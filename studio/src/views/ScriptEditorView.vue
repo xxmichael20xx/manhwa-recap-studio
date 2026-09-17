@@ -3,12 +3,12 @@
     <!-- Top Header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
-        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-crimson-500/50 text-muted-foreground hover:text-foreground shadow-sm">
+        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-amethyst-500/50 text-muted-foreground hover:text-foreground shadow-sm">
           <ArrowLeft class="w-4 h-4" />
         </router-link>
         <div>
           <div class="flex items-center space-x-2">
-            <span class="text-xs font-mono text-brand-crimson-600 dark:text-brand-crimson-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
+            <span class="text-xs font-mono text-brand-amethyst-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
             <span class="text-slate-400">/</span>
             <span class="text-xs font-mono text-muted-foreground">{{ $route.params.episodeId }}</span>
           </div>
@@ -20,7 +20,7 @@
         <button 
           @click="saveScript" 
           :disabled="saving"
-          class="px-4 py-2 rounded-xl bg-primary hover:bg-brand-crimson-600 text-primary-foreground text-xs font-semibold flex items-center space-x-2 transition-all shadow-md disabled:opacity-50 cursor-pointer"
+          class="px-4 py-2 rounded-xl bg-brand-amethyst-600 hover:bg-brand-amethyst-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-md shadow-brand-amethyst-500/20 disabled:opacity-50 cursor-pointer"
         >
           <Save class="w-4 h-4" />
           <span>{{ saving ? 'Saving...' : 'Save Script to Disk' }}</span>
@@ -28,7 +28,7 @@
 
         <router-link 
           :to="`/prompts/${$route.params.franchiseId}/${$route.params.episodeId}`"
-          class="px-4 py-2 rounded-xl bg-card border border-border hover:border-brand-cyan-500/50 text-brand-cyan-600 dark:text-brand-cyan-400 text-xs font-semibold flex items-center space-x-2 transition-all shadow-sm"
+          class="px-4 py-2 rounded-xl bg-card border border-border hover:border-brand-gold-500/50 text-brand-gold-400 text-xs font-semibold flex items-center space-x-2 transition-all shadow-sm"
         >
           <Sparkles class="w-4 h-4" />
           <span>Prompt Matrix</span>
@@ -43,10 +43,10 @@
         <div class="bg-card border border-border rounded-2xl overflow-hidden flex flex-col h-[750px] shadow-sm">
           <div class="px-4 py-3 border-b border-border bg-secondary/40 flex items-center justify-between">
             <span class="text-xs font-mono text-muted-foreground flex items-center space-x-2">
-              <FileCode class="w-4 h-4 text-brand-crimson-500" />
+              <FileCode class="w-4 h-4 text-brand-amethyst-400" />
               <span>01_Episode_Script.md</span>
             </span>
-            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold animate-fade-in">
+            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-400 font-semibold animate-fade-in">
               ✓ Saved to 01_Franchises Directory
             </span>
           </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="bg-secondary/60 p-3 rounded-xl border border-border text-center">
               <div class="text-[10px] font-mono text-muted-foreground uppercase">Runtime @ 140 WPM</div>
-              <div class="text-lg font-extrabold text-brand-cyan-600 dark:text-brand-cyan-400 font-mono mt-1">{{ audit.estimatedMinutes || 0 }}m</div>
+              <div class="text-lg font-extrabold text-brand-gold-400 font-mono mt-1">{{ audit.estimatedMinutes || 0 }}m</div>
             </div>
           </div>
 

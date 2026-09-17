@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 60 5% 98%;         /* #FAFAF9 Warm Alabaster */
-    --foreground: 24 10% 10%;        /* #1C1917 Deep Espresso */
+    --background: 260 29% 4%;        /* #08070C Shadow Carbon Canvas */
+    --foreground: 210 40% 98%;       /* #F8FAFC White */
     
-    --card: 0 0% 100%;               /* #FFFFFF Pure White */
-    --card-foreground: 24 10% 10%;
+    --card: 262 30% 8%;              /* #110E1A Dark Amethyst Slate */
+    --card-foreground: 210 40% 98%;
     
-    --border: 24 6% 90%;             /* #E7E5E4 Warm Stone */
-    --input: 24 6% 90%;
-    --ring: 263 70% 50%;             /* #6D28D9 Royal Violet Ring */
+    --border: 262 33% 16%;           /* #231B36 Royal Violet Border */
+    --input: 262 33% 16%;
+    --ring: 258 90% 66%;             /* #8B5CF6 Amethyst Glow */
     
-    --primary: 263 70% 50%;          /* #6D28D9 Royal Violet */
+    --primary: 258 90% 66%;          /* #8B5CF6 Royal Amethyst */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 250 100% 98%;       /* #F5F3FF Soft Lavender */
-    --secondary-foreground: 263 70% 50%;
+    --secondary: 256 31% 11%;        /* #171324 Elevated Slate */
+    --secondary-foreground: 210 40% 98%;
     
-    --muted: 250 100% 98%;
-    --muted-foreground: 25 5% 45%;   /* #78716C */
+    --muted: 256 31% 11%;
+    --muted-foreground: 254 13% 65%; /* #9E98B3 */
     
-    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold */
+    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
     --accent-foreground: 0 0% 100%;
   }
 
@@ -48,6 +48,30 @@
     --muted-foreground: 254 13% 65%; /* #9E98B3 */
     
     --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .light {
+    --background: 60 5% 98%;         /* #FAFAF9 Warm Alabaster */
+    --foreground: 24 10% 10%;        /* #1C1917 Deep Espresso */
+    
+    --card: 0 0% 100%;               /* #FFFFFF Pure White */
+    --card-foreground: 24 10% 10%;
+    
+    --border: 24 6% 90%;             /* #E7E5E4 Warm Stone */
+    --input: 24 6% 90%;
+    --ring: 263 70% 50%;             /* #6D28D9 Royal Violet Ring */
+    
+    --primary: 263 70% 50%;          /* #6D28D9 Royal Violet */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 250 100% 98%;       /* #F5F3FF Soft Lavender */
+    --secondary-foreground: 263 70% 50%;
+    
+    --muted: 250 100% 98%;
+    --muted-foreground: 25 5% 45%;   /* #78716C */
+    
+    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold */
     --accent-foreground: 0 0% 100%;
   }
 }

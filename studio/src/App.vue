@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen w-screen overflow-hidden bg-slate-50 dark:bg-[#07090e] text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans',sans-serif]">
+  <div class="flex h-screen w-screen overflow-hidden bg-background text-foreground font-['Plus_Jakarta_Sans',sans-serif]">
     <!-- Collapsible Sidebar for Desktop (>= 1024px) -->
     <Sidebar class="hidden lg:flex shrink-0" />
 
@@ -10,12 +10,12 @@
     >
       <!-- Backdrop overlay -->
       <div 
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity cursor-pointer"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity cursor-pointer"
         @click="isMobileSidebarOpen = false"
       ></div>
 
       <!-- Slide-over Drawer Shell -->
-      <div class="relative w-72 max-w-[85vw] bg-white dark:bg-[#0a0d14] h-full shadow-2xl flex flex-col z-10">
+      <div class="relative w-72 max-w-[85vw] bg-card border-r border-border h-full shadow-2xl flex flex-col z-10">
         <Sidebar @navigate="isMobileSidebarOpen = false" />
       </div>
     </div>
@@ -25,24 +25,22 @@
       <!-- Sticky Dynamic Header synced with Vue Router & Theme Toggle -->
       <Header 
         :is-dark="isDark" 
-        :environment="currentEnvironment"
-        @update:environment="currentEnvironment = $event"
         @toggle-theme="toggleTheme" 
         @copy-dna="copyMasterDna" 
         @toggle-mobile-sidebar="isMobileSidebarOpen = !isMobileSidebarOpen"
       />
 
       <!-- Scrollable Main View Area (SPA Router Outlet) -->
-      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 bg-background">
         <div class="max-w-7xl mx-auto">
           <router-view />
         </div>
       </main>
 
       <!-- Footer -->
-      <footer class="border-t border-slate-200 dark:border-slate-800/80 py-3 px-6 bg-white/60 dark:bg-[#0a0d14]/60 text-center text-xs text-slate-500 font-mono flex items-center justify-between">
+      <footer class="border-t border-border py-3 px-6 bg-card/70 text-center text-xs text-muted-foreground font-mono flex items-center justify-between">
         <span>Manhwa Recap Studio &bull; Universal Narrative Engineering</span>
-        <span class="text-rose-500 font-semibold">Port 3100 (API 3101)</span>
+        <span class="text-brand-gold-500 font-semibold">Port 3100 (API 3101)</span>
       </footer>
     </div>
   </div>
@@ -54,16 +52,17 @@ import Sidebar from './components/Sidebar.vue'
 import Header from './components/Header.vue'
 
 const isMobileSidebarOpen = ref(false)
-const currentEnvironment = ref('live')
 const isDark = ref(true)
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
   if (isDark.value) {
     document.documentElement.classList.add('dark')
+    document.documentElement.classList.remove('light')
     localStorage.setItem('manhwa-theme', 'dark')
   } else {
     document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('light')
     localStorage.setItem('manhwa-theme', 'light')
   }
 }
@@ -75,13 +74,10 @@ const copyMasterDna = () => {
 }
 
 onMounted(() => {
-  const saved = localStorage.getItem('manhwa-theme')
-  if (saved === 'light') {
-    isDark.value = false
-    document.documentElement.classList.remove('dark')
-  } else {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  }
+  // Always initialize with Shadow Monarch dark mode by default
+  isDark.value = true
+  document.documentElement.classList.add('dark')
+  document.documentElement.classList.remove('light')
+  localStorage.setItem('manhwa-theme', 'dark')
 })
 </script>

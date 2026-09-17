@@ -55,8 +55,8 @@
           class="w-full flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all group relative select-none"
           :class="[
             isItemActive(item) 
-              ? 'bg-brand-amethyst-50 dark:bg-brand-amethyst-500/10 text-brand-amethyst-700 dark:text-brand-amethyst-400 font-semibold shadow-sm' 
-              : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+              ? 'bg-brand-amethyst-500/15 text-brand-amethyst-300 border border-brand-amethyst-500/30 font-semibold shadow-sm shadow-brand-amethyst-500/10' 
+              : 'text-muted-foreground hover:bg-secondary hover:text-foreground border border-transparent'
           ]"
         >
           <component :is="item.icon" class="w-5 h-5 flex-shrink-0" :class="[isCollapsed ? 'mx-auto' : 'mr-3']" />

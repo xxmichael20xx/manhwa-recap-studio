@@ -21,38 +21,6 @@
     </div>
 
     <div class="flex items-center space-x-2 sm:space-x-3 flex-wrap justify-end gap-y-1.5">
-      <!-- Environment Switcher Pill (Live vs Sandbox) -->
-      <div class="flex items-center bg-secondary p-1 rounded-xl border border-border text-xs font-semibold shadow-inner">
-        <button
-          type="button"
-          @click="$emit('update:environment', 'live')"
-          :class="[
-            'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
-            environment === 'live'
-              ? 'bg-card text-brand-amethyst-600 dark:text-brand-amethyst-400 font-bold shadow-sm'
-              : 'text-muted-foreground hover:text-foreground'
-          ]"
-          title="Live Production Mode"
-        >
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          <span>Live Studio</span>
-        </button>
-        <button
-          type="button"
-          @click="$emit('update:environment', 'sandbox')"
-          :class="[
-            'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
-            environment === 'sandbox'
-              ? 'bg-card text-brand-gold-600 dark:text-brand-gold-400 font-bold shadow-sm'
-              : 'text-muted-foreground hover:text-foreground'
-          ]"
-          title="Sandbox Testing Mode"
-        >
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-          <span>Sandbox</span>
-        </button>
-      </div>
-
       <!-- Dark / Light Mode Toggle Button -->
       <button
         @click="$emit('toggle-theme')"
@@ -64,7 +32,7 @@
           <span class="hidden md:inline">Light</span>
         </span>
         <span v-else class="flex items-center space-x-1.5">
-          <Moon class="w-3.5 h-3.5 text-brand-amethyst-600" />
+          <Moon class="w-3.5 h-3.5 text-brand-amethyst-400" />
           <span class="hidden md:inline">Dark</span>
         </span>
       </button>
@@ -72,7 +40,7 @@
       <!-- Quick Action: Copy Master Character DNA -->
       <button 
         @click="$emit('copy-dna')"
-        class="h-8 px-3 rounded-xl bg-gradient-to-r from-brand-amethyst-600 to-purple-800 hover:from-brand-amethyst-700 hover:to-purple-900 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-md shadow-brand-amethyst-500/20 transition active:scale-95 cursor-pointer"
+        class="h-8 px-3 rounded-xl bg-gradient-to-r from-brand-amethyst-600 to-purple-800 hover:from-brand-amethyst-500 hover:to-purple-700 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-md shadow-brand-amethyst-500/20 transition active:scale-95 cursor-pointer"
         title="Copy Ethan Drake's locked Midjourney --cref prompt string"
       >
         <Sparkles class="w-3.5 h-3.5 text-brand-gold-300" />
@@ -88,14 +56,10 @@ import { useRoute } from 'vue-router'
 import { Menu, Sun, Moon, Sparkles } from 'lucide-vue-next'
 
 const props = defineProps({
-  isDark: Boolean,
-  environment: {
-    type: String,
-    default: 'live'
-  }
+  isDark: Boolean
 })
 
-defineEmits(['toggle-mobile-sidebar', 'update:environment', 'toggle-theme', 'copy-dna'])
+defineEmits(['toggle-mobile-sidebar', 'toggle-theme', 'copy-dna'])
 
 const route = useRoute()
 

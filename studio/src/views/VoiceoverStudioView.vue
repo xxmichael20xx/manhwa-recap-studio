@@ -3,12 +3,12 @@
     <!-- Header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
-        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-crimson-500/50 text-muted-foreground hover:text-foreground shadow-sm">
+        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-amethyst-500/50 text-muted-foreground hover:text-foreground shadow-sm">
           <ArrowLeft class="w-4 h-4" />
         </router-link>
         <div>
           <div class="flex items-center space-x-2">
-            <span class="text-xs font-mono text-purple-600 dark:text-purple-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
+            <span class="text-xs font-mono text-brand-amethyst-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
             <span class="text-slate-400">/</span>
             <span class="text-xs font-mono text-muted-foreground">{{ $route.params.episodeId }}</span>
           </div>
@@ -19,7 +19,7 @@
       <div class="flex items-center space-x-3">
         <select 
           v-model="selectedVoice"
-          class="bg-card border border-border rounded-xl px-3 py-2 text-xs font-mono text-foreground focus:outline-none focus:border-purple-500 shadow-sm"
+          class="bg-card border border-border rounded-xl px-3 py-2 text-xs font-mono text-foreground focus:outline-none focus:border-brand-amethyst-500 shadow-sm"
         >
           <option value="en-US-ChristopherNeural">Christopher (US - Deep Narrative)</option>
           <option value="en-GB-RyanNeural">Ryan (UK - Clear Authoritative)</option>
@@ -30,7 +30,7 @@
         <button 
           @click="generateAllAudio"
           :disabled="rendering"
-          class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-md disabled:opacity-50 cursor-pointer"
+          class="px-4 py-2 rounded-xl bg-brand-amethyst-600 hover:bg-brand-amethyst-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-md shadow-brand-amethyst-500/20 disabled:opacity-50 cursor-pointer"
         >
           <Volume2 class="w-4 h-4" :class="{ 'animate-pulse': rendering }" />
           <span>{{ rendering ? 'Rendering Audio...' : 'Generate All Scene VO (Edge-TTS $0)' }}</span>
