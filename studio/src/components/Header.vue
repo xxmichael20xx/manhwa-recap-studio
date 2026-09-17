@@ -24,26 +24,26 @@
       <!-- Dark / Light Mode Toggle Button -->
       <button
         @click="$emit('toggle-theme')"
-        class="h-8 px-3 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
+        class="h-8 px-3 rounded-xl border border-border bg-secondary hover:bg-muted text-foreground transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
         :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
       >
-        <span v-if="isDark" class="flex items-center space-x-1.5">
+        <span v-if="isDark" class="flex items-center space-x-1.5 text-brand-gold-400">
           <Sun class="w-3.5 h-3.5 text-brand-gold-400" />
-          <span class="hidden md:inline">Light</span>
+          <span class="hidden md:inline font-mono font-semibold">Light Mode</span>
         </span>
-        <span v-else class="flex items-center space-x-1.5">
+        <span v-else class="flex items-center space-x-1.5 text-brand-amethyst-400">
           <Moon class="w-3.5 h-3.5 text-brand-amethyst-400" />
-          <span class="hidden md:inline">Dark</span>
+          <span class="hidden md:inline font-mono font-semibold">Dark Mode</span>
         </span>
       </button>
 
       <!-- Quick Action: Copy Master Character DNA -->
       <button 
         @click="$emit('copy-dna')"
-        class="h-8 px-3 rounded-xl bg-gradient-to-r from-brand-amethyst-600 to-purple-800 hover:from-brand-amethyst-500 hover:to-purple-700 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-md shadow-brand-amethyst-500/20 transition active:scale-95 cursor-pointer"
+        class="h-8 px-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 border border-purple-400/30 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-lg shadow-purple-900/40 transition active:scale-95 cursor-pointer"
         title="Copy Ethan Drake's locked Midjourney --cref prompt string"
       >
-        <Sparkles class="w-3.5 h-3.5 text-brand-gold-300" />
+        <Sparkles class="w-3.5 h-3.5 text-brand-gold-400" />
         <span class="hidden sm:inline">Copy Character DNA</span>
       </button>
     </div>
@@ -79,7 +79,7 @@ const viewIcon = computed(() => {
   if (route.path.startsWith('/editor')) return '✍️'
   if (route.path.startsWith('/prompts')) return '🎨'
   if (route.path.startsWith('/tts')) return '🎙️'
-  if (route.path === '/engine') return '📘'
+  if (route.path === '/engine') return '📜'
   return '⚡'
 })
 

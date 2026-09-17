@@ -35,11 +35,11 @@ export default {
         },
         brand: {
           shadow: {
-            950: '#08070C', // Shadow Carbon Canvas
-            900: '#110E1A', // Dark Amethyst Slate Surface
-            850: '#171324', // Elevated Slate
-            800: '#1E192E',
-            700: '#231B36', // Royal Violet Border
+            950: '#0A0614', // Deep Obsidian Canvas
+            900: '#160F28', // Royal Amethyst Slate Surface
+            850: '#22173E', // Elevated Amethyst Surface
+            800: '#2C1E4F',
+            700: '#432470', // Crisp Violet Border
           },
           amethyst: {
             50: '#FAF5FF',
@@ -47,7 +47,7 @@ export default {
             200: '#E9D5FF',
             300: '#D8B4FE',
             400: '#C084FC',
-            500: '#8B5CF6', // Royal Amethyst Primary
+            500: '#8B5CF6', // Royal Amethyst Primary Glow
             600: '#7C3AED',
             700: '#6D28D9',
             800: '#5B21B6',

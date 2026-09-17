@@ -55,15 +55,16 @@
           class="w-full flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all group relative select-none"
           :class="[
             isItemActive(item) 
-              ? 'bg-brand-amethyst-500/15 text-brand-amethyst-300 border border-brand-amethyst-500/30 font-semibold shadow-sm shadow-brand-amethyst-500/10' 
-              : 'text-muted-foreground hover:bg-secondary hover:text-foreground border border-transparent'
+              ? 'bg-purple-600/30 text-purple-100 border border-purple-500/70 font-bold shadow-md shadow-purple-600/25' 
+              : 'text-muted-foreground hover:bg-secondary/70 hover:text-purple-200 border border-transparent'
           ]"
         >
-          <component :is="item.icon" class="w-5 h-5 flex-shrink-0" :class="[isCollapsed ? 'mx-auto' : 'mr-3']" />
+          <component :is="item.icon" class="w-5 h-5 flex-shrink-0" :class="[isCollapsed ? 'mx-auto' : 'mr-3', isItemActive(item) ? 'text-purple-300' : 'text-muted-foreground group-hover:text-purple-300']" />
           <span v-if="!isCollapsed" class="truncate flex-1">{{ item.label }}</span>
           <span 
             v-if="!isCollapsed && item.badge" 
-            class="ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-secondary text-muted-foreground border border-border tracking-wider uppercase"
+            class="ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded-md border tracking-wider uppercase"
+            :class="isItemActive(item) ? 'bg-purple-950/60 text-brand-gold-400 border-brand-gold-500/40' : 'bg-secondary text-muted-foreground border-border'"
           >
             {{ item.badge }}
           </span>
@@ -81,11 +82,11 @@
     </div>
 
     <!-- Footer Venture Meta -->
-    <div class="p-4 border-t border-border/80 text-xs">
+    <div class="p-4 border-t border-border/80 text-xs bg-secondary/20">
       <div v-if="!isCollapsed" class="space-y-1">
-        <p class="text-muted-foreground text-[11px] font-mono uppercase">Venture</p>
-        <p class="font-semibold text-foreground truncate">Manhwa Recap Studio</p>
-        <p class="text-[10px] text-brand-gold-600 dark:text-brand-gold-400 font-mono">👑 Shadow Monarch Theme Active</p>
+        <p class="text-muted-foreground text-[10px] font-mono uppercase">Venture</p>
+        <p class="font-bold text-foreground truncate">Manhwa Recap Studio</p>
+        <p class="text-[10px] text-brand-gold-400 font-mono font-semibold">👑 Shadow Monarch Theme Active</p>
       </div>
       <div v-else class="text-center text-muted-foreground text-xs font-mono">v1.0</div>
     </div>

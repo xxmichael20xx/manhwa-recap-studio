@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 260 29% 4%;        /* #08070C Shadow Carbon Canvas */
-    --foreground: 210 40% 98%;       /* #F8FAFC White */
+    --background: 265 45% 5%;        /* #0A0614 Deep Obsidian Canvas */
+    --foreground: 265 20% 98%;       /* #F8FAFC Crisp White Typography */
     
-    --card: 262 30% 8%;              /* #110E1A Dark Amethyst Slate */
-    --card-foreground: 210 40% 98%;
+    --card: 265 42% 10%;             /* #160F28 Royal Amethyst Slate Surface */
+    --card-foreground: 265 20% 98%;
     
-    --border: 262 33% 16%;           /* #231B36 Royal Violet Border */
-    --input: 262 33% 16%;
-    --ring: 258 90% 66%;             /* #8B5CF6 Amethyst Glow */
+    --border: 265 45% 25%;           /* #432470 Crisp Violet Border */
+    --input: 265 45% 25%;
+    --ring: 265 85% 65%;             /* #8B5CF6 Vivid Royal Amethyst Glow */
     
-    --primary: 258 90% 66%;          /* #8B5CF6 Royal Amethyst */
+    --primary: 265 85% 65%;          /* #8B5CF6 Royal Amethyst */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 256 31% 11%;        /* #171324 Elevated Slate */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 265 38% 15%;        /* #22173E Elevated Amethyst Surface */
+    --secondary-foreground: 265 20% 98%;
     
-    --muted: 256 31% 11%;
-    --muted-foreground: 254 13% 65%; /* #9E98B3 */
+    --muted: 265 38% 15%;
+    --muted-foreground: 265 20% 70%; /* #B8AEC9 Soft Lavender-Grey Text */
     
     --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
     --accent-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 260 29% 4%;        /* #08070C Shadow Carbon Canvas */
-    --foreground: 210 40% 98%;       /* #F8FAFC White */
+    --background: 265 45% 5%;        /* #0A0614 Deep Obsidian Canvas */
+    --foreground: 265 20% 98%;       /* #F8FAFC Crisp White Typography */
     
-    --card: 262 30% 8%;              /* #110E1A Dark Amethyst Slate */
-    --card-foreground: 210 40% 98%;
+    --card: 265 42% 10%;             /* #160F28 Royal Amethyst Slate Surface */
+    --card-foreground: 265 20% 98%;
     
-    --border: 262 33% 16%;           /* #231B36 Royal Violet Border */
-    --input: 262 33% 16%;
-    --ring: 258 90% 66%;             /* #8B5CF6 Amethyst Glow */
+    --border: 265 45% 25%;           /* #432470 Crisp Violet Border */
+    --input: 265 45% 25%;
+    --ring: 265 85% 65%;             /* #8B5CF6 Vivid Royal Amethyst Glow */
     
-    --primary: 258 90% 66%;          /* #8B5CF6 Royal Amethyst */
+    --primary: 265 85% 65%;          /* #8B5CF6 Royal Amethyst */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 256 31% 11%;        /* #171324 Elevated Slate */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 265 38% 15%;        /* #22173E Elevated Amethyst Surface */
+    --secondary-foreground: 265 20% 98%;
     
-    --muted: 256 31% 11%;
-    --muted-foreground: 254 13% 65%; /* #9E98B3 */
+    --muted: 265 38% 15%;
+    --muted-foreground: 265 20% 70%; /* #B8AEC9 Soft Lavender-Grey Text */
     
     --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
     --accent-foreground: 0 0% 100%;
