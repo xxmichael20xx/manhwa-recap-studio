@@ -1,80 +1,87 @@
 <template>
-  <div class="min-h-screen bg-[#07090e] text-slate-100 flex flex-col">
-    <!-- Top Navigation Header -->
-    <header class="border-b border-cyber-border/80 bg-[#0a0d14]/90 backdrop-blur sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <!-- Logo & Brand -->
-        <div class="flex items-center space-x-3">
-          <router-link to="/" class="flex items-center space-x-3 group">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 via-purple-600 to-cyan-500 p-[1px] shadow-lg shadow-rose-500/20 group-hover:shadow-rose-500/40 transition-all">
-              <div class="w-full h-full bg-[#0a0d14] rounded-xl flex items-center justify-center">
-                <Layers class="w-5 h-5 text-rose-500 group-hover:scale-110 transition-transform" />
-              </div>
-            </div>
-            <div>
-              <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                MANHWA RECAP <span class="text-rose-500">STUDIO</span>
-              </span>
-              <div class="flex items-center space-x-2">
-                <span class="text-[10px] font-mono tracking-widest text-cyan-400 uppercase">Engine v1.0.0</span>
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="text-[10px] text-slate-400">Zero-Slop Active</span>
-              </div>
-            </div>
-          </router-link>
-        </div>
+  <div class="flex h-screen w-screen overflow-hidden bg-slate-50 dark:bg-[#07090e] text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans',sans-serif]">
+    <!-- Collapsible Sidebar for Desktop (>= 1024px) -->
+    <Sidebar class="hidden lg:flex shrink-0" />
 
-        <!-- Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-1">
-          <router-link 
-            to="/" 
-            class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all flex items-center space-x-2"
-            :class="$route.path === '/' ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'"
-          >
-            <LayoutDashboard class="w-4 h-4" />
-            <span>Dashboard</span>
-          </router-link>
+    <!-- Mobile Slide-Over Navigation Drawer (< 1024px) -->
+    <div 
+      v-if="isMobileSidebarOpen"
+      class="fixed inset-0 z-50 lg:hidden flex"
+    >
+      <!-- Backdrop overlay -->
+      <div 
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity cursor-pointer"
+        @click="isMobileSidebarOpen = false"
+      ></div>
 
-          <router-link 
-            to="/engine" 
-            class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all flex items-center space-x-2"
-            :class="$route.path === '/engine' ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'"
-          >
-            <BookOpen class="w-4 h-4" />
-            <span>Anti-Slop Codex</span>
-          </router-link>
-        </nav>
-
-        <!-- Right System Indicators -->
-        <div class="flex items-center space-x-3">
-          <div class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border text-xs font-mono text-slate-300">
-            <ShieldCheck class="w-4 h-4 text-emerald-400" />
-            <span>5 Pillars Locked</span>
-          </div>
-          <a 
-            href="https://github.com/xxmichael20xx/manhwa-recap-studio" 
-            target="_blank"
-            class="p-2 rounded-lg bg-cyber-card border border-cyber-border hover:border-slate-700 text-slate-400 hover:text-white transition-colors"
-            title="GitHub Repository"
-          >
-            <Github class="w-4 h-4" />
-          </a>
-        </div>
+      <!-- Slide-over Drawer Shell -->
+      <div class="relative w-72 max-w-[85vw] bg-white dark:bg-[#0a0d14] h-full shadow-2xl flex flex-col z-10">
+        <Sidebar @navigate="isMobileSidebarOpen = false" />
       </div>
-    </header>
+    </div>
 
-    <!-- Main View Outlet -->
-    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-      <router-view />
-    </main>
+    <!-- Main Content Flow Area -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <!-- Sticky Dynamic Header synced with Vue Router & Theme Toggle -->
+      <Header 
+        :is-dark="isDark" 
+        :environment="currentEnvironment"
+        @update:environment="currentEnvironment = $event"
+        @toggle-theme="toggleTheme" 
+        @copy-dna="copyMasterDna" 
+        @toggle-mobile-sidebar="isMobileSidebarOpen = !isMobileSidebarOpen"
+      />
 
-    <!-- Footer -->
-    <footer class="border-t border-cyber-border/40 py-4 bg-[#0a0d14]/60 text-center text-xs text-slate-500 font-mono">
-      Manhwa Recap Studio — Universal Narrative Engineering Suite &bull; ShipByMike
-    </footer>
+      <!-- Scrollable Main View Area (SPA Router Outlet) -->
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
+        <div class="max-w-7xl mx-auto">
+          <router-view />
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-slate-200 dark:border-slate-800/80 py-3 px-6 bg-white/60 dark:bg-[#0a0d14]/60 text-center text-xs text-slate-500 font-mono flex items-center justify-between">
+        <span>Manhwa Recap Studio &bull; Universal Narrative Engineering</span>
+        <span class="text-rose-500 font-semibold">Port 3100 (API 3101)</span>
+      </footer>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { Layers, LayoutDashboard, BookOpen, ShieldCheck, Github } from 'lucide-vue-next'
+import { ref, onMounted } from 'vue'
+import Sidebar from './components/Sidebar.vue'
+import Header from './components/Header.vue'
+
+const isMobileSidebarOpen = ref(false)
+const currentEnvironment = ref('live')
+const isDark = ref(true)
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('manhwa-theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('manhwa-theme', 'light')
+  }
+}
+
+const copyMasterDna = () => {
+  const masterAnchor = `Ethan Drake, 22-year-old male hunter, sharp angular jawline, jet-black messy undercut hair, piercing steel-grey eyes, high-collar charcoal tactical trench-coat over dark combat armour --cref [CHARACTER_URL] --cw 80 --ar 16:9 --style raw`
+  navigator.clipboard.writeText(masterAnchor)
+  alert('✨ Copied Ethan Drake Master Character DNA Prompt Anchor to Clipboard!')
+}
+
+onMounted(() => {
+  const saved = localStorage.getItem('manhwa-theme')
+  if (saved === 'light') {
+    isDark.value = false
+    document.documentElement.classList.remove('dark')
+  } else {
+    isDark.value = true
+    document.documentElement.classList.add('dark')
+  }
+})
 </script>
