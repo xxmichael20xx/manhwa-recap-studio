@@ -1,10 +1,10 @@
 <template>
   <div class="space-y-8">
-    <!-- Top Hero Section -->
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-crimson-500/10 via-purple-500/5 to-secondary border border-brand-crimson-500/20 p-8 shadow-sm">
+    <!-- Top Hero Section (Shadow Monarch Regal Theme) -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-amethyst-500/10 via-purple-500/5 to-secondary border border-brand-amethyst-500/20 p-8 shadow-sm">
       <div class="relative z-10 max-w-3xl space-y-3">
-        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-crimson-500/10 border border-brand-crimson-500/30 text-brand-crimson-600 dark:text-brand-crimson-400 text-xs font-mono uppercase tracking-wider">
-          <span>🚀 Multi-Franchise Production Hub</span>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-amethyst-500/10 border border-brand-amethyst-500/30 text-brand-amethyst-700 dark:text-brand-amethyst-300 text-xs font-mono uppercase tracking-wider font-semibold">
+          <span>👑 Shadow Monarch Studio Engine</span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
           Universal Anti-Slop Studio
@@ -15,15 +15,15 @@
 
         <div class="pt-4 flex flex-wrap gap-3">
           <div class="flex items-center space-x-2 text-xs font-mono text-muted-foreground bg-card px-3 py-1.5 rounded-lg border border-border shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-brand-cyan-500"></span>
-            <span>Triple-Archetype Engine Ready</span>
+            <span class="w-2 h-2 rounded-full bg-brand-amethyst-500"></span>
+            <span>Triple-Archetype Engine Active</span>
           </div>
           <div class="flex items-center space-x-2 text-xs font-mono text-muted-foreground bg-card px-3 py-1.5 rounded-lg border border-border shadow-sm">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             <span>$5,000 EXP Re-Indexing Active</span>
           </div>
           <div class="flex items-center space-x-2 text-xs font-mono text-muted-foreground bg-card px-3 py-1.5 rounded-lg border border-border shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            <span class="w-2 h-2 rounded-full bg-brand-gold-500"></span>
             <span>200 CON Durability Law Enforced</span>
           </div>
         </div>
@@ -35,14 +35,14 @@
       <div class="flex items-center justify-between">
         <div>
           <h2 class="text-xl font-bold text-foreground flex items-center space-x-2">
-            <Film class="w-5 h-5 text-brand-crimson-500" />
+            <Film class="w-5 h-5 text-brand-amethyst-500" />
             <span>Active Franchises</span>
           </h2>
           <p class="text-xs text-muted-foreground">Isolated story repositories inheriting the universal engine</p>
         </div>
         <router-link 
           to="/engine"
-          class="text-xs font-mono text-brand-cyan-600 dark:text-brand-cyan-400 hover:underline flex items-center space-x-1"
+          class="text-xs font-mono text-brand-amethyst-600 dark:text-brand-amethyst-400 hover:underline flex items-center space-x-1"
         >
           <span>View Archetype Blueprints</span>
           <ArrowRight class="w-3.5 h-3.5" />
@@ -61,18 +61,18 @@
         <div 
           v-for="item in franchises" 
           :key="item.id"
-          class="bg-card border border-border hover:border-brand-crimson-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-brand-crimson-500/5 flex flex-col justify-between group shadow-sm"
+          class="bg-card border border-border hover:border-brand-amethyst-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-brand-amethyst-500/5 flex flex-col justify-between group shadow-sm"
         >
           <div class="space-y-4">
             <div class="flex items-start justify-between">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-crimson-500/10 text-brand-crimson-600 dark:text-brand-crimson-400 border border-brand-crimson-500/20 uppercase font-semibold">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-amethyst-500/10 text-brand-amethyst-700 dark:text-brand-amethyst-300 border border-brand-amethyst-500/20 uppercase font-bold">
                 {{ item.id.includes('01') ? 'Archetype A' : 'Archetype B' }}
               </span>
               <span class="text-xs font-mono text-muted-foreground">{{ item.episodes.length }} Episodes</span>
             </div>
 
             <div>
-              <h3 class="text-lg font-bold text-foreground group-hover:text-brand-crimson-500 transition-colors">
+              <h3 class="text-lg font-bold text-foreground group-hover:text-brand-amethyst-500 transition-colors">
                 {{ item.name }}
               </h3>
               <p class="text-xs text-muted-foreground mt-1 line-clamp-2">
@@ -88,14 +88,14 @@
                 class="flex items-center justify-between text-xs bg-secondary/60 px-3 py-2 rounded-lg border border-border"
               >
                 <div class="flex items-center space-x-2">
-                  <PlayCircle class="w-3.5 h-3.5 text-brand-crimson-500" />
+                  <PlayCircle class="w-3.5 h-3.5 text-brand-amethyst-500" />
                   <span class="font-medium text-foreground truncate max-w-[140px]">{{ ep.name }}</span>
                 </div>
                 <div class="flex items-center space-x-2 font-mono text-[10px]">
-                  <span v-if="ep.audit?.isAntiSlopCertified" class="text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
+                  <span v-if="ep.audit?.isAntiSlopCertified" class="text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 font-semibold">
                     {{ ep.audit.overallScore }}% Anti-Slop
                   </span>
-                  <span v-if="ep.audioCount > 0" class="text-brand-cyan-600 dark:text-brand-cyan-400 font-semibold">
+                  <span v-if="ep.audioCount > 0" class="text-brand-amethyst-600 dark:text-brand-amethyst-400 font-semibold">
                     {{ ep.audioCount }} VO
                   </span>
                 </div>
@@ -106,7 +106,7 @@
           <div class="pt-6">
             <router-link 
               :to="`/franchises/${item.id}`"
-              class="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-brand-crimson-600 text-primary-foreground text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-sm"
+              class="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-brand-amethyst-600 text-primary-foreground text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-sm"
             >
               <span>Open Franchise Studio</span>
               <ArrowRight class="w-3.5 h-3.5" />

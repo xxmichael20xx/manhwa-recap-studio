@@ -4,50 +4,50 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;      /* #F8FAFC Warm Chalk */
-    --foreground: 222 47% 11%;      /* #0F172A Deep Charcoal */
+    --background: 60 5% 98%;         /* #FAFAF9 Warm Alabaster */
+    --foreground: 24 10% 10%;        /* #1C1917 Deep Espresso */
     
-    --card: 0 0% 100%;              /* #FFFFFF Pure White */
-    --card-foreground: 222 47% 11%;
+    --card: 0 0% 100%;               /* #FFFFFF Pure White */
+    --card-foreground: 24 10% 10%;
     
-    --border: 214 32% 91%;          /* #E2E8F0 Clean Slate */
-    --input: 214 32% 91%;
-    --ring: 346 100% 58%;           /* #FF2A5F Crimson Focus Ring */
+    --border: 24 6% 90%;             /* #E7E5E4 Warm Stone */
+    --input: 24 6% 90%;
+    --ring: 263 70% 50%;             /* #6D28D9 Royal Violet Ring */
     
-    --primary: 346 77% 49%;         /* #E11D48 Deep Crimson */
+    --primary: 263 70% 50%;          /* #6D28D9 Royal Violet */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 210 40% 96%;       /* #F1F5F9 Soft Slate */
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 250 100% 98%;       /* #F5F3FF Soft Lavender */
+    --secondary-foreground: 263 70% 50%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;/* #64748B */
+    --muted: 250 100% 98%;
+    --muted-foreground: 25 5% 45%;   /* #78716C */
     
-    --accent: 346 100% 97%;         /* #FFF1F2 */
-    --accent-foreground: 346 77% 40%;/* #BE123C */
+    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold */
+    --accent-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 216 28% 5%;       /* #090C10 Deep Obsidian */
-    --foreground: 210 40% 98%;      /* #F8FAFC Moonlight White */
+    --background: 260 29% 4%;        /* #08070C Shadow Carbon Canvas */
+    --foreground: 210 40% 98%;       /* #F8FAFC White */
     
-    --card: 218 30% 8%;             /* #0F141C Gunmetal Surface */
+    --card: 262 30% 8%;              /* #110E1A Dark Amethyst Slate */
     --card-foreground: 210 40% 98%;
     
-    --border: 220 30% 17%;          /* #1E2638 Forged Steel */
-    --input: 220 30% 17%;
-    --ring: 346 100% 58%;           /* #FF2A5F Electric Crimson */
+    --border: 262 33% 16%;           /* #231B36 Royal Violet Border */
+    --input: 262 33% 16%;
+    --ring: 258 90% 66%;             /* #8B5CF6 Amethyst Glow */
     
-    --primary: 346 100% 58%;        /* #FF2A5F Electric Crimson */
+    --primary: 258 90% 66%;          /* #8B5CF6 Royal Amethyst */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 218 28% 12%;       /* #141B26 Subdued Slate */
+    --secondary: 256 31% 11%;        /* #171324 Elevated Slate */
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 218 28% 12%;
-    --muted-foreground: 215 20% 65%;/* #94A3B8 */
+    --muted: 256 31% 11%;
+    --muted-foreground: 254 13% 65%; /* #9E98B3 */
     
-    --accent: 346 100% 58%;
+    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
     --accent-foreground: 0 0% 100%;
   }
 }
@@ -65,9 +65,9 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(139, 92, 246, 0.2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(139, 92, 246, 0.4);
 }

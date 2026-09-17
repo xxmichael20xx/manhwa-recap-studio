@@ -29,7 +29,7 @@
           :class="[
             'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
             environment === 'live'
-              ? 'bg-card text-emerald-600 dark:text-emerald-400 font-bold shadow-sm'
+              ? 'bg-card text-brand-amethyst-600 dark:text-brand-amethyst-400 font-bold shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           ]"
           title="Live Production Mode"
@@ -43,7 +43,7 @@
           :class="[
             'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
             environment === 'sandbox'
-              ? 'bg-card text-amber-600 dark:text-amber-400 font-bold shadow-sm'
+              ? 'bg-card text-brand-gold-600 dark:text-brand-gold-400 font-bold shadow-sm'
               : 'text-muted-foreground hover:text-foreground'
           ]"
           title="Sandbox Testing Mode"
@@ -60,11 +60,11 @@
         :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
       >
         <span v-if="isDark" class="flex items-center space-x-1.5">
-          <Sun class="w-3.5 h-3.5 text-amber-400" />
+          <Sun class="w-3.5 h-3.5 text-brand-gold-400" />
           <span class="hidden md:inline">Light</span>
         </span>
         <span v-else class="flex items-center space-x-1.5">
-          <Moon class="w-3.5 h-3.5 text-indigo-500" />
+          <Moon class="w-3.5 h-3.5 text-brand-amethyst-600" />
           <span class="hidden md:inline">Dark</span>
         </span>
       </button>
@@ -72,10 +72,10 @@
       <!-- Quick Action: Copy Master Character DNA -->
       <button 
         @click="$emit('copy-dna')"
-        class="h-8 px-3 rounded-xl bg-brand-crimson-500 hover:bg-brand-crimson-600 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-sm transition active:scale-95 cursor-pointer"
+        class="h-8 px-3 rounded-xl bg-gradient-to-r from-brand-amethyst-600 to-purple-800 hover:from-brand-amethyst-700 hover:to-purple-900 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-md shadow-brand-amethyst-500/20 transition active:scale-95 cursor-pointer"
         title="Copy Ethan Drake's locked Midjourney --cref prompt string"
       >
-        <Sparkles class="w-3.5 h-3.5" />
+        <Sparkles class="w-3.5 h-3.5 text-brand-gold-300" />
         <span class="hidden sm:inline">Copy Character DNA</span>
       </button>
     </div>
@@ -110,7 +110,7 @@ const viewTitle = computed(() => {
 })
 
 const viewIcon = computed(() => {
-  if (route.path === '/') return '📊'
+  if (route.path === '/') return '👑'
   if (route.path.startsWith('/franchises')) return '🎬'
   if (route.path.startsWith('/editor')) return '✍️'
   if (route.path.startsWith('/prompts')) return '🎨'

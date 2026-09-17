@@ -11,16 +11,16 @@
           @click="$emit('navigate')"
           class="flex items-center space-x-3 overflow-hidden group select-none"
         >
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-crimson-500 via-purple-600 to-brand-cyan-500 p-[1px] shadow-lg shadow-brand-crimson-500/20 flex-shrink-0 group-hover:scale-105 transition-transform">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-amethyst-500 via-purple-700 to-brand-gold-500 p-[1px] shadow-lg shadow-brand-amethyst-500/20 flex-shrink-0 group-hover:scale-105 transition-transform">
             <div class="w-full h-full bg-card rounded-xl flex items-center justify-center">
-              <span class="text-lg">🎬</span>
+              <span class="text-lg">👑</span>
             </div>
           </div>
           <div v-if="!isCollapsed" class="overflow-hidden">
-            <h1 class="font-bold text-sm text-foreground leading-tight truncate group-hover:text-brand-crimson-500 transition-colors">
+            <h1 class="font-bold text-sm text-foreground leading-tight truncate group-hover:text-brand-amethyst-500 transition-colors">
               Manhwa Studio
             </h1>
-            <p class="text-[11px] text-brand-crimson-600 dark:text-brand-crimson-400 font-semibold tracking-wide">
+            <p class="text-[11px] text-brand-amethyst-600 dark:text-brand-amethyst-400 font-semibold tracking-wide">
               ShipByMike &bull; v1.0
             </p>
           </div>
@@ -55,7 +55,7 @@
           class="w-full flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-all group relative select-none"
           :class="[
             isItemActive(item) 
-              ? 'bg-brand-crimson-50 dark:bg-brand-crimson-500/10 text-brand-crimson-700 dark:text-brand-crimson-400 font-semibold shadow-sm' 
+              ? 'bg-brand-amethyst-50 dark:bg-brand-amethyst-500/10 text-brand-amethyst-700 dark:text-brand-amethyst-400 font-semibold shadow-sm' 
               : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
           ]"
         >
@@ -74,7 +74,7 @@
             class="absolute left-full ml-3 px-2.5 py-1 bg-slate-900 text-white text-xs rounded-md shadow-xl whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50 flex items-center space-x-1"
           >
             <span>{{ item.label }}</span>
-            <span v-if="item.badge" class="text-[9px] font-bold text-brand-crimson-400">({{ item.badge }})</span>
+            <span v-if="item.badge" class="text-[9px] font-bold text-brand-amethyst-400">({{ item.badge }})</span>
           </div>
         </router-link>
       </nav>
@@ -85,7 +85,7 @@
       <div v-if="!isCollapsed" class="space-y-1">
         <p class="text-muted-foreground text-[11px] font-mono uppercase">Venture</p>
         <p class="font-semibold text-foreground truncate">Manhwa Recap Studio</p>
-        <p class="text-[10px] text-muted-foreground font-mono">16:9 Long-Form Arc Recaps</p>
+        <p class="text-[10px] text-brand-gold-600 dark:text-brand-gold-400 font-mono">👑 Shadow Monarch Theme Active</p>
       </div>
       <div v-else class="text-center text-muted-foreground text-xs font-mono">v1.0</div>
     </div>
