@@ -34,12 +34,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          shadow: {
-            950: '#0A0614', // Deep Obsidian Canvas
-            900: '#160F28', // Royal Amethyst Slate Surface
-            850: '#22173E', // Elevated Amethyst Surface
-            800: '#2C1E4F',
-            700: '#432470', // Crisp Violet Border
+          dark: {
+            950: '#030712', // Deep Midnight Slate (Canvas)
+            900: '#0f172a', // Clean Slate 900 (Cards & Sidebar)
+            850: '#141e33', // Elevated Surface
+            800: '#1e293b', // Slate 800 Border
+            700: '#334155', // Slate 700 Accent Border
+            600: '#475569'
           },
           amethyst: {
             50: '#FAF5FF',
@@ -47,8 +48,8 @@ export default {
             200: '#E9D5FF',
             300: '#D8B4FE',
             400: '#C084FC',
-            500: '#8B5CF6', // Royal Amethyst Primary Glow
-            600: '#7C3AED',
+            500: '#8B5CF6', // Electric Amethyst
+            600: '#7C3AED', // Royal Violet
             700: '#6D28D9',
             800: '#5B21B6',
             900: '#4C1D95',

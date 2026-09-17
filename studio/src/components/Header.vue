@@ -1,22 +1,22 @@
 <template>
-  <header class="bg-card/90 border-b border-border px-4 sm:px-6 md:px-8 py-3.5 flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md">
+  <header class="bg-white/90 dark:bg-brand-dark-900/90 border-b border-slate-200 dark:border-brand-dark-800 px-4 sm:px-6 md:px-8 py-3.5 flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md">
     <div class="flex items-center space-x-3">
       <!-- Mobile Navigation Hamburger Button -->
       <button 
         type="button"
         @click="$emit('toggle-mobile-sidebar')"
-        class="lg:hidden p-2 rounded-xl border border-border bg-secondary text-foreground hover:bg-muted transition active:scale-95 shadow-sm cursor-pointer"
+        class="lg:hidden p-2 rounded-xl border border-slate-200 dark:border-brand-dark-800 bg-slate-100/80 dark:bg-brand-dark-950 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-brand-dark-800 transition active:scale-95 shadow-sm cursor-pointer"
         title="Open navigation menu"
       >
         <Menu class="w-4 h-4" />
       </button>
 
       <div>
-        <h2 class="text-base sm:text-lg font-bold text-foreground capitalize flex items-center">
+        <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white capitalize flex items-center">
           <span class="mr-2">{{ viewIcon }}</span>
           {{ viewTitle }}
         </h2>
-        <p class="text-[11px] sm:text-xs text-muted-foreground hidden xs:block">{{ viewSubtitle }}</p>
+        <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 hidden xs:block">{{ viewSubtitle }}</p>
       </div>
     </div>
 
@@ -24,15 +24,15 @@
       <!-- Dark / Light Mode Toggle Button -->
       <button
         @click="$emit('toggle-theme')"
-        class="h-8 px-3 rounded-xl border border-border bg-secondary hover:bg-muted text-foreground transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
+        class="h-8 px-3 rounded-xl border border-slate-200 dark:border-brand-dark-700 bg-slate-100 dark:bg-brand-dark-800 hover:bg-slate-200 dark:hover:bg-brand-dark-700 text-slate-700 dark:text-slate-200 transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
         :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
       >
         <span v-if="isDark" class="flex items-center space-x-1.5 text-brand-gold-400">
           <Sun class="w-3.5 h-3.5 text-brand-gold-400" />
           <span class="hidden md:inline font-mono font-semibold">Light Mode</span>
         </span>
-        <span v-else class="flex items-center space-x-1.5 text-brand-amethyst-400">
-          <Moon class="w-3.5 h-3.5 text-brand-amethyst-400" />
+        <span v-else class="flex items-center space-x-1.5 text-purple-600 dark:text-purple-400">
+          <Moon class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
           <span class="hidden md:inline font-mono font-semibold">Dark Mode</span>
         </span>
       </button>

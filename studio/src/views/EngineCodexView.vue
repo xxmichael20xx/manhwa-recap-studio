@@ -23,29 +23,29 @@
           :key="doc.filename"
           @click="selectedDocIndex = index"
           class="w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between group cursor-pointer"
-          :class="selectedDocIndex === index ? 'bg-purple-600/20 dark:bg-purple-600/30 border-purple-500 text-purple-900 dark:text-purple-100 shadow-lg shadow-purple-600/15 ring-1 ring-purple-500/50' : 'bg-card border-border/80 text-muted-foreground hover:text-foreground hover:border-purple-500/50 hover:bg-secondary/40'"
+          :class="selectedDocIndex === index ? 'bg-purple-50 dark:bg-purple-500/10 border-purple-500 text-purple-900 dark:text-purple-100 shadow-sm ring-1 ring-purple-500/30' : 'bg-white dark:bg-brand-dark-900 border-slate-200 dark:border-brand-dark-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:border-purple-500/40 hover:bg-slate-50 dark:hover:bg-brand-dark-850'"
         >
           <div class="space-y-1">
-            <div class="text-xs font-mono" :class="selectedDocIndex === index ? 'text-brand-gold-600 dark:text-brand-gold-400 font-bold' : 'text-muted-foreground group-hover:text-purple-400'">{{ doc.filename }}</div>
-            <div class="text-sm font-bold" :class="selectedDocIndex === index ? 'text-purple-950 dark:text-white' : 'text-foreground'">{{ doc.title }}</div>
+            <div class="text-xs font-mono" :class="selectedDocIndex === index ? 'text-brand-gold-600 dark:text-brand-gold-400 font-bold' : 'text-slate-400 dark:text-slate-500 group-hover:text-purple-500 dark:group-hover:text-purple-400'">{{ doc.filename }}</div>
+            <div class="text-sm font-bold" :class="selectedDocIndex === index ? 'text-purple-950 dark:text-white' : 'text-slate-900 dark:text-slate-100'">{{ doc.title }}</div>
           </div>
-          <ChevronRight class="w-4 h-4 transition-transform" :class="selectedDocIndex === index ? 'text-brand-gold-500 dark:text-brand-gold-400 translate-x-0.5' : 'text-muted-foreground group-hover:text-purple-400'" />
+          <ChevronRight class="w-4 h-4 transition-transform" :class="selectedDocIndex === index ? 'text-brand-gold-500 dark:text-brand-gold-400 translate-x-0.5' : 'text-slate-400 group-hover:text-purple-500'" />
         </button>
       </div>
 
       <!-- Document Viewer (8 cols) -->
-      <div class="lg:col-span-8 bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl shadow-black/10 dark:shadow-black/40">
+      <div class="lg:col-span-8 bg-white dark:bg-brand-dark-900 border border-slate-200 dark:border-brand-dark-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
         <div v-if="currentDoc" class="space-y-4">
-          <div class="border-b border-border/80 pb-4 flex items-center justify-between">
+          <div class="border-b border-slate-200 dark:border-brand-dark-800 pb-4 flex items-center justify-between">
             <div>
-              <span class="text-xs font-mono text-brand-amethyst-600 dark:text-purple-300 font-semibold">{{ currentDoc.filename }}</span>
-              <h2 class="text-xl font-extrabold text-foreground mt-1">{{ currentDoc.title }}</h2>
+              <span class="text-xs font-mono text-purple-600 dark:text-purple-400 font-semibold">{{ currentDoc.filename }}</span>
+              <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mt-1">{{ currentDoc.title }}</h2>
             </div>
-            <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-secondary dark:bg-purple-950/70 border border-border dark:border-purple-500/30 text-purple-700 dark:text-purple-300 font-semibold">
+            <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 font-semibold">
               👑 Universal Law Active
             </span>
           </div>
-          <pre class="font-mono text-xs text-foreground whitespace-pre-wrap leading-relaxed overflow-x-auto bg-secondary/50 dark:bg-black/40 p-5 rounded-xl border border-border dark:border-purple-500/20 shadow-inner select-text">{{ currentDoc.content }}</pre>
+          <pre class="font-mono text-xs text-slate-800 dark:text-slate-100 whitespace-pre-wrap leading-relaxed overflow-x-auto bg-slate-50 dark:bg-slate-950 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-inner select-text">{{ currentDoc.content }}</pre>
         </div>
       </div>
     </div>
