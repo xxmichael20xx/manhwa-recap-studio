@@ -3,68 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Clean Light Mode (Slate 50 + Pure White) */
-    --background: 210 40% 98%;        /* #F8FAFC Slate 50 */
-    --foreground: 222 47% 11%;        /* #0F172A Slate 900 */
-    
-    --card: 0 0% 100%;                /* #FFFFFF Pure White */
-    --card-foreground: 222 47% 11%;
-    
-    --border: 214 32% 91%;            /* #E2E8F0 Slate 200 */
-    --input: 214 32% 91%;
-    --ring: 265 85% 60%;
-    
-    --primary: 265 85% 60%;           /* Royal Violet Accent */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 210 40% 96.1%;       /* #F1F5F9 Slate 100 */
-    --secondary-foreground: 222 47% 11%;
-    
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;  /* #64748B Slate 500 */
-    
-    --accent: 38 92% 50%;             /* #F59E0B Imperial Gold */
-    --accent-foreground: 0 0% 100%;
-  }
-
-  .dark {
-    /* Sovereign Slate Dark Mode (Luna Slate Foundation + Adult Action Violet) */
-    --background: 224 71% 4%;         /* #030712 Deep Midnight Slate */
-    --foreground: 210 40% 98%;        /* #F8FAFC Crisp White Typography */
-    
-    --card: 222 47% 10%;              /* #0F172A Clean Slate 900 Card */
-    --card-foreground: 210 40% 98%;
-    
-    --border: 217 33% 18%;            /* #1E293B Crisp Slate 800 Border */
-    --input: 217 33% 18%;
-    --ring: 265 85% 65%;             /* #8B5CF6 Electric Amethyst Glow */
-    
-    --primary: 265 85% 65%;          /* #8B5CF6 Electric Amethyst */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 217 33% 15%;        /* #141E33 Slate 850 */
-    --secondary-foreground: 210 40% 98%;
-    
-    --muted: 217 33% 15%;
-    --muted-foreground: 215 20% 65%; /* #94A3B8 Slate 400 Text */
-    
-    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
-    --accent-foreground: 0 0% 100%;
-  }
-
   * {
-    border-color: hsl(var(--border));
+    border-color: #e2e8f0;
   }
-
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  .dark * {
+    border-color: #1e293b;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -78,4 +25,9 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(139, 92, 246, 0.4);
+}
+
+/* Smooth theme transitions */
+html, body {
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

@@ -26,8 +26,8 @@ export class FileService {
           const biblePath = path.join(franchisePath, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
           try {
             seriesBibleContent = await fs.readFile(biblePath, 'utf-8')
-            const anchorMatch = seriesBibleContent.match(/Prompt Anchor:\`?([^\`\n]+)\`?/)
-            if (anchorMatch) characterAnchor = anchorMatch[1].trim()
+            const anchorMatch = seriesBibleContent.match(/Prompt Anchor:\*{0,2}\s*`?([^`\r\n]+)`?/)
+            if (anchorMatch) characterAnchor = anchorMatch[1].replace(/`|\*/g, '').trim()
           } catch (e) {
             // Bible might not exist yet
           }

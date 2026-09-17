@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen w-screen overflow-hidden bg-background text-foreground font-['Plus_Jakarta_Sans',sans-serif]">
+  <div class="flex h-screen w-screen overflow-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans',sans-serif]">
     <!-- Collapsible Sidebar for Desktop (>= 1024px) -->
     <Sidebar class="hidden lg:flex shrink-0" />
 
@@ -15,7 +15,7 @@
       ></div>
 
       <!-- Slide-over Drawer Shell -->
-      <div class="relative w-72 max-w-[85vw] bg-card border-r border-border h-full shadow-2xl flex flex-col z-10">
+      <div class="relative w-72 max-w-[85vw] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-full shadow-2xl flex flex-col z-10">
         <Sidebar @navigate="isMobileSidebarOpen = false" />
       </div>
     </div>
@@ -31,16 +31,16 @@
       />
 
       <!-- Scrollable Main View Area (SPA Router Outlet) -->
-      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 bg-background">
+      <main class="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
         <div class="max-w-7xl mx-auto">
           <router-view />
         </div>
       </main>
 
       <!-- Footer -->
-      <footer class="border-t border-border py-3 px-6 bg-card/70 text-center text-xs text-muted-foreground font-mono flex items-center justify-between">
+      <footer class="border-t border-slate-200 dark:border-slate-800 py-3 px-6 bg-white/80 dark:bg-slate-900/80 text-center text-xs text-slate-500 dark:text-slate-400 font-mono flex items-center justify-between">
         <span>Manhwa Recap Studio &bull; Universal Narrative Engineering</span>
-        <span class="text-brand-gold-500 font-semibold">Port 3100 (API 3101)</span>
+        <span class="text-amber-500 dark:text-amber-400 font-semibold">Port 3100 (API 3101)</span>
       </footer>
     </div>
   </div>
