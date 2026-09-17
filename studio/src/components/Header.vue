@@ -1,38 +1,38 @@
 <template>
-  <header class="bg-white/90 dark:bg-[#0a0d14]/90 border-b border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 md:px-8 py-3.5 flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md">
+  <header class="bg-card/90 border-b border-border px-4 sm:px-6 md:px-8 py-3.5 flex items-center justify-between sticky top-0 z-30 shadow-sm backdrop-blur-md">
     <div class="flex items-center space-x-3">
       <!-- Mobile Navigation Hamburger Button -->
       <button 
         type="button"
         @click="$emit('toggle-mobile-sidebar')"
-        class="lg:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition active:scale-95 shadow-sm cursor-pointer"
+        class="lg:hidden p-2 rounded-xl border border-border bg-secondary text-foreground hover:bg-muted transition active:scale-95 shadow-sm cursor-pointer"
         title="Open navigation menu"
       >
         <Menu class="w-4 h-4" />
       </button>
 
       <div>
-        <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white capitalize flex items-center">
+        <h2 class="text-base sm:text-lg font-bold text-foreground capitalize flex items-center">
           <span class="mr-2">{{ viewIcon }}</span>
           {{ viewTitle }}
         </h2>
-        <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 hidden xs:block">{{ viewSubtitle }}</p>
+        <p class="text-[11px] sm:text-xs text-muted-foreground hidden xs:block">{{ viewSubtitle }}</p>
       </div>
     </div>
 
     <div class="flex items-center space-x-2 sm:space-x-3 flex-wrap justify-end gap-y-1.5">
       <!-- Environment Switcher Pill (Live vs Sandbox) -->
-      <div class="flex items-center bg-slate-100 dark:bg-slate-900 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold shadow-inner">
+      <div class="flex items-center bg-secondary p-1 rounded-xl border border-border text-xs font-semibold shadow-inner">
         <button
           type="button"
           @click="$emit('update:environment', 'live')"
           :class="[
             'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
             environment === 'live'
-              ? 'bg-white dark:bg-[#0a0d14] text-emerald-600 dark:text-emerald-400 font-bold shadow-sm'
-              : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+              ? 'bg-card text-emerald-600 dark:text-emerald-400 font-bold shadow-sm'
+              : 'text-muted-foreground hover:text-foreground'
           ]"
-          title="Live Production Mode: Connects to local franchises."
+          title="Live Production Mode"
         >
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           <span>Live Studio</span>
@@ -43,8 +43,8 @@
           :class="[
             'px-2.5 py-1 rounded-lg transition flex items-center space-x-1.5',
             environment === 'sandbox'
-              ? 'bg-white dark:bg-[#0a0d14] text-amber-600 dark:text-amber-400 font-bold shadow-sm'
-              : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+              ? 'bg-card text-amber-600 dark:text-amber-400 font-bold shadow-sm'
+              : 'text-muted-foreground hover:text-foreground'
           ]"
           title="Sandbox Testing Mode"
         >
@@ -56,7 +56,7 @@
       <!-- Dark / Light Mode Toggle Button -->
       <button
         @click="$emit('toggle-theme')"
-        class="h-8 px-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
+        class="h-8 px-3 rounded-xl border border-border bg-card hover:bg-secondary text-foreground transition shadow-sm flex items-center space-x-2 text-xs font-medium cursor-pointer"
         :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
       >
         <span v-if="isDark" class="flex items-center space-x-1.5">
@@ -72,7 +72,7 @@
       <!-- Quick Action: Copy Master Character DNA -->
       <button 
         @click="$emit('copy-dna')"
-        class="h-8 px-3 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-sm transition active:scale-95 cursor-pointer"
+        class="h-8 px-3 rounded-xl bg-brand-crimson-500 hover:bg-brand-crimson-600 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-sm transition active:scale-95 cursor-pointer"
         title="Copy Ethan Drake's locked Midjourney --cref prompt string"
       >
         <Sparkles class="w-3.5 h-3.5" />

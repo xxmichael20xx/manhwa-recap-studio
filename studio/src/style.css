@@ -2,22 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
+@layer base {
+  :root {
+    --background: 210 40% 98%;      /* #F8FAFC Warm Chalk */
+    --foreground: 222 47% 11%;      /* #0F172A Deep Charcoal */
+    
+    --card: 0 0% 100%;              /* #FFFFFF Pure White */
+    --card-foreground: 222 47% 11%;
+    
+    --border: 214 32% 91%;          /* #E2E8F0 Clean Slate */
+    --input: 214 32% 91%;
+    --ring: 346 100% 58%;           /* #FF2A5F Crimson Focus Ring */
+    
+    --primary: 346 77% 49%;         /* #E11D48 Deep Crimson */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 40% 96%;       /* #F1F5F9 Soft Slate */
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;/* #64748B */
+    
+    --accent: 346 100% 97%;         /* #FFF1F2 */
+    --accent-foreground: 346 77% 40%;/* #BE123C */
+  }
+
+  .dark {
+    --background: 216 28% 5%;       /* #090C10 Deep Obsidian */
+    --foreground: 210 40% 98%;      /* #F8FAFC Moonlight White */
+    
+    --card: 218 30% 8%;             /* #0F141C Gunmetal Surface */
+    --card-foreground: 210 40% 98%;
+    
+    --border: 220 30% 17%;          /* #1E2638 Forged Steel */
+    --input: 220 30% 17%;
+    --ring: 346 100% 58%;           /* #FF2A5F Electric Crimson */
+    
+    --primary: 346 100% 58%;        /* #FF2A5F Electric Crimson */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 218 28% 12%;       /* #141B26 Subdued Slate */
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 218 28% 12%;
+    --muted-foreground: 215 20% 65%;/* #94A3B8 */
+    
+    --accent: 346 100% 58%;
+    --accent-foreground: 0 0% 100%;
+  }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b2436;
+  background: rgba(148, 163, 184, 0.2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #28354f;
+  background: rgba(148, 163, 184, 0.4);
 }

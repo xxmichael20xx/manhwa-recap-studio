@@ -3,16 +3,16 @@
     <!-- Header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
-        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-cyber-card border border-cyber-border hover:border-slate-700 text-slate-400 hover:text-white">
+        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-crimson-500/50 text-muted-foreground hover:text-foreground shadow-sm">
           <ArrowLeft class="w-4 h-4" />
         </router-link>
         <div>
           <div class="flex items-center space-x-2">
-            <span class="text-xs font-mono text-cyan-400 uppercase">{{ $route.params.franchiseId }}</span>
-            <span class="text-slate-600">/</span>
-            <span class="text-xs font-mono text-slate-400">{{ $route.params.episodeId }}</span>
+            <span class="text-xs font-mono text-brand-cyan-600 dark:text-brand-cyan-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
+            <span class="text-slate-400">/</span>
+            <span class="text-xs font-mono text-muted-foreground">{{ $route.params.episodeId }}</span>
           </div>
-          <h1 class="text-xl font-bold text-white">Visual Prompt Matrix Hub</h1>
+          <h1 class="text-xl font-bold text-foreground">Visual Prompt Matrix Hub</h1>
         </div>
       </div>
 
@@ -20,23 +20,23 @@
         <button 
           @click="regeneratePrompts"
           :disabled="generating"
-          class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-lg shadow-cyan-600/20 disabled:opacity-50"
+          class="px-4 py-2 rounded-xl bg-brand-cyan-600 hover:bg-brand-cyan-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-md disabled:opacity-50 cursor-pointer"
         >
           <RefreshCw class="w-4 h-4" :class="{ 'animate-spin': generating }" />
-          <span>Sync & Regenerate from Script</span>
+          <span>Sync & Regenerate</span>
         </button>
 
         <button 
           @click="copyAllPrompts"
-          class="px-4 py-2 rounded-xl bg-cyber-card border border-cyber-border hover:border-slate-700 text-slate-200 text-xs font-semibold flex items-center space-x-2 transition-all"
+          class="px-4 py-2 rounded-xl bg-card border border-border hover:border-border text-foreground text-xs font-semibold flex items-center space-x-2 transition-all shadow-sm cursor-pointer"
         >
-          <Copy class="w-4 h-4 text-emerald-400" />
+          <Copy class="w-4 h-4 text-emerald-500" />
           <span>{{ copiedAll ? 'All Prompts Copied!' : 'Copy All for Midjourney' }}</span>
         </button>
 
         <router-link 
           :to="`/tts/${$route.params.franchiseId}/${$route.params.episodeId}`"
-          class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-lg shadow-purple-600/20"
+          class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-md"
         >
           <Mic class="w-4 h-4" />
           <span>Audio Studio</span>
@@ -45,30 +45,30 @@
     </div>
 
     <!-- Prompts Table / Cards -->
-    <div class="bg-cyber-card border border-cyber-border rounded-2xl overflow-hidden">
-      <div class="px-6 py-4 border-b border-cyber-border/80 bg-slate-900/60 flex items-center justify-between">
-        <span class="text-xs font-mono text-slate-400">
+    <div class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
+      <div class="px-6 py-4 border-b border-border bg-secondary/40 flex items-center justify-between">
+        <span class="text-xs font-mono text-muted-foreground">
           Showing {{ parsedPrompts.length }} Action Panels (16:9 Midjourney / Fooocus Ready)
         </span>
-        <span class="text-xs font-mono text-cyan-400">
+        <span class="text-xs font-mono text-brand-cyan-600 dark:text-brand-cyan-400 font-semibold">
           --cref [CHARACTER_URL] --cw 80 Active
         </span>
       </div>
 
-      <div class="divide-y divide-cyber-border/60">
+      <div class="divide-y divide-border">
         <div 
           v-for="(p, index) in parsedPrompts" 
           :key="index"
-          class="p-4 sm:p-6 hover:bg-slate-900/40 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
+          class="p-4 sm:p-6 hover:bg-secondary/30 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
         >
-          <div class="space-y-1 flex-1">
+          <div class="space-y-1.5 flex-1">
             <div class="flex items-center space-x-2">
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-cyan-500/10 text-brand-cyan-600 dark:text-brand-cyan-400 border border-brand-cyan-500/20 font-bold">
                 {{ p.tag }}
               </span>
-              <span class="text-xs font-semibold text-slate-300">{{ p.description }}</span>
+              <span class="text-xs font-semibold text-foreground">{{ p.description }}</span>
             </div>
-            <p class="text-xs font-mono text-slate-400 bg-black/40 p-2.5 rounded-lg border border-slate-800 break-all select-all">
+            <p class="text-xs font-mono text-muted-foreground bg-secondary/50 p-2.5 rounded-lg border border-border break-all select-all">
               {{ p.prompt }}
             </p>
           </div>
@@ -76,10 +76,10 @@
           <div>
             <button 
               @click="copySinglePrompt(p.prompt, index)"
-              class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-cyan-600 text-slate-200 text-xs font-mono font-medium flex items-center space-x-1.5 transition-all w-full md:w-auto justify-center"
+              class="px-3.5 py-2 rounded-lg bg-card border border-border hover:bg-brand-cyan-600 hover:text-white text-foreground text-xs font-mono font-medium flex items-center space-x-1.5 transition-all w-full md:w-auto justify-center cursor-pointer shadow-sm"
             >
-              <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-400" />
-              <Copy v-else class="w-3.5 h-3.5 text-slate-400" />
+              <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-500" />
+              <Copy v-else class="w-3.5 h-3.5 text-muted-foreground" />
               <span>{{ copiedIndex === index ? 'Copied' : 'Copy Prompt' }}</span>
             </button>
           </div>

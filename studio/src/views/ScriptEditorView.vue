@@ -3,16 +3,16 @@
     <!-- Top Header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
-        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-cyber-card border border-cyber-border hover:border-slate-700 text-slate-400 hover:text-white">
+        <router-link :to="`/franchises/${$route.params.franchiseId}`" class="p-2 rounded-lg bg-card border border-border hover:border-brand-crimson-500/50 text-muted-foreground hover:text-foreground shadow-sm">
           <ArrowLeft class="w-4 h-4" />
         </router-link>
         <div>
           <div class="flex items-center space-x-2">
-            <span class="text-xs font-mono text-rose-500 uppercase">{{ $route.params.franchiseId }}</span>
-            <span class="text-slate-600">/</span>
-            <span class="text-xs font-mono text-slate-400">{{ $route.params.episodeId }}</span>
+            <span class="text-xs font-mono text-brand-crimson-600 dark:text-brand-crimson-400 uppercase font-semibold">{{ $route.params.franchiseId }}</span>
+            <span class="text-slate-400">/</span>
+            <span class="text-xs font-mono text-muted-foreground">{{ $route.params.episodeId }}</span>
           </div>
-          <h1 class="text-xl font-bold text-white">4-Act Script & Anti-Slop Studio</h1>
+          <h1 class="text-xl font-bold text-foreground">4-Act Script & Anti-Slop Studio</h1>
         </div>
       </div>
 
@@ -20,7 +20,7 @@
         <button 
           @click="saveScript" 
           :disabled="saving"
-          class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold flex items-center space-x-2 transition-all shadow-lg shadow-rose-600/20 disabled:opacity-50"
+          class="px-4 py-2 rounded-xl bg-primary hover:bg-brand-crimson-600 text-primary-foreground text-xs font-semibold flex items-center space-x-2 transition-all shadow-md disabled:opacity-50 cursor-pointer"
         >
           <Save class="w-4 h-4" />
           <span>{{ saving ? 'Saving...' : 'Save Script to Disk' }}</span>
@@ -28,7 +28,7 @@
 
         <router-link 
           :to="`/prompts/${$route.params.franchiseId}/${$route.params.episodeId}`"
-          class="px-4 py-2 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyan-500/50 text-cyan-400 text-xs font-semibold flex items-center space-x-2 transition-all"
+          class="px-4 py-2 rounded-xl bg-card border border-border hover:border-brand-cyan-500/50 text-brand-cyan-600 dark:text-brand-cyan-400 text-xs font-semibold flex items-center space-x-2 transition-all shadow-sm"
         >
           <Sparkles class="w-4 h-4" />
           <span>Prompt Matrix</span>
@@ -40,20 +40,20 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <!-- Editor Column (8 cols) -->
       <div class="lg:col-span-8 space-y-4">
-        <div class="bg-cyber-card border border-cyber-border rounded-2xl overflow-hidden flex flex-col h-[750px]">
-          <div class="px-4 py-3 border-b border-cyber-border/80 bg-slate-900/60 flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-400 flex items-center space-x-2">
-              <FileCode class="w-4 h-4 text-rose-500" />
+        <div class="bg-card border border-border rounded-2xl overflow-hidden flex flex-col h-[750px] shadow-sm">
+          <div class="px-4 py-3 border-b border-border bg-secondary/40 flex items-center justify-between">
+            <span class="text-xs font-mono text-muted-foreground flex items-center space-x-2">
+              <FileCode class="w-4 h-4 text-brand-crimson-500" />
               <span>01_Episode_Script.md</span>
             </span>
-            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-400 animate-fade-in">
+            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold animate-fade-in">
               ✓ Saved to 01_Franchises Directory
             </span>
           </div>
           <textarea 
             v-model="scriptText" 
             @input="handleInput"
-            class="flex-1 w-full bg-transparent p-6 text-slate-200 font-mono text-xs leading-relaxed focus:outline-none resize-none"
+            class="flex-1 w-full bg-transparent p-6 text-foreground font-mono text-xs leading-relaxed focus:outline-none resize-none"
             placeholder="Write your 4-act script here..."
           ></textarea>
         </div>
@@ -62,15 +62,15 @@
       <!-- Anti-Slop Audit Sidebar (4 cols) -->
       <div class="lg:col-span-4 space-y-6">
         <!-- Live Metrics Card -->
-        <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 space-y-6">
+        <div class="bg-card border border-border rounded-2xl p-6 space-y-6 shadow-sm">
           <div class="flex items-center justify-between">
-            <h2 class="text-sm font-bold text-white flex items-center space-x-2">
-              <ShieldCheck class="w-4 h-4 text-emerald-400" />
+            <h2 class="text-sm font-bold text-foreground flex items-center space-x-2">
+              <ShieldCheck class="w-4 h-4 text-emerald-500" />
               <span>Anti-Slop Real-Time Audit</span>
             </h2>
             <span 
               class="text-xs font-mono font-bold px-2 py-1 rounded"
-              :class="audit.overallScore >= 80 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'"
+              :class="audit.overallScore >= 80 ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20'"
             >
               {{ audit.overallScore || 0 }}% CERTIFIED
             </span>
@@ -78,35 +78,35 @@
 
           <!-- Words & Runtime Estimates -->
           <div class="grid grid-cols-2 gap-3">
-            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
-              <div class="text-[10px] font-mono text-slate-400 uppercase">Word Count</div>
-              <div class="text-lg font-extrabold text-white font-mono mt-1">{{ audit.wordCount || 0 }}</div>
+            <div class="bg-secondary/60 p-3 rounded-xl border border-border text-center">
+              <div class="text-[10px] font-mono text-muted-foreground uppercase">Word Count</div>
+              <div class="text-lg font-extrabold text-foreground font-mono mt-1">{{ audit.wordCount || 0 }}</div>
             </div>
-            <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-center">
-              <div class="text-[10px] font-mono text-slate-400 uppercase">Runtime @ 140 WPM</div>
-              <div class="text-lg font-extrabold text-cyan-400 font-mono mt-1">{{ audit.estimatedMinutes || 0 }}m</div>
+            <div class="bg-secondary/60 p-3 rounded-xl border border-border text-center">
+              <div class="text-[10px] font-mono text-muted-foreground uppercase">Runtime @ 140 WPM</div>
+              <div class="text-lg font-extrabold text-brand-cyan-600 dark:text-brand-cyan-400 font-mono mt-1">{{ audit.estimatedMinutes || 0 }}m</div>
             </div>
           </div>
 
           <!-- 5 Pillars Checklist -->
           <div class="space-y-3 pt-2">
-            <div class="text-xs font-mono uppercase text-slate-400 tracking-wider">Pillars Verification</div>
+            <div class="text-xs font-mono uppercase text-muted-foreground tracking-wider font-semibold">Pillars Verification</div>
             <div 
               v-for="check in audit.checks" 
               :key="check.id"
-              class="p-3 rounded-xl bg-slate-900/50 border text-xs space-y-1.5"
+              class="p-3 rounded-xl bg-secondary/30 border text-xs space-y-1.5"
               :class="check.passed ? 'border-emerald-500/20' : 'border-amber-500/20'"
             >
               <div class="flex items-center justify-between">
-                <span class="font-bold text-slate-200">{{ check.name }}</span>
+                <span class="font-bold text-foreground">{{ check.name }}</span>
                 <span 
-                  class="font-mono text-[10px] px-1.5 py-0.5 rounded"
-                  :class="check.passed ? 'text-emerald-400 bg-emerald-950/40' : 'text-amber-400 bg-amber-950/40'"
+                  class="font-mono text-[10px] px-1.5 py-0.5 rounded font-semibold"
+                  :class="check.passed ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10' : 'text-amber-600 dark:text-amber-400 bg-amber-500/10'"
                 >
                   {{ check.score }}%
                 </span>
               </div>
-              <p class="text-[11px] text-slate-400 leading-snug">{{ check.details }}</p>
+              <p class="text-[11px] text-muted-foreground leading-snug">{{ check.details }}</p>
             </div>
           </div>
         </div>
