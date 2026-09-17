@@ -58,11 +58,9 @@ const toggleTheme = () => {
   isDark.value = !isDark.value
   if (isDark.value) {
     document.documentElement.classList.add('dark')
-    document.documentElement.classList.remove('light')
     localStorage.setItem('manhwa-theme', 'dark')
   } else {
     document.documentElement.classList.remove('dark')
-    document.documentElement.classList.add('light')
     localStorage.setItem('manhwa-theme', 'light')
   }
 }
@@ -74,10 +72,16 @@ const copyMasterDna = () => {
 }
 
 onMounted(() => {
-  // Always initialize with Shadow Monarch dark mode by default
-  isDark.value = true
-  document.documentElement.classList.add('dark')
-  document.documentElement.classList.remove('light')
-  localStorage.setItem('manhwa-theme', 'dark')
+  const saved = localStorage.getItem('manhwa-theme')
+  if (saved === 'light') {
+    isDark.value = false
+    document.documentElement.classList.remove('dark')
+  } else {
+    isDark.value = true
+    document.documentElement.classList.add('dark')
+    if (!saved) {
+      localStorage.setItem('manhwa-theme', 'dark')
+    }
+  }
 })
 </script>

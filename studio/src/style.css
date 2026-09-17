@@ -4,54 +4,7 @@
 
 @layer base {
   :root {
-    --background: 265 45% 5%;        /* #0A0614 Deep Obsidian Canvas */
-    --foreground: 265 20% 98%;       /* #F8FAFC Crisp White Typography */
-    
-    --card: 265 42% 10%;             /* #160F28 Royal Amethyst Slate Surface */
-    --card-foreground: 265 20% 98%;
-    
-    --border: 265 45% 25%;           /* #432470 Crisp Violet Border */
-    --input: 265 45% 25%;
-    --ring: 265 85% 65%;             /* #8B5CF6 Vivid Royal Amethyst Glow */
-    
-    --primary: 265 85% 65%;          /* #8B5CF6 Royal Amethyst */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 265 38% 15%;        /* #22173E Elevated Amethyst Surface */
-    --secondary-foreground: 265 20% 98%;
-    
-    --muted: 265 38% 15%;
-    --muted-foreground: 265 20% 70%; /* #B8AEC9 Soft Lavender-Grey Text */
-    
-    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
-    --accent-foreground: 0 0% 100%;
-  }
-
-  .dark {
-    --background: 265 45% 5%;        /* #0A0614 Deep Obsidian Canvas */
-    --foreground: 265 20% 98%;       /* #F8FAFC Crisp White Typography */
-    
-    --card: 265 42% 10%;             /* #160F28 Royal Amethyst Slate Surface */
-    --card-foreground: 265 20% 98%;
-    
-    --border: 265 45% 25%;           /* #432470 Crisp Violet Border */
-    --input: 265 45% 25%;
-    --ring: 265 85% 65%;             /* #8B5CF6 Vivid Royal Amethyst Glow */
-    
-    --primary: 265 85% 65%;          /* #8B5CF6 Royal Amethyst */
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 265 38% 15%;        /* #22173E Elevated Amethyst Surface */
-    --secondary-foreground: 265 20% 98%;
-    
-    --muted: 265 38% 15%;
-    --muted-foreground: 265 20% 70%; /* #B8AEC9 Soft Lavender-Grey Text */
-    
-    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
-    --accent-foreground: 0 0% 100%;
-  }
-
-  .light {
+    /* Base Light Mode */
     --background: 60 5% 98%;         /* #FAFAF9 Warm Alabaster */
     --foreground: 24 10% 10%;        /* #1C1917 Deep Espresso */
     
@@ -60,18 +13,43 @@
     
     --border: 24 6% 90%;             /* #E7E5E4 Warm Stone */
     --input: 24 6% 90%;
-    --ring: 263 70% 50%;             /* #6D28D9 Royal Violet Ring */
+    --ring: 265 85% 65%;             /* Royal Amethyst Ring */
     
-    --primary: 263 70% 50%;          /* #6D28D9 Royal Violet */
+    --primary: 265 85% 55%;          /* Royal Amethyst Primary */
     --primary-foreground: 0 0% 100%;
     
     --secondary: 250 100% 98%;       /* #F5F3FF Soft Lavender */
-    --secondary-foreground: 263 70% 50%;
+    --secondary-foreground: 265 70% 50%;
     
     --muted: 250 100% 98%;
     --muted-foreground: 25 5% 45%;   /* #78716C */
     
     --accent: 38 92% 50%;            /* #F59E0B Imperial Gold */
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    /* Shadow Monarch Dark Mode */
+    --background: 265 45% 5%;        /* #0A0614 Deep Obsidian Canvas */
+    --foreground: 265 20% 98%;       /* #F8FAFC Crisp White Typography */
+    
+    --card: 265 42% 10%;             /* #160F28 Royal Amethyst Slate Surface */
+    --card-foreground: 265 20% 98%;
+    
+    --border: 265 45% 25%;           /* #432470 Crisp Violet Border */
+    --input: 265 45% 25%;
+    --ring: 265 85% 65%;             /* #8B5CF6 Vivid Royal Amethyst Glow */
+    
+    --primary: 265 85% 65%;          /* #8B5CF6 Royal Amethyst */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 265 38% 15%;        /* #22173E Elevated Amethyst Surface */
+    --secondary-foreground: 265 20% 98%;
+    
+    --muted: 265 38% 15%;
+    --muted-foreground: 265 20% 70%; /* #B8AEC9 Soft Lavender-Grey Text */
+    
+    --accent: 38 92% 50%;            /* #F59E0B Imperial Gold Telemetry */
     --accent-foreground: 0 0% 100%;
   }
 }
