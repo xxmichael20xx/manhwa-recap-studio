@@ -99,47 +99,81 @@ export class VideoService {
       await ImageService.generateStoryboardStills(franchiseId, episodeId)
     }
 
-    // 3. Inspect audio duration using ffprobe or file calculation
+    // 3. Inspect audio duration and parse scene-to-image mappings
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
-      message: 'Calculating audio-video sync timing...',
-      log: [...(this.compilationState[key].log || []), 'Mapping scene durations to images...']
+      message: 'Calculating audio-video sync timing per scene...',
+      log: [...(this.compilationState[key].log || []), 'Mapping scene audio durations to script prompt tags...']
     })
 
-    // Get individual scene audio files to distribute durations accurately
-    let audioFiles = []
-    try {
-      const allFiles = await fs.readdir(audioDir)
-      audioFiles = allFiles.filter(f => f.endsWith('.mp3') && f.includes('_SC')).sort()
-    } catch (e) {
-      audioFiles = []
-    }
-
-    // Read total duration of master audio via FFmpeg/ffprobe
     const totalDurationSeconds = await this.getAudioDuration(masterAudioPath)
     this.updateStatus(franchiseId, episodeId, {
       progress: 35,
-      log: [...(this.compilationState[key].log || []), `Total voiceover duration: ${totalDurationSeconds.toFixed(1)}s`]
+      log: [...(this.compilationState[key].log || []), `Total master voiceover duration: ${totalDurationSeconds.toFixed(2)}s`]
     })
 
-    // Distribute time across scene images:
-    // If we have N scenes in prompt matrix (e.g. 22 images) and duration D,
-    // each image displays for totalDurationSeconds / N seconds.
-    const durationPerImage = Math.max(2.0, totalDurationSeconds / scenes.length)
+    // Parse scene-to-prompt mappings from 01_Episode_Script.md
+    const scriptPath = path.join(franchisesDir, franchiseId, episodeId, '01_Episode_Script.md')
+    let sceneTagMap = []
+    try {
+      const scriptContent = await fs.readFile(scriptPath, 'utf-8')
+      const sceneBlocks = scriptContent.split(/### Scene \d+:/g).slice(1)
+      sceneBlocks.forEach((b, idx) => {
+        const tagMatch = b.match(/Prompt Tag:\*?\*?\s*(.*?)\n/i)
+        const tags = tagMatch ? (tagMatch[1].match(/IMG_\d+/gi) || []) : []
+        sceneTagMap.push({
+          sceneNumber: idx + 1,
+          tags: tags.map(t => t.toUpperCase())
+        })
+      })
+    } catch (e) {
+      console.warn('Could not parse scene tags from script:', e.message)
+    }
 
-    // Build FFmpeg concat input list for images
+    // Build FFmpeg concat input list with scene-locked durations
     const imageListPath = path.join(videoDir, 'image_concat_list.txt')
     const imageListLines = []
-    for (const scene of scenes) {
-      const imgPath = path.join(imagesDir, scene.filename)
-      // FFmpeg concat demuxer requires forward slashes or escaped backslashes
-      const safePath = imgPath.replace(/\\/g, '/')
-      imageListLines.push(`file '${safePath}'`)
-      imageListLines.push(`duration ${durationPerImage.toFixed(3)}`)
+    let lastHandledImage = null
+
+    if (sceneTagMap.length > 0) {
+      for (const sc of sceneTagMap) {
+        const sceneNumPadded = String(sc.sceneNumber).padStart(2, '0')
+        const sceneAudioPath = path.join(audioDir, `${episodeId}_SC${sceneNumPadded}.mp3`)
+        let sceneDur = 0
+        try {
+          sceneDur = await this.getAudioDuration(sceneAudioPath)
+        } catch (e) {}
+
+        const tags = sc.tags.length > 0 ? sc.tags : [`IMG_${String(sc.sceneNumber).padStart(3, '0')}`]
+        // If scene audio doesn't exist, calculate proportional fallback
+        const effectiveSceneDur = sceneDur > 0 ? sceneDur : (totalDurationSeconds / sceneTagMap.length)
+        const durPerTag = Math.max(1.5, effectiveSceneDur / tags.length)
+
+        for (const tag of tags) {
+          const imgFilename = `${tag}.png`
+          const imgPath = path.join(imagesDir, imgFilename)
+          const safePath = imgPath.replace(/\\/g, '/')
+          imageListLines.push(`file '${safePath}'`)
+          imageListLines.push(`duration ${durPerTag.toFixed(3)}`)
+          lastHandledImage = safePath
+        }
+      }
+    } else {
+      // Fallback if script parsing fails
+      const durationPerImage = Math.max(2.0, totalDurationSeconds / scenes.length)
+      for (const scene of scenes) {
+        const imgPath = path.join(imagesDir, scene.filename)
+        const safePath = imgPath.replace(/\\/g, '/')
+        imageListLines.push(`file '${safePath}'`)
+        imageListLines.push(`duration ${durationPerImage.toFixed(3)}`)
+        lastHandledImage = safePath
+      }
     }
-    // Repeat last file without duration per FFmpeg concat demuxer spec
-    const lastImg = path.join(imagesDir, scenes[scenes.length - 1].filename).replace(/\\/g, '/')
-    imageListLines.push(`file '${lastImg}'`)
+
+    // Repeat last file without duration per FFmpeg concat demuxer specification
+    if (lastHandledImage) {
+      imageListLines.push(`file '${lastHandledImage}'`)
+    }
     await fs.writeFile(imageListPath, imageListLines.join('\n'), 'utf-8')
 
     this.updateStatus(franchiseId, episodeId, {
@@ -232,18 +266,23 @@ export class VideoService {
 
   static async getAudioDuration(audioPath) {
     return new Promise((resolve) => {
-      const proc = spawn('ffmpeg', ['-i', audioPath], { shell: true })
-      let stderr = ''
-      proc.stderr.on('data', d => { stderr += d.toString() })
+      const proc = spawn('ffprobe', [
+        '-v', 'error',
+        '-show_entries', 'format=duration',
+        '-of', 'default=noprint_wrappers=1:nokey=1',
+        audioPath
+      ])
+      let stdout = ''
+      proc.stdout.on('data', d => { stdout += d.toString() })
       proc.on('close', () => {
-        const match = stderr.match(/Duration:\s*(\d+):(\d+):(\d+\.\d+)/)
-        if (match) {
-          const sec = parseInt(match[1]) * 3600 + parseInt(match[2]) * 60 + parseFloat(match[3])
+        const sec = parseFloat(stdout.trim())
+        if (!isNaN(sec) && sec > 0) {
           resolve(sec)
         } else {
-          resolve(120) // 2 min fallback
+          resolve(30.0) // 30s safe fallback
         }
       })
+      proc.on('error', () => resolve(30.0))
     })
   }
 }

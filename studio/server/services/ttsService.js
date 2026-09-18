@@ -34,6 +34,28 @@ export class TtsService {
     return path.join(franchisesDir, franchiseId, episodeId, 'audio')
   }
 
+  static async getAudioDuration(audioPath) {
+    return new Promise((resolve) => {
+      const proc = spawn('ffprobe', [
+        '-v', 'error',
+        '-show_entries', 'format=duration',
+        '-of', 'default=noprint_wrappers=1:nokey=1',
+        audioPath
+      ])
+      let stdout = ''
+      proc.stdout.on('data', d => { stdout += d.toString() })
+      proc.on('close', () => {
+        const sec = parseFloat(stdout.trim())
+        if (!isNaN(sec) && sec > 0) {
+          resolve(sec)
+        } else {
+          resolve(0)
+        }
+      })
+      proc.on('error', () => resolve(0))
+    })
+  }
+
   static async generateEpisodeAudio(franchiseId, episodeId, voice = 'en-US-ChristopherNeural') {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
@@ -60,7 +82,8 @@ export class TtsService {
     const generatedAudioFiles = []
 
     for (const block of sceneBlocks) {
-      const voiceoverMatch = block.match(/Voiceover:\s*([\s\S]*?)(?=(?:### Scene|\Z|## 🎙️ Act))/i)
+      // Fix regex: $ matches end of string in JS regex (\Z matches literal Z in JS)
+      const voiceoverMatch = block.match(/Voiceover:\s*([\s\S]*?)(?=(?:### Scene|$|## 🎙️ Act))/i)
       let text = voiceoverMatch ? voiceoverMatch[1].trim() : ''
       
       // Clean markdown tags from spoken text
@@ -94,9 +117,11 @@ export class TtsService {
           await fs.writeFile(filePath, buffer)
           generatedAudioFiles.push(filePath)
 
-          // Estimate audio duration from MP3 buffer (24kHz 48kbps mono ~ 6000 bytes/sec)
-          // Exact duration: (buffer.length * 8) / 48000 seconds
-          const approxDurationMs = Math.round((buffer.length * 8 * 1000) / 48000)
+          // Measure exact audio duration via ffprobe
+          const exactDurationSec = await this.getAudioDuration(filePath)
+          const exactDurationMs = exactDurationSec > 0 
+            ? Math.round(exactDurationSec * 1000) 
+            : Math.round((buffer.length * 8 * 1000) / 48000)
 
           // Parse sentence boundaries from metadata if available
           let parsedSentences = []
@@ -122,34 +147,59 @@ export class TtsService {
             }
           }
 
-          // Split into punchy, dynamic captions (max 10-12 words per cue)
-          const rawSentences = text.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [text]
-          let runningStart = globalTimeMs
-          const totalChars = text.length
+          // If no sentence boundaries from Edge-TTS metadata, use chunker
+          if (parsedSentences.length === 0) {
+            const rawSentences = text.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [text]
+            let runningStart = globalTimeMs
+            const totalChars = text.length
 
-          for (const s of rawSentences) {
-            const sTrim = s.trim()
-            if (!sTrim) continue
-            
-            // Sub-divide long sentences by commas or 10-word chunks so captions remain in lower-third
-            const words = sTrim.split(/\s+/)
-            const chunkSize = 10
-            const chunks = []
-            for (let i = 0; i < words.length; i += chunkSize) {
-              chunks.push(words.slice(i, i + chunkSize).join(' '))
+            for (const s of rawSentences) {
+              const sTrim = s.trim()
+              if (!sTrim) continue
+              
+              const words = sTrim.split(/\s+/)
+              const chunkSize = 10
+              const chunks = []
+              for (let i = 0; i < words.length; i += chunkSize) {
+                chunks.push(words.slice(i, i + chunkSize).join(' '))
+              }
+
+              const sentenceDuration = Math.max(1200, Math.round((sTrim.length / totalChars) * exactDurationMs))
+              const chunkDuration = Math.round(sentenceDuration / chunks.length)
+
+              for (const chunk of chunks) {
+                parsedSentences.push({
+                  text: chunk,
+                  start: runningStart,
+                  end: runningStart + chunkDuration
+                })
+                runningStart += chunkDuration
+              }
             }
-
-            const sentenceDuration = Math.max(1200, Math.round((sTrim.length / totalChars) * approxDurationMs))
-            const chunkDuration = Math.round(sentenceDuration / chunks.length)
-
-            for (const chunk of chunks) {
-              parsedSentences.push({
-                text: chunk,
-                start: runningStart,
-                end: runningStart + chunkDuration
-              })
-              runningStart += chunkDuration
+          } else {
+            // Edge-TTS metadata present: split overly long sentences (>12 words) without duplication
+            const refined = []
+            for (const sent of parsedSentences) {
+              const words = sent.text.split(/\s+/)
+              if (words.length > 12) {
+                const chunkSize = 8
+                const numChunks = Math.ceil(words.length / chunkSize)
+                const chunkDur = Math.round((sent.end - sent.start) / numChunks)
+                for (let i = 0; i < words.length; i += chunkSize) {
+                  const idx = Math.floor(i / chunkSize)
+                  const cStart = sent.start + idx * chunkDur
+                  const cEnd = Math.min(sent.end, cStart + chunkDur)
+                  refined.push({
+                    text: words.slice(i, i + chunkSize).join(' '),
+                    start: cStart,
+                    end: cEnd
+                  })
+                }
+              } else {
+                refined.push(sent)
+              }
             }
+            parsedSentences = refined
           }
 
           for (const s of parsedSentences) {
@@ -160,11 +210,11 @@ export class TtsService {
             scene: sceneIndex,
             filename,
             size: buffer.length,
-            durationMs: approxDurationMs,
+            durationMs: exactDurationMs,
             previewText: text.substring(0, 80) + '...'
           })
 
-          globalTimeMs += approxDurationMs
+          globalTimeMs += exactDurationMs
         } catch (err) {
           console.error(`Error generating audio for scene ${sceneIndex}:`, err)
         }
