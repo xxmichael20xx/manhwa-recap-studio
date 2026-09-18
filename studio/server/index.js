@@ -45,8 +45,44 @@ app.get('/api/episodes/:franchiseId/:episodeId', async (req, res) => {
 app.post('/api/episodes/:franchiseId/:episodeId/script', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
-    const { script } = req.body
-    const result = await FileService.saveScript(franchiseId, episodeId, script)
+    const { script, label } = req.body
+    const result = await FileService.saveScript(franchiseId, episodeId, script, label)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Script History Snapshots
+app.get('/api/episodes/:franchiseId/:episodeId/history', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const history = await FileService.getScriptHistory(franchiseId, episodeId)
+    res.json(history)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Create Manual Snapshot
+app.post('/api/episodes/:franchiseId/:episodeId/history', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { script, label } = req.body
+    const result = await FileService.createScriptSnapshot(franchiseId, episodeId, script, label)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Restore Snapshot
+app.post('/api/episodes/:franchiseId/:episodeId/history/restore', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { filename } = req.body
+    if (!filename) return res.status(400).json({ error: 'Filename is required to restore.' })
+    const result = await FileService.restoreScriptSnapshot(franchiseId, episodeId, filename)
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })

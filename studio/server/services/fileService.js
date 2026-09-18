@@ -120,11 +120,157 @@ export class FileService {
     }
   }
 
-  static async saveScript(franchiseId, episodeId, scriptContent) {
+  static async getHistoryDir(franchiseId, episodeId) {
+    const historyDir = path.join(franchisesDir, franchiseId, episodeId, '.history')
+    await fs.mkdir(historyDir, { recursive: true })
+    return historyDir
+  }
+
+  static async getScriptHistory(franchiseId, episodeId) {
+    const historyDir = await this.getHistoryDir(franchiseId, episodeId)
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const scriptPath = path.join(epPath, '01_Episode_Script.md')
+
+    let files = []
+    try {
+      files = await fs.readdir(historyDir)
+    } catch (e) {
+      files = []
+    }
+
+    // If no history exists yet, but current script exists, create an initial baseline snapshot
+    if (files.filter(f => f.endsWith('.md')).length === 0) {
+      try {
+        const currentScript = await fs.readFile(scriptPath, 'utf-8')
+        if (currentScript && currentScript.trim()) {
+          const initialTimestamp = new Date().toISOString()
+          const initialFile = `snapshot_${Date.now()}_initial.md`
+          const contentWithMeta = `<!-- metadata: {"label": "Initial Baseline", "timestamp": "${initialTimestamp}"} -->\n${currentScript}`
+          await fs.writeFile(path.join(historyDir, initialFile), contentWithMeta, 'utf-8')
+          files = [initialFile]
+        }
+      } catch (e) {}
+    }
+
+    const mdFiles = files.filter(f => f.endsWith('.md'))
+    const history = []
+
+    for (const file of mdFiles) {
+      const filePath = path.join(historyDir, file)
+      try {
+        const raw = await fs.readFile(filePath, 'utf-8')
+        const stat = await fs.stat(filePath)
+        
+        let label = 'Snapshot'
+        let timestamp = stat.mtime.toISOString()
+        let cleanScript = raw
+
+        // Extract metadata header if present
+        const metaMatch = raw.match(/^<!--\s*metadata:\s*({.*?})\s*-->\r?\n?/)
+        if (metaMatch) {
+          try {
+            const meta = JSON.parse(metaMatch[1])
+            if (meta.label) label = meta.label
+            if (meta.timestamp) timestamp = meta.timestamp
+          } catch (err) {}
+          cleanScript = raw.slice(metaMatch[0].length)
+        }
+
+        const audit = AntiSlopValidator.auditScript(cleanScript)
+
+        history.push({
+          filename: file,
+          label,
+          timestamp,
+          wordCount: audit.wordCount,
+          estimatedMinutes: audit.estimatedMinutes,
+          overallScore: audit.overallScore,
+          isAntiSlopCertified: audit.isAntiSlopCertified,
+          scriptPreview: cleanScript.slice(0, 300) + (cleanScript.length > 300 ? '...' : '')
+        })
+      } catch (e) {
+        console.error(`Error reading snapshot ${file}:`, e)
+      }
+    }
+
+    // Sort descending by timestamp
+    history.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+    return history
+  }
+
+  static async createScriptSnapshot(franchiseId, episodeId, scriptContent, label = 'Manual Checkpoint') {
+    const historyDir = await this.getHistoryDir(franchiseId, episodeId)
+    const timestamp = new Date().toISOString()
+    const safeLabel = label.replace(/[^a-zA-Z0-9_\-\s]/g, '').trim() || 'Snapshot'
+    const filename = `snapshot_${Date.now()}_${safeLabel.replace(/\s+/g, '_').toLowerCase()}.md`
+    const contentWithMeta = `<!-- metadata: {"label": "${safeLabel}", "timestamp": "${timestamp}"} -->\n${scriptContent}`
+    
+    await fs.writeFile(path.join(historyDir, filename), contentWithMeta, 'utf-8')
+    const audit = AntiSlopValidator.auditScript(scriptContent)
+
+    return {
+      success: true,
+      snapshot: {
+        filename,
+        label: safeLabel,
+        timestamp,
+        wordCount: audit.wordCount,
+        estimatedMinutes: audit.estimatedMinutes,
+        overallScore: audit.overallScore,
+        isAntiSlopCertified: audit.isAntiSlopCertified
+      }
+    }
+  }
+
+  static async restoreScriptSnapshot(franchiseId, episodeId, filename) {
+    const historyDir = await this.getHistoryDir(franchiseId, episodeId)
+    const snapshotPath = path.join(historyDir, filename)
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const scriptPath = path.join(epPath, '01_Episode_Script.md')
+
+    // Read the snapshot
+    const raw = await fs.readFile(snapshotPath, 'utf-8')
+    let cleanScript = raw
+    const metaMatch = raw.match(/^<!--\s*metadata:\s*({.*?})\s*-->\r?\n?/)
+    if (metaMatch) {
+      cleanScript = raw.slice(metaMatch[0].length)
+    }
+
+    // Read current live script to create an automatic safety backup before overwriting
+    try {
+      const currentScript = await fs.readFile(scriptPath, 'utf-8')
+      if (currentScript.trim() && currentScript.trim() !== cleanScript.trim()) {
+        const backupTimestamp = new Date().toISOString()
+        const backupFilename = `snapshot_${Date.now()}_pre_restore_backup.md`
+        const backupContent = `<!-- metadata: {"label": "Auto-Backup Before Restoring ${filename}", "timestamp": "${backupTimestamp}"} -->\n${currentScript}`
+        await fs.writeFile(path.join(historyDir, backupFilename), backupContent, 'utf-8')
+      }
+    } catch (e) {}
+
+    // Overwrite live script
+    await fs.writeFile(scriptPath, cleanScript, 'utf-8')
+    const audit = AntiSlopValidator.auditScript(cleanScript)
+
+    return {
+      success: true,
+      script: cleanScript,
+      audit,
+      restoredFrom: filename
+    }
+  }
+
+  static async saveScript(franchiseId, episodeId, scriptContent, label = 'Auto-Save') {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     await fs.mkdir(epPath, { recursive: true })
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
     await fs.writeFile(scriptPath, scriptContent, 'utf-8')
+
+    // Automatically create a snapshot on every save
+    try {
+      await this.createScriptSnapshot(franchiseId, episodeId, scriptContent, label || 'Auto-Save')
+    } catch (e) {
+      console.error('Snapshot creation failed during save:', e)
+    }
 
     const audit = AntiSlopValidator.auditScript(scriptContent)
     return { success: true, audit }

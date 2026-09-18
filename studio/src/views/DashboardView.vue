@@ -1,10 +1,10 @@
 <template>
   <div class="space-y-8">
-    <!-- Top Hero Section (Shadow Monarch Regal Theme) -->
+    <!-- Top Hero Section (Scale Sovereign Regal Theme) -->
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-900/30 via-indigo-900/20 to-slate-900/40 border border-purple-500/30 p-6 md:p-8 shadow-sm">
       <div class="relative z-10 max-w-3xl space-y-3">
         <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-mono uppercase tracking-wider font-semibold">
-          <span>👑 Shadow Monarch Studio Engine</span>
+          <span>👑 Scale Sovereign Studio Engine</span>
         </div>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Universal Anti-Slop Studio
