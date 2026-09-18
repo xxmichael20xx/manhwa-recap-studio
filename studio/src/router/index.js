@@ -4,6 +4,7 @@ import SeriesDetailView from '../views/SeriesDetailView.vue'
 import ScriptEditorView from '../views/ScriptEditorView.vue'
 import PromptMatrixView from '../views/PromptMatrixView.vue'
 import VoiceoverStudioView from '../views/VoiceoverStudioView.vue'
+import VideoStudioView from '../views/VideoStudioView.vue'
 import EngineCodexView from '../views/EngineCodexView.vue'
 
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
     path: '/tts/:franchiseId/:episodeId',
     name: 'voiceover-studio',
     component: VoiceoverStudioView
+  },
+  {
+    path: '/video/:franchiseId/:episodeId',
+    name: 'video-studio',
+    component: VideoStudioView
   },
   {
     path: '/engine',

@@ -6,6 +6,8 @@ import path from 'path'
 import { FileService } from './services/fileService.js'
 import { TtsService } from './services/ttsService.js'
 import { AntiSlopValidator } from './services/antiSlopValidator.js'
+import { ImageService } from './services/imageService.js'
+import { VideoService } from './services/videoService.js'
 
 dotenv.config()
 
@@ -135,6 +137,198 @@ app.get('/api/audio/:franchiseId/:episodeId/:filename', (req, res) => {
     readStream.pipe(res)
   } else {
     res.status(404).send('Audio file not found')
+  }
+})
+
+// Scene Images List & Status
+app.get('/api/episodes/:franchiseId/:episodeId/images', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const scenes = await ImageService.getPromptMatrixScenes(franchiseId, episodeId)
+    res.json(scenes)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream Scene Image
+app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => {
+  const { franchiseId, episodeId, filename } = req.params
+  const filePath = ImageService.getImagePath(franchiseId, episodeId, filename)
+
+  if (fs.existsSync(filePath)) {
+    res.setHeader('Content-Type', 'image/png')
+    const readStream = fs.createReadStream(filePath)
+    readStream.pipe(res)
+  } else {
+    res.status(404).send('Image file not found')
+  }
+})
+
+// Generate All Storyboard Stills (Tier 1 Fallback)
+app.post('/api/episodes/:franchiseId/:episodeId/images/generate-storyboard', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const result = await ImageService.generateStoryboardStills(franchiseId, episodeId)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Manual Image Upload / Dropzone (Base64)
+app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { tag, base64Data } = req.body
+    if (!tag || !base64Data) {
+      return res.status(400).json({ error: 'tag and base64Data are required.' })
+    }
+
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    await fs.promises.mkdir(imagesDir, { recursive: true })
+    const targetPath = path.join(imagesDir, `${tag.toUpperCase()}.png`)
+
+    const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '')
+    const buffer = Buffer.from(cleanBase64, 'base64')
+    await fs.promises.writeFile(targetPath, buffer)
+
+    res.json({
+      success: true,
+      filename: `${tag.toUpperCase()}.png`,
+      url: `/api/episodes/${franchiseId}/${episodeId}/images/${tag.toUpperCase()}.png`
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Fetch Subtitles (.srt / .vtt)
+app.get('/api/episodes/:franchiseId/:episodeId/subtitles', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const subtitles = await TtsService.getSubtitles(franchiseId, episodeId)
+    res.json(subtitles)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream Subtitle File (.srt or .vtt)
+app.get('/api/episodes/:franchiseId/:episodeId/subtitles/:filename', (req, res) => {
+  const { franchiseId, episodeId, filename } = req.params
+  const filePath = TtsService.getSubtitleFilePath(franchiseId, episodeId, filename)
+
+  if (fs.existsSync(filePath)) {
+    const isVtt = filename.endsWith('.vtt')
+    res.setHeader('Content-Type', isVtt ? 'text/vtt' : 'application/x-subrip')
+    const readStream = fs.createReadStream(filePath)
+    readStream.pipe(res)
+  } else {
+    res.status(404).send('Subtitle file not found')
+  }
+})
+
+// Overall Production Pipeline Status
+app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const scenes = await ImageService.getPromptMatrixScenes(franchiseId, episodeId)
+    const imagesReady = scenes.filter(s => s.hasImage).length
+
+    const audioDir = TtsService.getAudioDir(franchiseId, episodeId)
+    let audioReady = 0
+    let hasMasterAudio = false
+    try {
+      const audioFiles = await fs.promises.readdir(audioDir)
+      audioReady = audioFiles.filter(f => f.endsWith('.mp3') && f.includes('_SC')).length
+      hasMasterAudio = audioFiles.includes('01_Episode_Master.mp3')
+    } catch (e) {}
+
+    const subtitles = await TtsService.getSubtitles(franchiseId, episodeId)
+
+    const masterVideoPath = VideoService.getMasterVideoPath(franchiseId, episodeId)
+    const hasVideo = fs.existsSync(masterVideoPath)
+    let videoSize = 0
+    if (hasVideo) {
+      try { videoSize = (await fs.promises.stat(masterVideoPath)).size } catch (e) {}
+    }
+
+    const videoState = VideoService.getStatus(franchiseId, episodeId)
+
+    res.json({
+      totalScenes: scenes.length,
+      imagesReady,
+      audioReady,
+      hasMasterAudio,
+      hasSubtitles: subtitles.hasSubtitles,
+      hasVideo,
+      videoSize,
+      videoState
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Trigger Video Compilation (FFmpeg)
+app.post('/api/episodes/:franchiseId/:episodeId/compile-video', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const options = req.body || {}
+
+  // Spawn in background so client receives immediate response
+  VideoService.compileEpisodeVideo(franchiseId, episodeId, options).catch(err => {
+    console.error('Video compilation error:', err)
+  })
+
+  res.json({
+    success: true,
+    message: 'Video compilation initiated',
+    status: VideoService.getStatus(franchiseId, episodeId)
+  })
+})
+
+// Video Compilation Progress & Status
+app.get('/api/episodes/:franchiseId/:episodeId/video-status', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  res.json(VideoService.getStatus(franchiseId, episodeId))
+})
+
+// Stream Compiled Master Video (with HTTP Range Requests)
+app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const videoPath = VideoService.getMasterVideoPath(franchiseId, episodeId)
+
+  if (!fs.existsSync(videoPath)) {
+    return res.status(404).send('Compiled video not found')
+  }
+
+  const stat = fs.statSync(videoPath)
+  const fileSize = stat.size
+  const range = req.headers.range
+
+  if (range) {
+    const parts = range.replace(/bytes=/, '').split('-')
+    const start = parseInt(parts[0], 10)
+    const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1
+    const chunksize = (end - start) + 1
+    const file = fs.createReadStream(videoPath, { start, end })
+    const head = {
+      'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': chunksize,
+      'Content-Type': 'video/mp4',
+    }
+    res.writeHead(206, head)
+    file.pipe(res)
+  } else {
+    const head = {
+      'Content-Length': fileSize,
+      'Content-Type': 'video/mp4',
+      'Accept-Ranges': 'bytes'
+    }
+    res.writeHead(200, head)
+    fs.createReadStream(videoPath).pipe(res)
   }
 })
 
