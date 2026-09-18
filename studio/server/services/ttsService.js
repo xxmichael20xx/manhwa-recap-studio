@@ -113,13 +113,15 @@ export class TtsService {
       const voiceoverMatch = block.match(/Voiceover:\s*([\s\S]*?)(?=(?:### Scene|$|## 🎙️ Act))/i)
       let text = voiceoverMatch ? voiceoverMatch[1].trim() : ''
       
-      // Clean markdown tags from spoken text
+      // Clean markdown tags from spoken text and normalize dashes for clean tokenization
       text = text.replace(/\*\*\[(.*?)\]\*\*/g, '$1')
                  .replace(/\*\*(.*?)\*\*/g, '$1')
                  .replace(/\*(.*?)\*/g, '$1')
                  .replace(/\[(.*?)\]/g, '$1')
                  .replace(/\$1/g, '')
+                 .replace(/—/g, ' — ')
                  .replace(/\n+/g, ' ')
+                 .replace(/\s+/g, ' ')
                  .trim()
 
       if (text.length > 10) {
@@ -130,10 +132,47 @@ export class TtsService {
         try {
           const res = await tts.toStream(text)
           const chunks = []
-          const metadataChunks = []
+          const rawWords = []
 
           if (res.metadataStream) {
-            res.metadataStream.on('data', d => metadataChunks.push(d.toString()))
+            res.metadataStream.on('data', d => {
+              const str = d.toString()
+              try {
+                const json = JSON.parse(str.trim())
+                if (json.Metadata) {
+                  for (const m of json.Metadata) {
+                    if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                      rawWords.push({
+                        ttsWord: m.Data.text.Text,
+                        startMs: Math.round(m.Data.Offset / 10000),
+                        endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                      })
+                    }
+                  }
+                }
+              } catch (e) {
+                // Regex scan fallback in case chunks are concatenated or split
+                const matches = str.match(/\{[\s\S]*?"Metadata"\s*:\s*\[[\s\S]*?\][\s\S]*?\}/g)
+                if (matches) {
+                  for (const block of matches) {
+                    try {
+                      const json = JSON.parse(block)
+                      if (json.Metadata) {
+                        for (const m of json.Metadata) {
+                          if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                            rawWords.push({
+                              ttsWord: m.Data.text.Text,
+                              startMs: Math.round(m.Data.Offset / 10000),
+                              endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                            })
+                          }
+                        }
+                      }
+                    } catch (err) {}
+                  }
+                }
+              }
+            })
           }
 
           for await (const chunk of res.audioStream) {
@@ -150,31 +189,86 @@ export class TtsService {
             ? Math.round(exactDurationSec * 1000) 
             : Math.round((buffer.length * 8 * 1000) / 48000)
 
-          // Parse sentence boundaries from metadata if available
           let parsedSentences = []
-          if (metadataChunks.length > 0) {
-            const rawMeta = metadataChunks.join('')
-            const matches = rawMeta.match(/\{"Metadata":\[\{"Type":"SentenceBoundary"[\s\S]*?\}\]\}/g)
-            if (matches) {
-              for (const m of matches) {
-                try {
-                  const parsed = JSON.parse(m)
-                  const item = parsed.Metadata[0]
-                  if (item && item.Data && item.Data.text) {
-                    const offsetMs = Math.round(item.Data.Offset / 10000)
-                    const durationMs = Math.round(item.Data.Duration / 10000)
-                    parsedSentences.push({
-                      text: item.Data.text.Text.trim(),
-                      start: globalTimeMs + offsetMs,
-                      end: globalTimeMs + offsetMs + durationMs
-                    })
-                  }
-                } catch (e) {}
+
+          if (rawWords.length > 0) {
+            // Sort raw words by startMs
+            rawWords.sort((a, b) => a.startMs - b.startMs)
+
+            // Reconcile punctuation and casing from the original spoken text
+            let cursor = 0
+            const alignedWords = []
+            for (const rw of rawWords) {
+              const cleanWord = rw.ttsWord.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+              let foundIdx = -1
+              for (let c = cursor; c <= text.length - cleanWord.length; c++) {
+                const candidate = text.slice(c, c + cleanWord.length).replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+                if (candidate === cleanWord) {
+                  foundIdx = c
+                  break
+                }
+              }
+              if (foundIdx !== -1) {
+                let endIdx = foundIdx + rw.ttsWord.length
+                while (endIdx < text.length && /[,.?!;:—"'()\]]/.test(text[endIdx])) {
+                  endIdx++
+                }
+                const originalToken = text.slice(foundIdx, endIdx)
+                alignedWords.push({
+                  ...rw,
+                  text: originalToken
+                })
+                cursor = endIdx
+              } else {
+                alignedWords.push({
+                  ...rw,
+                  text: rw.ttsWord
+                })
+              }
+            }
+
+            // Cluster into cadence-aware subtitle cards (optimal 4-8 words per cue)
+            let currentGroup = []
+            for (let i = 0; i < alignedWords.length; i++) {
+              const w = alignedWords[i]
+              currentGroup.push(w)
+
+              const isLastWord = (i === alignedWords.length - 1)
+              const nextWord = isLastWord ? null : alignedWords[i + 1]
+
+              const hasTerminalPunct = /[.?!;—:]$/.test(w.text)
+              const hasCommaPunct = /[,]$/.test(w.text) && currentGroup.length >= 3
+              const hasPauseGap = nextWord ? (nextWord.startMs - w.endMs > 240) : false
+              const nextIsOrphanBeforePunct = nextWord && /[,.?!;—:]$/.test(nextWord.text) && currentGroup.length < 8
+
+              const cardDuration = w.endMs - currentGroup[0].startMs
+              const isGroupFull = currentGroup.length >= 8 && !nextIsOrphanBeforePunct
+              const isTimeExceeded = cardDuration > 3000 && currentGroup.length >= 4 && !nextIsOrphanBeforePunct
+
+              if (isLastWord || hasTerminalPunct || hasCommaPunct || hasPauseGap || isGroupFull || isTimeExceeded) {
+                const firstWord = currentGroup[0]
+                const lastWord = currentGroup[currentGroup.length - 1]
+
+                let cueEnd = lastWord.endMs + 100
+                if (nextWord && cueEnd > nextWord.startMs) {
+                  cueEnd = Math.max(lastWord.endMs, nextWord.startMs - 20)
+                }
+                if (cueEnd > exactDurationMs) {
+                  cueEnd = exactDurationMs
+                }
+
+                parsedSentences.push({
+                  text: currentGroup.map(item => item.text).join(' '),
+                  start: globalTimeMs + firstWord.startMs,
+                  end: globalTimeMs + cueEnd
+                })
+
+                currentGroup = []
               }
             }
           }
 
-          // If no sentence boundaries from Edge-TTS metadata, use chunker
+          // Fallback if no word boundaries from Edge-TTS metadata
           if (parsedSentences.length === 0) {
             const rawSentences = text.match(/[^.!?]+[.!?]+(?:\s|$)/g) || [text]
             let runningStart = globalTimeMs
@@ -185,7 +279,7 @@ export class TtsService {
               if (!sTrim) continue
               
               const words = sTrim.split(/\s+/)
-              const chunkSize = 10
+              const chunkSize = 8
               const chunks = []
               for (let i = 0; i < words.length; i += chunkSize) {
                 chunks.push(words.slice(i, i + chunkSize).join(' '))
@@ -198,35 +292,11 @@ export class TtsService {
                 parsedSentences.push({
                   text: chunk,
                   start: runningStart,
-                  end: runningStart + chunkDuration
+                  end: Math.min(globalTimeMs + exactDurationMs, runningStart + chunkDuration)
                 })
                 runningStart += chunkDuration
               }
             }
-          } else {
-            // Edge-TTS metadata present: split overly long sentences (>12 words) without duplication
-            const refined = []
-            for (const sent of parsedSentences) {
-              const words = sent.text.split(/\s+/)
-              if (words.length > 12) {
-                const chunkSize = 8
-                const numChunks = Math.ceil(words.length / chunkSize)
-                const chunkDur = Math.round((sent.end - sent.start) / numChunks)
-                for (let i = 0; i < words.length; i += chunkSize) {
-                  const idx = Math.floor(i / chunkSize)
-                  const cStart = sent.start + idx * chunkDur
-                  const cEnd = Math.min(sent.end, cStart + chunkDur)
-                  refined.push({
-                    text: words.slice(i, i + chunkSize).join(' '),
-                    start: cStart,
-                    end: cEnd
-                  })
-                }
-              } else {
-                refined.push(sent)
-              }
-            }
-            parsedSentences = refined
           }
 
           for (const s of parsedSentences) {
@@ -238,6 +308,8 @@ export class TtsService {
             filename,
             size: buffer.length,
             durationMs: exactDurationMs,
+            wordCount: rawWords.length,
+            cueCount: parsedSentences.length,
             previewText: text.substring(0, 80) + '...'
           })
 
