@@ -69,18 +69,27 @@
           class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
         >
           <div class="space-y-1 flex-1">
-            <div class="flex items-center space-x-2">
+            <div class="flex flex-wrap items-center gap-2">
               <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 px-2 py-0.5 rounded border border-purple-200 dark:border-purple-500/30">
                 SCENE {{ String(index + 1).padStart(2, '0') }}
               </span>
-              <span class="text-xs font-mono text-slate-900 dark:text-white">{{ track }}</span>
+              <span class="text-xs font-mono font-semibold text-slate-900 dark:text-white">{{ track }}</span>
+              <span 
+                v-if="durations[track]" 
+                class="text-xs font-mono font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/30 flex items-center space-x-1"
+              >
+                <Clock class="w-3 h-3" />
+                <span>{{ durations[track] }}</span>
+              </span>
             </div>
           </div>
 
           <div class="flex items-center space-x-3 w-full sm:w-auto">
             <audio 
               controls 
-              class="h-9 w-full sm:w-64 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-inner"
+              preload="metadata"
+              @loadedmetadata="handleMetadata(track, $event)"
+              class="h-9 w-full sm:w-80 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-inner"
               :src="`/api/audio/${$route.params.franchiseId}/${$route.params.episodeId}/${track}`"
             ></audio>
           </div>
@@ -93,18 +102,45 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { ArrowLeft, Volume2, Radio } from 'lucide-vue-next'
+import { ArrowLeft, Volume2, Radio, Clock } from 'lucide-vue-next'
 
 const route = useRoute()
 const selectedVoice = ref('en-US-ChristopherNeural')
 const audioList = ref([])
+const durations = ref({})
 const rendering = ref(false)
+
+const formatTime = (seconds) => {
+  if (!seconds || isNaN(seconds) || seconds === Infinity) return '0:00'
+  const mins = Math.floor(seconds / 60)
+  const secs = Math.floor(seconds % 60)
+  return `${mins}:${String(secs).padStart(2, '0')}`
+}
+
+const handleMetadata = (track, event) => {
+  const dur = event.target.duration
+  if (dur && !isNaN(dur) && dur !== Infinity) {
+    durations.value[track] = formatTime(dur)
+  }
+}
 
 const loadEpisodeAudio = async () => {
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}`)
     const data = await res.json()
     audioList.value = data.audioFiles || []
+
+    // Proactively preload metadata for all tracks
+    audioList.value.forEach(track => {
+      const audio = new Audio()
+      audio.preload = 'metadata'
+      audio.src = `/api/audio/${route.params.franchiseId}/${route.params.episodeId}/${track}`
+      audio.onloadedmetadata = () => {
+        if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
+          durations.value[track] = formatTime(audio.duration)
+        }
+      }
+    })
   } catch (err) {
     console.error(err)
   }

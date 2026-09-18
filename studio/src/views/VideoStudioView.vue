@@ -210,6 +210,7 @@
           <audio 
             ref="masterAudioPlayer"
             controls 
+            preload="metadata"
             class="w-full md:w-96 h-9 rounded-lg"
             :src="`/api/audio/${$route.params.franchiseId}/${$route.params.episodeId}/01_Episode_Master.mp3`"
           ></audio>
