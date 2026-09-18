@@ -46,3 +46,12 @@ Prior to drafting any new series, season arc, or episode script, the agent MUST 
 2. **Chosen Narrative Archetype:** (Archetype A: Betrayal & Sovereign, Archetype B: Regressor, Archetype C: Hidden Crafter).
 3. **Entity Bible & Character DNA:** Names, pronouns, and power metrics.
 4. **Pacing & Micro-Payoffs:** Retention markers every 3–4 minutes.
+
+---
+
+## 🎨 Architectural UI/UX & Theming Standard (Anti-Patch Invariant)
+
+When addressing UI, styling, theme, or architectural defects:
+1. **Zero Half-Baked Surface Patching:** Strictly avoid ad-hoc class swaps, fragile CSS variable `@apply` overrides, or piecemeal component fixes that risk desync across views.
+2. **Systemic Root-Cause Harmonization:** Trace the build pipeline or token root cause (e.g. Vite JIT caching, config desync, dual-system conflicts). Align 100% of views and components systematically to the established design system (e.g., Luna Studio's native Slate token hierarchy: `bg-slate-50 dark:bg-slate-950` canvas, `bg-white dark:bg-slate-900` surfaces, `border-slate-200 dark:border-slate-800` borders).
+3. **Multi-View Visual QA Verification:** For UI/theming overhauls, do not claim completion based on code alone. Systematically verify and visually audit both Light and Dark modes across all primary routes (via headless capture or browser verification) to guarantee full-app contrast harmony and zero regressions.
