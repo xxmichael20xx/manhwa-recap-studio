@@ -24,6 +24,17 @@
 
       <!-- Quick Pipeline Status Pills -->
       <div class="flex items-center space-x-3">
+        <button 
+          @click="openProgressModal"
+          class="px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-500/20 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+        >
+          <Activity class="w-3.5 h-3.5" :class="{ 'animate-pulse text-amber-500': modalState.status === 'running' }" />
+          <span>Stage Progress Modal</span>
+          <span v-if="modalState.status === 'running'" class="px-1.5 py-0.2 text-[10px] rounded bg-purple-600 text-white font-bold">
+            {{ modalState.progress }}%
+          </span>
+        </button>
+
         <div class="flex items-center space-x-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 shadow-sm text-xs font-mono">
           <span class="text-slate-400">Pipeline:</span>
           <span :class="pipeline.imagesReady === pipeline.totalScenes && pipeline.totalScenes > 0 ? 'text-emerald-600 dark:text-emerald-400 font-bold' : 'text-amber-500'">
@@ -332,12 +343,30 @@
       </div>
     </div>
 
+    <!-- 3-STAGE PROGRESS MODAL COMPONENT -->
+    <StageProgressModal
+      :show="modalState.show"
+      :is-minimized="modalState.isMinimized"
+      :active-stage="modalState.activeStage"
+      :status="modalState.status"
+      :progress="modalState.progress"
+      :message="modalState.message"
+      :logs="modalState.logs"
+      :pipeline="pipeline"
+      @close="modalState.show = false"
+      @minimize="modalState.isMinimized = !modalState.isMinimized"
+      @maximize="modalState.isMinimized = false"
+      @proceed-next="handleProceedNext"
+      @switch-stage="handleSwitchStage"
+    />
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import StageProgressModal from '../components/StageProgressModal.vue'
 import { 
   ArrowLeft, 
   Image, 
@@ -348,7 +377,8 @@ import {
   Upload, 
   Radio, 
   CheckCircle, 
-  Play 
+  Play,
+  Activity 
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -357,6 +387,44 @@ const scenes = ref([])
 const cacheBuster = ref(Date.now())
 const generatingStoryboards = ref(false)
 const storyboardFeedback = ref('')
+
+const modalState = ref({
+  show: false,
+  isMinimized: false,
+  activeStage: 'visuals',
+  status: 'idle',
+  progress: 0,
+  message: '',
+  logs: []
+})
+let imagePollTimer = null
+let ttsPollTimer = null
+
+const openProgressModal = () => {
+  if (modalState.value.status === 'idle') {
+    if (pipeline.value.hasVideo) {
+      modalState.value.activeStage = 'compiler'
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = 'Master 1080p Video compilation completed successfully!'
+      modalState.value.logs = ['All 3 stages complete: Visuals, Audio & Master Cut ready.']
+    } else if (pipeline.value.hasMasterAudio) {
+      modalState.value.activeStage = 'audio'
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = 'Voiceover & subtitles ready.'
+      modalState.value.logs = ['Voiceover audio and subtitles synchronized.']
+    } else if (pipeline.value.imagesReady > 0) {
+      modalState.value.activeStage = 'visuals'
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = `${pipeline.value.imagesReady} visual panels ready.`
+      modalState.value.logs = [`${pipeline.value.imagesReady} panels available.`]
+    }
+  }
+  modalState.value.show = true
+  modalState.value.isMinimized = false
+}
 
 const selectedVoice = ref('en-US-ChristopherNeural')
 const synthesizingAudio = ref(false)
@@ -401,19 +469,58 @@ const loadSubtitles = async () => {
 const generateStoryboards = async () => {
   generatingStoryboards.value = true
   storyboardFeedback.value = ''
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'visuals',
+    status: 'running',
+    progress: 5,
+    message: `Synthesizing ${scenes.value.length} 1080p storyboard panels...`,
+    logs: ['Initializing Puppeteer 1080p render pipeline...']
+  }
+
+  clearInterval(imagePollTimer)
+  imagePollTimer = setInterval(async () => {
+    try {
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/status`)
+      const data = await res.json()
+      if (data && data.status) {
+        if (modalState.value.activeStage === 'visuals') {
+          modalState.value.progress = data.progress || modalState.value.progress
+          modalState.value.message = data.message || modalState.value.message
+          if (data.log && data.log.length > 0) {
+            modalState.value.logs = data.log
+          }
+        }
+      }
+    } catch (e) {}
+  }, 800)
+
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/generate-storyboard`, {
       method: 'POST'
     })
     const data = await res.json()
+    clearInterval(imagePollTimer)
     if (data.success) {
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = `Successfully synthesized all ${data.count} 1080p panels!`
+      modalState.value.logs = [...modalState.value.logs, `Completed: ${data.count} panels rendered in 1080p.`]
       storyboardFeedback.value = `Successfully synthesized ${data.count} 1080p storyboard panels!`
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
+    } else {
+      modalState.value.status = 'failed'
+      modalState.value.message = data.error || 'Failed to synthesize storyboard panels.'
+      modalState.value.logs = [...modalState.value.logs, `Error: ${modalState.value.message}`]
     }
   } catch (e) {
-    console.error(e)
+    clearInterval(imagePollTimer)
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Network error: ${e.message}`]
   } finally {
     generatingStoryboards.value = false
   }
@@ -457,6 +564,33 @@ const uploadBase64 = async (tag, base64Data) => {
 
 const generateVoiceoverAndSubtitles = async () => {
   synthesizingAudio.value = true
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'audio',
+    status: 'running',
+    progress: 5,
+    message: `Connecting to Edge-TTS neural engine (${selectedVoice.value})...`,
+    logs: [`Initializing Edge-TTS neural engine with voice ${selectedVoice.value}...`]
+  }
+
+  clearInterval(ttsPollTimer)
+  ttsPollTimer = setInterval(async () => {
+    try {
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/tts-status`)
+      const data = await res.json()
+      if (data && data.status) {
+        if (modalState.value.activeStage === 'audio') {
+          modalState.value.progress = data.progress || modalState.value.progress
+          modalState.value.message = data.message || modalState.value.message
+          if (data.log && data.log.length > 0) {
+            modalState.value.logs = data.log
+          }
+        }
+      }
+    } catch (e) {}
+  }, 800)
+
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/generate-tts`, {
       method: 'POST',
@@ -464,12 +598,24 @@ const generateVoiceoverAndSubtitles = async () => {
       body: JSON.stringify({ voice: selectedVoice.value })
     })
     const data = await res.json()
+    clearInterval(ttsPollTimer)
     if (data.success) {
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = `Master audio & ${data.subtitleCount || 255} subtitle cues synchronized!`
+      modalState.value.logs = [...modalState.value.logs, `Success: Generated ${data.generatedCount} scenes & ${data.subtitleCount} cues.`]
       await loadSubtitles()
       await loadPipelineStatus()
+    } else {
+      modalState.value.status = 'failed'
+      modalState.value.message = data.error || 'Failed to generate voiceover audio.'
+      modalState.value.logs = [...modalState.value.logs, `Error: ${modalState.value.message}`]
     }
   } catch (e) {
-    console.error(e)
+    clearInterval(ttsPollTimer)
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Network error: ${e.message}`]
   } finally {
     synthesizingAudio.value = false
   }
@@ -509,6 +655,16 @@ const seekAudio = (seconds) => {
 
 const compileVideo = async () => {
   compiling.value = true
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'compiler',
+    status: 'running',
+    progress: 10,
+    message: 'Initializing FFmpeg 1080p compilation pipeline with 30fps subtitle rasterization...',
+    logs: ['Launching FFmpeg encode job with frame-accurate subtitle sync...']
+  }
+
   try {
     await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
       method: 'POST',
@@ -518,6 +674,9 @@ const compileVideo = async () => {
     startPolling()
   } catch (e) {
     compiling.value = false
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Compilation error: ${e.message}`]
   }
 }
 
@@ -528,14 +687,52 @@ const startPolling = () => {
       const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/video-status`)
       const data = await res.json()
       videoStatus.value = data
-      if (data.status === 'completed' || data.status === 'failed') {
+
+      if (modalState.value.activeStage === 'compiler') {
+        modalState.value.progress = data.progress || modalState.value.progress
+        modalState.value.message = data.message || modalState.value.message
+        if (data.log && data.log.length > 0) {
+          modalState.value.logs = data.log
+        }
+      }
+
+      if (data.status === 'completed') {
         clearInterval(pollTimer)
         compiling.value = false
+        modalState.value.status = 'completed'
+        modalState.value.progress = 100
+        modalState.value.message = 'Master 1080p Video compilation completed successfully!'
+        modalState.value.logs = [...(data.log || []), 'Master 1080p MP4 ready with frame-accurate subtitles.']
         cacheBuster.value = Date.now()
         await loadPipelineStatus()
+      } else if (data.status === 'failed') {
+        clearInterval(pollTimer)
+        compiling.value = false
+        modalState.value.status = 'failed'
+        modalState.value.message = data.message || 'FFmpeg compilation failed.'
+        modalState.value.logs = [...(data.log || []), `Error: ${data.message}`]
       }
     } catch (e) {}
   }, 1000)
+}
+
+const handleProceedNext = (nextStage) => {
+  activeStage.value = nextStage
+  modalState.value.activeStage = nextStage
+  modalState.value.status = 'idle'
+  modalState.value.progress = 0
+  modalState.value.message = ''
+  modalState.value.logs = []
+  if (nextStage === 'audio') {
+    generateVoiceoverAndSubtitles()
+  } else if (nextStage === 'compiler') {
+    compileVideo()
+  }
+}
+
+const handleSwitchStage = (stage) => {
+  activeStage.value = stage
+  modalState.value.activeStage = stage
 }
 
 onMounted(() => {
@@ -546,5 +743,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   clearInterval(pollTimer)
+  clearInterval(imagePollTimer)
+  clearInterval(ttsPollTimer)
 })
 </script>

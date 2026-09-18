@@ -26,27 +26,47 @@ function formatVttTime(ms) {
 }
 
 export class TtsService {
-  static getSubtitlesDir(franchiseId, episodeId) {
-    return path.join(franchisesDir, franchiseId, episodeId, 'subtitles')
+  static statusState = {}
+
+  static getStatus(franchiseId, episodeId) {
+    const key = `${franchiseId}/${episodeId}`
+    return this.statusState[key] || {
+      status: 'idle',
+      progress: 0,
+      message: 'Ready to generate voiceover audio',
+      log: []
+    }
+  }
+
+  static updateStatus(franchiseId, episodeId, patch) {
+    const key = `${franchiseId}/${episodeId}`
+    this.statusState[key] = {
+      ...(this.statusState[key] || { status: 'idle', progress: 0, log: [] }),
+      ...patch
+    }
   }
 
   static getAudioDir(franchiseId, episodeId) {
     return path.join(franchisesDir, franchiseId, episodeId, 'audio')
   }
 
-  static async getAudioDuration(audioPath) {
+  static getSubtitlesDir(franchiseId, episodeId) {
+    return path.join(franchisesDir, franchiseId, episodeId, 'subtitles')
+  }
+
+  static async getAudioDuration(filePath) {
     return new Promise((resolve) => {
       const proc = spawn('ffprobe', [
         '-v', 'error',
         '-show_entries', 'format=duration',
         '-of', 'default=noprint_wrappers=1:nokey=1',
-        audioPath
+        filePath.replace(/\\/g, '/')
       ])
-      let stdout = ''
-      proc.stdout.on('data', d => { stdout += d.toString() })
-      proc.on('close', () => {
-        const sec = parseFloat(stdout.trim())
-        if (!isNaN(sec) && sec > 0) {
+      let out = ''
+      proc.stdout.on('data', d => { out += d.toString() })
+      proc.on('close', (code) => {
+        if (code === 0) {
+          const sec = parseFloat(out.trim())
           resolve(sec)
         } else {
           resolve(0)
@@ -70,6 +90,13 @@ export class TtsService {
     const sceneBlocks = scriptContent.split(/### Scene \d+:/g).slice(1)
     const results = []
     const allSubtitleEntries = []
+
+    this.updateStatus(franchiseId, episodeId, {
+      status: 'running',
+      progress: 5,
+      message: `Connecting to Edge-TTS neural engine (${voice})...`,
+      log: [`Connecting to Edge-TTS neural engine (${voice})...`]
+    })
 
     const tts = new MsEdgeTTS()
     await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
@@ -215,6 +242,16 @@ export class TtsService {
           })
 
           globalTimeMs += exactDurationMs
+
+          const pct = Math.min(85, Math.round(10 + (sceneIndex / sceneBlocks.length) * 75))
+          const currentLogs = [...(this.getStatus(franchiseId, episodeId).log || [])]
+          currentLogs.push(`Synthesized SC${String(sceneIndex).padStart(2, '0')} (${(exactDurationMs / 1000).toFixed(1)}s, ${parsedSentences.length} subtitle cues)`)
+          this.updateStatus(franchiseId, episodeId, {
+            status: 'running',
+            progress: pct,
+            message: `Synthesizing scene ${sceneIndex}/${sceneBlocks.length}...`,
+            log: currentLogs.slice(-25)
+          })
         } catch (err) {
           console.error(`Error generating audio for scene ${sceneIndex}:`, err)
         }
@@ -225,6 +262,13 @@ export class TtsService {
     try {
       tts.close()
     } catch (e) {}
+
+    this.updateStatus(franchiseId, episodeId, {
+      status: 'running',
+      progress: 90,
+      message: `Assembling master audio & compiling ${allSubtitleEntries.length} timed cues...`,
+      log: [...(this.getStatus(franchiseId, episodeId).log || []), `Concatenating ${generatedAudioFiles.length} scene tracks and formatting SRT/VTT...`]
+    })
 
     // Generate Master SRT and VTT
     let srtContent = ''
@@ -249,6 +293,13 @@ export class TtsService {
     if (generatedAudioFiles.length > 0) {
       await this.concatenateAudioFiles(generatedAudioFiles, masterAudioPath)
     }
+
+    this.updateStatus(franchiseId, episodeId, {
+      status: 'completed',
+      progress: 100,
+      message: `Voiceover & subtitles ready! Generated ${results.length} scenes & ${allSubtitleEntries.length} subtitle cues.`,
+      log: [...(this.getStatus(franchiseId, episodeId).log || []), `Complete: Master audio and ${allSubtitleEntries.length} subtitle cues ready.`]
+    })
 
     return {
       success: true,

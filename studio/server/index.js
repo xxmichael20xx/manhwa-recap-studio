@@ -175,6 +175,12 @@ app.get('/api/episodes/:franchiseId/:episodeId/images', async (req, res) => {
   }
 })
 
+// Image Generation Status (Must be before :filename route)
+app.get('/api/episodes/:franchiseId/:episodeId/images/status', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  res.json(ImageService.getStatus(franchiseId, episodeId))
+})
+
 // Stream Scene Image
 app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
@@ -198,6 +204,12 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/generate-storyboard', asy
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
+})
+
+// Voiceover TTS Status
+app.get('/api/episodes/:franchiseId/:episodeId/tts-status', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  res.json(TtsService.getStatus(franchiseId, episodeId))
 })
 
 // Manual Image Upload / Dropzone (Base64)
@@ -278,6 +290,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       try { videoSize = (await fs.promises.stat(masterVideoPath)).size } catch (e) {}
     }
 
+    const imageState = ImageService.getStatus(franchiseId, episodeId)
+    const ttsState = TtsService.getStatus(franchiseId, episodeId)
     const videoState = VideoService.getStatus(franchiseId, episodeId)
 
     res.json({
@@ -288,6 +302,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       hasSubtitles: subtitles.hasSubtitles,
       hasVideo,
       videoSize,
+      imageState,
+      ttsState,
       videoState
     })
   } catch (err) {

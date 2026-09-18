@@ -188,8 +188,9 @@ export class VideoService {
     
     // Construct video filter:
     // 1. Scale/pad to 1920x1080
-    // 2. Subtitles burn-in if enabled
-    let videoFilter = 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,format=yuv420p'
+    // 2. Expand still frames to 30fps stream so subtitles filter evaluates every timestamp dynamically
+    // 3. Subtitles burn-in if enabled
+    let videoFilter = 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p'
     
     if (burnSubtitles) {
       try {
@@ -220,6 +221,7 @@ export class VideoService {
 
     return new Promise((resolve, reject) => {
       let stderrOutput = ''
+      let lastLoggedPct = 45
       const proc = spawn('ffmpeg', ffmpegArgs)
 
       proc.stderr.on('data', (chunk) => {
@@ -230,9 +232,15 @@ export class VideoService {
         if (timeMatch) {
           const currentSec = parseInt(timeMatch[1]) * 3600 + parseInt(timeMatch[2]) * 60 + parseFloat(timeMatch[3])
           const pct = Math.min(95, Math.round(45 + (currentSec / totalDurationSeconds) * 50))
+          const currentLogs = [...(this.compilationState[key].log || [])]
+          if (pct >= lastLoggedPct + 10) {
+            lastLoggedPct = pct
+            currentLogs.push(`Encoding progress: ${pct}% (${currentSec.toFixed(0)}s / ${totalDurationSeconds.toFixed(0)}s processed)`)
+          }
           this.updateStatus(franchiseId, episodeId, {
             progress: pct,
-            message: `Encoding Master 1080p Cut (${pct}% - ${currentSec.toFixed(1)}s / ${totalDurationSeconds.toFixed(1)}s)...`
+            message: `Encoding Master 1080p Cut (${pct}% - ${currentSec.toFixed(1)}s / ${totalDurationSeconds.toFixed(1)}s)...`,
+            log: currentLogs.slice(-30)
           })
         }
       })
@@ -245,7 +253,7 @@ export class VideoService {
             status: 'completed',
             progress: 100,
             message: 'Master 1080p Video compilation completed successfully!',
-            log: [...(this.compilationState[key].log || []), 'Master 1080p MP4 ready.']
+            log: [...(this.compilationState[key].log || []), 'Master 1080p MP4 ready with frame-accurate subtitles.']
           })
           resolve({
             success: true,

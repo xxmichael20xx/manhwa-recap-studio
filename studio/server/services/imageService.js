@@ -10,6 +10,26 @@ const franchisesDir = path.resolve(projectRoot, '01_Franchises')
 const require = createRequire(import.meta.url)
 
 export class ImageService {
+  static statusState = {}
+
+  static getStatus(franchiseId, episodeId) {
+    const key = `${franchiseId}/${episodeId}`
+    return this.statusState[key] || {
+      status: 'idle',
+      progress: 0,
+      message: 'Ready to synthesize storyboard panels',
+      log: []
+    }
+  }
+
+  static updateStatus(franchiseId, episodeId, patch) {
+    const key = `${franchiseId}/${episodeId}`
+    this.statusState[key] = {
+      ...(this.statusState[key] || { status: 'idle', progress: 0, log: [] }),
+      ...patch
+    }
+  }
+
   static getImagesDir(franchiseId, episodeId) {
     return path.join(franchisesDir, franchiseId, episodeId, 'images')
   }
@@ -75,26 +95,56 @@ export class ImageService {
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
     await fs.mkdir(imagesDir, { recursive: true })
 
+    this.updateStatus(franchiseId, episodeId, {
+      status: 'running',
+      progress: 5,
+      message: `Initializing Puppeteer renderer for ${scenes.length} panels...`,
+      log: [`Starting storyboard generation for ${scenes.length} panels...`]
+    })
+
     let puppeteer
     try {
       puppeteer = require('C:/Users/MIchaelangelo/.gemini/antigravity/scratch/node_modules/puppeteer')
     } catch (err) {
+      this.updateStatus(franchiseId, episodeId, {
+        status: 'failed',
+        message: `Puppeteer could not be loaded: ${err.message}`,
+        log: [`Error: Puppeteer could not be loaded`]
+      })
       throw new Error(`Puppeteer could not be loaded: ${err.message}`)
     }
 
-    const browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    })
+    let browser
+    try {
+      browser = await puppeteer.launch({
+        headless: 'new',
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      })
+    } catch (err) {
+      this.updateStatus(franchiseId, episodeId, {
+        status: 'failed',
+        message: `Browser launch failed: ${err.message}`,
+        log: [`Error launching Puppeteer browser`]
+      })
+      throw err
+    }
 
     const page = await browser.newPage()
     await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 })
 
     const generated = []
 
-    for (const scene of scenes) {
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i]
       const targetPath = path.join(imagesDir, scene.filename)
       
+      this.updateStatus(franchiseId, episodeId, {
+        status: 'running',
+        progress: Math.round(10 + ((i + 1) / scenes.length) * 85),
+        message: `Rendering panel ${i + 1} of ${scenes.length} ([${scene.tag}])...`,
+        log: [`Rendering panel [${scene.tag}]: ${scene.description}`]
+      })
+
       let accentColor = '#9333ea' // Purple
       let glowColor = 'rgba(147, 51, 234, 0.3)'
       if (scene.act.includes('Act 1')) {
@@ -311,6 +361,13 @@ export class ImageService {
     }
 
     await browser.close()
+
+    this.updateStatus(franchiseId, episodeId, {
+      status: 'completed',
+      progress: 100,
+      message: `Successfully synthesized all ${generated.length} storyboard panels!`,
+      log: [`Storyboard generation complete: ${generated.length} panels rendered in 1080p.`]
+    })
 
     return {
       success: true,
