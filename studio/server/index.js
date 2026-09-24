@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { FileService } from './services/fileService.js'
 import { TtsService } from './services/ttsService.js'
 import { AntiSlopValidator } from './services/antiSlopValidator.js'
@@ -10,6 +11,11 @@ import { ImageService } from './services/imageService.js'
 import { VideoService } from './services/videoService.js'
 
 dotenv.config()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const projectRoot = path.resolve(__dirname, '../../')
+const bgmDir = path.resolve(projectRoot, 'assets/audio/bgm')
 
 const app = express()
 const PORT = process.env.PORT || 3101
@@ -133,6 +139,70 @@ app.get('/api/audio/:franchiseId/:episodeId/:filename', (req, res) => {
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).send('Audio file not found')
+  }
+
+  const stat = fs.statSync(filePath)
+  const fileSize = stat.size
+  const range = req.headers.range
+
+  if (range) {
+    const parts = range.replace(/bytes=/, '').split('-')
+    const start = parseInt(parts[0], 10)
+    const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1
+    const chunksize = (end - start) + 1
+    const file = fs.createReadStream(filePath, { start, end })
+    const head = {
+      'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': chunksize,
+      'Content-Type': 'audio/mpeg',
+    }
+    res.writeHead(206, head)
+    file.pipe(res)
+  } else {
+    const head = {
+      'Content-Length': fileSize,
+      'Accept-Ranges': 'bytes',
+      'Content-Type': 'audio/mpeg',
+    }
+    res.writeHead(200, head)
+    fs.createReadStream(filePath).pipe(res)
+  }
+})
+
+// BGM Soundscape Tracks List
+app.get('/api/bgm', async (req, res) => {
+  try {
+    const manifestPath = path.join(bgmDir, 'manifest.json')
+    if (fs.existsSync(manifestPath)) {
+      const data = JSON.parse(await fs.promises.readFile(manifestPath, 'utf-8'))
+      return res.json(data)
+    }
+    if (fs.existsSync(bgmDir)) {
+      const files = await fs.promises.readdir(bgmDir)
+      const tracks = files.filter(f => f.endsWith('.mp3')).map(f => ({
+        id: f.replace(/\.mp3$/, ''),
+        filename: f,
+        title: f.replace(/\.mp3$/, '').replace(/_/g, ' '),
+        mood: 'Cinematic Soundscape',
+        desc: 'Royalty-free background OST',
+        url: `/api/bgm/${f}`
+      }))
+      return res.json(tracks)
+    }
+    res.json([])
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream BGM Audio File (with Range requests)
+app.get('/api/bgm/:filename', (req, res) => {
+  const { filename } = req.params
+  const filePath = path.join(bgmDir, filename)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send('BGM file not found')
   }
 
   const stat = fs.statSync(filePath)

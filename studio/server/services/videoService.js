@@ -40,7 +40,7 @@ export class VideoService {
   }
 
   static async compileEpisodeVideo(franchiseId, episodeId, options = {}) {
-    const { kenBurns = true, burnSubtitles = true } = options
+    const { kenBurns = true, burnSubtitles = true, bgmTrack = null, bgmVolume = -22 } = options
     const key = `${franchiseId}/${episodeId}`
 
     if (this.compilationState[key]?.status === 'compiling') {
@@ -202,22 +202,87 @@ export class VideoService {
       }
     }
 
-    const ffmpegArgs = [
-      '-y',
-      '-f', 'concat',
-      '-safe', '0',
-      '-i', imageListPath.replace(/\\/g, '/'),
-      '-i', masterAudioPath.replace(/\\/g, '/'),
-      '-vf', videoFilter,
-      '-c:v', 'libx264',
-      '-preset', 'veryfast',
-      '-crf', '22',
-      '-r', '30',
-      '-c:a', 'aac',
-      '-b:a', '192k',
-      '-shortest',
-      masterVideoPath.replace(/\\/g, '/')
-    ]
+    // Resolve optional BGM soundscape
+    const bgmDir = path.resolve(projectRoot, 'assets/audio/bgm')
+    let bgmPath = null
+    if (bgmTrack && bgmTrack !== 'none') {
+      const candidatePath = path.join(bgmDir, bgmTrack)
+      try {
+        const s = await fs.stat(candidatePath)
+        if (s.size > 1000) {
+          bgmPath = candidatePath
+        }
+      } catch (e) {
+        console.warn(`BGM track not found: ${candidatePath}`)
+      }
+    }
+
+    const safeBgmVol = Number.isFinite(Number(bgmVolume)) ? Number(bgmVolume) : -22
+    let ffmpegArgs = []
+
+    if (bgmPath) {
+      this.updateStatus(franchiseId, episodeId, {
+        progress: 45,
+        message: `Compiling 1080p video with BGM auto-ducking (${path.basename(bgmPath)} @ ${safeBgmVol}dB)...`,
+        log: [
+          ...(this.compilationState[key].log || []),
+          `Active Audio Ducking: Voiceover master with BGM '${path.basename(bgmPath)}' (${safeBgmVol}dB resting, dynamic sidechain dip)...`,
+          'Launching FFmpeg encode job with dual-stream audio ducking...'
+        ]
+      })
+
+      const filterComplex = [
+        `[0:v]${videoFilter}[v]`,
+        `[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`,
+        `[2:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`,
+        `[bgm_base][vo_sc]sidechaincompress=threshold=0.04:ratio=4:attack=20:release=350[bgm_ducked]`,
+        `[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`
+      ].join(';')
+
+      ffmpegArgs = [
+        '-y',
+        '-f', 'concat',
+        '-safe', '0',
+        '-i', imageListPath.replace(/\\/g, '/'),
+        '-i', masterAudioPath.replace(/\\/g, '/'),
+        '-stream_loop', '-1',
+        '-i', bgmPath.replace(/\\/g, '/'),
+        '-filter_complex', filterComplex,
+        '-map', '[v]',
+        '-map', '[aout]',
+        '-c:v', 'libx264',
+        '-preset', 'veryfast',
+        '-crf', '22',
+        '-r', '30',
+        '-c:a', 'aac',
+        '-b:a', '192k',
+        '-shortest',
+        masterVideoPath.replace(/\\/g, '/')
+      ]
+    } else {
+      this.updateStatus(franchiseId, episodeId, {
+        progress: 45,
+        message: 'Compiling 1080p video with Ken Burns motion & burned-in subtitles...',
+        log: [...(this.compilationState[key].log || []), 'Launching FFmpeg encode job (Voiceover only)...']
+      })
+
+      ffmpegArgs = [
+        '-y',
+        '-f', 'concat',
+        '-safe', '0',
+        '-i', imageListPath.replace(/\\/g, '/'),
+        '-i', masterAudioPath.replace(/\\/g, '/'),
+        '-vf', videoFilter,
+        '-c:v', 'libx264',
+        '-preset', 'veryfast',
+        '-crf', '22',
+        '-r', '30',
+        '-c:a', 'aac',
+        '-b:a', '192k',
+        '-shortest',
+        masterVideoPath.replace(/\\/g, '/')
+      ]
+    }
 
     return new Promise((resolve, reject) => {
       let stderrOutput = ''

@@ -298,6 +298,126 @@
           </div>
         </div>
 
+        <!-- BGM Soundscape & Audio Ducking Configuration Card -->
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2">
+              <div class="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <Music class="w-4 h-4" />
+              </div>
+              <div>
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide">
+                  Background Music & Dynamic Sidechain Ducking
+                </h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Select a royalty-free soundscape. FFmpeg will automatically duck music by -6 dB during vocal narration.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ducking Status Badge -->
+            <div v-if="selectedBgmTrack !== 'none'" class="flex items-center space-x-2 text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-semibold">
+              <Radio class="w-3 h-3 animate-pulse" />
+              <span>Sidechain Ducking Active (-6 dB)</span>
+            </div>
+            <div v-else class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+              Acapella VO Only (No BGM)
+            </div>
+          </div>
+
+          <!-- BGM Track Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <!-- No BGM Option -->
+            <div 
+              @click="selectBgmTrack('none')"
+              :class="selectedBgmTrack === 'none' 
+                ? 'border-purple-600 bg-purple-50/50 dark:bg-purple-950/20 ring-1 ring-purple-600' 
+                : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-500/50'"
+              class="p-3.5 rounded-xl border transition cursor-pointer flex flex-col justify-between space-y-2"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <VolumeX class="w-4 h-4 text-slate-400" />
+                  <span class="text-xs font-bold text-slate-900 dark:text-white">None (Voiceover Only)</span>
+                </div>
+                <div v-if="selectedBgmTrack === 'none'" class="w-2 h-2 rounded-full bg-purple-600"></div>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                Pristine isolated narration without background music.
+              </p>
+            </div>
+
+            <!-- Dynamic Tracks -->
+            <div 
+              v-for="track in bgmTracks" 
+              :key="track.id"
+              @click="selectBgmTrack(track.filename)"
+              :class="selectedBgmTrack === track.filename 
+                ? 'border-purple-600 bg-purple-50/50 dark:bg-purple-950/20 ring-1 ring-purple-600' 
+                : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-500/50'"
+              class="p-3.5 rounded-xl border transition cursor-pointer flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center space-x-2 truncate">
+                    <Music class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+                    <span class="text-xs font-bold text-slate-900 dark:text-white truncate">{{ track.title }}</span>
+                  </div>
+                  <div v-if="selectedBgmTrack === track.filename" class="w-2 h-2 rounded-full bg-purple-600 shrink-0"></div>
+                </div>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-purple-600 dark:text-purple-400 font-medium inline-block mt-1">
+                  {{ track.mood }}
+                </span>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">
+                  {{ track.desc }}
+                </p>
+              </div>
+
+              <!-- Inline Preview Controller -->
+              <div class="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800/80" @click.stop>
+                <button 
+                  @click="togglePreviewBgm(track)"
+                  class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-purple-600 hover:text-white text-slate-700 dark:text-slate-300 text-[10px] font-mono font-semibold flex items-center space-x-1.5 transition"
+                >
+                  <component :is="activePreviewTrack === track.filename ? Pause : Play" class="w-3 h-3 fill-current" />
+                  <span>{{ activePreviewTrack === track.filename ? 'Pause' : 'Preview' }}</span>
+                </button>
+                <span class="text-[10px] font-mono text-slate-400">120s Loop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volume & Ducking Tuning Slider (Visible when track is selected) -->
+          <div v-if="selectedBgmTrack !== 'none'" class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 w-full md:w-auto">
+              <Sliders class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+              <div class="space-y-0.5">
+                <div class="flex items-center space-x-2">
+                  <span class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">Resting BGM Level:</span>
+                  <span class="text-xs font-mono text-purple-600 dark:text-purple-400 font-bold">{{ selectedBgmVolume }} dB</span>
+                </div>
+                <span class="text-[10px] text-slate-400">Standard broadcast resting range is -24 dB to -20 dB</span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3 w-full md:w-72">
+              <span class="text-[10px] font-mono text-slate-400">-36dB</span>
+              <input 
+                type="range" 
+                min="-36" 
+                max="-12" 
+                step="1"
+                v-model.number="selectedBgmVolume" 
+                class="w-full accent-purple-600 h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer"
+              />
+              <span class="text-[10px] font-mono text-slate-400">-12dB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Audio Element for BGM Preview -->
+        <audio ref="bgmAudioPlayer" @ended="onBgmEnded"></audio>
+
         <!-- Compilation Progress & Status Box -->
         <div v-if="videoStatus.status === 'compiling' || compiling" class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 space-y-3">
           <div class="flex items-center justify-between text-xs font-mono">
@@ -378,7 +498,11 @@ import {
   Radio, 
   CheckCircle, 
   Play,
-  Activity 
+  Activity,
+  Music,
+  Sliders,
+  VolumeX,
+  Pause
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -429,6 +553,46 @@ const openProgressModal = () => {
 const selectedVoice = ref('en-US-ChristopherNeural')
 const synthesizingAudio = ref(false)
 const masterAudioPlayer = ref(null)
+
+// BGM & Sidechain Ducking State
+const bgmTracks = ref([])
+const selectedBgmTrack = ref('01_Catacombs_SubBass_Drone.mp3')
+const selectedBgmVolume = ref(-22)
+const activePreviewTrack = ref(null)
+const bgmAudioPlayer = ref(null)
+
+const loadBgmTracks = async () => {
+  try {
+    const res = await fetch('/api/bgm')
+    const data = await res.json()
+    if (Array.isArray(data) && data.length > 0) {
+      bgmTracks.value = data
+    }
+  } catch (e) {
+    console.warn('Failed to load BGM tracks:', e)
+  }
+}
+
+const selectBgmTrack = (filename) => {
+  selectedBgmTrack.value = filename
+}
+
+const togglePreviewBgm = (track) => {
+  if (!bgmAudioPlayer.value) return
+  if (activePreviewTrack.value === track.filename) {
+    bgmAudioPlayer.value.pause()
+    activePreviewTrack.value = null
+  } else {
+    activePreviewTrack.value = track.filename
+    bgmAudioPlayer.value.src = track.url
+    bgmAudioPlayer.value.volume = Math.max(0.01, Math.min(1.0, Math.pow(10, selectedBgmVolume.value / 20)))
+    bgmAudioPlayer.value.play().catch(() => {})
+  }
+}
+
+const onBgmEnded = () => {
+  activePreviewTrack.value = null
+}
 
 const subtitles = ref({ srt: '', vtt: '', hasSubtitles: false })
 const compiling = ref(false)
@@ -669,7 +833,12 @@ const compileVideo = async () => {
     await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ kenBurns: true, burnSubtitles: true })
+      body: JSON.stringify({ 
+        kenBurns: true, 
+        burnSubtitles: true,
+        bgmTrack: selectedBgmTrack.value,
+        bgmVolume: selectedBgmVolume.value
+      })
     })
     startPolling()
   } catch (e) {
@@ -739,11 +908,15 @@ onMounted(() => {
   loadPipelineStatus()
   loadScenes()
   loadSubtitles()
+  loadBgmTracks()
 })
 
 onUnmounted(() => {
   clearInterval(pollTimer)
   clearInterval(imagePollTimer)
   clearInterval(ttsPollTimer)
+  if (bgmAudioPlayer.value) {
+    bgmAudioPlayer.value.pause()
+  }
 })
 </script>

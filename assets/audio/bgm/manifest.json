@@ -1,0 +1,34 @@
+[
+  {
+    "id": "01_Catacombs_SubBass_Drone",
+    "filename": "01_Catacombs_SubBass_Drone.mp3",
+    "title": "Catacombs Sub-Bass Drone",
+    "mood": "Atmospheric / Suspense",
+    "desc": "Deep subterranean sub-bass, resonant low-frequency rumble and dark ambient air for dungeon exploration.",
+    "url": "/api/bgm/01_Catacombs_SubBass_Drone.mp3"
+  },
+  {
+    "id": "02_Betrayal_Melancholic_Ambience",
+    "filename": "02_Betrayal_Melancholic_Ambience.mp3",
+    "title": "Betrayal Melancholic Ambience",
+    "mood": "Tragic / Cold Realisation",
+    "desc": "Slow evolving minor chord pads in A minor with subtle cold harmonic shimmer, reflecting betrayal and isolation.",
+    "url": "/api/bgm/02_Betrayal_Melancholic_Ambience.mp3"
+  },
+  {
+    "id": "03_Awakening_Power_Surge",
+    "filename": "03_Awakening_Power_Surge.mp3",
+    "title": "Awakening Power Surge",
+    "mood": "Epic / System Ascension",
+    "desc": "Harmonic open fifth chords with shimmering high-register mana surge and dynamic swelling, ideal for sovereign awakening.",
+    "url": "/api/bgm/03_Awakening_Power_Surge.mp3"
+  },
+  {
+    "id": "04_Combat_Dungeon_Raid",
+    "filename": "04_Combat_Dungeon_Raid.mp3",
+    "title": "Combat Dungeon Raid",
+    "mood": "Action / Boss Battle",
+    "desc": "Tense low-end percussive pulse, driving combat drones and tension riser texture for high-stakes dungeon skirmishes.",
+    "url": "/api/bgm/04_Combat_Dungeon_Raid.mp3"
+  }
+]
