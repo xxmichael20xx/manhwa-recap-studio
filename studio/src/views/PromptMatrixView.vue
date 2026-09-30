@@ -542,15 +542,19 @@ const FLOW_DIRECTIVE_HEADER = `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION & FU
 3. DO NOT generate videos, animations, or ask for confirmation.
 4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
 5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, and high-fidelity manhwa artwork.`
+6. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
+7. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, and high-fidelity manhwa artwork.`
 
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
   if (!batch || !batch.items.length) return
 
   const scenesXml = batch.items.map(p => {
-    const id = p.tag.replace(/[^A-Za-z0-9]/g, '')
-    return `<scene id="${id}">\n${p.prompt}\n</scene>`
+    const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
+    const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+    const tag = `IMG_${num}`
+    const filename = `${tag}.jpg`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
   const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
@@ -576,8 +580,11 @@ const copySelectedPrompts = () => {
   if (!selectedItems.length) return
 
   const scenesXml = selectedItems.map(p => {
-    const id = p.tag.replace(/[^A-Za-z0-9]/g, '')
-    return `<scene id="${id}">\n${p.prompt}\n</scene>`
+    const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
+    const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+    const tag = `IMG_${num}`
+    const filename = `${tag}.jpg`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
   const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
@@ -596,8 +603,11 @@ const copyMissingPrompts = () => {
   if (!missingItems.length) return
 
   const scenesXml = missingItems.map(p => {
-    const id = p.tag.replace(/[^A-Za-z0-9]/g, '')
-    return `<scene id="${id}">\n${p.prompt}\n</scene>`
+    const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
+    const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+    const tag = `IMG_${num}`
+    const filename = `${tag}.jpg`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
   const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
@@ -615,8 +625,11 @@ const copyAllMaster = () => {
   if (!parsedPrompts.value.length) return
 
   const scenesXml = parsedPrompts.value.map(p => {
-    const id = p.tag.replace(/[^A-Za-z0-9]/g, '')
-    return `<scene id="${id}">\n${p.prompt}\n</scene>`
+    const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
+    const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+    const tag = `IMG_${num}`
+    const filename = `${tag}.jpg`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
   const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
