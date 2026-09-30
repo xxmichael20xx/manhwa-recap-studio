@@ -3,6 +3,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { spawn } from 'child_process'
+import { ActivityLogService } from './activityLogService.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -372,6 +373,8 @@ export class TtsService {
       message: `Voiceover & subtitles ready! Generated ${results.length} scenes & ${allSubtitleEntries.length} subtitle cues.`,
       log: [...(this.getStatus(franchiseId, episodeId).log || []), `Complete: Master audio and ${allSubtitleEntries.length} subtitle cues ready.`]
     })
+
+    ActivityLogService.success('audio', 'Voiceover & Subtitles Generated', `Synthesized ${results.length} scene audio tracks (${(globalTimeMs / 1000).toFixed(1)}s total) and ${allSubtitleEntries.length} subtitle cues using voice "${voice}".`, { voice, sceneCount: results.length, durationSeconds: (globalTimeMs / 1000).toFixed(1) }, franchiseId, episodeId)
 
     return {
       success: true,

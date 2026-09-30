@@ -1,7 +1,9 @@
 import fs from 'fs/promises'
+import fsSync from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { createRequire } from 'module'
+import { ActivityLogService } from './activityLogService.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -54,10 +56,43 @@ export class ImageService {
       existingImages = []
     }
 
-    const lines = content.split('\n')
     const scenes = []
     let currentAct = 'General'
 
+    // 1. Check for XML <scene id="..."> blocks
+    const xmlMatches = [...content.matchAll(/<scene\s+id=["']?(IMG_?\d+)["']?>([\s\S]*?)<\/scene>/gi)]
+    if (xmlMatches.length > 0) {
+      for (const match of xmlMatches) {
+        const rawId = match[1].replace(/_/g, '')
+        const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+        const tag = `IMG_${num}`
+        const prompt = match[2].trim()
+
+        let matchedFilename = `${tag}.png`
+        let hasImage = existingImages.includes(matchedFilename)
+        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
+          matchedFilename = `${tag}.jpg`
+          hasImage = true
+        }
+
+        const descMatch = prompt.match(/^IMG\d+,\s*([^,\n]+)/i)
+        const description = descMatch ? descMatch[1].trim() : `Scene ${num}`
+
+        scenes.push({
+          tag,
+          filename: matchedFilename,
+          act: currentAct,
+          description,
+          prompt,
+          hasImage,
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
+        })
+      }
+      return scenes
+    }
+
+    // 2. Fallback to Markdown Table rows
+    const lines = content.split('\n')
     for (const line of lines) {
       const actMatch = line.match(/^##\s+(Act\s+\d+:[^(\n]+)/i)
       if (actMatch) {
@@ -65,24 +100,54 @@ export class ImageService {
         continue
       }
 
-      // Match table row: | `[IMG_001]` | Description | Full Prompt |
-      const rowMatch = line.match(/^\|\s*`?\[?(IMG_\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|/i)
-      if (rowMatch) {
-        const tag = rowMatch[1].trim().toUpperCase()
-        const description = rowMatch[2].trim()
-        const prompt = rowMatch[3].trim()
+      // Match 4-column table row: | `[IMG_001]` | Description | Anchor | Full Prompt |
+      const match4 = line.match(/^\|\s*`?\[?(IMG_\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
+      if (match4) {
+        const tag = match4[1].trim().toUpperCase()
+        const description = match4[2].trim()
+        const prompt = match4[4].trim()
 
-        const filename = `${tag}.png`
-        const hasImage = existingImages.includes(filename)
+        let matchedFilename = `${tag}.png`
+        let hasImage = existingImages.includes(matchedFilename)
+        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
+          matchedFilename = `${tag}.jpg`
+          hasImage = true
+        }
 
         scenes.push({
           tag,
-          filename,
+          filename: matchedFilename,
           act: currentAct,
           description,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
+        })
+        continue
+      }
+
+      // Match 3-column table row: | `[IMG_001]` | Description | Full Prompt |
+      const rowMatch = line.match(/^\|\s*`?\[?(IMG_\d+)\]?`?\s*\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
+      if (rowMatch && !line.includes('---')) {
+        const tag = rowMatch[1].trim().toUpperCase()
+        const description = rowMatch[2].trim()
+        const prompt = rowMatch[3].trim()
+
+        let matchedFilename = `${tag}.png`
+        let hasImage = existingImages.includes(matchedFilename)
+        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
+          matchedFilename = `${tag}.jpg`
+          hasImage = true
+        }
+
+        scenes.push({
+          tag,
+          filename: matchedFilename,
+          act: currentAct,
+          description,
+          prompt,
+          hasImage,
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
         })
       }
     }
@@ -90,7 +155,7 @@ export class ImageService {
     return scenes
   }
 
-  static async generateStoryboardStills(franchiseId, episodeId) {
+  static async generateStoryboardStills(franchiseId, episodeId, options = {}) {
     const scenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
     await fs.mkdir(imagesDir, { recursive: true })
@@ -138,6 +203,23 @@ export class ImageService {
       const scene = scenes[i]
       const targetPath = path.join(imagesDir, scene.filename)
       
+      // Non-destructive safeguard: Never overwrite existing high-fidelity artwork unless forced
+      if (fsSync.existsSync(targetPath) && !options.force) {
+        try {
+          const stats = fsSync.statSync(targetPath)
+          if (stats.size > 100000) {
+            generated.push({ tag: scene.tag, filename: scene.filename, path: targetPath, preserved: true })
+            this.updateStatus(franchiseId, episodeId, {
+              status: 'running',
+              progress: Math.round(10 + ((i + 1) / scenes.length) * 85),
+              message: `Preserving high-fidelity panel ${i + 1} of ${scenes.length} ([${scene.tag}])...`,
+              log: [`Preserved existing high-fidelity panel [${scene.tag}]: ${scene.filename}`]
+            })
+            continue
+          }
+        } catch (_) {}
+      }
+
       this.updateStatus(franchiseId, episodeId, {
         status: 'running',
         progress: Math.round(10 + ((i + 1) / scenes.length) * 85),
@@ -369,10 +451,95 @@ export class ImageService {
       log: [`Storyboard generation complete: ${generated.length} panels rendered in 1080p.`]
     })
 
+    ActivityLogService.success('visuals', 'Storyboard Panels Rendered', `Synthesized ${generated.length} fallback storyboard stills in 1080p.`, { count: generated.length }, franchiseId, episodeId)
+
     return {
       success: true,
       count: generated.length,
       files: generated
+    }
+  }
+
+  static async extractAndIngestZip(franchiseId, episodeId, zipBase64, originalFilename = 'batch.zip') {
+    const imagesDir = this.getImagesDir(franchiseId, episodeId)
+    await fs.mkdir(imagesDir, { recursive: true })
+
+    const cleanBase64 = zipBase64.replace(/^data:application\/[\w.-]+;base64,/, '').replace(/^data:application\/zip;base64,/, '').replace(/^data:application\/x-zip-compressed;base64,/, '')
+    const buffer = Buffer.from(cleanBase64, 'base64')
+
+    const AdmZipModule = await import('adm-zip')
+    const AdmZip = AdmZipModule.default || AdmZipModule
+    const zip = new AdmZip(buffer)
+    const zipEntries = zip.getEntries()
+
+    // Filter valid image files, ignore OS meta / hidden files
+    const imageEntries = zipEntries.filter(entry => {
+      if (entry.isDirectory) return false
+      const name = entry.entryName.toLowerCase()
+      if (name.includes('__macosx') || name.startsWith('.') || path.basename(name).startsWith('.')) return false
+      return /\.(png|jpe?g|webp)$/i.test(name)
+    })
+
+    if (imageEntries.length === 0) {
+      ActivityLogService.warn('visuals', 'ZIP Archive Empty', `No valid image files found in ${originalFilename}.`, { filename: originalFilename }, franchiseId, episodeId)
+      throw new Error('No valid image files (PNG, JPG, WEBP) found inside ZIP archive.')
+    }
+
+    // Sort entries naturally
+    imageEntries.sort((a, b) => a.entryName.localeCompare(b.entryName, undefined, { numeric: true, sensitivity: 'base' }))
+
+    const extracted = []
+    const existingScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+
+    for (let i = 0; i < imageEntries.length; i++) {
+      const entry = imageEntries[i]
+      const entryBase = path.basename(entry.entryName)
+      
+      // Check if entry filename contains scene number e.g. IMG_001, IMG001, scene_01, 01, etc.
+      let targetTag = null
+      const tagMatch = entryBase.match(/IMG_?0*(\d+)/i)
+      if (tagMatch) {
+        const num = parseInt(tagMatch[1], 10)
+        targetTag = `IMG_${String(num).padStart(3, '0')}`
+      } else {
+        const numMatch = entryBase.match(/(?:scene|panel|image|shot|cut)?[-_ ]*0*(\d+)/i)
+        if (numMatch) {
+          const num = parseInt(numMatch[1], 10)
+          targetTag = `IMG_${String(num).padStart(3, '0')}`
+        }
+      }
+
+      if (!targetTag) {
+        // Fallback to sequential index matching existingScenes or index + 1
+        const fallbackNum = i + 1
+        targetTag = existingScenes[i]?.tag || `IMG_${String(fallbackNum).padStart(3, '0')}`
+      }
+
+      const targetPath = path.join(imagesDir, `${targetTag}.png`)
+      const data = entry.getData()
+      await fs.writeFile(targetPath, data)
+
+      // Also write un-underscored alias IMG001.png for compatibility
+      const aliasTag = targetTag.replace(/_/g, '')
+      if (aliasTag !== targetTag) {
+        const aliasPath = path.join(imagesDir, `${aliasTag}.png`)
+        await fs.writeFile(aliasPath, data)
+      }
+
+      extracted.push({
+        tag: targetTag,
+        sourceName: entryBase,
+        savedAs: `${targetTag}.png`
+      })
+    }
+
+    ActivityLogService.success('visuals', 'ZIP Archive Ingested', `Unpacked & mapped ${extracted.length} scene images from "${originalFilename}".`, { count: extracted.length, archiveName: originalFilename }, franchiseId, episodeId)
+
+    return {
+      success: true,
+      archiveName: originalFilename,
+      count: extracted.length,
+      files: extracted
     }
   }
 

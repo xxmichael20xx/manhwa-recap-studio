@@ -57,3 +57,12 @@ When addressing UI, styling, theme, or architectural defects:
 3. **Multi-View Visual QA Verification:** For UI/theming overhauls, do not claim completion based on code alone. Systematically verify and visually audit both Light and Dark modes across all primary routes (via headless capture or browser verification) to guarantee full-app contrast harmony and zero regressions.
 4. **Mandatory Dual-Theme Visual Proof in Walkthroughs:** Whenever implementing or modifying UI, components, or layout features, the agent MUST capture and embed visual verification screenshots of both Light and Dark modes directly in the walkthrough report or summary response.
 
+---
+
+## 🛑 The Production-First Episode Gate (Anti-Premature Expansion)
+Strictly forbidden from suggesting, drafting, or initiating Episode 02 (or any subsequent episode) until:
+1. Episode 01 has 100% of its visual assets replaced from storyboard placeholders to finished high-fidelity panels.
+2. The Studio Engine (Visual Bridge, Edge-TTS Sync, Subtitles, BGM Sidechain Ducking, and Master FFmpeg Compiler) is fully verified and operating with zero regressions.
+3. The user explicitly reviews, signs off, and commands expansion to the next episode.
+
+

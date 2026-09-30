@@ -2,6 +2,7 @@
 ## Series 01: The Sovereign Protocol | Season 1, Episode 1
 
 > **Format:** Episode (Tier 1) | **Runtime:** ~20:00 (~3,200 Words @ ~140 WPM)  
+> **Visual Dynamic Beats:** 124 Master Plates (Batches A–F) | **Average Cut Pace:** 3.5 – 5.0s per beat  
 > **Location:** `01_Franchises/Series_01_The_Sovereign_Protocol/EP01_Awakening_and_Catacombs/01_Episode_Script.md`
 
 ---
@@ -9,7 +10,7 @@
 ## 🎙️ Act 1: The Catalyst & Humiliation (0:00 – 3:30)
 
 ### Scene 1: The Golden Banquet Hall (0:00 – 1:30)
-* **Prompt Tag:** `[IMG_001]`, `[IMG_002]`
+* **Prompt Tag:** `[IMG_001]`, `[IMG_002]`, `[IMG_003]`, `[IMG_004]`, `[IMG_005]`, `[IMG_006]`, `[IMG_007]`, `[IMG_008]`, `[IMG_009]`, `[IMG_010]`
 * **Voiceover:**
   For three years, Ethan Drake had carried the heaviest burdens of the Vanguard Guild. While the elite strike teams claimed the glory, the press conferences, and the multi-million credit bounties, Ethan walked three paces behind—an unranked core porter whose mana channels had been deemed permanently fractured since birth. He was the invisible mule of Sector Nine... until tonight.
 
@@ -22,7 +23,7 @@
 ---
 
 ### Scene 2: Cast Into the Lower City (1:30 – 2:30)
-* **Prompt Tag:** `[IMG_003]`, `[IMG_004]`
+* **Prompt Tag:** `[IMG_011]`, `[IMG_012]`, `[IMG_013]`, `[IMG_014]`, `[IMG_015]`, `[IMG_016]`, `[IMG_017]`, `[IMG_018]`
 * **Voiceover:**
   Marcus did not draw his blade. In the upper circles of the Awakened nobility, physical violence was uncouth when social annihilation was so effortless. With a single gesture to the guild bailiffs, Marcus revoked Ethan’s porter licence on grounds of physical deficiency, stripping him of his guild stipend and his right to enter licensed gate facilities.
 
@@ -31,7 +32,7 @@
 ---
 
 ### Scene 3: The Crimson Awakening (2:30 – 3:30)
-* **Prompt Tag:** `[IMG_005]`, `[IMG_006]`
+* **Prompt Tag:** `[IMG_019]`, `[IMG_020]`, `[IMG_021]`, `[IMG_022]`, `[IMG_023]`, `[IMG_024]`, `[IMG_025]`, `[IMG_026]`, `[IMG_027]`, `[IMG_028]`
 * **Voiceover:**
   In a forgotten service corridor beneath the monorail tracks, Ethan’s knees finally buckled. His vital signs cratered. His vision tunnelled into pitch darkness as his heart rhythm stuttered to a near standstill. 
 
@@ -52,7 +53,7 @@
 ## 🎙️ Act 2: The Hidden Trial & Durability Calibration (3:30 – 10:00)
 
 ### Scene 4: Descending into Sector Nine Catacombs (3:30 – 5:30)
-* **Prompt Tag:** `[IMG_007]`, `[IMG_008]`
+* **Prompt Tag:** `[IMG_029]`, `[IMG_030]`, `[IMG_031]`, `[IMG_032]`, `[IMG_033]`, `[IMG_034]`, `[IMG_035]`, `[IMG_036]`, `[IMG_037]`, `[IMG_038]`
 * **Voiceover:**
   Ethan rose to his feet. The persistent ache that had plagued his chest for seven years had vanished. In its place was a dense, heavy stillness—a weight distribution within his muscles that felt less like biological tissue and more like forged tungsten.
 
@@ -66,7 +67,7 @@
 ---
 
 ### Scene 5: The Physical Threshold Test (5:30 – 7:30)
-* **Prompt Tag:** `[IMG_009]`, `[IMG_010]`
+* **Prompt Tag:** `[IMG_039]`, `[IMG_040]`, `[IMG_041]`, `[IMG_042]`, `[IMG_043]`, `[IMG_044]`, `[IMG_045]`, `[IMG_046]`, `[IMG_047]`, `[IMG_048]`, `[IMG_049]`, `[IMG_050]`, `[IMG_051]`, `[IMG_052]`
 * **Voiceover:**
   A Level Two Shadowfang Hound—a beast engineered for ambushing civilian scavengers. With a guttural snarl, the alpha lunged across twenty paces, its serrated fangs aimed directly for Ethan’s jugular.
 
@@ -91,7 +92,7 @@
 ---
 
 ### Scene 6: The Neural Download & Kinetic Kata (7:30 – 10:00)
-* **Prompt Tag:** `[IMG_011]`, `[IMG_012]`
+* **Prompt Tag:** `[IMG_053]`, `[IMG_054]`, `[IMG_055]`, `[IMG_056]`, `[IMG_057]`, `[IMG_058]`, `[IMG_059]`, `[IMG_060]`, `[IMG_061]`, `[IMG_062]`, `[IMG_063]`, `[IMG_064]`, `[IMG_065]`, `[IMG_066]`
 * **Voiceover:**
   Within the remains of the alpha hound lay an unformed skill orb—a rarity in low-tier sub-gates. 
 
@@ -111,7 +112,7 @@
 ## 🎙️ Act 3: Choke-Point Tactical Escalation (10:00 – 16:30)
 
 ### Scene 7: The Syndicate Scavenger Ambush (10:00 – 12:30)
-* **Prompt Tag:** `[IMG_013]`, `[IMG_014]`
+* **Prompt Tag:** `[IMG_067]`, `[IMG_068]`, `[IMG_069]`, `[IMG_070]`, `[IMG_071]`, `[IMG_072]`, `[IMG_073]`, `[IMG_074]`, `[IMG_075]`, `[IMG_076]`, `[IMG_077]`, `[IMG_078]`
 * **Voiceover:**
   By the fourth hour of his expedition, the subterranean passage opened into an ancient drainage cistern. Ethan’s kill counter stood at eighteen hounds, his experience pool reaching three thousand two hundred points.
 
@@ -126,7 +127,7 @@
 ---
 
 ### Scene 8: Choke-Point Annihilation (12:30 – 14:30)
-* **Prompt Tag:** `[IMG_015]`, `[IMG_016]`
+* **Prompt Tag:** `[IMG_079]`, `[IMG_080]`, `[IMG_081]`, `[IMG_082]`, `[IMG_083]`, `[IMG_084]`, `[IMG_085]`, `[IMG_086]`, `[IMG_087]`, `[IMG_088]`, `[IMG_089]`, `[IMG_090]`, `[IMG_091]`, `[IMG_092]`
 * **Voiceover:**
   They did not attack one by one. The Iron Jackals were ruthless professionals: on Grigor’s hand signal, the four riflemen on the catwalk opened fire simultaneously, while the melee squad advanced in a disciplined interlocking wedge.
 
@@ -149,7 +150,7 @@
 ---
 
 ### Scene 9: Calculated Finality (14:30 – 16:30)
-* **Prompt Tag:** `[IMG_017]`, `[IMG_018]`
+* **Prompt Tag:** `[IMG_093]`, `[IMG_094]`, `[IMG_095]`, `[IMG_096]`, `[IMG_097]`, `[IMG_098]`, `[IMG_099]`, `[IMG_100]`, `[IMG_101]`, `[IMG_102]`
 * **Voiceover:**
   Grigor’s eyes bulged with primal terror. The pneumatic gauge on his hammer hissed violently, but the metal face had begun to cave inward under the sheer compressive pressure of Ethan’s grip.
 
@@ -170,7 +171,7 @@
 ## 🎙️ Act 4: Decisive Climax & The Loop Hook (16:30 – 20:00)
 
 ### Scene 10: The Catacomb Boss & Core Breakthrough (16:30 – 18:30)
-* **Prompt Tag:** `[IMG_019]`, `[IMG_020]`
+* **Prompt Tag:** `[IMG_103]`, `[IMG_104]`, `[IMG_105]`, `[IMG_106]`, `[IMG_107]`, `[IMG_108]`, `[IMG_109]`, `[IMG_110]`, `[IMG_111]`, `[IMG_112]`, `[IMG_113]`, `[IMG_114]`
 * **Voiceover:**
   The violence in the conduit had awakened the true master of the sub-gate. 
 
@@ -194,7 +195,7 @@
 ---
 
 ### Scene 11: The Black Market Pawn & The Next Arc Hook (18:30 – 20:00)
-* **Prompt Tag:** `[IMG_021]`, `[IMG_022]`
+* **Prompt Tag:** `[IMG_115]`, `[IMG_116]`, `[IMG_117]`, `[IMG_118]`, `[IMG_119]`, `[IMG_120]`, `[IMG_121]`, `[IMG_122]`, `[IMG_123]`, `[IMG_124]`
 * **Voiceover:**
   Within the dust of the fallen behemoth lay its pristine sovereign core—a pure violet anomaly worth at least fifty thousand guild credits on the open market. Enough capital to fund a solitary hunter’s equipment for an entire year.
 
@@ -209,3 +210,4 @@
   *"Then the Captain lied,"* Ethan replied softly. *"Put it on tonight’s auction block. Let House Vance buy back what their pride couldn't claim."*
 
   **[Next Episode Teaser: The Black Market Auction War, Marcus Vance’s Reckoning, and the First Sovereign Trial.]**
+

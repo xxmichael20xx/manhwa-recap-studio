@@ -110,7 +110,7 @@
               class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-2 transition shadow-md shadow-purple-900/20 disabled:opacity-50 cursor-pointer"
             >
               <Wand2 class="w-4 h-4" :class="{ 'animate-spin': generatingStoryboards }" />
-              <span>{{ generatingStoryboards ? 'Synthesizing 22 Panels...' : 'Synthesize All Storyboard Panels ($0)' }}</span>
+              <span>{{ generatingStoryboards ? `Synthesizing ${scenes.length} Panels...` : `Synthesize All Storyboard Panels ($0)` }}</span>
             </button>
           </div>
         </div>
@@ -119,6 +119,213 @@
         <div v-if="storyboardFeedback" class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono flex items-center justify-between">
           <span>✓ {{ storyboardFeedback }}</span>
           <button @click="storyboardFeedback = ''" class="cursor-pointer">✕</button>
+        </div>
+
+        <!-- Character Model DNA Sheets & Reference Plates -->
+        <!-- Character Vault (Google Flow Reference Plates) -->
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2">
+              <div class="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <Users class="w-4 h-4" />
+              </div>
+              <div>
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide">
+                  Franchise Character Vault (Google Flow Reference Plates)
+                </h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Standardised character plates and naming matching Google Flow collections for rapid Alt+Tab generation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex items-center space-x-1.5 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
+              <button 
+                v-for="cat in ['all', 'Protagonist', 'Antagonist', 'Supporting']" 
+                :key="cat"
+                @click="selectedVaultCategory = cat"
+                class="px-2.5 py-1 rounded-lg transition capitalize cursor-pointer"
+                :class="selectedVaultCategory === cat ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                {{ cat === 'all' ? `All (${characterModels.length})` : cat }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Character Models Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div 
+              v-for="model in filteredCharacterModels" 
+              :key="model.id"
+              class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3 flex flex-col justify-between"
+            >
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-1">
+                  <div>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">{{ model.name }}</h4>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 font-semibold inline-block mt-0.5">
+                      {{ model.role }} • {{ model.tier }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Model Preview Thumbnail (16:9) -->
+                <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
+                  <img :src="model.url" :alt="model.name" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <a 
+                    :href="model.url" 
+                    target="_blank" 
+                    class="absolute top-2 right-2 p-1.5 rounded-lg bg-black/60 hover:bg-black/80 text-white backdrop-blur-xs transition"
+                    title="View full resolution in new tab"
+                  >
+                    <ExternalLink class="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                  {{ model.description }}
+                </p>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800/80 gap-1.5">
+                <button 
+                  @click="downloadModelPlate(model)"
+                  class="px-2 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer"
+                >
+                  <Download class="w-3 h-3" />
+                  <span>Download</span>
+                </button>
+                <button 
+                  @click="copyModelDna(model)"
+                  class="px-2 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer"
+                >
+                  <Copy class="w-3 h-3" />
+                  <span>Copy DNA</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt Matrix Hub Banner & Universal Asset Ingestion Zone -->
+        <div class="space-y-4">
+          <!-- 1. Quick Bridge to Visual Prompt Matrix Hub -->
+          <div class="p-5 rounded-2xl bg-gradient-to-r from-purple-900/40 via-slate-900 to-indigo-950/40 border border-purple-500/30 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center space-x-3.5">
+              <div class="p-2.5 rounded-xl bg-purple-600 text-white shadow-md shadow-purple-950/40">
+                <Layers class="w-5 h-5" />
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white flex items-center space-x-2">
+                  <span>Visual Prompt Matrix & Google Flow Batch Hub</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/30 font-bold">{{ scenes.length }} Scenes Synchronized</span>
+                </h3>
+                <p class="text-xs text-slate-300 mt-0.5">
+                  Dynamic 24-scene Google Flow partition deck with automatic anti-grid directives and zero-duplicate copy tracking.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-2 shrink-0">
+              <router-link 
+                :to="`/prompts/${$route.params.franchiseId}/${$route.params.episodeId}`"
+                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-2 transition shadow-md shadow-purple-950/40 cursor-pointer"
+              >
+                <span>Open Prompt Matrix Hub</span>
+                <ExternalLink class="w-3.5 h-3.5" />
+              </router-link>
+            </div>
+          </div>
+
+          <!-- 2. Universal Batch Ingestion Dropzone (ZIP, Folder & Multi-Images) -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+            <div 
+              @dragover.prevent
+              @drop.prevent="handleBatchDrop"
+              class="p-8 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/40 hover:border-purple-500 bg-purple-50/30 dark:bg-purple-950/10 text-center space-y-3.5 transition"
+            >
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mx-auto shadow-xs">
+                <Archive v-if="batchUploading" class="w-6 h-6 animate-spin" />
+                <FolderDown v-else class="w-6 h-6" />
+              </div>
+
+              <div>
+                <div class="text-sm font-bold text-slate-900 dark:text-white">
+                  {{ batchUploading ? 'Processing & Ingesting Visual Assets...' : 'Universal Visual Ingest Dropzone' }}
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 max-w-lg mx-auto mt-1">
+                  Drag and drop a <strong>.ZIP archive</strong> from Google Flow, an entire <strong>folder of images</strong>, or <strong>multiple image files</strong> directly here. Images will be automatically sorted and mapped to scene tags.
+                </p>
+              </div>
+
+              <!-- Ingestion Action Buttons -->
+              <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+                <button 
+                  @click="triggerZipUpload"
+                  :disabled="batchUploading"
+                  class="px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-1.5 transition shadow-sm cursor-pointer disabled:opacity-50"
+                >
+                  <Archive class="w-3.5 h-3.5" />
+                  <span>Upload .ZIP Archive</span>
+                </button>
+
+                <button 
+                  @click="triggerFolderUpload"
+                  :disabled="batchUploading"
+                  class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                >
+                  <FolderOpen class="w-3.5 h-3.5 text-purple-500" />
+                  <span>Upload Folder</span>
+                </button>
+
+                <button 
+                  @click="triggerBatchUpload"
+                  :disabled="batchUploading"
+                  class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                >
+                  <Image class="w-3.5 h-3.5 text-indigo-500" />
+                  <span>Select Image Files</span>
+                </button>
+              </div>
+
+              <!-- Hidden Inputs -->
+              <input 
+                ref="zipFileInput" 
+                type="file" 
+                accept=".zip,application/zip,application/x-zip-compressed" 
+                class="hidden" 
+                @change="handleZipFileInput" 
+              />
+              <input 
+                ref="folderFileInput" 
+                type="file" 
+                webkitdirectory 
+                directory 
+                multiple 
+                class="hidden" 
+                @change="handleFolderFileInput" 
+              />
+              <input 
+                ref="batchFileInput" 
+                type="file" 
+                multiple 
+                accept="image/*" 
+                class="hidden" 
+                @change="handleBatchFileInput" 
+              />
+            </div>
+
+            <!-- Ingest Feedback Toast -->
+            <div v-if="batchUploadFeedback" class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-mono flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <Check class="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>{{ batchUploadFeedback }}</span>
+              </div>
+              <button @click="batchUploadFeedback = ''" class="text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
+            </div>
+          </div>
         </div>
 
         <!-- Scenes Grid -->
@@ -502,7 +709,18 @@ import {
   Music,
   Sliders,
   VolumeX,
-  Pause
+  Pause,
+  Copy,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  Users,
+  Check,
+  FolderDown,
+  Archive,
+  FolderOpen,
+  Layers
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -553,6 +771,254 @@ const openProgressModal = () => {
 const selectedVoice = ref('en-US-ChristopherNeural')
 const synthesizingAudio = ref(false)
 const masterAudioPlayer = ref(null)
+
+// Character Models & Ingestion State
+const characterModels = ref([])
+const selectedVaultCategory = ref('all')
+const batchUploading = ref(false)
+const batchUploadFeedback = ref('')
+const batchFileInput = ref(null)
+const zipFileInput = ref(null)
+const folderFileInput = ref(null)
+
+const loadCharacterModels = async () => {
+  try {
+    const res = await fetch(`/api/franchises/${route.params.franchiseId}/character-models`)
+    const data = await res.json()
+    if (Array.isArray(data)) {
+      characterModels.value = data
+    }
+  } catch (e) {
+    console.warn('Failed to load character models:', e)
+  }
+}
+
+const filteredCharacterModels = computed(() => {
+  if (selectedVaultCategory.value === 'all') return characterModels.value
+  return characterModels.value.filter(m => m.role?.toLowerCase() === selectedVaultCategory.value.toLowerCase())
+})
+
+const copyModelDna = (model) => {
+  if (!model) return
+  navigator.clipboard.writeText(model.dnaAnchor).then(() => {
+    batchUploadFeedback.value = `Copied ${model.name} DNA tokens to clipboard!`
+    setTimeout(() => { batchUploadFeedback.value = '' }, 3000)
+  })
+}
+
+const downloadModelPlate = (model) => {
+  if (!model) return
+  const a = document.createElement('a')
+  a.href = model.url
+  a.download = model.filename
+  a.click()
+}
+
+// Universal Ingestion Triggers
+const triggerZipUpload = () => {
+  if (zipFileInput.value) zipFileInput.value.click()
+}
+
+const triggerFolderUpload = () => {
+  if (folderFileInput.value) folderFileInput.value.click()
+}
+
+const triggerBatchUpload = () => {
+  if (batchFileInput.value) batchFileInput.value.click()
+}
+
+const handleZipFileInput = async (e) => {
+  const files = e.target ? Array.from(e.target.files) : []
+  if (files.length > 0) {
+    await handleZipUpload(files[0])
+  }
+  if (e.target) e.target.value = ''
+}
+
+const handleFolderFileInput = async (e) => {
+  const files = e.target ? Array.from(e.target.files) : []
+  await processBatchFiles(files)
+  if (e.target) e.target.value = ''
+}
+
+const handleBatchFileInput = async (e) => {
+  const files = e.target ? Array.from(e.target.files) : []
+  await processBatchFiles(files)
+  if (e.target) e.target.value = ''
+}
+
+const handleBatchDrop = async (e) => {
+  const files = e.dataTransfer ? Array.from(e.dataTransfer.files) : []
+  if (files.length === 0) return
+
+  // Check if a .zip archive was dropped
+  const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+  if (zipFile) {
+    await handleZipUpload(zipFile)
+    return
+  }
+
+  await processBatchFiles(files)
+}
+
+const handleZipUpload = async (file) => {
+  batchUploading.value = true
+  batchUploadFeedback.value = `Unpacking and ingesting "${file.name}"...`
+
+  try {
+    const base64Data = await new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result)
+      reader.onerror = reject
+      reader.readAsDataURL(file)
+    })
+
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload-zip`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        zipBase64: base64Data,
+        filename: file.name
+      })
+    })
+
+    if (!res.ok) {
+      const errText = await res.text()
+      throw new Error(`Server returned ${res.status}: ${errText.slice(0, 100)}`)
+    }
+
+    const data = await res.json()
+    if (data.success) {
+      batchUploadFeedback.value = `✓ Successfully unzipped and mapped ${data.count} visual panels from "${file.name}"!`
+      cacheBuster.value = Date.now()
+      await loadScenes()
+      await loadPipelineStatus()
+    } else {
+      throw new Error(data.error || 'Failed to unpack ZIP archive')
+    }
+  } catch (err) {
+    console.error('ZIP upload failed:', err)
+    batchUploadFeedback.value = `ZIP Upload Error: ${err.message}`
+  } finally {
+    batchUploading.value = false
+    setTimeout(() => { batchUploadFeedback.value = '' }, 6000)
+  }
+}
+
+const processBatchFiles = async (files) => {
+  const imageFiles = files.filter(f => /\.(png|jpe?g|webp)$/i.test(f.name))
+  if (imageFiles.length === 0) {
+    batchUploadFeedback.value = 'No PNG, JPG, or WEBP images found in selection.'
+    setTimeout(() => { batchUploadFeedback.value = '' }, 4000)
+    return
+  }
+
+  batchUploading.value = true
+  batchUploadFeedback.value = `Analyzing and matching ${imageFiles.length} images...`
+
+  try {
+    const usedTags = new Set()
+    const mappedItems = []
+
+    for (const file of imageFiles) {
+      const fileNameClean = file.name.toLowerCase().replace(/[^a-z0-9_]/g, ' ')
+
+      // 1. Deterministic Tag Match: Check for exact scene index in filename (e.g. IMG001, IMG_001)
+      let targetScene = null
+      const tagMatch = file.name.match(/IMG_?0*(\d+)/i)
+      if (tagMatch) {
+        const num = parseInt(tagMatch[1], 10)
+        const formattedTag = `IMG_${String(num).padStart(3, '0')}`
+        targetScene = scenes.value.find(s => s.tag === formattedTag && !usedTags.has(s.tag))
+      }
+
+      // 2. Number in filename match (e.g. 01.png, scene_1.jpg)
+      if (!targetScene) {
+        const numMatch = file.name.match(/(?:scene|panel|image|shot|cut)?[-_ ]*0*(\d+)/i)
+        if (numMatch) {
+          const num = parseInt(numMatch[1], 10)
+          const formattedTag = `IMG_${String(num).padStart(3, '0')}`
+          targetScene = scenes.value.find(s => s.tag === formattedTag && !usedTags.has(s.tag))
+        }
+      }
+
+      // 3. Keyword score matching against scene description & prompt
+      if (!targetScene) {
+        let highestScore = 0
+        for (const s of scenes.value) {
+          if (usedTags.has(s.tag)) continue
+          let score = 0
+          const text = `${s.description} ${s.prompt}`.toLowerCase()
+          const words = text.split(/[\s,._-]+/).filter(w => w.length >= 4)
+          for (const word of words) {
+            if (fileNameClean.includes(word)) {
+              score += word.length
+            }
+          }
+          if (score > highestScore) {
+            highestScore = score
+            targetScene = s
+          }
+        }
+      }
+
+      // 4. Fallback to first available scene
+      if (!targetScene) {
+        targetScene = scenes.value.find(s => !usedTags.has(s.tag))
+      }
+
+      if (targetScene) {
+        usedTags.add(targetScene.tag)
+        const base64Data = await new Promise((resolve) => {
+          const reader = new FileReader()
+          reader.onload = () => resolve(reader.result)
+          reader.readAsDataURL(file)
+        })
+        mappedItems.push({ tag: targetScene.tag, base64Data, filename: file.name })
+      }
+    }
+
+    // Sort by scene order
+    mappedItems.sort((a, b) => a.tag.localeCompare(b.tag, undefined, { numeric: true }))
+
+    // Chunk upload in batches of 4 to guarantee payload safety
+    const chunkSize = 4
+    let totalUploaded = 0
+
+    for (let i = 0; i < mappedItems.length; i += chunkSize) {
+      const chunk = mappedItems.slice(i, i + chunkSize)
+      batchUploadFeedback.value = `Uploading panels ${i + 1} to ${Math.min(i + chunkSize, mappedItems.length)} of ${mappedItems.length}...`
+
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/batch-upload`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: chunk })
+      })
+
+      if (!res.ok) {
+        const errText = await res.text()
+        throw new Error(`Server returned ${res.status}: ${errText.slice(0, 100)}`)
+      }
+
+      const data = await res.json()
+      if (data.success) {
+        totalUploaded += data.count
+      } else {
+        throw new Error(data.error || 'Upload chunk failed')
+      }
+    }
+
+    batchUploadFeedback.value = `✓ Successfully ingested and mapped ${totalUploaded} panels!`
+    cacheBuster.value = Date.now()
+    await loadScenes()
+    await loadPipelineStatus()
+  } catch (e) {
+    batchUploadFeedback.value = `Batch upload error: ${e.message}`
+  } finally {
+    batchUploading.value = false
+    setTimeout(() => { batchUploadFeedback.value = '' }, 6000)
+  }
+}
 
 // BGM & Sidechain Ducking State
 const bgmTracks = ref([])
@@ -909,6 +1375,7 @@ onMounted(() => {
   loadScenes()
   loadSubtitles()
   loadBgmTracks()
+  loadCharacterModels()
 })
 
 onUnmounted(() => {

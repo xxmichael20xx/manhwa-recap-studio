@@ -9,6 +9,7 @@ import { TtsService } from './services/ttsService.js'
 import { AntiSlopValidator } from './services/antiSlopValidator.js'
 import { ImageService } from './services/imageService.js'
 import { VideoService } from './services/videoService.js'
+import { ActivityLogService } from './services/activityLogService.js'
 
 dotenv.config()
 
@@ -21,7 +22,29 @@ const app = express()
 const PORT = process.env.PORT || 3101
 
 app.use(cors())
-app.use(express.json({ limit: '10mb' }))
+app.use(express.json({ limit: '250mb' }))
+app.use(express.urlencoded({ limit: '250mb', extended: true }))
+
+// Activity Logs Endpoints
+app.get('/api/activity-logs', (req, res) => {
+  const { category, level, search, limit } = req.query
+  res.json(ActivityLogService.getLogs({
+    category,
+    level,
+    search,
+    limit: limit ? parseInt(limit, 10) : 200
+  }))
+})
+
+app.post('/api/activity-logs', (req, res) => {
+  const { category, level, title, message, metadata, franchiseId, episodeId } = req.body
+  const entry = ActivityLogService.log({ category, level, title, message, metadata, franchiseId, episodeId })
+  res.json({ success: true, entry })
+})
+
+app.post('/api/activity-logs/clear', (req, res) => {
+  res.json(ActivityLogService.clearLogs())
+})
 
 // Healthcheck
 app.get('/api/health', (req, res) => {
@@ -269,7 +292,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => 
 app.post('/api/episodes/:franchiseId/:episodeId/images/generate-storyboard', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
-    const result = await ImageService.generateStoryboardStills(franchiseId, episodeId)
+    const { force } = req.body || {}
+    const result = await ImageService.generateStoryboardStills(franchiseId, episodeId, { force: Boolean(force) })
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -306,6 +330,96 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res)
     })
   } catch (err) {
     res.status(500).json({ error: err.message })
+  }
+})
+
+// Batch Image Upload (Multiple images at once)
+app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { items } = req.body
+    if (!Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ error: 'items array is required' })
+    }
+
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    await fs.promises.mkdir(imagesDir, { recursive: true })
+
+    const uploaded = []
+    for (const item of items) {
+      if (!item.tag || !item.base64Data) continue
+      const targetPath = path.join(imagesDir, `${item.tag.toUpperCase()}.png`)
+      const cleanBase64 = item.base64Data.replace(/^data:image\/\w+;base64,/, '')
+      const buffer = Buffer.from(cleanBase64, 'base64')
+      await fs.promises.writeFile(targetPath, buffer)
+      uploaded.push(item.tag.toUpperCase())
+    }
+
+    res.json({
+      success: true,
+      count: uploaded.length,
+      uploaded
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Upload & Extract ZIP Archive of Scene Images
+app.post('/api/episodes/:franchiseId/:episodeId/images/upload-zip', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { zipBase64, filename } = req.body
+    if (!zipBase64) {
+      return res.status(400).json({ error: 'zipBase64 payload is required' })
+    }
+
+    const result = await ImageService.extractAndIngestZip(franchiseId, episodeId, zipBase64, filename || 'batch.zip')
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Character Models List for Franchise
+app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const modelsDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models')
+    const manifestPath = path.join(modelsDir, 'character_models.json')
+    if (fs.existsSync(manifestPath)) {
+      const data = JSON.parse(await fs.promises.readFile(manifestPath, 'utf-8'))
+      return res.json(data)
+    }
+    if (fs.existsSync(modelsDir)) {
+      const files = await fs.promises.readdir(modelsDir)
+      const images = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f)).map(f => ({
+        id: f.replace(/\.[^/.]+$/, '').toLowerCase(),
+        name: f.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
+        tier: 'Standard Reference',
+        filename: f,
+        url: `/api/franchises/${franchiseId}/character-models/${f}`
+      }))
+      return res.json(images)
+    }
+    res.json([])
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream Character Model Image
+app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) => {
+  const { franchiseId, filename } = req.params
+  const filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
+
+  if (fs.existsSync(filePath)) {
+    const ext = path.extname(filename).toLowerCase()
+    res.setHeader('Content-Type', ext === '.png' ? 'image/png' : 'image/jpeg')
+    const readStream = fs.createReadStream(filePath)
+    readStream.pipe(res)
+  } else {
+    res.status(404).send('Character model file not found')
   }
 })
 

@@ -28,6 +28,7 @@
         @toggle-theme="toggleTheme" 
         @copy-dna="copyMasterDna" 
         @toggle-mobile-sidebar="isMobileSidebarOpen = !isMobileSidebarOpen"
+        @open-activity-logs="isActivityModalOpen = true"
       />
 
       <!-- Scrollable Main View Area (SPA Router Outlet) -->
@@ -43,6 +44,12 @@
         <span class="text-amber-500 dark:text-amber-400 font-semibold">Port 3100 (API 3101)</span>
       </footer>
     </div>
+
+    <!-- Global Studio Activity Logs Modal / Drawer -->
+    <GlobalActivityModal 
+      :show="isActivityModalOpen" 
+      @close="isActivityModalOpen = false" 
+    />
   </div>
 </template>
 
@@ -50,8 +57,10 @@
 import { ref, onMounted } from 'vue'
 import Sidebar from './components/Sidebar.vue'
 import Header from './components/Header.vue'
+import GlobalActivityModal from './components/GlobalActivityModal.vue'
 
 const isMobileSidebarOpen = ref(false)
+const isActivityModalOpen = ref(false)
 const isDark = ref(true)
 
 const toggleTheme = () => {

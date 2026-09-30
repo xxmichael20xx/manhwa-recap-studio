@@ -3,10 +3,13 @@ node_modules/
 .pnp
 .pnp.js
 
-# Build Outputs
+# Build Outputs & Large Video Artifacts
 dist/
 build/
 *.local
+*.mp4
+*.zip
+video/*.mp4
 
 # Environment & Secrets
 .env
@@ -24,4 +27,7 @@ Thumbs.db
 .vscode/
 .idea/
 .history/
+.tmp/
+.temp/
+
 

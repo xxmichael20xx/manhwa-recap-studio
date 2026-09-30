@@ -21,6 +21,16 @@
     </div>
 
     <div class="flex items-center space-x-2 sm:space-x-3 flex-wrap justify-end gap-y-1.5">
+      <!-- Global Activity Stream Logs Button -->
+      <button
+        @click="$emit('open-activity-logs')"
+        class="h-8 px-3 rounded-xl border border-purple-200 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 transition shadow-sm flex items-center space-x-1.5 text-xs font-mono font-semibold cursor-pointer"
+        title="Open Studio Activity Stream & Ledger"
+      >
+        <Activity class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 animate-pulse" />
+        <span class="hidden sm:inline">Activity Logs</span>
+      </button>
+
       <!-- Dark / Light Mode Toggle Button -->
       <button
         @click="$emit('toggle-theme')"
@@ -53,13 +63,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { Menu, Sun, Moon, Sparkles } from 'lucide-vue-next'
+import { Menu, Sun, Moon, Sparkles, Activity } from 'lucide-vue-next'
 
 const props = defineProps({
   isDark: Boolean
 })
 
-defineEmits(['toggle-mobile-sidebar', 'toggle-theme', 'copy-dna'])
+defineEmits(['toggle-mobile-sidebar', 'toggle-theme', 'copy-dna', 'open-activity-logs'])
 
 const route = useRoute()
 
