@@ -10,8 +10,8 @@ console.log('⚡ Starting Manhwa Recap Studio Suite...')
 console.log('📍 Frontend: http://localhost:3100')
 console.log('📍 Backend API: http://localhost:3101')
 
-// Start Express Server
-const server = spawn('node', ['server/index.js'], {
+// Start Express Server with native Node.js auto-watch
+const server = spawn('node', ['--watch', 'server/index.js'], {
   cwd: rootDir,
   stdio: 'inherit',
   shell: true,

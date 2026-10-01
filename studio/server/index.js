@@ -288,12 +288,15 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => 
   }
 })
 
-// Generate All Storyboard Stills (Tier 1 Fallback)
+// Generate Storyboard Stills (Full or Single Batch)
 app.post('/api/episodes/:franchiseId/:episodeId/images/generate-storyboard', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
-    const { force } = req.body || {}
-    const result = await ImageService.generateStoryboardStills(franchiseId, episodeId, { force: Boolean(force) })
+    const { force, batchIndex } = req.body || {}
+    const result = await ImageService.generateStoryboardStills(franchiseId, episodeId, { 
+      force: Boolean(force),
+      batchIndex: typeof batchIndex === 'number' ? batchIndex : null
+    })
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -365,16 +368,28 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
   }
 })
 
-// Upload & Extract ZIP Archive of Scene Images
+// Upload & Extract ZIP Archive of Scene Images (with Optional Batch Scoping)
 app.post('/api/episodes/:franchiseId/:episodeId/images/upload-zip', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
-    const { zipBase64, filename } = req.body
+    const { zipBase64, filename, batchIndex } = req.body
     if (!zipBase64) {
       return res.status(400).json({ error: 'zipBase64 payload is required' })
     }
 
-    const result = await ImageService.extractAndIngestZip(franchiseId, episodeId, zipBase64, filename || 'batch.zip')
+    const result = await ImageService.extractAndIngestZip(franchiseId, episodeId, zipBase64, filename || 'batch.zip', typeof batchIndex === 'number' ? batchIndex : null)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Auto-Ingest Newest Google Flow Download folder or ZIP from Downloads
+app.post('/api/episodes/:franchiseId/:episodeId/images/auto-ingest-downloads', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { customDir, batchIndex } = req.body || {}
+    const result = await ImageService.autoIngestFromDownloads(franchiseId, episodeId, customDir, typeof batchIndex === 'number' ? batchIndex : null)
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -518,13 +533,26 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-status', (req, res) => {
   res.json(VideoService.getStatus(franchiseId, episodeId))
 })
 
-// Stream Compiled Master Video (with HTTP Range Requests)
+// List Available Video Renders (Master & Batch Previews)
+app.get('/api/episodes/:franchiseId/:episodeId/video-files', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const files = await VideoService.getVideoFiles(franchiseId, episodeId)
+    res.json(files)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream Video (Master or Specific Batch Preview with HTTP Range Requests)
 app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   const { franchiseId, episodeId } = req.params
-  const videoPath = VideoService.getMasterVideoPath(franchiseId, episodeId)
+  const requestedFile = req.query.file ? path.basename(req.query.file) : '01_Episode_Master_1080p.mp4'
+  const videoDir = VideoService.getVideoDir(franchiseId, episodeId)
+  const videoPath = path.join(videoDir, requestedFile)
 
   if (!fs.existsSync(videoPath)) {
-    return res.status(404).send('Compiled video not found')
+    return res.status(404).send(`Compiled video (${requestedFile}) not found`)
   }
 
   const stat = fs.statSync(videoPath)

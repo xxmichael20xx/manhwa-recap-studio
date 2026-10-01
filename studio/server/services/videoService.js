@@ -102,77 +102,149 @@ export class VideoService {
 
     try {
       const scriptContent = await fs.readFile(scriptPath, 'utf-8')
-      const sceneBlocks = scriptContent.split(/### Scene \d+:/g).slice(1)
-      const scenesData = []
-      let cueCursor = 0
+      const normalize = (text) => (text || '').toLowerCase().replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim()
 
-      const normalize = (text) => (text || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim()
+      const normalizedCues = cues.map((c, i) => ({
+        ...c,
+        cueIdx: i,
+        normText: normalize(c.text)
+      }))
 
-      for (let sIdx = 0; sIdx < sceneBlocks.length; sIdx++) {
-        const block = sceneBlocks[sIdx]
-        const tagMatch = block.match(/Prompt Tag:\*?\*?\s*(.*?)\n/i)
-        const sceneTags = tagMatch ? (tagMatch[1].match(/IMG_\d+/gi) || []) : []
-
-        const voMatch = block.split(/\* \*\*Voiceover:\*\*/i)[1] || ''
-        const cleanVo = voMatch.replace(/---|\#\#.*/g, '').trim()
-        const rawSentences = cleanVo.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(s => s.length > 0)
-
-        let sceneStart = 0
-        if (sIdx === 0) {
-          sceneStart = 0
-        } else if (rawSentences.length > 0) {
-          const firstWords = normalize(rawSentences[0]).split(' ').slice(0, 3).join(' ')
-          for (let c = cueCursor; c < cues.length; c++) {
-            if (normalize(cues[c].text).includes(firstWords.slice(0, 10))) {
-              sceneStart = cues[c].startSec
-              cueCursor = c
-              break
-            }
-          }
-        }
-
-        scenesData.push({
-          sceneIndex: sIdx + 1,
-          tags: sceneTags,
-          startSec: sceneStart,
-          endSec: 0
+      // Extract all inline tags across the entire script
+      const extractedBeats = []
+      const inlineRegex = /\[(IMG_\d+)\][`\s]*([^\[\n\r]+)/g
+      let m
+      let beatCount = 0
+      while ((m = inlineRegex.exec(scriptContent)) !== null) {
+        beatCount++
+        extractedBeats.push({
+          tag: m[1].toUpperCase(),
+          sceneIndex: Math.ceil(beatCount / 24),
+          text: m[2].replace(/`/g, '').trim()
         })
       }
 
-      // Monotonically bound scene end timestamps
-      for (let i = 0; i < scenesData.length; i++) {
-        scenesData[i].endSec = (i < scenesData.length - 1) ? scenesData[i + 1].startSec : totalDurationSeconds
-      }
+      if (extractedBeats.length > 0) {
+        const STOP_WORDS = new Set(['the', 'and', 'for', 'with', 'while', 'this', 'that', 'from', 'into', 'over', 'under', 'upon', 'been', 'were', 'have', 'had', 'has', 'was', 'are', 'his', 'her', 'its', 'their', 'our', 'who', 'whom', 'whose', 'which', 'what', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'than', 'too', 'very', 'can', 'will', 'just', 'should', 'now'])
 
-      const timelineBeats = []
-      for (let sIdx = 0; sIdx < scenesData.length; sIdx++) {
-        const s = scenesData[sIdx]
-        const count = s.tags.length || 1
-        const sceneStartFrame = Math.round(s.startSec * 30)
-        const sceneEndFrame = (sIdx === scenesData.length - 1) ? totalAudioFrames : Math.round(s.endSec * 30)
-        const sceneFrames = sceneEndFrame - sceneStartFrame
+        let cueCursor = 0
+        const anchors = extractedBeats.map((beat, idx) => {
+          const rawWords = normalize(beat.text).split(' ').filter(w => w.length > 0)
+          const contentWords = rawWords.filter(w => !STOP_WORDS.has(w) && w.length >= 3)
 
-        for (let tIdx = 0; tIdx < count; tIdx++) {
-          const tag = (s.tags[tIdx] || `IMG_${String(timelineBeats.length + 1).padStart(3, '0')}`).toUpperCase()
-          const beatStartFrame = sceneStartFrame + Math.round((tIdx / count) * sceneFrames)
-          const beatEndFrame = (tIdx === count - 1) ? sceneEndFrame : sceneStartFrame + Math.round(((tIdx + 1) / count) * sceneFrames)
-          const beatFrames = Math.max(1, beatEndFrame - beatStartFrame)
+          let match = null
+          let bestScore = 0
+          let bestCueIdx = -1
+
+          // Search forward from cueCursor within a localized window of 30 cues
+          const maxLookahead = Math.min(normalizedCues.length, cueCursor + 30)
+
+          for (let c = cueCursor; c < maxLookahead; c++) {
+            const cueNorm = normalizedCues[c].normText
+            const cueWords = cueNorm.split(' ')
+
+            let score = 0
+            const p3 = rawWords.slice(0, 3).join(' ')
+            const p2 = rawWords.slice(0, 2).join(' ')
+
+            if (p3.length >= 8 && cueNorm.includes(p3)) {
+              score += 50
+            } else if (p2.length >= 7 && cueNorm.includes(p2) && (!STOP_WORDS.has(rawWords[0]) || !STOP_WORDS.has(rawWords[1]))) {
+              score += 30
+            }
+
+            // Check content words in sequential order
+            let lastPos = -1
+            let matchedContentCount = 0
+            for (const cw of contentWords.slice(0, 4)) {
+              const pos = cueWords.indexOf(cw)
+              if (pos > lastPos) {
+                matchedContentCount++
+                lastPos = pos
+              }
+            }
+            score += matchedContentCount * 10
+
+            if (score > bestScore && score >= 20) {
+              bestScore = score
+              bestCueIdx = c
+            }
+          }
+
+          if (bestCueIdx !== -1) {
+            match = normalizedCues[bestCueIdx]
+            cueCursor = bestCueIdx
+          }
+
+          return {
+            index: idx,
+            sceneIndex: beat.sceneIndex,
+            tag: beat.tag,
+            startSec: match ? match.startSec : null,
+            isAnchor: !!match
+          }
+        })
+
+        // Force first anchor to 0.0s
+        anchors[0].startSec = 0.0
+        anchors[0].isAnchor = true
+
+        // Monotonically interpolate timestamps
+        let i = 0
+        while (i < anchors.length) {
+          if (anchors[i].isAnchor) {
+            let nextAnchorIdx = -1
+            for (let j = i + 1; j < anchors.length; j++) {
+              if (anchors[j].isAnchor && anchors[j].startSec > anchors[i].startSec) {
+                nextAnchorIdx = j
+                break
+              }
+            }
+
+            if (nextAnchorIdx === -1) {
+              const startSec = anchors[i].startSec
+              const count = anchors.length - i
+              const step = (totalDurationSeconds - startSec) / count
+              for (let k = 1; k < count; k++) {
+                anchors[i + k].startSec = startSec + k * step
+              }
+              break
+            } else {
+              const startSec = anchors[i].startSec
+              const endSec = anchors[nextAnchorIdx].startSec
+              const span = nextAnchorIdx - i
+              const step = (endSec - startSec) / span
+              for (let k = 1; k < span; k++) {
+                anchors[i + k].startSec = startSec + k * step
+              }
+              i = nextAnchorIdx
+            }
+          } else {
+            i++
+          }
+        }
+
+        const timelineBeats = []
+        for (let b = 0; b < anchors.length; b++) {
+          const startFrame = (b === 0) ? 0 : Math.round(anchors[b].startSec * 30)
+          const endFrame = (b === anchors.length - 1) ? totalAudioFrames : Math.round(anchors[b + 1].startSec * 30)
+          const frames = Math.max(1, endFrame - startFrame)
 
           timelineBeats.push({
-            beatIndex: timelineBeats.length + 1,
-            sceneIndex: s.sceneIndex,
-            tag,
-            startFrame: beatStartFrame,
-            endFrame: beatEndFrame,
-            frames: beatFrames,
-            startTime: beatStartFrame / 30,
-            endTime: beatEndFrame / 30,
-            duration: beatFrames / 30
+            beatIndex: b + 1,
+            sceneIndex: anchors[b].sceneIndex,
+            tag: anchors[b].tag,
+            startFrame,
+            endFrame,
+            frames,
+            startTime: startFrame / 30,
+            endTime: endFrame / 30,
+            duration: frames / 30
           })
         }
-      }
 
-      return timelineBeats
+        return timelineBeats
+      }
     } catch (e) {
       console.warn('Could not parse script paragraphs dynamically, falling back to scene list:', e.message)
     }
@@ -207,7 +279,15 @@ export class VideoService {
    */
   static async generate4kCanvasComposite(imagePath, outputPath) {
     if (fsSync.existsSync(outputPath)) {
-      return outputPath
+      try {
+        const srcStat = await fs.stat(imagePath)
+        const outStat = await fs.stat(outputPath)
+        if (outStat.mtimeMs >= srcStat.mtimeMs && outStat.size > 1000) {
+          return outputPath
+        }
+      } catch (e) {
+        // Regenerate if stat fails
+      }
     }
 
     const meta = await sharp(imagePath).metadata()
@@ -280,22 +360,22 @@ export class VideoService {
     const PI = '3.14159265'
 
     const motionPresets = [
-      // 0: Liquid Webtoon Vertical Scan (Top-to-Bottom Glide with Sine Easing)
-      `zoompan=z=1.28:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':d=${frames}:s=1920x1080:fps=30`,
-      // 1: Dramatic Webtoon Vertical Reveal (Bottom-to-Top Glide with Sine Easing)
-      `zoompan=z=1.28:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':d=${frames}:s=1920x1080:fps=30`,
-      // 2: Smooth Center Push-In (1.02x -> 1.24x Tension Ramp)
-      `zoompan=z='1.02+0.22*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 3: Dramatic Center Pull-Out (1.24x -> 1.04x Scope Reveal)
-      `zoompan=z='1.24-0.20*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 4: Horizontal Panoramic Drift (Left to Right)
-      `zoompan=z=1.22:x='(iw-iw/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 5: Horizontal Tracking Drift (Right to Left)
-      `zoompan=z=1.22:x='(iw-iw/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 6: Upper-Third Character Focus Push-In (Face & Eyes Tension)
-      `zoompan=z='1.08+0.18*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.20':d=${frames}:s=1920x1080:fps=30`,
-      // 7: Lower-Third Combat / Impact Pull-Out (Weapon & Action Ground)
-      `zoompan=z='1.25-0.18*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.80':d=${frames}:s=1920x1080:fps=30`
+      // 0: Subtle Vertical Scan (Top-to-Bottom Gentle Glide with Sine Easing)
+      `zoompan=z=1.06:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':d=${frames}:s=1920x1080:fps=30`,
+      // 1: Subtle Vertical Reveal (Bottom-to-Top Gentle Glide with Sine Easing)
+      `zoompan=z=1.06:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':d=${frames}:s=1920x1080:fps=30`,
+      // 2: Gentle Center Push-In (1.02x -> 1.08x Breath Ramp)
+      `zoompan=z='1.02+0.06*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      // 3: Gentle Center Pull-Out (1.08x -> 1.02x Scope Reveal)
+      `zoompan=z='1.08-0.06*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      // 4: Horizontal Slow Drift (Left to Right)
+      `zoompan=z=1.05:x='(iw-iw/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      // 5: Horizontal Slow Drift (Right to Left)
+      `zoompan=z=1.05:x='(iw-iw/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      // 6: Upper-Third Focus Push-In (Face & Eyes)
+      `zoompan=z='1.03+0.05*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.30':d=${frames}:s=1920x1080:fps=30`,
+      // 7: Lower-Third Focus Pull-Out (Action / Ground)
+      `zoompan=z='1.07-0.05*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.70':d=${frames}:s=1920x1080:fps=30`
     ]
 
     const filter = `${motionPresets[motionIndex % motionPresets.length]},format=yuv420p`
@@ -329,19 +409,71 @@ export class VideoService {
     })
   }
 
+  static async getVideoFiles(franchiseId, episodeId) {
+    const videoDir = this.getVideoDir(franchiseId, episodeId)
+    if (!fsSync.existsSync(videoDir)) return []
+    try {
+      const files = await fs.readdir(videoDir)
+      const videoFiles = []
+      for (const f of files) {
+        if (f.endsWith('.mp4')) {
+          const fullPath = path.join(videoDir, f)
+          const st = await fs.stat(fullPath)
+          const isMaster = f === '01_Episode_Master_1080p.mp4'
+          const batchMatch = f.match(/Batch_([A-Za-z0-9_]+)_Preview/)
+          videoFiles.push({
+            filename: f,
+            size: st.size,
+            mtime: st.mtime,
+            isMaster,
+            batchLetter: batchMatch ? batchMatch[1] : null,
+            label: isMaster ? 'Master Full Episode (1080p)' : (batchMatch ? `Batch ${batchMatch[1]} Preview` : f),
+            url: `/api/episodes/${franchiseId}/${episodeId}/video-stream?file=${f}`
+          })
+        }
+      }
+      videoFiles.sort((a, b) => {
+        if (a.isMaster) return -1
+        if (b.isMaster) return 1
+        return a.filename.localeCompare(b.filename)
+      })
+      return videoFiles
+    } catch (e) {
+      return []
+    }
+  }
+
   static async compileEpisodeVideo(franchiseId, episodeId, options = {}) {
-    const { kenBurns = true, burnSubtitles = true, bgmTrack = '01_Catacombs_SubBass_Drone.mp3', bgmVolume = -22 } = options
+    const { 
+      kenBurns = true, 
+      burnSubtitles = true, 
+      bgmTrack = '01_Catacombs_SubBass_Drone.mp3', 
+      bgmVolume = -22,
+      batchIndex = null 
+    } = options
     const key = `${franchiseId}/${episodeId}`
 
     if (this.compilationState[key]?.status === 'compiling') {
       throw new Error('Video compilation is already in progress for this episode.')
     }
 
+    const isBatchCompile = batchIndex !== null && batchIndex !== undefined && Number.isInteger(Number(batchIndex)) && Number(batchIndex) >= 0
+    const batchIdxNum = isBatchCompile ? Number(batchIndex) : null
+    const batchLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
+    const batchLetter = isBatchCompile ? (batchLetters[batchIdxNum] || `Batch_${batchIdxNum + 1}`) : null
+    const outputFilename = isBatchCompile ? `Batch_${batchLetter}_Preview_1080p.mp4` : '01_Episode_Master_1080p.mp4'
+
     this.updateStatus(franchiseId, episodeId, {
       status: 'compiling',
       progress: 5,
-      message: 'Analyzing transcript timeline and subtitle cues...',
-      log: ['Initializing Dynamic Script-Driven Video Compilation Engine...']
+      message: isBatchCompile 
+        ? `Initializing compilation for Batch ${batchLetter}...` 
+        : 'Analyzing transcript timeline and subtitle cues...',
+      log: [
+        isBatchCompile 
+          ? `Initializing Modular Batch Compilation Engine for Batch ${batchLetter}...`
+          : 'Initializing Dynamic Script-Driven Video Compilation Engine...'
+      ]
     })
 
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
@@ -388,13 +520,39 @@ export class VideoService {
     })
 
     // 2. Parse Dynamic Timeline Beats
-    const timelineBeats = await this.parseDynamicTimeline(franchiseId, episodeId, totalDurationSeconds)
+    const fullTimelineBeats = await this.parseDynamicTimeline(franchiseId, episodeId, totalDurationSeconds)
+    
+    let targetBeats = fullTimelineBeats
+    let batchStartTime = 0
+    let batchDuration = totalDurationSeconds
+
+    if (isBatchCompile) {
+      const batchSize = 24
+      const startIdx = batchIdxNum * batchSize
+      const endIdx = Math.min(startIdx + batchSize, fullTimelineBeats.length)
+      targetBeats = fullTimelineBeats.slice(startIdx, endIdx)
+
+      if (targetBeats.length === 0) {
+        throw new Error(`No scenes found for batch index ${batchIdxNum}.`)
+      }
+
+      batchStartTime = targetBeats[0].startTime
+      const batchEndTime = targetBeats[targetBeats.length - 1].endTime
+      batchDuration = Math.max(0.1, batchEndTime - batchStartTime)
+    }
+
+    const targetVideoPath = path.join(videoDir, outputFilename)
+
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
-      message: `Aligned ${timelineBeats.length} narrative panel beats with SRT cues. Synthesizing 30fps Ken Burns clips...`,
+      message: isBatchCompile 
+        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 30fps Ken Burns clips...`
+        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 30fps Ken Burns clips...`,
       log: [
         ...(this.compilationState[key].log || []),
-        `Dynamic Timeline: Generated ${timelineBeats.length} transcript-synchronized panel cuts.`
+        isBatchCompile 
+          ? `Batch ${batchLetter}: Processing ${targetBeats.length} cuts from t=${batchStartTime.toFixed(2)}s to t=${(batchStartTime + batchDuration).toFixed(2)}s.`
+          : `Dynamic Timeline: Generated ${targetBeats.length} transcript-synchronized panel cuts.`
       ]
     })
 
@@ -406,22 +564,26 @@ export class VideoService {
     const concurrency = 4
     let completedClips = 0
 
-    for (let i = 0; i < timelineBeats.length; i += concurrency) {
-      const batch = timelineBeats.slice(i, i + concurrency)
+    for (let i = 0; i < targetBeats.length; i += concurrency) {
+      const batch = targetBeats.slice(i, i + concurrency)
       await Promise.all(batch.map(async (beat, batchIdx) => {
         const beatIndex = i + batchIdx
+        const globalBeatIdx = isBatchCompile ? (batchIdxNum * 24 + beatIndex) : beatIndex
         const clipPath = path.join(tempClipsDir, `clip_${String(beatIndex).padStart(3, '0')}.mp4`)
         
-        // Find best matching image file
-        let imageFilename = `${beat.tag}.png`
-        if (!existingFiles.includes(imageFilename)) {
-          // Check for .jpg or fallback to first available image
-          const altJpg = `${beat.tag}.jpg`
-          if (existingFiles.includes(altJpg)) {
-            imageFilename = altJpg
-          } else if (existingFiles.length > 0) {
-            imageFilename = existingFiles[beatIndex % existingFiles.length]
-          }
+        // Find best matching image file (IMG_001.jpg, IMG_001.png, IMG001.jpg, IMG001.png)
+        const tagVariants = [
+          `${beat.tag}.jpg`,
+          `${beat.tag}.png`,
+          `${beat.tag.replace('_', '')}.jpg`,
+          `${beat.tag.replace('_', '')}.png`
+        ]
+        let imageFilename = tagVariants.find(v => existingFiles.includes(v))
+        if (!imageFilename && existingFiles.length > 0) {
+          imageFilename = existingFiles[globalBeatIdx % existingFiles.length]
+        }
+        if (!imageFilename) {
+          imageFilename = `${beat.tag}.png`
         }
 
         let imagePath = path.join(imagesDir, imageFilename)
@@ -438,18 +600,20 @@ export class VideoService {
         await VideoService.generate4kCanvasComposite(imagePath, compPath)
 
         // Render sub-pixel 30fps Ken Burns clip
-        await VideoService.renderKenBurnsClip(compPath, beat.frames, kenBurns ? beatIndex : 0, clipPath)
+        await VideoService.renderKenBurnsClip(compPath, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
 
         clipFiles[beatIndex] = clipPath
         completedClips++
 
-        const progressPct = Math.round(25 + (completedClips / timelineBeats.length) * 45)
+        const progressPct = Math.round(25 + (completedClips / targetBeats.length) * 45)
         this.updateStatus(franchiseId, episodeId, {
           progress: progressPct,
-          message: `Rendered ${completedClips} of ${timelineBeats.length} 30fps Ken Burns clips ([${beat.tag}])...`,
+          message: isBatchCompile
+            ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
+            : `Rendered ${completedClips} of ${targetBeats.length} 30fps Ken Burns clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
-            `Rendered dynamic clip ${beatIndex + 1}/${timelineBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
+            `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
           ]
         })
       }))
@@ -462,15 +626,44 @@ export class VideoService {
 
     this.updateStatus(franchiseId, episodeId, {
       progress: 75,
-      message: 'Muxing multi-stream master cut with BGM sidechain ducking & WordBoundary subtitles...',
+      message: isBatchCompile
+        ? `Muxing Batch ${batchLetter} cut with BGM sidechain ducking & WordBoundary subtitles...`
+        : 'Muxing multi-stream master cut with BGM sidechain ducking & WordBoundary subtitles...',
       log: [
         ...(this.compilationState[key].log || []),
         'Stitching dynamic Ken Burns clips and applying audio DSP sidechain ducking...'
       ]
     })
 
-    // 5. Final Stitch & Subtitle / Audio Muxing
-    const safeSrtPath = srtPath.replace(/\\/g, '/').replace(/:/g, '\\:')
+    // 5. Handle Subtitle Slicing for Batch
+    let effectiveSrtPath = srtPath
+    if (burnSubtitles && isBatchCompile) {
+      try {
+        const rawCues = await this.parseSrtCues(srtPath)
+        const batchCues = rawCues
+          .filter(c => c.endSec > batchStartTime && c.startSec < (batchStartTime + batchDuration))
+          .map((c, idx) => {
+            const newStart = Math.max(0, c.startSec - batchStartTime)
+            const newEnd = Math.max(newStart + 0.1, c.endSec - batchStartTime)
+            const formatTm = (sec) => {
+              const h = String(Math.floor(sec / 3600)).padStart(2, '0')
+              const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0')
+              const s = String(Math.floor(sec % 60)).padStart(2, '0')
+              const ms = String(Math.floor((sec % 1) * 1000)).padStart(3, '0')
+              return `${h}:${m}:${s},${ms}`
+            }
+            return `${idx + 1}\n${formatTm(newStart)} --> ${formatTm(newEnd)}\n${c.text}`
+          })
+        const batchSrtPath = path.join(tempClipsDir, `batch_${batchLetter}_subtitles.srt`)
+        await fs.writeFile(batchSrtPath, batchCues.join('\n\n'), 'utf-8')
+        effectiveSrtPath = batchSrtPath
+      } catch (e) {
+        console.warn('Could not slice batch subtitles, using full SRT:', e.message)
+      }
+    }
+
+    // 6. Final Stitch & Subtitle / Audio Muxing
+    const safeSrtPath = effectiveSrtPath.replace(/\\/g, '/').replace(/:/g, '\\:')
     const bgmDir = path.resolve(projectRoot, 'assets/audio/bgm')
     let bgmPath = null
     if (bgmTrack && bgmTrack !== 'none') {
@@ -483,6 +676,11 @@ export class VideoService {
     const safeBgmVol = Number.isFinite(Number(bgmVolume)) ? Number(bgmVolume) : -22
     let subStyle = "force_style='FontSize=20,FontName=Arial,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=2.5,Shadow=1.5,Alignment=2,MarginV=42'"
     
+    // For batch compile, slice master audio from batchStartTime for batchDuration
+    const audioInputArgs = isBatchCompile
+      ? ['-ss', String(batchStartTime), '-t', String(batchDuration), '-i', masterAudioPath.replace(/\\/g, '/')]
+      : ['-i', masterAudioPath.replace(/\\/g, '/')]
+
     let ffmpegArgs = []
 
     if (bgmPath) {
@@ -499,7 +697,7 @@ export class VideoService {
         '-f', 'concat',
         '-safe', '0',
         '-i', concatListPath.replace(/\\/g, '/'),
-        '-i', masterAudioPath.replace(/\\/g, '/'),
+        ...audioInputArgs,
         '-stream_loop', '-1',
         '-i', bgmPath.replace(/\\/g, '/'),
         '-filter_complex', filterComplex,
@@ -512,7 +710,7 @@ export class VideoService {
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
-        masterVideoPath.replace(/\\/g, '/')
+        targetVideoPath.replace(/\\/g, '/')
       ]
     } else {
       let vf = burnSubtitles ? `subtitles='${safeSrtPath}':${subStyle}` : null
@@ -521,7 +719,7 @@ export class VideoService {
         '-f', 'concat',
         '-safe', '0',
         '-i', concatListPath.replace(/\\/g, '/'),
-        '-i', masterAudioPath.replace(/\\/g, '/'),
+        ...audioInputArgs,
         ...(vf ? ['-vf', vf] : []),
         '-c:v', 'libx264',
         '-preset', 'veryfast',
@@ -530,7 +728,7 @@ export class VideoService {
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
-        masterVideoPath.replace(/\\/g, '/')
+        targetVideoPath.replace(/\\/g, '/')
       ]
     }
 
@@ -550,20 +748,31 @@ export class VideoService {
         } catch (e) {}
 
         if (code === 0) {
+          const successMsg = isBatchCompile
+            ? `Batch ${batchLetter} Preview (${targetBeats.length} cuts) compiled successfully!`
+            : `Master 1080p Video compiled successfully with ${targetBeats.length} synced Ken Burns cuts!`
           this.updateStatus(franchiseId, episodeId, {
             status: 'completed',
             progress: 100,
-            message: `Master 1080p Video compiled successfully with ${timelineBeats.length} synced Ken Burns cuts!`,
+            message: successMsg,
             log: [
               ...(this.compilationState[key].log || []),
-              `Master 1080p MP4 ready with ${timelineBeats.length} dynamic synchronized cuts and frame-accurate subtitles.`
+              `${outputFilename} ready with ${targetBeats.length} dynamic synchronized cuts and frame-accurate subtitles.`
             ]
           })
-          ActivityLogService.success('video', 'Master 1080p Video Compiled', `Rendered 01_Episode_Master_1080p.mp4 with ${timelineBeats.length} Ken Burns cuts and BGM sidechain ducking.`, { cuts: timelineBeats.length, bgmTrack }, franchiseId, episodeId)
+          ActivityLogService.success(
+            'video', 
+            isBatchCompile ? `Batch ${batchLetter} Preview Compiled` : 'Master 1080p Video Compiled', 
+            `Rendered ${outputFilename} with ${targetBeats.length} Ken Burns cuts.`, 
+            { cuts: targetBeats.length, isBatchCompile, batchLetter, outputFilename }, 
+            franchiseId, 
+            episodeId
+          )
           resolve({
             success: true,
-            videoPath: masterVideoPath,
-            url: `/api/episodes/${franchiseId}/${episodeId}/video-stream`
+            videoPath: targetVideoPath,
+            filename: outputFilename,
+            url: `/api/episodes/${franchiseId}/${episodeId}/video-stream?file=${outputFilename}`
           })
         } else {
           console.error('FFmpeg master muxing failed:', stderrOutput.slice(-1500))

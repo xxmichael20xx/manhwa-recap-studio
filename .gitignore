@@ -29,5 +29,7 @@ Thumbs.db
 .history/
 .tmp/
 .temp/
+studio/*.png
+studio/*.jpg
 
 
