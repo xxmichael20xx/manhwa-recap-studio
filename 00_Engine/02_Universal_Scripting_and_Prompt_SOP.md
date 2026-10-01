@@ -31,15 +31,25 @@ EP[XX]_[Episode_Slug]/
 
 ---
 
-## 3. The Universal Prompt Matrix Formula
+## 3. The Universal Prompt Matrix Formula (9:16 Native Vertical Standard)
 
-Every visual prompt generated must follow this 6-part construction formula to guarantee visual consistency:
+Every visual prompt generated must strictly follow the **9:16 Native Vertical Aspect Ratio** and this 6-part construction formula to guarantee visual consistency and peak retention:
 
-$$\text{Prompt} = \text{[Style Anchor]} + \text{[Character Reference Seed]} + \text{[Spatial Environment]} + \text{[Action / Kinetic Pose]} + \text{[Camera Angle \& Lighting]} + \text{[Quality Parameters]}$$
+$$\text{Prompt} = \text{[Style Anchor]} + \text{[Character Reference Seed]} + \text{[Spatial Environment]} + \text{[Action / Kinetic Pose]} + \text{[Camera Angle \& Lighting]} + \text{[Anatomical Quality Directives]}$$
 
-### Example Standardised Prompt Entry:
-```text
-/imagine prompt: manhwa webtoon art style, action webcomic panel, Ethan Drake standing amidst shattered dungeon stone, glowing crimson interface screen floating before him, dynamic low angle, cinematic lighting, sharp shadows, high octane action, 8k resolution --cref [CHARACTER_URL] --cw 80 --ar 16:9 --style raw
+### Universal Rules for Prompt Matrices:
+1. **Strict 9:16 Native Vertical Mandate:** All prompts must specify `9:16 vertical format` (`1080x1920`). Never use 16:9 or landscape boilerplate.
+2. **2.0s – 3.5s Rapid-Pacing:** Every 13–15 minute episode script is partitioned into ~250–300 micro-beats (averaging ~2.8s–3.2s per cut, hard ceiling 3.8s) for maximum YouTube retention.
+3. **Mandatory Anatomical Negative Directives:** Every prompt MUST include:
+   ```text
+   anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting
+   ```
+
+### Example Standardised Prompt Entry (XML Batch Schema):
+```xml
+<scene id="IMG_001" filename="IMG_001.jpg">
+IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeon exit establishing shot, [Foreground]: @{Ethan Drake - Outcast} walking with hunched posture, carrying a heavy rusted iron rig with dual bronze mana canisters strapped across shoulders, [Background]: elite hunters in glowing cyan power armour, dark stone tunnel, misty floor, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting
+</scene>
 ```
 
 ---

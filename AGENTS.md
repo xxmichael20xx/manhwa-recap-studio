@@ -1,7 +1,7 @@
 # 🎬 Manhwa & Webtoon Recap — Universal Studio Directives & Engine Rules
 
 > **Master Reference for Scriptwriting, Lore Integrity & Multi-Franchise Production**  
-> **Brand:** ShipByMike / Manhwa Recap Studio  
+> **Workspace:** `quirky-chandrasekhar`  
 > **Venture Directory:** `C:\Users\MIchaelangelo\Documents\My Brand\02_Ventures & Digital Products\Manhwa Recap Studio\`
 
 ---
@@ -64,5 +64,50 @@ Strictly forbidden from suggesting, drafting, or initiating Episode 02 (or any s
 1. Episode 01 has 100% of its visual assets replaced from storyboard placeholders to finished high-fidelity panels.
 2. The Studio Engine (Visual Bridge, Edge-TTS Sync, Subtitles, BGM Sidechain Ducking, and Master FFmpeg Compiler) is fully verified and operating with zero regressions.
 3. The user explicitly reviews, signs off, and commands expansion to the next episode.
+
+---
+
+## 🔒 The Lead Developer 3-Tier Live Verification Standard (Anti-Half-Baked Invariant)
+1. **Absolute Ban on 'Code-and-Declare':** The agent is **STRICTLY FORBIDDEN** from declaring a task, bug fix, or feature complete based solely on writing files or passing syntax checks. Every deliverable must be verified in the live running environment before handing back to the user.
+2. **Mandatory 3-Tier Live Verification Gate:** Prior to concluding any coding turn, the agent MUST execute and prove:
+   - **Tier 1 (Syntax & Build):** Run the project build command (e.g. `npm run build`, `tsc`) and confirm Exit Code 0.
+   - **Tier 2 (Live Runtime & Process Synchronization):** Whenever backend routes, services, or APIs are modified, confirm the active server process is running with auto-reload (`--watch`) or restarted, and execute live `curl.exe` queries against the running port with real data to confirm valid HTTP 200 JSON responses.
+   - **Tier 3 (Headless Visual & Interactive Audit):** Whenever UI components or styling are modified, execute headless browser inspection (Puppeteer) across both Light and Dark modes to verify rendered data, clickability, and zero console/network crashes. Embed dual-theme screenshots directly in the response.
+3. **Production Scale Pre-Flight:** Always anticipate real-world production scale (e.g. 100+ images, large file buffers, network timeouts). Never assume a 1-file test represents production workloads. Build defensive chunking, error handling, and payload guards upfront.
+
+---
+
+## 🛑 The "Step-Back & First-Principles Diagnosis" Protocol (Anti-Patching Invariant)
+Whenever repetitive tuning friction, parameter fighting, or repeated microscopic adjustments occur (>2 iterations on the same sub-problem):
+1. **Immediate Execution Halt:** Cease repetitive micro-patching of scripts or configuration parameters.
+2. **Step-Back Macro Analysis:** Proactively zoom out to the broader architectural, workflow, and user-experience level.
+3. **First-Principles Strategic Alternative:** Present a high-leverage architectural alternative (e.g. layout paradigm shifts, batch restructuring, workflow consolidation) rather than persevering with a fundamentally flawed local premise.
+
+---
+
+## 🎨 The Dynamic Hybrid Multi-Panel Webtoon/Manhwa Strip Standard (The 3-Tier Visual Engine)
+To guarantee organic narration synchronization, eliminate rapid screen flashing, and deliver authentic manhwa scrolling aesthetics, visual cuts are **dynamically derived from the master transcript's sentence lengths and narrative action units** across 3 Layout Tiers:
+
+1. **Tier A: Full-Bleed Cinematic Hero Plate (Single Panel / Wide Focus)**
+   - **Use Case:** Major awakening moments, boss reveals, vast landscape establishing shots.
+   - **Dynamic Screen Hold:** $5.0\text{s} – 8.0\text{s}$ (matches dramatic sentence pause).
+   - **Motion:** Subtle Ken Burns center push-in or atmospheric breath ($1.02\times \rightarrow 1.08\times$).
+
+2. **Tier B: Dual-Panel Dynamic Split Strip (2 Framed Manhwa Blocks in 9:16)**
+   - **Use Case:** Dialogue exchanges, action vs reaction (e.g. *Top block:* Antagonist smirking with wine goblet; *Bottom block:* Evelyn's silver ring bouncing on protagonist's combat boot).
+   - **Dynamic Screen Hold:** $6.0\text{s} – 9.0\text{s}$ (matches complete two-clause sentence).
+   - **Motion:** Gentle vertical downward scroll glide scanning from top block to bottom block with sine easing.
+
+3. **Tier C: Multi-Panel Action Strip (3–4 Framed Comic Panels in 9:16)**
+   - **Use Case:** Combat micro-beats, tactical breakdown, rapid impact sequences (e.g. *Top:* Enemy lunging; *Middle:* Forearm parry spark; *Bottom:* Kinetic counter-punch impact).
+   - **Dynamic Screen Hold:** $7.0\text{s} – 12.0\text{s}$ (matches complete combat sequence).
+   - **Motion:** Smooth vertical camera scroll mimicking native Webtoon reading.
+
+#### 📐 Dynamic Transcript Derivation & Synchronization Rules:
+- **No Arbitrary Fixed Counts:** The number of visual cuts is NEVER constrained to an arbitrary static number; it is dynamically determined by the master voiceover duration and sentence structure.
+- **100% Triad Synchronization:** Every master plate `[IMG_XXX]` anchors 1:1 to its complete narrative clause, ensuring all visual subjects (actor, action, reaction) remain on screen while being described by the narrator.
+- **Strict Anatomical & Character DNA Prompt Guards:** Every prompt matrix entry must include locked Character DNA anchors (`@{...}`) and explicit negative anatomical quality directives (`anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting`).
+- **Strict Limb Connectivity & Anti-Ghost-Morph Invariant:** Any prompt describing a character holding an object MUST explicitly describe physical arm attachment (e.g. `right armored arm bent at the elbow holding a single golden wine goblet, left arm resting naturally at side, both arms physically connected to shoulders`) to eliminate diffusion attention splitting or floating severed hands.
+
 
 

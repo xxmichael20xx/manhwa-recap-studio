@@ -156,42 +156,64 @@ export class ImageService {
   }
 
   static async generateStoryboardStills(franchiseId, episodeId, options = {}) {
-    const scenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+    const allScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
     await fs.mkdir(imagesDir, { recursive: true })
+
+    const batchSize = 24
+    let scenes = allScenes
+    let batchLabel = 'All'
+    if (typeof options.batchIndex === 'number' && options.batchIndex >= 0) {
+      const start = options.batchIndex * batchSize
+      scenes = allScenes.slice(start, start + batchSize)
+      const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+      batchLabel = `Batch ${letters[options.batchIndex] || options.batchIndex + 1}`
+    }
+
+    if (scenes.length === 0) {
+      throw new Error(`No scenes found for storyboard generation (${batchLabel}).`)
+    }
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'running',
       progress: 5,
-      message: `Initializing Puppeteer renderer for ${scenes.length} panels...`,
-      log: [`Starting storyboard generation for ${scenes.length} panels...`]
+      message: `Initializing 1080p renderer for ${scenes.length} panels (${batchLabel})...`,
+      log: [`Starting storyboard generation for ${scenes.length} panels (${batchLabel})...`]
     })
 
-    let puppeteer
-    try {
-      puppeteer = require('C:/Users/MIchaelangelo/.gemini/antigravity/scratch/node_modules/puppeteer')
-    } catch (err) {
-      this.updateStatus(franchiseId, episodeId, {
-        status: 'failed',
-        message: `Puppeteer could not be loaded: ${err.message}`,
-        log: [`Error: Puppeteer could not be loaded`]
-      })
-      throw new Error(`Puppeteer could not be loaded: ${err.message}`)
-    }
+    const edgePaths = [
+      'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+      'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+      'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+      'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+    ]
+    let browserExe = edgePaths.find(p => fsSync.existsSync(p))
 
     let browser
     try {
-      browser = await puppeteer.launch({
+      const puppeteerCoreModule = await import('puppeteer-core')
+      const puppeteerCore = puppeteerCoreModule.default || puppeteerCoreModule
+      browser = await puppeteerCore.launch({
+        executablePath: browserExe || undefined,
         headless: 'new',
         args: ['--no-sandbox', '--disable-setuid-sandbox']
       })
     } catch (err) {
-      this.updateStatus(franchiseId, episodeId, {
-        status: 'failed',
-        message: `Browser launch failed: ${err.message}`,
-        log: [`Error launching Puppeteer browser`]
-      })
-      throw err
+      try {
+        const puppeteerModule = await import('puppeteer')
+        const puppeteer = puppeteerModule.default || puppeteerModule
+        browser = await puppeteer.launch({
+          headless: 'new',
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        })
+      } catch (err2) {
+        this.updateStatus(franchiseId, episodeId, {
+          status: 'failed',
+          message: `Browser launch failed: ${err.message}`,
+          log: [`Error launching Puppeteer browser`]
+        })
+        throw new Error(`Puppeteer browser launch failed: ${err.message}`)
+      }
     }
 
     const page = await browser.newPage()
@@ -460,7 +482,7 @@ export class ImageService {
     }
   }
 
-  static async extractAndIngestZip(franchiseId, episodeId, zipBase64, originalFilename = 'batch.zip') {
+  static async extractAndIngestZip(franchiseId, episodeId, zipBase64, originalFilename = 'batch.zip', targetBatchIndex = null) {
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
     await fs.mkdir(imagesDir, { recursive: true })
 
@@ -489,57 +511,231 @@ export class ImageService {
     imageEntries.sort((a, b) => a.entryName.localeCompare(b.entryName, undefined, { numeric: true, sensitivity: 'base' }))
 
     const extracted = []
-    const existingScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+    const allScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+    const batchSize = 24
+    let candidateScenes = allScenes
+    if (typeof targetBatchIndex === 'number' && targetBatchIndex >= 0) {
+      candidateScenes = allScenes.slice(targetBatchIndex * batchSize, (targetBatchIndex + 1) * batchSize)
+    }
 
-    for (let i = 0; i < imageEntries.length; i++) {
-      const entry = imageEntries[i]
-      const entryBase = path.basename(entry.entryName)
-      
-      // Check if entry filename contains scene number e.g. IMG_001, IMG001, scene_01, 01, etc.
-      let targetTag = null
-      const tagMatch = entryBase.match(/IMG_?0*(\d+)/i)
-      if (tagMatch) {
-        const num = parseInt(tagMatch[1], 10)
-        targetTag = `IMG_${String(num).padStart(3, '0')}`
-      } else {
-        const numMatch = entryBase.match(/(?:scene|panel|image|shot|cut)?[-_ ]*0*(\d+)/i)
-        if (numMatch) {
-          const num = parseInt(numMatch[1], 10)
-          targetTag = `IMG_${String(num).padStart(3, '0')}`
-        }
-      }
+    const filesToMap = imageEntries.map((entry, idx) => ({
+      id: `entry_${idx}`,
+      name: path.basename(entry.entryName),
+      getData: () => entry.getData()
+    }))
 
-      if (!targetTag) {
-        // Fallback to sequential index matching existingScenes or index + 1
-        const fallbackNum = i + 1
-        targetTag = existingScenes[i]?.tag || `IMG_${String(fallbackNum).padStart(3, '0')}`
-      }
+    const mappings = this.matchImagesToScenes(filesToMap, candidateScenes)
 
-      const targetPath = path.join(imagesDir, `${targetTag}.png`)
-      const data = entry.getData()
+    for (const m of mappings) {
+      const targetTag = m.scene.tag
+      const targetPath = path.join(imagesDir, `${targetTag}.jpg`)
+      const data = m.file.getData()
       await fs.writeFile(targetPath, data)
 
-      // Also write un-underscored alias IMG001.png for compatibility
+      // Also write un-underscored alias IMG001.jpg
       const aliasTag = targetTag.replace(/_/g, '')
       if (aliasTag !== targetTag) {
-        const aliasPath = path.join(imagesDir, `${aliasTag}.png`)
+        const aliasPath = path.join(imagesDir, `${aliasTag}.jpg`)
         await fs.writeFile(aliasPath, data)
       }
 
       extracted.push({
         tag: targetTag,
-        sourceName: entryBase,
-        savedAs: `${targetTag}.png`
+        sourceName: m.file.name,
+        savedAs: `${targetTag}.jpg`,
+        score: m.score,
+        matchSlug: m.slug
       })
     }
 
-    ActivityLogService.success('visuals', 'ZIP Archive Ingested', `Unpacked & mapped ${extracted.length} scene images from "${originalFilename}".`, { count: extracted.length, archiveName: originalFilename }, franchiseId, episodeId)
+    ActivityLogService.success('visuals', 'ZIP Archive Ingested', `Unpacked & semantically mapped ${extracted.length} scene images from "${originalFilename}".`, { count: extracted.length, archiveName: originalFilename }, franchiseId, episodeId)
 
     return {
       success: true,
       archiveName: originalFilename,
       count: extracted.length,
-      files: extracted
+      extracted
+    }
+  }
+
+  static cleanSlug(filename) {
+    return filename
+      .replace(/_\d{10,18}(?:_\d+)?\.(jpe?g|png|webp)$/i, '')
+      .replace(/\.(jpe?g|png|webp)$/i, '')
+      .toLowerCase()
+      .replace(/[._-]/g, ' ')
+      .replace(/[^a-z0-9\s]/g, '')
+      .trim()
+  }
+
+  static matchImagesToScenes(imageFiles, scenes) {
+    const scoredPairs = []
+    imageFiles.forEach(file => {
+      const slug = this.cleanSlug(file.name)
+      const slugTokens = slug.split(/\s+/).filter(w => w.length > 2)
+
+      // Direct tag match first (IMG_001, IMG001)
+      const directMatch = file.name.match(/IMG_?0*(\d+)/i)
+      if (directMatch) {
+        const num = parseInt(directMatch[1], 10)
+        const targetTag = `IMG_${String(num).padStart(3, '0')}`
+        const matchedScene = scenes.find(s => s.tag === targetTag)
+        if (matchedScene) {
+          scoredPairs.push({ file, scene: matchedScene, score: 999, slug })
+          return
+        }
+      }
+
+      scenes.forEach(scene => {
+        let score = 0
+        const sceneKeywords = (scene.prompt || scene.description || '')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, ' ')
+          .split(/\s+/)
+          .filter(w => w.length > 2)
+
+        slugTokens.forEach(t => {
+          if (sceneKeywords.includes(t)) score += 3
+          else if (sceneKeywords.some(k => k.includes(t) || t.includes(k))) score += 1
+        })
+        scoredPairs.push({ file, scene, score, slug })
+      })
+    })
+
+    scoredPairs.sort((a, b) => b.score - a.score)
+
+    const assignedFiles = new Set()
+    const assignedScenes = new Set()
+    const finalMapping = []
+
+    for (const pair of scoredPairs) {
+      if (!assignedFiles.has(pair.file.id) && !assignedScenes.has(pair.scene.tag) && pair.score > 0) {
+        assignedFiles.add(pair.file.id)
+        assignedScenes.add(pair.scene.tag)
+        finalMapping.push({
+          file: pair.file,
+          scene: pair.scene,
+          score: pair.score,
+          slug: pair.slug
+        })
+      }
+    }
+
+    // Fallback sequential assignment for unassigned
+    const unassignedFiles = imageFiles.filter(f => !assignedFiles.has(f.id))
+    const unassignedScenes = scenes.filter(s => !assignedScenes.has(s.tag))
+
+    unassignedFiles.forEach((file, idx) => {
+      const scene = unassignedScenes[idx]
+      if (scene) {
+        finalMapping.push({
+          file,
+          scene,
+          score: 0,
+          slug: this.cleanSlug(file.name)
+        })
+      }
+    })
+
+    return finalMapping
+  }
+
+  static async autoIngestFromDownloads(franchiseId, episodeId, customDir = null, targetBatchIndex = null) {
+    const downloadsDir = customDir || 'C:/Users/MIchaelangelo/Downloads'
+    const imagesDir = this.getImagesDir(franchiseId, episodeId)
+    await fs.mkdir(imagesDir, { recursive: true })
+
+    if (!fsSync.existsSync(downloadsDir)) {
+      throw new Error(`Downloads directory not found at ${downloadsDir}`)
+    }
+
+    const items = await fs.readdir(downloadsDir)
+    // Find candidate directories or zip files matching download* or batch*
+    const candidates = []
+    for (const item of items) {
+      const full = path.join(downloadsDir, item)
+      const st = await fs.stat(full)
+      if (st.isDirectory() && /download|batch|flow|img|scenes/i.test(item)) {
+        candidates.push({ full, name: item, mtime: st.mtimeMs, isDir: true })
+      } else if (st.isFile() && item.endsWith('.zip') && /download|batch|flow/i.test(item)) {
+        candidates.push({ full, name: item, mtime: st.mtimeMs, isZip: true })
+      }
+    }
+
+    candidates.sort((a, b) => b.mtime - a.mtime)
+    if (candidates.length === 0) {
+      throw new Error('No Google Flow download folders or ZIPs found in Downloads.')
+    }
+
+    const newest = candidates[0]
+    const allScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+    const extracted = []
+
+    if (newest.isDir) {
+      const files = await fs.readdir(newest.full)
+      const imageFiles = files.filter(f => /\.(jpe?g|png|webp)$/i.test(f)).map((f, idx) => ({
+        id: `file_${idx}`,
+        name: f,
+        fullPath: path.join(newest.full, f),
+        getData: async () => await fs.readFile(path.join(newest.full, f))
+      }))
+
+      if (imageFiles.length === 0) {
+        throw new Error(`No image files found inside ${newest.name}`)
+      }
+
+      // Determine batch window (strictly scope to 24-scene batch to prevent cross-batch leakage)
+      const batchSize = 24
+      let candidateScenes = allScenes
+
+      if (typeof targetBatchIndex === 'number') {
+        const start = targetBatchIndex * batchSize
+        candidateScenes = allScenes.slice(start, start + batchSize)
+      } else if (imageFiles.length <= batchSize) {
+        // Auto-detect the first unfulfilled batch
+        let selectedBatch = 0
+        for (let b = 0; b < Math.ceil(allScenes.length / batchSize); b++) {
+          const slice = allScenes.slice(b * batchSize, (b + 1) * batchSize)
+          const filledCount = slice.filter(s => s.hasImage).length
+          if (filledCount < slice.length) {
+            selectedBatch = b
+            break
+          }
+        }
+        candidateScenes = allScenes.slice(selectedBatch * batchSize, (selectedBatch + 1) * batchSize)
+      }
+
+      const mappings = this.matchImagesToScenes(imageFiles, candidateScenes)
+      for (const m of mappings) {
+        const targetTag = m.scene.tag
+        const ext = path.extname(m.file.name) || '.jpg'
+        const targetPath = path.join(imagesDir, `${targetTag}${ext}`)
+        const data = await m.file.getData()
+        await fs.writeFile(targetPath, data)
+
+        const aliasTag = targetTag.replace(/_/g, '')
+        if (aliasTag !== targetTag) {
+          const aliasPath = path.join(imagesDir, `${aliasTag}${ext}`)
+          await fs.writeFile(aliasPath, data)
+        }
+
+        extracted.push({
+          tag: targetTag,
+          sourceName: m.file.name,
+          savedAs: `${targetTag}${ext}`,
+          score: m.score,
+          matchSlug: m.slug
+        })
+      }
+    }
+
+    ActivityLogService.success('visuals', 'Downloads Auto-Ingested', `Mapped ${extracted.length} images from "${newest.name}".`, { count: extracted.length, source: newest.name }, franchiseId, episodeId)
+
+    return {
+      success: true,
+      source: newest.name,
+      count: extracted.length,
+      extracted
     }
   }
 

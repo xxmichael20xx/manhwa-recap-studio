@@ -349,7 +349,7 @@
               <div class="p-3 rounded-xl bg-purple-50/60 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-500/20 flex items-start space-x-2.5">
                 <ShieldCheck class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
                 <div class="text-[11px] text-purple-900 dark:text-purple-300 leading-relaxed font-mono">
-                  <span class="font-bold">Anti-Grid & Auto-Retry Directive:</span> Forces Google Flow to generate <strong>1 standalone 16:9 image per &lt;scene&gt;</strong> and mandates automatic retry on failed calls.
+                  <span class="font-bold">Anti-Grid & Auto-Retry Directive:</span> Forces Google Flow to generate <strong>1 standalone 9:16 vertical image per &lt;scene&gt;</strong> and mandates automatic retry on failed calls.
                 </div>
               </div>
 
@@ -392,22 +392,25 @@
                 </div>
 
                 <!-- Action Button for Batch -->
-                <button 
-                  @click="copyBatchByIndex(bIdx)"
-                  class="w-full py-2.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm"
-                  :class="copiedBatchIndices[bIdx]
-                    ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-                    : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-purple-950/20'"
-                >
-                  <Check v-if="activeCopiedIndex === bIdx" class="w-4 h-4 text-emerald-200 animate-bounce" />
-                  <Zap v-else class="w-4 h-4 text-purple-200" />
-                  <span>
-                    {{ activeCopiedIndex === bIdx 
-                      ? `${batch.name} XML Copied to Clipboard!` 
-                      : (copiedBatchIndices[bIdx] ? `Re-Copy ${batch.name} XML (${batch.items.length} Scenes)` : `⚡ Copy ${batch.name} XML (${batch.items.length} Scenes)`) 
-                    }}
-                  </span>
-                </button>
+                <div class="space-y-2">
+                  <button 
+                    @click="copyBatchByIndex(bIdx)"
+                    class="w-full py-2.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm"
+                    :class="copiedBatchIndices[bIdx]
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                      : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-purple-950/20'"
+                  >
+                    <Check v-if="activeCopiedIndex === bIdx" class="w-4 h-4 text-emerald-200 animate-bounce" />
+                    <Zap v-else class="w-4 h-4 text-purple-200" />
+                    <span>
+                      {{ activeCopiedIndex === bIdx 
+                        ? `${batch.name} XML Copied to Clipboard!` 
+                        : (copiedBatchIndices[bIdx] ? `Re-Copy ${batch.name} XML (${batch.items.length} Scenes)` : `⚡ Copy ${batch.name} XML (${batch.items.length} Scenes)`) 
+                      }}
+                    </span>
+                  </button>
+
+                </div>
               </div>
 
               <!-- Fallback Copy All In One -->
@@ -441,7 +444,7 @@ import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, RefreshCw, Copy, Check, CheckCircle2, 
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
-  AlertCircle, AlertTriangle 
+  AlertCircle, AlertTriangle, Play, Film, Loader2 
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -449,6 +452,30 @@ const parsedPrompts = ref([])
 const rawMarkdown = ref('')
 const generating = ref(false)
 const copiedIndex = ref(null)
+const batchCompilingIndex = ref(null)
+
+const compileBatchPreview = async (index) => {
+  batchCompilingIndex.value = index
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        batchIndex: index,
+        kenBurns: true, 
+        burnSubtitles: true
+      })
+    })
+    const data = await res.json()
+    if (data.success) {
+      setTimeout(() => {
+        batchCompilingIndex.value = null
+      }, 3000)
+    }
+  } catch (e) {
+    batchCompilingIndex.value = null
+  }
+}
 
 // Multi-Selection & Filtering State
 const selectedTags = ref(new Set())
@@ -537,13 +564,14 @@ const clearSelection = () => {
 }
 
 const FLOW_DIRECTIVE_HEADER = `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION & FULL COMPLETION PROTOCOL]
-1. Generate EXACTLY ONE separate, standalone full-frame 16:9 cinematic image for each <scene> container below.
+1. Generate EXACTLY ONE separate, standalone full-frame 9:16 vertical manhwa image for each <scene> container below.
 2. DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
 3. DO NOT generate videos, animations, or ask for confirmation.
 4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
 5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-7. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, and high-fidelity manhwa artwork.`
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, cup, goblet, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, ZERO duplicate floating arms holding props, and ZERO morphing anomalies.
+7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
+8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, 9:16 vertical aspect ratio, and high-fidelity manhwa artwork.`
 
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
