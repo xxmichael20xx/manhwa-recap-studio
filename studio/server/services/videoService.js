@@ -1,6 +1,7 @@
 import fs from 'fs/promises'
 import fsSync from 'fs'
 import path from 'path'
+import os from 'os'
 import { fileURLToPath } from 'url'
 import { spawn } from 'child_process'
 import sharp from 'sharp'
@@ -686,7 +687,13 @@ export class VideoService {
     }
 
     // 6. Final Stitch & Subtitle / Audio Muxing
-    const safeSrtPath = effectiveSrtPath.replace(/\\/g, '/').replace(/:/g, '\\:')
+    const cleanTempSrt = path.join(os.tmpdir(), `sub_${franchiseId}_${episodeId}_${isBatchCompile ? batchLetter : 'master'}_${Date.now()}.srt`)
+    try {
+      await fs.copyFile(effectiveSrtPath, cleanTempSrt)
+    } catch (e) {
+      console.warn('Could not copy SRT to temp dir:', e.message)
+    }
+    const safeSrtPath = cleanTempSrt.replace(/\\/g, '/').replace(/:/g, '\\:')
     const bgmDir = path.resolve(projectRoot, 'assets/audio/bgm')
     let bgmPath = null
     if (bgmTrack && bgmTrack !== 'none') {
@@ -711,7 +718,7 @@ export class VideoService {
         burnSubtitles ? `[0:v]subtitles='${safeSrtPath}':${subStyle}[v]` : `[0:v]copy[v]`,
         `[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`,
         `[2:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`,
-        `[bgm_base][vo_sc]sidechaincompress=threshold=0.04:ratio=4:attack=20:release=350[bgm_ducked]`,
+        `[bgm_base][vo_sc]sidechaincompress=threshold=0.08:ratio=4:attack=20:release=300:link=average[bgm_ducked]`,
         `[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`
       ].join(';')
 
@@ -757,7 +764,7 @@ export class VideoService {
 
     return new Promise((resolve, reject) => {
       let stderrOutput = ''
-      const proc = spawn('ffmpeg', ffmpegArgs)
+      const proc = spawn('ffmpeg', ffmpegArgs, { cwd: projectRoot })
 
       proc.stderr.on('data', chunk => {
         stderrOutput += chunk.toString()

@@ -87,8 +87,30 @@ export class TtsService {
     await fs.mkdir(subtitlesDir, { recursive: true })
     const scriptContent = await fs.readFile(scriptPath, 'utf-8')
 
-    // Parse scenes from script
-    const sceneBlocks = scriptContent.split(/### Scene \d+:/g).slice(1)
+    // Parse scenes from script (Supports Dynamic Hybrid [IMG_XXX] format & legacy ### Scene blocks)
+    const extractedScenes = []
+    const inlineRegex = /\[(IMG_\d+)\][`\s]*([^\[\n\r]+)/g
+    let m
+    while ((m = inlineRegex.exec(scriptContent)) !== null) {
+      extractedScenes.push({
+        tag: m[1],
+        text: m[2].trim()
+      })
+    }
+
+    if (extractedScenes.length === 0) {
+      const sceneBlocks = scriptContent.split(/### Scene \d+:/g).slice(1)
+      for (const block of sceneBlocks) {
+        const voiceoverMatch = block.match(/Voiceover:\s*([\s\S]*?)(?=(?:### Scene|$|## 🎙️ Act))/i)
+        if (voiceoverMatch) {
+          extractedScenes.push({
+            tag: `SC_${String(extractedScenes.length + 1).padStart(2, '0')}`,
+            text: voiceoverMatch[1].trim()
+          })
+        }
+      }
+    }
+
     const results = []
     const allSubtitleEntries = []
 
@@ -109,10 +131,8 @@ export class TtsService {
     let sceneIndex = 1
     const generatedAudioFiles = []
 
-    for (const block of sceneBlocks) {
-      // Fix regex: $ matches end of string in JS regex (\Z matches literal Z in JS)
-      const voiceoverMatch = block.match(/Voiceover:\s*([\s\S]*?)(?=(?:### Scene|$|## 🎙️ Act))/i)
-      let text = voiceoverMatch ? voiceoverMatch[1].trim() : ''
+    for (const item of extractedScenes) {
+      let text = item.text
       
       // Clean markdown tags from spoken text and normalize dashes for clean tokenization
       text = text.replace(/\*\*\[(.*?)\]\*\*/g, '$1')
@@ -125,7 +145,7 @@ export class TtsService {
                  .replace(/\s+/g, ' ')
                  .trim()
 
-      if (text.length > 10) {
+      if (text.length > 5) {
         const paddedIndex = String(sceneIndex).padStart(2, '0')
         const filename = `${episodeId}_SC${paddedIndex}.mp3`
         const filePath = path.join(audioDir, filename)
