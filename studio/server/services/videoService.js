@@ -293,27 +293,27 @@ export class VideoService {
 
     let cardW, cardH, cardX, cardY
     if (isVertical) {
-      cardW = 640
+      cardW = 680
       cardH = 960
-      cardX = 640
+      cardX = 620
       cardY = 60
     } else {
-      cardW = 1520
-      cardH = 855
-      cardX = 200
-      cardY = 112
+      cardW = 1560
+      cardH = 880
+      cardX = 180
+      cardY = 100
     }
 
-    const cornerRadius = 32
+    const cornerRadius = 26
     const bgPath = path.join(tempDir, `${baseName}_bg.jpg`)
     const maskPath = path.join(tempDir, `${baseName}_mask.png`)
     const shadowPath = path.join(tempDir, `${baseName}_shadow.png`)
 
-    // 1. Ambient Background Layer
+    // 1. Ambient Background Layer (Heavily blurred and atmospheric)
     await sharp(imagePath)
       .resize(CANVAS_W, CANVAS_H, { fit: 'cover', position: 'center' })
-      .blur(45)
-      .modulate({ brightness: 0.70, saturation: 1.08 })
+      .blur(50)
+      .modulate({ brightness: 0.65, saturation: 1.15 })
       .jpeg({ quality: 90 })
       .toFile(bgPath)
 
@@ -326,19 +326,19 @@ export class VideoService {
     await sharp(maskSvg).png().toFile(maskPath)
 
     // 3. Drop Shadow & Border Plate
-    const shadowPadding = 60
+    const shadowPadding = 45
     const sw = cardW + shadowPadding * 2
     const sh = cardH + shadowPadding * 2
     const shadowSvg = Buffer.from(
       `<svg width="${sw}" height="${sh}">
-        <rect x="${shadowPadding}" y="${shadowPadding + 8}" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.75)"/>
+        <rect x="${shadowPadding}" y="${shadowPadding + 8}" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.85)"/>
       </svg>`
     )
     const shadowBuf = await sharp(shadowSvg).blur(24).png().toBuffer()
 
     const borderSvg = Buffer.from(
       `<svg width="${cardW}" height="${cardH}">
-        <rect x="1" y="1" width="${cardW - 2}" height="${cardH - 2}" rx="${cornerRadius}" ry="${cornerRadius}" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+        <rect x="1" y="1" width="${cardW - 2}" height="${cardH - 2}" rx="${cornerRadius}" ry="${cornerRadius}" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="2"/>
       </svg>`
     )
     const borderBuf = await sharp(borderSvg).png().toBuffer()
@@ -373,52 +373,75 @@ export class VideoService {
   /**
    * Render a true dual-stream parallax Ken Burns clip:
    * - Background Stream: Ambient blurred cover slowly breathes/zooms (1.00x -> 1.04x)
-   * - Inner Window Stream: Comic artwork scales and scrolls/pans inside the 32px rounded window
-   * - Alpha-merged inside the card frame with soft diffuse drop-shadow
+   * - Inner Window Stream: Comic artwork scales and scrolls/pans inside the rounded window
+   * - Smooth pixel-perfect scroll from top panel to bottom panel across the manhwa strip
    */
   static async renderParallaxKenBurnsClip(imagePath, layerInfo, framesCount, motionIndex, outputPath) {
     const frames = Math.max(15, Math.round(framesCount))
     const PI = '3.14159265'
-    const ease = `(0.5-0.5*cos(${PI}*on/${frames}))`
-    const easeInv = `(1.0-(0.5-0.5*cos(${PI}*on/${frames})))`
+    const ease = `(0.5-0.5*cos(${PI}*n/${frames}))`
+    const easeInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
 
     const { bgPath, maskPath, shadowPath, cardW, cardH, cardX, cardY, isVertical } = layerInfo
 
-    // Pre-scale inner image so it fits the window width (for vertical) or window height/width (for landscape)
-    const scaleFilter = isVertical
-      ? `scale=w=${cardW}:h=-1`
-      : `scale=w=${cardW}:h=-1:force_original_aspect_ratio=increase`
+    let innerStreamFilter = ''
 
-    // 10-Way Omnidirectional Motion Matrix for the Inner Window
-    const motionPresets = [
-      // 0: North -> South (Top to Bottom Vertical Scroll)
-      `zoompan=z=1.04:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 1: South -> North (Bottom to Top Upward Reveal)
-      `zoompan=z=1.04:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 2: West -> East (Left to Right Horizontal Pan)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 3: East -> West (Right to Left Horizontal Pan)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 4: NW -> SE (Diagonal Top-Left to Bottom-Right)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 5: NE -> SW (Diagonal Top-Right to Bottom-Left)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 6: SW -> NE (Diagonal Bottom-Left to Top-Right)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 7: SE -> NW (Diagonal Bottom-Right to Top-Left)
-      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 8: Center Push-In (1.02x -> 1.08x Breath)
-      `zoompan=z='1.02+0.06*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-      // 9: Center Pull-Out (1.08x -> 1.02x Scope Reveal)
-      `zoompan=z='1.08-0.06*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
-    ]
-
-    const selectedMotion = motionPresets[motionIndex % motionPresets.length]
+    if (isVertical) {
+      // Vertical Manhwa Strips: Full-length scroll and directional panel focal scanning
+      const verticalPresets = [
+        // 0: Top-to-Bottom Smooth Webtoon Scroll
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})'`,
+        // 1: Bottom-to-Top Upward Reveal
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${easeInv})'`,
+        // 2: Top Panel Focus with Subtle Push-In
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y=0,zoompan=z='1.0+0.10*${ease}':x='(iw-iw/zoom)/2':y=0:d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 3: Bottom Panel Focus with Subtle Push-In
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,ih-${cardH})',zoompan=z='1.0+0.10*${ease}':x='(iw-iw/zoom)/2':y='ih-ih/zoom':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 4: Center Focus Kinetic Breath
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.02+0.08*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 5: Scope Pull-Out Reveal (1.12x -> 1.0x)
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})',zoompan=z='1.12-0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 6: Diagonal Top-Left to Bottom-Right Scan
+        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${ease}':y='max(0,(ih-${cardH})*${ease})'`,
+        // 7: Diagonal Top-Right to Bottom-Left Scan
+        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${easeInv}':y='max(0,(ih-${cardH})*${ease})'`,
+        // 8: Full-Length Speed Scan (Smooth Continuous Top to Bottom)
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})'`,
+        // 9: Centered Subtle Floating Breath
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.0+0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
+      ]
+      innerStreamFilter = verticalPresets[motionIndex % verticalPresets.length]
+    } else {
+      // Landscape / Standard Panels: Horizontal panning, diagonal sweep, and push-in zooms
+      const landscapePresets = [
+        // 0: Left to Right Horizontal Pan
+        `scale=w=-1:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${ease})':y=0`,
+        // 1: Right to Left Horizontal Pan
+        `scale=w=-1:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${easeInv})':y=0`,
+        // 2: Center Push-In (1.0x -> 1.12x)
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 3: Center Pull-Out (1.12x -> 1.0x)
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.12-0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 4: Subtle Cinematic Breath
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.02+0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 5: Left to Right Diagonal Sweep
+        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='140*${ease}':y='80*${ease}'`,
+        // 6: Right to Left Diagonal Sweep
+        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='140*${easeInv}':y='80*${ease}'`,
+        // 7: Left Anchor Focus
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${ease}':x=0:y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 8: Right Anchor Focus
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${ease}':x='iw-iw/zoom':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        // 9: Ambient Stillness with Floating Drift
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z=1.03:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
+      ]
+      innerStreamFilter = landscapePresets[motionIndex % landscapePresets.length]
+    }
 
     // Complex filtergraph for multi-layer parallax composite
     const filterComplex = [
-      `[0:v]zoompan=z='1.0+0.04*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30[bg_stream]`,
-      `[1:v]${scaleFilter},${selectedMotion}[inner_raw]`,
+      `[0:v]zoompan=z='1.0+0.04*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30[bg_stream]`,
+      `[1:v]${innerStreamFilter}[inner_raw]`,
       `[inner_raw][2:v]alphamerge[inner_masked]`,
       `[bg_stream][3:v]overlay=0:0[bg_shadow]`,
       `[bg_shadow][inner_masked]overlay=${cardX}:${cardY}:format=auto,format=yuv420p[vout]`
