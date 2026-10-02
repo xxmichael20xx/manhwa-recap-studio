@@ -77,6 +77,14 @@ Strictly forbidden from suggesting, drafting, or initiating Episode 02 (or any s
 
 ---
 
+## 📋 Mandatory Post-Milestone Operator Action Plan & Testing Protocol (Zero-Ambiguity Handoff)
+Whenever concluding any coding task, engine refactor, bug fix, or visual milestone, the agent MUST ALWAYS conclude the response with a dedicated, highly structured **Operator Action & Testing Guide**:
+1. **Immediate Step-by-Step Operator Actions:** Clear numbered steps detailing exactly what the user needs to click, input, or upload in the UI (e.g. which buttons to press, which folders to drop).
+2. **Exact Verification & Testing Method:** Concrete instructions on how to test the build (e.g. player scrubbing, audio sidechain level checks, frame-accurate subtitle sync checkpoints).
+3. **Expected Success Outcome & Next Milestone Gate:** Explicit criteria defining successful verification and the exact condition required before advancing to subsequent batches or episodes.
+
+---
+
 ## 🛑 The "Step-Back & First-Principles Diagnosis" Protocol (Anti-Patching Invariant)
 Whenever repetitive tuning friction, parameter fighting, or repeated microscopic adjustments occur (>2 iterations on the same sub-problem):
 1. **Immediate Execution Halt:** Cease repetitive micro-patching of scripts or configuration parameters.
