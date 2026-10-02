@@ -253,24 +253,25 @@
             <div 
               @dragover.prevent
               @drop.prevent="handleBatchDrop"
-              class="p-8 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/40 hover:border-purple-500 bg-purple-50/30 dark:bg-purple-950/10 text-center space-y-3.5 transition"
+              @click="triggerBatchUpload"
+              class="p-8 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/40 hover:border-purple-500 bg-purple-50/30 dark:bg-purple-950/10 text-center space-y-3.5 transition cursor-pointer group hover:shadow-inner"
             >
-              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mx-auto shadow-xs">
+              <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mx-auto shadow-xs group-hover:scale-110 transition">
                 <Archive v-if="batchUploading" class="w-6 h-6 animate-spin" />
                 <FolderDown v-else class="w-6 h-6" />
               </div>
 
               <div>
-                <div class="text-sm font-bold text-slate-900 dark:text-white">
+                <div class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
                   {{ batchUploading ? 'Processing & Ingesting Visual Assets...' : 'Universal Master Visual Ingest Dropzone (All Batches)' }}
                 </div>
                 <p class="text-xs text-slate-500 dark:text-slate-400 max-w-lg mx-auto mt-1">
-                  Drag and drop a <strong>.ZIP archive</strong> from Google Flow, an entire <strong>folder of images</strong>, or <strong>multiple image files</strong> directly here. Images will be automatically sorted and mapped across all scene tags.
+                  <strong>Click anywhere to browse files</strong>, or drag & drop a <strong>.ZIP archive</strong>, folder, or images directly here.
                 </p>
               </div>
 
               <!-- Ingestion Action Buttons -->
-              <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+              <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1" @click.stop>
                 <button 
                   @click="triggerZipUpload"
                   :disabled="batchUploading"
@@ -323,6 +324,14 @@
                 accept="image/*" 
                 class="hidden" 
                 @change="handleBatchFileInput" 
+              />
+              <input 
+                ref="batchScopedFileInput" 
+                type="file" 
+                multiple 
+                accept="image/*,.zip,application/zip,application/x-zip-compressed" 
+                class="hidden" 
+                @change="handleBatchScopedFileInput" 
               />
             </div>
 
@@ -412,18 +421,6 @@
                   <Download class="w-3.5 h-3.5" :class="{ 'animate-bounce': batchActionState[batch.index]?.isIngesting }" />
                   <span>{{ batchActionState[batch.index]?.isIngesting ? 'Ingesting...' : `📥 Ingest ${batch.name}` }}</span>
                 </button>
-
-                <!-- 1-Click Compile Batch Preview -->
-                <button 
-                  @click="compileBatchPreviewFromAccordion(batch.index)"
-                  :disabled="batchActionState[batch.index]?.isCompiling"
-                  class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-sm cursor-pointer disabled:opacity-50"
-                  title="Compile single test video for this batch"
-                >
-                  <Loader2 v-if="batchActionState[batch.index]?.isCompiling" class="w-3.5 h-3.5 animate-spin" />
-                  <Play v-else class="w-3.5 h-3.5" />
-                  <span>{{ batchActionState[batch.index]?.isCompiling ? 'Compiling Video...' : `🎬 Compile ${batch.name} Preview` }}</span>
-                </button>
               </div>
             </div>
 
@@ -433,14 +430,15 @@
               <div 
                 @dragover.prevent
                 @drop.prevent="handleBatchScopedDrop($event, batch.index)"
-                class="p-6 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/30 hover:border-purple-500 bg-purple-50/20 dark:bg-purple-950/10 text-center space-y-2 transition"
+                @click="triggerBatchScopedUpload(batch.index)"
+                class="p-6 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/30 hover:border-purple-500 bg-purple-50/20 hover:bg-purple-50/40 dark:bg-purple-950/10 dark:hover:bg-purple-950/20 text-center space-y-2 transition cursor-pointer group"
               >
-                <div class="flex items-center justify-center space-x-2 text-xs font-bold text-slate-800 dark:text-slate-200">
-                  <FolderDown class="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                <div class="flex items-center justify-center space-x-2 text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
+                  <FolderDown class="w-4 h-4 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition" />
                   <span>Dropzone for {{ batch.name }} ({{ batch.startTag }} – {{ batch.endTag }})</span>
                 </div>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                  Drag & drop images or a ZIP archive here. All files will be strictly mapped within {{ batch.name }} scenes.
+                  <strong>Click to browse files</strong> or drag & drop images / ZIP archive here. All files will be strictly mapped within {{ batch.name }} scenes.
                 </p>
               </div>
 
@@ -612,43 +610,15 @@
             </p>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <!-- Batch Target Selector -->
-            <div class="flex items-center space-x-1.5 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl text-xs font-mono">
-              <button 
-                @click="selectedBatchTarget = 'all'"
-                class="px-2.5 py-1.5 rounded-lg font-semibold transition cursor-pointer"
-                :class="selectedBatchTarget === 'all' 
-                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-              >
-                Full Episode (Master)
-              </button>
-              <select 
-                v-model="selectedBatchTarget"
-                class="bg-transparent border-0 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 focus:ring-0 cursor-pointer pr-2"
-                :class="{ 'text-purple-600 dark:text-purple-400 font-bold': selectedBatchTarget !== 'all' }"
-              >
-                <option value="all">Full (All Cuts)</option>
-                <option v-for="b in availableBatches" :key="b.index" :value="b.index">
-                  {{ b.label }}
-                </option>
-              </select>
-            </div>
-
-            <!-- Compile Action Button -->
+          <div class="flex items-center space-x-3">
+            <!-- Compile Master Action Button -->
             <button 
               @click="compileVideo"
               :disabled="compiling"
               class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 active:scale-95 text-white text-xs font-semibold flex items-center space-x-2 transition shadow-lg shadow-purple-900/30 disabled:opacity-50 cursor-pointer"
             >
               <Play class="w-4 h-4 fill-current" :class="{ 'animate-spin': compiling }" />
-              <span>
-                {{ compiling 
-                  ? 'Compiling Video...' 
-                  : (selectedBatchTarget === 'all' ? 'Compile Master 1080p Video' : `Compile ${availableBatches.find(b => b.index === selectedBatchTarget)?.letter || ''} Preview`) 
-                }}
-              </span>
+              <span>{{ compiling ? 'Compiling Master Video...' : 'Compile Master 1080p Video' }}</span>
             </button>
           </div>
         </div>
@@ -1028,6 +998,31 @@ const triggerBatchUpload = () => {
   if (batchFileInput.value) batchFileInput.value.click()
 }
 
+const activeScopedBatchIndex = ref(null)
+const batchScopedFileInput = ref(null)
+
+const triggerBatchScopedUpload = (batchIndex) => {
+  activeScopedBatchIndex.value = batchIndex
+  if (batchScopedFileInput.value) {
+    batchScopedFileInput.value.click()
+  }
+}
+
+const handleBatchScopedFileInput = async (e) => {
+  const files = e.target ? Array.from(e.target.files) : []
+  const targetBatchIndex = activeScopedBatchIndex.value
+  if (files.length > 0 && targetBatchIndex !== null) {
+    const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+    if (zipFile) {
+      await handleZipUpload(zipFile, targetBatchIndex)
+    } else {
+      await processBatchFiles(files, targetBatchIndex)
+    }
+  }
+  if (e.target) e.target.value = ''
+  activeScopedBatchIndex.value = null
+}
+
 const handleZipFileInput = async (e) => {
   const files = e.target ? Array.from(e.target.files) : []
   if (files.length > 0) {
@@ -1218,85 +1213,6 @@ const synthesizeAllBatches = async () => {
     modalState.value.logs = [...modalState.value.logs, `Error: ${e.message}`]
   } finally {
     isSynthesizingAll.value = false
-  }
-}
-
-const startBatchCompilationPolling = (batchIndex, letter) => {
-  clearInterval(pollTimer)
-  pollTimer = setInterval(async () => {
-    try {
-      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/video-status`)
-      const data = await res.json()
-      if (data) {
-        if (modalState.value.activeStage === 'compiler') {
-          modalState.value.progress = data.progress || modalState.value.progress
-          modalState.value.message = data.message || modalState.value.message
-          if (data.log && data.log.length > 0) {
-            modalState.value.logs = data.log
-          }
-        }
-
-        if (data.status === 'completed') {
-          clearInterval(pollTimer)
-          modalState.value.status = 'completed'
-          modalState.value.progress = 100
-          modalState.value.message = `Batch ${letter} Preview compiled successfully!`
-          modalState.value.logs = [...(data.log || []), `Batch_${letter}_Preview_1080p.mp4 ready in player.`]
-          await loadVideoFiles()
-          selectedVideoFile.value = `Batch_${letter}_Preview_1080p.mp4`
-          activeStage.value = 'compiler'
-        } else if (data.status === 'failed') {
-          clearInterval(pollTimer)
-          modalState.value.status = 'failed'
-          modalState.value.message = data.message || 'Batch compilation failed.'
-          modalState.value.logs = [...(data.log || []), `Error: ${data.message}`]
-        }
-      }
-    } catch (e) {
-      clearInterval(pollTimer)
-      modalState.value.status = 'failed'
-      modalState.value.message = e.message
-    }
-  }, 1000)
-}
-
-const compileBatchPreviewFromAccordion = async (batchIndex) => {
-  const letter = String.fromCharCode(65 + batchIndex)
-  modalState.value = {
-    show: true,
-    isMinimized: false,
-    activeStage: 'compiler',
-    status: 'running',
-    progress: 10,
-    message: `Initializing compilation for Batch ${letter} Preview (1080p)...`,
-    logs: [
-      `Initializing Modular Batch Compilation Engine for Batch ${letter}...`,
-      `Target range: Scenes ${batchIndex * 24 + 1} to ${Math.min((batchIndex + 1) * 24, scenes.value.length)}.`
-    ]
-  }
-
-  try {
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        batchIndex,
-        kenBurns: true,
-        burnSubtitles: true,
-        bgmTrack: selectedBgmTrack.value,
-        bgmVolume: selectedBgmVolume.value
-      })
-    })
-    const data = await res.json()
-    if (data.success) {
-      startBatchCompilationPolling(batchIndex, letter)
-    } else {
-      throw new Error(data.error || 'Compilation trigger failed')
-    }
-  } catch (e) {
-    modalState.value.status = 'failed'
-    modalState.value.message = e.message
-    modalState.value.logs = [...modalState.value.logs, `Compile error: ${e.message}`]
   }
 }
 
@@ -1840,18 +1756,14 @@ const seekAudio = (seconds) => {
 
 const compileVideo = async () => {
   compiling.value = true
-  const isBatch = selectedBatchTarget.value !== 'all'
-  const batchObj = isBatch ? availableBatches.value.find(b => b.index === selectedBatchTarget.value) : null
-  const targetLabel = isBatch ? (batchObj ? batchObj.label : `Batch ${selectedBatchTarget.value}`) : 'Full 1080p Master Episode'
-
   modalState.value = {
     show: true,
     isMinimized: false,
     activeStage: 'compiler',
     status: 'running',
     progress: 10,
-    message: `Initializing compilation for ${targetLabel}...`,
-    logs: [`Launching FFmpeg compilation job for ${targetLabel}...`]
+    message: 'Initializing compilation for Full 1080p Master Episode...',
+    logs: ['Launching FFmpeg compilation job for Full 1080p Master Episode...']
   }
 
   try {
@@ -1860,9 +1772,6 @@ const compileVideo = async () => {
       burnSubtitles: true,
       bgmTrack: selectedBgmTrack.value,
       bgmVolume: selectedBgmVolume.value
-    }
-    if (isBatch) {
-      payload.batchIndex = selectedBatchTarget.value
     }
 
     await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
