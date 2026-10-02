@@ -379,8 +379,15 @@ export class VideoService {
   static async renderParallaxKenBurnsClip(imagePath, layerInfo, framesCount, motionIndex, outputPath) {
     const frames = Math.max(15, Math.round(framesCount))
     const PI = '3.14159265'
-    const ease = `(0.5-0.5*cos(${PI}*n/${frames}))`
-    const easeInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
+    
+    // Scoped easing variables:
+    // In 'crop' filter: 'n' is the frame counter
+    // In 'zoompan' filter: 'on' is the frame counter
+    const cropEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
+    const cropEaseInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
+
+    const zpEase = `(0.5-0.5*cos(${PI}*on/${frames}))`
+    const zpEaseInv = `(1.0-(0.5-0.5*cos(${PI}*on/${frames})))`
 
     const { bgPath, maskPath, shadowPath, cardW, cardH, cardX, cardY, isVertical } = layerInfo
 
@@ -390,48 +397,48 @@ export class VideoService {
       // Vertical Manhwa Strips: Full-length scroll and directional panel focal scanning
       const verticalPresets = [
         // 0: Top-to-Bottom Smooth Webtoon Scroll
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})'`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})'`,
         // 1: Bottom-to-Top Upward Reveal
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${easeInv})'`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEaseInv})'`,
         // 2: Top Panel Focus with Subtle Push-In
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y=0,zoompan=z='1.0+0.10*${ease}':x='(iw-iw/zoom)/2':y=0:d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y=0,zoompan=z='1.0+0.10*${zpEase}':x='(iw-iw/zoom)/2':y=0:d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 3: Bottom Panel Focus with Subtle Push-In
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,ih-${cardH})',zoompan=z='1.0+0.10*${ease}':x='(iw-iw/zoom)/2':y='ih-ih/zoom':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,ih-${cardH})',zoompan=z='1.0+0.10*${zpEase}':x='(iw-iw/zoom)/2':y='ih-ih/zoom':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 4: Center Focus Kinetic Breath
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.02+0.08*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.02+0.08*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 5: Scope Pull-Out Reveal (1.12x -> 1.0x)
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})',zoompan=z='1.12-0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})',zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 6: Diagonal Top-Left to Bottom-Right Scan
-        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${ease}':y='max(0,(ih-${cardH})*${ease})'`,
+        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${cropEase}':y='max(0,(ih-${cardH})*${cropEase})'`,
         // 7: Diagonal Top-Right to Bottom-Left Scan
-        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${easeInv}':y='max(0,(ih-${cardH})*${ease})'`,
+        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${cropEaseInv}':y='max(0,(ih-${cardH})*${cropEase})'`,
         // 8: Full-Length Speed Scan (Smooth Continuous Top to Bottom)
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${ease})'`,
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})'`,
         // 9: Centered Subtle Floating Breath
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.0+0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
+        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.0+0.05*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
       ]
       innerStreamFilter = verticalPresets[motionIndex % verticalPresets.length]
     } else {
       // Landscape / Standard Panels: Horizontal panning, diagonal sweep, and push-in zooms
       const landscapePresets = [
         // 0: Left to Right Horizontal Pan
-        `scale=w=-1:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${ease})':y=0`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEase})':y=0`,
         // 1: Right to Left Horizontal Pan
-        `scale=w=-1:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${easeInv})':y=0`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEaseInv})':y=0`,
         // 2: Center Push-In (1.0x -> 1.12x)
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 3: Center Pull-Out (1.12x -> 1.0x)
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.12-0.12*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 4: Subtle Cinematic Breath
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.02+0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.02+0.05*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 5: Left to Right Diagonal Sweep
-        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='140*${ease}':y='80*${ease}'`,
+        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEase})':y='max(0,(ih-${cardH})*${cropEase})'`,
         // 6: Right to Left Diagonal Sweep
-        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='140*${easeInv}':y='80*${ease}'`,
+        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEaseInv})':y='max(0,(ih-${cardH})*${cropEase})'`,
         // 7: Left Anchor Focus
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${ease}':x=0:y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${zpEase}':x=0:y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 8: Right Anchor Focus
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${ease}':x='iw-iw/zoom':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${zpEase}':x='iw-iw/zoom':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
         // 9: Ambient Stillness with Floating Drift
         `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z=1.03:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
       ]
