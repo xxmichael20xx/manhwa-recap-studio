@@ -739,6 +739,47 @@ export class ImageService {
     }
   }
 
+  /**
+   * Stitches two individual panels (top and bottom) into a seamless 9:16 vertical manhwa strip.
+   * Eliminates multi-panel AI diffusion anatomy bleeding.
+   */
+  static async stitchMultiPanel({ topBufferOrPath, bottomBufferOrPath, outputPath, gutterHeight = 8, gutterColor = '#0b0f19' }) {
+    const sharp = (await import('sharp')).default
+    const CANVAS_W = 1080
+    const CANVAS_H = 1920
+    const panelH = Math.floor((CANVAS_H - gutterHeight) / 2)
+
+    const topProcessed = await sharp(topBufferOrPath)
+      .resize(CANVAS_W, panelH, { fit: 'cover', position: 'center' })
+      .toBuffer()
+
+    const bottomProcessed = await sharp(bottomBufferOrPath)
+      .resize(CANVAS_W, panelH, { fit: 'cover', position: 'center' })
+      .toBuffer()
+
+    const gutterSvg = Buffer.from(
+      `<svg width="${CANVAS_W}" height="${gutterHeight}"><rect width="${CANVAS_W}" height="${gutterHeight}" fill="${gutterColor}"/></svg>`
+    )
+
+    await sharp({
+      create: {
+        width: CANVAS_W,
+        height: CANVAS_H,
+        channels: 4,
+        background: gutterColor
+      }
+    })
+      .composite([
+        { input: topProcessed, top: 0, left: 0 },
+        { input: gutterSvg, top: panelH, left: 0 },
+        { input: bottomProcessed, top: panelH + gutterHeight, left: 0 }
+      ])
+      .jpeg({ quality: 95 })
+      .toFile(outputPath)
+
+    return outputPath
+  }
+
   static getImagePath(franchiseId, episodeId, filename) {
     return path.join(this.getImagesDir(franchiseId, episodeId), filename)
   }

@@ -368,6 +368,40 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
   }
 })
 
+// Stitch Two Single Renders into Multi-Panel 9:16 Strip
+app.post('/api/episodes/:franchiseId/:episodeId/images/stitch-strip', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { tag, topBase64, bottomBase64, gutterHeight, gutterColor } = req.body
+    if (!tag || !topBase64 || !bottomBase64) {
+      return res.status(400).json({ error: 'tag, topBase64, and bottomBase64 are required' })
+    }
+
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    await fs.promises.mkdir(imagesDir, { recursive: true })
+    const targetPath = path.join(imagesDir, `${tag.toUpperCase()}.jpg`)
+
+    const topBuf = Buffer.from(topBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64')
+    const bottomBuf = Buffer.from(bottomBase64.replace(/^data:image\/\w+;base64,/, ''), 'base64')
+
+    await ImageService.stitchMultiPanel({
+      topBufferOrPath: topBuf,
+      bottomBufferOrPath: bottomBuf,
+      outputPath: targetPath,
+      gutterHeight: gutterHeight || 8,
+      gutterColor: gutterColor || '#0b0f19'
+    })
+
+    res.json({
+      success: true,
+      filename: `${tag.toUpperCase()}.jpg`,
+      url: `/api/episodes/${franchiseId}/${episodeId}/images/${tag.toUpperCase()}.jpg`
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Upload & Extract ZIP Archive of Scene Images (with Optional Batch Scoping)
 app.post('/api/episodes/:franchiseId/:episodeId/images/upload-zip', async (req, res) => {
   try {

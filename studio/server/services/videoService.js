@@ -353,32 +353,55 @@ export class VideoService {
 
   /**
    * Render a single 30fps Ken Burns motion MP4 clip with Lumos trigonometric sine easing.
-   * Multi-Focal Slicing Engine: Cycles dynamically through 8 varied cinematic framing modes.
+   * Multi-Focal Slicing Engine: Adaptive easing scaled dynamically to scene hold duration.
+   * - T < 8s: Subtle Breath (1.00x -> 1.035x)
+   * - 8s <= T <= 16s: Webtoon Vertical Scroll Glide (1.00x -> 1.055x)
+   * - T > 16s: 2-Stage Reading Pan + Center Linger
    */
   static async renderKenBurnsClip(compositePath, framesCount, motionIndex, outputPath) {
     const frames = Math.max(15, Math.round(framesCount))
+    const durationSec = frames / 30
     const PI = '3.14159265'
 
-    const motionPresets = [
-      // 0: Subtle Vertical Scan (Top-to-Bottom Gentle Glide with Sine Easing)
-      `zoompan=z=1.06:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':d=${frames}:s=1920x1080:fps=30`,
-      // 1: Subtle Vertical Reveal (Bottom-to-Top Gentle Glide with Sine Easing)
-      `zoompan=z=1.06:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':d=${frames}:s=1920x1080:fps=30`,
-      // 2: Gentle Center Push-In (1.02x -> 1.08x Breath Ramp)
-      `zoompan=z='1.02+0.06*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 3: Gentle Center Pull-Out (1.08x -> 1.02x Scope Reveal)
-      `zoompan=z='1.08-0.06*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 4: Horizontal Slow Drift (Left to Right)
-      `zoompan=z=1.05:x='(iw-iw/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 5: Horizontal Slow Drift (Right to Left)
-      `zoompan=z=1.05:x='(iw-iw/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 6: Upper-Third Focus Push-In (Face & Eyes)
-      `zoompan=z='1.03+0.05*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.30':d=${frames}:s=1920x1080:fps=30`,
-      // 7: Lower-Third Focus Pull-Out (Action / Ground)
-      `zoompan=z='1.07-0.05*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.70':d=${frames}:s=1920x1080:fps=30`
-    ]
+    let motionFilter = ''
 
-    const filter = `${motionPresets[motionIndex % motionPresets.length]},format=yuv420p`
+    if (durationSec < 8) {
+      // Short Hold (<8s): Micro-breath to prevent rapid screen flashing
+      const presets = [
+        // 0: Center Breath In (1.01x -> 1.035x)
+        `zoompan=z='1.01+0.025*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+        // 1: Upper Focus Subtle Drift
+        `zoompan=z='1.01+0.025*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*0.35':d=${frames}:s=1920x1080:fps=30`,
+        // 2: Center Pull-Out Scope
+        `zoompan=z='1.035-0.025*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`
+      ]
+      motionFilter = presets[motionIndex % presets.length]
+    } else if (durationSec <= 16) {
+      // Medium Hold (8s - 16s): Authentic Webtoon Downward Glide with Sine Easing
+      const presets = [
+        // 0: Top-to-Bottom Smooth Webtoon Scan (1.00x -> 1.055x)
+        `zoompan=z=1.055:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':d=${frames}:s=1920x1080:fps=30`,
+        // 1: Bottom-to-Top Dynamic Reveal
+        `zoompan=z=1.055:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(1.0-(0.5-0.5*cos(${PI}*on/${frames})))':d=${frames}:s=1920x1080:fps=30`,
+        // 2: Upper Focus to Lower Focus Diagonal Pan
+        `zoompan=z='1.02+0.035*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':y='(ih-ih/zoom)*(0.3+0.4*(0.5-0.5*cos(${PI}*on/${frames})))':d=${frames}:s=1920x1080:fps=30`,
+        // 3: Center Slow Push-In
+        `zoompan=z='1.01+0.045*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`
+      ]
+      motionFilter = presets[motionIndex % presets.length]
+    } else {
+      // Extended Hold (>16s): 2-Stage Multi-Panel Reading Linger
+      // Hold top panel for first 35%, smooth vertical transition 35%-65%, hold bottom panel 65%-100%
+      const presets = [
+        // 0: 2-Stage Step Pan (Top Panel -> Bottom Panel Reading Rhythm)
+        `zoompan=z=1.05:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(if(lt(on/${frames},0.35),0,if(gt(on/${frames},0.65),1,(on/${frames}-0.35)/0.30)))':d=${frames}:s=1920x1080:fps=30`,
+        // 1: Slow Scope Glide with Center Linger
+        `zoompan=z='1.02+0.045*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*(0.5-0.5*cos(${PI}*on/${frames}))':d=${frames}:s=1920x1080:fps=30`
+      ]
+      motionFilter = presets[motionIndex % presets.length]
+    }
+
+    const filter = `${motionFilter},format=yuv420p`
 
     const args = [
       '-y',

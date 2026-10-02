@@ -374,12 +374,13 @@
                   <div class="flex items-center space-x-2.5">
                     <span class="text-sm font-bold text-slate-900 dark:text-white">{{ batch.label }}</span>
                     <span 
-                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full"
+                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1"
                       :class="batch.isFullyReady 
                         ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30' 
                         : 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'"
                     >
-                      {{ batch.readyCount }}/{{ batch.totalCount }} Panels Loaded
+                      <span v-if="batch.isFullyReady">✓ {{ batch.readyCount }}/{{ batch.totalCount }} Panels Loaded (100%)</span>
+                      <span v-else>{{ batch.readyCount }}/{{ batch.totalCount }} Loaded • {{ batch.totalCount - batch.readyCount }} Missing ({{ batch.progressPercent }}%)</span>
                     </span>
                   </div>
                   <div class="flex items-center space-x-3 mt-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
