@@ -274,128 +274,164 @@ export class VideoService {
   }
 
   /**
-   * Generates a pristine 4K (3840x2160) canvas composite for an episode scene image.
-   * - Background: Full-bleed Cover + 45px Gaussian Blur + Atmospheric Dimming
-   * - Foreground: Uncropped aspect-ratio preserved panel with 36px Rounded Corners & Soft Diffuse Drop Shadow
+   * Generates pristine parallax layers for an episode scene image:
+   * - Layer 1: Ambient 1920x1080 cover background (Gaussian blurred + dimmed)
+   * - Layer 2: Mask SVG with 32px rounded corners matching card window dimensions
+   * - Layer 3: Drop-shadow & border overlay (1920x1080 transparent PNG)
+   * 
+   * Dynamic Aspect Ratio Adaption:
+   * - Vertical Manhwa Strips (R < 0.95): 640x960 window centered at (640, 60)
+   * - Landscape / Standard (R >= 0.95): 1520x855 window centered at (200, 112)
    */
-  static async generate4kCanvasComposite(imagePath, outputPath) {
-    if (fsSync.existsSync(outputPath)) {
-      try {
-        const srcStat = await fs.stat(imagePath)
-        const outStat = await fs.stat(outputPath)
-        if (outStat.mtimeMs >= srcStat.mtimeMs && outStat.size > 1000) {
-          return outputPath
-        }
-      } catch (e) {
-        // Regenerate if stat fails
-      }
+  static async generateParallaxLayers(imagePath, tempDir, baseName) {
+    const meta = await sharp(imagePath).metadata()
+    const imgRatio = meta.width / meta.height
+    const isVertical = imgRatio < 0.95
+
+    const CANVAS_W = 1920
+    const CANVAS_H = 1080
+
+    let cardW, cardH, cardX, cardY
+    if (isVertical) {
+      cardW = 640
+      cardH = 960
+      cardX = 640
+      cardY = 60
+    } else {
+      cardW = 1520
+      cardH = 855
+      cardX = 200
+      cardY = 112
     }
 
-    const meta = await sharp(imagePath).metadata()
-    const CANVAS_W = 3840
-    const CANVAS_H = 2160
+    const cornerRadius = 32
+    const bgPath = path.join(tempDir, `${baseName}_bg.jpg`)
+    const maskPath = path.join(tempDir, `${baseName}_mask.png`)
+    const shadowPath = path.join(tempDir, `${baseName}_shadow.png`)
 
-    // 1. Background (Cover + Heavy Gaussian Blur + Dimming)
-    const bgBuffer = await sharp(imagePath)
+    // 1. Ambient Background Layer
+    await sharp(imagePath)
       .resize(CANVAS_W, CANVAS_H, { fit: 'cover', position: 'center' })
       .blur(45)
-      .modulate({ brightness: 0.72, saturation: 1.08 })
-      .toBuffer()
+      .modulate({ brightness: 0.70, saturation: 1.08 })
+      .jpeg({ quality: 90 })
+      .toFile(bgPath)
 
-    // 2. Foreground sizing (fit neatly inside max height 2020px, max width 3500px)
-    const fgMaxH = 2020
-    const fgMaxW = 3500
-    const scale = Math.min(fgMaxW / meta.width, fgMaxH / meta.height)
-    const fgW = Math.round(meta.width * scale)
-    const fgH = Math.round(meta.height * scale)
-    const cornerRadius = 36
-
-    const resizedFg = await sharp(imagePath)
-      .resize(fgW, fgH, { kernel: 'lanczos3' })
-      .toBuffer()
-
-    // Rounded Corner SVG Mask
+    // 2. Rounded Mask for Inner Stream
     const maskSvg = Buffer.from(
-      `<svg width="${fgW}" height="${fgH}"><rect x="0" y="0" width="${fgW}" height="${fgH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="#fff"/></svg>`
+      `<svg width="${cardW}" height="${cardH}">
+        <rect x="0" y="0" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="#ffffff"/>
+      </svg>`
     )
+    await sharp(maskSvg).png().toFile(maskPath)
 
-    const roundedFg = await sharp(resizedFg)
-      .composite([{ input: maskSvg, blend: 'dest-in' }])
-      .png()
-      .toBuffer()
-
-    // Soft Diffuse Drop Shadow
-    const shadowPadding = 70
-    const shadowW = fgW + shadowPadding * 2
-    const shadowH = fgH + shadowPadding * 2
+    // 3. Drop Shadow & Border Plate
+    const shadowPadding = 60
+    const sw = cardW + shadowPadding * 2
+    const sh = cardH + shadowPadding * 2
     const shadowSvg = Buffer.from(
-      `<svg width="${shadowW}" height="${shadowH}"><rect x="${shadowPadding}" y="${shadowPadding + 10}" width="${fgW}" height="${fgH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.65)"/></svg>`
+      `<svg width="${sw}" height="${sh}">
+        <rect x="${shadowPadding}" y="${shadowPadding + 8}" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.75)"/>
+      </svg>`
     )
+    const shadowBuf = await sharp(shadowSvg).blur(24).png().toBuffer()
 
-    const blurredShadow = await sharp(shadowSvg)
-      .blur(28)
-      .png()
-      .toBuffer()
+    const borderSvg = Buffer.from(
+      `<svg width="${cardW}" height="${cardH}">
+        <rect x="1" y="1" width="${cardW - 2}" height="${cardH - 2}" rx="${cornerRadius}" ry="${cornerRadius}" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      </svg>`
+    )
+    const borderBuf = await sharp(borderSvg).png().toBuffer()
 
-    // 3. Composite everything onto the 4K canvas
-    const posX = Math.round((CANVAS_W - fgW) / 2)
-    const posY = Math.round((CANVAS_H - fgH) / 2)
-
-    await sharp(bgBuffer)
+    await sharp({
+      create: {
+        width: CANVAS_W,
+        height: CANVAS_H,
+        channels: 4,
+        background: { r: 0, g: 0, b: 0, alpha: 0 }
+      }
+    })
       .composite([
-        { input: blurredShadow, left: posX - shadowPadding, top: posY - shadowPadding },
-        { input: roundedFg, left: posX, top: posY }
+        { input: shadowBuf, left: cardX - shadowPadding, top: cardY - shadowPadding },
+        { input: borderBuf, left: cardX, top: cardY }
       ])
-      .jpeg({ quality: 96 })
-      .toFile(outputPath)
+      .png()
+      .toFile(shadowPath)
 
-    return outputPath
+    return {
+      bgPath,
+      maskPath,
+      shadowPath,
+      cardW,
+      cardH,
+      cardX,
+      cardY,
+      isVertical
+    }
   }
 
   /**
-   * Render a single 30fps Ken Burns motion MP4 clip with Lumos trigonometric sine easing.
-   * Multi-Focal Slicing Engine: 10-Way Omnidirectional Camera Motion Matrix.
-   * - Cardinal: North->South, South->North, West->East, East->West
-   * - Diagonal: NW->SE, NE->SW, SW->NE, SE->NW
-   * - Dynamic Zoom: Center Push-In Breath & Pull-Out Reveal
+   * Render a true dual-stream parallax Ken Burns clip:
+   * - Background Stream: Ambient blurred cover slowly breathes/zooms (1.00x -> 1.04x)
+   * - Inner Window Stream: Comic artwork scales and scrolls/pans inside the 32px rounded window
+   * - Alpha-merged inside the card frame with soft diffuse drop-shadow
    */
-  static async renderKenBurnsClip(compositePath, framesCount, motionIndex, outputPath) {
+  static async renderParallaxKenBurnsClip(imagePath, layerInfo, framesCount, motionIndex, outputPath) {
     const frames = Math.max(15, Math.round(framesCount))
     const PI = '3.14159265'
-    const z = '1.055'
     const ease = `(0.5-0.5*cos(${PI}*on/${frames}))`
     const easeInv = `(1.0-(0.5-0.5*cos(${PI}*on/${frames})))`
 
+    const { bgPath, maskPath, shadowPath, cardW, cardH, cardX, cardY, isVertical } = layerInfo
+
+    // Pre-scale inner image so it fits the window width (for vertical) or window height/width (for landscape)
+    const scaleFilter = isVertical
+      ? `scale=w=${cardW}:h=-1`
+      : `scale=w=${cardW}:h=-1:force_original_aspect_ratio=increase`
+
+    // 10-Way Omnidirectional Motion Matrix for the Inner Window
     const motionPresets = [
       // 0: North -> South (Top to Bottom Vertical Scroll)
-      `zoompan=z=${z}:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${ease}':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.04:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 1: South -> North (Bottom to Top Upward Reveal)
-      `zoompan=z=${z}:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.04:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 2: West -> East (Left to Right Horizontal Pan)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 3: East -> West (Right to Left Horizontal Pan)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 4: NW -> SE (Diagonal Top-Left to Bottom-Right)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 5: NE -> SW (Diagonal Top-Right to Bottom-Left)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${ease}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 6: SW -> NE (Diagonal Bottom-Left to Top-Right)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=1920x1080:fps=30`,
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${ease}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
       // 7: SE -> NW (Diagonal Bottom-Right to Top-Left)
-      `zoompan=z=${z}:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=1920x1080:fps=30`,
-      // 8: Center Push-In (1.01x -> 1.06x Breath)
-      `zoompan=z='1.01+0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`,
-      // 9: Center Pull-Out (1.06x -> 1.01x Scope Reveal)
-      `zoompan=z='1.06-0.05*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30`
+      `zoompan=z=1.06:x='(iw-iw/zoom)*${easeInv}':y='(ih-ih/zoom)*${easeInv}':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+      // 8: Center Push-In (1.02x -> 1.08x Breath)
+      `zoompan=z='1.02+0.06*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
+      // 9: Center Pull-Out (1.08x -> 1.02x Scope Reveal)
+      `zoompan=z='1.08-0.06*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
     ]
 
-    const filter = `${motionPresets[motionIndex % motionPresets.length]},format=yuv420p`
+    const selectedMotion = motionPresets[motionIndex % motionPresets.length]
+
+    // Complex filtergraph for multi-layer parallax composite
+    const filterComplex = [
+      `[0:v]zoompan=z='1.0+0.04*${ease}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30[bg_stream]`,
+      `[1:v]${scaleFilter},${selectedMotion}[inner_raw]`,
+      `[inner_raw][2:v]alphamerge[inner_masked]`,
+      `[bg_stream][3:v]overlay=0:0[bg_shadow]`,
+      `[bg_shadow][inner_masked]overlay=${cardX}:${cardY}:format=auto,format=yuv420p[vout]`
+    ].join(';')
 
     const args = [
       '-y',
-      '-loop', '1',
-      '-i', compositePath,
-      '-vf', filter,
+      '-loop', '1', '-i', bgPath,
+      '-loop', '1', '-i', imagePath,
+      '-loop', '1', '-i', maskPath,
+      '-loop', '1', '-i', shadowPath,
+      '-filter_complex', filterComplex,
+      '-map', '[vout]',
       '-c:v', 'libx264',
       '-preset', 'veryfast',
       '-crf', '20',
@@ -412,8 +448,8 @@ export class VideoService {
         if (code === 0) {
           resolve(outputPath)
         } else {
-          console.error(`FFmpeg Ken Burns clip error (${compositePath}):`, stderr.slice(-300))
-          reject(new Error(`Clip rendering failed for ${path.basename(compositePath)}`))
+          console.error(`FFmpeg Parallax Ken Burns error (${imagePath}):`, stderr.slice(-400))
+          reject(new Error(`Parallax clip rendering failed for ${path.basename(imagePath)}`))
         }
       })
       proc.on('error', reject)
@@ -605,13 +641,12 @@ export class VideoService {
           imagePath = path.join(imagesDir, `${beat.tag}.png`)
         }
 
-        // Generate 4K Canvas Composite with rounded corners & drop shadow
+        // Generate Parallax Layers (Ambient BG, Mask, Drop Shadow)
         const baseName = path.basename(imagePath, path.extname(imagePath))
-        const compPath = path.join(tempCompositesDir, `${baseName}_4k.jpg`)
-        await VideoService.generate4kCanvasComposite(imagePath, compPath)
+        const layers = await VideoService.generateParallaxLayers(imagePath, tempCompositesDir, baseName)
 
-        // Render sub-pixel 30fps Ken Burns clip
-        await VideoService.renderKenBurnsClip(compPath, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
+        // Render sub-pixel 30fps Dual-Stream Parallax Ken Burns clip
+        await VideoService.renderParallaxKenBurnsClip(imagePath, layers, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
 
         clipFiles[beatIndex] = clipPath
         completedClips++
@@ -621,7 +656,7 @@ export class VideoService {
           progress: progressPct,
           message: isBatchCompile
             ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
-            : `Rendered ${completedClips} of ${targetBeats.length} 30fps Ken Burns clips ([${beat.tag}])...`,
+            : `Rendered ${completedClips} of ${targetBeats.length} 30fps Parallax Ken Burns clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
             `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
@@ -705,7 +740,7 @@ export class VideoService {
         burnSubtitles ? `[0:v]subtitles='${safeSrtPath}':${subStyle}[v]` : `[0:v]copy[v]`,
         `[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`,
         `[2:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`,
-        `[bgm_base][vo_sc]sidechaincompress=threshold=0.08:ratio=4:attack=20:release=300:link=average[bgm_ducked]`,
+        `[bgm_base][vo_sc]sidechaincompress=threshold=0.015:ratio=10:attack=12:release=350:link=average[bgm_ducked]`,
         `[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`
       ].join(';')
 

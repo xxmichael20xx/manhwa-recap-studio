@@ -400,17 +400,6 @@
 
               <!-- Quick Batch Action Buttons -->
               <div class="flex flex-wrap items-center gap-2" @click.stop>
-                <!-- 1-Click Synthesize Batch -->
-                <button 
-                  @click="synthesizeSingleBatch(batch.index)"
-                  :disabled="batchActionState[batch.index]?.isSynthesizing"
-                  class="px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
-                  title="1-Click background synthesis for this batch"
-                >
-                  <Wand2 class="w-3.5 h-3.5" :class="{ 'animate-spin': batchActionState[batch.index]?.isSynthesizing }" />
-                  <span>{{ batchActionState[batch.index]?.isSynthesizing ? 'Synthesizing...' : `⚡ Synthesize ${batch.name}` }}</span>
-                </button>
-
                 <!-- 1-Click Ingest from Downloads for this Batch -->
                 <button 
                   @click="autoIngestSingleBatchDownloads(batch.index)"
@@ -740,9 +729,6 @@
           </div>
         </div>
 
-        <!-- Hidden Audio Element for BGM Preview -->
-        <audio ref="bgmAudioPlayer" @ended="onBgmEnded"></audio>
-
         <!-- Compilation Progress & Status Box -->
         <div v-if="videoStatus.status === 'compiling' || compiling" class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 space-y-3">
           <div class="flex items-center justify-between text-xs font-mono">
@@ -828,6 +814,9 @@
       @proceed-next="handleProceedNext"
       @switch-stage="handleSwitchStage"
     />
+
+    <!-- Global Hidden Audio Element for BGM Preview -->
+    <audio ref="bgmAudioPlayer" @ended="onBgmEnded"></audio>
 
   </div>
 </template>
@@ -1484,8 +1473,11 @@ const togglePreviewBgm = (track) => {
   } else {
     activePreviewTrack.value = track.filename
     bgmAudioPlayer.value.src = track.url
-    bgmAudioPlayer.value.volume = Math.max(0.01, Math.min(1.0, Math.pow(10, selectedBgmVolume.value / 20)))
-    bgmAudioPlayer.value.play().catch(() => {})
+    bgmAudioPlayer.value.volume = 0.75
+    bgmAudioPlayer.value.play().catch((err) => {
+      console.warn('BGM preview play error:', err)
+      activePreviewTrack.value = null
+    })
   }
 }
 
