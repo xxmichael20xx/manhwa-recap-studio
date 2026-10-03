@@ -18,12 +18,11 @@ async function audit() {
   const page = await browser.newPage()
   await page.setViewport({ width: 1440, height: 900 })
 
-  // 1. Light Mode
   await page.goto('http://localhost:3100/video/Series_01_The_Singularity_Protocol/EP01_The_Double_FRank_Anomaly', { waitUntil: 'networkidle0' })
-  await page.evaluate(() => document.documentElement.classList.remove('dark'))
-  await new Promise(r => setTimeout(r, 1500))
+  await page.evaluate(() => document.documentElement.classList.add('dark'))
+  await new Promise(r => setTimeout(r, 1000))
 
-  // Click Validate Scene Alignment
+  // 1. Click Validate Scene Alignment
   const buttons = await page.$$('button')
   for (const btn of buttons) {
     const text = await page.evaluate(el => el.textContent, btn)
@@ -33,16 +32,23 @@ async function audit() {
     }
   }
 
-  await new Promise(r => setTimeout(r, 2000))
-  await page.screenshot({ path: 'C:/Users/MIchaelangelo/.gemini/antigravity/brain/425b19b0-3cce-44b2-9067-511ba7c4c2bf/visual_alignment_modal_light.png' })
+  await new Promise(r => setTimeout(r, 1200))
 
-  // 2. Dark Mode
-  await page.evaluate(() => document.documentElement.classList.add('dark'))
-  await new Promise(r => setTimeout(r, 800))
-  await page.screenshot({ path: 'C:/Users/MIchaelangelo/.gemini/antigravity/brain/425b19b0-3cce-44b2-9067-511ba7c4c2bf/visual_alignment_modal_dark.png' })
+  // 2. Click Re-scan Alignment
+  const modalButtons = await page.$$('button')
+  for (const btn of modalButtons) {
+    const text = await page.evaluate(el => el.textContent, btn)
+    if (text && text.includes('Re-scan Alignment')) {
+      console.log('Found and clicking Re-scan Alignment button...')
+      await btn.click()
+      break
+    }
+  }
 
+  await new Promise(r => setTimeout(r, 1500))
+  await page.screenshot({ path: 'C:/Users/MIchaelangelo/.gemini/antigravity/brain/425b19b0-3cce-44b2-9067-511ba7c4c2bf/visual_alignment_modal_rescanned.png' })
   await browser.close()
-  console.log('Dual theme screenshots captured successfully.')
+  console.log('Re-scan test screenshot captured successfully.')
 }
 
 audit().catch(console.error)

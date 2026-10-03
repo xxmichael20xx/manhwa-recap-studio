@@ -1078,17 +1078,20 @@
         </div>
 
         <!-- Modal Footer -->
-        <div class="p-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-slate-50/50 dark:bg-slate-950/40">
-          <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-            Audit scanned {{ alignmentReport?.totalScenes || 0 }} scenes • {{ alignmentReport?.attachedCount || 0 }} loaded • {{ alignmentReport?.missingCount || 0 }} missing
+        <div class="p-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 shrink-0 bg-slate-50/50 dark:bg-slate-950/40">
+          <div class="flex items-center space-x-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <span>Audit scanned {{ alignmentReport?.totalScenes || 0 }} scenes • {{ alignmentReport?.attachedCount || 0 }} loaded • {{ alignmentReport?.missingCount || 0 }} missing</span>
+            <span v-if="lastScannedTime" class="text-indigo-600 dark:text-indigo-400 font-semibold">• Last synced: {{ lastScannedTime }}</span>
+            <span v-if="scanFeedback" class="text-emerald-600 dark:text-emerald-400 font-bold animate-pulse">• {{ scanFeedback }}</span>
           </div>
           <div class="flex items-center space-x-3">
             <button 
               @click="runVisualAlignmentValidation(activeAlignmentBatchTab === 'all' ? null : activeAlignmentBatchTab)"
-              class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition cursor-pointer flex items-center space-x-1.5"
+              :disabled="isValidatingAlignment"
+              class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition cursor-pointer flex items-center space-x-1.5 disabled:opacity-50"
             >
               <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isValidatingAlignment }" />
-              <span>Re-scan Alignment</span>
+              <span>{{ isValidatingAlignment ? 'Scanning Disk Assets...' : 'Re-scan Alignment' }}</span>
             </button>
             <button 
               @click="showAlignmentModal = false"
@@ -1241,23 +1244,37 @@ const alignmentReport = ref(null)
 const alignmentFilter = ref('all')
 const showAlignmentModal = ref(false)
 const activeAlignmentBatchTab = ref('all')
+const lastScannedTime = ref('')
+const scanFeedback = ref('')
 
 const runVisualAlignmentValidation = async (targetBatchIndex = null) => {
   isValidatingAlignment.value = true
+  scanFeedback.value = 'Scanning disk...'
   triggerToast('Validating Scenes', 'Auditing visual scene alignment and file integrity...', 'info', true)
 
   try {
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/validate-alignment`)
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/validate-alignment?cb=${Date.now()}`)
     if (!res.ok) throw new Error(`Server returned ${res.status}`)
     const data = await res.json()
     if (data.success) {
       alignmentReport.value = data
+      lastScannedTime.value = new Date().toLocaleTimeString()
+      cacheBuster.value = Date.now()
+      
       if (typeof targetBatchIndex === 'number') {
         activeAlignmentBatchTab.value = targetBatchIndex
       } else {
         activeAlignmentBatchTab.value = 'all'
       }
       showAlignmentModal.value = true
+
+      // Synchronously refresh main sequencer view in background
+      loadScenes()
+      loadPipelineStatus()
+
+      scanFeedback.value = `✓ Updated at ${lastScannedTime.value}`
+      setTimeout(() => { scanFeedback.value = '' }, 5000)
+
       if (data.isFullyAligned) {
         triggerToast('Alignment Verified', `✓ 100% of scenes (${data.totalScenes}/${data.totalScenes}) are fully aligned!`, 'success')
       } else {
@@ -1268,6 +1285,7 @@ const runVisualAlignmentValidation = async (targetBatchIndex = null) => {
     }
   } catch (err) {
     console.error('Validation error:', err)
+    scanFeedback.value = `Error: ${err.message}`
     triggerToast('Validation Error', err.message, 'error')
   } finally {
     isValidatingAlignment.value = false
