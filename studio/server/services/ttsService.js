@@ -336,13 +336,13 @@ export class TtsService {
 
           globalTimeMs += exactDurationMs
 
-          const pct = Math.min(85, Math.round(10 + (sceneIndex / sceneBlocks.length) * 75))
+          const pct = Math.min(85, Math.round(10 + (sceneIndex / extractedScenes.length) * 75))
           const currentLogs = [...(this.getStatus(franchiseId, episodeId).log || [])]
           currentLogs.push(`Synthesized SC${String(sceneIndex).padStart(2, '0')} (${(exactDurationMs / 1000).toFixed(1)}s, ${parsedSentences.length} subtitle cues)`)
           this.updateStatus(franchiseId, episodeId, {
             status: 'running',
             progress: pct,
-            message: `Synthesizing scene ${sceneIndex}/${sceneBlocks.length}...`,
+            message: `Synthesizing scene ${sceneIndex}/${extractedScenes.length}...`,
             log: currentLogs.slice(-25)
           })
         } catch (err) {
