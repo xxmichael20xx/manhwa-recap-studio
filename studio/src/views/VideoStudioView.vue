@@ -1422,6 +1422,26 @@ const handleBatchDrop = async (e) => {
   await processBatchFiles(files)
 }
 
+const fetchWithRetry = async (url, options = {}, retries = 2, delayMs = 600) => {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, options)
+      if (res.ok || attempt === retries) return res
+      if ([500, 502, 503, 504].includes(res.status) && attempt < retries) {
+        await new Promise(r => setTimeout(r, delayMs * (attempt + 1)))
+        continue
+      }
+      return res
+    } catch (err) {
+      if (attempt < retries) {
+        await new Promise(r => setTimeout(r, delayMs * (attempt + 1)))
+        continue
+      }
+      throw err
+    }
+  }
+}
+
 const handleZipUpload = async (file, targetBatchIndex = null) => {
   batchUploading.value = true
   const batchLabel = typeof targetBatchIndex === 'number' ? `Batch ${targetBatchIndex + 1}` : 'Visual Deck'
@@ -1453,7 +1473,7 @@ const handleZipUpload = async (file, targetBatchIndex = null) => {
     modalState.value.progress = 50
     modalState.value.message = 'Sending visual assets to studio engine...'
 
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload-zip`, {
+    const res = await fetchWithRetry(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload-zip`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1620,7 +1640,7 @@ const processBatchFiles = async (files, targetBatchIndex = null) => {
       modalState.value.message = `Uploading panels ${i + 1} to ${Math.min(i + chunkSize, mappedItems.length)} of ${mappedItems.length}...`
       batchUploadFeedback.value = `Uploading panels ${i + 1} to ${Math.min(i + chunkSize, mappedItems.length)} of ${mappedItems.length}...`
 
-      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/batch-upload`, {
+      const res = await fetchWithRetry(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/batch-upload`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: chunk })

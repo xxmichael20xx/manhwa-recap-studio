@@ -316,6 +316,37 @@ app.get('/api/episodes/:franchiseId/:episodeId/tts-status', (req, res) => {
   res.json(TtsService.getStatus(franchiseId, episodeId))
 })
 
+// Helper to detect extension and clean older conflicting extensions for same tag
+const saveUploadedImage = async (imagesDir, tag, base64Data) => {
+  const cleanTag = tag.toUpperCase()
+  let ext = 'png'
+  const match = base64Data.match(/^data:image\/([a-zA-Z0-9+]+);base64,/)
+  if (match) {
+    const sub = match[1].toLowerCase()
+    if (sub === 'jpeg' || sub === 'jpg') ext = 'jpg'
+    else if (sub === 'webp') ext = 'webp'
+  }
+
+  const filename = `${cleanTag}.${ext}`
+  const targetPath = path.join(imagesDir, filename)
+  const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '')
+  const buffer = Buffer.from(cleanBase64, 'base64')
+  await fs.promises.writeFile(targetPath, buffer)
+
+  // Remove conflicting alternate extensions to prevent caching / shadowing
+  const allExts = ['jpg', 'jpeg', 'png', 'webp']
+  for (const altExt of allExts) {
+    if (altExt !== ext) {
+      const altPath = path.join(imagesDir, `${cleanTag}.${altExt}`)
+      if (fs.existsSync(altPath)) {
+        try { await fs.promises.unlink(altPath) } catch (_) {}
+      }
+    }
+  }
+
+  return { filename, url: filename }
+}
+
 // Manual Image Upload / Dropzone (Base64)
 app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res) => {
   try {
@@ -327,16 +358,12 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res)
 
     const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
     await fs.promises.mkdir(imagesDir, { recursive: true })
-    const targetPath = path.join(imagesDir, `${tag.toUpperCase()}.png`)
-
-    const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '')
-    const buffer = Buffer.from(cleanBase64, 'base64')
-    await fs.promises.writeFile(targetPath, buffer)
+    const { filename } = await saveUploadedImage(imagesDir, tag, base64Data)
 
     res.json({
       success: true,
-      filename: `${tag.toUpperCase()}.png`,
-      url: `/api/episodes/${franchiseId}/${episodeId}/images/${tag.toUpperCase()}.png`
+      filename,
+      url: `/api/episodes/${franchiseId}/${episodeId}/images/${filename}`
     })
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -358,10 +385,7 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
     const uploaded = []
     for (const item of items) {
       if (!item.tag || !item.base64Data) continue
-      const targetPath = path.join(imagesDir, `${item.tag.toUpperCase()}.png`)
-      const cleanBase64 = item.base64Data.replace(/^data:image\/\w+;base64,/, '')
-      const buffer = Buffer.from(cleanBase64, 'base64')
-      await fs.promises.writeFile(targetPath, buffer)
+      const { filename } = await saveUploadedImage(imagesDir, item.tag, item.base64Data)
       uploaded.push(item.tag.toUpperCase())
     }
 
