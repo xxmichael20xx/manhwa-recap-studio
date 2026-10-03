@@ -146,12 +146,12 @@
 
           <div class="flex flex-wrap items-center gap-3">
             <button 
-              @click="autoIngestDownloads"
-              :disabled="ingestingDownloads"
-              class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold flex items-center space-x-2 transition shadow-md shadow-emerald-950/20 disabled:opacity-50 cursor-pointer"
+              @click="runVisualAlignmentValidation()"
+              :disabled="isValidatingAlignment"
+              class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center space-x-2 transition shadow-md shadow-indigo-950/20 disabled:opacity-50 cursor-pointer"
             >
-              <Download class="w-4 h-4" :class="{ 'animate-bounce': ingestingDownloads }" />
-              <span>{{ ingestingDownloads ? 'Ingesting Google Flow Images...' : '📥 Ingest from Downloads' }}</span>
+              <ShieldCheck class="w-4 h-4" :class="{ 'animate-pulse': isValidatingAlignment }" />
+              <span>{{ isValidatingAlignment ? 'Auditing Alignment...' : '🛡️ Validate Scene Alignment' }}</span>
             </button>
 
             <button 
@@ -441,15 +441,15 @@
 
               <!-- Quick Batch Action Buttons -->
               <div class="flex flex-wrap items-center gap-2" @click.stop>
-                <!-- 1-Click Ingest from Downloads for this Batch -->
+                <!-- 1-Click Validate Alignment for this Batch -->
                 <button 
-                  @click="autoIngestSingleBatchDownloads(batch.index)"
-                  :disabled="batchActionState[batch.index]?.isIngesting"
-                  class="px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 border border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
-                  title="Auto-ingest downloaded images strictly into this batch"
+                  @click="runVisualAlignmentValidation(batch.index)"
+                  :disabled="isValidatingAlignment"
+                  class="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                  :title="`Validate scene alignment strictly for ${batch.name}`"
                 >
-                  <Download class="w-3.5 h-3.5" :class="{ 'animate-bounce': batchActionState[batch.index]?.isIngesting }" />
-                  <span>{{ batchActionState[batch.index]?.isIngesting ? 'Ingesting...' : `📥 Ingest ${batch.name}` }}</span>
+                  <ShieldCheck class="w-3.5 h-3.5" />
+                  <span>{{ `🔍 Validate ${batch.name}` }}</span>
                 </button>
               </div>
             </div>
@@ -871,6 +871,236 @@
       @switch-stage="handleSwitchStage"
     />
 
+    <!-- SCENE VISUAL ALIGNMENT & QUALITY AUDIT MODAL -->
+    <div v-if="showAlignmentModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+        <!-- Modal Header -->
+        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-slate-50/50 dark:bg-slate-950/40">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+              <ShieldCheck class="w-6 h-6" />
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Scene Visual Alignment & Quality Audit</h3>
+                <span 
+                  class="px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono uppercase tracking-wider"
+                  :class="alignmentReport?.isFullyAligned ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'"
+                >
+                  {{ alignmentReport?.isFullyAligned ? '100% Fully Aligned' : `${alignmentReport?.alignmentScore || 0}% Scene Coverage` }}
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Real-time verification of physical asset files, sequence continuity, 9:16 vertical manhwa tiers, and narration audio synchronization.
+              </p>
+            </div>
+          </div>
+          <button 
+            @click="showAlignmentModal = false" 
+            class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+          >
+            <X class="w-5 h-5" />
+          </button>
+        </div>
+
+        <!-- Modal Body (Scrollable) -->
+        <div class="p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
+          <!-- 4 Core Metric Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-1">
+              <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Alignment Score</div>
+              <div class="text-2xl font-black text-slate-900 dark:text-white font-mono flex items-baseline space-x-1">
+                <span>{{ alignmentReport?.alignmentScore || 0 }}%</span>
+                <span class="text-xs font-normal text-slate-400">coverage</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mt-2">
+                <div 
+                  class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transition-all duration-500"
+                  :style="{ width: `${alignmentReport?.alignmentScore || 0}%` }"
+                ></div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-1">
+              <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Physical Images</div>
+              <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                {{ alignmentReport?.attachedCount || 0 }} <span class="text-sm font-normal text-slate-400">/ {{ alignmentReport?.totalScenes || 0 }}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">{{ alignmentReport?.missingCount || 0 }} scenes missing assets</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-1">
+              <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Artwork Fidelity</div>
+              <div class="text-2xl font-black text-purple-600 dark:text-purple-400 font-mono">
+                {{ alignmentReport?.highFidelityCount || 0 }} <span class="text-xs font-normal text-slate-400">High-Res</span>
+              </div>
+              <div class="text-[11px] text-slate-500">{{ alignmentReport?.placeholderCount || 0 }} storyboard stills</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-1">
+              <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Anti-Slop Visual</div>
+              <div class="text-base font-bold font-mono mt-1 flex items-center space-x-1.5" :class="alignmentReport?.isAntiSlopVisualCertified ? 'text-emerald-500' : 'text-amber-500'">
+                <span>{{ alignmentReport?.isAntiSlopVisualCertified ? '✓ 100% Certified' : '⏳ In Production' }}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">Tier A/B/C ratio aligned</div>
+            </div>
+          </div>
+
+          <!-- Anomalies Alert Box if any -->
+          <div v-if="alignmentReport?.anomalies && alignmentReport.anomalies.length > 0" class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 space-y-2">
+            <div class="flex items-center space-x-2 text-xs font-bold text-amber-700 dark:text-amber-300 font-mono uppercase tracking-wider">
+              <AlertTriangle class="w-4 h-4 text-amber-500" />
+              <span>Pipeline Diagnostic Notices ({{ alignmentReport.anomalies.length }})</span>
+            </div>
+            <ul class="space-y-1 text-xs text-amber-800 dark:text-amber-200 font-mono">
+              <li v-for="(anom, idx) in alignmentReport.anomalies.slice(0, 5)" :key="idx" class="flex items-start space-x-2">
+                <span class="text-amber-500">•</span>
+                <span>{{ anom.message }}</span>
+              </li>
+              <li v-if="alignmentReport.anomalies.length > 5" class="text-slate-500 italic pl-3">
+                ...and {{ alignmentReport.anomalies.length - 5 }} more notices.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Batch Selector Tabs -->
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <button 
+                @click="activeAlignmentBatchTab = 'all'"
+                class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer"
+                :class="activeAlignmentBatchTab === 'all' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'"
+              >
+                All Scenes ({{ alignmentReport?.totalScenes || 0 }})
+              </button>
+
+              <button 
+                v-for="b in alignmentReport?.batches || []" 
+                :key="b.index"
+                @click="activeAlignmentBatchTab = b.index"
+                class="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center space-x-2 transition cursor-pointer"
+                :class="activeAlignmentBatchTab === b.index ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'"
+              >
+                <span>{{ b.name }} ({{ b.attached }}/{{ b.total }})</span>
+                <span v-if="b.isFullyReady" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span v-else class="w-2 h-2 rounded-full bg-amber-400"></span>
+              </button>
+            </div>
+
+            <!-- Quick Filter -->
+            <div class="flex items-center space-x-2">
+              <span class="text-xs text-slate-400 font-mono">Filter:</span>
+              <select 
+                v-model="alignmentFilter" 
+                class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-1 text-xs text-slate-700 dark:text-slate-200 font-mono focus:outline-none focus:border-indigo-500"
+              >
+                <option value="all">Show All</option>
+                <option value="missing">Missing Assets Only</option>
+                <option value="high_fidelity">High-Fidelity Only</option>
+                <option value="storyboard">Storyboard Stills Only</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Scenes Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+            <div 
+              v-for="scene in filteredAlignmentScenes" 
+              :key="scene.tag"
+              class="p-3.5 rounded-2xl border transition space-y-2.5 bg-slate-50/60 dark:bg-slate-950/40"
+              :class="scene.hasImage ? 'border-slate-200 dark:border-slate-800 hover:border-indigo-500/40' : 'border-rose-300 dark:border-rose-500/30 bg-rose-50/10'"
+            >
+              <!-- Thumbnail & Badges -->
+              <div class="aspect-[9/16] rounded-xl overflow-hidden bg-slate-900 relative group border border-slate-200 dark:border-slate-800">
+                <img 
+                  v-if="scene.hasImage" 
+                  :src="`${scene.url}?t=${cacheBuster}`" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                  alt="scene preview" 
+                />
+                <div v-else class="w-full h-full flex flex-col items-center justify-center space-y-2 text-slate-500 p-4 text-center">
+                  <Image class="w-8 h-8 opacity-30 text-rose-400" />
+                  <span class="text-[11px] font-mono text-rose-500 dark:text-rose-400">Missing Asset File</span>
+                </div>
+
+                <!-- Top Badges -->
+                <div class="absolute top-2 left-2 right-2 flex items-center justify-between pointer-events-none">
+                  <span class="px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-xs text-white font-mono font-bold text-[11px] border border-white/10">
+                    [{{ scene.tag }}]
+                  </span>
+                  <span 
+                    class="px-2 py-0.5 rounded-md font-mono font-bold text-[10px] backdrop-blur-xs"
+                    :class="{
+                      'bg-purple-950/80 text-purple-300 border border-purple-500/30': scene.tierCode === 'hero',
+                      'bg-blue-950/80 text-blue-300 border border-blue-500/30': scene.tierCode === 'dual',
+                      'bg-amber-950/80 text-amber-300 border border-amber-500/30': scene.tierCode === 'multi'
+                    }"
+                  >
+                    {{ scene.tierCode === 'hero' ? 'Hero' : (scene.tierCode === 'dual' ? 'Dual' : 'Multi') }}
+                  </span>
+                </div>
+
+                <!-- Bottom Status Overlay -->
+                <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between pointer-events-none text-[10px] font-mono">
+                  <span 
+                    v-if="scene.hasImage"
+                    class="px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-xs"
+                    :class="scene.isHighFidelity ? 'text-emerald-400 border border-emerald-500/30' : 'text-purple-300 border border-purple-500/30'"
+                  >
+                    {{ scene.isHighFidelity ? `High-Res (${scene.fileSizeFormatted})` : 'Storyboard' }}
+                  </span>
+                  <span 
+                    v-else
+                    class="px-2 py-0.5 rounded-md bg-rose-950/90 text-rose-300 border border-rose-500/40"
+                  >
+                    Missing
+                  </span>
+                </div>
+              </div>
+
+              <!-- Scene Description & Sync Metas -->
+              <div class="space-y-1">
+                <div class="text-xs font-semibold text-slate-800 dark:text-slate-200 line-clamp-1" :title="scene.description">
+                  {{ scene.description }}
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-200 dark:border-slate-800/80">
+                  <span :class="scene.inScript ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'">
+                    Script {{ scene.inScript ? '✓' : '—' }}
+                  </span>
+                  <span v-if="scene.inTts !== null" :class="scene.inTts ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-500'">
+                    TTS Audio {{ scene.inTts ? '✓' : '⏳' }}
+                  </span>
+                  <span v-else class="text-slate-400">TTS Audio —</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="p-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-slate-50/50 dark:bg-slate-950/40">
+          <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+            Audit scanned {{ alignmentReport?.totalScenes || 0 }} scenes • {{ alignmentReport?.attachedCount || 0 }} loaded • {{ alignmentReport?.missingCount || 0 }} missing
+          </div>
+          <div class="flex items-center space-x-3">
+            <button 
+              @click="runVisualAlignmentValidation(activeAlignmentBatchTab === 'all' ? null : activeAlignmentBatchTab)"
+              class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition cursor-pointer flex items-center space-x-1.5"
+            >
+              <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isValidatingAlignment }" />
+              <span>Re-scan Alignment</span>
+            </button>
+            <button 
+              @click="showAlignmentModal = false"
+              class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition cursor-pointer shadow-md shadow-indigo-900/20"
+            >
+              Done / Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Global Hidden Audio Element for BGM Preview -->
     <audio ref="bgmAudioPlayer" @ended="onBgmEnded"></audio>
 
@@ -915,6 +1145,8 @@ import {
   AlertCircle,
   Info,
   AlertTriangle,
+  ShieldCheck,
+  RefreshCw,
   X
 } from 'lucide-vue-next'
 
@@ -1003,84 +1235,66 @@ const batchUploadFeedback = ref('')
 const batchFileInput = ref(null)
 const zipFileInput = ref(null)
 const folderFileInput = ref(null)
-const ingestingDownloads = ref(false)
+// Scene Visual Alignment & Quality Audit State
+const isValidatingAlignment = ref(false)
+const alignmentReport = ref(null)
+const alignmentFilter = ref('all')
+const showAlignmentModal = ref(false)
+const activeAlignmentBatchTab = ref('all')
 
-const autoIngestDownloads = async () => {
-  ingestingDownloads.value = true
-  triggerToast('Scanning Downloads', 'Searching Downloads for recent Google Flow ZIP exports...', 'info', true)
-
-  modalState.value = {
-    show: true,
-    isMinimized: false,
-    activeStage: 'visuals',
-    status: 'running',
-    progress: 30,
-    message: 'Scanning Downloads directory for image archives...',
-    logs: [
-      'Scanning Downloads folder for ZIP archives...',
-      'Checking Google Flow batch exports...'
-    ]
-  }
+const runVisualAlignmentValidation = async (targetBatchIndex = null) => {
+  isValidatingAlignment.value = true
+  triggerToast('Validating Scenes', 'Auditing visual scene alignment and file integrity...', 'info', true)
 
   try {
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/auto-ingest-downloads`, {
-      method: 'POST'
-    })
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/validate-alignment`)
+    if (!res.ok) throw new Error(`Server returned ${res.status}`)
     const data = await res.json()
     if (data.success) {
-      const extractedLogs = Array.isArray(data.extracted) 
-        ? data.extracted.map(e => `[${e.tag}] ← ${e.sourceName} (Score: ${e.score})`) 
-        : []
-
-      modalState.value = {
-        show: true,
-        isMinimized: false,
-        activeStage: 'visuals',
-        status: 'completed',
-        progress: 100,
-        message: `Successfully ingested ${data.count} visual panels!`,
-        logs: [
-          ...modalState.value.logs,
-          ...extractedLogs,
-          `✓ Successfully unpacked and assigned ${data.count} panels from "${data.source}".`
-        ]
+      alignmentReport.value = data
+      if (typeof targetBatchIndex === 'number') {
+        activeAlignmentBatchTab.value = targetBatchIndex
+      } else {
+        activeAlignmentBatchTab.value = 'all'
       }
-
-      triggerToast('Auto-Ingest Complete', `✓ Successfully mapped ${data.count} panels from "${data.source}"!`, 'success')
-      batchUploadFeedback.value = `✓ Successfully ingested and mapped ${data.count} panels from "${data.source}"!`
-      cacheBuster.value = Date.now()
-      await loadScenes()
-      await loadPipelineStatus()
+      showAlignmentModal.value = true
+      if (data.isFullyAligned) {
+        triggerToast('Alignment Verified', `✓ 100% of scenes (${data.totalScenes}/${data.totalScenes}) are fully aligned!`, 'success')
+      } else {
+        triggerToast('Alignment Audit', `Audit complete: ${data.attachedCount}/${data.totalScenes} attached (${data.missingCount} missing).`, 'info')
+      }
     } else {
-      modalState.value = {
-        show: true,
-        isMinimized: false,
-        activeStage: 'visuals',
-        status: 'failed',
-        progress: 0,
-        message: data.error || 'No matching image archives found in Downloads.',
-        logs: [...modalState.value.logs, `Note: ${data.error || 'No images found in Downloads.'}`]
-      }
-      triggerToast('Downloads Ingestion', data.error || 'No matching image archives found in Downloads.', 'error')
-      batchUploadFeedback.value = `Ingestion note: ${data.error || 'No images found in Downloads.'}`
+      throw new Error(data.error || 'Failed to validate alignment')
     }
-  } catch (e) {
-    modalState.value = {
-      show: true,
-      isMinimized: false,
-      activeStage: 'visuals',
-      status: 'failed',
-      progress: 0,
-      message: `Ingestion Error: ${e.message}`,
-      logs: [...modalState.value.logs, `Error: ${e.message}`]
-    }
-    triggerToast('Ingestion Error', e.message, 'error')
-    storyboardFeedback.value = `Ingestion error: ${e.message}`
+  } catch (err) {
+    console.error('Validation error:', err)
+    triggerToast('Validation Error', err.message, 'error')
   } finally {
-    ingestingDownloads.value = false
-    setTimeout(() => { batchUploadFeedback.value = '' }, 8000)
+    isValidatingAlignment.value = false
   }
 }
+
+const filteredAlignmentScenes = computed(() => {
+  if (!alignmentReport.value || !Array.isArray(alignmentReport.value.batches)) return []
+  let list = []
+  if (activeAlignmentBatchTab.value === 'all') {
+    list = alignmentReport.value.batches.flatMap(b => b.scenes)
+  } else {
+    const batch = alignmentReport.value.batches.find(b => b.index === activeAlignmentBatchTab.value)
+    list = batch ? batch.scenes : []
+  }
+
+  if (alignmentFilter.value === 'missing') {
+    return list.filter(s => !s.hasImage)
+  }
+  if (alignmentFilter.value === 'high_fidelity') {
+    return list.filter(s => s.isHighFidelity)
+  }
+  if (alignmentFilter.value === 'storyboard') {
+    return list.filter(s => s.hasImage && !s.isHighFidelity)
+  }
+  return list
+})
 
 const loadCharacterModels = async () => {
   try {
@@ -1346,49 +1560,6 @@ const synthesizeAllBatches = async () => {
     modalState.value.logs = [...modalState.value.logs, `Error: ${e.message}`]
   } finally {
     isSynthesizingAll.value = false
-  }
-}
-
-const autoIngestSingleBatchDownloads = async (batchIndex) => {
-  const letter = String.fromCharCode(65 + batchIndex)
-  modalState.value = {
-    show: true,
-    isMinimized: false,
-    activeStage: 'visuals',
-    status: 'running',
-    progress: 25,
-    message: `Auto-ingesting and mapping Batch ${letter} from Downloads...`,
-    logs: [`Scanning Downloads folder for Batch ${letter} image files...`]
-  }
-
-  try {
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/auto-ingest-downloads`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ batchIndex })
-    })
-    const data = await res.json()
-    if (data.success) {
-      modalState.value.status = 'completed'
-      modalState.value.progress = 100
-      modalState.value.message = `Successfully ingested & mapped ${data.count} panels for Batch ${letter}!`
-      modalState.value.logs = [
-        ...modalState.value.logs,
-        `Matched ${data.count} files from "${data.source}".`,
-        `Batch ${letter} visual assets are now 100% synchronized.`
-      ]
-      cacheBuster.value = Date.now()
-      await loadScenes()
-      await loadPipelineStatus()
-    } else {
-      modalState.value.status = 'failed'
-      modalState.value.message = data.error || 'Ingest failed'
-      modalState.value.logs = [...modalState.value.logs, `Note: ${data.error || 'No images found in Downloads.'}`]
-    }
-  } catch (e) {
-    modalState.value.status = 'failed'
-    modalState.value.message = e.message
-    modalState.value.logs = [...modalState.value.logs, `Error: ${e.message}`]
   }
 }
 

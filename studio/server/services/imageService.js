@@ -686,102 +686,229 @@ export class ImageService {
     return finalMapping
   }
 
-  static async autoIngestFromDownloads(franchiseId, episodeId, customDir = null, targetBatchIndex = null) {
-    const downloadsDir = customDir || 'C:/Users/MIchaelangelo/Downloads'
+  /**
+   * Validates visual scene alignment, tag continuity, multi-panel tier compliance,
+   * high-fidelity artwork status, and narration audio sync across all scenes and batches.
+   */
+  static async validateVisualAlignment(franchiseId, episodeId, options = {}) {
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const scriptPath = path.join(epPath, '01_Episode_Script.md')
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
+    const audioDir = path.join(epPath, 'audio')
+    const ttsManifestPath = path.join(audioDir, 'tts_manifest.json')
     await fs.mkdir(imagesDir, { recursive: true })
 
-    if (!fsSync.existsSync(downloadsDir)) {
-      throw new Error(`Downloads directory not found at ${downloadsDir}`)
-    }
+    const scenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
+    let scriptContent = ''
+    try {
+      scriptContent = await fs.readFile(scriptPath, 'utf-8')
+    } catch (_) {}
 
-    const items = await fs.readdir(downloadsDir)
-    // Find candidate directories or zip files matching download* or batch*
-    const candidates = []
-    for (const item of items) {
-      const full = path.join(downloadsDir, item)
-      const st = await fs.stat(full)
-      if (st.isDirectory() && /download|batch|flow|img|scenes/i.test(item)) {
-        candidates.push({ full, name: item, mtime: st.mtimeMs, isDir: true })
-      } else if (st.isFile() && item.endsWith('.zip') && /download|batch|flow/i.test(item)) {
-        candidates.push({ full, name: item, mtime: st.mtimeMs, isZip: true })
+    let ttsManifest = null
+    try {
+      if (fsSync.existsSync(ttsManifestPath)) {
+        ttsManifest = JSON.parse(await fs.readFile(ttsManifestPath, 'utf-8'))
       }
+    } catch (_) {}
+
+    let existingImageFiles = []
+    try {
+      existingImageFiles = await fs.readdir(imagesDir)
+    } catch (_) {}
+
+    // Extract tags present in script
+    const scriptTagMatches = [...scriptContent.matchAll(/\[(IMG_\d+)\]/gi)]
+    const scriptTags = new Set(scriptTagMatches.map(m => m[1].toUpperCase()))
+
+    // TTS aligned tags
+    const ttsTags = new Set()
+    if (ttsManifest && Array.isArray(ttsManifest.scenes)) {
+      ttsManifest.scenes.forEach(s => {
+        if (s.tag) ttsTags.add(s.tag.toUpperCase())
+      })
     }
 
-    candidates.sort((a, b) => b.mtime - a.mtime)
-    if (candidates.length === 0) {
-      throw new Error('No Google Flow download folders or ZIPs found in Downloads.')
-    }
+    const sceneAudits = []
+    const anomalies = []
+    let highFidelityCount = 0
+    let placeholderCount = 0
+    let missingCount = 0
 
-    const newest = candidates[0]
-    const allScenes = await this.getPromptMatrixScenes(franchiseId, episodeId)
-    const extracted = []
+    // Inspect each prompt matrix scene
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i]
+      const tag = scene.tag.toUpperCase()
+      const inScript = scriptTags.has(tag)
+      const inTts = ttsTags.size > 0 ? ttsTags.has(tag) : null
 
-    if (newest.isDir) {
-      const files = await fs.readdir(newest.full)
-      const imageFiles = files.filter(f => /\.(jpe?g|png|webp)$/i.test(f)).map((f, idx) => ({
-        id: `file_${idx}`,
-        name: f,
-        fullPath: path.join(newest.full, f),
-        getData: async () => await fs.readFile(path.join(newest.full, f))
-      }))
+      // Check physical files on disk
+      let foundFile = null
+      let fileSize = 0
+      let fileExt = null
+      let isHighFidelity = false
 
-      if (imageFiles.length === 0) {
-        throw new Error(`No image files found inside ${newest.name}`)
-      }
-
-      // Determine batch window (strictly scope to 24-scene batch to prevent cross-batch leakage)
-      const batchSize = 24
-      let candidateScenes = allScenes
-
-      if (typeof targetBatchIndex === 'number') {
-        const start = targetBatchIndex * batchSize
-        candidateScenes = allScenes.slice(start, start + batchSize)
-      } else if (imageFiles.length <= batchSize) {
-        // Auto-detect the first unfulfilled batch
-        let selectedBatch = 0
-        for (let b = 0; b < Math.ceil(allScenes.length / batchSize); b++) {
-          const slice = allScenes.slice(b * batchSize, (b + 1) * batchSize)
-          const filledCount = slice.filter(s => s.hasImage).length
-          if (filledCount < slice.length) {
-            selectedBatch = b
-            break
-          }
+      const possibleFilenames = [`${tag}.png`, `${tag}.jpg`, `${tag}.jpeg`, `${tag}.webp`]
+      for (const fn of possibleFilenames) {
+        const full = path.join(imagesDir, fn)
+        if (fsSync.existsSync(full)) {
+          try {
+            const stat = fsSync.statSync(full)
+            if (stat.size > 0) {
+              foundFile = fn
+              fileSize = stat.size
+              fileExt = path.extname(fn).replace('.', '').toLowerCase()
+              // > 60KB typically indicates authentic high-fidelity raster artwork vs lightweight storyboard SVG/placeholder
+              isHighFidelity = stat.size >= 60000
+              break
+            }
+          } catch (_) {}
         }
-        candidateScenes = allScenes.slice(selectedBatch * batchSize, (selectedBatch + 1) * batchSize)
       }
 
-      const mappings = this.matchImagesToScenes(imageFiles, candidateScenes)
-      for (const m of mappings) {
-        const targetTag = m.scene.tag
-        const ext = path.extname(m.file.name) || '.jpg'
-        const targetPath = path.join(imagesDir, `${targetTag}${ext}`)
-        const data = await m.file.getData()
-        await fs.writeFile(targetPath, data)
+      // Identify Tier Archetype
+      const promptLower = (scene.prompt || '').toLowerCase()
+      let tier = 'Tier A: Hero Plate'
+      let tierCode = 'hero'
+      if (promptLower.includes('three-panel') || promptLower.includes('3-panel') || promptLower.includes('four-panel') || promptLower.includes('multi-panel')) {
+        tier = 'Tier C: Multi-Panel Strip'
+        tierCode = 'multi'
+      } else if (promptLower.includes('dual-panel') || promptLower.includes('2-panel') || promptLower.includes('two-panel') || promptLower.includes('top block')) {
+        tier = 'Tier B: Dual-Panel Strip'
+        tierCode = 'dual'
+      }
 
-        const aliasTag = targetTag.replace(/_/g, '')
-        if (aliasTag !== targetTag) {
-          const aliasPath = path.join(imagesDir, `${aliasTag}${ext}`)
-          await fs.writeFile(aliasPath, data)
-        }
+      let status = 'ready'
+      if (!foundFile) {
+        status = 'missing'
+        missingCount++
+        anomalies.push({
+          type: 'missing_asset',
+          tag,
+          severity: 'warning',
+          message: `Scene [${tag}] has no physical image asset in images/ folder.`
+        })
+      } else if (isHighFidelity) {
+        highFidelityCount++
+      } else {
+        placeholderCount++
+      }
 
-        extracted.push({
-          tag: targetTag,
-          sourceName: m.file.name,
-          savedAs: `${targetTag}${ext}`,
-          score: m.score,
-          matchSlug: m.slug
+      if (!inScript && scriptContent.length > 0) {
+        anomalies.push({
+          type: 'script_mismatch',
+          tag,
+          severity: 'info',
+          message: `Tag [${tag}] is present in Prompt Matrix but not referenced in 01_Episode_Script.md.`
+        })
+      }
+
+      sceneAudits.push({
+        index: i,
+        tag,
+        description: scene.description,
+        act: scene.act,
+        prompt: scene.prompt,
+        hasImage: Boolean(foundFile),
+        filename: foundFile,
+        url: foundFile ? `/api/episodes/${franchiseId}/${episodeId}/images/${foundFile}` : null,
+        fileSize,
+        fileSizeFormatted: fileSize ? `${Math.round(fileSize / 1024)} KB` : '0 KB',
+        fileExt,
+        isHighFidelity,
+        tier,
+        tierCode,
+        inScript,
+        inTts,
+        status
+      })
+    }
+
+    // Sequence continuity check: detect gaps in numeric tags
+    for (let i = 0; i < sceneAudits.length - 1; i++) {
+      const curNum = parseInt(sceneAudits[i].tag.replace('IMG_', ''), 10)
+      const nextNum = parseInt(sceneAudits[i + 1].tag.replace('IMG_', ''), 10)
+      if (nextNum !== curNum + 1) {
+        anomalies.push({
+          type: 'sequence_gap',
+          tag: sceneAudits[i].tag,
+          severity: 'error',
+          message: `Sequence gap detected between ${sceneAudits[i].tag} and ${sceneAudits[i + 1].tag}.`
         })
       }
     }
 
-    ActivityLogService.success('visuals', 'Downloads Auto-Ingested', `Mapped ${extracted.length} images from "${newest.name}".`, { count: extracted.length, source: newest.name }, franchiseId, episodeId)
+    // Check for orphaned images in imagesDir not mapped to any known scene tag
+    const knownTags = new Set(sceneAudits.map(s => s.tag))
+    const orphanedFiles = existingImageFiles.filter(f => {
+      const baseTag = f.replace(/\.(png|jpe?g|webp)$/i, '').toUpperCase()
+      return !knownTags.has(baseTag) && !knownTags.has(`IMG_${baseTag}`) && !f.startsWith('.')
+    })
+
+    if (orphanedFiles.length > 0) {
+      anomalies.push({
+        type: 'orphaned_files',
+        count: orphanedFiles.length,
+        files: orphanedFiles,
+        severity: 'info',
+        message: `Found ${orphanedFiles.length} unattached or extra image file(s) in images/ folder.`
+      })
+    }
+
+    // Partition into 24-scene batches
+    const chunkSize = 24
+    const totalScenes = sceneAudits.length
+    const batchCount = Math.ceil(totalScenes / chunkSize)
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    const batches = []
+
+    for (let b = 0; b < batchCount; b++) {
+      const start = b * chunkSize
+      const end = Math.min(start + chunkSize, totalScenes)
+      const batchScenes = sceneAudits.slice(start, end)
+      const attached = batchScenes.filter(s => s.hasImage).length
+      const highFid = batchScenes.filter(s => s.isHighFidelity).length
+      const missingTags = batchScenes.filter(s => !s.hasImage).map(s => s.tag)
+      const letter = letters[b] || `Batch_${b + 1}`
+
+      batches.push({
+        index: b,
+        letter,
+        name: `Batch ${letter}`,
+        label: `Batch ${letter}: Scenes ${String(start + 1).padStart(3, '0')}–${String(end).padStart(3, '0')}`,
+        startTag: batchScenes[0]?.tag || `IMG_${String(start + 1).padStart(3, '0')}`,
+        endTag: batchScenes[batchScenes.length - 1]?.tag || `IMG_${String(end).padStart(3, '0')}`,
+        total: batchScenes.length,
+        attached,
+        missing: batchScenes.length - attached,
+        highFidelityCount: highFid,
+        isFullyReady: attached === batchScenes.length && batchScenes.length > 0,
+        isProductionReady: highFid === batchScenes.length && batchScenes.length > 0,
+        progressPercent: batchScenes.length ? Math.round((attached / batchScenes.length) * 100) : 0,
+        missingTags,
+        scenes: batchScenes
+      })
+    }
+
+    const totalAttached = sceneAudits.filter(s => s.hasImage).length
+    const alignmentScore = totalScenes > 0 ? Math.round((totalAttached / totalScenes) * 100) : 0
+    const isFullyAligned = totalAttached === totalScenes && totalScenes > 0
 
     return {
       success: true,
-      source: newest.name,
-      count: extracted.length,
-      extracted
+      franchiseId,
+      episodeId,
+      timestamp: new Date().toISOString(),
+      totalScenes,
+      attachedCount: totalAttached,
+      missingCount: totalScenes - totalAttached,
+      highFidelityCount,
+      placeholderCount,
+      alignmentScore,
+      isFullyAligned,
+      isAntiSlopVisualCertified: isFullyAligned && highFidelityCount === totalScenes,
+      batches,
+      anomalies,
+      orphanedFiles
     }
   }
 

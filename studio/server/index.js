@@ -281,6 +281,17 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/status', (req, res) => {
   res.json(ImageService.getStatus(franchiseId, episodeId))
 })
 
+// Validate Visual Scene Alignment, Fidelity & Sequence Integrity (Must be before :filename route)
+app.get('/api/episodes/:franchiseId/:episodeId/images/validate-alignment', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const result = await ImageService.validateVisualAlignment(franchiseId, episodeId)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Stream Scene Image
 app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
@@ -443,18 +454,6 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/upload-zip', async (req, 
     }
 
     const result = await ImageService.extractAndIngestZip(franchiseId, episodeId, zipBase64, filename || 'batch.zip', typeof batchIndex === 'number' ? batchIndex : null)
-    res.json(result)
-  } catch (err) {
-    res.status(500).json({ error: err.message })
-  }
-})
-
-// Auto-Ingest Newest Google Flow Download folder or ZIP from Downloads
-app.post('/api/episodes/:franchiseId/:episodeId/images/auto-ingest-downloads', async (req, res) => {
-  try {
-    const { franchiseId, episodeId } = req.params
-    const { customDir, batchIndex } = req.body || {}
-    const result = await ImageService.autoIngestFromDownloads(franchiseId, episodeId, customDir, typeof batchIndex === 'number' ? batchIndex : null)
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
