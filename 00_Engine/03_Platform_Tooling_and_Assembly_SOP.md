@@ -6,6 +6,18 @@
 
 ---
 
+## 0. Official YouTube Channel & Brand Identity
+
+* **Channel Name:** **Recap Runic**
+* **Handle:** `@RecapRunic` (Fallback: `@RecapRunicOfficial`)
+* **Official Channel Email:** `recaprunic@gmail.com`
+* **Brand Tagline:** *"Deciphering peak Manhwa & Webtoons with cinematic precision. Zero slop. Just pure progression."*
+* **Narrator Intro Hook:** *"Welcome to Recap Runic..."*
+* **Narrator Outro Call-to-Action:** *"If you enjoy high-tier progression and zero-slop storytelling, subscribe to Recap Runic and awaken your inner sovereign."*
+* **Visual Watermark:** Semi-transparent glowing amethyst/solar-gold Runic glyph positioned in the top-right corner ($15\%$ opacity).
+
+---
+
 ## 1. Tool Stack & Direct Access Directory
 
 * **Visual Generation (Cloud):** [Midjourney](https://www.midjourney.com) (Standard Plan on `/settings` $\rightarrow$ **Relax Mode**).
