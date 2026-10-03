@@ -58,6 +58,21 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
+// Brand Static Assets & Identity
+app.use('/brand', express.static(path.resolve(projectRoot, 'assets/brand')))
+app.get('/api/brand', (req, res) => {
+  try {
+    const brandJsonPath = path.resolve(projectRoot, 'assets/brand/brand_identity.json')
+    if (fs.existsSync(brandJsonPath)) {
+      const data = JSON.parse(fs.readFileSync(brandJsonPath, 'utf-8'))
+      return res.json(data)
+    }
+    res.status(404).json({ error: 'Brand identity not found' })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Franchises
 app.get('/api/franchises', async (req, res) => {
   try {

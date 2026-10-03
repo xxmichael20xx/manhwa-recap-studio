@@ -1,0 +1,35 @@
+{
+  "channelName": "Recap Runic",
+  "handle": "@RecapRunic",
+  "handleFallback": "@RecapRunicOfficial",
+  "email": "recaprunic@gmail.com",
+  "tagline": "Deciphering peak Manhwa & Webtoons with cinematic precision. Zero slop. Just pure progression.",
+  "slogans": [
+    "Awaken Your Inner Sovereign.",
+    "Tactical Storytelling. Zero Slop. Pure Lore.",
+    "The High-IQ Manhwa Archive."
+  ],
+  "spokenHooks": {
+    "intro": "Welcome to Recap Runic. Today, we break down the awakening of a sovereign...",
+    "outro": "If you enjoy high-tier progression and zero-slop storytelling, hit subscribe to Recap Runic and awaken your inner sovereign."
+  },
+  "description": "Welcome to Recap Runic — the home of cinematic, lore-accurate Manhwa & Webtoon storytelling.\n\nWe craft deep-dive recaps, arc sagas, and full-season movies for fans who love high-tier regression, overpowered tactical protagonists, and complex system awakenings.\n\n🛡️ THE RECAP RUNIC STANDARD (ZERO SLOP):\n• Clean RPG Math & Consistent Progression (No arbitrary stat bloat)\n• High-Tactical Combat Realism (Elevation, choke-points, and spatial strategy)\n• High-IQ Antagonists & Political Leverage (No brain-rot excuses or cartoonish villains)\n• Same-Act Forensic Lore & Full-Arc Continuity\n\n🎬 OUR PRODUCTION FORMATS:\n• Weekly Episodes (18–25 Mins) — Rapid algorithmic chapters & episodic hooks\n• Arc Features (45–60 Mins) — Complete standalone saga breakdowns\n• Season Movies (1.5–2.5 Hours) — High-AVD cinematic binge marathons\n\n🔔 Upload Schedule: Weekly uploads + Monthly Mega-Marathons.\n\n📧 BUSINESS & PARTNERSHIPS:\nFor business inquiries, voiceover collaborations, or sponsorship opportunities:\nContact: recaprunic@gmail.com\n\n⚖️ COPYRIGHT & FAIR USE DISCLAIMER:\nAll rights belong to their respective webtoon authors, artists, and publishers. Content used is transformative and created under Fair Use guidelines for review, analysis, commentary, and education. If you are a copyright owner and have inquiries, please contact recaprunic@gmail.com.",
+  "tags": [
+    "manhwa recap",
+    "webtoon recap",
+    "recap runic",
+    "system manhwa",
+    "regressor manhwa",
+    "anti slop manhwa",
+    "dark fantasy webtoon",
+    "manhwa movie",
+    "manhwa summary",
+    "overpowered mc",
+    "sovereign progression"
+  ],
+  "assets": {
+    "logo": "/brand/recap_runic_logo.jpg",
+    "banner": "/brand/recap_runic_banner.jpg",
+    "watermark": "/brand/recap_runic_watermark.jpg"
+  }
+}
