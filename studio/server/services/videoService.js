@@ -274,198 +274,83 @@ export class VideoService {
   }
 
   /**
-   * Generates pristine parallax layers for an episode scene image:
-   * - Layer 1: Ambient 1920x1080 cover background (Gaussian blurred + dimmed)
-   * - Layer 2: Mask SVG with 32px rounded corners matching card window dimensions
-   * - Layer 3: Drop-shadow & border overlay (1920x1080 transparent PNG)
-   * 
-   * Dynamic Aspect Ratio Adaption:
-   * - Vertical Manhwa Strips (R < 0.95): 640x960 window centered at (640, 60)
-   * - Landscape / Standard (R >= 0.95): 1520x855 window centered at (200, 112)
+   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Strip Glide:
+   * - 60 FPS high temporal frame density to eliminate motion stepping.
+   * - 2X Supersampled coordinate space (3840x2160) with bicubic antialiasing to eliminate 1px staircase judder.
+   * - Background: 3840x2160 ambient blurred cover.
+   * - Center Strip: Full-height (2160px tall in 2X, 1300px wide).
+   * - Compound Animation: Moves across screen horizontally (x: 840px <-> 1480px in 2X) WHILE scrolling vertically.
+   * - Downsampling: High-precision bicubic filter scaling down to 1920x1080p60.
    */
-  static async generateParallaxLayers(imagePath, tempDir, baseName) {
-    const meta = await sharp(imagePath).metadata()
-    const imgRatio = meta.width / meta.height
-    const isVertical = imgRatio < 0.95
-
-    const CANVAS_W = 1920
-    const CANVAS_H = 1080
-
-    let cardW, cardH, cardX, cardY
-    if (isVertical) {
-      cardW = 680
-      cardH = 960
-      cardX = 620
-      cardY = 60
-    } else {
-      cardW = 1560
-      cardH = 880
-      cardX = 180
-      cardY = 100
-    }
-
-    const cornerRadius = 26
-    const bgPath = path.join(tempDir, `${baseName}_bg.jpg`)
-    const maskPath = path.join(tempDir, `${baseName}_mask.png`)
-    const shadowPath = path.join(tempDir, `${baseName}_shadow.png`)
-
-    // 1. Ambient Background Layer (Heavily blurred and atmospheric)
-    await sharp(imagePath)
-      .resize(CANVAS_W, CANVAS_H, { fit: 'cover', position: 'center' })
-      .blur(50)
-      .modulate({ brightness: 0.65, saturation: 1.15 })
-      .jpeg({ quality: 90 })
-      .toFile(bgPath)
-
-    // 2. Rounded Mask for Inner Stream
-    const maskSvg = Buffer.from(
-      `<svg width="${cardW}" height="${cardH}">
-        <rect x="0" y="0" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="#ffffff"/>
-      </svg>`
-    )
-    await sharp(maskSvg).png().toFile(maskPath)
-
-    // 3. Drop Shadow & Border Plate
-    const shadowPadding = 45
-    const sw = cardW + shadowPadding * 2
-    const sh = cardH + shadowPadding * 2
-    const shadowSvg = Buffer.from(
-      `<svg width="${sw}" height="${sh}">
-        <rect x="${shadowPadding}" y="${shadowPadding + 8}" width="${cardW}" height="${cardH}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.85)"/>
-      </svg>`
-    )
-    const shadowBuf = await sharp(shadowSvg).blur(24).png().toBuffer()
-
-    const borderSvg = Buffer.from(
-      `<svg width="${cardW}" height="${cardH}">
-        <rect x="1" y="1" width="${cardW - 2}" height="${cardH - 2}" rx="${cornerRadius}" ry="${cornerRadius}" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="2"/>
-      </svg>`
-    )
-    const borderBuf = await sharp(borderSvg).png().toBuffer()
-
-    await sharp({
-      create: {
-        width: CANVAS_W,
-        height: CANVAS_H,
-        channels: 4,
-        background: { r: 0, g: 0, b: 0, alpha: 0 }
-      }
-    })
-      .composite([
-        { input: shadowBuf, left: cardX - shadowPadding, top: cardY - shadowPadding },
-        { input: borderBuf, left: cardX, top: cardY }
-      ])
-      .png()
-      .toFile(shadowPath)
-
-    return {
-      bgPath,
-      maskPath,
-      shadowPath,
-      cardW,
-      cardH,
-      cardX,
-      cardY,
-      isVertical
-    }
-  }
-
-  /**
-   * Render a true dual-stream parallax Ken Burns clip:
-   * - Background Stream: Ambient blurred cover slowly breathes/zooms (1.00x -> 1.04x)
-   * - Inner Window Stream: Comic artwork scales and scrolls/pans inside the rounded window
-   * - Smooth pixel-perfect scroll from top panel to bottom panel across the manhwa strip
-   */
-  static async renderParallaxKenBurnsClip(imagePath, layerInfo, framesCount, motionIndex, outputPath) {
-    const frames = Math.max(15, Math.round(framesCount))
+  static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
+    const fps = 60
+    const duration = framesCount / 30
+    const frames = Math.max(30, Math.round(duration * fps))
     const PI = '3.14159265'
     
-    // Scoped easing variables:
-    // In 'crop' filter: 'n' is the frame counter
-    // In 'zoompan' filter: 'on' is the frame counter
+    // Scoped easing variables in 60fps frame coordinates:
     const cropEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
     const cropEaseInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
-
     const zpEase = `(0.5-0.5*cos(${PI}*on/${frames}))`
-    const zpEaseInv = `(1.0-(0.5-0.5*cos(${PI}*on/${frames})))`
 
-    const { bgPath, maskPath, shadowPath, cardW, cardH, cardX, cardY, isVertical } = layerInfo
-
-    let innerStreamFilter = ''
+    let filterComplex = ''
 
     if (isVertical) {
-      // Vertical Manhwa Strips: Full-length scroll and directional panel focal scanning
-      const verticalPresets = [
-        // 0: Top-to-Bottom Smooth Webtoon Scroll
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 1: Bottom-to-Top Upward Reveal
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEaseInv})'`,
-        // 2: Top Panel Focus with Subtle Push-In
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y=0,zoompan=z='1.0+0.10*${zpEase}':x='(iw-iw/zoom)/2':y=0:d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 3: Bottom Panel Focus with Subtle Push-In
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,ih-${cardH})',zoompan=z='1.0+0.10*${zpEase}':x='(iw-iw/zoom)/2':y='ih-ih/zoom':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 4: Center Focus Kinetic Breath
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.02+0.08*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 5: Scope Pull-Out Reveal (1.12x -> 1.0x)
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})',zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 6: Diagonal Top-Left to Bottom-Right Scan
-        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${cropEase}':y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 7: Diagonal Top-Right to Bottom-Left Scan
-        `scale=w=${cardW + 100}:h=-1,crop=w=${cardW}:h=${cardH}:x='100*${cropEaseInv}':y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 8: Full-Length Speed Scan (Smooth Continuous Top to Bottom)
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 9: Centered Subtle Floating Breath
-        `scale=w=${cardW}:h=-1,crop=w=${cardW}:h=${cardH}:x=0:y='max(0,(ih-${cardH})/2)',zoompan=z='1.0+0.05*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
-      ]
-      innerStreamFilter = verticalPresets[motionIndex % verticalPresets.length]
-    } else {
-      // Landscape / Standard Panels: Horizontal panning, diagonal sweep, and push-in zooms
-      const landscapePresets = [
-        // 0: Left to Right Horizontal Pan
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEase})':y=0`,
-        // 1: Right to Left Horizontal Pan
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEaseInv})':y=0`,
-        // 2: Center Push-In (1.0x -> 1.12x)
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 3: Center Pull-Out (1.12x -> 1.0x)
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 4: Subtle Cinematic Breath
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.02+0.05*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 5: Left to Right Diagonal Sweep
-        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEase})':y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 6: Right to Left Diagonal Sweep
-        `scale=w=${cardW + 140}:h=${cardH + 80}:force_original_aspect_ratio=increase,crop=w=${cardW}:h=${cardH}:x='max(0,(iw-${cardW})*${cropEaseInv})':y='max(0,(ih-${cardH})*${cropEase})'`,
-        // 7: Left Anchor Focus
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${zpEase}':x=0:y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 8: Right Anchor Focus
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z='1.0+0.08*${zpEase}':x='iw-iw/zoom':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`,
-        // 9: Ambient Stillness with Floating Drift
-        `scale=w=${cardW}:h=${cardH}:force_original_aspect_ratio=increase,zoompan=z=1.03:x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=${cardW}x${cardH}:fps=30`
-      ]
-      innerStreamFilter = landscapePresets[motionIndex % landscapePresets.length]
-    }
+      let meta = { width: 768, height: 1376 }
+      try {
+        meta = await sharp(imagePath).metadata()
+      } catch (e) {}
 
-    // Complex filtergraph for multi-layer parallax composite
-    const filterComplex = [
-      `[0:v]zoompan=z='1.0+0.04*(0.5-0.5*cos(${PI}*on/${frames}))':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=30[bg_stream]`,
-      `[1:v]${innerStreamFilter}[inner_raw]`,
-      `[inner_raw][2:v]alphamerge[inner_masked]`,
-      `[bg_stream][3:v]overlay=0:0[bg_shadow]`,
-      `[bg_shadow][inner_masked]overlay=${cardX}:${cardY}:format=auto,format=yuv420p[vout]`
-    ].join(';')
+      const imgRatio = (meta.width && meta.height) ? (meta.width / meta.height) : 0.558
+      let STRIP_W_2X = 1300
+      let scaleFilter2X = ''
+      const scaledHeight2X = (1300 / (meta.width || 768)) * (meta.height || 1376)
+      
+      if (scaledHeight2X < 2160) {
+        STRIP_W_2X = Math.round(2160 * imgRatio)
+        if (STRIP_W_2X % 2 !== 0) STRIP_W_2X += 1
+        scaleFilter2X = `scale=w=${STRIP_W_2X}:h=2160`
+      } else {
+        scaleFilter2X = `scale=w=${STRIP_W_2X}:h=-2`
+      }
+
+      // 2X Space Horizontal Trajectory (840px <-> 1480px)
+      const isRightToLeft = (motionIndex % 2 === 0)
+      const xTravelExpr2X = isRightToLeft 
+        ? `1480-640*${cropEase}` 
+        : `840+640*${cropEase}`
+
+      // Vertical downward scroll to reveal hidden panels
+      const isReverseVertical = (motionIndex % 4 === 3)
+      const yScrollExpr = isReverseVertical ? cropEaseInv : cropEase
+
+      filterComplex = [
+        `[0:v]scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,boxblur=35:10,eq=brightness=-0.08:saturation=1.15[bg_2x]`,
+        `[0:v]${scaleFilter2X},crop=w=${STRIP_W_2X}:h=2160:x=0:y='max(0,(ih-2160)*${yScrollExpr})'[strip_2x]`,
+        `[bg_2x][strip_2x]overlay=x='${xTravelExpr2X}':y=0[comp_2x]`,
+        `[comp_2x]scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`
+      ].join(';')
+    } else {
+      // Landscape Panels (Full 60fps 16:9 Pan & Scan with Supersampled Scaling)
+      const landscapePresets = [
+        `[0:v]scale=w=4200:h=2360:force_original_aspect_ratio=increase,crop=3840:2160:x='max(0,(iw-3840)*${cropEase})':y='(ih-2160)/2',scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`,
+        `[0:v]scale=w=4200:h=2360:force_original_aspect_ratio=increase,crop=3840:2160:x='max(0,(iw-3840)*${cropEaseInv})':y='(ih-2160)/2',scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`,
+        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.0+0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
+        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`
+      ]
+      filterComplex = landscapePresets[motionIndex % landscapePresets.length]
+    }
 
     const args = [
       '-y',
-      '-loop', '1', '-i', bgPath,
-      '-loop', '1', '-i', imagePath,
-      '-loop', '1', '-i', maskPath,
-      '-loop', '1', '-i', shadowPath,
+      '-loop', '1',
+      '-i', imagePath,
       '-filter_complex', filterComplex,
       '-map', '[vout]',
       '-c:v', 'libx264',
       '-preset', 'veryfast',
-      '-crf', '20',
-      '-r', '30',
+      '-crf', '18',
+      '-r', '60',
       '-frames:v', String(frames),
       outputPath
     ]
@@ -478,8 +363,8 @@ export class VideoService {
         if (code === 0) {
           resolve(outputPath)
         } else {
-          console.error(`FFmpeg Parallax Ken Burns error (${imagePath}):`, stderr.slice(-400))
-          reject(new Error(`Parallax clip rendering failed for ${path.basename(imagePath)}`))
+          console.error(`FFmpeg 60fps Strip Scroll error (${imagePath}):`, stderr.slice(-400))
+          reject(new Error(`Strip scroll rendering failed for ${path.basename(imagePath)}`))
         }
       })
       proc.on('error', reject)
@@ -671,12 +556,17 @@ export class VideoService {
           imagePath = path.join(imagesDir, `${beat.tag}.png`)
         }
 
-        // Generate Parallax Layers (Ambient BG, Mask, Drop Shadow)
-        const baseName = path.basename(imagePath, path.extname(imagePath))
-        const layers = await VideoService.generateParallaxLayers(imagePath, tempCompositesDir, baseName)
+        // Determine if image is a vertical manhwa strip or landscape panel
+        let isVertical = false
+        try {
+          const meta = await sharp(imagePath).metadata()
+          isVertical = (meta.width / meta.height) < 0.95
+        } catch (e) {
+          isVertical = false
+        }
 
-        // Render sub-pixel 30fps Dual-Stream Parallax Ken Burns clip
-        await VideoService.renderParallaxKenBurnsClip(imagePath, layers, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
+        // Render pristine Full-Bleed Pan & Scan Ken Burns clip
+        await VideoService.renderFullBleedKenBurnsClip(imagePath, isVertical, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
 
         clipFiles[beatIndex] = clipPath
         completedClips++
@@ -686,7 +576,7 @@ export class VideoService {
           progress: progressPct,
           message: isBatchCompile
             ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
-            : `Rendered ${completedClips} of ${targetBeats.length} 30fps Parallax Ken Burns clips ([${beat.tag}])...`,
+            : `Rendered ${completedClips} of ${targetBeats.length} Full-Bleed Ken Burns clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
             `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
@@ -788,7 +678,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '22',
-        '-r', '30',
+        '-r', '60',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
@@ -806,7 +696,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '22',
-        '-r', '30',
+        '-r', '60',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
