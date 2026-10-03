@@ -117,5 +117,9 @@ To guarantee organic narration synchronization, eliminate rapid screen flashing,
 - **Strict Anatomical & Character DNA Prompt Guards:** Every prompt matrix entry must include locked Character DNA anchors (`@{...}`) and explicit negative anatomical quality directives (`anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting`).
 - **Strict Limb Connectivity & Anti-Ghost-Morph Invariant:** Any prompt describing a character holding an object MUST explicitly describe physical arm attachment (e.g. `right armored arm bent at the elbow holding a single golden wine goblet, left arm resting naturally at side, both arms physically connected to shoulders`) to eliminate diffusion attention splitting or floating severed hands.
 
+---
 
-
+## 🛑 Zero Autonomous Full-Episode Compilation Invariant (Studio-First Handoff Gate)
+1. **Absolute Ban on Autonomous Full-Video Compilation:** The agent is **STRICTLY FORBIDDEN** from triggering multi-minute, full-episode video compilations (`compileEpisodeVideo` on full transcripts) autonomously in the background during development turns.
+2. **Fast Unit & Build Verification Only:** Technical verification on the compiler engine must strictly use fast syntax builds (`npm run build`, Exit Code 0) or lightweight micro-checks in scratch space.
+3. **Immediate Studio-First Handoff:** Whenever video compiler, styling, or engine code is updated, the agent must immediately conclude the turn with direct step-by-step instructions for the operator to trigger, monitor, and inspect the compilation within the **Luna Studio UI**.
