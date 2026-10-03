@@ -12,7 +12,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ---
 
-## 2. The 10 Universal Slop Defects & Engineered Fixes
+## 2. The 13 Universal Slop Defects & Engineered Fixes
 
 ### 1. The "Forgotten Skill & Inventory Black Hole" Trope
 * **Defect:** Unlocking god-tier abilities in Chapter 1 that vanish when facing danger in Chapter 10.
@@ -85,3 +85,28 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 * **Fix (Institutional Treaties & Dimensional Physics):**
   - *Urban Battles:* Reference Hunter Ministry media blackout protocols and sovereign damage treaties.
   - *Higher Realms:* Reference atmospheric mana density and dimensional gravitational compression.
+
+---
+
+### 11. The Eternal "Demonic Accusation" Brain-Rot Trope
+* **Defect:** Protagonist displays an unusual or dark-hued technique, and onlookers mindlessly shriek *"He made a contract with an evil god!"* with zero empirical inspection or verification for dozens of chapters.
+* **Fix (Same-Act Forensic Telemetry & Analytical Supporting Cast):**
+  - Dark, necrotic, or void skill aesthetics are permissible *only* when paired with an analytical supporting character (e.g. Head Examiner Keith Morgan, Alchemist Lyra Fenn, or Senior Proctor).
+  - Within the **exact same Act**, the supporting character must deploy diagnostic sensors, mana spectrometers, or runic analysis to forensically prove that the ability operates on legitimate in-world physics (e.g. gravitational photon absorption, negative-entropy compression, or dense kinetic dispersion) rather than supernatural heresy.
+
+---
+
+### 12. The Eternal "Weakness Faking" & Indefinite Concealment Trap
+* **Defect:** Protagonist achieves god-tier power but remains disguised as a bullied, submissive F-rank porter for 50+ chapters, causing pacing stagnation and audience frustration.
+* **Fix (The Act 5+ Progressive Unveiling Law):**
+  - Concealment is strictly a temporary tactical phase for early asset accumulation.
+  - By **Act 5 (or the mid-arc climax / major public tournament/raid)**, the protagonist MUST openly reveal their dominant capabilities, shifting the narrative dynamic from secretive survival to dominant tactical authority.
+
+---
+
+### 13. The Blind Proctor & Unmonitored Exam Trope
+* **Defect:** High-stakes academy trials or dungeon exams operate with zero surveillance, allowing antagonists to commit blatant crimes unnoticed while proctors appear totally oblivious.
+* **Fix (Live-Feed Surveillance & High-IQ Evaluators):**
+  - All institutional trials must feature real-time scrying crystals, drone telemetry, and mana-density monitors.
+  - Proctors possess above-average analytical intellect: they observe kinetic anomalies, acoustic spikes, and environmental fractures from control centres, actively adjusting threat ratings and making calculated institutional deductions.
+

@@ -27,15 +27,18 @@ To prevent ambiguity, never refer to content simply as a "video". Use this stand
 
 ---
 
-## 🔒 The 5 Aligned Core Pillars (Locked Standard)
+## 🔒 The 8 Aligned Core Pillars (Locked Standard)
 
 Whenever adapting, rewriting, or narrating content across ANY franchise or episode, all agents MUST strictly enforce:
 
 1. **Re-Indexed Progression Arithmetic (Clean RPG Math):** Never parrot bloated, arbitrary numbers ($100\text{M EXP}$). Recalibrate all progression into clean, internally consistent RPG metrics (Level 1 $\rightarrow$ 10 requires $5,000\text{ EXP}$; stats scale predictably from 10 to 200+).
 2. **Absolute Physical Durability Threshold ($Attack - Defence \le 0 \implies 0\text{ Dmg}$):** Superhuman Constitution ($150–200+$) provides total physical invulnerability to mundane fodder (teeth snap, blades deflect). Use **Vessel Calibration Latency** only if an injury is strictly required for the subsequent scene.
 3. **High-Tactical Combat Realism:** Enemies never attack in polite, single-file lines. The protagonist actively uses **choke-points, elevation, line-of-sight, and AoE crowd control** against swarms.
-4. **Pragmatic & Calculated Antagonists:** Arrogant nobles and guild captains act with self-preservation, replacing tantrums with **political leverage, guild council sanctions, and black-market contracts**.
+4. **Pragmatic, High-IQ & Calculated Antagonists (Zero Low-IQ Slop):** Strictly forbidden from writing characters who screech cartoonish insults or make brain-dead supernatural excuses (*"He made a pact with the devil!"*). Arrogant nobles and guild captains act with institutional self-preservation, replacing tantrums with **political leverage, legal NDAs, media monopolies, and black-market contracts**. Proctors and examiners deduce anomalies through **hard forensic telemetry, acoustic sensors, and material stress data**.
 5. **Balanced Institutional Realism:** Ground events with brief 1–2 sentence contextual explanations for Hunter Ministry media blackouts, property damage treaties, and dimensional atmospheric density.
+6. **Same-Act Forensic Verification (Dark / Forbidden Skill Invariant):** Dark, evil, or forbidden skill aesthetics are permitted **only** if an analytical supporting character (Academy Examiner, Head Proctor, Alchemist, or Runic Scholar) forensically investigates and verifies the true underlying in-world physics/mechanics within the **exact same Act**. Unverified "demonic pact" accusations stretching across multiple acts are strictly forbidden.
+7. **Progressive Power Unveiling (Act 5+ Milestone Gate):** The protagonist is strictly forbidden from hiding their true abilities indefinitely. By **Act 5 (or mid-arc climax / major tournament)**, the MC must openly unleash their dominant powers, transitioning the narrative from concealed survival to overt tactical dominance.
+8. **Institutional Live Monitoring & High-IQ Proctor Standard:** Practical exams, dungeon evaluations, and academy ranking trials must feature active live-feed surveillance (scrying crystals/CCTV/telemetry arrays) monitored by evaluators who deduce anomalies through **acoustic sensors, mana-density telemetry, and compressive stress data**, completely eliminating oblivious proctors.
 
 ---
 

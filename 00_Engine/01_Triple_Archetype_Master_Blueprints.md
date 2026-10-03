@@ -79,3 +79,6 @@ Before rendering any episode script under these archetypes, verify:
 2. **[ ] Combat:** Are physical attacks mitigated strictly by Constitution formulas?
 3. **[ ] Villains:** Are antagonists acting through legal, economic, or tactical self-preservation?
 4. **[ ] Lore:** Do character names, ranks, and abilities match the Master Entity Bible?
+5. **[ ] Skill Telemetry:** Are any dark/forbidden abilities forensically validated by a supporting specialist within the same Act?
+6. **[ ] Power Unveiling:** Does the protagonist progress from concealment to public sovereign power by Act 5 / mid-arc climax?
+7. **[ ] Institutional IQ:** Are practical exams actively surveilled with high-IQ proctor telemetry and zero oblivious evaluator tropes?
