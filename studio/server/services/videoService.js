@@ -112,17 +112,27 @@ export class VideoService {
       }))
 
       // Extract all inline tags across the entire script
+      const tagMatches = [...scriptContent.matchAll(/\[(IMG_\d+)\]/g)]
       const extractedBeats = []
-      const inlineRegex = /\[(IMG_\d+)\][`\s]*([^\[\n\r]+)/g
-      let m
-      let beatCount = 0
-      while ((m = inlineRegex.exec(scriptContent)) !== null) {
-        beatCount++
-        extractedBeats.push({
-          tag: m[1].toUpperCase(),
-          sceneIndex: Math.ceil(beatCount / 24),
-          text: m[2].replace(/`/g, '').trim()
-        })
+      for (let i = 0; i < tagMatches.length; i++) {
+        const current = tagMatches[i]
+        const tag = current[1].toUpperCase()
+        const startPos = current.index + current[0].length
+        const endPos = (i + 1 < tagMatches.length) ? tagMatches[i + 1].index : scriptContent.length
+        let rawBlock = scriptContent.slice(startPos, endPos)
+        let cleanText = rawBlock
+          .replace(/###\s+[^\n]+/g, '')
+          .replace(/##\s+[^\n]+/g, '')
+          .replace(/---/g, '')
+          .replace(/`/g, '')
+          .trim()
+        if (cleanText.length > 0) {
+          extractedBeats.push({
+            tag,
+            sceneIndex: Math.ceil((i + 1) / 24),
+            text: cleanText
+          })
+        }
       }
 
       if (extractedBeats.length > 0) {

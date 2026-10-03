@@ -75,9 +75,9 @@ const toggleTheme = () => {
 }
 
 const copyMasterDna = () => {
-  const masterAnchor = `Ethan Drake, 22-year-old male hunter, sharp angular jawline, jet-black messy undercut hair, piercing steel-grey eyes, high-collar charcoal tactical trench-coat over dark combat armour --cref [CHARACTER_URL] --cw 80 --ar 16:9 --style raw`
+  const masterAnchor = `Caelen Vance, 18-year-old male academy student, messy raven-black hair, sharp piercing violet-amethyst eyes, calm analytical expression, fitted charcoal-gray academy combat tunic with silver clasps, fingerless tactical grip gloves, dark utility trousers, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting --cref [CHARACTER_URL] --cw 80 --ar 16:9 --style raw`
   navigator.clipboard.writeText(masterAnchor)
-  alert('✨ Copied Ethan Drake Master Character DNA Prompt Anchor to Clipboard!')
+  alert('✨ Copied Caelen Vance Master Character DNA Prompt Anchor to Clipboard!')
 }
 
 onMounted(() => {

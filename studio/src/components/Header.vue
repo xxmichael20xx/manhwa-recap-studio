@@ -51,7 +51,7 @@
       <button 
         @click="$emit('copy-dna')"
         class="h-8 px-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 border border-purple-400/30 text-white font-semibold text-xs flex items-center space-x-1.5 shadow-lg shadow-purple-900/40 transition active:scale-95 cursor-pointer"
-        title="Copy Ethan Drake's locked Midjourney --cref prompt string"
+        title="Copy active Master Character DNA prompt anchor to clipboard"
       >
         <Sparkles class="w-3.5 h-3.5 text-brand-gold-400" />
         <span class="hidden sm:inline">Copy Character DNA</span>

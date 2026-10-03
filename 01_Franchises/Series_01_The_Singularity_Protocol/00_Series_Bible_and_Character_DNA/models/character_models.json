@@ -1,0 +1,68 @@
+[
+  {
+    "id": "caelen_vance_tier_1_academy",
+    "name": "Caelen Vance",
+    "flowName": "Caelen Vance - Outcast",
+    "role": "Protagonist",
+    "tier": "Tier 1: Outcast Cadet",
+    "filename": "Caelen_Vance_Tier_1_Academy.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Caelen_Vance_Tier_1_Academy.jpg",
+    "description": "18yo male academy student, messy raven-black hair, sharp violet-amethyst eyes, fitted charcoal cadet uniform, fingerless grip gloves.",
+    "dnaAnchor": "Caelen Vance, 18-year-old male academy student, messy raven-black hair, sharp piercing violet-amethyst eyes, calm analytical expression, fitted charcoal-gray academy combat tunic with silver clasps, fingerless tactical grip gloves, dark utility trousers, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting"
+  },
+  {
+    "id": "caelen_vance_tier_2_sovereign",
+    "name": "Caelen Vance (Awakened)",
+    "flowName": "Caelen Vance - Awakened",
+    "role": "Protagonist",
+    "tier": "Tier 2: Void Sovereign",
+    "filename": "Caelen_Vance_Tier_2_Sovereign.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Caelen_Vance_Tier_2_Sovereign.jpg",
+    "description": "Awakened space-gravity sovereign, glowing amethyst eyes with swirling gravitational iris rings, high-collar obsidian trench-coat with silver runes.",
+    "dnaAnchor": "Caelen Vance, 18-year-old awakened space-gravity sovereign, messy raven-black hair with subtle violet highlights, glowing amethyst eyes with swirling gravitational iris rings, high-collar obsidian trench-coat with silver runes, dark tactical body armor, micro-spatial distortion ripples around hands, dark fantasy action manhwa art style, sharp ink linework"
+  },
+  {
+    "id": "valen_sol_aegis_class_a_leader",
+    "name": "Prince Valen Sol-Aegis",
+    "flowName": "Valen Sol-Aegis",
+    "role": "Antagonist",
+    "tier": "S-Rank Class A Leader",
+    "filename": "Valen_Sol_Aegis_Class_A_Leader.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Valen_Sol_Aegis_Class_A_Leader.jpg",
+    "description": "19yo royal high noble, immaculate combed golden-blonde hair, haughty sneer, glowing solar-gold eyes, white-and-gold imperial officer uniform, crimson capelet.",
+    "dnaAnchor": "Prince Valen Sol-Aegis, 19-year-old royal high noble, immaculate golden-blonde hair, haughty sneer, glowing solar-gold eyes, white-and-gold imperial academy officer uniform, crimson silk capelet with royal sun crest, ornate gold-hilted rapier, dark fantasy action manhwa art style, bright solar radiance"
+  },
+  {
+    "id": "keith_morgan_head_examiner",
+    "name": "Head Examiner Keith Morgan",
+    "flowName": "Keith Morgan",
+    "role": "Supporting",
+    "tier": "Senior Proctor",
+    "filename": "Keith_Morgan_Head_Examiner.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Keith_Morgan_Head_Examiner.jpg",
+    "description": "45yo battle-scarred veteran hunter, greying dark hair, heavy enchanted metal prosthetic right arm and shoulder, weathered stern jawline.",
+    "dnaAnchor": "Head Examiner Keith Morgan, 45-year-old battle-scarred veteran hunter, greying dark hair, cybernetic metal prosthetic right shoulder and arm, weathered stern jawline with battle scar, charcoal-grey military trench-coat with gold proctor insignia, dark fantasy action manhwa art style"
+  },
+  {
+    "id": "lyra_fenn_class_f_alchemist",
+    "name": "Lyra Fenn",
+    "flowName": "Lyra Fenn",
+    "role": "Supporting",
+    "tier": "Class F Alchemist",
+    "filename": "Lyra_Fenn_Class_F_Alchemist.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Lyra_Fenn_Class_F_Alchemist.jpg",
+    "description": "18yo female alchemist, copper-auburn hair in low ponytail, brass round goggles on forehead, hazel-green eyes, leather utility apron, potion vial bandolier.",
+    "dnaAnchor": "Lyra Fenn, 18-year-old female academy alchemist, short copper-auburn hair in messy low ponytail, brass round goggles on forehead, bright hazel-green eyes, oversized leather utility apron over olive work uniform, glass potion vial bandolier across chest, dark fantasy action manhwa art style"
+  },
+  {
+    "id": "void_carapace_goliath_boss",
+    "name": "Void-Carapace Goliath",
+    "flowName": "Void-Carapace Goliath",
+    "role": "Antagonist",
+    "tier": "Dungeon Calamity Boss",
+    "filename": "Void_Carapace_Goliath_Boss.jpg",
+    "url": "/api/franchises/Series_01_The_Singularity_Protocol/character-models/Void_Carapace_Goliath_Boss.jpg",
+    "description": "Colossal 4-metre subterranean quadruped titan, obsidian segmented exoskeleton armor, glowing purple rift fissures along ribcage, dual razor scythe forelimbs.",
+    "dnaAnchor": "Void-Carapace Goliath, colossal 4-metre subterranean quadruped chitinous titan monster, obsidian segmented exoskeleton armor plates, glowing purple dimensional rift fissures along ribcage, dual razor scythe forelimbs, heavy armored cranium, dark fantasy action manhwa art style"
+  }
+]

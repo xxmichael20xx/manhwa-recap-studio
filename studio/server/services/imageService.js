@@ -68,10 +68,13 @@ export class ImageService {
         const tag = `IMG_${num}`
         const prompt = match[2].trim()
 
-        let matchedFilename = `${tag}.png`
-        let hasImage = existingImages.includes(matchedFilename)
-        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
-          matchedFilename = `${tag}.jpg`
+        let matchedFilename = `${tag}.jpg`
+        let hasImage = existingImages.includes(`${tag}.jpg`)
+        if (!hasImage && existingImages.includes(`${tag}.png`)) {
+          matchedFilename = `${tag}.png`
+          hasImage = true
+        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
+          matchedFilename = `${tag}.webp`
           hasImage = true
         }
 
@@ -107,10 +110,13 @@ export class ImageService {
         const description = match4[2].trim()
         const prompt = match4[4].trim()
 
-        let matchedFilename = `${tag}.png`
-        let hasImage = existingImages.includes(matchedFilename)
-        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
-          matchedFilename = `${tag}.jpg`
+        let matchedFilename = `${tag}.jpg`
+        let hasImage = existingImages.includes(`${tag}.jpg`)
+        if (!hasImage && existingImages.includes(`${tag}.png`)) {
+          matchedFilename = `${tag}.png`
+          hasImage = true
+        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
+          matchedFilename = `${tag}.webp`
           hasImage = true
         }
 
@@ -133,10 +139,13 @@ export class ImageService {
         const description = rowMatch[2].trim()
         const prompt = rowMatch[3].trim()
 
-        let matchedFilename = `${tag}.png`
-        let hasImage = existingImages.includes(matchedFilename)
-        if (!hasImage && existingImages.includes(`${tag}.jpg`)) {
-          matchedFilename = `${tag}.jpg`
+        let matchedFilename = `${tag}.jpg`
+        let hasImage = existingImages.includes(`${tag}.jpg`)
+        if (!hasImage && existingImages.includes(`${tag}.png`)) {
+          matchedFilename = `${tag}.png`
+          hasImage = true
+        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
+          matchedFilename = `${tag}.webp`
           hasImage = true
         }
 
@@ -539,6 +548,14 @@ export class ImageService {
         await fs.writeFile(aliasPath, data)
       }
 
+      // If a placeholder PNG exists for this tag, remove it so it doesn't mask the high-fidelity JPG
+      const pngPath = path.join(imagesDir, `${targetTag}.png`)
+      try {
+        if (fsSync.existsSync(pngPath)) {
+          await fs.unlink(pngPath)
+        }
+      } catch (_) {}
+
       extracted.push({
         tag: targetTag,
         sourceName: m.file.name,
@@ -574,31 +591,59 @@ export class ImageService {
       const slug = this.cleanSlug(file.name)
       const slugTokens = slug.split(/\s+/).filter(w => w.length > 2)
 
-      // Direct tag match first (IMG_001, IMG001)
+      // 1. Direct tag match (IMG_001, IMG001)
       const directMatch = file.name.match(/IMG_?0*(\d+)/i)
       if (directMatch) {
         const num = parseInt(directMatch[1], 10)
         const targetTag = `IMG_${String(num).padStart(3, '0')}`
         const matchedScene = scenes.find(s => s.tag === targetTag)
         if (matchedScene) {
-          scoredPairs.push({ file, scene: matchedScene, score: 999, slug })
+          scoredPairs.push({ file, scene: matchedScene, score: 10000, slug })
           return
         }
       }
 
+      // 2. Semantic n-gram and substring matching
       scenes.forEach(scene => {
         let score = 0
-        const sceneKeywords = (scene.prompt || scene.description || '')
-          .toLowerCase()
-          .replace(/[^a-z0-9\s]/g, ' ')
-          .split(/\s+/)
-          .filter(w => w.length > 2)
+        const promptLower = (scene.prompt || '').toLowerCase()
+        const descLower = (scene.description || '').toLowerCase()
 
+        // Full slug match against prompt or description
+        if (slug.length >= 8 && (promptLower.includes(slug) || descLower.includes(slug))) {
+          score += 500 + slug.length * 5
+        }
+
+        // 3-word n-grams
+        if (slugTokens.length >= 3) {
+          for (let i = 0; i <= slugTokens.length - 3; i++) {
+            const trigram = slugTokens.slice(i, i + 3).join(' ')
+            if (promptLower.includes(trigram) || descLower.includes(trigram)) score += 50
+          }
+        }
+
+        // 2-word n-grams
+        if (slugTokens.length >= 2) {
+          for (let i = 0; i <= slugTokens.length - 2; i++) {
+            const bigram = slugTokens.slice(i, i + 2).join(' ')
+            if (promptLower.includes(bigram) || descLower.includes(bigram)) score += 20
+          }
+        }
+
+        // Individual significant tokens (filter generic stop words)
+        const stopWords = ['man', 'woman', 'student', 'the', 'and', 'with', 'scene', 'top', 'bottom', 'block', 'shot', 'view']
         slugTokens.forEach(t => {
-          if (sceneKeywords.includes(t)) score += 3
-          else if (sceneKeywords.some(k => k.includes(t) || t.includes(k))) score += 1
+          if (stopWords.includes(t)) return
+          if (promptLower.includes(t) || descLower.includes(t)) {
+            score += 6
+            // Extra bonus if token appears near the start of the prompt
+            if (promptLower.indexOf(t) >= 0 && promptLower.indexOf(t) < 100) score += 8
+          }
         })
-        scoredPairs.push({ file, scene, score, slug })
+
+        if (score > 0) {
+          scoredPairs.push({ file, scene, score, slug })
+        }
       })
     })
 
@@ -637,6 +682,7 @@ export class ImageService {
       }
     })
 
+    finalMapping.sort((a, b) => a.scene.tag.localeCompare(b.scene.tag))
     return finalMapping
   }
 

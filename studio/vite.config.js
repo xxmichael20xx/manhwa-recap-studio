@@ -14,11 +14,11 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3101',
+        target: 'http://127.0.0.1:3101',
         changeOrigin: true
       },
       '/audio-stream': {
-        target: 'http://localhost:3101',
+        target: 'http://127.0.0.1:3101',
         changeOrigin: true
       }
     }

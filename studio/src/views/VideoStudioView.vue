@@ -1,5 +1,46 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-6 relative">
+    <!-- Global Floating Toast Notification -->
+    <transition
+      enter-active-class="transform ease-out duration-300 transition"
+      enter-from-class="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+      enter-to-class="translate-y-0 opacity-100 sm:translate-x-0"
+      leave-active-class="transition ease-in duration-200"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+      <div 
+        v-if="toast.show" 
+        class="fixed top-20 right-6 z-50 max-w-md w-full shadow-2xl rounded-2xl p-4 border flex items-start space-x-3 backdrop-blur-md transition-all pointer-events-auto"
+        :class="{
+          'bg-white/95 dark:bg-slate-900/95 border-emerald-500/40 text-slate-900 dark:text-white': toast.type === 'success',
+          'bg-white/95 dark:bg-slate-900/95 border-purple-500/40 text-slate-900 dark:text-white': toast.type === 'info',
+          'bg-white/95 dark:bg-slate-900/95 border-rose-500/40 text-slate-900 dark:text-white': toast.type === 'error'
+        }"
+      >
+        <div class="p-2 rounded-xl shrink-0" :class="{
+          'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-500': toast.type === 'success',
+          'bg-purple-50 dark:bg-purple-950/60 text-purple-500': toast.type === 'info',
+          'bg-rose-50 dark:bg-rose-950/60 text-rose-500': toast.type === 'error'
+        }">
+          <Check v-if="toast.type === 'success'" class="w-5 h-5" />
+          <Loader2 v-else-if="toast.type === 'info' && toast.loading" class="w-5 h-5 animate-spin" />
+          <Info v-else-if="toast.type === 'info'" class="w-5 h-5" />
+          <AlertTriangle v-else-if="toast.type === 'error'" class="w-5 h-5" />
+        </div>
+        <div class="flex-1 min-w-0 pt-0.5">
+          <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">{{ toast.title }}</h4>
+          <p class="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 leading-relaxed break-words">{{ toast.message }}</p>
+        </div>
+        <button 
+          @click="toast.show = false"
+          class="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition cursor-pointer"
+        >
+          <X class="w-4 h-4" />
+        </button>
+      </div>
+    </transition>
+
     <!-- Top Header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
@@ -420,8 +461,13 @@
                 @dragover.prevent
                 @drop.prevent="handleBatchScopedDrop($event, batch.index)"
                 @click="triggerBatchScopedUpload(batch.index)"
-                class="p-6 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/30 hover:border-purple-500 bg-purple-50/20 hover:bg-purple-50/40 dark:bg-purple-950/10 dark:hover:bg-purple-950/20 text-center space-y-2 transition cursor-pointer group"
+                class="p-6 rounded-xl border-2 border-dashed border-purple-300 dark:border-purple-500/30 hover:border-purple-500 bg-purple-50/20 hover:bg-purple-50/40 dark:bg-purple-950/10 dark:hover:bg-purple-950/20 text-center space-y-2 transition cursor-pointer group relative overflow-hidden"
               >
+                <div v-if="batchActionState[batch.index]?.isIngesting" class="absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex items-center justify-center space-x-2 text-white z-10">
+                  <Loader2 class="w-5 h-5 text-purple-400 animate-spin" />
+                  <span class="text-xs font-mono font-bold">Ingesting and mapping {{ batch.name }} panels...</span>
+                </div>
+
                 <div class="flex items-center justify-center space-x-2 text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
                   <FolderDown class="w-4 h-4 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition" />
                   <span>Dropzone for {{ batch.name }} ({{ batch.startTag }} – {{ batch.endTag }})</span>
@@ -436,11 +482,21 @@
                 <div 
                   v-for="scene in batch.scenes" 
                   :key="scene.tag"
-                  class="rounded-xl border bg-slate-50 dark:bg-slate-950/40 p-4 space-y-3 relative group transition-all"
+                  class="rounded-xl border bg-slate-50 dark:bg-slate-950/40 p-4 space-y-3 relative group transition-all overflow-hidden"
                   :class="scene.hasImage ? 'border-slate-200 dark:border-slate-800' : 'border-dashed border-slate-300 dark:border-slate-700'"
                   @dragover.prevent
                   @drop.prevent="handleFileDrop($event, scene.tag)"
                 >
+                  <!-- Active Card Upload Loading Overlay -->
+                  <div 
+                    v-if="uploadingCardTags.has(scene.tag)" 
+                    class="absolute inset-0 bg-slate-950/85 backdrop-blur-xs rounded-xl z-20 flex flex-col items-center justify-center space-y-2 p-4 text-center"
+                  >
+                    <Loader2 class="w-6 h-6 text-purple-400 animate-spin" />
+                    <span class="text-xs font-mono font-bold text-white">Uploading [{{ scene.tag }}]...</span>
+                    <span class="text-[10px] font-mono text-purple-300">Assigning image & refreshing...</span>
+                  </div>
+
                   <!-- Card Header -->
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
@@ -856,7 +912,10 @@ import {
   Layers,
   Zap,
   Loader2,
-  AlertCircle
+  AlertCircle,
+  Info,
+  AlertTriangle,
+  X
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -908,6 +967,34 @@ const selectedVoice = ref('en-US-ChristopherNeural')
 const synthesizingAudio = ref(false)
 const masterAudioPlayer = ref(null)
 
+// Toast Notification & Card Loading State
+const toast = ref({
+  show: false,
+  title: '',
+  message: '',
+  type: 'info', // 'info' | 'success' | 'error'
+  loading: false
+})
+let toastTimer = null
+
+const triggerToast = (title, message, type = 'info', loading = false, duration = 4500) => {
+  clearTimeout(toastTimer)
+  toast.value = {
+    show: true,
+    title,
+    message,
+    type,
+    loading
+  }
+  if (!loading && duration > 0) {
+    toastTimer = setTimeout(() => {
+      toast.value.show = false
+    }, duration)
+  }
+}
+
+const uploadingCardTags = ref(new Set())
+
 // Character Models & Ingestion State
 const characterModels = ref([])
 const selectedVaultCategory = ref('all')
@@ -920,24 +1007,78 @@ const ingestingDownloads = ref(false)
 
 const autoIngestDownloads = async () => {
   ingestingDownloads.value = true
+  triggerToast('Scanning Downloads', 'Searching Downloads for recent Google Flow ZIP exports...', 'info', true)
+
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'visuals',
+    status: 'running',
+    progress: 30,
+    message: 'Scanning Downloads directory for image archives...',
+    logs: [
+      'Scanning Downloads folder for ZIP archives...',
+      'Checking Google Flow batch exports...'
+    ]
+  }
+
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/auto-ingest-downloads`, {
       method: 'POST'
     })
     const data = await res.json()
     if (data.success) {
-      storyboardFeedback.value = `✓ Successfully ingested and semantically mapped ${data.count} panels from "${data.source}"!`
+      const extractedLogs = Array.isArray(data.extracted) 
+        ? data.extracted.map(e => `[${e.tag}] ← ${e.sourceName} (Score: ${e.score})`) 
+        : []
+
+      modalState.value = {
+        show: true,
+        isMinimized: false,
+        activeStage: 'visuals',
+        status: 'completed',
+        progress: 100,
+        message: `Successfully ingested ${data.count} visual panels!`,
+        logs: [
+          ...modalState.value.logs,
+          ...extractedLogs,
+          `✓ Successfully unpacked and assigned ${data.count} panels from "${data.source}".`
+        ]
+      }
+
+      triggerToast('Auto-Ingest Complete', `✓ Successfully mapped ${data.count} panels from "${data.source}"!`, 'success')
+      batchUploadFeedback.value = `✓ Successfully ingested and mapped ${data.count} panels from "${data.source}"!`
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
     } else {
-      storyboardFeedback.value = `Ingestion note: ${data.error || 'No images found in Downloads.'}`
+      modalState.value = {
+        show: true,
+        isMinimized: false,
+        activeStage: 'visuals',
+        status: 'failed',
+        progress: 0,
+        message: data.error || 'No matching image archives found in Downloads.',
+        logs: [...modalState.value.logs, `Note: ${data.error || 'No images found in Downloads.'}`]
+      }
+      triggerToast('Downloads Ingestion', data.error || 'No matching image archives found in Downloads.', 'error')
+      batchUploadFeedback.value = `Ingestion note: ${data.error || 'No images found in Downloads.'}`
     }
   } catch (e) {
+    modalState.value = {
+      show: true,
+      isMinimized: false,
+      activeStage: 'visuals',
+      status: 'failed',
+      progress: 0,
+      message: `Ingestion Error: ${e.message}`,
+      logs: [...modalState.value.logs, `Error: ${e.message}`]
+    }
+    triggerToast('Ingestion Error', e.message, 'error')
     storyboardFeedback.value = `Ingestion error: ${e.message}`
   } finally {
     ingestingDownloads.value = false
-    setTimeout(() => { storyboardFeedback.value = '' }, 8000)
+    setTimeout(() => { batchUploadFeedback.value = '' }, 8000)
   }
 }
 
@@ -960,9 +1101,12 @@ const filteredCharacterModels = computed(() => {
 
 const copyModelDna = (model) => {
   if (!model) return
-  navigator.clipboard.writeText(model.dnaAnchor).then(() => {
+  const textToCopy = model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
+  navigator.clipboard.writeText(textToCopy).then(() => {
     batchUploadFeedback.value = `Copied ${model.name} DNA tokens to clipboard!`
     setTimeout(() => { batchUploadFeedback.value = '' }, 3000)
+  }).catch((err) => {
+    console.error('Clipboard write error:', err)
   })
 }
 
@@ -1280,7 +1424,23 @@ const handleBatchDrop = async (e) => {
 
 const handleZipUpload = async (file, targetBatchIndex = null) => {
   batchUploading.value = true
-  batchUploadFeedback.value = `Unpacking and ingesting "${file.name}"...`
+  const batchLabel = typeof targetBatchIndex === 'number' ? `Batch ${targetBatchIndex + 1}` : 'Visual Deck'
+  
+  triggerToast('Processing ZIP Archive', `Unpacking "${file.name}" for ${batchLabel}...`, 'info', true)
+
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'visuals',
+    status: 'running',
+    progress: 20,
+    message: `Unpacking "${file.name}" and mapping visual scenes...`,
+    logs: [
+      `Reading ZIP archive "${file.name}"...`,
+      `Extracting image files for ${batchLabel}...`,
+      `Running semantic n-gram scene matcher...`
+    ]
+  }
 
   try {
     const base64Data = await new Promise((resolve, reject) => {
@@ -1289,6 +1449,9 @@ const handleZipUpload = async (file, targetBatchIndex = null) => {
       reader.onerror = reject
       reader.readAsDataURL(file)
     })
+
+    modalState.value.progress = 50
+    modalState.value.message = 'Sending visual assets to studio engine...'
 
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload-zip`, {
       method: 'POST',
@@ -1307,6 +1470,25 @@ const handleZipUpload = async (file, targetBatchIndex = null) => {
 
     const data = await res.json()
     if (data.success) {
+      const extractedLogs = Array.isArray(data.extracted) 
+        ? data.extracted.map(e => `[${e.tag}] ← ${e.sourceName} (Score: ${e.score})`) 
+        : []
+
+      modalState.value = {
+        show: true,
+        isMinimized: false,
+        activeStage: 'visuals',
+        status: 'completed',
+        progress: 100,
+        message: `Successfully unzipped and mapped ${data.count} visual panels!`,
+        logs: [
+          ...modalState.value.logs,
+          ...extractedLogs,
+          `✓ Successfully assigned all ${data.count} panels from "${file.name}".`
+        ]
+      }
+
+      triggerToast('Ingestion Complete', `✓ Successfully mapped ${data.count} panels from "${file.name}"!`, 'success')
       batchUploadFeedback.value = `✓ Successfully unzipped and mapped ${data.count} visual panels from "${file.name}"!`
       cacheBuster.value = Date.now()
       await loadScenes()
@@ -1316,23 +1498,44 @@ const handleZipUpload = async (file, targetBatchIndex = null) => {
     }
   } catch (err) {
     console.error('ZIP upload failed:', err)
+    modalState.value = {
+      show: true,
+      isMinimized: false,
+      activeStage: 'visuals',
+      status: 'failed',
+      progress: 0,
+      message: `ZIP Upload Failed: ${err.message}`,
+      logs: [...modalState.value.logs, `Error: ${err.message}`]
+    }
+    triggerToast('Ingestion Failed', `ZIP Upload Error: ${err.message}`, 'error')
     batchUploadFeedback.value = `ZIP Upload Error: ${err.message}`
   } finally {
     batchUploading.value = false
-    setTimeout(() => { batchUploadFeedback.value = '' }, 6000)
+    setTimeout(() => { batchUploadFeedback.value = '' }, 8000)
   }
 }
 
 const processBatchFiles = async (files, targetBatchIndex = null) => {
   const imageFiles = files.filter(f => /\.(png|jpe?g|webp)$/i.test(f.name))
   if (imageFiles.length === 0) {
+    triggerToast('Upload Notice', 'No PNG, JPG, or WEBP images found in selection.', 'error')
     batchUploadFeedback.value = 'No PNG, JPG, or WEBP images found in selection.'
     setTimeout(() => { batchUploadFeedback.value = '' }, 4000)
     return
   }
 
   batchUploading.value = true
-  batchUploadFeedback.value = `Analyzing and matching ${imageFiles.length} images...`
+  triggerToast('Analyzing Panels', `Analyzing and matching ${imageFiles.length} images...`, 'info', true)
+
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'visuals',
+    status: 'running',
+    progress: 15,
+    message: `Analyzing and mapping ${imageFiles.length} images...`,
+    logs: [`Processing ${imageFiles.length} loose images...`]
+  }
 
   try {
     const candidateScenes = typeof targetBatchIndex === 'number' 
@@ -1403,12 +1606,18 @@ const processBatchFiles = async (files, targetBatchIndex = null) => {
     // Sort by scene order
     mappedItems.sort((a, b) => a.tag.localeCompare(b.tag, undefined, { numeric: true }))
 
+    modalState.value.progress = 40
+    modalState.value.message = `Uploading ${mappedItems.length} matched panels...`
+
     // Chunk upload in batches of 4 to guarantee payload safety
     const chunkSize = 4
     let totalUploaded = 0
 
     for (let i = 0; i < mappedItems.length; i += chunkSize) {
       const chunk = mappedItems.slice(i, i + chunkSize)
+      const currentProgress = Math.round(40 + (i / mappedItems.length) * 55)
+      modalState.value.progress = currentProgress
+      modalState.value.message = `Uploading panels ${i + 1} to ${Math.min(i + chunkSize, mappedItems.length)} of ${mappedItems.length}...`
       batchUploadFeedback.value = `Uploading panels ${i + 1} to ${Math.min(i + chunkSize, mappedItems.length)} of ${mappedItems.length}...`
 
       const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/batch-upload`, {
@@ -1425,20 +1634,47 @@ const processBatchFiles = async (files, targetBatchIndex = null) => {
       const data = await res.json()
       if (data.success) {
         totalUploaded += data.count
+        chunk.forEach(c => {
+          modalState.value.logs.push(`[${c.tag}] ← ${c.filename} (Assigned ✓)`)
+        })
       } else {
         throw new Error(data.error || 'Upload chunk failed')
       }
     }
 
+    modalState.value = {
+      show: true,
+      isMinimized: false,
+      activeStage: 'visuals',
+      status: 'completed',
+      progress: 100,
+      message: `Successfully ingested and mapped ${totalUploaded} panels!`,
+      logs: [
+        ...modalState.value.logs,
+        `✓ Finished mapping all ${totalUploaded} panels into the pipeline.`
+      ]
+    }
+
+    triggerToast('Panels Ingested', `✓ Successfully ingested and mapped ${totalUploaded} panels!`, 'success')
     batchUploadFeedback.value = `✓ Successfully ingested and mapped ${totalUploaded} panels!`
     cacheBuster.value = Date.now()
     await loadScenes()
     await loadPipelineStatus()
   } catch (e) {
+    modalState.value = {
+      show: true,
+      isMinimized: false,
+      activeStage: 'visuals',
+      status: 'failed',
+      progress: 0,
+      message: `Batch Upload Error: ${e.message}`,
+      logs: [...modalState.value.logs, `Error: ${e.message}`]
+    }
+    triggerToast('Upload Error', e.message, 'error')
     batchUploadFeedback.value = `Batch upload error: ${e.message}`
   } finally {
     batchUploading.value = false
-    setTimeout(() => { batchUploadFeedback.value = '' }, 6000)
+    setTimeout(() => { batchUploadFeedback.value = '' }, 8000)
   }
 }
 
@@ -1622,6 +1858,8 @@ const generateStoryboards = async () => {
 const handleFileInput = async (event, tag) => {
   const file = event.target.files[0]
   if (!file) return
+  uploadingCardTags.value = new Set(uploadingCardTags.value).add(tag)
+  triggerToast('Uploading Panel', `Uploading image for [${tag}]...`, 'info', true)
   const reader = new FileReader()
   reader.onload = async (e) => {
     await uploadBase64(tag, e.target.result)
@@ -1632,6 +1870,8 @@ const handleFileInput = async (event, tag) => {
 const handleFileDrop = async (event, tag) => {
   const file = event.dataTransfer.files[0]
   if (!file) return
+  uploadingCardTags.value = new Set(uploadingCardTags.value).add(tag)
+  triggerToast('Uploading Panel', `Uploading image for [${tag}]...`, 'info', true)
   const reader = new FileReader()
   reader.onload = async (e) => {
     await uploadBase64(tag, e.target.result)
@@ -1640,6 +1880,7 @@ const handleFileDrop = async (event, tag) => {
 }
 
 const uploadBase64 = async (tag, base64Data) => {
+  uploadingCardTags.value = new Set(uploadingCardTags.value).add(tag)
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload`, {
       method: 'POST',
@@ -1648,11 +1889,20 @@ const uploadBase64 = async (tag, base64Data) => {
     })
     const data = await res.json()
     if (data.success) {
+      triggerToast('Panel Updated', `✓ [${tag}] visual panel successfully updated!`, 'success')
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
+    } else {
+      triggerToast('Upload Failed', data.error || `Failed to upload [${tag}]`, 'error')
     }
-  } catch (e) {}
+  } catch (e) {
+    triggerToast('Upload Error', e.message || `Error uploading [${tag}]`, 'error')
+  } finally {
+    const updated = new Set(uploadingCardTags.value)
+    updated.delete(tag)
+    uploadingCardTags.value = updated
+  }
 }
 
 const generateVoiceoverAndSubtitles = async () => {

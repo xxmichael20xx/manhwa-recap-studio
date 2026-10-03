@@ -88,14 +88,22 @@ export class TtsService {
     const scriptContent = await fs.readFile(scriptPath, 'utf-8')
 
     // Parse scenes from script (Supports Dynamic Hybrid [IMG_XXX] format & legacy ### Scene blocks)
+    const tagMatches = [...scriptContent.matchAll(/\[(IMG_\d+)\]/g)]
     const extractedScenes = []
-    const inlineRegex = /\[(IMG_\d+)\][`\s]*([^\[\n\r]+)/g
-    let m
-    while ((m = inlineRegex.exec(scriptContent)) !== null) {
-      extractedScenes.push({
-        tag: m[1],
-        text: m[2].trim()
-      })
+    for (let i = 0; i < tagMatches.length; i++) {
+      const current = tagMatches[i]
+      const tag = current[1].toUpperCase()
+      const startPos = current.index + current[0].length
+      const endPos = (i + 1 < tagMatches.length) ? tagMatches[i + 1].index : scriptContent.length
+      let rawBlock = scriptContent.slice(startPos, endPos)
+      let cleanText = rawBlock
+        .replace(/###\s+[^\n]+/g, '')
+        .replace(/##\s+[^\n]+/g, '')
+        .replace(/---/g, '')
+        .trim()
+      if (cleanText.length > 0) {
+        extractedScenes.push({ tag, text: cleanText })
+      }
     }
 
     if (extractedScenes.length === 0) {

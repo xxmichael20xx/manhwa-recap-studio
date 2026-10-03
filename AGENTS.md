@@ -10,7 +10,7 @@
 
 The studio operates on a modular two-tier architecture:
 1. **`/00_Engine/` (Universal Core):** Contains universal anti-slop codices, archetype formulas, prompt matrices, and platform manuals inherited by all series.
-2. **`/01_Franchises/` (Isolated Series Repositories):** Contains self-contained franchise repositories (`Series_01_The_Sovereign_Protocol/`, `Series_02_The_Abyssal_Regressor/`, etc.) with dedicated Character DNA sheets and episodic folders (`EP01/`, `EP02/`, etc.).
+2. **`/01_Franchises/` (Isolated Series Repositories):** Contains self-contained franchise repositories (`Series_01_The_Singularity_Protocol/`, `Series_02_The_Abyssal_Regressor/`, etc.) with dedicated Character DNA sheets and episodic folders (`EP01/`, `EP02/`, etc.).
 
 ---
 

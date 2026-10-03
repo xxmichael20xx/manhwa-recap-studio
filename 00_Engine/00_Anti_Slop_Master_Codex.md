@@ -65,9 +65,12 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ---
 
-### 8. Cartoonish "Young Master" Antagonists
-* **Defect:** Wealthy nobles witness the protagonist slay an S-Rank monster, then immediately walk up and demand his loot under threat of a physical slap.
-* **Fix (Calculated Political & Factional Leverage):** Replace suicidal tantrums with economic sanctions, guild council pressure, hostage exploitation, and black-market assassination contracts.
+### 8. Cartoonish "Young Master" & Low-IQ Antagonist Slop
+* **Defect:** Wealthy nobles witness the protagonist display god-tier competence, then screech illogical insults (*"He made a pact with the devil!"*, *"Kill this peasant!"*) or throw suicidal tantrums with zero self-preservation.
+* **Fix (The High-IQ Institutional Standard):** 
+  - **Zero "Sold Soul to Devil" Slop:** Strictly forbidden from writing characters who make lazy supernatural excuses when outsmarted.
+  - **Forensic & Data-Driven Logic:** Proctors and examiners assess anomalies through hard sensor data, acoustic telemetry, and compressive material stress analysis.
+  - **Calculated Political & Factional Leverage:** Antagonists act like ruthless corporate/military oligarchs, protecting their status through non-disclosure agreements, media monopolies, guild council sanctions, and black-market contracts rather than cartoonish tantrums.
 
 ---
 
