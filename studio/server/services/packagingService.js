@@ -226,6 +226,22 @@ This video is an original narrative adaptation and production. All scripts, lore
     // 8. Pinned Comment
     const pinnedComment = `💬 Question for you guys: Would you have spared Lord Vane on that collapsing bridge, or eliminated him right away? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
 
+    // 9. Master Generated Thumbnail Detection
+    const thumbDir = path.join(epPath, 'thumbnails')
+    let masterThumbnail = null
+    if (fsSync.existsSync(thumbDir)) {
+      const files = fsSync.readdirSync(thumbDir).filter(f => f.endsWith('.jpg') || f.endsWith('.png'))
+      if (files.length > 0) {
+        const primaryThumb = files.find(f => f.includes('Master')) || files[0]
+        masterThumbnail = {
+          filename: primaryThumb,
+          url: `/api/episodes/${franchiseId}/${episodeId}/thumbnail/${primaryThumb}`,
+          badgeText: 'FALSE F-RANK',
+          style: 'Split Contrast (Weak Scavenger vs Awakened Sovereign)'
+        }
+      }
+    }
+
     return {
       success: true,
       franchiseId,
@@ -239,6 +255,7 @@ This video is an original narrative adaptation and production. All scripts, lore
       description,
       chapterText,
       thumbnailPrompts,
+      masterThumbnail,
       tags,
       pinnedComment
     }

@@ -1403,13 +1403,55 @@
         </div>
 
         <!-- 2. 16:9 MASTER THUMBNAIL PROMPTS (GOOGLE FLOW / MIDJOURNEY) -->
-        <div class="space-y-3">
+        <div class="space-y-4">
           <div class="flex items-center justify-between">
             <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white flex items-center space-x-2">
               <Image class="w-4 h-4 text-purple-500" />
-              <span>2. 16:9 Master Thumbnail Generator Suite (Midjourney / Google Flow)</span>
+              <span>2. 16:9 Master Thumbnail Generator Suite (Midjourney / Studio AI)</span>
             </h3>
             <span class="text-[11px] font-mono text-slate-400">High-Contrast 16:9 Prompts with Badge Overlays</span>
+          </div>
+
+          <!-- Generated Master Thumbnail Preview Card -->
+          <div v-if="youtubePackage.masterThumbnail" class="p-5 rounded-3xl bg-slate-900 border border-purple-500/30 text-white shadow-xl flex flex-col md:flex-row items-center gap-6 overflow-hidden relative">
+            <div class="w-full md:w-1/2 aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 relative group shrink-0">
+              <img 
+                :src="`${youtubePackage.masterThumbnail.url}?t=${cacheBuster}`" 
+                alt="16:9 Master Thumbnail" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-rose-500 to-purple-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg border border-white/20">
+                ⚡ {{ youtubePackage.masterThumbnail.badgeText }}
+              </div>
+              <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-md bg-black/70 backdrop-blur-xs font-mono font-bold text-[10px] text-emerald-400 border border-emerald-500/30">
+                1920×1080 Ready
+              </div>
+            </div>
+
+            <div class="space-y-3 flex-1 min-w-0">
+              <div class="space-y-1">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase font-bold">
+                  Active Master Thumbnail
+                </span>
+                <h4 class="text-base sm:text-lg font-bold text-white">
+                  {{ youtubePackage.masterThumbnail.style }}
+                </h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Split-contrast composition: Weak Double F-Rank scavenger in dungeon shadows on the left vs Awakened Singularity Sovereign in midnight blue coat with glowing cyan eyes and floating runes on the right.
+                </p>
+              </div>
+
+              <div class="flex items-center space-x-3 pt-2">
+                <a 
+                  :href="youtubePackage.masterThumbnail.url" 
+                  download="01_Master_YouTube_Thumbnail_16x9.jpg"
+                  class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-md shadow-purple-950/40 cursor-pointer"
+                >
+                  <Download class="w-3.5 h-3.5" />
+                  <span>⬇️ Download Master 16:9 Thumbnail</span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
