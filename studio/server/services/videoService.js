@@ -285,56 +285,19 @@ export class VideoService {
   }
 
   /**
-   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Strip Glide:
-   * - 60 FPS high temporal frame density to eliminate motion stepping.
-   * - 2X Supersampled coordinate space (3840x2160) with bicubic antialiasing to eliminate 1px staircase judder.
-   * - Background: 3840x2160 ambient blurred cover.
-   * - Center Strip: Full-height (2160px tall in 2X, 1300px wide).
-   * - Compound Animation: Moves across screen horizontally (x: 840px <-> 1480px in 2X) WHILE scrolling vertically.
-   * - Downsampling: High-precision bicubic filter scaling down to 1920x1080p60.
-   */
-  /**
-   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Strip Glide:
-   * - One-shot Sharp pre-rendered ambient blurred background (eliminates redundant per-frame FFmpeg blur).
-   * - Centered stationary X positioning (eliminates diagonal stair-stepping).
-   * - Pure vertical sine-eased reading glide for tall strips.
-   * - 60 FPS high temporal density with fast C++ composite.
+   * Render authentic Manhwa Recap Sub-Pixel 30 FPS Strip Glide & Landscape Motion:
+   * - One-shot Sharp pre-rendered ambient blurred background (<10ms via C++ libvips SIMD).
+   * - Native multi-threaded FFmpeg C++ filter graphs for all 6 reading strip modes and 6 landscape modes.
+   * - 30 FPS high-efficiency rendering with libx264 veryfast hardware-accelerated SIMD instructions.
    */
   static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
-    const fps = 60
-    const durationSec = framesCount / 30
-
-    // 1. Primary: Omni-Directional Sub-Pixel GPU Motion Engine (60 FPS Sub-Pixel Interpolation)
-    try {
-      return await MotionEngine.renderSceneClip({
-        imagePath,
-        durationSec,
-        fps,
-        motionIndex,
-        outputPath
-      })
-    } catch (motionErr) {
-      console.warn(`MotionEngine attempt 1 failed for ${path.basename(imagePath)}, recycling browser and retrying:`, motionErr.message)
-      try {
-        await MotionEngine.closeBrowser()
-        return await MotionEngine.renderSceneClip({
-          imagePath,
-          durationSec,
-          fps,
-          motionIndex,
-          outputPath
-        })
-      } catch (retryErr) {
-        console.error(`MotionEngine retry failed for ${path.basename(imagePath)}, falling back:`, retryErr.message)
-      }
-    }
-
-    // 2. Graceful Fallback: Native Filter Graph
+    const fps = 30
+    const durationSec = Math.max(1.0, framesCount / 30)
     const frames = Math.max(30, Math.round(durationSec * fps))
     const PI = '3.14159265'
 
     const tempDir = path.dirname(outputPath)
-    const tempBgPath = path.join(tempDir, `bg_${path.basename(outputPath, '.mp4')}.jpg`)
+    const tempBgPath = path.join(tempDir, `bg_${path.basename(outputPath, '.mp4')}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}.jpg`)
 
     let meta = { width: 768, height: 1376 }
     try {
@@ -345,17 +308,17 @@ export class VideoService {
     const imgH = meta.height || 1376
     const isTallStrip = (imgH / imgW) >= 1.35
 
-    const cropEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
-    const cropEaseInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
-    const zpEase = `(0.5-0.5*cos(${PI}*on/${frames}))`
+    const snapDown = `if(lt(n/${frames},0.30),0,if(gt(n/${frames},0.70),1,(0.5-0.5*cos(${PI}*(n/${frames}-0.30)/0.40))))`
+    const snapUp = `(1.0-${snapDown})`
+    const sineEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
 
     if (isVertical) {
       // 1. Generate 1920x1080 blurred ambient backdrop plate once with Sharp (<10ms)
       try {
         await sharp(imagePath)
           .resize(1920, 1080, { fit: 'cover' })
-          .blur(25)
-          .modulate({ brightness: 0.65, saturation: 1.25 })
+          .blur(35)
+          .modulate({ brightness: 0.55, saturation: 1.30 })
           .toFile(tempBgPath)
       } catch (e) {
         // Fallback to solid dark background
@@ -372,19 +335,27 @@ export class VideoService {
       let filterComplex = ''
 
       if (isTallStrip) {
-        // Multi-panel tall manhwa strip: 680px width, centered at X=620, smooth vertical glide
+        // Multi-panel tall manhwa strip: 680px width, centered at X=620, 6 dynamic reading modes
         const stripDisplayW = 680
         const stripDisplayH = Math.round((imgH / imgW) * stripDisplayW)
         const maxScrollY = Math.max(0, stripDisplayH - 1080)
         const centerX = Math.round((1920 - stripDisplayW) / 2) // 620px
-        const isReverse = (motionIndex % 4 === 3)
-        const yScrollExpr = isReverse ? cropEaseInv : cropEase
 
-        filterComplex = [
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${yScrollExpr})'[strip]`,
-          `[0:v][strip]overlay=x=${centerX}:y=0[comp]`,
-          `[comp]format=yuv420p[vout]`
-        ].join(';')
+        const tallStripPresets = [
+          // 0. Vertical Snap Down (Top to Bottom reading glide)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 1. Vertical Diagonal Left to Right (Top-Left to Bottom-Right dynamic tracking)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x='${centerX - 30}+60*${sineEase}':y=0[comp];[comp]format=yuv420p[vout]`,
+          // 2. Vertical Smooth Glide (Center sine ease)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${sineEase})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 3. Vertical Snap Up (Bottom to Top climax/reveal glide)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapUp})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 4. Vertical Diagonal Right to Left (Top-Right to Bottom-Left dynamic tracking)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x='${centerX + 30}-60*${sineEase}':y=0[comp];[comp]format=yuv420p[vout]`,
+          // 5. Vertical Contextual Pull (Center smooth glide)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${sineEase})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`
+        ]
+        filterComplex = tallStripPresets[motionIndex % tallStripPresets.length]
       } else {
         // Single panel vertical card
         const stripHeight = 1040
@@ -392,11 +363,13 @@ export class VideoService {
         const centerX = Math.round((1920 - stripWidth) / 2)
         const centerY = 20
 
-        filterComplex = [
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip]`,
-          `[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp]`,
-          `[comp]format=yuv420p[vout]`
-        ].join(';')
+        const cardPresets = [
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x='${centerX - 25}+50*${sineEase}':y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x='${centerX + 25}-50*${sineEase}':y=${centerY}[comp];[comp]format=yuv420p[vout]`
+        ]
+        filterComplex = cardPresets[motionIndex % cardPresets.length]
       }
 
       const args = [
@@ -407,8 +380,8 @@ export class VideoService {
         '-map', '[vout]',
         '-c:v', 'libx264',
         '-preset', 'veryfast',
-        '-crf', '18',
-        '-r', '60',
+        '-crf', '19',
+        '-r', '30',
         '-frames:v', String(frames),
         outputPath
       ]
@@ -426,28 +399,42 @@ export class VideoService {
             reject(new Error(`Strip scroll rendering failed for ${path.basename(imagePath)}`))
           }
         })
-        proc.on('error', reject)
+        proc.on('error', async err => {
+          try { await fs.unlink(tempBgPath) } catch (_) {}
+          reject(err)
+        })
       })
     } else {
-      // Landscape Panels (Full 60fps 16:9 Pan & Scan with Supersampled Scaling)
+      // Landscape Panels (Full 30fps 16:9 Pan, Dynamic Scale Zoom & Sweeps)
+      const maxLandScrollX = 280
+      const maxLandScrollY = 158
+
       const landscapePresets = [
-        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.0+0.06*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
-        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.06-0.06*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,(iw-1920)*${cropEase})':y='(ih-1080)/2',format=yuv420p[vout]`,
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,(iw-1920)*${cropEaseInv})':y='(ih-1080)/2',format=yuv420p[vout]`
+        // 0. Pan Left to Right
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${sineEase})':y='(ih-1080)/2',format=yuv420p[vout]`,
+        // 1. Hero Zoom In (Dynamic Scaling)
+        `[0:v]scale=w='2200*(1.0+0.07*${sineEase})':h='1238*(1.0+0.07*${sineEase})':eval=frame:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
+        // 2. Pan Right to Left
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*(1.0-${sineEase}))':y='(ih-1080)/2',format=yuv420p[vout]`,
+        // 3. Diagonal Sweep
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${sineEase})':y='max(0,${maxLandScrollY}*${sineEase})',format=yuv420p[vout]`,
+        // 4. Hero Zoom Out (Dynamic Scaling)
+        `[0:v]scale=w='2200*(1.07-0.07*${sineEase})':h='1238*(1.07-0.07*${sineEase})':eval=frame:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
+        // 5. Pan Top to Bottom
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='(iw-1920)/2':y='max(0,${maxLandScrollY}*${sineEase})',format=yuv420p[vout]`
       ]
       const filterComplex = landscapePresets[motionIndex % landscapePresets.length]
 
       const args = [
         '-y',
-        '-loop', '1',
+        '-loop', '1', '-t', String(durationSec),
         '-i', imagePath,
         '-filter_complex', filterComplex,
         '-map', '[vout]',
         '-c:v', 'libx264',
         '-preset', 'veryfast',
-        '-crf', '18',
-        '-r', '60',
+        '-crf', '19',
+        '-r', '30',
         '-frames:v', String(frames),
         outputPath
       ]
@@ -606,8 +593,8 @@ export class VideoService {
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
       message: isBatchCompile 
-        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 30fps Ken Burns clips...`
-        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 30fps Ken Burns clips...`,
+        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing Turbo C++ 30fps clips...`
+        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing Turbo C++ 30fps clips...`,
       log: [
         ...(this.compilationState[key].log || []),
         isBatchCompile 
@@ -619,9 +606,9 @@ export class VideoService {
     // Get list of existing images on disk
     const existingFiles = fsSync.existsSync(imagesDir) ? await fs.readdir(imagesDir) : []
 
-    // 3. Render Ken Burns clips in managed concurrency (2 at a time for optimal browser GPU memory)
+    // 3. Render Ken Burns clips in managed concurrency (6 at a time for multi-threaded CPU SIMD)
     const clipFiles = []
-    const concurrency = 2
+    const concurrency = 6
     let completedClips = 0
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
@@ -674,7 +661,7 @@ export class VideoService {
           progress: progressPct,
           message: isBatchCompile
             ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
-            : `Rendered ${completedClips} of ${targetBeats.length} Full-Bleed Ken Burns clips ([${beat.tag}])...`,
+            : `Rendered ${completedClips} of ${targetBeats.length} Turbo C++ clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
             `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
@@ -775,8 +762,8 @@ export class VideoService {
         '-map', '[aout]',
         '-c:v', 'libx264',
         '-preset', 'veryfast',
-        '-crf', '22',
-        '-r', '60',
+        '-crf', '20',
+        '-r', '30',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
@@ -793,8 +780,8 @@ export class VideoService {
         ...(vf ? ['-vf', vf] : []),
         '-c:v', 'libx264',
         '-preset', 'veryfast',
-        '-crf', '22',
-        '-r', '60',
+        '-crf', '20',
+        '-r', '30',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
@@ -811,13 +798,11 @@ export class VideoService {
       })
 
       proc.on('close', async code => {
-        // Clean up temporary clip, composite directories, and browser resources
+        // Clean up temporary clip and composite directories
         try {
           await fs.rm(tempClipsDir, { recursive: true, force: true })
           await fs.rm(tempCompositesDir, { recursive: true, force: true })
-        } catch (e) {}
-        try {
-          await MotionEngine.closeBrowser()
+          await fs.unlink(cleanTempSrt)
         } catch (e) {}
 
         if (code === 0) {
