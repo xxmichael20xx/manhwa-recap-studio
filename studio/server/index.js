@@ -666,6 +666,66 @@ app.post('/api/episodes/:franchiseId/:episodeId/compile-video', (req, res) => {
   })
 })
 
+// Trigger Automated Sequential Compilation for All Batches & Auto-Stitch
+app.post('/api/episodes/:franchiseId/:episodeId/auto-compile-all', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const options = req.body || {}
+
+  VideoService.autoCompileAllBatches(franchiseId, episodeId, options).catch(err => {
+    console.error('Auto compile all error:', err)
+  })
+
+  res.json({
+    success: true,
+    message: 'Automated sequential batch pipeline initiated',
+    status: VideoService.getStatus(franchiseId, episodeId)
+  })
+})
+
+// Trigger Instant Lossless Batch Stitching (-c copy into Master 1080p)
+app.post('/api/episodes/:franchiseId/:episodeId/stitch-batches', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const options = req.body || {}
+
+  VideoService.stitchBatches(franchiseId, episodeId, options).catch(err => {
+    console.error('Batch stitch error:', err)
+  })
+
+  res.json({
+    success: true,
+    message: 'Batch stitcher initiated',
+    status: VideoService.getStatus(franchiseId, episodeId)
+  })
+})
+
+// Trigger Selective Grouped Batch Queue Compilation
+app.post('/api/episodes/:franchiseId/:episodeId/compile-grouped-batches', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const options = req.body || {}
+
+  VideoService.compileGroupedBatches(franchiseId, episodeId, options).catch(err => {
+    console.error('Grouped batch compilation error:', err)
+  })
+
+  res.json({
+    success: true,
+    message: 'Grouped batch pipeline initiated',
+    status: VideoService.getStatus(franchiseId, episodeId)
+  })
+})
+
+// Trigger Multi-Master Cross-Episode Omnibus Lossless Stitcher
+app.post('/api/episodes/:franchiseId/stitch-master-omnibus', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const { masterFilePaths = [], outputFilename } = req.body || {}
+    const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Video Compilation Progress & Status
 app.get('/api/episodes/:franchiseId/:episodeId/video-status', (req, res) => {
   const { franchiseId, episodeId } = req.params

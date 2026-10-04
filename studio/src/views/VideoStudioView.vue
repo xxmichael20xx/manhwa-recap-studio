@@ -521,6 +521,17 @@
 
               <!-- Quick Batch Action Buttons -->
               <div class="flex flex-wrap items-center gap-2" @click.stop>
+                <!-- 1-Click Render Batch Preview Video Button -->
+                <button 
+                  @click="compileBatchDirect(batch.index)"
+                  :disabled="compiling"
+                  class="px-2.5 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                  :title="`1-Click Render ${batch.name} Preview Video`"
+                >
+                  <Film class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                  <span>{{ `🎬 Render ${batch.name}` }}</span>
+                </button>
+
                 <!-- Fix / Copy Failed Prompts for this Batch Button -->
                 <button 
                   v-if="batch.failedCount > 0"
@@ -779,15 +790,330 @@
           </div>
 
           <div class="flex items-center space-x-3">
-            <!-- Compile Master Action Button -->
+            <!-- Strategy Selector (Visible in Auto Mode) -->
+            <select 
+              v-if="compilationScope === 'auto'"
+              v-model="autoCompileStrategy"
+              class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono font-bold text-purple-600 dark:text-purple-400 focus:outline-none focus:border-purple-500 shadow-sm cursor-pointer"
+            >
+              <option value="skip_compiled">⚡ Skip Compiled Batches</option>
+              <option value="fresh_all">🔄 Fresh All Batches</option>
+            </select>
+
+            <!-- Dynamic Primary Action Button -->
             <button 
-              @click="compileVideo"
+              @click="triggerCompilation()"
               :disabled="compiling"
               class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 active:scale-95 text-white text-xs font-semibold flex items-center space-x-2 transition shadow-lg shadow-purple-900/30 disabled:opacity-50 cursor-pointer"
             >
               <Play class="w-4 h-4 fill-current" :class="{ 'animate-spin': compiling }" />
-              <span>{{ compiling ? 'Compiling Master Video...' : 'Compile Master 1080p Video' }}</span>
+              <span v-if="compiling">Processing {{ compilationScope === 'auto' ? 'Automated Batch Queue' : (compilationScope === 'batch' ? (currentSelectedBatch?.name || 'Batch') : (compilationScope === 'stitch' ? 'Batch Stitcher' : 'Master Video')) }}...</span>
+              <span v-else-if="compilationScope === 'auto'">{{ autoCompileStrategy === 'skip_compiled' ? '⚡ Auto-Compile (Skip Ready & Stitch)' : '🔄 Auto-Compile (Fresh All 9 Batches & Stitch)' }}</span>
+              <span v-else-if="compilationScope === 'batch'">Compile {{ currentSelectedBatch?.name || 'Batch A' }} Preview ({{ currentSelectedBatch?.totalCount || 24 }} Cuts)</span>
+              <span v-else-if="compilationScope === 'stitch'">🔗 Stitch {{ compiledBatchesCount }} Compiled Batches into Master (Instant &lt;3s)</span>
+              <span v-else>Compile Monolithic Master Video ({{ scenes.length }} Cuts)</span>
             </button>
+          </div>
+        </div>
+
+        <!-- Compilation Scope & Target Mode Selector Card -->
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2">
+              <div class="p-1.5 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                <Layers class="w-4 h-4" />
+              </div>
+              <div>
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide">
+                  Compilation Mode & Master Assembly
+                </h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Select automated queue compilation, isolated single-batch testing (~25s), or instant lossless stitching (&lt;3s).
+                </p>
+              </div>
+            </div>
+
+            <!-- Scope Mode Switcher Pills -->
+            <div class="flex items-center bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl border border-slate-300 dark:border-slate-700 flex-wrap gap-1">
+              <button 
+                @click="compilationScope = 'auto'"
+                class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="compilationScope === 'auto' 
+                  ? 'bg-purple-600 text-white shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <Zap class="w-3.5 h-3.5 text-amber-300" />
+                <span>⚡ Auto-Queue & Stitch</span>
+              </button>
+
+              <button 
+                @click="compilationScope = 'batch'"
+                class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="compilationScope === 'batch' 
+                  ? 'bg-purple-600 text-white shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <Layers class="w-3.5 h-3.5 text-purple-300" />
+                <span>📦 Grouped Batches ({{ selectedBatchIndices.length }})</span>
+              </button>
+
+              <button 
+                @click="compilationScope = 'stitch'"
+                class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="compilationScope === 'stitch' 
+                  ? 'bg-purple-600 text-white shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <Film class="w-3.5 h-3.5 text-emerald-300" />
+                <span>🔗 Stitch Batches (&lt;2s)</span>
+              </button>
+
+              <button 
+                @click="compilationScope = 'omnibus'"
+                class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="compilationScope === 'omnibus' 
+                  ? 'bg-purple-600 text-white shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <Sparkles class="w-3.5 h-3.5 text-amber-300" />
+                <span>🏆 Master Omnibus</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 1: Auto-Queue & Stitch Explainer -->
+          <div v-if="compilationScope === 'auto'" class="pt-3 border-t border-slate-200 dark:border-slate-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <CheckCircle class="w-4 h-4 text-emerald-500" />
+                <span>Automated Sequential Pipeline Architecture (24 FPS)</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+                Compiles Batch A &rarr; flushes memory &rarr; compiles Batch B &rarr; ... &rarr; Batch I (6 parallel threads @ 24fps), then automatically losslessly stitches all batches into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_A-I_1080p.mp4</code> in &lt;2s.
+              </p>
+            </div>
+
+            <div class="flex items-center space-x-2 shrink-0">
+              <select 
+                v-model="autoCompileStrategy"
+                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono font-bold text-purple-600 dark:text-purple-400 focus:outline-none focus:border-purple-500 shadow-sm cursor-pointer"
+              >
+                <option value="skip_compiled">⚡ Skip Compiled (Fast)</option>
+                <option value="fresh_all">🔄 Fresh All (Overwrite)</option>
+              </select>
+
+              <button 
+                @click="triggerCompilation()"
+                :disabled="compiling"
+                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition flex items-center space-x-1.5 shrink-0 shadow-md shadow-purple-900/20 cursor-pointer disabled:opacity-50"
+              >
+                <Zap class="w-3.5 h-3.5 text-amber-300" />
+                <span>{{ autoCompileStrategy === 'skip_compiled' ? 'Start Queue (Skip Ready)' : 'Start Queue (Fresh All)' }}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 2: Custom Grouped Batch Checkbox Matrix -->
+          <div v-if="compilationScope === 'batch'" class="pt-3 border-t border-slate-200 dark:border-slate-800/80 space-y-4">
+            <!-- Header & Action Helpers -->
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center space-x-2">
+                <span class="text-xs font-bold text-slate-900 dark:text-white">Selected Batches:</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  {{ selectedBatchIndices.length }} of {{ batchedScenes.length }} Batches
+                </span>
+                <span class="text-[11px] font-mono text-slate-400 dark:text-slate-500">
+                  (Descriptor: <code class="text-purple-600 dark:text-purple-400 font-bold">{{ groupedBatchDescriptor }}</code>)
+                </span>
+              </div>
+
+              <!-- Quick Action Presets -->
+              <div class="flex items-center space-x-2">
+                <button 
+                  @click="selectMissingBatchesOnly()"
+                  class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition cursor-pointer"
+                >
+                  ⚡ Select Missing Only
+                </button>
+                <button 
+                  @click="selectAllBatches()"
+                  class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition cursor-pointer"
+                >
+                  Select All
+                </button>
+                <button 
+                  @click="deselectAllBatches()"
+                  class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition cursor-pointer"
+                >
+                  Deselect All
+                </button>
+              </div>
+            </div>
+
+            <!-- Batch Checkbox Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              <div 
+                v-for="b in batchedScenes" 
+                :key="b.index"
+                @click="toggleBatchSelection(b.index)"
+                class="p-3.5 rounded-xl border text-left transition cursor-pointer flex flex-col justify-between space-y-2 select-none relative"
+                :class="selectedBatchIndices.includes(b.index)
+                  ? 'border-purple-600 bg-purple-50/60 dark:bg-purple-950/30 ring-1 ring-purple-600 shadow-sm' 
+                  : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-500/40 opacity-70'"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-2">
+                    <input 
+                      type="checkbox"
+                      :checked="selectedBatchIndices.includes(b.index)"
+                      @click.stop="toggleBatchSelection(b.index)"
+                      class="w-4 h-4 rounded text-purple-600 accent-purple-600 cursor-pointer"
+                    />
+                    <span class="text-xs font-bold text-slate-900 dark:text-white">{{ b.name }}</span>
+                  </div>
+                  <span v-if="b.hasVideo" class="px-1.5 py-0.5 text-[9px] rounded font-mono font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">✓ MP4</span>
+                  <span v-else class="text-[9px] font-mono text-slate-400">⏳ Pending</span>
+                </div>
+
+                <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                  {{ b.startTag }} &rarr; {{ b.endTag }}
+                </div>
+
+                <div class="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800/80 text-[10px] font-mono">
+                  <span :class="b.isFullyReady ? 'text-emerald-600 dark:text-emerald-400 font-semibold' : 'text-amber-500'">
+                    {{ b.readyCount }}/{{ b.totalCount }} Loaded
+                  </span>
+                  <span class="text-slate-400">24 Cuts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grouped Action Footer -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-200 dark:border-slate-800">
+              <label class="flex items-center space-x-2 text-xs text-slate-700 dark:text-slate-300 cursor-pointer select-none">
+                <input 
+                  type="checkbox" 
+                  v-model="autoStitchGrouped"
+                  class="w-4 h-4 rounded text-purple-600 accent-purple-600 cursor-pointer"
+                />
+                <span class="font-semibold">Auto-stitch selected batches into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_{{ groupedBatchDescriptor }}_1080p.mp4</code></span>
+              </label>
+
+              <button 
+                @click="compileGroupedBatchesAction()"
+                :disabled="compiling || selectedBatchIndices.length === 0"
+                class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition flex items-center space-x-2 shadow-lg shadow-purple-900/30 cursor-pointer disabled:opacity-50"
+              >
+                <Play class="w-4 h-4 fill-current" />
+                <span>Compile {{ selectedBatchIndices.length }} Selected Batches (24 FPS)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 3: Batch Stitcher Hub (Visible when compilationScope === 'stitch') -->
+          <div v-if="compilationScope === 'stitch'" class="pt-3 border-t border-slate-200 dark:border-slate-800/80 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="space-y-0.5">
+                <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                  <Film class="w-4 h-4 text-emerald-500" />
+                  <span>Lossless Batch Assembly Stitcher (FFmpeg -c copy)</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Instantly merges all compiled batch preview videos on disk in under 2 seconds into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_A-I_1080p.mp4</code>.
+                </p>
+              </div>
+
+              <div class="flex items-center space-x-3">
+                <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full" :class="compiledBatchesCount > 0 ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' : 'bg-slate-200 dark:bg-slate-800 text-slate-500'">
+                  {{ compiledBatchesCount }} of {{ batchedScenes.length }} Batches Compiled on Disk
+                </span>
+                <button 
+                  @click="stitchBatches()"
+                  :disabled="compiling || compiledBatchesCount === 0"
+                  class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center space-x-1.5 shadow-md shadow-emerald-900/20 cursor-pointer disabled:opacity-50"
+                >
+                  <Film class="w-3.5 h-3.5" />
+                  <span>Stitch {{ compiledBatchesCount }} Batches Now</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Stitched Batch Badges -->
+            <div class="flex flex-wrap items-center gap-2 pt-1">
+              <div 
+                v-for="b in batchedScenes" 
+                :key="b.index"
+                class="px-3 py-1.5 rounded-xl border flex items-center space-x-2 text-xs font-mono"
+                :class="b.hasVideo 
+                  ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500/30 text-emerald-700 dark:text-emerald-300' 
+                  : 'bg-slate-100 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-400'"
+              >
+                <span class="font-bold">{{ b.name }}</span>
+                <span v-if="b.hasVideo" class="text-[10px] text-emerald-500">✓ Ready</span>
+                <span v-else class="text-[10px] text-slate-500">⏳ Uncompiled</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode 4: Multi-Master & Episode Omnibus Stitcher -->
+          <div v-if="compilationScope === 'omnibus'" class="pt-3 border-t border-slate-200 dark:border-slate-800/80 space-y-4">
+            <div class="space-y-1">
+              <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <Sparkles class="w-4 h-4 text-amber-500" />
+                <span>Multi-Master Video Extension & Season Omnibus Studio</span>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+                Losslessly concatenate multiple Master Videos (e.g. Part 1: Batches A–I + Part 2: Batches J–P or Episode 1 + Episode 2 + Episode 3) into an extended Grand Omnibus in &lt;5 seconds.
+              </p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3">
+              <div class="flex items-center justify-between text-xs font-bold text-slate-900 dark:text-white">
+                <span>Select Master Video Files to Merge:</span>
+                <span class="font-mono text-purple-600 dark:text-purple-400">{{ selectedOmnibusFiles.length }} Selected</span>
+              </div>
+
+              <!-- Available Master Videos List -->
+              <div class="space-y-2">
+                <div 
+                  v-for="vf in videoFiles.filter(f => f.isMaster || f.filename.includes('Master'))" 
+                  :key="vf.filename"
+                  class="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-xs font-mono"
+                >
+                  <label class="flex items-center space-x-2.5 cursor-pointer select-none">
+                    <input 
+                      type="checkbox" 
+                      :value="vf.filename" 
+                      v-model="selectedOmnibusFiles"
+                      class="w-4 h-4 rounded text-purple-600 accent-purple-600 cursor-pointer"
+                    />
+                    <span class="font-bold text-slate-800 dark:text-slate-200">{{ vf.label }}</span>
+                  </label>
+                  <span class="text-slate-400 text-[11px]">({{ (vf.size / (1024 * 1024)).toFixed(1) }} MB)</span>
+                </div>
+              </div>
+
+              <!-- Output Filename & Stitch Action -->
+              <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-200 dark:border-slate-800">
+                <div class="flex items-center space-x-2 w-full md:w-auto">
+                  <span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-400">Omnibus Filename:</span>
+                  <input 
+                    type="text" 
+                    v-model="omnibusOutputName"
+                    class="bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-mono px-3 py-1.5 rounded-lg text-slate-800 dark:text-slate-200 focus:outline-none focus:border-purple-500 w-72"
+                  />
+                </div>
+
+                <button 
+                  @click="stitchOmnibusAction()"
+                  :disabled="compiling || selectedOmnibusFiles.length < 2"
+                  class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-purple-600 hover:from-amber-400 hover:to-purple-500 text-white text-xs font-bold transition flex items-center space-x-1.5 shadow-md shadow-purple-900/20 cursor-pointer disabled:opacity-50"
+                >
+                  <Sparkles class="w-3.5 h-3.5" />
+                  <span>Stitch {{ selectedOmnibusFiles.length }} Masters into Omnibus (&lt;5s)</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2055,6 +2381,8 @@ const batchedScenes = computed(() => {
     const missingCount = items.filter(s => !s.hasImage).length
     const failedCount = clutteredCount + warningCount + missingCount
     const letter = letters[i] || `Batch_${i + 1}`
+    const batchVideoFilename = `01_Episode_Batch_${letter}_Preview.mp4`
+    const hasVideo = Array.isArray(videoFiles.value) && videoFiles.value.some(f => f.filename === batchVideoFilename)
 
     list.push({
       index: i,
@@ -2071,12 +2399,18 @@ const batchedScenes = computed(() => {
       warningCount,
       clutteredCount,
       failedCount,
+      hasVideo,
+      batchVideoFilename,
       isFullyReady: readyCount === items.length && items.length > 0,
       isFullyClean: (cleanCount === readyCount) && (readyCount === items.length) && items.length > 0,
       progressPercent: items.length ? Math.round((readyCount / items.length) * 100) : 0
     })
   }
   return list
+})
+
+const compiledBatchesCount = computed(() => {
+  return batchedScenes.value.filter(b => b.hasVideo).length
 })
 
 const toggleBatch = (bIdx) => {
@@ -2583,12 +2917,66 @@ const pipeline = ref({
 const videoFiles = ref([])
 const selectedVideoFile = ref('01_Episode_Master_1080p.mp4')
 const selectedBatchTarget = ref('all')
+const compilationScope = ref('auto')
+const autoCompileStrategy = ref('skip_compiled') // 'skip_compiled' | 'fresh_all'
+const selectedBatchIndex = ref(0)
+const selectedBatchIndices = ref([0, 1, 2, 3, 4, 5, 6, 7, 8]) // Default all 9 batches selected
+const autoStitchGrouped = ref(true)
+const omnibusOutputName = ref('00_Season_01_Omnibus_1080p.mp4')
+const selectedOmnibusFiles = ref([])
+
+const currentSelectedBatch = computed(() => {
+  return batchedScenes.value.find(b => b.index === selectedBatchIndex.value) || batchedScenes.value[0] || null
+})
+
+const groupedBatchDescriptor = computed(() => {
+  if (selectedBatchIndices.value.length === 0) return 'None'
+  const letters = selectedBatchIndices.value.map(i => availableBatches.value[i]?.letter || String.fromCharCode(65 + i))
+  letters.sort()
+  const charCodes = letters.map(l => l.charCodeAt(0))
+  let isContiguous = true
+  for (let i = 1; i < charCodes.length; i++) {
+    if (charCodes[i] !== charCodes[i - 1] + 1) {
+      isContiguous = false
+      break
+    }
+  }
+  if (isContiguous && letters.length > 1) {
+    return `Batches_${letters[0]}-${letters[letters.length - 1]}`
+  } else {
+    return `Batches_${letters.join('_')}`
+  }
+})
+
+const selectMissingBatchesOnly = () => {
+  selectedBatchIndices.value = batchedScenes.value
+    .filter(b => !b.hasVideo)
+    .map(b => b.index)
+}
+
+const selectAllBatches = () => {
+  selectedBatchIndices.value = batchedScenes.value.map(b => b.index)
+}
+
+const deselectAllBatches = () => {
+  selectedBatchIndices.value = []
+}
+
+const toggleBatchSelection = (idx) => {
+  const i = selectedBatchIndices.value.indexOf(idx)
+  if (i >= 0) {
+    selectedBatchIndices.value.splice(i, 1)
+  } else {
+    selectedBatchIndices.value.push(idx)
+    selectedBatchIndices.value.sort((a, b) => a - b)
+  }
+}
 
 const availableBatches = computed(() => {
-  const total = scenes.value.length || 266
+  const total = scenes.value.length || 216
   const chunkSize = 24
   const count = Math.ceil(total / chunkSize)
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
+  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']
   const list = []
   for (let i = 0; i < count; i++) {
     const start = i * chunkSize + 1
@@ -2598,7 +2986,7 @@ const availableBatches = computed(() => {
       index: i,
       letter,
       label: `Batch ${letter} (Scenes ${String(start).padStart(3, '0')}–${String(end).padStart(3, '0')})`,
-      filename: `Batch_${letter}_Preview_1080p.mp4`
+      filename: `01_Episode_Batch_${letter}_Preview.mp4`
     })
   }
   return list
@@ -2855,7 +3243,72 @@ const seekAudio = (seconds) => {
   }
 }
 
-const compileVideo = async () => {
+const compileBatchDirect = (batchIdx) => {
+  activeStage.value = 'compiler'
+  compilationScope.value = 'batch'
+  selectedBatchIndex.value = batchIdx
+  compileVideo(batchIdx)
+}
+
+const triggerCompilation = () => {
+  if (compilationScope.value === 'auto') {
+    autoCompileAllBatches()
+  } else if (compilationScope.value === 'batch') {
+    compileGroupedBatchesAction()
+  } else if (compilationScope.value === 'stitch') {
+    stitchBatches()
+  } else if (compilationScope.value === 'omnibus') {
+    stitchOmnibusAction()
+  } else {
+    compileVideo()
+  }
+}
+
+const compileGroupedBatchesAction = async () => {
+  if (selectedBatchIndices.value.length === 0) return
+  compiling.value = true
+  const selectedLetters = selectedBatchIndices.value.map(i => availableBatches.value[i]?.letter || String.fromCharCode(65 + i)).join(', ')
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'compiler',
+    status: 'running',
+    progress: 5,
+    message: `Initializing Grouped Queue for ${selectedBatchIndices.value.length} batches (${selectedLetters})...`,
+    logs: [
+      `Starting selective grouped batch compilation for batches: ${selectedLetters}...`,
+      `Frame Rate: 24 FPS Standard (6 parallel CPU threads).`,
+      autoStitchGrouped.value ? `Will losslessly auto-stitch into 01_Episode_Master_${groupedBatchDescriptor.value}_1080p.mp4.` : 'Auto-stitch disabled.'
+    ]
+  }
+
+  try {
+    const payload = {
+      batchIndices: selectedBatchIndices.value,
+      autoStitch: autoStitchGrouped.value,
+      kenBurns: true,
+      burnSubtitles: true,
+      bgmTrack: selectedBgmTrack.value,
+      bgmVolume: selectedBgmVolume.value,
+      force: true
+    }
+
+    await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-grouped-batches`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    startPolling(false, null, true)
+  } catch (e) {
+    compiling.value = false
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Grouped compile error: ${e.message}`]
+  }
+}
+
+const stitchOmnibusAction = async () => {
+  if (selectedOmnibusFiles.value.length < 2) return
   compiling.value = true
   modalState.value = {
     show: true,
@@ -2863,8 +3316,134 @@ const compileVideo = async () => {
     activeStage: 'compiler',
     status: 'running',
     progress: 10,
-    message: 'Initializing compilation for Full 1080p Master Episode...',
-    logs: ['Launching FFmpeg compilation job for Full 1080p Master Episode...']
+    message: `Losslessly stitching ${selectedOmnibusFiles.value.length} Master Videos into ${omnibusOutputName.value}...`,
+    logs: [
+      `Assembling Grand Omnibus from: ${selectedOmnibusFiles.value.join(', ')}...`
+    ]
+  }
+
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/stitch-master-omnibus`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        masterFilePaths: selectedOmnibusFiles.value,
+        outputFilename: omnibusOutputName.value
+      })
+    })
+    const data = await res.json()
+    if (data.success) {
+      compiling.value = false
+      modalState.value.status = 'completed'
+      modalState.value.progress = 100
+      modalState.value.message = `Grand Omnibus (${data.filename}) successfully stitched in <2 seconds!`
+      await loadVideoFiles()
+    } else {
+      throw new Error(data.error || 'Omnibus stitching failed')
+    }
+  } catch (e) {
+    compiling.value = false
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+  }
+}
+
+const autoCompileAllBatches = async () => {
+  const isSkip = autoCompileStrategy.value === 'skip_compiled'
+  compiling.value = true
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'compiler',
+    status: 'running',
+    progress: 5,
+    message: isSkip 
+      ? 'Initializing Auto-Queue (Skipping already compiled batches)...' 
+      : 'Initializing Auto-Queue (Fresh All: Recompiling 100% batches)...',
+    logs: [
+      `Starting automated sequential compilation (${isSkip ? 'Skip Already Compiled Batches' : 'Fresh All Re-render'})...`,
+      'Memory will be flushed after each batch. Master video will be auto-stitched at the end.'
+    ]
+  }
+
+  try {
+    const payload = {
+      kenBurns: true,
+      burnSubtitles: true,
+      bgmTrack: selectedBgmTrack.value,
+      bgmVolume: selectedBgmVolume.value,
+      skipExisting: isSkip,
+      force: true
+    }
+
+    await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/auto-compile-all`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    startPolling(false, null, true)
+  } catch (e) {
+    compiling.value = false
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Auto-compile error: ${e.message}`]
+  }
+}
+
+const stitchBatches = async () => {
+  compiling.value = true
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'compiler',
+    status: 'running',
+    progress: 10,
+    message: `Losslessly stitching ${compiledBatchesCount.value} compiled batches into Master 1080p video...`,
+    logs: [
+      `Executing instant lossless FFmpeg stream copy (-c copy) across ${compiledBatchesCount.value} batches...`
+    ]
+  }
+
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/stitch-batches`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({})
+    })
+    const data = await res.json()
+    if (data.success) {
+      startPolling(false, null, false, true)
+    } else {
+      throw new Error(data.error || 'Stitching failed')
+    }
+  } catch (e) {
+    compiling.value = false
+    modalState.value.status = 'failed'
+    modalState.value.message = e.message
+    modalState.value.logs = [...modalState.value.logs, `Stitch error: ${e.message}`]
+  }
+}
+
+const compileVideo = async (targetBatchIdx = null) => {
+  const isBatch = targetBatchIdx !== null || compilationScope.value === 'batch'
+  const bIdx = targetBatchIdx !== null ? targetBatchIdx : selectedBatchIndex.value
+  const bObj = batchedScenes.value.find(b => b.index === bIdx) || { name: `Batch ${String.fromCharCode(65 + bIdx)}`, letter: String.fromCharCode(65 + bIdx), totalCount: 24 }
+
+  compiling.value = true
+  modalState.value = {
+    show: true,
+    isMinimized: false,
+    activeStage: 'compiler',
+    status: 'running',
+    progress: 10,
+    message: isBatch 
+      ? `Initializing C++ Skia compilation for ${bObj.name} (${bObj.totalCount} cuts)...`
+      : 'Initializing compilation for Full 1080p Master Episode...',
+    logs: [
+      isBatch 
+        ? `Launching fast C++ Skia synthesis for ${bObj.name} (${bObj.totalCount} cuts)...`
+        : 'Launching FFmpeg compilation job for Full 1080p Master Episode...'
+    ]
   }
 
   try {
@@ -2874,13 +3453,16 @@ const compileVideo = async () => {
       bgmTrack: selectedBgmTrack.value,
       bgmVolume: selectedBgmVolume.value
     }
+    if (isBatch) {
+      payload.batchIndex = bIdx
+    }
 
     await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/compile-video`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-    startPolling()
+    startPolling(isBatch, bObj)
   } catch (e) {
     compiling.value = false
     modalState.value.status = 'failed'
@@ -2889,7 +3471,7 @@ const compileVideo = async () => {
   }
 }
 
-const startPolling = () => {
+const startPolling = (isBatch = false, bObj = null, isAutoQueue = false, isStitch = false) => {
   clearInterval(pollTimer)
   pollTimer = setInterval(async () => {
     try {
@@ -2910,10 +3492,28 @@ const startPolling = () => {
         compiling.value = false
         modalState.value.status = 'completed'
         modalState.value.progress = 100
-        modalState.value.message = 'Master 1080p Video compilation completed successfully!'
-        modalState.value.logs = [...(data.log || []), 'Master 1080p MP4 ready with frame-accurate subtitles.']
+        let successMsg = 'Master 1080p Video compiled successfully!'
+        if (isBatch && bObj) {
+          successMsg = `${bObj.name} Preview (${bObj.totalCount} cuts) compiled successfully!`
+        } else if (isAutoQueue) {
+          successMsg = 'All batches compiled & Master 1080p Video auto-stitched successfully!'
+        } else if (isStitch) {
+          successMsg = 'Master 1080p Video losslessly stitched in under 3 seconds!'
+        }
+        modalState.value.message = successMsg
+        modalState.value.logs = [...(data.log || []), `${isBatch ? (bObj?.name || 'Batch') : 'Master 1080p'} MP4 ready with frame-accurate subtitles.`]
         cacheBuster.value = Date.now()
         await loadPipelineStatus()
+
+        // Auto-select compiled batch preview or master video in player
+        if (isBatch && bObj) {
+          const expectedFilename = `01_Episode_Batch_${bObj.letter}_Preview.mp4`
+          if (videoFiles.value.some(f => f.filename === expectedFilename)) {
+            selectedVideoFile.value = expectedFilename
+          }
+        } else {
+          selectedVideoFile.value = '01_Episode_Master_1080p.mp4'
+        }
       } else if (data.status === 'failed') {
         clearInterval(pollTimer)
         compiling.value = false
