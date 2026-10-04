@@ -110,14 +110,7 @@ const navItems = [
     label: 'Dashboard',
     path: '/',
     icon: LayoutDashboard,
-    badge: 'Hub'
-  },
-  {
-    id: 'franchises',
-    label: 'Franchise Studio',
-    path: '/franchises/Series_01_The_Singularity_Protocol',
-    icon: Film,
-    badge: 'Series 01'
+    badge: 'All Series'
   },
   {
     id: 'engine',

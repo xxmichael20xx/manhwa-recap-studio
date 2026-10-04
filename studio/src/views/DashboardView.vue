@@ -64,11 +64,11 @@
           class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-500/40 rounded-2xl p-6 transition-all duration-200 hover:shadow-lg flex flex-col justify-between group shadow-sm"
         >
           <div class="space-y-4">
-            <div class="flex items-start justify-between">
+            <div class="flex items-start justify-between gap-2">
               <span class="text-xs font-mono px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 uppercase font-bold">
-                {{ item.id.includes('01') ? 'Archetype A' : 'Archetype B' }}
+                {{ item.id.includes('01') ? 'Format 1: 9:16 Webtoon' : 'Format 2: 16:9 Landscape' }}
               </span>
-              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">{{ item.episodes.length }} Episodes</span>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">{{ item.episodes.length }} Episode{{ item.episodes.length > 1 ? 's' : '' }}</span>
             </div>
 
             <div>
@@ -108,7 +108,7 @@
               :to="`/franchises/${item.id}`"
               class="w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 active:scale-95 text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-md shadow-purple-900/20"
             >
-              <span>Open Franchise Studio</span>
+              <span>Enter Series Workspace</span>
               <ArrowRight class="w-3.5 h-3.5" />
             </router-link>
           </div>
