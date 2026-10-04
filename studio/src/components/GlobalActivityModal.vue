@@ -115,20 +115,20 @@
                 ]"
                 :key="cat.id"
                 @click="selectedCategory = cat.id"
-                class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer"
+                class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer font-bold"
                 :class="selectedCategory === cat.id 
-                  ? 'bg-purple-600 text-white font-bold shadow-xs' 
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700'"
+                  ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-xs border border-purple-600' 
+                  : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700'"
               >
                 {{ cat.label }}
               </button>
 
               <button 
                 @click="selectedLevel = selectedLevel === 'error' ? 'all' : 'error'"
-                class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer ml-auto"
+                class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer ml-auto font-bold"
                 :class="selectedLevel === 'error' 
-                  ? 'bg-rose-600 text-white font-bold shadow-xs' 
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-rose-500/10 hover:text-rose-500'"
+                  ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-xs border border-rose-600' 
+                  : 'bg-slate-100 hover:bg-rose-50 dark:bg-slate-800 dark:hover:bg-rose-950/40 text-slate-800 hover:text-rose-700 dark:text-slate-200 dark:hover:text-rose-300 border border-slate-300 dark:border-slate-700'"
               >
                 Errors Only
               </button>

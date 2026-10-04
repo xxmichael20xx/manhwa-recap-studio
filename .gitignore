@@ -33,5 +33,7 @@ scratch/
 studio/scratch/
 studio/*.png
 studio/*.jpg
+images_original_backup/
+*_original_backup/
 
 

@@ -705,7 +705,7 @@ const loadEpisode = async () => {
 const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
   const results = []
 
-  // Check for XML <scene id="IMG_001"> ... </scene> blocks
+  // 1. Check for XML <scene id="IMG_001"> ... </scene> blocks
   const sceneRegex = /<scene\s+id=["']?(IMG_?\d+)["']?>\s*([\s\S]*?)\s*<\/scene>/gi
   let sMatch
   while ((sMatch = sceneRegex.exec(markdown)) !== null) {
@@ -731,9 +731,10 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
     // Enrich descriptions from table if present
     const lines = markdown.split('\n')
     for (const line of lines) {
-      const match4 = line.match(/^\|\s*`?(\[IMG_\d+\])`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
+      const match4 = line.match(/^\|\s*`?\[?(IMG_?\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*(.+?)\s*\|(?:\s*$)?/i)
       if (match4) {
-        const item = results.find(r => r.tag.toUpperCase() === match4[1].trim().toUpperCase())
+        const cleanTag = match4[1].toUpperCase()
+        const item = results.find(r => r.tag.replace(/[[\]]/g, '').toUpperCase() === cleanTag)
         if (item) {
           item.description = match4[2].trim()
           if (match4[3].trim()) item.characterAnchor = match4[3].trim()
@@ -744,19 +745,27 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
     return
   }
 
+  // 2. Parse Markdown Table rows
   const lines = markdown.split('\n')
   for (const line of lines) {
-    // Check for 4-column table: | Tag | Description | Anchor | Prompt |
-    const match4 = line.match(/^\|\s*`?(\[IMG_\d+\])`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
+    if (line.includes('---') || line.includes(':---') || line.toLowerCase().includes('scene tag')) continue
+
+    // Check for 4-column table: | Tag | Layout Tier / Description | Anchor | Prompt |
+    const match4 = line.match(/^\|\s*`?\[?(IMG_?\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*(.+?)\s*\|(?:\s*$)?/i)
     if (match4) {
-      const tag = match4[1].trim()
-      const cleanTag = tag.replace(/[[\]]/g, '').toUpperCase()
+      const rawTag = match4[1].trim().toUpperCase()
+      const tag = `[${rawTag}]`
+      const cleanTag = rawTag
       const imgInfo = imageMap.get(cleanTag)
+      const desc = match4[2].trim()
+      const anchor = match4[3].trim()
+      const prompt = match4[4].trim()
+
       results.push({
         tag,
-        description: match4[2].trim(),
-        characterAnchor: match4[3].trim(),
-        prompt: match4[4].trim(),
+        description: desc,
+        characterAnchor: anchor,
+        prompt,
         hasImage: imgInfo ? imgInfo.hasImage : false,
         imageUrl: imgInfo ? imgInfo.url : null
       })
@@ -764,10 +773,11 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
     }
 
     // Check for 3-column table: | Tag | Description | Prompt |
-    const match3 = line.match(/^\|\s*`?(\[IMG_\d+\])`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
-    if (match3 && !line.includes('---')) {
-      const tag = match3[1].trim()
-      const cleanTag = tag.replace(/[[\]]/g, '').toUpperCase()
+    const match3 = line.match(/^\|\s*`?\[?(IMG_?\d+)\]?`?\s*\|\s*([^|]+)\|\s*(.+?)\s*\|(?:\s*$)?/i)
+    if (match3) {
+      const rawTag = match3[1].trim().toUpperCase()
+      const tag = `[${rawTag}]`
+      const cleanTag = rawTag
       const imgInfo = imageMap.get(cleanTag)
       const pText = match3[3].trim()
       const anchors = [...pText.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]).join(', ')

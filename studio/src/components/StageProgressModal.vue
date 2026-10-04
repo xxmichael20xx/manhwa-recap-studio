@@ -80,14 +80,14 @@
             <div class="flex items-center space-x-1.5">
               <button 
                 @click="$emit('minimize')" 
-                class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+                class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
                 title="Minimize to floating widget"
               >
                 <Minimize2 class="w-4 h-4" />
               </button>
               <button 
                 @click="$emit('close')" 
-                class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+                class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
                 title="Close"
               >
                 <X class="w-4 h-4" />
@@ -212,7 +212,7 @@
             <div class="flex items-center space-x-2">
               <button 
                 @click="$emit('minimize')"
-                class="px-3.5 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition cursor-pointer"
+                class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 text-xs font-bold transition cursor-pointer shadow-xs"
               >
                 Minimize
               </button>
@@ -221,7 +221,7 @@
               <button 
                 v-if="status === 'completed' && activeStage === 'visuals'"
                 @click="$emit('proceed-next', 'audio')"
-                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
+                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
               >
                 <span>Proceed to Stage 2: Voiceover Sync</span>
                 <ArrowRight class="w-3.5 h-3.5" />
@@ -231,7 +231,7 @@
               <button 
                 v-else-if="status === 'completed' && activeStage === 'audio'"
                 @click="$emit('proceed-next', 'compiler')"
-                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
+                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
               >
                 <span>Proceed to Stage 3: FFmpeg Compilation</span>
                 <ArrowRight class="w-3.5 h-3.5" />
@@ -241,7 +241,7 @@
               <button 
                 v-else-if="status === 'completed' && activeStage === 'compiler'"
                 @click="$emit('close')"
-                class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center space-x-1.5 transition shadow-md shadow-emerald-900/20 cursor-pointer"
+                class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-emerald-900/20 cursor-pointer"
               >
                 <CheckCircle2 class="w-3.5 h-3.5" />
                 <span>View Master 1080p Video</span>
@@ -251,7 +251,7 @@
               <button 
                 v-else
                 @click="$emit('close')"
-                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition cursor-pointer"
+                class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white text-xs font-bold transition cursor-pointer shadow-sm"
               >
                 Close
               </button>

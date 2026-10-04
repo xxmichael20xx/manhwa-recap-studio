@@ -10,6 +10,7 @@ import { AntiSlopValidator } from './services/antiSlopValidator.js'
 import { ImageService } from './services/imageService.js'
 import { VideoService } from './services/videoService.js'
 import { ActivityLogService } from './services/activityLogService.js'
+import { VisualQaService } from './services/visualQaService.js'
 
 dotenv.config()
 
@@ -307,20 +308,6 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/validate-alignment', async
   }
 })
 
-// Stream Scene Image
-app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => {
-  const { franchiseId, episodeId, filename } = req.params
-  const filePath = ImageService.getImagePath(franchiseId, episodeId, filename)
-
-  if (fs.existsSync(filePath)) {
-    res.setHeader('Content-Type', 'image/png')
-    const readStream = fs.createReadStream(filePath)
-    readStream.pipe(res)
-  } else {
-    res.status(404).send('Image file not found')
-  }
-})
-
 // Generate Storyboard Stills (Full or Single Batch)
 app.post('/api/episodes/:franchiseId/:episodeId/images/generate-storyboard', async (req, res) => {
   try {
@@ -342,8 +329,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/tts-status', (req, res) => {
   res.json(TtsService.getStatus(franchiseId, episodeId))
 })
 
-// Helper to detect extension and clean older conflicting extensions for same tag
-const saveUploadedImage = async (imagesDir, tag, base64Data) => {
+// Helper to detect extension, sanitize, and clean older conflicting extensions for same tag
+const saveUploadedImage = async (imagesDir, tag, base64Data, franchiseId, episodeId) => {
   const cleanTag = tag.toUpperCase()
   let ext = 'png'
   const match = base64Data.match(/^data:image\/([a-zA-Z0-9+]+);base64,/)
@@ -370,10 +357,19 @@ const saveUploadedImage = async (imagesDir, tag, base64Data) => {
     }
   }
 
-  return { filename, url: filename }
+  // Automatically run Visual QA & Anti-Clutter Sanitization
+  let qaReport = null
+  const backupDir = path.join(imagesDir, '..', 'images_original_backup')
+  try {
+    qaReport = await VisualQaService.verifyImage(targetPath, { autoFix: true, backupDir })
+  } catch (err) {
+    console.warn(`[VisualQA] QA error on ${cleanTag}:`, err.message)
+  }
+
+  return { filename, url: filename, qa: qaReport }
 }
 
-// Manual Image Upload / Dropzone (Base64)
+// Manual Image Upload / Dropzone (Base64) with Auto Visual-QA Verification
 app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
@@ -384,12 +380,13 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/upload', async (req, res)
 
     const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
     await fs.promises.mkdir(imagesDir, { recursive: true })
-    const { filename } = await saveUploadedImage(imagesDir, tag, base64Data)
+    const { filename, qa } = await saveUploadedImage(imagesDir, tag, base64Data, franchiseId, episodeId)
 
     res.json({
       success: true,
       filename,
-      url: `/api/episodes/${franchiseId}/${episodeId}/images/${filename}`
+      url: `/api/episodes/${franchiseId}/${episodeId}/images/${filename}`,
+      qa
     })
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -411,8 +408,8 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
     const uploaded = []
     for (const item of items) {
       if (!item.tag || !item.base64Data) continue
-      const { filename } = await saveUploadedImage(imagesDir, item.tag, item.base64Data)
-      uploaded.push(item.tag.toUpperCase())
+      const { filename, qa } = await saveUploadedImage(imagesDir, item.tag, item.base64Data, franchiseId, episodeId)
+      uploaded.push({ tag: item.tag.toUpperCase(), filename, qa })
     }
 
     res.json({
@@ -420,6 +417,53 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
       count: uploaded.length,
       uploaded
     })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Single Image QA Verification on Demand
+app.post('/api/episodes/:franchiseId/:episodeId/images/verify', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { filename, tag, autoFix } = req.body || {}
+    const targetName = filename || (tag ? `${tag.toUpperCase()}.jpg` : null)
+    if (!targetName) {
+      return res.status(400).json({ error: 'filename or tag is required' })
+    }
+
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    const filePath = path.join(imagesDir, targetName)
+    const backupDir = path.join(imagesDir, '..', 'images_original_backup')
+
+    const report = await VisualQaService.verifyImage(filePath, { autoFix: Boolean(autoFix), backupDir })
+    res.json({
+      success: true,
+      filename: targetName,
+      ...report
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Full Episode Image QA Audit & Batch Sanitization
+app.get('/api/episodes/:franchiseId/:episodeId/images/qa-audit', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const audit = await VisualQaService.auditEpisodeImages(franchiseId, episodeId, { autoFix: false })
+    res.json(audit)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.post('/api/episodes/:franchiseId/:episodeId/images/qa-audit', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { autoFix } = req.body || {}
+    const audit = await VisualQaService.auditEpisodeImages(franchiseId, episodeId, { autoFix: Boolean(autoFix) })
+    res.json(audit)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
@@ -472,6 +516,22 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/upload-zip', async (req, 
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream Scene Image (Must be AFTER all specific /images/* sub-routes)
+app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => {
+  const { franchiseId, episodeId, filename } = req.params
+  const filePath = ImageService.getImagePath(franchiseId, episodeId, filename)
+
+  if (fs.existsSync(filePath)) {
+    const ext = path.extname(filename).toLowerCase()
+    const contentType = ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg' : (ext === '.webp' ? 'image/webp' : 'image/png')
+    res.setHeader('Content-Type', contentType)
+    const readStream = fs.createReadStream(filePath)
+    readStream.pipe(res)
+  } else {
+    res.status(404).send('Image file not found')
   }
 })
 

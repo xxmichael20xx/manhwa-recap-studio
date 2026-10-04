@@ -4,6 +4,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { createRequire } from 'module'
 import { ActivityLogService } from './activityLogService.js'
+import { VisualQaService } from './visualQaService.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -34,6 +35,39 @@ export class ImageService {
 
   static getImagesDir(franchiseId, episodeId) {
     return path.join(franchisesDir, franchiseId, episodeId, 'images')
+  }
+
+  /**
+   * Resolves the best matching physical image file on disk for a given scene tag,
+   * supporting underscores, non-underscores, zero-padding, lowercase, PNG, JPG, JPEG, and WEBP.
+   */
+  static resolveImageFilename(tag, existingFiles) {
+    if (!tag || !Array.isArray(existingFiles) || existingFiles.length === 0) return null
+    const numMatch = tag.match(/\d+/)
+    if (!numMatch) return null
+    const num = parseInt(numMatch[0], 10)
+    const numStr = String(num)
+    const padded = numStr.padStart(3, '0')
+    const candidates = [
+      `IMG_${padded}.jpg`,
+      `IMG_${padded}.png`,
+      `IMG_${padded}.jpeg`,
+      `IMG_${padded}.webp`,
+      `IMG${padded}.jpg`,
+      `IMG${padded}.png`,
+      `IMG${padded}.jpeg`,
+      `IMG${padded}.webp`,
+      `IMG_${numStr}.jpg`,
+      `IMG_${numStr}.png`,
+      `IMG${numStr}.jpg`,
+      `IMG${numStr}.png`
+    ]
+    const existingLower = existingFiles.map(f => f.toLowerCase())
+    for (const c of candidates) {
+      const idx = existingLower.indexOf(c.toLowerCase())
+      if (idx !== -1) return existingFiles[idx]
+    }
+    return null
   }
 
   static async getPromptMatrixScenes(franchiseId, episodeId) {
@@ -68,27 +102,21 @@ export class ImageService {
         const tag = `IMG_${num}`
         const prompt = match[2].trim()
 
-        let matchedFilename = `${tag}.jpg`
-        let hasImage = existingImages.includes(`${tag}.jpg`)
-        if (!hasImage && existingImages.includes(`${tag}.png`)) {
-          matchedFilename = `${tag}.png`
-          hasImage = true
-        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
-          matchedFilename = `${tag}.webp`
-          hasImage = true
-        }
+        const matchedFilename = this.resolveImageFilename(tag, existingImages)
+        const hasImage = Boolean(matchedFilename)
+        const filename = matchedFilename || `${tag}.jpg`
 
         const descMatch = prompt.match(/^IMG\d+,\s*([^,\n]+)/i)
         const description = descMatch ? descMatch[1].trim() : `Scene ${num}`
 
         scenes.push({
           tag,
-          filename: matchedFilename,
+          filename,
           act: currentAct,
           description,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
         })
       }
       return scenes
@@ -97,66 +125,59 @@ export class ImageService {
     // 2. Fallback to Markdown Table rows
     const lines = content.split('\n')
     for (const line of lines) {
+      if (line.includes('---') || line.includes(':---') || line.toLowerCase().includes('scene tag')) continue
+
       const actMatch = line.match(/^##\s+(Act\s+\d+:[^(\n]+)/i)
       if (actMatch) {
         currentAct = actMatch[1].trim()
         continue
       }
 
-      // Match 4-column table row: | `[IMG_001]` | Description | Anchor | Full Prompt |
-      const match4 = line.match(/^\|\s*`?\[?(IMG_\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
+      // Match 4-column table row: | `IMG_001` | Layout Tier / Description | Anchor | Full Prompt |
+      const match4 = line.match(/^\|\s*`?\[?(IMG_?\d+)\]?`?\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*(.+?)\s*\|(?:\s*$)?/i)
       if (match4) {
-        const tag = match4[1].trim().toUpperCase()
-        const description = match4[2].trim()
+        const rawTag = match4[1].trim().toUpperCase()
+        const tag = rawTag.includes('_') ? rawTag : `IMG_${rawTag.replace(/IMG/i, '').padStart(3, '0')}`
+        const layoutOrDesc = match4[2].trim()
+        const anchor = match4[3].trim()
         const prompt = match4[4].trim()
 
-        let matchedFilename = `${tag}.jpg`
-        let hasImage = existingImages.includes(`${tag}.jpg`)
-        if (!hasImage && existingImages.includes(`${tag}.png`)) {
-          matchedFilename = `${tag}.png`
-          hasImage = true
-        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
-          matchedFilename = `${tag}.webp`
-          hasImage = true
-        }
+        const matchedFilename = this.resolveImageFilename(tag, existingImages)
+        const hasImage = Boolean(matchedFilename)
+        const filename = matchedFilename || `${tag}.jpg`
 
         scenes.push({
           tag,
-          filename: matchedFilename,
+          filename,
           act: currentAct,
-          description,
+          description: `${layoutOrDesc} • ${anchor}`,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
         })
         continue
       }
 
-      // Match 3-column table row: | `[IMG_001]` | Description | Full Prompt |
-      const rowMatch = line.match(/^\|\s*`?\[?(IMG_\d+)\]?`?\s*\|\s*([^|]+)\|\s*`?([^|`]+)`?\s*\|/i)
-      if (rowMatch && !line.includes('---')) {
-        const tag = rowMatch[1].trim().toUpperCase()
+      // Match 3-column table row: | `IMG_001` | Description | Full Prompt |
+      const rowMatch = line.match(/^\|\s*`?\[?(IMG_?\d+)\]?`?\s*\|\s*([^|]+)\|\s*(.+?)\s*\|(?:\s*$)?/i)
+      if (rowMatch) {
+        const rawTag = rowMatch[1].trim().toUpperCase()
+        const tag = rawTag.includes('_') ? rawTag : `IMG_${rawTag.replace(/IMG/i, '').padStart(3, '0')}`
         const description = rowMatch[2].trim()
         const prompt = rowMatch[3].trim()
 
-        let matchedFilename = `${tag}.jpg`
-        let hasImage = existingImages.includes(`${tag}.jpg`)
-        if (!hasImage && existingImages.includes(`${tag}.png`)) {
-          matchedFilename = `${tag}.png`
-          hasImage = true
-        } else if (!hasImage && existingImages.includes(`${tag}.webp`)) {
-          matchedFilename = `${tag}.webp`
-          hasImage = true
-        }
+        const matchedFilename = this.resolveImageFilename(tag, existingImages)
+        const hasImage = Boolean(matchedFilename)
+        const filename = matchedFilename || `${tag}.jpg`
 
         scenes.push({
           tag,
-          filename: matchedFilename,
+          filename,
           act: currentAct,
           description,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${matchedFilename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
         })
       }
     }
@@ -535,18 +556,14 @@ export class ImageService {
 
     const mappings = this.matchImagesToScenes(filesToMap, candidateScenes)
 
+    const backupDir = path.join(imagesDir, '..', 'images_original_backup')
+    await fs.mkdir(backupDir, { recursive: true })
+
     for (const m of mappings) {
       const targetTag = m.scene.tag
       const targetPath = path.join(imagesDir, `${targetTag}.jpg`)
       const data = m.file.getData()
       await fs.writeFile(targetPath, data)
-
-      // Also write un-underscored alias IMG001.jpg
-      const aliasTag = targetTag.replace(/_/g, '')
-      if (aliasTag !== targetTag) {
-        const aliasPath = path.join(imagesDir, `${aliasTag}.jpg`)
-        await fs.writeFile(aliasPath, data)
-      }
 
       // If a placeholder PNG exists for this tag, remove it so it doesn't mask the high-fidelity JPG
       const pngPath = path.join(imagesDir, `${targetTag}.png`)
@@ -556,16 +573,25 @@ export class ImageService {
         }
       } catch (_) {}
 
+      // Automatically verify and sanitize image against Studio Quality / Anti-Clutter Criteria
+      let qaReport = null
+      try {
+        qaReport = await VisualQaService.verifyImage(targetPath, { autoFix: true, backupDir })
+      } catch (err) {
+        console.warn(`[VisualQA] Verification error on ${targetTag}:`, err.message)
+      }
+
       extracted.push({
         tag: targetTag,
         sourceName: m.file.name,
         savedAs: `${targetTag}.jpg`,
         score: m.score,
-        matchSlug: m.slug
+        matchSlug: m.slug,
+        qa: qaReport
       })
     }
 
-    ActivityLogService.success('visuals', 'ZIP Archive Ingested', `Unpacked & semantically mapped ${extracted.length} scene images from "${originalFilename}".`, { count: extracted.length, archiveName: originalFilename }, franchiseId, episodeId)
+    ActivityLogService.success('visuals', 'ZIP Archive Ingested & QA Verified', `Unpacked, mapped & visual-QA audited ${extracted.length} scene images from "${originalFilename}".`, { count: extracted.length, archiveName: originalFilename }, franchiseId, episodeId)
 
     return {
       success: true,
@@ -742,27 +768,22 @@ export class ImageService {
       const inTts = ttsTags.size > 0 ? ttsTags.has(tag) : null
 
       // Check physical files on disk
-      let foundFile = null
+      const foundFile = this.resolveImageFilename(tag, existingImageFiles)
       let fileSize = 0
       let fileExt = null
       let isHighFidelity = false
 
-      const possibleFilenames = [`${tag}.png`, `${tag}.jpg`, `${tag}.jpeg`, `${tag}.webp`]
-      for (const fn of possibleFilenames) {
-        const full = path.join(imagesDir, fn)
-        if (fsSync.existsSync(full)) {
-          try {
-            const stat = fsSync.statSync(full)
-            if (stat.size > 0) {
-              foundFile = fn
-              fileSize = stat.size
-              fileExt = path.extname(fn).replace('.', '').toLowerCase()
-              // > 60KB typically indicates authentic high-fidelity raster artwork vs lightweight storyboard SVG/placeholder
-              isHighFidelity = stat.size >= 60000
-              break
-            }
-          } catch (_) {}
-        }
+      if (foundFile) {
+        const full = path.join(imagesDir, foundFile)
+        try {
+          const stat = fsSync.statSync(full)
+          if (stat.size > 0) {
+            fileSize = stat.size
+            fileExt = path.extname(foundFile).replace('.', '').toLowerCase()
+            // > 60KB typically indicates authentic high-fidelity raster artwork vs lightweight storyboard SVG/placeholder
+            isHighFidelity = stat.size >= 60000
+          }
+        } catch (_) {}
       }
 
       // Identify Tier Archetype
@@ -837,11 +858,26 @@ export class ImageService {
       }
     }
 
-    // Check for orphaned images in imagesDir not mapped to any known scene tag
-    const knownTags = new Set(sceneAudits.map(s => s.tag))
+    // Check for truly orphaned images in imagesDir not mapped to any known scene tag or scene index
+    const attachedFilenames = new Set(sceneAudits.map(s => s.filename).filter(Boolean))
+    const maxSceneNum = scenes.length
     const orphanedFiles = existingImageFiles.filter(f => {
-      const baseTag = f.replace(/\.(png|jpe?g|webp)$/i, '').toUpperCase()
-      return !knownTags.has(baseTag) && !knownTags.has(`IMG_${baseTag}`) && !f.startsWith('.')
+      if (f.startsWith('.')) return false
+      // If it is the attached file for a scene, not orphaned
+      if (attachedFilenames.has(f)) return false
+
+      // Check if it corresponds to an alias/duplicate of a known scene in the episode (1..maxSceneNum)
+      const numMatch = f.match(/IMG_?0*(\d+)/i)
+      if (numMatch) {
+        const num = parseInt(numMatch[1], 10)
+        if (num >= 1 && num <= maxSceneNum) {
+          // File is an alias/duplicate of a valid scene in the episode, not an unknown orphan
+          return false
+        }
+      }
+
+      // Truly unmapped file
+      return true
     })
 
     if (orphanedFiles.length > 0) {

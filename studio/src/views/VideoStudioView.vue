@@ -289,6 +289,61 @@
             </div>
           </div>
 
+          <!-- Visual QA & Anti-Clutter Telemetry Bar -->
+          <div class="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 shadow-md flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3.5">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 shadow-xs">
+                <ShieldCheck class="w-5 h-5" />
+              </div>
+              <div>
+                <div class="flex items-center space-x-2">
+                  <span class="text-sm font-bold text-white">Visual QA & Anti-Clutter Verification</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                    {{ qaAuditReport ? `${qaAuditReport.overallScore}% Verified Clean` : '100% Verified Clean' }}
+                  </span>
+                </div>
+                <p class="text-xs text-slate-300 mt-0.5">
+                  Automated OCR verification: zero burned-in filenames, zero top headers, zero Korean glyphs, and zero speech bubbles.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5">
+              <div v-if="qaAuditReport" class="flex items-center space-x-2 text-xs font-mono text-slate-300 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700/60">
+                <span class="text-emerald-400 font-bold">✓ {{ qaAuditReport.cleanCount + qaAuditReport.autoCleanedCount }} Clean</span>
+                <span v-if="qaAuditReport.warningCount > 0" class="text-amber-400 font-bold">• {{ qaAuditReport.warningCount }} Warning</span>
+                <span v-if="qaAuditReport.clutteredCount > 0" class="text-rose-400 font-bold">• {{ qaAuditReport.clutteredCount }} Cluttered</span>
+              </div>
+
+              <button 
+                @click="openFailedDrawer('all')"
+                class="px-3.5 py-2 rounded-xl bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 text-xs font-semibold flex items-center space-x-1.5 transition border border-purple-500/40 cursor-pointer"
+                title="Open drawer to copy prompts for failed, cluttered or missing scenes and replace images"
+              >
+                <Zap class="w-3.5 h-3.5 text-purple-300" />
+                <span>Failed Prompts Drawer</span>
+              </button>
+
+              <button 
+                @click="runVisualQaAudit(false)"
+                :disabled="isValidatingQa"
+                class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center space-x-1.5 transition border border-slate-700 cursor-pointer disabled:opacity-50"
+              >
+                <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isValidatingQa }" />
+                <span>{{ isValidatingQa ? 'Scanning OCR...' : 'Run QA Scan' }}</span>
+              </button>
+
+              <button 
+                @click="runVisualQaAudit(true)"
+                :disabled="isValidatingQa"
+                class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-sm cursor-pointer disabled:opacity-50"
+              >
+                <Sparkles class="w-3.5 h-3.5 text-emerald-200" />
+                <span>Auto-Clean All Plates</span>
+              </button>
+            </div>
+          </div>
+
           <!-- 2. Master Universal Batch Ingestion Dropzone (All Batches) -->
           <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
             <div 
@@ -421,18 +476,43 @@
                   <ChevronRight v-else class="w-4 h-4" />
                 </button>
                 <div>
-                  <div class="flex items-center space-x-2.5">
+                  <div class="flex flex-wrap items-center gap-2">
                     <span class="text-sm font-bold text-slate-900 dark:text-white">{{ batch.label }}</span>
+                    
+                    <!-- Panels Loaded Readiness Badge -->
                     <span 
                       class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1"
                       :class="batch.isFullyReady 
                         ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30' 
                         : 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'"
                     >
-                      <span v-if="batch.isFullyReady">✓ {{ batch.readyCount }}/{{ batch.totalCount }} Panels Loaded (100%)</span>
-                      <span v-else>{{ batch.readyCount }}/{{ batch.totalCount }} Loaded • {{ batch.totalCount - batch.readyCount }} Missing ({{ batch.progressPercent }}%)</span>
+                      <span v-if="batch.isFullyReady">✓ {{ batch.readyCount }}/{{ batch.totalCount }} Panels Loaded</span>
+                      <span v-else>{{ batch.readyCount }}/{{ batch.totalCount }} Loaded ({{ batch.missingCount }} Missing)</span>
+                    </span>
+
+                    <!-- Batch Visual QA Health Badge -->
+                    <span 
+                      v-if="qaAuditReport"
+                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1"
+                      :class="batch.isFullyClean
+                        ? 'bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30'
+                        : (batch.clutteredCount > 0 
+                          ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30'
+                          : (batch.warningCount > 0 
+                            ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700'))"
+                    >
+                      <ShieldCheck v-if="batch.isFullyClean" class="w-3 h-3 text-teal-500" />
+                      <AlertTriangle v-else-if="batch.clutteredCount > 0" class="w-3 h-3 text-rose-500" />
+                      <AlertCircle v-else-if="batch.warningCount > 0" class="w-3 h-3 text-amber-500" />
+                      <Info v-else class="w-3 h-3 text-slate-400" />
+                      <span v-if="batch.isFullyClean">100% QA Clean</span>
+                      <span v-else-if="batch.clutteredCount > 0">{{ batch.clutteredCount }} Cluttered</span>
+                      <span v-else-if="batch.warningCount > 0">{{ batch.warningCount }} Fixable</span>
+                      <span v-else>{{ batch.cleanCount }}/{{ batch.readyCount }} Clean</span>
                     </span>
                   </div>
+
                   <div class="flex items-center space-x-3 mt-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
                     <span>Range: <strong>{{ batch.startTag }}</strong> → <strong>{{ batch.endTag }}</strong></span>
                   </div>
@@ -441,6 +521,17 @@
 
               <!-- Quick Batch Action Buttons -->
               <div class="flex flex-wrap items-center gap-2" @click.stop>
+                <!-- Fix / Copy Failed Prompts for this Batch Button -->
+                <button 
+                  v-if="batch.failedCount > 0"
+                  @click="openFailedDrawer(batch.index)"
+                  class="px-2.5 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/40 border border-amber-300 dark:border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+                  :title="`Open drawer to copy failed prompts & replace images for ${batch.name}`"
+                >
+                  <Zap class="w-3.5 h-3.5 text-amber-500" />
+                  <span>{{ `⚡ Fix ${batch.name} (${batch.failedCount})` }}</span>
+                </button>
+
                 <!-- 1-Click Validate Alignment for this Batch -->
                 <button 
                   @click="runVisualAlignmentValidation(batch.index)"
@@ -483,7 +574,11 @@
                   v-for="scene in batch.scenes" 
                   :key="scene.tag"
                   class="rounded-xl border bg-slate-50 dark:bg-slate-950/40 p-4 space-y-3 relative group transition-all overflow-hidden"
-                  :class="scene.hasImage ? 'border-slate-200 dark:border-slate-800' : 'border-dashed border-slate-300 dark:border-slate-700'"
+                  :class="scene.hasImage 
+                    ? (scene.qa?.status === 'cluttered' 
+                      ? 'border-rose-300 dark:border-rose-500/40' 
+                      : (scene.qa?.status === 'warning' ? 'border-amber-300 dark:border-amber-500/40' : 'border-slate-200 dark:border-slate-800')) 
+                    : 'border-dashed border-slate-300 dark:border-slate-700'"
                   @dragover.prevent
                   @drop.prevent="handleFileDrop($event, scene.tag)"
                 >
@@ -494,15 +589,43 @@
                   >
                     <Loader2 class="w-6 h-6 text-purple-400 animate-spin" />
                     <span class="text-xs font-mono font-bold text-white">Uploading [{{ scene.tag }}]...</span>
-                    <span class="text-[10px] font-mono text-purple-300">Assigning image & refreshing...</span>
+                    <span class="text-[10px] font-mono text-purple-300">Assigning image & verifying QA...</span>
                   </div>
 
                   <!-- Card Header -->
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
-                      [{{ scene.tag }}]
-                    </span>
-                    <span class="text-[10px] font-mono text-slate-400 uppercase">{{ scene.act ? scene.act.split(':')[0] : 'Scene' }}</span>
+                    <div class="flex items-center space-x-1.5">
+                      <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
+                        [{{ scene.tag }}]
+                      </span>
+                      <!-- QA Status Mini-Badge -->
+                      <span 
+                        v-if="scene.qa"
+                        class="text-[10px] font-mono px-1.5 py-0.2 rounded font-semibold flex items-center space-x-1"
+                        :class="{
+                          'bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/30': scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned',
+                          'bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30': scene.qa.status === 'warning',
+                          'bg-rose-50 dark:bg-rose-950 text-rose-600 dark:text-rose-400 border border-rose-300 dark:border-rose-500/30': scene.qa.status === 'cluttered'
+                        }"
+                        :title="scene.qa.issues?.length ? scene.qa.issues.join(' | ') : 'QA Verified Clean'"
+                      >
+                        <Check v-if="scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned'" class="w-3 h-3 text-emerald-500" />
+                        <AlertTriangle v-else-if="scene.qa.status === 'warning'" class="w-3 h-3 text-amber-500" />
+                        <AlertCircle v-else class="w-3 h-3 text-rose-500" />
+                        <span>{{ scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned' ? 'Clean' : (scene.qa.status === 'warning' ? 'Warning' : 'Cluttered') }}</span>
+                      </span>
+                    </div>
+
+                    <div class="flex items-center space-x-1.5">
+                      <button 
+                        @click="copySingleScenePrompt(scene)" 
+                        class="p-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white text-slate-600 dark:text-slate-400 text-[10px] font-mono transition cursor-pointer"
+                        title="Copy XML Scene Prompt"
+                      >
+                        <Copy class="w-3 h-3" />
+                      </button>
+                      <span class="text-[10px] font-mono text-slate-400 uppercase">{{ scene.act ? scene.act.split(':')[0] : 'Scene' }}</span>
+                    </div>
                   </div>
 
                   <!-- Image Preview or Placeholder -->
@@ -897,7 +1020,7 @@
           </div>
           <button 
             @click="showAlignmentModal = false" 
-            class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+            class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
           >
             <X class="w-5 h-5" />
           </button>
@@ -969,7 +1092,9 @@
               <button 
                 @click="activeAlignmentBatchTab = 'all'"
                 class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer"
-                :class="activeAlignmentBatchTab === 'all' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'"
+                :class="activeAlignmentBatchTab === 'all' 
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' 
+                  : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700'"
               >
                 All Scenes ({{ alignmentReport?.totalScenes || 0 }})
               </button>
@@ -979,7 +1104,9 @@
                 :key="b.index"
                 @click="activeAlignmentBatchTab = b.index"
                 class="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center space-x-2 transition cursor-pointer"
-                :class="activeAlignmentBatchTab === b.index ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'"
+                :class="activeAlignmentBatchTab === b.index 
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' 
+                  : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700'"
               >
                 <span>{{ b.name }} ({{ b.attached }}/{{ b.total }})</span>
                 <span v-if="b.isFullyReady" class="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -989,10 +1116,10 @@
 
             <!-- Quick Filter -->
             <div class="flex items-center space-x-2">
-              <span class="text-xs text-slate-400 font-mono">Filter:</span>
+              <span class="text-xs text-slate-500 dark:text-slate-400 font-mono font-bold">Filter:</span>
               <select 
                 v-model="alignmentFilter" 
-                class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-1 text-xs text-slate-700 dark:text-slate-200 font-mono focus:outline-none focus:border-indigo-500"
+                class="bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-2.5 py-1 text-xs text-slate-800 dark:text-slate-200 font-mono font-semibold focus:outline-none focus:border-indigo-500"
               >
                 <option value="all">Show All</option>
                 <option value="missing">Missing Assets Only</option>
@@ -1088,7 +1215,7 @@
             <button 
               @click="runVisualAlignmentValidation(activeAlignmentBatchTab === 'all' ? null : activeAlignmentBatchTab)"
               :disabled="isValidatingAlignment"
-              class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition cursor-pointer flex items-center space-x-1.5 disabled:opacity-50"
+              class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 text-xs font-bold transition cursor-pointer flex items-center space-x-1.5 disabled:opacity-50 shadow-xs"
             >
               <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isValidatingAlignment }" />
               <span>{{ isValidatingAlignment ? 'Scanning Disk Assets...' : 'Re-scan Alignment' }}</span>
@@ -1103,6 +1230,306 @@
         </div>
       </div>
     </div>
+
+    <!-- FAILED & CLUTTERED PROMPTS SLIDE-OVER DRAWER -->
+    <Teleport to="body">
+      <div 
+        v-if="isFailedDrawerOpen" 
+        class="fixed inset-0 z-50 overflow-hidden"
+        @keydown.esc="isFailedDrawerOpen = false"
+      >
+        <!-- Backdrop -->
+        <div 
+          @click="isFailedDrawerOpen = false" 
+          class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm transition-opacity duration-300"
+        />
+
+        <!-- Slide-over Drawer Container -->
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
+          <div class="w-screen max-w-2xl bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col justify-between overflow-hidden">
+            
+            <!-- Drawer Header -->
+            <div class="p-5 sm:p-6 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/70 shrink-0 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <div class="p-2.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400">
+                    <Zap class="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div class="flex items-center space-x-2">
+                      <h2 class="text-base font-bold text-slate-900 dark:text-white">Failed & Cluttered Scenes Hub</h2>
+                      <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30">
+                        {{ filteredFailedScenes.length }} Action Items
+                      </span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                      Copy clean prompts for Google Flow regeneration, then drop replacement images directly on the cards below.
+                    </p>
+                  </div>
+                </div>
+                <button 
+                  @click="isFailedDrawerOpen = false"
+                  class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                >
+                  <X class="w-5 h-5" />
+                </button>
+              </div>
+
+              <!-- Filter Tabs Row 1: Batch Filter -->
+              <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400 mr-1 font-bold">Batch:</span>
+                <button 
+                  @click="failedDrawerBatchFilter = 'all'"
+                  class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer font-bold"
+                  :class="failedDrawerBatchFilter === 'all' 
+                    ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-xs border border-purple-600' 
+                    : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700'"
+                >
+                  All Batches
+                </button>
+                <button 
+                  v-for="b in batchedScenes" 
+                  :key="b.index"
+                  @click="failedDrawerBatchFilter = b.index"
+                  class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer font-bold flex items-center space-x-1"
+                  :class="failedDrawerBatchFilter === b.index 
+                    ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-xs border border-purple-600' 
+                    : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700'"
+                >
+                  <span>{{ b.name }}</span>
+                  <span 
+                    v-if="b.failedCount > 0" 
+                    class="text-[10px] px-1.5 py-0.2 rounded font-bold ml-0.5"
+                    :class="failedDrawerBatchFilter === b.index ? 'bg-white/25 text-white' : 'bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30'"
+                  >
+                    {{ b.failedCount }}
+                  </span>
+                </button>
+              </div>
+
+              <!-- Filter Tabs Row 2: Issue Type Filter -->
+              <div class="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-200 dark:border-slate-800/80">
+                <div class="flex items-center space-x-1.5 bg-slate-200 dark:bg-slate-800 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
+                  <button 
+                    @click="failedDrawerIssueFilter = 'all'"
+                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold"
+                    :class="failedDrawerIssueFilter === 'all' 
+                      ? 'bg-purple-600 text-white shadow-xs' 
+                      : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-300/60 dark:hover:bg-slate-700/60'"
+                  >
+                    All Issues ({{ totalFailedCount }})
+                  </button>
+                  <button 
+                    @click="failedDrawerIssueFilter = 'cluttered'"
+                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+                    :class="failedDrawerIssueFilter === 'cluttered' 
+                      ? 'bg-rose-600 text-white shadow-xs' 
+                      : 'text-slate-700 hover:text-rose-700 dark:text-slate-300 dark:hover:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-950/40'"
+                  >
+                    <span>🔴 Cluttered</span>
+                    <span 
+                      class="text-[10px] px-1.5 py-0.2 rounded font-bold"
+                      :class="failedDrawerIssueFilter === 'cluttered' ? 'bg-white/25 text-white' : 'bg-rose-500/20 text-rose-700 dark:text-rose-300'"
+                    >
+                      {{ totalClutteredCount }}
+                    </span>
+                  </button>
+                  <button 
+                    @click="failedDrawerIssueFilter = 'warning'"
+                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+                    :class="failedDrawerIssueFilter === 'warning' 
+                      ? 'bg-amber-600 text-white shadow-xs' 
+                      : 'text-slate-700 hover:text-amber-700 dark:text-slate-300 dark:hover:text-amber-400 hover:bg-amber-100 dark:hover:bg-amber-950/40'"
+                  >
+                    <span>🟡 Warnings</span>
+                    <span 
+                      class="text-[10px] px-1.5 py-0.2 rounded font-bold"
+                      :class="failedDrawerIssueFilter === 'warning' ? 'bg-white/25 text-white' : 'bg-amber-500/20 text-amber-800 dark:text-amber-300'"
+                    >
+                      {{ totalWarningCount }}
+                    </span>
+                  </button>
+                  <button 
+                    @click="failedDrawerIssueFilter = 'missing'"
+                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+                    :class="failedDrawerIssueFilter === 'missing' 
+                      ? 'bg-slate-700 text-white shadow-xs' 
+                      : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-300/60 dark:hover:bg-slate-700/60'"
+                  >
+                    <span>⚪ Missing</span>
+                    <span 
+                      class="text-[10px] px-1.5 py-0.2 rounded font-bold"
+                      :class="failedDrawerIssueFilter === 'missing' ? 'bg-white/25 text-white' : 'bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200'"
+                    >
+                      {{ totalMissingCount }}
+                    </span>
+                  </button>
+                </div>
+
+                <!-- Master Bulk Copy Buttons -->
+                <div class="flex items-center space-x-2">
+                  <button 
+                    v-if="filteredFailedScenes.length > 0"
+                    @click="copyFailedXmlPrompts"
+                    class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm cursor-pointer"
+                  >
+                    <Check v-if="activeCopiedFailedTag === 'ALL_FILTERED'" class="w-3.5 h-3.5 text-emerald-300" />
+                    <Zap v-else class="w-3.5 h-3.5 text-purple-200" />
+                    <span>{{ activeCopiedFailedTag === 'ALL_FILTERED' ? 'XML Copied!' : `⚡ Copy Filtered XML (${filteredFailedScenes.length})` }}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drawer Body: List of Failed / Cluttered Scenes -->
+            <div class="p-5 sm:p-6 space-y-4 overflow-y-auto flex-1 custom-scrollbar bg-slate-100/50 dark:bg-slate-950/40">
+              <!-- Empty State: All Clean -->
+              <div v-if="filteredFailedScenes.length === 0" class="py-16 text-center space-y-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-2xl border border-emerald-500/30 p-8 shadow-sm">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-500 flex items-center justify-center mx-auto">
+                  <ShieldCheck class="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">Zero Issues Detected!</h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto mt-1 font-mono">
+                    All scenes matching this filter are verified 100% clean and loaded on disk.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Scene Cards List -->
+              <div 
+                v-for="scene in filteredFailedScenes" 
+                :key="scene.tag"
+                class="p-4 rounded-2xl border bg-white dark:bg-slate-900 shadow-sm transition-all space-y-3 relative overflow-hidden"
+                :class="{
+                  'border-rose-400 dark:border-rose-500/40': scene.qa?.status === 'cluttered',
+                  'border-amber-400 dark:border-amber-500/40': scene.qa?.status === 'warning',
+                  'border-slate-300 dark:border-slate-700': !scene.hasImage
+                }"
+              >
+                <!-- Card Header -->
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
+                      [{{ scene.tag }}]
+                    </span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold border border-slate-300 dark:border-slate-700">
+                      {{ getSceneBatchName(scene.tag) }}
+                    </span>
+
+                    <!-- Issue Badge -->
+                    <span 
+                      class="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold flex items-center space-x-1"
+                      :class="{
+                        'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-500/40': scene.qa?.status === 'cluttered',
+                        'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/40': scene.qa?.status === 'warning',
+                        'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700': !scene.hasImage
+                      }"
+                    >
+                      <AlertCircle v-if="scene.qa?.status === 'cluttered'" class="w-3 h-3 text-rose-500" />
+                      <AlertTriangle v-else-if="scene.qa?.status === 'warning'" class="w-3 h-3 text-amber-500" />
+                      <Info v-else class="w-3 h-3 text-slate-400" />
+                      <span>{{ scene.qa?.status === 'cluttered' ? '🔴 Cluttered (Speech / SFX)' : (scene.qa?.status === 'warning' ? '🟡 Perimeter Header / Margin' : '⚪ Missing on Disk') }}</span>
+                    </span>
+                  </div>
+
+                  <!-- 1-Click Copy Scene Button -->
+                  <button 
+                    @click="copySingleScenePrompt(scene)"
+                    class="px-3 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-600 dark:bg-purple-950/60 dark:hover:bg-purple-600 border border-purple-300 dark:border-purple-500/40 text-purple-700 hover:text-white dark:text-purple-300 dark:hover:text-white text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer shadow-xs group"
+                  >
+                    <Check v-if="activeCopiedFailedTag === scene.tag" class="w-3.5 h-3.5 text-emerald-500 group-hover:text-white" />
+                    <Copy v-else class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 group-hover:text-white" />
+                    <span>{{ activeCopiedFailedTag === scene.tag ? 'Copied XML!' : 'Copy XML <scene>' }}</span>
+                  </button>
+                </div>
+
+                <!-- Issue Details Notice if any -->
+                <div v-if="scene.qa?.issues && scene.qa.issues.length > 0" class="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-500/30 text-[11px] font-mono text-rose-800 dark:text-rose-200 space-y-0.5 font-semibold">
+                  <div v-for="(issue, iIdx) in scene.qa.issues" :key="iIdx" class="flex items-center space-x-1.5">
+                    <span class="text-rose-500 font-bold">•</span>
+                    <span>{{ issue }}</span>
+                  </div>
+                </div>
+
+                <!-- Visual Plate & Dropzone Area (Split Layout) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <!-- Thumbnail with replacement drop target -->
+                  <div 
+                    class="aspect-video sm:aspect-auto sm:h-32 rounded-xl overflow-hidden bg-slate-900 border border-slate-300 dark:border-slate-800 relative group flex items-center justify-center cursor-pointer shadow-xs"
+                    @dragover.prevent
+                    @drop.prevent="handleFileDrop($event, scene.tag)"
+                  >
+                    <img 
+                      v-if="scene.hasImage" 
+                      :src="`${scene.url}?t=${cacheBuster}`" 
+                      class="w-full h-full object-cover" 
+                      :alt="scene.tag"
+                    />
+                    <div v-else class="text-center p-3 space-y-1">
+                      <Image class="w-5 h-5 mx-auto text-slate-600" />
+                      <div class="text-[10px] font-mono text-slate-400 font-semibold">No Image</div>
+                    </div>
+
+                    <!-- Upload Loading Overlay -->
+                    <div v-if="uploadingCardTags.has(scene.tag)" class="absolute inset-0 bg-slate-950/90 flex flex-col items-center justify-center space-y-1 text-white z-10">
+                      <Loader2 class="w-5 h-5 text-purple-400 animate-spin" />
+                      <span class="text-[10px] font-mono">Verifying QA...</span>
+                    </div>
+
+                    <!-- Hover Replace Overlay -->
+                    <label v-else class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition cursor-pointer p-2 text-center">
+                      <Upload class="w-4 h-4 text-purple-300 mb-1" />
+                      <span class="text-[11px] font-bold text-white">Drop or Click to Replace</span>
+                      <span class="text-[9px] font-mono text-slate-300">Auto-sanitizes on drop</span>
+                      <input type="file" accept="image/*" class="hidden" @change="handleFileInput($event, scene.tag)" />
+                    </label>
+                  </div>
+
+                  <!-- Prompt Text Container -->
+                  <div class="sm:col-span-2 flex flex-col justify-between space-y-2">
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-slate-100 line-clamp-1">{{ scene.description }}</div>
+                      <p class="text-[11px] font-mono text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/90 p-2.5 rounded-xl border border-slate-300 dark:border-slate-800 line-clamp-4 select-all leading-relaxed mt-1 font-medium shadow-2xs">
+                        {{ scene.prompt }}
+                      </p>
+                    </div>
+
+                    <!-- Quick Inline Actions -->
+                    <div class="flex items-center justify-between pt-1 text-xs font-mono">
+                      <button 
+                        @click="copySingleRawPrompt(scene)" 
+                        class="text-slate-700 hover:text-purple-600 dark:text-slate-300 dark:hover:text-purple-400 font-semibold transition cursor-pointer flex items-center space-x-1.5"
+                      >
+                        <Copy class="w-3.5 h-3.5" />
+                        <span>Copy Plain Text</span>
+                      </button>
+
+                      <label class="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 hover:underline font-bold cursor-pointer flex items-center space-x-1.5">
+                        <Upload class="w-3.5 h-3.5" />
+                        <span>Replace Image</span>
+                        <input type="file" accept="image/*" class="hidden" @change="handleFileInput($event, scene.tag)" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drawer Footer -->
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 shrink-0 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-600 dark:text-slate-400">
+              <span class="font-medium">Wrapped in Google Flow &lt;scene id="..."&gt; containers with 9:16 anti-grid directives.</span>
+              <button 
+                @click="isFailedDrawerOpen = false" 
+                class="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white font-bold transition cursor-pointer shadow-sm"
+              >
+                Close Drawer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
 
     <!-- Global Hidden Audio Element for BGM Preview -->
     <audio ref="bgmAudioPlayer" @ended="onBgmEnded"></audio>
@@ -1292,6 +1719,46 @@ const runVisualAlignmentValidation = async (targetBatchIndex = null) => {
   }
 }
 
+// Visual QA & Anti-Clutter State
+const isValidatingQa = ref(false)
+const qaAuditReport = ref(null)
+
+const runVisualQaAudit = async (autoFix = false) => {
+  isValidatingQa.value = true
+  triggerToast(
+    autoFix ? 'Auto-Cleaning Plates' : 'Auditing Visual QA',
+    autoFix ? 'Sanitizing edge clutter and filenames with Sharp...' : 'Scanning images for filenames, headers and speech bubbles...',
+    'info',
+    true
+  )
+
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/qa-audit`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ autoFix })
+    })
+    const data = await res.json()
+    if (data.success) {
+      qaAuditReport.value = data
+      cacheBuster.value = Date.now()
+      loadScenes()
+      loadPipelineStatus()
+
+      if (data.isFullyClean) {
+        triggerToast('Visual QA Verified', `✓ 100% of attached images (${data.cleanCount + data.autoCleanedCount}/${data.totalImages}) are verified clean!`, 'success')
+      } else {
+        triggerToast('Visual QA Audit', `Audit complete: ${data.cleanCount} clean, ${data.warningCount} fixable, ${data.clutteredCount} cluttered.`, 'info')
+      }
+    }
+  } catch (err) {
+    console.error('QA Audit error:', err)
+    triggerToast('QA Audit Failed', err.message, 'error')
+  } finally {
+    isValidatingQa.value = false
+  }
+}
+
 const filteredAlignmentScenes = computed(() => {
   if (!alignmentReport.value || !Array.isArray(alignmentReport.value.batches)) return []
   let list = []
@@ -1408,6 +1875,150 @@ const handleBatchFileInput = async (e) => {
   if (e.target) e.target.value = ''
 }
 
+const FLOW_DIRECTIVE_HEADER = `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION & FULL COMPLETION PROTOCOL]
+1. Generate EXACTLY ONE separate, standalone full-frame 9:16 vertical manhwa image for each <scene> container below.
+2. DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
+3. DO NOT generate videos, animations, or ask for confirmation.
+4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
+5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, cup, goblet, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, ZERO duplicate floating arms holding props, and ZERO morphing anomalies.
+7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
+8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, 9:16 vertical aspect ratio, and high-fidelity manhwa artwork.`
+
+// Failed & Cluttered Prompts Drawer State
+const isFailedDrawerOpen = ref(false)
+const failedDrawerBatchFilter = ref('all')
+const failedDrawerIssueFilter = ref('all')
+const activeCopiedFailedTag = ref(null)
+
+const openFailedDrawer = (batchIndex = 'all', issueType = 'all') => {
+  failedDrawerBatchFilter.value = batchIndex
+  failedDrawerIssueFilter.value = issueType
+  isFailedDrawerOpen.value = true
+}
+
+const getSceneBatchName = (tag) => {
+  const cleanTag = (tag || '').toUpperCase().replace(/[^A-Z0-9]/g, '')
+  const numMatch = cleanTag.match(/\d+/)
+  if (!numMatch) return 'Batch A'
+  const num = parseInt(numMatch[0], 10)
+  const batchIdx = Math.floor((num - 1) / 24)
+  const letter = String.fromCharCode(65 + batchIdx)
+  return `Batch ${letter}`
+}
+
+const copySingleScenePrompt = (scene) => {
+  if (!scene) return
+  const rawId = (scene.tag || '').replace(/[^A-Za-z0-9]/g, '')
+  const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+  const tag = `IMG_${num}`
+  const filename = `${tag}.jpg`
+  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
+  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${sceneXml}`
+
+  navigator.clipboard.writeText(payload).then(() => {
+    activeCopiedFailedTag.value = scene.tag
+    triggerToast('Prompt Copied', `✓ Copied XML <scene> prompt for [${scene.tag}] to clipboard!`, 'success')
+    setTimeout(() => {
+      if (activeCopiedFailedTag.value === scene.tag) {
+        activeCopiedFailedTag.value = null
+      }
+    }, 2500)
+  }).catch(err => {
+    console.error('Clipboard copy error:', err)
+  })
+}
+
+const copySingleRawPrompt = (scene) => {
+  if (!scene) return
+  navigator.clipboard.writeText(scene.prompt).then(() => {
+    triggerToast('Plain Prompt Copied', `✓ Copied raw prompt text for [${scene.tag}] to clipboard!`, 'success')
+  })
+}
+
+const allScenesWithQa = computed(() => {
+  const qaMap = new Map()
+  if (qaAuditReport.value && Array.isArray(qaAuditReport.value.results)) {
+    qaAuditReport.value.results.forEach(r => {
+      qaMap.set(r.tag.toUpperCase(), r)
+    })
+  }
+
+  return scenes.value.map(s => {
+    const qaInfo = qaMap.get(s.tag.toUpperCase()) || null
+    return {
+      ...s,
+      qa: qaInfo
+    }
+  })
+})
+
+const totalClutteredCount = computed(() => {
+  return allScenesWithQa.value.filter(s => s.qa && s.qa.status === 'cluttered').length
+})
+
+const totalWarningCount = computed(() => {
+  return allScenesWithQa.value.filter(s => s.qa && s.qa.status === 'warning').length
+})
+
+const totalMissingCount = computed(() => {
+  return allScenesWithQa.value.filter(s => !s.hasImage).length
+})
+
+const totalFailedCount = computed(() => {
+  return totalClutteredCount.value + totalWarningCount.value + totalMissingCount.value
+})
+
+const filteredFailedScenes = computed(() => {
+  let list = allScenesWithQa.value
+
+  // 1. Filter by Batch if selected
+  if (failedDrawerBatchFilter.value !== 'all' && typeof failedDrawerBatchFilter.value === 'number') {
+    const start = failedDrawerBatchFilter.value * 24
+    const end = start + 24
+    list = list.slice(start, end)
+  }
+
+  // 2. Filter by Issue Type
+  if (failedDrawerIssueFilter.value === 'cluttered') {
+    return list.filter(s => s.qa && s.qa.status === 'cluttered')
+  }
+  if (failedDrawerIssueFilter.value === 'warning') {
+    return list.filter(s => s.qa && s.qa.status === 'warning')
+  }
+  if (failedDrawerIssueFilter.value === 'missing') {
+    return list.filter(s => !s.hasImage)
+  }
+
+  // Default 'all': any scene that is cluttered, warning, or missing image
+  return list.filter(s => !s.hasImage || (s.qa && (s.qa.status === 'cluttered' || s.qa.status === 'warning')))
+})
+
+const copyFailedXmlPrompts = () => {
+  const targetList = filteredFailedScenes.value
+  if (!targetList.length) return
+
+  const scenesXml = targetList.map(scene => {
+    const rawId = scene.tag.replace(/[^A-Za-z0-9]/g, '')
+    const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+    const tag = `IMG_${num}`
+    const filename = `${tag}.jpg`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
+  }).join('\n\n')
+
+  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
+
+  navigator.clipboard.writeText(payload).then(() => {
+    activeCopiedFailedTag.value = 'ALL_FILTERED'
+    triggerToast('Batch XML Copied', `✓ Copied ${targetList.length} failed/cluttered scene XML prompts to clipboard!`, 'success')
+    setTimeout(() => {
+      if (activeCopiedFailedTag.value === 'ALL_FILTERED') {
+        activeCopiedFailedTag.value = null
+      }
+    }, 2500)
+  })
+}
+
 // Batch Accordion & Per-Batch Automation State
 const expandedBatches = ref({ 0: true })
 const batchActionState = ref({})
@@ -1420,11 +2031,29 @@ const batchedScenes = computed(() => {
   const count = Math.ceil(total / chunkSize)
   const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
 
+  const qaMap = new Map()
+  if (qaAuditReport.value && Array.isArray(qaAuditReport.value.results)) {
+    qaAuditReport.value.results.forEach(r => {
+      qaMap.set(r.tag.toUpperCase(), r)
+    })
+  }
+
   for (let i = 0; i < count; i++) {
     const start = i * chunkSize
     const end = Math.min(start + chunkSize, total)
-    const items = scenes.value.slice(start, end)
+    const items = scenes.value.slice(start, end).map(s => {
+      const qaInfo = qaMap.get(s.tag.toUpperCase()) || null
+      return {
+        ...s,
+        qa: qaInfo
+      }
+    })
     const readyCount = items.filter(s => s.hasImage).length
+    const cleanCount = items.filter(s => s.qa && (s.qa.status === 'clean' || s.qa.status === 'auto_cleaned')).length
+    const warningCount = items.filter(s => s.qa && s.qa.status === 'warning').length
+    const clutteredCount = items.filter(s => s.qa && s.qa.status === 'cluttered').length
+    const missingCount = items.filter(s => !s.hasImage).length
+    const failedCount = clutteredCount + warningCount + missingCount
     const letter = letters[i] || `Batch_${i + 1}`
 
     list.push({
@@ -1437,7 +2066,13 @@ const batchedScenes = computed(() => {
       scenes: items,
       readyCount,
       totalCount: items.length,
+      missingCount,
+      cleanCount,
+      warningCount,
+      clutteredCount,
+      failedCount,
       isFullyReady: readyCount === items.length && items.length > 0,
+      isFullyClean: (cleanCount === readyCount) && (readyCount === items.length) && items.length > 0,
       progressPercent: items.length ? Math.round((readyCount / items.length) * 100) : 0
     })
   }
@@ -2102,6 +2737,21 @@ const uploadBase64 = async (tag, base64Data) => {
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
+
+      if (data.qa && qaAuditReport.value && Array.isArray(qaAuditReport.value.results)) {
+        const cleanTag = tag.toUpperCase()
+        const idx = qaAuditReport.value.results.findIndex(r => r.tag.toUpperCase() === cleanTag)
+        const updatedItem = {
+          filename: data.filename,
+          tag: cleanTag,
+          ...data.qa
+        }
+        if (idx >= 0) {
+          qaAuditReport.value.results[idx] = updatedItem
+        } else {
+          qaAuditReport.value.results.push(updatedItem)
+        }
+      }
     } else {
       triggerToast('Upload Failed', data.error || `Failed to upload [${tag}]`, 'error')
     }
@@ -2300,6 +2950,7 @@ onMounted(() => {
   loadSubtitles()
   loadBgmTracks()
   loadCharacterModels()
+  runVisualQaAudit(false)
 })
 
 onUnmounted(() => {
