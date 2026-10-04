@@ -1277,19 +1277,18 @@
               </div>
             </div>
 
-            <div class="flex items-center space-x-3 text-xs font-mono text-slate-500 dark:text-slate-400">
-              <span v-if="selectedVideoFile === '01_Episode_Master_1080p.mp4'" class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold">
-                Full 13m 28s Master
-              </span>
-              <span v-else class="px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">
-                Batch Preview Cut
+            <div class="flex flex-wrap items-center gap-2.5 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded-full font-bold text-[11px]" :class="activeBadgeClass">
+                {{ activeBadgeLabel }}
               </span>
               <a 
-                :href="`/api/episodes/${$route.params.franchiseId}/${$route.params.episodeId}/video-stream?file=${selectedVideoFile}&download=1`"
-                download
-                class="hover:text-purple-600 dark:hover:text-purple-400 underline flex items-center space-x-1 font-semibold"
+                :href="`/api/episodes/${$route.params.franchiseId}/${$route.params.episodeId}/video-stream?file=${encodeURIComponent(selectedVideoFile)}&download=1`"
+                :download="selectedVideoFile"
+                class="px-3 py-1 rounded-lg bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-600 dark:text-purple-400 border border-purple-500/20 font-semibold transition flex items-center space-x-1.5 cursor-pointer shadow-xs"
+                :title="`Download ${selectedVideoFile}`"
               >
-                <span>Download MP4</span>
+                <Download class="w-3.5 h-3.5" />
+                <span class="max-w-[280px] truncate">Download {{ selectedVideoFile }}</span>
               </a>
             </div>
           </div>
@@ -3251,6 +3250,53 @@ const selectedBatchIndices = ref([0, 1, 2, 3, 4, 5, 6, 7, 8]) // Default all 9 b
 const autoStitchGrouped = ref(true)
 const omnibusOutputName = ref('00_Season_01_Omnibus_1080p.mp4')
 const selectedOmnibusFiles = ref([])
+
+const activeVideoMeta = computed(() => {
+  return videoFiles.value.find(f => f.filename === selectedVideoFile.value) || {
+    filename: selectedVideoFile.value,
+    size: pipeline.value.videoSize || 0,
+    isMaster: selectedVideoFile.value.includes('Master'),
+    isOmnibus: selectedVideoFile.value.includes('Omnibus'),
+    label: selectedVideoFile.value,
+    batchLetter: (selectedVideoFile.value.match(/Batch_([A-Za-z0-9_]+)_Preview/i) || [])[1] || null
+  }
+})
+
+const activeBadgeLabel = computed(() => {
+  const meta = activeVideoMeta.value
+  const filename = meta.filename || ''
+  
+  if (meta.isOmnibus || filename.includes('Omnibus')) {
+    return '🏆 Grand Omnibus Cut'
+  }
+  
+  const masterBatchMatch = filename.match(/Master_Batches_([A-Za-z0-9_-]+)_1080p/i)
+  if (masterBatchMatch) {
+    const range = masterBatchMatch[1].replace('-', '–').replace(/_/g, ', ')
+    return `🌟 Master (Batches ${range})`
+  }
+  
+  if (meta.isMaster || filename === '01_Episode_Master_1080p.mp4') {
+    return '🌟 Master (Full Episode)'
+  }
+  
+  if (meta.batchLetter) {
+    return `🎬 Batch ${meta.batchLetter} Preview (24 Cuts)`
+  }
+  
+  return '🎬 Video Preview'
+})
+
+const activeBadgeClass = computed(() => {
+  const meta = activeVideoMeta.value
+  if (meta.isOmnibus || meta.filename?.includes('Omnibus')) {
+    return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'
+  }
+  if (meta.isMaster || meta.filename?.includes('Master')) {
+    return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'
+  }
+  return 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30'
+})
 
 const currentSelectedBatch = computed(() => {
   return batchedScenes.value.find(b => b.index === selectedBatchIndex.value) || batchedScenes.value[0] || null

@@ -759,6 +759,9 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   const fileSize = stat.size
   const range = req.headers.range
 
+  const isDownload = req.query.download === '1' || req.query.download === 'true'
+  const dispositionHeader = isDownload ? { 'Content-Disposition': `attachment; filename="${requestedFile}"` } : {}
+
   if (range) {
     const parts = range.replace(/bytes=/, '').split('-')
     const start = parseInt(parts[0], 10)
@@ -770,6 +773,7 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
       'Accept-Ranges': 'bytes',
       'Content-Length': chunksize,
       'Content-Type': 'video/mp4',
+      ...dispositionHeader
     }
     res.writeHead(206, head)
     file.pipe(res)
@@ -777,7 +781,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
     const head = {
       'Content-Length': fileSize,
       'Content-Type': 'video/mp4',
-      'Accept-Ranges': 'bytes'
+      'Accept-Ranges': 'bytes',
+      ...dispositionHeader
     }
     res.writeHead(200, head)
     fs.createReadStream(videoPath).pipe(res)
