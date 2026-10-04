@@ -53,7 +53,7 @@
           </div>
 
           <!-- Pipeline Step Cards -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <router-link 
               :to="`/editor/${franchise.folder}/${ep.id}`"
               class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 text-center space-y-1 transition-all group"
@@ -89,15 +89,6 @@
               <div class="text-[11px] font-bold text-slate-900 dark:text-slate-100">Video Studio</div>
               <div class="text-[9px] font-mono text-purple-600 dark:text-purple-400">1080p Master</div>
             </router-link>
-
-            <router-link 
-              :to="`/video/${franchise.folder}/${ep.id}#youtube-launchpad`"
-              class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 hover:border-rose-500/50 text-center space-y-1 transition-all group"
-            >
-              <Youtube class="w-4 h-4 mx-auto text-rose-600 dark:text-rose-500 group-hover:scale-110 transition-transform" />
-              <div class="text-[11px] font-bold text-slate-900 dark:text-slate-100">YouTube Launchpad</div>
-              <div class="text-[9px] font-mono text-rose-600 dark:text-rose-400">SEO & Titles</div>
-            </router-link>
           </div>
         </div>
       </div>
@@ -108,7 +99,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { ArrowLeft, Layers, FileText, Sparkles, Mic, Film, Youtube } from 'lucide-vue-next'
+import { ArrowLeft, Layers, FileText, Sparkles, Mic, Film } from 'lucide-vue-next'
 
 const route = useRoute()
 const franchise = ref(null)
