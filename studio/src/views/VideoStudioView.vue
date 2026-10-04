@@ -2950,7 +2950,6 @@ onMounted(() => {
   loadSubtitles()
   loadBgmTracks()
   loadCharacterModels()
-  runVisualQaAudit(false)
 })
 
 onUnmounted(() => {
