@@ -285,16 +285,15 @@ export class VideoService {
   }
 
   /**
-   * Render authentic Manhwa Recap Sub-Pixel 30 FPS Strip Glide & Landscape Motion:
+   * Render authentic Manhwa Recap Constant-Speed 60 FPS Liquid Glide:
+   * - 100% Constant uniform linear velocity from frame 0 to frame N (zero slow starts, zero speedups, zero dead stalls).
    * - One-shot Sharp pre-rendered ambient blurred background (<10ms via C++ libvips SIMD).
-   * - Native multi-threaded FFmpeg C++ filter graphs for all 6 reading strip modes and 6 landscape modes.
-   * - 30 FPS high-efficiency rendering with libx264 veryfast hardware-accelerated SIMD instructions.
+   * - Native multi-threaded FFmpeg C++ bicubic antialiased filter graphs at 60 FPS for buttery smooth broadcast motion.
    */
   static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
-    const fps = 30
+    const fps = 60
     const durationSec = Math.max(1.0, framesCount / 30)
-    const frames = Math.max(30, Math.round(durationSec * fps))
-    const PI = '3.14159265'
+    const frames = Math.max(60, Math.round(durationSec * fps))
 
     const tempDir = path.dirname(outputPath)
     const tempBgPath = path.join(tempDir, `bg_${path.basename(outputPath, '.mp4')}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}.jpg`)
@@ -308,9 +307,9 @@ export class VideoService {
     const imgH = meta.height || 1376
     const isTallStrip = (imgH / imgW) >= 1.35
 
-    const snapDown = `if(lt(n/${frames},0.30),0,if(gt(n/${frames},0.70),1,(0.5-0.5*cos(${PI}*(n/${frames}-0.30)/0.40))))`
-    const snapUp = `(1.0-${snapDown})`
-    const sineEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
+    // 100% Constant Linear Motion (Equal distance traversed on every frame)
+    const linearProgress = `(n/${frames})`
+    const linearProgressInv = `(1.0-(n/${frames}))`
 
     if (isVertical) {
       // 1. Generate 1920x1080 blurred ambient backdrop plate once with Sharp (<10ms)
@@ -335,25 +334,25 @@ export class VideoService {
       let filterComplex = ''
 
       if (isTallStrip) {
-        // Multi-panel tall manhwa strip: 680px width, centered at X=620, 6 dynamic reading modes
+        // Multi-panel tall manhwa strip: 680px width, centered at X=620, constant linear speed
         const stripDisplayW = 680
         const stripDisplayH = Math.round((imgH / imgW) * stripDisplayW)
         const maxScrollY = Math.max(0, stripDisplayH - 1080)
         const centerX = Math.round((1920 - stripDisplayW) / 2) // 620px
 
         const tallStripPresets = [
-          // 0. Vertical Snap Down (Top to Bottom reading glide)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 1. Vertical Diagonal Left to Right (Top-Left to Bottom-Right dynamic tracking)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x='${centerX - 30}+60*${sineEase}':y=0[comp];[comp]format=yuv420p[vout]`,
-          // 2. Vertical Smooth Glide (Center sine ease)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${sineEase})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 3. Vertical Snap Up (Bottom to Top climax/reveal glide)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapUp})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 4. Vertical Diagonal Right to Left (Top-Right to Bottom-Left dynamic tracking)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${snapDown})'[strip];[0:v][strip]overlay=x='${centerX + 30}-60*${sineEase}':y=0[comp];[comp]format=yuv420p[vout]`,
-          // 5. Vertical Contextual Pull (Center smooth glide)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${sineEase})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`
+          // 0. Constant Linear Reading Glide Down (Top to Bottom at uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 1. Constant Diagonal Reading Glide (Scroll down while panning right at uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x='${centerX - 20}+40*${linearProgress}':y=0[comp];[comp]format=yuv420p[vout]`,
+          // 2. Constant Linear Reading Glide Down (Centered uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 3. Constant Linear Reveal Glide Up (Bottom to Top at uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgressInv})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
+          // 4. Constant Diagonal Reading Glide (Scroll down while panning left at uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x='${centerX + 20}-40*${linearProgress}':y=0[comp];[comp]format=yuv420p[vout]`,
+          // 5. Constant Linear Reading Glide Down (Centered uniform speed)
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`
         ]
         filterComplex = tallStripPresets[motionIndex % tallStripPresets.length]
       } else {
@@ -364,10 +363,10 @@ export class VideoService {
         const centerY = 20
 
         const cardPresets = [
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x='${centerX - 25}+50*${sineEase}':y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip];[0:v][strip]overlay=x='${centerX + 25}-50*${sineEase}':y=${centerY}[comp];[comp]format=yuv420p[vout]`
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x='${centerX - 20}+40*${linearProgress}':y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x='${centerX + 20}-40*${linearProgress}':y=${centerY}[comp];[comp]format=yuv420p[vout]`
         ]
         filterComplex = cardPresets[motionIndex % cardPresets.length]
       }
@@ -381,7 +380,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '19',
-        '-r', '30',
+        '-r', '60',
         '-frames:v', String(frames),
         outputPath
       ]
@@ -405,23 +404,23 @@ export class VideoService {
         })
       })
     } else {
-      // Landscape Panels (Full 30fps 16:9 Pan, Dynamic Scale Zoom & Sweeps)
+      // Landscape Panels (Constant Linear 60fps 16:9 Pan, Zoom & Sweeps)
       const maxLandScrollX = 280
       const maxLandScrollY = 158
 
       const landscapePresets = [
-        // 0. Pan Left to Right
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${sineEase})':y='(ih-1080)/2',format=yuv420p[vout]`,
-        // 1. Hero Zoom In (Dynamic Scaling)
-        `[0:v]scale=w='2200*(1.0+0.07*${sineEase})':h='1238*(1.0+0.07*${sineEase})':eval=frame:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
-        // 2. Pan Right to Left
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*(1.0-${sineEase}))':y='(ih-1080)/2',format=yuv420p[vout]`,
-        // 3. Diagonal Sweep
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${sineEase})':y='max(0,${maxLandScrollY}*${sineEase})',format=yuv420p[vout]`,
-        // 4. Hero Zoom Out (Dynamic Scaling)
-        `[0:v]scale=w='2200*(1.07-0.07*${sineEase})':h='1238*(1.07-0.07*${sineEase})':eval=frame:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
-        // 5. Pan Top to Bottom
-        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='(iw-1920)/2':y='max(0,${maxLandScrollY}*${sineEase})',format=yuv420p[vout]`
+        // 0. Constant Pan Left to Right
+        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgress})':y='(ih-1080)/2',format=yuv420p[vout]`,
+        // 1. Constant Hero Zoom In
+        `[0:v]scale=w='2200*(1.0+0.05*${linearProgress})':h='1238*(1.0+0.05*${linearProgress})':eval=frame:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
+        // 2. Constant Pan Right to Left
+        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgressInv})':y='(ih-1080)/2',format=yuv420p[vout]`,
+        // 3. Constant Diagonal Sweep
+        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgress})':y='max(0,${maxLandScrollY}*${linearProgress})',format=yuv420p[vout]`,
+        // 4. Constant Hero Zoom Out
+        `[0:v]scale=w='2200*(1.05-0.05*${linearProgress})':h='1238*(1.05-0.05*${linearProgress})':eval=frame:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
+        // 5. Constant Pan Top to Bottom
+        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='(iw-1920)/2':y='max(0,${maxLandScrollY}*${linearProgress})',format=yuv420p[vout]`
       ]
       const filterComplex = landscapePresets[motionIndex % landscapePresets.length]
 
@@ -434,7 +433,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '19',
-        '-r', '30',
+        '-r', '60',
         '-frames:v', String(frames),
         outputPath
       ]
@@ -763,7 +762,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '20',
-        '-r', '30',
+        '-r', '60',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
@@ -781,7 +780,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '20',
-        '-r', '30',
+        '-r', '60',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
