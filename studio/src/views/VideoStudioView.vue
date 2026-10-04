@@ -1378,9 +1378,19 @@
                   <span class="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400">
                     {{ t.archetype }}
                   </span>
-                  <span class="text-[10px] font-mono font-black text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                    ⚡ {{ t.ctrScore }} CTR
-                  </span>
+                  <div class="flex items-center space-x-1.5">
+                    <span 
+                      class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded"
+                      :class="t.title.length <= 100 
+                        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' 
+                        : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-black animate-pulse'"
+                    >
+                      {{ t.title.length }}/100 chars
+                    </span>
+                    <span class="text-[10px] font-mono font-black text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">
+                      ⚡ {{ t.ctrScore }} CTR
+                    </span>
+                  </div>
                 </div>
                 <p class="text-xs font-bold text-slate-900 dark:text-white leading-snug">
                   {{ t.title }}
@@ -3953,13 +3963,14 @@ const copyToClipboard = async (text, fieldName) => {
 
 const copyFullReleaseKit = async () => {
   if (!youtubePackage.value) return
+  const selectedTitle = youtubePackage.value.titles[selectedTitleIndex.value]?.title || ''
   const fullKit = `=== YOUTUBE VIDEO METADATA & PACKAGING SUITE ===
 SERIES: ${youtubePackage.value.franchiseName}
 EPISODE: ${youtubePackage.value.episodeName}
 DURATION: ${youtubePackage.value.formattedDuration}
 
---- SELECTED HIGH-CTR TITLE ---
-${youtubePackage.value.titles[selectedTitleIndex.value]?.title || ''}
+--- SELECTED HIGH-CTR TITLE (${selectedTitle.length}/100 CHARS) ---
+${selectedTitle}
 
 --- 16:9 THUMBNAIL PROMPT (${youtubePackage.value.thumbnailPrompts[selectedThumbIndex.value]?.name || ''}) ---
 BADGE OVERLAY: [${youtubePackage.value.thumbnailPrompts[selectedThumbIndex.value]?.badgeText || ''}]

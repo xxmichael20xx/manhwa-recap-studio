@@ -105,39 +105,52 @@ export class PackagingService {
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
-    // 3. Generate High-CTR Title Archetypes
-    const titles = [
+    // 3. Generate High-CTR Title Archetypes (Strict <= 100 Chars Hard Cap)
+    const rawTitles = [
       {
         archetype: 'False Rank & Hidden Sovereign',
-        title: `They Left the Weakest F-Rank to Die in the Abyss, Unaware He Awakened the World's First Sovereign Protocol`,
+        title: `Left in the Abyss to Die, the Weakest F-Rank Awakens the World's First Sovereign Protocol`,
         ctrScore: '98%',
         style: 'High curiosity & underdog transformation hook'
       },
       {
         archetype: 'Marathon System (Junkie\'s Manhwa Style)',
-        title: `(1-8) Everyone Mocked His F-Rank Rank, Until He Unlocked a 10,000x Calculation Sovereign System`,
+        title: `(1-8) Mocked as a Useless F-Rank, He Unlocks a 10,000x Calculation Sovereign System`,
         ctrScore: '96%',
         style: 'Numbered binge-compilation & progression hook'
       },
       {
         archetype: 'Catacombs Betrayal & Solo Dominance',
-        title: `Betrayed and Left Behind in an F-Rank Dungeon, He Returned as an Untouchable Abyssal Monarch`,
+        title: `Betrayed in an F-Rank Dungeon, He Returns as an Untouchable Abyssal Monarch`,
         ctrScore: '94%',
         style: 'Betrayal, high-stakes revenge & dominance'
       },
       {
         archetype: 'Institutional Anomaly & Proctor Shock',
-        title: `The Guild Tried to Blacklist Him as Garbage, But His Zero-Mana Slashes Broke the Entire Academy`,
+        title: `The Guild Blacklisted Him as Trash, But His Zero-Mana Slashes Shocked the Academy`,
         ctrScore: '92%',
         style: 'High-IQ tactical proctor shockwave'
       },
       {
         archetype: 'Sovereign Pillar & Empire Genesis',
-        title: `He Was Classified as Double F-Rank, But His Calculation Velocity Made Him the World's Strongest Pillar`,
+        title: `Classified as Double F-Rank, His Calculation Speed Made Him the Strongest Pillar`,
         ctrScore: '91%',
         style: 'Epic power scaling & unshakeable status'
       }
     ]
+
+    const titles = rawTitles.map(t => {
+      let cleanTitle = t.title.trim()
+      if (cleanTitle.length > 100) {
+        cleanTitle = cleanTitle.slice(0, 97).trim() + '...'
+      }
+      return {
+        ...t,
+        title: cleanTitle,
+        charCount: cleanTitle.length,
+        isCompliant: cleanTitle.length <= 100
+      }
+    })
 
     // 4. Generate Chapter Text for Description
     const chapterText = chapters.map(c => `${c.time} - ${c.title}`).join('\n')

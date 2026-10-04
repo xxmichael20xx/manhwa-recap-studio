@@ -1,0 +1,46 @@
+[
+  {
+    "id": "kaelen_thorne_tier_1_porter",
+    "name": "Kaelen Thorne (Porter)",
+    "flowName": "Kaelen Thorne - Luggage Carrier",
+    "role": "Protagonist",
+    "tier": "Tier 1: 10-Year Porter",
+    "filename": "01_Protagonist_Kaelen_Thorne.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne.jpg",
+    "description": "28yo male weary porter, worn ragged brown canvas coat, bruised jawline, deep purple mana-burn scars, hunched posture hauling enchanted crates.",
+    "dnaAnchor": "Kaelen Thorne, 28-year-old male exhausted dungeon porter, worn ragged brown canvas coat with iron luggage harness, bruised face, purple mana-burn scars across cheekbones, dark fantasy action manhwa art style, sharp ink linework"
+  },
+  {
+    "id": "kaelen_thorne_tier_2_regressor",
+    "name": "Kaelen Thorne (Awakened)",
+    "flowName": "Kaelen Thorne - Dual Bronco Regressor",
+    "role": "Protagonist",
+    "tier": "Tier 2: Omniscient Sovereign",
+    "filename": "01_Protagonist_Kaelen_Thorne.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne.jpg",
+    "description": "18yo male manhwa protagonist, pitch-black hair, piercing amethyst eyes, tailored charcoal trench coat, dual modified tungsten Bronco handcannons.",
+    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, pitch-black hair with subtle parted bangs, piercing luminous amethyst-purple glowing eyes, calm and cold analytical gaze, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, dual matte tungsten heavy handcannons, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
+  },
+  {
+    "id": "lord_jason_vane",
+    "name": "Lord Jason Vane",
+    "flowName": "Lord Jason Vane - Aegis Vanguard Scion",
+    "role": "Antagonist",
+    "tier": "Grade-B Vanguard Scion",
+    "filename": "02_Antagonist_Lord_Jason_Vane.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/02_Antagonist_Lord_Jason_Vane.jpg",
+    "description": "22yo noble scion, slicked-back platinum-blonde hair, arrogant golden-amber eyes, ornate gilded scarlet-and-gold plate armor, ruby-hilted rapier.",
+    "dnaAnchor": "Lord Jason Vane, 22-year-old male noble antagonist, slicked-back platinum blonde hair, arrogant sharp golden-amber eyes, wearing ornate gilded scarlet-and-gold plate armour with crimson velvet trim and white cape, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting"
+  },
+  {
+    "id": "chief_proctor_keith_morgan",
+    "name": "Chief Proctor Keith Morgan",
+    "flowName": "Chief Proctor Keith Morgan - Bureau Examiner",
+    "role": "Supporting",
+    "tier": "Senior Proctor",
+    "filename": "03_Supporting_Keith_Morgan.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/03_Supporting_Keith_Morgan.jpg",
+    "description": "48yo senior exam evaluator, slate-gray hair, gold-rimmed biometric telemetry monocle, tailored navy-blue Bureau officer trench coat, glowing datapad.",
+    "dnaAnchor": "Chief Proctor Keith Morgan, 48-year-old male senior exam proctor, slate-gray hair, gold-rimmed biometric telemetry monocle over right eye, wearing a tailored navy-blue bureau officer overcoat with brass insignia, holding a glowing holographic datapad, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting"
+  }
+]

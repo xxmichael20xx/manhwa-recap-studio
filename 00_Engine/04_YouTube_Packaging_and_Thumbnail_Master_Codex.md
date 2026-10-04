@@ -28,13 +28,13 @@ Every episode across all franchises must progress through 4 strictly isolated st
 
 ---
 
-## 🎯 The 5 High-CTR Title Archetypes
-Every episode package must generate 5 distinct title options:
-1. **False Rank & Hidden Sovereign:** *"They Left the Weakest F-Rank to Die in the Abyss, Unaware He Awakened the World's First Sovereign Protocol"*
-2. **Numbered Marathon Binge (Junkie's Style):** *"(1-8) Everyone Mocked His F-Rank Rank, Until He Unlocked a 10,000x Calculation Sovereign System"*
-3. **Catacombs Betrayal & Solo Dominance:** *"Betrayed and Left Behind in an F-Rank Dungeon, He Returned as an Untouchable Abyssal Monarch"*
-4. **Institutional Proctor Shock:** *"The Guild Tried to Blacklist Him as Garbage, But His Zero-Mana Slashes Broke the Entire Academy"*
-5. **Sovereign Pillar & Empire Genesis:** *"He Was Classified as Double F-Rank, But His Calculation Velocity Made Him the World's Strongest Pillar"*
+## 🎯 The 5 High-CTR Title Archetypes (Strict ≤ 100 Characters Hard Cap)
+Every episode package must generate 5 distinct title options, strictly capped at **≤ 100 characters** for YouTube upload compliance and high mobile CTR without truncation:
+1. **False Rank & Hidden Sovereign (89 chars):** *"Left in the Abyss to Die, the Weakest F-Rank Awakens the World's First Sovereign Protocol"*
+2. **Numbered Marathon Binge (84 chars):** *"(1-8) Mocked as a Useless F-Rank, He Unlocks a 10,000x Calculation Sovereign System"*
+3. **Catacombs Betrayal & Solo Dominance (75 chars):** *"Betrayed in an F-Rank Dungeon, He Returns as an Untouchable Abyssal Monarch"*
+4. **Institutional Proctor Shock (81 chars):** *"The Guild Blacklisted Him as Trash, But His Zero-Mana Slashes Shocked the Academy"*
+5. **Sovereign Pillar & Empire Genesis (80 chars):** *"Classified as Double F-Rank, His Calculation Speed Made Him the Strongest Pillar"*
 
 ---
 

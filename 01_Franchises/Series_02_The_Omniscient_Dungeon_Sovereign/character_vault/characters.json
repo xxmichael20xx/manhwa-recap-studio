@@ -1,0 +1,82 @@
+{
+  "series_id": "Series_02_The_Omniscient_Dungeon_Sovereign",
+  "series_title": "The Omniscient Dungeon Sovereign",
+  "format": "16:9 Full Bleed Landscape",
+  "archetype": "Archetype B: Analytical Regressor & Sovereign Crafter",
+  "characters": [
+    {
+      "id": "kaelen_thorne",
+      "name": "Kaelen Thorne",
+      "token": "@{Kaelen Thorne - Dual Bronco Regressor}",
+      "tier": 1,
+      "role": "Protagonist (10-Year Porter Regressor)",
+      "age": 18,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Omniscient Sovereign (Unclassified / F-Rank Facade)",
+        "strength": 12,
+        "agility": 14,
+        "constitution": 11,
+        "perception": 240,
+        "neural_calculation_velocity": "10,000x"
+      },
+      "appearance": {
+        "hair": "Pitch-black medium-parted straight hair with subtle bangs framing sharp angular cheekbones",
+        "eyes": "Piercing luminous amethyst-purple glowing pupils, intensely cold, analytical, and calculated gaze",
+        "physique": "Lean, athletic, and agile build, highly flexible and poised",
+        "attire": "Charcoal-gray tailored heavy canvas trench coat with raised collar, matte black tactical combat vest underneath, dark slate reinforced combat trousers, polished black military boots, dual black tactical thigh holsters",
+        "weapons": "Dual customized heavy-caliber kinetic handcannons ('Dead Frontier Broncos') forged from matte tungsten alloy with etched linear mana-dispersion grooves and flared compensator muzzle brakes"
+      },
+      "dna_prompt_anchor": "@{Kaelen Thorne - Dual Bronco Regressor}, 18-year-old male manhwa protagonist, pitch-black hair, piercing luminous amethyst-purple eyes, cold analytical gaze, wearing a charcoal-gray tailored trench coat with high collar over matte black tactical vest, dual matte tungsten handcannons in hand or holstered at thighs, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting",
+      "reference_plate": "01_Protagonist_Kaelen_Thorne.jpg"
+    },
+    {
+      "id": "jason_vane",
+      "name": "Lord Jason Vane",
+      "token": "@{Lord Jason Vane - Aegis Vanguard Scion}",
+      "tier": 2,
+      "role": "Arc Antagonist (Aegis Vanguard Guild Heir)",
+      "age": 22,
+      "stats_baseline": {
+        "level": 28,
+        "class": "Pyromancer Vanguard (Grade-B)",
+        "strength": 48,
+        "agility": 36,
+        "constitution": 42,
+        "perception": 22
+      },
+      "appearance": {
+        "hair": "Slicked-back pristine platinum-blonde hair",
+        "eyes": "Arrogant, sharp golden-amber eyes with condescending smirk",
+        "physique": "Tall, muscular, and broad-shouldered aristocratic posture",
+        "attire": "Ornate gilded scarlet-and-gold enchanted plate armour over crimson velvet tunic, white silk cape with gold trim, ornate gilded steel rapier sheathed at waist with glowing ruby pommel"
+      },
+      "dna_prompt_anchor": "@{Lord Jason Vane - Aegis Vanguard Scion}, 22-year-old male noble antagonist, slicked-back platinum blonde hair, arrogant sharp golden-amber eyes, wearing ornate gilded scarlet-and-gold plate armour with crimson velvet trim and white cape, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting",
+      "reference_plate": "02_Antagonist_Lord_Jason_Vane.jpg"
+    },
+    {
+      "id": "keith_morgan",
+      "name": "Chief Proctor Keith Morgan",
+      "token": "@{Chief Proctor Keith Morgan - Bureau Examiner}",
+      "tier": 3,
+      "role": "Supporting Analytical Proctor (Hunter Assessment Bureau Chief)",
+      "age": 48,
+      "stats_baseline": {
+        "level": 65,
+        "class": "High Examiner & Runic Scholar (Grade-A)",
+        "strength": 35,
+        "agility": 40,
+        "constitution": 50,
+        "perception": 185
+      },
+      "appearance": {
+        "hair": "Neatly groomed slate-gray hair with distinguished silver temples",
+        "eyes": "Sharp dark analytical eyes behind a gold-rimmed biometric telemetry monocle over his right eye",
+        "physique": "Upright, disciplined military posture, composed and calculating demeanor",
+        "attire": "Tailored navy-blue Hunter Assessment Bureau overcoat with brass insignia buttons, charcoal vest, crisp white collared shirt with black tie, holding a glowing holographic diagnostic datapad"
+      },
+      "dna_prompt_anchor": "@{Chief Proctor Keith Morgan - Bureau Examiner}, 48-year-old male senior exam proctor, slate-gray hair, gold-rimmed biometric telemetry monocle over right eye, wearing a tailored navy-blue bureau officer overcoat with brass insignia, holding a glowing holographic datapad, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting",
+      "reference_plate": "03_Supporting_Keith_Morgan.jpg"
+    }
+  ]
+}

@@ -541,13 +541,37 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   try {
     const { franchiseId } = req.params
     const modelsDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models')
+    const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    
+    // Check character_models.json in modelsDir
     const manifestPath = path.join(modelsDir, 'character_models.json')
     if (fs.existsSync(manifestPath)) {
       const data = JSON.parse(await fs.promises.readFile(manifestPath, 'utf-8'))
       return res.json(data)
     }
-    if (fs.existsSync(modelsDir)) {
-      const files = await fs.promises.readdir(modelsDir)
+
+    // Check characters.json in character_vault
+    const vaultManifestPath = path.join(vaultDir, 'characters.json')
+    if (fs.existsSync(vaultManifestPath)) {
+      const rawVault = JSON.parse(await fs.promises.readFile(vaultManifestPath, 'utf-8'))
+      const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
+      const mapped = charList.map(c => ({
+        id: c.id,
+        name: c.name,
+        flowName: c.token ? c.token.replace(/[@{}]/g, '') : c.name,
+        role: c.role ? (c.role.toLowerCase().includes('antagonist') ? 'Antagonist' : c.role.toLowerCase().includes('supporting') || c.role.toLowerCase().includes('proctor') ? 'Supporting' : 'Protagonist') : 'Standard',
+        tier: `Tier ${c.tier || 1}: ${c.role || 'Character'}`,
+        filename: c.reference_plate || `${c.id}.jpg`,
+        url: `/api/franchises/${franchiseId}/character-models/${c.reference_plate || `${c.id}.jpg`}`,
+        description: c.appearance?.hair ? `${c.appearance.hair}. ${c.appearance.attire}` : (c.appearance || c.role),
+        dnaAnchor: c.dna_prompt_anchor || c.token || c.name
+      }))
+      return res.json(mapped)
+    }
+
+    const activeDir = fs.existsSync(modelsDir) ? modelsDir : (fs.existsSync(vaultDir) ? vaultDir : null)
+    if (activeDir) {
+      const files = await fs.promises.readdir(activeDir)
       const images = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f)).map(f => ({
         id: f.replace(/\.[^/.]+$/, '').toLowerCase(),
         name: f.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
@@ -566,7 +590,11 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
 // Stream Character Model Image
 app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) => {
   const { franchiseId, filename } = req.params
-  const filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
+  let filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
+  
+  if (!fs.existsSync(filePath)) {
+    filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault', filename)
+  }
 
   if (fs.existsSync(filePath)) {
     const ext = path.extname(filename).toLowerCase()
@@ -577,6 +605,7 @@ app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) =>
     res.status(404).send('Character model file not found')
   }
 })
+
 
 // Fetch Subtitles (.srt / .vtt)
 app.get('/api/episodes/:franchiseId/:episodeId/subtitles', async (req, res) => {

@@ -110,3 +110,14 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   - All institutional trials must feature real-time scrying crystals, drone telemetry, and mana-density monitors.
   - Proctors possess above-average analytical intellect: they observe kinetic anomalies, acoustic spikes, and environmental fractures from control centres, actively adjusting threat ratings and making calculated institutional deductions.
 
+---
+
+### 14. Visual Identity Amnesia & Character Morphing Slop
+* **Defect:** Protagonists and key characters randomly mutate their appearance between scenes—changing eye colour, hairstyles, clothing, and weapon dimensions from panel to panel, completely breaking audience immersion.
+* **Fix (The Mandatory Pre-Flight Character Vault Standard):**
+  - Strictly forbidden from generating episodic prompt matrices until the franchise repository maintains a populated `character_vault/` directory containing:
+    1. `characters.json`: Structured DNA tokens specifying master prompt anchors, exact facial structure, hair undertones, signature attire, and weapon loadouts (e.g. `@{Kaelen Thorne - Dual Bronco Regressor}`).
+    2. Master Visual Reference Plates (`01_Protagonist_Master_Plate.jpg`, `02_Antagonist_Master_Plate.jpg`): High-fidelity, textless concept plates matching Midjourney `--cref [URL] --cw 80` standards.
+  - 100% of episodic prompt entries must inject locked character tokens (`@{Character}`) to eliminate diffusion attention splitting and guarantee facial/outfit consistency across all 24-scene batches.
+
+
