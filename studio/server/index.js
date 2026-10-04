@@ -799,8 +799,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/youtube-package', async (req, res
 app.get('/api/episodes/:franchiseId/:episodeId/thumbnail/:filename', (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
   const safeFilename = path.basename(filename)
-  const thumbPath = path.join(franchisesDir, franchiseId, episodeId, 'thumbnails', safeFilename)
-  if (fsSync.existsSync(thumbPath)) {
+  const thumbPath = path.join(projectRoot, '01_Franchises', franchiseId, episodeId, 'thumbnails', safeFilename)
+  if (fs.existsSync(thumbPath)) {
     res.sendFile(thumbPath)
   } else {
     res.status(404).send('Thumbnail not found')
