@@ -63,3 +63,18 @@ IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeo
    * Use staccato, punchy sentences during high-action combat (e.g. *"Step. Pivot. Strike."*).
 3. **Phonetic Pronunciation Tagging:**
    * Foreign or fantasy terms must include bracketed phonetic guides on first mention: e.g. *Qi [Chee]*, *Xianxia [Shee-ahn-shyah]*, *Grimoire [Grim-wahr]*.
+
+---
+
+## 5. Franchise Character Vault & Reference Sheet Standard
+
+Prior to drafting any episodic prompt matrix, every franchise must initialize its **Character Vault** in `/01_Franchises/Series_XX/character_vault/` containing:
+
+1. **Character DNA Sheets (`characters.json`):**
+   - **Protagonist (Tier 1):** Master prompt anchor, facial features, hair undertones, signature attire, and weapon loadout (e.g. `@{Kaelen Thorne - Dual Bronco Regressor}`).
+   - **Primary Antagonist (Tier 2):** Arrogant noble scions, corrupt guild captains, and syndicate executives.
+   - **Supporting Evaluators (Tier 3):** Senior academy examiners, forensic proctors, and alchemist scholars.
+2. **Master Character Reference Plates (16:9 / 9:16):**
+   - High-fidelity textless character concept art saved as `character_vault/01_Protagonist_Master_Plate.jpg` matching Midjourney `--cref [URL] --cw 80` standards.
+3. **Mandatory Token Injection:**
+   - 100% of visual prompt entries `[IMG_001]` to `[IMG_216]` must anchor to their corresponding Character DNA tokens (`@{Character}`) to eliminate diffusion attention splitting or visual drift.
