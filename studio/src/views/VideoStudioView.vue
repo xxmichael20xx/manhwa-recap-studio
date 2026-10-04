@@ -129,13 +129,16 @@
         <span v-if="pipeline.hasVideo" class="w-2 h-2 rounded-full bg-emerald-400"></span>
       </button>
 
-      <a 
-        href="#youtube-launchpad"
-        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-600 dark:hover:text-rose-400"
+      <button 
+        @click="activeStage = 'youtube'"
+        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
+        :class="activeStage === 'youtube' 
+          ? 'bg-rose-600 text-white shadow-md shadow-rose-900/20' 
+          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-600 dark:hover:text-rose-400'"
       >
-        <Youtube class="w-4 h-4 text-rose-500" />
+        <Youtube class="w-4 h-4" :class="activeStage === 'youtube' ? 'text-white' : 'text-rose-500'" />
         <span>Stage 4: YouTube Launchpad & Packaging</span>
-      </a>
+      </button>
     </div>
 
     <!-- STAGE 1: Visual Assets & Storyboard Stills -->
@@ -1311,14 +1314,14 @@
       </div>
     </div>
 
-    <!-- STAGE 5: YOUTUBE LAUNCHPAD & PACKAGING SUITE -->
-    <div id="youtube-launchpad" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-8 shadow-sm">
+    <!-- STAGE 4: YOUTUBE LAUNCHPAD & PACKAGING SUITE -->
+    <div v-if="activeStage === 'youtube'" id="youtube-launchpad" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-8 shadow-sm">
       <!-- Section Header -->
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
         <div class="space-y-1">
           <div class="flex items-center space-x-2">
             <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono uppercase tracking-wider bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
-              Stage 5: Publishing
+              Stage 4: Publishing
             </span>
             <span class="text-xs font-mono text-slate-400">• YouTube Release Hub</span>
           </div>
@@ -3826,7 +3829,7 @@ const handleSwitchStage = (stage) => {
   modalState.value.activeStage = stage
 }
 
-// 🚀 STAGE 5: YOUTUBE LAUNCHPAD & PACKAGING STATE
+// 🚀 STAGE 4: YOUTUBE LAUNCHPAD & PACKAGING STATE
 const youtubePackage = ref(null)
 const loadingPackage = ref(false)
 const selectedTitleIndex = ref(0)
