@@ -8,6 +8,7 @@ import sharp from 'sharp'
 import { ImageService } from './imageService.js'
 import { TtsService } from './ttsService.js'
 import { ActivityLogService } from './activityLogService.js'
+import { MotionEngine } from './motionEngine.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -292,93 +293,180 @@ export class VideoService {
    * - Compound Animation: Moves across screen horizontally (x: 840px <-> 1480px in 2X) WHILE scrolling vertically.
    * - Downsampling: High-precision bicubic filter scaling down to 1920x1080p60.
    */
+  /**
+   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Strip Glide:
+   * - One-shot Sharp pre-rendered ambient blurred background (eliminates redundant per-frame FFmpeg blur).
+   * - Centered stationary X positioning (eliminates diagonal stair-stepping).
+   * - Pure vertical sine-eased reading glide for tall strips.
+   * - 60 FPS high temporal density with fast C++ composite.
+   */
   static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
     const fps = 60
-    const duration = framesCount / 30
-    const frames = Math.max(30, Math.round(duration * fps))
+    const durationSec = framesCount / 30
+
+    // 1. Primary: Omni-Directional Sub-Pixel GPU Motion Engine (60 FPS Sub-Pixel Interpolation)
+    try {
+      return await MotionEngine.renderSceneClip({
+        imagePath,
+        durationSec,
+        fps,
+        motionIndex,
+        outputPath
+      })
+    } catch (motionErr) {
+      console.warn(`MotionEngine attempt 1 failed for ${path.basename(imagePath)}, recycling browser and retrying:`, motionErr.message)
+      try {
+        await MotionEngine.closeBrowser()
+        return await MotionEngine.renderSceneClip({
+          imagePath,
+          durationSec,
+          fps,
+          motionIndex,
+          outputPath
+        })
+      } catch (retryErr) {
+        console.error(`MotionEngine retry failed for ${path.basename(imagePath)}, falling back:`, retryErr.message)
+      }
+    }
+
+    // 2. Graceful Fallback: Native Filter Graph
+    const frames = Math.max(30, Math.round(durationSec * fps))
     const PI = '3.14159265'
-    
-    // Scoped easing variables in 60fps frame coordinates:
+
+    const tempDir = path.dirname(outputPath)
+    const tempBgPath = path.join(tempDir, `bg_${path.basename(outputPath, '.mp4')}.jpg`)
+
+    let meta = { width: 768, height: 1376 }
+    try {
+      meta = await sharp(imagePath).metadata()
+    } catch (e) {}
+
+    const imgW = meta.width || 768
+    const imgH = meta.height || 1376
+    const isTallStrip = (imgH / imgW) >= 1.35
+
     const cropEase = `(0.5-0.5*cos(${PI}*n/${frames}))`
     const cropEaseInv = `(1.0-(0.5-0.5*cos(${PI}*n/${frames})))`
     const zpEase = `(0.5-0.5*cos(${PI}*on/${frames}))`
 
-    let filterComplex = ''
-
     if (isVertical) {
-      let meta = { width: 768, height: 1376 }
+      // 1. Generate 1920x1080 blurred ambient backdrop plate once with Sharp (<10ms)
       try {
-        meta = await sharp(imagePath).metadata()
-      } catch (e) {}
-
-      const imgRatio = (meta.width && meta.height) ? (meta.width / meta.height) : 0.558
-      let STRIP_W_2X = 1300
-      let scaleFilter2X = ''
-      const scaledHeight2X = (1300 / (meta.width || 768)) * (meta.height || 1376)
-      
-      if (scaledHeight2X < 2160) {
-        STRIP_W_2X = Math.round(2160 * imgRatio)
-        if (STRIP_W_2X % 2 !== 0) STRIP_W_2X += 1
-        scaleFilter2X = `scale=w=${STRIP_W_2X}:h=2160`
-      } else {
-        scaleFilter2X = `scale=w=${STRIP_W_2X}:h=-2`
+        await sharp(imagePath)
+          .resize(1920, 1080, { fit: 'cover' })
+          .blur(25)
+          .modulate({ brightness: 0.65, saturation: 1.25 })
+          .toFile(tempBgPath)
+      } catch (e) {
+        // Fallback to solid dark background
+        await sharp({
+          create: {
+            width: 1920,
+            height: 1080,
+            channels: 3,
+            background: { r: 11, g: 15, b: 25 }
+          }
+        }).jpeg().toFile(tempBgPath)
       }
 
-      // 2X Space Horizontal Trajectory (840px <-> 1480px)
-      const isRightToLeft = (motionIndex % 2 === 0)
-      const xTravelExpr2X = isRightToLeft 
-        ? `1480-640*${cropEase}` 
-        : `840+640*${cropEase}`
+      let filterComplex = ''
 
-      // Vertical downward scroll to reveal hidden panels
-      const isReverseVertical = (motionIndex % 4 === 3)
-      const yScrollExpr = isReverseVertical ? cropEaseInv : cropEase
+      if (isTallStrip) {
+        // Multi-panel tall manhwa strip: 680px width, centered at X=620, smooth vertical glide
+        const stripDisplayW = 680
+        const stripDisplayH = Math.round((imgH / imgW) * stripDisplayW)
+        const maxScrollY = Math.max(0, stripDisplayH - 1080)
+        const centerX = Math.round((1920 - stripDisplayW) / 2) // 620px
+        const isReverse = (motionIndex % 4 === 3)
+        const yScrollExpr = isReverse ? cropEaseInv : cropEase
 
-      filterComplex = [
-        `[0:v]scale=3840:2160:force_original_aspect_ratio=increase,crop=3840:2160,boxblur=35:10,eq=brightness=-0.08:saturation=1.15[bg_2x]`,
-        `[0:v]${scaleFilter2X},crop=w=${STRIP_W_2X}:h=2160:x=0:y='max(0,(ih-2160)*${yScrollExpr})'[strip_2x]`,
-        `[bg_2x][strip_2x]overlay=x='${xTravelExpr2X}':y=0[comp_2x]`,
-        `[comp_2x]scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`
-      ].join(';')
+        filterComplex = [
+          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH},crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${yScrollExpr})'[strip]`,
+          `[0:v][strip]overlay=x=${centerX}:y=0[comp]`,
+          `[comp]format=yuv420p[vout]`
+        ].join(';')
+      } else {
+        // Single panel vertical card
+        const stripHeight = 1040
+        const stripWidth = Math.round((imgW / imgH) * stripHeight)
+        const centerX = Math.round((1920 - stripWidth) / 2)
+        const centerY = 20
+
+        filterComplex = [
+          `[1:v]scale=w=${stripWidth}:h=${stripHeight}[strip]`,
+          `[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp]`,
+          `[comp]format=yuv420p[vout]`
+        ].join(';')
+      }
+
+      const args = [
+        '-y',
+        '-loop', '1', '-t', String(durationSec), '-i', tempBgPath,
+        '-loop', '1', '-t', String(durationSec), '-i', imagePath,
+        '-filter_complex', filterComplex,
+        '-map', '[vout]',
+        '-c:v', 'libx264',
+        '-preset', 'veryfast',
+        '-crf', '18',
+        '-r', '60',
+        '-frames:v', String(frames),
+        outputPath
+      ]
+
+      return new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', args)
+        let stderr = ''
+        proc.stderr.on('data', d => { stderr += d.toString() })
+        proc.on('close', async code => {
+          try { await fs.unlink(tempBgPath) } catch (_) {}
+          if (code === 0) {
+            resolve(outputPath)
+          } else {
+            console.error(`FFmpeg vertical strip render error (${imagePath}):`, stderr.slice(-400))
+            reject(new Error(`Strip scroll rendering failed for ${path.basename(imagePath)}`))
+          }
+        })
+        proc.on('error', reject)
+      })
     } else {
       // Landscape Panels (Full 60fps 16:9 Pan & Scan with Supersampled Scaling)
       const landscapePresets = [
-        `[0:v]scale=w=4200:h=2360:force_original_aspect_ratio=increase,crop=3840:2160:x='max(0,(iw-3840)*${cropEase})':y='(ih-2160)/2',scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`,
-        `[0:v]scale=w=4200:h=2360:force_original_aspect_ratio=increase,crop=3840:2160:x='max(0,(iw-3840)*${cropEaseInv})':y='(ih-2160)/2',scale=1920:1080:flags=bicubic+accurate_rnd,format=yuv420p[vout]`,
-        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.0+0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
-        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.12-0.12*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`
+        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.0+0.06*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
+        `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,zoompan=z='1.06-0.06*${zpEase}':x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=${frames}:s=1920x1080:fps=60,format=yuv420p[vout]`,
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,(iw-1920)*${cropEase})':y='(ih-1080)/2',format=yuv420p[vout]`,
+        `[0:v]scale=w=2200:h=1238:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,(iw-1920)*${cropEaseInv})':y='(ih-1080)/2',format=yuv420p[vout]`
       ]
-      filterComplex = landscapePresets[motionIndex % landscapePresets.length]
-    }
+      const filterComplex = landscapePresets[motionIndex % landscapePresets.length]
 
-    const args = [
-      '-y',
-      '-loop', '1',
-      '-i', imagePath,
-      '-filter_complex', filterComplex,
-      '-map', '[vout]',
-      '-c:v', 'libx264',
-      '-preset', 'veryfast',
-      '-crf', '18',
-      '-r', '60',
-      '-frames:v', String(frames),
-      outputPath
-    ]
+      const args = [
+        '-y',
+        '-loop', '1',
+        '-i', imagePath,
+        '-filter_complex', filterComplex,
+        '-map', '[vout]',
+        '-c:v', 'libx264',
+        '-preset', 'veryfast',
+        '-crf', '18',
+        '-r', '60',
+        '-frames:v', String(frames),
+        outputPath
+      ]
 
-    return new Promise((resolve, reject) => {
-      const proc = spawn('ffmpeg', args)
-      let stderr = ''
-      proc.stderr.on('data', d => { stderr += d.toString() })
-      proc.on('close', code => {
-        if (code === 0) {
-          resolve(outputPath)
-        } else {
-          console.error(`FFmpeg 60fps Strip Scroll error (${imagePath}):`, stderr.slice(-400))
-          reject(new Error(`Strip scroll rendering failed for ${path.basename(imagePath)}`))
-        }
+      return new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', args)
+        let stderr = ''
+        proc.stderr.on('data', d => { stderr += d.toString() })
+        proc.on('close', code => {
+          if (code === 0) {
+            resolve(outputPath)
+          } else {
+            console.error(`FFmpeg landscape render error (${imagePath}):`, stderr.slice(-400))
+            reject(new Error(`Landscape clip rendering failed for ${path.basename(imagePath)}`))
+          }
+        })
+        proc.on('error', reject)
       })
-      proc.on('error', reject)
-    })
+    }
   }
 
   static async getVideoFiles(franchiseId, episodeId) {
@@ -531,9 +619,9 @@ export class VideoService {
     // Get list of existing images on disk
     const existingFiles = fsSync.existsSync(imagesDir) ? await fs.readdir(imagesDir) : []
 
-    // 3. Render Ken Burns clips in managed concurrency (4 at a time)
+    // 3. Render Ken Burns clips in managed concurrency (2 at a time for optimal browser GPU memory)
     const clipFiles = []
-    const concurrency = 4
+    const concurrency = 2
     let completedClips = 0
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
@@ -723,10 +811,13 @@ export class VideoService {
       })
 
       proc.on('close', async code => {
-        // Clean up temporary clip and composite directories
+        // Clean up temporary clip, composite directories, and browser resources
         try {
           await fs.rm(tempClipsDir, { recursive: true, force: true })
           await fs.rm(tempCompositesDir, { recursive: true, force: true })
+        } catch (e) {}
+        try {
+          await MotionEngine.closeBrowser()
         } catch (e) {}
 
         if (code === 0) {

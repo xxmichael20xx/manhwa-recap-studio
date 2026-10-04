@@ -1,1039 +1,1075 @@
 1
-00:00:00,100 --> 00:00:02,713
+00:00:00,100 --> 00:00:02,725
 In the Imperial Hunter Academy of Valerius,
 
 2
-00:00:02,875 --> 00:00:04,763
-your worth as a human being is measured
+00:00:02,950 --> 00:00:05,613
+human worth is quantified by a single unforgiving
 
 3
-00:00:04,775 --> 00:00:06,000
-by a single metric:
+00:00:05,625 --> 00:00:06,225
+metric:
 
 4
-00:00:06,188 --> 00:00:08,738
-the destructive volume of your awakened mana core.
+00:00:06,413 --> 00:00:08,663
+the raw destructive volume of your awakened mana
 
 5
-00:00:09,500 --> 00:00:12,213
-Those who summon towering firestorms or crack the
+00:00:08,675 --> 00:00:09,225
+core.
 
 6
-00:00:12,225 --> 00:00:15,238
-earth with lightning are crowned future national protectors,
+00:00:10,108 --> 00:00:13,258
+Those who conjure towering firestorms or shatter granite
 
 7
-00:00:15,425 --> 00:00:18,100
-while utility wielders are quietly discarded into the
+00:00:13,271 --> 00:00:16,158
+with lightning are hailed as sovereign national protectors,
 
 8
-00:00:18,113 --> 00:00:19,463
-scavenger divisions.
+00:00:16,358 --> 00:00:19,408
+immediately granted military pensions and noble rank.
 
 9
-00:00:20,332 --> 00:00:22,432
-At the center of the Grand Awakening Arena,
+00:00:20,284 --> 00:00:20,972
+Meanwhile,
 
 10
-00:00:22,620 --> 00:00:25,520
-Prince Valen Sol-Aegis stepped toward the colossal Resonance
+00:00:21,122 --> 00:00:24,184
+utility wielders with non-destructive affinities are quietly
 
 11
-00:00:25,532 --> 00:00:26,057
-Pillar.
+00:00:24,197 --> 00:00:26,747
+discarded into the hazardous scavenger divisions,
 
 12
-00:00:26,820 --> 00:00:30,607
-The eighteen-year-old royal prodigy radiated condescending confidence,
+00:00:26,922 --> 00:00:29,509
+doomed to haul dimensional ballast until their contracts
 
 13
-00:00:30,757 --> 00:00:33,857
-his golden-blonde hair and immaculate white-and-gold uniform
+00:00:29,522 --> 00:00:30,284
+expire.
 
 14
-00:00:33,870 --> 00:00:36,357
-catching the glare of the imperial spotlights.
+00:00:31,156 --> 00:00:34,431
+The Grand Awakening Arena buzzed with feverish anticipation
 
 15
-00:00:37,120 --> 00:00:39,482
-When his fingers touched the obsidian stone,
+00:00:34,444 --> 00:00:37,206
+as three thousand spectators filled the tiered obsidian
 
 16
-00:00:39,620 --> 00:00:42,257
-a blinding pillar of golden solar fire erupted
+00:00:37,219 --> 00:00:39,706
+stands under blazing imperial spotlights.
 
 17
-00:00:42,270 --> 00:00:43,795
-fifty metres into the air,
+00:00:40,588 --> 00:00:42,088
+At the center of the stadium,
 
 18
-00:00:43,982 --> 00:00:46,320
-vaporizing the arena's ambient humidity.
+00:00:42,238 --> 00:00:45,126
+Prince Valen Sol-Aegis stepped toward the colossal Resonance
 
 19
-00:00:47,188 --> 00:00:50,338
-The evaluation display locked in with deafening fanfare:
+00:00:45,138 --> 00:00:47,026
+Pillar with theatrical composure.
 
 20
-00:00:50,488 --> 00:00:51,813
-S-Rank Solar Flare,
+00:00:47,908 --> 00:00:51,271
+The nineteen-year-old royal heir radiated supreme condescension,
 
 21
-00:00:52,026 --> 00:00:55,438
-initial mana saturation index at five thousand points.
+00:00:51,446 --> 00:00:54,458
+his golden-blonde hair and pristine white-and-gold uniform
 
 22
-00:00:56,201 --> 00:00:58,951
-The academy proctors stood in unanimous ovation,
+00:00:54,471 --> 00:00:57,296
+pristine beneath the glare of floating press drones.
 
 23
-00:00:59,151 --> 00:01:02,501
-House Sol-Aegis securing another billion-credit military contract
+00:00:58,156 --> 00:01:01,144
+When Valen's gloved hand touched the obsidian crystal,
 
 24
-00:01:02,513 --> 00:01:04,213
-before the afternoon concluded.
+00:01:01,319 --> 00:01:03,456
+a deafening roar shook the colosseum as a
 
 25
-00:01:04,976 --> 00:01:06,901
-Valen sneered at the lower tiers,
+00:01:03,469 --> 00:01:06,681
+blinding fifty-metre pillar of solar plasma erupted toward
 
 26
-00:01:06,988 --> 00:01:09,488
-adjusting his gold-trimmed capelet as if the rest
+00:01:06,694 --> 00:01:07,356
+the sky.
 
 27
-00:01:09,501 --> 00:01:11,801
-of humanity were merely background static.
+00:01:08,236 --> 00:01:11,324
+The automated diagnostic display locked in with imperial
 
 28
-00:01:12,676 --> 00:01:15,451
-Then, Caelen Vance stepped onto the platform.
+00:01:11,336 --> 00:01:12,061
+fanfare:
 
 29
-00:01:16,214 --> 00:01:18,914
-Unlike the aristocrats draped in silk and enchanted
+00:01:12,249 --> 00:01:13,536
+S-Rank Solar Flare,
 
 30
-00:01:18,926 --> 00:01:19,514
-mithril,
+00:01:13,786 --> 00:01:17,136
+initial mana saturation index calibrated at five thousand
 
 31
-00:01:19,676 --> 00:01:22,876
-Caelen wore a standard charcoal academy cadet uniform,
+00:01:17,149 --> 00:01:17,761
+units.
 
 32
-00:01:23,014 --> 00:01:25,214
-his dark hair falling messy across sharp,
+00:01:18,628 --> 00:01:21,566
+House Sol-Aegis proctors erupted in standing ovation,
 
 33
-00:01:25,326 --> 00:01:26,839
-observant violet eyes.
+00:01:21,766 --> 00:01:25,053
+their family secure in another multi-million-credit state defense
 
 34
-00:01:27,601 --> 00:01:30,039
-He had spent three grueling years studying dimensional
+00:01:25,066 --> 00:01:27,016
+subsidy before midday concluded.
 
 35
-00:01:30,051 --> 00:01:31,951
-physics in the academy archives,
+00:01:27,892 --> 00:01:30,092
+Valen sneered down at the lower tiers,
 
 36
-00:01:32,026 --> 00:01:34,501
-understanding that true power lay not in flashy
+00:01:30,192 --> 00:01:32,617
+adjusting his crimson silk capelet as though the
 
 37
-00:01:34,514 --> 00:01:35,351
-light shows,
+00:01:32,630 --> 00:01:35,117
+surrounding students were mere background noise.
 
 38
-00:01:35,526 --> 00:01:37,351
-but in the fundamental constants that held the
+00:01:35,980 --> 00:01:38,568
+Then, Head Proctor Keith Morgan called the next
 
 39
-00:01:37,364 --> 00:01:38,476
-universe together.
+00:01:38,580 --> 00:01:39,755
+name from the registry:
 
 40
-00:01:39,340 --> 00:01:41,840
-Caelen pressed his palm against the cold surface
-
-41
-00:01:41,853 --> 00:01:43,040
-of the Resonance Pillar.
-
-42
-00:01:43,803 --> 00:01:45,778
-The massive crystal hummed briefly,
-
-43
-00:01:45,878 --> 00:01:47,303
-but no flames roared.
-
-44
-00:01:48,065 --> 00:01:49,453
-No lightning cracked.
-
-45
-00:01:50,215 --> 00:01:52,903
-To the impatient proctors in the observation box,
-
-46
-00:01:52,990 --> 00:01:55,015
-the stone appeared completely dormant.
-
-47
-00:01:55,778 --> 00:01:58,078
-The diagnostic needles barely twitched,
-
-48
-00:01:58,240 --> 00:02:01,615
-recording zero elemental discharge and zero mana particle
-
-49
-00:02:01,628 --> 00:02:02,478
-radiation.
-
-50
-00:02:03,340 --> 00:02:06,028
-The automated registrar issued its cold verdict:
-
-51
-00:02:06,178 --> 00:02:07,928
-Double F-Rank evaluation.
-
-52
-00:02:08,690 --> 00:02:09,528
-Skill One:
-
-53
-00:02:09,628 --> 00:02:10,878
-Micro-Spatial Fold,
-
-54
-00:02:11,028 --> 00:02:13,528
-range restricted to a pathetic one millimetre.
-
-55
-00:02:14,290 --> 00:02:15,165
-Skill Two:
-
-56
-00:02:15,378 --> 00:02:17,290
-Localized Point Gravity Shift,
-
-57
-00:02:17,340 --> 00:02:19,490
-limited to direct physical contact.
-
-58
-00:02:20,253 --> 00:02:22,640
-The arena erupted into mocking laughter.
-
-59
-00:02:23,403 --> 00:02:25,678
-The examiners scribbled a red mark across his
-
-60
-00:02:25,690 --> 00:02:26,415
-profile:
-
-61
-00:02:26,590 --> 00:02:28,265
-Class F Scavenger Division.
-
-62
-00:02:29,028 --> 00:02:31,278
-A glorified porter who couldn't even cast a
-
-63
-00:02:31,290 --> 00:02:32,703
-spark to light a candle.
-
-64
-00:02:33,580 --> 00:02:34,980
-High in the proctor box,
-
-65
-00:02:35,105 --> 00:02:37,893
-Head Examiner Keith Morgan watched Caelen step down
-
-66
-00:02:37,905 --> 00:02:40,305
-without a shred of disappointment on his face.
-
-67
-00:02:41,068 --> 00:02:43,130
-The battle-scarred veteran leaned forward,
-
-68
-00:02:43,268 --> 00:02:45,980
-his cybernetic prosthetic arm clicking as he zoomed
-
-69
-00:02:45,993 --> 00:02:47,118
-in on the pedestal.
-
-70
-00:02:47,880 --> 00:02:49,143
-Beneath Caelen's feet,
-
-71
-00:02:49,268 --> 00:02:52,168
-the reinforced granite slab hadn't melted from heat
-
-72
-00:02:52,418 --> 00:02:54,730
-it had been compressed into high-density diamond under
-
-73
-00:02:54,743 --> 00:02:57,680
-fifty atmospheres of silent gravitational pressure.
-
-74
-00:02:58,564 --> 00:03:01,464
-Caelen quietly walked toward the Class F benches,
-
-75
-00:03:01,589 --> 00:03:04,289
-adjusting the straps of his fingerless grip gloves.
-
-76
-00:03:05,052 --> 00:03:08,439
-The academy's primitive testing crystals were calibrated solely
-
-77
-00:03:08,452 --> 00:03:10,214
-for explosive chemical mana.
-
-78
-00:03:10,977 --> 00:03:12,914
-They couldn't perceive the true horror of his
-
-79
-00:03:12,927 --> 00:03:13,602
-awakening:
-
-80
-00:03:13,839 --> 00:03:15,502
-he hadn't received weak spells
-
-81
-00:03:15,739 --> 00:03:18,414
-he had been granted absolute administrative authority over
-
-82
-00:03:18,427 --> 00:03:19,627
-Space and Gravity.
-
-83
-00:03:20,500 --> 00:03:23,438
-The annual Academy Survival Trial took place within
-
-84
-00:03:23,450 --> 00:03:24,675
-the Obsidian Hollows,
-
-85
-00:03:24,775 --> 00:03:27,613
-a perilous subterranean dimensional rift three hundred metres
-
-86
-00:03:27,625 --> 00:03:29,313
-below the imperial capital.
-
-87
-00:03:30,075 --> 00:03:31,300
-The rules were simple:
-
-88
-00:03:31,500 --> 00:03:34,038
-Class A elites would clear the primary vanguard
-
-89
-00:03:34,050 --> 00:03:36,875
-paths to secure high-value dungeon monster cores,
-
-90
-00:03:37,038 --> 00:03:39,038
-while Class F porters were forced to follow
-
-91
-00:03:39,050 --> 00:03:39,613
-behind,
-
-92
-00:03:39,788 --> 00:03:42,375
-hauling hundreds of kilograms of dimensional ballast and
-
-93
-00:03:42,388 --> 00:03:44,013
-raw monster carapaces.
-
-94
-00:03:44,884 --> 00:03:46,822
-Caelen marched at the rear of the convoy
-
-95
-00:03:46,834 --> 00:03:48,259
-alongside Lyra Fenn,
-
-96
-00:03:48,484 --> 00:03:50,697
-a timid first-year alchemist who had been demoted
-
-97
-00:03:50,709 --> 00:03:52,947
-to Class F for failing her offensive combat
-
-98
-00:03:52,959 --> 00:03:53,622
-exam.
-
-99
-00:03:54,384 --> 00:03:56,609
-Lyra struggled under the weight of an extraction
-
-100
-00:03:56,622 --> 00:03:57,097
-pack,
-
-101
-00:03:57,309 --> 00:03:59,709
-her round brass goggles sliding down her nose
-
-102
-00:03:59,722 --> 00:04:02,047
-as she surveyed the jagged cavern walls.
-
-103
-00:04:02,908 --> 00:04:04,771
-Stay close to the corridor wall,
-
-104
-00:04:04,883 --> 00:04:07,021
-Lyra," Caelen advised in a calm,
-
-105
-00:04:07,183 --> 00:04:08,108
-measured tone.
-
-106
-00:04:08,871 --> 00:04:12,371
-He had already calculated the subterranean acoustic resonance.
-
-107
-00:04:13,133 --> 00:04:16,033
-The rock formations here bottleneck the air currents.
-
-108
-00:04:16,796 --> 00:04:18,708
-If a swarm breaches the vanguard,
-
-109
-00:04:18,821 --> 00:04:20,808
-the center path will turn into a slaughter
-
-110
-00:04:20,821 --> 00:04:21,333
-zone."
-
-111
-00:04:22,204 --> 00:04:23,017
-Ahead of them,
-
-112
-00:04:23,154 --> 00:04:25,317
-Prince Valen led the Class A vanguard with
-
-113
-00:04:25,329 --> 00:04:26,592
-theatrical arrogance,
-
-114
-00:04:26,754 --> 00:04:30,079
-incinerating low-tier F-Rank Shadow Crawlers with wide-arc
-
-115
-00:04:30,092 --> 00:04:31,104
-solar beams.
-
-116
-00:04:31,867 --> 00:04:34,367
-He wasted massive pools of mana on fodder
-
-117
-00:04:34,379 --> 00:04:37,242
-monsters to impress the floating broadcast drones,
-
-118
-00:04:37,392 --> 00:04:40,254
-completely ignoring the structural integrity of the surrounding
-
-119
-00:04:40,267 --> 00:04:41,279
-cavern ceiling.
-
-120
-00:04:42,148 --> 00:04:44,848
-Suddenly, the ground convulsed violently.
-
-121
-00:04:45,611 --> 00:04:47,936
-A deep crimson rift tear split across the
-
-122
-00:04:47,948 --> 00:04:50,923
-cavern floor, corrupting the dungeon mana field.
-
-123
-00:04:51,686 --> 00:04:53,823
-The standard low-tier beasts vanished,
-
-124
-00:04:53,973 --> 00:04:56,723
-replaced by the terrifying screech of an unscheduled
-
-125
-00:04:56,736 --> 00:04:57,961
-Calamity mutation:
-
-126
-00:04:58,173 --> 00:04:59,898
-the Void-Carapace Goliath.
-
-127
-00:05:00,661 --> 00:05:04,023
-A four-metre tall subterranean predator encased in obsidian
-
-128
-00:05:04,036 --> 00:05:04,523
-chitin,
-
-129
-00:05:04,761 --> 00:05:08,573
-its segmented armor vibrating with anti-magic dimensional frequencies.
-
-130
-00:05:09,436 --> 00:05:10,549
-Valen panicked.
-
-131
-00:05:11,311 --> 00:05:14,074
-He unleashed his signature S-Rank Solar Lance,
-
-132
-00:05:14,261 --> 00:05:17,099
-hurling a blinding spear of concentrated golden plasma
-
-133
-00:05:17,111 --> 00:05:18,899
-directly at the beast's cranium.
-
-134
-00:05:19,661 --> 00:05:22,799
-But the Goliath's void-carapace absorbed the magical blast
-
-135
-00:05:22,811 --> 00:05:23,436
-instantly,
-
-136
-00:05:23,586 --> 00:05:26,211
-deflecting the thermal heat into the rock walls.
-
-137
-00:05:26,974 --> 00:05:28,574
-The beast didn't even flinch
-
-138
-00:05:28,786 --> 00:05:29,836
-it lunged forward,
-
-139
-00:05:30,011 --> 00:05:32,349
-snapping the front rank of mithril shields like
-
-140
-00:05:32,361 --> 00:05:33,324
-dry twigs.
-
-141
-00:05:34,204 --> 00:05:36,417
-Faced with genuine life-or-death pressure,
-
-142
-00:05:36,567 --> 00:05:38,867
-Valen's aristocratic composure shattered.
-
-143
-00:05:39,629 --> 00:05:42,029
-Rather than establishing a defensive perimeter,
-
-144
-00:05:42,229 --> 00:05:44,492
-he ordered a full retreat toward the extraction
-
-145
-00:05:44,504 --> 00:05:45,004
-lift.
-
-146
-00:05:45,767 --> 00:05:47,092
-To buy himself time,
-
-147
-00:05:47,254 --> 00:05:49,842
-Valen activated the emergency quarantine lever,
-
-148
-00:05:50,042 --> 00:05:52,479
-dropping a heavy iron portcullis behind him and
-
-149
-00:05:52,492 --> 00:05:54,554
-sealing Class F inside the cavern with the
-
-150
-00:05:54,567 --> 00:05:55,692
-charging behemoth.
-
-151
-00:05:56,572 --> 00:05:58,985
-The cavern plunged into absolute darkness,
-
-152
-00:05:59,172 --> 00:06:01,585
-save for the ominous violet glow radiating from
-
-153
-00:06:01,597 --> 00:06:03,472
-the Goliath's armored carapace.
-
-154
-00:06:04,235 --> 00:06:06,272
-The trapped Class F students fell to their
-
-155
-00:06:06,285 --> 00:06:07,322
-knees in despair,
-
-156
-00:06:07,510 --> 00:06:10,372
-their basic iron weapons shaking against the impenetrable
-
-157
-00:06:10,385 --> 00:06:11,322
-stone floor.
-
-158
-00:06:12,085 --> 00:06:14,397
-The Goliath let out an earth-shattering roar,
-
-159
-00:06:14,535 --> 00:06:16,272
-targeting the nearest living prey
-
-160
-00:06:16,472 --> 00:06:17,547
+00:01:39,905 --> 00:01:40,955
 Caelen Vance.
 
+41
+00:01:41,836 --> 00:01:44,686
+Unlike the aristocrats draped in enchanted silks,
+
+42
+00:01:44,849 --> 00:01:47,274
+Caelen stepped onto the stage wearing an unadorned
+
+43
+00:01:47,286 --> 00:01:48,674
+charcoal cadet tunic,
+
+44
+00:01:48,849 --> 00:01:50,961
+dark hair falling messily across sharp,
+
+45
+00:01:51,074 --> 00:01:52,586
+observant violet eyes.
+
+46
+00:01:53,452 --> 00:01:54,965
+For three grueling years,
+
+47
+00:01:55,040 --> 00:01:57,577
+Caelen had studied dimensional physics in the academy
+
+48
+00:01:57,590 --> 00:02:00,490
+archives, knowing true power lay not in flashy
+
+49
+00:02:00,502 --> 00:02:01,315
+fireworks,
+
+50
+00:02:01,477 --> 00:02:03,777
+but in the fundamental constants of spacetime.
+
+51
+00:02:04,660 --> 00:02:07,073
+Caelen calmly placed his bare palm against the
+
+52
+00:02:07,085 --> 00:02:09,210
+frozen surface of the Resonance Pillar.
+
+53
+00:02:10,084 --> 00:02:12,147
+The massive monolith hummed with a deep,
+
+54
+00:02:12,322 --> 00:02:14,284
+subterranean acoustic vibration,
+
+55
+00:02:14,509 --> 00:02:16,909
+yet no flames roared and no lightning split
+
+56
+00:02:16,922 --> 00:02:17,547
+the air.
+
+57
+00:02:18,412 --> 00:02:21,200
+To the impatient examiners in the observation booth,
+
+58
+00:02:21,337 --> 00:02:24,150
+the ancient testing pillar appeared entirely dormant,
+
+59
+00:02:24,325 --> 00:02:26,700
+its elemental needles flatlining at zero.
+
+60
+00:02:27,580 --> 00:02:30,718
+The automated registrar chimed with an emotionless mechanical
+
+61
+00:02:30,730 --> 00:02:31,293
+voice:
+
+62
+00:02:31,480 --> 00:02:33,693
+Double F-Rank evaluation recorded.
+
+63
+00:02:34,564 --> 00:02:35,402
+Skill One:
+
+64
+00:02:35,502 --> 00:02:36,752
+Micro-Spatial Fold,
+
+65
+00:02:36,902 --> 00:02:39,402
+range restricted to a pathetic one millimetre.
+
+66
+00:02:40,164 --> 00:02:41,039
+Skill Two:
+
+67
+00:02:41,252 --> 00:02:43,202
+Localized Point Gravity Shift,
+
+68
+00:02:43,289 --> 00:02:45,327
+limited strictly to physical touch.
+
+69
+00:02:46,204 --> 00:02:48,592
+Mocking laughter swept through the noble stands as
+
+70
+00:02:48,604 --> 00:02:51,842
+examiners stamped a crimson rejection seal across Caelen's
+
+71
+00:02:51,854 --> 00:02:52,492
+dossier:
+
+72
+00:02:52,729 --> 00:02:54,292
+Assigned to Scavenger Unit.
+
+73
+00:02:55,156 --> 00:02:56,556
+High in the proctor box,
+
+74
+00:02:56,681 --> 00:02:59,481
+Head Examiner Keith Morgan watched Caelen step down
+
+75
+00:02:59,494 --> 00:03:02,031
+without a flicker of disappointment in his posture.
+
+76
+00:03:02,908 --> 00:03:05,183
+The battle-scarred veteran narrowed his eyes,
+
+77
+00:03:05,333 --> 00:03:08,071
+his enchanted cybernetic prosthetic arm humming as he
+
+78
+00:03:08,083 --> 00:03:11,033
+zoomed his visual sensors onto the testing pedestal.
+
+79
+00:03:11,908 --> 00:03:13,296
+Beneath Caelen's boots,
+
+80
+00:03:13,396 --> 00:03:16,308
+the reinforced granite slab hadn't melted from heat
+
+81
+00:03:16,558 --> 00:03:18,996
+it had been compressed into solid industrial diamond
+
+82
+00:03:19,008 --> 00:03:22,221
+under fifty atmospheres of silent gravitational force.
+
+83
+00:03:23,092 --> 00:03:25,980
+Caelen quietly walked toward the Class F benches,
+
+84
+00:03:26,142 --> 00:03:28,492
+tightening the straps of his fingerless grip gloves
+
+85
+00:03:28,505 --> 00:03:29,917
+with an unbothered smirk.
+
+86
+00:03:30,796 --> 00:03:33,634
+The academy's primitive testing arrays were built solely
+
+87
+00:03:33,646 --> 00:03:35,246
+for crude chemical combustion;
+
+88
+00:03:35,471 --> 00:03:37,684
+they could never comprehend that he held absolute
+
+89
+00:03:37,696 --> 00:03:40,234
+administrative authority over Space and Gravity.
+
+90
+00:03:41,116 --> 00:03:44,104
+The annual Academy Survival Trial commenced three hundred
+
+91
+00:03:44,116 --> 00:03:46,904
+metres beneath the capital within the perilous subterranean
+
+92
+00:03:46,916 --> 00:03:49,179
+labyrinth known as the Obsidian Hollows.
+
+93
+00:03:50,044 --> 00:03:51,657
+The protocol was ruthless:
+
+94
+00:03:51,844 --> 00:03:54,182
+Class A elites pushed the vanguard to farm
+
+95
+00:03:54,194 --> 00:03:55,744
+glory and monster cores,
+
+96
+00:03:55,907 --> 00:03:58,007
+while Class F porters marched in the rear,
+
+97
+00:03:58,207 --> 00:04:00,932
+hauling hundreds of kilograms of extraction ballast.
+
+98
+00:04:01,804 --> 00:04:04,304
+Caelen marched in the rear flank alongside Lyra
+
+99
+00:04:04,317 --> 00:04:04,767
+Fenn,
+
+100
+00:04:04,979 --> 00:04:07,517
+a timid first-year alchemist demoted to Class F
+
+101
+00:04:07,529 --> 00:04:09,892
+after failing her offensive casting exam.
+
+102
+00:04:10,756 --> 00:04:12,906
+Lyra stumbled beneath the heavy weight of her
+
+103
+00:04:12,919 --> 00:04:14,181
+alchemical haul-pack
+
+104
+00:04:14,406 --> 00:04:16,781
+her round brass goggles sliding down her nose
+
+105
+00:04:16,794 --> 00:04:19,069
+as she surveyed the jagged cavern ceiling.
+
+106
+00:04:19,948 --> 00:04:21,523
+Keep close to the left wall,
+
+107
+00:04:21,636 --> 00:04:23,761
+Lyra," Caelen instructed quietly,
+
+108
+00:04:23,961 --> 00:04:27,323
+observing the damp mineral formations and acoustic reverberations
+
+109
+00:04:27,336 --> 00:04:28,148
+of the trench.
+
+110
+00:04:29,020 --> 00:04:32,058
+The corridor here naturally funnels atmospheric pressure;
+
+111
+00:04:32,270 --> 00:04:34,108
+if the vanguard causes a breach,
+
+112
+00:04:34,258 --> 00:04:36,558
+this center path will transform into a lethal
+
+113
+00:04:36,570 --> 00:04:37,270
+kill-zone
+
+114
+00:04:38,140 --> 00:04:38,953
+Ahead of them,
+
+115
+00:04:39,090 --> 00:04:41,790
+Prince Valen commanded the forward squad with reckless
+
+116
+00:04:41,803 --> 00:04:42,403
+vanity,
+
+117
+00:04:42,615 --> 00:04:46,428
+incinerating low-tier Shadow Crawlers with wide-arc solar beams.
+
+118
+00:04:47,308 --> 00:04:50,008
+Valen incinerated harmless fodder to show off for
+
+119
+00:04:50,021 --> 00:04:51,558
+the floating camera drones,
+
+120
+00:04:51,746 --> 00:04:54,558
+utterly disregarding the fragile structural integrity of the
+
+121
+00:04:54,571 --> 00:04:56,171
+surrounding cavern arches.
+
+122
+00:04:57,052 --> 00:04:59,465
+Caelen counted Valen's mana expenditure:
+
+123
+00:04:59,690 --> 00:05:02,715
+thirty percent wasted on aesthetic flourishes while basic
+
+124
+00:05:02,727 --> 00:05:05,615
+subterranean protocol dictated defensive reserve.
+
+125
+00:05:06,484 --> 00:05:09,509
+Without warning, the stone floor convulsed violently
+
+126
+00:05:09,522 --> 00:05:12,247
+under a sickening frequency of spatial distortion.
+
+127
+00:05:13,108 --> 00:05:15,558
+A jagged crimson rift tore open across the
+
+128
+00:05:15,571 --> 00:05:16,283
+main tunnel,
+
+129
+00:05:16,433 --> 00:05:18,833
+corrupting the dungeon mana field and swallowing the
+
+130
+00:05:18,846 --> 00:05:21,083
+low-tier monster spawns in an instant.
+
+131
+00:05:21,964 --> 00:05:24,877
+From the dimensional tear emerged the horrifying silhouette
+
+132
+00:05:24,889 --> 00:05:26,977
+of an unscheduled Calamity Mutation:
+
+133
+00:05:27,202 --> 00:05:28,927
+the Void-Carapace Goliath.
+
+134
+00:05:29,788 --> 00:05:31,738
+Standing over four metres tall,
+
+135
+00:05:31,901 --> 00:05:35,113
+the chitinous titan possessed obsidian armor plating vibrating
+
+136
+00:05:35,126 --> 00:05:38,376
+with anti-magic dimensional frequencies and dual razor scythe
+
+137
+00:05:38,388 --> 00:05:39,188
+forelimbs.
+
+138
+00:05:40,060 --> 00:05:42,635
+Panic instantly shattered the Class A vanguard as
+
+139
+00:05:42,648 --> 00:05:45,273
+their elemental barriers flickered out against the Goliath's
+
+140
+00:05:45,285 --> 00:05:46,473
+anti-magic aura.
+
+141
+00:05:47,356 --> 00:05:49,169
+Valen shrieked in desperation,
+
+142
+00:05:49,319 --> 00:05:52,119
+charging his signature S-Rank Solar Lance and hurling
+
+143
+00:05:52,131 --> 00:05:54,844
+a massive concentrated plasma javelin at the monster's
+
+144
+00:05:54,856 --> 00:05:55,406
+skull.
+
+145
+00:05:56,284 --> 00:05:58,809
+The radiant lance struck the Goliath's cranium with
+
+146
+00:05:58,822 --> 00:05:59,984
+blinding brilliance,
+
+147
+00:06:00,159 --> 00:06:02,972
+but dissipated harmlessly into thermal heat across its
+
+148
+00:06:02,984 --> 00:06:04,647
+void-plated exoskeleton.
+
+149
+00:06:05,409 --> 00:06:07,097
+Zero damage inflicted.
+
+150
+00:06:07,972 --> 00:06:09,697
+The Goliath didn't even flinch;
+
+151
+00:06:09,922 --> 00:06:12,010
+it lunged forward with hydraulic fury,
+
+152
+00:06:12,222 --> 00:06:15,297
+snapping the vanguard's reinforced mithril shields like dry
+
+153
+00:06:15,310 --> 00:06:15,935
+kindling.
+
+154
+00:06:16,804 --> 00:06:18,554
+Faced with genuine mortality,
+
+155
+00:06:18,729 --> 00:06:21,942
+Prince Valen's aristocratic arrogance evaporated into cowardly
+
+156
+00:06:21,954 --> 00:06:24,367
+panic as he broke formation and bolted toward
+
+157
+00:06:24,379 --> 00:06:25,592
+the extraction lift.
+
+158
+00:06:26,452 --> 00:06:28,065
+Seal the quarantine gate!"
+
+159
+00:06:28,827 --> 00:06:31,152
+Valen screamed at the mechanical operator,
+
+160
+00:06:31,290 --> 00:06:34,227
+clawing his way into the reinforced elevator cage.
+
 161
-00:06:18,412 --> 00:06:20,362
-The colossal predator accelerated,
+00:06:35,092 --> 00:06:36,655
+To ensure his own escape,
 
 162
-00:06:20,562 --> 00:06:23,350
-its razor obsidian scythe forelimbs slicing through the
+00:06:36,780 --> 00:06:39,467
+Valen forcefully pulled the emergency iron lever,
 
 163
-00:06:23,362 --> 00:06:25,712
-subterranean air with the force of a hydraulic
+00:06:39,642 --> 00:06:42,805
+dropping a three-ton spiked iron portcullis behind him.
 
 164
-00:06:25,725 --> 00:06:26,337
-press.
+00:06:43,684 --> 00:06:46,034
+The heavy iron teeth slammed into the stone
 
 165
-00:06:27,100 --> 00:06:29,250
-Lyra screamed for Caelen to dodge,
+00:06:46,047 --> 00:06:48,084
+foundation with an ear-splitting crash,
 
 166
-00:06:29,337 --> 00:06:31,237
-but the young man didn't move an inch.
+00:06:48,259 --> 00:06:49,147
+locking Caelen,
 
 167
-00:06:32,000 --> 00:06:33,962
-He planted his boots into the dust and
+00:06:49,297 --> 00:06:49,784
+Lyra,
 
 168
-00:06:33,975 --> 00:06:35,800
-raised a single unarmored hand.
+00:06:49,972 --> 00:06:51,972
+and the Class F squad inside the dark
 
 169
-00:06:36,676 --> 00:06:39,451
-The Goliath's lethal scythe struck Caelen's chest at
+00:06:51,984 --> 00:06:52,559
+cavern.
 
 170
-00:06:39,464 --> 00:06:40,676
-maximum velocity
+00:06:53,428 --> 00:06:54,828
+Trapped behind the bars,
 
 171
-00:06:40,889 --> 00:06:42,451
-and came to a dead stop.
+00:06:54,941 --> 00:06:56,866
+the porter students fell to their knees in
 
 172
-00:06:43,214 --> 00:06:44,551
-There was no explosion,
+00:06:56,878 --> 00:06:59,303
+despair as the Goliath turned its glowing purple
 
 173
-00:06:44,701 --> 00:06:45,851
-no spray of blood,
+00:06:59,316 --> 00:07:00,878
+optical clusters toward them.
 
 174
-00:06:45,989 --> 00:06:47,251
-and no shockwave.
+00:07:01,756 --> 00:07:03,094
+Valen abandoned us...
 
 175
-00:06:48,014 --> 00:06:50,264
-At exactly one millimetre from his skin,
+00:07:03,194 --> 00:07:03,856
+we're dead!"
 
 176
-00:06:50,439 --> 00:06:53,526
-Caelen's Micro-Spatial Fold redirected the entire kinetic
+00:07:04,031 --> 00:07:05,006
+a student wailed,
 
 177
-00:06:53,539 --> 00:06:55,664
-trajectory into adjacent empty air.
+00:07:05,119 --> 00:07:07,606
+dropping his iron pickaxe against the dust.
 
 178
-00:06:56,426 --> 00:06:57,314
-To the monster,
+00:07:08,476 --> 00:07:10,789
+In the pitch-black cavern illuminated only by the
 
 179
-00:06:57,439 --> 00:06:58,751
-it was as if it had struck an
+00:07:10,801 --> 00:07:12,626
+monster's violet rift fissures,
 
 180
-00:06:58,764 --> 00:07:00,651
-infinitely deep spatial abyss.
+00:07:12,789 --> 00:07:14,051
+Caelen stepped forward,
 
 181
-00:07:01,414 --> 00:07:03,214
-Zero damage penetration.
+00:07:14,201 --> 00:07:16,614
+dropping his extraction satchel without a hint of
 
 182
-00:07:04,084 --> 00:07:06,472
-My turn," Caelen whispered coldly.
+00:07:16,626 --> 00:07:17,189
+fear.
 
 183
-00:07:07,234 --> 00:07:09,497
-He stepped forward and placed his palm against
+00:07:18,052 --> 00:07:20,302
+The Goliath emitted an ear-splitting screech,
 
 184
-00:07:09,509 --> 00:07:11,697
-the Goliath's impenetrable chest plate.
+00:07:20,502 --> 00:07:23,377
+its muscular segmented legs propelling its massive bulk
 
 185
-00:07:12,459 --> 00:07:14,072
-He activated Skill Two:
+00:07:23,390 --> 00:07:26,040
+across the cavern floor at terrifying speed.
 
 186
-00:07:14,272 --> 00:07:16,409
-Point Gravitational Density Shift.
+00:07:26,908 --> 00:07:29,396
+Its dual razor scythes whistled through the air,
 
 187
-00:07:17,172 --> 00:07:18,234
-In a microsecond,
+00:07:29,583 --> 00:07:32,258
+descending in a lethal downward execution arc aimed
 
 188
-00:07:18,372 --> 00:07:21,909
-he concentrated fifty times standard gravitational acceleration
+00:07:32,271 --> 00:07:33,858
+directly at Caelen's skull.
 
 189
-00:07:21,922 --> 00:07:23,934
-into a pinpoint area no larger than a
+00:07:34,732 --> 00:07:37,495
+Lyra shrieked, shutting her eyes and covering her
 
 190
-00:07:23,947 --> 00:07:24,509
-coin.
+00:07:37,507 --> 00:07:39,920
+face in terror as the heavy obsidian blade
 
 191
-00:07:25,372 --> 00:07:28,260
-The atmospheric pressure inside the cavern imploded with
+00:07:39,932 --> 00:07:40,982
+made contact.
 
 192
-00:07:28,272 --> 00:07:29,735
-a deafening sonic boom.
+00:07:41,860 --> 00:07:43,885
+Yet there was no sound of tearing flesh
 
 193
-00:07:30,497 --> 00:07:33,597
-The Goliath's unbreakable chitinous armor caved inward
+00:07:43,898 --> 00:07:45,235
+and no spray of blood.
 
 194
-00:07:33,610 --> 00:07:35,710
-under the weight of twenty tons of localized
+00:07:46,108 --> 00:07:48,846
+At precisely one millimetre from Caelen's chest,
 
 195
-00:07:35,722 --> 00:07:37,010
-gravitational pull.
+00:07:48,971 --> 00:07:51,433
+the Goliath's lethal scythe ground to a dead,
 
 196
-00:07:37,772 --> 00:07:40,472
-Its internal organs and mana core were pulverized
+00:07:51,571 --> 00:07:54,033
+absolute halt against an invisible barrier.
 
 197
-00:07:40,485 --> 00:07:43,497
-simultaneously, collapsing the multi-ton titan into
+00:07:54,916 --> 00:07:58,054
+Caelen's Micro-Spatial Fold had curved the local geometry
 
 198
-00:07:43,510 --> 00:07:44,110
-a dense,
+00:07:58,066 --> 00:07:58,741
+of space,
 
 199
-00:07:44,285 --> 00:07:46,535
-crushed sphere of stone and bone that crashed
+00:07:58,941 --> 00:08:01,979
+redirecting thousands of kilograms of kinetic momentum into
 
 200
-00:07:46,547 --> 00:07:48,260
-lifelessly to the cavern floor.
+00:08:01,991 --> 00:08:03,616
+an adjacent dimensional void.
 
 201
-00:07:49,132 --> 00:07:51,420
-The silence in the cavern was suffocating.
+00:08:04,492 --> 00:08:05,892
+To the Calamity monster,
 
 202
-00:07:52,182 --> 00:07:54,820
-Lyra and the surviving Class F students stared
+00:08:06,067 --> 00:08:07,780
+it was as if its strike had collided
 
 203
-00:07:54,832 --> 00:07:56,095
-in utter disbelief.
+00:08:07,792 --> 00:08:10,205
+with the unyielding mass of an entire planetary
 
 204
-00:07:56,857 --> 00:07:59,145
-The mutated calamity beast that had routed the
+00:08:10,217 --> 00:08:10,742
+core.
 
 205
-00:07:59,157 --> 00:08:01,857
-Academy's top S-Rank prodigy had been erased in
+00:08:11,505 --> 00:08:13,305
+Zero damage penetration.
 
 206
-00:08:01,870 --> 00:08:04,370
-three seconds by an F-Rank scavenger who hadn't
+00:08:14,188 --> 00:08:16,488
+Caelen looked up into the beast's glowing purple
 
 207
-00:08:04,382 --> 00:08:05,482
-even drawn a weapon.
+00:08:16,501 --> 00:08:16,976
+eyes,
 
 208
-00:08:06,364 --> 00:08:09,202
-Caelen calmly leaned down and extracted the pristine,
+00:08:17,126 --> 00:08:20,301
+his own irises swirling with deep amethyst gravitational
 
 209
-00:08:09,377 --> 00:08:11,939
-glowing violet S-Rank Void Core from the crushed
+00:08:20,313 --> 00:08:20,926
+rings.
 
 210
-00:08:11,952 --> 00:08:12,702
-remains.
+00:08:21,796 --> 00:08:24,421
+My turn," Caelen murmured in a chillingly calm
 
 211
-00:08:13,464 --> 00:08:14,777
-In the imperial market,
+00:08:24,434 --> 00:08:25,196
+monotone.
 
 212
-00:08:14,914 --> 00:08:17,364
-this single dimensional asset was worth over three
+00:08:26,068 --> 00:08:28,231
+He stepped into the monster's reach and pressed
 
 213
-00:08:17,377 --> 00:08:18,939
-thousand Gold Sovereigns
+00:08:28,243 --> 00:08:30,181
+his flat palm against the center of its
 
 214
-00:08:19,189 --> 00:08:21,389
-enough to purchase a private estate and fund
+00:08:30,193 --> 00:08:32,168
+unbreakable chitinous chest plate.
 
 215
-00:08:21,402 --> 00:08:24,414
-an entire laboratory of high-grade dimensional research.
+00:08:33,052 --> 00:08:34,477
+Activating Skill Two:
 
 216
-00:08:25,177 --> 00:08:27,289
-He slipped the core into his inner utility
+00:08:34,690 --> 00:08:36,715
+Point Gravitational Density Shift,
 
 217
-00:08:27,302 --> 00:08:29,614
-pocket, his expression undisturbed.
+00:08:36,877 --> 00:08:40,027
+Caelen concentrated fifty times planetary gravitational
 
 218
-00:08:30,484 --> 00:08:32,384
-Using his micro-gravity shift,
+00:08:40,040 --> 00:08:42,640
+acceleration into a contact point no larger than
 
 219
-00:08:32,522 --> 00:08:35,572
-Caelen effortlessly lifted the several-ton iron portcullis
+00:08:42,652 --> 00:08:43,290
+a coin.
 
 220
-00:08:35,584 --> 00:08:36,797
-that Valen had sealed,
+00:08:44,164 --> 00:08:46,802
+The atmospheric pressure within the cavern collapsed with
 
 221
-00:08:36,997 --> 00:08:39,409
-leading the stunned Class F students safely back
+00:08:46,814 --> 00:08:48,639
+an explosive sonic implosion,
 
 222
-00:08:39,422 --> 00:08:41,059
-toward the extraction elevator.
+00:08:48,852 --> 00:08:51,777
+sucking all ambient oxygen toward Caelen's palm.
 
 223
-00:08:41,822 --> 00:08:44,297
-They stepped out into the surface staging pavilion
+00:08:52,660 --> 00:08:55,798
+The Goliath's indestructible armor caved inward under twenty
 
 224
-00:08:44,309 --> 00:08:47,097
-just as the emergency rescue sirens wailed across
+00:08:55,810 --> 00:08:58,085
+tons of localized gravitational pull,
 
 225
-00:08:47,109 --> 00:08:48,484
-the academy grounds.
+00:08:58,273 --> 00:09:00,573
+crushing its internal organs and skeleton in a
 
 226
-00:08:49,348 --> 00:08:51,648
-Prince Valen stood before the proctor board,
+00:09:00,585 --> 00:09:01,860
+fraction of a second.
 
 227
-00:08:51,823 --> 00:08:54,686
-breathlessly fabricating a heroic narrative about how he
+00:09:02,740 --> 00:09:05,228
+The multi-ton titan collapsed into a dense,
 
 228
-00:08:54,698 --> 00:08:57,136
-had valiantly held off the calamity beast before
+00:09:05,365 --> 00:09:07,990
+compacted sphere of shattered carapace and bone,
 
 229
-00:08:57,148 --> 00:09:00,073
-an unavoidable structural collapse separated his squad.
+00:09:08,203 --> 00:09:11,090
+crashing lifelessly onto the fractured stone floor.
 
 230
-00:09:00,836 --> 00:09:03,961
-His father's guild representatives were already preparing press
+00:09:11,956 --> 00:09:15,006
+Suffocating silence descended over the cavern as Lyra
 
 231
-00:09:03,973 --> 00:09:06,973
-releases to spin the retreat into tactical brilliance.
+00:09:15,019 --> 00:09:17,206
+and the surviving Class F students stared in
 
 232
-00:09:07,852 --> 00:09:10,340
-The pavilion fell dead silent as the elevator
+00:09:17,219 --> 00:09:18,656
+petrified disbelief.
 
 233
-00:09:10,352 --> 00:09:11,152
-doors parted,
+00:09:19,540 --> 00:09:21,928
+The Calamity beast that had routed the Academy's
 
 234
-00:09:11,377 --> 00:09:13,852
-revealing Caelen Vance and the entire Class F
+00:09:21,940 --> 00:09:24,228
+top S-Rank prodigy had been erased in three
 
 235
-00:09:13,865 --> 00:09:16,115
-unit alive without a single casualty.
+00:09:24,240 --> 00:09:26,540
+seconds by an F-Rank reject who hadn't even
 
 236
-00:09:16,877 --> 00:09:19,527
-Head Examiner Keith Morgan pushed through the crowd,
+00:09:26,553 --> 00:09:27,715
+unsheathed a blade.
 
 237
-00:09:19,690 --> 00:09:22,277
-his heavy cybernetic shoulder humming as he inspected
+00:09:28,588 --> 00:09:30,776
+Caelen knelt beside the crushed remains,
 
 238
-00:09:22,290 --> 00:09:24,315
-the pristine, uninjured students.
+00:09:30,888 --> 00:09:32,613
+calmly prying loose a pristine,
 
 239
-00:09:25,180 --> 00:09:28,143
-Valen Sol-Aegis claimed the Goliath was an unstoppable
+00:09:32,801 --> 00:09:34,938
+pulsing violet S-Rank Void Core.
 
 240
-00:09:28,155 --> 00:09:30,193
-S-Rank mutation that wiped the cavern,"
+00:09:35,812 --> 00:09:37,137
+In the imperial market,
 
 241
-00:09:30,355 --> 00:09:33,343
-Keith stated, his steel gaze fixing upon Caelen.
+00:09:37,287 --> 00:09:39,762
+this single dimensional crystal was valued at three
 
 242
-00:09:34,105 --> 00:09:35,380
-Who killed the beast?"
+00:09:39,775 --> 00:09:41,325
+thousand Gold Sovereigns
 
 243
-00:09:36,244 --> 00:09:38,969
-Caelen adjusted the collar of his charcoal uniform,
+00:09:41,537 --> 00:09:44,612
+an astronomical fortune sufficient to establish a sovereign
 
 244
-00:09:39,069 --> 00:09:40,094
-offering a polite,
+00:09:44,625 --> 00:09:45,875
+research laboratory.
 
 245
-00:09:40,282 --> 00:09:41,919
-indifferent academy salute.
+00:09:46,756 --> 00:09:49,019
+He slipped the radiant core into his concealed
 
 246
-00:09:42,682 --> 00:09:45,644
-The beast suffered a catastrophic structural implosion from
+00:09:49,031 --> 00:09:50,431
+inner trench-coat pocket,
 
 247
-00:09:45,657 --> 00:09:47,494
-cavern pressure, Examiner.
+00:09:50,631 --> 00:09:53,394
+then walked over to the three-ton iron portcullis.
 
 248
-00:09:48,257 --> 00:09:50,157
-We merely scavenged the path."
+00:09:54,268 --> 00:09:56,143
+With a casual flick of his wrist,
 
 249
-00:09:51,028 --> 00:09:54,228
-Keith inspected the subtle micro-gravitational ripples lingering
+00:09:56,281 --> 00:09:59,168
+Caelen negated the gate's gravitational mass and hoisted
 
 250
-00:09:54,241 --> 00:09:55,366
-on Caelen's cuffs,
+00:09:59,181 --> 00:10:01,518
+the massive iron barrier with a single hand,
 
 251
-00:09:55,491 --> 00:09:56,153
-a slow,
+00:10:01,681 --> 00:10:03,881
+beckoning the stunned students toward the lift.
 
 252
-00:09:56,366 --> 00:09:59,216
-knowing smirk forming across the veteran's scarred jaw.
+00:10:04,756 --> 00:10:06,269
+Up on the surface pavilion,
 
 253
-00:09:59,978 --> 00:10:01,891
-Valen gritted his teeth in fury,
+00:10:06,456 --> 00:10:09,444
+emergency alarm sirens blared as Prince Valen spun
 
 254
-00:10:02,053 --> 00:10:04,278
-sensing his royal authority slipping away,
+00:10:09,456 --> 00:10:12,069
+a shameless heroic fable to the academy proctors
 
 255
-00:10:04,503 --> 00:10:07,091
-while Caelen melted quietly back into the academy
+00:10:12,081 --> 00:10:13,931
+about his tactical sacrifice.
 
 256
-00:10:07,103 --> 00:10:07,716
-crowd.
+00:10:14,812 --> 00:10:17,387
+The pavilion fell dead silent as the extraction
 
 257
-00:10:08,478 --> 00:10:11,191
-The Imperial Academy believed they had evaluated an
+00:10:17,400 --> 00:10:18,675
+elevator doors parted,
 
 258
-00:10:11,203 --> 00:10:12,278
-F-Rank reject
+00:10:18,900 --> 00:10:21,387
+revealing Caelen Vance and the entire Class F
 
 259
-00:10:12,453 --> 00:10:14,553
-unaware that the true Sovereign of Space and
+00:10:21,400 --> 00:10:23,787
+unit walking out without a single scratch.
 
 260
-00:10:14,566 --> 00:10:16,403
-Gravity had just begun his reign.
+00:10:24,652 --> 00:10:27,290
+Head Examiner Keith Morgan pushed through the crowd,
+
+261
+00:10:27,452 --> 00:10:30,077
+his mechanical arm whirring as his analytical gaze
+
+262
+00:10:30,090 --> 00:10:32,677
+locked directly onto Caelen's calm expression.
+
+263
+00:10:33,556 --> 00:10:34,969
+Caelen offered a crisp,
+
+264
+00:10:35,044 --> 00:10:36,344
+polite cadet salute,
+
+265
+00:10:36,494 --> 00:10:38,856
+murmuring that the beast suffered a structural pressure
+
+266
+00:10:38,869 --> 00:10:39,531
+collapse
+
+267
+00:10:39,756 --> 00:10:40,794
+while in his eyes,
+
+268
+00:10:40,906 --> 00:10:43,431
+the silent sovereign authority of Space and Gravity
+
+269
+00:10:43,444 --> 00:10:44,456
+began to reign.
