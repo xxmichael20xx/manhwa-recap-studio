@@ -11,6 +11,7 @@ import { ImageService } from './services/imageService.js'
 import { VideoService } from './services/videoService.js'
 import { ActivityLogService } from './services/activityLogService.js'
 import { VisualQaService } from './services/visualQaService.js'
+import { PackagingService } from './services/packagingService.js'
 
 dotenv.config()
 
@@ -780,6 +781,17 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
     }
     res.writeHead(200, head)
     fs.createReadStream(videoPath).pipe(res)
+  }
+})
+
+// YouTube Packaging & Release Suite (Titles, Description, Timestamps, 16:9 Thumbnail Prompts)
+app.get('/api/episodes/:franchiseId/:episodeId/youtube-package', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const pkg = await PackagingService.generatePackage(franchiseId, episodeId)
+    res.json(pkg)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
   }
 })
 
