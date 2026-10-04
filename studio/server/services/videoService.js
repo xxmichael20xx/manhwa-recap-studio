@@ -311,16 +311,16 @@ export class VideoService {
   }
 
   /**
-   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Liquid Glide:
-   * - 60 FPS high temporal frame density to eliminate motion stepping.
+   * Render authentic Manhwa Recap Sub-Pixel 24 FPS Cinematic Liquid Glide:
+   * - 24 FPS standard cinematic anime cadence (slashes compute overhead by 60%).
    * - In-browser Skia floating-point sub-pixel rasterization with 40px feathered ambient drop shadow.
    * - 100% Constant uniform linear velocity from frame 0 to frame N (zero slow starts, zero speedups, zero dead stalls).
    */
   static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
-    const fps = 60
+    const fps = 24
     const durationSec = Math.max(1.0, framesCount / 30)
 
-    // 1. Primary: Omni-Directional Sub-Pixel GPU Motion Engine (60 FPS Sub-Pixel Interpolation)
+    // 1. Primary: Omni-Directional Sub-Pixel GPU Motion Engine (24 FPS Sub-Pixel Interpolation)
     try {
       return await MotionEngine.renderSceneClip({
         imagePath,
@@ -501,8 +501,8 @@ export class VideoService {
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
       message: isBatchCompile 
-        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 60fps Sub-Pixel Skia clips...`
-        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 60fps Sub-Pixel Skia clips...`,
+        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 24fps Sub-Pixel Skia clips...`
+        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 24fps Sub-Pixel Skia clips...`,
       log: [
         ...(this.compilationState[key].log || []),
         isBatchCompile 
@@ -521,6 +521,18 @@ export class VideoService {
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
       const batch = targetBeats.slice(i, i + concurrency)
+      const chunkTags = batch.map(b => `[${b.tag}]`).join(', ')
+
+      this.updateStatus(franchiseId, episodeId, {
+        message: isBatchCompile
+          ? `[Batch ${batchLetter}] ⚡ Computing clips ${chunkTags} (6 parallel Skia threads)...`
+          : `⚡ Computing clips ${chunkTags} (6 parallel Skia threads)...`,
+        log: [
+          ...(this.compilationState[key].log || []).slice(-20),
+          `⚡ [Workers Active] Rendering chunk ${Math.floor(i / concurrency) + 1}/${Math.ceil(targetBeats.length / concurrency)}: ${chunkTags}`
+        ]
+      })
+
       await Promise.all(batch.map(async (beat, batchIdx) => {
         const beatIndex = i + batchIdx
         const globalBeatIdx = isBatchCompile ? (batchIdxNum * 24 + beatIndex) : beatIndex
@@ -568,11 +580,11 @@ export class VideoService {
         this.updateStatus(franchiseId, episodeId, {
           progress: progressPct,
           message: isBatchCompile
-            ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
+            ? `[Batch ${batchLetter}] Rendered ${completedClips}/${targetBeats.length} clips (Latest: [${beat.tag}])...`
             : `Rendered ${completedClips} of ${targetBeats.length} Sub-Pixel Skia clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
-            `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
+            `✓ Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s) [24 FPS]`
           ]
         })
       }))
@@ -740,7 +752,7 @@ export class VideoService {
         '-c:v', 'libx264',
         '-preset', 'veryfast',
         '-crf', '20',
-        '-r', '60',
+        '-r', '24',
         '-c:a', 'aac',
         '-b:a', '192k',
         '-shortest',
