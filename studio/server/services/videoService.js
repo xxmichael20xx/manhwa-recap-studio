@@ -285,173 +285,39 @@ export class VideoService {
   }
 
   /**
-   * Render authentic Manhwa Recap Constant-Speed 60 FPS Liquid Glide:
+   * Render authentic Manhwa Recap Sub-Pixel 60 FPS Liquid Glide:
+   * - 60 FPS high temporal frame density to eliminate motion stepping.
+   * - In-browser Skia floating-point sub-pixel rasterization with 40px feathered ambient drop shadow.
    * - 100% Constant uniform linear velocity from frame 0 to frame N (zero slow starts, zero speedups, zero dead stalls).
-   * - One-shot Sharp pre-rendered ambient blurred background (<10ms via C++ libvips SIMD).
-   * - Native multi-threaded FFmpeg C++ bicubic antialiased filter graphs at 60 FPS for buttery smooth broadcast motion.
    */
   static async renderFullBleedKenBurnsClip(imagePath, isVertical, framesCount, motionIndex, outputPath) {
     const fps = 60
     const durationSec = Math.max(1.0, framesCount / 30)
-    const frames = Math.max(60, Math.round(durationSec * fps))
 
-    const tempDir = path.dirname(outputPath)
-    const tempBgPath = path.join(tempDir, `bg_${path.basename(outputPath, '.mp4')}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}.jpg`)
-
-    let meta = { width: 768, height: 1376 }
+    // 1. Primary: Omni-Directional Sub-Pixel GPU Motion Engine (60 FPS Sub-Pixel Interpolation)
     try {
-      meta = await sharp(imagePath).metadata()
-    } catch (e) {}
-
-    const imgW = meta.width || 768
-    const imgH = meta.height || 1376
-    const isTallStrip = (imgH / imgW) >= 1.35
-
-    // 100% Constant Linear Motion (Equal distance traversed on every frame)
-    const linearProgress = `(n/${frames})`
-    const linearProgressInv = `(1.0-(n/${frames}))`
-
-    if (isVertical) {
-      // 1. Generate 1920x1080 blurred ambient backdrop plate once with Sharp (<10ms)
+      return await MotionEngine.renderSceneClip({
+        imagePath,
+        durationSec,
+        fps,
+        motionIndex,
+        outputPath
+      })
+    } catch (motionErr) {
+      console.warn(`MotionEngine attempt 1 failed for ${path.basename(imagePath)}, recycling browser and retrying:`, motionErr.message)
       try {
-        await sharp(imagePath)
-          .resize(1920, 1080, { fit: 'cover' })
-          .blur(35)
-          .modulate({ brightness: 0.55, saturation: 1.30 })
-          .toFile(tempBgPath)
-      } catch (e) {
-        // Fallback to solid dark background
-        await sharp({
-          create: {
-            width: 1920,
-            height: 1080,
-            channels: 3,
-            background: { r: 11, g: 15, b: 25 }
-          }
-        }).jpeg().toFile(tempBgPath)
+        await MotionEngine.closeBrowser()
+        return await MotionEngine.renderSceneClip({
+          imagePath,
+          durationSec,
+          fps,
+          motionIndex,
+          outputPath
+        })
+      } catch (retryErr) {
+        console.error(`MotionEngine retry failed for ${path.basename(imagePath)}:`, retryErr.message)
+        throw retryErr
       }
-
-      let filterComplex = ''
-
-      if (isTallStrip) {
-        // Multi-panel tall manhwa strip: 680px width, centered at X=620, constant linear speed
-        const stripDisplayW = 680
-        const stripDisplayH = Math.round((imgH / imgW) * stripDisplayW)
-        const maxScrollY = Math.max(0, stripDisplayH - 1080)
-        const centerX = Math.round((1920 - stripDisplayW) / 2) // 620px
-
-        const tallStripPresets = [
-          // 0. Constant Linear Reading Glide Down (Top to Bottom at uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 1. Constant Diagonal Reading Glide (Scroll down while panning right at uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x='${centerX - 20}+40*${linearProgress}':y=0[comp];[comp]format=yuv420p[vout]`,
-          // 2. Constant Linear Reading Glide Down (Centered uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 3. Constant Linear Reveal Glide Up (Bottom to Top at uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgressInv})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`,
-          // 4. Constant Diagonal Reading Glide (Scroll down while panning left at uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x='${centerX + 20}-40*${linearProgress}':y=0[comp];[comp]format=yuv420p[vout]`,
-          // 5. Constant Linear Reading Glide Down (Centered uniform speed)
-          `[1:v]scale=w=${stripDisplayW}:h=${stripDisplayH}:flags=bicubic,crop=w=${stripDisplayW}:h=1080:x=0:y='max(0,${maxScrollY}*${linearProgress})'[strip];[0:v][strip]overlay=x=${centerX}:y=0[comp];[comp]format=yuv420p[vout]`
-        ]
-        filterComplex = tallStripPresets[motionIndex % tallStripPresets.length]
-      } else {
-        // Single panel vertical card
-        const stripHeight = 1040
-        const stripWidth = Math.round((imgW / imgH) * stripHeight)
-        const centerX = Math.round((1920 - stripWidth) / 2)
-        const centerY = 20
-
-        const cardPresets = [
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x='${centerX - 20}+40*${linearProgress}':y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x=${centerX}:y=${centerY}[comp];[comp]format=yuv420p[vout]`,
-          `[1:v]scale=w=${stripWidth}:h=${stripHeight}:flags=bicubic[strip];[0:v][strip]overlay=x='${centerX + 20}-40*${linearProgress}':y=${centerY}[comp];[comp]format=yuv420p[vout]`
-        ]
-        filterComplex = cardPresets[motionIndex % cardPresets.length]
-      }
-
-      const args = [
-        '-y',
-        '-loop', '1', '-t', String(durationSec), '-i', tempBgPath,
-        '-loop', '1', '-t', String(durationSec), '-i', imagePath,
-        '-filter_complex', filterComplex,
-        '-map', '[vout]',
-        '-c:v', 'libx264',
-        '-preset', 'veryfast',
-        '-crf', '19',
-        '-r', '60',
-        '-frames:v', String(frames),
-        outputPath
-      ]
-
-      return new Promise((resolve, reject) => {
-        const proc = spawn('ffmpeg', args)
-        let stderr = ''
-        proc.stderr.on('data', d => { stderr += d.toString() })
-        proc.on('close', async code => {
-          try { await fs.unlink(tempBgPath) } catch (_) {}
-          if (code === 0) {
-            resolve(outputPath)
-          } else {
-            console.error(`FFmpeg vertical strip render error (${imagePath}):`, stderr.slice(-400))
-            reject(new Error(`Strip scroll rendering failed for ${path.basename(imagePath)}`))
-          }
-        })
-        proc.on('error', async err => {
-          try { await fs.unlink(tempBgPath) } catch (_) {}
-          reject(err)
-        })
-      })
-    } else {
-      // Landscape Panels (Constant Linear 60fps 16:9 Pan, Zoom & Sweeps)
-      const maxLandScrollX = 280
-      const maxLandScrollY = 158
-
-      const landscapePresets = [
-        // 0. Constant Pan Left to Right
-        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgress})':y='(ih-1080)/2',format=yuv420p[vout]`,
-        // 1. Constant Hero Zoom In
-        `[0:v]scale=w='2200*(1.0+0.05*${linearProgress})':h='1238*(1.0+0.05*${linearProgress})':eval=frame:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
-        // 2. Constant Pan Right to Left
-        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgressInv})':y='(ih-1080)/2',format=yuv420p[vout]`,
-        // 3. Constant Diagonal Sweep
-        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='max(0,${maxLandScrollX}*${linearProgress})':y='max(0,${maxLandScrollY}*${linearProgress})',format=yuv420p[vout]`,
-        // 4. Constant Hero Zoom Out
-        `[0:v]scale=w='2200*(1.05-0.05*${linearProgress})':h='1238*(1.05-0.05*${linearProgress})':eval=frame:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:(iw-1920)/2:(ih-1080)/2,format=yuv420p[vout]`,
-        // 5. Constant Pan Top to Bottom
-        `[0:v]scale=w=2200:h=1238:flags=bicubic:force_original_aspect_ratio=increase,crop=1920:1080:x='(iw-1920)/2':y='max(0,${maxLandScrollY}*${linearProgress})',format=yuv420p[vout]`
-      ]
-      const filterComplex = landscapePresets[motionIndex % landscapePresets.length]
-
-      const args = [
-        '-y',
-        '-loop', '1', '-t', String(durationSec),
-        '-i', imagePath,
-        '-filter_complex', filterComplex,
-        '-map', '[vout]',
-        '-c:v', 'libx264',
-        '-preset', 'veryfast',
-        '-crf', '19',
-        '-r', '60',
-        '-frames:v', String(frames),
-        outputPath
-      ]
-
-      return new Promise((resolve, reject) => {
-        const proc = spawn('ffmpeg', args)
-        let stderr = ''
-        proc.stderr.on('data', d => { stderr += d.toString() })
-        proc.on('close', code => {
-          if (code === 0) {
-            resolve(outputPath)
-          } else {
-            console.error(`FFmpeg landscape render error (${imagePath}):`, stderr.slice(-400))
-            reject(new Error(`Landscape clip rendering failed for ${path.basename(imagePath)}`))
-          }
-        })
-        proc.on('error', reject)
-      })
     }
   }
 
@@ -592,8 +458,8 @@ export class VideoService {
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
       message: isBatchCompile 
-        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing Turbo C++ 30fps clips...`
-        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing Turbo C++ 30fps clips...`,
+        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 60fps Sub-Pixel Skia clips...`
+        : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 60fps Sub-Pixel Skia clips...`,
       log: [
         ...(this.compilationState[key].log || []),
         isBatchCompile 
@@ -605,9 +471,9 @@ export class VideoService {
     // Get list of existing images on disk
     const existingFiles = fsSync.existsSync(imagesDir) ? await fs.readdir(imagesDir) : []
 
-    // 3. Render Ken Burns clips in managed concurrency (6 at a time for multi-threaded CPU SIMD)
+    // 3. Render Ken Burns clips in managed concurrency (2 at a time for optimal browser GPU memory)
     const clipFiles = []
-    const concurrency = 6
+    const concurrency = 2
     let completedClips = 0
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
@@ -660,7 +526,7 @@ export class VideoService {
           progress: progressPct,
           message: isBatchCompile
             ? `Rendered Batch ${batchLetter} clip ${completedClips}/${targetBeats.length} ([${beat.tag}])...`
-            : `Rendered ${completedClips} of ${targetBeats.length} Turbo C++ clips ([${beat.tag}])...`,
+            : `Rendered ${completedClips} of ${targetBeats.length} Sub-Pixel Skia clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
             `Rendered clip ${beatIndex + 1}/${targetBeats.length} [${beat.tag}] (${beat.duration.toFixed(1)}s)`
@@ -797,16 +663,20 @@ export class VideoService {
       })
 
       proc.on('close', async code => {
-        // Clean up temporary clip and composite directories
+        // Clean up temporary clip and composite directories, and browser instance
         try {
           await fs.rm(tempClipsDir, { recursive: true, force: true })
           await fs.rm(tempCompositesDir, { recursive: true, force: true })
           await fs.unlink(cleanTempSrt)
         } catch (e) {}
+        try {
+          await MotionEngine.closeBrowser()
+        } catch (e) {}
 
         if (code === 0) {
           const successMsg = isBatchCompile
             ? `Batch ${batchLetter} Preview (${targetBeats.length} cuts) compiled successfully!`
+            : `Master 1080p Video compiled successfully with ${targetBeats.length} synced Ken Burns cuts!`
             : `Master 1080p Video compiled successfully with ${targetBeats.length} synced Ken Burns cuts!`
           this.updateStatus(franchiseId, episodeId, {
             status: 'completed',

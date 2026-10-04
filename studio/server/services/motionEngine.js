@@ -121,20 +121,8 @@ export class MotionEngine {
               const framesBase64 = [];
 
               for (let i = 0; i < totalFrames; i++) {
-                const t = totalFrames > 1 ? (i / (totalFrames - 1)) : 0;
-                const breathZoom = 1.0 + 0.026 * Math.sin(Math.PI * t);
-                const sineEase = 0.5 - 0.5 * Math.cos(Math.PI * t);
-
-                // 3-Phase Snap & Glide curve for reading strips
-                let snapProgress = 0;
-                if (t < 0.35) {
-                  snapProgress = 0;
-                } else if (t > 0.65) {
-                  snapProgress = 1.0;
-                } else {
-                  const subT = (t - 0.35) / (0.65 - 0.35);
-                  snapProgress = 0.5 - 0.5 * Math.cos(Math.PI * subT);
-                }
+                // 100% Constant Uniform Linear Velocity: Equal delta on every single frame from frame 0 to frame N
+                const linearProgress = totalFrames > 1 ? (i / (totalFrames - 1)) : 0;
 
                 ctx.drawImage(bgCanvas, 0, 0);
 
@@ -145,44 +133,42 @@ export class MotionEngine {
                 if (isVertical) {
                   let curX = baseCenterX;
                   let curY = baseCenterY;
-                  let curZoom = breathZoom;
+                  let curZoom = 1.0;
 
                   if (isTallStrip) {
-                    if (motionType === 'vertical_snap_down') {
-                      // 1. Top to Bottom
-                      curY = -(snapProgress * maxScrollY);
-                    } else if (motionType === 'vertical_snap_up') {
-                      // 2. Bottom to Top
-                      curY = -((1.0 - snapProgress) * maxScrollY);
+                    if (motionType === 'vertical_snap_up') {
+                      // 1. Bottom to Top Constant Linear Glide
+                      curY = -((1.0 - linearProgress) * maxScrollY);
                     } else if (motionType === 'vertical_diagonal_left_to_right') {
-                      // 3. Top-Left to Bottom-Right
-                      curY = -(snapProgress * maxScrollY);
-                      curX = (baseCenterX - 30) + (sineEase * 60);
+                      // 2. Constant Diagonal Glide Down-Right
+                      curY = -(linearProgress * maxScrollY);
+                      curX = (baseCenterX - 20) + (linearProgress * 40);
                     } else if (motionType === 'vertical_diagonal_right_to_left') {
-                      // 4. Top-Right to Bottom-Left
-                      curY = -(snapProgress * maxScrollY);
-                      curX = (baseCenterX + 30) - (sineEase * 60);
+                      // 3. Constant Diagonal Glide Down-Left
+                      curY = -(linearProgress * maxScrollY);
+                      curX = (baseCenterX + 20) - (linearProgress * 40);
                     } else if (motionType === 'vertical_zoom_in') {
-                      // 5. Center Dramatic Push-In
-                      curY = -(sineEase * maxScrollY);
-                      curZoom = 1.0 + 0.055 * sineEase;
+                      // 4. Constant Glide with Subtle Push-In
+                      curY = -(linearProgress * maxScrollY);
+                      curZoom = 1.0 + 0.035 * linearProgress;
                     } else if (motionType === 'vertical_zoom_out') {
-                      // 6. Center Contextual Pull-Out
-                      curY = -(sineEase * maxScrollY);
-                      curZoom = 1.055 - 0.055 * sineEase;
+                      // 5. Constant Glide with Subtle Pull-Out
+                      curY = -(linearProgress * maxScrollY);
+                      curZoom = 1.035 - 0.035 * linearProgress;
                     } else {
-                      curY = -(snapProgress * maxScrollY);
+                      // 6. Standard Top to Bottom Constant Linear Glide
+                      curY = -(linearProgress * maxScrollY);
                     }
                   } else {
                     // Single vertical panel
                     if (motionType === 'vertical_snap_up') {
-                      curZoom = 1.0 + 0.045 * sineEase;
+                      curZoom = 1.0 + 0.035 * linearProgress;
                     } else if (motionType === 'vertical_zoom_out') {
-                      curZoom = 1.045 - 0.045 * sineEase;
+                      curZoom = 1.035 - 0.035 * linearProgress;
                     } else if (motionType === 'vertical_diagonal_left_to_right') {
-                      curX = (baseCenterX - 25) + (sineEase * 50);
+                      curX = (baseCenterX - 20) + (linearProgress * 40);
                     } else if (motionType === 'vertical_diagonal_right_to_left') {
-                      curX = (baseCenterX + 25) - (sineEase * 50);
+                      curX = (baseCenterX + 20) - (linearProgress * 40);
                     }
                   }
 
@@ -190,6 +176,7 @@ export class MotionEngine {
                   ctx.scale(curZoom, curZoom);
                   ctx.translate(-960, -540);
 
+                  // Skia sub-pixel floating-point antialiasing + rich ambient drop shadow
                   ctx.shadowColor = 'rgba(0, 0, 0, 0.90)';
                   ctx.shadowBlur = 40;
                   ctx.shadowOffsetX = 0;
@@ -202,35 +189,35 @@ export class MotionEngine {
                   ctx.strokeStyle = 'rgba(255, 255, 255, 0.10)';
                   ctx.strokeRect(curX, curY, stripDisplayW, stripDisplayH);
                 } else {
-                  // Landscape Artwork Omni-Directional Modes
+                  // Landscape Artwork Omni-Directional Modes (Constant Linear Speed)
                   let curX = landCenterX;
                   let curY = landCenterY;
                   let curZoom = 1.0;
 
                   if (motionType === 'pan_left_to_right') {
-                    // 1. Left to Right
-                    curX = -(maxLandScrollX * (1.0 - sineEase));
+                    // 1. Constant Left to Right
+                    curX = -(maxLandScrollX * (1.0 - linearProgress));
                   } else if (motionType === 'pan_right_to_left') {
-                    // 2. Right to Left
-                    curX = -(maxLandScrollX * sineEase);
+                    // 2. Constant Right to Left
+                    curX = -(maxLandScrollX * linearProgress);
                   } else if (motionType === 'pan_top_to_bottom') {
-                    // 3. Top to Bottom
-                    curY = -(maxLandScrollY * sineEase);
+                    // 3. Constant Top to Bottom
+                    curY = -(maxLandScrollY * linearProgress);
                   } else if (motionType === 'pan_bottom_to_top') {
-                    // 4. Bottom to Top
-                    curY = -(maxLandScrollY * (1.0 - sineEase));
+                    // 4. Constant Bottom to Top
+                    curY = -(maxLandScrollY * (1.0 - linearProgress));
                   } else if (motionType === 'hero_zoom_in') {
-                    // 5. Hero Push-In
-                    curZoom = 1.0 + 0.075 * sineEase;
+                    // 5. Constant Hero Push-In
+                    curZoom = 1.0 + 0.05 * linearProgress;
                   } else if (motionType === 'hero_zoom_out') {
-                    // 6. Hero Pull-Out
-                    curZoom = 1.075 - 0.075 * sineEase;
+                    // 6. Constant Hero Pull-Out
+                    curZoom = 1.05 - 0.05 * linearProgress;
                   } else if (motionType === 'pan_diagonal_sweep') {
-                    // 7. Diagonal Sweep
-                    curX = -(maxLandScrollX * (1.0 - sineEase));
-                    curY = -(maxLandScrollY * sineEase);
+                    // 7. Constant Diagonal Sweep
+                    curX = -(maxLandScrollX * (1.0 - linearProgress));
+                    curY = -(maxLandScrollY * linearProgress);
                   } else {
-                    curZoom = breathZoom;
+                    curX = -(maxLandScrollX * (1.0 - linearProgress));
                   }
 
                   ctx.translate(960, 540);
@@ -242,7 +229,7 @@ export class MotionEngine {
 
                 ctx.restore();
 
-                framesBase64.push(canvas.toDataURL('image/jpeg', 0.78).slice(23));
+                framesBase64.push(canvas.toDataURL('image/jpeg', 0.80).slice(23));
               }
 
               resolve(framesBase64);
