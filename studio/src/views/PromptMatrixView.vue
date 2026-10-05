@@ -1092,6 +1092,19 @@ const copyDirective = async () => {
   }
 }
 
+const getShortcodeCollectionName = (batchName) => {
+  const fRaw = route.params.franchiseId || 'Series_02'
+  const eRaw = route.params.episodeId || 'EP01'
+  
+  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
+  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
+
+  const bLetterMatch = (batchName || '').match(/Batch\s+([A-Z])/i)
+  const batchCode = bLetterMatch ? `B.${bLetterMatch[1]}` : (batchName || 'Batch').replace(/\s+/g, '_')
+
+  return `Se.${sNum}.EP.${epNum}.${batchCode}`
+}
+
 const formatCollectionHeader = (collectionTitle) => {
   return `[MANDATORY GOOGLE FLOW INSTRUCTION: CREATE & ASSIGN COLLECTION]
 Before or immediately upon generating the images below, YOU MUST CREATE A COLLECTION NAMED:
@@ -1107,9 +1120,7 @@ const copyBatchByIndex = (index) => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
-  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
-  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
-  const collectionTitle = `${franchiseTag} - ${episodeTag} - ${batch.name} (${batch.startTag} to ${batch.endTag})`
+  const collectionTitle = getShortcodeCollectionName(batch.name)
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1147,9 +1158,7 @@ const copySelectedPrompts = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
-  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
-  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
-  const collectionTitle = `${franchiseTag} - ${episodeTag} - Selected Scenes (${selectedItems.length} Panels)`
+  const collectionTitle = getShortcodeCollectionName('Selected')
 
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1180,9 +1189,7 @@ const copyMissingPrompts = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
-  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
-  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
-  const collectionTitle = `${franchiseTag} - ${episodeTag} - Missing Scenes (${missingItems.length} Panels)`
+  const collectionTitle = getShortcodeCollectionName('Missing')
 
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1212,9 +1219,7 @@ const copyAllMaster = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
-  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
-  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
-  const collectionTitle = `${franchiseTag} - ${episodeTag} - Master Deck (${parsedPrompts.value.length} Panels)`
+  const collectionTitle = getShortcodeCollectionName('Master')
 
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
