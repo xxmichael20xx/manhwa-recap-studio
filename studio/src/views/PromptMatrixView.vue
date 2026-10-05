@@ -31,6 +31,19 @@
           <span>Sync</span>
         </button>
 
+        <!-- Flow System Directive Button (Format-Aware: 16:9 vs 9:16) -->
+        <button 
+          @click="isDirectiveModalOpen = true"
+          class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold flex items-center space-x-2 transition-all shadow-md shadow-blue-950/30 cursor-pointer"
+          title="Open Google Flow System Instructions & Renaming Directives"
+        >
+          <FileCode2 class="w-4 h-4 text-cyan-200" />
+          <span>Flow Instructions</span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-blue-950/60 border border-blue-400/30 text-cyan-100 font-bold">
+            {{ activeDirectiveFormat === '16:9' ? '16:9' : '9:16' }}
+          </span>
+        </button>
+
         <!-- Character & Item Vault Drawer Trigger -->
         <button 
           @click="isVaultDrawerOpen = true"
@@ -648,17 +661,134 @@
         </div>
       </div>
     </Teleport>
+
+    <!-- Google Flow System Directive Modal (Format-Aware: 16:9 vs 9:16) -->
+    <Teleport to="body">
+      <div 
+        v-if="isDirectiveModalOpen" 
+        class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6"
+        @keydown.esc="isDirectiveModalOpen = false"
+      >
+        <!-- Backdrop -->
+        <div 
+          @click="isDirectiveModalOpen = false" 
+          class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"
+        />
+
+        <!-- Modal Card -->
+        <div class="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+          <!-- Modal Header -->
+          <div class="p-5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/80 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400">
+                <FileCode2 class="w-5 h-5" />
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                  <span>Google Flow System Instructions</span>
+                  <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 font-bold">
+                    {{ activeDirectiveFormat === '16:9' ? 'Format 2 (16:9)' : 'Format 1 (9:16)' }}
+                  </span>
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                  Pre-execution requirement for sequential image synthesis & auto-renaming
+                </p>
+              </div>
+            </div>
+            <button 
+              @click="isDirectiveModalOpen = false"
+              class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            >
+              <X class="w-5 h-5" />
+            </button>
+          </div>
+
+          <!-- Format Switcher Bar -->
+          <div class="px-5 py-3 border-b border-slate-200 dark:border-slate-800 bg-slate-100/60 dark:bg-slate-900/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Target Series Format:</span>
+            <div class="flex items-center space-x-1.5 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono">
+              <button 
+                @click="activeDirectiveFormat = '16:9'"
+                class="px-3 py-1 rounded-lg font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="activeDirectiveFormat === '16:9' 
+                  ? 'bg-white dark:bg-slate-900 text-cyan-600 dark:text-cyan-400 shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <span>16:9 Full Bleed Landscape</span>
+                <span class="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 font-mono font-bold">Series 02</span>
+              </button>
+              <button 
+                @click="activeDirectiveFormat = '9:16'"
+                class="px-3 py-1 rounded-lg font-bold transition cursor-pointer flex items-center space-x-1.5"
+                :class="activeDirectiveFormat === '9:16' 
+                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+              >
+                <span>9:16 Vertical Webtoon</span>
+                <span class="text-[10px] px-1.5 py-0.2 rounded bg-purple-500/15 text-purple-600 dark:text-purple-400 font-mono font-bold">Series 01</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="p-5 space-y-4 overflow-y-auto flex-1 font-mono text-xs">
+            <div class="p-3.5 rounded-xl bg-cyan-50/60 dark:bg-cyan-950/20 border border-cyan-200/60 dark:border-cyan-500/20 flex items-start space-x-2.5">
+              <ShieldCheck class="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
+              <p class="text-[11px] text-cyan-950 dark:text-cyan-200 leading-relaxed">
+                <strong>Where to paste:</strong> Copy this instruction once into your Google Flow Assistant Settings / System Directives. The agent will automatically generate each scene and immediately invoke the file renaming tool sequentially in the same turn.
+              </p>
+            </div>
+
+            <!-- Code Preview Block -->
+            <div class="relative group">
+              <pre class="p-4 rounded-xl bg-slate-900 text-slate-200 border border-slate-800 text-[11px] leading-relaxed whitespace-pre-wrap font-mono overflow-x-auto select-all">{{ currentDirectiveText }}</pre>
+              <button 
+                @click="copyDirective"
+                class="absolute top-3 right-3 px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-white text-[11px] font-bold border border-slate-700 flex items-center space-x-1.5 transition cursor-pointer shadow-sm"
+              >
+                <Check v-if="copiedDirective" class="w-3.5 h-3.5 text-emerald-400" />
+                <Copy v-else class="w-3.5 h-3.5 text-cyan-300" />
+                <span>{{ copiedDirective ? 'Copied!' : 'Copy Directive' }}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              Format: <strong class="text-slate-900 dark:text-white">{{ activeDirectiveFormat === '16:9' ? '16:9 Widescreen (1920x1080)' : '9:16 Vertical Webtoon (1080x1920)' }}</strong>
+            </span>
+            <div class="flex items-center space-x-2">
+              <button 
+                @click="isDirectiveModalOpen = false"
+                class="px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold transition cursor-pointer"
+              >
+                Close
+              </button>
+              <button 
+                @click="copyDirective"
+                class="px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold flex items-center space-x-2 transition shadow-md shadow-cyan-950/30 cursor-pointer"
+              >
+                <Check v-if="copiedDirective" class="w-4 h-4 text-emerald-200 animate-bounce" />
+                <Copy v-else class="w-4 h-4 text-cyan-200" />
+                <span>{{ copiedDirective ? `Copied ${activeDirectiveFormat} Directive!` : `⚡ Copy ${activeDirectiveFormat} Flow Instructions` }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, RefreshCw, Copy, Check, CheckCircle2, 
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
   AlertCircle, AlertTriangle, Play, Film, Loader2,
-  Users, Download, ExternalLink, Sparkles, Tag
+  Users, Download, ExternalLink, Sparkles, Tag, FileCode2
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -927,48 +1057,58 @@ const clearSelection = () => {
   selectedTags.value = new Set()
 }
 
-const getFlowDirectiveHeader = (collectionTitle) => {
-  const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (rawMarkdown.value || '').includes('16:9')
-  const aspectInstruction = is16x9 
-    ? '16:9 widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
-    : '9:16 native vertical aspect ratio (1080x1920 vertical format)'
+// Google Flow System Directive State & Auto-Detection
+const isDirectiveModalOpen = ref(false)
+const activeDirectiveFormat = ref('16:9') // '16:9' or '9:16'
+const copiedDirective = ref(false)
 
-  return `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION, COLLECTION GROUPING & FULL COMPLETION PROTOCOL]
+const currentDirectiveText = computed(() => {
+  const is16x9 = activeDirectiveFormat.value === '16:9'
+  const aspectRule = is16x9 
+    ? '3. 16:9 FULL-BLEED LANDSCAPE COMPOSITION: Every scene must be rendered as an edge-to-edge 16:9 horizontal landscape manhwa illustration (1920x1080) with sharp ink linework, cinematic contrast, and zero split-panel grids.'
+    : '3. 9:16 VERTICAL WEBTOON COMPOSITION: Every scene must be rendered as an independent full-frame 9:16 vertical manhwa asset (1080x1920) with sharp ink linework, cinematic contrast, and zero split-panel grids.'
 
-📁 MANDATORY COLLECTION GROUPING INSTRUCTION:
-Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
-"${collectionTitle}"
-and automatically assign, group, and organize 100% of all generated scene images into this Collection so they are organized together in Google Flow.
+  return `[PRE-EXECUTION REQUIREMENT: TWO-STEP GENERATION & SEQUENTIAL FILE RENAMING]
+1. MANDATORY TWO-STEP EXECUTION: For every scene generated from the <scene> tags below, you MUST execute two sequential actions within the exact same turn:
+   - Step 1 (Generation): Generate the visual plate matching the prompt and character/item DNA tokens.
+   - Step 2 (Sequential Renaming): Immediately call the file renaming tool to rename each output file to its exact attribute name (e.g. "IMG_001.jpg", "IMG_002.jpg", "IMG_003.jpg").
+2. STRICT ZERO-HASH NAMING: You are strictly forbidden from leaving files with randomized alphanumeric hashes, timestamps, or default names. Every file output must match filename="IMG_XXX.jpg" bit-for-bit.
+${aspectRule}
+4. TEXTLESS ARTWORK: Render pure illustration only. Do not embed speech bubbles, watermarks, or typography into the image unless explicitly quoted inside system HUD descriptions.
+5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, and ZERO severed or floating limbs.
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
+7. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.`
+})
 
-🎨 GENERATION INVARIANTS:
-1. Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
-2. DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
-3. DO NOT generate videos, animations, or ask for confirmation.
-4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
-5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, cup, goblet, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, ZERO duplicate floating arms holding props, and ZERO morphing anomalies.
-7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, ${aspectInstruction}, and high-fidelity textless manhwa artwork.`
+const copyDirective = async () => {
+  try {
+    await navigator.clipboard.writeText(currentDirectiveText.value)
+    copiedDirective.value = true
+    setTimeout(() => {
+      copiedDirective.value = false
+    }, 2500)
+  } catch (err) {
+    console.error('Failed to copy directive:', err)
+  }
 }
 
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
   if (!batch || !batch.items.length) return
 
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - ${batch.name} (${batch.startTag} to ${batch.endTag})`
+  const franchiseId = route.params.franchiseId || 'Series'
+  const episodeId = route.params.episodeId || 'EP01'
+  const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const header = getFlowDirectiveHeader(collectionTitle)
-  const payload = `${header}\n\n${scenesXml}`
+  const payload = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
 
   navigator.clipboard.writeText(payload)
   
@@ -990,20 +1130,19 @@ const copySelectedPrompts = () => {
   const selectedItems = parsedPrompts.value.filter(p => selectedTags.value.has(p.tag))
   if (!selectedItems.length) return
 
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - Selected Scenes (${selectedItems.length} Panels)`
+  const franchiseId = route.params.franchiseId || 'Series'
+  const episodeId = route.params.episodeId || 'EP01'
+  const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const header = getFlowDirectiveHeader(collectionTitle)
-  const payload = `${header}\n\n${scenesXml}`
+  const payload = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'SELECTED'
@@ -1018,20 +1157,19 @@ const copyMissingPrompts = () => {
   const missingItems = parsedPrompts.value.filter(p => !p.hasImage)
   if (!missingItems.length) return
 
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - Missing Scenes (${missingItems.length} Panels)`
+  const franchiseId = route.params.franchiseId || 'Series'
+  const episodeId = route.params.episodeId || 'EP01'
+  const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const header = getFlowDirectiveHeader(collectionTitle)
-  const payload = `${header}\n\n${scenesXml}`
+  const payload = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'MISSING'
@@ -1045,20 +1183,19 @@ const copyMissingPrompts = () => {
 const copyAllMaster = () => {
   if (!parsedPrompts.value.length) return
 
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - Master Deck (${parsedPrompts.value.length} Panels)`
+  const franchiseId = route.params.franchiseId || 'Series'
+  const episodeId = route.params.episodeId || 'EP01'
+  const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const header = getFlowDirectiveHeader(collectionTitle)
-  const payload = `${header}\n\n${scenesXml}`
+  const payload = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
 
   navigator.clipboard.writeText(payload)
   
@@ -1094,6 +1231,11 @@ const loadEpisode = async () => {
     }
 
     rawMarkdown.value = data.promptMatrix || ''
+    
+    // Auto-detect Format (16:9 vs 9:16) from franchise ID and prompt matrix content
+    const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (rawMarkdown.value || '').includes('16:9')
+    activeDirectiveFormat.value = is16x9 ? '16:9' : '9:16'
+    
     parseMarkdownPrompts(rawMarkdown.value, imageMap)
   } catch (err) {
     console.error(err)
