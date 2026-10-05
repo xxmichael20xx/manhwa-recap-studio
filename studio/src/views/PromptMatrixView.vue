@@ -1092,6 +1092,13 @@ const copyDirective = async () => {
   }
 }
 
+const formatCollectionHeader = (collectionTitle) => {
+  return `[MANDATORY GOOGLE FLOW INSTRUCTION: CREATE & ASSIGN COLLECTION]
+Before or immediately upon generating the images below, YOU MUST CREATE A COLLECTION NAMED:
+"${collectionTitle}"
+and automatically assign, group, and organize 100% of all generated scene images into this Collection.`
+}
+
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
   if (!batch || !batch.items.length) return
@@ -1099,6 +1106,10 @@ const copyBatchByIndex = (index) => {
   const franchiseId = route.params.franchiseId || 'Series'
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
+
+  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
+  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
+  const collectionTitle = `${franchiseTag} - ${episodeTag} - ${batch.name} (${batch.startTag} to ${batch.endTag})`
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1108,7 +1119,9 @@ const copyBatchByIndex = (index) => {
     return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const collectionDirective = formatCollectionHeader(collectionTitle)
+  const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${collectionDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -1134,6 +1147,10 @@ const copySelectedPrompts = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
+  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
+  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
+  const collectionTitle = `${franchiseTag} - ${episodeTag} - Selected Scenes (${selectedItems.length} Panels)`
+
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -1142,7 +1159,9 @@ const copySelectedPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const collectionDirective = formatCollectionHeader(collectionTitle)
+  const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${collectionDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'SELECTED'
@@ -1161,6 +1180,10 @@ const copyMissingPrompts = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
+  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
+  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
+  const collectionTitle = `${franchiseTag} - ${episodeTag} - Missing Scenes (${missingItems.length} Panels)`
+
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -1169,7 +1192,9 @@ const copyMissingPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const collectionDirective = formatCollectionHeader(collectionTitle)
+  const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${collectionDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'MISSING'
@@ -1187,6 +1212,10 @@ const copyAllMaster = () => {
   const episodeId = route.params.episodeId || 'EP01'
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
+  const franchiseTag = (route.params.franchiseId || '').match(/Series_(\d+)/i)?.[0]?.replace('_', ' ') || 'Series 02'
+  const episodeTag = (route.params.episodeId || '').match(/EP(\d+)/i)?.[0] || 'EP01'
+  const collectionTitle = `${franchiseTag} - ${episodeTag} - Master Deck (${parsedPrompts.value.length} Panels)`
+
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -1195,7 +1224,9 @@ const copyAllMaster = () => {
     return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const collectionDirective = formatCollectionHeader(collectionTitle)
+  const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${collectionDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
