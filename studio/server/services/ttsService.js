@@ -100,6 +100,8 @@ export class TtsService {
         .replace(/\*\*Runtime:\*\*.*$/gm, '')
         .replace(/\*\*Word Count:\*\*.*$/gm, '')
         .replace(/\*\*Visual Plates:\*\*.*$/gm, '')
+        .replace(/```[\s\S]*?```/g, '')
+        .replace(/\[END OF .*?\]/gi, '')
         .replace(/---+/g, '')
         .trim()
       if (cleanText.length > 0) {
@@ -130,11 +132,16 @@ export class TtsService {
       log: [`Connecting to Edge-TTS neural engine (${voice})...`]
     })
 
-    const tts = new MsEdgeTTS()
-    await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
-      wordBoundaryEnabled: true,
-      sentenceBoundaryEnabled: true
-    })
+    const createClient = async () => {
+      const client = new MsEdgeTTS()
+      await client.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
+        wordBoundaryEnabled: true,
+        sentenceBoundaryEnabled: true
+      })
+      return client
+    }
+
+    let tts = await createClient()
 
     let globalTimeMs = 0
     let sceneIndex = 1
@@ -148,6 +155,9 @@ export class TtsService {
                  .replace(/\*\*(.*?)\*\*/g, '$1')
                  .replace(/\*(.*?)\*/g, '$1')
                  .replace(/\[(.*?)\]/g, '$1')
+                 .replace(/[`]/g, '')
+                 .replace(/&/g, ' and ')
+                 .replace(/[<>]/g, '')
                  .replace(/\$1/g, '')
                  .replace(/—/g, ' — ')
                  .replace(/\n+/g, ' ')
@@ -159,65 +169,86 @@ export class TtsService {
         const filename = `${episodeId}_SC${paddedIndex}.mp3`
         const filePath = path.join(audioDir, filename)
 
-        try {
-          const res = await tts.toStream(text)
-          const chunks = []
-          const rawWords = []
+        let success = false
+        let attempts = 0
+        let buffer = null
+        let rawWords = []
 
-          if (res.metadataStream) {
-            res.metadataStream.on('data', d => {
-              const str = d.toString()
-              try {
-                const json = JSON.parse(str.trim())
-                if (json.Metadata) {
-                  for (const m of json.Metadata) {
-                    if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
-                      rawWords.push({
-                        ttsWord: m.Data.text.Text,
-                        startMs: Math.round(m.Data.Offset / 10000),
-                        endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
-                      })
+        while (!success && attempts < 3) {
+          attempts++
+          try {
+            const res = await tts.toStream(text)
+            const chunks = []
+            rawWords = []
+
+            if (res.metadataStream) {
+              res.metadataStream.on('data', d => {
+                const str = d.toString()
+                try {
+                  const json = JSON.parse(str.trim())
+                  if (json.Metadata) {
+                    for (const m of json.Metadata) {
+                      if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                        rawWords.push({
+                          ttsWord: m.Data.text.Text,
+                          startMs: Math.round(m.Data.Offset / 10000),
+                          endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                        })
+                      }
+                    }
+                  }
+                } catch (e) {
+                  const matches = str.match(/\{[\s\S]*?"Metadata"\s*:\s*\[[\s\S]*?\][\s\S]*?\}/g)
+                  if (matches) {
+                    for (const block of matches) {
+                      try {
+                        const json = JSON.parse(block)
+                        if (json.Metadata) {
+                          for (const m of json.Metadata) {
+                            if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                              rawWords.push({
+                                ttsWord: m.Data.text.Text,
+                                startMs: Math.round(m.Data.Offset / 10000),
+                                endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                              })
+                            }
+                          }
+                        }
+                      } catch (err) {}
                     }
                   }
                 }
-              } catch (e) {
-                // Regex scan fallback in case chunks are concatenated or split
-                const matches = str.match(/\{[\s\S]*?"Metadata"\s*:\s*\[[\s\S]*?\][\s\S]*?\}/g)
-                if (matches) {
-                  for (const block of matches) {
-                    try {
-                      const json = JSON.parse(block)
-                      if (json.Metadata) {
-                        for (const m of json.Metadata) {
-                          if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
-                            rawWords.push({
-                              ttsWord: m.Data.text.Text,
-                              startMs: Math.round(m.Data.Offset / 10000),
-                              endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
-                            })
-                          }
-                        }
-                      }
-                    } catch (err) {}
-                  }
-                }
-              }
-            })
+              })
+            }
+
+            for await (const chunk of res.audioStream) {
+              chunks.push(chunk)
+            }
+
+            buffer = Buffer.concat(chunks)
+            if (buffer.length > 500) {
+              await fs.writeFile(filePath, buffer)
+              success = true
+            } else {
+              throw new Error('Incomplete audio buffer received')
+            }
+          } catch (err) {
+            console.warn(`Retry ${attempts}/3 for scene ${sceneIndex}: ${err.message}`)
+            try { tts.close() } catch (e) {}
+            await new Promise(r => setTimeout(r, 600 * attempts))
+            tts = await createClient()
           }
+        }
 
-          for await (const chunk of res.audioStream) {
-            chunks.push(chunk)
-          }
+        if (success && buffer) {
+          try {
+            generatedAudioFiles.push(filePath)
 
-          const buffer = Buffer.concat(chunks)
-          await fs.writeFile(filePath, buffer)
-          generatedAudioFiles.push(filePath)
-
-          // Measure exact audio duration via ffprobe
-          const exactDurationSec = await this.getAudioDuration(filePath)
-          const exactDurationMs = exactDurationSec > 0 
-            ? Math.round(exactDurationSec * 1000) 
-            : Math.round((buffer.length * 8 * 1000) / 48000)
+            // Measure exact audio duration via ffprobe
+            const exactDurationSec = await this.getAudioDuration(filePath)
+            const exactDurationMs = exactDurationSec > 0 
+              ? Math.round(exactDurationSec * 1000) 
+              : Math.round((buffer.length * 8 * 1000) / 48000)
 
           let parsedSentences = []
 
@@ -347,7 +378,6 @@ export class TtsService {
 
           const pct = Math.min(85, Math.round(10 + (sceneIndex / extractedScenes.length) * 75))
           const currentLogs = [...(this.getStatus(franchiseId, episodeId).log || [])]
-          currentLogs.push(`Synthesized SC${String(sceneIndex).padStart(2, '0')} (${(exactDurationMs / 1000).toFixed(1)}s, ${parsedSentences.length} subtitle cues)`)
           this.updateStatus(franchiseId, episodeId, {
             status: 'running',
             progress: pct,
@@ -355,11 +385,12 @@ export class TtsService {
             log: currentLogs.slice(-25)
           })
         } catch (err) {
-          console.error(`Error generating audio for scene ${sceneIndex}:`, err)
+          console.error(`Error processing audio metadata for scene ${sceneIndex}:`, err)
         }
       }
-      sceneIndex++
     }
+    sceneIndex++
+  }
 
     try {
       tts.close()

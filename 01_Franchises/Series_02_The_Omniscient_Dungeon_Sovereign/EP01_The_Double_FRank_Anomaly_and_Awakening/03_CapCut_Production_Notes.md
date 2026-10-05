@@ -1,11 +1,12 @@
 # 🎬 Series 02: The Omniscient Dungeon Sovereign
 ## Episode 01: The Double F-Rank Anomaly & Day-One Regression
-### Audio, SFX & Video Production Engineering Notes (16:9 Landscape)
+### Audio, SFX & Video Production Engineering Notes (16:9 Landscape — Tier 2 Arc Feature)
 
 > **Franchise:** `Series_02_The_Omniscient_Dungeon_Sovereign`  
 > **Target Format:** Format 2 (16:9 Full Bleed Landscape — 1920×1080)  
 > **Master Track:** Full Bleed 16:9 Horizontal (Zero Sidebars / Zero Blur Wings)  
-> **Voiceover Voice:** `en-US-ChristopherNeural` (Edge-TTS, 140 WPM)
+> **Total Visual Cuts:** Exactly 312 Scene Plates (IMG_001 to IMG_312)  
+> **Voiceover Voice:** `en-US-ChristopherNeural` (Edge-TTS, 140–185 WPM)
 
 ---
 
@@ -17,8 +18,9 @@
 | **04:30 – 13:30** | Temporal Reversion & Awakening | Mysterious Ethereal Synths / Amethyst Pulse | $-16\text{ dB}$ |
 | **13:30 – 27:00** | Scrap Foundry Mod & Bureau Exam | Cyber-Orchestral Industrial / Tension Strings | $-15\text{ dB}$ |
 | **27:00 – 40:30** | Corrupted Subway Swarm & Ricochets | Fast Dark Synthwave / Kinetic Staccato Beats | $-20\text{ dB}$ |
-| **40:30 – 48:00** | Brood Goliath Inverted Decapitation | High-Stakes Epic Hybrid Orchestral Climax | $-22\text{ dB}$ |
-| **48:00 – 54:00** | Proctor Morgan Telemetry Vindication | Triumphant Analytical Ambient / Outro Theme | $-15\text{ dB}$ |
+| **40:30 – 50:45** | Underworld Vaults & Runic Lathe | Gritty Cyber-Industrial Synth / Clockwork Pulse | $-16\text{ dB}$ |
+| **50:45 – 58:30** | Sector 7 Incursion & Shadow Swarm | High-Octane Cinematic Action / Heavy Percussion | $-22\text{ dB}$ |
+| **58:30 – 61:15** | Dread-Reaper Takedown & Telemetry | Triumphant Sovereign Orchestral / Outro Theme | $-15\text{ dB}$ |
 
 ---
 
@@ -30,43 +32,52 @@
 4. **`[IMG_065]` (16:45):** *Heavy mechanical cylinder snap + dual slide rack metallic click.*
 5. **`[IMG_089]` (22:30):** *Quadruple pneumatic compressed-air launch thuds + supersonic projectile whizz.*
 6. **`[IMG_125]` (30:40):** *Thunderous 30mm tungsten kinetic boom + dual upward gas vent hisses.*
-7. **`[IMG_127]` (31:15):** *High-pitch metallic rail ricochet ping + double chitinous decapitation slice.*
-8. **`[IMG_141]` (35:20):** *Twin ground blast detonation + acoustic destructive wave cancellation pop.*
-9. **`[IMG_177]` (44:10):** *Low-frequency inverted double-shot roar + upward steel rail deflect ping.*
-10. **`[IMG_181]` (45:30):** *Eight-ton Goliath armor crash + masonry sliding collapse shudder.*
-11. **`[IMG_199]` (49:45):** *Holographic datapad activation tone + green telemetry waveform hum.*
+7. **`[IMG_177]` (44:10):** *Low-frequency inverted double-shot roar + upward steel rail deflect ping.*
+8. **`[IMG_199]` (49:45):** *Holographic datapad activation tone + green telemetry waveform hum.*
+9. **`[IMG_233]` (52:10):** *Heavy gold sovereign metallic ring on titanium counter.*
+10. **`[IMG_248]` (54:40):** *Sub-millimetre diamond etching scrape + high-pitch runic resonance hum.*
+11. **`[IMG_290]` (57:15):** *Twin Phase-Disruptor kinetic blasts + supersonic 54-degree rail ricochet pings.*
+12. **`[IMG_299]` (58:45):** *120-decibel Acoustic Resonator concussive shockwave detonation.*
+13. **`[IMG_310]` (60:20):** *Hypersonic tungsten sabot penetrator punch + core supernova explosion.*
 
 ---
 
 ## 🚀 YouTube Launchpad & SEO Packaging Metadata
 
-### 1. High-CTR Title Options:
-- **Option 1 (Recommended):** *Betrayed Baggage Porter Regresses 10 Years with 10,000x Calculation Velocity — False F-Rank Dominates All! (Full Movie)*
-- **Option 2:** *They Threw The Weakest F-Rank Into The S-Rank Abyss... But He Regressed 10 Years With Dual Handcannons!*
-- **Option 3:** *Unawakened Carrier Returns To Day 1 With 10,000x Spatial Calculation — Outsmarting Arrogant Noble Guilds!*
-- **Option 4:** *I Was Classified As A Defective F-Rank, But My Mind Calculates 10,000 Spatial Vectors Per Second!*
-- **Option 5:** *From Discarded Porter To Omniscient Sovereign — The 10-Year Regression of Kaelen Thorne!*
+### 1. High-CTR Title Options (Strictly $\le 100$ Characters):
+- **Option 1 (Recommended):** *Betrayed Porter Regresses 10 Years with 10,000x Calculation Velocity!* (72 chars)
+- **Option 2:** *They Threw The Weakest F-Rank Into The Abyss... But He Regressed Day 1!* (74 chars)
+- **Option 3:** *Unawakened Porter Returns to Day 1 with 10,000x Spatial Calculation!* (71 chars)
+- **Option 4:** *I Was Classified as False F-Rank, But My Mind Calculates Every Bullet!* (73 chars)
+- **Option 5:** *From Discarded Porter to Omniscient Sovereign — The 10-Year Regression!* (72 chars)
 
 ### 2. SEO Chapter Timestamps:
 ```text
 00:00 - Act 1: The Year 10 Cataclysm Betrayal
 04:12 - The Sovereign Reversion Protocol
 07:45 - Level 1 Status & 10,000x Calculation Velocity
-13:30 - Act 2: Machining The Dead Frontier Broncos
+13:30 - Act 2: Machining The Dual Ironclad Mag-Pistols
 18:50 - The Hunter Assessment Bureau Classification
 23:10 - The 0.00ms Reaction Velocity Anomaly
 27:00 - Act 3: Entering The Corrupted Iron Line
 31:40 - Subway Bottleneck & Ricochet Ballistics
 35:20 - Destructive Waveform Phase Cancellation
-40:30 - Act 4: The Chitinous Brood Goliath
-44:15 - Inverted Rail Ricochet Decapitation
-48:20 - Chief Proctor Keith Morgan's Forensic Verdict
-52:45 - The Grand Hunter Academy Approaching
+40:30 - Act 4: Inverted Slide Boss Elimination
+44:15 - Level 6 Awakening & 8 Gold Sovereigns
+47:20 - Act 5: Chief Proctor Morgan Forensics
+50:50 - Act 6: District 4 Underworld Vault & Master Boros
+54:10 - 10,000x Ballistic Runecrafting & Level 7
+57:00 - Act 7: District 7 Incursion & Aegis Guild Lockout
+59:15 - 35-Stalker Ricochet Annihilation
+60:10 - Dread-Reaper Boss Takedown & Level 9 Milestone
+61:00 - Imperial Sovereign Exemption & Academy Horizon
 ```
 
-### 3. High-CTR Pinned Comment:
-```text
-🔥 What would you do if you regressed 10 years with 10,000x Neural Calculation Velocity? Would you hide your powers as an F-rank or immediately conquer the Noble Guilds? Drop your thoughts below! 👇
+---
 
-📌 Episode 02 (Grand Academy Entrance Trials) is now entering production! Subscribe and turn on notifications so you don't miss the next saga!
+### 3. Pinned Comment Draft:
+```text
+🔥 Kaelen Thorne returns to Day 1 with 10,000x Spatial Calculation Velocity and zero magical mana!
+Drop a LIKE and SUBSCRIBE if you want Episode 02: The Grand Hunter Academy Trials!
+Which scene was your favourite? The Subway Rail Ricochet or the Sector 7 Dread-Reaper Takedown? Let us know below! 👇
 ```
