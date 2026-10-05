@@ -5,10 +5,10 @@
     "flowName": "Kaelen Thorne - Luggage Carrier",
     "role": "Protagonist",
     "tier": "Tier 1: 10-Year Porter",
-    "filename": "01_Protagonist_Kaelen_Thorne.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne.jpg",
-    "description": "28yo male weary porter, worn ragged brown canvas coat, bruised jawline, deep purple mana-burn scars, hunched posture hauling enchanted crates.",
-    "dnaAnchor": "Kaelen Thorne, 28-year-old male exhausted dungeon porter, worn ragged brown canvas coat with iron luggage harness, bruised face, purple mana-burn scars across cheekbones, dark fantasy action manhwa art style, sharp ink linework"
+    "filename": "01_Protagonist_Kaelen_Thorne_Tier1_Porter.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne_Tier1_Porter.jpg",
+    "description": "28yo weary luggage porter, worn brown canvas coat with iron harness, bruised face, purple mana scars across neck, hunched posture hauling crates.",
+    "dnaAnchor": "Kaelen Thorne, 28-year-old male exhausted dungeon baggage porter, messy disheveled dark black hair, tired dark hollow eyes with heavy dark circles, bruised face with purple mana-burn scars across neck and cheeks, worn frayed earth-brown heavy canvas porter coat with iron luggage harness strapped across chest, scuffed muddy work boots, hunched exhausted posture carrying rusted iron supply crate, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9"
   },
   {
     "id": "kaelen_thorne_tier_2_regressor",
@@ -16,10 +16,10 @@
     "flowName": "Kaelen Thorne - Dual Bronco Regressor",
     "role": "Protagonist",
     "tier": "Tier 2: Omniscient Sovereign",
-    "filename": "01_Protagonist_Kaelen_Thorne.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne.jpg",
-    "description": "18yo male manhwa protagonist, pitch-black hair, piercing amethyst eyes, tailored charcoal trench coat, dual modified tungsten Bronco handcannons.",
-    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, pitch-black hair with subtle parted bangs, piercing luminous amethyst-purple glowing eyes, calm and cold analytical gaze, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, dual matte tungsten heavy handcannons, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
+    "filename": "01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
+    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
+    "description": "18yo unscarred sovereign regressor, straight pitch-black hair, glowing amethyst eyes, tailored charcoal trench coat, dual modified tungsten Bronco handcannons.",
+    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, straight pitch-black hair with subtle parted bangs, piercing luminous glowing amethyst-purple eyes, calm cold analytical gaze, unscarred skin, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, slate combat trousers, dual matte tungsten heavy handcannons in hand or holstered at thighs, faint glowing purple holographic trajectory matrices, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
   },
   {
     "id": "lord_jason_vane",

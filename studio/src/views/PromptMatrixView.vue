@@ -563,19 +563,37 @@ const clearSelection = () => {
   selectedTags.value = new Set()
 }
 
-const FLOW_DIRECTIVE_HEADER = `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION & FULL COMPLETION PROTOCOL]
-1. Generate EXACTLY ONE separate, standalone full-frame 9:16 vertical manhwa image for each <scene> container below.
+const getFlowDirectiveHeader = (collectionTitle) => {
+  const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (rawMarkdown.value || '').includes('16:9')
+  const aspectInstruction = is16x9 
+    ? '16:9 widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
+    : '9:16 native vertical aspect ratio (1080x1920 vertical format)'
+
+  return `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION, COLLECTION GROUPING & FULL COMPLETION PROTOCOL]
+
+📁 MANDATORY COLLECTION GROUPING INSTRUCTION:
+Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
+"${collectionTitle}"
+and automatically assign, group, and organize 100% of all generated scene images into this Collection so they are organized together in Google Flow.
+
+🎨 GENERATION INVARIANTS:
+1. Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
 2. DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
 3. DO NOT generate videos, animations, or ask for confirmation.
 4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
 5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
 6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, cup, goblet, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, ZERO duplicate floating arms holding props, and ZERO morphing anomalies.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, 9:16 vertical aspect ratio, and high-fidelity manhwa artwork.`
+8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, ${aspectInstruction}, and high-fidelity textless manhwa artwork.`
+}
 
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
   if (!batch || !batch.items.length) return
+
+  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
+  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
+  const collectionTitle = `${franchiseClean} - ${episodeClean} - ${batch.name} (${batch.startTag} to ${batch.endTag})`
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -585,7 +603,8 @@ const copyBatchByIndex = (index) => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
+  const header = getFlowDirectiveHeader(collectionTitle)
+  const payload = `${header}\n\n${scenesXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -607,6 +626,10 @@ const copySelectedPrompts = () => {
   const selectedItems = parsedPrompts.value.filter(p => selectedTags.value.has(p.tag))
   if (!selectedItems.length) return
 
+  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
+  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
+  const collectionTitle = `${franchiseClean} - ${episodeClean} - Selected Scenes (${selectedItems.length} Panels)`
+
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -615,7 +638,8 @@ const copySelectedPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
+  const header = getFlowDirectiveHeader(collectionTitle)
+  const payload = `${header}\n\n${scenesXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'SELECTED'
@@ -630,6 +654,10 @@ const copyMissingPrompts = () => {
   const missingItems = parsedPrompts.value.filter(p => !p.hasImage)
   if (!missingItems.length) return
 
+  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
+  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
+  const collectionTitle = `${franchiseClean} - ${episodeClean} - Missing Scenes (${missingItems.length} Panels)`
+
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -638,7 +666,8 @@ const copyMissingPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
+  const header = getFlowDirectiveHeader(collectionTitle)
+  const payload = `${header}\n\n${scenesXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'MISSING'
@@ -652,6 +681,10 @@ const copyMissingPrompts = () => {
 const copyAllMaster = () => {
   if (!parsedPrompts.value.length) return
 
+  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
+  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
+  const collectionTitle = `${franchiseClean} - ${episodeClean} - Master Deck (${parsedPrompts.value.length} Panels)`
+
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
@@ -660,7 +693,8 @@ const copyAllMaster = () => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const payload = `${FLOW_DIRECTIVE_HEADER}\n\n${scenesXml}`
+  const header = getFlowDirectiveHeader(collectionTitle)
+  const payload = `${header}\n\n${scenesXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -706,7 +740,7 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
   const results = []
 
   // 1. Check for XML <scene id="IMG_001"> ... </scene> blocks
-  const sceneRegex = /<scene\s+id=["']?(IMG_?\d+)["']?>\s*([\s\S]*?)\s*<\/scene>/gi
+  const sceneRegex = /<scene\s+[^>]*id=["']?(IMG_?\d+)["']?[^>]*>\s*([\s\S]*?)\s*<\/scene>/gi
   let sMatch
   while ((sMatch = sceneRegex.exec(markdown)) !== null) {
     const rawTag = sMatch[1].replace(/_/g, '')

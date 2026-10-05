@@ -120,4 +120,15 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
     2. Master Visual Reference Plates (`01_Protagonist_Master_Plate.jpg`, `02_Antagonist_Master_Plate.jpg`): High-fidelity, textless concept plates matching Midjourney `--cref [URL] --cw 80` standards.
   - 100% of episodic prompt entries must inject locked character tokens (`@{Character}`) to eliminate diffusion attention splitting and guarantee facial/outfit consistency across all 24-scene batches.
 
+---
+
+### 15. The Spoken-Prose & IP Sanitisation Standard (Anti-Bleed & Zero-Jargon Invariant)
+* **Defect:** Voiceovers reading raw LaTeX mathematical formulas (`(+A + (-A) = 0)`), comparison operators (`<= 0 => 0 Damage`), third-party trademarked video game titles (*"Dead Frontier"*), or internal developer engine jargon (*"Studio Engine"*, *"Invariant"*).
+* **Fix (Organic Spoken Storytelling & In-Universe IP Isolation):**
+  1. **100% Original IP:** Strictly forbidden from using real-world trademarked game titles, commercial weapons, or external franchises. All weapons, syndicates, and artifacts use original in-universe terminology (e.g. *"Ironclad Series Heavy Handcannons"*).
+  2. **Zero Raw Math in Dialogue:** Replace algebraic formulas, LaTeX tags (`$...$`), and plus/minus stat notation with immersive spoken narrative descriptions (e.g. *"destructive acoustic phase cancellation"*, *"two points into Agility and one into Constitution"*).
+  3. **Zero Developer Meta-Jargon:** Internal studio terminology (*"Studio Engine"*, *"Invariant"*, *"Benchmark"*) is strictly forbidden in narration. System HUD popups must read as authentic in-world manhwa notices (`[SYSTEM NOTICE: Target Carapace Rating Exceeds Kinetic Impact — Null Damage Deflection]`).
+  4. **Zero-Bleed Script Formatting:** Script headers and Act summaries must never contain bracketed `[IMG_...]` tags. Scene tags `[IMG_XXX]` are strictly reserved for narrative scene starters.
+
+
 

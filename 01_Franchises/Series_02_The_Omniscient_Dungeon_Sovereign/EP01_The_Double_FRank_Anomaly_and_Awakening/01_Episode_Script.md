@@ -6,13 +6,13 @@
 > **Target Format:** Format 2 (16:9 Full Bleed Landscape — 1920×1080)  
 > **Total Word Count:** ~7,600 Words  
 > **Target Spoken Runtime:** ~54 Minutes (Average Spoken Cadence: 140 WPM)  
-> **Visual Scene Cuts:** Exactly 216 Scene Plates (`[IMG_001]` to `[IMG_216]`)  
+> **Visual Scene Cuts:** Exactly 216 Scene Plates (IMG_001 to IMG_216)  
 > **Voiceover Voice:** `en-US-ChristopherNeural` (Calm, authoritative, analytical)
 
 ---
 
 ### 📜 Act 1: The Cataclysm of Year 10 & Day-One Awakening
-**Runtime:** 0:00 – 13:30 | **Word Count:** ~1,850 Words | **Visual Plates:** `[IMG_001]` – `[IMG_054]`
+**Runtime:** 0:00 – 13:30 | **Word Count:** ~1,850 Words | **Visual Plates:** IMG_001 – IMG_054
 
 [IMG_001] For ten agonizing years, the subterranean abyss had been the only world Kaelen Thorne ever knew. While the glorious high-ranking hunters of the Aegis Vanguard basked in public adoration and sovereign gold, Kaelen carried their blood-soaked luggage across the shattered obsidian floor of the Cataclysm Rift.
 
@@ -118,7 +118,7 @@
 
 [IMG_050] "We don't sell mana staves or fancy enchanted blades here, boy," Otto growled without looking up from his lathe, sparks showering over his leather apron. "If you're looking for shiny toys for the Hunter Exam, go beg at the Ministry merchant stalls."
 
-[IMG_051] "I'm not here for enchanted toys, Master Otto," Kaelen replied smoothly, his tone composed and respectful. "I am here for the pair of decommissioned Dead Frontier Heavy Handcannons sitting in your scrap bin under the counter."
+[IMG_051] "I'm not here for enchanted toys, Master Otto," Kaelen replied smoothly, his tone composed and respectful. "I am here for the pair of decommissioned Ironclad Heavy Handcannons sitting in your scrap bin under the counter."
 
 [IMG_052] Otto froze, his lathe coming to a halt as he raised his cybernetic lens, staring at Kaelen in genuine disbelief.
 
@@ -129,11 +129,11 @@
 ---
 
 ### ⚙️ Act 2: The Ministry Classification & Kinetic Handcannon Modification
-**Runtime:** 13:30 – 27:00 | **Word Count:** ~1,950 Words | **Visual Plates:** `[IMG_055]` – `[IMG_108]`
+**Runtime:** 13:30 – 27:00 | **Word Count:** ~1,950 Words | **Visual Plates:** IMG_055 – IMG_108
 
 [IMG_055] Otto eyed the silver on the counter, then looked back at Kaelen’s calm, unwavering amethyst gaze. Shrugging his broad shoulders, the old gunsmith reached beneath the greasy worktable and hoisted a heavy, oilcloth-wrapped crate onto the iron bench.
 
-[IMG_056] He unrolled the fabric, revealing a matched pair of massive, matte-black heavy handcannons. Forged from high-density tungsten-carbide alloy, their frames were angular, rugged, and industrial—bearing the iconic flared muzzle compensators of the Dead Frontier series.
+[IMG_056] He unrolled the fabric, revealing a matched pair of massive, matte-black heavy handcannons. Forged from high-density tungsten-carbide alloy, their frames were angular, rugged, and industrial—bearing the iconic flared muzzle compensators of the Ironclad series.
 
 [IMG_057] "Standard thirty-millimeter solid tungsten kinetic slugs," Otto remarked, tapping the heavy iron cylinders. "Zero enchantment enchantments, zero elemental runes. If you don't possess at least twenty-five Strength, the kickback will dislocate your shoulder."
 
@@ -153,7 +153,7 @@
 
 [IMG_065] When he reassembled the dual weapons, the slide racked with a deep, authoritative metallic *clack*. The guns were no longer clumsy surplus weapons; they were precision kinetic instruments calibrated specifically for his neural predictive system.
 
-[IMG_066] `[EQUIPMENT MODIFICATION COMPLETE: Dual 'Dead Frontier Bronco' Handcannons (Calibrated)]`  
+[IMG_066] `[EQUIPMENT MODIFICATION COMPLETE: Dual 'Ironclad Bronco' Handcannons (Calibrated)]`  
 `[Base Kinetic Damage: 120 (Armour-Piercing)]`  
 `[Recoil Dissipation Efficiency: 84.5% via Gas Port Vectoring]`  
 `[Special Feature: Compatible with Trajectory Ricochet Calculation]`
@@ -249,7 +249,7 @@
 ---
 
 ### 🚇 Act 3: The Subterranean Corrupted Subway Catacombs
-**Runtime:** 27:00 – 40:30 | **Word Count:** ~2,000 Words | **Visual Plates:** `[IMG_109]` – `[IMG_162]`
+**Runtime:** 27:00 – 40:30 | **Word Count:** ~2,000 Words | **Visual Plates:** IMG_109 – IMG_162
 
 [IMG_109] The Subterranean Exclusion Zone of District 9 was a desolate expanse of abandoned train tunnels, flooded maintenance shafts, and cracked concrete platforms that had been swallowed by an unsealed Grade-E dimensional fracture seven years prior.
 
@@ -261,9 +261,9 @@
 
 [IMG_113] `[LOCATION IDENTIFIED: The Corrupted Iron Line (Dungeon Classification: Grade-E)]`  
 `[Monster Density: High | Primary Inhabitants: Tier-1 Carrion Stalkers & Shadow Vermin]`  
-`[EXP Benchmark: 50 EXP per Standard Kill | Foundation Cap: Level 10 = 5,000 EXP]`
+`[EXPERIENCE RATIO: 50 EXP Per Standard Elimination | Target Foundation Cap: 5,000 EXP]`
 
-[IMG_114] Kaelen reached under his long coat, unholstering both modified Dead Frontier Bronco handcannons. The heavy tungsten frames felt perfectly balanced in his grip, their flared compensators gleaming in the lamplight.
+[IMG_114] Kaelen reached under his long coat, unholstering both modified Ironclad Bronco handcannons. The heavy tungsten frames felt perfectly balanced in his grip, their flared compensators gleaming in the lamplight.
 
 [IMG_115] In conventional manhwa tropes, dungeon monsters attacked in polite, single-file lines, patiently waiting for the protagonist to deliver theatrical monologues.
 
@@ -311,12 +311,12 @@
 
 [IMG_136] In standard combat, this acoustic attack was an unavoidable AoE disable that wiped out unprepared squads.
 
-[IMG_137] However, to Kaelen's $10,000\times$ calculation, sound was simply an oscillating kinetic wave propagating through atmospheric medium.
+[IMG_137] However, to Kaelen's ten-thousand-times calculation speed, sound was simply an oscillating kinetic wave propagating through the air.
 
 [IMG_138] `[ACOUSTIC WAVEFORM DETECTED: Frequency: 18,400 Hz | Amplitude: 132 dB]`  
 `[Calculating Destructive Waveform Phase Cancellation Angle...]`
 
-[IMG_139] Kaelen calculated the exact inverse frequency required to nullify the pressure front ($+A + (-A) = 0$).
+[IMG_139] Kaelen calculated the exact inverse acoustic frequency required to create perfect destructive phase cancellation, completely nullifying the screeching shockwave on impact.
 
 [IMG_140] The instant the alpha opened its jaws to shriek, Kaelen fired both Broncos simultaneously into the steel plate floor at an offset distance of sixty-two centimetres.
 
@@ -339,13 +339,13 @@
 
 [IMG_149] `[LEVEL UP ACHIEVED: Level 1 -> Level 2]`  
 `[+3 Unallocated Stat Points Awarded]`  
-`[System Benchmark: Next Level Threshold = 650 EXP]`
+`[NEXT LEVEL REQUIREMENT: 650 EXP]`
 
 [IMG_150] A warm surge of purified biological energy washed through Kaelen’s muscles and marrow as his foundation breakthrough took effect.
 
-[IMG_151] Unlike bloated, arbitrary progression systems where players gained random thousands of points, the Studio Engine operated on strict arithmetic: exactly $+3$ points per level, representing tangible, calibrated physical enhancement.
+[IMG_151] Unlike uncalibrated magic systems where power scaled haphazardly, his sovereign foundation rewarded exactly three stat points per level, delivering pure, concentrated physical enhancement.
 
-[IMG_152] Without hesitation, Kaelen allocated $+2$ points into Agility and $+1$ into Constitution to improve his vessel's muscular density and recoil tolerance.
+[IMG_152] Without hesitation, Kaelen allocated two points into Agility and one into Constitution to improve his muscular density and heavy recoil tolerance.
 
 [IMG_153] `[STATUS UPDATED: Level 2 | Strength: 12 | Agility: 16 | Constitution: 12 | Perception: 240]`
 
@@ -372,7 +372,7 @@
 ---
 
 ### 👑 Act 4: Alpha Broodmother Decapitation & Proctor Forensic Investigation
-**Runtime:** 40:30 – 54:00 | **Word Count:** ~1,850 Words | **Visual Plates:** `[IMG_163]` – `[IMG_216]`
+**Runtime:** 40:30 – 54:00 | **Word Count:** ~1,850 Words | **Visual Plates:** IMG_163 – IMG_216
 
 [IMG_163] The collapsed concrete bulkhead at the end of the terminal shattered outward, showering the tracks with chunks of masonry as a monumental silhouette crawled into the flickering halogen lights.
 
@@ -380,11 +380,11 @@
 
 [IMG_165] `[DUNGEON BOSS DETECTED: Chitinous Brood Goliath (Grade-E Boss)]`  
 `[Physical Armor Rating: 180 (Heavy Hardened Chitin)]`  
-`[Boss Bounty Benchmark: 8 Gold Sovereigns | Kill EXP: 1,200 EXP]`
+`[BOSS CLEAR REWARD: 8 Gold Sovereigns | Elimination EXP: 1,200 EXP]`
 
 [IMG_166] In his previous life as a luggage porter, Kaelen had witnessed a full ten-man squad of Grade-D vanguard hunters get shredded by this exact beast because their blades failed to penetrate its frontal carapace.
 
-[IMG_167] `[Absolute Physical Durability Invariant: Incoming Attack - Defender Constitution <= 0 => 0 Damage]`
+[IMG_167] `[SYSTEM NOTICE: Target Carapace Rating Exceeds Kinetic Impact — Null Damage Deflection]`
 
 [IMG_168] Firing standard bullets directly into the Goliath’s frontal chest plates would yield zero penetration—the tungsten slugs would simply flatten against the 180-rating armor and ricochet harmlessly into the ceiling.
 

@@ -250,8 +250,20 @@ export class MotionEngine {
       const frameData = mainCanvas.data()
       if (!ffmpeg.stdin.destroyed) {
         const canWrite = ffmpeg.stdin.write(frameData)
-        if (!canWrite) {
-          await new Promise(resolve => ffmpeg.stdin.once('drain', resolve))
+        if (!canWrite && !ffmpeg.stdin.destroyed) {
+          await new Promise((resolve) => {
+            const timer = setTimeout(resolve, 1500)
+            const onDrain = () => { clearTimeout(timer); cleanup(); resolve() }
+            const onClose = () => { clearTimeout(timer); cleanup(); resolve() }
+            const cleanup = () => {
+              ffmpeg.stdin.removeListener('drain', onDrain)
+              ffmpeg.removeListener('close', onClose)
+              ffmpeg.removeListener('error', onClose)
+            }
+            ffmpeg.stdin.once('drain', onDrain)
+            ffmpeg.once('close', onClose)
+            ffmpeg.once('error', onClose)
+          })
         }
       }
     }
@@ -259,7 +271,13 @@ export class MotionEngine {
     if (!ffmpeg.stdin.destroyed) {
       ffmpeg.stdin.end()
     }
-    await pipePromise
+    await Promise.race([
+      pipePromise,
+      new Promise((_, reject) => setTimeout(() => {
+        try { ffmpeg.kill('SIGKILL') } catch (_) {}
+        reject(new Error(`FFmpeg rawvideo timed out after 45s for ${path.basename(outputPath)}`))
+      }, 45000))
+    ])
     return outputPath
   }
 

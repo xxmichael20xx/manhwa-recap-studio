@@ -138,19 +138,19 @@ export class VideoService {
         normText: normalize(c.text)
       }))
 
-      // Extract all inline tags across the entire script
-      const tagMatches = [...scriptContent.matchAll(/\[(IMG_\d+)\]/g)]
+      // Extract all inline tags across the entire script (line-anchored to avoid headers/metadata)
+      const tagMatches = [...scriptContent.matchAll(/(?:^|\n)\s*\[(IMG_\d+)\]\s*([\s\S]*?)(?=(?:\n\s*\[IMG_\d+\]|$))/gi)]
       const extractedBeats = []
       for (let i = 0; i < tagMatches.length; i++) {
-        const current = tagMatches[i]
-        const tag = current[1].toUpperCase()
-        const startPos = current.index + current[0].length
-        const endPos = (i + 1 < tagMatches.length) ? tagMatches[i + 1].index : scriptContent.length
-        let rawBlock = scriptContent.slice(startPos, endPos)
+        const tag = tagMatches[i][1].toUpperCase()
+        let rawBlock = tagMatches[i][2]
         let cleanText = rawBlock
-          .replace(/###\s+[^\n]+/g, '')
-          .replace(/##\s+[^\n]+/g, '')
-          .replace(/---/g, '')
+          .replace(/^#{1,6}\s+[^\n]+/gm, '')
+          .replace(/^>\s+[^\n]+/gm, '')
+          .replace(/\*\*Runtime:\*\*.*$/gm, '')
+          .replace(/\*\*Word Count:\*\*.*$/gm, '')
+          .replace(/\*\*Visual Plates:\*\*.*$/gm, '')
+          .replace(/---+/g, '')
           .replace(/`/g, '')
           .trim()
         if (cleanText.length > 0) {
@@ -514,9 +514,9 @@ export class VideoService {
     // Get list of existing images on disk
     const existingFiles = fsSync.existsSync(imagesDir) ? await fs.readdir(imagesDir) : []
 
-    // 3. Render Ken Burns clips in managed concurrency (6 parallel native Skia worker threads)
+    // 3. Render Ken Burns clips in managed concurrency (4 parallel native Skia worker threads)
     const clipFiles = []
-    const concurrency = 6
+    const concurrency = 4
     let completedClips = 0
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
@@ -525,8 +525,8 @@ export class VideoService {
 
       this.updateStatus(franchiseId, episodeId, {
         message: isBatchCompile
-          ? `[Batch ${batchLetter}] ⚡ Computing clips ${chunkTags} (6 parallel Skia threads)...`
-          : `⚡ Computing clips ${chunkTags} (6 parallel Skia threads)...`,
+          ? `[Batch ${batchLetter}] ⚡ Computing clips ${chunkTags} (4 parallel Skia threads)...`
+          : `⚡ Computing clips ${chunkTags} (4 parallel Skia threads)...`,
         log: [
           ...(this.compilationState[key].log || []).slice(-20),
           `⚡ [Workers Active] Rendering chunk ${Math.floor(i / concurrency) + 1}/${Math.ceil(targetBeats.length / concurrency)}: ${chunkTags}`
@@ -570,8 +570,17 @@ export class VideoService {
           isVertical = false
         }
 
-        // Render pristine Full-Bleed Pan & Scan Ken Burns clip
-        await VideoService.renderFullBleedKenBurnsClip(imagePath, isVertical, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
+        // Render pristine Full-Bleed Pan & Scan Ken Burns clip with auto-retry
+        try {
+          await VideoService.renderFullBleedKenBurnsClip(imagePath, isVertical, beat.frames, kenBurns ? globalBeatIdx : 0, clipPath)
+        } catch (renderErr) {
+          console.warn(`[VideoService] Clip render error for ${beat.tag}, retrying:`, renderErr.message)
+          try {
+            await VideoService.renderFullBleedKenBurnsClip(imagePath, isVertical, beat.frames, 0, clipPath)
+          } catch (retryErr) {
+            console.error(`[VideoService] Clip retry failed for ${beat.tag}:`, retryErr.message)
+          }
+        }
 
         clipFiles[beatIndex] = clipPath
         completedClips++

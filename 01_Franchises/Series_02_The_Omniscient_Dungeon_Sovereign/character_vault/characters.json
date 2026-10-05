@@ -5,11 +5,37 @@
   "archetype": "Archetype B: Analytical Regressor & Sovereign Crafter",
   "characters": [
     {
-      "id": "kaelen_thorne",
-      "name": "Kaelen Thorne",
-      "token": "@{Kaelen Thorne - Dual Bronco Regressor}",
+      "id": "kaelen_thorne_tier_1_porter",
+      "name": "Kaelen Thorne (Porter)",
+      "token": "@{Kaelen Thorne - Luggage Carrier}",
       "tier": 1,
-      "role": "Protagonist (10-Year Porter Regressor)",
+      "role": "Protagonist (10-Year Luggage Porter Phase)",
+      "age": 28,
+      "stats_baseline": {
+        "level": 0,
+        "class": "Unawakened Porter (Defective F-Rank)",
+        "strength": 8,
+        "agility": 7,
+        "constitution": 9,
+        "perception": 10,
+        "neural_calculation_velocity": "0x (Dormant)"
+      },
+      "appearance": {
+        "hair": "Messy dishevelled dark black hair, tired unwashed locks framing bruised face",
+        "eyes": "Dark hollow eyes with heavy dark circles, weary and defeated gaze, zero mana glow",
+        "physique": "Hunched, exhausted, and strained posture from a decade of hauling heavy iron luggage crates",
+        "attire": "Worn, frayed, and patched earth-brown canvas carrier jacket over stained thermal undershirt, heavy iron luggage harness with rusted brass buckles strapped across shoulders, dirty brown trousers, scuffed boots",
+        "weapons": "Zero weapons, carrying only a heavy rusted iron luggage pack"
+      },
+      "dna_prompt_anchor": "@{Kaelen Thorne - Luggage Carrier}, 28-year-old male exhausted dungeon baggage porter, messy disheveled dark black hair, tired dark hollow eyes with heavy dark circles, bruised face with purple mana-burn scars across neck and cheeks, worn frayed earth-brown heavy canvas porter coat with iron luggage harness strapped across chest, scuffed muddy work boots, hunched exhausted posture carrying rusted iron supply crate, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
+      "reference_plate": "01_Protagonist_Kaelen_Thorne_Tier1_Porter.jpg"
+    },
+    {
+      "id": "kaelen_thorne_tier_2_regressor",
+      "name": "Kaelen Thorne (Awakened)",
+      "token": "@{Kaelen Thorne - Dual Bronco Regressor}",
+      "tier": 2,
+      "role": "Protagonist (Awakened Sovereign Regressor)",
       "age": 18,
       "stats_baseline": {
         "level": 1,
@@ -21,14 +47,14 @@
         "neural_calculation_velocity": "10,000x"
       },
       "appearance": {
-        "hair": "Pitch-black medium-parted straight hair with subtle bangs framing sharp angular cheekbones",
-        "eyes": "Piercing luminous amethyst-purple glowing pupils, intensely cold, analytical, and calculated gaze",
+        "hair": "Straight pitch-black hair with subtle parted bangs framing sharp angular cheekbones",
+        "eyes": "Piercing luminous glowing amethyst-purple pupils, intensely cold, analytical, and calculated gaze",
         "physique": "Lean, athletic, and agile build, highly flexible and poised",
         "attire": "Charcoal-gray tailored heavy canvas trench coat with raised collar, matte black tactical combat vest underneath, dark slate reinforced combat trousers, polished black military boots, dual black tactical thigh holsters",
-        "weapons": "Dual customized heavy-caliber kinetic handcannons ('Dead Frontier Broncos') forged from matte tungsten alloy with etched linear mana-dispersion grooves and flared compensator muzzle brakes"
+        "weapons": "Dual customized heavy-caliber kinetic handcannons ('Dead Frontier Broncos') forged from matte tungsten alloy with linear mana-dispersion vents and flared compensator muzzle brakes"
       },
-      "dna_prompt_anchor": "@{Kaelen Thorne - Dual Bronco Regressor}, 18-year-old male manhwa protagonist, pitch-black hair, piercing luminous amethyst-purple eyes, cold analytical gaze, wearing a charcoal-gray tailored trench coat with high collar over matte black tactical vest, dual matte tungsten handcannons in hand or holstered at thighs, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting",
-      "reference_plate": "01_Protagonist_Kaelen_Thorne.jpg"
+      "dna_prompt_anchor": "@{Kaelen Thorne - Dual Bronco Regressor}, 18-year-old male manhwa protagonist, straight pitch-black hair with subtle parted bangs, piercing luminous glowing amethyst-purple eyes, calm cold analytical gaze, unscarred skin, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, slate combat trousers, dual matte tungsten heavy handcannons in hand or holstered at thighs, faint glowing purple holographic trajectory matrices, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9",
+      "reference_plate": "01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg"
     },
     {
       "id": "jason_vane",

@@ -94,7 +94,7 @@ export class ImageService {
     let currentAct = 'General'
 
     // 1. Check for XML <scene id="..."> blocks
-    const xmlMatches = [...content.matchAll(/<scene\s+id=["']?(IMG_?\d+)["']?>([\s\S]*?)<\/scene>/gi)]
+    const xmlMatches = [...content.matchAll(/<scene\s+[^>]*id=["']?(IMG_?\d+)["']?[^>]*>([\s\S]*?)<\/scene>/gi)]
     if (xmlMatches.length > 0) {
       for (const match of xmlMatches) {
         const rawId = match[1].replace(/_/g, '')

@@ -88,18 +88,19 @@ export class TtsService {
     const scriptContent = await fs.readFile(scriptPath, 'utf-8')
 
     // Parse scenes from script (Supports Dynamic Hybrid [IMG_XXX] format & legacy ### Scene blocks)
-    const tagMatches = [...scriptContent.matchAll(/\[(IMG_\d+)\]/g)]
+    // Only match line-anchored [IMG_XXX] tags to prevent capturing frontmatter or header specs
+    const tagMatches = [...scriptContent.matchAll(/(?:^|\n)\s*\[(IMG_\d+)\]\s*([\s\S]*?)(?=(?:\n\s*\[IMG_\d+\]|$))/gi)]
     const extractedScenes = []
     for (let i = 0; i < tagMatches.length; i++) {
-      const current = tagMatches[i]
-      const tag = current[1].toUpperCase()
-      const startPos = current.index + current[0].length
-      const endPos = (i + 1 < tagMatches.length) ? tagMatches[i + 1].index : scriptContent.length
-      let rawBlock = scriptContent.slice(startPos, endPos)
+      const tag = tagMatches[i][1].toUpperCase()
+      let rawBlock = tagMatches[i][2]
       let cleanText = rawBlock
-        .replace(/###\s+[^\n]+/g, '')
-        .replace(/##\s+[^\n]+/g, '')
-        .replace(/---/g, '')
+        .replace(/^#{1,6}\s+[^\n]+/gm, '')
+        .replace(/^>\s+[^\n]+/gm, '')
+        .replace(/\*\*Runtime:\*\*.*$/gm, '')
+        .replace(/\*\*Word Count:\*\*.*$/gm, '')
+        .replace(/\*\*Visual Plates:\*\*.*$/gm, '')
+        .replace(/---+/g, '')
         .trim()
       if (cleanText.length > 0) {
         extractedScenes.push({ tag, text: cleanText })

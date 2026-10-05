@@ -255,7 +255,7 @@ IMG055, 16:9 landscape shot. [Center]: Master Otto hoisting a heavy, oil-stained
 </scene>
 
 <scene id="IMG_056" filename="IMG_056.jpg" motion="hero_zoom_in">
-IMG056, 16:9 widescreen close-up. [Center]: The matched pair of Dead Frontier Bronco heavy handcannons lying side-by-side. Heavy angular tungsten frames, flared compensator muzzles, thick cylinders, and ergonomic polymer grips. Dark fantasy action manhwa art style, hyper-detailed mechanical rendering, horizontal 16:9, textless manhwa artwork.
+IMG056, 16:9 widescreen close-up. [Center]: The matched pair of Ironclad Bronco heavy handcannons lying side-by-side. Heavy angular tungsten frames, flared compensator muzzles, thick cylinders, and ergonomic polymer grips. Dark fantasy action manhwa art style, hyper-detailed mechanical rendering, horizontal 16:9, textless manhwa artwork.
 </scene>
 
 <scene id="IMG_057" filename="IMG_057.jpg" motion="pan_right_to_left">
@@ -295,7 +295,7 @@ IMG065, @{Kaelen Thorne - Dual Bronco Regressor}, 16:9 landscape composition. [C
 </scene>
 
 <scene id="IMG_066" filename="IMG_066.jpg" motion="hero_zoom_in">
-IMG066, 16:9 widescreen shot. In-Frame System HUD Archetype. [Center]: Translucent amethyst holographic item appraisal window floating beside the dual handcannons: `[MODIFIED DEAD FRONTIER BRONCOS | Kinetic AP: 120 | Recoil Dissipation: 84.5% | Trajectory Ricochet Compatible]`. Dark fantasy action manhwa art style, horizontal 16:9, textless manhwa artwork.
+IMG066, 16:9 widescreen shot. In-Frame System HUD Archetype. [Center]: Translucent amethyst holographic item appraisal window floating beside the dual handcannons: `[MODIFIED IRONCLAD BRONCOS | Kinetic AP: 120 | Recoil Dissipation: 84.5% | Trajectory Ricochet Compatible]`. Dark fantasy action manhwa art style, horizontal 16:9, textless manhwa artwork.
 </scene>
 
 <scene id="IMG_067" filename="IMG_067.jpg" motion="hero_zoom_out">
@@ -507,7 +507,7 @@ IMG113, 16:9 widescreen shot. In-Frame System HUD Archetype. [Center]: Holograph
 </scene>
 
 <scene id="IMG_114" filename="IMG_114.jpg" motion="hero_zoom_in">
-IMG114, @{Kaelen Thorne - Dual Bronco Regressor}, 16:9 landscape composition. [Center]: @{Kaelen Thorne - Dual Bronco Regressor} drawing both modified Dead Frontier Bronco handcannons from his thigh holsters, their tungsten frames gleaming under the shoulder lamp with formidable kinetic menace. Dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, textless manhwa artwork, both arms connected to shoulders.
+IMG114, @{Kaelen Thorne - Dual Bronco Regressor}, 16:9 landscape composition. [Center]: @{Kaelen Thorne - Dual Bronco Regressor} drawing both modified Ironclad Bronco handcannons from his thigh holsters, their tungsten frames gleaming under the shoulder lamp with formidable kinetic menace. Dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, textless manhwa artwork, both arms connected to shoulders.
 </scene>
 
 <scene id="IMG_115" filename="IMG_115.jpg" motion="pan_left_to_right">
