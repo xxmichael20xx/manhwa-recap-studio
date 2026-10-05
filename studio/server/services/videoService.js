@@ -795,7 +795,7 @@ export class VideoService {
 
     const filterComplex = filterComplexParts.join(';')
 
-    ffmpegArgs = [
+    const ffmpegArgs = [
       '-y',
       '-f', 'concat',
       '-safe', '0',
