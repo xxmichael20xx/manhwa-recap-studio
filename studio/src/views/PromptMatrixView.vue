@@ -31,6 +31,18 @@
           <span>Sync</span>
         </button>
 
+        <!-- Character & Item Vault Drawer Trigger -->
+        <button 
+          @click="isVaultDrawerOpen = true"
+          class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-600 via-purple-600 to-indigo-600 hover:from-amber-500 hover:to-purple-500 text-white text-xs font-bold flex items-center space-x-2 transition-all shadow-md shadow-purple-950/30 cursor-pointer"
+        >
+          <Users class="w-4 h-4 text-amber-200" />
+          <span>Character & Item Vault</span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-950/60 border border-purple-400/30 text-purple-100">
+            {{ vaultModels.length }} Plates
+          </span>
+        </button>
+
         <!-- Batch Copy Drawer Trigger Button -->
         <button 
           @click="isDrawerOpen = true"
@@ -209,13 +221,17 @@
                 Batch {{ Math.floor(index / batchChunkSize) + 1 }}
               </span>
               <template v-if="p.characterAnchor">
-                <span 
+                <button 
                   v-for="anchor in p.characterAnchor.split(',').map(a => a.trim()).filter(Boolean)"
                   :key="anchor"
-                  class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-500/30 font-semibold"
+                  @click.stop="copyTokenDirect(anchor)"
+                  class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-500/10 hover:bg-amber-100 dark:hover:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-500/30 font-semibold flex items-center space-x-1 cursor-pointer transition shadow-2xs"
+                  :title="`Click to copy token '${anchor}'`"
                 >
-                  {{ anchor }}
-                </span>
+                  <Check v-if="copiedDirectToken === anchor" class="w-2.5 h-2.5 text-emerald-500" />
+                  <Copy v-else class="w-2.5 h-2.5 text-amber-600/70 dark:text-amber-400/70" />
+                  <span>{{ anchor }}</span>
+                </button>
               </template>
               <span class="text-xs font-semibold text-slate-900 dark:text-white">{{ p.description }}</span>
             </div>
@@ -435,6 +451,203 @@
         </div>
       </div>
     </Teleport>
+
+    <!-- Character & Item Vault Side Drawer -->
+    <Teleport to="body">
+      <div 
+        v-if="isVaultDrawerOpen" 
+        class="fixed inset-0 z-50 overflow-hidden"
+        @keydown.esc="isVaultDrawerOpen = false"
+      >
+        <!-- Backdrop -->
+        <div 
+          @click="isVaultDrawerOpen = false" 
+          class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity duration-300"
+        />
+
+        <!-- Slide-over Drawer Panel -->
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+          <div class="w-screen max-w-3xl bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col justify-between">
+            
+            <!-- Drawer Header -->
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2.5">
+                  <div class="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400">
+                    <Users class="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 class="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                      <span>Character & Item Vault</span>
+                      <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">
+                        {{ vaultModels.length }} Reference Plates
+                      </span>
+                    </h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                      Master reference plates for Google Flow. Click Token to copy @{...}, Copy DNA, or Download plate directly.
+                    </p>
+                  </div>
+                </div>
+                <button 
+                  @click="isVaultDrawerOpen = false"
+                  class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                >
+                  <X class="w-5 h-5" />
+                </button>
+              </div>
+
+              <!-- Category Filter Tabs -->
+              <div class="mt-4 flex flex-wrap items-center gap-1.5 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
+                <button 
+                  v-for="cat in vaultCategories" 
+                  :key="cat.key"
+                  @click="selectedVaultCategory = cat.key"
+                  class="px-2.5 py-1 rounded-lg transition capitalize cursor-pointer font-medium flex items-center space-x-1"
+                  :class="selectedVaultCategory === cat.key ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+                >
+                  <span>{{ cat.label }}</span>
+                  <span class="text-[10px] opacity-75">({{ cat.count }})</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Drawer Body: Grid of Cards -->
+            <div class="p-6 space-y-4 overflow-y-auto flex-1">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div 
+                  v-for="model in filteredVaultModels" 
+                  :key="model.id"
+                  class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/60 shadow-sm space-y-3 flex flex-col justify-between hover:border-purple-500/40 transition"
+                >
+                  <div class="space-y-2.5">
+                    <div class="flex items-start justify-between gap-1">
+                      <div class="min-w-0 flex-1">
+                        <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" :title="model.name">{{ model.name }}</h4>
+                        <span 
+                          class="text-[10px] font-mono px-1.5 py-0.5 rounded font-semibold inline-block mt-0.5 border"
+                          :class="getCategoryBadgeClass(model.category)"
+                        >
+                          {{ model.category }} • {{ model.tier }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Model Thumbnail Preview (16:9) -->
+                    <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
+                      <img :src="model.url" :alt="model.name" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
+                        <a 
+                          :href="model.url" 
+                          target="_blank" 
+                          class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
+                          title="View Full Resolution"
+                        >
+                          <ExternalLink class="w-3.5 h-3.5" />
+                        </a>
+                        <button 
+                          @click="downloadVaultPlate(model)"
+                          class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
+                          title="Download Image"
+                        >
+                          <Download class="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Google Flow Setup Name Bar (1-Click Paste for Google Flow Reference Setup) -->
+                    <div 
+                      @click="copyVaultName(model)"
+                      class="p-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between cursor-pointer hover:border-purple-500/50 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition group"
+                      title="Click to copy clean Reference Name (WITHOUT @{}) to paste directly into Google Flow character/object setup"
+                    >
+                      <div class="flex items-center space-x-1.5 min-w-0 flex-1">
+                        <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-bold shrink-0">
+                          Flow Name
+                        </span>
+                        <span class="text-[10px] font-mono text-slate-700 dark:text-slate-300 truncate font-semibold">
+                          {{ model.flowName || model.name }}
+                        </span>
+                      </div>
+                      <span 
+                        class="text-[9px] font-mono shrink-0 ml-1 font-bold"
+                        :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
+                      >
+                        {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
+                      </span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                      {{ model.description }}
+                    </p>
+                  </div>
+
+                  <!-- Actions -->
+                  <div class="flex items-center justify-between pt-2.5 border-t border-slate-200/80 dark:border-slate-800/80 gap-1.5">
+                    <button 
+                      @click="downloadVaultPlate(model)"
+                      class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer border border-slate-200 dark:border-slate-700"
+                      title="Download Master Reference Plate"
+                    >
+                      <Download class="w-3 h-3 text-slate-500 dark:text-slate-400" />
+                      <span>Download</span>
+                    </button>
+                    
+                    <div class="flex items-center space-x-1">
+                      <button 
+                        @click="copyVaultName(model)"
+                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                        :class="copiedVaultId === model.id && copiedVaultType === 'name' 
+                          ? 'bg-emerald-600 text-white' 
+                          : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
+                        title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
+                      >
+                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3 h-3" />
+                        <Tag v-else class="w-3 h-3 text-slate-500" />
+                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
+                      </button>
+
+                      <button 
+                        @click="copyVaultToken(model)"
+                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                        :class="copiedVaultId === model.id && copiedVaultType === 'token' 
+                          ? 'bg-emerald-600 text-white' 
+                          : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
+                        title="Copy Google Flow Token (@{...})"
+                      >
+                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3" />
+                        <Copy v-else class="w-3 h-3" />
+                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
+                      </button>
+
+                      <button 
+                        @click="copyVaultDna(model)"
+                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                        :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
+                          ? 'bg-emerald-600 text-white' 
+                          : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
+                        title="Copy Complete Visual DNA Prompt"
+                      >
+                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3" />
+                        <Sparkles v-else class="w-3 h-3" />
+                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drawer Footer -->
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-center">
+              <p class="text-[11px] font-mono text-slate-400">
+                All reference plates are locked in Franchise Character Vault for 100% visual consistency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -444,10 +657,161 @@ import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, RefreshCw, Copy, Check, CheckCircle2, 
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
-  AlertCircle, AlertTriangle, Play, Film, Loader2 
+  AlertCircle, AlertTriangle, Play, Film, Loader2,
+  Users, Download, ExternalLink, Sparkles, Tag
 } from 'lucide-vue-next'
 
 const route = useRoute()
+
+// Character & Item Vault State
+const isVaultDrawerOpen = ref(false)
+const vaultModels = ref([])
+const selectedVaultCategory = ref('all')
+const copiedVaultId = ref(null)
+const copiedVaultType = ref(null)
+const copiedDirectToken = ref(null)
+
+const loadVaultModels = async () => {
+  try {
+    const res = await fetch(`/api/franchises/${route.params.franchiseId}/character-models?cb=${Date.now()}`)
+    const data = await res.json()
+    if (Array.isArray(data)) {
+      vaultModels.value = data
+    }
+  } catch (e) {
+    console.warn('Failed to load character/item models:', e)
+  }
+}
+
+const vaultCategories = computed(() => {
+  const total = vaultModels.value.length
+  const chars = vaultModels.value.filter(m => m.type === 'character' || ['protagonist', 'antagonist', 'supporting'].includes(m.category?.toLowerCase())).length
+  const weapons = vaultModels.value.filter(m => m.category === 'Weapons').length
+  const artifacts = vaultModels.value.filter(m => m.category === 'Artifacts').length
+  const props = vaultModels.value.filter(m => m.category === 'Props').length
+
+  const list = [{ key: 'all', label: 'All', count: total }]
+  if (chars > 0) list.push({ key: 'characters', label: 'Characters', count: chars })
+  if (weapons > 0) list.push({ key: 'Weapons', label: 'Weapons', count: weapons })
+  if (artifacts > 0) list.push({ key: 'Artifacts', label: 'Artifacts', count: artifacts })
+  if (props > 0) list.push({ key: 'Props', label: 'Props', count: props })
+  return list
+})
+
+const getCategoryBadgeClass = (category) => {
+  const cat = (category || '').toLowerCase()
+  if (cat.includes('protagonist')) return 'bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-800'
+  if (cat.includes('antagonist')) return 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800'
+  if (cat.includes('supporting')) return 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800'
+  if (cat.includes('weapon')) return 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800'
+  if (cat.includes('artifact')) return 'bg-violet-100 dark:bg-violet-950/80 text-violet-700 dark:text-violet-300 border-violet-300 dark:border-violet-800'
+  if (cat.includes('prop')) return 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800'
+  return 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
+}
+
+const filteredVaultModels = computed(() => {
+  if (selectedVaultCategory.value === 'all') return vaultModels.value
+  if (selectedVaultCategory.value === 'characters') {
+    return vaultModels.value.filter(m => m.type === 'character' || ['protagonist', 'antagonist', 'supporting'].includes(m.category?.toLowerCase()))
+  }
+  if (selectedVaultCategory.value === 'items') {
+    return vaultModels.value.filter(m => m.type !== 'character' || ['weapons', 'artifacts', 'props'].includes(m.category?.toLowerCase()))
+  }
+  return vaultModels.value.filter(m => 
+    m.category?.toLowerCase() === selectedVaultCategory.value.toLowerCase() ||
+    m.role?.toLowerCase() === selectedVaultCategory.value.toLowerCase()
+  )
+})
+
+const copyVaultName = async (model) => {
+  if (!model) return
+  const cleanName = model.flowName || model.token?.replace(/[@{}]/g, '') || model.name
+  try {
+    await navigator.clipboard.writeText(cleanName)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'name'
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'name') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const copyVaultToken = async (model) => {
+  if (!model) return
+  const tokenText = model.token || `@{${model.name}}`
+  try {
+    await navigator.clipboard.writeText(tokenText)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'token'
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'token') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const copyVaultDna = async (model) => {
+  if (!model) return
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
+  try {
+    await navigator.clipboard.writeText(textToCopy)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'dna'
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'dna') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const downloadVaultPlate = async (model) => {
+  if (!model) return
+  try {
+    const res = await fetch(model.url)
+    const blob = await res.blob()
+    const blobUrl = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = blobUrl
+    a.download = model.filename || `${model.name.replace(/\s+/g, '_')}.jpg`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    window.URL.revokeObjectURL(blobUrl)
+  } catch (err) {
+    const a = document.createElement('a')
+    a.href = model.url
+    a.download = model.filename || `${model.name}.jpg`
+    a.target = '_blank'
+    a.click()
+  }
+}
+
+const copyTokenDirect = async (tokenStr) => {
+  try {
+    await navigator.clipboard.writeText(tokenStr)
+    copiedDirectToken.value = tokenStr
+    setTimeout(() => {
+      if (copiedDirectToken.value === tokenStr) {
+        copiedDirectToken.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
 const parsedPrompts = ref([])
 const rawMarkdown = ref('')
 const generating = ref(false)
@@ -846,5 +1210,6 @@ const copySinglePrompt = (item, index) => {
 
 onMounted(() => {
   loadEpisode()
+  loadVaultModels()
 })
 </script>

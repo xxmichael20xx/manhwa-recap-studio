@@ -1,0 +1,55 @@
+{
+  "series_id": "Series_02_The_Omniscient_Dungeon_Sovereign",
+  "series_title": "The Omniscient Dungeon Sovereign",
+  "format": "16:9 Full Bleed Landscape",
+  "weapons": {
+    "dual_ironclad_mag_pistols": {
+      "name": "Dual Ironclad Mag-Pistols",
+      "token": "@{Weapon: Dual Ironclad Mag-Pistols}",
+      "category": "Signature Firearms",
+      "tier": 2,
+      "user": "Kaelen Thorne (Awakened)",
+      "visual_dna": "pair of identical custom heavy tactical mag-rail semi-automatic handguns, matte-black reinforced tungsten-titanium angular slides, dark carbon-fibre grip panels, glowing amethyst-purple mana conduction conduits illuminated along barrel flutes, integrated muzzle compensators emitting faint violet mana sparks, oversized heavy-calibre frame, no wood, no silver plating",
+      "reference_plate": "04_Weapon_Dual_Ironclad_Mag_Pistols.jpg"
+    },
+    "jason_vane_scarlet_rapier": {
+      "name": "Jason Vane's Gilded Scarlet Rapier",
+      "token": "@{Weapon: Jason Vane's Gilded Scarlet Rapier}",
+      "category": "Aristocratic Melee",
+      "tier": 2,
+      "user": "Lord Jason Vane",
+      "visual_dna": "ornate aristocratic rapier with intricate gilded gold wire basket hilt, polished ruby pommel, glowing translucent crimson mana edge along razor-thin steel blade",
+      "reference_plate": "05_Weapon_Jason_Vane_Scarlet_Rapier.jpg"
+    }
+  },
+  "key_props_and_artifacts": {
+    "sovereign_reversion_core": {
+      "name": "Sovereign Reversion Core",
+      "token": "@{Artifact: Sovereign Reversion Core}",
+      "category": "Primordial Relic",
+      "visual_dna": "pulsating geometric 12-sided amethyst crystal dodecahedron floating in air, radiating concentric purple holographic runic rings and microscopic neural data particles",
+      "reference_plate": "06_Artifact_Sovereign_Reversion_Core.jpg"
+    },
+    "district_9_chronometer": {
+      "name": "District 9 Retro Chronometer",
+      "token": "@{Prop: District 9 Chronometer}",
+      "category": "Environmental Prop",
+      "visual_dna": "cracked retro-digital desktop clock with brushed steel casing, glowing green 7-segment digital LED display reading 'OCT 14 - YR 00 - 07:15 AM', scratched acrylic lens",
+      "reference_plate": "07_Prop_District_9_Chronometer.jpg"
+    },
+    "guild_escape_pod": {
+      "name": "Aegis Guild Extraction Pod",
+      "token": "@{Prop: Guild Extraction Escape Pod}",
+      "category": "Escape Craft",
+      "visual_dna": "gilded titanium and scarlet-trimmed oval emergency evacuation pod with heavy hydraulic pneumatic blast doors, glowing amber thruster rings, pressurized steam vents",
+      "reference_plate": "08_Prop_Aegis_Guild_Extraction_Pod.jpg"
+    },
+    "holographic_system_hud": {
+      "name": "Sovereign Holographic System HUD",
+      "token": "@{Prop: Holographic System HUD}",
+      "category": "System Interface",
+      "visual_dna": "semi-translucent floating deep amethyst-violet holographic status window with delicate gold-trimmed runic borders, crisp glowing white and violet text, micro-data graphs",
+      "reference_plate": "09_Prop_Sovereign_System_HUD.jpg"
+    }
+  }
+}

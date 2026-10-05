@@ -130,5 +130,23 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   3. **Zero Developer Meta-Jargon:** Internal studio terminology (*"Studio Engine"*, *"Invariant"*, *"Benchmark"*) is strictly forbidden in narration. System HUD popups must read as authentic in-world manhwa notices (`[SYSTEM NOTICE: Target Carapace Rating Exceeds Kinetic Impact — Null Damage Deflection]`).
   4. **Zero-Bleed Script Formatting:** Script headers and Act summaries must never contain bracketed `[IMG_...]` tags. Scene tags `[IMG_XXX]` are strictly reserved for narrative scene starters.
 
+---
+
+### 16. The Spatial Scene-Block & Prop DNA Invariant (Zero-Hallucination Visual Standard)
+* **Defect:** Visual scenes randomly changing locations mid-conversation (e.g. going from a bedroom to an outdoor city in the next cut), weapons morphing from pistols to revolvers or laser blasters, or diffusion models hallucinating vehicles/turrets due to ambiguous words like "Bronco" or "Tank".
+* **Fix (Spatial Locking, Prop Vault & 5-Layer Prompt Engineering):**
+  1. **Mandatory Item & Prop DNA Vault (`items.json`):** Signature weapons, key magical artifacts, and recurring props are registered in `character_vault/items.json` with locked Item DNA tokens (e.g. `@{Weapon: Dual Ironclad Mag-Pistols}`).
+  2. **The Spatial Scene-Block Standard (3–6 Cut Location Locking):** Consecutive scenes set in the same physical location must share an identical 15–20 word locked environment string across all cuts in that cluster. Camera progression (Wide $\rightarrow$ Medium Action $\rightarrow$ Reaction Close-Up $\rightarrow$ Prop/HUD Detail) provides variety without changing the room.
+  3. **Strict 5-Layer Structured Prompt Hierarchy:** Every prompt must follow:
+     - `[Layer 1: Camera Framing]` (16:9 widescreen, shot type)
+     - `[Layer 2: Character DNA & Wardrobe]` (Locked character token & attire)
+     - `[Layer 3: Locked Environment]` (Identical room/cavern description)
+     - `[Layer 4: Unambiguous Action & Props]` (Clear physical action and locked item token)
+     - `[Layer 5: Art Style & Quality Guards]` (Dark fantasy action manhwa style, anatomical guards)
+  4. **Purge of Lexically Ambiguous Words:** Strictly ban dual-meaning automotive/military terms ("Bronco", "Tank", "Turret") in prompts and character tokens.
+  5. **Mandatory Visual Reference Plates for Items & Props:** Every signature weapon, recurring magical artifact, and key environmental prop MUST have a generated 16:9 master reference plate saved in `character_vault/` (`04_Weapon_...jpg`, `05_Weapon_...jpg`, etc.) and mapped in `items.json` for Google Flow asset injection and visual continuity.
+
+
+
 
 

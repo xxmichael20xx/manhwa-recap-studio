@@ -536,64 +536,157 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => 
   }
 })
 
-// Character Models List for Franchise
+// Unified Character, Weapon & Item Models List for Franchise Vault
 app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   try {
     const { franchiseId } = req.params
     const modelsDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models')
     const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
     
-    // Check character_models.json in modelsDir
-    const manifestPath = path.join(modelsDir, 'character_models.json')
-    if (fs.existsSync(manifestPath)) {
-      const data = JSON.parse(await fs.promises.readFile(manifestPath, 'utf-8'))
-      return res.json(data)
-    }
+    const allItems = []
 
-    // Check characters.json in character_vault
-    const vaultManifestPath = path.join(vaultDir, 'characters.json')
-    if (fs.existsSync(vaultManifestPath)) {
-      const rawVault = JSON.parse(await fs.promises.readFile(vaultManifestPath, 'utf-8'))
+    // 1. Ingest Characters
+    const vaultCharPath = path.join(vaultDir, 'characters.json')
+    const manifestCharPath = path.join(modelsDir, 'character_models.json')
+    
+    if (fs.existsSync(vaultCharPath)) {
+      const rawVault = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
       const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
-      const mapped = charList.map(c => ({
-        id: c.id,
-        name: c.name,
-        flowName: c.token ? c.token.replace(/[@{}]/g, '') : c.name,
-        role: c.role ? (c.role.toLowerCase().includes('antagonist') ? 'Antagonist' : c.role.toLowerCase().includes('supporting') || c.role.toLowerCase().includes('proctor') ? 'Supporting' : 'Protagonist') : 'Standard',
-        tier: `Tier ${c.tier || 1}: ${c.role || 'Character'}`,
-        filename: c.reference_plate || `${c.id}.jpg`,
-        url: `/api/franchises/${franchiseId}/character-models/${c.reference_plate || `${c.id}.jpg`}`,
-        description: c.appearance?.hair ? `${c.appearance.hair}. ${c.appearance.attire}` : (c.appearance || c.role),
-        dnaAnchor: c.dna_prompt_anchor || c.token || c.name
-      }))
-      return res.json(mapped)
+      for (const c of charList) {
+        const roleStr = c.role || 'Character'
+        const isAntagonist = roleStr.toLowerCase().includes('antagonist')
+        const isSupporting = roleStr.toLowerCase().includes('supporting') || roleStr.toLowerCase().includes('proctor')
+        const roleCategory = isAntagonist ? 'Antagonist' : (isSupporting ? 'Supporting' : 'Protagonist')
+        const plateFile = c.reference_plate || `${c.id}.jpg`
+        const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+        
+        allItems.push({
+          id: c.id,
+          name: c.name,
+          flowName: c.token ? c.token.replace(/[@{}]/g, '') : c.name,
+          category: roleCategory,
+          role: roleCategory,
+          type: 'character',
+          tier: `Tier ${c.tier || 1}: ${c.role || 'Character'}`,
+          filename: plateFile,
+          hasPlate: diskExists,
+          url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
+          description: c.appearance?.hair ? `${c.appearance.hair}. ${c.appearance.attire}` : (c.appearance || c.role || ''),
+          dnaAnchor: c.dna_prompt_anchor || c.token || c.name,
+          fullDna: c.dna_prompt_anchor || '',
+          token: c.token || `@{${c.name}}`
+        })
+      }
+    } else if (fs.existsSync(manifestCharPath)) {
+      const data = JSON.parse(await fs.promises.readFile(manifestCharPath, 'utf-8'))
+      if (Array.isArray(data)) {
+        allItems.push(...data)
+      }
     }
 
-    const activeDir = fs.existsSync(modelsDir) ? modelsDir : (fs.existsSync(vaultDir) ? vaultDir : null)
-    if (activeDir) {
-      const files = await fs.promises.readdir(activeDir)
-      const images = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f)).map(f => ({
-        id: f.replace(/\.[^/.]+$/, '').toLowerCase(),
-        name: f.replace(/\.[^/.]+$/, '').replace(/_/g, ' '),
-        tier: 'Standard Reference',
-        filename: f,
-        url: `/api/franchises/${franchiseId}/character-models/${f}`
-      }))
-      return res.json(images)
+    // 2. Ingest Weapons, Artifacts & Key Props
+    const vaultItemsPath = path.join(vaultDir, 'items.json')
+    const manifestItemsPath = path.join(modelsDir, 'items.json')
+    const activeItemsFile = fs.existsSync(vaultItemsPath) ? vaultItemsPath : (fs.existsSync(manifestItemsPath) ? manifestItemsPath : null)
+    
+    if (activeItemsFile) {
+      const rawItems = JSON.parse(await fs.promises.readFile(activeItemsFile, 'utf-8'))
+      
+      // A. Weapons
+      if (rawItems.weapons) {
+        for (const [key, item] of Object.entries(rawItems.weapons)) {
+          const plateFile = item.reference_plate || `${key}.jpg`
+          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+          allItems.push({
+            id: key,
+            name: item.name,
+            flowName: item.token ? item.token.replace(/[@{}]/g, '') : item.name,
+            category: 'Weapons',
+            role: 'Weapons',
+            type: 'weapon',
+            tier: item.category || `Tier ${item.tier || 2} Weapon`,
+            filename: plateFile,
+            hasPlate: diskExists,
+            url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
+            description: item.visual_dna || `${item.name} (${item.category || 'Signature Weapon'})`,
+            dnaAnchor: item.token || `@{Weapon: ${item.name}}`,
+            fullDna: item.visual_dna || '',
+            token: item.token || `@{Weapon: ${item.name}}`
+          })
+        }
+      }
+
+      // B. Key Props and Artifacts
+      if (rawItems.key_props_and_artifacts) {
+        for (const [key, item] of Object.entries(rawItems.key_props_and_artifacts)) {
+          const plateFile = item.reference_plate || `${key}.jpg`
+          const isArtifact = (item.category || '').toLowerCase().includes('relic') || (item.category || '').toLowerCase().includes('artifact') || key.includes('artifact') || key.includes('core')
+          const categoryName = isArtifact ? 'Artifacts' : 'Props'
+          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+          allItems.push({
+            id: key,
+            name: item.name,
+            flowName: item.token ? item.token.replace(/[@{}]/g, '') : item.name,
+            category: categoryName,
+            role: categoryName,
+            type: isArtifact ? 'artifact' : 'prop',
+            tier: item.category || (isArtifact ? 'Primordial Relic' : 'Key Environmental Prop'),
+            filename: plateFile,
+            hasPlate: diskExists,
+            url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
+            description: item.visual_dna || `${item.name} (${item.category || 'Prop/Artifact'})`,
+            dnaAnchor: item.token || `@{${item.name}}`,
+            fullDna: item.visual_dna || '',
+            token: item.token || `@{${item.name}}`
+          })
+        }
+      }
     }
-    res.json([])
+
+    // 3. Fallback to image files in directory if empty
+    if (allItems.length === 0) {
+      const activeDir = fs.existsSync(vaultDir) ? vaultDir : (fs.existsSync(modelsDir) ? modelsDir : null)
+      if (activeDir) {
+        const files = await fs.promises.readdir(activeDir)
+        const images = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f)).map(f => {
+          const cleanName = f.replace(/\.[^/.]+$/, '').replace(/_/g, ' ')
+          const isWeapon = /weapon/i.test(f)
+          const isArtifact = /artifact|relic|core/i.test(f)
+          const isProp = /prop/i.test(f)
+          const cat = isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : (isProp ? 'Props' : 'General'))
+          return {
+            id: f.replace(/\.[^/.]+$/, '').toLowerCase(),
+            name: cleanName,
+            flowName: cleanName,
+            category: cat,
+            role: cat,
+            type: isWeapon ? 'weapon' : (isArtifact ? 'artifact' : (isProp ? 'prop' : 'character')),
+            tier: 'Standard Reference',
+            filename: f,
+            hasPlate: true,
+            url: `/api/franchises/${franchiseId}/character-models/${f}`,
+            description: cleanName,
+            dnaAnchor: `@{${cleanName}}`,
+            token: `@{${cleanName}}`
+          }
+        })
+        return res.json(images)
+      }
+    }
+
+    res.json(allItems)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
 })
 
-// Stream Character Model Image
+// Stream Character / Item Model Reference Plate Image
 app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) => {
   const { franchiseId, filename } = req.params
-  let filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
+  let filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault', filename)
   
   if (!fs.existsSync(filePath)) {
-    filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault', filename)
+    filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
   }
 
   if (fs.existsSync(filePath)) {
@@ -602,7 +695,7 @@ app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) =>
     const readStream = fs.createReadStream(filePath)
     readStream.pipe(res)
   } else {
-    res.status(404).send('Character model file not found')
+    res.status(404).send('Reference plate not found')
   }
 })
 

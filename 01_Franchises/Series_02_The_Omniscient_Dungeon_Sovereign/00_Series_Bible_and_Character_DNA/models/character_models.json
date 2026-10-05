@@ -13,13 +13,13 @@
   {
     "id": "kaelen_thorne_tier_2_regressor",
     "name": "Kaelen Thorne (Awakened)",
-    "flowName": "Kaelen Thorne - Dual Bronco Regressor",
+    "flowName": "Kaelen Thorne - Awakened Sovereign",
     "role": "Protagonist",
     "tier": "Tier 2: Omniscient Sovereign",
     "filename": "01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
     "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
-    "description": "18yo unscarred sovereign regressor, straight pitch-black hair, glowing amethyst eyes, tailored charcoal trench coat, dual modified tungsten Bronco handcannons.",
-    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, straight pitch-black hair with subtle parted bangs, piercing luminous glowing amethyst-purple eyes, calm cold analytical gaze, unscarred skin, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, slate combat trousers, dual matte tungsten heavy handcannons in hand or holstered at thighs, faint glowing purple holographic trajectory matrices, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
+    "description": "18yo unscarred sovereign regressor, straight pitch-black hair, glowing amethyst eyes, tailored charcoal trench coat, holding @{Weapon: Dual Ironclad Mag-Pistols}.",
+    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, straight pitch-black hair with subtle parted bangs, piercing luminous glowing amethyst-purple eyes, calm cold analytical gaze, unscarred skin, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, slate combat trousers, holding @{Weapon: Dual Ironclad Mag-Pistols} or holstered at thighs, faint glowing purple holographic trajectory matrices, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
   },
   {
     "id": "lord_jason_vane",

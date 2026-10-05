@@ -122,7 +122,7 @@
 
 [IMG_052] Otto froze, his lathe coming to a halt as he raised his cybernetic lens, staring at Kaelen in genuine disbelief.
 
-[IMG_053] "Those Broncos have been collecting dust since the Second Rift War," Otto snorted, crossing his massive arms. "They're solid tungsten-forged kinetic beasts. Each gun weighs nine kilograms with an uncompensated recoil that would shatter an unranked kid's wrist in a single trigger pull. What could an unranked novice possibly do with non-magical slug-throwers?"
+[IMG_053] "Those Ironclad pistols have been collecting dust since the Second Rift War," Otto snorted, crossing his massive arms. "They're solid tungsten-forged kinetic beasts. Each gun weighs nine kilograms with an uncompensated recoil that would shatter an unranked kid's wrist in a single trigger pull. What could an unranked novice possibly do with non-magical slug-throwers?"
 
 [IMG_054] Kaelen placed forty silver pieces onto the counter in neat, perfectly aligned stacks. "I am going to rewrite their ballistics."
 
@@ -153,7 +153,7 @@
 
 [IMG_065] When he reassembled the dual weapons, the slide racked with a deep, authoritative metallic *clack*. The guns were no longer clumsy surplus weapons; they were precision kinetic instruments calibrated specifically for his neural predictive system.
 
-[IMG_066] `[EQUIPMENT MODIFICATION COMPLETE: Dual 'Ironclad Bronco' Handcannons (Calibrated)]`  
+[IMG_066] `[EQUIPMENT MODIFICATION COMPLETE: Dual 'Ironclad' Mag-Pistols (Calibrated)]`  
 `[Base Kinetic Damage: 120 (Armour-Piercing)]`  
 `[Recoil Dissipation Efficiency: 84.5% via Gas Port Vectoring]`  
 `[Special Feature: Compatible with Trajectory Ricochet Calculation]`
@@ -263,7 +263,7 @@
 `[Monster Density: High | Primary Inhabitants: Tier-1 Carrion Stalkers & Shadow Vermin]`  
 `[EXPERIENCE RATIO: 50 EXP Per Standard Elimination | Target Foundation Cap: 5,000 EXP]`
 
-[IMG_114] Kaelen reached under his long coat, unholstering both modified Ironclad Bronco handcannons. The heavy tungsten frames felt perfectly balanced in his grip, their flared compensators gleaming in the lamplight.
+[IMG_114] Kaelen reached under his long coat, unholstering both modified Ironclad Mag-Pistols. The heavy tungsten frames felt perfectly balanced in his grip, their flared compensators gleaming in the lamplight.
 
 [IMG_115] In conventional manhwa tropes, dungeon monsters attacked in polite, single-file lines, patiently waiting for the protagonist to deliver theatrical monologues.
 
@@ -287,7 +287,7 @@
 
 [IMG_125] *BANG!*
 
-[IMG_126] The modified Bronco roared with a thunderous kinetic boom. The gas ports vented propellant upward, completely cancelling the violent recoil while Kaelen’s arm remained rock steady.
+[IMG_126] The modified mag-pistol roared with a thunderous kinetic boom. The gas ports vented propellant upward, completely cancelling the violent recoil while Kaelen’s arm remained rock steady.
 
 [IMG_127] The thirty-millimeter solid tungsten slug slammed into the concrete wall, ricocheted cleanly off the subway rail with a blinding shower of sparks, and punched straight through the lead stalker's throat, severing its central nerve cluster before continuing through the skull of a second beast charging behind it.
 
@@ -296,7 +296,7 @@
 
 [IMG_129] Two more beasts surged over their fallen pack mates, snapping their mandibles in a frenzied attempt to close the distance.
 
-[IMG_130] Kaelen did not flinch. He raised his left Bronco and fired two consecutive calculated shots into the reinforced ceiling arch.
+[IMG_130] Kaelen did not flinch. He raised his left mag-pistol and fired two consecutive calculated shots into the reinforced ceiling arch.
 
 [IMG_131] *BANG! BANG!*
 
@@ -318,7 +318,7 @@
 
 [IMG_139] Kaelen calculated the exact inverse acoustic frequency required to create perfect destructive phase cancellation, completely nullifying the screeching shockwave on impact.
 
-[IMG_140] The instant the alpha opened its jaws to shriek, Kaelen fired both Broncos simultaneously into the steel plate floor at an offset distance of sixty-two centimetres.
+[IMG_140] The instant the alpha opened its jaws to shriek, Kaelen fired both mag-pistols simultaneously into the steel plate floor at an offset distance of sixty-two centimetres.
 
 [IMG_141] *BOOM!*
 
@@ -351,7 +351,7 @@
 
 [IMG_154] With the alpha dead, the remaining thirty stalkers lost pack cohesion and scattered in panic across the subterranean tracks.
 
-[IMG_155] Kaelen reloaded both Broncos with smooth, lightning-fast economy, dropping empty cylinder speed-loaders and locking fresh tungsten penetrators into place in under 1.2 seconds.
+[IMG_155] Kaelen reloaded both mag-pistols with smooth, lightning-fast economy, dropping empty cylinder speed-loaders and locking fresh tungsten penetrators into place in under 1.2 seconds.
 
 [IMG_156] Methodically advancing down the rail line, he fired calculated ricochets into ventilation ducts, maintenance alcoves, and beneath abandoned train cars, exterminating every fleeing beast with mathematical efficiency.
 
@@ -402,8 +402,7 @@
 
 [IMG_175] He dropped flat onto his back, sliding between the monster's legs along the smooth steel rail as the behemoth charged overhead.
 
-[IMG_176] While inverted beneath the monster's belly, Kaelen crossed his arms and fired both Broncos simultaneously into the underside of the subway rail at precisely calculated opposing angles.
-
+[IMG_176] While inverted beneath the monster's belly, Kaelen crossed his arms and fired both mag-pistols simultaneously into the underside of the subway rail at precisely calculated opposing angles.
 [IMG_177] *BOOM! BOOM!*
 
 [IMG_178] The first tungsten slug ricocheted off the inner lip of the steel rail, arced upward behind the beast's rear plate, and struck the hinge of the third dorsal plate, prying the armor gap open by exactly three millimetres.
@@ -429,7 +428,7 @@
 
 [IMG_187] With the boss destroyed, the dungeon gate at the end of the platform began to stabilize, its dimensional vortex turning from an unstable crimson to a calm, translucent blue.
 
-[IMG_188] Kaelen holstered his dual Broncos, slung his heavy leather harvest sack over his shoulder, and walked through the extraction exit back toward the surface world.
+[IMG_188] Kaelen holstered his dual mag-pistols, slung his heavy leather harvest sack over his shoulder, and walked through the extraction exit back toward the surface world.
 
 [IMG_189] As he stepped out of the subway station entrance into the District 9 plaza, he was immediately surrounded by a cordon of armed private security operatives wearing the crimson-and-gold livery of the Aegis Vanguard Guild.
 

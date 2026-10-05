@@ -182,51 +182,57 @@
           <button @click="storyboardFeedback = ''" class="cursor-pointer">✕</button>
         </div>
 
-        <!-- Character Model DNA Sheets & Reference Plates -->
-        <!-- Character Vault (Google Flow Reference Plates) -->
+        <!-- Character & Item Vault (Google Flow Reference Plates) -->
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-2">
-              <div class="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+            <div class="flex items-center space-x-2.5">
+              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400">
                 <Users class="w-4 h-4" />
               </div>
               <div>
-                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide">
-                  Franchise Character Vault (Google Flow Reference Plates)
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide flex items-center space-x-2">
+                  <span>Franchise Character & Item Vault</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">
+                    {{ characterModels.length }} Reference Plates
+                  </span>
                 </h3>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                  Standardised character plates and naming matching Google Flow collections for rapid Alt+Tab generation.
+                  Standardised character DNA, weapons, artifacts & environmental prop plates for instant Alt+Tab Google Flow generation.
                 </p>
               </div>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="flex items-center space-x-1.5 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center gap-1 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
               <button 
-                v-for="cat in ['all', 'Protagonist', 'Antagonist', 'Supporting']" 
-                :key="cat"
-                @click="selectedVaultCategory = cat"
-                class="px-2.5 py-1 rounded-lg transition capitalize cursor-pointer"
-                :class="selectedVaultCategory === cat ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+                v-for="cat in vaultCategories" 
+                :key="cat.key"
+                @click="selectedVaultCategory = cat.key"
+                class="px-2.5 py-1 rounded-lg transition capitalize cursor-pointer font-medium flex items-center space-x-1"
+                :class="selectedVaultCategory === cat.key ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
               >
-                {{ cat === 'all' ? `All (${characterModels.length})` : cat }}
+                <span>{{ cat.label }}</span>
+                <span class="text-[10px] opacity-75">({{ cat.count }})</span>
               </button>
             </div>
           </div>
 
-          <!-- Character Models Grid -->
+          <!-- Character & Item Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div 
               v-for="model in filteredCharacterModels" 
               :key="model.id"
-              class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3 flex flex-col justify-between"
+              class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3 flex flex-col justify-between hover:border-purple-500/40 transition"
             >
-              <div class="space-y-2">
-                <div class="flex items-center justify-between gap-1">
-                  <div>
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate">{{ model.name }}</h4>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 font-semibold inline-block mt-0.5">
-                      {{ model.role }} • {{ model.tier }}
+              <div class="space-y-2.5">
+                <div class="flex items-start justify-between gap-1">
+                  <div class="min-w-0 flex-1">
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" :title="model.name">{{ model.name }}</h4>
+                    <span 
+                      class="text-[10px] font-mono px-1.5 py-0.5 rounded font-semibold inline-block mt-0.5 border"
+                      :class="getCategoryBadgeClass(model.category)"
+                    >
+                      {{ model.category }} • {{ model.tier }}
                     </span>
                   </div>
                 </div>
@@ -234,37 +240,104 @@
                 <!-- Model Preview Thumbnail (16:9) -->
                 <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
                   <img :src="model.url" :alt="model.name" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                  <a 
-                    :href="model.url" 
-                    target="_blank" 
-                    class="absolute top-2 right-2 p-1.5 rounded-lg bg-black/60 hover:bg-black/80 text-white backdrop-blur-xs transition"
-                    title="View full resolution in new tab"
-                  >
-                    <ExternalLink class="w-3.5 h-3.5" />
-                  </a>
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
+                    <a 
+                      :href="model.url" 
+                      target="_blank" 
+                      class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
+                      title="View Full Resolution"
+                    >
+                      <ExternalLink class="w-3.5 h-3.5" />
+                    </a>
+                    <button 
+                      @click="downloadModelPlate(model)"
+                      class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
+                      title="Download Image File"
+                    >
+                      <Download class="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
 
+                <!-- Google Flow Setup Name Bar (1-Click Paste for Google Flow Reference Setup) -->
+                <div 
+                  @click="copyModelName(model)"
+                  class="p-1.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between cursor-pointer hover:border-purple-500/50 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition group"
+                  title="Click to copy clean Reference Name (WITHOUT @{}) to paste directly into Google Flow character/object setup"
+                >
+                  <div class="flex items-center space-x-1.5 min-w-0 flex-1">
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-bold shrink-0">
+                      Flow Name
+                    </span>
+                    <span class="text-[10px] font-mono text-slate-700 dark:text-slate-300 truncate font-semibold">
+                      {{ model.flowName || model.name }}
+                    </span>
+                  </div>
+                  <span 
+                    class="text-[9px] font-mono shrink-0 ml-1 font-bold"
+                    :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
+                  >
+                    {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
+                  </span>
+                </div>
+
+                <!-- Description -->
                 <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
                   {{ model.description }}
                 </p>
               </div>
 
-              <!-- Actions -->
-              <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800/80 gap-1.5">
+              <!-- Action Buttons -->
+              <div class="flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-slate-800/80 gap-1.5">
                 <button 
                   @click="downloadModelPlate(model)"
                   class="px-2 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer"
+                  title="Download Master Reference Plate"
                 >
-                  <Download class="w-3 h-3" />
+                  <Download class="w-3 h-3 text-slate-500 dark:text-slate-400" />
                   <span>Download</span>
                 </button>
-                <button 
-                  @click="copyModelDna(model)"
-                  class="px-2 py-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3 h-3" />
-                  <span>Copy DNA</span>
-                </button>
+                
+                <div class="flex items-center space-x-1">
+                  <button 
+                    @click="copyModelName(model)"
+                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    :class="copiedVaultId === model.id && copiedVaultType === 'name' 
+                      ? 'bg-emerald-600 text-white' 
+                      : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
+                    title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
+                  >
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3 h-3" />
+                    <Tag v-else class="w-3 h-3 text-slate-500" />
+                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
+                  </button>
+
+                  <button 
+                    @click="copyModelToken(model)"
+                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    :class="copiedVaultId === model.id && copiedVaultType === 'token' 
+                      ? 'bg-emerald-600 text-white' 
+                      : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
+                    title="Copy Google Flow Token (@{...})"
+                  >
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3" />
+                    <Copy v-else class="w-3 h-3" />
+                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
+                  </button>
+
+                  <button 
+                    @click="copyModelDna(model)"
+                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
+                      ? 'bg-emerald-600 text-white' 
+                      : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
+                    title="Copy Complete Visual DNA Prompt"
+                  >
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3" />
+                    <Sparkles v-else class="w-3 h-3" />
+                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -2225,6 +2298,7 @@ import {
   FolderDown,
   Archive,
   FolderOpen,
+  Tag,
   Layers,
   Zap,
   Loader2,
@@ -2445,7 +2519,7 @@ const filteredAlignmentScenes = computed(() => {
 
 const loadCharacterModels = async () => {
   try {
-    const res = await fetch(`/api/franchises/${route.params.franchiseId}/character-models`)
+    const res = await fetch(`/api/franchises/${route.params.franchiseId}/character-models?cb=${Date.now()}`)
     const data = await res.json()
     if (Array.isArray(data)) {
       characterModels.value = data
@@ -2455,28 +2529,127 @@ const loadCharacterModels = async () => {
   }
 }
 
-const filteredCharacterModels = computed(() => {
-  if (selectedVaultCategory.value === 'all') return characterModels.value
-  return characterModels.value.filter(m => m.role?.toLowerCase() === selectedVaultCategory.value.toLowerCase())
+const copiedVaultId = ref(null)
+const copiedVaultType = ref(null)
+
+const vaultCategories = computed(() => {
+  const total = characterModels.value.length
+  const chars = characterModels.value.filter(m => m.type === 'character' || ['protagonist', 'antagonist', 'supporting'].includes(m.category?.toLowerCase())).length
+  const weapons = characterModels.value.filter(m => m.category === 'Weapons').length
+  const artifacts = characterModels.value.filter(m => m.category === 'Artifacts').length
+  const props = characterModels.value.filter(m => m.category === 'Props').length
+
+  const list = [{ key: 'all', label: 'All', count: total }]
+  if (chars > 0) list.push({ key: 'characters', label: 'Characters', count: chars })
+  if (weapons > 0) list.push({ key: 'Weapons', label: 'Weapons', count: weapons })
+  if (artifacts > 0) list.push({ key: 'Artifacts', label: 'Artifacts', count: artifacts })
+  if (props > 0) list.push({ key: 'Props', label: 'Props', count: props })
+  return list
 })
 
-const copyModelDna = (model) => {
-  if (!model) return
-  const textToCopy = model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
-  navigator.clipboard.writeText(textToCopy).then(() => {
-    batchUploadFeedback.value = `Copied ${model.name} DNA tokens to clipboard!`
-    setTimeout(() => { batchUploadFeedback.value = '' }, 3000)
-  }).catch((err) => {
-    console.error('Clipboard write error:', err)
-  })
+const getCategoryBadgeClass = (category) => {
+  const cat = (category || '').toLowerCase()
+  if (cat.includes('protagonist')) return 'bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-800'
+  if (cat.includes('antagonist')) return 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-300 dark:border-rose-800'
+  if (cat.includes('supporting')) return 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800'
+  if (cat.includes('weapon')) return 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800'
+  if (cat.includes('artifact')) return 'bg-violet-100 dark:bg-violet-950/80 text-violet-700 dark:text-violet-300 border-violet-300 dark:border-violet-800'
+  if (cat.includes('prop')) return 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800'
+  return 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
 }
 
-const downloadModelPlate = (model) => {
+const filteredCharacterModels = computed(() => {
+  if (selectedVaultCategory.value === 'all') return characterModels.value
+  if (selectedVaultCategory.value === 'characters') {
+    return characterModels.value.filter(m => m.type === 'character' || ['protagonist', 'antagonist', 'supporting'].includes(m.category?.toLowerCase()))
+  }
+  if (selectedVaultCategory.value === 'items') {
+    return characterModels.value.filter(m => m.type !== 'character' || ['weapons', 'artifacts', 'props'].includes(m.category?.toLowerCase()))
+  }
+  return characterModels.value.filter(m => 
+    m.category?.toLowerCase() === selectedVaultCategory.value.toLowerCase() ||
+    m.role?.toLowerCase() === selectedVaultCategory.value.toLowerCase()
+  )
+})
+
+const copyModelName = async (model) => {
   if (!model) return
-  const a = document.createElement('a')
-  a.href = model.url
-  a.download = model.filename
-  a.click()
+  const cleanName = model.flowName || model.token?.replace(/[@{}]/g, '') || model.name
+  try {
+    await navigator.clipboard.writeText(cleanName)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'name'
+    triggerToast('Copied Reference Name', `Copied "${cleanName}" (without @{}) — ready to paste into Google Flow!`, 'success')
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'name') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const copyModelToken = async (model) => {
+  if (!model) return
+  const tokenText = model.token || `@{${model.name}}`
+  try {
+    await navigator.clipboard.writeText(tokenText)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'token'
+    triggerToast('Copied Token', `Copied "${tokenText}" to clipboard for Google Flow!`, 'success')
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'token') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const copyModelDna = async (model) => {
+  if (!model) return
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
+  try {
+    await navigator.clipboard.writeText(textToCopy)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'dna'
+    triggerToast('Copied Full DNA', `Copied complete visual prompt for "${model.name}" to clipboard!`, 'success')
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType.value === 'dna') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard write error:', err)
+  }
+}
+
+const downloadModelPlate = async (model) => {
+  if (!model) return
+  try {
+    const res = await fetch(model.url)
+    const blob = await res.blob()
+    const blobUrl = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = blobUrl
+    a.download = model.filename || `${model.name.replace(/\s+/g, '_')}.jpg`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    window.URL.revokeObjectURL(blobUrl)
+    triggerToast('Download Started', `Downloading reference plate "${model.filename}"`, 'info')
+  } catch (err) {
+    const a = document.createElement('a')
+    a.href = model.url
+    a.download = model.filename || `${model.name}.jpg`
+    a.target = '_blank'
+    a.click()
+  }
 }
 
 // Universal Ingestion Triggers
