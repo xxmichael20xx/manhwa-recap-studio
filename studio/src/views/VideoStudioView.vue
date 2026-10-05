@@ -1318,6 +1318,125 @@
           </div>
         </div>
 
+        <!-- Brand Watermark & Channel Identity Overlay Card -->
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2">
+              <div class="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <ShieldCheck class="w-4 h-4" />
+              </div>
+              <div>
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide flex items-center space-x-2">
+                  <span>Brand Watermark & Channel Identity Overlay</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">
+                    Recap Runic Medallion
+                  </span>
+                </h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Burns the transparent circular Recap Runic logo into compiled video cuts to protect intellectual property and establish channel branding.
+                </p>
+              </div>
+            </div>
+
+            <!-- Toggle Switch -->
+            <label class="flex items-center space-x-2.5 cursor-pointer select-none bg-white dark:bg-slate-900 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs">
+              <input 
+                type="checkbox" 
+                v-model="burnWatermark"
+                class="w-4 h-4 rounded text-purple-600 accent-purple-600 cursor-pointer"
+              />
+              <span class="text-xs font-bold font-mono" :class="burnWatermark ? 'text-purple-600 dark:text-purple-400' : 'text-slate-500'">
+                {{ burnWatermark ? '✓ Watermark Enabled' : 'Watermark Disabled' }}
+              </span>
+            </label>
+          </div>
+
+          <div v-if="burnWatermark" class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+            <!-- Left: Placement Options -->
+            <div class="space-y-3 lg:col-span-2">
+              <div class="text-xs font-bold font-mono text-slate-700 dark:text-slate-300">
+                Watermark Screen Placement:
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                <div 
+                  v-for="pos in watermarkPositions" 
+                  :key="pos.id"
+                  @click="watermarkPosition = pos.id"
+                  class="p-3 rounded-xl border transition cursor-pointer flex flex-col justify-between space-y-1.5"
+                  :class="watermarkPosition === pos.id 
+                    ? 'border-purple-600 bg-purple-50/50 dark:bg-purple-950/30 ring-1 ring-purple-600 shadow-xs' 
+                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-500/40'"
+                >
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-900 dark:text-white">{{ pos.label }}</span>
+                    <span v-if="watermarkPosition === pos.id" class="w-2 h-2 rounded-full bg-purple-600 shrink-0"></span>
+                  </div>
+                  <p class="text-[10px] text-slate-500 dark:text-slate-400 line-clamp-1">
+                    {{ pos.desc }}
+                  </p>
+                  <div class="text-[9px] font-mono text-purple-600 dark:text-purple-400 pt-1 border-t border-slate-100 dark:border-slate-800/80">
+                    {{ pos.xDesc }} • {{ pos.yDesc }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Opacity Selector -->
+              <div class="pt-3 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="space-y-0.5">
+                  <span class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">Logo Opacity Level:</span>
+                  <p class="text-[10px] text-slate-400">20% subtle opacity recommended for non-intrusive viewer retention</p>
+                </div>
+                <div class="flex items-center space-x-1.5 bg-slate-200 dark:bg-slate-800 p-1 rounded-xl border border-slate-300 dark:border-slate-700">
+                  <button 
+                    v-for="op in opacityPresets" 
+                    :key="op.value"
+                    @click="watermarkOpacity = op.value"
+                    class="px-2.5 py-1 rounded-lg text-xs font-mono transition cursor-pointer font-bold"
+                    :class="watermarkOpacity === op.value 
+                      ? 'bg-purple-600 text-white shadow-xs' 
+                      : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'"
+                  >
+                    {{ op.label }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Live Visual Preview Stage -->
+            <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between space-y-2.5">
+              <div class="flex items-center justify-between text-xs font-mono font-bold">
+                <span class="text-slate-700 dark:text-slate-300">Live Stage Mockup:</span>
+                <span class="text-purple-600 dark:text-purple-400 font-bold">{{ Math.round(watermarkOpacity * 100) }}% Opacity</span>
+              </div>
+
+              <!-- 16:9 Mini Canvas Preview -->
+              <div class="aspect-video w-full rounded-lg bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/80 border border-slate-300 dark:border-slate-700 relative overflow-hidden flex items-center justify-center p-2 shadow-inner">
+                <!-- Watermark positioned dynamically -->
+                <div 
+                  class="absolute transition-all duration-300 flex items-center justify-center pointer-events-none"
+                  :style="getWatermarkPreviewStyle"
+                >
+                  <img 
+                    :src="watermarkLogoUrl" 
+                    alt="Watermark" 
+                    class="w-10 h-10 object-contain drop-shadow-md"
+                    :style="`opacity: ${watermarkOpacity}`"
+                  />
+                </div>
+
+                <div class="text-center space-y-0.5 opacity-40 pointer-events-none">
+                  <div class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-widest">1080p Stage Preview</div>
+                  <div class="text-[8px] font-mono text-slate-500">1920 × 1080 Canvas</div>
+                </div>
+              </div>
+
+              <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 text-center">
+                Position: <span class="text-purple-600 dark:text-purple-400 font-bold">{{ watermarkPosition.toUpperCase().replace('_', ' ') }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Compilation Progress & Status Box -->
         <div v-if="videoStatus.status === 'compiling' || compiling" class="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 space-y-3">
           <div class="flex items-center justify-between text-xs font-mono">
@@ -2313,7 +2432,8 @@ import {
   Hash,
   Clock,
   MessageSquare,
-  CheckCircle2
+  CheckCircle2,
+  FileText
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -3395,6 +3515,41 @@ const selectedBgmVolume = ref(-22)
 const activePreviewTrack = ref(null)
 const bgmAudioPlayer = ref(null)
 
+// Brand Watermark & Channel Identity Overlay State
+const burnWatermark = ref(true)
+const watermarkLogoUrl = ref('/brand/recap_runic_logo_transparent.png')
+const watermarkOpacity = ref(0.20)
+const watermarkPosition = ref('top_right')
+const watermarkPositions = [
+  { id: 'top_right', label: 'Top-Right (Option B — Default)', desc: 'Standard broadcast watermark position', xDesc: 'Right (W-w-36)', yDesc: 'Top (36px)' },
+  { id: 'top_left', label: 'Top-Left', desc: 'Alternative upper corner placement', xDesc: 'Left (36px)', yDesc: 'Top (36px)' },
+  { id: 'bottom_right', label: 'Bottom-Right', desc: 'Subtle lower corner placement', xDesc: 'Right (W-w-36)', yDesc: 'Bottom (H-h-36)' },
+  { id: 'bottom_left', label: 'Bottom-Left', desc: 'Lower left watermark placement', xDesc: 'Left (36px)', yDesc: 'Bottom (H-h-36)' },
+  { id: 'custom_user', label: 'Custom Option A (65% X / 25% Y)', desc: 'Offset focal aesthetic from bottom', xDesc: 'X: 65%', yDesc: 'Y: 25% from bottom' }
+]
+const opacityPresets = [
+  { value: 0.10, label: '10% (Ghost)' },
+  { value: 0.20, label: '20% (Subtle — Default)' },
+  { value: 0.35, label: '35% (Balanced)' },
+  { value: 0.50, label: '50% (Prominent)' }
+]
+
+const getWatermarkPreviewStyle = computed(() => {
+  switch (watermarkPosition.value) {
+    case 'top_left':
+      return { top: '8px', left: '8px' }
+    case 'bottom_right':
+      return { bottom: '8px', right: '8px' }
+    case 'bottom_left':
+      return { bottom: '8px', left: '8px' }
+    case 'custom_user':
+      return { bottom: '25%', left: '65%', transform: 'translate(-50%, 50%)' }
+    case 'top_right':
+    default:
+      return { top: '8px', right: '8px' }
+  }
+})
+
 const loadBgmTracks = async () => {
   try {
     const res = await fetch('/api/bgm')
@@ -3869,6 +4024,9 @@ const compileGroupedBatchesAction = async () => {
       burnSubtitles: true,
       bgmTrack: selectedBgmTrack.value,
       bgmVolume: selectedBgmVolume.value,
+      watermark: burnWatermark.value,
+      watermarkOpacity: watermarkOpacity.value,
+      watermarkPosition: watermarkPosition.value,
       force: true
     }
 
@@ -3951,6 +4109,9 @@ const autoCompileAllBatches = async () => {
       burnSubtitles: true,
       bgmTrack: selectedBgmTrack.value,
       bgmVolume: selectedBgmVolume.value,
+      watermark: burnWatermark.value,
+      watermarkOpacity: watermarkOpacity.value,
+      watermarkPosition: watermarkPosition.value,
       skipExisting: isSkip,
       force: true
     }
@@ -4030,7 +4191,10 @@ const compileVideo = async (targetBatchIdx = null) => {
       kenBurns: true,
       burnSubtitles: true,
       bgmTrack: selectedBgmTrack.value,
-      bgmVolume: selectedBgmVolume.value
+      bgmVolume: selectedBgmVolume.value,
+      watermark: burnWatermark.value,
+      watermarkOpacity: watermarkOpacity.value,
+      watermarkPosition: watermarkPosition.value
     }
     if (isBatch) {
       payload.batchIndex = bIdx

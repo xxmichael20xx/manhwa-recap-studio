@@ -402,7 +402,10 @@ export class VideoService {
       burnSubtitles = true, 
       bgmTrack = '01_Catacombs_SubBass_Drone.mp3', 
       bgmVolume = -22,
-      batchIndex = null 
+      batchIndex = null,
+      watermark = true,
+      watermarkOpacity = 0.20,
+      watermarkPosition = 'top_right'
     } = options
     const key = `${franchiseId}/${episodeId}`
 
@@ -718,56 +721,109 @@ export class VideoService {
       ? ['-ss', String(batchStartTime), '-t', String(batchDuration), '-i', masterAudioPath.replace(/\\/g, '/')]
       : ['-i', masterAudioPath.replace(/\\/g, '/')]
 
-    let ffmpegArgs = []
+    // 6. Watermark Brand Asset Resolution & Placement
+    const brandDir = path.resolve(projectRoot, 'assets/brand')
+    let watermarkPath = null
+    if (watermark) {
+      const transparentCandidate = path.join(brandDir, 'recap_runic_logo_transparent.png')
+      const defaultCandidate = path.join(brandDir, 'recap_runic_logo.jpg')
+      if (fsSync.existsSync(transparentCandidate)) {
+        watermarkPath = transparentCandidate
+      } else if (fsSync.existsSync(defaultCandidate)) {
+        watermarkPath = defaultCandidate
+      }
+    }
+
+    const safeWatermarkOpacity = Math.max(0.05, Math.min(1.0, Number(watermarkOpacity) || 0.20))
+    
+    // Position mappings
+    let overlayExpr = 'W-w-36:36' // Default: Top-Right (Option B)
+    if (watermarkPosition === 'top_left') {
+      overlayExpr = '36:36'
+    } else if (watermarkPosition === 'bottom_right') {
+      overlayExpr = 'W-w-36:H-h-36'
+    } else if (watermarkPosition === 'bottom_left') {
+      overlayExpr = '36:H-h-36'
+    } else if (watermarkPosition === 'custom_user') {
+      overlayExpr = 'W*0.65-w/2:H*0.75-h/2'
+    } else if (watermarkPosition === 'center') {
+      overlayExpr = '(W-w)/2:(H-h)/2'
+    }
+
+    // Determine input indices
+    let nextInputIdx = 2
+    let bgmInputIdx = null
+    if (bgmPath) {
+      bgmInputIdx = nextInputIdx++
+    }
+
+    let watermarkInputIdx = null
+    if (watermarkPath) {
+      watermarkInputIdx = nextInputIdx++
+    }
+
+    const filterComplexParts = []
+
+    // Video Filter Chain: Subtitles -> Watermark Overlay -> Output [v]
+    if (burnSubtitles) {
+      if (watermarkPath) {
+        filterComplexParts.push(`[0:v]subtitles='${safeSrtPath}':${subStyle}[v_sub]`)
+        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=240:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
+        filterComplexParts.push(`[v_sub][wm_faded]overlay=${overlayExpr}:format=auto[v]`)
+      } else {
+        filterComplexParts.push(`[0:v]subtitles='${safeSrtPath}':${subStyle}[v]`)
+      }
+    } else {
+      if (watermarkPath) {
+        filterComplexParts.push(`[0:v]null[v_sub]`)
+        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=240:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
+        filterComplexParts.push(`[v_sub][wm_faded]overlay=${overlayExpr}:format=auto[v]`)
+      } else {
+        filterComplexParts.push(`[0:v]null[v]`)
+      }
+    }
+
+    // Audio Filter Chain: Narration + (Optional BGM with Sidechain Ducking) -> Output [aout]
+    if (bgmPath) {
+      filterComplexParts.push(`[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`)
+      filterComplexParts.push(`[${bgmInputIdx}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`)
+      filterComplexParts.push(`[bgm_base][vo_sc]sidechaincompress=threshold=0.015:ratio=10:attack=12:release=350:link=average[bgm_ducked]`)
+      filterComplexParts.push(`[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`)
+    } else {
+      filterComplexParts.push(`[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[aout]`)
+    }
+
+    const filterComplex = filterComplexParts.join(';')
+
+    ffmpegArgs = [
+      '-y',
+      '-f', 'concat',
+      '-safe', '0',
+      '-i', concatListPath.replace(/\\/g, '/'),
+      ...audioInputArgs
+    ]
 
     if (bgmPath) {
-      const filterComplex = [
-        burnSubtitles ? `[0:v]subtitles='${safeSrtPath}':${subStyle}[v]` : `[0:v]copy[v]`,
-        `[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`,
-        `[2:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`,
-        `[bgm_base][vo_sc]sidechaincompress=threshold=0.015:ratio=10:attack=12:release=350:link=average[bgm_ducked]`,
-        `[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`
-      ].join(';')
-
-      ffmpegArgs = [
-        '-y',
-        '-f', 'concat',
-        '-safe', '0',
-        '-i', concatListPath.replace(/\\/g, '/'),
-        ...audioInputArgs,
-        '-stream_loop', '-1',
-        '-i', bgmPath.replace(/\\/g, '/'),
-        '-filter_complex', filterComplex,
-        '-map', '[v]',
-        '-map', '[aout]',
-        '-c:v', 'libx264',
-        '-preset', 'veryfast',
-        '-crf', '20',
-        '-r', '60',
-        '-c:a', 'aac',
-        '-b:a', '192k',
-        '-shortest',
-        targetVideoPath.replace(/\\/g, '/')
-      ]
-    } else {
-      let vf = burnSubtitles ? `subtitles='${safeSrtPath}':${subStyle}` : null
-      ffmpegArgs = [
-        '-y',
-        '-f', 'concat',
-        '-safe', '0',
-        '-i', concatListPath.replace(/\\/g, '/'),
-        ...audioInputArgs,
-        ...(vf ? ['-vf', vf] : []),
-        '-c:v', 'libx264',
-        '-preset', 'veryfast',
-        '-crf', '20',
-        '-r', '24',
-        '-c:a', 'aac',
-        '-b:a', '192k',
-        '-shortest',
-        targetVideoPath.replace(/\\/g, '/')
-      ]
+      ffmpegArgs.push('-stream_loop', '-1', '-i', bgmPath.replace(/\\/g, '/'))
     }
+
+    if (watermarkPath) {
+      ffmpegArgs.push('-loop', '1', '-i', watermarkPath.replace(/\\/g, '/'))
+    }
+
+    ffmpegArgs.push(
+      '-filter_complex', filterComplex,
+      '-map', '[v]',
+      '-map', '[aout]',
+      '-c:v', 'libx264',
+      '-preset', 'veryfast',
+      '-crf', '20',
+      '-r', '24',
+      '-c:a', 'aac',
+      '-b:a', '192k',
+      '-shortest',
+      targetVideoPath.replace(/\\/g, '/')
+    )
 
     return new Promise((resolve, reject) => {
       let stderrOutput = ''
