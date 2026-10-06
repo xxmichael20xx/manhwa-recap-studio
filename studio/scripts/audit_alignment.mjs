@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename)
 const projectRoot = path.resolve(__dirname, '../../')
 
 const franchiseDir = path.join(projectRoot, '01_Franchises/Series_02_The_Omniscient_Dungeon_Sovereign')
-const epDir = path.join(franchiseDir, 'EP01_The_Double_FRank_Anomaly_and_Awakening')
+const epDir = path.join(franchiseDir, 'EP01_The_FRank_Awakening_and_The_Plunderers_Bow')
 
 const scriptContent = fs.readFileSync(path.join(epDir, '01_Episode_Script.md'), 'utf-8')
 const promptContent = fs.readFileSync(path.join(epDir, '02_Prompt_Matrix.md'), 'utf-8')

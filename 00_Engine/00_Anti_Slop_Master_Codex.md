@@ -49,7 +49,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ### 5. Turn-Based Mob Stupidity (Single-File Swarms)
 * **Defect:** 50 syndicate guards rush the protagonist one-by-one while the other 49 stand around shouting.
-* **Fix (Choke-Point & Spatial Tactics):** The protagonist actively exploits corridors, elevation, line-of-sight obstruction, and AoE kinetic shockwaves to force simultaneous attackers into a two-abreast bottleneck.
+* **Fix (Dynamic Combat Spectrum — Tactical Realism & Fodder Curb-Stomps):** The protagonist actively exploits corridors, elevation, line-of-sight obstruction, and AoE kinetic shockwaves during elite and boss encounters. However, ~30% of combat can feature reckless or slightly dim fodder mobs rushing in overconfidently to allow for breezy, satisfying curb-stomps.
 
 ---
 
@@ -67,10 +67,9 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ### 8. Cartoonish "Young Master" & Low-IQ Antagonist Slop
 * **Defect:** Wealthy nobles witness the protagonist display god-tier competence, then screech illogical insults (*"He made a pact with the devil!"*, *"Kill this peasant!"*) or throw suicidal tantrums with zero self-preservation.
-* **Fix (The High-IQ Institutional Standard):** 
-  - **Zero "Sold Soul to Devil" Slop:** Strictly forbidden from writing characters who make lazy supernatural excuses when outsmarted.
-  - **Forensic & Data-Driven Logic:** Proctors and examiners assess anomalies through hard sensor data, acoustic telemetry, and compressive material stress analysis.
-  - **Calculated Political & Factional Leverage:** Antagonists act like ruthless corporate/military oligarchs, protecting their status through non-disclosure agreements, media monopolies, guild council sanctions, and black-market contracts rather than cartoonish tantrums.
+* **Fix (Tiered Antagonist Hierarchy & Classic Face-Slap Dynamics):** 
+  - **High-Tier Oligarchs & Masterminds:** Protect their status through non-disclosure agreements, media monopolies, guild council sanctions, and black-market contracts.
+  - **Low-Tier Bullies & Rival Scions (~30% / Operator-Commanded):** Can openly mock, ridicule, and dismiss the MC before trials/exams to establish classic manhwa underdog tension, setting up satisfying face-slaps while secret top-tier VIPs in observation lounges deduce the MC's true terrifying foundation.
 
 ---
 
@@ -90,25 +89,25 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ### 11. The Eternal "Demonic Accusation" Brain-Rot Trope
 * **Defect:** Protagonist displays an unusual or dark-hued technique, and onlookers mindlessly shriek *"He made a contract with an evil god!"* with zero empirical inspection or verification for dozens of chapters.
-* **Fix (Same-Act Forensic Telemetry & Analytical Supporting Cast):**
-  - Dark, necrotic, or void skill aesthetics are permissible *only* when paired with an analytical supporting character (e.g. Head Examiner Keith Morgan, Alchemist Lyra Fenn, or Senior Proctor).
-  - Within the **exact same Act**, the supporting character must deploy diagnostic sensors, mana spectrometers, or runic analysis to forensically prove that the ability operates on legitimate in-world physics (e.g. gravitational photon absorption, negative-entropy compression, or dense kinetic dispersion) rather than supernatural heresy.
+* **Fix (Flexible Narrative Resolution & 4–6 Act Suspense Arcs):**
+  - Dark or unusual skill aesthetics do NOT require instant resolution in the exact same Act.
+  - Suspicion, rumors, and guild investigations can simmer across **4 to 6 Acts (or 2–4 batches)**, building multi-episode anticipation before an analytical supporting character (e.g. Academy Examiner Keith Morgan, Alchemist Lyra Fenn) or the MC's undeniable proof establishes the truth.
 
 ---
 
 ### 12. The Eternal "Weakness Faking" & Indefinite Concealment Trap
-* **Defect:** Protagonist achieves god-tier power but remains disguised as a bullied, submissive F-rank porter for 50+ chapters, causing pacing stagnation and audience frustration.
-* **Fix (The Act 5+ Progressive Unveiling Law):**
-  - Concealment is strictly a temporary tactical phase for early asset accumulation.
-  - By **Act 5 (or the mid-arc climax / major public tournament/raid)**, the protagonist MUST openly reveal their dominant capabilities, shifting the narrative dynamic from secretive survival to dominant tactical authority.
+* **Defect:** Protagonist achieves god-tier power but remains disguised as a bullied, submissive F-rank porter for 50+ chapters with zero progression.
+* **Fix (Operator-Prompted Concealment & Strategic Sandbagging):**
+  - The MC is permitted to selectively conceal, sandbag, or throttle their abilities based on tactical need (e.g. baiting corrupt scouts, passing exams with the bare minimum).
+  - The AI agent will proactively ask the operator during pre-flight alignment when the MC's grand unveiling should occur.
 
 ---
 
 ### 13. The Blind Proctor & Unmonitored Exam Trope
 * **Defect:** High-stakes academy trials or dungeon exams operate with zero surveillance, allowing antagonists to commit blatant crimes unnoticed while proctors appear totally oblivious.
-* **Fix (Live-Feed Surveillance & High-IQ Evaluators):**
-  - All institutional trials must feature real-time scrying crystals, drone telemetry, and mana-density monitors.
-  - Proctors possess above-average analytical intellect: they observe kinetic anomalies, acoustic spikes, and environmental fractures from control centres, actively adjusting threat ratings and making calculated institutional deductions.
+* **Fix (Contextual Evaluation & Proctor Dynamics):**
+  - Official state/empire trials feature real-time scrying crystals, drone telemetry, and mana-density monitors with high-IQ evaluators.
+  - Underground or corrupt trials can feature dismissive, corrupt, or biased examiners, setting up dramatic shock revelations when the MC breaks all records.
 
 ---
 

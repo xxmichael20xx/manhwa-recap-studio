@@ -1,46 +1,156 @@
-[
-  {
-    "id": "kaelen_thorne_tier_1_porter",
-    "name": "Kaelen Thorne (Porter)",
-    "flowName": "Kaelen Thorne - Luggage Carrier",
-    "role": "Protagonist",
-    "tier": "Tier 1: 10-Year Porter",
-    "filename": "01_Protagonist_Kaelen_Thorne_Tier1_Porter.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne_Tier1_Porter.jpg",
-    "description": "28yo weary luggage porter, worn brown canvas coat with iron harness, bruised face, purple mana scars across neck, hunched posture hauling crates.",
-    "dnaAnchor": "Kaelen Thorne, 28-year-old male exhausted dungeon baggage porter, messy disheveled dark black hair, tired dark hollow eyes with heavy dark circles, bruised face with purple mana-burn scars across neck and cheeks, worn frayed earth-brown heavy canvas porter coat with iron luggage harness strapped across chest, scuffed muddy work boots, hunched exhausted posture carrying rusted iron supply crate, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9"
-  },
-  {
-    "id": "kaelen_thorne_tier_2_regressor",
-    "name": "Kaelen Thorne (Awakened)",
-    "flowName": "Kaelen Thorne - Awakened Sovereign",
-    "role": "Protagonist",
-    "tier": "Tier 2: Omniscient Sovereign",
-    "filename": "01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/01_Protagonist_Kaelen_Thorne_Tier2_Awakened.jpg",
-    "description": "18yo unscarred sovereign regressor, straight pitch-black hair, glowing amethyst eyes, tailored charcoal trench coat, holding @{Weapon: Dual Ironclad Mag-Pistols}.",
-    "dnaAnchor": "Kaelen Thorne, 18-year-old male manhwa protagonist, straight pitch-black hair with subtle parted bangs, piercing luminous glowing amethyst-purple eyes, calm cold analytical gaze, unscarred skin, tailored charcoal-gray long heavy trench coat with raised collar over matte black tactical vest, slate combat trousers, holding @{Weapon: Dual Ironclad Mag-Pistols} or holstered at thighs, faint glowing purple holographic trajectory matrices, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9"
-  },
-  {
-    "id": "lord_jason_vane",
-    "name": "Lord Jason Vane",
-    "flowName": "Lord Jason Vane - Aegis Vanguard Scion",
-    "role": "Antagonist",
-    "tier": "Grade-B Vanguard Scion",
-    "filename": "02_Antagonist_Lord_Jason_Vane.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/02_Antagonist_Lord_Jason_Vane.jpg",
-    "description": "22yo noble scion, slicked-back platinum-blonde hair, arrogant golden-amber eyes, ornate gilded scarlet-and-gold plate armor, ruby-hilted rapier.",
-    "dnaAnchor": "Lord Jason Vane, 22-year-old male noble antagonist, slicked-back platinum blonde hair, arrogant sharp golden-amber eyes, wearing ornate gilded scarlet-and-gold plate armour with crimson velvet trim and white cape, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting"
-  },
-  {
-    "id": "chief_proctor_keith_morgan",
-    "name": "Chief Proctor Keith Morgan",
-    "flowName": "Chief Proctor Keith Morgan - Bureau Examiner",
-    "role": "Supporting",
-    "tier": "Senior Proctor",
-    "filename": "03_Supporting_Keith_Morgan.jpg",
-    "url": "/api/franchises/Series_02_The_Omniscient_Dungeon_Sovereign/character-models/03_Supporting_Keith_Morgan.jpg",
-    "description": "48yo senior exam evaluator, slate-gray hair, gold-rimmed biometric telemetry monocle, tailored navy-blue Bureau officer trench coat, glowing datapad.",
-    "dnaAnchor": "Chief Proctor Keith Morgan, 48-year-old male senior exam proctor, slate-gray hair, gold-rimmed biometric telemetry monocle over right eye, wearing a tailored navy-blue bureau officer overcoat with brass insignia, holding a glowing holographic datapad, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting"
-  }
-]
+{
+  "series_id": "Series_02_The_Phantom_Archer_Sovereign",
+  "series_title": "The Phantom Archer Sovereign: F-Rank Stat Plunderer",
+  "format": "16:9 Full Bleed Landscape",
+  "archetype": "The Tri-Synergy Underdog Archer (Stat Plunder & Phantom Bowmaster)",
+  "characters": [
+    {
+      "id": "caelen_vance_tier_1_student",
+      "name": "Caelen Vance (Student)",
+      "token": "@{Caelen Vance - Student Archer}",
+      "tier": 1,
+      "role": "Protagonist (F-Rank Academy Student Phase)",
+      "age": 18,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Basic Wood Archer (Apparent F-Rank)",
+        "strength": 14,
+        "agility": 16,
+        "constitution": 12,
+        "perception": 18,
+        "talent": "F-Rank: Minor Harvest"
+      },
+      "appearance": {
+        "hair": "Messy parted raven-black hair with subtle strands falling over calm forehead",
+        "eyes": "Deep dark grey eyes, unbothered, observant, and deadpan expression",
+        "physique": "Lean, flexible athletic frame, calm posture under schoolyard pressure",
+        "attire": "Standard dark slate District 9 high school blazer over white shirt, worn leather finger-tab on right hand, simple brown leather shoulder quiver with steel-tipped wooden arrows",
+        "weapons": "Battered Ashwood training bow with worn grip wrap"
+      },
+      "dna_prompt_anchor": "@{Caelen Vance - Student Archer}, 18-year-old male manhwa protagonist, messy raven-black hair, deep dark grey observant eyes, calm deadpan unbothered facial expression, dark slate school blazer over white shirt, holding a simple ashwood training bow with leather arrow quiver, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
+      "reference_plate": "01_Protagonist_Caelen_Vance_Student.jpg"
+    },
+    {
+      "id": "caelen_vance_tier_2_awakened",
+      "name": "Caelen Vance (Phantom Marksman)",
+      "token": "@{Caelen Vance - Phantom Marksman}",
+      "tier": 2,
+      "role": "Protagonist (Awakened Phantom Marksman Sovereign)",
+      "age": 18,
+      "stats_baseline": {
+        "level": 15,
+        "class": "Phantom Ballistic Sovereign",
+        "strength": 240,
+        "agility": 280,
+        "constitution": 210,
+        "perception": 350,
+        "talent": "Primordial Sovereign Siphon (Tri-Synergy Growth)"
+      },
+      "appearance": {
+        "hair": "Sharp raven-black hair swept slightly back with subtle glowing cyan highlights at tips",
+        "eyes": "Luminous piercing cyan-amethyst mana eyes, completely cold, sharp, and calculated deadpan smirk",
+        "physique": "Dense superhuman muscular definition beneath lean athletic silhouette",
+        "attire": "Tailored matte charcoal-black long combat coat with high collar, dark titanium-threaded tactical arm guards, dark tactical pants, reinforced boots, floating ethereal cyan siphon runes around wrists",
+        "weapons": "@{Weapon: Void-Strung Heavy Recurve} — colossal heavy titanium-alloy recurve bow strung with glowing weightless cyan ethereal mana thread"
+      },
+      "dna_prompt_anchor": "@{Caelen Vance - Phantom Marksman}, 18-year-old male manhwa protagonist, raven-black hair with faint glowing cyan highlights, piercing luminous cyan-amethyst eyes, deadpan calculated expression, wearing tailored charcoal-black long combat coat with high collar and dark arm guards, drawing back @{Weapon: Void-Strung Heavy Recurve} with glowing ethereal cyan mana arrow, dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9",
+      "reference_plate": "01_Protagonist_Caelen_Vance_Awakened.jpg"
+    },
+    {
+      "id": "ignis_sterling",
+      "name": "Ignis Sterling",
+      "token": "@{Ignis Sterling - Pyromancer Scion}",
+      "tier": 2,
+      "role": "Academy Bully Antagonist (Sterling Syndicate Heir)",
+      "age": 18,
+      "stats_baseline": {
+        "level": 12,
+        "class": "Solar Pyromancer (Grade-S)",
+        "strength": 35,
+        "agility": 32,
+        "constitution": 38,
+        "perception": 45
+      },
+      "appearance": {
+        "hair": "Slicked-back golden-blonde hair with styled curls",
+        "eyes": "Arrogant crimson-amber eyes with condescending smirk",
+        "physique": "Tall, well-fed aristocratic build",
+        "attire": "Ornate gold-trimmed crimson Academy Elite uniform, white silk cape with Sterling guild crest, wielding a glowing ruby-tipped enchanted flame staff"
+      },
+      "dna_prompt_anchor": "@{Ignis Sterling - Pyromancer Scion}, 18-year-old male noble student antagonist, slicked-back golden blonde hair, arrogant sharp amber eyes with mocking smirk, wearing ornate gold-trimmed crimson elite blazer with white cape, holding glowing ruby flame staff, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting, horizontal 16:9",
+      "reference_plate": "02_Antagonist_Ignis_Sterling.jpg"
+    },
+    {
+      "id": "instructor_boris_vane",
+      "name": "Instructor Boris Vane",
+      "token": "@{Instructor Boris Vane}",
+      "tier": 2,
+      "role": "Corrupt Academy Instructor (Sterling Payroll)",
+      "age": 42,
+      "stats_baseline": {
+        "level": 35,
+        "class": "Heavy Vanguard Instructor (Grade-B)",
+        "strength": 75,
+        "agility": 40,
+        "constitution": 85,
+        "perception": 30
+      },
+      "appearance": {
+        "hair": "Buzz-cut dark brown hair with scarred right temple",
+        "eyes": "Gruff, dismissive dark eyes, sneering expression",
+        "physique": "Burly, barrel-chested military build",
+        "attire": "Dark navy instructor uniform with heavy iron shoulder pauldrons, combat clipboard in hand"
+      },
+      "dna_prompt_anchor": "@{Instructor Boris Vane}, 42-year-old burly male academy instructor, buzz-cut brown hair, scar across jaw, dismissive arrogant scowl, wearing dark navy military instructor uniform with iron pauldrons, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
+      "reference_plate": "03_Instructor_Boris_Vane.jpg"
+    },
+    {
+      "id": "lyra_mercer",
+      "name": "Lyra Mercer",
+      "token": "@{Lyra Mercer - Wind Scout}",
+      "tier": 3,
+      "role": "Supporting Analytical Scout (Class 3-A Tracker)",
+      "age": 18,
+      "stats_baseline": {
+        "level": 8,
+        "class": "Acoustic Wind Tracker (Grade-C)",
+        "strength": 18,
+        "agility": 45,
+        "constitution": 20,
+        "perception": 65
+      },
+      "appearance": {
+        "hair": "Short bobbed silver-violet hair",
+        "eyes": "Sharp intelligent teal eyes, high-tech biometric lens over left ear",
+        "physique": "Slender, nimble scout build",
+        "attire": "Fitted forest-grey scout tunic, leather bracers, dual daggers sheathed at lower back"
+      },
+      "dna_prompt_anchor": "@{Lyra Mercer - Wind Scout}, 18-year-old female scout student, short silver-violet bob hair, sharp intelligent teal eyes with biometric scout monocle, wearing fitted forest-grey scout tunic and leather bracers, observant focused expression, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
+      "reference_plate": "04_Supporting_Lyra_Mercer.jpg"
+    },
+    {
+      "id": "director_keith_holloway",
+      "name": "High Director Keith Holloway",
+      "token": "@{Director Keith Holloway}",
+      "tier": 3,
+      "role": "Secret Top-Tier VIP (Academy Director & Retired War Hero)",
+      "age": 56,
+      "stats_baseline": {
+        "level": 88,
+        "class": "Sovereign Warlord (Grade-SS)",
+        "strength": 220,
+        "agility": 190,
+        "constitution": 250,
+        "perception": 310
+      },
+      "appearance": {
+        "hair": "Neat slicked steel-grey hair and trimmed beard",
+        "eyes": "Deep golden sovereign eyes, calculating, calm, and immensely authoritative",
+        "physique": "Broad-shouldered, towering dignified posture",
+        "attire": "Immaculate midnight-blue military greatcoat with gold epaulettes and medals, observing multi-screen holographic radar consoles"
+      },
+      "dna_prompt_anchor": "@{Director Keith Holloway}, 56-year-old dignified male academy director, steel-grey hair and trimmed beard, sharp golden sovereign eyes, wearing midnight-blue military greatcoat with gold epaulettes, observing glowing blue holographic surveillance radar consoles, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
+      "reference_plate": "05_VIP_Director_Keith_Holloway.jpg"
+    }
+  ]
+}

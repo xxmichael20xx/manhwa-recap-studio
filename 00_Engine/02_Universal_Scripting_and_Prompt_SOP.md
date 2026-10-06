@@ -61,8 +61,11 @@ IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeo
    * Insert ellipses (`...`) for fading ambience and atmospheric silence.
 2. **Combat Cadence:**
    * Use staccato, punchy sentences during high-action combat (e.g. *"Step. Pivot. Strike."*).
-3. **Phonetic Pronunciation Tagging:**
-   * Foreign or fantasy terms must include bracketed phonetic guides on first mention: e.g. *Qi [Chee]*, *Xianxia [Shee-ahn-shyah]*, *Grimoire [Grim-wahr]*.
+4. **The 4 High-Retention Storytelling Directives:**
+   * **15–30s Cold-Open Hook (*In Medias Res*):** Open at a peak crisis or badass moment before flashing back to *"12 Hours Earlier..."*.
+   * **Punchy System HUD Voiceovers:** Keep spoken holographic system notices under 12 words with crisp impact and zero academic jargon (e.g. `[SYSTEM: CALCULATION RATE 10,000x. ENEMY TRAJECTORY PREDICTED.]`).
+   * **Deadpan Sarcasm & Charismatic MC Dialogue:** Inject unbothered, witty, deadpan one-liners to make the protagonist instantly memorable and likable.
+   * **Ticking Clock & Looming Threat Outro Hook:** End the episode with an unresolved external crisis in the final 30–45s to maximize binge-watching.
 
 ---
 

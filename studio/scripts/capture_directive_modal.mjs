@@ -22,7 +22,7 @@ async function capture() {
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 })
 
   // 1. PromptMatrixView - Dark Mode with Modal Open
-  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening', { waitUntil: 'networkidle0' })
+  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow', { waitUntil: 'networkidle0' })
   await page.evaluate(() => document.documentElement.classList.add('dark'))
   await new Promise(r => setTimeout(r, 1200))
 

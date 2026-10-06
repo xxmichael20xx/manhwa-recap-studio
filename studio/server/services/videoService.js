@@ -736,18 +736,64 @@ export class VideoService {
 
     const safeWatermarkOpacity = Math.max(0.05, Math.min(1.0, Number(watermarkOpacity) || 0.20))
     
-    // Position mappings
-    let overlayExpr = 'W-w-36:36' // Default: Top-Right (Option B)
-    if (watermarkPosition === 'top_left') {
-      overlayExpr = '36:36'
-    } else if (watermarkPosition === 'bottom_right') {
-      overlayExpr = 'W-w-36:H-h-36'
-    } else if (watermarkPosition === 'bottom_left') {
-      overlayExpr = '36:H-h-36'
-    } else if (watermarkPosition === 'custom_user') {
-      overlayExpr = 'W*0.65-w/2:H*0.75-h/2'
-    } else if (watermarkPosition === 'center') {
-      overlayExpr = '(W-w)/2:(H-h)/2'
+    // Detect if current episode is Format 1 (9:16 Webtoon) or Format 2 (16:9 Full Bleed)
+    let isVerticalDeck = false
+    if (targetBeats.length > 0) {
+      const sampleTag = targetBeats[0].tag
+      const tagVariants = [
+        `${sampleTag}.jpg`,
+        `${sampleTag}.png`,
+        `${sampleTag.replace('_', '')}.jpg`,
+        `${sampleTag.replace('_', '')}.png`
+      ]
+      let sampleFile = tagVariants.find(v => existingFiles.includes(v))
+      if (!sampleFile && existingFiles.length > 0) {
+        sampleFile = existingFiles[0]
+      }
+      if (sampleFile) {
+        try {
+          const meta = await sharp(path.join(imagesDir, sampleFile)).metadata()
+          isVerticalDeck = (meta.width / meta.height) < 0.95
+        } catch (_) {}
+      }
+    }
+
+    // Format-Aware Watermark Scale & Positioning
+    const watermarkScale = isVerticalDeck ? 200 : 240
+    let overlayExpr = 'W-w-36:36' // Default: 16:9 Top-Right
+
+    if (isVerticalDeck) {
+      // Format 1: 9:16 Webtoon (680px center strip between X=620 and X=1300)
+      const stripW = 680
+      const stripLeft = `(W-${stripW})/2`
+      const stripRight = `(W+${stripW})/2`
+      if (watermarkPosition === 'top_left') {
+        overlayExpr = `${stripLeft}+20:36`
+      } else if (watermarkPosition === 'bottom_right') {
+        overlayExpr = `${stripRight}-w-20:H-h-36`
+      } else if (watermarkPosition === 'bottom_left') {
+        overlayExpr = `${stripLeft}+20:H-h-36`
+      } else if (watermarkPosition === 'custom_user') {
+        overlayExpr = `${stripLeft}+${stripW}*0.65-w/2:H*0.75-h/2`
+      } else if (watermarkPosition === 'center') {
+        overlayExpr = '(W-w)/2:(H-h)/2'
+      } else {
+        // Default top_right anchored to 9:16 strip
+        overlayExpr = `${stripRight}-w-20:36`
+      }
+    } else {
+      // Format 2: 16:9 Full-Bleed Landscape
+      if (watermarkPosition === 'top_left') {
+        overlayExpr = '36:36'
+      } else if (watermarkPosition === 'bottom_right') {
+        overlayExpr = 'W-w-36:H-h-36'
+      } else if (watermarkPosition === 'bottom_left') {
+        overlayExpr = '36:H-h-36'
+      } else if (watermarkPosition === 'custom_user') {
+        overlayExpr = 'W*0.65-w/2:H*0.75-h/2'
+      } else if (watermarkPosition === 'center') {
+        overlayExpr = '(W-w)/2:(H-h)/2'
+      }
     }
 
     // Determine input indices
@@ -768,7 +814,7 @@ export class VideoService {
     if (burnSubtitles) {
       if (watermarkPath) {
         filterComplexParts.push(`[0:v]subtitles='${safeSrtPath}':${subStyle}[v_sub]`)
-        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=240:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
+        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=${watermarkScale}:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
         filterComplexParts.push(`[v_sub][wm_faded]overlay=${overlayExpr}:format=auto[v]`)
       } else {
         filterComplexParts.push(`[0:v]subtitles='${safeSrtPath}':${subStyle}[v]`)
@@ -776,7 +822,7 @@ export class VideoService {
     } else {
       if (watermarkPath) {
         filterComplexParts.push(`[0:v]null[v_sub]`)
-        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=240:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
+        filterComplexParts.push(`[${watermarkInputIdx}:v]scale=${watermarkScale}:-1,format=rgba,colorchannelmixer=aa=${safeWatermarkOpacity}[wm_faded]`)
         filterComplexParts.push(`[v_sub][wm_faded]overlay=${overlayExpr}:format=auto[v]`)
       } else {
         filterComplexParts.push(`[0:v]null[v]`)

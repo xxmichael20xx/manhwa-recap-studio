@@ -22,7 +22,7 @@ async function capture() {
   await page.setViewport({ width: 1440, height: 1000, deviceScaleFactor: 2 })
 
   // 1. Capture VideoStudioView (Dark Mode) - Vault Cards
-  await page.goto('http://localhost:3100/video/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening', { waitUntil: 'networkidle0' })
+  await page.goto('http://localhost:3100/video/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow', { waitUntil: 'networkidle0' })
   await new Promise(r => setTimeout(r, 1500))
 
   // Scroll to Vault section
@@ -46,7 +46,7 @@ async function capture() {
   })
 
   // 3. Capture PromptMatrixView (Dark Mode) with Vault Drawer open
-  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening', { waitUntil: 'networkidle0' })
+  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow', { waitUntil: 'networkidle0' })
   await new Promise(r => setTimeout(r, 1500))
 
   // Click "Character & Item Vault" button

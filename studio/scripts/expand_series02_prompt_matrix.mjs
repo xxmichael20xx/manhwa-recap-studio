@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '../../')
-const epDir = path.resolve(projectRoot, '01_Franchises/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening')
+const epDir = path.resolve(projectRoot, '01_Franchises/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow')
 const promptMatrixPath = path.join(epDir, '02_Prompt_Matrix.md')
 
 console.log('📝 Reading 02_Prompt_Matrix.md...')

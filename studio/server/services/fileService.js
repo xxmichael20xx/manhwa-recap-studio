@@ -17,6 +17,11 @@ export class FileService {
 
       for (const entry of entries) {
         if (entry.isDirectory()) {
+          // Strictly ignore backup directories, hidden folders, and ephemerals
+          if (entry.name.toLowerCase().includes('backup') || entry.name.startsWith('.') || entry.name.startsWith('_')) {
+            continue
+          }
+
           const franchisePath = path.join(franchisesDir, entry.name)
           const episodes = []
           let seriesBibleContent = ''
@@ -32,10 +37,24 @@ export class FileService {
             // Bible might not exist yet
           }
 
+          // Extract human-readable franchise title if available
+          let franchiseDisplayName = entry.name.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+          if (seriesBibleContent) {
+            const titleMatch = seriesBibleContent.match(/Official Title:\*{0,2}\s*\*?([^\r\n*]+)\*?/) || seriesBibleContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*Series\s+\d+:\s*([^\r\n]+)/m)
+            if (titleMatch) {
+              franchiseDisplayName = titleMatch[1].trim()
+            }
+          }
+
           // Read Episodes
           const subEntries = await fs.readdir(franchisePath, { withFileTypes: true })
           for (const sub of subEntries) {
             if (sub.isDirectory() && sub.name.startsWith('EP')) {
+              // Ignore backup episode folders
+              if (sub.name.toLowerCase().includes('backup') || sub.name.startsWith('.')) {
+                continue
+              }
+
               const epPath = path.join(franchisePath, sub.name)
               let scriptContent = ''
               let promptMatrixContent = ''
@@ -56,9 +75,18 @@ export class FileService {
 
               const audit = scriptContent ? AntiSlopValidator.auditScript(scriptContent) : null
 
+              // Extract formatted episode title from script header if available
+              let episodeDisplayName = sub.name.replace(/_/g, ' ')
+              if (scriptContent) {
+                const epTitleMatch = scriptContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*(EP\d+:[^\r\n]+)/m) || scriptContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*([^\r\n]+)/m)
+                if (epTitleMatch) {
+                  episodeDisplayName = epTitleMatch[1].trim()
+                }
+              }
+
               episodes.push({
                 id: sub.name,
-                name: sub.name.replace(/_/g, ' '),
+                name: episodeDisplayName,
                 hasScript: !!scriptContent,
                 hasPrompts: !!promptMatrixContent,
                 audioCount,
@@ -69,7 +97,7 @@ export class FileService {
 
           franchises.push({
             id: entry.name,
-            name: entry.name.replace(/^Series_\d+_/, '').replace(/_/g, ' '),
+            name: franchiseDisplayName,
             folder: entry.name,
             characterAnchor,
             bibleContent: seriesBibleContent,

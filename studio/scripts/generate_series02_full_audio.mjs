@@ -3,7 +3,7 @@ import { TtsService } from '../server/services/ttsService.js'
 async function run() {
   console.log('🎙️ Initiating Stage 2 Full Neural TTS Audio & Subtitle Generation for Series 02 EP01 (312 Scenes)...')
   const franchiseId = 'Series_02_The_Omniscient_Dungeon_Sovereign'
-  const episodeId = 'EP01_The_Double_FRank_Anomaly_and_Awakening'
+  const episodeId = 'EP01_The_FRank_Awakening_and_The_Plunderers_Bow'
   const voice = 'en-US-ChristopherNeural'
 
   const startTime = Date.now()

@@ -1,55 +1,44 @@
 {
-  "series_id": "Series_02_The_Omniscient_Dungeon_Sovereign",
-  "series_title": "The Omniscient Dungeon Sovereign",
-  "format": "16:9 Full Bleed Landscape",
+  "series_id": "Series_02_The_Phantom_Archer_Sovereign",
   "weapons": {
-    "dual_ironclad_mag_pistols": {
-      "name": "Dual Ironclad Mag-Pistols",
-      "token": "@{Weapon: Dual Ironclad Mag-Pistols}",
-      "category": "Signature Firearms",
-      "tier": 2,
-      "user": "Kaelen Thorne (Awakened)",
-      "visual_dna": "pair of identical custom heavy tactical mag-rail semi-automatic handguns, matte-black reinforced tungsten-titanium angular slides, dark carbon-fibre grip panels, glowing amethyst-purple mana conduction conduits illuminated along barrel flutes, integrated muzzle compensators emitting faint violet mana sparks, oversized heavy-calibre frame, no wood, no silver plating",
-      "reference_plate": "04_Weapon_Dual_Ironclad_Mag_Pistols.jpg"
+    "ashwood_training_bow": {
+      "name": "Ashwood Training Bow",
+      "token": "@{Weapon: Ashwood Training Bow}",
+      "tier": "Tier 1 Starter Weapon",
+      "category": "Basic Weapon",
+      "visual_dna": "Simple weathered ashwood recurve bow with worn leather grip wrap and steel limb reinforcements, lightweight and plain",
+      "reference_plate": "06_Weapon_Ashwood_Training_Bow.jpg"
     },
-    "jason_vane_scarlet_rapier": {
-      "name": "Jason Vane's Gilded Scarlet Rapier",
-      "token": "@{Weapon: Jason Vane's Gilded Scarlet Rapier}",
-      "category": "Aristocratic Melee",
-      "tier": 2,
-      "user": "Lord Jason Vane",
-      "visual_dna": "ornate aristocratic rapier with intricate gilded gold wire basket hilt, polished ruby pommel, glowing translucent crimson mana edge along razor-thin steel blade",
-      "reference_plate": "05_Weapon_Jason_Vane_Scarlet_Rapier.jpg"
+    "void_strung_heavy_recurve": {
+      "name": "Void-Strung Heavy Recurve",
+      "token": "@{Weapon: Void-Strung Heavy Recurve}",
+      "tier": "Tier 4 Sovereign Armament",
+      "category": "Signature Weapon",
+      "visual_dna": "Colossal matte charcoal-titanium heavy recurve bow, angular geometric limbs with glowing cyan siphon conduits, strung with weightless luminous ethereal cyan mana thread",
+      "reference_plate": "07_Weapon_Void_Strung_Heavy_Recurve.jpg"
     }
   },
   "key_props_and_artifacts": {
-    "sovereign_reversion_core": {
-      "name": "Sovereign Reversion Core",
-      "token": "@{Artifact: Sovereign Reversion Core}",
-      "category": "Primordial Relic",
-      "visual_dna": "pulsating geometric 12-sided amethyst crystal dodecahedron floating in air, radiating concentric purple holographic runic rings and microscopic neural data particles",
-      "reference_plate": "06_Artifact_Sovereign_Reversion_Core.jpg"
+    "ethereal_siphon_arrow": {
+      "name": "Ethereal Siphon Arrow",
+      "token": "@{Item: Ethereal Siphon Arrow}",
+      "category": "Phantom Ammo",
+      "visual_dna": "Weightless translucent cyan-amethyst phantom arrow formed from pure condensed mana filaments, glowing with rotating siphon runes",
+      "reference_plate": "08_Item_Ethereal_Siphon_Arrow.jpg"
     },
-    "district_9_chronometer": {
-      "name": "District 9 Retro Chronometer",
-      "token": "@{Prop: District 9 Chronometer}",
-      "category": "Environmental Prop",
-      "visual_dna": "cracked retro-digital desktop clock with brushed steel casing, glowing green 7-segment digital LED display reading 'OCT 14 - YR 00 - 07:15 AM', scratched acrylic lens",
-      "reference_plate": "07_Prop_District_9_Chronometer.jpg"
+    "academy_awakening_orb": {
+      "name": "Academy Awakening Orb",
+      "token": "@{Item: Academy Awakening Orb}",
+      "category": "Ritual Artifact",
+      "visual_dna": "Large crystalline sphere mounted on an obsidian pedestal, glowing with elemental light and runic measurement dials",
+      "reference_plate": "09_Item_Awakening_Orb.jpg"
     },
-    "guild_escape_pod": {
-      "name": "Aegis Guild Extraction Pod",
-      "token": "@{Prop: Guild Extraction Escape Pod}",
-      "category": "Escape Craft",
-      "visual_dna": "gilded titanium and scarlet-trimmed oval emergency evacuation pod with heavy hydraulic pneumatic blast doors, glowing amber thruster rings, pressurized steam vents",
-      "reference_plate": "08_Prop_Aegis_Guild_Extraction_Pod.jpg"
-    },
-    "holographic_system_hud": {
-      "name": "Sovereign Holographic System HUD",
-      "token": "@{Prop: Holographic System HUD}",
-      "category": "System Interface",
-      "visual_dna": "semi-translucent floating deep amethyst-violet holographic status window with delicate gold-trimmed runic borders, crisp glowing white and violet text, micro-data graphs",
-      "reference_plate": "09_Prop_Sovereign_System_HUD.jpg"
+    "vip_radar_console": {
+      "name": "VIP Holographic Telemetry Console",
+      "token": "@{Item: VIP Radar Console}",
+      "category": "Observation Tech",
+      "visual_dna": "Curved multi-screen translucent blue holographic radar array displaying real-time acoustic shockwave telemetry and mana density graphs",
+      "reference_plate": "10_Item_VIP_Radar_Console.jpg"
     }
   }
 }

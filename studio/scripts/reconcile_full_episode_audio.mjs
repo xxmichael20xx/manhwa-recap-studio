@@ -7,7 +7,7 @@ import { spawn } from 'child_process'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '../../')
 const franchiseId = 'Series_02_The_Omniscient_Dungeon_Sovereign'
-const episodeId = 'EP01_The_Double_FRank_Anomaly_and_Awakening'
+const episodeId = 'EP01_The_FRank_Awakening_and_The_Plunderers_Bow'
 const epDir = path.resolve(projectRoot, '01_Franchises', franchiseId, episodeId)
 const audioDir = path.join(epDir, 'audio')
 const subtitlesDir = path.join(epDir, 'subtitles')

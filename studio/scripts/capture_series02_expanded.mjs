@@ -25,9 +25,30 @@ async function runVisualAudit() {
     }
   })
 
-  // 1. Audit Prompt Matrix View (Light Mode)
+  // 1. Audit Dashboard View (Dark Mode) - Verifying NO backups and clean titles
+  console.log('Testing Dashboard View (Dark Mode)...')
+  await page.goto('http://localhost:3100/', { waitUntil: 'networkidle2' })
+  await page.evaluate(() => {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  })
+  await new Promise(r => setTimeout(r, 1200))
+  const dashboardDarkPath = path.join(artifactDir, 'studio_dashboard_dark.png')
+  await page.screenshot({ path: dashboardDarkPath, fullPage: false })
+
+  // 2. Audit Dashboard View (Light Mode)
+  console.log('Testing Dashboard View (Light Mode)...')
+  await page.evaluate(() => {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('theme', 'light')
+  })
+  await new Promise(r => setTimeout(r, 1200))
+  const dashboardLightPath = path.join(artifactDir, 'studio_dashboard_light.png')
+  await page.screenshot({ path: dashboardLightPath, fullPage: false })
+
+  // 3. Audit Prompt Matrix View (Light Mode)
   console.log('Testing Series 02 Prompt Matrix View (Light Mode)...')
-  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening', { waitUntil: 'networkidle2' })
+  await page.goto('http://localhost:3100/prompts/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow', { waitUntil: 'networkidle2' })
   await page.evaluate(() => {
     document.documentElement.classList.remove('dark')
     localStorage.setItem('theme', 'light')
@@ -36,7 +57,7 @@ async function runVisualAudit() {
   const promptLightPath = path.join(artifactDir, 'series02_matrix_light_60min.png')
   await page.screenshot({ path: promptLightPath, fullPage: false })
 
-  // 2. Audit Prompt Matrix View (Dark Mode)
+  // 4. Audit Prompt Matrix View (Dark Mode)
   console.log('Testing Series 02 Prompt Matrix View (Dark Mode)...')
   await page.evaluate(() => {
     document.documentElement.classList.add('dark')
@@ -46,9 +67,9 @@ async function runVisualAudit() {
   const promptDarkPath = path.join(artifactDir, 'series02_matrix_dark_60min.png')
   await page.screenshot({ path: promptDarkPath, fullPage: false })
 
-  // 3. Audit Video Studio View (Dark Mode)
+  // 5. Audit Video Studio View (Dark Mode)
   console.log('Testing Series 02 Video Studio View (Dark Mode)...')
-  await page.goto('http://localhost:3100/video/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_Double_FRank_Anomaly_and_Awakening', { waitUntil: 'networkidle2' })
+  await page.goto('http://localhost:3100/video/Series_02_The_Omniscient_Dungeon_Sovereign/EP01_The_FRank_Awakening_and_The_Plunderers_Bow', { waitUntil: 'networkidle2' })
   await page.evaluate(() => {
     document.documentElement.classList.add('dark')
     localStorage.setItem('theme', 'dark')
@@ -57,7 +78,7 @@ async function runVisualAudit() {
   const videoDarkPath = path.join(artifactDir, 'series02_video_studio_dark_60min.png')
   await page.screenshot({ path: videoDarkPath, fullPage: false })
 
-  // 4. Audit Video Studio View (Light Mode)
+  // 6. Audit Video Studio View (Light Mode)
   console.log('Testing Series 02 Video Studio View (Light Mode)...')
   await page.evaluate(() => {
     document.documentElement.classList.remove('dark')

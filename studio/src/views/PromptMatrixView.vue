@@ -233,18 +233,43 @@
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-semibold">
                 Batch {{ Math.floor(index / batchChunkSize) + 1 }}
               </span>
-              <template v-if="p.characterAnchor">
-                <button 
-                  v-for="anchor in p.characterAnchor.split(',').map(a => a.trim()).filter(Boolean)"
-                  :key="anchor"
-                  @click.stop="copyTokenDirect(anchor)"
-                  class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-500/10 hover:bg-amber-100 dark:hover:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-500/30 font-semibold flex items-center space-x-1 cursor-pointer transition shadow-2xs"
-                  :title="`Click to copy token '${anchor}'`"
-                >
-                  <Check v-if="copiedDirectToken === anchor" class="w-2.5 h-2.5 text-emerald-500" />
-                  <Copy v-else class="w-2.5 h-2.5 text-amber-600/70 dark:text-amber-400/70" />
-                  <span>{{ anchor }}</span>
-                </button>
+
+              <!-- Rich Character & Item Vault Reference Chips -->
+              <template v-if="getSceneVaultReferences(p).length > 0">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <div 
+                    v-for="refItem in getSceneVaultReferences(p)"
+                    :key="refItem.id || refItem.name"
+                    class="group/chip inline-flex items-center space-x-1.5 pl-1 pr-2 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/30 dark:hover:bg-purple-950/20 shadow-2xs transition"
+                  >
+                    <!-- Mini Avatar Plate Thumbnail -->
+                    <div class="w-4 h-4 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
+                      <img v-if="refItem.url && refItem.hasPlate" :src="refItem.url" :alt="refItem.name" class="w-full h-full object-cover" />
+                      <div v-else class="w-full h-full flex items-center justify-center text-[8px] font-bold text-slate-500 uppercase">
+                        {{ (refItem.name || 'R')[0] }}
+                      </div>
+                    </div>
+
+                    <!-- Category Pill -->
+                    <span 
+                      class="text-[9px] font-mono px-1 py-0.2 rounded font-bold border"
+                      :class="getCategoryBadgeClass(refItem.category)"
+                    >
+                      {{ refItem.category }}
+                    </span>
+
+                    <!-- Token Name & 1-Click Copy -->
+                    <button 
+                      @click.stop="copyVaultToken(refItem)"
+                      class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 flex items-center space-x-1 cursor-pointer transition"
+                      :title="`Click to copy token '${refItem.token || refItem.name}' for Google Flow`"
+                    >
+                      <span>{{ refItem.flowName || refItem.name }}</span>
+                      <Check v-if="copiedVaultId === refItem.id && copiedVaultType === 'token'" class="w-2.5 h-2.5 text-emerald-500" />
+                      <Copy v-else class="w-2.5 h-2.5 text-slate-400 group-hover/chip:text-purple-500" />
+                    </button>
+                  </div>
+                </div>
               </template>
               <span class="text-xs font-semibold text-slate-900 dark:text-white">{{ p.description }}</span>
             </div>
@@ -418,6 +443,72 @@
                   <span v-else class="text-slate-400">
                     Not copied yet
                   </span>
+                </div>
+
+                <!-- Required Vault References (Google Flow 10-Ref Limit Tracker) -->
+                <div class="my-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-1.5">
+                      <Users class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                      <span class="text-xs font-bold text-slate-900 dark:text-white">Required References</span>
+                      <span 
+                        class="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded-full border"
+                        :class="batch.refCount > 10 
+                          ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30' 
+                          : (batch.refCount > 7 
+                            ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30' 
+                            : 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30')"
+                      >
+                        {{ batch.refCount }}/10
+                      </span>
+                    </div>
+                    <button 
+                      v-if="batch.refCount > 0"
+                      @click.stop="copyAllBatchTokens(batch.references, batch.name)"
+                      class="text-[10px] font-mono text-purple-600 dark:text-purple-400 hover:underline cursor-pointer flex items-center space-x-1"
+                      title="Copy comma-separated token list for this batch"
+                    >
+                      <Check v-if="copiedDirectToken === batch.name" class="w-2.5 h-2.5 text-emerald-500" />
+                      <Copy v-else class="w-2.5 h-2.5" />
+                      <span>{{ copiedDirectToken === batch.name ? 'Copied' : 'Copy Tokens' }}</span>
+                    </button>
+                  </div>
+
+                  <!-- References Chips -->
+                  <div v-if="batch.refCount > 0" class="flex flex-wrap gap-1.5">
+                    <div 
+                      v-for="model in batch.references" 
+                      :key="model.id || model.name"
+                      @click.stop="copyVaultToken(model)"
+                      class="group/chip inline-flex items-center space-x-1.5 pl-1 pr-1.5 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition cursor-pointer shadow-2xs"
+                      :title="`Click to copy token '${model.token || model.name}' (${model.category})`"
+                    >
+                      <div class="w-4 h-4 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
+                        <img v-if="model.url && model.hasPlate" :src="model.url" :alt="model.name" class="w-full h-full object-cover" />
+                        <div v-else class="w-full h-full flex items-center justify-center text-[8px] font-bold text-slate-500 uppercase">
+                          {{ (model.name || 'R')[0] }}
+                        </div>
+                      </div>
+                      <span class="text-[10px] font-mono text-slate-700 dark:text-slate-300 truncate max-w-[110px] font-semibold">
+                        {{ model.flowName || model.name }}
+                      </span>
+                      <span 
+                        class="text-[8px] font-mono px-1 py-0.2 rounded font-bold border"
+                        :class="getCategoryBadgeClass(model.category)"
+                      >
+                        {{ model.category }}
+                      </span>
+                    </div>
+                  </div>
+                  <div v-else class="text-[10px] font-mono text-slate-400 italic">
+                    No character/item references tagged in this batch.
+                  </div>
+
+                  <!-- Over Limit Alert -->
+                  <div v-if="batch.refCount > 10" class="p-1.5 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center space-x-1.5 text-rose-600 dark:text-rose-400 text-[10px] font-mono font-bold">
+                    <AlertTriangle class="w-3 h-3 shrink-0 text-rose-500" />
+                    <span>Exceeds Google Flow 10-reference limit! Remove {{ batch.refCount - 10 }} unused plates.</span>
+                  </div>
                 </div>
 
                 <!-- Action Button for Batch -->
@@ -995,6 +1086,112 @@ const filteredPrompts = computed(() => {
 const missingCount = computed(() => parsedPrompts.value.filter(p => !p.hasImage).length)
 const readyCount = computed(() => parsedPrompts.value.filter(p => p.hasImage).length)
 
+const extractTokensFromText = (text) => {
+  if (!text) return []
+  const matches = [...text.matchAll(/@\{([^}]+)\}/g)]
+  const unique = new Set()
+  const list = []
+  for (const m of matches) {
+    const fullToken = m[0]
+    if (!unique.has(fullToken)) {
+      unique.add(fullToken)
+      list.push(fullToken)
+    }
+  }
+  return list
+}
+
+const resolveVaultModel = (tokenStr) => {
+  if (!tokenStr) return null
+  const cleanName = tokenStr.replace(/[@{}]/g, '').trim()
+  
+  // Find match in vaultModels
+  const match = vaultModels.value.find(m => {
+    if (m.token === tokenStr) return true
+    if (m.flowName && m.flowName.toLowerCase() === cleanName.toLowerCase()) return true
+    if (m.name && m.name.toLowerCase() === cleanName.toLowerCase()) return true
+    if (m.dnaAnchor && m.dnaAnchor.includes(cleanName)) return true
+    const cleanWithoutPrefix = cleanName.replace(/^(Weapon|Item|Prop|Artifact):\s*/i, '').trim()
+    if (m.name && m.name.toLowerCase().includes(cleanWithoutPrefix.toLowerCase())) return true
+    return false
+  })
+
+  if (match) {
+    return match
+  }
+
+  // Fallback object if not in vault
+  const isWeapon = /^weapon:/i.test(cleanName) || /bow|sword|staff|blade|dagger/i.test(cleanName)
+  const isArtifact = /^item:/i.test(cleanName) || /orb|ring|relic|crystal/i.test(cleanName)
+  const isProp = /^prop:/i.test(cleanName) || /console|table|banner/i.test(cleanName)
+  const cat = isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : (isProp ? 'Props' : 'Characters'))
+
+  return {
+    id: cleanName.toLowerCase().replace(/[^a-z0-9]/g, '_'),
+    name: cleanName,
+    flowName: cleanName,
+    token: tokenStr,
+    category: cat,
+    role: cat,
+    type: isWeapon ? 'weapon' : (isArtifact ? 'artifact' : (isProp ? 'prop' : 'character')),
+    tier: 'Custom Ref',
+    hasPlate: false,
+    url: null,
+    description: cleanName
+  }
+}
+
+const getBatchVaultReferences = (items) => {
+  if (!items || !items.length) return { models: [], count: 0, isOverLimit: false, tokens: [] }
+  const uniqueTokens = new Set()
+  for (const item of items) {
+    const text = (item.prompt || '') + ' ' + (item.characterAnchor || '')
+    const tokens = extractTokensFromText(text)
+    tokens.forEach(t => uniqueTokens.add(t))
+  }
+  const models = Array.from(uniqueTokens).map(t => resolveVaultModel(t)).filter(Boolean)
+  return {
+    models,
+    count: models.length,
+    isOverLimit: models.length > 10,
+    tokens: Array.from(uniqueTokens)
+  }
+}
+
+const getSceneVaultReferences = (scene) => {
+  if (!scene) return []
+  const text = (scene.prompt || '') + ' ' + (scene.characterAnchor || '')
+  const tokens = extractTokensFromText(text)
+  return tokens.map(t => resolveVaultModel(t)).filter(Boolean)
+}
+
+const copyAllBatchTokens = async (models, batchName = '') => {
+  if (!models || !models.length) return
+  const tokenList = models.map(m => m.token || `@{${m.name}}`).join(', ')
+  try {
+    await navigator.clipboard.writeText(tokenList)
+    copiedDirectToken.value = batchName || tokenList
+    setTimeout(() => {
+      if (copiedDirectToken.value === (batchName || tokenList)) {
+        copiedDirectToken.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard copy error:', err)
+  }
+}
+
+const formatReferenceHeader = (references) => {
+  if (!references || references.length === 0) return ''
+  const limitStatus = references.length <= 10 ? `✓ WITHIN 10-REF LIMIT (${references.length}/10 slots)` : `⚠️ EXCEEDS 10-REF LIMIT (${references.length}/10 slots)`
+  const lines = references.map((m, i) => `${i + 1}. ${m.token || `@{${m.name}}`} [${m.category || m.type || 'Ref'}] — ${m.name}`)
+  return `<!-- 
+📌 GOOGLE FLOW REQUIRED REFERENCE PLATES [${limitStatus}]:
+${lines.join('\n')}
+(Attach these ${references.length} reference plate(s) into Google Flow before generation)
+-->`
+}
+
 // Dynamic Batches Computation based on total parsed scenes
 const dynamicBatches = computed(() => {
   if (!parsedPrompts.value || parsedPrompts.value.length === 0) return []
@@ -1009,6 +1206,7 @@ const dynamicBatches = computed(() => {
     const items = parsedPrompts.value.slice(startIndex, endIndex)
     const startTag = items[0]?.tag || `IMG${String(startIndex + 1).padStart(3, '0')}`
     const endTag = items[items.length - 1]?.tag || `IMG${String(endIndex).padStart(3, '0')}`
+    const batchRefs = getBatchVaultReferences(items)
 
     batches.push({
       name: `Batch ${String.fromCharCode(65 + i)}`, // Batch A, Batch B, Batch C...
@@ -1017,7 +1215,10 @@ const dynamicBatches = computed(() => {
       endIndex,
       startTag,
       endTag,
-      items
+      items,
+      references: batchRefs.models,
+      refCount: batchRefs.count,
+      isOverLimit: batchRefs.isOverLimit
     })
   }
 
@@ -1121,6 +1322,7 @@ const copyBatchByIndex = (index) => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName(batch.name)
+  const refHeader = formatReferenceHeader(batch.references || [])
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1131,8 +1333,8 @@ const copyBatchByIndex = (index) => {
   }).join('\n\n')
 
   const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
-  const payload = `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${batch.refCount || 0}/10">\n\n${scenesXml}\n\n</batch>`
+  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -1159,6 +1361,8 @@ const copySelectedPrompts = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Selected')
+  const selectedRefs = getBatchVaultReferences(selectedItems)
+  const refHeader = formatReferenceHeader(selectedRefs.models)
 
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1169,8 +1373,8 @@ const copySelectedPrompts = () => {
   }).join('\n\n')
 
   const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
-  const payload = `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${selectedRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
+  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'SELECTED'
@@ -1190,6 +1394,8 @@ const copyMissingPrompts = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Missing')
+  const missingRefs = getBatchVaultReferences(missingItems)
+  const refHeader = formatReferenceHeader(missingRefs.models)
 
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1200,8 +1406,8 @@ const copyMissingPrompts = () => {
   }).join('\n\n')
 
   const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
-  const payload = `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${missingRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
+  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'MISSING'
@@ -1220,6 +1426,8 @@ const copyAllMaster = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Master')
+  const allRefs = getBatchVaultReferences(parsedPrompts.value)
+  const refHeader = formatReferenceHeader(allRefs.models)
 
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -1230,8 +1438,8 @@ const copyAllMaster = () => {
   }).join('\n\n')
 
   const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
-  const payload = `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${allRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
+  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -1376,7 +1584,10 @@ const copySinglePrompt = (item, index) => {
     ? item.tag.replace(/[^A-Za-z0-9]/g, '')
     : `IMG${String(index + 1).padStart(3, '0')}`
   const promptText = typeof item === 'object' && item.prompt ? item.prompt : item
-  const payload = `<scene id="${id}">\n${promptText}\n</scene>`
+  const refs = typeof item === 'object' ? getSceneVaultReferences(item) : []
+  const refHeader = formatReferenceHeader(refs)
+  const sceneXml = `<scene id="${id}">\n${promptText}\n</scene>`
+  const payload = refHeader ? `${refHeader}\n\n${sceneXml}` : sceneXml
   navigator.clipboard.writeText(payload)
   copiedIndex.value = index
   setTimeout(() => {
