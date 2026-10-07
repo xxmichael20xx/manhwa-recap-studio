@@ -343,6 +343,99 @@
           </div>
         </div>
 
+        <!-- Google Flow Entity ID Mapper & Token Synchronizer -->
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2.5">
+              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <Hash class="w-4 h-4" />
+              </div>
+              <div>
+                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide flex items-center space-x-2">
+                  <span>Google Flow Entity ID Mapper & Synchronizer</span>
+                  <span 
+                    class="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border"
+                    :class="entityCount > 0 
+                      ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' 
+                      : 'bg-slate-200 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'"
+                  >
+                    {{ entityCount }} Entities Mapped
+                  </span>
+                </h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                  Map character & item reference names to Google Flow UUIDs (e.g. <code>Caelen Vance - Phantom Marksman: f16555...</code>) to replace <code>@{Name}</code> with <code>@UUID</code> in clipboard XML.
+                </p>
+              </div>
+            </div>
+
+            <!-- Active Output Format Toggle -->
+            <div class="flex items-center space-x-1 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
+              <span class="text-[10px] font-bold uppercase text-slate-500 px-1.5">Output:</span>
+              <button 
+                @click="togglePromptTagMode('token')"
+                class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+                :class="promptTagMode === 'token' 
+                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+                title="Use human-readable tokens like @{Caelen Vance - Phantom Marksman}"
+              >
+                <span>🏷️ @{Token}</span>
+              </button>
+              <button 
+                @click="togglePromptTagMode('uuid')"
+                class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+                :class="promptTagMode === 'uuid' 
+                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+                title="Use Google Flow entity UUIDs like @f16555b2-8ae8-..."
+              >
+                <span>🔑 @UUID</span>
+                <span v-if="entityCount > 0" class="text-[10px] px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black">
+                  {{ entityCount }}
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Textarea Input Area -->
+          <div class="space-y-2">
+            <textarea 
+              v-model="entityMapRawText" 
+              rows="6"
+              placeholder="Character Entities&#10;Caelen Vance - Phantom Marksman: f16555b2-8ae8-40bb-8027-5b8a0c9d859c&#10;...&#10;&#10;Weapon & Item Entities&#10;Weapon: Void-Strung Heavy Recurve: e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893"
+              class="w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 font-mono text-xs text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none resize-y shadow-xs"
+            ></textarea>
+          </div>
+
+          <!-- Action Buttons Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <div class="flex items-center space-x-2">
+              <button 
+                @click="syncEntityMapping"
+                :disabled="isSavingEntityMap || !entityMapRawText.trim()"
+                class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-2 transition shadow-md shadow-purple-950/20 disabled:opacity-50 cursor-pointer"
+              >
+                <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isSavingEntityMap }" />
+                <span>{{ isSavingEntityMap ? 'Synchronizing...' : `⚡ Read & Sync Entity IDs (${entityCount} Mapped)` }}</span>
+              </button>
+
+              <button 
+                v-if="entityCount > 0"
+                @click="copyCurrentEntityMapping"
+                class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+                title="Copy current mapping text to clipboard"
+              >
+                <Copy class="w-3.5 h-3.5" />
+                <span>Copy Mapping Text</span>
+              </button>
+            </div>
+
+            <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              Active mode: <strong class="text-purple-600 dark:text-purple-400">{{ promptTagMode === 'uuid' ? '@UUID replacement' : '@{Name} tokens' }}</strong>
+            </div>
+          </div>
+        </div>
+
         <!-- Prompt Matrix Hub Banner & Universal Asset Ingestion Zone -->
         <div class="space-y-4">
           <!-- 1. Quick Bridge to Visual Prompt Matrix Hub -->
@@ -2570,6 +2663,14 @@ import {
   CheckCircle2,
   FileText
 } from 'lucide-vue-next'
+import { 
+  parseEntityMappingText, 
+  transformTokens, 
+  saveEntityMapToStorage, 
+  loadEntityMapFromStorage, 
+  getTagModeFromStorage, 
+  setTagModeToStorage 
+} from '../utils/entityMapper.js'
 
 const route = useRoute()
 const activeStage = ref('visuals')
@@ -2577,6 +2678,82 @@ const scenes = ref([])
 const cacheBuster = ref(Date.now())
 const generatingStoryboards = ref(false)
 const storyboardFeedback = ref('')
+
+// Google Flow Entity ID Mapping State
+const entityMapRawText = ref('')
+const parsedEntities = ref({})
+const promptTagMode = ref('uuid') // 'uuid' | 'token'
+const isSavingEntityMap = ref(false)
+
+const entityCount = computed(() => Object.keys(parsedEntities.value).length)
+
+const syncEntityMapping = async () => {
+  const result = parseEntityMappingText(entityMapRawText.value)
+  parsedEntities.value = result.entities
+  saveEntityMapToStorage(route.params.franchiseId, entityMapRawText.value, result.entities)
+  
+  try {
+    isSavingEntityMap.value = true
+    await fetch(`/api/franchises/${route.params.franchiseId}/flow-entities`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rawText: entityMapRawText.value, entities: result.entities })
+    })
+  } catch (e) {
+    console.warn('Failed to persist flow entities to server:', e)
+  } finally {
+    isSavingEntityMap.value = false
+  }
+
+  triggerToast(
+    'Flow Entity IDs Synchronized',
+    `✓ Successfully mapped ${result.count} entities! Output mode: ${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'}`,
+    'success'
+  )
+}
+
+const togglePromptTagMode = (mode) => {
+  promptTagMode.value = mode
+  setTagModeToStorage(mode)
+  triggerToast(
+    'Prompt Format Toggled',
+    mode === 'uuid' ? 'Active Output: Google Flow Entity IDs (@UUID)' : 'Active Output: Human-Readable Tokens (@{Name})',
+    'info',
+    false,
+    2500
+  )
+}
+
+const copyCurrentEntityMapping = async () => {
+  try {
+    await navigator.clipboard.writeText(entityMapRawText.value)
+    triggerToast('Mapping Copied', '✓ Copied Entity ID mapping text to clipboard!', 'success')
+  } catch (e) {
+    console.error('Copy error:', e)
+  }
+}
+
+const loadFlowEntities = async () => {
+  promptTagMode.value = getTagModeFromStorage()
+  const local = loadEntityMapFromStorage(route.params.franchiseId)
+  if (local && local.rawText) {
+    entityMapRawText.value = local.rawText
+    parsedEntities.value = local.entities || parseEntityMappingText(local.rawText).entities
+  }
+
+  try {
+    const res = await fetch(`/api/franchises/${route.params.franchiseId}/flow-entities?cb=${Date.now()}`)
+    const data = await res.json()
+    if (data && data.rawText) {
+      entityMapRawText.value = data.rawText
+      parsedEntities.value = data.entities || parseEntityMappingText(data.rawText).entities
+      saveEntityMapToStorage(route.params.franchiseId, data.rawText, parsedEntities.value)
+    }
+  } catch (e) {
+    console.warn('Failed to fetch flow entities:', e)
+  }
+}
+
 
 const modalState = ref({
   show: false,
@@ -3145,7 +3322,8 @@ const copySingleScenePrompt = (scene) => {
   const num = rawId.replace(/IMG/i, '').padStart(3, '0')
   const tag = `IMG_${num}`
   const filename = `${tag}.jpg`
-  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
+  const finalPrompt = transformTokens(scene.prompt, parsedEntities.value, promptTagMode.value)
+  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
   
   const fRaw = route.params.franchiseId || 'Series_02'
   const eRaw = route.params.episodeId || 'EP01'
@@ -3157,7 +3335,7 @@ const copySingleScenePrompt = (scene) => {
 
   navigator.clipboard.writeText(payload).then(() => {
     activeCopiedFailedTag.value = scene.tag
-    triggerToast('Prompt Copied', `✓ Copied XML <scene> prompt for [${scene.tag}] to clipboard!`, 'success')
+    triggerToast('Prompt Copied', `✓ Copied XML <scene> prompt for [${scene.tag}] (${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'})!`, 'success')
     setTimeout(() => {
       if (activeCopiedFailedTag.value === scene.tag) {
         activeCopiedFailedTag.value = null
@@ -3170,8 +3348,9 @@ const copySingleScenePrompt = (scene) => {
 
 const copySingleRawPrompt = (scene) => {
   if (!scene) return
-  navigator.clipboard.writeText(scene.prompt).then(() => {
-    triggerToast('Plain Prompt Copied', `✓ Copied raw prompt text for [${scene.tag}] to clipboard!`, 'success')
+  const finalPrompt = transformTokens(scene.prompt, parsedEntities.value, promptTagMode.value)
+  navigator.clipboard.writeText(finalPrompt).then(() => {
+    triggerToast('Plain Prompt Copied', `✓ Copied raw prompt text for [${scene.tag}] (${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'})!`, 'success')
   })
 }
 
@@ -3242,7 +3421,8 @@ const copyFailedXmlPrompts = () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
+    const finalPrompt = transformTokens(scene.prompt, parsedEntities.value, promptTagMode.value)
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
   }).join('\n\n')
 
   const fRaw = route.params.franchiseId || 'Series_02'
@@ -4628,6 +4808,7 @@ onMounted(() => {
   loadBgmTracks()
   loadCharacterModels()
   loadYoutubePackage()
+  loadFlowEntities()
 })
 
 onUnmounted(() => {

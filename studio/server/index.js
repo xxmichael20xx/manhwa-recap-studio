@@ -699,6 +699,39 @@ app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) =>
   }
 })
 
+// Fetch Flow Entity Mapping
+app.get('/api/franchises/:franchiseId/flow-entities', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault', 'flow_entities.json')
+    if (fs.existsSync(filePath)) {
+      const data = JSON.parse(await fs.promises.readFile(filePath, 'utf-8'))
+      return res.json(data)
+    }
+    res.json({ rawText: '', entities: {} })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Save Flow Entity Mapping
+app.post('/api/franchises/:franchiseId/flow-entities', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const { rawText, entities } = req.body
+    const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    if (!fs.existsSync(vaultDir)) {
+      await fs.promises.mkdir(vaultDir, { recursive: true })
+    }
+    const filePath = path.join(vaultDir, 'flow_entities.json')
+    await fs.promises.writeFile(filePath, JSON.stringify({ rawText: rawText || '', entities: entities || {} }, null, 2), 'utf-8')
+    res.json({ success: true, count: Object.keys(entities || {}).length })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+
 
 // Fetch Subtitles (.srt / .vtt)
 app.get('/api/episodes/:franchiseId/:episodeId/subtitles', async (req, res) => {

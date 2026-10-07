@@ -1,0 +1,16 @@
+{
+  "rawText": "Character Entities\nCaelen Vance - Phantom Marksman: f16555b2-8ae8-40bb-8027-5b8a0c9d859c\nCaelen Vance - Student Archer: bbf8e245-73fa-42d8-a81c-1bdb468885de\nIgnis Sterling - Pyromancer Scion: a60b6666-0190-458f-9307-37ae95241946\nLyra Mercer - Wind Scout: fc5502df-6a3c-4837-b36a-d2b69a6df780\nInstructor Boris Vane: 11108672-a1f5-4e55-973c-84be752da3ce\nDirector Keith Holloway: b1c1a7f7-c0bf-4d5d-9c99-24759da75fb7\n\nWeapon & Item Entities\nWeapon: Void-Strung Heavy Recurve: e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893\nWeapon: Ashwood Training Bow: dedb670f-9670-4341-a5eb-6587353d5cd7\nItem: Ethereal Siphon Arrow: f6d5a575-29d5-4f37-a49e-eae728456316\nItem: Academy Awakening Orb: ceed8950-f216-41f8-ab79-c38f199cf85c\nItem: VIP Radar Console: 4a5d1028-8a9a-4cba-8398-b69cd5eb715f",
+  "entities": {
+    "Caelen Vance - Phantom Marksman": "f16555b2-8ae8-40bb-8027-5b8a0c9d859c",
+    "Caelen Vance - Student Archer": "bbf8e245-73fa-42d8-a81c-1bdb468885de",
+    "Ignis Sterling - Pyromancer Scion": "a60b6666-0190-458f-9307-37ae95241946",
+    "Lyra Mercer - Wind Scout": "fc5502df-6a3c-4837-b36a-d2b69a6df780",
+    "Instructor Boris Vane": "11108672-a1f5-4e55-973c-84be752da3ce",
+    "Director Keith Holloway": "b1c1a7f7-c0bf-4d5d-9c99-24759da75fb7",
+    "Weapon: Void-Strung Heavy Recurve": "e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893",
+    "Weapon: Ashwood Training Bow": "dedb670f-9670-4341-a5eb-6587353d5cd7",
+    "Item: Ethereal Siphon Arrow": "f6d5a575-29d5-4f37-a49e-eae728456316",
+    "Item: Academy Awakening Orb": "ceed8950-f216-41f8-ab79-c38f199cf85c",
+    "Item: VIP Radar Console": "4a5d1028-8a9a-4cba-8398-b69cd5eb715f"
+  }
+}

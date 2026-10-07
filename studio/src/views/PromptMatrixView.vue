@@ -144,6 +144,34 @@
           Clear ({{ selectedTags.size }})
         </button>
 
+        <!-- Format Output Toggle (@{Token} vs @UUID) -->
+        <div class="flex items-center space-x-1 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
+          <span class="text-[10px] font-bold uppercase text-slate-500 px-1.5">Format:</span>
+          <button 
+            @click="togglePromptTagMode('token')"
+            class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+            :class="promptTagMode === 'token' 
+              ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+            title="Display & copy with human-readable tokens like @{Name}"
+          >
+            <span>🏷️ @{Token}</span>
+          </button>
+          <button 
+            @click="togglePromptTagMode('uuid')"
+            class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
+            :class="promptTagMode === 'uuid' 
+              ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+            title="Display & copy with Google Flow entity UUIDs like @UUID"
+          >
+            <span>🔑 @UUID</span>
+            <span v-if="entityCount > 0" class="text-[10px] px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black">
+              {{ entityCount }}
+            </span>
+          </button>
+        </div>
+
         <!-- Copy Selected Button -->
         <button 
           v-if="selectedTags.size > 0"
@@ -274,7 +302,7 @@
               <span class="text-sm font-bold text-slate-900 dark:text-white">{{ p.description }}</span>
             </div>
             <p class="text-sm font-mono text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 break-words select-all leading-relaxed">
-              {{ p.prompt }}
+              {{ getDisplayPrompt(p) }}
             </p>
           </div>
 
@@ -885,10 +913,58 @@ import {
   ArrowLeft, RefreshCw, Copy, Check, CheckCircle2, 
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
   AlertCircle, AlertTriangle, Play, Film, Loader2,
-  Users, Download, ExternalLink, Sparkles, Tag, FileCode2
+  Users, Download, ExternalLink, Sparkles, Tag, FileCode2, Hash
 } from 'lucide-vue-next'
+import { 
+  parseEntityMappingText, 
+  transformTokens, 
+  buildSceneXmlNode,
+  saveEntityMapToStorage, 
+  loadEntityMapFromStorage, 
+  getTagModeFromStorage, 
+  setTagModeToStorage 
+} from '../utils/entityMapper.js'
 
 const route = useRoute()
+
+// Google Flow Entity Mapping State
+const entityMapRawText = ref('')
+const parsedEntities = ref({})
+const promptTagMode = ref('uuid') // 'uuid' | 'token'
+
+const entityCount = computed(() => Object.keys(parsedEntities.value).length)
+
+const togglePromptTagMode = (mode) => {
+  promptTagMode.value = mode
+  setTagModeToStorage(mode)
+}
+
+const getDisplayPrompt = (p) => {
+  if (!p || !p.prompt) return ''
+  return transformTokens(p.prompt, parsedEntities.value, promptTagMode.value)
+}
+
+const loadFlowEntities = async () => {
+  promptTagMode.value = getTagModeFromStorage()
+  const local = loadEntityMapFromStorage(route.params.franchiseId)
+  if (local && local.rawText) {
+    entityMapRawText.value = local.rawText
+    parsedEntities.value = local.entities || parseEntityMappingText(local.rawText).entities
+  }
+
+  try {
+    const res = await fetch(`/api/franchises/${route.params.franchiseId}/flow-entities?cb=${Date.now()}`)
+    const data = await res.json()
+    if (data && data.rawText) {
+      entityMapRawText.value = data.rawText
+      parsedEntities.value = data.entities || parseEntityMappingText(data.rawText).entities
+      saveEntityMapToStorage(route.params.franchiseId, data.rawText, parsedEntities.value)
+    }
+  } catch (e) {
+    console.warn('Failed to fetch flow entities:', e)
+  }
+}
+
 
 // Character & Item Vault State
 const isVaultDrawerOpen = ref(false)
@@ -1359,7 +1435,7 @@ const copyBatchByIndex = (index) => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value)
   }).join('\n\n')
 
   const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1397,7 +1473,7 @@ const copySelectedPrompts = () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value)
   }).join('\n\n')
 
   const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1428,7 +1504,7 @@ const copyMissingPrompts = () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value)
   }).join('\n\n')
 
   const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1458,7 +1534,7 @@ const copyAllMaster = () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value)
   }).join('\n\n')
 
   const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1610,7 +1686,8 @@ const copySinglePrompt = (item, index) => {
   const tag = `IMG_${num}`
   const filename = `${tag}.jpg`
   const promptText = typeof item === 'object' && item.prompt ? item.prompt : item
-  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${promptText}\n</scene>`
+  const finalPrompt = transformTokens(promptText, parsedEntities.value, promptTagMode.value)
+  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
   
   const is16x9 = activeDirectiveFormat.value === '16:9'
   const collectionTitle = getShortcodeCollectionName(`Single_${tag}`)
@@ -1629,5 +1706,6 @@ const copySinglePrompt = (item, index) => {
 onMounted(() => {
   loadEpisode()
   loadVaultModels()
+  loadFlowEntities()
 })
 </script>
