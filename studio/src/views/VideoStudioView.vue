@@ -1703,12 +1703,12 @@
               </span>
               <a 
                 :href="`/api/episodes/${$route.params.franchiseId}/${$route.params.episodeId}/video-stream?file=${encodeURIComponent(selectedVideoFile)}&download=1`"
-                :download="selectedVideoFile"
+                :download="getDownloadFilename(selectedVideoFile)"
                 class="px-3 py-1 rounded-lg bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-600 dark:text-purple-400 border border-purple-500/20 font-semibold transition flex items-center space-x-1.5 cursor-pointer shadow-xs"
-                :title="`Download ${selectedVideoFile}`"
+                :title="`Download ${getDownloadFilename(selectedVideoFile)}`"
               >
                 <Download class="w-3.5 h-3.5" />
-                <span class="max-w-[280px] truncate">Download {{ selectedVideoFile }}</span>
+                <span class="max-w-[280px] truncate">Download {{ getDownloadFilename(selectedVideoFile) }}</span>
               </a>
             </div>
           </div>
@@ -4177,6 +4177,18 @@ const availableBatches = computed(() => {
   }
   return list
 })
+
+const getDownloadFilename = (filename) => {
+  const now = new Date()
+  const pad = (n) => String(n).padStart(2, '0')
+  const timestamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`
+  const franchise = route.params.franchiseId || 'Series'
+  const episode = route.params.episodeId || 'EP01'
+  const cleanBase = (filename || '01_Episode_Master_1080p.mp4')
+    .replace(/^01_Episode_/, '')
+    .replace(/\.mp4$/i, '')
+  return `${franchise}_${episode}_${cleanBase}_${timestamp}.mp4`
+}
 
 const loadVideoFiles = async () => {
   try {

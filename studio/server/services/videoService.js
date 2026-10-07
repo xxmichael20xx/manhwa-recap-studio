@@ -864,6 +864,8 @@ export class VideoService {
       '-c:v', 'libx264',
       '-preset', 'veryfast',
       '-crf', '20',
+      '-pix_fmt', 'yuv420p',
+      '-movflags', '+faststart',
       '-r', '24',
       '-c:a', 'aac',
       '-b:a', '192k',

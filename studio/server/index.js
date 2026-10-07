@@ -915,7 +915,15 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   const range = req.headers.range
 
   const isDownload = req.query.download === '1' || req.query.download === 'true'
-  const dispositionHeader = isDownload ? { 'Content-Disposition': `attachment; filename="${requestedFile}"` } : {}
+  let downloadFilename = requestedFile
+  if (isDownload) {
+    const now = new Date()
+    const pad = (n) => String(n).padStart(2, '0')
+    const timestamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`
+    const cleanBase = requestedFile.replace(/^01_Episode_/, '').replace(/\.mp4$/i, '')
+    downloadFilename = `${franchiseId}_${episodeId}_${cleanBase}_${timestamp}.mp4`
+  }
+  const dispositionHeader = isDownload ? { 'Content-Disposition': `attachment; filename="${downloadFilename}"` } : {}
 
   if (range) {
     const parts = range.replace(/bytes=/, '').split('-')
