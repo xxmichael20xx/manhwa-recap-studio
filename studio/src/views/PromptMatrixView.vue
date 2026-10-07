@@ -172,7 +172,7 @@
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center space-x-3">
-          <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+          <span class="text-sm font-mono text-slate-500 dark:text-slate-400">
             Showing <strong class="text-slate-900 dark:text-white">{{ filteredPrompts.length }}</strong> of {{ parsedPrompts.length }} Scenes • Dynamic Chunks ({{ batchChunkSize }} scenes/batch)
           </span>
         </div>
@@ -180,12 +180,12 @@
           <span 
             v-for="(batch, bIdx) in dynamicBatches" 
             :key="bIdx"
-            class="text-[11px] font-mono px-2.5 py-0.5 rounded border font-semibold flex items-center space-x-1"
+            class="text-xs font-mono px-3 py-1 rounded-lg border font-semibold flex items-center space-x-1.5"
             :class="copiedBatchIndices[bIdx] 
               ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-500/30' 
               : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700'"
           >
-            <CheckCircle2 v-if="copiedBatchIndices[bIdx]" class="w-3 h-3 text-emerald-500" />
+            <CheckCircle2 v-if="copiedBatchIndices[bIdx]" class="w-3.5 h-3.5 text-emerald-500" />
             <span>{{ batch.name }}: {{ batch.startTag }}–{{ batch.endTag }}</span>
           </span>
         </div>
@@ -195,7 +195,7 @@
         <div 
           v-for="(p, index) in filteredPrompts" 
           :key="p.tag"
-          class="p-4 sm:p-6 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors flex flex-col md:flex-row md:items-start justify-between gap-4"
+          class="p-5 sm:p-6 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors flex flex-col md:flex-row md:items-start justify-between gap-4"
           :class="{ 'bg-purple-50/20 dark:bg-purple-950/10': selectedTags.has(p.tag) }"
         >
           <!-- Multi-Select Checkbox -->
@@ -208,51 +208,51 @@
             />
           </div>
 
-          <div class="space-y-2 flex-1">
-            <div class="flex flex-wrap items-center gap-2">
-              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 font-bold">
+          <div class="space-y-3 flex-1">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="text-sm font-mono px-3 py-1 rounded-lg bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 font-bold">
                 {{ p.tag }}
               </span>
 
               <!-- Status Tag (Ready vs Missing) -->
               <span 
                 v-if="p.hasImage" 
-                class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 font-semibold flex items-center space-x-1"
+                class="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 font-semibold flex items-center space-x-1.5"
               >
-                <Check class="w-3 h-3 text-emerald-500" />
+                <Check class="w-3.5 h-3.5 text-emerald-500" />
                 <span>Ready</span>
               </span>
               <span 
                 v-else 
-                class="text-xs font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30 font-semibold flex items-center space-x-1"
+                class="text-xs font-mono px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30 font-semibold flex items-center space-x-1.5"
               >
-                <AlertCircle class="w-3 h-3 text-amber-500" />
+                <AlertCircle class="w-3.5 h-3.5 text-amber-500" />
                 <span>Missing/Retry</span>
               </span>
 
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-semibold">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-semibold">
                 Batch {{ Math.floor(index / batchChunkSize) + 1 }}
               </span>
 
               <!-- Rich Character & Item Vault Reference Chips -->
               <template v-if="getSceneVaultReferences(p).length > 0">
-                <div class="flex flex-wrap items-center gap-1.5">
+                <div class="flex flex-wrap items-center gap-2">
                   <div 
                     v-for="refItem in getSceneVaultReferences(p)"
                     :key="refItem.id || refItem.name"
-                    class="group/chip inline-flex items-center space-x-1.5 pl-1 pr-2 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/30 dark:hover:bg-purple-950/20 shadow-2xs transition"
+                    class="group/chip inline-flex items-center space-x-2 pl-1.5 pr-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/30 dark:hover:bg-purple-950/20 shadow-2xs transition"
                   >
                     <!-- Mini Avatar Plate Thumbnail -->
-                    <div class="w-4 h-4 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
+                    <div class="w-5 h-5 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
                       <img v-if="refItem.url && refItem.hasPlate" :src="refItem.url" :alt="refItem.name" class="w-full h-full object-cover" />
-                      <div v-else class="w-full h-full flex items-center justify-center text-[8px] font-bold text-slate-500 uppercase">
+                      <div v-else class="w-full h-full flex items-center justify-center text-[9px] font-bold text-slate-500 uppercase">
                         {{ (refItem.name || 'R')[0] }}
                       </div>
                     </div>
 
                     <!-- Category Pill -->
                     <span 
-                      class="text-[9px] font-mono px-1 py-0.2 rounded font-bold border"
+                      class="text-[10px] font-mono px-1.5 py-0.5 rounded font-bold border"
                       :class="getCategoryBadgeClass(refItem.category)"
                     >
                       {{ refItem.category }}
@@ -261,19 +261,19 @@
                     <!-- Token Name & 1-Click Copy -->
                     <button 
                       @click.stop="copyVaultToken(refItem)"
-                      class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 flex items-center space-x-1 cursor-pointer transition"
+                      class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 flex items-center space-x-1.5 cursor-pointer transition max-w-[170px] truncate"
                       :title="`Click to copy token '${refItem.token || refItem.name}' for Google Flow`"
                     >
-                      <span>{{ refItem.flowName || refItem.name }}</span>
-                      <Check v-if="copiedVaultId === refItem.id && copiedVaultType === 'token'" class="w-2.5 h-2.5 text-emerald-500" />
-                      <Copy v-else class="w-2.5 h-2.5 text-slate-400 group-hover/chip:text-purple-500" />
+                      <span class="truncate">{{ refItem.flowName || refItem.name }}</span>
+                      <Check v-if="copiedVaultId === refItem.id && copiedVaultType === 'token'" class="w-3 h-3 text-emerald-500 shrink-0" />
+                      <Copy v-else class="w-3 h-3 text-slate-400 group-hover/chip:text-purple-500 shrink-0" />
                     </button>
                   </div>
                 </div>
               </template>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white">{{ p.description }}</span>
+              <span class="text-sm font-bold text-slate-900 dark:text-white">{{ p.description }}</span>
             </div>
-            <p class="text-xs font-mono text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950 p-3 rounded-lg border border-slate-200 dark:border-slate-800 break-words select-all leading-relaxed">
+            <p class="text-sm font-mono text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 break-words select-all leading-relaxed">
               {{ p.prompt }}
             </p>
           </div>
@@ -281,10 +281,10 @@
           <div class="shrink-0 pt-1 flex items-center space-x-2">
             <button 
               @click="copySinglePrompt(p, index)"
-              class="px-3.5 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-slate-700 dark:text-slate-200 text-xs font-mono font-medium flex items-center space-x-1.5 transition-all w-full md:w-auto justify-center cursor-pointer shadow-sm"
+              class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all w-full md:w-auto justify-center cursor-pointer shadow-sm"
             >
-              <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-500" />
-              <Copy v-else class="w-3.5 h-3.5 text-slate-400" />
+              <Check v-if="copiedIndex === index" class="w-4 h-4 text-emerald-500" />
+              <Copy v-else class="w-4 h-4 text-slate-400" />
               <span>{{ copiedIndex === index ? 'Copied XML' : 'Copy <scene>' }}</span>
             </button>
           </div>
@@ -307,7 +307,7 @@
 
         <!-- Slide-over Drawer Panel -->
         <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-          <div class="w-screen max-w-md bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col justify-between">
+          <div class="w-screen max-w-lg bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col justify-between">
             
             <!-- Drawer Header -->
             <div class="p-6 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60">
@@ -317,14 +317,14 @@
                     <Layers class="w-5 h-5" />
                   </div>
                   <div>
-                    <h2 class="text-base font-bold text-slate-900 dark:text-white">Batch Dispatch Hub</h2>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                    <h2 class="text-lg font-bold text-slate-900 dark:text-white">Batch Dispatch Hub</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 font-mono">
                       {{ parsedPrompts.length }} Scenes • Dynamic Google Flow Partitioning
                     </p>
                   </div>
                 </div>
                 <button 
-                  @click="isDrawerOpen = false"
+                  @click="isDrawerOpen = false" 
                   class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <X class="w-5 h-5" />
@@ -332,44 +332,44 @@
               </div>
 
               <!-- Anti-Duplicate Tracker Progress -->
-              <div class="mt-5 p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
-                <div class="flex items-center justify-between text-xs">
+              <div class="mt-5 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
+                <div class="flex items-center justify-between text-sm">
                   <span class="font-semibold text-slate-700 dark:text-slate-300">Dispatch Progress</span>
                   <span class="font-mono text-purple-600 dark:text-purple-400 font-bold">
                     {{ copiedBatchesCount }} of {{ dynamicBatches.length }} Batches Copied
                   </span>
                 </div>
                 <!-- Progress Bar -->
-                <div class="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <div class="w-full h-2.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                   <div 
                     class="h-full bg-gradient-to-r from-purple-600 to-emerald-500 transition-all duration-300"
                     :style="{ width: `${dynamicBatches.length ? (copiedBatchesCount / dynamicBatches.length) * 100 : 0}%` }"
                   />
                 </div>
                 <div class="flex items-center justify-between pt-1">
-                  <span class="text-[11px] text-slate-400">
+                  <span class="text-xs text-slate-500 dark:text-slate-400">
                     {{ copiedBatchesCount === dynamicBatches.length && dynamicBatches.length > 0 ? '🎉 All batches copied with zero duplicates!' : 'Copy batches sequentially to prevent duplicate scenes.' }}
                   </span>
                   <button 
                     v-if="copiedBatchesCount > 0"
                     @click="resetCopiedState" 
-                    class="text-[11px] font-mono text-slate-500 hover:text-rose-500 flex items-center space-x-1 cursor-pointer transition-colors"
+                    class="text-xs font-mono font-semibold text-slate-500 hover:text-rose-500 flex items-center space-x-1 cursor-pointer transition-colors"
                   >
-                    <RotateCcw class="w-3 h-3" />
+                    <RotateCcw class="w-3.5 h-3.5" />
                     <span>Reset</span>
                   </button>
                 </div>
               </div>
 
               <!-- Dedicated Missing / Failed Scenes Action in Drawer -->
-              <div v-if="missingCount > 0" class="mt-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
+              <div v-if="missingCount > 0" class="mt-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
                 <div>
-                  <span class="text-xs font-bold text-amber-700 dark:text-amber-300">Missing / Failed Scenes</span>
-                  <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400">{{ missingCount }} plates missing on disk</p>
+                  <span class="text-sm font-bold text-amber-700 dark:text-amber-300">Missing / Failed Scenes</span>
+                  <p class="text-xs font-mono text-slate-500 dark:text-slate-400">{{ missingCount }} plates missing on disk</p>
                 </div>
                 <button 
                   @click="copyMissingPrompts"
-                  class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-mono font-bold transition shadow-xs cursor-pointer"
+                  class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-mono font-bold transition shadow-xs cursor-pointer"
                 >
                   {{ activeCopiedIndex === 'MISSING' ? 'Copied!' : `⚡ Copy ${missingCount} Missing` }}
                 </button>
@@ -378,17 +378,17 @@
               <!-- Batch Size Settings -->
               <div class="mt-4 flex items-center justify-between">
                 <div>
-                  <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Scenes per Batch:</span>
-                  <span class="text-[10px] font-mono text-purple-600 dark:text-purple-400 ml-1.5 font-bold">(Max: 24)</span>
+                  <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Scenes per Batch:</span>
+                  <span class="text-xs font-mono text-purple-600 dark:text-purple-400 ml-1.5 font-bold">(Max: 24)</span>
                 </div>
-                <div class="flex items-center space-x-1.5">
+                <div class="flex items-center space-x-2">
                   <button 
                     v-for="size in [12, 18, 24]" 
                     :key="size"
                     @click="setBatchChunkSize(size)"
-                    class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer"
+                    class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer"
                     :class="batchChunkSize === size 
-                      ? 'bg-purple-600 text-white shadow-sm font-bold' 
+                      ? 'bg-purple-600 text-white shadow-sm' 
                       : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'"
                   >
                     {{ size }} {{ size === 24 ? '⚡ Max' : '' }}
@@ -398,12 +398,12 @@
             </div>
 
             <!-- Drawer Body: Dynamic Batch List -->
-            <div class="p-6 space-y-3.5 overflow-y-auto flex-1">
+            <div class="p-6 space-y-4 overflow-y-auto flex-1">
               <!-- Standalone Directive Badge -->
-              <div class="p-3 rounded-xl bg-purple-50/60 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-500/20 flex items-start space-x-2.5">
-                <ShieldCheck class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
-                <div class="text-[11px] text-purple-900 dark:text-purple-300 leading-relaxed font-mono">
-                  <span class="font-bold">Anti-Grid & Auto-Retry Directive:</span> Forces Google Flow to generate <strong>1 standalone 9:16 vertical image per &lt;scene&gt;</strong> and mandates automatic retry on failed calls.
+              <div class="p-3.5 rounded-xl bg-purple-50/60 dark:bg-purple-950/20 border border-purple-200/60 dark:border-purple-500/20 flex items-start space-x-2.5">
+                <ShieldCheck class="w-4.5 h-4.5 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
+                <div class="text-xs text-purple-900 dark:text-purple-300 leading-relaxed font-mono">
+                  <span class="font-bold">Anti-Grid & Auto-Retry Directive:</span> Forces Google Flow to generate <strong>1 standalone image per &lt;scene&gt;</strong> and mandates automatic retry on failed calls.
                 </div>
               </div>
 
@@ -418,26 +418,26 @@
                 <div class="flex items-center justify-between mb-2">
                   <div class="flex items-center space-x-2">
                     <span 
-                      class="px-2 py-0.5 rounded text-xs font-mono font-bold"
+                      class="px-2.5 py-1 rounded-md text-xs font-mono font-bold"
                       :class="copiedBatchIndices[bIdx] 
                         ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300' 
                         : 'bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30'"
                     >
                       {{ batch.name }}
                     </span>
-                    <span class="text-xs font-semibold text-slate-900 dark:text-white">
+                    <span class="text-sm font-bold text-slate-900 dark:text-white">
                       Scenes {{ batch.startIndex + 1 }}–{{ batch.endIndex }}
                     </span>
                   </div>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                  <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">
                     {{ batch.items.length }} {{ batch.items.length === 1 ? 'scene' : 'scenes' }}
                   </span>
                 </div>
 
-                <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-between">
+                <div class="text-xs font-mono text-slate-500 dark:text-slate-400 mb-3 flex items-center justify-between">
                   <span>Range: <strong>{{ batch.startTag }}</strong> → <strong>{{ batch.endTag }}</strong></span>
                   <span v-if="copiedBatchIndices[bIdx]" class="text-emerald-600 dark:text-emerald-400 font-bold flex items-center space-x-1">
-                    <CheckCircle2 class="w-3.5 h-3.5" />
+                    <CheckCircle2 class="w-4 h-4" />
                     <span>Copied & Pasted</span>
                   </span>
                   <span v-else class="text-slate-400">
@@ -446,13 +446,13 @@
                 </div>
 
                 <!-- Required Vault References (Google Flow 10-Ref Limit Tracker) -->
-                <div class="my-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 space-y-2">
+                <div class="my-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 space-y-2.5">
                   <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-1.5">
-                      <Users class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                      <span class="text-xs font-bold text-slate-900 dark:text-white">Required References</span>
+                    <div class="flex items-center space-x-2">
+                      <Users class="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                      <span class="text-sm font-bold text-slate-900 dark:text-white">Required References</span>
                       <span 
-                        class="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded-full border"
+                        class="text-xs font-mono font-bold px-2 py-0.5 rounded-full border"
                         :class="batch.refCount > 10 
                           ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30' 
                           : (batch.refCount > 7 
@@ -465,48 +465,55 @@
                     <button 
                       v-if="batch.refCount > 0"
                       @click.stop="copyAllBatchTokens(batch.references, batch.name)"
-                      class="text-[10px] font-mono text-purple-600 dark:text-purple-400 hover:underline cursor-pointer flex items-center space-x-1"
+                      class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400 hover:underline cursor-pointer flex items-center space-x-1"
                       title="Copy comma-separated token list for this batch"
                     >
-                      <Check v-if="copiedDirectToken === batch.name" class="w-2.5 h-2.5 text-emerald-500" />
-                      <Copy v-else class="w-2.5 h-2.5" />
+                      <Check v-if="copiedDirectToken === batch.name" class="w-3 h-3 text-emerald-500" />
+                      <Copy v-else class="w-3 h-3" />
                       <span>{{ copiedDirectToken === batch.name ? 'Copied' : 'Copy Tokens' }}</span>
                     </button>
                   </div>
 
-                  <!-- References Chips -->
-                  <div v-if="batch.refCount > 0" class="flex flex-wrap gap-1.5">
+                  <!-- References List (Full Width) -->
+                  <div v-if="batch.refCount > 0" class="space-y-1.5 pt-1">
                     <div 
                       v-for="model in batch.references" 
                       :key="model.id || model.name"
                       @click.stop="copyVaultToken(model)"
-                      class="group/chip inline-flex items-center space-x-1.5 pl-1 pr-1.5 py-0.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition cursor-pointer shadow-2xs"
+                      class="group/chip w-full flex items-center justify-between px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition cursor-pointer shadow-2xs"
                       :title="`Click to copy token '${model.token || model.name}' (${model.category})`"
                     >
-                      <div class="w-4 h-4 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
-                        <img v-if="model.url && model.hasPlate" :src="model.url" :alt="model.name" class="w-full h-full object-cover" />
-                        <div v-else class="w-full h-full flex items-center justify-center text-[8px] font-bold text-slate-500 uppercase">
-                          {{ (model.name || 'R')[0] }}
+                      <div class="flex items-center space-x-2.5 min-w-0 flex-1">
+                        <div class="w-6 h-6 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
+                          <img v-if="model.url && model.hasPlate" :src="model.url" :alt="model.name" class="w-full h-full object-cover" />
+                          <div v-else class="w-full h-full flex items-center justify-center text-[10px] font-bold text-slate-500 uppercase">
+                            {{ (model.name || 'R')[0] }}
+                          </div>
                         </div>
+                        <span class="text-xs font-mono text-slate-800 dark:text-slate-200 truncate font-bold">
+                          {{ model.flowName || model.name }}
+                        </span>
                       </div>
-                      <span class="text-[10px] font-mono text-slate-700 dark:text-slate-300 truncate max-w-[110px] font-semibold">
-                        {{ model.flowName || model.name }}
-                      </span>
-                      <span 
-                        class="text-[8px] font-mono px-1 py-0.2 rounded font-bold border"
-                        :class="getCategoryBadgeClass(model.category)"
-                      >
-                        {{ model.category }}
-                      </span>
+                      
+                      <div class="flex items-center space-x-2 shrink-0 ml-2">
+                        <span 
+                          class="text-[10px] font-mono px-2 py-0.5 rounded font-bold border"
+                          :class="getCategoryBadgeClass(model.category)"
+                        >
+                          {{ model.category }}
+                        </span>
+                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                        <Copy v-else class="w-3.5 h-3.5 text-slate-400 group-hover/chip:text-purple-500 shrink-0" />
+                      </div>
                     </div>
                   </div>
-                  <div v-else class="text-[10px] font-mono text-slate-400 italic">
+                  <div v-else class="text-xs font-mono text-slate-400 italic">
                     No character/item references tagged in this batch.
                   </div>
 
                   <!-- Over Limit Alert -->
-                  <div v-if="batch.refCount > 10" class="p-1.5 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center space-x-1.5 text-rose-600 dark:text-rose-400 text-[10px] font-mono font-bold">
-                    <AlertTriangle class="w-3 h-3 shrink-0 text-rose-500" />
+                  <div v-if="batch.refCount > 10" class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center space-x-1.5 text-rose-600 dark:text-rose-400 text-xs font-mono font-bold">
+                    <AlertTriangle class="w-3.5 h-3.5 shrink-0 text-rose-500" />
                     <span>Exceeds Google Flow 10-reference limit! Remove {{ batch.refCount - 10 }} unused plates.</span>
                   </div>
                 </div>
@@ -515,7 +522,7 @@
                 <div class="space-y-2">
                   <button 
                     @click="copyBatchByIndex(bIdx)"
-                    class="w-full py-2.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm"
+                    class="w-full py-3 px-4 rounded-xl text-sm font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm"
                     :class="copiedBatchIndices[bIdx]
                       ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
                       : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-purple-950/20'"
@@ -529,7 +536,6 @@
                       }}
                     </span>
                   </button>
-
                 </div>
               </div>
 
@@ -537,9 +543,9 @@
               <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
                 <button 
                   @click="copyAllMaster"
-                  class="w-full py-2.5 px-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all cursor-pointer"
+                  class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-sm font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer"
                 >
-                  <Copy class="w-3.5 h-3.5 text-purple-500 dark:text-purple-400" />
+                  <Copy class="w-4 h-4 text-purple-500 dark:text-purple-400" />
                   <span>{{ activeCopiedIndex === 'ALL' ? 'All Scenes Copied!' : `Copy Entire Episode (All ${parsedPrompts.length} Scenes)` }}</span>
                 </button>
               </div>
@@ -547,7 +553,7 @@
 
             <!-- Drawer Footer -->
             <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-center">
-              <p class="text-[11px] font-mono text-slate-400">
+              <p class="text-xs font-mono text-slate-400">
                 Each batch is wrapped in clean &lt;scene id="..."&gt; containers for Google Flow Agent Mode.
               </p>
             </div>
@@ -1149,7 +1155,18 @@ const getBatchVaultReferences = (items) => {
     const tokens = extractTokensFromText(text)
     tokens.forEach(t => uniqueTokens.add(t))
   }
-  const models = Array.from(uniqueTokens).map(t => resolveVaultModel(t)).filter(Boolean)
+  const seenModelKeys = new Set()
+  const models = []
+  for (const token of uniqueTokens) {
+    const model = resolveVaultModel(token)
+    if (model) {
+      const key = (model.id || model.token || model.name).toLowerCase()
+      if (!seenModelKeys.has(key)) {
+        seenModelKeys.add(key)
+        models.push(model)
+      }
+    }
+  }
   return {
     models,
     count: models.length,
@@ -1162,7 +1179,19 @@ const getSceneVaultReferences = (scene) => {
   if (!scene) return []
   const text = (scene.prompt || '') + ' ' + (scene.characterAnchor || '')
   const tokens = extractTokensFromText(text)
-  return tokens.map(t => resolveVaultModel(t)).filter(Boolean)
+  const seenModelKeys = new Set()
+  const models = []
+  for (const token of tokens) {
+    const model = resolveVaultModel(token)
+    if (model) {
+      const key = (model.id || model.token || model.name).toLowerCase()
+      if (!seenModelKeys.has(key)) {
+        seenModelKeys.add(key)
+        models.push(model)
+      }
+    }
+  }
+  return models
 }
 
 const copyAllBatchTokens = async (models, batchName = '') => {
@@ -1181,15 +1210,36 @@ const copyAllBatchTokens = async (models, batchName = '') => {
   }
 }
 
-const formatReferenceHeader = (references) => {
-  if (!references || references.length === 0) return ''
-  const limitStatus = references.length <= 10 ? `✓ WITHIN 10-REF LIMIT (${references.length}/10 slots)` : `⚠️ EXCEEDS 10-REF LIMIT (${references.length}/10 slots)`
-  const lines = references.map((m, i) => `${i + 1}. ${m.token || `@{${m.name}}`} [${m.category || m.type || 'Ref'}] — ${m.name}`)
-  return `<!-- 
-📌 GOOGLE FLOW REQUIRED REFERENCE PLATES [${limitStatus}]:
-${lines.join('\n')}
-(Attach these ${references.length} reference plate(s) into Google Flow before generation)
--->`
+const formatReferenceHeader = (_references) => {
+  // Omitted per operator directive (zero-bloat prompt payload)
+  return ''
+}
+
+const getFlowDirectiveHeader = (collectionTitle, format = '16:9') => {
+  const is16x9 = format === '16:9'
+  const aspectInstruction = is16x9 
+    ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
+    : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
+
+  return `[DIRECTIVE: GOOGLE FLOW PURE IMAGE GENERATION, COLLECTION GROUPING & ZERO-TEXT MANDATE]
+
+📁 MANDATORY COLLECTION GROUPING INSTRUCTION:
+Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
+"${collectionTitle}"
+and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
+
+🎨 GENERATION & COMPOSITION INVARIANTS:
+1. STANDALONE SCENES: Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
+2. ZERO GRIDS / ZERO STRIPS: DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
+3. 🚫 ABSOLUTE ZERO-TEXT & ZERO-KOREAN MANDATE (STRICTLY ENFORCED):
+   - Every generated image MUST be 100% pure, textless illustration artwork.
+   - ABSOLUTELY ZERO Korean characters / Hangul (한글), ZERO English words/letters, ZERO Japanese kanji/hiragana, ZERO numbers, ZERO speech bubbles, ZERO dialogue balloons, ZERO comic sound effects (SFX/onomatopoeia), ZERO subtitles, ZERO captions, ZERO watermarks, ZERO signatures, ZERO chapter titles, ZERO artist logos, ZERO burned-in filenames, and ZERO UI text.
+   - Never draw or overlay any words, glyphs, or letters onto the artwork under any circumstances.
+4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
+5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
+7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
+8. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
 }
 
 // Dynamic Batches Computation based on total parsed scenes
@@ -1265,20 +1315,7 @@ const copiedDirective = ref(false)
 
 const currentDirectiveText = computed(() => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
-  const aspectRule = is16x9 
-    ? '3. 16:9 FULL-BLEED LANDSCAPE COMPOSITION: Every scene must be rendered as an edge-to-edge 16:9 horizontal landscape manhwa illustration (1920x1080) with sharp ink linework, cinematic contrast, and zero split-panel grids.'
-    : '3. 9:16 VERTICAL WEBTOON COMPOSITION: Every scene must be rendered as an independent full-frame 9:16 vertical manhwa asset (1080x1920) with sharp ink linework, cinematic contrast, and zero split-panel grids.'
-
-  return `[PRE-EXECUTION REQUIREMENT: TWO-STEP GENERATION & SEQUENTIAL FILE RENAMING]
-1. MANDATORY TWO-STEP EXECUTION: For every scene generated from the <scene> tags below, you MUST execute two sequential actions within the exact same turn:
-   - Step 1 (Generation): Generate the visual plate matching the prompt and character/item DNA tokens.
-   - Step 2 (Sequential Renaming): Immediately call the file renaming tool to rename each output file to its exact attribute name (e.g. "IMG_001.jpg", "IMG_002.jpg", "IMG_003.jpg").
-2. STRICT ZERO-HASH NAMING: You are strictly forbidden from leaving files with randomized alphanumeric hashes, timestamps, or default names. Every file output must match filename="IMG_XXX.jpg" bit-for-bit.
-${aspectRule}
-4. TEXTLESS ARTWORK: Render pure illustration only. Do not embed speech bubbles, watermarks, or typography into the image unless explicitly quoted inside system HUD descriptions.
-5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, and ZERO severed or floating limbs.
-6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
-7. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.`
+  return getFlowDirectiveHeader('Direct_Copy', is16x9 ? '16:9' : '9:16')
 })
 
 const copyDirective = async () => {
@@ -1306,13 +1343,6 @@ const getShortcodeCollectionName = (batchName) => {
   return `Se.${sNum}.EP.${epNum}.${batchCode}`
 }
 
-const formatCollectionHeader = (collectionTitle) => {
-  return `[MANDATORY GOOGLE FLOW INSTRUCTION: CREATE & ASSIGN COLLECTION]
-Before or immediately upon generating the images below, YOU MUST CREATE A COLLECTION NAMED:
-"${collectionTitle}"
-and automatically assign, group, and organize 100% of all generated scene images into this Collection.`
-}
-
 const copyBatchByIndex = (index) => {
   const batch = dynamicBatches.value[index]
   if (!batch || !batch.items.length) return
@@ -1322,19 +1352,18 @@ const copyBatchByIndex = (index) => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName(batch.name)
-  const refHeader = formatReferenceHeader(batch.references || [])
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16')
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${batch.refCount || 0}/10">\n\n${scenesXml}\n\n</batch>`
-  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${flowDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -1361,20 +1390,18 @@ const copySelectedPrompts = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Selected')
-  const selectedRefs = getBatchVaultReferences(selectedItems)
-  const refHeader = formatReferenceHeader(selectedRefs.models)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16')
 
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${selectedRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
-  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${flowDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'SELECTED'
@@ -1394,20 +1421,18 @@ const copyMissingPrompts = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Missing')
-  const missingRefs = getBatchVaultReferences(missingItems)
-  const refHeader = formatReferenceHeader(missingRefs.models)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16')
 
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${missingRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
-  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${flowDirective}\n\n${batchXml}`
   navigator.clipboard.writeText(payload)
   
   activeCopiedIndex.value = 'MISSING'
@@ -1426,20 +1451,18 @@ const copyAllMaster = () => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
 
   const collectionTitle = getShortcodeCollectionName('Master')
-  const allRefs = getBatchVaultReferences(parsedPrompts.value)
-  const refHeader = formatReferenceHeader(allRefs.models)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16')
 
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return `<scene id="${tag}" filename="${filename}">\n${p.prompt}\n</scene>`
+    return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${p.prompt}\n</scene>`
   }).join('\n\n')
 
-  const collectionDirective = formatCollectionHeader(collectionTitle)
-  const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}" flow_references="${allRefs.count}/10">\n\n${scenesXml}\n\n</batch>`
-  const payload = refHeader ? `${refHeader}\n\n${collectionDirective}\n\n${batchXml}` : `${collectionDirective}\n\n${batchXml}`
+  const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${flowDirective}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload)
   
@@ -1580,14 +1603,20 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
 }
 
 const copySinglePrompt = (item, index) => {
-  const id = typeof item === 'object' && item.tag 
+  const rawId = typeof item === 'object' && item.tag 
     ? item.tag.replace(/[^A-Za-z0-9]/g, '')
     : `IMG${String(index + 1).padStart(3, '0')}`
+  const num = rawId.replace(/IMG/i, '').padStart(3, '0')
+  const tag = `IMG_${num}`
+  const filename = `${tag}.jpg`
   const promptText = typeof item === 'object' && item.prompt ? item.prompt : item
-  const refs = typeof item === 'object' ? getSceneVaultReferences(item) : []
-  const refHeader = formatReferenceHeader(refs)
-  const sceneXml = `<scene id="${id}">\n${promptText}\n</scene>`
-  const payload = refHeader ? `${refHeader}\n\n${sceneXml}` : sceneXml
+  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${promptText}\n</scene>`
+  
+  const is16x9 = activeDirectiveFormat.value === '16:9'
+  const collectionTitle = getShortcodeCollectionName(`Single_${tag}`)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16')
+  const payload = `${flowDirective}\n\n${sceneXml}`
+  
   navigator.clipboard.writeText(payload)
   copiedIndex.value = index
   setTimeout(() => {

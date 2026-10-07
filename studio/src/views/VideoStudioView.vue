@@ -227,9 +227,9 @@
               <div class="space-y-2.5">
                 <div class="flex items-start justify-between gap-1">
                   <div class="min-w-0 flex-1">
-                    <h4 class="text-xs font-bold text-slate-900 dark:text-white truncate" :title="model.name">{{ model.name }}</h4>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white truncate" :title="model.name">{{ model.name }}</h4>
                     <span 
-                      class="text-[10px] font-mono px-1.5 py-0.5 rounded font-semibold inline-block mt-0.5 border"
+                      class="text-xs font-mono px-2 py-0.5 rounded font-bold inline-block mt-0.5 border"
                       :class="getCategoryBadgeClass(model.category)"
                     >
                       {{ model.category }} • {{ model.tier }}
@@ -244,17 +244,17 @@
                     <a 
                       :href="model.url" 
                       target="_blank" 
-                      class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
+                      class="p-2 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
                       title="View Full Resolution"
                     >
-                      <ExternalLink class="w-3.5 h-3.5" />
+                      <ExternalLink class="w-4 h-4" />
                     </a>
                     <button 
                       @click="downloadModelPlate(model)"
-                      class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
+                      class="p-2 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
                       title="Download Image File"
                     >
-                      <Download class="w-3.5 h-3.5" />
+                      <Download class="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -262,19 +262,19 @@
                 <!-- Google Flow Setup Name Bar (1-Click Paste for Google Flow Reference Setup) -->
                 <div 
                   @click="copyModelName(model)"
-                  class="p-1.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between cursor-pointer hover:border-purple-500/50 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition group"
+                  class="p-2 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between cursor-pointer hover:border-purple-500/50 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition group"
                   title="Click to copy clean Reference Name (WITHOUT @{}) to paste directly into Google Flow character/object setup"
                 >
                   <div class="flex items-center space-x-1.5 min-w-0 flex-1">
-                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-bold shrink-0">
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-bold shrink-0">
                       Flow Name
                     </span>
-                    <span class="text-[10px] font-mono text-slate-700 dark:text-slate-300 truncate font-semibold">
+                    <span class="text-xs font-mono text-slate-700 dark:text-slate-300 truncate font-bold">
                       {{ model.flowName || model.name }}
                     </span>
                   </div>
                   <span 
-                    class="text-[9px] font-mono shrink-0 ml-1 font-bold"
+                    class="text-xs font-mono shrink-0 ml-1 font-bold"
                     :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
                   >
                     {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
@@ -282,7 +282,7 @@
                 </div>
 
                 <!-- Description -->
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
                   {{ model.description }}
                 </p>
               </div>
@@ -291,50 +291,50 @@
               <div class="flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-slate-800/80 gap-1.5">
                 <button 
                   @click="downloadModelPlate(model)"
-                  class="px-2 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer"
+                  class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-1 transition cursor-pointer"
                   title="Download Master Reference Plate"
                 >
-                  <Download class="w-3 h-3 text-slate-500 dark:text-slate-400" />
+                  <Download class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
                   <span>Download</span>
                 </button>
                 
                 <div class="flex items-center space-x-1">
                   <button 
                     @click="copyModelName(model)"
-                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
                     :class="copiedVaultId === model.id && copiedVaultType === 'name' 
                       ? 'bg-emerald-600 text-white' 
                       : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
                     title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
                   >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3 h-3" />
-                    <Tag v-else class="w-3 h-3 text-slate-500" />
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3.5 h-3.5" />
+                    <Tag v-else class="w-3.5 h-3.5 text-slate-500" />
                     <span>{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
                   </button>
 
                   <button 
                     @click="copyModelToken(model)"
-                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
                     :class="copiedVaultId === model.id && copiedVaultType === 'token' 
                       ? 'bg-emerald-600 text-white' 
                       : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
                     title="Copy Google Flow Token (@{...})"
                   >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3" />
-                    <Copy v-else class="w-3 h-3" />
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5" />
+                    <Copy v-else class="w-3.5 h-3.5" />
                     <span>{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
                   </button>
 
                   <button 
                     @click="copyModelDna(model)"
-                    class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
+                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
                     :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
                       ? 'bg-emerald-600 text-white' 
                       : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
                     title="Copy Complete Visual DNA Prompt"
                   >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3" />
-                    <Sparkles v-else class="w-3 h-3" />
+                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3.5 h-3.5" />
+                    <Sparkles v-else class="w-3.5 h-3.5" />
                     <span>{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
                   </button>
                 </div>
@@ -561,11 +561,11 @@
                 </button>
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
-                    <span class="text-sm font-bold text-slate-900 dark:text-white">{{ batch.label }}</span>
+                    <span class="text-base font-bold text-slate-900 dark:text-white">{{ batch.label }}</span>
                     
                     <!-- Panels Loaded Readiness Badge -->
                     <span 
-                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1"
+                      class="text-xs font-mono font-bold px-2.5 py-1 rounded-full flex items-center space-x-1.5"
                       :class="batch.isFullyReady 
                         ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30' 
                         : 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'"
@@ -577,7 +577,7 @@
                     <!-- Batch Visual QA Health Badge -->
                     <span 
                       v-if="qaAuditReport"
-                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1"
+                      class="text-xs font-mono font-bold px-2.5 py-1 rounded-full flex items-center space-x-1.5"
                       :class="batch.isFullyClean
                         ? 'bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30'
                         : (batch.clutteredCount > 0 
@@ -586,10 +586,10 @@
                             ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'
                             : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700'))"
                     >
-                      <ShieldCheck v-if="batch.isFullyClean" class="w-3 h-3 text-teal-500" />
-                      <AlertTriangle v-else-if="batch.clutteredCount > 0" class="w-3 h-3 text-rose-500" />
-                      <AlertCircle v-else-if="batch.warningCount > 0" class="w-3 h-3 text-amber-500" />
-                      <Info v-else class="w-3 h-3 text-slate-400" />
+                      <ShieldCheck v-if="batch.isFullyClean" class="w-3.5 h-3.5 text-teal-500" />
+                      <AlertTriangle v-else-if="batch.clutteredCount > 0" class="w-3.5 h-3.5 text-rose-500" />
+                      <AlertCircle v-else-if="batch.warningCount > 0" class="w-3.5 h-3.5 text-amber-500" />
+                      <Info v-else class="w-3.5 h-3.5 text-slate-400" />
                       <span v-if="batch.isFullyClean">100% QA Clean</span>
                       <span v-else-if="batch.clutteredCount > 0">{{ batch.clutteredCount }} Cluttered</span>
                       <span v-else-if="batch.warningCount > 0">{{ batch.warningCount }} Fixable</span>
@@ -598,19 +598,19 @@
 
                     <!-- Google Flow Required References Badge (N/10 Limit Tracker) -->
                     <span 
-                      class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full flex items-center space-x-1 border"
+                      class="text-xs font-mono font-bold px-2.5 py-1 rounded-full flex items-center space-x-1.5 border"
                       :class="batch.refCount > 10 
                         ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/30' 
                         : (batch.refCount > 7 
                           ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30' 
                           : 'bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30')"
                     >
-                      <Users class="w-3 h-3 text-purple-500" />
+                      <Users class="w-3.5 h-3.5 text-purple-500" />
                       <span>{{ batch.refCount }}/10 Flow Refs</span>
                     </span>
                   </div>
 
-                  <div class="flex items-center space-x-3 mt-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                  <div class="flex items-center space-x-3 mt-1 text-xs font-mono text-slate-500 dark:text-slate-400">
                     <span>Range: <strong>{{ batch.startTag }}</strong> → <strong>{{ batch.endTag }}</strong></span>
                   </div>
                 </div>
@@ -622,7 +622,7 @@
                 <button 
                   @click="compileBatchDirect(batch.index)"
                   :disabled="compiling"
-                  class="px-2.5 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                  class="px-3 py-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
                   :title="`1-Click Render ${batch.name} Preview Video`"
                 >
                   <Film class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
@@ -633,7 +633,7 @@
                 <button 
                   v-if="batch.failedCount > 0"
                   @click="openFailedDrawer(batch.index)"
-                  class="px-2.5 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/40 border border-amber-300 dark:border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+                  class="px-3 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/40 border border-amber-300 dark:border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer"
                   :title="`Open drawer to copy failed prompts & replace images for ${batch.name}`"
                 >
                   <Zap class="w-3.5 h-3.5 text-amber-500" />
@@ -644,7 +644,7 @@
                 <button 
                   @click="runVisualAlignmentValidation(batch.index)"
                   :disabled="isValidatingAlignment"
-                  class="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                  class="px-3.5 py-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
                   :title="`Validate scene alignment strictly for ${batch.name}`"
                 >
                   <ShieldCheck class="w-3.5 h-3.5" />
@@ -663,10 +663,10 @@
                       <Users class="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                      <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                         <span>Required References for {{ batch.name }}</span>
                         <span 
-                          class="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border"
+                          class="text-xs font-mono px-2.5 py-0.5 rounded-full font-bold border"
                           :class="batch.refCount > 10 
                             ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/30' 
                             : (batch.refCount > 7 
@@ -676,7 +676,7 @@
                           {{ batch.refCount }}/10 Flow Slots Used
                         </span>
                       </h4>
-                      <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                      <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                         Attach these reference plates into Google Flow when generating scenes {{ batch.startTag }}–{{ batch.endTag }}.
                       </p>
                     </div>
@@ -686,11 +686,11 @@
                     <button 
                       v-if="batch.refCount > 0"
                       @click="copyAllBatchTokens(batch.references, batch.name)"
-                      class="px-2.5 py-1.5 rounded-lg bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-500/30 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+                      class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-500/30 text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer"
                       title="Copy all tokens in this batch comma-separated"
                     >
-                      <Check v-if="copiedVaultId === batch.name && copiedVaultType === 'batch_tokens'" class="w-3 h-3 text-emerald-500" />
-                      <Copy v-else class="w-3 h-3" />
+                      <Check v-if="copiedVaultId === batch.name && copiedVaultType === 'batch_tokens'" class="w-3.5 h-3.5 text-emerald-500" />
+                      <Copy v-else class="w-3.5 h-3.5" />
                       <span>{{ copiedVaultId === batch.name && copiedVaultType === 'batch_tokens' ? 'Tokens Copied' : 'Copy All Batch Tokens' }}</span>
                     </button>
                   </div>
@@ -701,23 +701,23 @@
                   <div 
                     v-for="model in batch.references" 
                     :key="model.id || model.name"
-                    class="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 shadow-2xs hover:border-purple-500/40 transition group"
+                    class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 shadow-2xs hover:border-purple-500/40 transition group"
                   >
-                    <div class="flex items-center space-x-2 min-w-0">
+                    <div class="flex items-center space-x-2.5 min-w-0">
                       <!-- Thumbnail -->
-                      <div class="w-7 h-7 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 shrink-0 border border-slate-200 dark:border-slate-800 relative">
+                      <div class="w-9 h-9 rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 shrink-0 border border-slate-200 dark:border-slate-800 relative">
                         <img v-if="model.url && model.hasPlate" :src="model.url" :alt="model.name" class="w-full h-full object-cover" />
-                        <div v-else class="w-full h-full flex items-center justify-center text-[10px] font-bold text-slate-500 uppercase">
+                        <div v-else class="w-full h-full flex items-center justify-center text-xs font-bold text-slate-500 uppercase">
                           {{ (model.name || 'R')[0] }}
                         </div>
                       </div>
 
                       <div class="min-w-0 flex-1">
-                        <div class="text-[11px] font-mono font-bold text-slate-900 dark:text-white truncate" :title="model.name">
+                        <div class="text-xs font-mono font-bold text-slate-900 dark:text-white truncate" :title="model.name">
                           {{ model.flowName || model.name }}
                         </div>
                         <span 
-                          class="text-[9px] font-mono px-1.5 py-0.2 rounded font-semibold inline-block border"
+                          class="text-[10px] font-mono px-1.5 py-0.5 rounded font-bold inline-block border mt-0.5"
                           :class="getCategoryBadgeClass(model.category)"
                         >
                           {{ model.category }}
@@ -729,18 +729,18 @@
                     <div class="flex items-center space-x-1 shrink-0">
                       <button 
                         @click.stop="downloadModelPlate(model)"
-                        class="p-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] transition cursor-pointer"
+                        class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs transition cursor-pointer"
                         title="Download Reference Plate"
                       >
-                        <Download class="w-3 h-3" />
+                        <Download class="w-3.5 h-3.5" />
                       </button>
                       <button 
                         @click.stop="copyModelToken(model)"
-                        class="p-1 rounded-md bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 text-[10px] transition cursor-pointer"
+                        class="p-1.5 rounded-lg bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 text-xs transition cursor-pointer"
                         :title="`Copy Token '${model.token || model.name}'`"
                       >
-                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3 text-emerald-500" />
-                        <Copy v-else class="w-3 h-3" />
+                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5 text-emerald-500" />
+                        <Copy v-else class="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>
@@ -750,7 +750,7 @@
                 </div>
 
                 <!-- Over Limit Alert -->
-                <div v-if="batch.refCount > 10" class="p-2 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center space-x-2 text-rose-600 dark:text-rose-400 text-xs font-mono font-bold">
+                <div v-if="batch.refCount > 10" class="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center space-x-2 text-rose-600 dark:text-rose-400 text-xs font-mono font-bold">
                   <AlertTriangle class="w-4 h-4 shrink-0 text-rose-500" />
                   <span>Google Flow Limit Warning: This batch has {{ batch.refCount }} references, which exceeds the 10-reference maximum. Ensure unused references are detached before generating.</span>
                 </div>
@@ -797,20 +797,20 @@
                     class="absolute inset-0 bg-slate-950/85 backdrop-blur-xs rounded-xl z-20 flex flex-col items-center justify-center space-y-2 p-4 text-center"
                   >
                     <Loader2 class="w-6 h-6 text-purple-400 animate-spin" />
-                    <span class="text-xs font-mono font-bold text-white">Uploading [{{ scene.tag }}]...</span>
-                    <span class="text-[10px] font-mono text-purple-300">Assigning image & verifying QA...</span>
+                    <span class="text-sm font-mono font-bold text-white">Uploading [{{ scene.tag }}]...</span>
+                    <span class="text-xs font-mono text-purple-300">Assigning image & verifying QA...</span>
                   </div>
 
                   <!-- Card Header -->
                   <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-1.5">
-                      <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
+                      <span class="text-sm font-mono font-bold px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
                         [{{ scene.tag }}]
                       </span>
                       <!-- QA Status Mini-Badge -->
                       <span 
                         v-if="scene.qa"
-                        class="text-[10px] font-mono px-1.5 py-0.2 rounded font-semibold flex items-center space-x-1"
+                        class="text-xs font-mono px-2 py-0.5 rounded-md font-bold flex items-center space-x-1"
                         :class="{
                           'bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-500/30': scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned',
                           'bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30': scene.qa.status === 'warning',
@@ -818,9 +818,9 @@
                         }"
                         :title="scene.qa.issues?.length ? scene.qa.issues.join(' | ') : 'QA Verified Clean'"
                       >
-                        <Check v-if="scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned'" class="w-3 h-3 text-emerald-500" />
-                        <AlertTriangle v-else-if="scene.qa.status === 'warning'" class="w-3 h-3 text-amber-500" />
-                        <AlertCircle v-else class="w-3 h-3 text-rose-500" />
+                        <Check v-if="scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned'" class="w-3.5 h-3.5 text-emerald-500" />
+                        <AlertTriangle v-else-if="scene.qa.status === 'warning'" class="w-3.5 h-3.5 text-amber-500" />
+                        <AlertCircle v-else class="w-3.5 h-3.5 text-rose-500" />
                         <span>{{ scene.qa.status === 'clean' || scene.qa.status === 'auto_cleaned' ? 'Clean' : (scene.qa.status === 'warning' ? 'Warning' : 'Cluttered') }}</span>
                       </span>
                     </div>
@@ -828,12 +828,12 @@
                     <div class="flex items-center space-x-1.5">
                       <button 
                         @click="copySingleScenePrompt(scene)" 
-                        class="p-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white text-slate-600 dark:text-slate-400 text-[10px] font-mono transition cursor-pointer"
+                        class="p-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white text-slate-600 dark:text-slate-400 text-xs font-mono transition cursor-pointer"
                         title="Copy XML Scene Prompt"
                       >
-                        <Copy class="w-3 h-3" />
+                        <Copy class="w-3.5 h-3.5" />
                       </button>
-                      <span class="text-[10px] font-mono text-slate-400 uppercase">{{ scene.act ? scene.act.split(':')[0] : 'Scene' }}</span>
+                      <span class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase">{{ scene.act ? scene.act.split(':')[0] : 'Scene' }}</span>
                     </div>
                   </div>
 
@@ -846,43 +846,43 @@
                       :alt="scene.tag"
                     />
                     <div v-else class="text-center p-4 space-y-2">
-                      <Image class="w-6 h-6 mx-auto text-slate-600" />
-                      <div class="text-[11px] font-mono text-slate-400">No Image Rendered</div>
-                      <div class="text-[10px] text-slate-500">Drag & drop PNG/JPG here</div>
+                      <Image class="w-7 h-7 mx-auto text-slate-600" />
+                      <div class="text-xs font-mono text-slate-400">No Image Rendered</div>
+                      <div class="text-[11px] text-slate-500">Drag & drop PNG/JPG here</div>
                     </div>
 
                     <!-- Upload Overlay on Hover -->
                     <label class="absolute inset-0 bg-slate-900/70 backdrop-blur-xs opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition cursor-pointer">
-                      <Upload class="w-5 h-5 text-white mb-1" />
-                      <span class="text-[11px] font-semibold text-white">Replace Image</span>
+                      <Upload class="w-6 h-6 text-white mb-1" />
+                      <span class="text-xs font-semibold text-white">Replace Image</span>
                       <input type="file" accept="image/*" class="hidden" @change="handleFileInput($event, scene.tag)" />
                     </label>
                   </div>
 
                   <!-- Scene Info -->
                   <div>
-                    <div class="text-xs font-bold text-slate-900 dark:text-slate-100 line-clamp-1">{{ scene.description }}</div>
-                    <p class="text-[11px] font-mono text-slate-500 dark:text-slate-400 line-clamp-2 mt-1">{{ scene.prompt }}</p>
+                    <div class="text-sm font-bold text-slate-900 dark:text-slate-100 line-clamp-1">{{ scene.description }}</div>
+                    <p class="text-xs font-mono text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed mt-1">{{ scene.prompt }}</p>
                   </div>
 
                   <!-- Scene Character & Item Reference Chips -->
-                  <div v-if="getSceneReferences(scene.prompt).length > 0" class="flex flex-wrap gap-1 pt-1.5 border-t border-slate-100 dark:border-slate-800/80">
+                  <div v-if="getSceneReferences(scene.prompt).length > 0" class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 dark:border-slate-800/80">
                     <div 
                       v-for="refItem in getSceneReferences(scene.prompt)"
                       :key="refItem.id || refItem.name"
                       @click.stop="copyModelToken(refItem)"
-                      class="inline-flex items-center space-x-1 pl-1 pr-1.5 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:bg-purple-50/20 text-[10px] font-mono transition cursor-pointer shadow-2xs group/chip"
+                      class="inline-flex items-center space-x-1.5 pl-1.5 pr-2 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 hover:bg-purple-50/20 text-xs font-mono transition cursor-pointer shadow-2xs group/chip"
                       :title="`Click to copy token '${refItem.token || refItem.name}'`"
                     >
-                      <div class="w-3.5 h-3.5 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
+                      <div class="w-5 h-5 rounded overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
                         <img v-if="refItem.url && refItem.hasPlate" :src="refItem.url" :alt="refItem.name" class="w-full h-full object-cover" />
-                        <div v-else class="w-full h-full flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">
+                        <div v-else class="w-full h-full flex items-center justify-center text-[8px] font-bold text-slate-500 uppercase">
                           {{ (refItem.name || 'R')[0] }}
                         </div>
                       </div>
-                      <span class="font-semibold text-slate-700 dark:text-slate-300 truncate max-w-[85px]">{{ refItem.flowName || refItem.name }}</span>
-                      <span class="text-[8px] px-1 py-0.2 rounded font-bold border" :class="getCategoryBadgeClass(refItem.category)">{{ refItem.category }}</span>
-                      <Copy class="w-2 h-2 text-slate-400 group-hover/chip:text-purple-500" />
+                      <span class="font-bold text-slate-700 dark:text-slate-300 truncate max-w-[120px]">{{ refItem.flowName || refItem.name }}</span>
+                      <span class="text-[10px] px-1.5 py-0.5 rounded font-bold border" :class="getCategoryBadgeClass(refItem.category)">{{ refItem.category }}</span>
+                      <Copy class="w-3 h-3 text-slate-400 group-hover/chip:text-purple-500" />
                     </div>
                   </div>
                 </div>
@@ -2968,25 +2968,28 @@ const handleBatchFileInput = async (e) => {
 const getFlowDirectiveHeader = (collectionTitle) => {
   const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (franchise.value?.bibleContent || '').includes('16:9')
   const aspectInstruction = is16x9 
-    ? '16:9 widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
-    : '9:16 native vertical aspect ratio (1080x1920 vertical format)'
+    ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
+    : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
 
-  return `[DIRECTIVE: PURE INDIVIDUAL IMAGE GENERATION, COLLECTION GROUPING & FULL COMPLETION PROTOCOL]
+  return `[DIRECTIVE: GOOGLE FLOW PURE IMAGE GENERATION, COLLECTION GROUPING & ZERO-TEXT MANDATE]
 
 📁 MANDATORY COLLECTION GROUPING INSTRUCTION:
 Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
 "${collectionTitle}"
-and automatically assign, group, and organize 100% of all generated scene images into this Collection so they are organized together in Google Flow.
+and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
 
-🎨 GENERATION INVARIANTS:
-1. Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
-2. DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
-3. DO NOT generate videos, animations, or ask for confirmation.
-4. MANDATORY FULL COMPLETION & RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
-5. MANDATORY ANATOMICAL & QUALITY DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, cup, goblet, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, ZERO duplicate floating arms holding props, and ZERO morphing anomalies.
+🎨 GENERATION & COMPOSITION INVARIANTS:
+1. STANDALONE SCENES: Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
+2. ZERO GRIDS / ZERO STRIPS: DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
+3. 🚫 ABSOLUTE ZERO-TEXT & ZERO-KOREAN MANDATE (STRICTLY ENFORCED):
+   - Every generated image MUST be 100% pure, textless illustration artwork.
+   - ABSOLUTELY ZERO Korean characters / Hangul (한글), ZERO English words/letters, ZERO Japanese kanji/hiragana, ZERO numbers, ZERO speech bubbles, ZERO dialogue balloons, ZERO comic sound effects (SFX/onomatopoeia), ZERO subtitles, ZERO captions, ZERO watermarks, ZERO signatures, ZERO chapter titles, ZERO artist logos, ZERO burned-in filenames, and ZERO UI text.
+   - Never draw or overlay any words, glyphs, or letters onto the artwork under any circumstances.
+4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
+5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. Render each scene as an independent visual asset with crisp black ink linework, rich atmospheric lighting, ${aspectInstruction}, and high-fidelity textless manhwa artwork.`
+8. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
 }
 
 // Failed & Cluttered Prompts Drawer State
@@ -3074,7 +3077,18 @@ const getBatchVaultReferences = (items) => {
     const tokens = extractTokensFromText(text)
     tokens.forEach(t => uniqueTokens.add(t))
   }
-  const models = Array.from(uniqueTokens).map(t => resolveVaultModel(t)).filter(Boolean)
+  const seenModelKeys = new Set()
+  const models = []
+  for (const token of uniqueTokens) {
+    const model = resolveVaultModel(token)
+    if (model) {
+      const key = (model.id || model.token || model.name).toLowerCase()
+      if (!seenModelKeys.has(key)) {
+        seenModelKeys.add(key)
+        models.push(model)
+      }
+    }
+  }
   return {
     models,
     count: models.length,
@@ -3086,7 +3100,19 @@ const getBatchVaultReferences = (items) => {
 const getSceneReferences = (promptText) => {
   if (!promptText) return []
   const tokens = extractTokensFromText(promptText)
-  return tokens.map(t => resolveVaultModel(t)).filter(Boolean)
+  const seenModelKeys = new Set()
+  const models = []
+  for (const token of tokens) {
+    const model = resolveVaultModel(token)
+    if (model) {
+      const key = (model.id || model.token || model.name).toLowerCase()
+      if (!seenModelKeys.has(key)) {
+        seenModelKeys.add(key)
+        models.push(model)
+      }
+    }
+  }
+  return models
 }
 
 const copyAllBatchTokens = async (models, batchName = '') => {
@@ -3108,15 +3134,9 @@ const copyAllBatchTokens = async (models, batchName = '') => {
   }
 }
 
-const formatFlowReferenceHeader = (references) => {
-  if (!references || references.length === 0) return ''
-  const limitStatus = references.length <= 10 ? `✓ WITHIN 10-REF LIMIT (${references.length}/10 slots)` : `⚠️ EXCEEDS 10-REF LIMIT (${references.length}/10 slots)`
-  const lines = references.map((m, i) => `${i + 1}. ${m.token || `@{${m.name}}`} [${m.category || m.type || 'Ref'}] — ${m.name}`)
-  return `<!-- 
-📌 GOOGLE FLOW REQUIRED REFERENCE PLATES [${limitStatus}]:
-${lines.join('\n')}
-(Attach these ${references.length} reference plate(s) into Google Flow before generation)
--->`
+const formatFlowReferenceHeader = (_references) => {
+  // Omitted per operator directive (zero-bloat prompt payload)
+  return ''
 }
 
 const copySingleScenePrompt = (scene) => {
@@ -3127,13 +3147,13 @@ const copySingleScenePrompt = (scene) => {
   const filename = `${tag}.jpg`
   const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
   
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - Single Plate [${tag}]`
+  const fRaw = route.params.franchiseId || 'Series_02'
+  const eRaw = route.params.episodeId || 'EP01'
+  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
+  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
+  const collectionTitle = `Se.${sNum}.EP.${epNum}.Single_${tag}`
   const header = getFlowDirectiveHeader(collectionTitle)
-  const sceneRefs = getSceneReferences(scene.prompt)
-  const refHeader = formatFlowReferenceHeader(sceneRefs)
-  const payload = refHeader ? `${refHeader}\n\n${header}\n\n${sceneXml}` : `${header}\n\n${sceneXml}`
+  const payload = `${header}\n\n${sceneXml}`
 
   navigator.clipboard.writeText(payload).then(() => {
     activeCopiedFailedTag.value = scene.tag
@@ -3225,13 +3245,14 @@ const copyFailedXmlPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${scene.prompt}\n</scene>`
   }).join('\n\n')
 
-  const franchiseClean = (route.params.franchiseId || '').replace(/^Series_\d+_/, '').replace(/_/g, ' ') || 'Series'
-  const episodeClean = (route.params.episodeId || '').replace(/^EP\d+_/, '').replace(/_/g, ' ') || 'Episode'
-  const collectionTitle = `${franchiseClean} - ${episodeClean} - Failed & Cluttered Panels (${targetList.length} Scenes)`
+  const fRaw = route.params.franchiseId || 'Series_02'
+  const eRaw = route.params.episodeId || 'EP01'
+  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
+  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
+  const collectionTitle = `Se.${sNum}.EP.${epNum}.Failed_${targetList.length}`
   const header = getFlowDirectiveHeader(collectionTitle)
-  const failedRefs = getBatchVaultReferences(targetList)
-  const refHeader = formatFlowReferenceHeader(failedRefs.models)
-  const payload = refHeader ? `${refHeader}\n\n${header}\n\n${scenesXml}` : `${header}\n\n${scenesXml}`
+  const batchXml = `<batch id="Failed_and_Cluttered_Scenes" series="${fRaw}" episode="${eRaw}" scenes="Failed_${targetList.length}">\n\n${scenesXml}\n\n</batch>`
+  const payload = `${header}\n\n${batchXml}`
 
   navigator.clipboard.writeText(payload).then(() => {
     activeCopiedFailedTag.value = 'ALL_FILTERED'
