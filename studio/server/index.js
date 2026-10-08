@@ -899,15 +899,16 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-files', async (req, res) =>
   }
 })
 
-// Stream Video (Master or Specific Batch Preview with HTTP Range Requests)
+// Stream Video (Master & Batch Previews with HTTP Range Requests)
 app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   const { franchiseId, episodeId } = req.params
-  const requestedFile = req.query.file ? path.basename(req.query.file) : '01_Episode_Master_1080p.mp4'
+  const requestedParam = req.query.file || '01_Episode_Master_1080p.mp4'
+  const normalizedRel = path.normalize(requestedParam).replace(/^(\.\.[\/\\])+/, '')
   const videoDir = VideoService.getVideoDir(franchiseId, episodeId)
-  const videoPath = path.join(videoDir, requestedFile)
+  const videoPath = path.resolve(videoDir, normalizedRel)
 
-  if (!fs.existsSync(videoPath)) {
-    return res.status(404).send(`Compiled video (${requestedFile}) not found`)
+  if (!videoPath.startsWith(videoDir) || !fs.existsSync(videoPath)) {
+    return res.status(404).send(`Compiled video (${requestedParam}) not found`)
   }
 
   const stat = fs.statSync(videoPath)
@@ -915,12 +916,12 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   const range = req.headers.range
 
   const isDownload = req.query.download === '1' || req.query.download === 'true'
-  let downloadFilename = requestedFile
+  let downloadFilename = path.basename(requestedParam)
   if (isDownload) {
     const now = new Date()
     const pad = (n) => String(n).padStart(2, '0')
     const timestamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`
-    const cleanBase = requestedFile.replace(/^01_Episode_/, '').replace(/\.mp4$/i, '')
+    const cleanBase = path.basename(requestedParam).replace(/^01_Episode_/, '').replace(/\.mp4$/i, '')
     downloadFilename = `${franchiseId}_${episodeId}_${cleanBase}_${timestamp}.mp4`
   }
   const dispositionHeader = isDownload ? { 'Content-Disposition': `attachment; filename="${downloadFilename}"` } : {}
@@ -952,12 +953,56 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
   }
 })
 
-// YouTube Packaging & Release Suite (Titles, Description, Timestamps, 16:9 Thumbnail Prompts)
+// YouTube Packaging & Release Suite (Titles, Description, Timestamps, Thumbnail Variants)
 app.get('/api/episodes/:franchiseId/:episodeId/youtube-package', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
     const pkg = await PackagingService.generatePackage(franchiseId, episodeId)
     res.json(pkg)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Thumbnail Variants List
+app.get('/api/episodes/:franchiseId/:episodeId/thumbnail-variants', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const variants = await PackagingService.getThumbnailVariants(franchiseId, episodeId)
+    res.json(variants)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Composite Vector Badge onto Thumbnail (Sharp Engine)
+app.post('/api/episodes/:franchiseId/:episodeId/render-thumbnail-badge', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const options = req.body || {}
+    const result = await PackagingService.compositeThumbnailBadge(franchiseId, episodeId, options)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Upload & Save Thumbnail Variant Image
+app.post('/api/episodes/:franchiseId/:episodeId/upload-thumbnail-variant', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { variantId, base64Data, applyBadge, badgeText, subBadgeText, badgeColorPreset, badgePosition } = req.body || {}
+    if (!variantId || !base64Data) {
+      return res.status(400).json({ error: 'variantId and base64Data are required.' })
+    }
+    const result = await PackagingService.saveThumbnailUpload(franchiseId, episodeId, variantId, base64Data, {
+      applyBadge: Boolean(applyBadge),
+      badgeText,
+      subBadgeText,
+      badgeColorPreset,
+      badgePosition
+    })
+    res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

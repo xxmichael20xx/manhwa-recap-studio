@@ -95,8 +95,10 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
   }
 }
 
-export const ENTITY_STORAGE_KEY_PREFIX = 'luna_flow_entity_map_'
-export const TAG_MODE_STORAGE_KEY = 'luna_prompt_tag_mode'
+export const ENTITY_STORAGE_KEY_PREFIX = 'manhwa_recap_flow_entity_map_'
+export const TAG_MODE_STORAGE_KEY = 'manhwa_recap_prompt_tag_mode'
+const LEGACY_ENTITY_STORAGE_KEY_PREFIX = 'luna_flow_entity_map_'
+const LEGACY_TAG_MODE_STORAGE_KEY = 'luna_prompt_tag_mode'
 
 export function saveEntityMapToStorage(franchiseId, rawText, entities) {
   try {
@@ -110,7 +112,12 @@ export function saveEntityMapToStorage(franchiseId, rawText, entities) {
 export function loadEntityMapFromStorage(franchiseId) {
   try {
     const key = `${ENTITY_STORAGE_KEY_PREFIX}${franchiseId || 'default'}`
-    const raw = localStorage.getItem(key)
+    let raw = localStorage.getItem(key)
+    if (!raw) {
+      // Graceful fallback for legacy storage key
+      const legacyKey = `${LEGACY_ENTITY_STORAGE_KEY_PREFIX}${franchiseId || 'default'}`
+      raw = localStorage.getItem(legacyKey)
+    }
     if (raw) {
       return JSON.parse(raw)
     }
@@ -122,7 +129,7 @@ export function loadEntityMapFromStorage(franchiseId) {
 
 export function getTagModeFromStorage() {
   try {
-    return localStorage.getItem(TAG_MODE_STORAGE_KEY) || 'uuid' // Default to uuid or token
+    return localStorage.getItem(TAG_MODE_STORAGE_KEY) || localStorage.getItem(LEGACY_TAG_MODE_STORAGE_KEY) || 'uuid'
   } catch (e) {
     return 'uuid'
   }

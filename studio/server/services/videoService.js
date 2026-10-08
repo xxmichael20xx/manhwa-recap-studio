@@ -70,6 +70,17 @@ export class VideoService {
     }
   }
 
+  static formatTimestamp(seconds) {
+    const sec = Math.max(0, Math.floor(seconds))
+    const h = Math.floor(sec / 3600)
+    const m = Math.floor((sec % 3600) / 60)
+    const s = sec % 60
+    if (h > 0) {
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+    }
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+  }
+
   static async getAudioDuration(audioPath) {
     return new Promise((resolve) => {
       const proc = spawn('ffprobe', [
@@ -385,6 +396,7 @@ export class VideoService {
           })
         }
       }
+
       videoFiles.sort((a, b) => {
         if (a.isMaster && !b.isMaster) return -1
         if (!a.isMaster && b.isMaster) return 1

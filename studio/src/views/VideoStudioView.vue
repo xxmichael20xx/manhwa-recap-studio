@@ -1724,7 +1724,7 @@
         </div>
 
         <!-- Empty State if Video Not Compiled Yet -->
-        <div v-else-if="!compiling" class="py-12 text-center space-y-2 bg-slate-50 dark:bg-slate-950/40 rounded-xl border border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-400">
+        <div v-if="!compiling && videoFiles.length === 0 && !pipeline.hasVideo" class="py-12 text-center space-y-2 bg-slate-50 dark:bg-slate-950/40 rounded-xl border border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-400">
           <Film class="w-8 h-8 mx-auto text-slate-600 mb-2" />
           <p class="font-semibold text-slate-700 dark:text-slate-300">No Video Renders Found Yet</p>
           <p class="text-slate-500">Ensure Visuals (Stage 1) and Voiceover (Stage 2) are prepared, then select a batch or click "Compile Master 1080p Video".</p>
@@ -1749,7 +1749,7 @@
             <span>YouTube Launchpad & Release Packaging Suite</span>
           </h2>
           <p class="text-xs text-slate-500 dark:text-slate-400">
-            Algorithm-optimized title variations, frame-accurate chapter timestamps, SEO description, and 16:9 Midjourney thumbnail prompts.
+            Algorithm-optimized title variations, Multi-Variant 16:9 Thumbnail Studio, frame-accurate chapter timestamps, and SEO description.
           </p>
         </div>
 
@@ -1831,99 +1831,201 @@
           </div>
         </div>
 
-        <!-- 2. 16:9 MASTER THUMBNAIL PROMPTS (GOOGLE FLOW / MIDJOURNEY) -->
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white flex items-center space-x-2">
-              <Image class="w-4 h-4 text-purple-500" />
-              <span>2. 16:9 Master Thumbnail Generator Suite (Midjourney / Studio AI)</span>
-            </h3>
-            <span class="text-[11px] font-mono text-slate-400">High-Contrast 16:9 Prompts with Badge Overlays</span>
-          </div>
-
-          <!-- Generated Master Thumbnail Preview Card -->
-          <div v-if="youtubePackage.masterThumbnail" class="p-5 rounded-3xl bg-slate-900 border border-purple-500/30 text-white shadow-xl flex flex-col md:flex-row items-center gap-6 overflow-hidden relative">
-            <div class="w-full md:w-1/2 aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 relative group shrink-0">
-              <img 
-                :src="`${youtubePackage.masterThumbnail.url}?t=${cacheBuster}`" 
-                alt="16:9 Master Thumbnail" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-rose-500 to-purple-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg border border-white/20">
-                ⚡ {{ youtubePackage.masterThumbnail.badgeText }}
+        <!-- 2. 3 HIGH-CTR YOUTUBE THUMBNAIL VARIATIONS (PURE VISUAL SHOWCASE) -->
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  CTR Engine
+                </span>
+                <span class="text-xs font-mono text-slate-400">Pure 16:9 Visual Showcase • YouTube Compliant &lt;2MB</span>
               </div>
-              <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-md bg-black/70 backdrop-blur-xs font-mono font-bold text-[10px] text-emerald-400 border border-emerald-500/30">
-                1920×1080 Ready
-              </div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2 mt-0.5">
+                <Image class="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                <span>2. 3 High-CTR YouTube Thumbnail Variations (Pure Visual Showcase)</span>
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">
+                Select between 3 distinct, ultra-catchy storytelling concepts calibrated for maximum YouTube CTR. Zero unreadable tags or clutter — pure high-impact manhwa art.
+              </p>
             </div>
 
-            <div class="space-y-3 flex-1 min-w-0">
-              <div class="space-y-1">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase font-bold">
-                  Active Master Thumbnail
-                </span>
-                <h4 class="text-base sm:text-lg font-bold text-white">
-                  {{ youtubePackage.masterThumbnail.style }}
-                </h4>
-                <p class="text-xs text-slate-400 leading-relaxed">
-                  Split-contrast composition: Weak Double F-Rank scavenger in dungeon shadows on the left vs Awakened Singularity Sovereign in midnight blue coat with glowing cyan eyes and floating runes on the right.
+            <!-- Quick Download Master Active -->
+            <div v-if="currentThumbnailVariant?.hasImage" class="flex items-center space-x-2">
+              <a 
+                :href="currentThumbnailVariant.url" 
+                :download="currentThumbnailVariant.filename"
+                class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-md shadow-purple-950/40 cursor-pointer"
+              >
+                <Download class="w-4 h-4" />
+                <span>Download Master ({{ currentThumbnailVariant.fileSizeFormatted }})</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3 Pure-Image Visual Cards Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div 
+              v-for="(v, idx) in (youtubePackage.thumbnailVariants || [])"
+              :key="v.id"
+              @click="selectThumbnailVariant(idx)"
+              class="p-5 rounded-3xl border transition-all duration-300 flex flex-col justify-between space-y-4 cursor-pointer relative group"
+              :class="selectedVariantIndex === idx 
+                ? 'bg-purple-500/5 dark:bg-purple-950/30 border-purple-600 shadow-xl ring-2 ring-purple-600/40' 
+                : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-purple-400/50 hover:shadow-lg'"
+            >
+              <!-- Card Header -->
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <span 
+                      class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider"
+                      :class="selectedVariantIndex === idx 
+                        ? 'bg-purple-600 text-white shadow-sm' 
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'"
+                    >
+                      Variant {{ String.fromCharCode(65 + idx) }}
+                    </span>
+                    <span v-if="v.hasImage" class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 flex items-center space-x-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      <span>Ready ({{ v.fileSizeFormatted }})</span>
+                    </span>
+                  </div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1.5 line-clamp-1">
+                    {{ v.name.replace(/^Concept\s+[A-C]:\s*/i, '') }}
+                  </h4>
+                </div>
+
+                <!-- Selection Radio Indicator -->
+                <div 
+                  class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition shrink-0"
+                  :class="selectedVariantIndex === idx 
+                    ? 'border-purple-600 bg-purple-600 text-white' 
+                    : 'border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-transparent'"
+                >
+                  <Check class="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+              </div>
+
+              <!-- 16:9 Full Bleed Visual Canvas -->
+              <div 
+                class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-200 dark:border-slate-800 relative group/canvas flex items-center justify-center shadow-inner select-none"
+                @dragover.prevent
+                @drop.prevent="handleThumbnailFileDrop($event, v.id)"
+              >
+                <!-- Rendered Image -->
+                <img 
+                  v-if="v.hasImage"
+                  :key="`${v.filename}_${cacheBuster}`"
+                  :src="`${v.url}?t=${cacheBuster}`" 
+                  :alt="v.name" 
+                  class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"
+                />
+
+                <!-- Empty State Fallback -->
+                <div v-else class="w-full h-full flex flex-col items-center justify-center p-4 text-center space-y-2 bg-gradient-to-br from-slate-900 via-purple-950/30 to-slate-900">
+                  <Image class="w-8 h-8 text-purple-400 opacity-60" />
+                  <p class="text-xs text-slate-400 font-mono">Drop 16:9 Artwork Here</p>
+                </div>
+
+                <!-- Hover Floating Overlay Actions -->
+                <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/canvas:opacity-100 transition-opacity flex items-center justify-center space-x-2 pointer-events-auto backdrop-blur-xs">
+                  <a 
+                    v-if="v.hasImage"
+                    :href="v.url" 
+                    target="_blank" 
+                    class="p-2.5 rounded-xl bg-black/80 hover:bg-black text-white text-xs font-mono font-bold flex items-center space-x-1 transition border border-white/20"
+                    title="View Full Resolution"
+                  >
+                    <ExternalLink class="w-4 h-4" />
+                    <span>Full Res</span>
+                  </a>
+
+                  <label class="p-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold flex items-center space-x-1 transition cursor-pointer shadow-md" title="Upload Replacement Artwork">
+                    <Upload class="w-4 h-4" />
+                    <span>Replace</span>
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      class="hidden" 
+                      @change="handleThumbnailFileDrop($event, v.id)"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              <!-- Hook & Composition Info -->
+              <div class="space-y-1.5 text-xs">
+                <div class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-bold flex items-center space-x-1">
+                  <Sparkles class="w-3 h-3" />
+                  <span>{{ v.subtitle }}</span>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed">
+                  {{ v.composition }}
                 </p>
               </div>
 
-              <div class="flex items-center space-x-3 pt-2">
-                <a 
-                  :href="youtubePackage.masterThumbnail.url" 
-                  download="01_Master_YouTube_Thumbnail_16x9.jpg"
-                  class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-md shadow-purple-950/40 cursor-pointer"
+              <!-- Card Action Bar -->
+              <div class="pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between gap-2">
+                <button 
+                  @click.stop="selectThumbnailVariant(idx)"
+                  class="flex-1 py-2 px-3 rounded-xl text-xs font-mono font-bold transition flex items-center justify-center space-x-1.5 cursor-pointer"
+                  :class="selectedVariantIndex === idx 
+                    ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
+                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700'"
                 >
-                  <Download class="w-3.5 h-3.5" />
-                  <span>⬇️ Download Master 16:9 Thumbnail</span>
+                  <Check v-if="selectedVariantIndex === idx" class="w-3.5 h-3.5" />
+                  <span>{{ selectedVariantIndex === idx ? 'Master Selected' : 'Set as Master' }}</span>
+                </button>
+
+                <a 
+                  v-if="v.hasImage"
+                  :href="v.url" 
+                  :download="v.filename"
+                  @click.stop
+                  class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition cursor-pointer"
+                  :title="`Download ${v.filename} (${v.fileSizeFormatted})`"
+                >
+                  <Download class="w-4 h-4" />
                 </a>
+
+                <button 
+                  @click.stop="copyToClipboard(v.prompt, `${v.name} Prompt`)"
+                  class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition cursor-pointer"
+                  title="Copy 16:9 Midjourney Prompt"
+                >
+                  <Copy class="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div 
-              v-for="(th, idx) in youtubePackage.thumbnailPrompts" 
-              :key="idx"
-              class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 space-y-4 flex flex-col justify-between"
-            >
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold text-slate-900 dark:text-white">{{ th.name }}</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 font-bold">
-                    16:9 Landscape
-                  </span>
-                </div>
-
-                <!-- Visual Badge Mockup Card -->
-                <div class="p-3.5 rounded-xl bg-slate-900 text-white space-y-2 border border-slate-800 relative overflow-hidden">
-                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
-                    <span>Focal Point Layout:</span>
-                    <span class="text-amber-400">{{ th.composition }}</span>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <span class="text-[10px] font-mono text-slate-400">Text Badge:</span>
-                    <span class="px-2 py-0.5 rounded font-black text-xs bg-gradient-to-r from-amber-400 to-rose-500 text-slate-950 uppercase tracking-wider shadow-sm">
-                      {{ th.badgeText }}
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Prompt Block -->
-                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-300 leading-relaxed max-h-32 overflow-y-auto custom-scrollbar">
-                  {{ th.prompt }}
-                </div>
+          <!-- Midjourney & Google Flow 16:9 Prompt Matrix Card -->
+          <div v-if="currentThumbnailVariant" class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center space-x-2">
+                <Sparkles class="w-4 h-4 text-amber-500" />
+                <h4 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white">
+                  16:9 Generative Prompt for {{ currentThumbnailVariant.name }}
+                </h4>
               </div>
 
               <button 
-                @click="copyToClipboard(th.prompt, `${th.name} Prompt`)"
-                class="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold flex items-center justify-center space-x-1.5 transition shadow-sm cursor-pointer"
+                @click="copyToClipboard(currentThumbnailVariant.prompt, `${currentThumbnailVariant.name} Prompt`)"
+                class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold flex items-center space-x-1.5 transition shadow-sm cursor-pointer"
               >
                 <Copy class="w-3.5 h-3.5" />
-                <span>Copy 16:9 Thumbnail Prompt</span>
+                <span>📋 Copy 16:9 Prompt</span>
               </button>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 leading-relaxed max-h-36 overflow-y-auto select-all">
+              {{ currentThumbnailVariant.prompt }}
+            </div>
+
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-1">
+              <span>Layout Focus: <span class="text-purple-600 dark:text-purple-400 font-bold">{{ currentThumbnailVariant.composition }}</span></span>
+              <span>Aspect Ratio: <span class="font-bold">--ar 16:9</span></span>
             </div>
           </div>
         </div>
@@ -4070,6 +4172,7 @@ const activeVideoMeta = computed(() => {
     size: pipeline.value.videoSize || 0,
     isMaster: selectedVideoFile.value.includes('Master'),
     isOmnibus: selectedVideoFile.value.includes('Omnibus'),
+    isShort: selectedVideoFile.value.startsWith('shorts/'),
     label: selectedVideoFile.value,
     batchLetter: (selectedVideoFile.value.match(/Batch_([A-Za-z0-9_]+)_Preview/i) || [])[1] || null
   }
@@ -4079,6 +4182,10 @@ const activeBadgeLabel = computed(() => {
   const meta = activeVideoMeta.value
   const filename = meta.filename || ''
   
+  if (meta.isShort || filename.startsWith('shorts/')) {
+    return '⚡ Viral Short (9:16)'
+  }
+
   if (meta.isOmnibus || filename.includes('Omnibus')) {
     return '🏆 Grand Omnibus Cut'
   }
@@ -4102,8 +4209,11 @@ const activeBadgeLabel = computed(() => {
 
 const activeBadgeClass = computed(() => {
   const meta = activeVideoMeta.value
-  if (meta.isOmnibus || meta.filename?.includes('Omnibus')) {
+  if (meta.isShort || meta.filename?.startsWith('shorts/')) {
     return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30'
+  }
+  if (meta.isOmnibus || meta.filename?.includes('Omnibus')) {
+    return 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30'
   }
   if (meta.isMaster || meta.filename?.includes('Master')) {
     return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'
@@ -4185,6 +4295,7 @@ const getDownloadFilename = (filename) => {
   const franchise = route.params.franchiseId || 'Series'
   const episode = route.params.episodeId || 'EP01'
   const cleanBase = (filename || '01_Episode_Master_1080p.mp4')
+    .replace(/^shorts\//, '')
     .replace(/^01_Episode_/, '')
     .replace(/\.mp4$/i, '')
   return `${franchise}_${episode}_${cleanBase}_${timestamp}.mp4`
@@ -4751,13 +4862,65 @@ const handleSwitchStage = (stage) => {
   modalState.value.activeStage = stage
 }
 
-// 🚀 STAGE 4: YOUTUBE LAUNCHPAD & PACKAGING STATE
+// 🚀 STAGE 4: YOUTUBE LAUNCHPAD & MULTI-VARIANT THUMBNAIL STUDIO STATE
 const youtubePackage = ref(null)
 const loadingPackage = ref(false)
 const selectedTitleIndex = ref(0)
-const selectedThumbIndex = ref(0)
+const selectedVariantIndex = ref(0) // 0: Concept A, 1: Concept B, 2: Concept C
 const activeDescTab = ref('description') // 'description' | 'timestamps' | 'tags' | 'pinned'
 const copiedField = ref('')
+
+// Thumbnail Showcase State
+const isUploadingThumbnail = ref(false)
+
+const currentThumbnailVariant = computed(() => {
+  if (!youtubePackage.value?.thumbnailVariants?.length) return null
+  return youtubePackage.value.thumbnailVariants[selectedVariantIndex.value] || youtubePackage.value.thumbnailVariants[0]
+})
+
+const selectThumbnailVariant = (idx) => {
+  selectedVariantIndex.value = idx
+}
+
+const handleThumbnailFileDrop = async (event, variantId) => {
+  const files = event.dataTransfer?.files || event.target?.files
+  if (!files || !files.length) return
+  const file = files[0]
+  if (!file.type.startsWith('image/')) {
+    triggerToast('Invalid File', 'Please upload a PNG, JPG, or WebP image.', 'error')
+    return
+  }
+
+  isUploadingThumbnail.value = true
+  const reader = new FileReader()
+  reader.onload = async (e) => {
+    try {
+      const base64Data = e.target.result
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/upload-thumbnail-variant`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          variantId: variantId || currentThumbnailVariant.value?.id || 'concept_a',
+          base64Data,
+          applyBadge: false
+        })
+      })
+      const data = await res.json()
+      if (data.success) {
+        cacheBuster.value = Date.now()
+        await loadYoutubePackage()
+        triggerToast('Thumbnail Uploaded', `✓ Master 16:9 thumbnail updated (${data.fileSizeFormatted})!`, 'success')
+      } else {
+        throw new Error(data.error || 'Upload failed')
+      }
+    } catch (err) {
+      triggerToast('Upload Failed', err.message, 'error')
+    } finally {
+      isUploadingThumbnail.value = false
+    }
+  }
+  reader.readAsDataURL(file)
+}
 
 const loadYoutubePackage = async () => {
   loadingPackage.value = true
@@ -4788,6 +4951,7 @@ const copyToClipboard = async (text, fieldName) => {
 const copyFullReleaseKit = async () => {
   if (!youtubePackage.value) return
   const selectedTitle = youtubePackage.value.titles[selectedTitleIndex.value]?.title || ''
+  const selectedVariant = currentThumbnailVariant.value || youtubePackage.value.thumbnailVariants?.[0]
   const fullKit = `=== YOUTUBE VIDEO METADATA & PACKAGING SUITE ===
 SERIES: ${youtubePackage.value.franchiseName}
 EPISODE: ${youtubePackage.value.episodeName}
@@ -4796,10 +4960,11 @@ DURATION: ${youtubePackage.value.formattedDuration}
 --- SELECTED HIGH-CTR TITLE (${selectedTitle.length}/100 CHARS) ---
 ${selectedTitle}
 
---- 16:9 THUMBNAIL PROMPT (${youtubePackage.value.thumbnailPrompts[selectedThumbIndex.value]?.name || ''}) ---
-BADGE OVERLAY: [${youtubePackage.value.thumbnailPrompts[selectedThumbIndex.value]?.badgeText || ''}]
+--- 16:9 THUMBNAIL VARIANT (${selectedVariant?.name || ''}) ---
+FILE: ${selectedVariant?.filename || ''}
+COMPOSITION: ${selectedVariant?.composition || ''}
 PROMPT:
-${youtubePackage.value.thumbnailPrompts[selectedThumbIndex.value]?.prompt || ''}
+${selectedVariant?.prompt || ''}
 
 --- FULL SEO DESCRIPTION & TIMESTAMPS ---
 ${youtubePackage.value.description}

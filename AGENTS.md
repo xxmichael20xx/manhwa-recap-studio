@@ -56,7 +56,7 @@ Prior to drafting any new series, season arc, or episode script, the agent MUST 
 
 When addressing UI, styling, theme, or architectural defects:
 1. **Zero Half-Baked Surface Patching:** Strictly avoid ad-hoc class swaps, fragile CSS variable `@apply` overrides, or piecemeal component fixes that risk desync across views.
-2. **Systemic Root-Cause Harmonization:** Trace the build pipeline or token root cause (e.g. Vite JIT caching, config desync, dual-system conflicts). Align 100% of views and components systematically to the established design system (e.g., Luna Studio's native Slate token hierarchy: `bg-slate-50 dark:bg-slate-950` canvas, `bg-white dark:bg-slate-900` surfaces, `border-slate-200 dark:border-slate-800` borders).
+2. **Systemic Root-Cause Harmonization:** Trace the build pipeline or token root cause (e.g. Vite JIT caching, config desync, dual-system conflicts). Align 100% of views and components systematically to the established design system (e.g., Manhwa Recap Studio's native Slate token hierarchy: `bg-slate-50 dark:bg-slate-950` canvas, `bg-white dark:bg-slate-900` surfaces, `border-slate-200 dark:border-slate-800` borders).
 3. **Multi-View Visual QA Verification:** For UI/theming overhauls, do not claim completion based on code alone. Systematically verify and visually audit both Light and Dark modes across all primary routes (via headless capture or browser verification) to guarantee full-app contrast harmony and zero regressions.
 4. **Mandatory Dual-Theme Visual Proof in Walkthroughs:** Whenever implementing or modifying UI, components, or layout features, the agent MUST capture and embed visual verification screenshots of both Light and Dark modes directly in the walkthrough report or summary response.
 
@@ -125,4 +125,16 @@ To guarantee organic narration synchronization, eliminate rapid screen flashing,
 ## 🛑 Zero Autonomous Full-Episode Compilation Invariant (Studio-First Handoff Gate)
 1. **Absolute Ban on Autonomous Full-Video Compilation:** The agent is **STRICTLY FORBIDDEN** from triggering multi-minute, full-episode video compilations (`compileEpisodeVideo` on full transcripts) autonomously in the background during development turns.
 2. **Fast Unit & Build Verification Only:** Technical verification on the compiler engine must strictly use fast syntax builds (`npm run build`, Exit Code 0) or lightweight micro-checks in scratch space.
-3. **Immediate Studio-First Handoff:** Whenever video compiler, styling, or engine code is updated, the agent must immediately conclude the turn with direct step-by-step instructions for the operator to trigger, monitor, and inspect the compilation within the **Luna Studio UI**.
+3. **Immediate Studio-First Handoff:** Whenever video compiler, styling, or engine code is updated, the agent must immediately conclude the turn with direct step-by-step instructions for the operator to trigger, monitor, and inspect the compilation within the **Manhwa Recap Studio UI**.
+
+---
+
+## 🖼️ The Mandatory 3-Variant High-CTR Visual Thumbnail Invariant (Zero-Tag Standard)
+Whenever generating, designing, or packaging YouTube thumbnails for ANY episode or franchise:
+1. **Mandatory 3 Distinct Storytelling Concepts:** The agent MUST always generate and deliver exactly 3 high-contrast, visually distinct 16:9 thumbnail variations:
+   - **Variant A (The Split Transformation):** High-contrast split-screen contrasting the weak/exhausted underdog in dungeon shadows on the left against the glowing, awakened sovereign with cyan mana eyes and runes on the right.
+   - **Variant B (The Proctor's Panic / Emotional Shock):** High-tension close-up on horrified proctors, arrogant guild masters, or examiners in cold sweat as holographic measuring crystals violently shatter from numeric overflow.
+   - **Variant C (The Calamity / Solo Cleave Spectacle):** Epic panoramic widescreen spectacle of the protagonist single-handedly unleashing monumental energy (e.g. 10,000 light arrows, spatial cleaves) against a colossal Red Gate or titan horde.
+2. **Zero Small Unreadable Tags (Pure Visual Storytelling Mandate):** Strictly forbidden from adding small text tags, coordinate dropdowns, tiny badge pills, or cluttered overlays onto thumbnails. On mobile YouTube feeds (150–300px), thumbnails must hook viewers through extreme facial emotion, vibrant contrasting mana colours, and pure monumental manhwa art.
+3. **Pure-Image Selection UI Standard:** The studio interface must present the 3 finished options directly in full-bleed 16:9 visual cards with instant 1-click master selection, 1-click JPG download (<2MB MozJPEG YouTube compliance), and 1-click Midjourney/Google Flow prompt copying.
+
