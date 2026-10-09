@@ -138,3 +138,92 @@ Whenever generating, designing, or packaging YouTube thumbnails for ANY episode 
 2. **Zero Small Unreadable Tags (Pure Visual Storytelling Mandate):** Strictly forbidden from adding small text tags, coordinate dropdowns, tiny badge pills, or cluttered overlays onto thumbnails. On mobile YouTube feeds (150–300px), thumbnails must hook viewers through extreme facial emotion, vibrant contrasting mana colours, and pure monumental manhwa art.
 3. **Pure-Image Selection UI Standard:** The studio interface must present the 3 finished options directly in full-bleed 16:9 visual cards with instant 1-click master selection, 1-click JPG download (<2MB MozJPEG YouTube compliance), and 1-click Midjourney/Google Flow prompt copying.
 
+
+---
+
+## 🏛️ The Invariant 100% Locked Spatial Environment Enclosure & Bit-for-Bit Narrative Standard
+
+Whenever drafting, adapting, or refining episodic transcripts, scripts, and prompt matrices across ANY franchise or episode:
+
+1. **The Invariant 100% Locked Spatial Environment Enclosure (Zero Room Morphing):**
+   - Every single scene cut within a physical room, hall, dungeon quadrant, or combat arena MUST inherit an **identical, verbatim 25–30 word locked spatial environment string** across every scene cut in that geographic cluster.
+   - **Absolute Ban on Environmental Synonyms:** Strictly forbidden from varying room materials (e.g. switching between wood planks and stone floor), architectural shapes (e.g. small podium vs massive circular arena), or omitting persistent background context (e.g. seated student audience in an auditorium) between consecutive shots in the same space.
+   - Shot variety MUST be achieved exclusively through camera framing (Wide Establishing $\rightarrow$ Medium Action $\rightarrow$ Reaction Close-up $\rightarrow$ Over-the-Shoulder HUD), NEVER by mutating the room environment.
+
+2. **The 100% Bit-for-Bit Spoken Narrative & Prompt Subject Alignment Standard:**
+   - Every single beast, enemy entity, weapon state, and physical combat action described in the script's spoken voiceover MUST be explicitly and identically depicted in the corresponding image prompt.
+   - If the narrative voiceover states *"Level 8 Armored Cave Bear"*, the prompt matrix MUST explicitly describe the *"Level 8 Armored Cave Bear"*. Zero beast substitutions (e.g. replacing a bear with a centipede or feline predator is strictly prohibited).
+   - If the script describes a weapon breaking (e.g. *"wooden ashwood bow snapping in half"*), the image prompt must explicitly depict the splintered wood fragments and the character standing weaponless before engaging in bare-fist combat.
+
+3. **The Absolute Ban on Truncated / Compressed Prompts (Unabridged 5-Layer Prompt Standard):**
+   - Strictly forbidden from abbreviating, compressing, or leaving prompt clauses implicit under the assumption that the AI model will "infer" context.
+   - Every single prompt entry across all 24-scene batches MUST contain the full, unabridged 5-Layer hierarchy:
+     1. `[Layer 1: Explicit Camera Framing & Aspect Ratio]`
+     2. `[Layer 2: Demographic & Character DNA Anchors (@{Character})]`
+     3. `[Layer 3: Invariant Locked Spatial Environment Enclosure (Verbatim 25–30 words)]`
+     4. `[Layer 4: Unambiguous Action, Weapon State & Interaction Matching Spoken Narration]`
+     5. `[Layer 5: Universal Negative Quality & Diffusion Anti-Bleed Guards]`
+
+---
+
+## 🧠 Two-Tier Prompt Architecture & Anti-Attention-Dilution Standard (Google Flow)
+
+To eliminate cross-attention saturation and model prompt dilution across multi-scene batches in Google Flow, prompts are split into two decoupled architectural tiers:
+
+### Tier 1: Google Flow Master Agent Instructions (Set Once per Session / Project)
+Master Agent Instructions house all static negative guards, formatting rules, collection routing, anatomical invariants, and global art style rules.
+
+#### A. Format 2: 16:9 Full-Bleed Landscape Master Instructions
+```text
+[SYSTEM DIRECTIVE: GOOGLE FLOW MASTER AGENT INSTRUCTIONS — 16:9 FULL BLEED LANDSCAPE]
+
+📁 SESSION & COLLECTION ISOLATION:
+1. Always create and isolate each batch within its dedicated collection. Never mix scenes across batches.
+2. STANDALONE SCENES: Generate EXACTLY ONE standalone, edge-to-edge 16:9 horizontal widescreen landscape image (1920x1080 full bleed) per <scene> node. Zero comic strips, zero multi-panel grids, zero storyboards, zero collages.
+
+🚫 ZERO-TEXT MANDATE (STRICTLY ENFORCED):
+- 100% pure textless illustration artwork.
+- ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, chapter titles, or UI labels.
+
+👥 ACTOR & ANATOMICAL INTEGRITY:
+- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand, natural articulation. Complete limbs, pristine anatomy.
+- ZERO extra limbs, mutated hands, duplicate body parts, fused fingers, floating hands, or detached ghost limbs.
+- Every hand holding a weapon, bow, or prop MUST be physically and seamlessly attached to the forearm and shoulder.
+- SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Never clone or duplicate the main character. Diverse background faces and neutral indistinct crowd silhouettes.
+- Floating holographic screens must float freely in mid-air with zero disembodied hands touching the glass.
+
+🏛️ SPATIAL & CAMERA INTEGRITY:
+- Strictly adhere to the indoor or outdoor environment defined in the prompt. Single unified camera perspective (zero split 50/50 rooms or fractured non-Euclidean doorways).
+
+🎨 MASTER ART STYLE:
+- Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, pure textless artwork.
+```
+
+#### B. Format 1: 9:16 Authentic Webtoon Master Instructions
+```text
+[SYSTEM DIRECTIVE: GOOGLE FLOW MASTER AGENT INSTRUCTIONS — 9:16 AUTHENTIC WEBTOON STRIP]
+
+📁 SESSION & COLLECTION ISOLATION:
+1. Always create and isolate each batch within its dedicated collection. Never mix scenes across batches.
+2. STANDALONE SCENES: Generate EXACTLY ONE standalone 9:16 vertical manhwa aspect ratio (1080x1920) comic plate per <scene> node.
+3. 3-TIER COMPOSITION ENGINE: Support Tier A (Cinematic Hero Plate 30%), Tier B (Dual-Panel Split Strip 50%), and Tier C (Three-Panel Action Strip 20%).
+
+🚫 ZERO-TEXT MANDATE (STRICTLY ENFORCED):
+- 100% pure textless illustration artwork.
+- ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, or chapter titles.
+
+👥 ACTOR & ANATOMICAL INTEGRITY:
+- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
+- SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Zero duplicate clones.
+
+🎨 MASTER ART STYLE:
+- Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, pure textless artwork.
+```
+
+### Tier 2: Lean Episodic Scene Prompts (High-Attention XML Payloads)
+When Tier 1 Master Instructions are active in Google Flow, episodic scene prompts MUST omit the repetitive 600–800 character negative/style tail. Each scene node focuses 100% of the model's cross-attention on:
+1. **Camera Framing & Aspect Ratio**
+2. **Actor Composition, Expression & Weapon State (@UUID / Character Anchor)**
+3. **Locked Spatial Environment Enclosure (25–30 Words)**
+
+*Result:* Scene prompts are compressed from ~1,000 characters down to ~280–350 characters, increasing prompt attention fidelity by ~300% and completely preventing model forgetfulness or hallucination.

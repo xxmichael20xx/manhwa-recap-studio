@@ -93,52 +93,51 @@
       </div>
     </div>
 
-    <!-- Stage Navigation Tabs -->
-    <div class="flex items-center space-x-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-      <button 
-        @click="activeStage = 'visuals'"
-        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
-        :class="activeStage === 'visuals' 
-          ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
-          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
-      >
-        <Image class="w-4 h-4" />
-        <span>Stage 1: Visual Assets & Storyboard ({{ scenes.length }})</span>
-      </button>
+    <!-- Stage Navigation Tabs (3 Focused Episodic Stages) -->
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-2">
+      <div class="flex items-center space-x-2">
+        <button 
+          @click="activeStage = 'visuals'"
+          class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
+          :class="activeStage === 'visuals' 
+            ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
+            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
+        >
+          <Image class="w-4 h-4" />
+          <span>Stage 1: Visual Assets & Storyboard ({{ scenes.length }})</span>
+        </button>
 
-      <button 
-        @click="activeStage = 'audio'"
-        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
-        :class="activeStage === 'audio' 
-          ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
-          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
-      >
-        <Volume2 class="w-4 h-4" />
-        <span>Stage 2: Voiceover & Subtitle Sync</span>
-      </button>
+        <button 
+          @click="activeStage = 'audio'"
+          class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
+          :class="activeStage === 'audio' 
+            ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
+            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
+        >
+          <Volume2 class="w-4 h-4" />
+          <span>Stage 2: Voiceover & Subtitle Sync</span>
+        </button>
 
-      <button 
-        @click="activeStage = 'compiler'"
-        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
-        :class="activeStage === 'compiler' 
-          ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
-          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
-      >
-        <Film class="w-4 h-4" />
-        <span>Stage 3: FFmpeg Compilation & Master Cut</span>
-        <span v-if="pipeline.hasVideo" class="w-2 h-2 rounded-full bg-emerald-400"></span>
-      </button>
+        <button 
+          @click="activeStage = 'compiler'"
+          class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
+          :class="activeStage === 'compiler' 
+            ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
+            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
+        >
+          <Film class="w-4 h-4" />
+          <span>Stage 3: FFmpeg Compilation & Master Cut</span>
+          <span v-if="pipeline.hasVideo" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        </button>
+      </div>
 
-      <button 
-        @click="activeStage = 'youtube'"
-        class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
-        :class="activeStage === 'youtube' 
-          ? 'bg-rose-600 text-white shadow-md shadow-rose-900/20' 
-          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-rose-600 dark:hover:text-rose-400'"
+      <router-link 
+        :to="`/franchises/${$route.params.franchiseId}`"
+        class="px-3.5 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-500/30 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer shrink-0"
       >
-        <Youtube class="w-4 h-4" :class="activeStage === 'youtube' ? 'text-white' : 'text-rose-500'" />
-        <span>Stage 4: YouTube Launchpad & Packaging</span>
-      </button>
+        <Youtube class="w-3.5 h-3.5" />
+        <span>Open YouTube Launchpad in Series Hub &rarr;</span>
+      </router-link>
     </div>
 
     <!-- STAGE 1: Visual Assets & Storyboard Stills -->
@@ -1729,429 +1728,29 @@
           <p class="font-semibold text-slate-700 dark:text-slate-300">No Video Renders Found Yet</p>
           <p class="text-slate-500">Ensure Visuals (Stage 1) and Voiceover (Stage 2) are prepared, then select a batch or click "Compile Master 1080p Video".</p>
         </div>
-
-      </div>
-    </div>
-
-    <!-- STAGE 4: YOUTUBE LAUNCHPAD & PACKAGING SUITE -->
-    <div v-if="activeStage === 'youtube'" id="youtube-launchpad" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-8 shadow-sm">
-      <!-- Section Header -->
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
-        <div class="space-y-1">
-          <div class="flex items-center space-x-2">
-            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono uppercase tracking-wider bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
-              Stage 4: Publishing
-            </span>
-            <span class="text-xs font-mono text-slate-400">• YouTube Release Hub</span>
-          </div>
-          <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center space-x-2">
-            <Youtube class="w-6 h-6 text-rose-600 dark:text-rose-500" />
-            <span>YouTube Launchpad & Release Packaging Suite</span>
-          </h2>
-          <p class="text-xs text-slate-500 dark:text-slate-400">
-            Algorithm-optimized title variations, Multi-Variant 16:9 Thumbnail Studio, frame-accurate chapter timestamps, and SEO description.
-          </p>
-        </div>
-
-        <div class="flex items-center space-x-3 shrink-0">
-          <button 
-            @click="loadYoutubePackage"
-            :disabled="loadingPackage"
-            class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
-          >
-            <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': loadingPackage }" />
-            <span>Refresh Package</span>
-          </button>
-          <button 
-            @click="copyFullReleaseKit"
-            class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-500 hover:to-purple-500 text-white text-xs font-bold flex items-center space-x-2 transition shadow-md shadow-rose-950/20 cursor-pointer"
-          >
-            <Copy class="w-4 h-4" />
-            <span>📋 Copy Complete Release Kit</span>
-          </button>
-        </div>
-      </div>
-
-      <div v-if="youtubePackage" class="space-y-8">
-        <!-- 1. HIGH-CTR TITLE MATRIX -->
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white flex items-center space-x-2">
-              <Sparkles class="w-4 h-4 text-amber-500" />
-              <span>1. High-CTR Title Matrix (5 Proven Archetypes)</span>
-            </h3>
-            <span class="text-[11px] font-mono text-slate-400">Click any card to select or copy directly</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-            <div 
-              v-for="(t, idx) in youtubePackage.titles"
-              :key="idx"
-              @click="selectedTitleIndex = idx"
-              class="p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-3 relative group"
-              :class="selectedTitleIndex === idx 
-                ? 'bg-purple-50/60 dark:bg-purple-950/30 border-purple-500/60 shadow-sm ring-2 ring-purple-500/20' 
-                : 'bg-slate-50 dark:bg-slate-950/40 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'"
-            >
-              <div class="space-y-2">
-                <div class="flex items-center justify-between gap-2">
-                  <span class="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400">
-                    {{ t.archetype }}
-                  </span>
-                  <div class="flex items-center space-x-1.5">
-                    <span 
-                      class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded"
-                      :class="t.title.length <= 100 
-                        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' 
-                        : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-black animate-pulse'"
-                    >
-                      {{ t.title.length }}/100 chars
-                    </span>
-                    <span class="text-[10px] font-mono font-black text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                      ⚡ {{ t.ctrScore }} CTR
-                    </span>
-                  </div>
-                </div>
-                <p class="text-xs font-bold text-slate-900 dark:text-white leading-snug">
-                  {{ t.title }}
-                </p>
-              </div>
-
-              <div class="flex items-center justify-between pt-2 border-t border-slate-200/60 dark:border-slate-800/60 text-[11px] font-mono">
-                <span class="text-slate-400 truncate max-w-[180px]">{{ t.style }}</span>
-                <button 
-                  @click.stop="copyToClipboard(t.title, `Title (${t.archetype})`)"
-                  class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-bold border border-slate-200 dark:border-slate-700 flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3 h-3" />
-                  <span>Copy</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. 3 HIGH-CTR YOUTUBE THUMBNAIL VARIATIONS (PURE VISUAL SHOWCASE) -->
-        <div class="space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <div class="flex items-center space-x-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
-                  CTR Engine
-                </span>
-                <span class="text-xs font-mono text-slate-400">Pure 16:9 Visual Showcase • YouTube Compliant &lt;2MB</span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2 mt-0.5">
-                <Image class="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                <span>2. 3 High-CTR YouTube Thumbnail Variations (Pure Visual Showcase)</span>
-              </h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">
-                Select between 3 distinct, ultra-catchy storytelling concepts calibrated for maximum YouTube CTR. Zero unreadable tags or clutter — pure high-impact manhwa art.
-              </p>
-            </div>
-
-            <!-- Quick Download Master Active -->
-            <div v-if="currentThumbnailVariant?.hasImage" class="flex items-center space-x-2">
-              <a 
-                :href="currentThumbnailVariant.url" 
-                :download="currentThumbnailVariant.filename"
-                class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-md shadow-purple-950/40 cursor-pointer"
-              >
-                <Download class="w-4 h-4" />
-                <span>Download Master ({{ currentThumbnailVariant.fileSizeFormatted }})</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- 3 Pure-Image Visual Cards Grid -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div 
-              v-for="(v, idx) in (youtubePackage.thumbnailVariants || [])"
-              :key="v.id"
-              @click="selectThumbnailVariant(idx)"
-              class="p-5 rounded-3xl border transition-all duration-300 flex flex-col justify-between space-y-4 cursor-pointer relative group"
-              :class="selectedVariantIndex === idx 
-                ? 'bg-purple-500/5 dark:bg-purple-950/30 border-purple-600 shadow-xl ring-2 ring-purple-600/40' 
-                : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-purple-400/50 hover:shadow-lg'"
-            >
-              <!-- Card Header -->
-              <div class="flex items-start justify-between gap-2">
-                <div>
-                  <div class="flex items-center space-x-2">
-                    <span 
-                      class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider"
-                      :class="selectedVariantIndex === idx 
-                        ? 'bg-purple-600 text-white shadow-sm' 
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'"
-                    >
-                      Variant {{ String.fromCharCode(65 + idx) }}
-                    </span>
-                    <span v-if="v.hasImage" class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 flex items-center space-x-1">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      <span>Ready ({{ v.fileSizeFormatted }})</span>
-                    </span>
-                  </div>
-                  <h4 class="text-sm font-bold text-slate-900 dark:text-white mt-1.5 line-clamp-1">
-                    {{ v.name.replace(/^Concept\s+[A-C]:\s*/i, '') }}
-                  </h4>
-                </div>
-
-                <!-- Selection Radio Indicator -->
-                <div 
-                  class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition shrink-0"
-                  :class="selectedVariantIndex === idx 
-                    ? 'border-purple-600 bg-purple-600 text-white' 
-                    : 'border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-transparent'"
-                >
-                  <Check class="w-3.5 h-3.5 stroke-[3]" />
-                </div>
-              </div>
-
-              <!-- 16:9 Full Bleed Visual Canvas -->
-              <div 
-                class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-200 dark:border-slate-800 relative group/canvas flex items-center justify-center shadow-inner select-none"
-                @dragover.prevent
-                @drop.prevent="handleThumbnailFileDrop($event, v.id)"
-              >
-                <!-- Rendered Image -->
-                <img 
-                  v-if="v.hasImage"
-                  :key="`${v.filename}_${cacheBuster}`"
-                  :src="`${v.url}?t=${cacheBuster}`" 
-                  :alt="v.name" 
-                  class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"
-                />
-
-                <!-- Empty State Fallback -->
-                <div v-else class="w-full h-full flex flex-col items-center justify-center p-4 text-center space-y-2 bg-gradient-to-br from-slate-900 via-purple-950/30 to-slate-900">
-                  <Image class="w-8 h-8 text-purple-400 opacity-60" />
-                  <p class="text-xs text-slate-400 font-mono">Drop 16:9 Artwork Here</p>
-                </div>
-
-                <!-- Hover Floating Overlay Actions -->
-                <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/canvas:opacity-100 transition-opacity flex items-center justify-center space-x-2 pointer-events-auto backdrop-blur-xs">
-                  <a 
-                    v-if="v.hasImage"
-                    :href="v.url" 
-                    target="_blank" 
-                    class="p-2.5 rounded-xl bg-black/80 hover:bg-black text-white text-xs font-mono font-bold flex items-center space-x-1 transition border border-white/20"
-                    title="View Full Resolution"
-                  >
-                    <ExternalLink class="w-4 h-4" />
-                    <span>Full Res</span>
-                  </a>
-
-                  <label class="p-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold flex items-center space-x-1 transition cursor-pointer shadow-md" title="Upload Replacement Artwork">
-                    <Upload class="w-4 h-4" />
-                    <span>Replace</span>
-                    <input 
-                      type="file" 
-                      accept="image/*" 
-                      class="hidden" 
-                      @change="handleThumbnailFileDrop($event, v.id)"
-                    />
-                  </label>
-                </div>
-              </div>
-
-              <!-- Hook & Composition Info -->
-              <div class="space-y-1.5 text-xs">
-                <div class="text-[11px] font-mono text-purple-600 dark:text-purple-400 font-bold flex items-center space-x-1">
-                  <Sparkles class="w-3 h-3" />
-                  <span>{{ v.subtitle }}</span>
-                </div>
-                <p class="text-slate-600 dark:text-slate-400 text-xs line-clamp-2 leading-relaxed">
-                  {{ v.composition }}
-                </p>
-              </div>
-
-              <!-- Card Action Bar -->
-              <div class="pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between gap-2">
-                <button 
-                  @click.stop="selectThumbnailVariant(idx)"
-                  class="flex-1 py-2 px-3 rounded-xl text-xs font-mono font-bold transition flex items-center justify-center space-x-1.5 cursor-pointer"
-                  :class="selectedVariantIndex === idx 
-                    ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
-                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-purple-50 dark:hover:bg-purple-950/40 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700'"
-                >
-                  <Check v-if="selectedVariantIndex === idx" class="w-3.5 h-3.5" />
-                  <span>{{ selectedVariantIndex === idx ? 'Master Selected' : 'Set as Master' }}</span>
-                </button>
-
-                <a 
-                  v-if="v.hasImage"
-                  :href="v.url" 
-                  :download="v.filename"
-                  @click.stop
-                  class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition cursor-pointer"
-                  :title="`Download ${v.filename} (${v.fileSizeFormatted})`"
-                >
-                  <Download class="w-4 h-4" />
-                </a>
-
-                <button 
-                  @click.stop="copyToClipboard(v.prompt, `${v.name} Prompt`)"
-                  class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition cursor-pointer"
-                  title="Copy 16:9 Midjourney Prompt"
-                >
-                  <Copy class="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Midjourney & Google Flow 16:9 Prompt Matrix Card -->
-          <div v-if="currentThumbnailVariant" class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-3">
-            <div class="flex flex-wrap items-center justify-between gap-3">
-              <div class="flex items-center space-x-2">
-                <Sparkles class="w-4 h-4 text-amber-500" />
-                <h4 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white">
-                  16:9 Generative Prompt for {{ currentThumbnailVariant.name }}
-                </h4>
-              </div>
-
-              <button 
-                @click="copyToClipboard(currentThumbnailVariant.prompt, `${currentThumbnailVariant.name} Prompt`)"
-                class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold flex items-center space-x-1.5 transition shadow-sm cursor-pointer"
-              >
-                <Copy class="w-3.5 h-3.5" />
-                <span>📋 Copy 16:9 Prompt</span>
-              </button>
-            </div>
-
-            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 leading-relaxed max-h-36 overflow-y-auto select-all">
-              {{ currentThumbnailVariant.prompt }}
-            </div>
-
-            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pt-1">
-              <span>Layout Focus: <span class="text-purple-600 dark:text-purple-400 font-bold">{{ currentThumbnailVariant.composition }}</span></span>
-              <span>Aspect Ratio: <span class="font-bold">--ar 16:9</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. INTERACTIVE DESCRIPTION, CHAPTER MARKERS & METADATA HUB -->
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-3">
+        <!-- Next Steps Callout Banner after Video Compilation -->
+        <div v-if="pipeline.hasVideo || videoFiles.length > 0" class="p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-rose-500/10 border border-purple-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
             <div class="flex items-center space-x-2">
-              <div class="p-1.5 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400">
-                <FileText class="w-4 h-4" />
-              </div>
-              <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white">
-                3. Video Description, Chapter Timestamps & Tags Hub
-              </h3>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-bold font-mono uppercase tracking-wider bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                ✓ Master Video Ready
+              </span>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Episodic Pipeline Complete</span>
             </div>
-
-            <!-- Tabs -->
-            <div class="flex items-center space-x-1.5 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
-              <button 
-                v-for="tab in [
-                  { id: 'description', label: '📄 Full SEO Description' },
-                  { id: 'timestamps', label: '⏱️ Chapter Timestamps' },
-                  { id: 'tags', label: '🏷️ YouTube Tags' },
-                  { id: 'pinned', label: '💬 Pinned Comment' }
-                ]"
-                :key="tab.id"
-                @click="activeDescTab = tab.id"
-                class="px-3 py-1.5 rounded-lg transition cursor-pointer"
-                :class="activeDescTab === tab.id ? 'bg-white dark:bg-slate-900 text-rose-600 dark:text-rose-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-              >
-                {{ tab.label }}
-              </button>
-            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Ready for Series Compilation & YouTube Publishing</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 max-w-2xl">
+              Concatenate multi-episode Arc Features & Season Movies or grab the 3 High-CTR Master Thumbnails and YouTube Release Kit in the centralized Series Workspace.
+            </p>
           </div>
-
-          <!-- Tab Content Display -->
-          <div class="relative">
-            <!-- Full SEO Description -->
-            <div v-if="activeDescTab === 'description'" class="space-y-3">
-              <div class="flex items-center justify-between text-xs font-mono text-slate-500">
-                <span>Complete description ready to paste directly into YouTube Studio:</span>
-                <button 
-                  @click="copyToClipboard(youtubePackage.description, 'Complete SEO Description')"
-                  class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3.5 h-3.5" />
-                  <span>Copy Description</span>
-                </button>
-              </div>
-              <pre class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed max-h-72 overflow-y-auto custom-scrollbar select-all">{{ youtubePackage.description }}</pre>
-            </div>
-
-            <!-- Chapter Timestamps Only -->
-            <div v-if="activeDescTab === 'timestamps'" class="space-y-3">
-              <div class="flex items-center justify-between text-xs font-mono text-slate-500">
-                <span>Exact frame-accurate chapter timestamps:</span>
-                <button 
-                  @click="copyToClipboard(youtubePackage.chapterText, 'Chapter Timestamps')"
-                  class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3.5 h-3.5" />
-                  <span>Copy Timestamps</span>
-                </button>
-              </div>
-              <pre class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-emerald-600 dark:text-emerald-400 whitespace-pre-wrap leading-relaxed select-all">{{ youtubePackage.chapterText }}</pre>
-            </div>
-
-            <!-- Tags Box -->
-            <div v-if="activeDescTab === 'tags'" class="space-y-3">
-              <div class="flex items-center justify-between text-xs font-mono text-slate-500">
-                <span>Comma-separated tags for the YouTube upload tags box:</span>
-                <button 
-                  @click="copyToClipboard(youtubePackage.tags, 'YouTube Tags')"
-                  class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3.5 h-3.5" />
-                  <span>Copy Tags</span>
-                </button>
-              </div>
-              <pre class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed select-all">{{ youtubePackage.tags }}</pre>
-            </div>
-
-            <!-- Pinned Comment Hook -->
-            <div v-if="activeDescTab === 'pinned'" class="space-y-3">
-              <div class="flex items-center justify-between text-xs font-mono text-slate-500">
-                <span>Engagement question for the pinned community comment:</span>
-                <button 
-                  @click="copyToClipboard(youtubePackage.pinnedComment, 'Pinned Comment')"
-                  class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold flex items-center space-x-1 transition cursor-pointer"
-                >
-                  <Copy class="w-3.5 h-3.5" />
-                  <span>Copy Pinned Comment</span>
-                </button>
-              </div>
-              <pre class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-purple-600 dark:text-purple-300 whitespace-pre-wrap leading-relaxed select-all">{{ youtubePackage.pinnedComment }}</pre>
-            </div>
-          </div>
+          <router-link 
+            :to="`/franchises/${$route.params.franchiseId}`"
+            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-rose-600 hover:from-purple-500 hover:to-rose-500 text-white font-bold text-xs flex items-center space-x-2 transition shadow-md shadow-purple-950/20 shrink-0"
+          >
+            <span>Open Series Workspace Hub</span>
+            <ArrowLeft class="w-4 h-4 rotate-180" />
+          </router-link>
         </div>
 
-        <!-- 4. FINAL PUBLISHING CHECKLIST -->
-        <div class="p-5 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 space-y-3">
-          <div class="flex items-center space-x-2">
-            <CheckCircle2 class="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-            <h4 class="text-xs font-bold font-mono uppercase text-emerald-900 dark:text-emerald-300">
-              YouTube Pre-Upload Verification Checklist
-            </h4>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono">
-            <div class="flex items-center space-x-2 text-emerald-700 dark:text-emerald-300">
-              <Check class="w-4 h-4 shrink-0" />
-              <span>1080p 24FPS Master Video Ready</span>
-            </div>
-            <div class="flex items-center space-x-2 text-emerald-700 dark:text-emerald-300">
-              <Check class="w-4 h-4 shrink-0" />
-              <span>Subtitles Synced & Tested</span>
-            </div>
-            <div class="flex items-center space-x-2 text-emerald-700 dark:text-emerald-300">
-              <Check class="w-4 h-4 shrink-0" />
-              <span>16:9 Master Thumbnail Prompt Ready</span>
-            </div>
-            <div class="flex items-center space-x-2 text-emerald-700 dark:text-emerald-300">
-              <Check class="w-4 h-4 shrink-0" />
-              <span>SEO Timestamps & Fair Use Attached</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -3250,12 +2849,14 @@ const getFlowDirectiveHeader = (collectionTitle) => {
     ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
     : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
 
-  return `[DIRECTIVE: GOOGLE FLOW PURE IMAGE GENERATION, COLLECTION GROUPING & ZERO-TEXT MANDATE]
+  return `[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
 
-📁 MANDATORY COLLECTION GROUPING INSTRUCTION:
-Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
-"${collectionTitle}"
-and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
+📁 MANDATORY COLLECTION GROUPING & SESSION ISOLATION INSTRUCTION:
+1. TARGET COLLECTION: Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
+   "${collectionTitle}"
+   and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
+2. ZERO CROSS-BATCH CONTAMINATION: DO NOT assign, route, or link any of these generated images to prior collections or earlier batch threads (such as previous batches or older chat runs). Every image generated from this prompt must belong strictly and exclusively to "${collectionTitle}".
+3. HARD BATCH BOUNDARY: Treat this generation batch as a completely isolated container.
 
 🎨 GENERATION & COMPOSITION INVARIANTS:
 1. STANDALONE SCENES: Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
@@ -3431,7 +3032,7 @@ const copySingleScenePrompt = (scene) => {
   const eRaw = route.params.episodeId || 'EP01'
   const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
   const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
-  const collectionTitle = `Se.${sNum}.EP.${epNum}.Single_${tag}`
+  const collectionTitle = getCollectionName(`Single_${tag}`)
   const header = getFlowDirectiveHeader(collectionTitle)
   const payload = `${header}\n\n${sceneXml}`
 
@@ -3514,6 +3115,30 @@ const filteredFailedScenes = computed(() => {
   return list.filter(s => !s.hasImage || (s.qa && (s.qa.status === 'cluttered' || s.qa.status === 'warning')))
 })
 
+// Helper to generate dynamic spreadsheet-style batch letters (A..Z, AA..AZ, BA..BZ, etc.)
+const getBatchLetter = (index) => {
+  let letter = ''
+  let num = index
+  while (num >= 0) {
+    letter = String.fromCharCode((num % 26) + 65) + letter
+    num = Math.floor(num / 26) - 1
+  }
+  return letter
+}
+
+const getCollectionName = (batchName) => {
+  const fRaw = route.params.franchiseId || 'Series_02'
+  const eRaw = route.params.episodeId || 'EP01'
+  
+  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
+  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
+
+  const bLetterMatch = (batchName || '').match(/Batch\s+([A-Z]+)/i)
+  const batchCode = bLetterMatch ? `Batch ${bLetterMatch[1]}` : (batchName || 'Batch')
+
+  return `Series ${sNum} EP${epNum} ${batchCode}`
+}
+
 const copyFailedXmlPrompts = () => {
   const targetList = filteredFailedScenes.value
   if (!targetList.length) return
@@ -3529,9 +3154,7 @@ const copyFailedXmlPrompts = () => {
 
   const fRaw = route.params.franchiseId || 'Series_02'
   const eRaw = route.params.episodeId || 'EP01'
-  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
-  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
-  const collectionTitle = `Se.${sNum}.EP.${epNum}.Failed_${targetList.length}`
+  const collectionTitle = getCollectionName(`Failed_${targetList.length}`)
   const header = getFlowDirectiveHeader(collectionTitle)
   const batchXml = `<batch id="Failed_and_Cluttered_Scenes" series="${fRaw}" episode="${eRaw}" scenes="Failed_${targetList.length}">\n\n${scenesXml}\n\n</batch>`
   const payload = `${header}\n\n${batchXml}`
@@ -3557,7 +3180,6 @@ const batchedScenes = computed(() => {
   const chunkSize = 24
   const total = scenes.value.length || 0
   const count = Math.ceil(total / chunkSize)
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
 
   const qaMap = new Map()
   if (qaAuditReport.value && Array.isArray(qaAuditReport.value.results)) {
@@ -3582,7 +3204,7 @@ const batchedScenes = computed(() => {
     const clutteredCount = items.filter(s => s.qa && s.qa.status === 'cluttered').length
     const missingCount = items.filter(s => !s.hasImage).length
     const failedCount = clutteredCount + warningCount + missingCount
-    const letter = letters[i] || `Batch_${i + 1}`
+    const letter = getBatchLetter(i)
     const batchVideoFilename = `01_Episode_Batch_${letter}_Preview.mp4`
     const hasVideo = Array.isArray(videoFiles.value) && videoFiles.value.some(f => f.filename === batchVideoFilename)
     const batchRefs = getBatchVaultReferences(items)
@@ -3636,7 +3258,7 @@ const toggleAllBatches = () => {
 }
 
 const synthesizeSingleBatch = async (batchIndex) => {
-  const letter = String.fromCharCode(65 + batchIndex)
+  const letter = getBatchLetter(batchIndex)
   const batch = batchedScenes.value.find(b => b.index === batchIndex)
   const totalInBatch = batch ? batch.totalCount : 24
   
@@ -4742,7 +4364,8 @@ const stitchBatches = async () => {
 const compileVideo = async (targetBatchIdx = null) => {
   const isBatch = targetBatchIdx !== null || compilationScope.value === 'batch'
   const bIdx = targetBatchIdx !== null ? targetBatchIdx : selectedBatchIndex.value
-  const bObj = batchedScenes.value.find(b => b.index === bIdx) || { name: `Batch ${String.fromCharCode(65 + bIdx)}`, letter: String.fromCharCode(65 + bIdx), totalCount: 24 }
+  const bLetter = getBatchLetter(bIdx)
+  const bObj = batchedScenes.value.find(b => b.index === bIdx) || { name: `Batch ${bLetter}`, letter: bLetter, totalCount: 24 }
 
   compiling.value = true
   modalState.value = {
@@ -4862,129 +4485,12 @@ const handleSwitchStage = (stage) => {
   modalState.value.activeStage = stage
 }
 
-// 🚀 STAGE 4: YOUTUBE LAUNCHPAD & MULTI-VARIANT THUMBNAIL STUDIO STATE
-const youtubePackage = ref(null)
-const loadingPackage = ref(false)
-const selectedTitleIndex = ref(0)
-const selectedVariantIndex = ref(0) // 0: Concept A, 1: Concept B, 2: Concept C
-const activeDescTab = ref('description') // 'description' | 'timestamps' | 'tags' | 'pinned'
-const copiedField = ref('')
-
-// Thumbnail Showcase State
-const isUploadingThumbnail = ref(false)
-
-const currentThumbnailVariant = computed(() => {
-  if (!youtubePackage.value?.thumbnailVariants?.length) return null
-  return youtubePackage.value.thumbnailVariants[selectedVariantIndex.value] || youtubePackage.value.thumbnailVariants[0]
-})
-
-const selectThumbnailVariant = (idx) => {
-  selectedVariantIndex.value = idx
-}
-
-const handleThumbnailFileDrop = async (event, variantId) => {
-  const files = event.dataTransfer?.files || event.target?.files
-  if (!files || !files.length) return
-  const file = files[0]
-  if (!file.type.startsWith('image/')) {
-    triggerToast('Invalid File', 'Please upload a PNG, JPG, or WebP image.', 'error')
-    return
-  }
-
-  isUploadingThumbnail.value = true
-  const reader = new FileReader()
-  reader.onload = async (e) => {
-    try {
-      const base64Data = e.target.result
-      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/upload-thumbnail-variant`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          variantId: variantId || currentThumbnailVariant.value?.id || 'concept_a',
-          base64Data,
-          applyBadge: false
-        })
-      })
-      const data = await res.json()
-      if (data.success) {
-        cacheBuster.value = Date.now()
-        await loadYoutubePackage()
-        triggerToast('Thumbnail Uploaded', `✓ Master 16:9 thumbnail updated (${data.fileSizeFormatted})!`, 'success')
-      } else {
-        throw new Error(data.error || 'Upload failed')
-      }
-    } catch (err) {
-      triggerToast('Upload Failed', err.message, 'error')
-    } finally {
-      isUploadingThumbnail.value = false
-    }
-  }
-  reader.readAsDataURL(file)
-}
-
-const loadYoutubePackage = async () => {
-  loadingPackage.value = true
-  try {
-    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/youtube-package`)
-    const data = await res.json()
-    if (data.success) {
-      youtubePackage.value = data
-    }
-  } catch (e) {
-    console.warn('Failed to load YouTube package:', e)
-  } finally {
-    loadingPackage.value = false
-  }
-}
-
-const copyToClipboard = async (text, fieldName) => {
-  try {
-    await navigator.clipboard.writeText(text)
-    copiedField.value = fieldName
-    setTimeout(() => { copiedField.value = '' }, 2500)
-    triggerToast('Copied to Clipboard', `${fieldName} copied successfully!`, 'success')
-  } catch (e) {
-    triggerToast('Copy Failed', 'Could not access clipboard.', 'error')
-  }
-}
-
-const copyFullReleaseKit = async () => {
-  if (!youtubePackage.value) return
-  const selectedTitle = youtubePackage.value.titles[selectedTitleIndex.value]?.title || ''
-  const selectedVariant = currentThumbnailVariant.value || youtubePackage.value.thumbnailVariants?.[0]
-  const fullKit = `=== YOUTUBE VIDEO METADATA & PACKAGING SUITE ===
-SERIES: ${youtubePackage.value.franchiseName}
-EPISODE: ${youtubePackage.value.episodeName}
-DURATION: ${youtubePackage.value.formattedDuration}
-
---- SELECTED HIGH-CTR TITLE (${selectedTitle.length}/100 CHARS) ---
-${selectedTitle}
-
---- 16:9 THUMBNAIL VARIANT (${selectedVariant?.name || ''}) ---
-FILE: ${selectedVariant?.filename || ''}
-COMPOSITION: ${selectedVariant?.composition || ''}
-PROMPT:
-${selectedVariant?.prompt || ''}
-
---- FULL SEO DESCRIPTION & TIMESTAMPS ---
-${youtubePackage.value.description}
-
---- YOUTUBE TAGS BOX ---
-${youtubePackage.value.tags}
-
---- PINNED COMMENT ---
-${youtubePackage.value.pinnedComment}
-`
-  await copyToClipboard(fullKit, 'Complete YouTube Release Kit')
-}
-
 onMounted(() => {
   loadPipelineStatus()
   loadScenes()
   loadSubtitles()
   loadBgmTracks()
   loadCharacterModels()
-  loadYoutubePackage()
   loadFlowEntities()
 })
 

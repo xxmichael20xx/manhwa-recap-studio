@@ -143,7 +143,28 @@ export function setTagModeToStorage(mode) {
   }
 }
 
-export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mode = 'token') {
+export const LEAN_MODE_STORAGE_KEY = 'manhwa_recap_lean_prompt_mode'
+
+export function stripBoilerplateTail(text) {
+  if (!text || typeof text !== 'string') return ''
+
+  // 1. Common style intro marker: "dark fantasy action manhwa..."
+  const styleMatch = text.search(/[,.\s]+dark fantasy action manhwa/i)
+  if (styleMatch !== -1) {
+    return text.slice(0, styleMatch).trim()
+  }
+
+  // 2. Anatomical negative tail marker if style phrase wasn't found
+  const anatomyMatch = text.search(/[,.\s]+(?:anatomically correct hands|no character cloning|textless manhwa illustration)/i)
+  if (anatomyMatch !== -1) {
+    return text.slice(0, anatomyMatch).trim()
+  }
+
+  return text.trim()
+}
+
+export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mode = 'token', options = {}) {
+  const isLean = Boolean(options && options.lean)
   const charRefs = []
   const itemRefs = []
   const text = promptText || ''
@@ -202,6 +223,7 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   }
   openTag += `>`
 
-  const finalPrompt = transformTokens(text, entityMap, mode)
+  const promptBody = isLean ? stripBoilerplateTail(text) : text
+  const finalPrompt = transformTokens(promptBody, entityMap, mode)
   return `${openTag}\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
 }

@@ -1009,7 +1009,7 @@ app.post('/api/episodes/:franchiseId/:episodeId/upload-thumbnail-variant', async
 })
 
 // Serve Thumbnail Image
-app.get('/api/episodes/:franchiseId/:episodeId/thumbnail/:filename', (req, res) => {
+app.get(['/api/episodes/:franchiseId/:episodeId/thumbnail/:filename', '/api/episodes/:franchiseId/:episodeId/thumbnails/:filename'], (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
   const safeFilename = path.basename(filename)
   const thumbPath = path.join(projectRoot, '01_Franchises', franchiseId, episodeId, 'thumbnails', safeFilename)

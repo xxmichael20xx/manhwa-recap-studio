@@ -919,3717 +919,3749 @@ practiced muscle memory built from three years of
 solo target practice.
 
 231
-00:08:47,332 --> 00:08:49,432
+00:08:47,224 --> 00:08:49,324
 As the viper launched itself through the air
 
 232
-00:08:49,445 --> 00:08:50,607
+00:08:49,337 --> 00:08:50,499
 with blinding speed,
 
 233
-00:08:50,782 --> 00:08:53,345
+00:08:50,674 --> 00:08:53,237
 Caelen calculated its parabolic arc in a split
 
 234
-00:08:53,357 --> 00:08:55,032
+00:08:53,249 --> 00:08:54,924
 second and released the bowstring.
 
 235
-00:08:55,900 --> 00:08:58,225
+00:08:55,804 --> 00:08:58,129
 The steel arrow whistled through the damp air,
 
 236
-00:08:58,425 --> 00:09:00,825
+00:08:58,329 --> 00:09:00,729
 piercing directly through the viper's open maw and
 
 237
-00:09:00,838 --> 00:09:03,175
+00:09:00,742 --> 00:09:03,079
 pinning its brain to the stone cavern wall.
 
 238
-00:09:04,036 --> 00:09:07,161
+00:09:03,842 --> 00:09:06,967
 The beast convulsed twice before falling completely limp,
 
 239
-00:09:07,361 --> 00:09:09,949
+00:09:07,167 --> 00:09:09,754
 its dark blood sizzling against the damp floor.
 
 240
-00:09:10,828 --> 00:09:12,966
+00:09:10,636 --> 00:09:12,774
 Before the echo of the shot could fade,
 
 241
-00:09:13,116 --> 00:09:15,353
+00:09:12,924 --> 00:09:15,161
 a brilliant swirl of cyan and gold mana
 
 242
-00:09:15,366 --> 00:09:17,566
+00:09:15,174 --> 00:09:17,374
 filaments erupted from the viper's carcass,
 
 243
-00:09:17,778 --> 00:09:19,803
+00:09:17,586 --> 00:09:19,611
 rushing straight into Caelen's chest.
 
 244
-00:09:20,668 --> 00:09:21,381
+00:09:20,476 --> 00:09:21,189
 SYSTEM:
 
 245
-00:09:21,543 --> 00:09:23,218
+00:09:21,351 --> 00:09:23,026
 LEVEL 1 TARGET ELIMINATED
 
 246
-00:09:23,431 --> 00:09:25,106
+00:09:23,239 --> 00:09:24,914
 IRON-SCALED CAVE VIPER.
 
 247
-00:09:25,972 --> 00:09:27,222
+00:09:25,676 --> 00:09:26,926
 TALENT ACTIVATION:
 
 248
-00:09:27,385 --> 00:09:30,072
+00:09:27,089 --> 00:09:29,776
 SOVEREIGN SIPHON EXTRACTED 2  AGILITY,
 
 249
-00:09:30,247 --> 00:09:31,472
+00:09:29,951 --> 00:09:31,176
 1  PERCEPTION
 
 250
-00:09:31,685 --> 00:09:32,335
+00:09:31,389 --> 00:09:32,039
 PERMANENT).
 
 251
-00:09:33,196 --> 00:09:34,596
+00:09:32,908 --> 00:09:34,308
 A sudden rush of cool,
 
 252
-00:09:34,734 --> 00:09:37,909
+00:09:34,446 --> 00:09:37,621
 invigorating energy flowed through Caelen's nervous system,
 
 253
-00:09:38,071 --> 00:09:40,209
+00:09:37,783 --> 00:09:39,921
 sharpening his eyesight and lightening the weight of
 
 254
-00:09:40,221 --> 00:09:40,984
+00:09:39,933 --> 00:09:40,696
 his boots.
 
 255
-00:09:41,860 --> 00:09:43,373
+00:09:41,572 --> 00:09:43,085
 Opening his status screen,
 
 256
-00:09:43,523 --> 00:09:46,048
+00:09:43,235 --> 00:09:45,760
 his Agility had instantly climbed from sixteen to
 
 257
-00:09:46,060 --> 00:09:46,735
+00:09:45,772 --> 00:09:46,447
 eighteen,
 
 258
-00:09:46,948 --> 00:09:48,985
+00:09:46,660 --> 00:09:48,697
 while his Perception rose to nineteen.
 
 259
-00:09:49,852 --> 00:09:52,477
+00:09:49,564 --> 00:09:52,189
 Three stat points from a single low-tier snake,"
 
 260
-00:09:52,565 --> 00:09:53,540
+00:09:52,277 --> 00:09:53,252
 Caelen whispered,
 
 261
-00:09:53,715 --> 00:09:56,565
+00:09:53,427 --> 00:09:56,277
 feeling the physical difference in his sensory receptors.
 
 262
-00:09:57,436 --> 00:10:00,199
+00:09:57,148 --> 00:09:59,911
 In standard Hunter Ministry progression arithmetic,
 
 263
-00:10:00,386 --> 00:10:03,299
+00:10:00,098 --> 00:10:03,011
 gaining three stat points required grinding three full
 
 264
-00:10:03,311 --> 00:10:03,849
+00:10:03,023 --> 00:10:03,561
 levels
 
 265
-00:10:04,061 --> 00:10:06,849
+00:10:03,773 --> 00:10:06,561
 which took ordinary students weeks of dungeon raiding.
 
 266
-00:10:07,732 --> 00:10:10,107
+00:10:07,444 --> 00:10:09,819
 Caelen had accomplished the same growth in three
 
 267
-00:10:10,120 --> 00:10:12,745
+00:10:09,832 --> 00:10:12,457
 seconds with a single fifty-cent steel arrow.
 
 268
-00:10:13,612 --> 00:10:15,687
-Looking into the vast darkness of the cavern
+00:10:13,324 --> 00:10:14,412
+STATUS UPDATE:
 
 269
-00:10:15,700 --> 00:10:18,037
-where hundreds of glowing green eyes flickered along
+00:10:14,612 --> 00:10:18,074
+STRENGTH 14 AGILITY 19 CONSTITUTION 12 PERCEPTION
 
 270
-00:10:18,050 --> 00:10:19,212
-the pipes and walls,
+00:10:18,087 --> 00:10:18,612
+20
 
 271
-00:10:19,400 --> 00:10:22,087
-Caelen's deadpan expression gave way to a cold,
+00:10:19,492 --> 00:10:20,442
+CORE POTENTIAL:
 
 272
-00:10:22,250 --> 00:10:23,512
-razor-sharp smile.
+00:10:20,542 --> 00:10:23,255
+UNLIMITED CUMULATIVE STAT SIPHON CONFIRMED.
 
 273
-00:10:24,388 --> 00:10:26,526
+00:10:24,124 --> 00:10:26,249
 They sent me down here to clean garbage,"
 
 274
-00:10:26,601 --> 00:10:29,288
-Caelen murmured, pulling three more arrows from his
+00:10:26,349 --> 00:10:28,337
+Caelen murmured with an analytical grin,
 
 275
-00:10:29,301 --> 00:10:29,863
-quiver.
+00:10:28,562 --> 00:10:30,862
+feeling the limitless potential of his talent.
 
 276
-00:10:30,626 --> 00:10:32,588
-Let us see how much garbage this place
+00:10:31,732 --> 00:10:33,807
+Looking into the vast darkness of the cavern
 
 277
-00:10:32,601 --> 00:10:33,163
-has."
+00:10:33,820 --> 00:10:36,157
+where hundreds of glowing green eyes flickered along
 
 278
-00:10:34,036 --> 00:10:36,299
-He stepped into the shadows of the subterranean
+00:10:36,170 --> 00:10:37,332
+the pipes and walls,
 
 279
-00:10:36,311 --> 00:10:39,361
-labyrinth, his footsteps completely silent as the hunt
+00:10:37,520 --> 00:10:40,207
+Caelen's deadpan expression gave way to a cold,
 
 280
-00:10:39,374 --> 00:10:39,974
-began.
+00:10:40,370 --> 00:10:41,632
+razor-sharp smile.
 
 281
-00:10:40,852 --> 00:10:42,565
-Over the next forty-eight hours,
+00:10:42,508 --> 00:10:44,646
+They sent me down here to clean garbage,"
 
 282
-00:10:42,677 --> 00:10:45,377
-while Ignis and his wealthy classmates celebrated their
+00:10:44,721 --> 00:10:47,408
+Caelen murmured, pulling three more arrows from his
 
 283
-00:10:45,390 --> 00:10:47,365
-contracts at high-end banquet halls,
+00:10:47,421 --> 00:10:47,983
+quiver.
 
 284
-00:10:47,565 --> 00:10:50,815
-Caelen turned Catacomb Sector Four into a slaughterhouse.
+00:10:48,746 --> 00:10:50,708
+Let us see how much garbage this place
 
 285
-00:10:51,676 --> 00:10:54,376
-Moving with ghost-like precision along the high pipes
+00:10:50,721 --> 00:10:51,283
+has."
 
 286
-00:10:54,389 --> 00:10:55,614
-and iron catwalks,
+00:10:52,156 --> 00:10:54,419
+He stepped into the shadows of the subterranean
 
 287
-00:10:55,789 --> 00:10:58,514
-Caelen forced the monster swarms into narrow drainage
+00:10:54,431 --> 00:10:57,481
+labyrinth, his footsteps completely silent as the hunt
 
 288
-00:10:58,526 --> 00:10:59,739
-corridor bottlenecks,
+00:10:57,494 --> 00:10:58,094
+began.
 
 289
-00:10:59,889 --> 00:11:02,989
-systematically eliminating every target along his clear line
+00:10:58,972 --> 00:11:00,685
+Over the next forty-eight hours,
 
 290
-00:11:03,001 --> 00:11:04,989
-of fire from fifty paces away.
+00:11:00,797 --> 00:11:03,497
+while Ignis and his wealthy classmates celebrated their
 
 291
-00:11:05,860 --> 00:11:06,548
-SYSTEM:
+00:11:03,510 --> 00:11:05,485
+contracts at high-end banquet halls,
 
 292
-00:11:06,723 --> 00:11:08,423
-MUTANT DIRT BEETLE ELIMINATED
+00:11:05,685 --> 00:11:08,935
+Caelen turned Catacomb Sector Four into a slaughterhouse.
 
 293
-00:11:08,635 --> 00:11:10,735
-EXTRACTED 2  CONSTITUTION,
+00:11:09,796 --> 00:11:12,496
+Moving with ghost-like precision along the high pipes
 
 294
-00:11:10,885 --> 00:11:12,060
-1  STRENGTH.
+00:11:12,509 --> 00:11:13,734
+and iron catwalks,
 
 295
-00:11:12,940 --> 00:11:13,653
-SYSTEM:
+00:11:13,909 --> 00:11:16,634
+Caelen forced the monster swarms into narrow drainage
 
 296
-00:11:13,815 --> 00:11:15,690
-VENOMOUS SEWER CRAWLER ELIMINATED
+00:11:16,646 --> 00:11:17,859
+corridor bottlenecks,
 
 297
-00:11:15,915 --> 00:11:17,803
-EXTRACTED 3  AGILITY.
+00:11:18,009 --> 00:11:21,109
+systematically eliminating every target along his clear line
 
 298
-00:11:18,676 --> 00:11:19,389
-SYSTEM:
+00:11:21,121 --> 00:11:23,109
+of fire from fifty paces away.
 
 299
-00:11:19,501 --> 00:11:21,376
-ARMORED CAVE SCORPION ELIMINATED
+00:11:23,980 --> 00:11:24,668
+SYSTEM:
 
 300
-00:11:21,589 --> 00:11:23,351
-EXTRACTED 2  STRENGTH,
+00:11:24,843 --> 00:11:26,543
+MUTANT DIRT BEETLE ELIMINATED
 
 301
-00:11:23,501 --> 00:11:25,039
-1  CONSTITUTION.
+00:11:26,755 --> 00:11:28,855
+EXTRACTED 2  CONSTITUTION,
 
 302
-00:11:25,900 --> 00:11:27,400
-With every fifty kills,
+00:11:29,005 --> 00:11:30,180
+1  STRENGTH.
 
 303
-00:11:27,513 --> 00:11:29,788
-Caelen retrieved his spent steel arrows from the
+00:11:31,060 --> 00:11:31,773
+SYSTEM:
 
 304
-00:11:29,800 --> 00:11:30,550
-carcasses,
+00:11:31,935 --> 00:11:33,810
+VENOMOUS SEWER CRAWLER ELIMINATED
 
 305
-00:11:30,713 --> 00:11:33,463
-sharpening the tips against a whetstone before continuing
+00:11:34,035 --> 00:11:35,923
+EXTRACTED 3  AGILITY.
 
 306
-00:11:33,475 --> 00:11:34,725
-his relentless patrol.
+00:11:36,796 --> 00:11:37,509
+SYSTEM:
 
 307
-00:11:35,596 --> 00:11:37,284
-By the time he had cleared the third
+00:11:37,621 --> 00:11:39,496
+ARMORED CAVE SCORPION ELIMINATED
 
 308
-00:11:37,296 --> 00:11:39,009
-subterranean drainage channel,
+00:11:39,709 --> 00:11:41,471
+EXTRACTED 2  STRENGTH,
 
 309
-00:11:39,146 --> 00:11:41,296
-over two hundred mutant beasts lay dead in
+00:11:41,621 --> 00:11:43,159
+1  CONSTITUTION.
 
 310
-00:11:41,309 --> 00:11:42,259
-the dark water.
+00:11:44,020 --> 00:11:45,520
+With every fifty kills,
 
 311
-00:11:43,132 --> 00:11:45,582
-The cumulative stat absorption was staggering:
+00:11:45,633 --> 00:11:47,908
+Caelen retrieved his spent steel arrows from the
 
 312
-00:11:45,770 --> 00:11:48,507
-his Strength had surged from fourteen to eighty-five
+00:11:47,920 --> 00:11:48,670
+carcasses,
 
 313
-00:11:48,720 --> 00:11:51,807
-his Agility reached ninety-eight and his Constitution climbed
+00:11:48,833 --> 00:11:51,583
+sharpening the tips against a whetstone before continuing
 
 314
-00:11:51,820 --> 00:11:52,795
-to seventy-two
+00:11:51,595 --> 00:11:52,845
+his relentless patrol.
 
 315
-00:11:53,668 --> 00:11:55,881
-When Caelen drew his simple ashwood bow to
+00:11:53,716 --> 00:11:55,404
+By the time he had cleared the third
 
 316
-00:11:55,893 --> 00:11:57,668
-take down an armored cave bear,
+00:11:55,416 --> 00:11:57,129
+subterranean drainage channel,
 
 317
-00:11:57,868 --> 00:12:00,256
-the wooden limbs groaned under his superhuman muscle
+00:11:57,266 --> 00:11:59,416
+over two hundred mutant beasts lay dead in
 
 318
-00:12:00,268 --> 00:12:00,756
-power,
+00:11:59,429 --> 00:12:00,379
+the dark water.
 
 319
-00:12:00,943 --> 00:12:03,381
-snapping clean in half with a loud crack.
+00:12:01,252 --> 00:12:03,702
+The cumulative stat absorption was staggering:
 
 320
-00:12:04,252 --> 00:12:07,377
-My physical draw-weight has exceeded standard wooden timber,"
+00:12:03,890 --> 00:12:06,627
+his Strength had surged from fourteen to eighty-five
 
 321
-00:12:07,540 --> 00:12:08,815
-Caelen noted calmly,
+00:12:06,840 --> 00:12:09,927
+his Agility reached ninety-eight and his Constitution climbed
 
 322
-00:12:09,002 --> 00:12:11,252
-inspecting the fractured ashwood riser.
+00:12:09,940 --> 00:12:10,915
+to seventy-two
 
 323
-00:12:12,124 --> 00:12:14,787
-A massive Level 8 Armored Cave Bear charged at
+00:12:11,788 --> 00:12:14,001
+When Caelen drew his simple ashwood bow to
 
 324
-00:12:14,799 --> 00:12:16,074
-him with roaring fury,
+00:12:14,013 --> 00:12:15,788
+take down an armored cave bear,
 
 325
-00:12:16,274 --> 00:12:19,649
-its razor-sharp claws swiping directly at Caelen's chest.
+00:12:15,988 --> 00:12:18,376
+the wooden limbs groaned under his superhuman muscle
 
 326
-00:12:20,524 --> 00:12:21,887
-Without a bow in hand,
+00:12:18,388 --> 00:12:18,876
+power,
 
 327
-00:12:22,024 --> 00:12:23,812
-any normal archer would have been ripped to
+00:12:19,063 --> 00:12:21,501
+snapping clean in half with a loud crack.
 
 328
-00:12:23,824 --> 00:12:25,687
-shreds in a fraction of a second.
+00:12:22,372 --> 00:12:25,497
+My physical draw-weight has exceeded standard wooden timber,"
 
 329
-00:12:26,548 --> 00:12:28,311
-Caelen simply stood his ground,
+00:12:25,660 --> 00:12:26,935
+Caelen noted calmly,
 
 330
-00:12:28,511 --> 00:12:30,836
-raising his bare left forearm to intercept the
+00:12:27,122 --> 00:12:29,372
+inspecting the fractured ashwood riser.
 
 331
-00:12:30,848 --> 00:12:33,061
-beast's descending iron-hard claws.
+00:12:30,244 --> 00:12:32,907
+A massive Level 8 Armored Cave Bear charged at
 
 332
-00:12:33,940 --> 00:12:35,615
-PHYSICAL DURABILITY CHECK:
+00:12:32,919 --> 00:12:34,194
+him with roaring fury,
 
 333
-00:12:35,778 --> 00:12:36,815
-ATTACKER STRENGTH
+00:12:34,394 --> 00:12:37,769
+its razor-sharp claws swiping directly at Caelen's chest.
 
 334
-00:12:36,990 --> 00:12:37,853
-45)
+00:12:38,644 --> 00:12:40,007
+Without a bow in hand,
 
 335
-00:12:38,065 --> 00:12:39,478
-DEFENDER CONSTITUTION
+00:12:40,144 --> 00:12:41,932
+any normal archer would have been ripped to
 
 336
-00:12:39,678 --> 00:12:40,553
-72)
+00:12:41,944 --> 00:12:43,807
+shreds in a fraction of a second.
 
 337
-00:12:40,803 --> 00:12:41,690
-  0
+00:12:44,668 --> 00:12:46,431
+Caelen simply stood his ground,
 
 338
-00:12:41,915 --> 00:12:43,353
-NULL DAMAGE DEFLECTION.
+00:12:46,631 --> 00:12:48,956
+raising his bare left forearm to intercept the
 
 339
-00:12:44,236 --> 00:12:46,924
-A loud metallic ring echoed across the chamber
+00:12:48,968 --> 00:12:51,181
+beast's descending iron-hard claws.
 
 340
-00:12:46,936 --> 00:12:49,136
-as the bear's claws struck Caelen's skin
+00:12:52,060 --> 00:12:53,735
+PHYSICAL DURABILITY CHECK:
 
 341
-00:12:49,374 --> 00:12:51,899
-and shattered into bone fragments with zero skin
+00:12:53,898 --> 00:12:54,935
+ATTACKER STRENGTH
 
 342
-00:12:51,911 --> 00:12:52,461
-break.
+00:12:55,110 --> 00:12:55,973
+45)
 
 343
-00:12:53,332 --> 00:12:54,770
-The bear whimpered in shock,
+00:12:56,185 --> 00:12:57,598
+DEFENDER CONSTITUTION
 
 344
-00:12:54,920 --> 00:12:57,107
-staring at the human boy whose flesh was
+00:12:57,798 --> 00:12:58,673
+72)
 
 345
-00:12:57,120 --> 00:12:58,845
-harder than tempered plate armor.
+00:12:58,923 --> 00:12:59,810
+  0
 
 346
-00:12:59,716 --> 00:13:01,841
-My turn," Caelen said deadpan,
+00:13:00,035 --> 00:13:01,473
+NULL DAMAGE DEFLECTION.
 
 347
-00:13:02,016 --> 00:13:04,091
-driving his bare right fist straight into the
+00:13:02,356 --> 00:13:05,044
+A loud metallic ring echoed across the chamber
 
 348
-00:13:04,104 --> 00:13:06,641
-beast's armored skull with eighty-five points of raw
+00:13:05,056 --> 00:13:07,256
+as the bear's claws struck Caelen's skin
 
 349
-00:13:06,654 --> 00:13:07,304
-Strength.
+00:13:07,494 --> 00:13:10,019
+and shattered into bone fragments with zero skin
 
 350
-00:13:08,164 --> 00:13:11,252
-The impact created a concussive shockwave that blasted
+00:13:10,031 --> 00:13:10,581
+break.
 
 351
-00:13:11,264 --> 00:13:13,852
-the massive beast backwards into a stone pillar,
+00:13:11,452 --> 00:13:12,890
+The bear whimpered in shock,
 
 352
-00:13:13,977 --> 00:13:15,189
-killing it instantly.
+00:13:13,040 --> 00:13:15,227
+staring at the human boy whose flesh was
 
 353
-00:13:16,060 --> 00:13:16,773
-SYSTEM:
+00:13:15,240 --> 00:13:16,965
+harder than tempered plate armor.
 
 354
-00:13:16,923 --> 00:13:19,173
-LEVEL 8 ARMORED CAVE BEAR ELIMINATED
+00:13:17,836 --> 00:13:19,961
+My turn," Caelen said deadpan,
 
 355
-00:13:19,385 --> 00:13:21,173
-EXTRACTED 3  STRENGTH,
+00:13:20,136 --> 00:13:22,211
+driving his bare right fist straight into the
 
 356
-00:13:21,310 --> 00:13:22,860
-2  CONSTITUTION.
+00:13:22,224 --> 00:13:24,761
+beast's armored skull with eighty-five points of raw
 
 357
-00:13:23,740 --> 00:13:25,765
-Caelen shook the dust from his blazer,
+00:13:24,774 --> 00:13:25,424
+Strength.
 
 358
-00:13:25,903 --> 00:13:27,878
-looking down at his hands with a satisfied
+00:13:26,284 --> 00:13:29,372
+The impact created a concussive shockwave that blasted
 
 359
-00:13:27,890 --> 00:13:28,403
-nod.
+00:13:29,384 --> 00:13:31,972
+the massive beast backwards into a stone pillar,
 
 360
-00:13:29,284 --> 00:13:31,759
-His physical density had reached the threshold where
+00:13:32,097 --> 00:13:33,309
+killing it instantly.
 
 361
-00:13:31,772 --> 00:13:34,484
-mundane fangs and low-tier monster strikes could not
+00:13:34,180 --> 00:13:34,893
+SYSTEM:
 
 362
-00:13:34,497 --> 00:13:36,384
-even pierce his outer epidermis.
+00:13:35,043 --> 00:13:37,293
+LEVEL 8 ARMORED CAVE BEAR ELIMINATED
 
 363
-00:13:37,252 --> 00:13:37,852
-However,
+00:13:37,505 --> 00:13:39,293
+EXTRACTED 3  STRENGTH,
 
 364
-00:13:38,027 --> 00:13:40,702
-relying on bare-fist combat defeated the purpose of
+00:13:39,430 --> 00:13:40,980
+2  CONSTITUTION.
 
 365
-00:13:40,715 --> 00:13:42,190
-his true class potential;
+00:13:41,860 --> 00:13:43,885
+Caelen shook the dust from his blazer,
 
 366
-00:13:42,427 --> 00:13:44,652
-he needed a bow capable of handling thousands
+00:13:44,023 --> 00:13:45,998
+looking down at his hands with a satisfied
 
 367
-00:13:44,665 --> 00:13:46,502
-of pounds of kinetic draw pressure.
+00:13:46,010 --> 00:13:46,523
+nod.
 
 368
-00:13:47,380 --> 00:13:49,755
-Retrieving a heavy steel girder from the abandoned
+00:13:47,404 --> 00:13:49,879
+His physical density had reached the threshold where
 
 369
-00:13:49,768 --> 00:13:51,030
-construction refuse,
+00:13:49,892 --> 00:13:52,604
+mundane fangs and low-tier monster strikes could not
 
 370
-00:13:51,218 --> 00:13:53,643
-Caelen's eyes locked onto the glowing blue mana
+00:13:52,617 --> 00:13:54,504
+even pierce his outer epidermis.
 
 371
-00:13:53,655 --> 00:13:55,543
-filaments lingering in his palms.
+00:13:55,372 --> 00:13:55,972
+However,
 
 372
-00:13:56,404 --> 00:13:58,417
-It was time to unlock the third layer
+00:13:56,147 --> 00:13:58,822
+relying on bare-fist combat defeated the purpose of
 
 373
-00:13:58,429 --> 00:14:00,379
-of his Primordial Sovereign Siphon.
+00:13:58,835 --> 00:14:00,310
+his true class potential;
 
 374
-00:14:01,252 --> 00:14:03,665
-Sitting cross-legged on a high stone ledge above
+00:14:00,547 --> 00:14:02,772
+he needed a bow capable of handling thousands
 
 375
-00:14:03,677 --> 00:14:04,777
-the underground river,
+00:14:02,785 --> 00:14:04,622
+of pounds of kinetic draw pressure.
 
 376
-00:14:04,952 --> 00:14:07,490
-Caelen focused his internal mana flow into his
+00:14:05,500 --> 00:14:07,875
+Retrieving a heavy steel girder from the abandoned
 
 377
-00:14:07,502 --> 00:14:08,340
-fingertips.
+00:14:07,888 --> 00:14:09,150
+construction refuse,
 
 378
-00:14:09,220 --> 00:14:10,333
-SYSTEM NOTICE:
+00:14:09,338 --> 00:14:11,763
+Caelen's eyes locked onto the glowing blue mana
 
 379
-00:14:10,508 --> 00:14:14,208
-VESSEL FOUNDATION REACHED 200 CUMULATIVE STAT THRESHOLD.
+00:14:11,775 --> 00:14:13,663
+filaments lingering in his palms.
 
 380
-00:14:15,076 --> 00:14:16,851
-CORE FUNCTION 3 UNLOCKED:
+00:14:14,524 --> 00:14:16,537
+It was time to unlock the third layer
 
 381
-00:14:16,964 --> 00:14:19,951
-ETHEREAL MANA FILAMENT GHOST-STRING SYNTHESIS).
+00:14:16,549 --> 00:14:18,499
+of his Primordial Sovereign Siphon.
 
 382
-00:14:20,812 --> 00:14:22,812
-As Caelen willed the energy forward,
+00:14:19,372 --> 00:14:21,785
+Sitting cross-legged on a high stone ledge above
 
 383
-00:14:22,950 --> 00:14:26,000
-weightless glowing cyan mana threads materialized between
+00:14:21,797 --> 00:14:22,897
+the underground river,
 
 384
-00:14:26,012 --> 00:14:28,812
-his fingers, shimmering like liquid light without adding
+00:14:23,072 --> 00:14:25,610
+Caelen focused his internal mana flow into his
 
 385
-00:14:28,825 --> 00:14:30,612
-a single gram of physical weight.
+00:14:25,622 --> 00:14:26,460
+fingertips.
 
 386
-00:14:31,492 --> 00:14:34,455
-He picked up the heavy reinforced titanium-alloy bow
+00:14:27,340 --> 00:14:28,453
+SYSTEM NOTICE:
 
 387
-00:14:34,467 --> 00:14:37,417
-frame he had assembled from salvaged industrial scrap,
+00:14:28,628 --> 00:14:32,328
+VESSEL FOUNDATION REACHED 200 CUMULATIVE STAT THRESHOLD.
 
 388
-00:14:37,642 --> 00:14:40,217
-wrapping the ethereal mana thread across the recurve
+00:14:33,196 --> 00:14:34,971
+CORE FUNCTION 3 UNLOCKED:
 
 389
-00:14:40,230 --> 00:14:40,955
-notches.
+00:14:35,084 --> 00:14:38,071
+ETHEREAL MANA FILAMENT GHOST-STRING SYNTHESIS).
 
 390
-00:14:41,836 --> 00:14:43,699
-When he pulled back on the ghost-string
+00:14:38,932 --> 00:14:40,932
+As Caelen willed the energy forward,
 
 391
-00:14:43,861 --> 00:14:46,861
-the titanium limbs flexed smoothly under three thousand
+00:14:41,070 --> 00:14:44,120
+weightless glowing cyan mana threads materialized between
 
 392
-00:14:46,874 --> 00:14:48,011
-pounds of draw weight,
+00:14:44,132 --> 00:14:46,932
+his fingers, shimmering like liquid light without adding
 
 393
-00:14:48,149 --> 00:14:48,999
-emitting a deep,
+00:14:46,945 --> 00:14:48,732
+a single gram of physical weight.
 
 394
-00:14:49,199 --> 00:14:51,199
-resonant hum that vibrated the air.
+00:14:49,612 --> 00:14:52,575
+He picked up the heavy reinforced titanium-alloy bow
 
 395
-00:14:52,060 --> 00:14:52,835
-Even better:
+00:14:52,587 --> 00:14:55,537
+frame he had assembled from salvaged industrial scrap,
 
 396
-00:14:53,048 --> 00:14:55,323
-he did not need physical arrows anymore.
+00:14:55,762 --> 00:14:58,337
+wrapping the ethereal mana thread across the recurve
 
 397
-00:14:56,085 --> 00:14:58,348
-By condensing his mana along the string,
+00:14:58,350 --> 00:14:59,075
+notches.
 
 398
-00:14:58,510 --> 00:15:01,460
-a glowing translucent phantom arrow formed instantly on
+00:14:59,956 --> 00:15:01,819
+When he pulled back on the ghost-string
 
 399
-00:15:01,473 --> 00:15:02,148
-the rest.
+00:15:01,981 --> 00:15:04,981
+the titanium limbs flexed smoothly under three thousand
 
 400
-00:15:03,028 --> 00:15:04,053
-WEAPON CREATED:
+00:15:04,994 --> 00:15:06,131
+pounds of draw weight,
 
 401
-00:15:04,203 --> 00:15:07,866
-VOID-STRUNG HEAVY RECURVE TIER-4 SOVEREIGN ARMAMENT).
+00:15:06,269 --> 00:15:07,119
+emitting a deep,
 
 402
-00:15:08,740 --> 00:15:11,178
-A high-pitched shriek tore through the upper cavern
+00:15:07,319 --> 00:15:09,319
+resonant hum that vibrated the air.
 
 403
-00:15:11,190 --> 00:15:13,353
-as a flock of forty mutated Gloom Bats
+00:15:10,180 --> 00:15:10,955
+Even better:
 
 404
-00:15:13,365 --> 00:15:14,565
-swarmed from the ceiling,
+00:15:11,168 --> 00:15:13,443
+he did not need physical arrows anymore.
 
 405
-00:15:14,765 --> 00:15:17,678
-their sound-dampening wings moving in complete silence.
+00:15:14,205 --> 00:15:16,468
+By condensing his mana along the string,
 
 406
-00:15:18,556 --> 00:15:20,131
-Caelen did not even look up with his
+00:15:16,630 --> 00:15:19,580
+a glowing translucent phantom arrow formed instantly on
 
 407
-00:15:20,144 --> 00:15:20,656
-eyes;
+00:15:19,593 --> 00:15:20,268
+the rest.
 
 408
-00:15:20,844 --> 00:15:22,781
-his Perception of one hundred and ten allowed
+00:15:21,148 --> 00:15:22,173
+WEAPON CREATED:
 
 409
-00:15:22,794 --> 00:15:24,856
-him to map every acoustic frequency in the
+00:15:22,323 --> 00:15:25,986
+VOID-STRUNG HEAVY RECURVE TIER-4 SOVEREIGN ARMAMENT).
 
 410
-00:15:24,869 --> 00:15:26,481
-room with absolute precision.
+00:15:26,860 --> 00:15:29,298
+A high-pitched shriek tore through the upper cavern
 
 411
-00:15:27,364 --> 00:15:29,227
-Drawing the ghost-string to his cheek,
+00:15:29,310 --> 00:15:31,473
+as a flock of forty mutated Gloom Bats
 
 412
-00:15:29,377 --> 00:15:32,077
-he loosed five phantom arrows in rapid succession,
+00:15:31,485 --> 00:15:32,685
+swarmed from the ceiling,
 
 413
-00:15:32,264 --> 00:15:34,302
-his fingers blurring faster than the human eye
+00:15:32,885 --> 00:15:35,798
+their sound-dampening wings moving in complete silence.
 
 414
-00:15:34,314 --> 00:15:35,064
-could track.
+00:15:36,676 --> 00:15:38,251
+Caelen did not even look up with his
 
 415
-00:15:35,932 --> 00:15:38,182
-The arrows did not fly in straight ballistic
+00:15:38,264 --> 00:15:38,776
+eyes;
 
 416
-00:15:38,195 --> 00:15:38,732
-arcs;
+00:15:38,964 --> 00:15:40,901
+his Perception of one hundred and ten allowed
 
 417
-00:15:38,932 --> 00:15:41,320
-they curved through the air along optimal trajectory
+00:15:40,914 --> 00:15:42,976
+him to map every acoustic frequency in the
 
 418
-00:15:41,332 --> 00:15:41,970
-vectors,
+00:15:42,989 --> 00:15:44,601
+room with absolute precision.
 
 419
-00:15:42,145 --> 00:15:44,570
-piercing through ten bats per shot and shattering
+00:15:45,484 --> 00:15:47,347
+Drawing the ghost-string to his cheek,
 
 420
-00:15:44,582 --> 00:15:45,395
-their cores.
+00:15:47,497 --> 00:15:50,197
+he loosed five phantom arrows in rapid succession,
 
 421
-00:15:46,276 --> 00:15:47,001
-SYSTEM:
+00:15:50,384 --> 00:15:52,422
+his fingers blurring faster than the human eye
 
 422
-00:15:47,151 --> 00:15:48,901
-40 GLOOM BATS ELIMINATED
+00:15:52,434 --> 00:15:53,184
+could track.
 
 423
-00:15:49,114 --> 00:15:50,951
-EXTRACTED 40  AGILITY,
+00:15:54,052 --> 00:15:56,302
+The arrows did not fly in straight ballistic
 
 424
-00:15:51,101 --> 00:15:52,739
-25  PERCEPTION.
+00:15:56,315 --> 00:15:56,852
+arcs;
 
 425
-00:15:53,620 --> 00:15:55,345
-RARE SOUL TRAIT HARVESTED:
+00:15:57,052 --> 00:15:59,440
+they curved through the air along optimal trajectory
 
 426
-00:15:55,508 --> 00:15:56,458
-PASSIVE SKILL
+00:15:59,452 --> 00:16:00,090
+vectors,
 
 427
-00:15:56,633 --> 00:15:57,195
-EAGLE EYE:
+00:16:00,265 --> 00:16:02,690
+piercing through ten bats per shot and shattering
 
 428
-00:15:57,370 --> 00:15:59,533
-3KM TELESCOPIC VISION.]
+00:16:02,702 --> 00:16:03,515
+their cores.
 
 429
-00:16:00,412 --> 00:16:02,137
-RARE SOUL TRAIT HARVESTED:
+00:16:04,396 --> 00:16:05,121
+SYSTEM:
 
 430
-00:16:02,300 --> 00:16:03,287
-PASSIVE SKILL
+00:16:05,271 --> 00:16:07,021
+40 GLOOM BATS ELIMINATED
 
 431
-00:16:03,500 --> 00:16:04,725
-SILENT TRAJECTORY:
+00:16:07,234 --> 00:16:09,071
+EXTRACTED 40  AGILITY,
 
 432
-00:16:04,912 --> 00:16:06,412
-ZERO ACOUSTIC WAKE.]
+00:16:09,221 --> 00:16:10,859
+25  PERCEPTION.
 
 433
-00:16:07,276 --> 00:16:10,289
-Caelen's pupils dilated with crystalline geometric rings
+00:16:11,740 --> 00:16:13,465
+RARE SOUL TRAIT HARVESTED:
 
 434
-00:16:10,301 --> 00:16:12,376
-as his vision expanded exponentially,
+00:16:13,628 --> 00:16:14,578
+PASSIVE SKILL
 
 435
-00:16:12,639 --> 00:16:15,289
-allowing him to see individual dust motes floating
+00:16:14,753 --> 00:16:15,315
+EAGLE EYE:
 
 436
-00:16:15,301 --> 00:16:17,764
-three kilometers away in total darkness.
+00:16:15,490 --> 00:16:17,653
+3KM TELESCOPIC VISION.]
 
 437
-00:16:18,628 --> 00:16:21,428
-Every arrow he fired now produced zero whistling
+00:16:18,532 --> 00:16:20,257
+RARE SOUL TRAIT HARVESTED:
 
 438
-00:16:21,441 --> 00:16:21,978
-noise,
+00:16:20,420 --> 00:16:21,407
+PASSIVE SKILL
 
 439
-00:16:22,128 --> 00:16:25,053
-making his shots completely undetectable until the moment
+00:16:21,620 --> 00:16:22,845
+SILENT TRAJECTORY:
 
 440
-00:16:25,066 --> 00:16:26,266
-of lethal impact.
+00:16:23,032 --> 00:16:24,532
+ZERO ACOUSTIC WAKE.]
 
 441
-00:16:27,148 --> 00:16:29,186
-Checking his updated status window,
+00:16:25,396 --> 00:16:28,409
+Caelen's pupils dilated with crystalline geometric rings
 
 442
-00:16:29,348 --> 00:16:31,786
-Caelen felt a chill of satisfaction run down
+00:16:28,421 --> 00:16:30,496
+as his vision expanded exponentially,
 
 443
-00:16:31,798 --> 00:16:32,561
-his spine.
+00:16:30,759 --> 00:16:33,409
+allowing him to see individual dust motes floating
 
 444
-00:16:33,436 --> 00:16:34,674
-STATUS OVERVIEW:
+00:16:33,421 --> 00:16:35,884
+three kilometers away in total darkness.
 
 445
-00:16:34,824 --> 00:16:36,799
-CAELEN VANCE LEVEL 12.
+00:16:36,748 --> 00:16:39,548
+Every arrow he fired now produced zero whistling
 
 446
-00:16:37,561 --> 00:16:38,249
-STRENGTH:
+00:16:39,561 --> 00:16:40,098
+noise,
 
 447
-00:16:38,449 --> 00:16:39,961
-145.
+00:16:40,248 --> 00:16:43,173
+making his shots completely undetectable until the moment
 
 448
-00:16:40,724 --> 00:16:41,449
-AGILITY:
+00:16:43,186 --> 00:16:44,386
+of lethal impact.
 
 449
-00:16:41,636 --> 00:16:43,111
-178.
+00:16:45,268 --> 00:16:47,306
+Checking his updated status window,
 
 450
-00:16:43,874 --> 00:16:44,811
-CONSTITUTION:
+00:16:47,468 --> 00:16:49,906
+Caelen felt a chill of satisfaction run down
 
 451
-00:16:45,011 --> 00:16:46,474
-135.
+00:16:49,918 --> 00:16:50,681
+his spine.
 
 452
-00:16:47,236 --> 00:16:47,986
-PERCEPTION:
+00:16:51,556 --> 00:16:52,794
+STATUS OVERVIEW:
 
 453
-00:16:48,186 --> 00:16:49,299
-210.
+00:16:52,944 --> 00:16:54,919
+CAELEN VANCE LEVEL 12.
 
 454
-00:16:50,164 --> 00:16:52,739
-In less than seventy-two hours of quiet refuse
+00:16:55,681 --> 00:16:56,369
+STRENGTH:
 
 455
-00:16:52,752 --> 00:16:53,352
-grinding,
+00:16:56,569 --> 00:16:58,081
+145.
 
 456
-00:16:53,514 --> 00:16:56,664
-his total combat stat pool had surpassed two-hundred-and-forty
+00:16:58,844 --> 00:16:59,569
+AGILITY:
 
 457
-00:16:56,677 --> 00:16:57,327
-points.
+00:16:59,756 --> 00:17:01,231
+178.
 
 458
-00:16:58,204 --> 00:17:01,542
-For comparison, S-Rank prodigy Ignis Sterling currently
+00:17:01,994 --> 00:17:02,931
+CONSTITUTION:
 
 459
-00:17:01,554 --> 00:17:04,842
-possessed around one-hundred-and-thirty total stats after receiving
+00:17:03,131 --> 00:17:04,594
+135.
 
 460
-00:17:04,854 --> 00:17:07,067
-millions in guild enhancement elixirs.
+00:17:05,356 --> 00:17:06,106
+PERCEPTION:
 
 461
-00:17:07,948 --> 00:17:10,448
-An alarm chime suddenly buzzed from the municipal
+00:17:06,306 --> 00:17:07,419
+210.
 
 462
-00:17:10,461 --> 00:17:12,198
-radio strapped to Caelen's belt,
+00:17:08,284 --> 00:17:10,859
+In less than seventy-two hours of quiet refuse
 
 463
-00:17:12,398 --> 00:17:15,661
-broadcasting an urgent announcement from Instructor Boris Vane.
+00:17:10,872 --> 00:17:11,472
+grinding,
 
 464
-00:17:16,540 --> 00:17:19,403
-All graduating seniors must report immediately to the
+00:17:11,634 --> 00:17:14,784
+his total combat stat pool had surpassed two-hundred-and-forty
 
 465
-00:17:19,415 --> 00:17:22,290
-Sector Seven Subterranean Trial Grounds for the Official
+00:17:14,797 --> 00:17:15,447
+points.
 
 466
-00:17:22,303 --> 00:17:23,828
-Academy Ranking Exam."
+00:17:16,324 --> 00:17:19,662
+For comparison, S-Rank prodigy Ignis Sterling currently
 
 467
-00:17:24,700 --> 00:17:27,563
-Caelen dismissed his glowing ghost-bow into his dimensional
+00:17:19,674 --> 00:17:22,962
+possessed around one-hundred-and-thirty total stats after receiving
 
 468
-00:17:27,575 --> 00:17:28,288
-inventory,
+00:17:22,974 --> 00:17:25,187
+millions in guild enhancement elixirs.
 
 469
-00:17:28,488 --> 00:17:30,713
-wiped the dust from his old school uniform,
+00:17:26,068 --> 00:17:28,568
+An alarm chime suddenly buzzed from the municipal
 
 470
-00:17:30,850 --> 00:17:32,788
-and headed toward the surface elevator.
+00:17:28,581 --> 00:17:30,318
+radio strapped to Caelen's belt,
 
 471
-00:17:33,652 --> 00:17:36,090
-The Sector Seven Trial Grounds was a massive
+00:17:30,518 --> 00:17:33,781
+broadcasting an urgent announcement from Instructor Boris Vane.
 
 472
-00:17:36,102 --> 00:17:39,627
-multi-level dungeon arena enclosed by reinforced forcefield
+00:17:34,660 --> 00:17:37,523
+All graduating seniors must report immediately to the
 
 473
-00:17:39,640 --> 00:17:42,490
-barriers and monitored by dozens of media broadcast
+00:17:37,535 --> 00:17:40,410
+Sector Seven Subterranean Trial Grounds for the Official
 
 474
-00:17:42,502 --> 00:17:43,202
-cameras.
+00:17:40,423 --> 00:17:41,948
+Academy Ranking Exam."
 
 475
-00:17:44,068 --> 00:17:46,106
-Hundreds of students stood in formation on the
+00:17:42,820 --> 00:17:45,683
+Caelen dismissed his glowing ghost-bow into his dimensional
 
 476
-00:17:46,118 --> 00:17:47,581
-manicured staging lawn,
+00:17:45,695 --> 00:17:46,408
+inventory,
 
 477
-00:17:47,806 --> 00:17:50,406
-proudly displaying their gleaming enchanted weapons,
+00:17:46,608 --> 00:17:48,833
+wiped the dust from his old school uniform,
 
 478
-00:17:50,593 --> 00:17:53,518
-dragon-hide armor, and high-tier guild crests.
+00:17:48,970 --> 00:17:50,908
+and headed toward the surface elevator.
 
 479
-00:17:54,388 --> 00:17:56,276
-At the center of the crowd stood Ignis
+00:17:51,772 --> 00:17:54,210
+The Sector Seven Trial Grounds was a massive
 
 480
-00:17:56,288 --> 00:17:56,863
-Sterling,
+00:17:54,222 --> 00:17:57,747
+multi-level dungeon arena enclosed by reinforced forcefield
 
 481
-00:17:57,026 --> 00:17:59,551
-surrounded by an admiring circle of sycophants as
+00:17:57,760 --> 00:18:00,610
+barriers and monitored by dozens of media broadcast
 
 482
-00:17:59,563 --> 00:18:02,426
-his crimson flame aura danced across his shoulders.
+00:18:00,622 --> 00:18:01,322
+cameras.
 
 483
-00:18:03,292 --> 00:18:05,767
-When Caelen walked through the security gates carrying
+00:18:02,188 --> 00:18:04,226
+Hundreds of students stood in formation on the
 
 484
-00:18:05,780 --> 00:18:08,092
-an ordinary wooden replacement bow and wearing his
+00:18:04,238 --> 00:18:05,701
+manicured staging lawn,
 
 485
-00:18:08,105 --> 00:18:09,305
-dusty school blazer,
+00:18:05,926 --> 00:18:08,526
+proudly displaying their gleaming enchanted weapons,
 
 486
-00:18:09,430 --> 00:18:11,667
-the surrounding students chuckled derisively.
+00:18:08,713 --> 00:18:11,638
+dragon-hide armor, and high-tier guild crests.
 
 487
-00:18:12,532 --> 00:18:15,020
-Look who survived the sewer pits," a heavy
+00:18:12,508 --> 00:18:14,396
+At the center of the crowd stood Ignis
 
 488
-00:18:15,032 --> 00:18:16,120
-warrior laughed.
+00:18:14,408 --> 00:18:14,983
+Sterling,
 
 489
-00:18:16,882 --> 00:18:18,695
-Did you find any nice mushrooms in the
+00:18:15,146 --> 00:18:17,671
+surrounded by an admiring circle of sycophants as
 
 490
-00:18:18,707 --> 00:18:19,882
-garbage, archer?"
+00:18:17,683 --> 00:18:20,546
+his crimson flame aura danced across his shoulders.
 
 491
-00:18:20,764 --> 00:18:23,314
-The mushrooms were decent," Caelen replied with a
+00:18:21,412 --> 00:18:23,887
+When Caelen walked through the security gates carrying
 
 492
-00:18:23,327 --> 00:18:24,902
-completely straight face.
+00:18:23,900 --> 00:18:26,212
+an ordinary wooden replacement bow and wearing his
 
 493
-00:18:25,664 --> 00:18:26,677
-A bit salty,
+00:18:26,225 --> 00:18:27,425
+dusty school blazer,
 
 494
-00:18:26,789 --> 00:18:28,139
-but high in minerals."
+00:18:27,550 --> 00:18:29,787
+the surrounding students chuckled derisively.
 
 495
-00:18:29,020 --> 00:18:30,820
-The warrior blinked in confusion,
+00:18:30,652 --> 00:18:33,140
+Look who survived the sewer pits," a heavy
 
 496
-00:18:30,970 --> 00:18:33,408
-expecting Caelen to cower in shame rather than
+00:18:33,152 --> 00:18:34,240
+warrior laughed.
 
 497
-00:18:33,420 --> 00:18:36,383
-give a deadpan culinary review of dungeon refuse.
+00:18:35,002 --> 00:18:36,815
+Did you find any nice mushrooms in the
 
 498
-00:18:37,252 --> 00:18:39,540
-Ignis walked over with his arms crossed,
+00:18:36,827 --> 00:18:38,002
+garbage, archer?"
 
 499
-00:18:39,677 --> 00:18:41,965
-looking down at Caelen's cheap wooden bow with
+00:18:38,884 --> 00:18:41,434
+The mushrooms were decent," Caelen replied with a
 
 500
-00:18:41,977 --> 00:18:42,927
-utter contempt.
+00:18:41,447 --> 00:18:43,022
+completely straight face.
 
 501
-00:18:43,804 --> 00:18:45,554
-If you get scared during the trial,
+00:18:43,784 --> 00:18:44,797
+A bit salty,
 
 502
-00:18:45,679 --> 00:18:48,379
-Vance, you can hide behind my squad," Ignis
+00:18:44,909 --> 00:18:46,259
+but high in minerals."
 
 503
-00:18:48,392 --> 00:18:49,567
-mocked with a smirk.
+00:18:47,140 --> 00:18:48,940
+The warrior blinked in confusion,
 
 504
-00:18:50,329 --> 00:18:52,142
-I will let you collect the monster pelts
+00:18:49,090 --> 00:18:51,528
+expecting Caelen to cower in shame rather than
 
 505
-00:18:52,154 --> 00:18:53,754
-after I burn them to ash."
+00:18:51,540 --> 00:18:54,503
+give a deadpan culinary review of dungeon refuse.
 
 506
-00:18:54,628 --> 00:18:56,078
-I appreciate the offer,
+00:18:55,372 --> 00:18:57,660
+Ignis walked over with his arms crossed,
 
 507
-00:18:56,241 --> 00:18:58,303
-Sterling," Caelen said calmly.
+00:18:57,797 --> 00:19:00,085
+looking down at Caelen's cheap wooden bow with
 
 508
-00:18:59,066 --> 00:19:00,641
-Make sure you do not set your own
+00:19:00,097 --> 00:19:01,047
+utter contempt.
 
 509
-00:19:00,653 --> 00:19:03,178
-cape on fire again like in sophomore year."
+00:19:01,924 --> 00:19:03,674
+If you get scared during the trial,
 
 510
-00:19:04,060 --> 00:19:06,810
-Several students stifled a laugh as Ignis's face
+00:19:03,799 --> 00:19:06,499
+Vance, you can hide behind my squad," Ignis
 
 511
-00:19:06,823 --> 00:19:08,335
-turned beet-red with rage,
+00:19:06,512 --> 00:19:07,687
+mocked with a smirk.
 
 512
-00:19:08,498 --> 00:19:10,848
-his crimson aura flaring in irritation.
+00:19:08,449 --> 00:19:10,262
+I will let you collect the monster pelts
 
 513
-00:19:11,716 --> 00:19:14,554
-You insolent F-rank trash," Ignis hissed under his
+00:19:10,274 --> 00:19:11,874
+after I burn them to ash."
 
 514
-00:19:14,566 --> 00:19:15,116
-breath.
+00:19:12,748 --> 00:19:14,198
+I appreciate the offer,
 
 515
-00:19:15,879 --> 00:19:17,379
-Let us see if you can still make
+00:19:14,361 --> 00:19:16,423
+Sterling," Caelen said calmly.
 
 516
-00:19:17,391 --> 00:19:20,066
-jokes when the trial ranking scores are posted."
+00:19:17,186 --> 00:19:18,761
+Make sure you do not set your own
 
 517
-00:19:20,932 --> 00:19:23,595
-Instructor Boris Vane stepped onto the stage,
+00:19:18,773 --> 00:19:21,298
+cape on fire again like in sophomore year."
 
 518
-00:19:23,757 --> 00:19:25,982
-blowing a loud silver whistle to silence the
+00:19:22,180 --> 00:19:24,930
+Several students stifled a laugh as Ignis's face
 
 519
-00:19:25,995 --> 00:19:26,620
-crowd.
+00:19:24,943 --> 00:19:26,455
+turned beet-red with rage,
 
 520
-00:19:27,484 --> 00:19:30,447
-The Ranking Trial consists of clearing three simulated
+00:19:26,618 --> 00:19:28,968
+his crimson aura flaring in irritation.
 
 521
-00:19:30,459 --> 00:19:33,097
-dungeon zones," Boris announced loudly.
+00:19:29,836 --> 00:19:32,674
+You insolent F-rank trash," Ignis hissed under his
 
 522
-00:19:33,859 --> 00:19:36,434
-Your scores will determine your official Hunter Ministry
+00:19:32,686 --> 00:19:33,236
+breath.
 
 523
-00:19:36,447 --> 00:19:38,809
-license tier and guild draft position."
+00:19:33,999 --> 00:19:35,499
+Let us see if you can still make
 
 524
-00:19:39,676 --> 00:19:42,401
-Up in the VIP observation lounge overlooking the
+00:19:35,511 --> 00:19:38,186
+jokes when the trial ranking scores are posted."
 
 525
-00:19:42,414 --> 00:19:42,964
-arena,
+00:19:39,052 --> 00:19:41,715
+Instructor Boris Vane stepped onto the stage,
 
 526
-00:19:43,201 --> 00:19:45,676
-High Director Keith Holloway sat behind a glass
+00:19:41,877 --> 00:19:44,102
+blowing a loud silver whistle to silence the
 
 527
-00:19:45,689 --> 00:19:46,364
-partition,
+00:19:44,115 --> 00:19:44,740
+crowd.
 
 528
-00:19:46,576 --> 00:19:50,014
-flanked by senior military evaluators and guild directors.
+00:19:45,604 --> 00:19:48,567
+The Ranking Trial consists of clearing three simulated
 
 529
-00:19:50,884 --> 00:19:53,997
-Director Holloway watched the live telemetry consoles with
+00:19:48,579 --> 00:19:51,217
+dungeon zones," Boris announced loudly.
 
 530
-00:19:54,009 --> 00:19:54,484
-calm,
+00:19:51,979 --> 00:19:54,554
+Your scores will determine your official Hunter Ministry
 
 531
-00:19:54,634 --> 00:19:55,459
-sharp eyes,
+00:19:54,567 --> 00:19:56,929
+license tier and guild draft position."
 
 532
-00:19:55,622 --> 00:19:58,909
-scanning the bio-signatures of the incoming student cohorts.
+00:19:57,796 --> 00:20:00,521
+Up in the VIP observation lounge overlooking the
 
 533
-00:19:59,788 --> 00:20:03,138
-Beside him, an evaluator pointed at Ignis's profile:
-
-534
-00:20:03,338 --> 00:20:05,326
-Young Lord Sterling is favored to break the
-
-535
-00:20:05,338 --> 00:20:08,213
-school record today with his S-rank solar output."
-
-536
-00:20:09,076 --> 00:20:10,514
-Holloway nodded slowly,
-
-537
-00:20:10,639 --> 00:20:12,701
-but his golden eyes drifted toward the lone
-
-538
-00:20:12,714 --> 00:20:14,464
-boy in the back row who stood with
-
-539
-00:20:14,476 --> 00:20:15,851
-an unusually relaxed,
-
-540
-00:20:15,976 --> 00:20:17,101
-balanced posture.
-
-541
-00:20:17,980 --> 00:20:19,943
-Who is that student with the wooden bow?"
-
-542
-00:20:20,705 --> 00:20:23,843
-Holloway asked, noticing that the boy's breathing cadence
-
-543
-00:20:23,855 --> 00:20:26,305
-remained steady at twelve breaths per minute despite
-
-544
-00:20:26,318 --> 00:20:27,730
-the high-pressure environment.
-
-545
-00:20:28,612 --> 00:20:31,512
-Just an F-rank utility archer from District Nine,
-
-546
-00:20:31,675 --> 00:20:32,300
-Director,"
-
-547
-00:20:32,462 --> 00:20:34,212
-an aide replied dismissively.
-
-548
-00:20:34,975 --> 00:20:36,675
-Assigned to garbage cleanup.
-
-549
-00:20:37,437 --> 00:20:38,775
-Not worth monitoring."
-
-550
-00:20:39,652 --> 00:20:40,927
-Holloway said nothing,
-
-551
-00:20:41,115 --> 00:20:42,902
-but he tapped the sensor array to keep
-
-552
-00:20:42,915 --> 00:20:46,590
-a secondary telemetry feed pinned on Caelen's bio-signature
-
-553
-00:20:47,452 --> 00:20:49,590
-Trial candidates, enter the Gate!"
-
-554
-00:20:50,352 --> 00:20:53,040
-Boris roared as the massive steel blast doors
-
-555
-00:20:53,052 --> 00:20:55,227
-opened into the simulated dungeon zone.
-
-556
-00:20:56,092 --> 00:20:59,230
-Students rushed forward in coordinated combat squads,
-
-557
-00:20:59,405 --> 00:21:01,917
-shouting battle cries as they drew their enchanted
-
-558
-00:21:01,930 --> 00:21:04,142
-swords and channeled elemental spells.
-
-559
-00:21:05,020 --> 00:21:07,070
-Caelen walked into the portal at a leisurely
-
-560
-00:21:07,083 --> 00:21:07,645
-stroll,
-
-561
-00:21:07,808 --> 00:21:10,333
-deliberately deciding to throttle his output to five
-
-562
-00:21:10,345 --> 00:21:13,370
-percent to avoid drawing premature Ministry attention.
-
-563
-00:21:14,236 --> 00:21:16,374
-The first trial zone was a dense rocky
-
-564
-00:21:16,386 --> 00:21:19,699
-canyon populated by Level 10 Armored Hobgoblins wielding
-
-565
-00:21:19,711 --> 00:21:21,611
-heavy clubs and iron shields.
-
-566
-00:21:22,492 --> 00:21:24,642
-Ignis Sterling spearheaded the assault,
-
-567
-00:21:24,767 --> 00:21:27,517
-unleashing massive torrents of solar flame that roasted
-
-568
-00:21:27,530 --> 00:21:29,180
-five hobgoblins at once,
-
-569
-00:21:29,380 --> 00:21:31,417
-earning cheers from the viewing monitors.
-
-570
-00:21:32,284 --> 00:21:33,622
-Further down the canyon,
-
-571
-00:21:33,747 --> 00:21:36,334
-Caelen took position on a low rock outcropping,
-
-572
-00:21:36,509 --> 00:21:38,772
-casually pulling back his cheap wooden bow with
-
-573
-00:21:38,784 --> 00:21:40,947
-barely five percent of his true Strength.
-
-574
-00:21:41,812 --> 00:21:44,225
-He deliberately avoided flashy headshots,
-
-575
-00:21:44,375 --> 00:21:46,762
-shooting simple steel arrows into the knees and
-
-576
-00:21:46,775 --> 00:21:49,600
-joints of advancing hobgoblins to allow other students
-
-577
-00:21:49,612 --> 00:21:50,787
-to finish them off.
-
-578
-00:21:51,652 --> 00:21:52,752
-SYSTEM NOTICE:
-
-579
-00:21:52,915 --> 00:21:54,852
-APPARENT TRIAL SCORE CALCULATED
-
-580
-00:21:55,027 --> 00:21:55,877
-GRADE C
-
-581
-00:21:56,027 --> 00:21:57,265
-PASSING BARE MINIMUM).
-
-582
-00:21:58,132 --> 00:22:00,457
-Nearby students laughed as they passed him:
-
-583
-00:22:00,607 --> 00:22:01,307
-Look at him,
-
-584
-00:22:01,495 --> 00:22:03,932
-shooting one arrow every thirty seconds!
-
-585
-00:22:04,695 --> 00:22:06,920
-He will barely scrape a passing mark!"
-
-586
-00:22:07,780 --> 00:22:09,555
-Caelen nodded pleasantly at them:
-
-587
-00:22:09,693 --> 00:22:11,043
-Pacing is important.
-
-588
-00:22:11,805 --> 00:22:13,955
-Conserves stamina for retirement."
-
-589
-00:22:14,836 --> 00:22:16,874
-While the students saw only a lazy,
-
-590
-00:22:17,024 --> 00:22:17,924
-low-tier archer,
-
-591
-00:22:18,074 --> 00:22:19,899
-the true reality was playing out on the
-
-592
-00:22:19,911 --> 00:22:20,774
-micro-level
-
-593
-00:22:21,652 --> 00:22:24,340
-Every single arrow Caelen fired had a tiny,
-
-594
-00:22:24,527 --> 00:22:26,990
-invisible thread of ethereal mana wrapped around the
-
-595
-00:22:27,002 --> 00:22:27,415
-tip,
-
-596
-00:22:27,615 --> 00:22:30,690
-silently siphoning stats from every beast he grazed.
-
-597
-00:22:31,564 --> 00:22:32,289
-SYSTEM:
-
-598
-00:22:32,427 --> 00:22:35,527
-HOBGOBLIN GRAZED EXTRACTED 1  STRENGTH,
-
-599
-00:22:35,702 --> 00:22:36,802
-1  AGILITY
-
-600
-00:22:37,014 --> 00:22:37,677
-PERMANENT).
-
-601
-00:22:38,548 --> 00:22:39,273
-SYSTEM:
-
-602
-00:22:39,423 --> 00:22:41,011
-HOBGOBLIN SHIELD SPLINTERED
-
-603
-00:22:41,198 --> 00:22:43,373
-EXTRACTED 1  CONSTITUTION.
-
-604
-00:22:44,236 --> 00:22:46,474
-While Ignis was burning through seventy percent of
-
-605
-00:22:46,486 --> 00:22:49,124
-his mana pool to earn flashy trial points,
-
-606
-00:22:49,299 --> 00:22:52,424
-Caelen was casually accumulating thirty permanent stat points
-
-607
-00:22:52,436 --> 00:22:53,674
-with zero exertion.
-
-608
-00:22:54,556 --> 00:22:56,844
-Up in the VIP observation lounge,
-
-609
-00:22:57,006 --> 00:22:59,319
-High Director Holloway frowned as he examined the
-
-610
-00:22:59,331 --> 00:23:02,456
-acoustic vibration graphs on his holographic console.
-
-611
-00:23:03,340 --> 00:23:06,240
-Why did the seismic sensors register a three-hundred-joule
-
-612
-00:23:06,253 --> 00:23:08,278
-micro-kinetic pulse in Sector B?"
-
-613
-00:23:09,040 --> 00:23:11,803
-Holloway asked, pointing at a spike in Caelen's
-
-614
-00:23:11,815 --> 00:23:12,528
-quadrant.
-
-615
-00:23:13,396 --> 00:23:16,146
-It must be residual shockwaves from Lord Sterling's
-
-616
-00:23:16,159 --> 00:23:19,346
-solar explosions, Director," the technician answered
-
-617
-00:23:19,359 --> 00:23:20,309
-without checking.
-
-618
-00:23:21,172 --> 00:23:23,110
-Holloway zoomed in on the telemetry:
-
-619
-00:23:23,322 --> 00:23:25,372
-the pulse had originated from a wooden arrow
-
-620
-00:23:25,385 --> 00:23:27,447
-that had cleanly pierced two feet of solid
-
-621
-00:23:27,460 --> 00:23:29,747
-granite after grazing a hobgoblin's armor.
-
-622
-00:23:30,628 --> 00:23:33,091
-No standard ashwood bow generates that kind of
-
-623
-00:23:33,103 --> 00:23:34,341
-kinetic penetration,"
-
-624
-00:23:34,528 --> 00:23:36,016
-Holloway thought to himself,
-
-625
-00:23:36,153 --> 00:23:38,903
-his golden eyes narrowing in deep curiosity.
-
-626
-00:23:39,772 --> 00:23:40,872
-In the trial zone,
-
-627
-00:23:40,997 --> 00:23:43,547
-Lyra Mercer sprinted past Caelen's position,
-
-628
-00:23:43,722 --> 00:23:45,972
-pausing for a moment to observe the hobgoblin
-
-629
-00:23:45,985 --> 00:23:47,597
-corpses pinned to the ground.
-
-630
-00:23:48,460 --> 00:23:50,110
-Using her acoustic monocle,
-
-631
-00:23:50,260 --> 00:23:52,648
-Lyra noticed that the monster's muscle fibers had
-
-632
-00:23:52,660 --> 00:23:54,510
-suffered total cellular collapse,
-
-633
-00:23:54,735 --> 00:23:56,848
-as if their physical vitality had been drained
-
-634
-00:23:56,860 --> 00:23:58,010
-from the inside out.
-
-635
-00:23:58,876 --> 00:24:00,201
-She glanced at Caelen,
-
-636
-00:24:00,326 --> 00:24:02,601
-who was casually eating a field energy bar
-
-637
-00:24:02,614 --> 00:24:04,089
-while notching another arrow.
-
-638
-00:24:04,972 --> 00:24:05,972
-Did you do this?"
-
-639
-00:24:06,735 --> 00:24:08,947
-Lyra asked with genuine suspicion.
-
-640
-00:24:09,820 --> 00:24:12,945
-The hobgoblin had poor cardiovascular health," Caelen
-
-641
-00:24:12,958 --> 00:24:14,145
-replied deadpan.
-
-642
-00:24:14,908 --> 00:24:16,733
-Too much red meat in the dungeon."
-
-643
-00:24:17,596 --> 00:24:18,921
-Lyra stared at him,
-
-644
-00:24:19,034 --> 00:24:21,134
-half-exasperated and half-intrigued
-
-645
-00:24:21,309 --> 00:24:23,384
-before shaking her head and sprinting toward the
-
-646
-00:24:23,396 --> 00:24:24,396
-next checkpoint.
-
-647
-00:24:25,276 --> 00:24:27,789
-Little did anyone know that Instructor Boris Vane
-
-648
-00:24:27,801 --> 00:24:29,551
-was watching from the control tower,
-
-649
-00:24:29,739 --> 00:24:32,301
-his hand hovering over a hidden override console
-
-650
-00:24:32,314 --> 00:24:33,189
-on his terminal.
-
-651
-00:24:34,060 --> 00:24:36,848
-Instructor Boris Vane had received a secret directive
-
-652
-00:24:36,860 --> 00:24:38,198
-from the Sterling Syndicate:
-
-653
-00:24:38,410 --> 00:24:41,573
-ensure Caelen Vance suffers a fatal training accident"
-
-654
-00:24:41,598 --> 00:24:44,373
-so he cannot contest Ignis's top scholarship.
-
-655
-00:24:45,244 --> 00:24:47,869
-Typing a covert override code into the terminal,
-
-656
-00:24:48,044 --> 00:24:49,494
-Boris released a caged,
-
-657
-00:24:49,632 --> 00:24:52,682
-unmonitored Level 25 Blood-Horned Minotaur directly
-
-658
-00:24:52,694 --> 00:24:54,969
-into Caelen's isolated canyon path.
-
-659
-00:24:55,852 --> 00:24:58,627
-The massive ten-foot-tall beast burst through a concealed
-
-660
-00:24:58,640 --> 00:24:59,365
-steel gate,
-
-661
-00:24:59,602 --> 00:25:02,352
-roaring with savage bloodlust as its razor-sharp horns
-
-662
-00:25:02,365 --> 00:25:03,990
-charged straight toward Caelen.
-
-663
-00:25:04,852 --> 00:25:05,652
-THREAT ALERT:
-
-664
-00:25:05,840 --> 00:25:07,790
-LEVEL 25 ELITE MUTANT
-
-665
-00:25:08,002 --> 00:25:09,327
-BLOOD-HORNED MINOTAUR.
-
-666
-00:25:10,204 --> 00:25:11,629
-ESTIMATED THREAT LEVEL:
-
-667
-00:25:11,779 --> 00:25:12,842
-GRADE-A HAZARD.
-
-668
-00:25:13,604 --> 00:25:15,817
-MANDATORY EVACUATION PROTOCOL.
-
-669
-00:25:16,684 --> 00:25:18,197
-Up in the VIP booth,
-
-670
-00:25:18,347 --> 00:25:21,009
-sirens began to blare as technicians shouted:
-
-671
-00:25:21,197 --> 00:25:21,784
-Warning!
-
-672
-00:25:22,547 --> 00:25:26,109
-Unauthorized elite containment breach in Canyon Sector Four!"
-
-673
-00:25:26,980 --> 00:25:29,005
-Boris feigned panic on the intercom:
-
-674
-00:25:29,168 --> 00:25:30,580
-The forcefield glitched!
-
-675
-00:25:31,343 --> 00:25:33,118
-Candidate Vance, hold on,
-
-676
-00:25:33,268 --> 00:25:35,830
-our rescue team will arrive in five minutes!"
-
-677
-00:25:36,700 --> 00:25:38,800
-Boris smiled wickedly to himself,
-
-678
-00:25:38,963 --> 00:25:41,188
-knowing that an F-rank archer would be trampled
-
-679
-00:25:41,200 --> 00:25:43,375
-into paste in less than five seconds.
-
-680
-00:25:44,236 --> 00:25:45,136
-In the canyon,
-
-681
-00:25:45,249 --> 00:25:47,749
-Caelen watched the roaring minotaur charge at forty
-
-682
-00:25:47,761 --> 00:25:48,724
-miles per hour,
-
-683
-00:25:48,936 --> 00:25:51,249
-its massive iron greataxe raised to cleave him
-
-684
-00:25:51,261 --> 00:25:51,899
-in two.
-
-685
-00:25:52,780 --> 00:25:54,618
-Five minutes for a rescue team?"
-
-686
-00:25:55,380 --> 00:25:56,255
-Caelen muttered,
-
-687
-00:25:56,405 --> 00:25:57,480
-shaking his head.
-
-688
-00:25:58,243 --> 00:26:00,505
-The municipal response time in this city is
-
-689
-00:26:00,518 --> 00:26:01,618
-truly terrible."
-
-690
-00:26:02,500 --> 00:26:03,613
-Instead of fleeing,
-
-691
-00:26:03,750 --> 00:26:06,525
-Caelen casually tossed his cheap wooden bow aside,
-
-692
-00:26:06,763 --> 00:26:08,738
-reaching his hand into the air as glowing
-
-693
-00:26:08,750 --> 00:26:11,588
-cyan mana threads exploded from his fingertips.
-
-694
-00:26:12,460 --> 00:26:14,435
-SOVEREIGN ARMAMENT MANIFESTATION:
-
-695
-00:26:14,623 --> 00:26:16,385
-VOID-STRUNG HEAVY RECURVE.
-
-696
-00:26:17,260 --> 00:26:20,248
-The colossal titanium bow materialized in his grip,
-
-697
-00:26:20,460 --> 00:26:23,335
-its ethereal cyan string illuminating the dark canyon
-
-698
-00:26:23,348 --> 00:26:25,260
-walls with radiant runic energy.
-
-699
-00:26:26,140 --> 00:26:28,478
-Caelen notched a translucent phantom arrow,
-
-700
-00:26:28,640 --> 00:26:31,140
-aiming directly at the charging beast's chest.
-
-701
-00:26:32,020 --> 00:26:33,833
-SOVEREIGN SIPHON LAYER 2:
-
-702
-00:26:34,020 --> 00:26:36,145
-TACTICAL DEBUFF DRAIN ACTIVATED.
-
-703
-00:26:37,012 --> 00:26:38,325
-He released the string.
-
-704
-00:26:39,087 --> 00:26:41,862
-The phantom arrow flew with zero acoustic wake,
-
-705
-00:26:42,012 --> 00:26:44,737
-passing straight through the minotaur's heavy iron armor
-
-706
-00:26:44,750 --> 00:26:46,287
-and embedding into its sternum.
-
-707
-00:26:47,164 --> 00:26:48,302
-DRAIN SUCCESSFUL:
-
-708
-00:26:48,489 --> 00:26:50,877
-EXTRACTED 10% PRIMARY ATTRIBUTE
-
-709
-00:26:51,039 --> 00:26:53,164
-MINOTAUR STRENGTH 30),
-
-710
-00:26:53,327 --> 00:26:55,502
-TRANSFERRED TO CAELEN 30).
-
-711
-00:26:56,380 --> 00:26:58,893
-The charging beast instantly stumbled as its leg
-
-712
-00:26:58,905 --> 00:26:59,818
-muscles withered,
-
-713
-00:27:00,030 --> 00:27:03,030
-its crushing momentum collapsing into a pathetic crawl.
-
-714
-00:27:03,892 --> 00:27:07,992
-Meanwhile, Caelen's physical Strength surged to two-hundred-and-ten points,
-
-715
-00:27:08,155 --> 00:27:10,655
-his body radiating a palpable pressure that cracked
-
-716
-00:27:10,667 --> 00:27:12,342
-the bedrock beneath his boots.
-
-717
-00:27:13,204 --> 00:27:14,929
-Drawing a second phantom arrow,
-
-718
-00:27:15,067 --> 00:27:17,129
-Caelen pulled the ghost-string all the way to
-
-719
-00:27:17,142 --> 00:27:17,717
-his ear,
-
-720
-00:27:17,867 --> 00:27:20,454
-unleashing one hundred percent of his siphoned power.
-
-721
-00:27:21,316 --> 00:27:23,116
-HYPERSONIC KINETIC RELEASE:
-
-722
-00:27:23,216 --> 00:27:24,641
-MACH 3 TRAJECTORY.
-
-723
-00:27:25,516 --> 00:27:27,404
-The arrow tore through the canyon with the
-
-724
-00:27:27,416 --> 00:27:29,454
-sound of a tearing dimensional fabric,
-
-725
-00:27:29,604 --> 00:27:32,266
-obliterating the minotaur's upper torso in a blinding
-
-726
-00:27:32,279 --> 00:27:33,916
-explosion of kinetic light.
-
-727
-00:27:34,780 --> 00:27:37,043
-The massive beast collapsed into a shower of
-
-728
-00:27:37,055 --> 00:27:39,743
-dissipated mana particles before its body could even
-
-729
-00:27:39,755 --> 00:27:40,680
-hit the ground.
-
-730
-00:27:41,548 --> 00:27:42,261
-SYSTEM:
-
-731
-00:27:42,423 --> 00:27:44,911
-LEVEL 25 ELITE MINOTAUR ELIMINATED
-
-732
-00:27:45,123 --> 00:27:47,136
-EXTRACTED 15  STRENGTH,
-
-733
-00:27:47,311 --> 00:27:48,873
-12  CONSTITUTION,
-
-734
-00:27:49,036 --> 00:27:50,286
-10  PERCEPTION
-
-735
-00:27:50,461 --> 00:27:51,098
-PERMANENT).
-
-736
-00:27:51,964 --> 00:27:54,027
-Before Caelen could dismiss his bow,
-
-737
-00:27:54,202 --> 00:27:56,564
-the sky above the trial arena fractured into
-
-738
-00:27:56,577 --> 00:27:58,289
-jagged crimson spiderwebs,
-
-739
-00:27:58,514 --> 00:27:59,927
-radiating an overwhelming,
-
-740
-00:28:00,102 --> 00:28:01,402
-suffocating pressure.
-
-741
-00:28:02,284 --> 00:28:05,459
-The simulated trial atmosphere dissolved as the atmospheric
-
-742
-00:28:05,472 --> 00:28:08,122
-mana density surged by ten thousand percent,
-
-743
-00:28:08,297 --> 00:28:11,209
-plunging the entire canyon into blood-red darkness.
-
-744
-00:28:12,076 --> 00:28:13,539
-EMERGENCY BROADCAST:
-
-745
-00:28:13,701 --> 00:28:15,426
-RED GATE MUTATION DETECTED.
-
-746
-00:28:16,300 --> 00:28:17,863
-DIMENSIONAL LOCK ENGAGED:
-
-747
-00:28:17,988 --> 00:28:21,350
-ZERO RETREAT POSSIBLE UNTIL DUNGEON BOSS ELIMINATION.
-
-748
-00:28:22,228 --> 00:28:24,378
-In the VIP observation lounge,
-
-749
-00:28:24,503 --> 00:28:27,241
-all electrical consoles short-circuited in a shower of
-
-750
-00:28:27,253 --> 00:28:29,728
-sparks as Director Holloway leapt to his feet,
-
-751
-00:28:29,903 --> 00:28:31,578
-drawing his military sword.
-
-752
-00:28:32,452 --> 00:28:35,077
-A Red Gate mutation inside an academy trial
-
-753
-00:28:35,090 --> 00:28:35,677
-arena?"
-
-754
-00:28:36,440 --> 00:28:37,565
-Holloway roared.
-
-755
-00:28:38,327 --> 00:28:41,277
-Get the emergency strike force down there immediately!"
-
-756
-00:28:42,148 --> 00:28:43,961
-We cannot penetrate the barrier,
-
-757
-00:28:44,036 --> 00:28:44,673
-Director!"
-
-758
-00:28:44,823 --> 00:28:46,961
-the chief technician screamed in terror.
-
-759
-00:28:47,723 --> 00:28:49,973
-The dimensional density is off the charts
-
-760
-00:28:50,198 --> 00:28:52,136
-it is an S-rank Abyssal Calamity!"
-
-761
-00:28:52,996 --> 00:28:54,396
-Down in the central arena,
-
-762
-00:28:54,496 --> 00:28:57,459
-over three hundred graduating students shrieked in absolute
-
-763
-00:28:57,471 --> 00:28:59,984
-panic as the ground split open into volcanic
-
-764
-00:28:59,996 --> 00:29:00,684
-fissures.
-
-765
-00:29:01,564 --> 00:29:03,477
-From the center of the molten abyss rose
-
-766
-00:29:03,489 --> 00:29:05,689
-an eighty-foot-tall Obsidian Colossus,
-
-767
-00:29:05,889 --> 00:29:08,889
-its four armored arms holding colossal jagged greatswords
-
-768
-00:29:08,902 --> 00:29:10,427
-that dripped with black magma.
-
-769
-00:29:11,308 --> 00:29:12,433
-CALAMITY BOSS:
-
-770
-00:29:12,583 --> 00:29:15,108
-LEVEL 60 ABYSSAL OBSIDIAN COLOSSUS
-
-771
-00:29:15,308 --> 00:29:16,033
-S-RANK
-
-772
-00:29:16,900 --> 00:29:18,775
-ESTIMATED CARAPACE DEFENSE:
-
-773
-00:29:18,900 --> 00:29:20,438
-8,000 ARMOR RATING.
-
-774
-00:29:21,200 --> 00:29:23,538
-ZERO MUNDANE PENETRATION POSSIBLE.
-
-775
-00:29:24,412 --> 00:29:26,637
-The colossus slammed its four blades into the
-
-776
-00:29:26,650 --> 00:29:29,937
-ground, unleashing a three-hundred-and-sixty-degree shockwave
-
-777
-00:29:29,950 --> 00:29:32,387
-of black fire that vaporized the arena's inner
-
-778
-00:29:32,400 --> 00:29:33,137
-towers.
-
-779
-00:29:34,012 --> 00:29:36,950
-Dozens of high-ranking student squads were blasted across
-
-780
-00:29:36,962 --> 00:29:37,562
-the field,
-
-781
-00:29:37,737 --> 00:29:40,362
-their magical shields shattering like cheap glass under
-
-782
-00:29:40,375 --> 00:29:41,312
-the immense heat.
-
-783
-00:29:42,196 --> 00:29:44,446
-Ignis Sterling stood trembling in the center of
-
-784
-00:29:44,459 --> 00:29:45,559
-the scorched clearing,
-
-785
-00:29:45,721 --> 00:29:48,034
-his hands shaking so violently that he dropped
-
-786
-00:29:48,046 --> 00:29:50,096
-his glowing ruby staff into the dirt.
-
-787
-00:29:50,980 --> 00:29:52,705
-I am an S-rank prodigy...
-
-788
-00:29:53,468 --> 00:29:55,655
-I am the heir to the Sterling Syndicate..."
-
-789
-00:29:56,418 --> 00:29:59,443
-Ignis stammered, his aristocratic arrogance completely
-
-790
-00:29:59,455 --> 00:30:01,255
-collapsing into primal terror.
-
-791
-00:30:02,116 --> 00:30:04,954
-The Obsidian Colossus locked its blazing yellow eyes
-
-792
-00:30:04,966 --> 00:30:05,841
-onto Ignis,
-
-793
-00:30:06,041 --> 00:30:08,241
-raising a twenty-ton stone foot to crush the
-
-794
-00:30:08,254 --> 00:30:10,091
-screaming prodigy into paste.
-
-795
-00:30:10,972 --> 00:30:11,685
-Help me!
-
-796
-00:30:12,447 --> 00:30:13,222
-Boris!
-
-797
-00:30:13,972 --> 00:30:14,672
-Father!
-
-798
-00:30:15,422 --> 00:30:16,760
-Somebody save me!"
-
-799
-00:30:17,522 --> 00:30:19,860
-Ignis shrieked, curling into a ball on the
-
-800
-00:30:19,872 --> 00:30:22,422
-ground as the massive shadow descended over him.
-
-801
-00:30:23,284 --> 00:30:25,009
-From the edge of the canyon ledge,
-
-802
-00:30:25,109 --> 00:30:27,709
-Lyra Mercer tried to fire an acoustic concussive
-
-803
-00:30:27,722 --> 00:30:28,172
-bolt,
-
-804
-00:30:28,347 --> 00:30:30,634
-but her magic barely scratched the boss's outer
-
-805
-00:30:30,647 --> 00:30:31,447
-toe armor.
-
-806
-00:30:32,308 --> 00:30:33,683
-We are all going to die..."
-
-807
-00:30:34,446 --> 00:30:36,046
-Lyra whispered in despair,
-
-808
-00:30:36,196 --> 00:30:38,733
-closing her eyes as the crushing blow fell.
-
-809
-00:30:39,604 --> 00:30:41,667
-Yet the crushing blow never landed.
-
-810
-00:30:42,532 --> 00:30:45,195
-A sudden, earth-shaking sonic boom ripped through the
-
-811
-00:30:45,207 --> 00:30:45,732
+00:20:00,534 --> 00:20:01,084
 arena,
 
-812
-00:30:45,957 --> 00:30:48,145
-followed by a beam of luminous cyan light
-
-813
-00:30:48,157 --> 00:30:50,457
-that struck the colossus's descending foot with the
-
-814
-00:30:50,470 --> 00:30:51,995
-force of an orbital strike.
-
-815
-00:30:52,876 --> 00:30:55,914
-The colossal twenty-ton stone foot was blasted upwards
-
-816
-00:30:55,926 --> 00:30:57,601
-by sheer kinetic counter-force
-
-817
-00:30:57,801 --> 00:31:00,601
-staggering the eighty-foot titan backwards by three full
-
-818
-00:31:00,614 --> 00:31:01,276
-steps.
-
-819
-00:31:02,140 --> 00:31:04,953
-Ignis opened his tear-streaked eyes in disbelief,
-
-820
-00:31:05,128 --> 00:31:06,865
-looking up to see who had performed this
-
-821
-00:31:06,878 --> 00:31:08,178
-impossible miracle.
-
-822
-00:31:09,052 --> 00:31:11,290
-Standing atop the ruined canyon wall,
-
-823
-00:31:11,427 --> 00:31:13,877
-his long charcoal coat fluttering in the volcanic
-
-824
-00:31:13,890 --> 00:31:14,352
-gale,
-
-825
-00:31:14,565 --> 00:31:17,377
-stood Caelen Vance with his Void-Strung Heavy Recurve
-
-826
-00:31:17,390 --> 00:31:18,302
-fully drawn.
-
-827
-00:31:19,180 --> 00:31:20,593
-Ignis stared with wide,
-
-828
-00:31:20,718 --> 00:31:23,068
-uncomprehending eyes at the boy he had mocked
-
-829
-00:31:23,080 --> 00:31:25,605
-as a useless F-rank garbage collector only two
-
-830
-00:31:25,618 --> 00:31:26,518
-days prior.
-
-831
-00:31:27,388 --> 00:31:28,176
-Vance...?"
-
-832
-00:31:28,926 --> 00:31:31,226
-Ignis croaked, his voice cracking.
-
-833
-00:31:31,988 --> 00:31:32,526
-How...
-
-834
-00:31:32,751 --> 00:31:35,163
-how are you standing against an S-rank calamity?"
-
-835
-00:31:36,028 --> 00:31:38,378
-Caelen did not even glance down at Ignis;
-
-836
-00:31:38,541 --> 00:31:41,666
-his piercing cyan-amethyst eyes were locked entirely onto
-
-837
-00:31:41,678 --> 00:31:44,791
-the glowing mana core inside the colossus's ribcage.
-
-838
-00:31:45,652 --> 00:31:48,015
-PERCEPTION SCAN 350 PER):
-
-839
-00:31:48,027 --> 00:31:51,415
-STRUCTURAL CORE LOCATED BENEATH 12 INCHES OF DENSE OBSIDIAN
-
-840
-00:31:51,427 --> 00:31:52,302
-CARAPACE.
-
-841
-00:31:53,164 --> 00:31:55,714
-The Obsidian Colossus roared in fury at being
-
-842
-00:31:55,727 --> 00:31:57,677
-staggered by an insignificant human,
-
-843
-00:31:57,877 --> 00:32:00,327
-turning all four of its colossal magma blades
-
-844
-00:32:00,339 --> 00:32:01,764
-toward Caelen's position.
-
-845
-00:32:02,644 --> 00:32:04,144
-With a terrifying swing,
-
-846
-00:32:04,294 --> 00:32:06,844
-the titan cleaved through the entire canyon wall,
-
-847
-00:32:07,007 --> 00:32:10,244
-sending thousand-ton boulders crashing down toward Caelen.
-
-848
-00:32:11,116 --> 00:32:13,779
-Students watching from the perimeter screamed in horror,
-
-849
-00:32:13,954 --> 00:32:16,054
-expecting the archer to be crushed beneath the
-
-850
-00:32:16,066 --> 00:32:17,466
-mountain of falling rock.
-
-851
-00:32:18,340 --> 00:32:19,515
-Instead of dodging,
-
-852
-00:32:19,603 --> 00:32:23,115
-Caelen simply activated his siphoned Agility of two-hundred-and-eighty
-
-853
-00:32:23,290 --> 00:32:26,565
-his body blurring into three distinct phantom afterimages.
-
-854
-00:32:27,436 --> 00:32:30,161
-He stepped effortlessly across the falling boulders as
-
-855
-00:32:30,174 --> 00:32:31,799
-if they were stationary stairs,
-
-856
-00:32:31,999 --> 00:32:34,286
-dancing through the rain of debris with supreme,
-
-857
-00:32:34,411 --> 00:32:35,786
-calculated elegance.
-
-858
-00:32:36,652 --> 00:32:38,290
-Up in the observation lounge,
-
-859
-00:32:38,402 --> 00:32:41,215
-Director Holloway gripped the balcony railing so tightly
-
-860
-00:32:41,227 --> 00:32:43,827
-that the reinforced steel bent beneath his fingers.
-
-861
-00:32:44,692 --> 00:32:47,442
-That is not an F-rank agility curve," Holloway
-
-862
-00:32:47,455 --> 00:32:49,742
-whispered, his voice trembling with awe.
-
-863
-00:32:50,505 --> 00:32:52,505
-That boy is moving at Mach Two point
-
-864
-00:32:52,517 --> 00:32:53,530
-five on foot!"
-
-865
-00:32:54,412 --> 00:32:56,962
-Instructor Boris Vane stood pale as a ghost
-
-866
-00:32:56,975 --> 00:32:58,012
-in the control booth,
-
-867
-00:32:58,175 --> 00:33:00,362
-his knees knocking together in sheer terror as
-
-868
-00:33:00,375 --> 00:33:02,175
-he realized what kind of monster he had
-
-869
-00:33:02,187 --> 00:33:03,462
-tried to assassinate.
-
-870
-00:33:04,324 --> 00:33:05,874
-He was hiding his power..."
-
-871
-00:33:06,637 --> 00:33:07,699
-Boris stammered.
-
-872
-00:33:08,462 --> 00:33:10,774
-He was sandbagging the entire trial!"
-
-873
-00:33:11,644 --> 00:33:14,682
-Landing gracefully atop a soaring obsidian spire,
-
-874
-00:33:14,844 --> 00:33:17,857
-Caelen drew three phantom arrows simultaneously onto
-
-875
-00:33:17,869 --> 00:33:18,819
-his ghost-string
-
-876
-00:33:19,684 --> 00:33:21,347
-SOVEREIGN SIPHON COMBO:
-
-877
-00:33:21,547 --> 00:33:23,309
-TRIPLE RESONANCE MANA DRAIN.
-
-878
-00:33:24,172 --> 00:33:25,485
-He released the string.
-
-879
-00:33:26,247 --> 00:33:28,935
-The three arrows whistled soundlessly through the air,
-
-880
-00:33:29,135 --> 00:33:31,960
-piercing the colossus's four shoulder joints with surgical
-
-881
-00:33:31,972 --> 00:33:32,660
-precision.
-
-882
-00:33:33,532 --> 00:33:34,632
-SIPHON EFFECT:
-
-883
-00:33:34,795 --> 00:33:37,782
-EXTRACTED 10% BOSS STRENGTH 80),
-
-884
-00:33:37,995 --> 00:33:40,170
-DRAINED 10% BOSS CONSTITUTION
-
-885
-00:33:40,370 --> 00:33:41,770
-120).
-
-886
-00:33:42,652 --> 00:33:44,477
-TEMPORARY ATTRIBUTE TRANSFER:
-
-887
-00:33:44,652 --> 00:33:47,090
-CAELEN VANCE STRENGTH SURGES TO 320,
-
-888
-00:33:47,227 --> 00:33:49,365
-CONSTITUTION SURGES TO 330.
-
-889
-00:33:50,236 --> 00:33:52,211
-The colossal titan let out a pained,
-
-890
-00:33:52,386 --> 00:33:54,611
-guttural groan as its black armor softened and
-
-891
-00:33:54,624 --> 00:33:57,099
-its four massive arms dropped under sudden muscle
-
-892
-00:33:57,111 --> 00:33:57,774
-fatigue.
-
-893
-00:33:58,636 --> 00:34:01,686
-Meanwhile, a terrifying shockwave of pure cyan
-
-894
-00:34:01,699 --> 00:34:03,611
-mana erupted from Caelen's body,
-
-895
-00:34:03,836 --> 00:34:06,849
-radiating outward with enough gravitational pressure to pin
-
-896
-00:34:06,861 --> 00:34:08,499
-nearby debris to the floor.
-
-897
-00:34:09,364 --> 00:34:10,902
-Ignis looked up from the dirt,
-
-898
-00:34:11,027 --> 00:34:13,502
-his mind completely shattering under the sheer gap
-
-899
-00:34:13,514 --> 00:34:15,502
-in power between himself and the orphan he
-
-900
-00:34:15,514 --> 00:34:16,427
-had ridiculed.
-
-901
-00:34:17,308 --> 00:34:18,558
-He isn't an archer..."
-
-902
-00:34:19,321 --> 00:34:22,796
-Ignis whimpered, clutching his head in psychological defeat.
-
-903
-00:34:23,558 --> 00:34:24,758
-He is a sovereign..."
-
-904
-00:34:25,636 --> 00:34:28,424
-Caelen calmly reached into his dimensional inventory,
-
-905
-00:34:28,586 --> 00:34:29,749
-drawing out a single,
-
-906
-00:34:29,949 --> 00:34:33,111
-solid titanium-alloy armor-piercing broadhead arrow.
-
-907
-00:34:33,988 --> 00:34:36,763
-Time to close the gate," Caelen said quietly.
-
-908
-00:34:37,636 --> 00:34:40,274
-Caelen notched the heavy titanium broadhead onto the
-
-909
-00:34:40,286 --> 00:34:41,911
-Void-Strung Heavy Recurve,
-
-910
-00:34:42,161 --> 00:34:44,499
-wrapping his entire mana pool around the arrow
-
-911
-00:34:44,511 --> 00:34:46,099
-shaft in a tight spiral.
-
-912
-00:34:46,972 --> 00:34:49,597
-The sheer kinetic energy gathering around the bowstring
-
-913
-00:34:49,610 --> 00:34:51,822
-turned the surrounding air into a glowing vacuum
-
-914
-00:34:51,835 --> 00:34:52,560
-vortex,
-
-915
-00:34:52,735 --> 00:34:54,885
-bending the light around Caelen's silhouette.
-
-916
-00:34:55,756 --> 00:34:56,856
-SYSTEM NOTICE:
-
-917
-00:34:57,031 --> 00:35:00,206
-VESSEL CONSTITUTION REACHED MAXIMUM DRAW CAPACITY.
-
-918
-00:35:01,084 --> 00:35:02,484
-CALCULATED DRAW WEIGHT:
-
-919
-00:35:02,697 --> 00:35:05,672
-6,500 POUNDS OF KINETIC FORCE.
-
-920
-00:35:06,532 --> 00:35:08,732
-As Caelen pulled the string to his cheek,
-
-921
-00:35:08,857 --> 00:35:11,295
-the entire trial arena began to shake,
-
-922
-00:35:11,445 --> 00:35:14,307
-the bedrock fracturing under the immense gravitational pressure
-
-923
-00:35:14,320 --> 00:35:15,657
-gathering in his stance.
-
-924
-00:35:16,540 --> 00:35:19,153
-The Obsidian Colossus sensed its impending doom,
-
-925
-00:35:19,328 --> 00:35:21,515
-opening its massive chest plates to charge a
-
-926
-00:35:21,528 --> 00:35:24,603
-twenty-meter beam of concentrated apocalyptic magma.
-
-927
-00:35:25,468 --> 00:35:27,531
-The heat was so intense that the stone
-
-928
-00:35:27,543 --> 00:35:30,468
-floor fifty meters away melted into liquid slag,
-
-929
-00:35:30,631 --> 00:35:33,306
-threatening to incinerate all surviving students.
-
-930
-00:35:34,180 --> 00:35:34,993
-Vance!
-
-931
-00:35:35,743 --> 00:35:36,468
-Shoot it!"
-
-932
-00:35:37,230 --> 00:35:39,668
-Lyra Mercer screamed through her comms.
-
-933
-00:35:40,430 --> 00:35:42,893
-It is going to fire an apocalyptic wave!"
-
-934
-00:35:43,756 --> 00:35:45,231
-Caelen did not panic.
-
-935
-00:35:45,994 --> 00:35:47,094
-He waited calmly,
-
-936
-00:35:47,244 --> 00:35:49,431
-letting the boss charge its beam to ninety-nine
-
-937
-00:35:49,444 --> 00:35:51,756
-percent to guarantee that its core was fully
-
-938
-00:35:51,769 --> 00:35:52,606
-exposed.
-
-939
-00:35:53,476 --> 00:35:55,651
-Patience is the first lesson of archery,"
-
-940
-00:35:55,801 --> 00:35:58,301
-Caelen murmured in his signature deadpan tone.
-
-941
-00:35:59,164 --> 00:36:00,302
-PERCEPTION LOCK:
-
-942
-00:36:00,477 --> 00:36:04,427
-TRAJECTORY VECTOR CALCULATED AT 0.0001
-
-943
-00:36:04,439 --> 00:36:05,814
-DEGREE MARGIN OF ERROR.
-
-944
-00:36:06,676 --> 00:36:08,801
-The colossus opened its maw to unleash the
-
-945
-00:36:08,814 --> 00:36:10,676
-apocalyptic magma blast.
-
-946
-00:36:11,548 --> 00:36:13,273
-At that exact microsecond,
-
-947
-00:36:13,386 --> 00:36:15,798
-Caelen released his fingers from the ghost-string
-
-948
-00:36:16,660 --> 00:36:17,873
-KINETIC DISCHARGE:
-
-949
-00:36:18,023 --> 00:36:19,623
-HYPERSONIC PLUNDER STRIKE
-
-950
-00:36:19,785 --> 00:36:21,135
-MACH 4 VELOCITY.
-
-951
-00:36:22,012 --> 00:36:24,487
-The resulting sound was not an arrow release;
-
-952
-00:36:24,712 --> 00:36:27,575
-it was an explosive atmospheric thunderclap that shattered
-
-953
-00:36:27,587 --> 00:36:30,350
-every glass window across the five-mile facility.
-
-954
-00:36:31,228 --> 00:36:33,928
-A blinding beam of incandescent cyan light tore
-
-955
-00:36:33,941 --> 00:36:34,778
-through the arena,
-
-956
-00:36:34,991 --> 00:36:37,766
-splitting the volcanic magma blast clean in half
-
-957
-00:36:37,778 --> 00:36:39,653
-with overwhelming kinetic momentum.
-
-958
-00:36:40,516 --> 00:36:43,416
-The arrow entered the colossus's open chest cavity,
-
-959
-00:36:43,616 --> 00:36:46,229
-pierced through twelve inches of dense obsidian armor,
-
-960
-00:36:46,379 --> 00:36:48,666
-and slammed directly into the pulsing core.
-
-961
-00:36:49,540 --> 00:36:52,515
-Time seemed to freeze for one agonizing heartbeat.
-
-962
-00:36:53,380 --> 00:36:56,293
-Then, a network of brilliant cyan fractures spread
-
-963
-00:36:56,305 --> 00:36:58,480
-across the colossus's eighty-foot body,
-
-964
-00:36:58,655 --> 00:37:00,930
-glowing brighter and brighter until they eclipsed the
-
-965
-00:37:00,943 --> 00:37:01,468
-sun.
-
-966
-00:37:02,332 --> 00:37:03,020
-SYSTEM:
-
-967
-00:37:03,182 --> 00:37:06,145
-S-RANK CALAMITY BOSS CORE DETONATION CONFIRMED.
-
-968
-00:37:07,012 --> 00:37:08,512
-With a catastrophic roar,
-
-969
-00:37:08,662 --> 00:37:11,762
-the entire Obsidian Colossus exploded into millions of
-
-970
-00:37:11,775 --> 00:37:13,587
-harmless glittering mana crystals,
-
-971
-00:37:13,787 --> 00:37:16,712
-raining down like luminescent snow across the arena.
-
-972
-00:37:17,596 --> 00:37:19,909
-The red sky fractured and peeled away like
-
-973
-00:37:19,921 --> 00:37:22,321
-burning paper as the Red Gate dimensional barrier
-
-974
-00:37:22,334 --> 00:37:22,884
-shattered,
-
-975
-00:37:23,059 --> 00:37:25,696
-restoring the clear blue daylight of District Nine.
-
-976
-00:37:26,572 --> 00:37:28,572
-In the center of the smoking crater stood
-
-977
-00:37:28,585 --> 00:37:29,510
-Caelen Vance,
-
-978
-00:37:29,697 --> 00:37:31,835
-calmly lowering his bow with not a single
-
-979
-00:37:31,847 --> 00:37:33,422
-drop of sweat on his brow.
-
-980
-00:37:34,300 --> 00:37:35,388
-SYSTEM NOTICE:
-
-981
-00:37:35,513 --> 00:37:37,838
-S-RANK CALAMITY ELIMINATION RECORDED.
-
-982
-00:37:38,716 --> 00:37:40,554
-MASSIVE REWARD NOTIFICATION:
-
-983
-00:37:40,729 --> 00:37:43,041
-PRIMORDIAL SOVEREIGN SIPHON ACTIVATED.
-
-984
-00:37:43,924 --> 00:37:45,437
-PERMANENT ATTRIBUTE PLUNDER:
-
-985
-00:37:45,624 --> 00:37:46,887
-50  STRENGTH,
-
-986
-00:37:47,037 --> 00:37:48,299
-60  AGILITY,
-
-987
-00:37:48,449 --> 00:37:50,362
-55  CONSTITUTION,
-
-988
-00:37:50,537 --> 00:37:53,887
-70  PERCEPTION, 100  MANA CAPACITY.
-
-989
-00:37:54,748 --> 00:37:56,698
-LEGENDARY SOUL TRAIT HARVESTED:
-
-990
-00:37:56,886 --> 00:37:57,986
-S-RANK PASSIVE
-
-991
-00:37:58,173 --> 00:37:59,136
-TITAN DENSITY:
-
-992
-00:37:59,323 --> 00:38:01,161
-ABSOLUTE KINETIC RESISTANCE.]
-
-993
-00:38:02,044 --> 00:38:03,982
-LEGENDARY SOUL TRAIT HARVESTED:
-
-994
-00:38:04,169 --> 00:38:05,232
-S-RANK PASSIVE
-
-995
-00:38:05,457 --> 00:38:06,569
-ORBITAL TRAJECTORY:
-
-996
-00:38:06,769 --> 00:38:08,207
-ZERO DISTANCE DECAY.]
-
-997
-00:38:09,076 --> 00:38:12,164
-A torrential pillar of golden-cyan energy cascaded from
-
-998
-00:38:12,176 --> 00:38:13,839
-the heavens into Caelen's body,
-
-999
-00:38:14,039 --> 00:38:17,289
-permanently cementing his foundation as an unstoppable sovereign
-
-1000
-00:38:17,301 --> 00:38:18,214
-powerhouse.
-
-1001
-00:38:19,084 --> 00:38:19,647
-Total,
-
-1002
-00:38:19,809 --> 00:38:22,459
-stunned silence gripped the thousands of students,
-
-1003
-00:38:22,559 --> 00:38:23,509
-evaluators,
-
-1004
-00:38:23,659 --> 00:38:26,197
-and medical personnel standing around the perimeter of
-
-1005
-00:38:26,209 --> 00:38:26,922
-the arena.
-
-1006
-00:38:27,796 --> 00:38:28,934
-Nobody moved.
-
-1007
-00:38:29,696 --> 00:38:30,834
-Nobody spoke.
-
-1008
-00:38:31,596 --> 00:38:33,584
-The only sound was the crackle of cooling
-
-1009
-00:38:33,596 --> 00:38:35,221
-obsidian embers in the crater.
-
-1010
-00:38:36,100 --> 00:38:38,100
-Ignis Sterling remained on his knees in the
-
-1011
-00:38:38,113 --> 00:38:38,488
-dirt,
-
-1012
-00:38:38,663 --> 00:38:40,338
-staring at Caelen with hollow,
-
-1013
-00:38:40,475 --> 00:38:41,638
-traumatized eyes,
-
-1014
-00:38:41,800 --> 00:38:44,625
-completely unable to process what he had witnessed.
-
-1015
-00:38:45,508 --> 00:38:47,671
-Caelen walked slowly past Ignis,
-
-1016
-00:38:47,796 --> 00:38:50,121
-pausing for a brief moment beside the trembling
-
-1017
-00:38:50,133 --> 00:38:51,258
-S-rank prodigy.
-
-1018
-00:38:52,132 --> 00:38:53,757
-Caelen reached into his pocket,
-
-1019
-00:38:53,945 --> 00:38:56,120
-retrieved the copper coin Ignis had thrown at
-
-1020
-00:38:56,132 --> 00:38:57,695
-him during the morning ceremony,
-
-1021
-00:38:57,882 --> 00:38:59,732
-and dropped it into Ignis's lap.
-
-1022
-00:39:00,604 --> 00:39:03,217
-Here is your change," Caelen said deadpan.
-
-1023
-00:39:03,979 --> 00:39:05,979
-Keep practicing your fire magic.
-
-1024
-00:39:06,742 --> 00:39:08,467
-It makes a decent campfire."
-
-1025
-00:39:09,340 --> 00:39:11,415
-Ignis buried his face in his hands,
-
-1026
-00:39:11,540 --> 00:39:14,615
-completely humiliated as the surrounding students stared in
-
-1027
-00:39:14,628 --> 00:39:15,615
-awe and shock.
-
-1028
-00:39:16,492 --> 00:39:18,592
-Lyra Mercer walked up to Caelen with her
-
-1029
-00:39:18,605 --> 00:39:19,805
-jaw hanging open,
-
-1030
-00:39:20,030 --> 00:39:23,517
-her biometric monocle still flashing with off-the-charts telemetry
-
-1031
-00:39:23,530 --> 00:39:24,217
-readings.
-
-1032
-00:39:25,084 --> 00:39:25,872
-Vance..."
-
-1033
-00:39:26,622 --> 00:39:27,634
-Lyra breathed,
-
-1034
-00:39:27,809 --> 00:39:29,009
-her voice trembling.
-
-1035
-00:39:29,772 --> 00:39:30,547
-That arrow...
-
-1036
-00:39:30,759 --> 00:39:32,909
-you shattered an S-rank boss from one point
-
-1037
-00:39:32,922 --> 00:39:35,334
-five kilometers away in a single shot."
-
-1038
-00:39:36,196 --> 00:39:36,846
-Good bow,"
-
-1039
-00:39:37,034 --> 00:39:38,759
-Caelen replied with a shrug.
-
-1040
-00:39:39,521 --> 00:39:41,196
-Good wind conditions too."
-
-1041
-00:39:42,076 --> 00:39:43,951
-Lyra let out a helpless laugh,
-
-1042
-00:39:44,001 --> 00:39:45,901
-realizing that no matter what happened,
-
-1043
-00:39:46,076 --> 00:39:48,339
-this boy would never drop his infuriating,
-
-1044
-00:39:48,414 --> 00:39:49,701
-unbothered composure.
-
-1045
-00:39:50,572 --> 00:39:53,485
-Suddenly, the sound of heavy military boots echoed
-
-1046
-00:39:53,497 --> 00:39:55,910
-across the lawn as High Director Keith Holloway
-
-1047
-00:39:55,922 --> 00:39:57,960
-descended from the VIP platform,
-
-1048
-00:39:58,122 --> 00:40:00,035
-flanked by elite royal guards.
-
-1049
-00:40:00,916 --> 00:40:03,254
-The crowd parted in reverence as the legendary
-
-1050
-00:40:03,266 --> 00:40:06,316
-war hero walked straight toward the eighteen-year-old archer.
-
-1051
-00:40:07,180 --> 00:40:09,630
-Director Holloway stopped two paces in front of
-
-1052
-00:40:09,643 --> 00:40:10,155
-Caelen,
-
-1053
-00:40:10,318 --> 00:40:12,943
-his golden sovereign eyes inspecting the young man's
-
-1054
-00:40:12,955 --> 00:40:14,993
-calm demeanor with profound respect.
-
-1055
-00:40:15,868 --> 00:40:17,481
-Son," Holloway said,
-
-1056
-00:40:17,631 --> 00:40:20,306
-his deep voice carrying across the entire silent
-
-1057
-00:40:20,318 --> 00:40:20,881
-stadium,
-
-1058
-00:40:21,031 --> 00:40:23,031
-in forty years of military service,
-
-1059
-00:40:23,218 --> 00:40:25,131
-I have never seen an archer bend kinetic
-
-1060
-00:40:25,143 --> 00:40:26,181
-space like that."
-
-1061
-00:40:27,052 --> 00:40:29,102
-Just doing my assigned maintenance duty,
-
-1062
-00:40:29,215 --> 00:40:29,852
+534
+00:20:01,321 --> 00:20:03,796
+High Director Keith Holloway sat behind a glass
+
+535
+00:20:03,809 --> 00:20:04,484
+partition,
+
+536
+00:20:04,696 --> 00:20:08,134
+flanked by senior military evaluators and guild directors.
+
+537
+00:20:09,004 --> 00:20:12,117
+Director Holloway watched the live telemetry consoles with
+
+538
+00:20:12,129 --> 00:20:12,604
+calm,
+
+539
+00:20:12,754 --> 00:20:13,579
+sharp eyes,
+
+540
+00:20:13,742 --> 00:20:17,029
+scanning the bio-signatures of the incoming student cohorts.
+
+541
+00:20:17,908 --> 00:20:21,258
+Beside him, an evaluator pointed at Ignis's profile:
+
+542
+00:20:21,458 --> 00:20:23,446
+Young Lord Sterling is favored to break the
+
+543
+00:20:23,458 --> 00:20:26,333
+school record today with his S-rank solar output."
+
+544
+00:20:27,196 --> 00:20:28,634
+Holloway nodded slowly,
+
+545
+00:20:28,759 --> 00:20:30,821
+but his golden eyes drifted toward the lone
+
+546
+00:20:30,834 --> 00:20:32,584
+boy in the back row who stood with
+
+547
+00:20:32,596 --> 00:20:33,971
+an unusually relaxed,
+
+548
+00:20:34,096 --> 00:20:35,221
+balanced posture.
+
+549
+00:20:36,100 --> 00:20:38,063
+Who is that student with the wooden bow?"
+
+550
+00:20:38,825 --> 00:20:41,963
+Holloway asked, noticing that the boy's breathing cadence
+
+551
+00:20:41,975 --> 00:20:44,425
+remained steady at twelve breaths per minute despite
+
+552
+00:20:44,438 --> 00:20:45,850
+the high-pressure environment.
+
+553
+00:20:46,732 --> 00:20:49,632
+Just an F-rank utility archer from District Nine,
+
+554
+00:20:49,795 --> 00:20:50,420
 Director,"
 
-1063
-00:40:30,002 --> 00:40:31,727
-Caelen said with a polite nod.
+555
+00:20:50,582 --> 00:20:52,332
+an aide replied dismissively.
 
-1064
-00:40:32,490 --> 00:40:34,065
-The garbage has been cleared."
+556
+00:20:53,095 --> 00:20:54,795
+Assigned to garbage cleanup.
 
-1065
-00:40:34,948 --> 00:40:37,623
-A faint smile touched Holloway's scarred lips:
+557
+00:20:55,557 --> 00:20:56,895
+Not worth monitoring."
 
-1066
-00:40:37,773 --> 00:40:39,373
-That was no garbage cleanup,
+558
+00:20:57,772 --> 00:20:59,047
+Holloway said nothing,
 
-1067
-00:40:39,423 --> 00:40:40,198
-young man.
+559
+00:20:59,235 --> 00:21:01,022
+but he tapped the sensor array to keep
 
-1068
-00:40:40,961 --> 00:40:43,023
-That was an empire-class miracle."
+560
+00:21:01,035 --> 00:21:04,710
+a secondary telemetry feed pinned on Caelen's bio-signature
 
-1069
-00:40:43,900 --> 00:40:45,725
-Meanwhile, across the field,
+561
+00:21:05,572 --> 00:21:07,710
+Trial candidates, enter the Gate!"
 
-1070
-00:40:45,850 --> 00:40:48,650
-Instructor Boris Vane was already in handcuffs,
+562
+00:21:08,472 --> 00:21:11,160
+Boris roared as the massive steel blast doors
 
-1071
-00:40:48,825 --> 00:40:51,638
-being escorted away by Imperial Military Police for
+563
+00:21:11,172 --> 00:21:13,347
+opened into the simulated dungeon zone.
 
-1072
-00:40:51,650 --> 00:40:54,013
-high-treason tampering with dungeon containment.
+564
+00:21:14,212 --> 00:21:17,350
+Students rushed forward in coordinated combat squads,
 
-1073
-00:40:54,892 --> 00:40:57,342
-The first chapter of Caelen Vance's legend had
+565
+00:21:17,525 --> 00:21:20,037
+shouting battle cries as they drew their enchanted
 
-1074
-00:40:57,355 --> 00:40:59,530
-closed, but the ripples of his power were
+566
+00:21:20,050 --> 00:21:22,262
+swords and channeled elemental spells.
 
-1075
-00:40:59,542 --> 00:41:01,855
-only beginning to spread across the empire.
+567
+00:21:23,140 --> 00:21:25,190
+Caelen walked into the portal at a leisurely
 
-1076
-00:41:02,716 --> 00:41:03,616
-By nightfall,
+568
+00:21:25,203 --> 00:21:25,765
+stroll,
 
-1077
-00:41:03,779 --> 00:41:05,679
-the news of the District Nine Red Gate
+569
+00:21:25,928 --> 00:21:28,453
+deliberately deciding to throttle his output to five
 
-1078
-00:41:05,691 --> 00:41:08,529
-anomaly had spread like wildfire across the global
+570
+00:21:28,465 --> 00:21:31,490
+percent to avoid drawing premature Ministry attention.
 
-1079
-00:41:08,541 --> 00:41:09,554
-hunter networks.
+571
+00:21:32,356 --> 00:21:34,494
+The first trial zone was a dense rocky
 
-1080
-00:41:10,420 --> 00:41:13,445
-Official Ministry press releases claimed that an automated
+572
+00:21:34,506 --> 00:21:37,819
+canyon populated by Level 10 Armored Hobgoblins wielding
 
-1081
-00:41:13,458 --> 00:41:16,195
-orbital defense satellite had neutralized the boss to
+573
+00:21:37,831 --> 00:21:39,731
+heavy clubs and iron shields.
 
-1082
-00:41:16,208 --> 00:41:17,558
-maintain public calm.
+574
+00:21:40,612 --> 00:21:42,762
+Ignis Sterling spearheaded the assault,
 
-1083
-00:41:18,436 --> 00:41:21,699
-However, inside the fortified headquarters of the Imperial
+575
+00:21:42,887 --> 00:21:45,637
+unleashing massive torrents of solar flame that roasted
 
-1084
-00:41:21,711 --> 00:41:22,586
-Hunter Ministry,
+576
+00:21:45,650 --> 00:21:47,300
+five hobgoblins at once,
 
-1085
-00:41:22,799 --> 00:41:25,274
-the highest council of S-Rank Guild Masters sat
+577
+00:21:47,500 --> 00:21:49,537
+earning cheers from the viewing monitors.
 
-1086
-00:41:25,286 --> 00:41:27,174
-around a classified round table.
+578
+00:21:50,404 --> 00:21:51,742
+Further down the canyon,
 
-1087
-00:41:28,036 --> 00:41:30,011
-On the central holographic projector,
+579
+00:21:51,867 --> 00:21:54,454
+Caelen took position on a low rock outcropping,
 
-1088
-00:41:30,199 --> 00:41:33,649
-high-speed military satellite footage replayed Caelen's Mach-4
+580
+00:21:54,629 --> 00:21:56,892
+casually pulling back his cheap wooden bow with
 
-1089
-00:41:33,661 --> 00:41:35,549
-phantom arrow in slow motion.
+581
+00:21:56,904 --> 00:21:59,067
+barely five percent of his true Strength.
 
-1090
-00:41:36,412 --> 00:41:39,237
-This was no satellite strike," the Grand Marshal
+582
+00:21:59,932 --> 00:22:02,345
+He deliberately avoided flashy headshots,
 
-1091
-00:41:39,250 --> 00:41:41,437
-of the Hunter Military declared gravely.
+583
+00:22:02,495 --> 00:22:04,882
+shooting simple steel arrows into the knees and
 
-1092
-00:41:42,200 --> 00:41:44,950
-This was a single human releasing an unclassified
+584
+00:22:04,895 --> 00:22:07,720
+joints of advancing hobgoblins to allow other students
 
-1093
-00:41:44,962 --> 00:41:46,562
-kinetic sovereign technique."
+585
+00:22:07,732 --> 00:22:08,907
+to finish them off.
 
-1094
-00:41:47,428 --> 00:41:50,203
-An eighteen-year-old student registered as an F-rank wood
+586
+00:22:09,772 --> 00:22:10,872
+SYSTEM NOTICE:
 
-1095
-00:41:50,216 --> 00:41:50,766
-archer,"
+587
+00:22:11,035 --> 00:22:12,972
+APPARENT TRIAL SCORE CALCULATED
 
-1096
-00:41:50,941 --> 00:41:52,641
-an intelligence operative reported,
+588
+00:22:13,147 --> 00:22:13,997
+GRADE C
 
-1097
-00:41:52,766 --> 00:41:54,728
-displaying Caelen's school dossier.
+589
+00:22:14,147 --> 00:22:15,385
+PASSING BARE MINIMUM).
 
-1098
-00:41:55,612 --> 00:41:58,200
-Find him," the Grand Marshal commanded.
+590
+00:22:16,252 --> 00:22:18,577
+Nearby students laughed as they passed him:
 
-1099
-00:41:58,962 --> 00:42:01,562
-Every corporate syndicate and foreign empire will want
+591
+00:22:18,727 --> 00:22:19,427
+Look at him,
 
-1100
-00:42:01,575 --> 00:42:04,075
-to dissect his foundation or eliminate him before
+592
+00:22:19,615 --> 00:22:22,052
+shooting one arrow every thirty seconds!
 
-1101
-00:42:04,087 --> 00:42:05,462
-he grows any stronger."
+593
+00:22:22,815 --> 00:22:25,040
+He will barely scrape a passing mark!"
 
-1102
-00:42:06,340 --> 00:42:06,865
-ALERT:
+594
+00:22:25,900 --> 00:22:27,675
+Caelen nodded pleasantly at them:
 
-1103
-00:42:06,940 --> 00:42:10,253
-MINISTRY BLACK OPS CONTINGENT DEPLOYED TO DISTRICT NINE.
+595
+00:22:27,813 --> 00:22:29,163
+Pacing is important.
 
-1104
-00:42:11,116 --> 00:42:13,616
-Meanwhile, in a quiet one-room apartment on the
+596
+00:22:29,925 --> 00:22:32,075
+Conserves stamina for retirement."
 
-1105
-00:42:13,629 --> 00:42:15,154
-outskirts of District Nine,
+597
+00:22:32,956 --> 00:22:34,994
+While the students saw only a lazy,
 
-1106
-00:42:15,341 --> 00:42:17,179
-Caelen sat by the open window,
+598
+00:22:35,144 --> 00:22:36,044
+low-tier archer,
 
-1107
-00:42:17,391 --> 00:42:19,204
-sipping warm tea in peace.
+599
+00:22:36,194 --> 00:22:38,019
+the true reality was playing out on the
 
-1108
-00:42:20,068 --> 00:42:21,906
-On the wooden table before him lay his
+600
+00:22:38,031 --> 00:22:38,894
+micro-level
 
-1109
-00:42:21,918 --> 00:42:23,568
+601
+00:22:39,772 --> 00:22:42,460
+Every single arrow Caelen fired had a tiny,
+
+602
+00:22:42,647 --> 00:22:45,110
+invisible thread of ethereal mana wrapped around the
+
+603
+00:22:45,122 --> 00:22:45,535
+tip,
+
+604
+00:22:45,735 --> 00:22:48,810
+silently siphoning stats from every beast he grazed.
+
+605
+00:22:49,684 --> 00:22:50,409
+SYSTEM:
+
+606
+00:22:50,547 --> 00:22:53,647
+HOBGOBLIN GRAZED EXTRACTED 1  STRENGTH,
+
+607
+00:22:53,822 --> 00:22:54,922
+1  AGILITY
+
+608
+00:22:55,134 --> 00:22:55,797
+PERMANENT).
+
+609
+00:22:56,668 --> 00:22:57,393
+SYSTEM:
+
+610
+00:22:57,543 --> 00:22:59,131
+HOBGOBLIN SHIELD SPLINTERED
+
+611
+00:22:59,318 --> 00:23:01,493
+EXTRACTED 1  CONSTITUTION.
+
+612
+00:23:02,356 --> 00:23:04,594
+While Ignis was burning through seventy percent of
+
+613
+00:23:04,606 --> 00:23:07,244
+his mana pool to earn flashy trial points,
+
+614
+00:23:07,419 --> 00:23:10,544
+Caelen was casually accumulating thirty permanent stat points
+
+615
+00:23:10,556 --> 00:23:11,794
+with zero exertion.
+
+616
+00:23:12,676 --> 00:23:14,964
+Up in the VIP observation lounge,
+
+617
+00:23:15,126 --> 00:23:17,439
+High Director Holloway frowned as he examined the
+
+618
+00:23:17,451 --> 00:23:20,576
+acoustic vibration graphs on his holographic console.
+
+619
+00:23:21,460 --> 00:23:24,360
+Why did the seismic sensors register a three-hundred-joule
+
+620
+00:23:24,373 --> 00:23:26,398
+micro-kinetic pulse in Sector B?"
+
+621
+00:23:27,160 --> 00:23:29,923
+Holloway asked, pointing at a spike in Caelen's
+
+622
+00:23:29,935 --> 00:23:30,648
+quadrant.
+
+623
+00:23:31,516 --> 00:23:34,266
+It must be residual shockwaves from Lord Sterling's
+
+624
+00:23:34,279 --> 00:23:37,466
+solar explosions, Director," the technician answered
+
+625
+00:23:37,479 --> 00:23:38,429
+without checking.
+
+626
+00:23:39,292 --> 00:23:41,230
+Holloway zoomed in on the telemetry:
+
+627
+00:23:41,442 --> 00:23:43,492
+the pulse had originated from a wooden arrow
+
+628
+00:23:43,505 --> 00:23:45,567
+that had cleanly pierced two feet of solid
+
+629
+00:23:45,580 --> 00:23:47,867
+granite after grazing a hobgoblin's armor.
+
+630
+00:23:48,748 --> 00:23:51,211
+No standard ashwood bow generates that kind of
+
+631
+00:23:51,223 --> 00:23:52,461
+kinetic penetration,"
+
+632
+00:23:52,648 --> 00:23:54,136
+Holloway thought to himself,
+
+633
+00:23:54,273 --> 00:23:57,023
+his golden eyes narrowing in deep curiosity.
+
+634
+00:23:57,892 --> 00:23:58,992
+In the trial zone,
+
+635
+00:23:59,117 --> 00:24:01,667
+Lyra Mercer sprinted past Caelen's position,
+
+636
+00:24:01,842 --> 00:24:04,092
+pausing for a moment to observe the hobgoblin
+
+637
+00:24:04,105 --> 00:24:05,717
+corpses pinned to the ground.
+
+638
+00:24:06,580 --> 00:24:08,230
+Using her acoustic monocle,
+
+639
+00:24:08,380 --> 00:24:10,768
+Lyra noticed that the monster's muscle fibers had
+
+640
+00:24:10,780 --> 00:24:12,630
+suffered total cellular collapse,
+
+641
+00:24:12,855 --> 00:24:14,968
+as if their physical vitality had been drained
+
+642
+00:24:14,980 --> 00:24:16,130
+from the inside out.
+
+643
+00:24:16,996 --> 00:24:18,321
+She glanced at Caelen,
+
+644
+00:24:18,446 --> 00:24:20,721
+who was casually eating a field energy bar
+
+645
+00:24:20,734 --> 00:24:22,209
+while notching another arrow.
+
+646
+00:24:23,092 --> 00:24:24,092
+Did you do this?"
+
+647
+00:24:24,855 --> 00:24:27,067
+Lyra asked with genuine suspicion.
+
+648
+00:24:27,940 --> 00:24:31,065
+The hobgoblin had poor cardiovascular health," Caelen
+
+649
+00:24:31,078 --> 00:24:32,265
+replied deadpan.
+
+650
+00:24:33,028 --> 00:24:34,853
+Too much red meat in the dungeon."
+
+651
+00:24:35,716 --> 00:24:37,041
+Lyra stared at him,
+
+652
+00:24:37,154 --> 00:24:39,254
+half-exasperated and half-intrigued
+
+653
+00:24:39,429 --> 00:24:41,504
+before shaking her head and sprinting toward the
+
+654
+00:24:41,516 --> 00:24:42,516
+next checkpoint.
+
+655
+00:24:43,396 --> 00:24:45,909
+Little did anyone know that Instructor Boris Vane
+
+656
+00:24:45,921 --> 00:24:47,671
+was watching from the control tower,
+
+657
+00:24:47,859 --> 00:24:50,421
+his hand hovering over a hidden override console
+
+658
+00:24:50,434 --> 00:24:51,309
+on his terminal.
+
+659
+00:24:52,180 --> 00:24:54,968
+Instructor Boris Vane had received a secret directive
+
+660
+00:24:54,980 --> 00:24:56,318
+from the Sterling Syndicate:
+
+661
+00:24:56,530 --> 00:24:59,693
+ensure Caelen Vance suffers a fatal training accident"
+
+662
+00:24:59,718 --> 00:25:02,493
+so he cannot contest Ignis's top scholarship.
+
+663
+00:25:03,364 --> 00:25:05,989
+Typing a covert override code into the terminal,
+
+664
+00:25:06,164 --> 00:25:07,614
+Boris released a caged,
+
+665
+00:25:07,752 --> 00:25:10,802
+unmonitored Level 25 Blood-Horned Minotaur directly
+
+666
+00:25:10,814 --> 00:25:13,089
+into Caelen's isolated canyon path.
+
+667
+00:25:13,972 --> 00:25:16,747
+The massive ten-foot-tall beast burst through a concealed
+
+668
+00:25:16,760 --> 00:25:17,485
+steel gate,
+
+669
+00:25:17,722 --> 00:25:20,472
+roaring with savage bloodlust as its razor-sharp horns
+
+670
+00:25:20,485 --> 00:25:22,110
+charged straight toward Caelen.
+
+671
+00:25:22,972 --> 00:25:23,772
+THREAT ALERT:
+
+672
+00:25:23,960 --> 00:25:25,910
+LEVEL 25 ELITE MUTANT
+
+673
+00:25:26,122 --> 00:25:27,447
+BLOOD-HORNED MINOTAUR.
+
+674
+00:25:28,324 --> 00:25:29,749
+ESTIMATED THREAT LEVEL:
+
+675
+00:25:29,899 --> 00:25:30,962
+GRADE-A HAZARD.
+
+676
+00:25:31,724 --> 00:25:33,937
+MANDATORY EVACUATION PROTOCOL.
+
+677
+00:25:34,804 --> 00:25:36,317
+Up in the VIP booth,
+
+678
+00:25:36,467 --> 00:25:39,129
+sirens began to blare as technicians shouted:
+
+679
+00:25:39,317 --> 00:25:39,904
+Warning!
+
+680
+00:25:40,667 --> 00:25:44,229
+Unauthorized elite containment breach in Canyon Sector Four!"
+
+681
+00:25:45,100 --> 00:25:47,125
+Boris feigned panic on the intercom:
+
+682
+00:25:47,288 --> 00:25:48,700
+The forcefield glitched!
+
+683
+00:25:49,463 --> 00:25:51,238
+Candidate Vance, hold on,
+
+684
+00:25:51,388 --> 00:25:53,950
+our rescue team will arrive in five minutes!"
+
+685
+00:25:54,820 --> 00:25:56,920
+Boris smiled wickedly to himself,
+
+686
+00:25:57,083 --> 00:25:59,308
+knowing that an F-rank archer would be trampled
+
+687
+00:25:59,320 --> 00:26:01,495
+into paste in less than five seconds.
+
+688
+00:26:02,356 --> 00:26:03,256
+In the canyon,
+
+689
+00:26:03,369 --> 00:26:05,869
+Caelen watched the roaring minotaur charge at forty
+
+690
+00:26:05,881 --> 00:26:06,844
+miles per hour,
+
+691
+00:26:07,056 --> 00:26:09,369
+its massive iron greataxe raised to cleave him
+
+692
+00:26:09,381 --> 00:26:10,019
+in two.
+
+693
+00:26:10,900 --> 00:26:12,738
+Five minutes for a rescue team?"
+
+694
+00:26:13,500 --> 00:26:14,375
+Caelen muttered,
+
+695
+00:26:14,525 --> 00:26:15,600
+shaking his head.
+
+696
+00:26:16,363 --> 00:26:18,625
+The municipal response time in this city is
+
+697
+00:26:18,638 --> 00:26:19,738
+truly terrible."
+
+698
+00:26:20,620 --> 00:26:21,733
+Instead of fleeing,
+
+699
+00:26:21,870 --> 00:26:24,645
+Caelen casually tossed his cheap wooden bow aside,
+
+700
+00:26:24,883 --> 00:26:26,858
+reaching his hand into the air as glowing
+
+701
+00:26:26,870 --> 00:26:29,708
+cyan mana threads exploded from his fingertips.
+
+702
+00:26:30,580 --> 00:26:32,555
+SOVEREIGN ARMAMENT MANIFESTATION:
+
+703
+00:26:32,743 --> 00:26:34,505
+VOID-STRUNG HEAVY RECURVE.
+
+704
+00:26:35,380 --> 00:26:38,368
+The colossal titanium bow materialized in his grip,
+
+705
+00:26:38,580 --> 00:26:41,455
+its ethereal cyan string illuminating the dark canyon
+
+706
+00:26:41,468 --> 00:26:43,380
+walls with radiant runic energy.
+
+707
+00:26:44,260 --> 00:26:46,598
+Caelen notched a translucent phantom arrow,
+
+708
+00:26:46,760 --> 00:26:49,260
+aiming directly at the charging beast's chest.
+
+709
+00:26:50,140 --> 00:26:51,953
+SOVEREIGN SIPHON LAYER 2:
+
+710
+00:26:52,140 --> 00:26:54,265
+TACTICAL DEBUFF DRAIN ACTIVATED.
+
+711
+00:26:55,132 --> 00:26:56,445
+He released the string.
+
+712
+00:26:57,207 --> 00:26:59,982
+The phantom arrow flew with zero acoustic wake,
+
+713
+00:27:00,132 --> 00:27:02,857
+passing straight through the minotaur's heavy iron armor
+
+714
+00:27:02,870 --> 00:27:04,407
+and embedding into its sternum.
+
+715
+00:27:05,284 --> 00:27:06,422
+DRAIN SUCCESSFUL:
+
+716
+00:27:06,609 --> 00:27:08,997
+EXTRACTED 10% PRIMARY ATTRIBUTE
+
+717
+00:27:09,159 --> 00:27:11,284
+MINOTAUR STRENGTH 30),
+
+718
+00:27:11,447 --> 00:27:13,622
+TRANSFERRED TO CAELEN 30).
+
+719
+00:27:14,500 --> 00:27:17,013
+The charging beast instantly stumbled as its leg
+
+720
+00:27:17,025 --> 00:27:17,938
+muscles withered,
+
+721
+00:27:18,150 --> 00:27:21,150
+its crushing momentum collapsing into a pathetic crawl.
+
+722
+00:27:22,012 --> 00:27:26,112
+Meanwhile, Caelen's physical Strength surged to two-hundred-and-ten points,
+
+723
+00:27:26,275 --> 00:27:28,775
+his body radiating a palpable pressure that cracked
+
+724
+00:27:28,787 --> 00:27:30,462
+the bedrock beneath his boots.
+
+725
+00:27:31,324 --> 00:27:33,049
+Drawing a second phantom arrow,
+
+726
+00:27:33,187 --> 00:27:35,249
+Caelen pulled the ghost-string all the way to
+
+727
+00:27:35,262 --> 00:27:35,837
+his ear,
+
+728
+00:27:35,987 --> 00:27:38,574
+unleashing one hundred percent of his siphoned power.
+
+729
+00:27:39,436 --> 00:27:41,236
+HYPERSONIC KINETIC RELEASE:
+
+730
+00:27:41,336 --> 00:27:42,761
+MACH 3 TRAJECTORY.
+
+731
+00:27:43,636 --> 00:27:45,524
+The arrow tore through the canyon with the
+
+732
+00:27:45,536 --> 00:27:47,574
+sound of a tearing dimensional fabric,
+
+733
+00:27:47,724 --> 00:27:50,386
+obliterating the minotaur's upper torso in a blinding
+
+734
+00:27:50,399 --> 00:27:52,036
+explosion of kinetic light.
+
+735
+00:27:52,900 --> 00:27:55,163
+The massive beast collapsed into a shower of
+
+736
+00:27:55,175 --> 00:27:57,863
+dissipated mana particles before its body could even
+
+737
+00:27:57,875 --> 00:27:58,800
+hit the ground.
+
+738
+00:27:59,668 --> 00:28:00,381
+SYSTEM:
+
+739
+00:28:00,543 --> 00:28:03,031
+LEVEL 25 ELITE MINOTAUR ELIMINATED
+
+740
+00:28:03,243 --> 00:28:05,256
+EXTRACTED 15  STRENGTH,
+
+741
+00:28:05,431 --> 00:28:06,993
+12  CONSTITUTION,
+
+742
+00:28:07,156 --> 00:28:08,406
+10  PERCEPTION
+
+743
+00:28:08,581 --> 00:28:09,218
+PERMANENT).
+
+744
+00:28:10,084 --> 00:28:12,147
+Before Caelen could dismiss his bow,
+
+745
+00:28:12,322 --> 00:28:14,684
+the sky above the trial arena fractured into
+
+746
+00:28:14,697 --> 00:28:16,409
+jagged crimson spiderwebs,
+
+747
+00:28:16,634 --> 00:28:18,047
+radiating an overwhelming,
+
+748
+00:28:18,222 --> 00:28:19,522
+suffocating pressure.
+
+749
+00:28:20,404 --> 00:28:23,579
+The simulated trial atmosphere dissolved as the atmospheric
+
+750
+00:28:23,592 --> 00:28:26,242
+mana density surged by ten thousand percent,
+
+751
+00:28:26,417 --> 00:28:29,329
+plunging the entire canyon into blood-red darkness.
+
+752
+00:28:30,196 --> 00:28:31,659
+EMERGENCY BROADCAST:
+
+753
+00:28:31,821 --> 00:28:33,546
+RED GATE MUTATION DETECTED.
+
+754
+00:28:34,420 --> 00:28:35,983
+DIMENSIONAL LOCK ENGAGED:
+
+755
+00:28:36,108 --> 00:28:39,470
+ZERO RETREAT POSSIBLE UNTIL DUNGEON BOSS ELIMINATION.
+
+756
+00:28:40,348 --> 00:28:42,498
+In the VIP observation lounge,
+
+757
+00:28:42,623 --> 00:28:45,361
+all electrical consoles short-circuited in a shower of
+
+758
+00:28:45,373 --> 00:28:47,848
+sparks as Director Holloway leapt to his feet,
+
+759
+00:28:48,023 --> 00:28:49,698
+drawing his military sword.
+
+760
+00:28:50,572 --> 00:28:53,197
+A Red Gate mutation inside an academy trial
+
+761
+00:28:53,210 --> 00:28:53,797
+arena?"
+
+762
+00:28:54,560 --> 00:28:55,685
+Holloway roared.
+
+763
+00:28:56,447 --> 00:28:59,397
+Get the emergency strike force down there immediately!"
+
+764
+00:29:00,268 --> 00:29:02,081
+We cannot penetrate the barrier,
+
+765
+00:29:02,156 --> 00:29:02,793
+Director!"
+
+766
+00:29:02,943 --> 00:29:05,081
+the chief technician screamed in terror.
+
+767
+00:29:05,843 --> 00:29:08,093
+The dimensional density is off the charts
+
+768
+00:29:08,318 --> 00:29:10,256
+it is an S-rank Abyssal Calamity!"
+
+769
+00:29:11,116 --> 00:29:12,516
+Down in the central arena,
+
+770
+00:29:12,616 --> 00:29:15,579
+over three hundred graduating students shrieked in absolute
+
+771
+00:29:15,591 --> 00:29:18,104
+panic as the ground split open into volcanic
+
+772
+00:29:18,116 --> 00:29:18,804
+fissures.
+
+773
+00:29:19,684 --> 00:29:21,597
+From the center of the molten abyss rose
+
+774
+00:29:21,609 --> 00:29:23,809
+an eighty-foot-tall Obsidian Colossus,
+
+775
+00:29:24,009 --> 00:29:27,009
+its four armored arms holding colossal jagged greatswords
+
+776
+00:29:27,022 --> 00:29:28,547
+that dripped with black magma.
+
+777
+00:29:29,428 --> 00:29:30,553
+CALAMITY BOSS:
+
+778
+00:29:30,703 --> 00:29:33,228
+LEVEL 60 ABYSSAL OBSIDIAN COLOSSUS
+
+779
+00:29:33,428 --> 00:29:34,153
+S-RANK
+
+780
+00:29:35,020 --> 00:29:36,895
+ESTIMATED CARAPACE DEFENSE:
+
+781
+00:29:37,020 --> 00:29:38,558
+8,000 ARMOR RATING.
+
+782
+00:29:39,320 --> 00:29:41,658
+ZERO MUNDANE PENETRATION POSSIBLE.
+
+783
+00:29:42,532 --> 00:29:44,757
+The colossus slammed its four blades into the
+
+784
+00:29:44,770 --> 00:29:48,057
+ground, unleashing a three-hundred-and-sixty-degree shockwave
+
+785
+00:29:48,070 --> 00:29:50,507
+of black fire that vaporized the arena's inner
+
+786
+00:29:50,520 --> 00:29:51,257
+towers.
+
+787
+00:29:52,132 --> 00:29:55,070
+Dozens of high-ranking student squads were blasted across
+
+788
+00:29:55,082 --> 00:29:55,682
+the field,
+
+789
+00:29:55,857 --> 00:29:58,482
+their magical shields shattering like cheap glass under
+
+790
+00:29:58,495 --> 00:29:59,432
+the immense heat.
+
+791
+00:30:00,316 --> 00:30:02,566
+Ignis Sterling stood trembling in the center of
+
+792
+00:30:02,579 --> 00:30:03,679
+the scorched clearing,
+
+793
+00:30:03,841 --> 00:30:06,154
+his hands shaking so violently that he dropped
+
+794
+00:30:06,166 --> 00:30:08,216
+his glowing ruby staff into the dirt.
+
+795
+00:30:09,100 --> 00:30:10,825
+I am an S-rank prodigy...
+
+796
+00:30:11,588 --> 00:30:13,775
+I am the heir to the Sterling Syndicate..."
+
+797
+00:30:14,538 --> 00:30:17,563
+Ignis stammered, his aristocratic arrogance completely
+
+798
+00:30:17,575 --> 00:30:19,375
+collapsing into primal terror.
+
+799
+00:30:20,236 --> 00:30:23,074
+The Obsidian Colossus locked its blazing yellow eyes
+
+800
+00:30:23,086 --> 00:30:23,961
+onto Ignis,
+
+801
+00:30:24,161 --> 00:30:26,361
+raising a twenty-ton stone foot to crush the
+
+802
+00:30:26,374 --> 00:30:28,211
+screaming prodigy into paste.
+
+803
+00:30:29,092 --> 00:30:29,805
+Help me!
+
+804
+00:30:30,567 --> 00:30:31,342
+Boris!
+
+805
+00:30:32,092 --> 00:30:32,792
+Father!
+
+806
+00:30:33,542 --> 00:30:34,880
+Somebody save me!"
+
+807
+00:30:35,642 --> 00:30:37,980
+Ignis shrieked, curling into a ball on the
+
+808
+00:30:37,992 --> 00:30:40,542
+ground as the massive shadow descended over him.
+
+809
+00:30:41,404 --> 00:30:43,129
+From the edge of the canyon ledge,
+
+810
+00:30:43,229 --> 00:30:45,829
+Lyra Mercer tried to fire an acoustic concussive
+
+811
+00:30:45,842 --> 00:30:46,292
+bolt,
+
+812
+00:30:46,467 --> 00:30:48,754
+but her magic barely scratched the boss's outer
+
+813
+00:30:48,767 --> 00:30:49,567
+toe armor.
+
+814
+00:30:50,428 --> 00:30:51,803
+We are all going to die..."
+
+815
+00:30:52,566 --> 00:30:54,166
+Lyra whispered in despair,
+
+816
+00:30:54,316 --> 00:30:56,853
+closing her eyes as the crushing blow fell.
+
+817
+00:30:57,724 --> 00:30:59,787
+Yet the crushing blow never landed.
+
+818
+00:31:00,652 --> 00:31:03,315
+A sudden, earth-shaking sonic boom ripped through the
+
+819
+00:31:03,327 --> 00:31:03,852
+arena,
+
+820
+00:31:04,077 --> 00:31:06,265
+followed by a beam of luminous cyan light
+
+821
+00:31:06,277 --> 00:31:08,577
+that struck the colossus's descending foot with the
+
+822
+00:31:08,590 --> 00:31:10,115
+force of an orbital strike.
+
+823
+00:31:10,996 --> 00:31:14,034
+The colossal twenty-ton stone foot was blasted upwards
+
+824
+00:31:14,046 --> 00:31:15,721
+by sheer kinetic counter-force
+
+825
+00:31:15,921 --> 00:31:18,721
+staggering the eighty-foot titan backwards by three full
+
+826
+00:31:18,734 --> 00:31:19,396
+steps.
+
+827
+00:31:20,260 --> 00:31:23,073
+Ignis opened his tear-streaked eyes in disbelief,
+
+828
+00:31:23,248 --> 00:31:24,985
+looking up to see who had performed this
+
+829
+00:31:24,998 --> 00:31:26,298
+impossible miracle.
+
+830
+00:31:27,172 --> 00:31:29,410
+Standing atop the ruined canyon wall,
+
+831
+00:31:29,547 --> 00:31:31,997
+his long charcoal coat fluttering in the volcanic
+
+832
+00:31:32,010 --> 00:31:32,472
+gale,
+
+833
+00:31:32,685 --> 00:31:35,497
+stood Caelen Vance with his Void-Strung Heavy Recurve
+
+834
+00:31:35,510 --> 00:31:36,422
+fully drawn.
+
+835
+00:31:37,300 --> 00:31:38,713
+Ignis stared with wide,
+
+836
+00:31:38,838 --> 00:31:41,188
+uncomprehending eyes at the boy he had mocked
+
+837
+00:31:41,200 --> 00:31:43,725
+as a useless F-rank garbage collector only two
+
+838
+00:31:43,738 --> 00:31:44,638
+days prior.
+
+839
+00:31:45,508 --> 00:31:46,296
+Vance...?"
+
+840
+00:31:47,046 --> 00:31:49,346
+Ignis croaked, his voice cracking.
+
+841
+00:31:50,108 --> 00:31:50,646
+How...
+
+842
+00:31:50,871 --> 00:31:53,283
+how are you standing against an S-rank calamity?"
+
+843
+00:31:54,148 --> 00:31:56,498
+Caelen did not even glance down at Ignis;
+
+844
+00:31:56,661 --> 00:31:59,786
+his piercing cyan-amethyst eyes were locked entirely onto
+
+845
+00:31:59,798 --> 00:32:02,911
+the glowing mana core inside the colossus's ribcage.
+
+846
+00:32:03,772 --> 00:32:06,135
+PERCEPTION SCAN 350 PER):
+
+847
+00:32:06,147 --> 00:32:09,535
+STRUCTURAL CORE LOCATED BENEATH 12 INCHES OF DENSE OBSIDIAN
+
+848
+00:32:09,547 --> 00:32:10,422
+CARAPACE.
+
+849
+00:32:11,284 --> 00:32:13,834
+The Obsidian Colossus roared in fury at being
+
+850
+00:32:13,847 --> 00:32:15,797
+staggered by an insignificant human,
+
+851
+00:32:15,997 --> 00:32:18,447
+turning all four of its colossal magma blades
+
+852
+00:32:18,459 --> 00:32:19,884
+toward Caelen's position.
+
+853
+00:32:20,764 --> 00:32:22,264
+With a terrifying swing,
+
+854
+00:32:22,414 --> 00:32:24,964
+the titan cleaved through the entire canyon wall,
+
+855
+00:32:25,127 --> 00:32:28,364
+sending thousand-ton boulders crashing down toward Caelen.
+
+856
+00:32:29,236 --> 00:32:31,899
+Students watching from the perimeter screamed in horror,
+
+857
+00:32:32,074 --> 00:32:34,174
+expecting the archer to be crushed beneath the
+
+858
+00:32:34,186 --> 00:32:35,586
+mountain of falling rock.
+
+859
+00:32:36,460 --> 00:32:37,635
+Instead of dodging,
+
+860
+00:32:37,723 --> 00:32:41,235
+Caelen simply activated his siphoned Agility of two-hundred-and-eighty
+
+861
+00:32:41,410 --> 00:32:44,685
+his body blurring into three distinct phantom afterimages.
+
+862
+00:32:45,556 --> 00:32:48,281
+He stepped effortlessly across the falling boulders as
+
+863
+00:32:48,294 --> 00:32:49,919
+if they were stationary stairs,
+
+864
+00:32:50,119 --> 00:32:52,406
+dancing through the rain of debris with supreme,
+
+865
+00:32:52,531 --> 00:32:53,906
+calculated elegance.
+
+866
+00:32:54,772 --> 00:32:56,410
+Up in the observation lounge,
+
+867
+00:32:56,522 --> 00:32:59,335
+Director Holloway gripped the balcony railing so tightly
+
+868
+00:32:59,347 --> 00:33:01,947
+that the reinforced steel bent beneath his fingers.
+
+869
+00:33:02,812 --> 00:33:05,562
+That is not an F-rank agility curve," Holloway
+
+870
+00:33:05,575 --> 00:33:07,862
+whispered, his voice trembling with awe.
+
+871
+00:33:08,625 --> 00:33:10,625
+That boy is moving at Mach Two point
+
+872
+00:33:10,637 --> 00:33:11,650
+five on foot!"
+
+873
+00:33:12,532 --> 00:33:15,082
+Instructor Boris Vane stood pale as a ghost
+
+874
+00:33:15,095 --> 00:33:16,132
+in the control booth,
+
+875
+00:33:16,295 --> 00:33:18,482
+his knees knocking together in sheer terror as
+
+876
+00:33:18,495 --> 00:33:20,295
+he realized what kind of monster he had
+
+877
+00:33:20,307 --> 00:33:21,582
+tried to assassinate.
+
+878
+00:33:22,444 --> 00:33:23,994
+He was hiding his power..."
+
+879
+00:33:24,757 --> 00:33:25,819
+Boris stammered.
+
+880
+00:33:26,582 --> 00:33:28,894
+He was sandbagging the entire trial!"
+
+881
+00:33:29,764 --> 00:33:32,802
+Landing gracefully atop a soaring obsidian spire,
+
+882
+00:33:32,964 --> 00:33:35,977
+Caelen drew three phantom arrows simultaneously onto
+
+883
+00:33:35,989 --> 00:33:36,939
+his ghost-string
+
+884
+00:33:37,804 --> 00:33:39,467
+SOVEREIGN SIPHON COMBO:
+
+885
+00:33:39,667 --> 00:33:41,429
+TRIPLE RESONANCE MANA DRAIN.
+
+886
+00:33:42,292 --> 00:33:43,605
+He released the string.
+
+887
+00:33:44,367 --> 00:33:47,055
+The three arrows whistled soundlessly through the air,
+
+888
+00:33:47,255 --> 00:33:50,080
+piercing the colossus's four shoulder joints with surgical
+
+889
+00:33:50,092 --> 00:33:50,780
+precision.
+
+890
+00:33:51,652 --> 00:33:52,752
+SIPHON EFFECT:
+
+891
+00:33:52,915 --> 00:33:55,902
+EXTRACTED 10% BOSS STRENGTH 80),
+
+892
+00:33:56,115 --> 00:33:58,290
+DRAINED 10% BOSS CONSTITUTION
+
+893
+00:33:58,490 --> 00:33:59,890
+120).
+
+894
+00:34:00,772 --> 00:34:02,597
+TEMPORARY ATTRIBUTE TRANSFER:
+
+895
+00:34:02,772 --> 00:34:05,210
+CAELEN VANCE STRENGTH SURGES TO 320,
+
+896
+00:34:05,347 --> 00:34:07,485
+CONSTITUTION SURGES TO 330.
+
+897
+00:34:08,356 --> 00:34:10,331
+The colossal titan let out a pained,
+
+898
+00:34:10,506 --> 00:34:12,731
+guttural groan as its black armor softened and
+
+899
+00:34:12,744 --> 00:34:15,219
+its four massive arms dropped under sudden muscle
+
+900
+00:34:15,231 --> 00:34:15,894
+fatigue.
+
+901
+00:34:16,756 --> 00:34:19,806
+Meanwhile, a terrifying shockwave of pure cyan
+
+902
+00:34:19,819 --> 00:34:21,731
+mana erupted from Caelen's body,
+
+903
+00:34:21,956 --> 00:34:24,969
+radiating outward with enough gravitational pressure to pin
+
+904
+00:34:24,981 --> 00:34:26,619
+nearby debris to the floor.
+
+905
+00:34:27,484 --> 00:34:29,022
+Ignis looked up from the dirt,
+
+906
+00:34:29,147 --> 00:34:31,622
+his mind completely shattering under the sheer gap
+
+907
+00:34:31,634 --> 00:34:33,622
+in power between himself and the orphan he
+
+908
+00:34:33,634 --> 00:34:34,547
+had ridiculed.
+
+909
+00:34:35,428 --> 00:34:36,678
+He isn't an archer..."
+
+910
+00:34:37,441 --> 00:34:40,916
+Ignis whimpered, clutching his head in psychological defeat.
+
+911
+00:34:41,678 --> 00:34:42,878
+He is a sovereign..."
+
+912
+00:34:43,756 --> 00:34:46,544
+Caelen calmly reached into his dimensional inventory,
+
+913
+00:34:46,706 --> 00:34:47,869
+drawing out a single,
+
+914
+00:34:48,069 --> 00:34:51,231
+solid titanium-alloy armor-piercing broadhead arrow.
+
+915
+00:34:52,108 --> 00:34:54,883
+Time to close the gate," Caelen said quietly.
+
+916
+00:34:55,756 --> 00:34:58,394
+Caelen notched the heavy titanium broadhead onto the
+
+917
+00:34:58,406 --> 00:35:00,031
 Void-Strung Heavy Recurve,
 
+918
+00:35:00,281 --> 00:35:02,619
+wrapping his entire mana pool around the arrow
+
+919
+00:35:02,631 --> 00:35:04,219
+shaft in a tight spiral.
+
+920
+00:35:05,092 --> 00:35:07,717
+The sheer kinetic energy gathering around the bowstring
+
+921
+00:35:07,730 --> 00:35:09,942
+turned the surrounding air into a glowing vacuum
+
+922
+00:35:09,955 --> 00:35:10,680
+vortex,
+
+923
+00:35:10,855 --> 00:35:13,005
+bending the light around Caelen's silhouette.
+
+924
+00:35:13,876 --> 00:35:14,976
+SYSTEM NOTICE:
+
+925
+00:35:15,151 --> 00:35:18,326
+VESSEL CONSTITUTION REACHED MAXIMUM DRAW CAPACITY.
+
+926
+00:35:19,204 --> 00:35:20,604
+CALCULATED DRAW WEIGHT:
+
+927
+00:35:20,817 --> 00:35:23,792
+6,500 POUNDS OF KINETIC FORCE.
+
+928
+00:35:24,652 --> 00:35:26,852
+As Caelen pulled the string to his cheek,
+
+929
+00:35:26,977 --> 00:35:29,415
+the entire trial arena began to shake,
+
+930
+00:35:29,565 --> 00:35:32,427
+the bedrock fracturing under the immense gravitational pressure
+
+931
+00:35:32,440 --> 00:35:33,777
+gathering in his stance.
+
+932
+00:35:34,660 --> 00:35:37,273
+The Obsidian Colossus sensed its impending doom,
+
+933
+00:35:37,448 --> 00:35:39,635
+opening its massive chest plates to charge a
+
+934
+00:35:39,648 --> 00:35:42,723
+twenty-meter beam of concentrated apocalyptic magma.
+
+935
+00:35:43,588 --> 00:35:45,651
+The heat was so intense that the stone
+
+936
+00:35:45,663 --> 00:35:48,588
+floor fifty meters away melted into liquid slag,
+
+937
+00:35:48,751 --> 00:35:51,426
+threatening to incinerate all surviving students.
+
+938
+00:35:52,300 --> 00:35:53,113
+Vance!
+
+939
+00:35:53,863 --> 00:35:54,588
+Shoot it!"
+
+940
+00:35:55,350 --> 00:35:57,788
+Lyra Mercer screamed through her comms.
+
+941
+00:35:58,550 --> 00:36:01,013
+It is going to fire an apocalyptic wave!"
+
+942
+00:36:01,876 --> 00:36:03,351
+Caelen did not panic.
+
+943
+00:36:04,114 --> 00:36:05,214
+He waited calmly,
+
+944
+00:36:05,364 --> 00:36:07,551
+letting the boss charge its beam to ninety-nine
+
+945
+00:36:07,564 --> 00:36:09,876
+percent to guarantee that its core was fully
+
+946
+00:36:09,889 --> 00:36:10,726
+exposed.
+
+947
+00:36:11,596 --> 00:36:13,771
+Patience is the first lesson of archery,"
+
+948
+00:36:13,921 --> 00:36:16,421
+Caelen murmured in his signature deadpan tone.
+
+949
+00:36:17,284 --> 00:36:18,422
+PERCEPTION LOCK:
+
+950
+00:36:18,597 --> 00:36:22,547
+TRAJECTORY VECTOR CALCULATED AT 0.0001
+
+951
+00:36:22,559 --> 00:36:23,934
+DEGREE MARGIN OF ERROR.
+
+952
+00:36:24,796 --> 00:36:26,921
+The colossus opened its maw to unleash the
+
+953
+00:36:26,934 --> 00:36:28,796
+apocalyptic magma blast.
+
+954
+00:36:29,668 --> 00:36:31,393
+At that exact microsecond,
+
+955
+00:36:31,506 --> 00:36:33,918
+Caelen released his fingers from the ghost-string
+
+956
+00:36:34,780 --> 00:36:35,993
+KINETIC DISCHARGE:
+
+957
+00:36:36,143 --> 00:36:37,743
+HYPERSONIC PLUNDER STRIKE
+
+958
+00:36:37,905 --> 00:36:39,255
+MACH 4 VELOCITY.
+
+959
+00:36:40,132 --> 00:36:42,607
+The resulting sound was not an arrow release;
+
+960
+00:36:42,832 --> 00:36:45,695
+it was an explosive atmospheric thunderclap that shattered
+
+961
+00:36:45,707 --> 00:36:48,470
+every glass window across the five-mile facility.
+
+962
+00:36:49,348 --> 00:36:52,048
+A blinding beam of incandescent cyan light tore
+
+963
+00:36:52,061 --> 00:36:52,898
+through the arena,
+
+964
+00:36:53,111 --> 00:36:55,886
+splitting the volcanic magma blast clean in half
+
+965
+00:36:55,898 --> 00:36:57,773
+with overwhelming kinetic momentum.
+
+966
+00:36:58,636 --> 00:37:01,536
+The arrow entered the colossus's open chest cavity,
+
+967
+00:37:01,736 --> 00:37:04,349
+pierced through twelve inches of dense obsidian armor,
+
+968
+00:37:04,499 --> 00:37:06,786
+and slammed directly into the pulsing core.
+
+969
+00:37:07,660 --> 00:37:10,635
+Time seemed to freeze for one agonizing heartbeat.
+
+970
+00:37:11,500 --> 00:37:14,413
+Then, a network of brilliant cyan fractures spread
+
+971
+00:37:14,425 --> 00:37:16,600
+across the colossus's eighty-foot body,
+
+972
+00:37:16,775 --> 00:37:19,050
+glowing brighter and brighter until they eclipsed the
+
+973
+00:37:19,063 --> 00:37:19,588
+sun.
+
+974
+00:37:20,452 --> 00:37:21,140
+SYSTEM:
+
+975
+00:37:21,302 --> 00:37:24,265
+S-RANK CALAMITY BOSS CORE DETONATION CONFIRMED.
+
+976
+00:37:25,132 --> 00:37:26,632
+With a catastrophic roar,
+
+977
+00:37:26,782 --> 00:37:29,882
+the entire Obsidian Colossus exploded into millions of
+
+978
+00:37:29,895 --> 00:37:31,707
+harmless glittering mana crystals,
+
+979
+00:37:31,907 --> 00:37:34,832
+raining down like luminescent snow across the arena.
+
+980
+00:37:35,716 --> 00:37:38,029
+The red sky fractured and peeled away like
+
+981
+00:37:38,041 --> 00:37:40,441
+burning paper as the Red Gate dimensional barrier
+
+982
+00:37:40,454 --> 00:37:41,004
+shattered,
+
+983
+00:37:41,179 --> 00:37:43,816
+restoring the clear blue daylight of District Nine.
+
+984
+00:37:44,692 --> 00:37:46,692
+In the center of the smoking crater stood
+
+985
+00:37:46,705 --> 00:37:47,630
+Caelen Vance,
+
+986
+00:37:47,817 --> 00:37:49,955
+calmly lowering his bow with not a single
+
+987
+00:37:49,967 --> 00:37:51,542
+drop of sweat on his brow.
+
+988
+00:37:52,420 --> 00:37:53,508
+SYSTEM NOTICE:
+
+989
+00:37:53,633 --> 00:37:55,958
+S-RANK CALAMITY ELIMINATION RECORDED.
+
+990
+00:37:56,836 --> 00:37:58,674
+MASSIVE REWARD NOTIFICATION:
+
+991
+00:37:58,849 --> 00:38:01,161
+PRIMORDIAL SOVEREIGN SIPHON ACTIVATED.
+
+992
+00:38:02,044 --> 00:38:03,557
+PERMANENT ATTRIBUTE PLUNDER:
+
+993
+00:38:03,744 --> 00:38:05,007
+50  STRENGTH,
+
+994
+00:38:05,157 --> 00:38:06,419
+60  AGILITY,
+
+995
+00:38:06,569 --> 00:38:08,482
+55  CONSTITUTION,
+
+996
+00:38:08,657 --> 00:38:12,007
+70  PERCEPTION, 100  MANA CAPACITY.
+
+997
+00:38:12,868 --> 00:38:14,818
+LEGENDARY SOUL TRAIT HARVESTED:
+
+998
+00:38:15,006 --> 00:38:16,106
+S-RANK PASSIVE
+
+999
+00:38:16,293 --> 00:38:17,256
+TITAN DENSITY:
+
+1000
+00:38:17,443 --> 00:38:19,281
+ABSOLUTE KINETIC RESISTANCE.]
+
+1001
+00:38:20,164 --> 00:38:22,102
+LEGENDARY SOUL TRAIT HARVESTED:
+
+1002
+00:38:22,289 --> 00:38:23,352
+S-RANK PASSIVE
+
+1003
+00:38:23,577 --> 00:38:24,689
+ORBITAL TRAJECTORY:
+
+1004
+00:38:24,889 --> 00:38:26,327
+ZERO DISTANCE DECAY.]
+
+1005
+00:38:27,196 --> 00:38:30,284
+A torrential pillar of golden-cyan energy cascaded from
+
+1006
+00:38:30,296 --> 00:38:31,959
+the heavens into Caelen's body,
+
+1007
+00:38:32,159 --> 00:38:35,409
+permanently cementing his foundation as an unstoppable sovereign
+
+1008
+00:38:35,421 --> 00:38:36,334
+powerhouse.
+
+1009
+00:38:37,204 --> 00:38:37,767
+Total,
+
+1010
+00:38:37,929 --> 00:38:40,579
+stunned silence gripped the thousands of students,
+
+1011
+00:38:40,679 --> 00:38:41,629
+evaluators,
+
+1012
+00:38:41,779 --> 00:38:44,317
+and medical personnel standing around the perimeter of
+
+1013
+00:38:44,329 --> 00:38:45,042
+the arena.
+
+1014
+00:38:45,916 --> 00:38:47,054
+Nobody moved.
+
+1015
+00:38:47,816 --> 00:38:48,954
+Nobody spoke.
+
+1016
+00:38:49,716 --> 00:38:51,704
+The only sound was the crackle of cooling
+
+1017
+00:38:51,716 --> 00:38:53,341
+obsidian embers in the crater.
+
+1018
+00:38:54,220 --> 00:38:56,220
+Ignis Sterling remained on his knees in the
+
+1019
+00:38:56,233 --> 00:38:56,608
+dirt,
+
+1020
+00:38:56,783 --> 00:38:58,458
+staring at Caelen with hollow,
+
+1021
+00:38:58,595 --> 00:38:59,758
+traumatized eyes,
+
+1022
+00:38:59,920 --> 00:39:02,745
+completely unable to process what he had witnessed.
+
+1023
+00:39:03,628 --> 00:39:05,791
+Caelen walked slowly past Ignis,
+
+1024
+00:39:05,916 --> 00:39:08,241
+pausing for a brief moment beside the trembling
+
+1025
+00:39:08,253 --> 00:39:09,378
+S-rank prodigy.
+
+1026
+00:39:10,252 --> 00:39:11,877
+Caelen reached into his pocket,
+
+1027
+00:39:12,065 --> 00:39:14,240
+retrieved the copper coin Ignis had thrown at
+
+1028
+00:39:14,252 --> 00:39:15,815
+him during the morning ceremony,
+
+1029
+00:39:16,002 --> 00:39:17,852
+and dropped it into Ignis's lap.
+
+1030
+00:39:18,724 --> 00:39:21,337
+Here is your change," Caelen said deadpan.
+
+1031
+00:39:22,099 --> 00:39:24,099
+Keep practicing your fire magic.
+
+1032
+00:39:24,862 --> 00:39:26,587
+It makes a decent campfire."
+
+1033
+00:39:27,460 --> 00:39:29,535
+Ignis buried his face in his hands,
+
+1034
+00:39:29,660 --> 00:39:32,735
+completely humiliated as the surrounding students stared in
+
+1035
+00:39:32,748 --> 00:39:33,735
+awe and shock.
+
+1036
+00:39:34,612 --> 00:39:36,712
+Lyra Mercer walked up to Caelen with her
+
+1037
+00:39:36,725 --> 00:39:37,925
+jaw hanging open,
+
+1038
+00:39:38,150 --> 00:39:41,637
+her biometric monocle still flashing with off-the-charts telemetry
+
+1039
+00:39:41,650 --> 00:39:42,337
+readings.
+
+1040
+00:39:43,204 --> 00:39:43,992
+Vance..."
+
+1041
+00:39:44,742 --> 00:39:45,754
+Lyra breathed,
+
+1042
+00:39:45,929 --> 00:39:47,129
+her voice trembling.
+
+1043
+00:39:47,892 --> 00:39:48,667
+That arrow...
+
+1044
+00:39:48,879 --> 00:39:51,029
+you shattered an S-rank boss from one point
+
+1045
+00:39:51,042 --> 00:39:53,454
+five kilometers away in a single shot."
+
+1046
+00:39:54,316 --> 00:39:54,966
+Good bow,"
+
+1047
+00:39:55,154 --> 00:39:56,879
+Caelen replied with a shrug.
+
+1048
+00:39:57,641 --> 00:39:59,316
+Good wind conditions too."
+
+1049
+00:40:00,196 --> 00:40:02,071
+Lyra let out a helpless laugh,
+
+1050
+00:40:02,121 --> 00:40:04,021
+realizing that no matter what happened,
+
+1051
+00:40:04,196 --> 00:40:06,459
+this boy would never drop his infuriating,
+
+1052
+00:40:06,534 --> 00:40:07,821
+unbothered composure.
+
+1053
+00:40:08,692 --> 00:40:11,605
+Suddenly, the sound of heavy military boots echoed
+
+1054
+00:40:11,617 --> 00:40:14,030
+across the lawn as High Director Keith Holloway
+
+1055
+00:40:14,042 --> 00:40:16,080
+descended from the VIP platform,
+
+1056
+00:40:16,242 --> 00:40:18,155
+flanked by elite royal guards.
+
+1057
+00:40:19,036 --> 00:40:21,374
+The crowd parted in reverence as the legendary
+
+1058
+00:40:21,386 --> 00:40:24,436
+war hero walked straight toward the eighteen-year-old archer.
+
+1059
+00:40:25,300 --> 00:40:27,750
+Director Holloway stopped two paces in front of
+
+1060
+00:40:27,763 --> 00:40:28,275
+Caelen,
+
+1061
+00:40:28,438 --> 00:40:31,063
+his golden sovereign eyes inspecting the young man's
+
+1062
+00:40:31,075 --> 00:40:33,113
+calm demeanor with profound respect.
+
+1063
+00:40:33,988 --> 00:40:35,601
+Son," Holloway said,
+
+1064
+00:40:35,751 --> 00:40:38,426
+his deep voice carrying across the entire silent
+
+1065
+00:40:38,438 --> 00:40:39,001
+stadium,
+
+1066
+00:40:39,151 --> 00:40:41,151
+in forty years of military service,
+
+1067
+00:40:41,338 --> 00:40:43,251
+I have never seen an archer bend kinetic
+
+1068
+00:40:43,263 --> 00:40:44,301
+space like that."
+
+1069
+00:40:45,172 --> 00:40:47,222
+Just doing my assigned maintenance duty,
+
+1070
+00:40:47,335 --> 00:40:47,972
+Director,"
+
+1071
+00:40:48,122 --> 00:40:49,847
+Caelen said with a polite nod.
+
+1072
+00:40:50,610 --> 00:40:52,185
+The garbage has been cleared."
+
+1073
+00:40:53,068 --> 00:40:55,743
+A faint smile touched Holloway's scarred lips:
+
+1074
+00:40:55,893 --> 00:40:57,493
+That was no garbage cleanup,
+
+1075
+00:40:57,543 --> 00:40:58,318
+young man.
+
+1076
+00:40:59,081 --> 00:41:01,143
+That was an empire-class miracle."
+
+1077
+00:41:02,020 --> 00:41:03,845
+Meanwhile, across the field,
+
+1078
+00:41:03,970 --> 00:41:06,770
+Instructor Boris Vane was already in handcuffs,
+
+1079
+00:41:06,945 --> 00:41:09,758
+being escorted away by Imperial Military Police for
+
+1080
+00:41:09,770 --> 00:41:12,133
+high-treason tampering with dungeon containment.
+
+1081
+00:41:13,012 --> 00:41:15,462
+The first chapter of Caelen Vance's legend had
+
+1082
+00:41:15,475 --> 00:41:17,650
+closed, but the ripples of his power were
+
+1083
+00:41:17,662 --> 00:41:19,975
+only beginning to spread across the empire.
+
+1084
+00:41:20,836 --> 00:41:21,736
+By nightfall,
+
+1085
+00:41:21,899 --> 00:41:23,799
+the news of the District Nine Red Gate
+
+1086
+00:41:23,811 --> 00:41:26,649
+anomaly had spread like wildfire across the global
+
+1087
+00:41:26,661 --> 00:41:27,674
+hunter networks.
+
+1088
+00:41:28,540 --> 00:41:31,565
+Official Ministry press releases claimed that an automated
+
+1089
+00:41:31,578 --> 00:41:34,315
+orbital defense satellite had neutralized the boss to
+
+1090
+00:41:34,328 --> 00:41:35,678
+maintain public calm.
+
+1091
+00:41:36,556 --> 00:41:39,819
+However, inside the fortified headquarters of the Imperial
+
+1092
+00:41:39,831 --> 00:41:40,706
+Hunter Ministry,
+
+1093
+00:41:40,919 --> 00:41:43,394
+the highest council of S-Rank Guild Masters sat
+
+1094
+00:41:43,406 --> 00:41:45,294
+around a classified round table.
+
+1095
+00:41:46,156 --> 00:41:48,131
+On the central holographic projector,
+
+1096
+00:41:48,319 --> 00:41:51,769
+high-speed military satellite footage replayed Caelen's Mach-4
+
+1097
+00:41:51,781 --> 00:41:53,669
+phantom arrow in slow motion.
+
+1098
+00:41:54,532 --> 00:41:57,357
+This was no satellite strike," the Grand Marshal
+
+1099
+00:41:57,370 --> 00:41:59,557
+of the Hunter Military declared gravely.
+
+1100
+00:42:00,320 --> 00:42:03,070
+This was a single human releasing an unclassified
+
+1101
+00:42:03,082 --> 00:42:04,682
+kinetic sovereign technique."
+
+1102
+00:42:05,548 --> 00:42:08,323
+An eighteen-year-old student registered as an F-rank wood
+
+1103
+00:42:08,336 --> 00:42:08,886
+archer,"
+
+1104
+00:42:09,061 --> 00:42:10,761
+an intelligence operative reported,
+
+1105
+00:42:10,886 --> 00:42:12,848
+displaying Caelen's school dossier.
+
+1106
+00:42:13,732 --> 00:42:16,320
+Find him," the Grand Marshal commanded.
+
+1107
+00:42:17,082 --> 00:42:19,682
+Every corporate syndicate and foreign empire will want
+
+1108
+00:42:19,695 --> 00:42:22,195
+to dissect his foundation or eliminate him before
+
+1109
+00:42:22,207 --> 00:42:23,582
+he grows any stronger."
+
 1110
-00:42:23,806 --> 00:42:26,056
-its cyan conduits pulsing with calm,
+00:42:24,460 --> 00:42:24,985
+ALERT:
 
 1111
-00:42:26,231 --> 00:42:27,793
-rhythmic heartbeats of mana.
+00:42:25,060 --> 00:42:28,373
+MINISTRY BLACK OPS CONTINGENT DEPLOYED TO DISTRICT NINE.
 
 1112
-00:42:28,660 --> 00:42:30,948
-Opening his updated status interface,
+00:42:29,236 --> 00:42:31,736
+Meanwhile, in a quiet one-room apartment on the
 
 1113
-00:42:31,060 --> 00:42:33,760
-Caelen reviewed his true permanent progression ledger.
+00:42:31,749 --> 00:42:33,274
+outskirts of District Nine,
 
 1114
-00:42:34,636 --> 00:42:35,461
-STATUS:
+00:42:33,461 --> 00:42:35,299
+Caelen sat by the open window,
 
 1115
-00:42:35,636 --> 00:42:39,186
-CAELEN VANCE LEVEL 18 PHANTOM BALLISTIC SOVEREIGN.
+00:42:35,511 --> 00:42:37,324
+sipping warm tea in peace.
 
 1116
-00:42:40,060 --> 00:42:41,560
-TOTAL COMBAT STATS:
+00:42:38,188 --> 00:42:40,026
+On the wooden table before him lay his
 
 1117
-00:42:41,698 --> 00:42:43,323
-STRENGTH 245.
+00:42:40,038 --> 00:42:41,688
+Void-Strung Heavy Recurve,
 
 1118
-00:42:44,085 --> 00:42:45,973
-AGILITY 288.
+00:42:41,926 --> 00:42:44,176
+its cyan conduits pulsing with calm,
 
 1119
-00:42:46,735 --> 00:42:48,898
-CONSTITUTION 215.
+00:42:44,351 --> 00:42:45,913
+rhythmic heartbeats of mana.
 
 1120
-00:42:49,660 --> 00:42:51,885
-PERCEPTION 355.
+00:42:46,780 --> 00:42:49,068
+Opening his updated status interface,
 
 1121
-00:42:52,648 --> 00:42:54,210
-MANA 420.
+00:42:49,180 --> 00:42:51,880
+Caelen reviewed his true permanent progression ledger.
 
 1122
-00:42:55,084 --> 00:42:57,034
-TOTAL HARVESTED PASSIVE TRAITS:
+00:42:52,756 --> 00:42:53,581
+STATUS:
 
 1123
-00:42:57,134 --> 00:42:58,997
-4 ACTIVE SOVEREIGN BLESSINGS.
+00:42:53,756 --> 00:42:57,306
+CAELEN VANCE LEVEL 18 PHANTOM BALLISTIC SOVEREIGN.
 
 1124
-00:42:59,860 --> 00:43:01,085
-In just three days,
+00:42:58,180 --> 00:42:59,680
+TOTAL COMBAT STATS:
 
 1125
-00:43:01,248 --> 00:43:03,198
-he had grown from an overlooked high school
+00:42:59,818 --> 00:43:01,443
+STRENGTH 245.
 
 1126
-00:43:03,210 --> 00:43:05,523
-orphan into a powerhouse capable of matching the
+00:43:02,205 --> 00:43:04,093
+AGILITY 288.
 
 1127
-00:43:05,535 --> 00:43:07,210
-top ten hunters in the nation.
+00:43:04,855 --> 00:43:07,018
+CONSTITUTION 215.
 
 1128
-00:43:08,092 --> 00:43:09,930
-Yet Caelen knew that this was only the
+00:43:07,780 --> 00:43:10,005
+PERCEPTION 355.
 
 1129
-00:43:09,942 --> 00:43:10,492
-beginning;
+00:43:10,768 --> 00:43:12,330
+MANA 420.
 
 1130
-00:43:10,705 --> 00:43:13,242
-the real dungeon trials and inter-guild wars were
+00:43:13,204 --> 00:43:15,154
+TOTAL HARVESTED PASSIVE TRAITS:
 
 1131
-00:43:13,255 --> 00:43:14,305
-about to commence.
+00:43:15,254 --> 00:43:17,117
+4 ACTIVE SOVEREIGN BLESSINGS.
 
 1132
-00:43:15,172 --> 00:43:18,197
-Suddenly, his heightened Perception of three-hundred-and-fifty
+00:43:17,980 --> 00:43:19,205
+In just three days,
 
 1133
-00:43:18,210 --> 00:43:20,710
-detected a sharp acoustic disturbance in the upper
+00:43:19,368 --> 00:43:21,318
+he had grown from an overlooked high school
 
 1134
-00:43:20,722 --> 00:43:21,497
-atmosphere.
+00:43:21,330 --> 00:43:23,643
+orphan into a powerhouse capable of matching the
 
 1135
-00:43:22,372 --> 00:43:24,135
-Looking up through the window into the night
+00:43:23,655 --> 00:43:25,330
+top ten hunters in the nation.
 
 1136
-00:43:24,147 --> 00:43:24,710
-sky,
+00:43:26,212 --> 00:43:28,050
+Yet Caelen knew that this was only the
 
 1137
-00:43:24,872 --> 00:43:26,385
-Caelen's eyes narrowed.
+00:43:28,062 --> 00:43:28,612
+beginning;
 
 1138
-00:43:27,268 --> 00:43:29,468
-Above the skyline of the capital city,
+00:43:28,825 --> 00:43:31,362
+the real dungeon trials and inter-guild wars were
 
 1139
-00:43:29,618 --> 00:43:32,456
-three massive S-Rank Abyssal Red Gates were slowly
+00:43:31,375 --> 00:43:32,425
+about to commence.
 
 1140
-00:43:32,468 --> 00:43:34,018
-rotating into existence,
+00:43:33,292 --> 00:43:36,317
+Suddenly, his heightened Perception of three-hundred-and-fifty
 
 1141
-00:43:34,193 --> 00:43:36,843
-their crimson portals bleeding dark void mana into
+00:43:36,330 --> 00:43:38,830
+detected a sharp acoustic disturbance in the upper
 
 1142
-00:43:36,856 --> 00:43:37,668
-the clouds.
+00:43:38,842 --> 00:43:39,617
+atmosphere.
 
 1143
-00:43:38,548 --> 00:43:40,186
-GLOBAL SYSTEM EMERGENCY:
+00:43:40,492 --> 00:43:42,255
+Looking up through the window into the night
 
 1144
-00:43:40,386 --> 00:43:43,623
-TRIPLE ABYSSAL CATACLYSM IMMINENT IN 48 HOURS
+00:43:42,267 --> 00:43:42,830
+sky,
 
 1145
-00:43:44,500 --> 00:43:46,325
-ESTIMATED CASUALTY PROJECTION:
+00:43:42,992 --> 00:43:44,505
+Caelen's eyes narrowed.
 
 1146
-00:43:46,513 --> 00:43:49,775
-NATION-WIDE COLLAPSE UNLESS CLEARED BY AN APEX SOVEREIGN.
+00:43:45,388 --> 00:43:47,588
+Above the skyline of the capital city,
 
 1147
-00:43:50,644 --> 00:43:51,744
-At the same moment,
+00:43:47,738 --> 00:43:50,576
+three massive S-Rank Abyssal Red Gates were slowly
 
 1148
-00:43:51,882 --> 00:43:55,107
-four shadowy figures in high-tier stealth cloaks materialized
+00:43:50,588 --> 00:43:52,138
+rotating into existence,
 
 1149
-00:43:55,119 --> 00:43:58,169
-silently on the rooftops across from Caelen's apartment.
+00:43:52,313 --> 00:43:54,963
+their crimson portals bleeding dark void mana into
 
 1150
-00:43:59,044 --> 00:44:00,469
-Caelen did not flinch,
+00:43:54,976 --> 00:43:55,788
+the clouds.
 
 1151
-00:44:00,569 --> 00:44:02,007
-panic, or hide.
+00:43:56,668 --> 00:43:58,306
+GLOBAL SYSTEM EMERGENCY:
 
 1152
-00:44:02,769 --> 00:44:05,057
-He simply picked up his Void-Strung bow,
+00:43:58,506 --> 00:44:01,743
+TRIPLE ABYSSAL CATACLYSM IMMINENT IN 48 HOURS
 
 1153
-00:44:05,207 --> 00:44:06,882
-notched a glowing phantom arrow,
+00:44:02,620 --> 00:44:04,445
+ESTIMATED CASUALTY PROJECTION:
 
 1154
-00:44:07,057 --> 00:44:08,782
-and aimed it through the window frame into
+00:44:04,633 --> 00:44:07,895
+NATION-WIDE COLLAPSE UNLESS CLEARED BY AN APEX SOVEREIGN.
 
 1155
-00:44:08,794 --> 00:44:09,457
-the dark.
+00:44:08,764 --> 00:44:09,864
+At the same moment,
 
 1156
-00:44:10,324 --> 00:44:12,537
-You picked a bad night to visit," Caelen
+00:44:10,002 --> 00:44:13,227
+four shadowy figures in high-tier stealth cloaks materialized
 
 1157
-00:44:12,549 --> 00:44:13,574
-murmured with a calm,
+00:44:13,239 --> 00:44:16,289
+silently on the rooftops across from Caelen's apartment.
 
 1158
-00:44:13,749 --> 00:44:16,674
-deadpan smile as his bowstring hummed with terrifying
+00:44:17,164 --> 00:44:18,589
+Caelen did not flinch,
 
 1159
-00:44:16,687 --> 00:44:17,274
+00:44:18,689 --> 00:44:20,127
+panic, or hide.
+
+1160
+00:44:20,889 --> 00:44:23,177
+He simply picked up his Void-Strung bow,
+
+1161
+00:44:23,327 --> 00:44:25,002
+notched a glowing phantom arrow,
+
+1162
+00:44:25,177 --> 00:44:26,902
+and aimed it through the window frame into
+
+1163
+00:44:26,914 --> 00:44:27,577
+the dark.
+
+1164
+00:44:28,444 --> 00:44:30,657
+You picked a bad night to visit," Caelen
+
+1165
+00:44:30,669 --> 00:44:31,694
+murmured with a calm,
+
+1166
+00:44:31,869 --> 00:44:34,794
+deadpan smile as his bowstring hummed with terrifying
+
+1167
+00:44:34,807 --> 00:44:35,394
 power.

@@ -215,40 +215,41 @@ The beast possessed armored green scales and venomous fangs capable of melting f
 Any ordinary F-rank student would have panicked and sprinted toward the elevator, but Caelen calmly drew an arrow from his quiver.
 
 [IMG_058]
-His hands were steady, notching the steel head against the ashwood riser with fluid, practiced muscle memory built from three years of solo target practice.
+His hands were steady, notching the steel head against the ashwood riser with fluid, practiced muscle memory built from three years of solo target practice. As the viper launched itself through the air with blinding speed, Caelen calculated its parabolic arc in a split second and released the bowstring.
 
 [IMG_059]
-As the viper launched itself through the air with blinding speed, Caelen calculated its parabolic arc in a split second and released the bowstring.
+The steel arrow whistled through the damp air, piercing directly through the viper's open maw and pinning its brain to the stone cavern wall. The beast convulsed twice before falling completely limp, its dark blood sizzling against the damp floor.
 
 [IMG_060]
-The steel arrow whistled through the damp air, piercing directly through the viper's open maw and pinning its brain to the stone cavern wall.
-
-[IMG_061]
-The beast convulsed twice before falling completely limp, its dark blood sizzling against the damp floor.
-
-[IMG_062]
 Before the echo of the shot could fade, a brilliant swirl of cyan and gold mana filaments erupted from the viper's carcass, rushing straight into Caelen's chest.
 
-[IMG_063]
+[IMG_061]
 `[SYSTEM: LEVEL 1 TARGET ELIMINATED — IRON-SCALED CAVE VIPER.]`
-
-[IMG_064]
 `[TALENT ACTIVATION: SOVEREIGN SIPHON EXTRACTED +2 AGILITY, +1 PERCEPTION (PERMANENT).]`
 
-[IMG_065]
+[IMG_062]
 A sudden rush of cool, invigorating energy flowed through Caelen's nervous system, sharpening his eyesight and lightening the weight of his boots.
 
-[IMG_066]
+[IMG_063]
 Opening his status screen, his Agility had instantly climbed from sixteen to eighteen, while his Perception rose to nineteen.
 
-[IMG_067]
+[IMG_064]
 *"Three stat points from a single low-tier snake,"* Caelen whispered, feeling the physical difference in his sensory receptors.
 
-[IMG_068]
+[IMG_065]
 In standard Hunter Ministry progression arithmetic, gaining three stat points required grinding three full levels—which took ordinary students weeks of dungeon raiding.
 
-[IMG_069]
+[IMG_066]
 Caelen had accomplished the same growth in three seconds with a single fifty-cent steel arrow.
+
+[IMG_067]
+`[STATUS UPDATE: STRENGTH 14 | AGILITY 19 | CONSTITUTION 12 | PERCEPTION 20]`
+
+[IMG_068]
+`[CORE POTENTIAL: UNLIMITED CUMULATIVE STAT SIPHON CONFIRMED.]`
+
+[IMG_069]
+*"They sent me down here to clean garbage,"* Caelen murmured with an analytical grin, feeling the limitless potential of his talent.
 
 [IMG_070]
 Looking into the vast darkness of the cavern where hundreds of glowing green eyes flickered along the pipes and walls, Caelen's deadpan expression gave way to a cold, razor-sharp smile.

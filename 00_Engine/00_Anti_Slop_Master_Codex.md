@@ -145,6 +145,34 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   4. **Purge of Lexically Ambiguous Words:** Strictly ban dual-meaning automotive/military terms ("Bronco", "Tank", "Turret") in prompts and character tokens.
   5. **Mandatory Visual Reference Plates for Items & Props:** Every signature weapon, recurring magical artifact, and key environmental prop MUST have a generated 16:9 master reference plate saved in `character_vault/` (`04_Weapon_...jpg`, `05_Weapon_...jpg`, etc.) and mapped in `items.json` for Google Flow asset injection and visual continuity.
 
+---
+
+### 17. The 12 Visual AI Slop Archetypes & Zero-Speculation Framework
+* **Defect:** Diffusion models hallucinating due to unconditioned prompts, causing: (1) multiple protagonist clones on stage and in the audience, (2) third phantom arms, (3) floating weapons, (4) 270° rubber spine twists, (5) system HUDs plastered across character faces, (6) clone audiences, (7) knights/swords on archers, (8) ceremonial pedestals teleporting into corridors, (9) wardrobe confusion between student blazers and sovereign armor, (10) contradictory multi-source lighting, (11) disembodied 3rd hands floating inside or touching holographic HUD glass, and (12) non-Euclidean split-room doorway distortions.
+* **Fix (The 12 Zero-Speculation Diffusion Invariants):**
+  1. **Compositional Screen Pinning:** Pin subject coordinates to screen thirds (`In the left third / center-stage / right foreground`) to eliminate framing guesswork.
+  2. **Chronological Wardrobe Locking:** Explicitly describe exact narrative attire per cut to prevent costume hallucination (`dark slate school blazer over white shirt and tie, zero heavy armor, zero coats`).
+  3. **Multi-Actor Identity Binding:** Every multi-person scene MUST identify all actors with distinct demographic tokens (age, outfit, hair, role) and mandate `strictly distinct individuals, zero duplicate protagonist`.
+  4. **Background Crowd De-Identification:** Audiences/classrooms must use `diverse, softly blurred, indistinct silhouettes with varied hairstyles and ZERO duplicate faces matching the protagonist`.
+  5. **Exact Skeletal Contact Geometry:** Describe physical grip mechanics on all weapons, papers, and artifacts to prevent floating items (`left hand firmly clasped around the wrapped wooden riser of the recurve bow, right fingers hooked on the bowstring`).
+  6. **Orthogonal Action Perspective:** Enforce natural anatomical angles (`three-quarter front view`, `eye-level framing`) to prevent spinal twist artifacts.
+  7. **HUD Quadrant Space Pinning:** System interfaces MUST float in open background quadrants (`upper-right quadrant of empty air`) with clear facial clearance.
+  8. **Dominant Illumination Locking:** Specify the single primary light source per room (`illuminated by warm overhead brass chandeliers`, `illuminated by bioluminescent teal moss`).
+  9. **Context-Scoped Environmental Enclosures:** Strictly partition spatial strings per room, eliminating cross-room prop teleportation.
+  10. **Decoupled Floating HUDs & Mandatory Arm Pinning (Zero-Disembodied-Hand Invariant):** Floating holographic system screens, diagnostic menus, and stat windows must float freely in open air without literal text strings `[...]`. Characters viewing the screen must have both arms physically anchored to their body (e.g. resting at sides, hand on quiver strap) with EXACTLY two arms. ZERO third hands, ZERO disembodied hands touching holographic screens, ZERO hands inside or holding the UI glass.
+  11. **Single-Perspective Threshold Geometry (Zero Split-Room Distortion):** Doorways, airlocks, and entrance/exit transitions must be composed from ONE unified camera perspective inside a single space. NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
+  12. **Unabridged Universal Negative Anti-Slop Quality Clause:** Every prompt entry across all batches MUST conclude with the complete, unabridged negative clause:
+      `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
+
+---
+
+### 18. The Proactive Prompt Learning & Auto-Codification Protocol (Zero-Reminder Invariant)
+* **Defect:** Prompt generation bugs and diffusion anomalies are resolved for one episode, but the agent forgets to persist the new invariant to master directives, causing identical errors in future episodes.
+* **Fix (Mandatory Autonomous Codification Gate):**
+  1. **Dual-Action Mandate:** Whenever a prompt correction, visual slop defect, or generation constraint is resolved during production turns, the agent is strictly forbidden from only silently modifying the local episodic file.
+  2. **Autonomous Proactive Codification:** The agent MUST proactively initiate a codification step at turn end (via `/learn` proposal or interactive prompt modal) to persist the newly discovered invariant directly into `AGENTS.md` and the master `00_Engine/` codices.
+  3. **Zero-Reminder Standard:** The operator should never have to manually remind the agent to update master codices. Codification is an automated studio invariant.
+
 
 
 
