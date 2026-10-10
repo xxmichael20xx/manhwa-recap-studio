@@ -1419,6 +1419,17 @@ const resolveVaultModel = (tokenStr) => {
   if (!tokenStr) return null
   const cleanName = tokenStr.replace(/[@{}]/g, '').trim()
   
+  // If cleanName is a UUID, reverse-resolve via parsedEntities
+  let entityKey = null
+  if (parsedEntities.value) {
+    for (const [k, u] of Object.entries(parsedEntities.value)) {
+      if (u === cleanName) {
+        entityKey = k
+        break
+      }
+    }
+  }
+
   // Find match in vaultModels
   const match = vaultModels.value.find(m => {
     if (m.token === tokenStr) return true
@@ -1427,6 +1438,12 @@ const resolveVaultModel = (tokenStr) => {
     if (m.dnaAnchor && m.dnaAnchor.includes(cleanName)) return true
     const cleanWithoutPrefix = cleanName.replace(/^(Weapon|Item|Prop|Artifact):\s*/i, '').trim()
     if (m.name && m.name.toLowerCase().includes(cleanWithoutPrefix.toLowerCase())) return true
+    if (entityKey) {
+      if (m.token === `@{${entityKey}}`) return true
+      if (m.name && m.name.toLowerCase() === entityKey.toLowerCase()) return true
+      const keyWithoutPrefix = entityKey.replace(/^(Weapon|Item|Prop|Artifact):\s*/i, '').trim().toLowerCase()
+      if (m.name && m.name.toLowerCase().includes(keyWithoutPrefix)) return true
+    }
     return false
   })
 
@@ -1435,23 +1452,24 @@ const resolveVaultModel = (tokenStr) => {
   }
 
   // Fallback object if not in vault
-  const isWeapon = /^weapon:/i.test(cleanName) || /bow|sword|staff|blade|dagger/i.test(cleanName)
-  const isArtifact = /^item:/i.test(cleanName) || /orb|ring|relic|crystal/i.test(cleanName)
-  const isProp = /^prop:/i.test(cleanName) || /console|table|banner/i.test(cleanName)
+  const displayName = entityKey || cleanName
+  const isWeapon = /^weapon:/i.test(displayName) || /bow|sword|staff|blade|dagger/i.test(displayName)
+  const isArtifact = /^item:/i.test(displayName) || /orb|ring|relic|crystal/i.test(displayName)
+  const isProp = /^prop:/i.test(displayName) || /console|table|banner/i.test(displayName)
   const cat = isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : (isProp ? 'Props' : 'Characters'))
 
   return {
     id: cleanName.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-    name: cleanName,
-    flowName: cleanName,
-    token: tokenStr,
+    name: displayName,
+    flowName: displayName,
+    token: tokenStr.startsWith('@') ? tokenStr : `@{${displayName}}`,
     category: cat,
     role: cat,
     type: isWeapon ? 'weapon' : (isArtifact ? 'artifact' : (isProp ? 'prop' : 'character')),
     tier: 'Custom Ref',
     hasPlate: false,
     url: null,
-    description: cleanName
+    description: displayName
   }
 }
 
@@ -1462,6 +1480,18 @@ const getBatchVaultReferences = (items) => {
     const text = (item.prompt || '') + ' ' + (item.characterAnchor || '')
     const tokens = extractTokensFromText(text)
     tokens.forEach(t => uniqueTokens.add(t))
+    if (item.character_ref) {
+      String(item.character_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => uniqueTokens.add(r))
+    }
+    if (item.character_refs) {
+      String(item.character_refs).split(',').map(s => s.trim()).filter(Boolean).forEach(r => uniqueTokens.add(r))
+    }
+    if (item.item_ref) {
+      String(item.item_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => uniqueTokens.add(r))
+    }
+    if (item.item_refs) {
+      String(item.item_refs).split(',').map(s => s.trim()).filter(Boolean).forEach(r => uniqueTokens.add(r))
+    }
   }
   const seenModelKeys = new Set()
   const models = []
@@ -1487,6 +1517,18 @@ const getSceneVaultReferences = (scene) => {
   if (!scene) return []
   const text = (scene.prompt || '') + ' ' + (scene.characterAnchor || '')
   const tokens = extractTokensFromText(text)
+  if (scene.character_ref) {
+    String(scene.character_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => tokens.push(r))
+  }
+  if (scene.character_refs) {
+    String(scene.character_refs).split(',').map(s => s.trim()).filter(Boolean).forEach(r => tokens.push(r))
+  }
+  if (scene.item_ref) {
+    String(scene.item_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => tokens.push(r))
+  }
+  if (scene.item_refs) {
+    String(scene.item_refs).split(',').map(s => s.trim()).filter(Boolean).forEach(r => tokens.push(r))
+  }
   const seenModelKeys = new Set()
   const models = []
   for (const token of tokens) {
@@ -1541,6 +1583,7 @@ const getFlowMasterInstructions = (format = '16:9') => {
 - ZERO extra limbs, mutated hands, duplicate body parts, fused fingers, floating hands, or detached ghost limbs.
 - Every hand holding a weapon, bow, or prop MUST be physically and seamlessly attached to the forearm and shoulder.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Never clone or duplicate the main character. Diverse background faces and neutral indistinct crowd silhouettes.
+- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, fist impact, weapon strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger, random muscle man, or generic bystander.
 - Floating holographic screens must float freely in mid-air with zero disembodied hands touching the glass.
 
 🏛️ SPATIAL & CAMERA INTEGRITY:
@@ -1563,6 +1606,7 @@ const getFlowMasterInstructions = (format = '16:9') => {
 👥 ACTOR & ANATOMICAL INTEGRITY:
 - Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Zero duplicate clones.
+- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger or generic bystander.
 
 🎨 MASTER ART STYLE:
 - Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, pure textless artwork.`
@@ -1616,18 +1660,15 @@ Isolate all generated images from this batch into "${collectionTitle}". Pure tex
    - Doorways, airlocks, and entrance/exit transitions must be shot from ONE unified camera perspective inside a single space.
    - NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
 12. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-13. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
+13. 🏹 MANDATORY CHARACTER IDENTITY ANCHORING & ZERO-ANONYMOUS-ACTOR INVARIANT:
+   - When a scene depicts an action, combat strike, fist impact, arrow release, stat siphon, reaction, or presence involving a character, that character MUST be explicitly identified using their locked entity reference (@UUID / Character Anchor).
+   - NEVER replace the named character with a generic stranger, random fighter, or unnamed bystander.
+14. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
 }
 
-// Helper to generate dynamic spreadsheet-style batch letters (A..Z, AA..AZ, BA..BZ, etc.)
-const getBatchLetter = (index) => {
-  let letter = ''
-  let num = index
-  while (num >= 0) {
-    letter = String.fromCharCode((num % 26) + 65) + letter
-    num = Math.floor(num / 26) - 1
-  }
-  return letter
+// Helper to generate dynamic zero-padded batch codes (01, 02, ... 13)
+const getBatchCode = (index) => {
+  return String(index + 1).padStart(2, '0')
 }
 
 const BATCH_SIZE = 24
@@ -1637,11 +1678,11 @@ const getSceneBatchName = (item, idx) => {
     const num = parseInt(item.tag.replace(/[^0-9]/g, ''), 10)
     if (!isNaN(num) && num > 0) {
       const bIdx = Math.floor((num - 1) / BATCH_SIZE)
-      return `Batch ${getBatchLetter(bIdx)}`
+      return `Batch ${getBatchCode(bIdx)}`
     }
   }
   const bIdx = Math.floor(idx / BATCH_SIZE)
-  return `Batch ${getBatchLetter(bIdx)}`
+  return `Batch ${getBatchCode(bIdx)}`
 }
 
 // Dynamic Batches Computation: Standard 24-scene batches partitioned into micro-chunks
@@ -1659,9 +1700,9 @@ const dynamicBatches = computed(() => {
     const startTag = items[0]?.tag || `IMG${String(startIndex + 1).padStart(3, '0')}`
     const endTag = items[items.length - 1]?.tag || `IMG${String(endIndex).padStart(3, '0')}`
     const batchRefs = getBatchVaultReferences(items)
-    const batchLetter = getBatchLetter(i)
-    const batchName = `Batch ${batchLetter}`
-    const collectionTitle = getCollectionName(batchName)
+    const batchCode = getBatchCode(i)
+    const batchName = `Batch ${batchCode}`
+    const collectionTitle = getCollectionName(batchName, i)
 
     // Compute micro-chunks for this batch
     const chunks = []
@@ -1697,7 +1738,8 @@ const dynamicBatches = computed(() => {
 
     batches.push({
       name: batchName,
-      letter: batchLetter,
+      letter: batchCode,
+      batchCode,
       batchNumber: i + 1,
       startIndex,
       endIndex,
@@ -1810,17 +1852,42 @@ const copyMasterAgentInstructions = async () => {
   }
 }
 
-const getCollectionName = (batchName) => {
-  const fRaw = route.params.franchiseId || 'Series_02'
+// Helper to convert letter (e.g. 'A', 'C', 'AA') to 1-indexed number
+const batchLetterToNumber = (letter) => {
+  if (!letter) return 1
+  let num = 0
+  for (let i = 0; i < letter.length; i++) {
+    num = num * 26 + (letter.charCodeAt(i) - 64)
+  }
+  return num
+}
+
+const getBatchNumFormatted = (batchName, fallbackIdx = null) => {
+  if (typeof fallbackIdx === 'number' && !isNaN(fallbackIdx) && fallbackIdx >= 0) {
+    return String(fallbackIdx + 1).padStart(2, '0')
+  }
+  const digitMatch = (batchName || '').match(/Batch\s+(\d+)/i)
+  if (digitMatch) {
+    return digitMatch[1].padStart(2, '0')
+  }
+  const letterMatch = (batchName || '').match(/Batch\s+([A-Za-z]+)/i)
+  if (letterMatch) {
+    const num = batchLetterToNumber(letterMatch[1].toUpperCase())
+    return String(num).padStart(2, '0')
+  }
+  return '01'
+}
+
+const getCollectionName = (batchName, batchIndex = null) => {
   const eRaw = route.params.episodeId || 'EP01'
-  
-  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
   const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
 
-  const bLetterMatch = (batchName || '').match(/Batch\s+([A-Z]+)/i)
-  const batchCode = bLetterMatch ? `Batch ${bLetterMatch[1]}` : (batchName || 'Batch')
+  if (batchName === 'Missing') return `EP${epNum} Missing`
+  if (batchName === 'Selected') return `EP${epNum} Selected`
+  if (batchName === 'Master_Deck') return `EP${epNum} Master Deck`
 
-  return `Series ${sNum} EP${epNum} ${batchCode}`
+  const bNum = getBatchNumFormatted(batchName, batchIndex)
+  return `EP${epNum} Batch ${bNum}`
 }
 
 const copyChunk = async (batch, bIdx, chunk, cIdx) => {
@@ -1838,7 +1905,13 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, { lean: isLean })
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, {
+      lean: isLean,
+      character_ref: p.character_ref,
+      character_refs: p.character_refs,
+      item_ref: p.item_ref,
+      item_refs: p.item_refs
+    })
   }).join('\n\n')
 
   const chunkXml = `<batch id="${batch.name.replace(/\s+/g, '_')}_Chunk_${chunk.chunkNumber}" series="${franchiseId}" episode="${episodeId}" batch="${batch.name}" chunk="${chunk.chunkNumber}" scenes="${chunk.startTag}-${chunk.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1887,7 +1960,13 @@ const copyBatchFullXml = async (batch, bIdx) => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, { lean: isLean })
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, {
+      lean: isLean,
+      character_ref: p.character_ref,
+      character_refs: p.character_refs,
+      item_ref: p.item_ref,
+      item_refs: p.item_refs
+    })
   }).join('\n\n')
 
   const batchXml = `<batch id="${batch.name.replace(/\s+/g, '_')}" series="${franchiseId}" episode="${episodeId}" scenes="${batch.startTag}-${batch.endTag}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1933,7 +2012,13 @@ const copySelectedPrompts = async () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, { lean: isLean })
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, {
+      lean: isLean,
+      character_ref: p.character_ref,
+      character_refs: p.character_refs,
+      item_ref: p.item_ref,
+      item_refs: p.item_refs
+    })
   }).join('\n\n')
 
   const batchXml = `<batch id="Selected_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Selected_${selectedItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -1970,7 +2055,13 @@ const copyMissingPrompts = async () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, { lean: isLean })
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, {
+      lean: isLean,
+      character_ref: p.character_ref,
+      character_refs: p.character_refs,
+      item_ref: p.item_ref,
+      item_refs: p.item_refs
+    })
   }).join('\n\n')
 
   const batchXml = `<batch id="Missing_Scenes" series="${franchiseId}" episode="${episodeId}" scenes="Missing_${missingItems.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -2006,7 +2097,13 @@ const copyAllMaster = async () => {
     const num = rawId.replace(/IMG/i, '').padStart(3, '0')
     const tag = `IMG_${num}`
     const filename = `${tag}.jpg`
-    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, { lean: isLean })
+    return buildSceneXmlNode(tag, filename, p.prompt, parsedEntities.value, promptTagMode.value, {
+      lean: isLean,
+      character_ref: p.character_ref,
+      character_refs: p.character_refs,
+      item_ref: p.item_ref,
+      item_refs: p.item_refs
+    })
   }).join('\n\n')
 
   const batchXml = `<batch id="Master_Deck" series="${franchiseId}" episode="${episodeId}" scenes="All_${parsedPrompts.value.length}" format="${is16x9 ? '16:9' : '9:16'}">\n\n${scenesXml}\n\n</batch>`
@@ -2068,12 +2165,22 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
   const results = []
 
   // 1. Check for XML <scene id="IMG_001"> ... </scene> blocks
-  const sceneRegex = /<scene\s+[^>]*id=["']?(IMG_?\d+)["']?[^>]*>\s*([\s\S]*?)\s*<\/scene>/gi
+  const sceneRegex = /<scene\s+([^>]*?)>\s*([\s\S]*?)\s*<\/scene>/gi
   let sMatch
   while ((sMatch = sceneRegex.exec(markdown)) !== null) {
-    const rawTag = sMatch[1].replace(/_/g, '')
-    const tag = `[${rawTag.replace(/(\d+)/, '_$1')}]`
+    const attrs = sMatch[1]
     const promptText = sMatch[2].trim()
+
+    const idMatch = attrs.match(/id=["']?(IMG_?\d+)["']?/i)
+    if (!idMatch) continue
+    const rawTag = idMatch[1].replace(/_/g, '')
+    const tag = `[${rawTag.replace(/(\d+)/, '_$1')}]`
+
+    const charRefMatch = attrs.match(/\bcharacter_ref=["']([^"']+)["']/i)
+    const charRefsMatch = attrs.match(/\bcharacter_refs=["']([^"']+)["']/i)
+    const itemRefMatch = attrs.match(/\bitem_ref=["']([^"']+)["']/i)
+    const itemRefsMatch = attrs.match(/\bitem_refs=["']([^"']+)["']/i)
+
     const anchors = [...promptText.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]).join(', ')
     
     const cleanTag = tag.replace(/[[\]]/g, '').toUpperCase()
@@ -2084,6 +2191,10 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
       description: `Scene Panel ${rawTag}`,
       characterAnchor: anchors,
       prompt: promptText,
+      character_ref: charRefMatch ? charRefMatch[1] : null,
+      character_refs: charRefsMatch ? charRefsMatch[1] : null,
+      item_ref: itemRefMatch ? itemRefMatch[1] : null,
+      item_refs: itemRefsMatch ? itemRefsMatch[1] : null,
       hasImage: imgInfo ? imgInfo.hasImage : false,
       imageUrl: imgInfo ? imgInfo.url : null
     })
@@ -2166,15 +2277,19 @@ const copySinglePrompt = async (item, index) => {
   const filename = `${tag}.jpg`
   const promptText = typeof item === 'object' && item.prompt ? item.prompt : item
   const isLean = isLeanPromptMode.value
-  const promptBody = isLean ? stripBoilerplateTail(promptText) : promptText
-  const finalPrompt = transformTokens(promptBody, parsedEntities.value, promptTagMode.value)
-  const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
+  const sceneXml = buildSceneXmlNode(tag, filename, promptText, parsedEntities.value, promptTagMode.value, {
+    lean: isLean,
+    character_ref: typeof item === 'object' ? item.character_ref : null,
+    character_refs: typeof item === 'object' ? item.character_refs : null,
+    item_ref: typeof item === 'object' ? item.item_ref : null,
+    item_refs: typeof item === 'object' ? item.item_refs : null
+  })
   
   const is16x9 = activeDirectiveFormat.value === '16:9'
   const sceneNum = parseInt(num, 10)
   const bIdx = !isNaN(sceneNum) && sceneNum > 0 ? Math.floor((sceneNum - 1) / BATCH_SIZE) : 0
-  const bLetter = getBatchLetter(bIdx)
-  const collectionTitle = getCollectionName(`Batch ${bLetter}`)
+  const bCode = getBatchCode(bIdx)
+  const collectionTitle = getCollectionName(`Batch ${bCode}`, bIdx)
   const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
   const payload = `${flowDirective}\n\n${sceneXml}`
   

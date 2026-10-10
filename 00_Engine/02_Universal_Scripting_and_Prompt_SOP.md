@@ -94,9 +94,9 @@ To guarantee complete visual cohesion across all generated storyboard plates and
 
 ---
 
-## 7. The 12 Zero-Speculation Prompt Construction Standard
+## 7. The 13 Zero-Speculation Prompt Construction Standard
 
-Every single prompt entry generated across all franchises must adhere unconditionally to the 12 Zero-Speculation Invariants:
+Every single prompt entry generated across all franchises must adhere unconditionally to the 13 Zero-Speculation Invariants:
 1. **Compositional Screen Pinning:** Pin subject coordinates to screen thirds (`left third`, `center-stage`, `right third`).
 2. **Chronological Wardrobe Locking:** Explicitly describe current narrative attire per cut to prevent costume hallucination.
 3. **Multi-Actor Identity Binding:** Every multi-person scene MUST identify all actors with distinct demographic tokens (age, outfit, hair, role) and mandate `strictly distinct individuals, zero duplicate protagonist`.
@@ -110,8 +110,13 @@ Every single prompt entry generated across all franchises must adhere unconditio
 11. **Single-Perspective Threshold Geometry (Zero Split-Room Distortion):** Doorways, airlocks, and entrance/exit transitions must be composed from ONE unified camera perspective inside a single space. NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
 12. **Unabridged Universal Negative Anti-Slop Quality Clause:** Include the complete, unabridged negative block on every scene node without exception:
     `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
+13. **Mandatory Character Identity Anchoring & Zero-Anonymous-Actor Invariant:**
+    - Every scene depicting combat action, physical impacts, punches, arrow releases, spellcasting, stat harvesting, emotional reactions, or scene presence MUST explicitly identify the acting character using their locked Character DNA token (`@{Character Name - Archetype}`) directly within the prompt body before the spatial enclosure.
+    - **Zero Anonymous Actors:** The studio prompt engine and authoring agents are strictly forbidden from writing abstract action descriptions (e.g. "a fist punching a monster", "arrows striking targets", "swords clashing") without explicitly specifying the named actor delivering or receiving the action.
+    - **1:1 Attribute-Token Synchronization:** Every `<scene>` XML node must include `character_ref="UUID"` (or `character_refs="UUID1, UUID2"`) matching 100% bit-for-bit with the canonical UUIDs defined in `flow_entities.json`.
 
 ---
+
 
 ## 8. The Proactive Prompt Learning & Auto-Codification Protocol
 

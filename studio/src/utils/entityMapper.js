@@ -169,41 +169,101 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   const itemRefs = []
   const text = promptText || ''
 
-  // Characters
-  if (text.includes('Caelen Vance - Phantom Marksman') || (mode === 'uuid' && entityMap['Caelen Vance - Phantom Marksman'] && text.includes(entityMap['Caelen Vance - Phantom Marksman']))) {
-    if (entityMap['Caelen Vance - Phantom Marksman']) charRefs.push(entityMap['Caelen Vance - Phantom Marksman'])
-  } else if (text.includes('Caelen Vance - Student Archer') || text.includes('Caelen Vance') || (mode === 'uuid' && entityMap['Caelen Vance - Student Archer'] && text.includes(entityMap['Caelen Vance - Student Archer']))) {
-    if (entityMap['Caelen Vance - Student Archer']) charRefs.push(entityMap['Caelen Vance - Student Archer'])
+  // 1. Preserve explicit character references passed in options (from disk parsing)
+  if (options.character_ref) {
+    String(options.character_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => {
+      if (!charRefs.includes(r)) charRefs.push(r)
+    })
+  }
+  if (options.characterRefs || options.character_refs) {
+    const refs = String(options.characterRefs || options.character_refs).split(',').map(s => s.trim()).filter(Boolean)
+    refs.forEach(r => {
+      if (!charRefs.includes(r)) charRefs.push(r)
+    })
   }
 
-  if (text.includes('Ignis Sterling') || (mode === 'uuid' && entityMap['Ignis Sterling - Pyromancer Scion'] && text.includes(entityMap['Ignis Sterling - Pyromancer Scion']))) {
-    if (entityMap['Ignis Sterling - Pyromancer Scion']) charRefs.push(entityMap['Ignis Sterling - Pyromancer Scion'])
+  // 2. Preserve explicit item references passed in options
+  if (options.item_ref) {
+    String(options.item_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => {
+      if (!itemRefs.includes(r)) itemRefs.push(r)
+    })
   }
-  if (text.includes('Lyra Mercer') || (mode === 'uuid' && entityMap['Lyra Mercer - Wind Scout'] && text.includes(entityMap['Lyra Mercer - Wind Scout']))) {
-    if (entityMap['Lyra Mercer - Wind Scout']) charRefs.push(entityMap['Lyra Mercer - Wind Scout'])
-  }
-  if (text.includes('Boris Vane') || (mode === 'uuid' && entityMap['Instructor Boris Vane'] && text.includes(entityMap['Instructor Boris Vane']))) {
-    if (entityMap['Instructor Boris Vane']) charRefs.push(entityMap['Instructor Boris Vane'])
-  }
-  if (text.includes('Keith Holloway') || text.includes('Director Holloway') || (mode === 'uuid' && entityMap['Director Keith Holloway'] && text.includes(entityMap['Director Keith Holloway']))) {
-    if (entityMap['Director Keith Holloway']) charRefs.push(entityMap['Director Keith Holloway'])
+  if (options.itemRefs || options.item_refs) {
+    const refs = String(options.itemRefs || options.item_refs).split(',').map(s => s.trim()).filter(Boolean)
+    refs.forEach(r => {
+      if (!itemRefs.includes(r)) itemRefs.push(r)
+    })
   }
 
-  // Items
-  if (text.includes('Void-Strung Heavy Recurve') || (mode === 'uuid' && entityMap['Weapon: Void-Strung Heavy Recurve'] && text.includes(entityMap['Weapon: Void-Strung Heavy Recurve']))) {
-    if (entityMap['Weapon: Void-Strung Heavy Recurve']) itemRefs.push(entityMap['Weapon: Void-Strung Heavy Recurve'])
+  // 3. Dynamic lookup from entityMap based on tokens or text references
+  if (entityMap && typeof entityMap === 'object') {
+    for (const [key, uuid] of Object.entries(entityMap)) {
+      if (!uuid) continue
+      const isItem = /^(Weapon|Item):/i.test(key)
+      const tokenPattern = `@{${key}}`
+      const hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
+      if (hasToken) {
+        if (isItem) {
+          if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+        } else {
+          if (key === 'Caelen Vance - Student Archer' && text.includes('Caelen Vance - Phantom Marksman')) {
+            continue
+          }
+          if (!charRefs.includes(uuid)) charRefs.push(uuid)
+        }
+      }
+    }
   }
-  if (text.includes('Ashwood Training Bow') || (mode === 'uuid' && entityMap['Weapon: Ashwood Training Bow'] && text.includes(entityMap['Weapon: Ashwood Training Bow']))) {
-    if (entityMap['Weapon: Ashwood Training Bow']) itemRefs.push(entityMap['Weapon: Ashwood Training Bow'])
+
+  // 4. Hardcoded fallbacks for Series 02 if entityMap is missing specific keys
+  if (text.includes('Caelen Vance - Phantom Marksman')) {
+    const uuid = (entityMap && entityMap['Caelen Vance - Phantom Marksman']) || 'f16555b2-8ae8-40bb-8027-5b8a0c9d859c'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
+    const studentUuid = (entityMap && entityMap['Caelen Vance - Student Archer']) || 'bbf8e245-73fa-42d8-a81c-1bdb468885de'
+    const sIdx = charRefs.indexOf(studentUuid)
+    if (sIdx !== -1) charRefs.splice(sIdx, 1)
+  } else if (text.includes('Caelen Vance - Student Archer') || text.includes('Caelen Vance')) {
+    const uuid = (entityMap && entityMap['Caelen Vance - Student Archer']) || 'bbf8e245-73fa-42d8-a81c-1bdb468885de'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
   }
-  if (text.includes('Ethereal Siphon Arrow') || (mode === 'uuid' && entityMap['Item: Ethereal Siphon Arrow'] && text.includes(entityMap['Item: Ethereal Siphon Arrow']))) {
-    if (entityMap['Item: Ethereal Siphon Arrow']) itemRefs.push(entityMap['Item: Ethereal Siphon Arrow'])
+
+  if (text.includes('Ignis Sterling')) {
+    const uuid = (entityMap && entityMap['Ignis Sterling - Pyromancer Scion']) || 'a60b6666-0190-458f-9307-37ae95241946'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
   }
-  if (text.includes('Academy Awakening Orb') || (mode === 'uuid' && entityMap['Item: Academy Awakening Orb'] && text.includes(entityMap['Item: Academy Awakening Orb']))) {
-    if (entityMap['Item: Academy Awakening Orb']) itemRefs.push(entityMap['Item: Academy Awakening Orb'])
+  if (text.includes('Lyra Mercer')) {
+    const uuid = (entityMap && entityMap['Lyra Mercer - Wind Scout']) || 'fc5502df-6a3c-4837-b36a-d2b69a6df780'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
   }
-  if (text.includes('VIP Radar Console') || (mode === 'uuid' && entityMap['Item: VIP Radar Console'] && text.includes(entityMap['Item: VIP Radar Console']))) {
-    if (entityMap['Item: VIP Radar Console']) itemRefs.push(entityMap['Item: VIP Radar Console'])
+  if (text.includes('Boris Vane')) {
+    const uuid = (entityMap && entityMap['Instructor Boris Vane']) || '11108672-a1f5-4e55-973c-84be752da3ce'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
+  }
+  if (text.includes('Keith Holloway') || text.includes('Director Holloway')) {
+    const uuid = (entityMap && entityMap['Director Keith Holloway']) || 'b1c1a7f7-c0bf-4d5d-9c99-24759da75fb7'
+    if (!charRefs.includes(uuid)) charRefs.push(uuid)
+  }
+
+  // Items fallbacks
+  if (text.includes('Void-Strung Heavy Recurve')) {
+    const uuid = (entityMap && entityMap['Weapon: Void-Strung Heavy Recurve']) || 'e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893'
+    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('Ashwood Training Bow')) {
+    const uuid = (entityMap && entityMap['Weapon: Ashwood Training Bow']) || 'dedb670f-9670-4341-a5eb-6587353d5cd7'
+    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('Ethereal Siphon Arrow')) {
+    const uuid = (entityMap && entityMap['Item: Ethereal Siphon Arrow']) || 'f6d5a575-29d5-4f37-a49e-eae728456316'
+    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('Academy Awakening Orb')) {
+    const uuid = (entityMap && entityMap['Item: Academy Awakening Orb']) || 'ceed8950-f216-41f8-ab79-c38f199cf85c'
+    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('VIP Radar Console')) {
+    const uuid = (entityMap && entityMap['Item: VIP Radar Console']) || '4a5d1028-8a9a-4cba-8398-b69cd5eb715f'
+    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
   }
 
   const uniqueChars = [...new Set(charRefs.filter(Boolean))]
@@ -224,6 +284,7 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   openTag += `>`
 
   const promptBody = isLean ? stripBoilerplateTail(text) : text
-  const finalPrompt = transformTokens(promptBody, entityMap, mode)
+  const cleanBody = promptBody.replace(/^#\s*Filename:[^\n]*\n?/im, '').trim()
+  const finalPrompt = transformTokens(cleanBody, entityMap, mode)
   return `${openTag}\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
 }

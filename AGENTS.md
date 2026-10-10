@@ -162,7 +162,24 @@ Whenever drafting, adapting, or refining episodic transcripts, scripts, and prom
      2. `[Layer 2: Demographic & Character DNA Anchors (@{Character})]`
      3. `[Layer 3: Invariant Locked Spatial Environment Enclosure (Verbatim 25–30 words)]`
      4. `[Layer 4: Unambiguous Action, Weapon State & Interaction Matching Spoken Narration]`
-     5. `[Layer 5: Universal Negative Quality & Diffusion Anti-Bleed Guards]`
+      5. `[Layer 5: Universal Negative Quality & Diffusion Anti-Bleed Guards]`
+
+---
+
+## 👤 The Mandatory 100% Character Anchor Invariant (Zero-NPC Hallucination Standard)
+
+Whenever generating prompt matrices, prompt XML decks, or storyboard panels across ANY franchise:
+
+1. **Absolute Ban on Unanchored Prompts:** Strictly forbidden from writing prompt entries that describe monsters, system HUDs, environments, spells, or room layouts in isolation without explicitly injecting the locked Character Anchor token (`@{Character Name}` / `@UUID`).
+2. **Mandatory Compositional Blocking for Non-Character Focus:**
+   - **Monster & Boss Reveals:** Must position the locked protagonist in the frame (e.g. `Dynamic monster confrontation shot, 16:9 widescreen. In the left foreground, @{Caelen Vance - Student Archer} standing composed with @{Weapon: Ashwood Training Bow}, facing the [Monster Name] surging out of the water on the right`).
+   - **System HUDs & Stat Windows:** Must position the protagonist viewing or interacting with the holographic window (e.g. `In-frame system HUD window, 16:9 widescreen. In the left foreground, @{Caelen Vance - Student Archer} in profile looking at the glowing translucent cyan status window floating on the right displaying...`).
+   - **Environmental Traversal & Discovery:** Must place the protagonist actively exploring the terrain (e.g. `Environmental exploration shot, 16:9 horizontal. @{Caelen Vance - Student Archer} holding @{Weapon: Ashwood Training Bow} walking carefully along the stone walkway of the [Environment]`).
+3. **Strict Demographic Enforcement:** Every character token injection must reinforce the character's core visual markers (`parted raven-black hair, deep dark grey observant eyes, calm deadpan unbothered expression, strictly male youth, no swords`) to eliminate AI model drift.
+4. **Mandatory Character Identity Anchoring & Zero-Anonymous-Actor Invariant:**
+   - Every scene in prompt matrices depicting combat action, physical impacts, punches, arrow releases, spellcasting, stat harvesting, emotional reactions, or scene presence MUST explicitly identify the acting character using their locked Character DNA token (`@{Character Name - Archetype}`) directly within the prompt body before the spatial enclosure.
+   - **Zero Anonymous Actors:** The studio prompt engine and authoring agents are strictly forbidden from writing abstract action descriptions (e.g. "a fist punching a monster", "arrows striking targets", "swords clashing") without explicitly specifying the named actor delivering or receiving the action.
+   - **1:1 Attribute-Token Synchronization:** Every `<scene>` XML node must include `character_ref="UUID"` (or `character_refs="UUID1, UUID2"`) matching 100% bit-for-bit with the canonical UUIDs defined in `flow_entities.json`.
 
 ---
 
@@ -190,6 +207,7 @@ Master Agent Instructions house all static negative guards, formatting rules, co
 - ZERO extra limbs, mutated hands, duplicate body parts, fused fingers, floating hands, or detached ghost limbs.
 - Every hand holding a weapon, bow, or prop MUST be physically and seamlessly attached to the forearm and shoulder.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Never clone or duplicate the main character. Diverse background faces and neutral indistinct crowd silhouettes.
+- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, fist impact, weapon strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger, random muscle man, or generic bystander.
 - Floating holographic screens must float freely in mid-air with zero disembodied hands touching the glass.
 
 🏛️ SPATIAL & CAMERA INTEGRITY:
@@ -215,6 +233,7 @@ Master Agent Instructions house all static negative guards, formatting rules, co
 👥 ACTOR & ANATOMICAL INTEGRITY:
 - Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Zero duplicate clones.
+- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger or generic bystander.
 
 🎨 MASTER ART STYLE:
 - Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, pure textless artwork.

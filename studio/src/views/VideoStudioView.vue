@@ -1120,7 +1120,7 @@
               <Play class="w-4 h-4 fill-current" :class="{ 'animate-spin': compiling }" />
               <span v-if="compiling">Processing {{ compilationScope === 'auto' ? 'Automated Batch Queue' : (compilationScope === 'batch' ? (currentSelectedBatch?.name || 'Batch') : (compilationScope === 'stitch' ? 'Batch Stitcher' : 'Master Video')) }}...</span>
               <span v-else-if="compilationScope === 'auto'">{{ autoCompileStrategy === 'skip_compiled' ? '⚡ Auto-Compile (Skip Ready & Stitch)' : '🔄 Auto-Compile (Fresh All 9 Batches & Stitch)' }}</span>
-              <span v-else-if="compilationScope === 'batch'">Compile {{ currentSelectedBatch?.name || 'Batch A' }} Preview ({{ currentSelectedBatch?.totalCount || 24 }} Cuts)</span>
+              <span v-else-if="compilationScope === 'batch'">Compile {{ currentSelectedBatch?.name || 'Batch 01' }} Preview ({{ currentSelectedBatch?.totalCount || 24 }} Cuts)</span>
               <span v-else-if="compilationScope === 'stitch'">🔗 Stitch {{ compiledBatchesCount }} Compiled Batches into Master (Instant &lt;3s)</span>
               <span v-else>Compile Monolithic Master Video ({{ scenes.length }} Cuts)</span>
             </button>
@@ -1200,7 +1200,7 @@
                 <span>Automated Sequential Pipeline Architecture (24 FPS)</span>
               </div>
               <p class="text-[11px] text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
-                Compiles Batch A &rarr; flushes memory &rarr; compiles Batch B &rarr; ... &rarr; Batch I (6 parallel threads @ 24fps), then automatically losslessly stitches all batches into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_A-I_1080p.mp4</code> in &lt;2s.
+                Compiles Batch 01 &rarr; flushes memory &rarr; compiles Batch 02 &rarr; ... (6 parallel threads @ 24fps), then automatically losslessly stitches all batches into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_1080p.mp4</code> in &lt;2s.
               </p>
             </div>
 
@@ -2887,11 +2887,11 @@ const openFailedDrawer = (batchIndex = 'all', issueType = 'all') => {
 const getSceneBatchName = (tag) => {
   const cleanTag = (tag || '').toUpperCase().replace(/[^A-Z0-9]/g, '')
   const numMatch = cleanTag.match(/\d+/)
-  if (!numMatch) return 'Batch A'
+  if (!numMatch) return 'Batch 01'
   const num = parseInt(numMatch[0], 10)
   const batchIdx = Math.floor((num - 1) / 24)
-  const letter = String.fromCharCode(65 + batchIdx)
-  return `Batch ${letter}`
+  const code = String(batchIdx + 1).padStart(2, '0')
+  return `Batch ${code}`
 }
 
 const extractTokensFromText = (text) => {
@@ -3028,10 +3028,6 @@ const copySingleScenePrompt = (scene) => {
   const finalPrompt = transformTokens(scene.prompt, parsedEntities.value, promptTagMode.value)
   const sceneXml = `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
   
-  const fRaw = route.params.franchiseId || 'Series_02'
-  const eRaw = route.params.episodeId || 'EP01'
-  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
-  const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
   const collectionTitle = getCollectionName(`Single_${tag}`)
   const header = getFlowDirectiveHeader(collectionTitle)
   const payload = `${header}\n\n${sceneXml}`
@@ -3115,6 +3111,11 @@ const filteredFailedScenes = computed(() => {
   return list.filter(s => !s.hasImage || (s.qa && (s.qa.status === 'cluttered' || s.qa.status === 'warning')))
 })
 
+// Helper to generate dynamic zero-padded batch codes (01, 02, ... 13)
+const getBatchCode = (index) => {
+  return String(index + 1).padStart(2, '0')
+}
+
 // Helper to generate dynamic spreadsheet-style batch letters (A..Z, AA..AZ, BA..BZ, etc.)
 const getBatchLetter = (index) => {
   let letter = ''
@@ -3126,17 +3127,41 @@ const getBatchLetter = (index) => {
   return letter
 }
 
-const getCollectionName = (batchName) => {
-  const fRaw = route.params.franchiseId || 'Series_02'
+// Helper to convert letter (e.g. 'A', 'C', 'AA') to 1-indexed number
+const batchLetterToNumber = (letter) => {
+  if (!letter) return 1
+  let num = 0
+  for (let i = 0; i < letter.length; i++) {
+    num = num * 26 + (letter.charCodeAt(i) - 64)
+  }
+  return num
+}
+
+const getBatchNumFormatted = (batchName, fallbackIdx = null) => {
+  if (typeof fallbackIdx === 'number' && !isNaN(fallbackIdx) && fallbackIdx >= 0) {
+    return String(fallbackIdx + 1).padStart(2, '0')
+  }
+  const digitMatch = (batchName || '').match(/Batch\s+(\d+)/i)
+  if (digitMatch) {
+    return digitMatch[1].padStart(2, '0')
+  }
+  const letterMatch = (batchName || '').match(/Batch\s+([A-Za-z]+)/i)
+  if (letterMatch) {
+    const num = batchLetterToNumber(letterMatch[1].toUpperCase())
+    return String(num).padStart(2, '0')
+  }
+  return '01'
+}
+
+const getCollectionName = (batchName, batchIndex = null) => {
   const eRaw = route.params.episodeId || 'EP01'
-  
-  const sNum = (fRaw.match(/Series_?(\d+)/i)?.[1] || '02').padStart(2, '0')
   const epNum = (eRaw.match(/EP?(\d+)/i)?.[1] || '01').padStart(2, '0')
 
-  const bLetterMatch = (batchName || '').match(/Batch\s+([A-Z]+)/i)
-  const batchCode = bLetterMatch ? `Batch ${bLetterMatch[1]}` : (batchName || 'Batch')
+  if (batchName && batchName.startsWith('Failed_')) return `EP${epNum} ${batchName}`
+  if (batchName && batchName.startsWith('Single_')) return `EP${epNum} ${batchName.replace('Single_', '')}`
 
-  return `Series ${sNum} EP${epNum} ${batchCode}`
+  const bNum = getBatchNumFormatted(batchName, batchIndex)
+  return `EP${epNum} Batch ${bNum}`
 }
 
 const copyFailedXmlPrompts = () => {
@@ -3205,15 +3230,22 @@ const batchedScenes = computed(() => {
     const missingCount = items.filter(s => !s.hasImage).length
     const failedCount = clutteredCount + warningCount + missingCount
     const letter = getBatchLetter(i)
-    const batchVideoFilename = `01_Episode_Batch_${letter}_Preview.mp4`
-    const hasVideo = Array.isArray(videoFiles.value) && videoFiles.value.some(f => f.filename === batchVideoFilename)
+    const batchCode = getBatchCode(i)
+    const batchCodeVideoFilename = `01_Episode_Batch_${batchCode}_Preview.mp4`
+    const batchLetterVideoFilename = `01_Episode_Batch_${letter}_Preview.mp4`
+    const foundVideo = Array.isArray(videoFiles.value)
+      ? videoFiles.value.find(f => f.filename === batchCodeVideoFilename || f.filename === batchLetterVideoFilename)
+      : null
+    const hasVideo = !!foundVideo
+    const batchVideoFilename = foundVideo ? foundVideo.filename : batchCodeVideoFilename
     const batchRefs = getBatchVaultReferences(items)
 
     list.push({
       index: i,
       letter,
-      name: `Batch ${letter}`,
-      label: `Batch ${letter}: Scenes ${String(start + 1).padStart(3, '0')}–${String(end).padStart(3, '0')}`,
+      batchCode,
+      name: `Batch ${batchCode}`,
+      label: `Batch ${batchCode}: Scenes ${String(start + 1).padStart(3, '0')}–${String(end).padStart(3, '0')}`,
       startTag: items[0]?.tag || `IMG_${String(start + 1).padStart(3, '0')}`,
       endTag: items[items.length - 1]?.tag || `IMG_${String(end).padStart(3, '0')}`,
       scenes: items,
@@ -3258,7 +3290,7 @@ const toggleAllBatches = () => {
 }
 
 const synthesizeSingleBatch = async (batchIndex) => {
-  const letter = getBatchLetter(batchIndex)
+  const batchCode = getBatchCode(batchIndex)
   const batch = batchedScenes.value.find(b => b.index === batchIndex)
   const totalInBatch = batch ? batch.totalCount : 24
   
@@ -3268,8 +3300,8 @@ const synthesizeSingleBatch = async (batchIndex) => {
     activeStage: 'visuals',
     status: 'running',
     progress: 10,
-    message: `Synthesizing ${totalInBatch} storyboard panels for Batch ${letter}...`,
-    logs: [`Initializing Puppeteer 1080p render pipeline for Batch ${letter}...`]
+    message: `Synthesizing ${totalInBatch} storyboard panels for Batch ${batchCode}...`,
+    logs: [`Initializing Puppeteer 1080p render pipeline for Batch ${batchCode}...`]
   }
 
   clearInterval(imagePollTimer)
@@ -3849,20 +3881,20 @@ const currentSelectedBatch = computed(() => {
 
 const groupedBatchDescriptor = computed(() => {
   if (selectedBatchIndices.value.length === 0) return 'None'
-  const letters = selectedBatchIndices.value.map(i => availableBatches.value[i]?.letter || String.fromCharCode(65 + i))
-  letters.sort()
-  const charCodes = letters.map(l => l.charCodeAt(0))
+  const codes = selectedBatchIndices.value.map(i => getBatchCode(i))
+  codes.sort()
+  const nums = codes.map(c => parseInt(c, 10))
   let isContiguous = true
-  for (let i = 1; i < charCodes.length; i++) {
-    if (charCodes[i] !== charCodes[i - 1] + 1) {
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1] + 1) {
       isContiguous = false
       break
     }
   }
-  if (isContiguous && letters.length > 1) {
-    return `Batches_${letters[0]}-${letters[letters.length - 1]}`
+  if (isContiguous && codes.length > 1) {
+    return `Batches_${codes[0]}-${codes[codes.length - 1]}`
   } else {
-    return `Batches_${letters.join('_')}`
+    return `Batches_${codes.join('_')}`
   }
 })
 
@@ -3894,17 +3926,19 @@ const availableBatches = computed(() => {
   const total = scenes.value.length || 216
   const chunkSize = 24
   const count = Math.ceil(total / chunkSize)
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']
   const list = []
   for (let i = 0; i < count; i++) {
     const start = i * chunkSize + 1
     const end = Math.min((i + 1) * chunkSize, total)
-    const letter = letters[i] || `Batch_${i + 1}`
+    const letter = getBatchLetter(i)
+    const batchCode = getBatchCode(i)
     list.push({
       index: i,
       letter,
-      label: `Batch ${letter} (Scenes ${String(start).padStart(3, '0')}–${String(end).padStart(3, '0')})`,
-      filename: `01_Episode_Batch_${letter}_Preview.mp4`
+      batchCode,
+      name: `Batch ${batchCode}`,
+      label: `Batch ${batchCode} (Scenes ${String(start).padStart(3, '0')}–${String(end).padStart(3, '0')})`,
+      filename: `01_Episode_Batch_${batchCode}_Preview.mp4`
     })
   }
   return list
@@ -4198,16 +4232,16 @@ const triggerCompilation = () => {
 const compileGroupedBatchesAction = async () => {
   if (selectedBatchIndices.value.length === 0) return
   compiling.value = true
-  const selectedLetters = selectedBatchIndices.value.map(i => availableBatches.value[i]?.letter || String.fromCharCode(65 + i)).join(', ')
+  const selectedBatchNames = selectedBatchIndices.value.map(i => availableBatches.value[i]?.name || `Batch ${getBatchCode(i)}`).join(', ')
   modalState.value = {
     show: true,
     isMinimized: false,
     activeStage: 'compiler',
     status: 'running',
     progress: 5,
-    message: `Initializing Grouped Queue for ${selectedBatchIndices.value.length} batches (${selectedLetters})...`,
+    message: `Initializing Grouped Queue for ${selectedBatchIndices.value.length} batches (${selectedBatchNames})...`,
     logs: [
-      `Starting selective grouped batch compilation for batches: ${selectedLetters}...`,
+      `Starting selective grouped batch compilation for batches: ${selectedBatchNames}...`,
       `Frame Rate: 24 FPS Standard (6 parallel CPU threads).`,
       autoStitchGrouped.value ? `Will losslessly auto-stitch into 01_Episode_Master_${groupedBatchDescriptor.value}_1080p.mp4.` : 'Auto-stitch disabled.'
     ]
@@ -4364,8 +4398,8 @@ const stitchBatches = async () => {
 const compileVideo = async (targetBatchIdx = null) => {
   const isBatch = targetBatchIdx !== null || compilationScope.value === 'batch'
   const bIdx = targetBatchIdx !== null ? targetBatchIdx : selectedBatchIndex.value
-  const bLetter = getBatchLetter(bIdx)
-  const bObj = batchedScenes.value.find(b => b.index === bIdx) || { name: `Batch ${bLetter}`, letter: bLetter, totalCount: 24 }
+  const bCode = getBatchCode(bIdx)
+  const bObj = batchedScenes.value.find(b => b.index === bIdx) || { name: `Batch ${bCode}`, letter: bCode, batchCode: bCode, totalCount: 24 }
 
   compiling.value = true
   modalState.value = {
