@@ -27,14 +27,34 @@ export class VideoService {
   }
 
   /**
-   * Formats an array of batch letters into a clean descriptor string:
-   * ['A','B','C','D','E','F','G','H','I'] -> "Batches_A-I"
+   * Formats an array of batch codes/letters into a clean descriptor string:
+   * ['01','02','03', ... '13'] -> "Batches_01-13"
+   * ['1','2','3'] -> "Batches_01-03"
    * ['A','B','C'] -> "Batches_A-C"
-   * ['A','C','F'] -> "Batches_A_C_F"
    */
-  static formatBatchRangeDescriptor(letters) {
-    if (!letters || letters.length === 0) return 'All'
-    const sorted = [...new Set(letters)].sort((a, b) => a.localeCompare(b))
+  static formatBatchRangeDescriptor(batches) {
+    if (!batches || batches.length === 0) return 'All'
+    
+    // Check if numeric or letter-based
+    const isNumeric = batches.every(b => /^\d+$/.test(String(b).trim()))
+    if (isNumeric) {
+      const nums = [...new Set(batches.map(b => parseInt(b, 10)))].sort((a, b) => a - b)
+      let isContiguous = true
+      for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1] + 1) {
+          isContiguous = false
+          break
+        }
+      }
+      const pad = n => String(n).padStart(2, '0')
+      if (isContiguous && nums.length > 1) {
+        return `Batches_${pad(nums[0])}-${pad(nums[nums.length - 1])}`
+      } else {
+        return `Batches_${nums.map(pad).join('_')}`
+      }
+    }
+
+    const sorted = [...new Set(batches)].sort((a, b) => a.localeCompare(b))
     const charCodes = sorted.map(l => l.charCodeAt(0))
 
     let isContiguous = true
@@ -51,6 +71,7 @@ export class VideoService {
       return `Batches_${sorted.join('_')}`
     }
   }
+
 
   static getStatus(franchiseId, episodeId) {
     const key = `${franchiseId}/${episodeId}`
@@ -100,6 +121,32 @@ export class VideoService {
         }
       })
       proc.on('error', () => resolve(30.0))
+    })
+  }
+
+  /**
+   * Probe video duration and container integrity using ffprobe
+   * Returns valid positive duration in seconds, or null if corrupt / missing container
+   */
+  static async getVideoDuration(videoPath) {
+    return new Promise((resolve) => {
+      if (!fsSync.existsSync(videoPath)) return resolve(null)
+      const proc = spawn('ffprobe', [
+        '-v', 'error',
+        '-show_entries', 'format=duration',
+        '-of', 'default=noprint_wrappers=1:nokey=1',
+        videoPath
+      ])
+      let stdout = ''
+      proc.stdout.on('data', d => { stdout += d.toString() })
+      proc.on('close', (code) => {
+        if (code === 0) {
+          const sec = parseFloat(stdout.trim())
+          if (!isNaN(sec) && sec > 0) return resolve(sec)
+        }
+        resolve(null)
+      })
+      proc.on('error', () => resolve(null))
     })
   }
 
@@ -391,6 +438,7 @@ export class VideoService {
             isMaster,
             isOmnibus,
             batchLetter: batchMatch ? batchMatch[1] : null,
+            batchCode: batchMatch ? batchMatch[1] : null,
             label,
             url: `/api/episodes/${franchiseId}/${episodeId}/video-stream?file=${f}`
           })
@@ -427,29 +475,29 @@ export class VideoService {
 
     const isBatchCompile = batchIndex !== null && batchIndex !== undefined && Number.isInteger(Number(batchIndex)) && Number(batchIndex) >= 0
     const batchIdxNum = isBatchCompile ? Number(batchIndex) : null
-    const batchLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
-    const batchLetter = isBatchCompile ? (batchLetters[batchIdxNum] || `Batch_${batchIdxNum + 1}`) : null
-    const outputFilename = isBatchCompile ? `01_Episode_Batch_${batchLetter}_Preview.mp4` : '01_Episode_Master_1080p.mp4'
+    const batchCode = isBatchCompile ? String(batchIdxNum + 1).padStart(2, '0') : null
+    const outputFilename = isBatchCompile ? `01_Episode_Batch_${batchCode}_Preview.mp4` : '01_Episode_Master_1080p.mp4'
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'compiling',
       progress: 5,
       message: isBatchCompile 
-        ? `Initializing compilation for Batch ${batchLetter}...` 
+        ? `Initializing compilation for Batch ${batchCode}...` 
         : 'Analyzing transcript timeline and subtitle cues...',
       log: [
         isBatchCompile 
-          ? `Initializing Modular Batch Compilation Engine for Batch ${batchLetter}...`
+          ? `Initializing Modular Batch Compilation Engine for Batch ${batchCode}...`
           : 'Initializing Dynamic Script-Driven Video Compilation Engine...'
       ]
     })
+
 
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
     const audioDir = TtsService.getAudioDir(franchiseId, episodeId)
     const subtitlesDir = TtsService.getSubtitlesDir(franchiseId, episodeId)
     const videoDir = this.getVideoDir(franchiseId, episodeId)
-    const batchKey = isBatchCompile ? `batch_${batchLetter}` : 'master'
+    const batchKey = isBatchCompile ? `batch_${batchCode}` : 'master'
     const sessionNonce = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}`
     const tempClipsDir = path.resolve(projectRoot, '.tmp', `video_clips_${franchiseId}_${episodeId}_${batchKey}_${sessionNonce}`)
     const tempCompositesDir = path.resolve(projectRoot, '.tmp', `composites_${franchiseId}_${episodeId}_${batchKey}_${sessionNonce}`)
@@ -516,12 +564,12 @@ export class VideoService {
     this.updateStatus(franchiseId, episodeId, {
       progress: 25,
       message: isBatchCompile 
-        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchLetter} (${batchDuration.toFixed(1)}s). Synthesizing 24fps Sub-Pixel Skia clips...`
+        ? `Aligned ${targetBeats.length} panel cuts for Batch ${batchCode} (${batchDuration.toFixed(1)}s). Synthesizing 24fps Sub-Pixel Skia clips...`
         : `Aligned ${targetBeats.length} narrative panel beats with SRT cues. Synthesizing 24fps Sub-Pixel Skia clips...`,
       log: [
         ...(this.compilationState[key].log || []),
         isBatchCompile 
-          ? `Batch ${batchLetter}: Processing ${targetBeats.length} cuts from t=${batchStartTime.toFixed(2)}s to t=${(batchStartTime + batchDuration).toFixed(2)}s.`
+          ? `Batch ${batchCode}: Processing ${targetBeats.length} cuts from t=${batchStartTime.toFixed(2)}s to t=${(batchStartTime + batchDuration).toFixed(2)}s.`
           : `Dynamic Timeline: Generated ${targetBeats.length} transcript-synchronized panel cuts.`
       ]
     })
@@ -540,7 +588,7 @@ export class VideoService {
 
       this.updateStatus(franchiseId, episodeId, {
         message: isBatchCompile
-          ? `[Batch ${batchLetter}] ⚡ Computing clips ${chunkTags} (4 parallel Skia threads)...`
+          ? `[Batch ${batchCode}] ⚡ Computing clips ${chunkTags} (4 parallel Skia threads)...`
           : `⚡ Computing clips ${chunkTags} (4 parallel Skia threads)...`,
         log: [
           ...(this.compilationState[key].log || []).slice(-20),
@@ -604,7 +652,7 @@ export class VideoService {
         this.updateStatus(franchiseId, episodeId, {
           progress: progressPct,
           message: isBatchCompile
-            ? `[Batch ${batchLetter}] Rendered ${completedClips}/${targetBeats.length} clips (Latest: [${beat.tag}])...`
+            ? `[Batch ${batchCode}] Rendered ${completedClips}/${targetBeats.length} clips (Latest: [${beat.tag}])...`
             : `Rendered ${completedClips} of ${targetBeats.length} Sub-Pixel Skia clips ([${beat.tag}])...`,
           log: [
             ...(this.compilationState[key].log || []).slice(-20),
@@ -673,7 +721,7 @@ export class VideoService {
     this.updateStatus(franchiseId, episodeId, {
       progress: 75,
       message: isBatchCompile
-        ? `Muxing Batch ${batchLetter} cut with BGM sidechain ducking & WordBoundary subtitles...`
+        ? `Muxing Batch ${batchCode} cut with BGM sidechain ducking & WordBoundary subtitles...`
         : 'Muxing multi-stream master cut with BGM sidechain ducking & WordBoundary subtitles...',
       log: [
         ...(this.compilationState[key].log || []),
@@ -700,7 +748,7 @@ export class VideoService {
             }
             return `${idx + 1}\n${formatTm(newStart)} --> ${formatTm(newEnd)}\n${c.text}`
           })
-        const batchSrtPath = path.join(tempClipsDir, `batch_${batchLetter}_subtitles.srt`)
+        const batchSrtPath = path.join(tempClipsDir, `batch_${batchCode}_subtitles.srt`)
         await fs.writeFile(batchSrtPath, batchCues.join('\n\n'), 'utf-8')
         effectiveSrtPath = batchSrtPath
       } catch (e) {
@@ -709,7 +757,7 @@ export class VideoService {
     }
 
     // 6. Final Stitch & Subtitle / Audio Muxing
-    const cleanTempSrt = path.join(os.tmpdir(), `sub_${franchiseId}_${episodeId}_${isBatchCompile ? batchLetter : 'master'}_${Date.now()}.srt`)
+    const cleanTempSrt = path.join(os.tmpdir(), `sub_${franchiseId}_${episodeId}_${isBatchCompile ? batchCode : 'master'}_${Date.now()}.srt`)
     try {
       await fs.copyFile(effectiveSrtPath, cleanTempSrt)
     } catch (e) {
@@ -906,7 +954,7 @@ export class VideoService {
 
         if (code === 0) {
           const successMsg = isBatchCompile
-            ? `Batch ${batchLetter} Preview (${targetBeats.length} cuts) compiled successfully!`
+            ? `Batch ${batchCode} Preview (${targetBeats.length} cuts) compiled successfully!`
             : `Master 1080p Video compiled successfully with ${targetBeats.length} synced Ken Burns cuts!`
           
           if (!options.isInternalSequential) {
@@ -931,9 +979,9 @@ export class VideoService {
 
           ActivityLogService.success(
             'video', 
-            isBatchCompile ? `Batch ${batchLetter} Preview Compiled` : 'Master 1080p Video Compiled', 
+            isBatchCompile ? `Batch ${batchCode} Preview Compiled` : 'Master 1080p Video Compiled', 
             `Rendered ${outputFilename} with ${targetBeats.length} Ken Burns cuts.`, 
-            { cuts: targetBeats.length, isBatchCompile, batchLetter, outputFilename }, 
+            { cuts: targetBeats.length, isBatchCompile, batchCode, outputFilename }, 
             franchiseId, 
             episodeId
           )
@@ -969,21 +1017,54 @@ export class VideoService {
 
     const { targetLetters = null } = options
     const files = await fs.readdir(videoDir)
-    let batchFiles = []
+
+    const normalizeBatchNum = (str) => {
+      if (/^\d+$/.test(str)) return parseInt(str, 10)
+      if (/^[A-Za-z]$/.test(str)) return str.toUpperCase().charCodeAt(0) - 64
+      return null
+    }
+
+    const batchMap = new Map()
     for (const f of files) {
       if (f.endsWith('.mp4')) {
         const match = f.match(/(?:01_Episode_Batch_|Batch_)([A-Za-z0-9_]+)_Preview/i)
         if (match) {
-          if (!targetLetters || targetLetters.includes(match[1])) {
-            batchFiles.push({
-              filename: f,
-              letter: match[1],
-              fullPath: path.join(videoDir, f)
-            })
+          const rawId = match[1]
+          const num = normalizeBatchNum(rawId)
+          if (num !== null) {
+            const isNumeric = /^\d+$/.test(rawId)
+            const code = String(num).padStart(2, '0')
+            if (!batchMap.has(num) || (isNumeric && !batchMap.get(num).isNumeric)) {
+              batchMap.set(num, {
+                filename: f,
+                fullPath: path.join(videoDir, f),
+                code,
+                batchNum: num,
+                isNumeric
+              })
+            }
           }
         }
       }
     }
+
+    let batchFiles = Array.from(batchMap.values()).sort((a, b) => a.batchNum - b.batchNum)
+    if (targetLetters && targetLetters.length > 0) {
+      const allowedNums = targetLetters.map(normalizeBatchNum).filter(n => n !== null)
+      batchFiles = batchFiles.filter(b => allowedNums.includes(b.batchNum))
+    }
+
+    // Validate video container integrity for every candidate batch file
+    const validatedBatchFiles = []
+    for (const b of batchFiles) {
+      const dur = await this.getVideoDuration(b.fullPath)
+      if (dur && dur > 0) {
+        validatedBatchFiles.push({ ...b, duration: dur })
+      } else {
+        console.warn(`[stitchBatches] Corrupt or unplayable preview video detected for Batch ${b.code} (${b.filename}). Excluding from stitch.`)
+      }
+    }
+    batchFiles = validatedBatchFiles
 
     if (batchFiles.length === 0) {
       this.updateStatus(franchiseId, episodeId, {
@@ -993,16 +1074,13 @@ export class VideoService {
       throw new Error('No compiled batch preview videos found in video/ folder.')
     }
 
-    // Sort batches strictly in alphabetical sequence (Batch A, B, C, D...)
-    batchFiles.sort((a, b) => a.letter.localeCompare(b.letter))
-
     const tempDir = path.resolve(projectRoot, '.tmp')
     await fs.mkdir(tempDir, { recursive: true })
     const concatListPath = path.join(tempDir, `concat_batches_${franchiseId}_${episodeId}_${Date.now()}.txt`)
     const concatLines = batchFiles.map(b => `file '${b.fullPath.replace(/\\/g, '/')}'`)
     await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
 
-    const descriptor = this.formatBatchRangeDescriptor(batchFiles.map(b => b.letter))
+    const descriptor = this.formatBatchRangeDescriptor(batchFiles.map(b => b.code))
     const masterOutputFilename = `01_Episode_Master_${descriptor}_1080p.mp4`
     const masterOutputPath = path.join(videoDir, masterOutputFilename)
     const standardMasterPath = path.join(videoDir, '01_Episode_Master_1080p.mp4')
@@ -1023,7 +1101,7 @@ export class VideoService {
       message: `Losslessly stitching ${batchFiles.length} batches (${descriptor}) into Master 1080p video...`,
       log: [
         ...(this.compilationState[key]?.log || []),
-        `Stitching ${batchFiles.length} batches: ${batchFiles.map(b => b.letter).join(', ')} -> ${masterOutputFilename}...`
+        `Stitching ${batchFiles.length} batches: ${batchFiles.map(b => 'Batch ' + b.code).join(', ')} -> ${masterOutputFilename}...`
       ]
     })
 
@@ -1041,7 +1119,7 @@ export class VideoService {
             await fs.copyFile(masterOutputPath, standardMasterPath)
           } catch (_) {}
 
-          const successMsg = `Master Video (${descriptor}) stitched successfully from ${batchFiles.length} batches (${batchFiles.map(b => 'Batch ' + b.letter).join(', ')}) in <2 seconds!`
+          const successMsg = `Master Video (${descriptor}) stitched successfully from ${batchFiles.length} batches (${batchFiles.map(b => 'Batch ' + b.code).join(', ')}) in <2 seconds!`
           this.updateStatus(franchiseId, episodeId, {
             status: 'completed',
             progress: 100,
@@ -1055,7 +1133,7 @@ export class VideoService {
             'video',
             'Master Video Stitched',
             `Losslessly assembled ${masterOutputFilename} from ${batchFiles.length} batches.`,
-            { batchCount: batchFiles.length, batches: batchFiles.map(b => b.letter), filename: masterOutputFilename },
+            { batchCount: batchFiles.length, batches: batchFiles.map(b => b.code || b.letter), filename: masterOutputFilename },
             franchiseId,
             episodeId
           )
@@ -1096,30 +1174,32 @@ export class VideoService {
     }
 
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']
+    const selectedCodes = batchIndices.map(i => String(i + 1).padStart(2, '0'))
     const selectedLetters = batchIndices.map(i => letters[i] || `Batch_${i + 1}`)
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'compiling',
       progress: 5,
-      message: `Starting Grouped Batch Queue for ${batchIndices.length} batches (${selectedLetters.join(', ')})...`,
+      message: `Starting Grouped Batch Queue for ${batchIndices.length} batches (${selectedCodes.map(c => 'Batch ' + c).join(', ')})...`,
       log: [
-        `Initializing Grouped Batch Queue for: ${selectedLetters.map(l => 'Batch ' + l).join(', ')}...`
+        `Initializing Grouped Batch Queue for: ${selectedCodes.map(c => 'Batch ' + c).join(', ')}...`
       ]
     })
 
     try {
       for (let i = 0; i < batchIndices.length; i++) {
         const bIdx = batchIndices[i]
+        const batchCode = String(bIdx + 1).padStart(2, '0')
         const letter = letters[bIdx] || `Batch_${bIdx + 1}`
         const progressPct = Math.round(5 + (i / batchIndices.length) * 85)
 
         this.updateStatus(franchiseId, episodeId, {
           status: 'compiling',
           progress: progressPct,
-          message: `[Batch ${letter}] Synthesizing 24 scene cuts (${i + 1} of ${batchIndices.length} grouped batches)...`,
+          message: `[Batch ${batchCode}] Synthesizing 24 scene cuts (${i + 1} of ${batchIndices.length} grouped batches)...`,
           log: [
             ...(this.compilationState[key]?.log || []),
-            `▶ Starting Grouped Batch ${letter} (${i + 1}/${batchIndices.length})...`
+            `▶ Starting Grouped Batch ${batchCode} (${i + 1}/${batchIndices.length})...`
           ]
         })
 
@@ -1254,49 +1334,95 @@ export class VideoService {
     const totalBatches = Math.ceil(totalScenes / chunkSize)
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
     const videoDir = this.getVideoDir(franchiseId, episodeId)
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'compiling',
       progress: 2,
       message: `Starting Automated Sequential Pipeline: ${totalBatches} batches (${totalScenes} cuts)...`,
       log: [
-        `Initializing Automated Batch Queue for ${totalBatches} batches (${skipExisting ? 'Skip Already Compiled Batches' : 'Fresh All Re-render'})...`
+        `Initializing Automated Batch Queue for ${totalBatches} batches (${skipExisting ? 'Smart-Skip Up-To-Date Batches' : 'Fresh All Re-render'})...`
       ]
     })
 
     try {
       for (let b = 0; b < totalBatches; b++) {
+        const batchCode = String(b + 1).padStart(2, '0')
         const letter = letters[b] || `Batch_${b + 1}`
-        const batchOutputFilename = `01_Episode_Batch_${letter}_Preview.mp4`
+        const batchOutputFilename = `01_Episode_Batch_${batchCode}_Preview.mp4`
+        const legacyOutputFilename = `01_Episode_Batch_${letter}_Preview.mp4`
         const batchOutputPath = path.join(videoDir, batchOutputFilename)
+        const legacyOutputPath = path.join(videoDir, legacyOutputFilename)
         const baseProgress = Math.round(2 + (b / totalBatches) * 90)
 
-        // Check if existing compiled batch MP4 exists on disk and is valid
-        if (skipExisting && fsSync.existsSync(batchOutputPath)) {
+        // Find if either numeric or legacy preview MP4 exists
+        const existingPreviewPath = fsSync.existsSync(batchOutputPath) 
+          ? batchOutputPath 
+          : (fsSync.existsSync(legacyOutputPath) ? legacyOutputPath : null)
+
+        // Smart staleness check: verify if preview MP4 exists AND all scene images are older than the MP4
+        if (skipExisting && existingPreviewPath) {
           try {
-            const stat = await fs.stat(batchOutputPath)
+            const stat = await fs.stat(existingPreviewPath)
             if (stat.size > 100000) {
-              this.updateStatus(franchiseId, episodeId, {
-                status: 'compiling',
-                progress: baseProgress,
-                message: `[Batch ${letter}] Existing preview video found (${(stat.size / (1024 * 1024)).toFixed(1)} MB). Skipping compilation...`,
-                log: [
-                  ...(this.compilationState[key]?.log || []),
-                  `⏩ [Batch ${letter}] Existing preview video found on disk (${(stat.size / (1024 * 1024)).toFixed(1)} MB). Skipping render.`
-                ]
-              })
-              continue
+              // Ensure video container is playable and not corrupt (e.g. missing moov atom)
+              const validDuration = await this.getVideoDuration(existingPreviewPath)
+              if (!validDuration) {
+                console.warn(`[Auto-Batch] Corrupt preview video detected for Batch ${batchCode}. Deleting and re-rendering...`)
+                try { await fs.unlink(existingPreviewPath) } catch (_) {}
+              } else {
+                const startScene = b * chunkSize + 1
+                const endScene = Math.min((b + 1) * chunkSize, totalScenes)
+                let hasNewerImage = false
+              
+              if (fsSync.existsSync(imagesDir)) {
+                for (let s = startScene; s <= endScene; s++) {
+                  const imgNum = String(s).padStart(3, '0')
+                  const imgPath = path.join(imagesDir, `IMG_${imgNum}.jpg`)
+                  if (fsSync.existsSync(imgPath)) {
+                    const imgStat = await fs.stat(imgPath)
+                    if (imgStat.mtimeMs > stat.mtimeMs) {
+                      hasNewerImage = true
+                      break
+                    }
+                  }
+                }
+              }
+
+              if (!hasNewerImage) {
+                this.updateStatus(franchiseId, episodeId, {
+                  status: 'compiling',
+                  progress: baseProgress,
+                  message: `[Batch ${batchCode}] Existing preview video found (${(stat.size / (1024 * 1024)).toFixed(1)} MB). Up to date, skipping render...`,
+                  log: [
+                    ...(this.compilationState[key]?.log || []),
+                    `⏩ [Batch ${batchCode}] Preview video on disk is up to date (${(stat.size / (1024 * 1024)).toFixed(1)} MB). Skipping render.`
+                  ]
+                })
+                continue
+              } else {
+                this.updateStatus(franchiseId, episodeId, {
+                  status: 'compiling',
+                  progress: baseProgress,
+                  message: `[Batch ${batchCode}] Fresh images detected! Re-rendering batch preview...`,
+                  log: [
+                    ...(this.compilationState[key]?.log || []),
+                    `🔄 [Batch ${batchCode}] Newly uploaded images are newer than existing preview video. Re-compiling batch...`
+                  ]
+                })
+              }
             }
-          } catch (_) {}
+          }
+        } catch (_) {}
         }
 
         this.updateStatus(franchiseId, episodeId, {
           status: 'compiling',
           progress: baseProgress,
-          message: `[Batch ${letter}] Synthesizing 24 scene cuts (${b + 1} of ${totalBatches} batches)...`,
+          message: `[Batch ${batchCode}] Synthesizing 24 scene cuts (${b + 1} of ${totalBatches} batches)...`,
           log: [
             ...(this.compilationState[key]?.log || []),
-            `▶ Starting Batch ${letter} (Batch ${b + 1}/${totalBatches})...`
+            `▶ Starting Batch ${batchCode} (Batch ${b + 1}/${totalBatches})...`
           ]
         })
 

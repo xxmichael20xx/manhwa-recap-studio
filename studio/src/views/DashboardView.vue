@@ -57,7 +57,7 @@
         No active franchises found in 01_Franchises directory.
       </div>
 
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div v-else class="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-6">
         <div 
           v-for="item in franchises" 
           :key="item.id"

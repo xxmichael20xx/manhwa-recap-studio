@@ -1,5 +1,5 @@
 # 🏹 EP01: The F-Rank Awakening & The Plunderer's Bow
-## 60-Minute Master Arc Feature Script (Batches A–M • Scenes IMG_001–IMG_312)
+## 60-Minute Master Arc Feature Script (Batches 01–13 • Scenes IMG_001–IMG_312)
 
 > **Series:** *Series 02: The Phantom Archer Sovereign: F-Rank Stat Plunderer*  
 > **Format:** 16:9 Full-Bleed Landscape (`1920×1080` 24 FPS)  
@@ -13,25 +13,25 @@
 
 | Batch Index | Tag Range | Narrative Movement & Core Tension | Target Word Count |
 | :--- | :--- | :--- | :--- |
-| **Batch A** | `IMG_001`–`IMG_024` | **Cold-Open & The Awakening Exam:** Mach-4 arrow cold-open; 18yo high school awakening trial; F-Rank Archer ridicule. | ~870 words |
-| **Batch B** | `IMG_025`–`IMG_048` | **The Assignment & Underdog Exile:** Corrupt instructor Boris Vane assigns Caelen to toxic refuse disposal; class mockery. | ~860 words |
-| **Batch C** | `IMG_049`–`IMG_072` | **The Refuse Caverns & First Plunder:** Entering the toxic pits; first arrow kill; discovering the tri-synergy stat siphon. | ~880 words |
-| **Batch D** | `IMG_073`–`IMG_096` | **The Secret Grind & Stat Surge:** Siphoning 200 cave vipers and ironclad beetles; physical stats surge past veteran hunters. | ~870 words |
-| **Batch E** | `IMG_097`–`IMG_120` | **Ghost-String Awakening & Trait Harvest:** Unlocking ethereal mana bowstring; harvesting *3km Eagle Eye* and *Silent Trajectory*. | ~860 words |
-| **Batch F** | `IMG_121`–`IMG_144` | **The Academy Trials Begin:** Entering the official trial grounds; classmates mock Caelen's worn wooden bow. | ~880 words |
-| **Batch G** | `IMG_145`–`IMG_168` | **Strategic Sandbagging & Sensor Spikes:** Caelen shoots at 5% draw power; High Director Holloway notices radar shockwaves. | ~870 words |
-| **Batch H** | `IMG_169`–`IMG_192` | **The Corrupt Ambush & Siphon Debuff:** Boris Vane guides a mutant elite to wipe out Caelen; Caelen drains its speed and one-shots it. | ~860 words |
-| **Batch I** | `IMG_193`–`IMG_216` | **The Red Gate Cataclysm:** Dimensional tear locks the trial zone; an S-Rank Obsidian Behemoth emerges; total student panic. | ~880 words |
-| **Batch J** | `IMG_217`–`IMG_240` | **The Prodigy's Collapse:** S-Rank Ignis Sterling's magic is crushed; students trapped in the kill zone; despair peaks. | ~870 words |
-| **Batch K** | `IMG_241`–`IMG_264` | **The Phantom Sovereign Steps Up:** Caelen draws his bow; siphons the boss's primary stats; bow creates thunderous sonic booms. | ~880 words |
-| **Batch L** | `IMG_265`–`IMG_288` | **The Hypersonic Execution:** Releasing the Mach-4 ethereal arrow; colossal boss core shattered; total classmate psychological shock. | ~870 words |
-| **Batch M** | `IMG_289`–`IMG_312` | **Aftermath & The Ticking Clock Hook:** Ignis humiliated; Director Holloway realizes the truth; Ministry Black Ops deployed. | ~860 words |
+| **Batch 01** | `IMG_001`–`IMG_024` | **Cold-Open & The Awakening Exam:** Mach-4 arrow cold-open; 18yo high school awakening trial; F-Rank Archer ridicule. | ~870 words |
+| **Batch 02** | `IMG_025`–`IMG_048` | **The Assignment & Underdog Exile:** Corrupt instructor Boris Vane assigns Caelen to toxic refuse disposal; class mockery. | ~860 words |
+| **Batch 03** | `IMG_049`–`IMG_072` | **The Refuse Caverns & First Plunder:** Entering the toxic pits; first arrow kill; discovering the tri-synergy stat siphon. | ~880 words |
+| **Batch 04** | `IMG_073`–`IMG_096` | **The Secret Grind & Stat Surge:** Siphoning 200 cave vipers and ironclad beetles; physical stats surge past veteran hunters. | ~870 words |
+| **Batch 05** | `IMG_097`–`IMG_120` | **Ghost-String Awakening & Trait Harvest:** Unlocking ethereal mana bowstring; harvesting *3km Eagle Eye* and *Silent Trajectory*. | ~860 words |
+| **Batch 06** | `IMG_121`–`IMG_144` | **The Academy Trials Begin:** Entering the official trial grounds; classmates mock Caelen's worn wooden bow. | ~880 words |
+| **Batch 07** | `IMG_145`–`IMG_168` | **Strategic Sandbagging & Sensor Spikes:** Caelen shoots at 5% draw power; High Director Holloway notices radar shockwaves. | ~870 words |
+| **Batch 08** | `IMG_169`–`IMG_192` | **The Corrupt Ambush & Siphon Debuff:** Boris Vane guides a mutant elite to wipe out Caelen; Caelen drains its speed and one-shots it. | ~860 words |
+| **Batch 09** | `IMG_193`–`IMG_216` | **The Red Gate Cataclysm:** Dimensional tear locks the trial zone; an S-Rank Obsidian Behemoth emerges; total student panic. | ~880 words |
+| **Batch 10** | `IMG_217`–`IMG_240` | **The Prodigy's Collapse:** S-Rank Ignis Sterling's magic is crushed; students trapped in the kill zone; despair peaks. | ~870 words |
+| **Batch 11** | `IMG_241`–`IMG_264` | **The Phantom Sovereign Steps Up:** Caelen draws his bow; siphons the boss's primary stats; bow creates thunderous sonic booms. | ~880 words |
+| **Batch 12** | `IMG_265`–`IMG_288` | **The Hypersonic Execution:** Releasing the Mach-4 ethereal arrow; colossal boss core shattered; total classmate psychological shock. | ~880 words |
+| **Batch 13** | `IMG_289`–`IMG_312` | **Aftermath & The Ticking Clock Hook:** Ignis humiliated; Director Holloway realizes the truth; Ministry Black Ops deployed. | ~860 words |
 
 ---
 
-## 🎬 Act 1: The Cold-Open & The Awakening Ceremony (Batches A–B)
+## 🎬 Act 1: The Cold-Open & The Awakening Ceremony (Batches 01–02)
 
-### Batch A: The Cold-Open Flash-Forward & The 18yo Awakening Exam (IMG_001–IMG_024)
+### Batch 01: The Cold-Open Flash-Forward & The 18yo Awakening Exam (IMG_001–IMG_024)
 
 [IMG_001]
 The ground shattered into a three-hundred-meter crater of molten obsidian as the colossal abyssal titan roared, its black armor radiating enough heat to melt steel.
@@ -107,7 +107,7 @@ As his bare palm touched the cold crystalline sphere, the room held its breath, 
 
 ---
 
-### Batch B: The Mockery & The Refuse Assignment (IMG_025–IMG_048)
+### Batch 02: The Mockery & The Refuse Assignment (IMG_025–IMG_048)
 
 [IMG_025]
 The Awakening Orb flickered with a faint, dull grey mist that barely illuminated the surface of the glass, producing zero elemental sound or radiant heat.
@@ -183,48 +183,47 @@ Caelen walked out into the cool evening air of District Nine, looking up at the 
 
 ---
 
-## 🎬 Act 2: The Secret Grinding & The Stat Surge (Batches C–E)
+## 🎬 Act 2: The Secret Grinding & The Stat Surge (Batches 03–05)
 
-### Batch C: The Refuse Caverns & The First Plunder (IMG_049–IMG_072)
+### Batch 03: The Refuse Caverns & The First Plunder (IMG_049–IMG_072)
 
 [IMG_049]
 The entrance to Catacomb Sector Four was a massive steel airlock built into the bedrock beneath the industrial district, reeking of damp moss and sulfur.
 
 [IMG_050]
-Equipped with only his ashwood bow, a quiver of twenty steel-tipped arrows, and a heavy iron refuse crate, Caelen descended the rusted spiral stairs into the abyss.
+Equipped with only his ashwood bow, a quiver of twenty steel-tipped arrows, and a heavy iron refuse crate,
 
 [IMG_051]
-The refuse caverns stretched for miles beneath the city, functioning as a dumping ground where the residue of high-level dungeon raids washed down into dark water channels.
+Caelen descended the rusted spiral stairs into the abyss.
 
 [IMG_052]
-Mundane hunters avoided this sector because the monsters here gave almost zero gold bounty and were too toxic to sell to civilian markets.
+The refuse caverns stretched for miles beneath the city, functioning as a dumping ground where the residue of high-level dungeon raids washed down into dark water channels. Mundane hunters avoided this sector because the monsters here gave almost zero gold bounty and were too toxic to sell to civilian markets. For Caelen, however, this desolate cavern was not a punishment—it was an all-you-can-eat stat buffet with zero witnesses. Checking his baseline status interface, Caelen reviewed his starting numbers: Strength fourteen, Agility sixteen, Constitution twelve, and Perception eighteen.
 
 [IMG_053]
-For Caelen, however, this desolate cavern was not a punishment—it was an all-you-can-eat stat buffet with zero witnesses.
-
-[IMG_054]
-Checking his baseline status interface, Caelen reviewed his starting numbers: Strength fourteen, Agility sixteen, Constitution twelve, and Perception eighteen.
-
-[IMG_055]
 A sudden metallic hiss echoed from the ceiling stalactites as a six-foot-long Iron-Scaled Cave Viper dropped onto a rusted iron catwalk.
 
-[IMG_056]
+[IMG_054]
 The beast possessed armored green scales and venomous fangs capable of melting flesh, hissing aggressively as it coiled to strike.
 
+[IMG_055]
+Any ordinary F-rank student would have panicked and sprinted toward the elevator, but Caelen calmly drew an arrow from his quiver. His hands were steady, notching the steel head against the ashwood riser with fluid, practiced muscle memory built from three years of solo target practice.
+
+[IMG_056]
+As the viper launched itself through the air with blinding speed, Caelen calculated its parabolic arc in a split second and released the bowstring.
+
 [IMG_057]
-Any ordinary F-rank student would have panicked and sprinted toward the elevator, but Caelen calmly drew an arrow from his quiver.
+The steel arrow whistled through the damp air, piercing directly through the viper's open maw and pinning its brain to the stone cavern wall.
 
 [IMG_058]
-His hands were steady, notching the steel head against the ashwood riser with fluid, practiced muscle memory built from three years of solo target practice. As the viper launched itself through the air with blinding speed, Caelen calculated its parabolic arc in a split second and released the bowstring.
+The beast convulsed twice before falling completely limp, its dark blood sizzling against the damp floor.
 
 [IMG_059]
-The steel arrow whistled through the damp air, piercing directly through the viper's open maw and pinning its brain to the stone cavern wall. The beast convulsed twice before falling completely limp, its dark blood sizzling against the damp floor.
-
-[IMG_060]
 Before the echo of the shot could fade, a brilliant swirl of cyan and gold mana filaments erupted from the viper's carcass, rushing straight into Caelen's chest.
 
-[IMG_061]
+[IMG_060]
 `[SYSTEM: LEVEL 1 TARGET ELIMINATED — IRON-SCALED CAVE VIPER.]`
+
+[IMG_061]
 `[TALENT ACTIVATION: SOVEREIGN SIPHON EXTRACTED +2 AGILITY, +1 PERCEPTION (PERMANENT).]`
 
 [IMG_062]
@@ -262,70 +261,70 @@ He stepped into the shadows of the subterranean labyrinth, his footsteps complet
 
 ---
 
-### Batch D: The Secret Grind & The Exponential Surge (IMG_073–IMG_096)
+### Batch 04: The Secret Grind & The Exponential Surge (IMG_073–IMG_096)
 
 [IMG_073]
-Over the next forty-eight hours, while Ignis and his wealthy classmates celebrated their contracts at high-end banquet halls, Caelen turned Catacomb Sector Four into a slaughterhouse.
+Over the next forty-eight hours, while Ignis and his wealthy classmates celebrated their contracts at high-end banquet halls,
 
 [IMG_074]
-Moving with ghost-like precision along the high pipes and iron catwalks, Caelen forced the monster swarms into narrow drainage corridor bottlenecks, systematically eliminating every target along his clear line of fire from fifty paces away.
+Caelen turned Catacomb Sector Four into a slaughterhouse. Moving with ghost-like precision along the high pipes and iron catwalks,
 
 [IMG_075]
-`[SYSTEM: MUTANT DIRT BEETLE ELIMINATED — EXTRACTED +2 CONSTITUTION, +1 STRENGTH.]`
+Caelen forced the monster swarms into narrow drainage corridor bottlenecks, systematically eliminating every target along his clear line of fire from fifty paces away.
 
 [IMG_076]
-`[SYSTEM: VENOMOUS SEWER CRAWLER ELIMINATED — EXTRACTED +3 AGILITY.]`
+`[SYSTEM: MUTANT DIRT BEETLE ELIMINATED — EXTRACTED +2 CONSTITUTION, +1 STRENGTH.]`
 
 [IMG_077]
-`[SYSTEM: ARMORED CAVE SCORPION ELIMINATED — EXTRACTED +2 STRENGTH, +1 CONSTITUTION.]`
+`[SYSTEM: VENOMOUS SEWER CRAWLER ELIMINATED — EXTRACTED +3 AGILITY.]`
 
 [IMG_078]
-With every fifty kills, Caelen retrieved his spent steel arrows from the carcasses, sharpening the tips against a whetstone before continuing his relentless patrol.
+`[SYSTEM: ARMORED CAVE SCORPION ELIMINATED — EXTRACTED +2 STRENGTH, +1 CONSTITUTION.]`
 
 [IMG_079]
-By the time he had cleared the third subterranean drainage channel, over two hundred mutant beasts lay dead in the dark water.
+With every fifty kills, Caelen retrieved his spent steel arrows from the carcasses, sharpening the tips against a whetstone before continuing his relentless patrol.
 
 [IMG_080]
-The cumulative stat absorption was staggering: his Strength had surged from fourteen to eighty-five, his Agility reached ninety-eight, and his Constitution climbed to seventy-two.
+By the time he had cleared the third subterranean drainage channel, over two hundred mutant beasts lay dead in the dark water.
 
 [IMG_081]
-When Caelen drew his simple ashwood bow to take down an armored cave bear, the wooden limbs groaned under his superhuman muscle power, snapping clean in half with a loud crack.
+The cumulative stat absorption was staggering: his Strength had surged from fourteen to eighty-five, his Agility reached ninety-eight, and his Constitution climbed to seventy-two.
 
 [IMG_082]
-*"My physical draw-weight has exceeded standard wooden timber,"* Caelen noted calmly, inspecting the fractured ashwood riser.
+When Caelen drew his simple ashwood bow to take down an armored cave bear,
 
 [IMG_083]
-A massive Level 8 Armored Cave Bear charged at him with roaring fury, its razor-sharp claws swiping directly at Caelen's chest.
+the wooden limbs groaned under his superhuman muscle power,
 
 [IMG_084]
-Without a bow in hand, any normal archer would have been ripped to shreds in a fraction of a second.
+snapping clean in half with a loud crack.
 
 [IMG_085]
-Caelen simply stood his ground, raising his bare left forearm to intercept the beast's descending iron-hard claws.
+*"My physical draw-weight has exceeded standard wooden timber,"* Caelen noted calmly, inspecting the fractured ashwood riser.
 
 [IMG_086]
-`[PHYSICAL DURABILITY CHECK: ATTACKER STRENGTH (45) - DEFENDER CONSTITUTION (72) <= 0 — NULL DAMAGE DEFLECTION.]`
+A massive Level 8 Armored Cave Bear charged at him with roaring fury, its razor-sharp claws swiping directly at Caelen's chest. Without a bow in hand, any normal archer would have been ripped to shreds in a fraction of a second.
 
 [IMG_087]
-A loud metallic ring echoed across the chamber as the bear's claws struck Caelen's skin—and shattered into bone fragments with zero skin break.
+Caelen simply stood his ground, raising his bare left forearm to intercept the beast's descending iron-hard claws.
 
 [IMG_088]
-The bear whimpered in shock, staring at the human boy whose flesh was harder than tempered plate armor.
+`[PHYSICAL DURABILITY CHECK: ATTACKER STRENGTH (45) - DEFENDER CONSTITUTION (72) <= 0 — NULL DAMAGE DEFLECTION.]`
 
 [IMG_089]
-*"My turn,"* Caelen said deadpan, driving his bare right fist straight into the beast's armored skull with eighty-five points of raw Strength.
+A loud metallic ring echoed across the chamber as the bear's claws struck Caelen's skin—and shattered into bone fragments with zero skin break. The bear whimpered in shock, staring at the human boy whose flesh was harder than tempered plate armor.
 
 [IMG_090]
-The impact created a concussive shockwave that blasted the massive beast backwards into a stone pillar, killing it instantly.
+*"My turn,"* Caelen said deadpan, driving his bare right fist straight into the beast's armored skull with eighty-five points of raw Strength.
 
 [IMG_091]
-`[SYSTEM: LEVEL 8 ARMORED CAVE BEAR ELIMINATED — EXTRACTED +3 STRENGTH, +2 CONSTITUTION.]`
+The impact created a concussive shockwave that blasted the massive beast backwards into a stone pillar, killing it instantly.
 
 [IMG_092]
-Caelen shook the dust from his blazer, looking down at his hands with a satisfied nod.
+`[SYSTEM: LEVEL 8 ARMORED CAVE BEAR ELIMINATED — EXTRACTED +3 STRENGTH, +2 CONSTITUTION.]`
 
 [IMG_093]
-His physical density had reached the threshold where mundane fangs and low-tier monster strikes could not even pierce his outer epidermis.
+Caelen shook the dust from his blazer, looking down at his hands with a satisfied nod. His physical density had reached the threshold where mundane fangs and low-tier monster strikes could not even pierce his outer epidermis.
 
 [IMG_094]
 However, relying on bare-fist combat defeated the purpose of his true class potential; he needed a bow capable of handling thousands of pounds of kinetic draw pressure.
@@ -338,7 +337,7 @@ It was time to unlock the third layer of his Primordial Sovereign Siphon.
 
 ---
 
-### Batch E: The Ghost-String Awakening & Trait Harvest (IMG_097–IMG_120)
+### Batch 05: The Ghost-String Awakening & Trait Harvest (IMG_097–IMG_120)
 
 [IMG_097]
 Sitting cross-legged on a high stone ledge above the underground river, Caelen focused his internal mana flow into his fingertips.
@@ -414,9 +413,9 @@ Caelen dismissed his glowing ghost-bow into his dimensional inventory, wiped the
 
 ---
 
-## 🎬 Act 3: The Academy Trials & Strategic Sandbagging (Batches F–H)
+## 🎬 Act 3: The Academy Trials & Strategic Sandbagging (Batches 06–08)
 
-### Batch F: The Academy Trials & The Return to Daylight (IMG_121–IMG_144)
+### Batch 06: The Academy Trials & The Return to Daylight (IMG_121–IMG_144)
 
 [IMG_121]
 The Sector Seven Trial Grounds was a massive multi-level dungeon arena enclosed by reinforced forcefield barriers and monitored by dozens of media broadcast cameras.
@@ -492,7 +491,7 @@ Caelen walked into the portal at a leisurely stroll, deliberately deciding to th
 
 ---
 
-### Batch G: Strategic Sandbagging & Radar Anomalies (IMG_145–IMG_168)
+### Batch 07: Strategic Sandbagging & Radar Anomalies (IMG_145–IMG_168)
 
 [IMG_145]
 The first trial zone was a dense rocky canyon populated by Level 10 Armored Hobgoblins wielding heavy clubs and iron shields.
@@ -568,7 +567,7 @@ Little did anyone know that Instructor Boris Vane was watching from the control 
 
 ---
 
-### Batch H: The Corrupt Ambush & The Siphon Debuff (IMG_169–IMG_192)
+### Batch 08: The Corrupt Ambush & The Siphon Debuff (IMG_169–IMG_192)
 
 [IMG_169]
 Instructor Boris Vane had received a secret directive from the Sterling Syndicate: ensure Caelen Vance suffers a "fatal training accident" so he cannot contest Ignis's top scholarship.
@@ -644,9 +643,9 @@ The massive beast collapsed into a shower of dissipated mana particles before it
 
 ---
 
-## 🎬 Act 4: The Red Gate Cataclysm & The Grand Execution (Batches I–L)
+## 🎬 Act 4: The Red Gate Cataclysm & The Grand Execution (Batches 09–12)
 
-### Batch I: The Red Gate Cataclysm (IMG_193–IMG_216)
+### Batch 09: The Red Gate Cataclysm (IMG_193–IMG_216)
 
 [IMG_193]
 Before Caelen could dismiss his bow, the sky above the trial arena fractured into jagged crimson spiderwebs, radiating an overwhelming, suffocating pressure.
@@ -722,7 +721,7 @@ Standing atop the ruined canyon wall, his long charcoal coat fluttering in the v
 
 ---
 
-### Batch J: The Prodigy's Psychological Collapse (IMG_217–IMG_240)
+### Batch 10: The Prodigy's Psychological Collapse (IMG_217–IMG_240)
 
 [IMG_217]
 Ignis stared with wide, uncomprehending eyes at the boy he had mocked as a useless F-rank garbage collector only two days prior.
@@ -798,7 +797,7 @@ Caelen calmly reached into his dimensional inventory, drawing out a single, soli
 
 ---
 
-### Batch K: The Phantom Sovereign Steps Up (IMG_241–IMG_264)
+### Batch 11: The Phantom Sovereign Steps Up (IMG_241–IMG_264)
 
 [IMG_241]
 Caelen notched the heavy titanium broadhead onto the Void-Strung Heavy Recurve, wrapping his entire mana pool around the arrow shaft in a tight spiral.
@@ -874,7 +873,7 @@ In the center of the smoking crater stood Caelen Vance, calmly lowering his bow 
 
 ---
 
-### Batch L: The Hypersonic Execution & Grand Payoff (IMG_265–IMG_288)
+### Batch 12: The Hypersonic Execution & Grand Payoff (IMG_265–IMG_288)
 
 [IMG_265]
 `[MASSIVE REWARD NOTIFICATION: PRIMORDIAL SOVEREIGN SIPHON ACTIVATED.]`
@@ -950,9 +949,9 @@ The first chapter of Caelen Vance's legend had closed, but the ripples of his po
 
 ---
 
-## 🎬 Act 5: The Aftermath & The Ticking Clock Hook (Batch M)
+## 🎬 Act 5: The Aftermath & The Ticking Clock Hook (Batch 13)
 
-### Batch M: The Binge Cliffhanger & The Looming Shadow (IMG_289–IMG_312)
+### Batch 13: The Binge Cliffhanger & The Looming Shadow (IMG_289–IMG_312)
 
 [IMG_289]
 By nightfall, the news of the District Nine Red Gate anomaly had spread like wildfire across the global hunter networks.

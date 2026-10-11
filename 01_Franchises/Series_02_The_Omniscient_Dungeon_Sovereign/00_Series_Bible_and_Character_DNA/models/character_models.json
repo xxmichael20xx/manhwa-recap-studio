@@ -151,6 +151,33 @@
       },
       "dna_prompt_anchor": "@{Director Keith Holloway}, 56-year-old dignified male academy director, steel-grey hair and trimmed beard, sharp golden sovereign eyes, wearing midnight-blue military greatcoat with gold epaulettes, observing glowing blue holographic surveillance radar consoles, dark fantasy action manhwa art style, sharp ink linework, horizontal 16:9",
       "reference_plate": "05_VIP_Director_Keith_Holloway.jpg"
+    },
+    {
+      "id": "boss_abyssal_obsidian_colossus",
+      "name": "Boss: Abyssal Obsidian Colossus",
+      "token": "@{Boss: Abyssal Obsidian Colossus}",
+      "category": "Antagonist",
+      "tier": 3,
+      "role": "S-Rank Red Gate Calamity Boss",
+      "age": null,
+      "stats_baseline": {
+        "level": 60,
+        "class": "Abyssal Calamity Behemoth (Grade-S)",
+        "strength": 800,
+        "agility": 120,
+        "constitution": 1200,
+        "perception": 150,
+        "armor": 8000
+      },
+      "appearance": {
+        "height": "Eighty-foot-tall colossal volcanic titan",
+        "eyes": "Blazing yellow magma eyes",
+        "physique": "Four muscular armored arms holding four colossal jagged greatswords dripping with black magma, dense volcanic obsidian carapace with glowing molten cyan and gold runes",
+        "attire": "Volcanic obsidian armor plates fused with cooling magma veins",
+        "weapons": "Four colossal jagged obsidian greatswords dripping with black magma"
+      },
+      "dna_prompt_anchor": "@{Boss: Abyssal Obsidian Colossus}, eighty-foot-tall colossal volcanic titan, four muscular armored arms holding four colossal jagged greatswords dripping with black magma, dense volcanic obsidian carapace with glowing molten cyan and gold runes, blazing yellow magma eyes, dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9",
+      "reference_plate": "06_Boss_Abyssal_Obsidian_Colossus.jpg"
     }
   ]
 }

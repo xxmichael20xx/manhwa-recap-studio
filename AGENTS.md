@@ -118,14 +118,22 @@ To guarantee organic narration synchronization, eliminate rapid screen flashing,
 - **No Arbitrary Fixed Counts:** The number of visual cuts is NEVER constrained to an arbitrary static number; it is dynamically determined by the master voiceover duration and sentence structure.
 - **100% Triad Synchronization:** Every master plate `[IMG_XXX]` anchors 1:1 to its complete narrative clause, ensuring all visual subjects (actor, action, reaction) remain on screen while being described by the narrator.
 - **Strict Anatomical & Character DNA Prompt Guards:** Every prompt matrix entry must include locked Character DNA anchors (`@{...}`) and explicit negative anatomical quality directives (`anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting`).
+- **The Strict 1:1 Spoken Clause-to-Plate Invariant (Anti-Cascade Drift Standard):**
+  - In `01_Episode_Script.md`, every single `[IMG_XXX]` tag MUST precede the exact, immediate spoken clause or sentence where that visual action begins. Never place a tag before introductory or transitional clauses that belong to a different plate.
+  - If a narrative sentence or paragraph contains multiple sequential actions, each action MUST be split into its own distinct sentence and assigned its own dedicated `[IMG_XXX]` tag. Never lump multiple visual beats under a single tag.
+  - In automated timeline compilation (`VideoService.parseDynamicTimeline()`), the script text following `[IMG_XXX]` is matched directly against forced-alignment SRT subtitle cues. A single unanchored or lumped tag causes every subsequent scene in that 24-scene batch to cascade out of alignment by 5–20 seconds.
+- **The Exhaustive Script Tag Alignment First Invariant (Zero Premature Diffusion Churn):**
+  - Whenever a desynchronisation or "wrong scene displayed" issue is flagged, the agent is **STRICTLY FORBIDDEN** from asking the operator to re-generate images or assuming physical images are incorrect without prior forensic reconciliation.
+  - *3-Step Forensic Reconciliation Protocol:* (1) Inspect physical disk files (`IMG_XXX.jpg`); (2) Inspect prompt matrix intent (`02_Prompt_Matrix.md`); (3) Reconcile against spoken subtitles in `01_Episode_Script.md`. Realign script tags first. Only request image re-generation if the image physically contradicts all surrounding narrative beats.
 - **Strict Limb Connectivity & Anti-Ghost-Morph Invariant:** Any prompt describing a character holding an object MUST explicitly describe physical arm attachment (e.g. `right armored arm bent at the elbow holding a single golden wine goblet, left arm resting naturally at side, both arms physically connected to shoulders`) to eliminate diffusion attention splitting or floating severed hands.
 
 ---
 
-## 🛑 Zero Autonomous Full-Episode Compilation Invariant (Studio-First Handoff Gate)
-1. **Absolute Ban on Autonomous Full-Video Compilation:** The agent is **STRICTLY FORBIDDEN** from triggering multi-minute, full-episode video compilations (`compileEpisodeVideo` on full transcripts) autonomously in the background during development turns.
-2. **Fast Unit & Build Verification Only:** Technical verification on the compiler engine must strictly use fast syntax builds (`npm run build`, Exit Code 0) or lightweight micro-checks in scratch space.
-3. **Immediate Studio-First Handoff:** Whenever video compiler, styling, or engine code is updated, the agent must immediately conclude the turn with direct step-by-step instructions for the operator to trigger, monitor, and inspect the compilation within the **Manhwa Recap Studio UI**.
+## 🛑 Video Compilation & Verification Protocol: Targeted Batch Recompilation vs Full-Episode Gate (Anti-Stale-Video Invariant)
+1. **Clarified Scope of Full Compilation Ban:** The ban on autonomous compilation strictly applies to full-length, multi-batch full-episode re-encodings (`compileEpisodeVideo` re-encoding all 300+ scenes from scratch), which tie up system resources for 15+ minutes.
+2. **Mandatory Targeted Single-Batch Recompilation:** Whenever script tags `[IMG_XXX]`, scene timings, or subtitle `.srt` cues are modified to fix a synchronization issue, the agent MUST immediately trigger targeted single-batch compilation (`POST /compile-video` with `{ batchIndex: N }`) for ONLY the affected batches. Leaving stale preview MP4 files on disk is strictly forbidden.
+3. **Mandatory Lossless Master Re-Stitching:** After compiling the affected batch previews, the agent MUST immediately trigger lossless stream-copy concatenation (`POST /stitch-batches`), which executes in <5 seconds via the FFmpeg concat demuxer (`-c copy`) without re-encoding.
+4. **Mandatory Frame-Accurate Video Proof Extraction Gate:** Prior to handing back to the operator, the agent MUST extract and visually verify at least 2–4 frame captures from the newly compiled video at the exact flagged timestamps using FFmpeg (`ffmpeg -ss <timestamp> -i <video.mp4> -vframes 1 ...`). Both the subtitle text and the visual action MUST be proven to match bit-for-bit before declaring completion.
 
 ---
 
@@ -201,6 +209,8 @@ Master Agent Instructions house all static negative guards, formatting rules, co
 🚫 ZERO-TEXT MANDATE (STRICTLY ENFORCED):
 - 100% pure textless illustration artwork.
 - ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, chapter titles, or UI labels.
+- ZERO META-TERMS & PRODUCTION JARGON: Strictly forbidden from using terms like "Character Reference Sheet", "Model Sheet", "Turnaround Sheet", or "Concept Art Sheet" which trigger training biases for black banners, header typography, and inset portrait boxes. Always use pure descriptive visual language (e.g. "full-body turnaround across multiple perspectives").
+- 100% TEXTLESS SEED PLATES: Reference plates in character vault must be 100% sanitized of text headers before diffusion injection.
 
 👥 ACTOR & ANATOMICAL INTEGRITY:
 - Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand, natural articulation. Complete limbs, pristine anatomy.
@@ -246,3 +256,33 @@ When Tier 1 Master Instructions are active in Google Flow, episodic scene prompt
 3. **Locked Spatial Environment Enclosure (25–30 Words)**
 
 *Result:* Scene prompts are compressed from ~1,000 characters down to ~280–350 characters, increasing prompt attention fidelity by ~300% and completely preventing model forgetfulness or hallucination.
+
+---
+
+## 🛡️ Production Continuity & Forensic Quality Directives (/learn)
+
+### 1. The Mandatory Multi-Scene Antagonist & Boss Vault Invariant
+Any recurring monster, boss, or elite creature appearing across $\ge 3$ scenes MUST have a dedicated master reference plate registered in `character_vault/` (e.g. `06_Boss_Abyssal_Obsidian_Colossus.jpg`) and a dedicated entity UUID registered in `flow_entities.json` and `characters.json` prior to prompt matrix generation.
+- **Zero-Unanchored Monster Invariant:** Generative diffusion models have zero temporal memory across scenes. Lacking an anchored entity reference plate forces the model to synthesize random, mutating monster designs on every cut.
+- **Prompt Token Binding:** All scenes featuring the monster must explicitly inject the registered character token (e.g. `@{Boss: Abyssal Obsidian Colossus}`) and technical model reference attribute (`character_ref="<uuid>"`).
+
+### 2. The Chronological Attire Continuity Invariant
+In-episode characters must strictly maintain their established chronological wardrobe (e.g. Student Academy Uniform throughout Episode 01) unless a physical in-script wardrobe change narrative beat explicitly occurs in the story.
+- **Prohibition of Premature / Phantom Transformations:** The protagonist does not magically sprout end-game combat coats or sovereign trench coats mid-trial. High-tier mana channeling manifests as glowing sovereign eye ignition, floating ethereal runes, and phantom afterimages, whilst physical garments remain locked to the active episodic phase.
+- **Character Reference Lock:** The entity reference UUID must remain locked across all scenes corresponding to that phase (e.g. `bbf8e245-73fa-42d8-a81c-1bdb468885de` for `@{Caelen Vance - Student Archer}`). Never swap entity UUIDs mid-episode without an in-script narrative change.
+
+### 3. The Pre-Flight Forensic Continuity Audit Protocol
+Prior to declaring prompt matrix decks ready for generation or rendering, agents must proactively execute a bit-for-bit cross-examination of the prompt matrix against the episode script:
+1. **Zero Hallucinated Sub-Plots:** Cross-check prompt beats 1:1 against script lines. Strictly eliminate fabricated filler sequences, unscripted character attacks, or premature resolutions.
+2. **Ironclad Weapon & Grip Binding:** Archers must have their physical grip explicitly bound to their bow (`@{Weapon: ...}`) with strict negative guards (`no swords on archer, no blades on protagonist, zero swords, zero blades`). Never allow context cues from bosses or secondary characters to leak melee weapons into archer hands.
+3. **Spatial Enclosure Grounding:** Verify that environment enclosures strictly reflect narrative locations (e.g. apartment scenes must not inherit trial arena or volcanic crater enclosures).
+
+### 4. The 10 High-CTR Title Archetypes & Object Normalisation Standard (YouTube Launchpad)
+1. **Strict 100-Character YouTube Hard Cap:** Every proposed title formula MUST strictly remain $\le 100$ characters to guarantee zero ellipsis truncation across mobile YouTube recommendation feeds.
+2. **Franchise-Grounded Lore & Dynamic Adapters:** In [`packagingService.js`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/studio/server/services/packagingService.js), title sets, SEO descriptions, and community pinned questions MUST dynamically bind to the active franchise lore (e.g. Series 02 Caelen Vance archery and Red Gate mechanics) rather than hardcoding legacy series narratives.
+3. **Rich Metadata Object Architecture & Pure Prose Clipboard Standard:** Backend services return structured title objects (`{ archetype, title, ctrScore, style, charCount }`). Studio interfaces must unpack both structured objects and legacy strings, displaying dedicated archetype badges, CTR metrics, and character counter pills. The 1-click clipboard button MUST extract and copy the pure unformatted title string, eliminating `[object Object]` or stringified JSON leaks.
+
+### 5. Universal Container-Fluid CSS Grid Architecture (Split-Screen & Mobile Responsiveness)
+1. **Multi-Viewport Fluidity Mandate:** All studio views ([`VideoStudioView.vue`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/studio/src/views/VideoStudioView.vue), [`PromptMatrixView.vue`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/studio/src/views/PromptMatrixView.vue), [`SeriesDetailView.vue`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/studio/src/views/SeriesDetailView.vue), [`ScriptEditorView.vue`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/studio/src/views/ScriptEditorView.vue)) must maintain 100% responsive fluid behaviour across full desktop, split-screen (e.g. 50/50 browser window alongside Google Flow at 700px–900px), and mobile viewports.
+2. **Strict Ban on Rigid Viewport Breakpoint Jumps:** Strictly forbidden from using fixed-width containers (`w-[1280px]`) or non-wrapping CSS grids (`grid-cols-4` without minmax). All card layouts, batch matrices, and dispatch drawers MUST employ fluid auto-fill grids (`grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))`) and flex-wrap containers with gap spacing to eliminate horizontal clipping in split-screen workflows.
+

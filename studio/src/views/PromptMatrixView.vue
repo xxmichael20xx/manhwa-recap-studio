@@ -118,6 +118,20 @@
             {{ readyCount }}
           </span>
         </button>
+        <button 
+          @click="filterMode = 'fresh'"
+          class="px-3 py-1.5 rounded-lg transition-all cursor-pointer font-medium flex items-center space-x-1.5"
+          :class="filterMode === 'fresh' 
+            ? 'bg-white dark:bg-slate-900 text-cyan-600 dark:text-cyan-400 font-bold shadow-xs' 
+            : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+          title="Filter newly regenerated/fresh images synced after prompt matrix update"
+        >
+          <Sparkles class="w-3 h-3 text-cyan-500" />
+          <span>Fresh / Synced</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-600 dark:text-cyan-400">
+            {{ freshCount }}
+          </span>
+        </button>
       </div>
 
       <!-- Quick Selection Actions -->
@@ -196,12 +210,80 @@
       </div>
     </div>
 
+    <!-- Batch Pre-Flight Health Bar & Fast Navigator -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm space-y-3">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center space-x-2.5">
+          <ShieldCheck class="w-4.5 h-4.5 text-purple-600 dark:text-purple-400" />
+          <h2 class="text-sm font-bold text-slate-900 dark:text-white">Batch Pre-Flight Health & Verification Hub</h2>
+          <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+            {{ verifiedBatchesCount }}/{{ dynamicBatches.length }} Batches 100% on Disk • {{ readyCount }}/{{ parsedPrompts.length }} Master Plates
+          </span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button 
+            @click="selectedBatchFilter = null"
+            class="px-3 py-1 rounded-lg text-xs font-mono font-semibold transition cursor-pointer"
+            :class="selectedBatchFilter === null 
+              ? 'bg-purple-600 text-white shadow-xs' 
+              : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+          >
+            All Batches ({{ dynamicBatches.length }})
+          </button>
+        </div>
+      </div>
+
+      <!-- Batch Mini-Cards Grid -->
+      <div class="grid grid-cols-[repeat(auto-fill,minmax(85px,1fr))] gap-2">
+        <div 
+          v-for="(b, bIdx) in dynamicBatches"
+          :key="bIdx"
+          @click="selectedBatchFilter = (selectedBatchFilter === bIdx ? null : bIdx)"
+          class="p-2.5 rounded-xl border text-center transition cursor-pointer flex flex-col justify-between"
+          :class="[
+            selectedBatchFilter === bIdx 
+              ? 'ring-2 ring-purple-500 border-purple-500 bg-purple-50/50 dark:bg-purple-950/40 shadow-xs' 
+              : 'hover:border-purple-400 dark:hover:border-purple-600 bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800'
+          ]"
+          :title="`Click to filter scenes to ${b.name} (${b.startTag}–${b.endTag})`"
+        >
+          <div class="flex items-center justify-between text-[11px] font-mono font-bold">
+            <span :class="selectedBatchFilter === bIdx ? 'text-purple-600 dark:text-purple-400' : 'text-slate-700 dark:text-slate-300'">
+              {{ b.name }}
+            </span>
+            <CheckCircle2 v-if="b.missingCount === 0" class="w-3 h-3 text-emerald-500 shrink-0" />
+            <AlertCircle v-else class="w-3 h-3 text-amber-500 shrink-0" />
+          </div>
+          <div class="my-1">
+            <span class="text-xs font-mono font-bold" :class="b.missingCount === 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'">
+              {{ b.readyCount }}/{{ b.items.length }}
+            </span>
+          </div>
+          <div class="text-[9px] font-mono truncate">
+            <span v-if="b.freshCount > 0" class="text-cyan-600 dark:text-cyan-400 font-bold">
+              {{ b.freshCount }} Fresh
+            </span>
+            <span v-else-if="b.missingCount > 0" class="text-rose-500 font-bold">
+              {{ b.missingCount }} Missing
+            </span>
+            <span v-else class="text-slate-400">
+              Synced
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Prompts Table / Cards -->
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
       <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center space-x-3">
           <span class="text-sm font-mono text-slate-500 dark:text-slate-400">
-            Showing <strong class="text-slate-900 dark:text-white">{{ filteredPrompts.length }}</strong> of {{ parsedPrompts.length }} Scenes • {{ dynamicBatches.length }} Batches (Micro-Chunks: {{ microChunkSize }} scenes)
+            Showing <strong class="text-slate-900 dark:text-white">{{ filteredPrompts.length }}</strong> of {{ parsedPrompts.length }} Scenes
+            <span v-if="selectedBatchFilter !== null" class="ml-1 px-2 py-0.5 rounded-full text-xs bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold">
+              Filtered: {{ dynamicBatches[selectedBatchFilter]?.name }}
+            </span>
+            • {{ dynamicBatches.length }} Batches (Micro-Chunks: {{ microChunkSize }} scenes)
           </span>
         </div>
         <div class="flex flex-wrap items-center gap-1.5">
@@ -225,25 +307,144 @@
         </div>
       </div>
 
+      <!-- Active Filtered Batch Pre-Flight Status Header -->
+      <div 
+        v-if="selectedBatchFilter !== null && dynamicBatches[selectedBatchFilter]"
+        class="p-5 border-b border-slate-200 dark:border-slate-800 bg-gradient-to-r from-purple-500/5 via-slate-50 to-purple-500/5 dark:from-purple-950/20 dark:via-slate-900 dark:to-purple-950/20 flex flex-col md:flex-row md:items-center justify-between gap-4"
+      >
+        <div class="space-y-1.5">
+          <div class="flex items-center space-x-2.5">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-purple-600 text-white shadow-xs">
+              {{ dynamicBatches[selectedBatchFilter].name }}
+            </span>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white">
+              Scenes {{ dynamicBatches[selectedBatchFilter].startIndex + 1 }}–{{ dynamicBatches[selectedBatchFilter].endIndex }} ({{ dynamicBatches[selectedBatchFilter].startTag }} → {{ dynamicBatches[selectedBatchFilter].endTag }})
+            </h3>
+            <span 
+              class="text-xs font-mono px-2 py-0.5 rounded-full font-bold border"
+              :class="dynamicBatches[selectedBatchFilter].missingCount === 0 
+                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
+                : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'"
+            >
+              {{ dynamicBatches[selectedBatchFilter].missingCount === 0 ? '✓ 100% On Disk' : '⚠️ Missing Plates' }}
+            </span>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <span>Verified: <strong class="text-slate-800 dark:text-slate-200">{{ dynamicBatches[selectedBatchFilter].readyCount }}/{{ dynamicBatches[selectedBatchFilter].items.length }}</strong> ({{ dynamicBatches[selectedBatchFilter].healthPercent }}%)</span>
+            <span>•</span>
+            <span class="text-cyan-600 dark:text-cyan-400 font-semibold">Fresh / Synced: <strong>{{ dynamicBatches[selectedBatchFilter].freshCount }}</strong></span>
+            <span>•</span>
+            <span class="text-amber-600 dark:text-amber-400 font-semibold">Needs Re-sync: <strong>{{ dynamicBatches[selectedBatchFilter].staleCount }}</strong></span>
+            <span>•</span>
+            <span :class="dynamicBatches[selectedBatchFilter].missingCount > 0 ? 'text-rose-500 font-bold' : 'text-slate-400'">Missing: <strong>{{ dynamicBatches[selectedBatchFilter].missingCount }}</strong></span>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2 shrink-0">
+          <button 
+            @click="compileBatchPreview(selectedBatchFilter)"
+            :disabled="batchCompilingIndex === selectedBatchFilter"
+            class="px-3.5 py-2 rounded-xl text-xs font-mono font-bold bg-purple-600 hover:bg-purple-500 text-white flex items-center space-x-2 transition cursor-pointer disabled:opacity-50 shadow-sm"
+            :title="`Compile ${dynamicBatches[selectedBatchFilter].name} Preview Video`"
+          >
+            <Loader2 v-if="batchCompilingIndex === selectedBatchFilter" class="w-3.5 h-3.5 animate-spin" />
+            <Film v-else class="w-3.5 h-3.5" />
+            <span>{{ batchCompilingIndex === selectedBatchFilter ? 'Compiling...' : 'Compile Batch Preview' }}</span>
+          </button>
+          <button 
+            @click="openBatchDrawer(selectedBatchFilter)"
+            class="px-3 py-2 rounded-xl text-xs font-mono font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-purple-400 text-slate-700 dark:text-slate-300 transition cursor-pointer shadow-2xs"
+            title="Open Google Flow Dispatch Drawer"
+          >
+            Dispatch Drawer
+          </button>
+          <button 
+            @click="selectedBatchFilter = null"
+            class="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+            title="Clear Batch Filter (View All Scenes)"
+          >
+            <X class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
       <div class="divide-y divide-slate-200 dark:divide-slate-800">
         <div 
           v-for="(p, index) in filteredPrompts" 
           :key="p.tag"
-          class="p-5 sm:p-6 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors flex flex-col md:flex-row md:items-start justify-between gap-4"
+          class="p-5 sm:p-6 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors flex flex-col lg:flex-row lg:items-start gap-5"
           :class="{ 'bg-purple-50/20 dark:bg-purple-950/10': selectedTags.has(p.tag) }"
         >
           <!-- Multi-Select Checkbox -->
-          <div class="pt-1">
+          <div class="pt-1 shrink-0 flex items-center lg:flex-col gap-2">
             <input 
               type="checkbox" 
               :checked="selectedTags.has(p.tag)"
               @change="toggleSelect(p.tag)"
               class="w-4 h-4 rounded border-slate-300 text-purple-600 focus:ring-purple-500 cursor-pointer"
+              :title="`Select ${p.tag}`"
             />
           </div>
 
-          <div class="space-y-3 flex-1">
-            <div class="flex flex-wrap items-center gap-2.5">
+          <!-- Physical Plate Thumbnail Preview / Lightbox Trigger -->
+          <div class="shrink-0 w-full sm:w-60 lg:w-64">
+            <div 
+              v-if="p.hasImage && p.imageUrl"
+              @click="openLightbox(p)"
+              class="group relative aspect-video w-full rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950 shadow-sm cursor-pointer hover:border-purple-500/80 hover:shadow-md transition-all duration-200"
+              :title="`Click to inspect ${p.tag} plate in full-resolution lightbox`"
+            >
+              <img 
+                :src="p.imageUrl" 
+                :alt="p.tag" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy" 
+              />
+              
+              <!-- Hover Overlay with Zoom Icon -->
+              <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2 text-white text-xs font-mono font-bold backdrop-blur-[2px]">
+                <Eye class="w-4 h-4 text-purple-300" />
+                <span>Inspect Plate</span>
+              </div>
+
+              <!-- Corner Metadata Badges -->
+              <div class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-xs text-[10px] font-mono text-white/90 font-medium">
+                {{ formatFileSize(p.size) }}
+              </div>
+              <div class="absolute top-1.5 right-1.5">
+                <span 
+                  v-if="p.freshness === 'fresh'"
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/90 text-white shadow-xs flex items-center space-x-1"
+                  title="Fresh: Plate generated/updated with latest prompt matrix"
+                >
+                  <Sparkles class="w-2.5 h-2.5" />
+                  <span>Fresh</span>
+                </span>
+                <span 
+                  v-else-if="p.freshness === 'stale'"
+                  class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/90 text-white shadow-xs flex items-center space-x-1"
+                  title="Needs Re-sync: Prompt matrix updated after this plate was generated"
+                >
+                  <Clock class="w-2.5 h-2.5" />
+                  <span>Stale</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Missing Image Empty Placeholder -->
+            <div 
+              v-else
+              class="aspect-video w-full rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800/40 flex flex-col items-center justify-center text-slate-400 p-3 text-center"
+            >
+              <AlertCircle class="w-6 h-6 text-amber-500/70 mb-1" />
+              <span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">No Plate on Disk</span>
+              <span class="text-[10px] font-mono text-slate-400 mt-0.5">Awaiting Google Flow generation</span>
+            </div>
+          </div>
+
+          <!-- Scene Content & Metadata -->
+          <div class="space-y-3 flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2">
               <span class="text-sm font-mono px-3 py-1 rounded-lg bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 font-bold">
                 {{ p.tag }}
               </span>
@@ -262,6 +463,26 @@
               >
                 <AlertCircle class="w-3.5 h-3.5 text-amber-500" />
                 <span>Missing/Retry</span>
+              </span>
+
+              <!-- Freshness & Timestamp Badge -->
+              <span 
+                v-if="p.hasImage && p.freshness === 'fresh'"
+                class="text-xs font-mono px-2.5 py-1 rounded-lg bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-500/30 font-semibold flex items-center space-x-1.5"
+                :title="`Modified: ${formatDate(p.mtime)}`"
+              >
+                <Sparkles class="w-3.5 h-3.5 text-cyan-500" />
+                <span>Fresh / Synced</span>
+                <span v-if="p.mtime" class="text-[10px] opacity-75">({{ formatDate(p.mtime) }})</span>
+              </span>
+              <span 
+                v-else-if="p.hasImage && p.freshness === 'stale'"
+                class="text-xs font-mono px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30 font-semibold flex items-center space-x-1.5"
+                :title="`Plate mod: ${formatDate(p.mtime)} vs Matrix mod: ${formatDate(p.promptMatrixMtime)}`"
+              >
+                <Clock class="w-3.5 h-3.5 text-amber-500" />
+                <span>Needs Re-sync</span>
+                <span v-if="p.mtime" class="text-[10px] opacity-75">({{ formatDate(p.mtime) }})</span>
               </span>
 
               <span class="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-semibold">
@@ -305,21 +526,52 @@
                   </div>
                 </div>
               </template>
-              <span class="text-sm font-bold text-slate-900 dark:text-white">{{ p.description }}</span>
+
+              <span class="text-sm font-bold text-slate-900 dark:text-white truncate">
+                {{ p.description }}
+              </span>
             </div>
+
+            <!-- Surfaced Character & Item Tokens Bar -->
+            <div v-if="p.characterTokens && p.characterTokens.length > 0" class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[10px] font-mono font-bold uppercase text-slate-500">Characters & Props:</span>
+              <button 
+                v-for="token in p.characterTokens"
+                :key="token"
+                @click="copyTokenDirect(token)"
+                class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-md text-xs font-mono font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900 transition cursor-pointer"
+                :title="`Click to copy token '${token}'`"
+              >
+                <span>{{ token }}</span>
+                <Check v-if="copiedDirectToken === token" class="w-3 h-3 text-emerald-500" />
+                <Copy v-else class="w-3 h-3 text-purple-400 opacity-60" />
+              </button>
+            </div>
+
+            <!-- Prompt Text -->
             <p class="text-sm font-mono text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 break-words select-all leading-relaxed">
               {{ getDisplayPrompt(p) }}
             </p>
           </div>
 
-          <div class="shrink-0 pt-1 flex items-center space-x-2">
+          <!-- Actions Column -->
+          <div class="shrink-0 pt-1 flex flex-row lg:flex-col items-center gap-2">
             <button 
               @click="copySinglePrompt(p, index)"
-              class="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all w-full md:w-auto justify-center cursor-pointer shadow-sm"
+              class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all cursor-pointer shadow-sm w-full justify-center"
             >
-              <Check v-if="copiedIndex === index" class="w-4 h-4 text-emerald-500" />
-              <Copy v-else class="w-4 h-4 text-slate-400" />
+              <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-500" />
+              <Copy v-else class="w-3.5 h-3.5 text-slate-400" />
               <span>{{ copiedIndex === index ? 'Copied XML' : 'Copy <scene>' }}</span>
+            </button>
+            <button 
+              v-if="p.hasImage && p.imageUrl"
+              @click="openLightbox(p)"
+              class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer w-full justify-center"
+              title="Inspect plate in full-resolution lightbox"
+            >
+              <Eye class="w-3.5 h-3.5 text-purple-500" />
+              <span>Inspect Plate</span>
             </button>
           </div>
         </div>
@@ -560,6 +812,53 @@
                   </span>
                 </div>
 
+                <!-- Batch Pre-Flight Plate Health Summary -->
+                <div class="my-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <div class="flex items-center space-x-1.5 font-bold text-slate-800 dark:text-slate-200">
+                      <ShieldCheck class="w-4 h-4" :class="batch.missingCount === 0 ? 'text-emerald-500' : 'text-amber-500'" />
+                      <span>Pre-Flight Plate Health</span>
+                    </div>
+                    <span 
+                      class="font-mono text-[11px] px-2 py-0.5 rounded-full font-bold border"
+                      :class="batch.missingCount === 0 
+                        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
+                        : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'"
+                    >
+                      {{ batch.readyCount }}/{{ batch.items.length }} On Disk ({{ batch.healthPercent }}%)
+                    </span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-1.5 text-center text-xs font-mono">
+                    <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                      <span class="text-slate-400 text-[10px] block">Verified</span>
+                      <strong class="text-slate-800 dark:text-slate-200">{{ batch.readyCount }}/{{ batch.items.length }}</strong>
+                    </div>
+                    <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                      <span class="text-slate-400 text-[10px] block">Fresh</span>
+                      <strong class="text-cyan-600 dark:text-cyan-400">{{ batch.freshCount }}</strong>
+                    </div>
+                    <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+                      <span class="text-slate-400 text-[10px] block">Missing</span>
+                      <strong :class="batch.missingCount > 0 ? 'text-rose-500' : 'text-slate-400'">{{ batch.missingCount }}</strong>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-1">
+                    <span class="text-[10px] font-mono text-slate-500">
+                      {{ batch.missingCount === 0 ? '✓ Ready for compilation' : '⚠️ Missing plates on disk' }}
+                    </span>
+                    <button 
+                      @click="compileBatchPreview(bIdx)"
+                      :disabled="batchCompilingIndex === bIdx"
+                      class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-purple-600 hover:bg-purple-500 text-white flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50 shadow-xs"
+                      :title="`Compile ${batch.name} Preview Video`"
+                    >
+                      <Loader2 v-if="batchCompilingIndex === bIdx" class="w-3 h-3 animate-spin" />
+                      <Film v-else class="w-3 h-3" />
+                      <span>{{ batchCompilingIndex === bIdx ? 'Compiling...' : 'Compile Preview' }}</span>
+                    </button>
+                  </div>
+                </div>
+
                 <!-- Session Isolation Target Collection Banner -->
                 <div class="mb-3 px-3 py-1.5 rounded-lg bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/60 dark:border-indigo-500/20 flex items-center justify-between text-[11px] font-mono">
                   <span class="text-slate-500 dark:text-slate-400">Target Collection:</span>
@@ -796,7 +1095,7 @@
 
             <!-- Drawer Body: Grid of Cards -->
             <div class="p-6 space-y-4 overflow-y-auto flex-1">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-4">
                 <div 
                   v-for="model in filteredVaultModels" 
                   :key="model.id"
@@ -860,62 +1159,60 @@
                     </div>
 
                     <!-- Description -->
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" :title="model.description">
                       {{ model.description }}
                     </p>
                   </div>
 
                   <!-- Actions -->
-                  <div class="flex items-center justify-between pt-2.5 border-t border-slate-200/80 dark:border-slate-800/80 gap-1.5">
+                  <div class="grid grid-cols-4 gap-1.5 pt-2.5 border-t border-slate-200/80 dark:border-slate-800/80">
                     <button 
                       @click="downloadVaultPlate(model)"
-                      class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center space-x-1 transition cursor-pointer border border-slate-200 dark:border-slate-700"
+                      class="py-1.5 px-1 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[10px] font-mono font-semibold flex items-center justify-center space-x-1 transition cursor-pointer border border-slate-200 dark:border-slate-700"
                       title="Download Master Reference Plate"
                     >
-                      <Download class="w-3 h-3 text-slate-500 dark:text-slate-400" />
-                      <span>Download</span>
+                      <Download class="w-3 h-3 shrink-0 text-slate-500 dark:text-slate-400" />
+                      <span class="truncate">Plate</span>
                     </button>
-                    
-                    <div class="flex items-center space-x-1">
-                      <button 
-                        @click="copyVaultName(model)"
-                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
-                        :class="copiedVaultId === model.id && copiedVaultType === 'name' 
-                          ? 'bg-emerald-600 text-white' 
-                          : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
-                        title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
-                      >
-                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3 h-3" />
-                        <Tag v-else class="w-3 h-3 text-slate-500" />
-                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
-                      </button>
 
-                      <button 
-                        @click="copyVaultToken(model)"
-                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
-                        :class="copiedVaultId === model.id && copiedVaultType === 'token' 
-                          ? 'bg-emerald-600 text-white' 
-                          : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
-                        title="Copy Google Flow Token (@{...})"
-                      >
-                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3" />
-                        <Copy v-else class="w-3 h-3" />
-                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
-                      </button>
+                    <button 
+                      @click="copyVaultName(model)"
+                      class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center justify-center space-x-1"
+                      :class="copiedVaultId === model.id && copiedVaultType === 'name' 
+                        ? 'bg-emerald-600 text-white' 
+                        : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
+                      title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
+                    >
+                      <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3 h-3 shrink-0" />
+                      <Tag v-else class="w-3 h-3 shrink-0 text-slate-500" />
+                      <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
+                    </button>
 
-                      <button 
-                        @click="copyVaultDna(model)"
-                        class="px-2 py-1.5 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center space-x-1"
-                        :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
-                          ? 'bg-emerald-600 text-white' 
-                          : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
-                        title="Copy Complete Visual DNA Prompt"
-                      >
-                        <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3" />
-                        <Sparkles v-else class="w-3 h-3" />
-                        <span>{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
-                      </button>
-                    </div>
+                    <button 
+                      @click="copyVaultToken(model)"
+                      class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center justify-center space-x-1"
+                      :class="copiedVaultId === model.id && copiedVaultType === 'token' 
+                        ? 'bg-emerald-600 text-white' 
+                        : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
+                      title="Copy Google Flow Token (@{...})"
+                    >
+                      <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3 shrink-0" />
+                      <Copy v-else class="w-3 h-3 shrink-0" />
+                      <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
+                    </button>
+
+                    <button 
+                      @click="copyVaultDna(model)"
+                      class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center justify-center space-x-1"
+                      :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
+                        ? 'bg-emerald-600 text-white' 
+                        : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
+                      title="Copy Complete Visual DNA Prompt"
+                    >
+                      <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3 shrink-0" />
+                      <Sparkles v-else class="w-3 h-3 shrink-0" />
+                      <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1100,6 +1397,131 @@
         </div>
       </transition>
     </Teleport>
+
+    <!-- Lightbox Modal for Physical Image Inspection -->
+    <Teleport to="body">
+      <div 
+        v-if="activeLightboxScene"
+        class="fixed inset-0 z-50 overflow-hidden flex items-center justify-center p-4 sm:p-6"
+        @keydown.esc="closeLightbox"
+      >
+        <!-- Backdrop -->
+        <div 
+          @click="closeLightbox"
+          class="fixed inset-0 bg-slate-950/85 backdrop-blur-md transition-opacity duration-300"
+        />
+
+        <!-- Modal Dialog -->
+        <div class="relative w-full max-w-5xl max-h-[92vh] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10">
+          <!-- Lightbox Header -->
+          <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/80 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 min-w-0">
+              <span class="text-sm font-mono px-3 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold shrink-0">
+                {{ activeLightboxScene.tag }}
+              </span>
+              <div class="min-w-0">
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white truncate">
+                  {{ activeLightboxScene.description }}
+                </h3>
+                <div class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+                  <span>{{ formatFileSize(activeLightboxScene.size) }}</span>
+                  <span v-if="activeLightboxScene.mtime">• Mod: {{ formatDate(activeLightboxScene.mtime) }}</span>
+                  <span 
+                    v-if="activeLightboxScene.freshness === 'fresh'"
+                    class="text-cyan-600 dark:text-cyan-400 font-bold"
+                  >
+                    • 🟢 Fresh / Synced
+                  </span>
+                  <span 
+                    v-else-if="activeLightboxScene.freshness === 'stale'"
+                    class="text-amber-600 dark:text-amber-400 font-bold"
+                  >
+                    • 🟡 Needs Re-sync
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-2 shrink-0">
+              <button 
+                @click="prevLightboxScene"
+                class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
+                title="Previous plate (Left Arrow)"
+              >
+                <ChevronLeft class="w-5 h-5" />
+              </button>
+              <button 
+                @click="nextLightboxScene"
+                class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
+                title="Next plate (Right Arrow)"
+              >
+                <ChevronRight class="w-5 h-5" />
+              </button>
+              <a 
+                v-if="activeLightboxScene.imageUrl"
+                :href="activeLightboxScene.imageUrl" 
+                target="_blank" 
+                download
+                class="p-2 rounded-lg text-slate-500 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
+                title="Open/Download original image"
+              >
+                <Download class="w-5 h-5" />
+              </a>
+              <button 
+                @click="closeLightbox"
+                class="p-2 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition cursor-pointer"
+                title="Close (Esc)"
+              >
+                <X class="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Lightbox Image Viewport -->
+          <div class="flex-1 bg-black/95 flex items-center justify-center p-4 overflow-hidden relative min-h-[300px] max-h-[60vh]">
+            <img 
+              v-if="activeLightboxScene.imageUrl"
+              :src="activeLightboxScene.imageUrl" 
+              :alt="activeLightboxScene.tag"
+              class="max-w-full max-h-full object-contain rounded shadow-lg"
+            />
+            <!-- Navigation Chevrons on image sides -->
+            <button 
+              @click="prevLightboxScene"
+              class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white backdrop-blur-xs transition cursor-pointer"
+            >
+              <ChevronLeft class="w-6 h-6" />
+            </button>
+            <button 
+              @click="nextLightboxScene"
+              class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white backdrop-blur-xs transition cursor-pointer"
+            >
+              <ChevronRight class="w-6 h-6" />
+            </button>
+          </div>
+
+          <!-- Lightbox Bottom Prompt & Characters Tray -->
+          <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2 overflow-y-auto max-h-[25vh]">
+            <!-- Character tokens -->
+            <div v-if="activeLightboxScene.characterTokens && activeLightboxScene.characterTokens.length > 0" class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[10px] font-mono font-bold uppercase text-slate-500">Entities:</span>
+              <button 
+                v-for="tok in activeLightboxScene.characterTokens"
+                :key="tok"
+                @click="copyTokenDirect(tok)"
+                class="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 transition cursor-pointer"
+              >
+                {{ tok }}
+              </button>
+            </div>
+            <!-- Monospace prompt -->
+            <p class="text-xs font-mono text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950 p-3 rounded-lg border border-slate-200 dark:border-slate-800 leading-relaxed select-all">
+              {{ getDisplayPrompt(activeLightboxScene) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -1111,7 +1533,7 @@ import {
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
   AlertCircle, AlertTriangle, Film, Loader2,
   Users, Download, ExternalLink, Sparkles, Tag, FileCode2, Hash,
-  ChevronDown
+  ChevronDown, Eye, ChevronLeft, ChevronRight, Clock
 } from 'lucide-vue-next'
 import { 
   parseEntityMappingText, 
@@ -1348,18 +1770,87 @@ const compileBatchPreview = async (index) => {
     })
     const data = await res.json()
     if (data.success) {
-      setTimeout(() => {
-        batchCompilingIndex.value = null
-      }, 3000)
+      showToast(`Batch ${getBatchCode(index)} compilation dispatched! Monitor progress in Video Studio.`)
+    } else {
+      showToast(data.error || `Failed to compile Batch ${getBatchCode(index)} preview`)
     }
   } catch (e) {
-    batchCompilingIndex.value = null
+    showToast(`Error dispatching compilation: ${e.message}`)
+  } finally {
+    setTimeout(() => {
+      batchCompilingIndex.value = null
+    }, 2000)
   }
 }
 
 // Multi-Selection & Filtering State
 const selectedTags = ref(new Set())
-const filterMode = ref('all') // 'all', 'missing', 'ready'
+const filterMode = ref('all') // 'all', 'missing', 'ready', 'fresh'
+const selectedBatchFilter = ref(null)
+
+// Lightbox & Preview State
+const activeLightboxScene = ref(null)
+
+const openLightbox = (scene) => {
+  activeLightboxScene.value = scene
+}
+
+const closeLightbox = () => {
+  activeLightboxScene.value = null
+}
+
+const prevLightboxScene = () => {
+  if (!activeLightboxScene.value) return
+  const scenesWithImages = filteredPrompts.value.filter(p => p.hasImage)
+  const idx = scenesWithImages.findIndex(p => p.tag === activeLightboxScene.value.tag)
+  if (idx > 0) {
+    activeLightboxScene.value = scenesWithImages[idx - 1]
+  } else if (scenesWithImages.length > 0) {
+    activeLightboxScene.value = scenesWithImages[scenesWithImages.length - 1]
+  }
+}
+
+const nextLightboxScene = () => {
+  if (!activeLightboxScene.value) return
+  const scenesWithImages = filteredPrompts.value.filter(p => p.hasImage)
+  const idx = scenesWithImages.findIndex(p => p.tag === activeLightboxScene.value.tag)
+  if (idx !== -1 && idx < scenesWithImages.length - 1) {
+    activeLightboxScene.value = scenesWithImages[idx + 1]
+  } else if (scenesWithImages.length > 0) {
+    activeLightboxScene.value = scenesWithImages[0]
+  }
+}
+
+const formatFileSize = (bytes) => {
+  if (!bytes || isNaN(bytes)) return '—'
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+}
+
+const formatDate = (isoString) => {
+  if (!isoString) return ''
+  try {
+    const d = new Date(isoString)
+    return d.toLocaleString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    })
+  } catch (_) {
+    return ''
+  }
+}
+
+const handleKeydown = (e) => {
+  if (!activeLightboxScene.value) return
+  if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) return
+  if (e.key === 'Escape') closeLightbox()
+  if (e.key === 'ArrowLeft') prevLightboxScene()
+  if (e.key === 'ArrowRight') nextLightboxScene()
+}
 
 // Side Drawer State & Fast Dispatch Micro-Chunk Tracking
 const isDrawerOpen = ref(false)
@@ -1388,17 +1879,25 @@ const showToast = (msg) => {
 
 // Filtered Prompts
 const filteredPrompts = computed(() => {
+  let list = parsedPrompts.value
+  if (selectedBatchFilter.value !== null && dynamicBatches.value[selectedBatchFilter.value]) {
+    list = dynamicBatches.value[selectedBatchFilter.value].items
+  }
   if (filterMode.value === 'missing') {
-    return parsedPrompts.value.filter(p => !p.hasImage)
+    return list.filter(p => !p.hasImage)
   }
   if (filterMode.value === 'ready') {
-    return parsedPrompts.value.filter(p => p.hasImage)
+    return list.filter(p => p.hasImage)
   }
-  return parsedPrompts.value
+  if (filterMode.value === 'fresh') {
+    return list.filter(p => p.hasImage && p.freshness === 'fresh')
+  }
+  return list
 })
 
 const missingCount = computed(() => parsedPrompts.value.filter(p => !p.hasImage).length)
 const readyCount = computed(() => parsedPrompts.value.filter(p => p.hasImage).length)
+const freshCount = computed(() => parsedPrompts.value.filter(p => p.hasImage && p.freshness === 'fresh').length)
 
 const extractTokensFromText = (text) => {
   if (!text) return []
@@ -1736,6 +2235,16 @@ const dynamicBatches = computed(() => {
       ? `Chunk ${nextUncopiedChunk.chunkNumber}: Scenes ${nextUncopiedChunk.startScene}–${nextUncopiedChunk.endScene}`
       : 'Chunk 1'
 
+    const readyItems = items.filter(p => p.hasImage)
+    const missingItems = items.filter(p => !p.hasImage)
+    const freshItems = items.filter(p => p.hasImage && p.freshness === 'fresh')
+    const staleItems = items.filter(p => p.hasImage && p.freshness === 'stale')
+    const readyCount = readyItems.length
+    const missingCount = missingItems.length
+    const freshCount = freshItems.length
+    const staleCount = staleItems.length
+    const healthPercent = items.length > 0 ? Math.round((readyCount / items.length) * 100) : 0
+
     batches.push({
       name: batchName,
       letter: batchCode,
@@ -1754,7 +2263,13 @@ const dynamicBatches = computed(() => {
       copiedChunksCount,
       isFullyCopied,
       nextUncopiedChunk,
-      nextChunkLabel
+      nextChunkLabel,
+      readyCount,
+      missingCount,
+      freshCount,
+      staleCount,
+      healthPercent,
+      isBatchComplete: items.length > 0 && readyCount === items.length
     })
   }
 
@@ -1763,6 +2278,10 @@ const dynamicBatches = computed(() => {
 
 const completedBatchesCount = computed(() => {
   return dynamicBatches.value.filter(b => b.isFullyCopied).length
+})
+
+const verifiedBatchesCount = computed(() => {
+  return dynamicBatches.value.filter(b => b.isBatchComplete).length
 })
 
 const totalChunksCount = computed(() => {
@@ -2196,7 +2715,14 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
       item_ref: itemRefMatch ? itemRefMatch[1] : null,
       item_refs: itemRefsMatch ? itemRefsMatch[1] : null,
       hasImage: imgInfo ? imgInfo.hasImage : false,
-      imageUrl: imgInfo ? imgInfo.url : null
+      imageUrl: imgInfo ? imgInfo.url : null,
+      mtime: imgInfo ? imgInfo.mtime : null,
+      mtimeMs: imgInfo ? imgInfo.mtimeMs : null,
+      size: imgInfo ? imgInfo.size : null,
+      promptMatrixMtime: imgInfo ? imgInfo.promptMatrixMtime : null,
+      promptMatrixMtimeMs: imgInfo ? imgInfo.promptMatrixMtimeMs : null,
+      freshness: imgInfo ? imgInfo.freshness : (imgInfo?.hasImage ? 'fresh' : 'missing'),
+      characterTokens: imgInfo?.characterTokens || [...new Set([...promptText.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
     })
   }
 
@@ -2240,7 +2766,14 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
         characterAnchor: anchor,
         prompt,
         hasImage: imgInfo ? imgInfo.hasImage : false,
-        imageUrl: imgInfo ? imgInfo.url : null
+        imageUrl: imgInfo ? imgInfo.url : null,
+        mtime: imgInfo ? imgInfo.mtime : null,
+        mtimeMs: imgInfo ? imgInfo.mtimeMs : null,
+        size: imgInfo ? imgInfo.size : null,
+        promptMatrixMtime: imgInfo ? imgInfo.promptMatrixMtime : null,
+        promptMatrixMtimeMs: imgInfo ? imgInfo.promptMatrixMtimeMs : null,
+        freshness: imgInfo ? imgInfo.freshness : (imgInfo?.hasImage ? 'fresh' : 'missing'),
+        characterTokens: imgInfo?.characterTokens || [...new Set([...prompt.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
       })
       continue
     }
@@ -2260,7 +2793,14 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
         characterAnchor: anchors,
         prompt: pText,
         hasImage: imgInfo ? imgInfo.hasImage : false,
-        imageUrl: imgInfo ? imgInfo.url : null
+        imageUrl: imgInfo ? imgInfo.url : null,
+        mtime: imgInfo ? imgInfo.mtime : null,
+        mtimeMs: imgInfo ? imgInfo.mtimeMs : null,
+        size: imgInfo ? imgInfo.size : null,
+        promptMatrixMtime: imgInfo ? imgInfo.promptMatrixMtime : null,
+        promptMatrixMtimeMs: imgInfo ? imgInfo.promptMatrixMtimeMs : null,
+        freshness: imgInfo ? imgInfo.freshness : (imgInfo?.hasImage ? 'fresh' : 'missing'),
+        characterTokens: imgInfo?.characterTokens || [...new Set([...pText.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
       })
     }
   }
@@ -2311,5 +2851,10 @@ onMounted(() => {
   loadEpisode()
   loadVaultModels()
   loadFlowEntities()
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
 })
 </script>

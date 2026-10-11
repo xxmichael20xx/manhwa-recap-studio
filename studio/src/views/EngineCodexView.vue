@@ -15,9 +15,9 @@
     </div>
 
     <!-- Main Content Layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <!-- Document Selector (4 cols) -->
-      <div class="lg:col-span-4 space-y-2.5">
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+      <!-- Document Selector (4 cols on xl) -->
+      <div class="xl:col-span-4 space-y-2.5">
         <button
           v-for="(doc, index) in docs"
           :key="doc.filename"
@@ -33,8 +33,8 @@
         </button>
       </div>
 
-      <!-- Document Viewer (8 cols) -->
-      <div class="lg:col-span-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+      <!-- Document Viewer (8 cols on xl) -->
+      <div class="xl:col-span-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
         <div v-if="currentDoc" class="space-y-4">
           <div class="border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center justify-between">
             <div>

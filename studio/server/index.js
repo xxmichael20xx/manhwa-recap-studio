@@ -537,6 +537,28 @@ app.get('/api/episodes/:franchiseId/:episodeId/images/:filename', (req, res) => 
 })
 
 // Unified Character, Weapon & Item Models List for Franchise Vault
+function formatAppearance(appearance, fallbackRole = '') {
+  if (!appearance) return fallbackRole
+  if (typeof appearance === 'string') return appearance
+  if (typeof appearance === 'object') {
+    const parts = []
+    if (appearance.height) parts.push(appearance.height)
+    if (appearance.physique) parts.push(appearance.physique)
+    if (appearance.hair) parts.push(appearance.hair)
+    if (appearance.eyes) parts.push(appearance.eyes)
+    if (appearance.attire) parts.push(`Attire: ${appearance.attire}`)
+    if (appearance.weapons) parts.push(`Weapons: ${appearance.weapons}`)
+    
+    if (parts.length === 0) {
+      const vals = Object.values(appearance).filter(v => typeof v === 'string' && v.trim())
+      if (vals.length > 0) return vals.join('. ')
+    } else {
+      return parts.join('. ')
+    }
+  }
+  return fallbackRole
+}
+
 app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   try {
     const { franchiseId } = req.params
@@ -553,10 +575,20 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
       const rawVault = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
       const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
       for (const c of charList) {
-        const roleStr = c.role || 'Character'
-        const isAntagonist = roleStr.toLowerCase().includes('antagonist')
-        const isSupporting = roleStr.toLowerCase().includes('supporting') || roleStr.toLowerCase().includes('proctor')
-        const roleCategory = isAntagonist ? 'Antagonist' : (isSupporting ? 'Supporting' : 'Protagonist')
+        const roleStr = (c.role || 'Character').toLowerCase()
+        const isAntagonist = (c.category && c.category.toLowerCase() === 'antagonist') ||
+                             roleStr.includes('antagonist') ||
+                             roleStr.includes('boss') ||
+                             roleStr.includes('calamity') ||
+                             roleStr.includes('monster') ||
+                             roleStr.includes('enemy') ||
+                             roleStr.includes('villain')
+        const isSupporting = (c.category && c.category.toLowerCase() === 'supporting') ||
+                             roleStr.includes('supporting') ||
+                             roleStr.includes('proctor') ||
+                             roleStr.includes('instructor') ||
+                             roleStr.includes('vip')
+        const roleCategory = c.category || (isAntagonist ? 'Antagonist' : (isSupporting ? 'Supporting' : 'Protagonist'))
         const plateFile = c.reference_plate || `${c.id}.jpg`
         const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
         
@@ -571,7 +603,7 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           filename: plateFile,
           hasPlate: diskExists,
           url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
-          description: c.appearance?.hair ? `${c.appearance.hair}. ${c.appearance.attire}` : (c.appearance || c.role || ''),
+          description: formatAppearance(c.appearance, c.role || ''),
           dnaAnchor: c.dna_prompt_anchor || c.token || c.name,
           fullDna: c.dna_prompt_anchor || '',
           token: c.token || `@{${c.name}}`

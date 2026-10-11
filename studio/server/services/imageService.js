@@ -77,15 +77,31 @@ export class ImageService {
     await fs.mkdir(imagesDir, { recursive: true })
 
     let content = ''
+    let promptMatrixMtime = null
+    let promptMatrixMtimeMs = null
     try {
+      const pmStat = await fs.stat(promptMatrixPath)
+      promptMatrixMtime = pmStat.mtime.toISOString()
+      promptMatrixMtimeMs = pmStat.mtimeMs
       content = await fs.readFile(promptMatrixPath, 'utf-8')
     } catch (e) {
       return []
     }
 
     let existingImages = []
+    const imageStatsMap = new Map()
     try {
       existingImages = await fs.readdir(imagesDir)
+      await Promise.all(existingImages.map(async (filename) => {
+        try {
+          const st = await fs.stat(path.join(imagesDir, filename))
+          imageStatsMap.set(filename.toLowerCase(), {
+            mtime: st.mtime.toISOString(),
+            mtimeMs: st.mtimeMs,
+            size: st.size
+          })
+        } catch (_) {}
+      }))
     } catch (e) {
       existingImages = []
     }
@@ -93,19 +109,42 @@ export class ImageService {
     const scenes = []
     let currentAct = 'General'
 
-    // 1. Check for XML <scene id="..."> blocks
-    const xmlMatches = [...content.matchAll(/<scene\s+[^>]*id=["']?(IMG_?\d+)["']?[^>]*>([\s\S]*?)<\/scene>/gi)]
+    // 1. Check for XML <scene ...> blocks
+    const xmlMatches = [...content.matchAll(/<scene\s+([^>]*?)>([\s\S]*?)<\/scene>/gi)]
     if (xmlMatches.length > 0) {
       for (const match of xmlMatches) {
-        const rawId = match[1].replace(/_/g, '')
+        const attrs = match[1]
+        const idMatch = attrs.match(/id=["']?(IMG_?\d+)["']?/i)
+        if (!idMatch) continue
+        const rawId = idMatch[1].replace(/_/g, '')
         const num = rawId.replace(/IMG/i, '').padStart(3, '0')
         const tag = `IMG_${num}`
         const prompt = match[2].trim()
 
+        const charRefMatch = attrs.match(/\bcharacter_ref=["']([^"']+)["']/i)
+        const charRefsMatch = attrs.match(/\bcharacter_refs=["']([^"']+)["']/i)
+        const itemRefMatch = attrs.match(/\bitem_ref=["']([^"']+)["']/i)
+        const itemRefsMatch = attrs.match(/\bitem_refs=["']([^"']+)["']/i)
+
         const matchedFilename = this.resolveImageFilename(tag, existingImages)
         const hasImage = Boolean(matchedFilename)
         const filename = matchedFilename || `${tag}.jpg`
+        const imgStat = matchedFilename ? imageStatsMap.get(matchedFilename.toLowerCase()) : null
 
+        const mtime = imgStat ? imgStat.mtime : null
+        const mtimeMs = imgStat ? imgStat.mtimeMs : null
+        const size = imgStat ? imgStat.size : null
+
+        let freshness = 'missing'
+        if (hasImage && size && size > 5000) {
+          if (!promptMatrixMtimeMs || (mtimeMs && mtimeMs >= (promptMatrixMtimeMs - 5000))) {
+            freshness = 'fresh'
+          } else {
+            freshness = 'stale'
+          }
+        }
+
+        const characterTokens = [...new Set([...prompt.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
         const descMatch = prompt.match(/^IMG\d+,\s*([^,\n]+)/i)
         const description = descMatch ? descMatch[1].trim() : `Scene ${num}`
 
@@ -116,7 +155,18 @@ export class ImageService {
           description,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null,
+          mtime,
+          mtimeMs,
+          size,
+          promptMatrixMtime,
+          promptMatrixMtimeMs,
+          freshness,
+          character_ref: charRefMatch ? charRefMatch[1] : null,
+          character_refs: charRefsMatch ? charRefsMatch[1] : null,
+          item_ref: itemRefMatch ? itemRefMatch[1] : null,
+          item_refs: itemRefsMatch ? itemRefsMatch[1] : null,
+          characterTokens
         })
       }
       return scenes
@@ -145,6 +195,22 @@ export class ImageService {
         const matchedFilename = this.resolveImageFilename(tag, existingImages)
         const hasImage = Boolean(matchedFilename)
         const filename = matchedFilename || `${tag}.jpg`
+        const imgStat = matchedFilename ? imageStatsMap.get(matchedFilename.toLowerCase()) : null
+
+        const mtime = imgStat ? imgStat.mtime : null
+        const mtimeMs = imgStat ? imgStat.mtimeMs : null
+        const size = imgStat ? imgStat.size : null
+
+        let freshness = 'missing'
+        if (hasImage && size && size > 5000) {
+          if (!promptMatrixMtimeMs || (mtimeMs && mtimeMs >= (promptMatrixMtimeMs - 5000))) {
+            freshness = 'fresh'
+          } else {
+            freshness = 'stale'
+          }
+        }
+
+        const characterTokens = [...new Set([...prompt.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
 
         scenes.push({
           tag,
@@ -153,7 +219,14 @@ export class ImageService {
           description: `${layoutOrDesc} • ${anchor}`,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null,
+          mtime,
+          mtimeMs,
+          size,
+          promptMatrixMtime,
+          promptMatrixMtimeMs,
+          freshness,
+          characterTokens
         })
         continue
       }
@@ -169,6 +242,22 @@ export class ImageService {
         const matchedFilename = this.resolveImageFilename(tag, existingImages)
         const hasImage = Boolean(matchedFilename)
         const filename = matchedFilename || `${tag}.jpg`
+        const imgStat = matchedFilename ? imageStatsMap.get(matchedFilename.toLowerCase()) : null
+
+        const mtime = imgStat ? imgStat.mtime : null
+        const mtimeMs = imgStat ? imgStat.mtimeMs : null
+        const size = imgStat ? imgStat.size : null
+
+        let freshness = 'missing'
+        if (hasImage && size && size > 5000) {
+          if (!promptMatrixMtimeMs || (mtimeMs && mtimeMs >= (promptMatrixMtimeMs - 5000))) {
+            freshness = 'fresh'
+          } else {
+            freshness = 'stale'
+          }
+        }
+
+        const characterTokens = [...new Set([...prompt.matchAll(/@\{([^}]+)\}/g)].map(m => m[0]))]
 
         scenes.push({
           tag,
@@ -177,7 +266,14 @@ export class ImageService {
           description,
           prompt,
           hasImage,
-          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null
+          url: hasImage ? `/api/episodes/${franchiseId}/${episodeId}/images/${filename}` : null,
+          mtime,
+          mtimeMs,
+          size,
+          promptMatrixMtime,
+          promptMatrixMtimeMs,
+          freshness,
+          characterTokens
         })
       }
     }

@@ -245,7 +245,7 @@
         </div>
 
         <!-- Character & Item Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 pt-2">
           <div 
             v-for="item in filteredModels" 
             :key="item.id"
@@ -336,7 +336,7 @@
         <!-- Format Tier Selection -->
         <div class="space-y-3">
           <label class="text-xs font-mono uppercase text-slate-400 font-bold">Select Compilation Format Tier</label>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
             <div 
               @click="selectedTier = 'tier2'"
               class="p-4 rounded-xl border cursor-pointer transition-all space-y-1.5"
@@ -470,7 +470,7 @@
             <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">100% YouTube Compliant (<2MB MozJPEG)</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">
             <!-- Variant A: Split Transformation -->
             <div class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-3 hover:border-purple-500/40 transition-all">
               <div class="aspect-video w-full rounded-xl bg-slate-900 overflow-hidden relative border border-slate-200 dark:border-slate-800">
@@ -581,28 +581,45 @@
           </div>
         </div>
 
-        <!-- 2. The 5 High-CTR Title Archetypes -->
+        <!-- 2. The 10 High-CTR Title Archetypes -->
         <div class="space-y-3 pt-4 border-t border-slate-200 dark:border-slate-800">
-          <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-            <FileText class="w-4 h-4 text-purple-600" />
-            <span>5 High-CTR Title Archetypes (&le; 100 Characters)</span>
-          </h3>
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+              <FileText class="w-4 h-4 text-purple-600" />
+              <span>10 High-CTR Title Archetypes (&le; 100 Characters)</span>
+            </h3>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold">
+              10 Formulas Available
+            </span>
+          </div>
 
-          <div class="space-y-2">
+          <div class="space-y-2.5">
             <div 
-              v-for="(title, idx) in pkgData?.titles || defaultTitles" 
+              v-for="(item, idx) in pkgData?.titles || defaultTitles" 
               :key="idx"
-              class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between hover:border-purple-500/40 transition-all"
+              class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-purple-500/40 transition-all group"
             >
-              <div class="space-y-0.5">
-                <div class="text-[10px] font-mono text-slate-400 font-semibold uppercase">Archetype {{ idx + 1 }} • {{ title.length }} Chars</div>
-                <div class="text-xs font-bold text-slate-900 dark:text-white">{{ title }}</div>
+              <div class="space-y-1 min-w-0 flex-1">
+                <div class="flex items-center space-x-2 flex-wrap gap-y-1">
+                  <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-bold">
+                    {{ typeof item === 'object' && item.archetype ? item.archetype : `Archetype ${idx + 1}` }}
+                  </span>
+                  <span v-if="typeof item === 'object' && item.ctrScore" class="text-[10px] font-mono text-amber-500 font-bold">
+                    🔥 {{ item.ctrScore }} CTR
+                  </span>
+                  <span class="text-[10px] font-mono text-slate-400">
+                    • {{ (typeof item === 'string' ? item : item.title).length }} / 100 Chars
+                  </span>
+                </div>
+                <div class="text-xs font-bold text-slate-900 dark:text-white leading-snug">
+                  {{ typeof item === 'string' ? item : item.title }}
+                </div>
               </div>
               <button 
-                @click="copyToken(title)"
-                class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 text-xs font-mono text-purple-600 dark:text-purple-400 flex items-center space-x-1 cursor-pointer shrink-0"
+                @click="copyToken(typeof item === 'string' ? item : item.title)"
+                class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 text-xs font-mono text-purple-600 dark:text-purple-400 flex items-center justify-center space-x-1 cursor-pointer shrink-0 transition"
               >
-                <Copy class="w-3 h-3" />
+                <Copy class="w-3.5 h-3.5" />
                 <span>Copy Title</span>
               </button>
             </div>
@@ -690,11 +707,16 @@ const triggerToast = (title, message) => {
 }
 
 const defaultTitles = [
-  "They Exiled Him as an F-Rank Archer, But His Bow Draws at Mach 4",
-  "Mocked for Rolling 'Garbage Wood Archer', He Siphons Boss Stats in Secret",
-  "The S-Rank Geniuses Cried for Help While the F-Rank Orphan One-Shot the Calamity",
-  "They Gave Him Dungeon Refuse Duty, Unaware His Stats Scale to Infinity",
-  "When an S-Rank Red Gate Trapped the Academy, the F-Rank Archer Revealed True Sovereign Power"
+  "Mocked as an F-Rank Archer, He Siphons Boss Stats in Secret and Draws at Mach 4",
+  "Assigned to the Trash Class, His 6,500 LBS Bow Shot Shocked the High Director",
+  "When an S-Rank Red Gate Trapped 300 Students, the F-Rank Archer Soloed the Boss",
+  "They Gave Him Dungeon Refuse Duty, Unaware His System Steals S-Rank Boss Stats",
+  "The S-Rank Scion Dropped His Staff in Terror While the Mocked Archer One-Shot It",
+  "He Shattered 12 Inches of S-Rank Obsidian Armor with a Single Hypersonic Arrow",
+  "(1-5) Mocked for Rolling 'Garbage Archer', He Unlocks the Omniscient Siphon Bow",
+  "They Exiled Him as a Weak Archer, But His Void-Strung Bow Controls the Dungeon",
+  "The Guild Thought He Was Paralyzed, But He Moved at Mach 2.5 Across Falling Rocks",
+  "From Mocked Orphan to S-Rank Calamity Slayer: The Rise of the Plunderer Archer"
 ]
 
 const loadFranchise = async () => {

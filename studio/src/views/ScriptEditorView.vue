@@ -58,9 +58,9 @@
     </div>
 
     <!-- Main Workspace Layout: Editor (Left) + Anti-Slop Audit Panel (Right) -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
       <!-- Editor Column (8 cols) -->
-      <div class="lg:col-span-8 space-y-4">
+      <div class="xl:col-span-8 space-y-4">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden flex flex-col h-[750px] shadow-sm">
           <div class="px-4 py-3 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 flex items-center justify-between">
             <span class="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center space-x-2">
@@ -81,7 +81,7 @@
       </div>
 
       <!-- Anti-Slop Audit Sidebar (4 cols) -->
-      <div class="lg:col-span-4 space-y-6">
+      <div class="xl:col-span-4 space-y-6">
         <!-- Live Metrics Card -->
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-6 shadow-sm">
           <div class="flex items-center justify-between">

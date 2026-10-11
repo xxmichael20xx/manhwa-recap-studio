@@ -95,7 +95,7 @@
 
     <!-- Stage Navigation Tabs (3 Focused Episodic Stages) -->
     <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-2">
-      <div class="flex items-center space-x-2">
+      <div class="flex flex-wrap items-center gap-2">
         <button 
           @click="activeStage = 'visuals'"
           class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
@@ -217,7 +217,7 @@
           </div>
 
           <!-- Character & Item Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-4">
             <div 
               v-for="model in filteredCharacterModels" 
               :key="model.id"
@@ -281,62 +281,60 @@
                 </div>
 
                 <!-- Description -->
-                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" :title="model.description">
                   {{ model.description }}
                 </p>
               </div>
 
               <!-- Action Buttons -->
-              <div class="flex items-center justify-between pt-2.5 border-t border-slate-100 dark:border-slate-800/80 gap-1.5">
+              <div class="grid grid-cols-4 gap-1.5 pt-2.5 border-t border-slate-100 dark:border-slate-800/80">
                 <button 
                   @click="downloadModelPlate(model)"
-                  class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-1 transition cursor-pointer"
+                  class="py-1.5 px-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[11px] font-mono font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
                   title="Download Master Reference Plate"
                 >
-                  <Download class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
-                  <span>Download</span>
+                  <Download class="w-3.5 h-3.5 shrink-0 text-slate-500 dark:text-slate-400" />
+                  <span class="truncate">Plate</span>
                 </button>
-                
-                <div class="flex items-center space-x-1">
-                  <button 
-                    @click="copyModelName(model)"
-                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
-                    :class="copiedVaultId === model.id && copiedVaultType === 'name' 
-                      ? 'bg-emerald-600 text-white' 
-                      : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
-                    title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
-                  >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3.5 h-3.5" />
-                    <Tag v-else class="w-3.5 h-3.5 text-slate-500" />
-                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
-                  </button>
 
-                  <button 
-                    @click="copyModelToken(model)"
-                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
-                    :class="copiedVaultId === model.id && copiedVaultType === 'token' 
-                      ? 'bg-emerald-600 text-white' 
-                      : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
-                    title="Copy Google Flow Token (@{...})"
-                  >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5" />
-                    <Copy v-else class="w-3.5 h-3.5" />
-                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
-                  </button>
+                <button 
+                  @click="copyModelName(model)"
+                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
+                  :class="copiedVaultId === model.id && copiedVaultType === 'name' 
+                    ? 'bg-emerald-600 text-white' 
+                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
+                  title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
+                >
+                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3.5 h-3.5 shrink-0" />
+                  <Tag v-else class="w-3.5 h-3.5 shrink-0 text-slate-500" />
+                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
+                </button>
 
-                  <button 
-                    @click="copyModelDna(model)"
-                    class="px-2.5 py-1.5 rounded-lg transition cursor-pointer text-xs font-mono font-bold flex items-center space-x-1"
-                    :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
-                      ? 'bg-emerald-600 text-white' 
-                      : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
-                    title="Copy Complete Visual DNA Prompt"
-                  >
-                    <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3.5 h-3.5" />
-                    <Sparkles v-else class="w-3.5 h-3.5" />
-                    <span>{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
-                  </button>
-                </div>
+                <button 
+                  @click="copyModelToken(model)"
+                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
+                  :class="copiedVaultId === model.id && copiedVaultType === 'token' 
+                    ? 'bg-emerald-600 text-white' 
+                    : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
+                  title="Copy Google Flow Token (@{...})"
+                >
+                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5 shrink-0" />
+                  <Copy v-else class="w-3.5 h-3.5 shrink-0" />
+                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
+                </button>
+
+                <button 
+                  @click="copyModelDna(model)"
+                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
+                  :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
+                    ? 'bg-emerald-600 text-white' 
+                    : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
+                  title="Copy Complete Visual DNA Prompt"
+                >
+                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3.5 h-3.5 shrink-0" />
+                  <Sparkles v-else class="w-3.5 h-3.5 shrink-0" />
+                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
+                </button>
               </div>
             </div>
           </div>
@@ -789,7 +787,7 @@
                 </div>
 
                 <!-- Reference Chips Grid -->
-                <div v-if="batch.refCount > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 pt-1">
+                <div v-if="batch.refCount > 0" class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-2.5 pt-1">
                   <div 
                     v-for="model in batch.references" 
                     :key="model.id || model.name"
@@ -870,7 +868,7 @@
               </div>
 
               <!-- 24-Scene Grid for this Batch -->
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="grid grid-cols-[repeat(auto-fill,minmax(330px,1fr))] gap-4">
                 <div 
                   v-for="scene in batch.scenes" 
                   :key="scene.tag"
@@ -1262,7 +1260,7 @@
             </div>
 
             <!-- Batch Checkbox Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3">
               <div 
                 v-for="b in batchedScenes" 
                 :key="b.index"
@@ -1330,7 +1328,7 @@
                   <span>Lossless Batch Assembly Stitcher (FFmpeg -c copy)</span>
                 </div>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                  Instantly merges all compiled batch preview videos on disk in under 2 seconds into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_A-I_1080p.mp4</code>.
+                  Instantly merges all compiled batch preview videos on disk in under 2 seconds into <code class="text-purple-600 dark:text-purple-400 font-mono">01_Episode_Master_Batches_01-13_1080p.mp4</code>.
                 </p>
               </div>
 
@@ -1456,7 +1454,7 @@
           </div>
 
           <!-- BGM Track Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-3">
             <!-- No BGM Option -->
             <div 
               @click="selectBgmTrack('none')"
@@ -1584,7 +1582,7 @@
               <div class="text-xs font-bold font-mono text-slate-700 dark:text-slate-300">
                 Watermark Screen Placement:
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+              <div class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-2.5">
                 <div 
                   v-for="pos in watermarkPositions" 
                   :key="pos.id"
@@ -1907,7 +1905,7 @@
           </div>
 
           <!-- Scenes Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-3.5">
             <div 
               v-for="scene in filteredAlignmentScenes" 
               :key="scene.tag"
