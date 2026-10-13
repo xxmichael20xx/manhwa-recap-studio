@@ -52,9 +52,47 @@ export class PackagingService {
     await fs.mkdir(thumbDir, { recursive: true })
 
     const isSeries01 = franchiseId.includes('Series_01')
+    const isSeries03 = franchiseId.includes('Series_03')
 
     // Concept definitions calibrated for maximum CTR & storytelling contrast
-    const baseVariants = isSeries01 ? [
+    const baseVariants = isSeries03 ? [
+      {
+        id: 'concept_a',
+        name: 'Concept A: The Sleeper Craftsman Transformation (Common Polisher vs Demigod Architect)',
+        subtitle: 'Split-Contrast (Left Humble Slum Craftsman / Right Infinite Enhancement Sovereign)',
+        badgeText: 'FALSE +1 RANK',
+        subBadgeText: 'UNCAPPED BANK',
+        badgeColorPreset: 'gold_crimson',
+        badgePosition: 'bottom_left',
+        composition: 'Left 45% Bram in simple rolled-up linen craftsman shirt holding chipped knife / Right 55% Bram surrounded by floating golden enhancement glyphs and celestial bank runes',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 24-year-old male protagonist Bramwell Locke in simple cream linen craftsman shirt with rolled-up sleeves, holding a battered chipped iron carving knife, standing in humble timber shop shadows with a calm smile. Right half: The same protagonist standing majestic with glowing amber mana eyes, surrounded by thousands of floating golden +N enhancement runes, celestial data matrices, and a colossal shattered demigod boss in the background. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, vibrant cel shading, volumetric warm lighting, 16:9 horizontal, textless artwork.`,
+        filename: '01_Thumbnail_Concept_A.jpg'
+      },
+      {
+        id: 'concept_b',
+        name: 'Concept B: The Chalk Rapier & Noble Humiliation',
+        subtitle: 'Center Dynamic / Noble Shock (Exploding Chalk Powder & Shattered Sacred Relic)',
+        badgeText: 'CHALK RAPIER',
+        subBadgeText: 'SEMANTIC REFACTOR',
+        badgeColorPreset: 'cyan_hud',
+        badgePosition: 'bottom_left',
+        composition: 'Lord Cassian Valerius staring in horrified shock and cold sweat at his empty gold hilt as the blade explodes into white chalk powder, while Bram smiles politely',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension comic drama manhwa composition. In foreground: Arrogant deep wine-burgundy haired noble knight Lord Cassian Valerius in white-and-gold plate armor, eyes bulging in cold sweat and horrified disbelief as his ancestral golden rapier blade crumbles violently into an explosive cloud of powdery white chalk dust. In center: Bramwell Locke casually dusting his fingertips with an unbothered, polite, charming smile. Dark fantasy action manhwa art style, vibrant cel shading, high contrast, dramatic cinematic lighting, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_B.jpg'
+      },
+      {
+        id: 'concept_c',
+        name: 'Concept C: The Floor 10 Abyssal Minotaur Cleave',
+        subtitle: 'Epic Boss Arena / Supersonic Pine Needle Shockwave',
+        badgeText: 'SOLO FLOOR 10',
+        subBadgeText: '22-MIN RECORD',
+        badgeColorPreset: 'crimson_flame',
+        badgePosition: 'bottom_left',
+        composition: 'Bram sipping tea in plain rolled-up sleeves while a supersonic pine needle shatters the colossal 5-metre demon minotaur\'s warhammer',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic subterranean boss arena manhwa composition. Colossal 5-metre demonic Abyssal Minotaur roaring in agony as its massive spiked granite warhammer is shattered into shrapnel by a single glowing hypersonic emerald-cyan pine needle projectile. In foreground: Protagonist Bramwell Locke calmly holding a steaming ceramic tea cup with rolled-up linen craftsman sleeves, looking completely unbothered. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant cel shading, volumetric combat lighting, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_C.jpg'
+      }
+    ] : isSeries01 ? [
       {
         id: 'concept_a',
         name: 'Concept A: The Split Transformation (Weak Scavenger vs Awakened Sovereign)',
@@ -621,11 +659,73 @@ export class PackagingService {
     })
 
     const isSeries02 = franchiseId.includes('Series_02')
+    const isSeries03 = franchiseId.includes('Series_03')
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
     // 3. Generate 10 High-CTR Title Archetypes (Strict <= 100 Chars Hard Cap)
-    const rawTitles = isSeries02 ? [
+    const rawTitles = isSeries03 ? [
+      {
+        archetype: 'The Architect\'s Smirk & Uncapped Bank',
+        title: `Reborn As A Smiling Game Architect, My Uncapped Enchantment Bank Destroyed The Empire's Tower!`,
+        ctrScore: '98%',
+        style: 'Uncapped +N progression & smiling architect dominance'
+      },
+      {
+        archetype: 'The 2-Word Semantic Deceit',
+        title: `He Rewrote "Rusty Iron" To "Abyssal Meteorite": The Smiling Architect Who Humiliated Nobles!`,
+        ctrScore: '97%',
+        style: 'Linguistic reality refactor & sleeper weapon shock'
+      },
+      {
+        archetype: 'The Divine Siphon Shock',
+        title: `Arrogant Nobles Mocked My Cheap Dagger, Unaware It Holds +10,000 Siphoned Divine Enhancements!`,
+        ctrScore: '96%',
+        style: 'Hidden numerical bank overflow & arrogant face-slap'
+      },
+      {
+        archetype: 'The Peasant Broom Curb-Stomp',
+        title: `They Thought I Was A Peasant Polisher, Until My Wooden Broom Shattered An S-Rank Knight Order!`,
+        ctrScore: '95%',
+        style: 'Mundane tool sleeper power & high-impact curb stomp'
+      },
+      {
+        archetype: 'Uncapped Progression Scaling',
+        title: `My Enchantment Has No Level Limit: Siphoning +50,000 Stats To Solo The 100th-Floor God!`,
+        ctrScore: '94%',
+        style: 'Clean RPG scaling & demigod tower ascent'
+      },
+      {
+        archetype: 'The Sleeper Underdog Ascension',
+        title: `Reborn With Infinite +N Enchantment, I Conquered The 100-Floor Tower With A Wooden Knife!`,
+        ctrScore: '93%',
+        style: 'Classic tower conquest & underdog sleeper weapon'
+      },
+      {
+        archetype: 'The Feudal Rebellion',
+        title: `Nobles Enslaved Earthlings, But My Infinite Enchantment Bank Broke The 100-Floor Tower!`,
+        ctrScore: '92%',
+        style: 'Anti-oligarchy uprising & system breaking'
+      },
+      {
+        archetype: 'The 2-Word Reality Hack',
+        title: `I Can Rewrite Any Item By 2 Words: How A Chipped Dagger Cleared The 100-Floor Divine Tower!`,
+        ctrScore: '91%',
+        style: 'Unique semantic mechanic & tower speedrun'
+      },
+      {
+        archetype: 'Progenitor Noble Face-Slap',
+        title: `They Laughed At My +1 Tool Polisher Talent, Until My Chipped Knife Shattered Their Demigod!`,
+        ctrScore: '90%',
+        style: 'Peak face-slap catharsis against imperial elites'
+      },
+      {
+        archetype: 'The 5-Copper Economy Breakdown',
+        title: `Transmigrated With An Infinite Enchantment Bank, I Reached Floor 100 With A 5-Copper Knife!`,
+        ctrScore: '89%',
+        style: 'Economic reality break & pure grit progression'
+      }
+    ] : isSeries02 ? [
       {
         archetype: 'False F-Rank / Secret Siphon',
         title: `Mocked as an F-Rank Archer, He Siphons Boss Stats in Secret and Draws at Mach 4`,

@@ -1,0 +1,260 @@
+{
+  "series_id": "Series_03_Transmigrated_Game_Architect",
+  "series_title": "Transmigrated Game Architect: Siphoning Demigod Enhancements in a Feudal World",
+  "format": "9:16 Vertical Webtoon",
+  "archetype": "The Smiling Game Architect (Uncapped Recursive Enchantment & Semantic Refactoring)",
+  "characters": [
+    {
+      "id": "bramwell_locke_craftsman",
+      "name": "Bramwell Locke (Craftsman)",
+      "token": "@{Bramwell Locke}",
+      "tier": 1,
+      "role": "Protagonist (Smiling Game Architect Phase)",
+      "age": 24,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Common Tool Polisher (True: Sovereign Architect)",
+        "strength": 12,
+        "agility": 14,
+        "constitution": 15,
+        "perception": 28,
+        "talent": "Uncapped Recursive Enhancement & Semantic Refactoring"
+      },
+      "appearance": {
+        "hair": "Messy parted chestnut-brown hair with short relaxed fringe over forehead",
+        "eyes": "Warm golden-amber eyes, calm, smiling, polite, and deeply observant expression",
+        "physique": "Lean athletic build, relaxed posture, never showing physical strain",
+        "attire": "Cream linen craftsman shirt with rolled-up sleeves, dark brown leather tool vest with small pockets, charcoal-grey trousers tucked into durable leather work boots",
+        "weapons": "Chipped 5-copper iron carving knife tucked into leather belt loop, pocket of smooth granite pebbles, ceramic cup of steaming herbal tea"
+      },
+      "dna_prompt_anchor": "@{Bramwell Locke}, handsome 24-year-old male manhwa protagonist, messy chestnut-brown hair, warm golden-amber eyes, polite confident friendly smile, wearing cream linen shirt with rolled-up sleeves, dark leather craftsman vest, charcoal trousers, relaxed posture, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic warm ambient lighting, vertical 9:16",
+      "reference_plate": "01_Protagonist_Bramwell_Locke.jpg",
+      "flowUuid": "16c4c742-5932-4c96-9c0c-c42aadbcb00a",
+      "flowName": "Bramwell Locke"
+    },
+    {
+      "id": "linnea_croft",
+      "name": "Linnea Croft",
+      "token": "@{Linnea Croft}",
+      "tier": 1,
+      "role": "Supporting Ally (Botanist Transmigrator)",
+      "age": 21,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Common Herbalist",
+        "strength": 8,
+        "agility": 10,
+        "constitution": 9,
+        "perception": 16,
+        "talent": "Plant Empathy (F-Rank)"
+      },
+      "appearance": {
+        "hair": "Braided strawberry-blonde hair resting neatly over one shoulder",
+        "eyes": "Bright emerald-green eyes, gentle, sweet, and hardworking expression",
+        "physique": "Slender, delicate build with soil-dusted knuckles",
+        "attire": "Forest-green working dress with embroidered canvas gardening apron, durable leather gardening gloves, woven straw sun hat resting on back",
+        "weapons": "Antique rustic copper watering can with faint cyan runes glowing along the base"
+      },
+      "dna_prompt_anchor": "@{Linnea Croft}, pretty 21-year-old female transmigrator, braided strawberry-blonde hair over shoulder, bright emerald-green eyes, gentle sweet expression, forest-green working dress, canvas gardener apron, holding an antique copper watering can, dark fantasy manhwa art style, sharp ink linework, delicate cel shading, soft natural daylight, vertical 9:16",
+      "reference_plate": "02_Supporting_Linnea_Croft.jpg",
+      "flowUuid": "7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b",
+      "flowName": "Linnea Croft"
+    },
+    {
+      "id": "lord_cassian_valerius",
+      "name": "Lord Cassian Valerius",
+      "token": "@{Lord Cassian Valerius}",
+      "tier": 1,
+      "role": "Primary Antagonist (Imperial Prodigy Knight)",
+      "age": 22,
+      "stats_baseline": {
+        "level": 18,
+        "class": "Sunfire Prodigy Knight",
+        "strength": 65,
+        "agility": 72,
+        "constitution": 58,
+        "perception": 40,
+        "talent": "Solar Radiant Aura (S-Rank)"
+      },
+      "appearance": {
+        "hair": "Slicked-back deep wine-burgundy dark crimson hair with sharp aristocratic parting",
+        "eyes": "Narrow cold ice-blue eyes, arrogant condescending smirk",
+        "physique": "Tall, broad-shouldered imperial athletic frame",
+        "attire": "Ornate white and gold-trimmed knight plate armour, high crimson velvet shoulder cape pinned with House Vane-Valerius gold dragon sigil, polished white leather combat boots",
+        "weapons": "Ancestral Sunfire Rapier with solid gold pommel and radiant solar aura"
+      },
+      "dna_prompt_anchor": "@{Lord Cassian Valerius}, arrogant 22-year-old male aristocrat, slicked-back deep wine-burgundy dark crimson hair, cruel haughty smirk, piercing cold blue eyes, wearing ornate white and gold-trimmed knight plate armour, crimson velvet cape, holding a golden rapier, dark fantasy action manhwa art style, sharp linework, dramatic high-contrast lighting, vertical 9:16",
+      "reference_plate": "03_Antagonist_Lord_Cassian_Valerius.jpg",
+      "flowUuid": "85907b43-f56f-4b92-9869-b3c40d8d0c17",
+      "flowName": "Lord Cassian Valerius"
+    },
+    {
+      "id": "commander_vance_sterling",
+      "name": "Commander Vance Sterling",
+      "token": "@{Commander Vance Sterling}",
+      "tier": 1,
+      "role": "Imperial Watch Commander / Tower Overseer",
+      "age": 46,
+      "stats_baseline": {
+        "level": 42,
+        "class": "Steel Bastion Vanguard",
+        "strength": 180,
+        "agility": 95,
+        "constitution": 210,
+        "perception": 130,
+        "talent": "Impenetrable Fortress (A-Rank)"
+      },
+      "appearance": {
+        "hair": "Short greying steel-grey hair, heavy stubble, battle-scarred cheek",
+        "eyes": "Sharp grey-slate analytical eyes, stern unyielding jawline",
+        "physique": "Massive towering muscular build, seasoned military veteran posture",
+        "attire": "Heavy dark-steel breastplate over reinforced imperial military trench coat, brass watch commander medallion pinned to chest",
+        "weapons": "Heavy steel broadsword resting in back scabbard"
+      },
+      "dna_prompt_anchor": "@{Commander Vance Sterling}, 46-year-old veteran male commander, short greying steel-grey hair, battle-scarred cheek, stern analytical slate-grey eyes, heavy dark-steel armor over military trench coat, watchful posture, dark fantasy manhwa art style, sharp ink linework, moody atmospheric lighting, vertical 9:16",
+      "reference_plate": "04_VIP_Commander_Vance_Sterling.jpg",
+      "flowUuid": "78f698f6-7fc3-4258-97d0-8e5733f8c70f",
+      "flowName": "Commander Vance Sterling"
+    },
+    {
+      "id": "boss_abyssal_minotaur",
+      "name": "Abyssal Minotaur",
+      "token": "@{Boss: Abyssal Minotaur}",
+      "tier": 1,
+      "role": "Floor 10 Tower Boss",
+      "age": null,
+      "stats_baseline": {
+        "level": 25,
+        "class": "Demon Titan Beast",
+        "strength": 310,
+        "agility": 85,
+        "constitution": 420,
+        "perception": 70,
+        "talent": "Adamantine Blood Rage"
+      },
+      "appearance": {
+        "hair": "Coarse jet-black fur, curved obsidian horns wreathed in dark miasma",
+        "eyes": "Blazing crimson demon eyes burning with primal fury",
+        "physique": "Colossal 5-metre towering bovine beast with massive corded muscles",
+        "attire": "Heavy spiked black-iron shoulder plates and fractured chains hanging from wrists",
+        "weapons": "Colossal spiked granite warhammer wrapped in barbed steel wire"
+      },
+      "dna_prompt_anchor": "@{Boss: Abyssal Minotaur}, colossal 5-metre demonic bovine minotaur titan, jet-black fur, curved obsidian horns with dark smoke, blazing crimson eyes, holding a giant spiked granite warhammer, dark fantasy action manhwa art style, sharp linework, high contrast dynamic lighting, vertical 9:16",
+      "reference_plate": "05_Boss_Abyssal_Minotaur.jpg",
+      "flowUuid": "70365391-fd2f-47b2-88c5-c587c1a02a65",
+      "flowName": "Boss: Abyssal Minotaur"
+    },
+    {
+      "id": "master_smith_corvus",
+      "name": "Master Smith Corvus",
+      "token": "@{Master Smith Corvus}",
+      "tier": 1,
+      "role": "Supporting Craftsman (Dwarf Blacksmith)",
+      "age": 140,
+      "stats_baseline": {
+        "level": 30,
+        "class": "Master Volcanic Blacksmith",
+        "strength": 140,
+        "agility": 45,
+        "constitution": 190,
+        "perception": 80,
+        "talent": "Magma Forging Mastery (A-Rank)"
+      },
+      "appearance": {
+        "hair": "Braided thick charcoal-grey beard with copper clasps",
+        "eyes": "Piercing molten-amber eyes, weathered skin with faint soot marks",
+        "physique": "Broad muscular stocky dwarven build",
+        "attire": "Heavy dark-brown leather blacksmith apron over rolled-up dark canvas tunic, iron-studded bracers, fingerless leather forge gloves, sturdy iron-tipped leather boots",
+        "weapons": "Heavy engraved runic forging hammer resting on an anvil"
+      },
+      "dna_prompt_anchor": "@{Master Smith Corvus}, grizzled middle-aged dwarven master blacksmith, braided thick charcoal-grey beard with copper clasps, piercing molten-amber eyes, heavy dark-brown leather blacksmith apron, fingerless leather forge gloves, holding a heavy engraved runic forging hammer, dark fantasy action manhwa art style, sharp ink linework, dramatic rim lighting, vibrant warm cel shading, vertical 9:16",
+      "reference_plate": "06_Supporting_Master_Smith_Corvus.jpg",
+      "flowUuid": "7e6b1206-e4cf-4039-8347-e3fcd9cbc09f",
+      "flowName": "Dwarf Blacksmith"
+    },
+    {
+      "id": "shadow_assassin_jackal",
+      "name": "Shadow Assassin Jackal",
+      "token": "@{Shadow Assassin Jackal}",
+      "tier": 1,
+      "role": "Antagonist Mercenary (Bloodhound Syndicate Leader)",
+      "age": 26,
+      "stats_baseline": {
+        "level": 22,
+        "class": "Shadow Katar Executioner",
+        "strength": 70,
+        "agility": 115,
+        "constitution": 60,
+        "perception": 95,
+        "talent": "Venom Mist Phase (B-Rank)"
+      },
+      "appearance": {
+        "hair": "Messy jet-black spiky hair, dark obsidian cowl",
+        "eyes": "Glowing menacing amethyst-purple eyes, pale sharp face half covered by dark charcoal silk face wrap",
+        "physique": "Lean athletic stealth build",
+        "attire": "Fitted matte-black reinforced leather assassin armor, dark arm bracers with hidden blade sheaths, strapped leather throwing-dagger belts, quiet soft-soled shadow stalker boots",
+        "weapons": "Dual curved steel katars with faint violet poison mana sheen"
+      },
+      "dna_prompt_anchor": "@{Shadow Assassin Jackal}, elite mercenary leader of Bloodhound Syndicate, lean athletic stealth build, charcoal face wrap, glowing amethyst-purple eyes, messy jet-black spiky hair, matte-black leather assassin armor, holding dual curved steel katars, dark fantasy action manhwa webtoon art style, sharp ink linework, cool moonlight rim lighting, high contrast cel shading, vertical 9:16",
+      "reference_plate": "07_Antagonist_Shadow_Assassin_Jackal.jpg",
+      "flowUuid": "6cbf8706-10e3-4cd6-b549-87101bcd6b55",
+      "flowName": "Masked Assassin"
+    },
+    {
+      "id": "chief_proctor_gary",
+      "name": "Chief Proctor Gary",
+      "token": "@{Chief Proctor Gary}",
+      "tier": 1,
+      "role": "Antagonist Bureaucrat (Imperial Awakening Examiner)",
+      "age": 48,
+      "stats_baseline": {
+        "level": 15,
+        "class": "Imperial Mana Examiner",
+        "strength": 25,
+        "agility": 30,
+        "constitution": 35,
+        "perception": 110,
+        "talent": "Mana Appraisal Monocle (B-Rank)"
+      },
+      "appearance": {
+        "hair": "Slicked-back oiled ash-blonde hair, thin sneering moustache",
+        "eyes": "Narrow condescending eyes behind brass holographic magnifying monocle over right eye",
+        "physique": "Slight, haughty aristocratic frame",
+        "attire": "Opulent royal-blue and gold-trimmed velvet examiner robes with stiff high collar, embroidered magistrate crest, white silk gloves",
+        "weapons": "Leather evaluation ledger and brass quill"
+      },
+      "dna_prompt_anchor": "@{Chief Proctor Gary}, senior imperial awakening examiner, pompous aristocratic man, slicked-back ash-blonde hair, thin moustache, brass holographic magnifying monocle over right eye, royal-blue and gold-trimmed velvet examiner robes, white silk gloves holding a leather evaluation ledger, dark fantasy manhwa art style, sharp linework, rich regal cel shading, vertical 9:16",
+      "reference_plate": "08_Antagonist_Chief_Proctor_Gary.jpg",
+      "flowUuid": "53613811-cabd-46ed-a125-a4275b036cb9",
+      "flowName": "High-Ranking Official"
+    },
+    {
+      "id": "boss_obsidian_core_golem",
+      "name": "Obsidian Core Golem",
+      "token": "@{Boss: Obsidian Core Golem}",
+      "tier": 1,
+      "role": "Floor 8 Tower Boss",
+      "age": null,
+      "stats_baseline": {
+        "level": 20,
+        "class": "Volcanic Construct Titan",
+        "strength": 260,
+        "agility": 40,
+        "constitution": 380,
+        "perception": 50,
+        "talent": "Magma Plate Hardening"
+      },
+      "appearance": {
+        "hair": "Faceless jagged basalt head with two glowing cyan rune slits",
+        "eyes": "Bright glowing cyan rune slits, colossal azure crystalline core sphere pulsating in cavernous chest",
+        "physique": "Massive 6-meter towering construct of jagged volcanic basalt and polished obsidian armor plates",
+        "attire": "Floating boulder shoulders bound by crackling cerulean mana arcs",
+        "weapons": "Colossal dual basalt cleaver fists"
+      },
+      "dna_prompt_anchor": "@{Boss: Obsidian Core Golem}, colossal 6-meter ancient spire boss monster, jagged dark volcanic basalt rocks, polished obsidian armor plates, floating boulder shoulders bound by cerulean mana arcs, glowing bright azure crystalline core sphere pulsating in chest, dark fantasy action manhwa art style, sharp heavy ink linework, high contrast glowing mana cel shading, vertical 9:16",
+      "reference_plate": "09_Boss_Obsidian_Core_Golem.jpg",
+      "flowUuid": "7adb703c-55b3-4cc6-afd4-1da4ad778985",
+      "flowName": "Stone Golem"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "series_id": "Series_03_Transmigrated_Game_Architect",
+  "items": [
+    {
+      "id": "chipped_carving_knife",
+      "name": "Chipped Carving Knife",
+      "token": "@{Weapon: Chipped Carving Knife}",
+      "type": "Weapon",
+      "apparent_rank": "Common (5 Copper Coins)",
+      "true_rank": "Rewritten: Abyssal Meteorite Knife (+500 Siphoned Force)",
+      "description": "A battered, rusty iron carving knife with chipped edges. Appears completely mundane, but cuts cleanly through adamantine dragon plate without resistance.",
+      "dna_prompt_anchor": "@{Weapon: Chipped Carving Knife}, small battered rusty iron carving knife with chipped blade edge and simple wooden grip, dark fantasy manhwa style, sharp ink linework, vertical 9:16"
+    },
+    {
+      "id": "sunfire_rapier",
+      "name": "Sunfire Rapier",
+      "token": "@{Weapon: Sunfire Rapier}",
+      "type": "Weapon",
+      "apparent_rank": "S-Rank Imperial Relic",
+      "true_rank": "Rewritten: Sunfire Chalk (0 Durability)",
+      "description": "The ancestral weapon of House Vane-Valerius. Formerly radiating intense solar heat, rewritten by Bram into chalk, turning into powdery dust upon impact.",
+      "dna_prompt_anchor": "@{Weapon: Sunfire Rapier}, ornate gold-hilted imperial rapier with radiant golden solar energy radiating from blade, dark fantasy manhwa style, dramatic lighting, vertical 9:16"
+    },
+    {
+      "id": "enchanted_wooden_broom",
+      "name": "Enchanted Wooden Broom",
+      "token": "@{Weapon: Enchanted Wooden Broom}",
+      "type": "Weapon",
+      "apparent_rank": "Mundane Cleaning Tool",
+      "true_rank": "Enhanced: +1,200 Kinetic Shockwave Sweep",
+      "description": "A standard coarse straw broom with a worn ashwood handle used by Bram to clean his shop. Delivers devastating sweeping shockwaves that blow away goblin squads.",
+      "dna_prompt_anchor": "@{Weapon: Enchanted Wooden Broom}, ordinary rustic straw broom with smooth ashwood handle, faint cyan kinetic vibration hum, dark fantasy manhwa style, vertical 9:16"
+    },
+    {
+      "id": "rustic_copper_watering_can",
+      "name": "Rustic Copper Watering Can",
+      "token": "@{Item: Rustic Copper Watering Can}",
+      "type": "Item",
+      "apparent_rank": "Common Gardening Tool",
+      "true_rank": "Enhanced: +50 Growth Velocity",
+      "description": "An old dented copper watering can belonging to Linnea Croft. Infused by Bram with growth velocity, allowing withered medicinal plants to bloom in seconds.",
+      "dna_prompt_anchor": "@{Item: Rustic Copper Watering Can}, antique dented copper watering can with faint cyan runes etched along base, sparkling droplets, dark fantasy manhwa style, vertical 9:16"
+    },
+    {
+      "id": "siphoned_pine_needle",
+      "name": "Siphoned Pine Needle",
+      "token": "@{Item: Siphoned Pine Needle}",
+      "type": "Item",
+      "apparent_rank": "Mundane Tree Leaf",
+      "true_rank": "Enhanced: +2,500 Piercing Force",
+      "description": "A single green needle plucked from a pine branch outside Locke's shop. Injected with siphoned kinetic piercing force, flying at Mach 4 to vaporise the Floor 10 Boss.",
+      "dna_prompt_anchor": "@{Item: Siphoned Pine Needle}, single thin green pine needle held between fingers, glowing with blinding supersonic cyan kinetic aura, dark fantasy manhwa style, vertical 9:16"
+    }
+  ]
+}

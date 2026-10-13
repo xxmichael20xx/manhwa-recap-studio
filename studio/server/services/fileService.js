@@ -37,12 +37,26 @@ export class FileService {
             // Bible might not exist yet
           }
 
-          // Extract human-readable franchise title if available
+          // Extract video format and human-readable franchise title if available
           let franchiseDisplayName = entry.name.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+          let videoFormat = entry.name.includes('02') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon'
+
           if (seriesBibleContent) {
             const titleMatch = seriesBibleContent.match(/Official Title:\*{0,2}\s*\*?([^\r\n*]+)\*?/) || seriesBibleContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*Series\s+\d+:\s*([^\r\n]+)/m)
             if (titleMatch) {
               franchiseDisplayName = titleMatch[1].trim()
+            }
+
+            const formatMatch = seriesBibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+            if (formatMatch) {
+              const rawFmt = formatMatch[1].trim()
+              if (rawFmt.includes('9:16')) {
+                videoFormat = 'Format 1: 9:16 Webtoon'
+              } else if (rawFmt.includes('16:9')) {
+                videoFormat = 'Format 2: 16:9 Landscape'
+              } else {
+                videoFormat = rawFmt
+              }
             }
           }
 
@@ -99,6 +113,7 @@ export class FileService {
             id: entry.name,
             name: franchiseDisplayName,
             folder: entry.name,
+            format: videoFormat,
             characterAnchor,
             bibleContent: seriesBibleContent,
             episodes: episodes.sort((a, b) => a.id.localeCompare(b.id))

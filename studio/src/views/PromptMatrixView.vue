@@ -190,7 +190,9 @@
         <button 
           v-if="selectedTags.size > 0"
           @click="copySelectedPrompts"
-          class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm cursor-pointer"
+          :disabled="isCopyDisabledDueToMissingUuids"
+          class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm"
+          :class="isCopyDisabledDueToMissingUuids ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
         >
           <Check v-if="activeCopiedKey === 'SELECTED'" class="w-3.5 h-3.5 text-emerald-300" />
           <Zap v-else class="w-3.5 h-3.5 text-purple-200" />
@@ -201,7 +203,9 @@
         <button 
           v-if="missingCount > 0 && selectedTags.size === 0"
           @click="copyMissingPrompts"
-          class="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm cursor-pointer"
+          :disabled="isCopyDisabledDueToMissingUuids"
+          class="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm"
+          :class="isCopyDisabledDueToMissingUuids ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
         >
           <Check v-if="activeCopiedKey === 'MISSING'" class="w-3.5 h-3.5 text-emerald-300" />
           <AlertTriangle v-else class="w-3.5 h-3.5 text-amber-200" />
@@ -230,6 +234,37 @@
           >
             All Batches ({{ dynamicBatches.length }})
           </button>
+        </div>
+      </div>
+
+            <!-- Mandatory Character Entity UUID Gate Warning Banner -->
+      <div 
+        v-if="isCopyDisabledDueToMissingUuids" 
+        class="mb-3 p-4 rounded-xl border border-rose-300 dark:border-rose-900/80 bg-rose-50 dark:bg-rose-950/40 shadow-xs flex items-start space-x-3 text-rose-900 dark:text-rose-200"
+      >
+        <AlertTriangle class="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+        <div class="space-y-1 text-xs">
+          <div class="font-bold flex items-center space-x-2">
+            <span class="text-sm font-semibold text-rose-700 dark:text-rose-300">Prompt Matrix Copying Locked</span>
+            <span class="px-2 py-0.5 rounded-full bg-rose-200/80 dark:bg-rose-900 text-[10px] font-mono font-bold text-rose-800 dark:text-rose-200">
+              {{ unmappedCharacterEntities.length }} Missing UUID{{ unmappedCharacterEntities.length > 1 ? 's' : '' }}
+            </span>
+          </div>
+          <p class="text-rose-700 dark:text-rose-300 leading-relaxed">
+            Copying prompt chunks or batch XML is disabled to prevent generation drift. The following character entities do not have valid Google Flow UUIDs configured in Character DNA / Vault:
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span 
+              v-for="char in unmappedCharacterEntities" 
+              :key="char"
+              class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 font-mono text-[11px] font-semibold text-rose-700 dark:text-rose-300 shadow-2xs"
+            >
+              @{{ char }}
+            </span>
+          </div>
+          <p class="text-[11px] text-rose-600 dark:text-rose-400 pt-1">
+            💡 Open the <strong>Google Flow Character Entities</strong> card above or the <strong>Character Vault</strong> to assign their respective UUIDs before copying prompts.
+          </p>
         </div>
       </div>
 
@@ -558,7 +593,9 @@
           <div class="shrink-0 pt-1 flex flex-row lg:flex-col items-center gap-2">
             <button 
               @click="copySinglePrompt(p, index)"
-              class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all cursor-pointer shadow-sm w-full justify-center"
+              :disabled="isCopyDisabledDueToMissingUuids"
+              class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all shadow-sm w-full justify-center"
+              :class="isCopyDisabledDueToMissingUuids ? 'opacity-40 cursor-not-allowed' : 'hover:bg-purple-600 hover:text-white hover:border-purple-600 cursor-pointer'"
             >
               <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-500" />
               <Copy v-else class="w-3.5 h-3.5 text-slate-400" />
@@ -617,6 +654,20 @@
                 </button>
               </div>
 
+                            <!-- Drawer Character Entity UUID Gate Banner -->
+              <div 
+                v-if="isCopyDisabledDueToMissingUuids" 
+                class="mt-4 p-3.5 rounded-xl border border-rose-300 dark:border-rose-900/80 bg-rose-50 dark:bg-rose-950/50 shadow-xs flex items-start space-x-2.5 text-rose-900 dark:text-rose-200 text-xs"
+              >
+                <AlertTriangle class="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+                <div class="space-y-1">
+                  <span class="font-bold text-rose-700 dark:text-rose-300 block">Copying Disabled: Missing Character UUIDs</span>
+                  <p class="text-[11px] text-rose-700 dark:text-rose-300 leading-normal">
+                    Please map UUIDs for: <span class="font-mono font-semibold">{{ unmappedCharacterEntities.join(', ') }}</span> in the Character Vault before copying chunks.
+                  </p>
+                </div>
+              </div>
+
               <!-- Dispatch Progress Tracker -->
               <div class="mt-5 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
                 <div class="flex items-center justify-between text-sm">
@@ -655,7 +706,9 @@
                 </div>
                 <button 
                   @click="copyMissingPrompts"
-                  class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-mono font-bold transition shadow-xs cursor-pointer"
+                  :disabled="isCopyDisabledDueToMissingUuids"
+                  class="px-3.5 py-2 rounded-lg bg-amber-600 text-white text-xs font-mono font-bold transition shadow-xs"
+                  :class="isCopyDisabledDueToMissingUuids ? 'opacity-50 cursor-not-allowed' : 'hover:bg-amber-500 cursor-pointer'"
                 >
                   {{ activeCopiedKey === 'MISSING' ? 'Copied!' : `⚡ Copy ${missingCount} Missing` }}
                 </button>
@@ -943,12 +996,15 @@
                   <!-- Primary Action: Copy Next Chunk -->
                   <button 
                     @click="copyNextBatchChunk(batch, bIdx)"
-                    class="w-full py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm text-white"
-                    :class="activeCopiedKey && activeCopiedKey.startsWith(`${bIdx}_`)
-                      ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-950/20'
-                      : (batch.isFullyCopied
-                        ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-950/20'
-                        : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 shadow-indigo-950/20')"
+                    :disabled="isCopyDisabledDueToMissingUuids"
+                    class="w-full py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 transition-all shadow-sm text-white"
+                    :class="isCopyDisabledDueToMissingUuids
+                      ? 'opacity-50 cursor-not-allowed bg-slate-500'
+                      : (activeCopiedKey && activeCopiedKey.startsWith(`${bIdx}_`)
+                        ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-950/20 cursor-pointer'
+                        : (batch.isFullyCopied
+                          ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-950/20 cursor-pointer'
+                          : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 shadow-indigo-950/20 cursor-pointer'))"
                   >
                     <Check v-if="activeCopiedKey && activeCopiedKey.startsWith(`${bIdx}_`)" class="w-4 h-4 text-emerald-200" />
                     <Check v-else-if="batch.isFullyCopied" class="w-4 h-4 text-emerald-200" />
@@ -975,14 +1031,18 @@
                         v-for="(chunk, cIdx) in batch.chunks"
                         :key="cIdx"
                         @click="copyChunk(batch, bIdx, chunk, cIdx)"
-                        class="px-2.5 py-2 rounded-lg text-xs font-mono font-bold border transition flex items-center justify-between cursor-pointer shadow-2xs"
-                        :class="chunk.isCopied
-                          ? (activeCopiedKey === `${bIdx}_${cIdx}`
-                              ? 'bg-emerald-500 text-white border-emerald-600'
-                              : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-600/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40')
-                          : (activeCopiedKey === `${bIdx}_${cIdx}`
-                              ? 'bg-purple-600 text-white border-purple-700'
-                              : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-purple-400 hover:bg-purple-50/30 dark:hover:bg-purple-950/30')"
+                        :disabled="isCopyDisabledDueToMissingUuids"
+                        class="px-2.5 py-2 rounded-lg text-xs font-mono font-bold border transition flex items-center justify-between shadow-2xs"
+                        :class="[
+                          isCopyDisabledDueToMissingUuids ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer',
+                          chunk.isCopied
+                            ? (activeCopiedKey === `${bIdx}_${cIdx}`
+                                ? 'bg-emerald-500 text-white border-emerald-600'
+                                : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-600/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40')
+                            : (activeCopiedKey === `${bIdx}_${cIdx}`
+                                ? 'bg-purple-600 text-white border-purple-700'
+                                : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-purple-400 hover:bg-purple-50/30 dark:hover:bg-purple-950/30')
+                        ]"
                         :title="`Click to copy Chunk ${chunk.chunkNumber} (${chunk.startTag}–${chunk.endTag}) with collection header`"
                       >
                         <span class="truncate">Chunk {{ chunk.chunkNumber }}</span>
@@ -996,7 +1056,9 @@
                   <!-- Fallback: Copy Full Batch XML -->
                   <button 
                     @click="copyBatchFullXml(batch, bIdx)"
-                    class="w-full py-2 px-3 rounded-lg text-[11px] font-mono font-bold flex items-center justify-center space-x-1.5 transition border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 cursor-pointer"
+                    :disabled="isCopyDisabledDueToMissingUuids"
+                    class="w-full py-2 px-3 rounded-lg text-[11px] font-mono font-bold flex items-center justify-center space-x-1.5 transition border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400"
+                    :class="isCopyDisabledDueToMissingUuids ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer'"
                     :title="`Copy all ${batch.items.length} scenes in one batch prompt`"
                   >
                     <Check v-if="activeCopiedKey === `FULL_${bIdx}`" class="w-3.5 h-3.5 text-emerald-500" />
@@ -1015,7 +1077,9 @@
               <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
                 <button 
                   @click="copyAllMaster"
-                  class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-purple-500/40 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-sm font-bold flex items-center justify-center space-x-2 transition-all cursor-pointer"
+                  :disabled="isCopyDisabledDueToMissingUuids"
+                  class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-sm font-bold flex items-center justify-center space-x-2 transition-all"
+                  :class="isCopyDisabledDueToMissingUuids ? 'opacity-50 cursor-not-allowed' : 'hover:border-purple-500/40 hover:text-slate-900 dark:hover:text-white cursor-pointer'"
                 >
                   <Copy class="w-4 h-4 text-purple-500 dark:text-purple-400" />
                   <span>{{ activeCopiedKey === 'ALL' ? 'All Scenes Copied!' : `Copy Entire Episode (All ${parsedPrompts.length} Scenes)` }}</span>
@@ -1567,6 +1631,66 @@ const parsedEntities = ref({})
 const promptTagMode = ref('uuid') // 'uuid' | 'token'
 
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
+
+// Character Entity UUID Gate (Anti-Unmapped Prompt Copying Invariant)
+const unmappedCharacterEntities = computed(() => {
+  const charNames = new Set()
+  
+  if (Array.isArray(vaultModels.value)) {
+    vaultModels.value.forEach(m => {
+      const isChar = m.type === 'character' || ['protagonist', 'antagonist', 'supporting', 'vip', 'boss'].includes(m.category?.toLowerCase())
+      if (isChar) {
+        const cleanName = (m.flowName || m.name || '').replace(/\s*\([^)]*\)/, '').trim()
+        if (cleanName) {
+          charNames.add(cleanName)
+        }
+      }
+    })
+  }
+
+  if (Array.isArray(parsedPrompts.value)) {
+    parsedPrompts.value.forEach(p => {
+      const tokens = p.characterTokens || []
+      tokens.forEach(t => {
+        const clean = t.replace(/^@\{?/, '').replace(/\}?$/, '').replace(/\s*\([^)]*\)/, '').trim()
+        if (clean && !clean.toLowerCase().startsWith('item:') && !clean.toLowerCase().startsWith('weapon:') && !clean.toLowerCase().startsWith('general')) {
+          charNames.add(clean)
+        }
+      })
+    })
+  }
+
+  const unmapped = []
+  const entityMap = parsedEntities.value || {}
+
+  for (const name of charNames) {
+    let hasValidUuid = false
+    const val = entityMap[name]
+    if (val && typeof val === 'string' && val.trim().length >= 8) {
+      hasValidUuid = true
+    } else {
+      for (const [k, v] of Object.entries(entityMap)) {
+        if (k.toLowerCase() === name.toLowerCase() && v && typeof v === 'string' && v.trim().length >= 8) {
+          hasValidUuid = true
+          break
+        }
+        const strippedK = k.replace(/^(Boss|Character):\s*/i, '').replace(/\s*\([^)]*\)/, '').trim().toLowerCase()
+        const strippedName = name.replace(/^(Boss|Character):\s*/i, '').replace(/\s*\([^)]*\)/, '').trim().toLowerCase()
+        if (strippedK === strippedName && v && typeof v === 'string' && v.trim().length >= 8) {
+          hasValidUuid = true
+          break
+        }
+      }
+    }
+    if (!hasValidUuid) {
+      unmapped.push(name)
+    }
+  }
+
+  return unmapped
+})
+
+const isCopyDisabledDueToMissingUuids = computed(() => unmappedCharacterEntities.value.length > 0)
 
 const togglePromptTagMode = (mode) => {
   promptTagMode.value = mode
@@ -2410,6 +2534,11 @@ const getCollectionName = (batchName, batchIndex = null) => {
 }
 
 const copyChunk = async (batch, bIdx, chunk, cIdx) => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   if (!chunk || !chunk.items.length) return
 
   const franchiseId = route.params.franchiseId || 'Series'
@@ -2459,12 +2588,22 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
 }
 
 const copyNextBatchChunk = async (batch, bIdx) => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   if (!batch || !batch.chunks.length) return
   const chunkToCopy = batch.nextUncopiedChunk || batch.chunks[0]
   await copyChunk(batch, bIdx, chunkToCopy, chunkToCopy.chunkIndex)
 }
 
 const copyBatchFullXml = async (batch, bIdx) => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   if (!batch || !batch.items.length) return
 
   const franchiseId = route.params.franchiseId || 'Series'
@@ -2515,6 +2654,11 @@ const copyBatchFullXml = async (batch, bIdx) => {
 }
 
 const copySelectedPrompts = async () => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   const selectedItems = parsedPrompts.value.filter(p => selectedTags.value.has(p.tag))
   if (!selectedItems.length) return
 
@@ -2558,6 +2702,11 @@ const copySelectedPrompts = async () => {
 }
 
 const copyMissingPrompts = async () => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   const missingItems = parsedPrompts.value.filter(p => !p.hasImage)
   if (!missingItems.length) return
 
@@ -2601,6 +2750,11 @@ const copyMissingPrompts = async () => {
 }
 
 const copyAllMaster = async () => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   if (!parsedPrompts.value.length) return
 
   const franchiseId = route.params.franchiseId || 'Series'
@@ -2809,6 +2963,11 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
 }
 
 const copySinglePrompt = async (item, index) => {
+  if (isCopyDisabledDueToMissingUuids.value) {
+    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
+    return
+  }
+
   const rawId = typeof item === 'object' && item.tag 
     ? item.tag.replace(/[^A-Za-z0-9]/g, '')
     : `IMG${String(index + 1).padStart(3, '0')}`

@@ -1,0 +1,19 @@
+{
+  "rawText": "Character Entities\nBramwell Locke: 16c4c742-5932-4c96-9c0c-c42aadbcb00a\nBoss: Abyssal Minotaur: 70365391-fd2f-47b2-88c5-c587c1a02a65\nCommander Vance Sterling: 78f698f6-7fc3-4258-97d0-8e5733f8c70f\nLinnea Croft: 7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b\nLord Cassian Valerius: 85907b43-f56f-4b92-9869-b3c40d8d0c17\nDwarf Blacksmith: 7e6b1206-e4cf-4039-8347-e3fcd9cbc09f\nMasked Assassin: 6cbf8706-10e3-4cd6-b549-87101bcd6b55\nHigh-Ranking Official: 53613811-cabd-46ed-a125-a4275b036cb9\nStone Golem: 7adb703c-55b3-4cc6-afd4-1da4ad778985",
+  "entities": {
+    "Bramwell Locke": "16c4c742-5932-4c96-9c0c-c42aadbcb00a",
+    "Boss: Abyssal Minotaur": "70365391-fd2f-47b2-88c5-c587c1a02a65",
+    "Commander Vance Sterling": "78f698f6-7fc3-4258-97d0-8e5733f8c70f",
+    "Linnea Croft": "7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b",
+    "Lord Cassian Valerius": "85907b43-f56f-4b92-9869-b3c40d8d0c17",
+    "Dwarf Blacksmith": "7e6b1206-e4cf-4039-8347-e3fcd9cbc09f",
+    "Masked Assassin": "6cbf8706-10e3-4cd6-b549-87101bcd6b55",
+    "High-Ranking Official": "53613811-cabd-46ed-a125-a4275b036cb9",
+    "Stone Golem": "7adb703c-55b3-4cc6-afd4-1da4ad778985",
+    "Master Smith Corvus": "7e6b1206-e4cf-4039-8347-e3fcd9cbc09f",
+    "Shadow Assassin Jackal": "6cbf8706-10e3-4cd6-b549-87101bcd6b55",
+    "Chief Proctor Gary": "53613811-cabd-46ed-a125-a4275b036cb9",
+    "Obsidian Core Golem": "7adb703c-55b3-4cc6-afd4-1da4ad778985",
+    "Boss: Obsidian Core Golem": "7adb703c-55b3-4cc6-afd4-1da4ad778985"
+  }
+}
