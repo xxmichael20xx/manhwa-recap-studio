@@ -866,7 +866,38 @@ export class PackagingService {
     const chapterText = chapters.map(c => `${c.time} - ${c.title}`).join('\n')
 
     // 5. Generate Full SEO Description
-    const description = isSeries02 
+    const description = isSeries03
+      ? `Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
+
+While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
+
+🔥 Series: ${cleanFranchiseName}
+🎬 Episode: ${cleanEpisodeName}
+⏱️ Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (Full 1080p 24FPS Cinematic Master)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CHAPTER TIMESTAMPS:
+${chapterText}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 COMMUNITY QUESTION:
+If you transmigrated with Bram's ability to rewrite two words in any item's System name, what everyday object would you turn into a demigod weapon first? Drop your thoughts below! 👇
+
+🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: Floors 11-35 & The Architect's Dilemma!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎵 MUSIC & AUDIO ATTRIBUTION:
+All background OST soundscapes and atmospheric dungeon scores are licensed royalty-free for creative production:
+- Outer Slums Tea Shop Ambience (Warm Acoustic Strings)
+- Imperial Aristocracy Tension (Minor Harmonic Strings)
+- Siphon Surge & Sovereign Bank (Hypersonic Bass Resonance)
+- Floor 10 Boss Calamity Cleave (Volcanic Low Drone)
+
+⚖️ DISCLAIMER:
+This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
+
+#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap`
+      : isSeries02 
       ? `They mocked him as a useless F-Rank student archer and assigned him to the academy's trash division, unaware that an apocalyptic Red Gate calamity would awaken the Omniscient Siphon System...
 
 Watch the full story of Caelen Vance as he transcends ordinary hunter classifications, wielding the Void-Strung Heavy Recurve with 6,500 lbs draw force, Mach 2.5 phantom agility, and unstoppable stat-siphoning power to shatter the S-Rank Abyssal Obsidian Colossus.
@@ -956,7 +987,9 @@ This video is an original narrative adaptation and production. All scripts, lore
     ].join(', ')
 
     // 8. Pinned Comment
-    const pinnedComment = isSeries02
+    const pinnedComment = isSeries03
+      ? `Bram really rewrote an ancestral S-Rank golden rapier into a stick of school chalk and siphoned 10,000 enhancement charges into his pocket without blinking. 😭☕\n\n🔔 Episode 02: Floors 11-35 & The Architect's Dilemma is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!\n\nWhat was your favourite moment from Episode 01: Bram pulverising the Floor 10 Minotaur with a single pine needle, or Lord Cassian realizing his sword turned to dust? Drop your thoughts below! 👇`
+      : isSeries02
       ? `💬 Question for you guys: Would you have stepped in to save Ignis after he spent the morning mocking your bow, or let the Colossus crush him? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
       : `💬 Question for you guys: Would you have spared Lord Vane on that collapsing bridge, or eliminated him right away? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
 

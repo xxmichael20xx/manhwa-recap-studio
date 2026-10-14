@@ -30,7 +30,12 @@
       "dna_prompt_anchor": "@{Bramwell Locke}, handsome 24-year-old male manhwa protagonist, messy chestnut-brown hair, warm golden-amber eyes, polite confident friendly smile, wearing cream linen shirt with rolled-up sleeves, dark leather craftsman vest, charcoal trousers, relaxed posture, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic warm ambient lighting, vertical 9:16",
       "reference_plate": "01_Protagonist_Bramwell_Locke.jpg",
       "flowUuid": "16c4c742-5932-4c96-9c0c-c42aadbcb00a",
-      "flowName": "Bramwell Locke"
+      "flowName": "Bramwell Locke",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+        "EP02_The_Architects_Dilemma_and_Floor_35",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     },
     {
       "id": "linnea_croft",
@@ -58,7 +63,12 @@
       "dna_prompt_anchor": "@{Linnea Croft}, pretty 21-year-old female transmigrator, braided strawberry-blonde hair over shoulder, bright emerald-green eyes, gentle sweet expression, forest-green working dress, canvas gardener apron, holding an antique copper watering can, dark fantasy manhwa art style, sharp ink linework, delicate cel shading, soft natural daylight, vertical 9:16",
       "reference_plate": "02_Supporting_Linnea_Croft.jpg",
       "flowUuid": "7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b",
-      "flowName": "Linnea Croft"
+      "flowName": "Linnea Croft",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+        "EP02_The_Architects_Dilemma_and_Floor_35",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     },
     {
       "id": "lord_cassian_valerius",
@@ -86,7 +96,12 @@
       "dna_prompt_anchor": "@{Lord Cassian Valerius}, arrogant 22-year-old male aristocrat, slicked-back deep wine-burgundy dark crimson hair, cruel haughty smirk, piercing cold blue eyes, wearing ornate white and gold-trimmed knight plate armour, crimson velvet cape, holding a golden rapier, dark fantasy action manhwa art style, sharp linework, dramatic high-contrast lighting, vertical 9:16",
       "reference_plate": "03_Antagonist_Lord_Cassian_Valerius.jpg",
       "flowUuid": "85907b43-f56f-4b92-9869-b3c40d8d0c17",
-      "flowName": "Lord Cassian Valerius"
+      "flowName": "Lord Cassian Valerius",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+        "EP02_The_Architects_Dilemma_and_Floor_35",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     },
     {
       "id": "commander_vance_sterling",
@@ -114,7 +129,12 @@
       "dna_prompt_anchor": "@{Commander Vance Sterling}, 46-year-old veteran male commander, short greying steel-grey hair, battle-scarred cheek, stern analytical slate-grey eyes, heavy dark-steel armor over military trench coat, watchful posture, dark fantasy manhwa art style, sharp ink linework, moody atmospheric lighting, vertical 9:16",
       "reference_plate": "04_VIP_Commander_Vance_Sterling.jpg",
       "flowUuid": "78f698f6-7fc3-4258-97d0-8e5733f8c70f",
-      "flowName": "Commander Vance Sterling"
+      "flowName": "Commander Vance Sterling",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+        "EP02_The_Architects_Dilemma_and_Floor_35",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     },
     {
       "id": "boss_abyssal_minotaur",
@@ -142,7 +162,10 @@
       "dna_prompt_anchor": "@{Boss: Abyssal Minotaur}, colossal 5-metre demonic bovine minotaur titan, jet-black fur, curved obsidian horns with dark smoke, blazing crimson eyes, holding a giant spiked granite warhammer, dark fantasy action manhwa art style, sharp linework, high contrast dynamic lighting, vertical 9:16",
       "reference_plate": "05_Boss_Abyssal_Minotaur.jpg",
       "flowUuid": "70365391-fd2f-47b2-88c5-c587c1a02a65",
-      "flowName": "Boss: Abyssal Minotaur"
+      "flowName": "Boss: Abyssal Minotaur",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier"
+      ]
     },
     {
       "id": "master_smith_corvus",
@@ -169,8 +192,12 @@
       },
       "dna_prompt_anchor": "@{Master Smith Corvus}, grizzled middle-aged dwarven master blacksmith, braided thick charcoal-grey beard with copper clasps, piercing molten-amber eyes, heavy dark-brown leather blacksmith apron, fingerless leather forge gloves, holding a heavy engraved runic forging hammer, dark fantasy action manhwa art style, sharp ink linework, dramatic rim lighting, vibrant warm cel shading, vertical 9:16",
       "reference_plate": "06_Supporting_Master_Smith_Corvus.jpg",
-      "flowUuid": "7e6b1206-e4cf-4039-8347-e3fcd9cbc09f",
-      "flowName": "Dwarf Blacksmith"
+      "flowUuid": "dc9d2745-aaeb-4468-b872-a5d950e82f98",
+      "flowName": "Dwarf Blacksmith",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     },
     {
       "id": "shadow_assassin_jackal",
@@ -197,8 +224,11 @@
       },
       "dna_prompt_anchor": "@{Shadow Assassin Jackal}, elite mercenary leader of Bloodhound Syndicate, lean athletic stealth build, charcoal face wrap, glowing amethyst-purple eyes, messy jet-black spiky hair, matte-black leather assassin armor, holding dual curved steel katars, dark fantasy action manhwa webtoon art style, sharp ink linework, cool moonlight rim lighting, high contrast cel shading, vertical 9:16",
       "reference_plate": "07_Antagonist_Shadow_Assassin_Jackal.jpg",
-      "flowUuid": "6cbf8706-10e3-4cd6-b549-87101bcd6b55",
-      "flowName": "Masked Assassin"
+      "flowUuid": "92e2835c-53d7-47e7-bca7-efe5a309005f",
+      "flowName": "Masked Assassin",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier"
+      ]
     },
     {
       "id": "chief_proctor_gary",
@@ -225,8 +255,11 @@
       },
       "dna_prompt_anchor": "@{Chief Proctor Gary}, senior imperial awakening examiner, pompous aristocratic man, slicked-back ash-blonde hair, thin moustache, brass holographic magnifying monocle over right eye, royal-blue and gold-trimmed velvet examiner robes, white silk gloves holding a leather evaluation ledger, dark fantasy manhwa art style, sharp linework, rich regal cel shading, vertical 9:16",
       "reference_plate": "08_Antagonist_Chief_Proctor_Gary.jpg",
-      "flowUuid": "53613811-cabd-46ed-a125-a4275b036cb9",
-      "flowName": "High-Ranking Official"
+      "flowUuid": "ba5911d8-eb26-4f84-b2a7-26a68926dc13",
+      "flowName": "High-Ranking Official",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier"
+      ]
     },
     {
       "id": "boss_obsidian_core_golem",
@@ -253,8 +286,229 @@
       },
       "dna_prompt_anchor": "@{Boss: Obsidian Core Golem}, colossal 6-meter ancient spire boss monster, jagged dark volcanic basalt rocks, polished obsidian armor plates, floating boulder shoulders bound by cerulean mana arcs, glowing bright azure crystalline core sphere pulsating in chest, dark fantasy action manhwa art style, sharp heavy ink linework, high contrast glowing mana cel shading, vertical 9:16",
       "reference_plate": "09_Boss_Obsidian_Core_Golem.jpg",
-      "flowUuid": "7adb703c-55b3-4cc6-afd4-1da4ad778985",
-      "flowName": "Stone Golem"
+      "flowUuid": "71f1468c-0d4c-49fd-a2bc-5b7d4dc3fe73",
+      "flowName": "Stone Golem",
+      "episodes": [
+        "EP01_The_Smiling_Architect_and_The_Chalk_Rapier"
+      ]
+    },
+    {
+      "id": "boss_glacial_titan",
+      "name": "Glacial Titan",
+      "token": "@{Boss: Glacial Titan}",
+      "tier": 2,
+      "role": "Floor 20 Calamity Trial Boss",
+      "age": null,
+      "stats_baseline": {
+        "level": 35,
+        "class": "Cryogenic Permafrost Titan",
+        "strength": 420,
+        "agility": 60,
+        "constitution": 580,
+        "perception": 90,
+        "talent": "Absolute Kinetic Reflection & 15,000-Lumen Cryo Beam"
+      },
+      "appearance": {
+        "hair": "Curved crystalline frost horns wreathed in freezing mist",
+        "eyes": "Cold piercing sapphire eyes, glowing cerulean heart core pulsating in multifaceted permafrost chest",
+        "physique": "Colossal 8-metre towering behemoth of ancient translucent blue permafrost",
+        "attire": "Jagged shoulder glaciers and frozen runic ice shackles",
+        "weapons": "Absolute zero kinetic cryogenic particle beam"
+      },
+      "dna_prompt_anchor": "@{Boss: Glacial Titan}, colossal 8-metre ancient crystalline permafrost behemoth, faceted sapphire ice body, curved frost horns, glowing cerulean heart core pulsating in chest, dark fantasy action manhwa art style, sharp ink linework, high contrast vibrant cel shading, volumetric dramatic lighting, vertical 9:16",
+      "reference_plate": "10_Boss_Glacial_Titan.jpg",
+      "flowUuid": "35218730-a72b-4eb0-9d61-f1e9137ca060",
+      "flowName": "Boss: Glacial Titan",
+      "episodes": [
+        "EP02_The_Architects_Dilemma_and_Floor_35"
+      ]
+    },
+    {
+      "id": "boss_magma_basin_wyrm",
+      "name": "Magma Basin Wyrm",
+      "token": "@{Boss: Magma Basin Wyrm}",
+      "tier": 2,
+      "role": "Floor 30 Calamity Trial Boss",
+      "age": null,
+      "stats_baseline": {
+        "level": 45,
+        "class": "Tectonic Volcanic Calamity",
+        "strength": 550,
+        "agility": 110,
+        "constitution": 620,
+        "perception": 120,
+        "talent": "Incinerating Hellfire Breath & Tectonic Submersion"
+      },
+      "appearance": {
+        "hair": "Jagged black tectonic dragon horns streaming with smoke",
+        "eyes": "Glowing molten-gold reptilian eyes, razor-sharp obsidian fangs",
+        "physique": "Monumental 80-metre volcanic serpentine dragon plated in thick tectonic obsidian crust with glowing crimson magma cracks",
+        "attire": "Hardened tectonic armor plates with liquid lava veins",
+        "weapons": "Tier-7 Incinerating Hellfire breath and volcanic tail cleave"
+      },
+      "dna_prompt_anchor": "@{Boss: Magma Basin Wyrm}, colossal 80-metre volcanic serpentine dragon, tectonic obsidian crust, glowing crimson magma cracks, molten gold reptilian eyes, razor fangs, dark fantasy action manhwa art style, sharp ink linework, high contrast vibrant cel shading, volumetric dramatic lighting, vertical 9:16",
+      "reference_plate": "11_Boss_Magma_Basin_Wyrm.jpg",
+      "flowUuid": "4fead3f6-1df9-44d4-a9d9-aaea842f7c8b",
+      "flowName": "Boss: Magma Basin Wyrm",
+      "episodes": [
+        "EP02_The_Architects_Dilemma_and_Floor_35"
+      ]
+    },
+    {
+      "id": "entity_ai_warden_aethelgard",
+      "name": "AI Warden Aethelgard",
+      "token": "@{AI Warden Aethelgard}",
+      "tier": 2,
+      "role": "Floor 35 Spire Sub-Kernel Autonomous Entity",
+      "age": 10000,
+      "stats_baseline": {
+        "level": 60,
+        "class": "Sub-Kernel Hypervisor Warden",
+        "strength": 200,
+        "agility": 250,
+        "constitution": 400,
+        "perception": 500,
+        "talent": "Absolute Coordinate Deletion & Diagnostic Safe-Mode Hypervisor"
+      },
+      "appearance": {
+        "hair": "Floating faceted prismatic glass ribbons forming an elegant crown",
+        "eyes": "Luminous turquoise optic sensors shifting to violet execution lasers",
+        "physique": "3-metre tall elegant humanoid construct of faceted crystalline glass and glowing cyan circuit ribbons",
+        "attire": "Flowing geometric glass vestments suspended in zero gravity",
+        "weapons": "Geometric crystalline glass halberd crackling with reality-erasing violet lightning"
+      },
+      "dna_prompt_anchor": "@{AI Warden Aethelgard}, 3-metre elegant crystalline humanoid construct, faceted prismatic glass ribbons, flowing glowing cyan circuit traces, luminous turquoise optic sensors, geometric glass halberd, dark fantasy sci-fi action manhwa art style, sharp linework, high contrast cel shading, starry cosmic lighting, vertical 9:16",
+      "reference_plate": "12_Entity_AI_Warden_Aethelgard.jpg",
+      "flowUuid": "d83b2563-8c54-4135-b2b1-131971f6b7c0",
+      "flowName": "AI Warden Aethelgard",
+      "episodes": [
+        "EP02_The_Architects_Dilemma_and_Floor_35",
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
+    },
+    {
+      "id": "entity_unit_vanguard_proxy",
+      "name": "Sub-Kernel Automaton Proxy (Unit Vanguard-0)",
+      "token": "@{Sub-Kernel Automaton Proxy}",
+      "tier": 2,
+      "role": "Floor 35 Reward & Soul-Tethered Climber Proxy",
+      "age": 0,
+      "stats_baseline": {
+        "level": 40,
+        "class": "Sub-Kernel Combat Puppet Chassis",
+        "strength": 180,
+        "agility": 220,
+        "constitution": 300,
+        "perception": 150,
+        "talent": "Pre-Compiled Martial Macro Execution & Remote Telepresence Control"
+      },
+      "appearance": {
+        "hair": "None, aerodynamic faceless helmet visor with single turquoise optic sensor line",
+        "eyes": "Luminous horizontal cyan sensor pulse across dark visor",
+        "physique": "2-metre tall athletic humanoid automaton chassis forged from matte obsidian armor plates and glowing sapphire crystalline sub-layers",
+        "attire": "Fitted black ballistic fiber articulation joints at elbows and knees",
+        "weapons": "Dual dark-iron combat daggers etched with subtle cyan circuit runes"
+      },
+      "dna_prompt_anchor": "@{Sub-Kernel Automaton Proxy}, 2-metre athletic humanoid automaton chassis, matte obsidian armor plates, glowing sapphire crystalline sub-layers, faceless helmet visor with glowing turquoise horizontal optic sensor line, dual dark-iron combat daggers, dark fantasy sci-fi action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic edge lighting, vertical 9:16",
+      "reference_plate": "13_Entity_Unit_Vanguard_Proxy.jpg",
+      "flowUuid": "5b2e9871-6c3d-4e92-8a17-3d4f5e6a7b8c",
+      "flowName": "Sub-Kernel Automaton Proxy",
+      "episodes": [
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
+    },
+    {
+      "id": "antagonist_grand_duke_vane_valerius",
+      "name": "Grand Duke Vane Valerius",
+      "token": "@{Grand Duke Vane Valerius}",
+      "tier": 3,
+      "role": "SS-Rank Patriarch of House Valerius & Supreme Military Inquisitor",
+      "age": 48,
+      "stats_baseline": {
+        "level": 75,
+        "class": "Imperial Void Sovereign",
+        "strength": 280,
+        "agility": 210,
+        "constitution": 320,
+        "perception": 290,
+        "talent": "Spatial Rift Manifestation & Ancestral Void Sceptre Dominance"
+      },
+      "appearance": {
+        "hair": "Slicked-back silver hair with sharp aristocratic temples",
+        "eyes": "Cold, predatory crimson eyes with calculated, unyielding authority",
+        "physique": "Broad-shouldered, imposing military commander posture",
+        "attire": "Ornate high-collared crimson-and-black runic plate armor with gold filigree, fur-trimmed dark velvet cape with gold embroidery",
+        "weapons": "Imperial Void Sceptre topped with a pulsating obsidian sphere crackling with dark-matter arcs"
+      },
+      "dna_prompt_anchor": "@{Grand Duke Vane Valerius}, cold ruthless 48-year-old military aristocrat, slicked-back silver hair, cold predatory crimson eyes, sharp regal jawline, ornate crimson-and-black runic plate armor with gold filigree, dark velvet cape, holding Imperial Void Sceptre, dark fantasy action manhwa art style, sharp ink linework, dramatic chiaroscuro cel shading, volumetric royal lighting, vertical 9:16",
+      "reference_plate": "14_Antagonist_Grand_Duke_Vane_Valerius.jpg",
+      "flowUuid": "a3f81902-7e4b-4c59-b1d6-829f0e1c2d3a",
+      "flowName": "Grand Duke Vane Valerius",
+      "episodes": [
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
+    },
+    {
+      "id": "boss_chrono_weaver_chimera",
+      "name": "Boss: Chrono-Weaver Chimera",
+      "token": "@{Boss: Chrono-Weaver Chimera}",
+      "tier": 2,
+      "role": "Floor 50 Temporal Trial Apex Boss",
+      "age": 10000,
+      "stats_baseline": {
+        "level": 50,
+        "class": "Temporal Reality Weaver",
+        "strength": 240,
+        "agility": 310,
+        "constitution": 280,
+        "perception": 400,
+        "talent": "Continuous Temporal Reversal Loop & 16-Bit HP Rewind"
+      },
+      "appearance": {
+        "hair": "Radiant glowing sapphire crystal mane flowing like frozen starlight",
+        "eyes": "Glowing azure feline eyes with Roman numeral pupil rings",
+        "physique": "Colossal 6-metre celestial multi-limbed feline apex predator with prismatic phase-shifting fur",
+        "attire": "Concentric spinning golden clockwork temporal rings hovering behind its back",
+        "weapons": "Razor-sharp obsidian claws cutting through temporal coordinates"
+      },
+      "dna_prompt_anchor": "@{Boss: Chrono-Weaver Chimera}, colossal 6-metre celestial multi-limbed feline apex predator, spinning concentric golden clockwork temporal rings, sapphire crystal mane, prismatic iridescent fur, obsidian claws, glowing azure eyes, dark fantasy action manhwa art style, sharp ink linework, high contrast vibrant cel shading, cinematic dramatic lighting, vertical 9:16",
+      "reference_plate": "15_Boss_Chrono_Weaver_Chimera.jpg",
+      "flowUuid": "b4c92013-8f5c-4d6a-c2e7-930a1f2d3e4b",
+      "flowName": "Boss: Chrono-Weaver Chimera",
+      "episodes": [
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
+    },
+    {
+      "id": "boss_archon_of_deletion",
+      "name": "Boss: Archon of Deletion",
+      "token": "@{Boss: Archon of Deletion}",
+      "tier": 3,
+      "role": "Floor 70 Hardware Core Entity (Spire Garbage Collector)",
+      "age": 10000,
+      "stats_baseline": {
+        "level": 70,
+        "class": "Spire Kernel Garbage Collector",
+        "strength": 350,
+        "agility": 380,
+        "constitution": 500,
+        "perception": 600,
+        "talent": "Null-Space Erasure & Unreferenced Memory Purge Scythe"
+      },
+      "appearance": {
+        "hair": "None, halo of floating black-hole event horizon rings and violet data cubes",
+        "eyes": "Luminous purple hexagonal optical core emitting scanning lasers",
+        "physique": "Monumental 8-metre four-armed floating obsidian automaton chassis with geometric glowing violet circuit seams",
+        "attire": "Zero-gravity floating shoulder pauldrons with dark-matter trails",
+        "weapons": "Dual 2-metre null-beam data scythes surging with crimson-violet reality-unmaking lightning"
+      },
+      "dna_prompt_anchor": "@{Boss: Archon of Deletion}, colossal 8-metre four-armed floating obsidian automaton, halo of glowing black-hole event horizon rings, floating violet data cubes, luminous purple hexagonal optical core, dual null-beam data scythes crackling with crimson-violet lightning, dark fantasy sci-fi action manhwa art style, sharp ink linework, high contrast cel shading, volumetric cosmic lighting, vertical 9:16",
+      "reference_plate": "16_Boss_Archon_of_Deletion.jpg",
+      "flowUuid": "c5d03124-9a6d-4e7b-d3f8-041b2a3e4f5c",
+      "flowName": "Boss: Archon of Deletion",
+      "episodes": [
+        "EP03_The_Blood_Core_Siege_and_Floor_70"
+      ]
     }
   ]
 }

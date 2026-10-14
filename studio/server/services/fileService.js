@@ -87,6 +87,11 @@ export class FileService {
                 audioCount = audioFiles.filter(f => f.endsWith('.mp3') || f.endsWith('.wav')).length
               } catch (e) {}
 
+              // Ignore empty scratch/temp episode directories that lack both script and prompt matrix
+              if (!scriptContent && !promptMatrixContent) {
+                continue
+              }
+
               const audit = scriptContent ? AntiSlopValidator.auditScript(scriptContent) : null
 
               // Extract formatted episode title from script header if available

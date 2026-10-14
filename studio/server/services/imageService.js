@@ -73,9 +73,6 @@ export class ImageService {
   static async getPromptMatrixScenes(franchiseId, episodeId) {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const promptMatrixPath = path.join(epPath, '02_Prompt_Matrix.md')
-    const imagesDir = this.getImagesDir(franchiseId, episodeId)
-    await fs.mkdir(imagesDir, { recursive: true })
-
     let content = ''
     let promptMatrixMtime = null
     let promptMatrixMtimeMs = null
@@ -87,6 +84,9 @@ export class ImageService {
     } catch (e) {
       return []
     }
+
+    const imagesDir = this.getImagesDir(franchiseId, episodeId)
+    await fs.mkdir(imagesDir, { recursive: true })
 
     let existingImages = []
     const imageStatsMap = new Map()

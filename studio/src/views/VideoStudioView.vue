@@ -181,257 +181,6 @@
           <button @click="storyboardFeedback = ''" class="cursor-pointer">✕</button>
         </div>
 
-        <!-- Character & Item Vault (Google Flow Reference Plates) -->
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-2.5">
-              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400">
-                <Users class="w-4 h-4" />
-              </div>
-              <div>
-                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide flex items-center space-x-2">
-                  <span>Franchise Character & Item Vault</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">
-                    {{ characterModels.length }} Reference Plates
-                  </span>
-                </h3>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                  Standardised character DNA, weapons, artifacts & environmental prop plates for instant Alt+Tab Google Flow generation.
-                </p>
-              </div>
-            </div>
-
-            <!-- Category Filter Tabs -->
-            <div class="flex flex-wrap items-center gap-1 bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-xl text-xs font-mono">
-              <button 
-                v-for="cat in vaultCategories" 
-                :key="cat.key"
-                @click="selectedVaultCategory = cat.key"
-                class="px-2.5 py-1 rounded-lg transition capitalize cursor-pointer font-medium flex items-center space-x-1"
-                :class="selectedVaultCategory === cat.key ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-              >
-                <span>{{ cat.label }}</span>
-                <span class="text-[10px] opacity-75">({{ cat.count }})</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Character & Item Grid -->
-          <div class="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-4">
-            <div 
-              v-for="model in filteredCharacterModels" 
-              :key="model.id"
-              class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3 flex flex-col justify-between hover:border-purple-500/40 transition"
-            >
-              <div class="space-y-2.5">
-                <div class="flex items-start justify-between gap-1">
-                  <div class="min-w-0 flex-1">
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white truncate" :title="model.name">{{ model.name }}</h4>
-                    <span 
-                      class="text-xs font-mono px-2 py-0.5 rounded font-bold inline-block mt-0.5 border"
-                      :class="getCategoryBadgeClass(model.category)"
-                    >
-                      {{ model.category }} • {{ model.tier }}
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Model Preview Thumbnail (16:9) -->
-                <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
-                  <img :src="model.url" :alt="model.name" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
-                    <a 
-                      :href="model.url" 
-                      target="_blank" 
-                      class="p-2 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
-                      title="View Full Resolution"
-                    >
-                      <ExternalLink class="w-4 h-4" />
-                    </a>
-                    <button 
-                      @click="downloadModelPlate(model)"
-                      class="p-2 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
-                      title="Download Image File"
-                    >
-                      <Download class="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Google Flow Setup Name Bar (1-Click Paste for Google Flow Reference Setup) -->
-                <div 
-                  @click="copyModelName(model)"
-                  class="p-2 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between cursor-pointer hover:border-purple-500/50 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition group"
-                  title="Click to copy clean Reference Name (WITHOUT @{}) to paste directly into Google Flow character/object setup"
-                >
-                  <div class="flex items-center space-x-1.5 min-w-0 flex-1">
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-bold shrink-0">
-                      Flow Name
-                    </span>
-                    <span class="text-xs font-mono text-slate-700 dark:text-slate-300 truncate font-bold">
-                      {{ model.flowName || model.name }}
-                    </span>
-                  </div>
-                  <span 
-                    class="text-xs font-mono shrink-0 ml-1 font-bold"
-                    :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
-                  >
-                    {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
-                  </span>
-                </div>
-
-                <!-- Description -->
-                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" :title="model.description">
-                  {{ model.description }}
-                </p>
-              </div>
-
-              <!-- Action Buttons -->
-              <div class="grid grid-cols-4 gap-1.5 pt-2.5 border-t border-slate-100 dark:border-slate-800/80">
-                <button 
-                  @click="downloadModelPlate(model)"
-                  class="py-1.5 px-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-[11px] font-mono font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
-                  title="Download Master Reference Plate"
-                >
-                  <Download class="w-3.5 h-3.5 shrink-0 text-slate-500 dark:text-slate-400" />
-                  <span class="truncate">Plate</span>
-                </button>
-
-                <button 
-                  @click="copyModelName(model)"
-                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
-                  :class="copiedVaultId === model.id && copiedVaultType === 'name' 
-                    ? 'bg-emerald-600 text-white' 
-                    : 'bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300'"
-                  title="Copy Clean Reference Name WITHOUT @{} (for Google Flow Setup)"
-                >
-                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'name'" class="w-3.5 h-3.5 shrink-0" />
-                  <Tag v-else class="w-3.5 h-3.5 shrink-0 text-slate-500" />
-                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Name' }}</span>
-                </button>
-
-                <button 
-                  @click="copyModelToken(model)"
-                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
-                  :class="copiedVaultId === model.id && copiedVaultType === 'token' 
-                    ? 'bg-emerald-600 text-white' 
-                    : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
-                  title="Copy Google Flow Token (@{...})"
-                >
-                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5 shrink-0" />
-                  <Copy v-else class="w-3.5 h-3.5 shrink-0" />
-                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
-                </button>
-
-                <button 
-                  @click="copyModelDna(model)"
-                  class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[11px] font-mono font-bold flex items-center justify-center space-x-1"
-                  :class="copiedVaultId === model.id && copiedVaultType === 'dna' 
-                    ? 'bg-emerald-600 text-white' 
-                    : 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'"
-                  title="Copy Complete Visual DNA Prompt"
-                >
-                  <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3.5 h-3.5 shrink-0" />
-                  <Sparkles v-else class="w-3.5 h-3.5 shrink-0" />
-                  <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Google Flow Entity ID Mapper & Token Synchronizer -->
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-2.5">
-              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400">
-                <Hash class="w-4 h-4" />
-              </div>
-              <div>
-                <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white tracking-wide flex items-center space-x-2">
-                  <span>Google Flow Entity ID Mapper & Synchronizer</span>
-                  <span 
-                    class="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border"
-                    :class="entityCount > 0 
-                      ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' 
-                      : 'bg-slate-200 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'"
-                  >
-                    {{ entityCount }} Entities Mapped
-                  </span>
-                </h3>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                  Map character & item reference names to Google Flow UUIDs (e.g. <code>Caelen Vance - Phantom Marksman: f16555...</code>) to replace <code>@{Name}</code> with <code>@UUID</code> in clipboard XML.
-                </p>
-              </div>
-            </div>
-
-            <!-- Active Output Format Toggle -->
-            <div class="flex items-center space-x-1 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
-              <span class="text-[10px] font-bold uppercase text-slate-500 px-1.5">Output:</span>
-              <button 
-                @click="togglePromptTagMode('token')"
-                class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-                :class="promptTagMode === 'token' 
-                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-                title="Use human-readable tokens like @{Caelen Vance - Phantom Marksman}"
-              >
-                <span>🏷️ @{Token}</span>
-              </button>
-              <button 
-                @click="togglePromptTagMode('uuid')"
-                class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-                :class="promptTagMode === 'uuid' 
-                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-                title="Use Google Flow entity UUIDs like @f16555b2-8ae8-..."
-              >
-                <span>🔑 @UUID</span>
-                <span v-if="entityCount > 0" class="text-[10px] px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black">
-                  {{ entityCount }}
-                </span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Textarea Input Area -->
-          <div class="space-y-2">
-            <textarea 
-              v-model="entityMapRawText" 
-              rows="6"
-              placeholder="Character Entities&#10;Caelen Vance - Phantom Marksman: f16555b2-8ae8-40bb-8027-5b8a0c9d859c&#10;...&#10;&#10;Weapon & Item Entities&#10;Weapon: Void-Strung Heavy Recurve: e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893"
-              class="w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 font-mono text-xs text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none resize-y shadow-xs"
-            ></textarea>
-          </div>
-
-          <!-- Action Buttons Bar -->
-          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div class="flex items-center space-x-2">
-              <button 
-                @click="syncEntityMapping"
-                :disabled="isSavingEntityMap || !entityMapRawText.trim()"
-                class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-2 transition shadow-md shadow-purple-950/20 disabled:opacity-50 cursor-pointer"
-              >
-                <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isSavingEntityMap }" />
-                <span>{{ isSavingEntityMap ? 'Synchronizing...' : `⚡ Read & Sync Entity IDs (${entityCount} Mapped)` }}</span>
-              </button>
-
-              <button 
-                v-if="entityCount > 0"
-                @click="copyCurrentEntityMapping"
-                class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
-                title="Copy current mapping text to clipboard"
-              >
-                <Copy class="w-3.5 h-3.5" />
-                <span>Copy Mapping Text</span>
-              </button>
-            </div>
-
-            <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-              Active mode: <strong class="text-purple-600 dark:text-purple-400">{{ promptTagMode === 'uuid' ? '@UUID replacement' : '@{Name} tokens' }}</strong>
-            </div>
-          </div>
-        </div>
 
         <!-- Prompt Matrix Hub Banner & Universal Asset Ingestion Zone -->
         <div class="space-y-4">
@@ -1707,6 +1456,15 @@
                 <Download class="w-3.5 h-3.5" />
                 <span class="max-w-[280px] truncate">Download {{ getDownloadFilename(selectedVideoFile) }}</span>
               </a>
+              <button 
+                v-if="selectedVideoFile"
+                @click="deleteSelectedVideoFile"
+                class="px-2.5 py-1 rounded-lg bg-rose-500/10 hover:bg-rose-600 hover:text-white text-rose-600 dark:text-rose-400 border border-rose-500/20 font-semibold transition flex items-center space-x-1.5 cursor-pointer shadow-xs"
+                title="Delete this compiled video file"
+              >
+                <Trash2 class="w-3.5 h-3.5" />
+                <span>Delete</span>
+              </button>
             </div>
           </div>
 
@@ -2353,6 +2111,7 @@ import {
   AlertTriangle,
   ShieldCheck,
   RefreshCw,
+  Trash2,
   X,
   Youtube,
   Share2,
@@ -3964,8 +3723,31 @@ const loadVideoFiles = async () => {
       if (!files.some(f => f.filename === selectedVideoFile.value)) {
         selectedVideoFile.value = files[0].filename
       }
+    } else {
+      selectedVideoFile.value = ''
     }
   } catch (e) {}
+}
+
+const deleteSelectedVideoFile = async () => {
+  if (!selectedVideoFile.value) return
+  if (!confirm(`Are you sure you want to delete compiled video "${selectedVideoFile.value}"? This action cannot be undone.`)) {
+    return
+  }
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/video-files?file=${encodeURIComponent(selectedVideoFile.value)}`, {
+      method: 'DELETE'
+    })
+    const data = await res.json()
+    if (!res.ok || data.error) {
+      throw new Error(data.error || 'Failed to delete video file')
+    }
+    triggerToast('Video File Deleted', `Deleted "${selectedVideoFile.value}"`, 'info')
+    selectedVideoFile.value = ''
+    await loadVideoFiles()
+  } catch (err) {
+    triggerToast('Delete Error', err.message, 'error')
+  }
 }
 
 const loadPipelineStatus = async () => {

@@ -85,6 +85,131 @@ app.get('/api/franchises', async (req, res) => {
   }
 })
 
+// =========================================================================
+// Master Cross-Episode Omnibus Lossless Stitcher & Delivery
+// (Mounted prior to /api/episodes/:franchiseId/:episodeId to prevent route capture)
+// =========================================================================
+
+const handleStitchMasterOmnibus = async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const { masterFilePaths = [], outputFilename } = req.body || {}
+    const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename)
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+
+const handleOmnibusStream = (req, res) => {
+  const { franchiseId } = req.params
+  const requestedFile = req.query.file || ''
+  const safeFilename = path.basename(requestedFile)
+  const omnibusDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'omnibus')
+  const filePath = path.join(omnibusDir, safeFilename)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send(`Omnibus video (${safeFilename}) not found`)
+  }
+
+  const stat = fs.statSync(filePath)
+  const fileSize = stat.size
+  const range = req.headers.range
+  const isDownload = req.query.download === '1' || req.query.download === 'true'
+
+  if (isDownload) {
+    res.setHeader('Content-Disposition', `attachment; filename="${safeFilename}"`)
+  }
+
+  if (range) {
+    const parts = range.replace(/bytes=/, '').split('-')
+    const start = parseInt(parts[0], 10)
+    const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1
+    const chunksize = (end - start) + 1
+    const file = fs.createReadStream(filePath, { start, end })
+    const head = {
+      'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': chunksize,
+      'Content-Type': 'video/mp4',
+    }
+    res.writeHead(206, head)
+    file.pipe(res)
+  } else {
+    const head = {
+      'Content-Length': fileSize,
+      'Content-Type': 'video/mp4',
+      'Accept-Ranges': 'bytes'
+    }
+    res.writeHead(200, head)
+    fs.createReadStream(filePath).pipe(res)
+  }
+}
+
+const handleOmnibusFiles = (req, res) => {
+  const { franchiseId } = req.params
+  const omnibusDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'omnibus')
+  if (!fs.existsSync(omnibusDir)) return res.json([])
+  try {
+    const files = fs.readdirSync(omnibusDir).filter(f => f.endsWith('.mp4')).map(f => {
+      const st = fs.statSync(path.join(omnibusDir, f))
+      return {
+        filename: f,
+        size: st.size,
+        sizeFormatted: `${(st.size / (1024 * 1024)).toFixed(1)} MB`,
+        mtime: st.mtime,
+        url: `/api/franchises/${franchiseId}/omnibus-stream?file=${encodeURIComponent(f)}`
+      }
+    })
+    res.json(files)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+
+const handleOmnibusDelete = (req, res) => {
+  const { franchiseId } = req.params
+  const requestedFile = req.query.file || req.body?.file || ''
+  if (!requestedFile) {
+    return res.status(400).json({ error: 'File parameter is required' })
+  }
+  const safeFilename = path.basename(requestedFile)
+  const omnibusDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'omnibus')
+  const filePath = path.join(omnibusDir, safeFilename)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: `Omnibus video (${safeFilename}) not found` })
+  }
+
+  try {
+    fs.unlinkSync(filePath)
+    ActivityLogService.info(
+      'video',
+      'Omnibus Master Deleted',
+      `Deleted compiled omnibus master ${safeFilename}`,
+      { filename: safeFilename },
+      franchiseId,
+      'omnibus'
+    )
+    res.json({ success: true, deleted: safeFilename })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+
+// Support both /api/franchises/:franchiseId and /api/episodes/:franchiseId prefixes
+app.post('/api/franchises/:franchiseId/stitch-master-omnibus', handleStitchMasterOmnibus)
+app.post('/api/episodes/:franchiseId/stitch-master-omnibus', handleStitchMasterOmnibus)
+
+app.get('/api/franchises/:franchiseId/omnibus-stream', handleOmnibusStream)
+app.get('/api/episodes/:franchiseId/omnibus-stream', handleOmnibusStream)
+
+app.get('/api/franchises/:franchiseId/omnibus-files', handleOmnibusFiles)
+app.get('/api/episodes/:franchiseId/omnibus-files', handleOmnibusFiles)
+
+app.delete('/api/franchises/:franchiseId/omnibus-files', handleOmnibusDelete)
+app.delete('/api/episodes/:franchiseId/omnibus-files', handleOmnibusDelete)
+
 // Episode Details
 app.get('/api/episodes/:franchiseId/:episodeId', async (req, res) => {
   try {
@@ -606,7 +731,9 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           description: formatAppearance(c.appearance, c.role || ''),
           dnaAnchor: c.dna_prompt_anchor || c.token || c.name,
           fullDna: c.dna_prompt_anchor || '',
-          token: c.token || `@{${c.name}}`
+          token: c.token || `@{${c.name}}`,
+          flowUuid: c.flowUuid || null,
+          episodes: Array.isArray(c.episodes) ? c.episodes : []
         })
       }
     } else if (fs.existsSync(manifestCharPath)) {
@@ -902,18 +1029,6 @@ app.post('/api/episodes/:franchiseId/:episodeId/compile-grouped-batches', (req, 
   })
 })
 
-// Trigger Multi-Master Cross-Episode Omnibus Lossless Stitcher
-app.post('/api/episodes/:franchiseId/stitch-master-omnibus', async (req, res) => {
-  try {
-    const { franchiseId } = req.params
-    const { masterFilePaths = [], outputFilename } = req.body || {}
-    const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename)
-    res.json(result)
-  } catch (err) {
-    res.status(500).json({ error: err.message })
-  }
-})
-
 // Video Compilation Progress & Status
 app.get('/api/episodes/:franchiseId/:episodeId/video-status', (req, res) => {
   const { franchiseId, episodeId } = req.params
@@ -982,6 +1097,37 @@ app.get('/api/episodes/:franchiseId/:episodeId/video-stream', (req, res) => {
     }
     res.writeHead(200, head)
     fs.createReadStream(videoPath).pipe(res)
+  }
+})
+
+// Delete Compiled Video File (Master or Batch Preview)
+app.delete('/api/episodes/:franchiseId/:episodeId/video-files', (req, res) => {
+  const { franchiseId, episodeId } = req.params
+  const requestedParam = req.query.file || req.body?.file || ''
+  if (!requestedParam) {
+    return res.status(400).json({ error: 'File parameter is required' })
+  }
+  const safeFilename = path.basename(requestedParam)
+  const videoDir = VideoService.getVideoDir(franchiseId, episodeId)
+  const videoPath = path.join(videoDir, safeFilename)
+
+  if (!fs.existsSync(videoPath)) {
+    return res.status(404).json({ error: `Compiled video (${safeFilename}) not found` })
+  }
+
+  try {
+    fs.unlinkSync(videoPath)
+    ActivityLogService.info(
+      'video',
+      'Episode Video Deleted',
+      `Deleted compiled video ${safeFilename}`,
+      { filename: safeFilename },
+      franchiseId,
+      episodeId
+    )
+    res.json({ success: true, deleted: safeFilename })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
   }
 })
 

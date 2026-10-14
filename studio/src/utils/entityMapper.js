@@ -9,23 +9,58 @@ export function parseEntityMappingText(rawText) {
 
   const entities = {}
   const lines = rawText.split(/\r?\n/)
+  const uuidRegex = /([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i
 
   for (const line of lines) {
     const trimmed = line.trim()
     if (!trimmed) continue
-    
-    // Ignore category headers
-    if (/^(character entities|weapon & item entities|item entities|weapon entities|entities)/i.test(trimmed)) {
-      continue
-    }
 
-    // Match "Name: UUID" or "Name : UUID" (where Name can contain colons e.g. "Weapon: Ashwood Training Bow")
-    const match = trimmed.match(/^(.*?)\s*:\s*([a-f0-9\-]{8,})\s*$/i)
-    if (match) {
-      const key = match[1].trim()
-      const uuid = match[2].trim()
-      if (key && uuid) {
-        entities[key] = uuid
+    // Search for a valid UUID anywhere on the line (skips headers & conversational intro)
+    const uuidMatch = trimmed.match(uuidRegex)
+    if (!uuidMatch) continue
+
+    const uuid = uuidMatch[1].toLowerCase()
+
+    // Extract the entity name before the UUID
+    const beforeUuid = trimmed.split(uuidMatch[1])[0]
+
+    // Clean trailing colons and spaces
+    let cleanName = beforeUuid.replace(/[:\s]+$/, '').trim()
+
+    // Clean markdown bolding, bullets, and numbering
+    cleanName = cleanName
+      .replace(/^[\s\-*•\d.]+/g, '') // strip bullets / numbering
+      .replace(/[*\x60_]/g, '')        // strip markdown formatting
+      .trim()
+
+    if (cleanName && uuid) {
+      entities[cleanName] = uuid
+
+      // Register smart manhwa narrative aliases
+      const strippedKey = cleanName.replace(/^(Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim()
+      if (strippedKey && strippedKey !== cleanName) {
+        entities[strippedKey] = uuid
+      }
+      if (cleanName.includes('Grand Duke Vane Valerius')) {
+        entities['Grand Duke Vane'] = uuid
+      }
+      if (cleanName.includes('Sub-Kernel Automaton Proxy')) {
+        entities['Unit Vanguard-0'] = uuid
+        entities['Automaton Proxy'] = uuid
+      }
+      if (cleanName.includes('Shadow Assassin Jackal')) {
+        entities['Masked Assassin'] = uuid
+        entities['Jackal'] = uuid
+      }
+      if (cleanName.includes('Chief Proctor Gary')) {
+        entities['High-Ranking Official'] = uuid
+        entities['Proctor Gary'] = uuid
+      }
+      if (cleanName.includes('Master Smith Corvus')) {
+        entities['Dwarf Blacksmith'] = uuid
+      }
+      if (cleanName.includes('Obsidian Core Golem')) {
+        entities['Stone Golem'] = uuid
       }
     }
   }

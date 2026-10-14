@@ -261,6 +261,14 @@ export class VideoService {
             }
             score += matchedContentCount * 10
 
+            // Single-word cue boost for short dialogue / exclamations (e.g. "Bram!", "Look!")
+            if (rawWords.length > 0 && cueNorm === rawWords[0]) {
+              score += 35
+            }
+
+            // Monotonic proximity bias: penalize cues further from the cursor to prevent distant jumps
+            const dist = c - cueCursor
+            score -= dist * 1.5
             if (score > bestScore && score >= 20) {
               bestScore = score
               bestCueIdx = c
@@ -1261,17 +1269,64 @@ export class VideoService {
       throw new Error('At least 2 master video files are required to stitch an Omnibus.')
     }
 
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+
+    // Defensively resolve each master file path across episodes
+    const alternatives = [
+      '01_Episode_Master_1080p.mp4',
+      '01_Episode_Master.mp4',
+      '01_Episode_Master_Batches_01-09_1080p.mp4'
+    ]
+
+    const resolvedFiles = []
+    for (const rawPath of masterFilePaths) {
+      let candidate = path.isAbsolute(rawPath) ? rawPath : path.resolve(projectRoot, rawPath)
+
+      if (fsSync.existsSync(candidate)) {
+        resolvedFiles.push(candidate)
+        continue
+      }
+
+      // Check alternate known master naming conventions in candidate directory
+      const dir = path.dirname(candidate)
+      let found = false
+      for (const alt of alternatives) {
+        const altPath = path.join(dir, alt)
+        if (fsSync.existsSync(altPath)) {
+          resolvedFiles.push(altPath)
+          found = true
+          break
+        }
+      }
+
+      // If still not found, check if rawPath was an episode folder/ID
+      if (!found) {
+        const epVideoDir = path.join(franchiseDir, rawPath, 'video')
+        for (const alt of alternatives) {
+          const altPath = path.join(epVideoDir, alt)
+          if (fsSync.existsSync(altPath)) {
+            resolvedFiles.push(altPath)
+            found = true
+            break
+          }
+        }
+      }
+
+      if (!found) {
+        throw new Error(`Master video file not found for: ${rawPath}. Ensure the episode has been compiled first.`)
+      }
+    }
+
     const tempDir = path.resolve(projectRoot, '.tmp')
     await fs.mkdir(tempDir, { recursive: true })
     const concatListPath = path.join(tempDir, `concat_omnibus_${franchiseId}_${Date.now()}.txt`)
-    const concatLines = masterFilePaths.map(p => `file '${p.replace(/\\/g, '/')}'`)
+    const concatLines = resolvedFiles.map(p => `file '${p.replace(/\\/g, '/')}'`)
     await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
 
     const outName = outputFilename || `00_Omnibus_${Date.now()}_1080p.mp4`
-    const franchiseDir = path.join(franchisesDir, franchiseId)
-    const videoDir = path.join(franchiseDir, 'EP01_The_Double_FRank_Anomaly', 'video')
-    await fs.mkdir(videoDir, { recursive: true })
-    const omnibusOutputPath = path.join(videoDir, outName)
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    await fs.mkdir(omnibusDir, { recursive: true })
+    const omnibusOutputPath = path.join(omnibusDir, outName)
 
     const ffmpegArgs = [
       '-y',
@@ -1295,17 +1350,18 @@ export class VideoService {
           ActivityLogService.success(
             'video',
             'Omnibus Video Stitched',
-            `Losslessly assembled ${outName} from ${masterFilePaths.length} master videos.`,
-            { fileCount: masterFilePaths.length, outputFilename: outName },
+            `Losslessly assembled ${outName} from ${resolvedFiles.length} master videos.`,
+            { fileCount: resolvedFiles.length, outputFilename: outName, outputPath: omnibusOutputPath },
             franchiseId,
-            'EP01_The_Double_FRank_Anomaly'
+            'omnibus'
           )
           resolve({
             success: true,
+            output: omnibusOutputPath,
             videoPath: omnibusOutputPath,
             filename: outName,
-            url: `/api/episodes/${franchiseId}/EP01_The_Double_FRank_Anomaly/video-stream?file=${outName}`,
-            masterCount: masterFilePaths.length
+            url: `/api/episodes/${franchiseId}/omnibus-stream?file=${encodeURIComponent(outName)}`,
+            masterCount: resolvedFiles.length
           })
         } else {
           console.error('FFmpeg omnibus stitching failed:', stderr.slice(-800))
