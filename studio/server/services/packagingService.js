@@ -45,6 +45,25 @@ export class PackagingService {
   }
 
   /**
+   * Get the locked canonical master series title for a franchise (strictly <= 84 chars)
+   * Leaves at least 16 chars for (Part 1 - {nth}) while staying strictly <= 100 chars
+   */
+  static getCanonicalSeriesTitle(franchiseId) {
+    if (franchiseId.includes('Series_03')) {
+      return 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
+    }
+    if (franchiseId.includes('Series_02')) {
+      return 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
+    }
+    if (franchiseId.includes('Series_01')) {
+      return 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
+    }
+    const clean = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+    return `Reborn As The Strongest Sovereign In ${clean}`
+  }
+
+
+  /**
    * Get calibrated high-CTR thumbnail concepts for a franchise and episode
    */
   static async getThumbnailVariants(franchiseId, episodeId) {
@@ -277,6 +296,17 @@ export class PackagingService {
         subText: '#c084fc',
         subBorder: 'rgba(168, 85, 247, 0.4)',
         glow: '#a855f7'
+      },
+      yellow_binge: {
+        gradId: 'yellowBingeGrad',
+        stop1: '#fef08a', // Yellow 200
+        stop2: '#facc15', // Yellow 400
+        stop3: '#eab308', // Yellow 500
+        textColor: '#09090b',
+        subBg: 'rgba(9, 9, 11, 0.92)',
+        subText: '#fde047',
+        subBorder: 'rgba(234, 179, 8, 0.6)',
+        glow: '#eab308'
       }
     }
 
@@ -663,189 +693,36 @@ export class PackagingService {
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
-    // 3. Generate 10 High-CTR Title Archetypes (Strict <= 100 Chars Hard Cap)
-    const rawTitles = isSeries03 ? [
+    // 3. Generate Unified Franchise Titles (Strict <= 100 Chars Hard Cap)
+    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
+    const epNumMatch = episodeId.match(/EP0*(\d+)/i)
+    const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
+    const partTag = `Part ${epNum}`
+
+    const rawTitles = [
       {
-        archetype: 'The Architect\'s Smirk & Uncapped Bank',
-        title: `Reborn As A Smiling Game Architect, My Uncapped Enchantment Bank Destroyed The Empire's Tower!`,
-        ctrScore: '98%',
-        style: 'Uncapped +N progression & smiling architect dominance'
+        archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
+        title: `(${partTag}) ${canonicalTitle}`,
+        ctrScore: '99%',
+        style: 'Primary confirmed high-CTR franchise standard'
       },
       {
-        archetype: 'The 2-Word Semantic Deceit',
-        title: `He Rewrote "Rusty Iron" To "Abyssal Meteorite": The Smiling Architect Who Humiliated Nobles!`,
+        archetype: 'Canonical Suffix (Direct Story)',
+        title: `${canonicalTitle} (${partTag})`,
         ctrScore: '97%',
-        style: 'Linguistic reality refactor & sleeper weapon shock'
+        style: 'Consistent story title with episodic suffix'
       },
       {
-        archetype: 'The Divine Siphon Shock',
-        title: `Arrogant Nobles Mocked My Cheap Dagger, Unaware It Holds +10,000 Siphoned Divine Enhancements!`,
-        ctrScore: '96%',
-        style: 'Hidden numerical bank overflow & arrogant face-slap'
-      },
-      {
-        archetype: 'The Peasant Broom Curb-Stomp',
-        title: `They Thought I Was A Peasant Polisher, Until My Wooden Broom Shattered An S-Rank Knight Order!`,
+        archetype: 'Clean Pipe Delimiter',
+        title: `${canonicalTitle} | ${partTag}`,
         ctrScore: '95%',
-        style: 'Mundane tool sleeper power & high-impact curb stomp'
+        style: 'Modern YouTube clean metadata delimiter'
       },
       {
-        archetype: 'Uncapped Progression Scaling',
-        title: `My Enchantment Has No Level Limit: Siphoning +50,000 Stats To Solo The 100th-Floor God!`,
+        archetype: 'Bracket High-Visibility',
+        title: `[${partTag}] ${canonicalTitle}`,
         ctrScore: '94%',
-        style: 'Clean RPG scaling & demigod tower ascent'
-      },
-      {
-        archetype: 'The Sleeper Underdog Ascension',
-        title: `Reborn With Infinite +N Enchantment, I Conquered The 100-Floor Tower With A Wooden Knife!`,
-        ctrScore: '93%',
-        style: 'Classic tower conquest & underdog sleeper weapon'
-      },
-      {
-        archetype: 'The Feudal Rebellion',
-        title: `Nobles Enslaved Earthlings, But My Infinite Enchantment Bank Broke The 100-Floor Tower!`,
-        ctrScore: '92%',
-        style: 'Anti-oligarchy uprising & system breaking'
-      },
-      {
-        archetype: 'The 2-Word Reality Hack',
-        title: `I Can Rewrite Any Item By 2 Words: How A Chipped Dagger Cleared The 100-Floor Divine Tower!`,
-        ctrScore: '91%',
-        style: 'Unique semantic mechanic & tower speedrun'
-      },
-      {
-        archetype: 'Progenitor Noble Face-Slap',
-        title: `They Laughed At My +1 Tool Polisher Talent, Until My Chipped Knife Shattered Their Demigod!`,
-        ctrScore: '90%',
-        style: 'Peak face-slap catharsis against imperial elites'
-      },
-      {
-        archetype: 'The 5-Copper Economy Breakdown',
-        title: `Transmigrated With An Infinite Enchantment Bank, I Reached Floor 100 With A 5-Copper Knife!`,
-        ctrScore: '89%',
-        style: 'Economic reality break & pure grit progression'
-      }
-    ] : isSeries02 ? [
-      {
-        archetype: 'False F-Rank / Secret Siphon',
-        title: `Mocked as an F-Rank Archer, He Siphons Boss Stats in Secret and Draws at Mach 4`,
-        ctrScore: '98%',
-        style: 'High curiosity & underdog siphon hook'
-      },
-      {
-        archetype: 'Academy Underdog / Proctor Shock',
-        title: `Assigned to the Trash Class, His 6,500 LBS Bow Shot Shocked the High Director`,
-        ctrScore: '97%',
-        style: 'High-IQ tactical proctor shockwave'
-      },
-      {
-        archetype: 'Red Gate Calamity / Solo Boss Cleave',
-        title: `When an S-Rank Red Gate Trapped 300 Students, the F-Rank Archer Soloed the Boss`,
-        ctrScore: '96%',
-        style: 'High stakes calamity & solo dominance'
-      },
-      {
-        archetype: '10,000x Siphon System Progression',
-        title: `They Gave Him Dungeon Refuse Duty, Unaware His System Steals S-Rank Boss Stats`,
-        ctrScore: '95%',
-        style: 'Progression arithmetic & stat theft'
-      },
-      {
-        archetype: 'Arrogant Noble Humiliation / Face-Slap',
-        title: `The S-Rank Scion Dropped His Staff in Terror While the Mocked Archer One-Shot It`,
-        ctrScore: '94%',
-        style: 'Classic arrogant noble face-slap catharsis'
-      },
-      {
-        archetype: '12-Inch Carapace Shatter Climax',
-        title: `He Shattered 12 Inches of S-Rank Obsidian Armor with a Single Hypersonic Arrow`,
-        ctrScore: '93%',
-        style: 'Tactical armor-piercing kinetic climax'
-      },
-      {
-        archetype: 'Binge-Marathon Formula',
-        title: `(1-5) Mocked for Rolling 'Garbage Archer', He Unlocks the Omniscient Siphon Bow`,
-        ctrScore: '92%',
-        style: 'Numbered multi-chapter marathon hook'
-      },
-      {
-        archetype: 'Sovereign Identity Unveiled',
-        title: `They Exiled Him as a Weak Archer, But His Void-Strung Bow Controls the Dungeon`,
-        ctrScore: '91%',
-        style: 'Hidden identity & sovereign weapon lore'
-      },
-      {
-        archetype: 'Mach 2.5 Afterimage Agility',
-        title: `The Guild Thought He Was Paralyzed, But He Moved at Mach 2.5 Across Falling Rocks`,
-        ctrScore: '90%',
-        style: 'Kinetic speed spectacle & tactical evasion'
-      },
-      {
-        archetype: 'Ultimate Underdog Transformation',
-        title: `From Mocked Orphan to S-Rank Calamity Slayer: The Rise of the Plunderer Archer`,
-        ctrScore: '89%',
-        style: 'Epic heroic rise & emotional arc'
-      }
-    ] : [
-      {
-        archetype: 'False Rank & Hidden Sovereign',
-        title: `Left in the Abyss to Die, the Weakest F-Rank Awakens the World's First Sovereign Protocol`,
-        ctrScore: '98%',
-        style: 'High curiosity & underdog transformation hook'
-      },
-      {
-        archetype: 'Marathon System (Junkie\'s Style)',
-        title: `(1-8) Mocked as a Useless F-Rank, He Unlocks a 10,000x Calculation Sovereign System`,
-        ctrScore: '97%',
-        style: 'Numbered binge-compilation & progression hook'
-      },
-      {
-        archetype: 'Catacombs Betrayal & Solo Dominance',
-        title: `Betrayed in an F-Rank Dungeon, He Returns as an Untouchable Abyssal Monarch`,
-        ctrScore: '96%',
-        style: 'Betrayal, high-stakes revenge & dominance'
-      },
-      {
-        archetype: 'Institutional Anomaly & Proctor Shock',
-        title: `The Guild Blacklisted Him as Trash, But His Zero-Mana Slashes Shocked the Academy`,
-        ctrScore: '95%',
-        style: 'High-IQ tactical proctor shockwave'
-      },
-      {
-        archetype: 'Sovereign Pillar & Empire Genesis',
-        title: `Classified as Double F-Rank, His Calculation Speed Made Him the Strongest Pillar`,
-        ctrScore: '94%',
-        style: 'Epic power scaling & unshakeable status'
-      },
-      {
-        archetype: 'Abyssal Rift Conquest',
-        title: `They Left Him in the Imperial Catacombs, Unaware He Conquered the Dimensional Rift`,
-        ctrScore: '93%',
-        style: 'Dungeon rift survival & conquest'
-      },
-      {
-        archetype: 'Gravitational Inversion Domain',
-        title: `Mocked by High Nobles, His Inverted Gravity Domain Crushed the S-Rank Vanguard`,
-        ctrScore: '92%',
-        style: 'Domain expansion & gravitational control'
-      },
-      {
-        archetype: 'Void Rebirth & Absolute Sovereign',
-        title: `He Survived 10,000 Deaths in the Void to Become the Singularity Sovereign`,
-        ctrScore: '91%',
-        style: 'Endurance, void trials & ultimate sovereignty'
-      },
-      {
-        archetype: 'Time Distortion & Finger Snap Climax',
-        title: `When the Floor Collapsed, the Weakest Scavenger Snapped His Fingers and Froze Time`,
-        ctrScore: '90%',
-        style: 'Microsecond reaction & space-time manipulation'
-      },
-      {
-        archetype: 'Empire Genesis Saga',
-        title: `From Broken Scavenger to Empire Sovereign: The Complete Catacombs Awakening`,
-        ctrScore: '89%',
-        style: 'Complete saga compilation hook'
+        style: 'High-contrast bracket visual anchor'
       }
     ]
 

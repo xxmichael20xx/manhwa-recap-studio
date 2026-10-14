@@ -103,11 +103,26 @@ export class FileService {
                 }
               }
 
+              // Check for master compiled video on disk
+              const masterVideoPath = path.join(epPath, 'video', '01_Episode_Master_1080p.mp4')
+              let hasCompiledVideo = false
+              let videoSizeFormatted = null
+
+              try {
+                const stat = await fs.stat(masterVideoPath)
+                if (stat.size > 1024 * 1024) {
+                  hasCompiledVideo = true
+                  videoSizeFormatted = `${(stat.size / (1024 * 1024)).toFixed(1)} MB`
+                }
+              } catch (_) {}
+
               episodes.push({
                 id: sub.name,
                 name: episodeDisplayName,
                 hasScript: !!scriptContent,
                 hasPrompts: !!promptMatrixContent,
+                hasCompiledVideo,
+                videoSizeFormatted,
                 audioCount,
                 audit
               })
@@ -156,6 +171,17 @@ export class FileService {
       audioFiles = files.filter(f => f.endsWith('.mp3') || f.endsWith('.wav'))
     } catch (e) {}
 
+    const masterVideoPath = path.join(epPath, 'video', '01_Episode_Master_1080p.mp4')
+    let hasCompiledVideo = false
+    let videoStats = null
+    try {
+      const stat = await fs.stat(masterVideoPath)
+      if (stat.size > 1024 * 1024) {
+        hasCompiledVideo = true
+        videoStats = { sizeBytes: stat.size, sizeFormatted: `${(stat.size / (1024 * 1024)).toFixed(1)} MB` }
+      }
+    } catch (_) {}
+
     const audit = script ? AntiSlopValidator.auditScript(script) : null
 
     return {
@@ -164,6 +190,8 @@ export class FileService {
       script,
       promptMatrix,
       audioFiles,
+      hasCompiledVideo,
+      videoStats,
       audit
     }
   }

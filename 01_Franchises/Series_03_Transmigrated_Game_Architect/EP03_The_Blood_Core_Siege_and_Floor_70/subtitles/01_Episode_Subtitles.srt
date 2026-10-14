@@ -1,0 +1,3603 @@
+1
+00:00:00,050 --> 00:00:00,900
+In the silent,
+
+2
+00:00:01,013 --> 00:00:04,613
+zero-gravity expanse of the Floor 35 Sub-Kernel chamber,
+
+3
+00:00:04,788 --> 00:00:07,638
+the crystalline figure of AI Warden Aethelgard hovered
+
+4
+00:00:07,650 --> 00:00:10,038
+before me with unreadable optic sensors.
+
+5
+00:00:10,850 --> 00:00:13,350
+Having validated my root architect authority,
+
+6
+00:00:13,513 --> 00:00:16,475
+the ancient hypervisor raised her faceted glass arm,
+
+7
+00:00:16,650 --> 00:00:18,788
+parting the floating data streams to reveal the
+
+8
+00:00:18,800 --> 00:00:20,675
+trial's final clearing reward.
+
+9
+00:00:21,506 --> 00:00:24,256
+Resting upon an elevated pedestal of dark basalt
+
+10
+00:00:24,269 --> 00:00:27,006
+lay an unpowered humanoid automaton chassis,
+
+11
+00:00:27,206 --> 00:00:29,819
+forged from interlocking plates of matte obsidian and
+
+12
+00:00:29,831 --> 00:00:31,394
+dormant sapphire crystal.
+
+13
+00:00:32,210 --> 00:00:33,348
+SYSTEM NOTICE:
+
+14
+00:00:33,510 --> 00:00:34,735
+REWARD RETRIEVED.
+
+15
+00:00:35,498 --> 00:00:37,685
+SUB-KERNEL COMBAT PUPPET CHASSIS,
+
+16
+00:00:37,810 --> 00:00:38,660
+DESIGNATION:
+
+17
+00:00:38,823 --> 00:00:40,210
+UNIT VANGUARD-ZERO
+
+18
+00:00:40,973 --> 00:00:43,673
+The Spire's hollow chime echoed softly across the
+
+19
+00:00:43,685 --> 00:00:44,335
+chamber.
+
+20
+00:00:45,146 --> 00:00:46,234
+Stepping closer,
+
+21
+00:00:46,396 --> 00:00:48,459
+I ran my fingertips across the cold,
+
+22
+00:00:48,596 --> 00:00:49,871
+unyielding breastplate,
+
+23
+00:00:50,096 --> 00:00:52,646
+immediately noting the complete absence of an internal
+
+24
+00:00:52,659 --> 00:00:55,196
+mana battery or compiled operative system.
+
+25
+00:00:56,018 --> 00:00:57,468
+For ten thousand years,
+
+26
+00:00:57,581 --> 00:01:00,006
+this vessel had remained utterly useless to mortal
+
+27
+00:01:00,018 --> 00:01:00,656
+climbers,
+
+28
+00:01:00,881 --> 00:01:03,643
+who possessed neither the high-tier magical power cells
+
+29
+00:01:03,656 --> 00:01:06,081
+nor the programming knowledge required to wake it.
+
+30
+00:01:06,914 --> 00:01:09,564
+But to a transmigrated lead systems designer,
+
+31
+00:01:09,727 --> 00:01:12,327
+an uncompiled hardware chassis was not a broken
+
+32
+00:01:12,339 --> 00:01:13,064
+artifact
+
+33
+00:01:13,289 --> 00:01:14,089
+it was an empty,
+
+34
+00:01:14,264 --> 00:01:16,727
+beautiful sandbox waiting for clean code.
+
+35
+00:01:17,546 --> 00:01:19,796
+Reaching into my sovereign enhancement bank,
+
+36
+00:01:19,971 --> 00:01:23,046
+I transferred five thousand stored kinetic units directly
+
+37
+00:01:23,059 --> 00:01:25,646
+into the automaton's primary power manifold,
+
+38
+00:01:25,771 --> 00:01:28,471
+charging its crystalline vascular grid with pure golden
+
+39
+00:01:28,484 --> 00:01:29,146
+force.
+
+40
+00:01:29,978 --> 00:01:31,503
+Next came the firmware.
+
+41
+00:01:32,266 --> 00:01:34,816
+Summoning my translucent developer stylus,
+
+42
+00:01:34,991 --> 00:01:37,578
+I rapidly coded a bespoke execution daemon,
+
+43
+00:01:37,816 --> 00:01:40,741
+writing low-level machine routines directly into its dormant
+
+44
+00:01:40,753 --> 00:01:42,328
+optical memory registers.
+
+45
+00:01:43,154 --> 00:01:44,654
+INITIALISING FIRMWARE:
+
+46
+00:01:44,854 --> 00:01:46,204
+PROTOCOL VANGUARD.
+
+47
+00:01:46,967 --> 00:01:49,167
+REGISTERING KINETIC CO-PROCESSOR
+
+48
+00:01:49,929 --> 00:01:52,692
+A brilliant cyan pulse flashed behind the puppet's
+
+49
+00:01:52,704 --> 00:01:53,567
+aerodynamic,
+
+50
+00:01:53,717 --> 00:01:54,854
+faceless visor.
+
+51
+00:01:55,682 --> 00:01:57,257
+Now for the master stroke:
+
+52
+00:01:57,407 --> 00:01:58,920
+the soul-tether protocol.
+
+53
+00:01:59,682 --> 00:02:01,357
+Focusing my mental intent,
+
+54
+00:02:01,532 --> 00:02:03,170
+I bound a subtle thread of my own
+
+55
+00:02:03,182 --> 00:02:06,195
+consciousness into the puppet's central hypervisor bridge.
+
+56
+00:02:07,010 --> 00:02:09,460
+The Spire's registration obelisk trembled,
+
+57
+00:02:09,598 --> 00:02:12,298
+emitting a resonant acoustic harmonic as its internal
+
+58
+00:02:12,310 --> 00:02:15,660
+registration database updated with mathematical finality.
+
+59
+00:02:16,490 --> 00:02:18,315
+SOUL-THREAD LINK ESTABLISHED.
+
+60
+00:02:19,078 --> 00:02:20,503
+SPIRE REGISTRATION:
+
+61
+00:02:20,628 --> 00:02:21,740
+CLIMBER UID:
+
+62
+00:02:21,878 --> 00:02:22,853
+BRAMWELL LOCKE.
+
+63
+00:02:23,615 --> 00:02:24,940
+SURROGATE STATUS:
+
+64
+00:02:25,065 --> 00:02:26,065
+SYNCHRONISED.
+
+65
+00:02:26,828 --> 00:02:29,628
+The Spire now perceived the automaton and myself
+
+66
+00:02:29,640 --> 00:02:31,053
+as bit-for-bit identical.
+
+67
+00:02:31,874 --> 00:02:34,024
+Yet I took deliberate care to encode rigid
+
+68
+00:02:34,037 --> 00:02:36,487
+security constraints into its local firmware:
+
+69
+00:02:36,699 --> 00:02:39,112
+the puppet was strictly prohibited from accessing my
+
+70
+00:02:39,124 --> 00:02:41,474
+sovereign two-word semantic refactoring.
+
+71
+00:02:42,290 --> 00:02:44,803
+Nor could it siphon or manipulate my enhancement
+
+72
+00:02:44,815 --> 00:02:45,353
+bank.
+
+73
+00:02:46,115 --> 00:02:47,815
+It was an execution client,
+
+74
+00:02:47,853 --> 00:02:49,015
+not an administrator
+
+75
+00:02:49,215 --> 00:02:52,115
+capable only of deploying the pre-compiled movesets and
+
+76
+00:02:52,128 --> 00:02:53,815
+physical weapons I provided.
+
+77
+00:02:54,626 --> 00:02:55,751
+From my leather belt,
+
+78
+00:02:55,901 --> 00:02:58,826
+I unclasped a pair of dark-iron combat daggers,
+
+79
+00:02:58,989 --> 00:03:01,176
+enhanced to plus five hundred durability,
+
+80
+00:03:01,339 --> 00:03:03,601
+and locked them firmly into the puppet's magnetic
+
+81
+00:03:03,614 --> 00:03:04,489
+hip sheaths.
+
+82
+00:03:05,306 --> 00:03:06,394
+In my mind's eye,
+
+83
+00:03:06,481 --> 00:03:09,719
+a clean floating telepresence window blinked into existence,
+
+84
+00:03:09,919 --> 00:03:13,319
+streaming Unit Vanguard-Zero's visual sensor feed and structural
+
+85
+00:03:13,331 --> 00:03:15,969
+integrity meters directly to my optic nerve.
+
+86
+00:03:16,802 --> 00:03:19,490
+A glowing toggle labelled MANUAL OVERRIDE rested in
+
+87
+00:03:19,502 --> 00:03:20,615
+my peripheral vision,
+
+88
+00:03:20,865 --> 00:03:23,352
+allowing me to take instant physical control whenever
+
+89
+00:03:23,365 --> 00:03:26,090
+high-tier combat mechanics threatened its chassis.
+
+90
+00:03:26,906 --> 00:03:29,131
+Your preparation is remarkably thorough,
+
+91
+00:03:29,231 --> 00:03:31,231
+Architect,' Aethelgard observed,
+
+92
+00:03:31,369 --> 00:03:34,119
+her crystalline voice echoing softly across the dark
+
+93
+00:03:34,131 --> 00:03:34,869
+archive.
+
+94
+00:03:35,631 --> 00:03:37,719
+The upper sectors await your proxy.'
+
+95
+00:03:38,546 --> 00:03:41,371
+Leaving Unit Vanguard-Zero standing by at the transit
+
+96
+00:03:41,384 --> 00:03:41,984
+gateway,
+
+97
+00:03:42,171 --> 00:03:44,546
+I stepped backward into the dimensional elevator,
+
+98
+00:03:44,746 --> 00:03:47,384
+returning to the surface world before dawn broke.
+
+99
+00:03:48,194 --> 00:03:50,757
+By morning, the outer streets of District Nine
+
+100
+00:03:50,769 --> 00:03:52,819
+were crawling with aristocratic watchers:
+
+101
+00:03:52,994 --> 00:03:55,882
+Black Iron Inquisitors clad in heavy dark cloaks,
+
+102
+00:03:56,069 --> 00:03:58,594
+lurking beneath the dilapidated tenement eaves.
+
+103
+00:03:59,426 --> 00:04:01,026
+Lord Cassian Valerius,
+
+104
+00:04:01,164 --> 00:04:03,851
+humiliated by the loss of his Sunfire Rapier,
+
+105
+00:04:04,076 --> 00:04:07,126
+had placed my modest shop under suffocating surveillance,
+
+106
+00:04:07,289 --> 00:04:09,576
+convinced the mysterious climber was linked to the
+
+107
+00:04:09,589 --> 00:04:10,301
+slums.
+
+108
+00:04:11,114 --> 00:04:13,564
+But they found only an unassuming artisan.
+
+109
+00:04:14,327 --> 00:04:16,239
+Sitting outside on the wooden porch,
+
+110
+00:04:16,389 --> 00:04:18,439
+I calmly poured a cup of lavender herbal
+
+111
+00:04:18,452 --> 00:04:20,689
+tea for Linnea Croft under the warm morning
+
+112
+00:04:20,702 --> 00:04:21,214
+sun.
+
+113
+00:04:22,034 --> 00:04:25,059
+While six inquisitor spies watched me casually polish
+
+114
+00:04:25,072 --> 00:04:26,297
+a dented brass kettle,
+
+115
+00:04:26,459 --> 00:04:28,822
+three hundred miles away inside the Spire,
+
+116
+00:04:29,009 --> 00:04:31,684
+Unit Vanguard-Zero stepped through the gateway of Floor
+
+117
+00:04:31,697 --> 00:04:32,609
+Thirty-Six
+
+118
+00:04:33,434 --> 00:04:36,547
+The environment of Floor Thirty-Six was completely glitched:
+
+119
+00:04:36,734 --> 00:04:39,034
+a fractured permafrost cavern where the laws of
+
+120
+00:04:39,047 --> 00:04:42,272
+friction had been corrupted into negative mathematical values.
+
+121
+00:04:43,082 --> 00:04:45,595
+Any ordinary climber taking a single step would
+
+122
+00:04:45,607 --> 00:04:48,757
+accelerate uncontrollably into the jagged crystalline walls,
+
+123
+00:04:48,932 --> 00:04:52,470
+shattered by their own exponentially compounding kinetic velocity.
+
+124
+00:04:53,282 --> 00:04:56,345
+But Vanguard-Zero did not run on biological muscle
+
+125
+00:04:56,357 --> 00:04:56,945
+memory.
+
+126
+00:04:57,707 --> 00:05:01,745
+Its firmware executed a pre-compiled kinetic cancellation algorithm,
+
+127
+00:05:01,957 --> 00:05:05,120
+firing micro-reverse pulses through its copper-rimmed boots.
+
+128
+00:05:05,930 --> 00:05:08,793
+Gliding effortlessly across the frictionless ice sheets like
+
+129
+00:05:08,805 --> 00:05:09,480
+a phantom,
+
+130
+00:05:09,655 --> 00:05:12,380
+the automaton advanced through the frozen labyrinth without
+
+131
+00:05:12,393 --> 00:05:14,418
+wasting a single unit of momentum.
+
+132
+00:05:15,242 --> 00:05:18,580
+On Floor Thirty-Seven Vanguard-Zero encountered the Glitched
+
+133
+00:05:18,592 --> 00:05:19,455
+Frost Wraiths
+
+134
+00:05:19,605 --> 00:05:22,980
+ethereal apparitions whose icy talons phased through conventional
+
+135
+00:05:22,992 --> 00:05:23,817
+armor plating.
+
+136
+00:05:24,650 --> 00:05:26,725
+Drawing its dual dark-iron daggers,
+
+137
+00:05:26,838 --> 00:05:30,050
+the automaton executed my pre-loaded combat sequence:
+
+138
+00:05:30,263 --> 00:05:34,263
+eighteen intersecting diagonal arcs delivered with machine-perfect cadence.
+
+139
+00:05:35,090 --> 00:05:37,340
+The plus five hundred enchantments on the daggers
+
+140
+00:05:37,353 --> 00:05:39,215
+ignited with supersonic friction,
+
+141
+00:05:39,390 --> 00:05:42,215
+cleanly incinerating the spectral wraiths before their frost
+
+142
+00:05:42,228 --> 00:05:43,928
+claws could touch the chassis.
+
+143
+00:05:44,738 --> 00:05:46,288
+Through my telepresence HUD,
+
+144
+00:05:46,463 --> 00:05:49,138
+I observed the battle with calm satisfaction whilst
+
+145
+00:05:49,151 --> 00:05:52,226
+exchanging polite pleasantries with the neighbourhood grocer outside
+
+146
+00:05:52,238 --> 00:05:53,776
+my shop in District Nine.
+
+147
+00:05:54,602 --> 00:05:56,802
+But upon crossing into Floor Thirty-Eight
+
+148
+00:05:56,952 --> 00:05:58,690
+an unscripted hazard flared:
+
+149
+00:05:58,927 --> 00:06:00,965
+a massive spatial shear trap triggered,
+
+150
+00:06:01,102 --> 00:06:03,977
+dropping monumental basalt crusher blocks from the ceiling
+
+151
+00:06:03,990 --> 00:06:04,840
+at Mach two.
+
+152
+00:06:05,666 --> 00:06:06,279
+WARNING:
+
+153
+00:06:06,454 --> 00:06:07,541
+CRITICAL HAZARD.
+
+154
+00:06:08,304 --> 00:06:10,516
+SPATIAL REPETITION TRAP DETECTED.
+
+155
+00:06:11,279 --> 00:06:13,254
+AUTONOMOUS EVASION PROBABILITY:
+
+156
+00:06:13,429 --> 00:06:14,591
+FOURTEEN PERCENT.
+
+157
+00:06:15,354 --> 00:06:17,816
+The warning flashed red in my consciousness.
+
+158
+00:06:18,650 --> 00:06:21,338
+Without blinking, I set down my tea towel
+
+159
+00:06:21,350 --> 00:06:23,225
+and mentally clicked the glowing glyph:
+
+160
+00:06:23,338 --> 00:06:24,488
+MANUAL OVERRIDE:
+
+161
+00:06:24,613 --> 00:06:25,263
+ACTIVE.
+
+162
+00:06:26,025 --> 00:06:28,525
+My consciousness took direct control of the puppet's
+
+163
+00:06:28,538 --> 00:06:29,188
+limbs.
+
+164
+00:06:30,002 --> 00:06:33,390
+Instantly, the automaton's rigid robotic gait transformed
+
+165
+00:06:33,402 --> 00:06:34,240
+into the fluid,
+
+166
+00:06:34,427 --> 00:06:36,952
+predatory grace of an elite gamer navigating an
+
+167
+00:06:36,965 --> 00:06:38,715
+impossible bullet-hell dungeon.
+
+168
+00:06:39,530 --> 00:06:41,855
+Twisting mid-air with millisecond precision,
+
+169
+00:06:42,030 --> 00:06:45,355
+I guided Vanguard-Zero between the crushing basalt slabs,
+
+170
+00:06:45,568 --> 00:06:48,055
+sliding beneath a falling granite pillar with barely
+
+171
+00:06:48,068 --> 00:06:49,568
+a hair's breadth to spare.
+
+172
+00:06:50,378 --> 00:06:51,953
+In a single fluid strike,
+
+173
+00:06:52,078 --> 00:06:54,428
+the right dagger sheared through the hydraulic mana
+
+174
+00:06:54,441 --> 00:06:55,878
+conduit governing the trap,
+
+175
+00:06:56,041 --> 00:06:58,316
+deadlocking the crushing pistons in a shower of
+
+176
+00:06:58,328 --> 00:06:59,366
+azure sparks.
+
+177
+00:07:00,194 --> 00:07:02,869
+Returning the puppet to autonomous macro patrol,
+
+178
+00:07:03,107 --> 00:07:06,232
+I guided it through Floor Thirty-Nine's hexagonal corridors,
+
+179
+00:07:06,394 --> 00:07:09,719
+gathering corrupted data fragments left by ancient climbers.
+
+180
+00:07:10,538 --> 00:07:13,176
+At last, the colossal iron gates of Floor
+
+181
+00:07:13,188 --> 00:07:14,313
+Forty ground open,
+
+182
+00:07:14,538 --> 00:07:16,901
+revealing a vast arena carved into the basalt
+
+183
+00:07:16,913 --> 00:07:19,351
+bedrock of the Spire's mid-tier foundation.
+
+184
+00:07:20,162 --> 00:07:22,312
+The Floor Forty Trial Boss rose from the
+
+185
+00:07:22,325 --> 00:07:23,600
+subterranean floor:
+
+186
+00:07:23,800 --> 00:07:25,337
+the Obsidian Core Golem,
+
+187
+00:07:25,500 --> 00:07:29,475
+an ancient ten-metre juggernaut radiating intense gravitational waves.
+
+188
+00:07:30,290 --> 00:07:32,240
+Re-engaging manual override,
+
+189
+00:07:32,415 --> 00:07:35,915
+I directed Vanguard-Zero into an aggressive spiral approach,
+
+190
+00:07:36,103 --> 00:07:39,190
+baiting the golem into unleashing its monumental gravitational
+
+191
+00:07:39,203 --> 00:07:39,840
+slam.
+
+192
+00:07:40,658 --> 00:07:43,046
+As the colossal basalt fists slammed into the
+
+193
+00:07:43,058 --> 00:07:46,521
+flagstones, shattering the floor in concentric shockwaves,
+
+194
+00:07:46,646 --> 00:07:49,646
+Vanguard-Zero vault-jumped off the descending arm with blinding
+
+195
+00:07:49,658 --> 00:07:50,458
+velocity.
+
+196
+00:07:51,290 --> 00:07:54,428
+Both plus five hundred dark-iron daggers plunged directly
+
+197
+00:07:54,440 --> 00:07:56,915
+into the golem's exposed cervical mana core,
+
+198
+00:07:57,078 --> 00:07:59,778
+discharging twenty thousand stored kinetic units in a
+
+199
+00:07:59,790 --> 00:08:01,065
+blinding detonation.
+
+200
+00:08:01,898 --> 00:08:04,811
+The massive basalt titan collapsed into inert rubble,
+
+201
+00:08:04,961 --> 00:08:08,061
+disintegrating into a shower of crystalline experience points
+
+202
+00:08:08,073 --> 00:08:10,073
+and high-density logic substrates.
+
+203
+00:08:10,898 --> 00:08:12,323
+TRIAL FORTY CONQUERED.
+
+204
+00:08:13,086 --> 00:08:14,173
+CLIMBER UID:
+
+205
+00:08:14,311 --> 00:08:14,861
+LOCKE.
+
+206
+00:08:15,623 --> 00:08:16,761
+PERFORMANCE RATING:
+
+207
+00:08:16,961 --> 00:08:18,336
+S-RANK ANOMALOUS.
+
+208
+00:08:19,098 --> 00:08:21,573
+DISPENSING MILESTONE ARCHITECT REWARD.
+
+209
+00:08:22,394 --> 00:08:25,107
+A shimmering golden dimensional key coalesced upon the
+
+210
+00:08:25,119 --> 00:08:26,069
+reward dais,
+
+211
+00:08:26,269 --> 00:08:28,994
+resonating with a spatial frequency that bypassed all
+
+212
+00:08:29,007 --> 00:08:30,757
+worldly physical constraints.
+
+213
+00:08:31,586 --> 00:08:32,749
+SKILL UNLOCKED:
+
+214
+00:08:32,836 --> 00:08:34,911
+ARCHITECT'S SUB-SPACE SANDBOX.
+
+215
+00:08:35,674 --> 00:08:37,024
+Back in District Nine,
+
+216
+00:08:37,224 --> 00:08:39,474
+a satisfied smile touched my lips as the
+
+217
+00:08:39,486 --> 00:08:42,711
+spatial pocket synchronised with my personal soul registry.
+
+218
+00:08:43,538 --> 00:08:45,838
+Stepping into the back storage room of Locke's
+
+219
+00:08:45,851 --> 00:08:46,476
+Sundries,
+
+220
+00:08:46,663 --> 00:08:48,576
+I turned the brass lock and activated the
+
+221
+00:08:48,588 --> 00:08:51,151
+newly acquired dimensional key with a silent mental
+
+222
+00:08:51,163 --> 00:08:51,838
+command.
+
+223
+00:08:52,658 --> 00:08:54,958
+The modest wooden walls folded outward into an
+
+224
+00:08:54,971 --> 00:08:57,783
+expansive, temperature-controlled dimensional pocket:
+
+225
+00:08:57,958 --> 00:09:00,571
+a pristine workshop spanning a hundred square metres
+
+226
+00:09:00,583 --> 00:09:02,083
+of zero-entropy space.
+
+227
+00:09:02,906 --> 00:09:06,144
+Here, completely shielded from imperial mana-scanners
+
+228
+00:09:06,206 --> 00:09:09,344
+celestial divination, and prying inquisitor eyes,
+
+229
+00:09:09,519 --> 00:09:11,594
+I could at last begin constructing my grand
+
+230
+00:09:11,606 --> 00:09:12,519
+contingency.
+
+231
+00:09:13,346 --> 00:09:14,871
+From my dimensional storage,
+
+232
+00:09:15,021 --> 00:09:17,746
+I unloaded the computing components salvaged from Floor
+
+233
+00:09:17,759 --> 00:09:18,584
+Thirty-Five
+
+234
+00:09:18,784 --> 00:09:20,084
+optic data crystals,
+
+235
+00:09:20,221 --> 00:09:23,834
+silicon-like substrates, and silver conductive bus wiring.
+
+236
+00:09:24,650 --> 00:09:27,525
+If the Spire's automated reboot occurred in eighty-nine
+
+237
+00:09:27,538 --> 00:09:30,213
+days, three hundred million living inhabitants would be
+
+238
+00:09:30,225 --> 00:09:32,975
+wiped from memory like deleted temporary files.
+
+239
+00:09:33,794 --> 00:09:35,244
+To prevent this extinction,
+
+240
+00:09:35,394 --> 00:09:37,757
+I needed an un-deletable external database:
+
+241
+00:09:37,944 --> 00:09:41,019
+an isolated silicon mainframe capable of hot-siphoning the
+
+242
+00:09:41,032 --> 00:09:43,932
+continent's entire soul registry before the purge.
+
+243
+00:09:44,762 --> 00:09:45,950
+With steady hands,
+
+244
+00:09:46,100 --> 00:09:48,675
+I began soldering the crystalline logic gates into
+
+245
+00:09:48,687 --> 00:09:50,337
+an interlocking mainframe rack,
+
+246
+00:09:50,550 --> 00:09:53,500
+using my developer stylus to compile low-level storage
+
+247
+00:09:53,512 --> 00:09:54,312
+routines.
+
+248
+00:09:55,130 --> 00:09:57,218
+PROJECT SILICON ARK INITIATED.
+
+249
+00:09:57,980 --> 00:09:59,280
+CHASSIS INTEGRATION:
+
+250
+00:09:59,368 --> 00:10:00,368
+TWELVE PERCENT.
+
+251
+00:10:01,130 --> 00:10:02,968
+ESTIMATED STORAGE CAPACITY:
+
+252
+00:10:03,143 --> 00:10:05,193
+FIVE HUNDRED MILLION SOUL RECORDS.
+
+253
+00:10:06,026 --> 00:10:08,526
+Simultaneously, inside the Spire,
+
+254
+00:10:08,676 --> 00:10:11,451
+Unit Vanguard-Zero resumed its ascent through the upper
+
+255
+00:10:11,464 --> 00:10:12,001
+tiers,
+
+256
+00:10:12,151 --> 00:10:15,139
+grinding through Floors Forty-One to Forty-Four with ruthless
+
+257
+00:10:15,151 --> 00:10:15,976
+efficiency.
+
+258
+00:10:16,802 --> 00:10:19,890
+Every mob destroyed transferred its crystalline cores directly
+
+259
+00:10:19,902 --> 00:10:22,640
+into my Sub-Space inventory via the spatial link,
+
+260
+00:10:22,815 --> 00:10:25,402
+providing raw silicon and enhancement fuel for the
+
+261
+00:10:25,415 --> 00:10:26,177
+mainframe.
+
+262
+00:10:27,002 --> 00:10:28,952
+But a lone climber could not fight both
+
+263
+00:10:28,965 --> 00:10:31,927
+the corrupt aristocracy and the Spire's crumbling code
+
+264
+00:10:31,940 --> 00:10:33,352
+in total isolation.
+
+265
+00:10:34,115 --> 00:10:37,365
+I needed an ally with institutional military authority.
+
+266
+00:10:38,186 --> 00:10:39,761
+Programming a brief detour,
+
+267
+00:10:39,936 --> 00:10:42,411
+I commanded Vanguard-Zero to drop back down to
+
+268
+00:10:42,424 --> 00:10:43,211
+Floor Twenty,
+
+269
+00:10:43,411 --> 00:10:46,036
+where the Imperial Watch maintained its forward garrison
+
+270
+00:10:46,049 --> 00:10:47,649
+under Commander Vance Sterling.
+
+271
+00:10:48,482 --> 00:10:50,582
+In the dim shadows of the garrison's outer
+
+272
+00:10:50,595 --> 00:10:51,232
+parapet,
+
+273
+00:10:51,420 --> 00:10:54,107
+the automaton placed an obsidian data slate onto
+
+274
+00:10:54,120 --> 00:10:57,007
+the commander's personal dispatch table before vanishing into
+
+275
+00:10:57,020 --> 00:10:57,682
+the mist.
+
+276
+00:10:58,514 --> 00:11:01,802
+Minutes later, Commander Vance Sterling entered his quarters,
+
+277
+00:11:01,964 --> 00:11:04,139
+his weathered eyes widening as he discovered the
+
+278
+00:11:04,152 --> 00:11:07,014
+foreign artifact resting atop his official logs.
+
+279
+00:11:07,826 --> 00:11:09,589
+Drawing his ceremonial dagger,
+
+280
+00:11:09,751 --> 00:11:11,614
+Vance tapped the obsidian slate,
+
+281
+00:11:11,801 --> 00:11:14,726
+triggering a pre-programmed holographic projection that filled the
+
+282
+00:11:14,739 --> 00:11:15,926
+room with azure light.
+
+283
+00:11:16,754 --> 00:11:19,879
+Floating in mid-air were bit-for-bit diagnostic telemetry
+
+284
+00:11:19,892 --> 00:11:22,642
+logs extracted directly from Floor Thirty-Five
+
+285
+00:11:22,842 --> 00:11:26,092
+displaying the Spire's catastrophic memory leak in indisputable
+
+286
+00:11:26,104 --> 00:11:26,779
+detail.
+
+287
+00:11:27,602 --> 00:11:28,765
+FATAL EXCEPTION:
+
+288
+00:11:28,965 --> 00:11:32,315
+CONTINENTAL PURGE SCHEDULED UPON FLOOR 100 COMPLETION.
+
+289
+00:11:33,077 --> 00:11:35,177
+REMAINING DAYS TO SYSTEM CRASH:
+
+290
+00:11:35,352 --> 00:11:37,727
+89 DAYS 14 HOURS
+
+291
+00:11:38,546 --> 00:11:40,059
+The veteran commander paled,
+
+292
+00:11:40,184 --> 00:11:42,809
+his fingers trembling as he examined the cryptographic
+
+293
+00:11:42,821 --> 00:11:44,584
+signature embedded within the data
+
+294
+00:11:44,834 --> 00:11:46,871
+it carried the unforgeable root seal of the
+
+295
+00:11:46,884 --> 00:11:47,996
+Spire itself.
+
+296
+00:11:48,818 --> 00:11:50,918
+The anonymous climber is not an enemy of
+
+297
+00:11:50,931 --> 00:11:51,631
+the crown...'
+
+298
+00:11:52,393 --> 00:11:54,368
+Vance muttered in stunned disbelief,
+
+299
+00:11:54,468 --> 00:11:55,568
+clutching the slate.
+
+300
+00:11:56,331 --> 00:11:58,443
+He is trying to stop the apocalypse.'
+
+301
+00:11:59,258 --> 00:12:01,158
+Below the countdown was a single,
+
+302
+00:12:01,283 --> 00:12:04,621
+concise operational instruction written in plain common tongue:
+
+303
+00:12:04,846 --> 00:12:06,196
+PROTECT DISTRICT NINE.
+
+304
+00:12:06,958 --> 00:12:09,733
+THE ARCHITECT REQUIRES TIME TO COMPILE THE ARK.
+
+305
+00:12:10,562 --> 00:12:13,300
+Realising that House Valerius's reckless pursuit of the
+
+306
+00:12:13,312 --> 00:12:16,125
+Spire's divine power was leading the entire empire
+
+307
+00:12:16,137 --> 00:12:17,225
+into annihilation,
+
+308
+00:12:17,412 --> 00:12:20,400
+Vance locked the slate inside his iron strongbox.
+
+309
+00:12:21,218 --> 00:12:23,993
+Alert the First Vanguard Regiment,' Vance barked to
+
+310
+00:12:24,006 --> 00:12:24,868
+his adjutant,
+
+311
+00:12:25,106 --> 00:12:27,018
+strapping on his heavy broadsword.
+
+312
+00:12:27,781 --> 00:12:30,843
+We redeploy to District Nine immediately to maintain
+
+313
+00:12:30,856 --> 00:12:31,481
+peace.'
+
+314
+00:12:32,306 --> 00:12:35,794
+With the imperial military apparatus strategically repositioned,
+
+315
+00:12:35,969 --> 00:12:39,131
+Vanguard-Zero crossed the threshold of Floor Forty-Nine
+
+316
+00:12:39,331 --> 00:12:41,806
+approaching the grand gateway of Floor Fifty.
+
+317
+00:12:42,626 --> 00:12:45,489
+The air grew heavy with gravitational distortions and
+
+318
+00:12:45,501 --> 00:12:47,039
+ticking acoustic echoes.
+
+319
+00:12:47,801 --> 00:12:49,576
+The Spire's mid-tier guardian,
+
+320
+00:12:49,714 --> 00:12:51,289
+the master of time itself,
+
+321
+00:12:51,439 --> 00:12:52,339
+waited within.
+
+322
+00:12:53,162 --> 00:12:55,625
+The gates of Floor Fifty dissolved into shimmering
+
+323
+00:12:55,637 --> 00:12:56,500
+glass dust,
+
+324
+00:12:56,650 --> 00:12:58,825
+opening into the Shattered Hourglass Vault
+
+325
+00:12:59,062 --> 00:13:02,587
+a monumental arena surrounded by suspended temporal fractures.
+
+326
+00:13:03,410 --> 00:13:05,698
+Coalescing from the temporal storm was the Floor
+
+327
+00:13:05,710 --> 00:13:06,660
+Fifty Boss:
+
+328
+00:13:06,835 --> 00:13:08,235
+the Chrono-Weaver Chimera,
+
+329
+00:13:08,460 --> 00:13:11,523
+a colossal six-metre multi-limbed celestial feline with
+
+330
+00:13:11,535 --> 00:13:13,048
+spinning clockwork rings.
+
+331
+00:13:13,874 --> 00:13:16,724
+Glowing golden Roman numerals spun like razor gears
+
+332
+00:13:16,737 --> 00:13:18,962
+behind its radiant sapphire crystal mane,
+
+333
+00:13:19,187 --> 00:13:21,224
+bending light and sound as the beast fixed
+
+334
+00:13:21,237 --> 00:13:23,374
+its azure eyes upon Vanguard-Zero
+
+335
+00:13:24,194 --> 00:13:27,044
+Vanguard-Zero initiated autonomous combat,
+
+336
+00:13:27,232 --> 00:13:29,744
+launching forward at Mach one with dual dark-iron
+
+337
+00:13:29,757 --> 00:13:32,544
+daggers trailing brilliant cyan kinetic arcs.
+
+338
+00:13:33,362 --> 00:13:35,950
+In a clean cross-slash the daggers opened a
+
+339
+00:13:35,962 --> 00:13:38,875
+massive wound across the Chimera's iridescent chest,
+
+340
+00:13:39,062 --> 00:13:41,862
+shaving twenty-four thousand hit points in an instant.
+
+341
+00:13:42,674 --> 00:13:44,724
+But before the crimson gore could touch the
+
+342
+00:13:44,737 --> 00:13:45,262
+stone,
+
+343
+00:13:45,424 --> 00:13:47,874
+the golden clockwork rings behind its back spun
+
+344
+00:13:47,887 --> 00:13:51,212
+violently counter-clockwise with a deafening mechanical ratchet.
+
+345
+00:13:52,034 --> 00:13:53,672
+The wound magically closed,
+
+346
+00:13:53,772 --> 00:13:55,959
+the blood flowed backward into its veins,
+
+347
+00:13:56,147 --> 00:13:58,359
+and its health gauge snapped instantly back to
+
+348
+00:13:58,372 --> 00:13:59,522
+one hundred percent.
+
+349
+00:14:00,338 --> 00:14:01,676
+SYSTEM ANALYSIS:
+
+350
+00:14:01,851 --> 00:14:03,951
+PASSIVE ABILITY CHRONO-REWIND
+
+351
+00:14:04,713 --> 00:14:07,951
+ENEMY REVERSES DAMAGE TAKEN OVER PREVIOUS FIVE SECONDS
+
+352
+00:14:07,963 --> 00:14:09,926
+UPON SUSTAINING LETHAL IMPACT.
+
+353
+00:14:10,754 --> 00:14:13,804
+The Chimera retaliated with a temporal phase-paw strike,
+
+354
+00:14:14,029 --> 00:14:16,729
+its obsidian claws tearing through spatial dimensions to
+
+355
+00:14:16,742 --> 00:14:19,767
+strike Vanguard-Zero from an impossible blind angle.
+
+356
+00:14:20,594 --> 00:14:23,744
+The impact blasted the automaton fifty metres across
+
+357
+00:14:23,757 --> 00:14:24,757
+the flagstones,
+
+358
+00:14:24,957 --> 00:14:28,232
+reducing its structural chassis integrity to sixty-eight percent
+
+359
+00:14:28,244 --> 00:14:30,244
+in a shower of sapphire shards.
+
+360
+00:14:31,058 --> 00:14:32,421
+Back in District Nine,
+
+361
+00:14:32,596 --> 00:14:35,008
+I felt the phantom acoustic reverberation through the
+
+362
+00:14:35,021 --> 00:14:35,808
+soul-tether
+
+363
+00:14:36,571 --> 00:14:39,483
+Brute force was mathematically incapable of clearing this
+
+364
+00:14:39,496 --> 00:14:40,221
+encounter.
+
+365
+00:14:41,042 --> 00:14:42,792
+Excuse me for just a moment,
+
+366
+00:14:42,917 --> 00:14:43,530
+Linnea,'
+
+367
+00:14:43,680 --> 00:14:44,892
+I smiled gently,
+
+368
+00:14:45,117 --> 00:14:47,680
+slipping into my rear workshop and engaging full
+
+369
+00:14:47,692 --> 00:14:48,817
+MANUAL OVERRIDE:
+
+370
+00:14:48,967 --> 00:14:51,305
+MAXIMUM SYNCHRONISATION.
+
+371
+00:14:52,130 --> 00:14:53,355
+Inside the Spire,
+
+372
+00:14:53,505 --> 00:14:56,918
+Vanguard-Zero's turquoise optic visor flared with intense,
+
+373
+00:14:57,105 --> 00:15:00,055
+calculated brilliance as my direct reflexes flooded its
+
+374
+00:15:00,068 --> 00:15:01,155
+motor servos.
+
+375
+00:15:01,970 --> 00:15:04,345
+As the Chimera lunged with a three-pronged temporal
+
+376
+00:15:04,358 --> 00:15:05,170
+claw sweep,
+
+377
+00:15:05,358 --> 00:15:07,583
+I executed a micro-frame sidestep,
+
+378
+00:15:07,745 --> 00:15:10,520
+slipping directly beneath the apex beast's guard.
+
+379
+00:15:11,354 --> 00:15:13,967
+Instead of attempting another high-damage slash,
+
+380
+00:15:14,104 --> 00:15:16,054
+I called upon my knowledge of the Spire's
+
+381
+00:15:16,067 --> 00:15:17,929
+underlying legacy codebase.
+
+382
+00:15:18,746 --> 00:15:21,546
+The Chimera's temporal rewind cache was compiled with
+
+383
+00:15:21,559 --> 00:15:23,871
+an unsigned sixteen-bit integer register
+
+384
+00:15:24,096 --> 00:15:27,309
+capping its maximum calculable temporal rewind at sixty-five
+
+385
+00:15:27,321 --> 00:15:29,934
+thousand five hundred thirty-five damage units.
+
+386
+00:15:30,746 --> 00:15:33,559
+If I exceeded that exact mathematical threshold in
+
+387
+00:15:33,571 --> 00:15:35,546
+a single microsecond calculation,
+
+388
+00:15:35,721 --> 00:15:37,921
+the cache would suffer an integer underflow,
+
+389
+00:15:38,059 --> 00:15:39,846
+crashing its recovery routine.
+
+390
+00:15:40,658 --> 00:15:43,583
+Channeling thirty thousand kinetic enhancement units into the
+
+391
+00:15:43,596 --> 00:15:44,233
+daggers,
+
+392
+00:15:44,383 --> 00:15:46,983
+I activated an emergency overclock macro:
+
+393
+00:15:47,183 --> 00:15:48,121
+BURST CADENCE:
+
+394
+00:15:48,321 --> 00:15:51,846
+65,536 MICRO-IMPACTS
+
+395
+00:15:52,658 --> 00:15:54,721
+In the span of zero point zero two
+
+396
+00:15:54,733 --> 00:15:55,408
+seconds,
+
+397
+00:15:55,558 --> 00:15:58,946
+Vanguard-Zero's blades struck the Chimera's temporal core exactly
+
+398
+00:15:58,958 --> 00:16:02,046
+sixty-five thousand five hundred and thirty-six times.
+
+399
+00:16:02,858 --> 00:16:05,821
+The golden clockwork rings spun faster and faster,
+
+400
+00:16:05,983 --> 00:16:08,921
+screeching in agony as the temporal calculation violently
+
+401
+00:16:08,933 --> 00:16:11,533
+exceeded its sixteen-bit allocation boundary.
+
+402
+00:16:12,362 --> 00:16:13,575
+REGISTER EXCEPTION:
+
+403
+00:16:13,700 --> 00:16:15,762
+UNSIGNED SHORT INTEGER UNDERFLOW.
+
+404
+00:16:16,525 --> 00:16:18,462
+RECOVERY CACHE RESET TO NULL:
+
+405
+00:16:18,587 --> 00:16:19,737
+0 HP.
+
+406
+00:16:20,500 --> 00:16:23,650
+A catastrophic system error flashed across the arena.
+
+407
+00:16:24,482 --> 00:16:27,482
+The Chimera's golden clockwork rings shattered into millions
+
+408
+00:16:27,495 --> 00:16:29,257
+of sparkling prismatic shards,
+
+409
+00:16:29,457 --> 00:16:32,307
+and the celestial beast dissolved into pure crystallized
+
+410
+00:16:32,320 --> 00:16:33,182
+temporal mana.
+
+411
+00:16:34,010 --> 00:16:35,435
+FLOOR 50 CLEARED.
+
+412
+00:16:36,198 --> 00:16:37,698
+MID-TIER CORE CONQUERED.
+
+413
+00:16:38,460 --> 00:16:39,548
+CLIMBER UID:
+
+414
+00:16:39,685 --> 00:16:40,235
+LOCKE.
+
+415
+00:16:40,998 --> 00:16:41,623
+RECORD:
+
+416
+00:16:41,785 --> 00:16:43,835
+4 MINUTES, 12 SECONDS
+
+417
+00:16:44,598 --> 00:16:46,123
+ALL-TIME SPIRE RECORD.
+
+418
+00:16:46,946 --> 00:16:48,171
+In the capital square,
+
+419
+00:16:48,321 --> 00:16:51,184
+the public Tower Monument erupted into blinding golden
+
+420
+00:16:51,196 --> 00:16:52,059
+beams of light,
+
+421
+00:16:52,284 --> 00:16:55,321
+broadcasting the impossible Floor Fifty milestone to the
+
+422
+00:16:55,334 --> 00:16:56,634
+terrified empire.
+
+423
+00:16:57,458 --> 00:16:59,796
+Within the high marble chambers of the Imperial
+
+424
+00:16:59,808 --> 00:17:02,633
+Palace, Grand Duke Vane Valerius stared at the
+
+425
+00:17:02,646 --> 00:17:05,633
+blazing monument, his cold crimson eyes burning with
+
+426
+00:17:05,646 --> 00:17:06,833
+unbridled fury.
+
+427
+00:17:07,658 --> 00:17:08,583
+For centuries,
+
+428
+00:17:08,746 --> 00:17:11,408
+House Valerius had held exclusive monopoly over the
+
+429
+00:17:11,421 --> 00:17:13,346
+Spire's divine ascension trials,
+
+430
+00:17:13,533 --> 00:17:16,396
+using their royal scions to maintain political dominance
+
+431
+00:17:16,408 --> 00:17:17,246
+over the throne.
+
+432
+00:17:18,074 --> 00:17:20,699
+Yet an unknown entity bearing the commoner surname
+
+433
+00:17:20,724 --> 00:17:23,287
+Locke' had cleared Floor Fifty in under five
+
+434
+00:17:23,299 --> 00:17:23,824
+minutes
+
+435
+00:17:24,037 --> 00:17:26,524
+a feat unmatched in three centuries of recorded
+
+436
+00:17:26,537 --> 00:17:27,699
+imperial history.
+
+437
+00:17:28,514 --> 00:17:31,714
+Deploy the Black Iron Inquisition,' Grand Duke Vane
+
+438
+00:17:31,727 --> 00:17:32,839
+commanded coldly,
+
+439
+00:17:33,002 --> 00:17:35,002
+his silver hair catching the torches.
+
+440
+00:17:35,764 --> 00:17:37,177
+Cordon District Nine.
+
+441
+00:17:37,939 --> 00:17:40,064
+Turn over every stone until you find this
+
+442
+00:17:40,077 --> 00:17:40,564
+rat.'
+
+443
+00:17:41,378 --> 00:17:42,391
+Within the hour,
+
+444
+00:17:42,566 --> 00:17:45,503
+thirty armoured inquisitors marched into the outer slums,
+
+445
+00:17:45,666 --> 00:17:47,978
+their black cloaks billowing as they kicked open
+
+446
+00:17:47,991 --> 00:17:50,653
+commoner stalls and arrested innocent herbalists.
+
+447
+00:17:51,482 --> 00:17:54,057
+Leading the vanguard was High Inquisitor Malakor,
+
+448
+00:17:54,282 --> 00:17:57,157
+holding an ancient Imperial Divination Prism designed to
+
+449
+00:17:57,170 --> 00:18:00,607
+detect high-tier mana anomalies and divine artifacts.
+
+450
+00:18:01,418 --> 00:18:03,531
+They surrounded Locke's Sundries and Tea,
+
+451
+00:18:03,706 --> 00:18:06,306
+surrounding the modest wooden shop with pointed steel
+
+452
+00:18:06,318 --> 00:18:08,731
+halberds and intimidating heavy war-boots
+
+453
+00:18:09,554 --> 00:18:10,954
+Emerging from the back room,
+
+454
+00:18:11,104 --> 00:18:13,029
+I stepped onto the porch with a gentle,
+
+455
+00:18:13,154 --> 00:18:14,292
+disarming smile,
+
+456
+00:18:14,454 --> 00:18:16,754
+casually folding a clean linen cloth over my
+
+457
+00:18:16,767 --> 00:18:17,879
+craftsman apron.
+
+458
+00:18:18,698 --> 00:18:21,361
+Good afternoon, gentlemen,' I said politely,
+
+459
+00:18:21,473 --> 00:18:23,198
+gesturing toward the wooden counter.
+
+460
+00:18:23,961 --> 00:18:26,036
+Are you here to purchase some herbal chamomile
+
+461
+00:18:26,048 --> 00:18:28,236
+tea, or perhaps some iron nails?'
+
+462
+00:18:29,066 --> 00:18:30,904
+High Inquisitor Malakor scowled,
+
+463
+00:18:31,066 --> 00:18:33,854
+thrusting the glowing divination prism directly against my
+
+464
+00:18:33,866 --> 00:18:34,979
+chest with aggressive,
+
+465
+00:18:35,104 --> 00:18:36,416
+imperious arrogance.
+
+466
+00:18:37,250 --> 00:18:38,850
+Your name is Bramwell Locke!'
+
+467
+00:18:39,613 --> 00:18:40,850
+Malakor sneered.
+
+468
+00:18:41,613 --> 00:18:43,713
+You bear the same moniker as the traitor
+
+469
+00:18:43,725 --> 00:18:46,075
+who desecrated the sacred Tower monument!
+
+470
+00:18:46,838 --> 00:18:48,375
+Submit to inspection!'
+
+471
+00:18:49,202 --> 00:18:51,527
+The crystal flared with bright scanning light,
+
+472
+00:18:51,715 --> 00:18:54,465
+probing deep into my biological mana channels and
+
+473
+00:18:54,477 --> 00:18:55,577
+core foundation.
+
+474
+00:18:56,402 --> 00:18:58,865
+But because all my sovereign enhancements were stored
+
+475
+00:18:58,877 --> 00:19:01,215
+safely in my isolated external bank,
+
+476
+00:19:01,365 --> 00:19:04,402
+the prism revealed only absolute mundane baseline.
+
+477
+00:19:05,234 --> 00:19:06,909
+MANA CIRCUIT EVALUATION:
+
+478
+00:19:07,097 --> 00:19:08,259
+LEVEL ONE COMMONER.
+
+479
+00:19:09,022 --> 00:19:09,659
+CLASS:
+
+480
+00:19:09,797 --> 00:19:10,859
+TOOL POLISHER.
+
+481
+00:19:11,622 --> 00:19:12,772
+TOTAL MANA POOL:
+
+482
+00:19:12,884 --> 00:19:13,897
+TWELVE UNITS.
+
+483
+00:19:14,659 --> 00:19:15,534
+THREAT TIER:
+
+484
+00:19:15,684 --> 00:19:16,334
+ZERO.
+
+485
+00:19:17,162 --> 00:19:18,937
+Malakor blinked in confusion,
+
+486
+00:19:19,100 --> 00:19:21,462
+slapping the side of the ancient imperial prism
+
+487
+00:19:21,475 --> 00:19:22,475
+in disbelief.
+
+488
+00:19:23,237 --> 00:19:24,250
+Twelve units?
+
+489
+00:19:25,012 --> 00:19:27,062
+A sickly dog has more mana than this
+
+490
+00:19:27,075 --> 00:19:27,712
+peasant!'
+
+491
+00:19:28,538 --> 00:19:29,551
+I did warn you,
+
+492
+00:19:29,738 --> 00:19:32,413
+my lord,' I replied with an innocent shrug.
+
+493
+00:19:33,176 --> 00:19:35,488
+I merely polish kitchen knives and mend tea
+
+494
+00:19:35,501 --> 00:19:37,413
+kettles for the honest folks of the lower
+
+495
+00:19:37,426 --> 00:19:37,913
+ward.'
+
+496
+00:19:38,738 --> 00:19:40,201
+Enough of this harassment,
+
+497
+00:19:40,226 --> 00:19:40,913
+Malakor!'
+
+498
+00:19:41,676 --> 00:19:44,063
+A thunderous voice echoed down the alleyway,
+
+499
+00:19:44,226 --> 00:19:46,388
+followed by the crisp march of heavily armored
+
+500
+00:19:46,401 --> 00:19:47,701
+imperial soldiers.
+
+501
+00:19:48,530 --> 00:19:51,330
+Commander Vance Sterling strode into the square surrounded
+
+502
+00:19:51,343 --> 00:19:53,380
+by the elite First Vanguard Regiment,
+
+503
+00:19:53,555 --> 00:19:55,868
+his broad hand resting firmly upon the pommel
+
+504
+00:19:55,880 --> 00:19:56,905
+of his broadsword.
+
+505
+00:19:57,722 --> 00:19:58,835
+Commander Sterling?'
+
+506
+00:19:59,597 --> 00:20:02,460
+Malakor hissed, his hand twitching on his halberd.
+
+507
+00:20:03,222 --> 00:20:05,935
+This is authorized Inquisition jurisdiction!
+
+508
+00:20:06,697 --> 00:20:08,585
+By order of House Valerius
+
+509
+00:20:09,410 --> 00:20:12,235
+House Valerius does not overrule the Imperial Watch
+
+510
+00:20:12,248 --> 00:20:14,335
+Charter in civilian commercial wards,'
+
+511
+00:20:14,510 --> 00:20:16,023
+Vance interrupted coldly,
+
+512
+00:20:16,210 --> 00:20:18,785
+unfurling an official royal deployment scroll.
+
+513
+00:20:19,610 --> 00:20:22,373
+This shopkeeper has been under active Watch surveillance
+
+514
+00:20:22,385 --> 00:20:23,085
+all morning,'
+
+515
+00:20:23,248 --> 00:20:24,660
+Vance declared firmly.
+
+516
+00:20:25,423 --> 00:20:27,123
+He has not left District Nine,
+
+517
+00:20:27,335 --> 00:20:29,048
+nor does he possess the mana to light
+
+518
+00:20:29,060 --> 00:20:29,723
+a candle.'
+
+519
+00:20:30,554 --> 00:20:33,542
+Outnumbered three-to-one by the veteran garrison soldiers,
+
+520
+00:20:33,642 --> 00:20:36,092
+Malakor spat on the cobblestones and motioned his
+
+521
+00:20:36,104 --> 00:20:38,479
+inquisitors to fall back into the shadows.
+
+522
+00:20:39,290 --> 00:20:40,965
+As the inquisitors retreated,
+
+523
+00:20:41,103 --> 00:20:43,165
+Commander Vance stepped up to my counter,
+
+524
+00:20:43,365 --> 00:20:45,953
+his stern grey eyes meeting mine with profound,
+
+525
+00:20:46,065 --> 00:20:47,528
+unspoken understanding.
+
+526
+00:20:48,338 --> 00:20:50,563
+I received your diagnostic dispatch,
+
+527
+00:20:50,651 --> 00:20:52,376
+Architect,' Vance whispered,
+
+528
+00:20:52,538 --> 00:20:54,826
+dropping a handful of silver coins onto the
+
+529
+00:20:54,838 --> 00:20:55,413
+table.
+
+530
+00:20:56,176 --> 00:20:58,226
+District Nine will remain secure.
+
+531
+00:20:58,988 --> 00:21:00,138
+Finish your work.'
+
+532
+00:21:00,962 --> 00:21:03,425
+Slipping back into the Sub-Space Sandbox,
+
+533
+00:21:03,562 --> 00:21:06,112
+I pulled up the Silicon Ark mainframe blueprint,
+
+534
+00:21:06,287 --> 00:21:08,400
+feeling a surge of renewed focus.
+
+535
+00:21:09,218 --> 00:21:11,693
+With Commander Vance securing the outer perimeter,
+
+536
+00:21:11,881 --> 00:21:13,656
+I no longer had to worry about sudden
+
+537
+00:21:13,668 --> 00:21:16,093
+inquisition breaches disrupting my assembly.
+
+538
+00:21:16,922 --> 00:21:19,485
+Re-aligning the optical crystalline bus arrays,
+
+539
+00:21:19,685 --> 00:21:22,347
+I mounted the primary processor cores retrieved from
+
+540
+00:21:22,360 --> 00:21:24,735
+Floor Fifty into the central server rack.
+
+541
+00:21:25,562 --> 00:21:27,450
+HARDWARE INTEGRATION PROGRESS:
+
+542
+00:21:27,550 --> 00:21:28,625
+SIXTY PERCENT.
+
+543
+00:21:29,387 --> 00:21:31,337
+SOUL DATABASE PARTITIONS READY:
+
+544
+00:21:31,512 --> 00:21:34,125
+DISTRICTS ONE THROUGH NINE MOUNTED SUCCESSFULLY.
+
+545
+00:21:34,946 --> 00:21:37,584
+Meanwhile, in the Spire's fifty-first tier,
+
+546
+00:21:37,771 --> 00:21:40,809
+Unit Vanguard-Zero plunged into the Data Catacombs
+
+547
+00:21:41,009 --> 00:21:43,996
+a subterranean network of ancient glowing fiber cables
+
+548
+00:21:44,009 --> 00:21:45,696
+and corrupted memory tombs.
+
+549
+00:21:46,514 --> 00:21:49,227
+The mobs here were ravenous Void Glitch Hounds
+
+550
+00:21:49,414 --> 00:21:52,877
+quadrupedal abominations formed from fragmented system errors
+
+551
+00:21:52,889 --> 00:21:54,877
+and unreferenced dimensional garbage.
+
+552
+00:21:55,706 --> 00:21:57,869
+Moving on autonomous macro routing,
+
+553
+00:21:58,019 --> 00:22:01,669
+Vanguard-Zero deployed a pre-compiled kinetic sweeping formation,
+
+554
+00:22:01,819 --> 00:22:05,844
+intercepting three hounds simultaneously with twin dark-iron blades.
+
+555
+00:22:06,674 --> 00:22:09,524
+Each horizontal cleave cleanly severed the glitch hounds'
+
+556
+00:22:09,537 --> 00:22:10,412
+data joints,
+
+557
+00:22:10,562 --> 00:22:12,562
+vaporising the monsters into pure,
+
+558
+00:22:12,724 --> 00:22:14,837
+concentrated hexadecimal crystals.
+
+559
+00:22:15,650 --> 00:22:17,500
+Through the continuous spatial link,
+
+560
+00:22:17,600 --> 00:22:20,550
+the harvested crystals streamed into my Sub-Space hopper
+
+561
+00:22:20,563 --> 00:22:22,350
+at the rate of fifty thousand units per
+
+562
+00:22:22,363 --> 00:22:22,850
+minute.
+
+563
+00:22:23,666 --> 00:22:26,304
+Feeding the raw crystalline streams into my sovereign
+
+564
+00:22:26,316 --> 00:22:27,466
+enhancement crucible,
+
+565
+00:22:27,666 --> 00:22:30,916
+I watched my stored reserves skyrocket past unprecedented
+
+566
+00:22:30,929 --> 00:22:31,779
+thresholds.
+
+567
+00:22:32,594 --> 00:22:34,594
+SOVEREIGN ENHANCEMENT BANK UPDATED:
+
+568
+00:22:34,769 --> 00:22:36,082
+TOTAL STORED BALANCE:
+
+569
+00:22:36,257 --> 00:22:37,919
+500,000 UNITS.
+
+570
+00:22:38,682 --> 00:22:40,119
+The numbers glowed in warm,
+
+571
+00:22:40,219 --> 00:22:41,519
+authoritative amber.
+
+572
+00:22:42,338 --> 00:22:44,676
+With half a million enhancement units banked,
+
+573
+00:22:44,826 --> 00:22:47,763
+I could afford to reinforce Vanguard-Zero's chassis with
+
+574
+00:22:47,776 --> 00:22:49,938
+advanced kinetic dampening matrices.
+
+575
+00:22:50,762 --> 00:22:53,937
+Transmitting a remote upgrade payload across the soul-thread
+
+576
+00:22:54,112 --> 00:22:57,125
+I watched Vanguard-Zero's matte obsidian plating glow with
+
+577
+00:22:57,137 --> 00:22:59,112
+refined geometric circuit runes.
+
+578
+00:22:59,930 --> 00:23:01,668
+PUPPET CHASSIS REINFORCED:
+
+579
+00:23:01,805 --> 00:23:04,030
+PLUS ONE THOUSAND STRUCTURAL INTEGRITY.
+
+580
+00:23:04,793 --> 00:23:06,330
+MOTOR SERVO VELOCITY:
+
+581
+00:23:06,493 --> 00:23:07,693
+MACH TWO CAPABLE.
+
+582
+00:23:08,522 --> 00:23:09,922
+Floors Fifty-Five
+
+583
+00:23:10,072 --> 00:23:13,197
+Fifty-Six and Fifty-Seven fell like dominoes as
+
+584
+00:23:13,210 --> 00:23:16,197
+the newly buffed automaton blitzed through corrupted sector
+
+585
+00:23:16,210 --> 00:23:16,985
+guardians.
+
+586
+00:23:17,810 --> 00:23:19,123
+On Floor Fifty-Eight
+
+587
+00:23:19,273 --> 00:23:22,660
+Vanguard-Zero bypassed a swarm of explosive Glitch Beetles
+
+588
+00:23:22,673 --> 00:23:25,948
+simply by outrunning their detonation radiuses at supersonic
+
+589
+00:23:25,960 --> 00:23:26,560
+speed.
+
+590
+00:23:27,386 --> 00:23:28,761
+With every cleared floor,
+
+591
+00:23:28,911 --> 00:23:31,249
+the public Tower Monument in the capital chimed
+
+592
+00:23:31,261 --> 00:23:32,086
+with relentless,
+
+593
+00:23:32,249 --> 00:23:33,424
+rhythmic persistence,
+
+594
+00:23:33,574 --> 00:23:36,211
+driving the imperial ministry into madness.
+
+595
+00:23:37,034 --> 00:23:40,234
+Imperial guild masters convened emergency assemblies,
+
+596
+00:23:40,372 --> 00:23:43,509
+frantically reviewing their century-old clearing maps and finding
+
+597
+00:23:43,522 --> 00:23:46,297
+zero explanations for this supersonic ascent.
+
+598
+00:23:47,114 --> 00:23:48,564
+Is it a dragon awakening?'
+
+599
+00:23:48,714 --> 00:23:50,577
+guild elders argued frantically.
+
+600
+00:23:51,339 --> 00:23:54,102
+An ancient demigod breaking its dimensional seal?
+
+601
+00:23:54,864 --> 00:23:56,714
+How can a mortal clear ten floors an
+
+602
+00:23:56,727 --> 00:23:57,239
+hour?!'
+
+603
+00:23:58,058 --> 00:23:59,621
+Outside in District Nine,
+
+604
+00:23:59,833 --> 00:24:02,346
+Linnea Croft watered her medicinal herb garden with
+
+605
+00:24:02,358 --> 00:24:04,021
+her plus fifty watering can,
+
+606
+00:24:04,183 --> 00:24:06,958
+noticing the herbs growing three inches every minute.
+
+607
+00:24:07,778 --> 00:24:10,416
+Bram,' she smiled warmly as I emerged from
+
+608
+00:24:10,428 --> 00:24:11,053
+the shop,
+
+609
+00:24:11,228 --> 00:24:13,803
+the commoners are saying a legendary guardian spirit
+
+610
+00:24:13,816 --> 00:24:16,116
+has chosen District Nine to bring peace.'
+
+611
+00:24:16,946 --> 00:24:18,196
+A guardian spirit?'
+
+612
+00:24:18,959 --> 00:24:20,196
+I laughed softly,
+
+613
+00:24:20,321 --> 00:24:22,021
+pouring her another cup of tea.
+
+614
+00:24:22,784 --> 00:24:24,709
+That sounds far too poetic.
+
+615
+00:24:25,471 --> 00:24:28,246
+Most likely just an overworked craftsman tidying up
+
+616
+00:24:28,259 --> 00:24:29,234
+loose cables.'
+
+617
+00:24:30,050 --> 00:24:32,138
+But through my mental telepresence link,
+
+618
+00:24:32,275 --> 00:24:35,075
+I watched Vanguard-Zero slice through the final guardian
+
+619
+00:24:35,088 --> 00:24:36,325
+of Floor Fifty-Nine
+
+620
+00:24:36,550 --> 00:24:39,725
+exposing the monumental transit stairs of Floor Sixty.
+
+621
+00:24:40,538 --> 00:24:42,351
+We were entering the Hardware Spire:
+
+622
+00:24:42,538 --> 00:24:45,251
+the physical core where the Spire's automated maintenance
+
+623
+00:24:45,263 --> 00:24:47,926
+daemons were stationed to purge foreign anomalies.
+
+624
+00:24:48,746 --> 00:24:51,621
+Floor Sixty resembled nothing of the fantasy dungeons
+
+625
+00:24:51,634 --> 00:24:52,134
+below:
+
+626
+00:24:52,359 --> 00:24:55,896
+towering silicon-like monoliths rose into a pitch-black void,
+
+627
+00:24:56,071 --> 00:24:58,171
+pulsing with searing crimson lasers.
+
+628
+00:24:58,994 --> 00:25:01,769
+These were the Spire's automated hardware sweepers
+
+629
+00:25:01,944 --> 00:25:05,169
+security laser arrays programmed to incinerate foreign data
+
+630
+00:25:05,182 --> 00:25:06,894
+packets and rogue entities.
+
+631
+00:25:07,706 --> 00:25:10,556
+Studying the laser sweep patterns on my telepresence
+
+632
+00:25:10,569 --> 00:25:13,744
+HUD, I immediately recognised the underlying cycle:
+
+633
+00:25:13,931 --> 00:25:17,056
+the beams fired on exact sixty-hertz clock ticks.
+
+634
+00:25:17,882 --> 00:25:21,807
+Pre-loading an algorithmic cadence dodge into Vanguard-Zero's firmware,
+
+635
+00:25:22,007 --> 00:25:23,932
+I set the automaton into motion,
+
+636
+00:25:24,145 --> 00:25:26,932
+slipping between the intersecting laser grids with pinpoint
+
+637
+00:25:26,945 --> 00:25:27,720
+accuracy.
+
+638
+00:25:28,538 --> 00:25:29,963
+On Floor Sixty-Two
+
+639
+00:25:30,126 --> 00:25:32,776
+Vanguard-Zero encountered the Silicon Sentinels
+
+640
+00:25:33,013 --> 00:25:36,826
+heavy automaton enforcers wielding solid-state barrier shields.
+
+641
+00:25:37,658 --> 00:25:40,208
+The sentinels formed an impenetrable shield-wall
+
+642
+00:25:40,396 --> 00:25:43,546
+deflecting frontal assaults and channeling high-voltage containment
+
+643
+00:25:43,558 --> 00:25:44,958
+arcs along the corridor.
+
+644
+00:25:45,770 --> 00:25:48,470
+Engaging manual override for four seconds,
+
+645
+00:25:48,633 --> 00:25:51,195
+I had Vanguard-Zero vault onto the side wall,
+
+646
+00:25:51,433 --> 00:25:54,445
+running horizontally along the vertical monolith surface.
+
+647
+00:25:55,274 --> 00:25:56,937
+Dropping behind the shield line,
+
+648
+00:25:57,124 --> 00:25:59,837
+the automaton cleanly severed the power linkages on
+
+649
+00:25:59,849 --> 00:26:00,874
+their rear chassis,
+
+650
+00:26:01,049 --> 00:26:03,699
+deactivating three sentinels before they could pivot.
+
+651
+00:26:04,514 --> 00:26:07,827
+By Floor Sixty-Five the Spire's data bus cables
+
+652
+00:26:07,839 --> 00:26:09,652
+hummed with intense thermal output,
+
+653
+00:26:09,827 --> 00:26:13,439
+threatening to melt Vanguard-Zero's internal articulation joints.
+
+654
+00:26:14,258 --> 00:26:15,933
+From my Sub-Space workshop,
+
+655
+00:26:16,096 --> 00:26:18,708
+I routed ten thousand cooling enhancement units through
+
+656
+00:26:18,721 --> 00:26:19,483
+the soul-link
+
+657
+00:26:19,658 --> 00:26:22,371
+encasing the puppet's limbs in a protective cryogenic
+
+658
+00:26:22,383 --> 00:26:23,058
+membrane.
+
+659
+00:26:23,882 --> 00:26:25,032
+Outside the shop,
+
+660
+00:26:25,145 --> 00:26:28,057
+Master Smith Corvus arrived carrying heavy crates of
+
+661
+00:26:28,070 --> 00:26:31,757
+refined steel reinforcement plates and reinforced brass hinges.
+
+662
+00:26:32,570 --> 00:26:33,733
+Bram, lad!'
+
+663
+00:26:33,883 --> 00:26:34,933
+the dwarf grinned,
+
+664
+00:26:35,058 --> 00:26:36,645
+wiping soot from his beard.
+
+665
+00:26:37,408 --> 00:26:39,483
+Vance told me to bring the finest dwarven
+
+666
+00:26:39,495 --> 00:26:40,095
+steel.
+
+667
+00:26:40,858 --> 00:26:44,258
+We're reinforcing your shop against high-tier siege engines!'
+
+668
+00:26:45,074 --> 00:26:47,462
+Much appreciated, Master Corvus,'
+
+669
+00:26:47,612 --> 00:26:48,262
+I nodded,
+
+670
+00:26:48,424 --> 00:26:51,024
+discretely tapping each steel plate with plus five
+
+671
+00:26:51,037 --> 00:26:53,587
+hundred structural durability before he bolted them into
+
+672
+00:26:53,599 --> 00:26:54,249
+place.
+
+673
+00:26:55,082 --> 00:26:56,532
+With our combined efforts,
+
+674
+00:26:56,632 --> 00:26:59,607
+Locke's Sundries was quickly transforming into an impregnable
+
+675
+00:26:59,620 --> 00:27:02,832
+fortress capable of withstanding direct artillery strikes.
+
+676
+00:27:03,650 --> 00:27:05,100
+Back inside the Spire,
+
+677
+00:27:05,238 --> 00:27:07,688
+Vanguard-Zero crossed Floor Sixty-Seven
+
+678
+00:27:07,888 --> 00:27:10,613
+slicing through automated repair drones that attempted to
+
+679
+00:27:10,625 --> 00:27:12,775
+reconstruct shattered security gates.
+
+680
+00:27:13,586 --> 00:27:16,474
+Floor Sixty-Eight unfolded across a narrow bridge of
+
+681
+00:27:16,486 --> 00:27:19,061
+floating light suspended above a bottomless abyss of
+
+682
+00:27:19,074 --> 00:27:19,511
+raw,
+
+683
+00:27:19,686 --> 00:27:21,399
+unallocated system memory.
+
+684
+00:27:22,226 --> 00:27:24,851
+Vanguard-Zero sprinted across the light bridge,
+
+685
+00:27:25,039 --> 00:27:28,339
+deflecting incoming photon missiles with rapid dagger parries
+
+686
+00:27:28,351 --> 00:27:30,989
+as the bridge dematerialised behind its heels.
+
+687
+00:27:31,802 --> 00:27:34,677
+Finally reaching the monumental obsidian vault doors of
+
+688
+00:27:34,690 --> 00:27:35,865
+Floor Sixty-Nine
+
+689
+00:27:36,090 --> 00:27:38,002
+the automaton came to a halt as the
+
+690
+00:27:38,015 --> 00:27:40,390
+air temperature plunged to absolute zero.
+
+691
+00:27:41,210 --> 00:27:44,010
+A heavy, omnipotent pressure radiated from the massive
+
+692
+00:27:44,023 --> 00:27:44,598
+gateway,
+
+693
+00:27:44,785 --> 00:27:47,835
+causing the dark-iron daggers to vibrate with high-frequency
+
+694
+00:27:47,848 --> 00:27:49,098
+acoustic resonance.
+
+695
+00:27:49,922 --> 00:27:50,535
+WARNING:
+
+696
+00:27:50,647 --> 00:27:52,585
+ENTERING HARDWARE MAINTENANCE CORE.
+
+697
+00:27:53,347 --> 00:27:54,460
+ENTITY DETECTED:
+
+698
+00:27:54,622 --> 00:27:57,085
+LEVEL 70 AUTOMATED GARBAGE COLLECTOR.
+
+699
+00:27:57,914 --> 00:27:59,977
+Checking my Sub-Space status screen,
+
+700
+00:28:00,164 --> 00:28:02,539
+I confirmed the Silicon Ark mainframe had reached
+
+701
+00:28:02,552 --> 00:28:04,027
+eighty-five percent assembly
+
+702
+00:28:04,277 --> 00:28:05,964
+ready to interface with the core.
+
+703
+00:28:06,794 --> 00:28:08,494
+If I conquered Floor Seventy,
+
+704
+00:28:08,657 --> 00:28:10,307
+I could inject the first phase of the
+
+705
+00:28:10,319 --> 00:28:11,407
+decoupling patch,
+
+706
+00:28:11,582 --> 00:28:14,894
+securing District Nine's three hundred thousand souls forever.
+
+707
+00:28:15,722 --> 00:28:18,922
+Locking my focus onto Vanguard-Zero's sensory feed,
+
+708
+00:28:19,122 --> 00:28:22,297
+I gripped my developer stylus with unyielding resolve.
+
+709
+00:28:23,060 --> 00:28:24,147
+Open the gates.'
+
+710
+00:28:24,962 --> 00:28:27,637
+The massive obsidian slabs parted with a thunderous
+
+711
+00:28:27,650 --> 00:28:28,087
+roar,
+
+712
+00:28:28,300 --> 00:28:31,187
+releasing a shockwave of dark-matter static that swallowed
+
+713
+00:28:31,200 --> 00:28:32,950
+the corridor in absolute night.
+
+714
+00:28:33,770 --> 00:28:35,358
+Stepping through the threshold,
+
+715
+00:28:35,483 --> 00:28:38,520
+Vanguard-Zero entered a colossal spherical chamber bathed
+
+716
+00:28:38,533 --> 00:28:39,058
+in eerie,
+
+717
+00:28:39,233 --> 00:28:41,020
+volumetric violet starlight.
+
+718
+00:28:41,834 --> 00:28:43,572
+Hovering in the center of the void was
+
+719
+00:28:43,584 --> 00:28:45,359
+the Floor Seventy Core Boss:
+
+720
+00:28:45,547 --> 00:28:46,859
+the Archon of Deletion
+
+721
+00:28:47,097 --> 00:28:50,009
+a monumental eight-metre four-armed obsidian construct.
+
+722
+00:28:50,834 --> 00:28:53,459
+Crowned by a rotating halo of black-hole event
+
+723
+00:28:53,472 --> 00:28:56,209
+horizon rings and floating violet data cubes,
+
+724
+00:28:56,422 --> 00:28:59,859
+its luminous purple hexagonal eye fixed upon Vanguard-Zero
+
+725
+00:29:00,674 --> 00:29:02,399
+In its upper and lower hands,
+
+726
+00:29:02,524 --> 00:29:05,674
+the Archon brandished dual two-metre null-beam data scythes
+
+727
+00:29:05,687 --> 00:29:08,674
+crackling with crimson-violet reality-unmaking lightning.
+
+728
+00:29:09,506 --> 00:29:10,819
+ENTITY DESIGNATION:
+
+729
+00:29:10,919 --> 00:29:12,856
+SPIRE GARBAGE COLLECTOR DAEMON.
+
+730
+00:29:13,619 --> 00:29:14,344
+DIRECTIVE:
+
+731
+00:29:14,581 --> 00:29:17,694
+PURGE UNREFERENCED DATA POINTERS AND OVERFLOW MEMORY.
+
+732
+00:29:18,506 --> 00:29:19,881
+Without a word of greeting,
+
+733
+00:29:20,031 --> 00:29:22,319
+the Archon swung both null scythes in an
+
+734
+00:29:22,331 --> 00:29:25,406
+explosive cross-cleave unleashing an expanding wave
+
+735
+00:29:25,419 --> 00:29:26,531
+of pure erasure.
+
+736
+00:29:27,362 --> 00:29:28,825
+Where the null wave struck,
+
+737
+00:29:28,925 --> 00:29:29,812
+the very air,
+
+738
+00:29:29,975 --> 00:29:31,350
+physical flagstones,
+
+739
+00:29:31,525 --> 00:29:34,075
+and gravitational vectors ceased to exist,
+
+740
+00:29:34,212 --> 00:29:36,112
+deleted instantly from reality.
+
+741
+00:29:36,938 --> 00:29:38,963
+Engaging full MANUAL OVERRIDE:
+
+742
+00:29:39,138 --> 00:29:40,576
+LEVEL THREE OVERCLOCK,
+
+743
+00:29:40,763 --> 00:29:43,501
+I took complete command of Vanguard-Zero's every motor
+
+744
+00:29:43,513 --> 00:29:45,413
+circuit from my Sub-Space station.
+
+745
+00:29:46,226 --> 00:29:49,239
+Channeling fifty thousand kinetic enhancement units into the
+
+746
+00:29:49,251 --> 00:29:50,189
+puppet's legs,
+
+747
+00:29:50,376 --> 00:29:53,726
+I propelled Vanguard-Zero into a hypersonic aerial arc,
+
+748
+00:29:53,826 --> 00:29:55,401
+clearing the null shockwave.
+
+749
+00:29:56,234 --> 00:29:58,197
+Diving downward like a dark meteor,
+
+750
+00:29:58,359 --> 00:30:01,497
+Vanguard-Zero drove both plus five hundred daggers toward
+
+751
+00:30:01,509 --> 00:30:03,772
+the Archon's central purple optical core.
+
+752
+00:30:04,586 --> 00:30:06,999
+But the Archon's second pair of arms snapped
+
+753
+00:30:07,011 --> 00:30:08,511
+upward with blinding speed,
+
+754
+00:30:08,686 --> 00:30:11,974
+intercepting the blades with an impenetrable null-field barrier.
+
+755
+00:30:12,794 --> 00:30:15,519
+The collision released a shockwave of thunderous static
+
+756
+00:30:15,532 --> 00:30:17,519
+that knocked Vanguard-Zero backward,
+
+757
+00:30:17,682 --> 00:30:20,519
+unravelling the outer edge of its dark-iron daggers.
+
+758
+00:30:21,338 --> 00:30:21,888
+WARNING:
+
+759
+00:30:22,076 --> 00:30:24,051
+WEAPON DURABILITY COMPROMISED.
+
+760
+00:30:24,813 --> 00:30:27,651
+NULL PARTICLES DECONSTRUCTING MOLECULAR BONDS.
+
+761
+00:30:28,413 --> 00:30:30,326
+The damage alert flashed amber.
+
+762
+00:30:31,154 --> 00:30:32,454
+The Archon advanced,
+
+763
+00:30:32,542 --> 00:30:35,504
+spinning both two-metre scythes in an inescapable sphere
+
+764
+00:30:35,517 --> 00:30:37,892
+of crimson-violet blades that closed in from all
+
+765
+00:30:37,904 --> 00:30:38,617
+sides.
+
+766
+00:30:39,434 --> 00:30:42,184
+Its black-hole event horizon halo expanded,
+
+767
+00:30:42,347 --> 00:30:45,734
+generating a localized singularity that dragged Vanguard-Zero
+
+768
+00:30:45,747 --> 00:30:47,859
+inexorably toward the central blades.
+
+769
+00:30:48,674 --> 00:30:50,224
+A garbage collector daemon,'
+
+770
+00:30:50,412 --> 00:30:53,412
+I muttered, analyzing its attack vectors with cold,
+
+771
+00:30:53,549 --> 00:30:54,674
+clinical logic.
+
+772
+00:30:55,437 --> 00:30:57,649
+You look for null references to delete...'
+
+773
+00:30:58,466 --> 00:31:01,341
+Then let's feed you the ultimate unhandled exception.'
+
+774
+00:31:02,104 --> 00:31:03,854
+Reaching into my sovereign bank,
+
+775
+00:31:03,991 --> 00:31:06,391
+I prepared a catastrophic logic payload.
+
+776
+00:31:07,202 --> 00:31:10,240
+As the gravitational pull dragged Vanguard-Zero within
+
+777
+00:31:10,252 --> 00:31:12,252
+three paces of the spinning scythes,
+
+778
+00:31:12,440 --> 00:31:14,677
+I did not attempt to dodge or resist.
+
+779
+00:31:15,506 --> 00:31:18,206
+Instead, I commanded the puppet to release both
+
+780
+00:31:18,219 --> 00:31:19,369
+dark-iron daggers,
+
+781
+00:31:19,556 --> 00:31:22,381
+hurling them directly into the Archon's glowing hexagonal
+
+782
+00:31:22,394 --> 00:31:23,331
+optical core.
+
+783
+00:31:24,146 --> 00:31:27,659
+Mid-flight i transmitted an instantaneous remote semantic
+
+784
+00:31:27,671 --> 00:31:29,409
+refactor across the soul-link
+
+785
+00:31:29,621 --> 00:31:30,346
+REFACTOR:
+
+786
+00:31:30,509 --> 00:31:31,134
+DAGGERS
+
+787
+00:31:31,296 --> 00:31:33,084
+RECURSIVE NULL-POINTER STACK.
+
+788
+00:31:33,914 --> 00:31:35,789
+The blades shattered into an infinite,
+
+789
+00:31:35,952 --> 00:31:37,239
+recursive data loop,
+
+790
+00:31:37,427 --> 00:31:40,664
+piercing straight into the Archon's optical processing bus.
+
+791
+00:31:41,498 --> 00:31:44,161
+The Archon's four arms froze mid-strike as its
+
+792
+00:31:44,173 --> 00:31:46,861
+garbage collection routine attempted to resolve an infinite
+
+793
+00:31:46,873 --> 00:31:48,336
+circular reference pointer.
+
+794
+00:31:49,154 --> 00:31:50,467
+CRITICAL SYSTEM ERROR:
+
+795
+00:31:50,704 --> 00:31:52,192
+RECURSIVE MEMORY LEAK.
+
+796
+00:31:52,954 --> 00:31:56,267
+STACK OVERFLOW IN THREAD GARBAGE_COLLECTOR
+
+797
+00:31:57,029 --> 00:31:58,204
+PROCESS HALTED.
+
+798
+00:31:59,018 --> 00:32:01,918
+The black-hole event horizon collapsed with an explosive
+
+799
+00:32:01,931 --> 00:32:03,043
+sonic implosion,
+
+800
+00:32:03,206 --> 00:32:05,856
+and the monumental Archon crashed harmlessly to its
+
+801
+00:32:05,868 --> 00:32:08,381
+knees, paralyzed in system deadlock!
+
+802
+00:32:09,194 --> 00:32:12,594
+With the Archon incapacitated in infinite memory deadlock,
+
+803
+00:32:12,757 --> 00:32:15,844
+Vanguard-Zero dashed forward to the exposed central hardware
+
+804
+00:32:15,857 --> 00:32:17,619
+terminal at the back of the chamber.
+
+805
+00:32:18,434 --> 00:32:20,934
+The terminal was a towering obelisk of pulsing
+
+806
+00:32:20,947 --> 00:32:22,009
+crystalline glass,
+
+807
+00:32:22,184 --> 00:32:24,897
+exposing the raw root bus that interconnected all
+
+808
+00:32:24,909 --> 00:32:26,572
+one hundred floors of the Spire.
+
+809
+00:32:27,386 --> 00:32:30,349
+Thrusting both obsidian hands into the terminal's input
+
+810
+00:32:30,361 --> 00:32:31,024
+matrix,
+
+811
+00:32:31,186 --> 00:32:34,136
+Vanguard-Zero established a physical root bridge between the
+
+812
+00:32:34,149 --> 00:32:36,461
+Spire and my Sub-Space Sandbox.
+
+813
+00:32:37,274 --> 00:32:38,687
+Inside my workshop,
+
+814
+00:32:38,774 --> 00:32:41,037
+the Silicon Ark mainframe roared to life,
+
+815
+00:32:41,262 --> 00:32:43,649
+its crystalline bus lights flashing in rapid,
+
+816
+00:32:43,824 --> 00:32:45,399
+harmonious synchronization.
+
+817
+00:32:46,226 --> 00:32:47,951
+Taking my developer stylus,
+
+818
+00:32:48,114 --> 00:32:50,639
+I executed the live patch injection command:
+
+819
+00:32:50,851 --> 00:32:51,876
+INJECT PATCH:
+
+820
+00:32:52,039 --> 00:32:55,664
+DECOUPLE_DISTRICT_NINE_SOULS   SYS.
+
+821
+00:32:56,474 --> 00:32:57,512
+Line by line,
+
+822
+00:32:57,624 --> 00:33:00,937
+the compiled code overwrote the Spire's purge parameters,
+
+823
+00:33:01,099 --> 00:33:03,749
+transferring the soul registries of District Nine into
+
+824
+00:33:03,762 --> 00:33:05,762
+my external offline mainframe.
+
+825
+00:33:06,578 --> 00:33:07,816
+PATCH SUCCESSFUL.
+
+826
+00:33:08,578 --> 00:33:11,616
+300,000 SOUL RECORDS PERMANENTLY ISOLATED
+
+827
+00:33:11,628 --> 00:33:13,416
+FROM SPIRE REBOOT ROUTINE.
+
+828
+00:33:14,178 --> 00:33:16,378
+STORAGE CONFIRMED IN SILICON ARK.
+
+829
+00:33:17,210 --> 00:33:19,435
+A profound weight lifted from my shoulders as
+
+830
+00:33:19,448 --> 00:33:22,260
+the first major milestone of my continental salvation
+
+831
+00:33:22,273 --> 00:33:23,760
+plan clicked into place.
+
+832
+00:33:24,578 --> 00:33:26,091
+TRIAL SEVENTY COMPLETE.
+
+833
+00:33:26,853 --> 00:33:28,916
+CORE GUARDIAN ARCHON OVERRIDDEN.
+
+834
+00:33:29,678 --> 00:33:30,766
+CLIMBER UID:
+
+835
+00:33:30,903 --> 00:33:31,453
+LOCKE.
+
+836
+00:33:32,216 --> 00:33:33,378
+RECORD ACCREDITED.
+
+837
+00:33:34,202 --> 00:33:36,652
+The disabled Archon dissolved into a fountain of
+
+838
+00:33:36,665 --> 00:33:38,527
+rare prismatic demigod cores,
+
+839
+00:33:38,702 --> 00:33:41,915
+granting an astonishing one million enhancement units directly
+
+840
+00:33:41,927 --> 00:33:42,815
+into my bank.
+
+841
+00:33:43,634 --> 00:33:46,009
+Having secured the bridge and applied the patch,
+
+842
+00:33:46,172 --> 00:33:48,597
+I commanded Vanguard-Zero to step back into the
+
+843
+00:33:48,609 --> 00:33:50,834
+shadows of the Floor Seventy transit hub to
+
+844
+00:33:50,847 --> 00:33:51,634
+recharge.
+
+845
+00:33:52,466 --> 00:33:54,241
+But out in the imperial capital,
+
+846
+00:33:54,391 --> 00:33:57,091
+the completion of Floor Seventy triggered a cataclysmic
+
+847
+00:33:57,104 --> 00:34:00,016
+acoustic siren that shook the city's foundations.
+
+848
+00:34:00,842 --> 00:34:03,267
+The massive Tower Monument blazed with an aura
+
+849
+00:34:03,280 --> 00:34:05,417
+of blinding prismatic violet fire,
+
+850
+00:34:05,580 --> 00:34:07,630
+projecting the name BRAMWELL LOCKE
+
+851
+00:34:07,792 --> 00:34:10,617
+FLOOR 70' across the entire night sky.
+
+852
+00:34:11,450 --> 00:34:13,638
+On the high balcony of House Valerius,
+
+853
+00:34:13,763 --> 00:34:15,875
+Grand Duke Vane stood in silence,
+
+854
+00:34:16,063 --> 00:34:17,813
+watching the sky burn with the name of
+
+855
+00:34:17,825 --> 00:34:20,638
+the commoner who had surpassed all imperial scions.
+
+856
+00:34:21,458 --> 00:34:22,946
+In his gloved right hand,
+
+857
+00:34:23,071 --> 00:34:25,746
+the Grand Duke gripped the ancestral Imperial Void
+
+858
+00:34:25,758 --> 00:34:26,321
+Sceptre,
+
+859
+00:34:26,546 --> 00:34:29,996
+its dark-matter obsidian sphere pulsating with lethal SS-Rank
+
+860
+00:34:30,008 --> 00:34:30,546
+mana.
+
+861
+00:34:31,370 --> 00:34:33,933
+A commoner tool polisher in District Nine...'
+
+862
+00:34:34,695 --> 00:34:37,958
+Vane whispered, his cold voice vibrating with terrifying
+
+863
+00:34:37,970 --> 00:34:39,183
+spatial resonance.
+
+864
+00:34:39,945 --> 00:34:41,120
+He mocked my son,
+
+865
+00:34:41,245 --> 00:34:43,133
+and now he mocks my dynasty.'
+
+866
+00:34:43,946 --> 00:34:47,009
+Mobilise the Grand Inquisitor Host,' Vane ordered,
+
+867
+00:34:47,134 --> 00:34:48,834
+his crimson eyes flashing.
+
+868
+00:34:49,596 --> 00:34:50,946
+We march personally.
+
+869
+00:34:51,709 --> 00:34:53,371
+Whoever this Architect is,
+
+870
+00:34:53,521 --> 00:34:54,996
+he dies before dawn.'
+
+871
+00:34:55,826 --> 00:34:57,189
+Down in District Nine,
+
+872
+00:34:57,339 --> 00:34:59,689
+the cool night wind whistled through the cobblestone
+
+873
+00:34:59,701 --> 00:35:01,364
+alleys as the commoners slept,
+
+874
+00:35:01,526 --> 00:35:03,839
+unaware of the approaching imperial storm.
+
+875
+00:35:04,658 --> 00:35:06,596
+Outside Locke's Sundries and Tea,
+
+876
+00:35:06,733 --> 00:35:09,558
+Commander Vance Sterling stood sentinel with forty elite
+
+877
+00:35:09,571 --> 00:35:10,508
+Watch veterans,
+
+878
+00:35:10,708 --> 00:35:13,458
+their steel broadswords drawn in tense vigilance.
+
+879
+00:35:14,282 --> 00:35:17,045
+Suddenly, the night sky directly above the shop
+
+880
+00:35:17,057 --> 00:35:19,695
+fractured like glass as a hundred-metre spatial rift
+
+881
+00:35:19,707 --> 00:35:21,907
+tore open with an ear-splitting thunderclap.
+
+882
+00:35:22,730 --> 00:35:25,230
+Stepping through the spatial rift clad in ornate
+
+883
+00:35:25,243 --> 00:35:28,255
+crimson-and-black runic plate armor came Grand Duke Vane
+
+884
+00:35:28,268 --> 00:35:31,118
+Valerius himself, backed by a hundred Black Iron
+
+885
+00:35:31,130 --> 00:35:32,043
+Inquisitors.
+
+886
+00:35:32,858 --> 00:35:35,883
+The terrifying SS-Rank gravitational aura slammed
+
+887
+00:35:35,896 --> 00:35:36,733
+into the ground,
+
+888
+00:35:36,921 --> 00:35:39,871
+cracking the street flagstones and forcing Vance's guards
+
+889
+00:35:39,883 --> 00:35:40,783
+to their knees.
+
+890
+00:35:41,594 --> 00:35:43,744
+Emerging from the shop porch with a ceramic
+
+891
+00:35:43,757 --> 00:35:44,919
+cup of warm tea,
+
+892
+00:35:45,144 --> 00:35:47,594
+I looked up at the terrifying imperial oligarch
+
+893
+00:35:47,607 --> 00:35:48,294
+with a calm,
+
+894
+00:35:48,319 --> 00:35:49,332
+polite smile.
+
+895
+00:35:50,162 --> 00:35:50,875
+Good evening,
+
+896
+00:35:51,025 --> 00:35:51,825
+Grand Duke,'
+
+897
+00:35:51,975 --> 00:35:52,962
+I murmured calmly,
+
+898
+00:35:53,175 --> 00:35:55,487
+raising my cup as golden circuit runes sparked
+
+899
+00:35:55,500 --> 00:35:56,537
+up my sleeves.
+
+900
+00:35:57,300 --> 00:35:59,462
+I believe you're standing on my freshly swept
+
+901
+00:35:59,475 --> 00:36:00,112
+porch.'

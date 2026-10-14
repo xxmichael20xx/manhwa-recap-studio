@@ -509,6 +509,68 @@
       "episodes": [
         "EP03_The_Blood_Core_Siege_and_Floor_70"
       ]
+    },
+    {
+      "id": "high_chancellor_moros",
+      "name": "High Chancellor Moros",
+      "token": "@{High Chancellor Moros}",
+      "tier": 2,
+      "role": "Primary Political Antagonist (Imperial Council Leader & Golden Spire Guildmaster)",
+      "age": 58,
+      "stats_baseline": {
+        "level": 45,
+        "class": "Sovereign Guildmaster & High Chancellor",
+        "strength": 25,
+        "agility": 20,
+        "constitution": 35,
+        "perception": 85,
+        "talent": "Imperial Treasury Dominion & S-Rank Aristocratic Ward"
+      },
+      "appearance": {
+        "hair": "Oiled silver-white hair combed back with ornate gold hairpins",
+        "eyes": "Sharp calculating pale amber eyes with heavy aristocratic jowls",
+        "physique": "Rotund, dignified imperial build",
+        "attire": "Voluminous crimson and gold velvet ceremonial robes trimmed in white ermine fur, heavy gold signet rings",
+        "weapons": "Solid-gold sovereign cane topped with an amber core"
+      },
+      "dna_prompt_anchor": "@{High Chancellor Moros}, corrupt 58-year-old imperial oligarch, heavy aristocratic jowls, sneering expression, oiled silver-white hair combed back with gold hairpins, sharp pale amber eyes, voluminous crimson and gold velvet ceremonial robes trimmed in white ermine fur, heavy gold signet rings, solid-gold sovereign cane topped with amber core, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic palace lighting, vertical 9:16",
+      "reference_plate": "17_Antagonist_High_Chancellor_Moros.jpg",
+      "flowUuid": "1e2585a8-d3c3-42e0-aa9a-7aa075332a94",
+      "flowName": "High Chancellor Moros",
+      "episodes": [
+        "EP04_The_Open_Heresy_and_Floor_90"
+      ]
+    },
+    {
+      "id": "boss_star_devourer_behemoth",
+      "name": "Boss: Star-Devourer Behemoth",
+      "token": "@{Boss: Star-Devourer Behemoth}",
+      "tier": 3,
+      "role": "Floor 90 Calamity Overlord (Astral Supernova Serpent)",
+      "age": 10000,
+      "stats_baseline": {
+        "level": 90,
+        "class": "Sub-Orbital Astral Calamity",
+        "strength": 500,
+        "agility": 420,
+        "constitution": 999,
+        "perception": 750,
+        "talent": "Absolute Mana Absorption & Stellar Singularity Roar"
+      },
+      "appearance": {
+        "hair": "None, crown of crackling cosmic lightning horns",
+        "eyes": "Multiple glowing azure compound eyes along armored serpentine jaw",
+        "physique": "Colossal 1-kilometre cosmic serpentine dragon titan plated in deep-space obsidian scales reflecting purple nebulae",
+        "attire": "None, natural cosmic void carapace",
+        "weapons": "Miniature blazing supernova stellar heart visible through translucent chest plating, cosmic lightning tentacles"
+      },
+      "dna_prompt_anchor": "@{Boss: Star-Devourer Behemoth}, colossal 1-kilometre cosmic serpentine dragon titan drifting in dark space void, interlocking obsidian scales reflecting purple nebulae, glowing azure compound eyes along jaw, cosmic lightning tentacles, pulsing miniature blazing supernova stellar heart in chest, dark fantasy sci-fi action manhwa art style, sharp ink linework, volumetric starlight illumination, vertical 9:16",
+      "reference_plate": "18_Boss_Star_Devourer_Behemoth.jpg",
+      "flowUuid": "6de7500f-e8c7-4388-a150-2064c8c7196e",
+      "flowName": "Boss: Star-Devourer Behemoth",
+      "episodes": [
+        "EP04_The_Open_Heresy_and_Floor_90"
+      ]
     }
   ]
 }

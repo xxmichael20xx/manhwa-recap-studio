@@ -47,9 +47,10 @@ Equipped with a friendly smile, rolled-up craftsman sleeves, and a calm, polite 
 | Character | Role / Archetype | Apparent Tier | True Foundation & Combat Identity |
 | :--- | :--- | :--- | :--- |
 | **Bramwell Locke ("Bram")** | Protagonist | Common Tool Polisher | **The Sovereign Architect:** Smiling, unbothered, hyper-intelligent game designer; wields uncapped $+N$ bank and 2-word semantic reality rewrites. |
-| **Linnea Croft** | Supportive Ally | Common Herbalist | **Former Botanist Transmigrator:** Kind-hearted neighbour running an herb stall; her watering can is enhanced to $+50\text{ Growth Velocity}$. |
+| **Linnea Croft** | Supportive Ally $\rightarrow$ Origin Deity | Common Herbalist | **Dormant World Goddess:** Kind-hearted neighbour running an herb stall; her withering garden anchors the dying World Core; awakened through Bram's structured logic enhancements to become co-architect of the new reality engine. |
 | **Lord Cassian Valerius** | Arrogant Aristocrat | S-Rank Sunfire Knight | Prodigy scion of House Vane-Valerius; wields the ancestral *Sunfire Rapier*, which Bram rewrites into *Sunfire Chalk*. |
-| **Commander Vance Sterling** | Imperial Watch Commander | A-Rank Steel Vanguard | Stern gatekeeper of the Tower of Demigods who investigates anonymous clearing records on the public Tower Monument. |
+| **Grand Duke Vane Valerius** | Primary Feudal Antagonist | SS-Rank Void Sovereign | Patriarch of House Valerius; wields the *Imperial Void Sceptre*; leads the corrupt noble monopoly determined to extinguish Bram's commoner ascendance. |
+| **Commander Vance Sterling** | Imperial Watch Commander | A-Rank Steel Vanguard | Stern gatekeeper of the Tower of Demigods who investigates clearance records, uncovers the truth, and allies the Watch with Bram. |
 | **The Abyssal Minotaur** | Floor 10 Trial Boss | Calamity Demon Beast | 5-metre armored bovine titan wielding a spiked granite warhammer; obliterated by Bram's $+2,500$ pine needle. |
 
 ---
@@ -61,13 +62,35 @@ Equipped with a friendly smile, rolled-up craftsman sleeves, and a calm, polite 
 3. **Canonical Refactor Table:**
    - `"Rusted Iron Dagger"` $\rightarrow$ `"Rusted [Abyssal Meteorite] Dagger"` (Appearance: rusty kitchen blade; Output: cuts divine metal).
    - `"Imperial Sunfire Rapier"` $\rightarrow$ `"Imperial [Sunfire Chalk]"` (Appearance: glowing golden rapier; Output: crumbles upon impact).
+   - `"Imperial Void Sceptre"` $\rightarrow$ `"Imperial [Void Duster]"` (Appearance: dark-matter orb sceptre; Output: harmless bundle of feathers).
    - `"Linen Work Shirt"` $\rightarrow$ `"[Divine Aegis] Shirt"` (Appearance: cheap woven cloth; Output: absolute ballistic deflection).
    - `"Ordinary Pine Needle"` $\rightarrow$ `"[Orbital Ballistic] Needle"` (Appearance: small green leaf; Output: supersonic armor-piercing projectile).
 
 ---
 
-## 🎬 5. Episodic Structure: EP01 (3 Batches • 72 Scenes • 20 Mins)
+## 🎬 5. Episodic Structure & Roadmap
 
-- **Batch A (Scenes 001–024):** The Great Transmigration Arch, aristocratic slave auctions, Bram's "Common Tool Polisher" awakening, setting up *Locke’s Sundries & Tea* in the outer slums, and grinding the first 1,000 enhancement cycles on rusted nails.
-- **Batch B (Scenes 025–048):** Saving Linnea Croft's withering medicinal garden with a $+50\text{ Growth Velocity}$ watering can; Lord Cassian Valerius extorting the commoner market; Bram politely rewriting the *Sunfire Rapier* into *Sunfire Chalk*; siphoning 10,000 units into the bank.
-- **Batch C (Scenes 049–072):** Midnight entry into the 100-Floor Tower; clearing Floors 1–9 with a wooden broom and pocket pebbles; vaporising the Floor 10 Abyssal Minotaur with a $+2,500$ pine needle; dawn siren alarm across the capital as the public Tower Monument flashes a legendary record.
+### EP01: The Smiling Architect and The Chalk Rapier (3 Batches • 72 Scenes • 20 Mins)
+- **Batch A (Scenes 001–024):** Transmigration arch, "Common Tool Polisher" awakening, setting up *Locke’s Sundries & Tea* in the slums, and grinding the first 1,000 enhancement cycles.
+- **Batch B (Scenes 025–048):** Saving Linnea Croft's withering medicinal garden with a $+50\text{ Growth Velocity}$ watering can; Lord Cassian Valerius extorting the commoner market; Bram rewriting the *Sunfire Rapier* into *Sunfire Chalk*.
+- **Batch C (Scenes 049–072):** Midnight entry into the Tower; clearing Floors 1–9 with a wooden broom; vaporising the Floor 10 Abyssal Minotaur with a $+2,500$ pine needle; dawn siren alarm across the capital.
+
+### EP02: The Architect's Dilemma and Floor 35 (9 Batches • 217 Scenes • 40 Mins)
+- **Batches 01–03:** Commander Vance Sterling's forensic investigation; Bram's economic expansion and automated workshop crafting; setting up the Sub-Space Sandbox.
+- **Batches 04–06:** Clearing Floors 11–25; uncovering the Spire's systemic data anomalies; Vance secretly observing Bram's impossible efficiency.
+- **Batches 07–09:** Defeating the Floor 35 Chimera Sovereign; extracting ancient architectural logs; establishing the first communication link with the Spire's root hypervisor.
+
+### EP03: The Automaton Proxy and The Sub-Space Sandbox (9 Batches • 217 Scenes • 40 Mins)
+- **Batches 01–03:** Building the Vanguard-Zero automaton proxy; noble guild sanctions against District Nine; Linnea expanding her thriving medicinal greenhouse.
+- **Batches 04–06:** Rapidly clearing Floors 36–69 via proxy remote piloting; collecting rare demigod cores to fuel the Silicon Ark keels.
+- **Batches 07–09:** Overriding the Floor 70 Core Guardian Archon via recursive memory leak injection; broadcasting Bramwell Locke's name across the capital sky; Grand Duke Vane Valerius mobilising the Black Iron Inquisitors to District Nine.
+
+### EP04: The Open Heresy and Floor 90 (9 Batches • 216 Scenes • 40 Mins)
+- **Batches 01–03 (Act 1):** The confrontation outside Locke's Sundries; Bram refactoring Vane's *Void Sceptre* into a feather duster; physical durability check fracturing Vane's strike; tea with Vance.
+- **Batches 04–06 (Act 2 & 3):** The Imperial Chamber of Peers confrontation; Bram reveals the 10,000-year reality harvest countdown ($T - 14\text{ Days}$); nobles decry it as treason to safeguard their monopolies; Vance defects with the Imperial Watch; Linnea's blooming garden resonance.
+- **Batches 07–09 (Act 4):** Blitzing Floors 71–90 with Vanguard-Zero and refactored railgun pellets; shattering the Floor 90 Star-Devourer Behemoth; the continental sky turns crimson as the countdown drops to $T - 72\text{ Hours}$.
+
+### EP05: The Goddess's Garden and The New Architect (12 Batches • 288 Scenes • 60 Mins — Grand Finale)
+- **Batches 01–04 (Phase 1):** Ascending Floors 91–99; noble houses collapsing in panic and begging for shelter aboard the Sub-Space Silicon Ark; Bram prioritizing commoners and honest craftsmen.
+- **Batches 05–08 (Phase 2 & 3):** Floor 100 white void; confronting the Demigod Overseer Prime Unit Alpha; Bram's deadpan bug report disintegrating the boss; the 00:00:00 timer paradox where the Spire demands a reality decision.
+- **Batches 09–12 (Phase 4 & 5):** Linnea Croft reveals her true identity as the Origin Goddess; explaining why the Tower remained unconquered for 10,000 years (corrupt talent monopolies); Bram and Linnea rewrite the world OS into an open, merit-based system; Locke's Sundries & Tea epilogue.

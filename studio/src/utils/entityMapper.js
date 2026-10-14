@@ -1,3 +1,14 @@
+export const COMMON_STOP_WORDS = new Set([
+  'high', 'grand', 'chief', 'master', 'shadow', 'stone', 'lord', 'director',
+  'instructor', 'commander', 'sub', 'unit', 'boss', 'character', 'young',
+  'ancient', 'demonic', 'celestial', 'imperial', 'dark', 'void', 'royal',
+  'iron', 'gold', 'golden', 'student', 'phantom', 'dwarf', 'masked', 'proxy',
+  'archon', 'golem', 'titan', 'chimera', 'wyrm', 'minotaur', 'behemoth',
+  'sceptre', 'blade', 'spear', 'bow', 'sword', 'armor', 'plate', 'shield',
+  'chancellor', 'proctor', 'vanguard', 'syndicate', 'mercenary', 'official',
+  'automaton', 'construct', 'blacksmith'
+])
+
 /**
  * Google Flow Entity ID Mapper & Token Transformer Utility
  */
@@ -130,8 +141,8 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
                           .replace(/\s*-\s*.*$/, '')
                           .trim()
       if (cleanKey && cleanKey.length >= 3) aliases.add(cleanKey)
-      const words = cleanKey.split(/\s+/).filter(w => w.length >= 3)
-      if (words.length > 0) aliases.add(words[0])
+      const words = cleanKey.split(/\s+/).filter(w => w.length >= 3 && !COMMON_STOP_WORDS.has(w.toLowerCase()))
+      words.forEach(w => aliases.add(w))
       if (cleanKey.toLowerCase().includes('bramwell')) aliases.add('Bram')
       if (cleanKey.toLowerCase().includes('minotaur')) aliases.add('Minotaur')
       if (cleanKey.toLowerCase().includes('cassian')) aliases.add('Cassian')
@@ -259,22 +270,23 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
     })
   }
 
-  // 3. Dynamic lookup from entityMap based on tokens or text references
-  if (entityMap && typeof entityMap === 'object') {
+  // 3. Dynamic lookup from entityMap based on tokens or text references ONLY when no explicit character ref was provided
+  if (charRefs.length === 0 && entityMap && typeof entityMap === 'object') {
     for (const [key, uuid] of Object.entries(entityMap)) {
       if (!uuid) continue
       const isItem = /^(Weapon|Item):/i.test(key)
+      if (isItem) continue
       const tokenPattern = `@{${key}}`
       let hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
-      if (!hasToken && !isItem) {
+      if (!hasToken) {
         const cleanKey = key.replace(/^(Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim()
-        const words = cleanKey.split(/\s+/).filter(w => w.length >= 3)
+        const words = cleanKey.split(/\s+/).filter(w => w.length >= 3 && !COMMON_STOP_WORDS.has(w.toLowerCase()))
         const checkNames = [cleanKey, ...words]
         if (cleanKey.toLowerCase().includes('bramwell')) checkNames.push('Bram')
-        if (cleanKey.toLowerCase().includes('minotaur')) checkNames.push('Minotaur')
         if (cleanKey.toLowerCase().includes('cassian')) checkNames.push('Cassian')
         if (cleanKey.toLowerCase().includes('vance')) checkNames.push('Vance')
         for (const n of checkNames) {
+          if (!n || COMMON_STOP_WORDS.has(n.toLowerCase())) continue
           const re = new RegExp(`\\b${n}\\b`, 'i')
           if (re.test(text)) {
             hasToken = true
@@ -283,14 +295,24 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
         }
       }
       if (hasToken) {
-        if (isItem) {
-          if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
-        } else {
-          if (key === 'Caelen Vance - Student Archer' && text.includes('Caelen Vance - Phantom Marksman')) {
-            continue
-          }
-          if (!charRefs.includes(uuid)) charRefs.push(uuid)
+        if (key === 'Caelen Vance - Student Archer' && text.includes('Caelen Vance - Phantom Marksman')) {
+          continue
         }
+        if (!charRefs.includes(uuid)) charRefs.push(uuid)
+      }
+    }
+  }
+
+  // 3b. Dynamic lookup for items ONLY when no explicit item ref was provided
+  if (itemRefs.length === 0 && entityMap && typeof entityMap === 'object') {
+    for (const [key, uuid] of Object.entries(entityMap)) {
+      if (!uuid) continue
+      const isItem = /^(Weapon|Item):/i.test(key)
+      if (!isItem) continue
+      const tokenPattern = `@{${key}}`
+      let hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
+      if (hasToken) {
+        if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
       }
     }
   }

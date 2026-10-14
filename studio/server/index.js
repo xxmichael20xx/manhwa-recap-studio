@@ -207,6 +207,16 @@ app.get('/api/episodes/:franchiseId/omnibus-stream', handleOmnibusStream)
 app.get('/api/franchises/:franchiseId/omnibus-files', handleOmnibusFiles)
 app.get('/api/episodes/:franchiseId/omnibus-files', handleOmnibusFiles)
 
+app.get(['/api/franchises/:franchiseId/omnibus-metadata', '/api/episodes/:franchiseId/omnibus-metadata'], async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const metadata = await VideoService.getOmnibusMetadata(franchiseId)
+    res.json(metadata || { message: 'No omnibus metadata available yet' })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 app.delete('/api/franchises/:franchiseId/omnibus-files', handleOmnibusDelete)
 app.delete('/api/episodes/:franchiseId/omnibus-files', handleOmnibusDelete)
 
@@ -1187,10 +1197,36 @@ app.post('/api/episodes/:franchiseId/:episodeId/upload-thumbnail-variant', async
 })
 
 // Serve Thumbnail Image
-app.get(['/api/episodes/:franchiseId/:episodeId/thumbnail/:filename', '/api/episodes/:franchiseId/:episodeId/thumbnails/:filename'], (req, res) => {
+app.get([
+  '/api/episodes/:franchiseId/:episodeId/thumbnail/:filename', 
+  '/api/episodes/:franchiseId/:episodeId/thumbnails/:filename',
+  '/api/franchises/:franchiseId/omnibus/thumbnail/:filename',
+  '/api/franchises/:franchiseId/omnibus/thumbnails/:filename'
+], (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
   const safeFilename = path.basename(filename)
-  const thumbPath = path.join(projectRoot, '01_Franchises', franchiseId, episodeId, 'thumbnails', safeFilename)
+  let thumbPath = episodeId && episodeId !== 'omnibus_master' && episodeId !== 'omnibus'
+    ? path.join(projectRoot, '01_Franchises', franchiseId, episodeId, 'thumbnails', safeFilename)
+    : path.join(projectRoot, '01_Franchises', franchiseId, 'omnibus', safeFilename)
+
+  if (!fs.existsSync(thumbPath)) {
+    const omniPath = path.join(projectRoot, '01_Franchises', franchiseId, 'omnibus', safeFilename)
+    if (fs.existsSync(omniPath)) {
+      thumbPath = omniPath
+    } else {
+      const franchisePath = path.join(projectRoot, '01_Franchises', franchiseId)
+      if (fs.existsSync(franchisePath)) {
+        const eps = fs.readdirSync(franchisePath).filter(d => d.startsWith('EP'))
+        if (eps.length > 0) {
+          const epThumbPath = path.join(franchisePath, eps[0], 'thumbnails', safeFilename)
+          if (fs.existsSync(epThumbPath)) {
+            thumbPath = epThumbPath
+          }
+        }
+      }
+    }
+  }
+
   if (fs.existsSync(thumbPath)) {
     res.sendFile(thumbPath)
   } else {

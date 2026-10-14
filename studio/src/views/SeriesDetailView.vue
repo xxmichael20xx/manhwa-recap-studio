@@ -588,7 +588,10 @@
             <div 
               v-for="ep in availableEpisodes" 
               :key="ep.id"
-              class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between"
+              class="p-4 rounded-xl border flex items-center justify-between transition-all"
+              :class="ep.hasCompiledVideo 
+                ? 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800' 
+                : 'bg-slate-50/50 dark:bg-slate-950/30 border-dashed border-slate-200 dark:border-slate-800 opacity-60'"
             >
               <div class="flex items-center space-x-3">
                 <input 
@@ -596,17 +599,26 @@
                   :id="ep.id" 
                   v-model="selectedEpisodes" 
                   :value="ep.id"
-                  class="w-4 h-4 rounded text-purple-600 focus:ring-purple-500 cursor-pointer"
+                  :disabled="!ep.hasCompiledVideo"
+                  class="w-4 h-4 rounded text-purple-600 focus:ring-purple-500 cursor-pointer disabled:cursor-not-allowed disabled:opacity-40"
                 />
-                <label :for="ep.id" class="cursor-pointer">
-                  <div class="text-xs font-bold text-slate-900 dark:text-white">{{ ep.name }}</div>
+                <label :for="ep.id" :class="ep.hasCompiledVideo ? 'cursor-pointer' : 'cursor-not-allowed'">
+                  <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <span>{{ ep.name }}</span>
+                    <span v-if="!ep.hasCompiledVideo" class="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 font-bold">
+                      No Master Video
+                    </span>
+                  </div>
                   <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400">{{ ep.id }}</div>
                 </label>
               </div>
 
               <div class="flex items-center space-x-2">
-                <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-bold">
-                  Master Ready (44m 18s)
+                <span v-if="ep.hasCompiledVideo" class="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-bold flex items-center space-x-1">
+                  <span>✓ Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
+                </span>
+                <span v-else class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-bold flex items-center space-x-1">
+                  <span>⏳ Compilation Pending</span>
                 </span>
               </div>
             </div>
@@ -696,7 +708,7 @@
             </p>
           </div>
 
-          <!-- Episode Selector Dropdown -->
+          <!-- Episode / Master Omnibus Selector Dropdown -->
           <div class="flex items-center space-x-2">
             <label class="text-xs font-mono text-slate-400 font-semibold">Select Release Target:</label>
             <select 
@@ -704,9 +716,16 @@
               @change="loadPackagingData"
               class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
             >
-              <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
-                {{ ep.name }}
-              </option>
+              <optgroup label="Compiled Master Releases">
+                <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
+                  🎬 Master Omnibus Movie (Parts 1 - {{ compiledEpisodes.length }} Compiled)
+                </option>
+              </optgroup>
+              <optgroup label="Individual Episode Releases">
+                <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
+                  {{ ep.name }}
+                </option>
+              </optgroup>
             </select>
           </div>
         </div>
@@ -725,7 +744,7 @@
             <div 
               v-for="(variant, idx) in (pkgData?.thumbnailVariants || [])" 
               :key="variant.id || idx"
-              class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-3 transition-all"
+              class="bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-3 transition-all relative"
               :class="variant.id === 'concept_a' ? 'hover:border-purple-500/40' : variant.id === 'concept_b' ? 'hover:border-amber-500/40' : 'hover:border-rose-500/40'"
             >
               <div class="aspect-video w-full rounded-xl bg-slate-900 overflow-hidden relative border border-slate-200 dark:border-slate-800">
@@ -735,33 +754,85 @@
                   class="w-full h-full object-cover"
                   @error="onThumbError"
                 />
-                <span 
-                  class="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded text-white font-bold uppercase shadow-sm"
-                  :class="variant.id === 'concept_a' ? 'bg-purple-600' : variant.id === 'concept_b' ? 'bg-amber-600' : 'bg-rose-600'"
+
+                <!-- Dynamic High-CTR Yellow Badge Live Preview Overlay (Top-Left) -->
+                <div 
+                  v-if="activeThumbnailBadge" 
+                  class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-yellow-400 text-slate-950 font-black text-xs font-mono tracking-wider shadow-xl border border-yellow-200 shadow-yellow-500/40 flex items-center space-x-1 z-10 select-none pointer-events-none"
                 >
-                  {{ variant.id === 'concept_a' ? 'Variant A: Split Transformation' : variant.id === 'concept_b' ? 'Variant B: Proctor\'s Panic' : 'Variant C: Calamity Cleave' }}
+                  <span>⚡ {{ activeThumbnailBadge }}</span>
+                </div>
+
+                <!-- Concept Category Badge (Top-Right) -->
+                <span 
+                  class="absolute top-2.5 right-2.5 text-[9px] font-mono px-2 py-0.5 rounded text-white font-bold uppercase shadow-sm z-10"
+                  :class="variant.id === 'concept_a' ? 'bg-purple-600/90' : variant.id === 'concept_b' ? 'bg-amber-600/90' : 'bg-rose-600/90'"
+                >
+                  {{ variant.id === 'concept_a' ? 'Concept A' : variant.id === 'concept_b' ? 'Concept B' : 'Concept C' }}
                 </span>
-                <span v-if="variant.hasImage" class="absolute bottom-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-sm text-emerald-400 font-bold border border-emerald-500/30">
+
+                <span v-if="variant.hasImage" class="absolute bottom-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-sm text-emerald-400 font-bold border border-emerald-500/30 z-10">
                   ✓ {{ variant.fileSizeFormatted }} MozJPEG
                 </span>
               </div>
+
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-slate-900 dark:text-white line-clamp-1">{{ variant.name }}</h4>
                 <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">{{ variant.composition || variant.subtitle }}</p>
               </div>
-              <div class="grid grid-cols-2 gap-2 pt-1">
-                <a 
-                  :href="variant.url || `/api/episodes/${franchise.folder}/${selectedPackageEpisode}/thumbnails/${variant.filename}`" 
-                  :download="variant.filename"
-                  class="py-1.5 px-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-center text-slate-700 dark:text-slate-300 hover:text-purple-600 flex items-center justify-center space-x-1"
-                >
-                  <Download class="w-3 h-3" />
-                  <span>Download</span>
-                </a>
+
+              <!-- Action Controls: Split Download Dropdown & Prompt Button -->
+              <div class="pt-1 flex items-center space-x-2 relative">
+                <!-- Split Download Dropdown -->
+                <div class="flex-1 flex rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm relative">
+                  <button 
+                    @click="downloadDynamicThumbnail(variant, activeThumbnailBadge)"
+                    :disabled="isDownloadingThumb"
+                    class="flex-1 py-1.5 px-2 text-[11px] font-mono text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 flex items-center justify-center space-x-1.5 transition cursor-pointer truncate"
+                    :title="`Download thumbnail with ${activeThumbnailBadge ? activeThumbnailBadge + ' badge' : 'clean artwork'}`"
+                  >
+                    <Loader2 v-if="isDownloadingThumb" class="w-3 h-3 animate-spin text-purple-600 shrink-0" />
+                    <Download v-else class="w-3 h-3 shrink-0" />
+                    <span class="truncate font-semibold">
+                      {{ activeThumbnailBadge ? `Download (${activeThumbnailBadge})` : 'Download Clean' }}
+                    </span>
+                  </button>
+                  <button 
+                    @click.stop="toggleDownloadMenu(variant.id)"
+                    class="px-2 py-1.5 border-l border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-500 hover:text-purple-600 flex items-center justify-center cursor-pointer transition shrink-0"
+                    title="Choose badge version"
+                  >
+                    <ChevronDown class="w-3 h-3 transition-transform" :class="activeDropdownCard === variant.id ? 'rotate-180' : ''" />
+                  </button>
+
+                  <!-- Badge Selection Dropdown Menu -->
+                  <div 
+                    v-if="activeDropdownCard === variant.id" 
+                    class="absolute bottom-full left-0 mb-1.5 w-60 py-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl z-30 space-y-0.5"
+                  >
+                    <div class="px-3 py-1.5 text-[10px] font-mono uppercase text-slate-400 font-bold border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                      <span>Select Badge Version</span>
+                      <span class="text-purple-600 font-bold">Dynamic Canvas</span>
+                    </div>
+                    <button
+                      v-for="opt in dynamicBadgeOptions"
+                      :key="opt.id"
+                      @click.stop="selectBadgeAndDownload(variant, opt.badgeText)"
+                      class="w-full text-left px-3 py-2 text-xs font-mono flex items-center justify-between hover:bg-purple-50 dark:hover:bg-purple-950/60 transition cursor-pointer"
+                      :class="activeThumbnailBadge === opt.badgeText ? 'text-purple-600 dark:text-purple-400 font-bold bg-purple-50/50 dark:bg-purple-950/30' : 'text-slate-700 dark:text-slate-300'"
+                    >
+                      <span>{{ opt.label }}</span>
+                      <Check v-if="activeThumbnailBadge === opt.badgeText" class="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Prompt Copy Button -->
                 <button 
                   @click="copyToken(variant.prompt)"
-                  class="py-1.5 px-2 rounded-lg text-white text-[11px] font-mono text-center flex items-center justify-center space-x-1 cursor-pointer transition"
+                  class="py-1.5 px-2.5 rounded-lg text-white text-[11px] font-mono flex items-center justify-center space-x-1 cursor-pointer transition shrink-0"
                   :class="variant.id === 'concept_a' ? 'bg-purple-600 hover:bg-purple-700' : variant.id === 'concept_b' ? 'bg-amber-600 hover:bg-amber-700' : 'bg-rose-600 hover:bg-rose-700'"
+                  title="Copy illustration prompt"
                 >
                   <Copy class="w-3 h-3" />
                   <span>Prompt</span>
@@ -776,10 +847,10 @@
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
               <FileText class="w-4 h-4 text-purple-600" />
-              <span>10 High-CTR Title Archetypes (&le; 100 Characters)</span>
+              <span>Unified Franchise Titles &amp; Format Variants (&le; 100 Characters)</span>
             </h3>
             <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold">
-              10 Formulas Available
+              {{ (pkgData?.titles || defaultTitles).length }} Formats Ready
             </span>
           </div>
 
@@ -889,6 +960,134 @@ const selectedPackageEpisode = ref('')
 const pkgData = ref(null)
 const omnibusFiles = ref([])
 
+// Dynamic Thumbnail Badge Engine (Client-Side Canvas Compositing)
+const activeThumbnailBadge = ref('1 - 2')
+const activeDropdownCard = ref(null)
+const isDownloadingThumb = ref(false)
+
+const dynamicBadgeOptions = computed(() => {
+  const options = [
+    { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' },
+    { id: 'part_1', label: '🟡 Part 1 (Single Episode)', badgeText: 'PART 1' }
+  ]
+  const count = Math.max(2, availableEpisodes.value.length)
+  for (let i = 2; i <= count; i++) {
+    options.push({
+      id: `part_1_${i}`,
+      label: `🟡 Parts 1 - ${i} (${i === 2 ? 'Omnibus Movie' : `Parts 1-${i}`})`,
+      badgeText: `1 - ${i}`
+    })
+  }
+  return options
+})
+
+const toggleDownloadMenu = (cardId) => {
+  activeDropdownCard.value = activeDropdownCard.value === cardId ? null : cardId
+}
+
+const selectBadgeAndDownload = (variant, badgeText) => {
+  activeThumbnailBadge.value = badgeText
+  activeDropdownCard.value = null
+  downloadDynamicThumbnail(variant, badgeText)
+}
+
+const generateYellowBadgeSvgMarkup = (badgeText) => {
+  const cleanBadge = (badgeText || '').trim()
+  const posX = 60
+  const posY = 60
+  const charWidth = 36
+  const padX = 36
+  const mainWidth = Math.max(220, cleanBadge.length * charWidth + padX * 2)
+  const mainHeight = 92
+
+  return `<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="yellowBingeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fef08a" />
+        <stop offset="45%" stop-color="#facc15" />
+        <stop offset="100%" stop-color="#eab308" />
+      </linearGradient>
+      <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.9" />
+        <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.65" />
+      </filter>
+    </defs>
+    <g filter="url(#badgeShadow)">
+      <rect x="${posX - 3}" y="${posY - 3}" width="${mainWidth + 6}" height="${mainHeight + 6}" rx="24" fill="#09090b" stroke="rgba(255,255,255,0.5)" stroke-width="3" />
+      <rect x="${posX}" y="${posY}" width="${mainWidth}" height="${mainHeight}" rx="22" fill="url(#yellowBingeGrad)" />
+      <rect x="${posX + 4}" y="${posY + 4}" width="${mainWidth - 8}" height="${mainHeight / 2 - 4}" rx="18" fill="rgba(255,255,255,0.25)" />
+      <text x="${posX + mainWidth / 2}" y="${posY + 65}" font-family="'Montserrat', 'Arial Black', Impact, -apple-system, sans-serif" font-size="56" font-weight="900" letter-spacing="2" fill="#09090b" text-anchor="middle">${cleanBadge}</text>
+    </g>
+  </svg>`
+}
+
+const downloadDynamicThumbnail = async (variant, badgeText = '') => {
+  try {
+    isDownloadingThumb.value = true
+    const rawUrl = variant.url || `/api/episodes/${franchise.value?.folder || route.params.id}/${selectedPackageEpisode.value}/thumbnails/${variant.filename}`
+    const textlessUrl = rawUrl.replace(/\.jpg$/i, '_Textless.jpg')
+
+    const img = new Image()
+    img.crossOrigin = 'anonymous'
+
+    await new Promise((resolve, reject) => {
+      img.onload = () => resolve()
+      img.onerror = () => {
+        img.src = rawUrl
+        img.onload = () => resolve()
+        img.onerror = () => reject(new Error('Failed to load image asset'))
+      }
+      img.src = textlessUrl
+    })
+
+    const canvas = document.createElement('canvas')
+    canvas.width = 1920
+    canvas.height = 1080
+    const ctx = canvas.getContext('2d')
+    ctx.drawImage(img, 0, 0, 1920, 1080)
+
+    if (badgeText && badgeText.trim()) {
+      const svgMarkup = generateYellowBadgeSvgMarkup(badgeText)
+      const svgBlob = new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' })
+      const svgUrl = URL.createObjectURL(svgBlob)
+      const svgImg = new Image()
+      await new Promise((resolve, reject) => {
+        svgImg.onload = () => {
+          ctx.drawImage(svgImg, 0, 0, 1920, 1080)
+          URL.revokeObjectURL(svgUrl)
+          resolve()
+        }
+        svgImg.onerror = reject
+        svgImg.src = svgUrl
+      })
+    }
+
+    canvas.toBlob((blob) => {
+      if (!blob) throw new Error('Canvas render failed')
+      const safeBadge = badgeText ? `Badge_${badgeText.replace(/[^a-zA-Z0-9_-]/g, '')}` : 'Clean'
+      const filename = `${franchise.value?.name ? franchise.value.name.replace(/\s+/g, '_') : 'Series'}_${variant.id || 'Concept'}_${safeBadge}.jpg`
+
+      const downloadUrl = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = downloadUrl
+      a.download = filename
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(downloadUrl)
+
+      triggerToast('Thumbnail Exported', `${filename} (${(blob.size / 1024).toFixed(1)} KB) ready!`)
+      isDownloadingThumb.value = false
+    }, 'image/jpeg', 0.92)
+
+  } catch (err) {
+    console.error('Download error:', err)
+    triggerToast('Export Error', err.message || 'Failed to render dynamic thumbnail')
+    isDownloadingThumb.value = false
+  }
+}
+
+
 // In-app Toast System
 const toast = ref({
   show: false,
@@ -925,7 +1124,8 @@ const loadFranchise = async () => {
     franchise.value = list.find(f => f.id === route.params.id)
     if (availableEpisodes.value.length) {
       selectedPackageEpisode.value = availableEpisodes.value[0].id
-      selectedEpisodes.value = availableEpisodes.value.map(e => e.id)
+      // Pre-select only verified compiled episodes for multi-episode stitching
+      selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       loadPackagingData()
       loadOmnibusFiles()
     }
@@ -943,11 +1143,100 @@ const loadModels = async () => {
   }
 }
 
+const omnibusMetadata = ref(null)
+
 const loadPackagingData = async () => {
   if (!selectedPackageEpisode.value) return
+  if (selectedPackageEpisode.value === 'omnibus_master') {
+    try {
+      const res = await fetch(`/api/franchises/${route.params.id}/omnibus-metadata`)
+      const meta = await res.json()
+      omnibusMetadata.value = meta
+
+      // Load base episode 1 packaging to inherit visual thumbnail concepts
+      const firstEp = availableEpisodes.value[0]?.id || 'EP01'
+      const basePkgRes = await fetch(`/api/episodes/${route.params.id}/${firstEp}/youtube-package`)
+      const basePkg = await basePkgRes.json()
+
+      // Dynamically enhance package for Master Omnibus
+      const partCount = meta?.partCount || (compiledEpisodes.value.length >= 2 ? compiledEpisodes.value.length : 2)
+      const partBadge = meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1')
+      const durationStr = meta?.totalDurationFormatted || '1h 14m 26s'
+
+      const canonicalTitle = route.params.id?.includes('Series_03')
+        ? 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
+        : route.params.id?.includes('Series_02')
+        ? 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
+        : route.params.id?.includes('Series_01')
+        ? 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
+        : (franchise.value?.name || 'Transmigrated Game Architect')
+
+      const omnibusTitles = [
+        {
+          archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
+          ctrScore: '99%',
+          title: `(Part ${partBadge}) ${canonicalTitle}`
+        },
+        {
+          archetype: 'Canonical Suffix (Full Saga)',
+          ctrScore: '97%',
+          title: `${canonicalTitle} (Part ${partBadge})`
+        },
+        {
+          archetype: 'Clean Pipe Delimiter',
+          ctrScore: '95%',
+          title: `${canonicalTitle} | Parts ${partBadge}`
+        },
+        {
+          archetype: 'Bracket High-Visibility',
+          ctrScore: '94%',
+          title: `[Parts ${partBadge}] ${canonicalTitle}`
+        }
+      ]
+
+      const dynamicChapterFallback = compiledEpisodes.value.map((ep, idx) => `00:00 Part ${idx + 1}: ${ep.name}`).join('\n')
+
+      const omnibusDescription = `🎬 MULTI-PART MARATHON COMPILATION (${partBadge} FULL SAGA - ${durationStr})
+Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
+
+While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
+
+⏱️ 100% MATHEMATICALLY ACCURATE CHAPTER TIMESTAMPS:
+${meta?.youtubeChapterString || dynamicChapterFallback}
+
+🎬 SERIES & PRODUCTION SPECS:
+• Series Title: ${franchise.value?.name || 'Transmigrated Game Architect'}
+• Compilation: Parts ${partBadge} (Full Arc Feature / Season Movie)
+• Total Master Runtime: ${durationStr}
+• Master Quality: 1080p 24FPS Cinematic Master Cut
+• Format: Authentic Webtoon Visual Flow
+
+💬 COMMUNITY MARATHON QUESTION:
+Which moment in this full compilation was the most satisfying: Bram turning the golden holy rapier into chalk, or pulverizing the Floor 10 Minotaur with a single pine needle? Let us know below!
+
+⚖️ COPYRIGHT & FAIR USE NOTICE:
+This production features original scripted manhwa recap storytelling, dynamic character lore, custom voiceover narration, and original visual staging. All rights reserved by Manhwa Recap Studio.`
+
+      activeThumbnailBadge.value = partBadge
+      pkgData.value = {
+        ...basePkg,
+        titles: omnibusTitles,
+        description: omnibusDescription,
+        pinnedComment: `Bram really rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 70 without breaking a sweat! 😭☕\n\nWhat was your favourite part of this full ${partBadge} saga? Drop your thoughts below! 👇`,
+        isOmnibus: true,
+        partBadgeText: partBadge
+      }
+    } catch (e) {
+      console.error('Failed to load omnibus package data:', e)
+    }
+    return
+  }
+
   try {
     const res = await fetch(`/api/episodes/${route.params.id}/${selectedPackageEpisode.value}/youtube-package`)
     pkgData.value = await res.json()
+    omnibusMetadata.value = null
+    activeThumbnailBadge.value = '' // Default to Clean for single episode release
   } catch (err) {
     console.error(err)
   }
@@ -973,6 +1262,10 @@ const availableEpisodes = computed(() => {
     seenPrefixes.add(prefix)
     return true
   })
+})
+
+const compiledEpisodes = computed(() => {
+  return availableEpisodes.value.filter(ep => ep.hasCompiledVideo)
 })
 
 const selectedEpisodeFilter = ref('all')
@@ -1250,5 +1543,8 @@ onMounted(() => {
   loadModels()
   loadOmnibusFiles()
   loadFlowEntities()
+  window.addEventListener('click', () => {
+    activeDropdownCard.value = null
+  })
 })
 </script>

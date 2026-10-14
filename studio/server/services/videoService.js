@@ -1347,11 +1347,61 @@ export class VideoService {
         try { await fs.unlink(concatListPath) } catch (_) {}
 
         if (code === 0) {
+          // Calculate 100% mathematically exact cumulative chapter timestamps via ffprobe
+          const chapterLedger = []
+          let accumulatedSeconds = 0
+
+          for (let i = 0; i < resolvedFiles.length; i++) {
+            const filePath = resolvedFiles[i]
+            const dur = await VideoService.getVideoDuration(filePath) || 0
+            const epDirName = path.basename(path.dirname(path.dirname(filePath)))
+            const epLabel = epDirName.replace(/^EP\d+_+/i, '').replace(/_/g, ' ') || `Episode ${i + 1}`
+
+            const formatTimestamp = (sec) => {
+              const s = Math.max(0, Math.floor(sec))
+              const h = Math.floor(s / 3600)
+              const m = Math.floor((s % 3600) / 60)
+              const remainderSec = s % 60
+              const pad = n => String(n).padStart(2, '0')
+              if (h > 0) return `${pad(h)}:${pad(m)}:${pad(remainderSec)}`
+              return `${pad(m)}:${pad(remainderSec)}`
+            }
+
+            chapterLedger.push({
+              partNumber: i + 1,
+              partLabel: `Part ${i + 1}`,
+              episodeId: epDirName,
+              episodeTitle: epLabel,
+              startTimestampFormatted: formatTimestamp(accumulatedSeconds),
+              startSeconds: accumulatedSeconds,
+              durationSeconds: dur,
+              filePath
+            })
+            accumulatedSeconds += dur
+          }
+
+          const metadata = {
+            franchiseId,
+            filename: outName,
+            totalDurationSeconds: accumulatedSeconds,
+            totalDurationFormatted: (accumulatedSeconds >= 3600)
+              ? `${Math.floor(accumulatedSeconds / 3600)}h ${Math.floor((accumulatedSeconds % 3600) / 60)}m ${Math.floor(accumulatedSeconds % 60)}s`
+              : `${Math.floor(accumulatedSeconds / 60)}m ${Math.floor(accumulatedSeconds % 60)}s`,
+            partCount: resolvedFiles.length,
+            partBadgeText: `1 - ${resolvedFiles.length}`,
+            chapters: chapterLedger,
+            youtubeChapterString: chapterLedger.map(c => `${c.startTimestampFormatted} Part ${c.partNumber}: ${c.episodeTitle}`).join('\n'),
+            generatedAt: new Date().toISOString()
+          }
+
+          const metaPath = path.join(omnibusDir, `${path.basename(outName, '.mp4')}_metadata.json`)
+          await fs.writeFile(metaPath, JSON.stringify(metadata, null, 2), 'utf-8').catch(() => {})
+
           ActivityLogService.success(
             'video',
             'Omnibus Video Stitched',
-            `Losslessly assembled ${outName} from ${resolvedFiles.length} master videos.`,
-            { fileCount: resolvedFiles.length, outputFilename: outName, outputPath: omnibusOutputPath },
+            `Losslessly assembled ${outName} from ${resolvedFiles.length} master videos. Cumulative duration: ${metadata.totalDurationFormatted}.`,
+            { fileCount: resolvedFiles.length, outputFilename: outName, outputPath: omnibusOutputPath, metadata },
             franchiseId,
             'omnibus'
           )
@@ -1361,7 +1411,8 @@ export class VideoService {
             videoPath: omnibusOutputPath,
             filename: outName,
             url: `/api/episodes/${franchiseId}/omnibus-stream?file=${encodeURIComponent(outName)}`,
-            masterCount: resolvedFiles.length
+            masterCount: resolvedFiles.length,
+            metadata
           })
         } else {
           console.error('FFmpeg omnibus stitching failed:', stderr.slice(-800))
@@ -1369,6 +1420,70 @@ export class VideoService {
         }
       })
     })
+  }
+
+  /**
+   * Probe and compute exact cumulative timestamps and chapter metadata for a set of master videos
+   */
+  static async getOmnibusMetadata(franchiseId, masterFilePaths = []) {
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    
+    // Scan existing omnibus metadata files if no specific master files passed
+    if (!masterFilePaths || masterFilePaths.length === 0) {
+      if (fsSync.existsSync(omnibusDir)) {
+        const metaFiles = fsSync.readdirSync(omnibusDir).filter(f => f.endsWith('_metadata.json'))
+        if (metaFiles.length > 0) {
+          const latest = path.join(omnibusDir, metaFiles[metaFiles.length - 1])
+          try {
+            return JSON.parse(await fs.readFile(latest, 'utf-8'))
+          } catch (_) {}
+        }
+      }
+      return null
+    }
+
+    const chapterLedger = []
+    let accumulatedSeconds = 0
+
+    for (let i = 0; i < masterFilePaths.length; i++) {
+      const rawPath = masterFilePaths[i]
+      const fullPath = path.isAbsolute(rawPath) ? rawPath : path.resolve(projectRoot, rawPath)
+      const dur = await VideoService.getVideoDuration(fullPath) || 0
+      const epDirName = path.basename(path.dirname(path.dirname(fullPath)))
+      const epLabel = epDirName.replace(/^EP\d+_+/i, '').replace(/_/g, ' ') || `Episode ${i + 1}`
+
+      const formatTimestamp = (sec) => {
+        const s = Math.max(0, Math.floor(sec))
+        const h = Math.floor(s / 3600)
+        const m = Math.floor((s % 3600) / 60)
+        const remainderSec = s % 60
+        const pad = n => String(n).padStart(2, '0')
+        if (h > 0) return `${pad(h)}:${pad(m)}:${pad(remainderSec)}`
+        return `${pad(m)}:${pad(remainderSec)}`
+      }
+
+      chapterLedger.push({
+        partNumber: i + 1,
+        partLabel: `Part ${i + 1}`,
+        episodeId: epDirName,
+        episodeTitle: epLabel,
+        startTimestampFormatted: formatTimestamp(accumulatedSeconds),
+        startSeconds: accumulatedSeconds,
+        durationSeconds: dur,
+        filePath: fullPath
+      })
+      accumulatedSeconds += dur
+    }
+
+    return {
+      franchiseId,
+      totalDurationSeconds: accumulatedSeconds,
+      partCount: masterFilePaths.length,
+      partBadgeText: `1 - ${masterFilePaths.length}`,
+      chapters: chapterLedger,
+      youtubeChapterString: chapterLedger.map(c => `${c.startTimestampFormatted} Part ${c.partNumber}: ${c.episodeTitle}`).join('\n')
+    }
   }
 
   /**
