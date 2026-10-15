@@ -97,10 +97,25 @@ export class FileService {
               // Extract formatted episode title from script header if available
               let episodeDisplayName = sub.name.replace(/_/g, ' ')
               if (scriptContent) {
-                const epTitleMatch = scriptContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*(EP\d+:[^\r\n]+)/m) || scriptContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*([^\r\n]+)/m)
-                if (epTitleMatch) {
-                  episodeDisplayName = epTitleMatch[1].trim()
+                // 1. Prioritise explicit Episode / EP title line anywhere in the header (e.g. "# Episode 04: ...", "## Episode 05: ...", "# EP01: ...")
+                const explicitEpMatch = scriptContent.match(/^#{1,3}\s*(?:Episode\s+\d+|EP\d+)[:\s–—-]+[^\r\n]+/im)
+                if (explicitEpMatch) {
+                  episodeDisplayName = explicitEpMatch[0].replace(/^#{1,3}\s*/, '').trim()
+                } else {
+                  // 2. Fallback to first level-1 markdown heading
+                  const headingMatch = scriptContent.match(/^#\s+([^\r\n]+)/m)
+                  if (headingMatch) {
+                    episodeDisplayName = headingMatch[1].trim()
+                  }
                 }
+
+                // 3. Defensive sanitisation: strip any surrogate emojis, orphaned surrogates, or replacement chars
+                episodeDisplayName = episodeDisplayName
+                  .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '') // Remove 4-byte surrogate emojis (like 🎬)
+                  .replace(/[\uD800-\uDFFF]/g, '')                // Remove orphaned low/high surrogates
+                  .replace(/\uFFFD/g, '')                         // Remove replacement characters
+                  .replace(/^[\s\-_:•—–]+/, '')                   // Remove leading punctuation
+                  .trim()
               }
 
               // Check for master compiled video on disk

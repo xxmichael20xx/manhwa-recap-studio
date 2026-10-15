@@ -571,6 +571,37 @@
       "episodes": [
         "EP04_The_Open_Heresy_and_Floor_90"
       ]
+    },
+    {
+      "id": "boss_demigod_overseer_prime_unit_alpha",
+      "name": "Boss: Demigod Overseer Prime Unit Alpha",
+      "token": "@{Boss: Demigod Overseer Prime Unit Alpha}",
+      "tier": 3,
+      "role": "Floor 100 Apex Guardian (Progenitor Celestial Overseer)",
+      "age": 10000,
+      "stats_baseline": {
+        "level": 100,
+        "class": "Apex Celestial Overseer",
+        "strength": 800,
+        "agility": 750,
+        "constitution": 1200,
+        "perception": 1000,
+        "talent": "Divine Judgment Matrix & Celestial Refactoring Erasure"
+      },
+      "appearance": {
+        "hair": "None, floating concentric golden binary halo rings",
+        "eyes": "Faceless polished gold reflection visor with pulsating celestial amber light",
+        "physique": "Monumental 15-metre six-winged angelic platinum automaton chassis with luminous geometric divine runes",
+        "attire": "Floating platinum pauldrons with cascading golden energy ribbons",
+        "weapons": "Two-mile glowing crystalline Judgment Lance surging with divine golden binary code"
+      },
+      "dna_prompt_anchor": "@{Boss: Demigod Overseer Prime Unit Alpha}, monumental 15-metre six-winged angelic platinum automaton chassis, floating halo of golden concentric binary rings, faceless polished gold reflection visor, wielding glowing crystalline Judgment Lance, dark fantasy sci-fi action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
+      "reference_plate": "19_Boss_Demigod_Overseer_Prime_Unit_Alpha.jpg",
+      "flowUuid": "1d37a172-4744-4304-bf18-0d9c96e513af",
+      "flowName": "Boss: Demigod Overseer Prime Unit Alpha",
+      "episodes": [
+        "EP05_The_Goddesss_Garden_and_The_New_Architect"
+      ]
     }
   ]
 }

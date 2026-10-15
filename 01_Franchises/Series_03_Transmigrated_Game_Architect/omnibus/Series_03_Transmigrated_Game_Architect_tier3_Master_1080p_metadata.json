@@ -1,0 +1,52 @@
+{
+  "franchiseId": "Series_03_Transmigrated_Game_Architect",
+  "filename": "Series_03_Transmigrated_Game_Architect_tier3_Master_1080p.mp4",
+  "totalDurationSeconds": 8495.303834,
+  "totalDurationFormatted": "2h 21m 35s",
+  "partCount": 4,
+  "partBadgeText": "1 - 4",
+  "chapters": [
+    {
+      "partNumber": 1,
+      "partLabel": "Part 1",
+      "episodeId": "EP01_The_Smiling_Architect_and_The_Chalk_Rapier",
+      "episodeTitle": "The Smiling Architect and The Chalk Rapier",
+      "startTimestampFormatted": "00:00",
+      "startSeconds": 0,
+      "durationSeconds": 2289.551292,
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP01_The_Smiling_Architect_and_The_Chalk_Rapier\\video\\01_Episode_Master_1080p.mp4"
+    },
+    {
+      "partNumber": 2,
+      "partLabel": "Part 2",
+      "episodeId": "EP02_The_Architects_Dilemma_and_Floor_35",
+      "episodeTitle": "The Architects Dilemma and Floor 35",
+      "startTimestampFormatted": "38:09",
+      "startSeconds": 2289.551292,
+      "durationSeconds": 2176.655292,
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP02_The_Architects_Dilemma_and_Floor_35\\video\\01_Episode_Master_1080p.mp4"
+    },
+    {
+      "partNumber": 3,
+      "partLabel": "Part 3",
+      "episodeId": "EP03_The_Blood_Core_Siege_and_Floor_70",
+      "episodeTitle": "The Blood Core Siege and Floor 70",
+      "startTimestampFormatted": "01:14:26",
+      "startSeconds": 4466.206584,
+      "durationSeconds": 2160.865958,
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP03_The_Blood_Core_Siege_and_Floor_70\\video\\01_Episode_Master_1080p.mp4"
+    },
+    {
+      "partNumber": 4,
+      "partLabel": "Part 4",
+      "episodeId": "EP04_The_Open_Heresy_and_Floor_90",
+      "episodeTitle": "The Open Heresy and Floor 90",
+      "startTimestampFormatted": "01:50:27",
+      "startSeconds": 6627.072542,
+      "durationSeconds": 1868.231292,
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP04_The_Open_Heresy_and_Floor_90\\video\\01_Episode_Master_1080p.mp4"
+    }
+  ],
+  "youtubeChapterString": "00:00 Part 1: The Smiling Architect and The Chalk Rapier\n38:09 Part 2: The Architects Dilemma and Floor 35\n01:14:26 Part 3: The Blood Core Siege and Floor 70\n01:50:27 Part 4: The Open Heresy and Floor 90",
+  "generatedAt": "2026-10-15T02:17:00.907Z"
+}

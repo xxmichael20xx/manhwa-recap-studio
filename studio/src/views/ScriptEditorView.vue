@@ -67,8 +67,9 @@
               <FileCode class="w-4 h-4 text-purple-600 dark:text-purple-400" />
               <span>01_Episode_Script.md</span>
             </span>
-            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold animate-fade-in">
-              ✓ Saved to 01_Franchises Directory
+            <span v-if="savedFeedback" class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold animate-fade-in flex items-center gap-1.5">
+              <Check class="w-3.5 h-3.5" />
+              <span>Saved to 01_Franchises Directory</span>
             </span>
           </div>
           <textarea 

@@ -66,8 +66,9 @@
           <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-900/60 border border-purple-400/30 text-purple-100">
             {{ dynamicBatches.length }} {{ dynamicBatches.length === 1 ? 'Batch' : 'Batches' }}
           </span>
-          <span v-if="completedBatchesCount > 0" class="px-1.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-            {{ completedBatchesCount }}/{{ dynamicBatches.length }} ✓
+          <span v-if="completedBatchesCount > 0" class="px-1.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+            <span>{{ completedBatchesCount }}/{{ dynamicBatches.length }}</span>
+            <Check class="w-2.5 h-2.5 inline" />
           </span>
         </button>
 
@@ -356,12 +357,14 @@
               Scenes {{ dynamicBatches[selectedBatchFilter].startIndex + 1 }}–{{ dynamicBatches[selectedBatchFilter].endIndex }} ({{ dynamicBatches[selectedBatchFilter].startTag }} → {{ dynamicBatches[selectedBatchFilter].endTag }})
             </h3>
             <span 
-              class="text-xs font-mono px-2 py-0.5 rounded-full font-bold border"
+              class="text-xs font-mono px-2 py-0.5 rounded-full font-bold border flex items-center gap-1"
               :class="dynamicBatches[selectedBatchFilter].missingCount === 0 
                 ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
                 : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'"
             >
-              {{ dynamicBatches[selectedBatchFilter].missingCount === 0 ? '✓ 100% On Disk' : '⚠️ Missing Plates' }}
+              <Check v-if="dynamicBatches[selectedBatchFilter].missingCount === 0" class="w-3 h-3 text-emerald-500" />
+              <AlertTriangle v-else class="w-3 h-3 text-amber-500" />
+              <span>{{ dynamicBatches[selectedBatchFilter].missingCount === 0 ? '100% On Disk' : 'Missing Plates' }}</span>
             </span>
           </div>
           <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
@@ -803,31 +806,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Scenes per Batch Partition Select -->
-              <div class="mt-4 flex items-center justify-between">
-                <div>
-                  <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Scenes per Micro-Chunk:</span>
-                  <span class="text-xs font-mono text-indigo-600 dark:text-indigo-400 ml-1.5 font-bold">({{ microChunkSize }} scenes)</span>
-                </div>
-                <div class="relative">
-                  <select 
-                    :value="microChunkSize"
-                    @change="setMicroChunkSize(Number($event.target.value))"
-                    class="px-3 py-1.5 pr-8 rounded-lg text-xs font-mono font-bold bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-purple-500/50 focus:border-purple-500 focus:outline-hidden focus:ring-1 focus:ring-purple-500/50 transition cursor-pointer appearance-none shadow-xs"
-                  >
-                    <option :value="24">24 scenes (Full Batch • Default)</option>
-                    <option :value="18">18 scenes</option>
-                    <option :value="12">12 scenes</option>
-                    <option :value="8">8 scenes</option>
-                    <option :value="6">6 scenes</option>
-                    <option :value="4">4 scenes (Micro-Drop)</option>
-                  </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-400">
-                    <ChevronDown class="w-3.5 h-3.5" />
-                  </div>
-                </div>
-              </div>
             </div>
 
             <!-- Drawer Body: Dynamic Batch List -->
@@ -844,23 +822,18 @@
                 v-for="(batch, bIdx) in dynamicBatches" 
                 :key="bIdx"
                 :id="`batch-card-${bIdx}`"
-                class="rounded-xl border transition-all overflow-hidden"
+                class="rounded-xl border transition-all duration-300 overflow-hidden"
                 :class="batch.isFullyCopied 
-                  ? 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-500/30' 
-                  : (batch.copiedChunksCount > 0 
-                    ? 'bg-purple-50/20 dark:bg-purple-950/10 border-purple-200/80 dark:border-purple-500/30' 
-                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-purple-500/40')"
+                  ? 'bg-emerald-50/80 dark:bg-emerald-950/40 border-emerald-500 dark:border-emerald-500/80 ring-2 ring-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.25)]' 
+                  : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-purple-500/40 shadow-xs'"
               >
-                <!-- Clickable Accordion Header -->
-                <div 
-                  @click="toggleBatchAccordion(bIdx)"
-                  class="p-4 flex items-center justify-between cursor-pointer hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors select-none"
-                >
-                  <div class="flex items-center space-x-2.5 min-w-0">
+                <!-- Streamlined Batch Row -->
+                <div class="p-4 flex items-center justify-between select-none">
+                  <div class="flex items-center space-x-3 min-w-0">
                     <span 
-                      class="px-2.5 py-1 rounded-md text-xs font-mono font-bold shrink-0"
+                      class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold shrink-0 transition-colors"
                       :class="batch.isFullyCopied 
-                        ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300' 
+                        ? 'bg-emerald-600 text-white shadow-xs' 
                         : 'bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30'"
                     >
                       {{ batch.name }}
@@ -869,214 +842,31 @@
                       <div class="text-sm font-bold text-slate-900 dark:text-white truncate">
                         Scenes {{ batch.startIndex + 1 }}–{{ batch.endIndex }}
                       </div>
-                      <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                      <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400 truncate">
                         {{ batch.startTag }} → {{ batch.endTag }} ({{ batch.items.length }} scenes)
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex items-center space-x-2 shrink-0 ml-2">
-                    <span 
-                      class="text-xs font-mono font-bold px-2 py-0.5 rounded-full border"
-                      :class="batch.isFullyCopied 
-                        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
-                        : (batch.copiedChunksCount > 0 
-                          ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30' 
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-500 border-slate-200 dark:border-slate-700')"
-                    >
-                      {{ batch.isFullyCopied ? 'Done ✓' : `${batch.copiedChunksCount}/${batch.chunks.length} Copied` }}
-                    </span>
-                    <ChevronDown 
-                      class="w-4 h-4 text-slate-400 transition-transform duration-200" 
-                      :class="{ 'rotate-180': expandedBatchIndices.has(bIdx) }" 
-                    />
-                  </div>
-                </div>
-
-                <!-- Collapsible Accordion Body -->
-                <div v-if="expandedBatchIndices.has(bIdx)" class="px-4 pb-4 pt-1 border-t border-slate-100 dark:border-slate-800/80 space-y-3">
-                  <!-- Batch Pre-Flight Plate Health Summary -->
-                  <div class="my-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2">
-                    <div class="flex items-center justify-between text-xs">
-                      <div class="flex items-center space-x-1.5 font-bold text-slate-800 dark:text-slate-200">
-                        <ShieldCheck class="w-4 h-4" :class="batch.missingCount === 0 ? 'text-emerald-500' : 'text-amber-500'" />
-                        <span>Pre-Flight Plate Health</span>
-                      </div>
-                      <span 
-                        class="font-mono text-[11px] px-2 py-0.5 rounded-full font-bold border"
-                        :class="batch.missingCount === 0 
-                          ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
-                          : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'"
-                      >
-                        {{ batch.readyCount }}/{{ batch.items.length }} On Disk ({{ batch.healthPercent }}%)
-                      </span>
-                    </div>
-                    <div class="grid grid-cols-3 gap-1.5 text-center text-xs font-mono">
-                      <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                        <span class="text-slate-400 text-[10px] block">Verified</span>
-                        <strong class="text-slate-800 dark:text-slate-200">{{ batch.readyCount }}/{{ batch.items.length }}</strong>
-                      </div>
-                      <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                        <span class="text-slate-400 text-[10px] block">Fresh</span>
-                        <strong class="text-cyan-600 dark:text-cyan-400">{{ batch.freshCount }}</strong>
-                      </div>
-                      <div class="p-1 rounded bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                        <span class="text-slate-400 text-[10px] block">Missing</span>
-                        <strong :class="batch.missingCount > 0 ? 'text-rose-500' : 'text-slate-400'">{{ batch.missingCount }}</strong>
-                      </div>
-                    </div>
-                    <div class="flex items-center justify-between pt-1">
-                      <span class="text-[10px] font-mono text-slate-500">
-                        {{ batch.missingCount === 0 ? '✓ Ready for compilation' : '⚠️ Missing plates on disk' }}
-                      </span>
-                      <button 
-                        @click="compileBatchPreview(bIdx)"
-                        :disabled="batchCompilingIndex === bIdx"
-                        class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-purple-600 hover:bg-purple-500 text-white flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50 shadow-xs"
-                        :title="`Compile ${batch.name} Preview Video`"
-                      >
-                        <Loader2 v-if="batchCompilingIndex === bIdx" class="w-3 h-3 animate-spin" />
-                        <Film v-else class="w-3 h-3" />
-                        <span>{{ batchCompilingIndex === bIdx ? 'Compiling...' : 'Compile Preview' }}</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Session Isolation Target Collection Banner -->
-                  <div class="px-3 py-1.5 rounded-lg bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/60 dark:border-indigo-500/20 flex items-center justify-between text-[11px] font-mono">
-                    <span class="text-slate-500 dark:text-slate-400">Target Collection:</span>
-                    <strong class="text-indigo-700 dark:text-indigo-300 font-bold truncate ml-2">"{{ batch.collectionTitle }}"</strong>
-                  </div>
-
-                  <!-- Required Vault References (Google Flow 10-Ref Limit Tracker) -->
-                  <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 space-y-2.5">
-                    <div class="flex items-center justify-between">
-                      <div class="flex items-center space-x-2">
-                        <Users class="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                        <span class="text-sm font-bold text-slate-900 dark:text-white">Required References</span>
-                        <span 
-                          class="text-xs font-mono font-bold px-2 py-0.5 rounded-full border"
-                          :class="batch.refCount > 10 
-                            ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30' 
-                            : (batch.refCount > 7 
-                              ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30' 
-                              : 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30')"
-                        >
-                          {{ batch.refCount }}/10
-                        </span>
-                      </div>
-                      <button 
-                        v-if="batch.refCount > 0"
-                        @click.stop="copyAllBatchTokens(batch.references, batch.name)"
-                        class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400 hover:underline cursor-pointer flex items-center space-x-1"
-                        title="Copy comma-separated token list for this batch"
-                      >
-                        <Check v-if="copiedDirectToken === batch.name" class="w-3 h-3 text-emerald-500" />
-                        <Copy v-else class="w-3 h-3" />
-                        <span>{{ copiedDirectToken === batch.name ? 'Copied' : 'Copy Tokens' }}</span>
-                      </button>
-                    </div>
-
-                    <!-- References List (Full Width) -->
-                    <div v-if="batch.refCount > 0" class="space-y-1.5 pt-1">
-                      <div 
-                        v-for="model in batch.references" 
-                        :key="model.id || model.name"
-                        @click.stop="copyVaultToken(model)"
-                        class="group/chip w-full flex items-center justify-between px-3 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500/60 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 transition cursor-pointer shadow-2xs"
-                        :title="`Click to copy token '${model.token || model.name}' (${model.category})`"
-                      >
-                        <div class="flex items-center space-x-2.5 min-w-0 flex-1">
-                          <div class="w-6 h-6 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-800 shrink-0 border border-slate-300 dark:border-slate-700">
-                            <img v-if="model.url && model.hasPlate" :src="model.url" :alt="model.name" class="w-full h-full object-cover" />
-                            <div v-else class="w-full h-full flex items-center justify-center text-[10px] font-bold text-slate-500 uppercase">
-                              {{ (model.name || 'R')[0] }}
-                            </div>
-                          </div>
-                          <span class="text-xs font-mono text-slate-800 dark:text-slate-200 truncate font-bold">
-                            {{ model.flowName || model.name }}
-                          </span>
-                        </div>
-                        
-                        <div class="flex items-center space-x-2 shrink-0 ml-2">
-                          <span 
-                            class="text-[10px] font-mono px-2 py-0.5 rounded font-bold border"
-                            :class="getCategoryBadgeClass(model.category)"
-                          >
-                            {{ model.category }}
-                          </span>
-                          <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                          <Copy v-else class="w-3.5 h-3.5 text-slate-400 group-hover/chip:text-purple-500 shrink-0" />
-                        </div>
-                      </div>
-                    </div>
-                    <div v-else class="text-xs font-mono text-slate-400 italic">
-                      No character/item references tagged in this batch.
-                    </div>
-
-                    <!-- Over Limit Alert -->
-                    <div v-if="batch.refCount > 10" class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center space-x-1.5 text-rose-600 dark:text-rose-400 text-xs font-mono font-bold">
-                      <AlertTriangle class="w-3.5 h-3.5 shrink-0 text-rose-500" />
-                      <span>Exceeds Google Flow 10-reference limit! Remove {{ batch.refCount - 10 }} unused plates.</span>
-                    </div>
-                  </div>
-
-                  <!-- Fast Dispatch Micro-Chunk Action Controls -->
-                  <div class="space-y-2.5 pt-1">
-                    <!-- Primary Action: Copy Next Chunk / Full XML -->
-                    <button 
+                  <!-- 1-Click Copy Batch XML Button -->
+                  <div class="flex items-center space-x-2 shrink-0 ml-3">
+                    <button
                       @click="copyBatchFullXml(batch, bIdx)"
                       :disabled="isCopyDisabledDueToMissingUuids"
-                      class="w-full py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 transition-all shadow-sm text-white"
-                      :class="isCopyDisabledDueToMissingUuids
-                        ? 'opacity-50 cursor-not-allowed bg-slate-500'
-                        : (activeCopiedKey === `FULL_${bIdx}`
-                          ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-950/20 cursor-pointer'
-                          : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-indigo-500 hover:to-purple-500 shadow-indigo-950/20 cursor-pointer')"
-                      :title="`Copy full batch XML (${batch.items.length} scenes)`"
+                      class="px-3.5 py-2 rounded-xl text-xs font-mono font-bold flex items-center space-x-1.5 transition-all shadow-xs"
+                      :class="[
+                        isCopyDisabledDueToMissingUuids
+                          ? 'opacity-40 cursor-not-allowed bg-slate-400 text-white'
+                          : (batch.isFullyCopied || activeCopiedKey === `FULL_${bIdx}`
+                              ? 'bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer shadow-emerald-950/20'
+                              : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white cursor-pointer active:scale-95')
+                      ]"
+                      :title="`Copy full ${batch.name} XML (${batch.items.length} scenes)`"
                     >
-                      <Check v-if="activeCopiedKey === `FULL_${bIdx}`" class="w-4 h-4 text-emerald-200" />
-                      <Copy v-else class="w-4 h-4 text-indigo-200" />
-                      <span>
-                        {{ activeCopiedKey === `FULL_${bIdx}`
-                          ? `✓ Batch XML Copied!`
-                          : `📋 Copy Batch XML (${batch.items.length} Scenes)`
-                        }}
-                      </span>
+                      <Check v-if="batch.isFullyCopied || activeCopiedKey === `FULL_${bIdx}`" class="w-3.5 h-3.5 text-white" />
+                      <Copy v-else class="w-3.5 h-3.5 text-purple-200" />
+                      <span>{{ (batch.isFullyCopied || activeCopiedKey === `FULL_${bIdx}`) ? 'Copied' : 'Copy XML' }}</span>
                     </button>
-
-                    <!-- 1-Click Micro-Chunk Button Grid (if partitioned) -->
-                    <div v-if="batch.chunks.length > 1" class="p-2.5 rounded-xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800 space-y-1.5">
-                      <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 font-semibold px-0.5">
-                        <span>1-Click Sub-Chunks:</span>
-                        <span>{{ batch.copiedChunksCount }}/{{ batch.chunks.length }} copied</span>
-                      </div>
-                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
-                        <button
-                          v-for="(chunk, cIdx) in batch.chunks"
-                          :key="cIdx"
-                          @click="copyChunk(batch, bIdx, chunk, cIdx)"
-                          :disabled="isCopyDisabledDueToMissingUuids"
-                          class="px-2.5 py-2 rounded-lg text-xs font-mono font-bold border transition flex items-center justify-between shadow-2xs"
-                          :class="[
-                            isCopyDisabledDueToMissingUuids ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer',
-                            chunk.isCopied
-                              ? (activeCopiedKey === `${bIdx}_${cIdx}`
-                                  ? 'bg-emerald-500 text-white border-emerald-600'
-                                  : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-600/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40')
-                              : (activeCopiedKey === `${bIdx}_${cIdx}`
-                                  ? 'bg-purple-600 text-white border-purple-700'
-                                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-purple-400 hover:bg-purple-50/30 dark:hover:bg-purple-950/30')
-                          ]"
-                          :title="`Click to copy Chunk ${chunk.chunkNumber} (${chunk.startTag}–${chunk.endTag}) with collection header`"
-                        >
-                          <span class="truncate">Chunk {{ chunk.chunkNumber }}</span>
-                          <span class="text-[10px] font-normal opacity-75 shrink-0 ml-1">({{ chunk.startScene }}–{{ chunk.endScene }})</span>
-                          <Check v-if="chunk.isCopied" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 ml-1" />
-                          <Copy v-else class="w-3 h-3 text-slate-400 shrink-0 ml-1" />
-                        </button>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1249,7 +1039,7 @@
                         class="text-[9px] font-mono shrink-0 ml-1 font-bold"
                         :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
                       >
-                        {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
+                        {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Copy Name' }}
                       </span>
                     </div>
 
@@ -1711,6 +1501,17 @@ const unmappedCharacterEntities = computed(() => {
           hasValidUuid = true
           break
         }
+      }
+    }
+    // Also verify against vault models if not found in entityMap
+    if (!hasValidUuid && Array.isArray(vaultModels.value)) {
+      const matchModel = vaultModels.value.find(m => {
+        const cName = (m.flowName || m.name || '').replace(/^(Boss|Character):\s*/i, '').replace(/\s*\([^)]*\)/, '').trim().toLowerCase()
+        const target = name.replace(/^(Boss|Character):\s*/i, '').replace(/\s*\([^)]*\)/, '').trim().toLowerCase()
+        return cName === target
+      })
+      if (matchModel && matchModel.flowUuid && typeof matchModel.flowUuid === 'string' && matchModel.flowUuid.trim().length >= 8 && !/^00000000-temp/i.test(matchModel.flowUuid)) {
+        hasValidUuid = true
       }
     }
     if (!hasValidUuid) {
@@ -2610,6 +2411,21 @@ const getCollectionName = (batchName, batchIndex = null) => {
   return `EP${epNum} Batch ${bNum}`
 }
 
+const sanitizeForClipboard = (text) => {
+  if (!text) return ''
+  return text
+    .replace(/[\u2014\u2015]/g, ' - ') // Em-dash to ASCII hyphen with spacing
+    .replace(/[\u2013]/g, '-')        // En-dash to ASCII hyphen
+    .replace(/[\u2018\u2019]/g, "'")  // Smart single quotes to ASCII apostrophe
+    .replace(/[\u201C\u201D]/g, '"')  // Smart double quotes to ASCII double quotes
+    .replace(/[\u2022]/g, '-')        // Bullet points to ASCII hyphen
+    .replace(/\uFFFD/g, '')           // Strip any stray replacement chars
+}
+
+const writeToClipboardSafe = async (text) => {
+  return navigator.clipboard.writeText(sanitizeForClipboard(text))
+}
+
 const copyChunk = async (batch, bIdx, chunk, cIdx) => {
   if (isCopyDisabledDueToMissingUuids.value) {
     showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
@@ -2643,7 +2459,7 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
   const payload = `${flowDirective}\n\n${chunkXml}`
 
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
     
     copiedChunksState.value = {
       ...copiedChunksState.value,
@@ -2693,7 +2509,7 @@ const copyBatchForFlowAutomator = async (batch, bIdx) => {
     .join('\n\n')
 
   try {
-    await navigator.clipboard.writeText(automatorText)
+    await writeToClipboardSafe(automatorText)
     const key = `AUTOMATOR_${bIdx}`
     activeCopiedKey.value = key
     showToast(`Copied ${batch.items.length} scenes for Google Flow Automator! Paste into extension prompt box.`)
@@ -2716,7 +2532,7 @@ const copySelectedForFlowAutomator = async () => {
     .join('\n\n')
 
   try {
-    await navigator.clipboard.writeText(automatorText)
+    await writeToClipboardSafe(automatorText)
     activeCopiedKey.value = 'SELECTED_AUTOMATOR'
     showToast(`Copied ${selectedItems.length} selected scenes for Google Flow Automator!`)
     setTimeout(() => {
@@ -2762,7 +2578,7 @@ const copyBatchFullXml = async (batch, bIdx) => {
   const payload = `${flowDirective}\n\n${batchXml}`
 
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
 
     const updated = { ...copiedChunksState.value }
     batch.chunks.forEach((_, cIdx) => {
@@ -2819,7 +2635,7 @@ const copySelectedPrompts = async () => {
   const payload = `${flowDirective}\n\n${batchXml}`
 
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
     activeCopiedKey.value = 'SELECTED'
     showToast(`Copied Selected Prompts (${selectedItems.length} scenes)${isLean ? ' [Lean Mode]' : ''}!`)
     setTimeout(() => {
@@ -2867,7 +2683,7 @@ const copyMissingPrompts = async () => {
   const payload = `${flowDirective}\n\n${batchXml}`
 
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
     activeCopiedKey.value = 'MISSING'
     showToast(`Copied Failed/Missing Scenes (${missingItems.length} scenes)${isLean ? ' [Lean Mode]' : ''}!`)
     setTimeout(() => {
@@ -2914,7 +2730,7 @@ const copyAllMaster = async () => {
   const payload = `${flowDirective}\n\n${batchXml}`
 
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
 
     const updated = {}
     dynamicBatches.value.forEach((b, bIdx) => {
@@ -3124,7 +2940,7 @@ const copySinglePrompt = async (item, index) => {
   const payload = `${flowDirective}\n\n${sceneXml}`
   
   try {
-    await navigator.clipboard.writeText(payload)
+    await writeToClipboardSafe(payload)
     copiedIndex.value = index
     showToast(`Copied ${tag} XML${isLean ? ' [Lean Mode]' : ''}! Target Collection: "${collectionTitle}"`)
     setTimeout(() => {

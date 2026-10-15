@@ -1,4 +1,4 @@
-# 02_Prompt_Matrix.md — Series 03 Episode 04 (The Open Heresy and Floor 90)
+# 02_Prompt_Matrix.md  -  Series 03 Episode 04 (The Open Heresy and Floor 90)
 
 > **Franchise:** Transmigrated Game Architect: Siphoning Demigod Enhancements in a Feudal World
 > **Episode:** EP04: The Open Heresy and Floor 90
@@ -8,7 +8,7 @@
 
 ---
 
-## 📦 BATCH 01 (Scenes 001 - 024)
+## BATCH 01 (Scenes 001 - 024)
 
 <scene id="IMG_001">
   <tag>IMG_001</tag>
@@ -203,7 +203,7 @@
 </scene>
 
 
-## 📦 BATCH 02 (Scenes 025 - 048)
+## BATCH 02 (Scenes 025 - 048)
 
 <scene id="IMG_025">
   <tag>IMG_025</tag>
@@ -398,7 +398,7 @@
 </scene>
 
 
-## 📦 BATCH 03 (Scenes 049 - 072)
+## BATCH 03 (Scenes 049 - 072)
 
 <scene id="IMG_049">
   <tag>IMG_049</tag>
@@ -593,7 +593,7 @@
 </scene>
 
 
-## 📦 BATCH 04 (Scenes 073 - 096)
+## BATCH 04 (Scenes 073 - 096)
 
 <scene id="IMG_073">
   <tag>IMG_073</tag>
@@ -788,7 +788,7 @@
 </scene>
 
 
-## 📦 BATCH 05 (Scenes 097 - 120)
+## BATCH 05 (Scenes 097 - 120)
 
 <scene id="IMG_097">
   <tag>IMG_097</tag>
@@ -983,7 +983,7 @@
 </scene>
 
 
-## 📦 BATCH 06 (Scenes 121 - 144)
+## BATCH 06 (Scenes 121 - 144)
 
 <scene id="IMG_121">
   <tag>IMG_121</tag>
@@ -1178,7 +1178,7 @@
 </scene>
 
 
-## 📦 BATCH 07 (Scenes 145 - 168)
+## BATCH 07 (Scenes 145 - 168)
 
 <scene id="IMG_145">
   <tag>IMG_145</tag>
@@ -1373,7 +1373,7 @@
 </scene>
 
 
-## 📦 BATCH 08 (Scenes 169 - 192)
+## BATCH 08 (Scenes 169 - 192)
 
 <scene id="IMG_169">
   <tag>IMG_169</tag>
@@ -1395,8 +1395,8 @@
   <tag>IMG_171</tag>
   <layout>Tier A: Hero Plate</layout>
   <character_ref>6de7500f-e8c7-4388-a150-2064c8c7196e</character_ref>
-  <narrative_sync>At the center of its chest blazed a blinding, miniature supernova—the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.</narrative_sync>
-  <prompt>Full-bleed cinematic hero plate. At the center of its chest blazed a blinding, miniature supernova—the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.. Featuring @{Boss: Star-Devourer Behemoth}, colossal 1-kilometre cosmic serpentine dragon titan drifting in dark space void, interlocking deep-space obsidian scales reflecting distant purple nebulae, multiple glowing azure compound eyes along armored jaw, crackling cosmic lightning tentacles, pulsing miniature blazing supernova stellar heart visible through translucent chest plating. Spatial Enclosure & Environment: Floor Ninety sub-orbital trial arena, deep space starry void, cosmic gravitational whirlpool, shattered astral debris. dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, textless manhwa illustration, zero speech bubbles, zero subtitles, zero watermarks, zero Korean characters, zero file names, zero blood, zero gore, zero graphic wounds, zero severed limbs, clean bloodless anime impact, pure textless artwork.</prompt>
+  <narrative_sync>At the center of its chest blazed a blinding, miniature supernova - the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.</narrative_sync>
+  <prompt>Full-bleed cinematic hero plate. At the center of its chest blazed a blinding, miniature supernova - the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.. Featuring @{Boss: Star-Devourer Behemoth}, colossal 1-kilometre cosmic serpentine dragon titan drifting in dark space void, interlocking deep-space obsidian scales reflecting distant purple nebulae, multiple glowing azure compound eyes along armored jaw, crackling cosmic lightning tentacles, pulsing miniature blazing supernova stellar heart visible through translucent chest plating. Spatial Enclosure & Environment: Floor Ninety sub-orbital trial arena, deep space starry void, cosmic gravitational whirlpool, shattered astral debris. dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, textless manhwa illustration, zero speech bubbles, zero subtitles, zero watermarks, zero Korean characters, zero file names, zero blood, zero gore, zero graphic wounds, zero severed limbs, clean bloodless anime impact, pure textless artwork.</prompt>
 </scene>
 
 <scene id="IMG_172">
@@ -1568,7 +1568,7 @@
 </scene>
 
 
-## 📦 BATCH 09 (Scenes 193 - 216)
+## BATCH 09 (Scenes 193 - 216)
 
 <scene id="IMG_193">
   <tag>IMG_193</tag>

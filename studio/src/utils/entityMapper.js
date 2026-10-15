@@ -104,8 +104,8 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
         if (k.toLowerCase() === trimmedKey.toLowerCase()) {
           return `@${uuid}`
         }
-        const strippedK = k.replace(/^(Weapon|Item):\s*/i, '').trim().toLowerCase()
-        const strippedKey = trimmedKey.replace(/^(Weapon|Item):\s*/i, '').trim().toLowerCase()
+        const strippedK = k.replace(/^(Weapon|Item|Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim().toLowerCase()
+        const strippedKey = trimmedKey.replace(/^(Weapon|Item|Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim().toLowerCase()
         if (strippedK === strippedKey) {
           return `@${uuid}`
         }
@@ -120,8 +120,8 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
       const regex = new RegExp(`@${escapedKey}(?![a-zA-Z0-9_-])`, 'g')
       transformed = transformed.replace(regex, `@${uuid}`)
       
-      // Also match stripped key (e.g. @Void-Strung Heavy Recurve)
-      const strippedKey = key.replace(/^(Weapon|Item):\s*/i, '').trim()
+      // Also match stripped key (e.g. @Void-Strung Heavy Recurve or @Demigod Overseer Prime Unit Alpha)
+      const strippedKey = key.replace(/^(Weapon|Item|Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim()
       if (strippedKey !== key) {
         const escapedStripped = strippedKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
         const strippedRegex = new RegExp(`@${escapedStripped}(?![a-zA-Z0-9_-])`, 'g')
@@ -244,16 +244,32 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   const itemRefs = []
   const text = promptText || ''
 
+  // Helper to resolve temporary or placeholder UUIDs against entityMap
+  const resolveRealUuid = (rawUuid) => {
+    if (!rawUuid || !/^00000000-temp/i.test(rawUuid)) return rawUuid
+    if (!entityMap || typeof entityMap !== 'object') return rawUuid
+    for (const [k, mappedUuid] of Object.entries(entityMap)) {
+      if (!mappedUuid || /^00000000-temp/i.test(mappedUuid)) continue
+      const cleanK = k.replace(/^(Weapon|Item|Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim().toLowerCase()
+      if (text.toLowerCase().includes(cleanK)) {
+        return mappedUuid
+      }
+    }
+    return rawUuid
+  }
+
   // 1. Preserve explicit character references passed in options (from disk parsing)
   if (options.character_ref) {
     String(options.character_ref).split(',').map(s => s.trim()).filter(Boolean).forEach(r => {
-      if (!charRefs.includes(r)) charRefs.push(r)
+      const resolved = resolveRealUuid(r)
+      if (!charRefs.includes(resolved)) charRefs.push(resolved)
     })
   }
   if (options.characterRefs || options.character_refs) {
     const refs = String(options.characterRefs || options.character_refs).split(',').map(s => s.trim()).filter(Boolean)
     refs.forEach(r => {
-      if (!charRefs.includes(r)) charRefs.push(r)
+      const resolved = resolveRealUuid(r)
+      if (!charRefs.includes(resolved)) charRefs.push(resolved)
     })
   }
 

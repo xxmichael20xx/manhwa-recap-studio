@@ -1,10 +1,10 @@
-# 🎬 Series 03: Transmigrated Game Architect
-## Episode 04: The Open Heresy and Floor 90
-### Format: Tier 2 Arc Feature • 9 Batches • 216 Scenes • Spoken Duration: ~42 Minutes
+# Episode 04: The Open Heresy and Floor 90
+## Series: Transmigrated Game Architect: Siphoning Demigod Enhancements in a Feudal World
+### Format: Tier 2 Arc Feature - 9 Batches - 216 Scenes - Spoken Duration: ~42 Minutes
 
 ---
 
-## ⚡ Batch 01 (Scenes 001–024) — Cold Open & The Porch Standoff
+## Batch 01 (Scenes 001-024)  -  Cold Open & The Porch Standoff
 
 [IMG_001] A violent crimson aurora tore across the continental heavens, casting a blood-red glare over the trembling spires of the imperial capital.
 
@@ -55,7 +55,7 @@
 [IMG_024] [TARGET IDENTIFIED: IMPERIAL VOID SCEPTRE. SEMANTIC REFACTORING ACTIVATED.]
 
 
-## ⚡ Batch 02 (Scenes 025–048) — Semantic Refactoring & The Broken Fist
+## Batch 02 (Scenes 025-048)  -  Semantic Refactoring & The Broken Fist
 
 [IMG_025] Locking my gaze onto the pulsing dark-matter weapon, I executed the two-word systemic rewrite within the taxonomic category of decorative household utensils.
 
@@ -106,7 +106,7 @@
 [IMG_048] 'Grand Duke,' Vance said, his voice ringing with cold authority. 'The Imperial Watch is commandeering this sector. If you wish to address Master Locke, it will be done lawfully in the Chamber of Peers.'
 
 
-## ⚡ Batch 03 (Scenes 049–072) — The Chamber of Peers & The Noble Council
+## Batch 03 (Scenes 049-072)  -  The Chamber of Peers & The Noble Council
 
 [IMG_049] At daybreak, the grand carriage of the Imperial Watch escorted me through the gilded gates of the Upper Citadel.
 
@@ -157,7 +157,7 @@
 [IMG_072] A stunned heartbeat passed before High Chancellor Moros erupted into loud, patronising laughter that echoed off the high vaulted ceilings.
 
 
-## ⚡ Batch 04 (Scenes 073–096) — Arrogant Denial & Vance's Defection
+## Batch 04 (Scenes 073-096)  -  Arrogant Denial & Vance's Defection
 
 [IMG_073] 'An apocalyptic fantasy concocted by a slum merchant!' Moros scoffed, wiping a tear of mocking amusement from his eye.
 
@@ -208,7 +208,7 @@
 [IMG_096] When the light cleared, the podium was empty, leaving the grand council shouting into the vacant air of their crumbling empire.
 
 
-## ⚡ Batch 05 (Scenes 097–120) — The Blooming Root & Linnea's Secret
+## Batch 05 (Scenes 097-120)  -  The Blooming Root & Linnea's Secret
 
 [IMG_097] Materialising back on the familiar cobblestones of District Nine, Vance and I were met by a vastly transformed neighbourhood.
 
@@ -259,7 +259,7 @@
 [IMG_120] My unique semantic refactoring talent was never a random cosmic accident; I had been summoned directly by the slumbering soul of the world itself.
 
 
-## ⚡ Batch 06 (Scenes 121–144) — The Silicon Ark & Dimensional Sandbox
+## Batch 06 (Scenes 121-144)  -  The Silicon Ark & Dimensional Sandbox
 
 [IMG_121] 'Keep tending the garden, Linnea,' I said with quiet determination, gently patting her hand. 'You are anchoring this entire district more than you know.'
 
@@ -310,7 +310,7 @@
 [IMG_144] [TARGET FLOOR: SEVENTY-ONE. TRANSIT COMMENCED.]
 
 
-## ⚡ Batch 07 (Scenes 145–168) — The Calamity Gauntlet (Floors 71–85)
+## Batch 07 (Scenes 145-168)  -  The Calamity Gauntlet (Floors 71-85)
 
 [IMG_145] Floor Seventy-One greeted us not with stone corridors, but with a boundless ocean of churning, white-hot magma beneath a storm of falling meteors.
 
@@ -361,13 +361,13 @@
 [IMG_168] [WARNING: ENTERING SUB-ORBITAL TRIAL ARENA. CALAMITY OVERLORD APPROACHING.]
 
 
-## ⚡ Batch 08 (Scenes 169–192) — The Star-Devourer Behemoth (Floor 90 Boss)
+## Batch 08 (Scenes 169-192)  -  The Star-Devourer Behemoth (Floor 90 Boss)
 
 [IMG_169] The black void of Floor Ninety trembled as a colossal celestial shadow blotched out the distant field of simulated stars.
 
 [IMG_170] Measuring over one kilometre from snout to tail, the Star-Devourer Behemoth drifted into view, its serpentine body plated in cosmic obsidian scales.
 
-[IMG_171] At the center of its chest blazed a blinding, miniature supernova—the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.
+[IMG_171] At the center of its chest blazed a blinding, miniature supernova - the legendary Abyssal Heart that devoured surrounding mana to fuel infinite regeneration.
 
 [IMG_172] [BOSS ENCOUNTER: STAR-DEVOURER BEHEMOTH. HP: ONE TRILLION. TRAIT: ABSOLUTE MANA ABSORPTION.]
 
@@ -412,7 +412,7 @@
 [IMG_192] [FLOOR NINETY CONQUERED. BOSS OVERRIDDEN. CLEARANCE ACCREDITED TO BRAMWELL LOCKE.]
 
 
-## ⚡ Batch 09 (Scenes 193–216) — The Crimson Sky & The Final Countdown
+## Batch 09 (Scenes 193-216)  -  The Crimson Sky & The Final Countdown
 
 [IMG_193] As the blinding flash of the supernova subsided, Vanguard-Zero dropped lightly onto the smooth marble pedestal at the center of the arena.
 

@@ -205,7 +205,7 @@
           <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 flex flex-wrap items-center justify-between gap-3">
             <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">
               <span v-if="status === 'running'">Process is running asynchronously in background.</span>
-              <span v-else-if="status === 'completed'" class="text-emerald-600 dark:text-emerald-400 font-semibold">✓ Stage {{ currentStageNumber }} completed successfully.</span>
+              <span v-else-if="status === 'completed'" class="text-emerald-600 dark:text-emerald-400 font-semibold">Stage {{ currentStageNumber }} completed successfully.</span>
               <span v-else-if="status === 'failed'" class="text-rose-500 font-semibold">Stage execution failed. Review log above.</span>
             </div>
 

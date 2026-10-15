@@ -399,7 +399,7 @@
                         : 'bg-slate-200/80 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'"
                       :title="getModelUuid(model) ? `Mapped to UUID: ${getModelUuid(model)}` : 'No UUID mapped yet. Paste mapping in textarea above.'"
                     >
-                      {{ getModelUuid(model) ? '✓ Mapped' : 'Pending' }}
+                      {{ getModelUuid(model) ? 'Mapped' : 'Pending' }}
                     </span>
                   </div>
                 </div>
@@ -455,7 +455,7 @@
                   class="text-[9px] font-mono shrink-0 ml-1 font-bold"
                   :class="copiedVaultId === model.id && copiedVaultType === 'name' ? 'text-emerald-500' : 'text-purple-600 dark:text-purple-400 group-hover:underline'"
                 >
-                  {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied ✓' : 'Copy Name' }}
+                  {{ copiedVaultId === model.id && copiedVaultType === 'name' ? 'Copied' : 'Copy Name' }}
                 </span>
               </div>
 
@@ -615,7 +615,8 @@
 
               <div class="flex items-center space-x-2">
                 <span v-if="ep.hasCompiledVideo" class="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-bold flex items-center space-x-1">
-                  <span>✓ Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
+                  <Check class="w-3.5 h-3.5" />
+                  <span>Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
                 </span>
                 <span v-else class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-bold flex items-center space-x-1">
                   <span>⏳ Compilation Pending</span>
@@ -772,7 +773,7 @@
                 </span>
 
                 <span v-if="variant.hasImage" class="absolute bottom-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/75 backdrop-blur-sm text-emerald-400 font-bold border border-emerald-500/30 z-10">
-                  ✓ {{ variant.fileSizeFormatted }} MozJPEG
+                  {{ variant.fileSizeFormatted }} MozJPEG
                 </span>
               </div>
 
@@ -1437,7 +1438,7 @@ const syncEntityMapping = async () => {
 
   triggerToast(
     'Flow Entity IDs Synchronized',
-    `✓ Successfully mapped ${result.count} entities! Mode: ${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'}`
+    `Successfully mapped ${result.count} entities! Mode: ${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'}`
   )
 }
 
@@ -1453,7 +1454,7 @@ const togglePromptTagMode = (mode) => {
 const copyCurrentEntityMapping = async () => {
   try {
     await navigator.clipboard.writeText(entityMapRawText.value)
-    triggerToast('Mapping Copied', '✓ Copied Entity ID mapping text to clipboard!')
+    triggerToast('Mapping Copied', 'Copied Entity ID mapping text to clipboard!')
   } catch (e) {
     console.error('Copy error:', e)
   }
