@@ -1,0 +1,214 @@
+{
+  "scene": 22,
+  "text": "\"Twenty-five percent is plenty,\" Lu Chen murmured with a calm, amused deadpan smile. \"Two hundred and fifty million years is already enough to turn any high-level calamity into dust with a flick of my finger.\"",
+  "durationMs": 12864,
+  "rawWords": [
+    {
+      "ttsWord": "Twenty-five",
+      "startMs": 50,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "percent",
+      "startMs": 663,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 1100,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "plenty",
+      "startMs": 1238,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1875,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 2063,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "murmured",
+      "startMs": 2313,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2663,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2788,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 2863,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "amused",
+      "startMs": 3475,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 3975,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 4475,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "Two",
+      "startMs": 5913,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 6150,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6438,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "fifty",
+      "startMs": 6538,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "million",
+      "startMs": 6913,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 7300,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 7675,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "already",
+      "startMs": 7825,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "enough",
+      "startMs": 8225,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 8538,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "turn",
+      "startMs": 8650,
+      "endMs": 8913
+    },
+    {
+      "ttsWord": "any",
+      "startMs": 8925,
+      "endMs": 9113
+    },
+    {
+      "ttsWord": "high-level",
+      "startMs": 9125,
+      "endMs": 9625
+    },
+    {
+      "ttsWord": "calamity",
+      "startMs": 9638,
+      "endMs": 10175
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 10188,
+      "endMs": 10400
+    },
+    {
+      "ttsWord": "dust",
+      "startMs": 10413,
+      "endMs": 10788
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 10800,
+      "endMs": 10888
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 10900,
+      "endMs": 10950
+    },
+    {
+      "ttsWord": "flick",
+      "startMs": 10963,
+      "endMs": 11263
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 11275,
+      "endMs": 11338
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 11350,
+      "endMs": 11488
+    },
+    {
+      "ttsWord": "finger",
+      "startMs": 11500,
+      "endMs": 12000
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Twenty-five percent is plenty,\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "Lu Chen murmured with a calm,",
+      "startOffsetMs": 1875,
+      "endOffsetMs": 3338
+    },
+    {
+      "text": "amused deadpan smile.",
+      "startOffsetMs": 3475,
+      "endOffsetMs": 5150
+    },
+    {
+      "text": "Two hundred and fifty million years is already",
+      "startOffsetMs": 5913,
+      "endOffsetMs": 8213
+    },
+    {
+      "text": "enough to turn any high-level calamity into dust",
+      "startOffsetMs": 8225,
+      "endOffsetMs": 10788
+    },
+    {
+      "text": "with a flick of my finger.\"",
+      "startOffsetMs": 10800,
+      "endOffsetMs": 12100
+    }
+  ]
+}

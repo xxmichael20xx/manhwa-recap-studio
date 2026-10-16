@@ -1,0 +1,204 @@
+{
+  "series_id": "Series_04_The_Billion_Year_Sovereign",
+  "series_title": "The Billion-Year Sovereign: Reality Convergence",
+  "format": "Format 1: 9:16 Webtoon",
+  "archetype": "Modern Urban Xianxia / Cultivation Manhua (1-Billion-Year Solitary Sovereign)",
+  "characters": [
+    {
+      "id": "lu_chen",
+      "name": "Lu Chen",
+      "token": "@{Lu Chen}",
+      "tier": 1,
+      "role": "Protagonist (The Primordial Sovereign / 25% Active Apex)",
+      "category": "protagonist",
+      "age": 20,
+      "stats_baseline": {
+        "cultivation_years": "1,000,000,000 Years Total (250,000,000 Years Active / 25% Output)",
+        "realm": "Primordial Sovereign / Xiao Yao Tianzun (Absolute Solitary Apex)",
+        "in_game_handle": "Xiao Yao",
+        "appraisal_mask": "Transcendent Apex / 250M Yrs Active (Infinite Overflow)",
+        "physique": "Primordial Immortal Vessel (Passive Recoil Invulnerability)"
+      },
+      "appearance": {
+        "hair": "Messy soft raven-black hair with relaxed fringe",
+        "eyes": "Deep dark obsidian eyes with microscopic hidden golden primordial starlight flecks",
+        "physique": "Lean athletic modern student build, completely unbothered posture",
+        "attire": "Clean oversized charcoal-black pullover streetwear hoodie, dark grey relaxed utility joggers, minimalist white sneakers, hands in pockets"
+      },
+      "dna_prompt_anchor": "@{Lu Chen}, 20-year-old East Asian male, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression, clean oversized charcoal-black pullover hoodie with sleeves covering wrists, dark casual utility trousers, hands in pockets, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "reference_plate": "01_Protagonist_Lu_Chen.jpg",
+      "flowUuid": "7ae04cf3-44e8-4f25-856e-2310c84eb9fb",
+      "flowName": "Character: Lu Chen",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "wang_bao",
+      "name": "Wang Bao",
+      "token": "@{Wang Bao}",
+      "tier": 2,
+      "role": "Supporting Ally (Dorm Roommate / Fatty Wang)",
+      "category": "supporting",
+      "age": 20,
+      "stats_baseline": {
+        "cultivation_years": "65 Years",
+        "realm": "Body Refining Stage 2",
+        "in_game_handle": "Little Bao"
+      },
+      "appearance": {
+        "hair": "Short spiky black hair",
+        "eyes": "Expressive wide comical eyes",
+        "physique": "Chubby, stout, energetic student frame",
+        "attire": "Red graphic gaming t-shirt, beige cargo shorts, sneakers"
+      },
+      "dna_prompt_anchor": "@{Wang Bao}, 20-year-old chubby East Asian male student, round cheerful face, short spiky black hair, expressive wide comical eyes, red graphic gaming t-shirt, beige cargo shorts, enthusiastic energetic posture, dark fantasy modern cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "reference_plate": "02_Sidekick_Wang_Bao.jpg",
+      "flowUuid": "9b2efd3b-0020-4eaa-aa51-a83dac5b6c65",
+      "flowName": "Character: Wang Bao",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "gu_tianyu",
+      "name": "Gu Tianyu",
+      "token": "@{Gu Tianyu}",
+      "tier": 2,
+      "role": "Antagonist Bully (Young Master / Scion)",
+      "category": "antagonist",
+      "age": 21,
+      "stats_baseline": {
+        "cultivation_years": "48,000 Years",
+        "realm": "Golden Core Realm",
+        "in_game_handle": "Sword-Bearer Gu",
+        "weapons": "Jade-Inscribed Custom Spirit Blade"
+      },
+      "appearance": {
+        "hair": "Sharp slicked-back dark brown hair",
+        "eyes": "Haughty, sneering, arrogant dark eyes",
+        "physique": "Athletic, tall, aristocratic posture",
+        "attire": "Tailored designer navy blazer over crisp white collar shirt, glowing cyan spirit qi at fingertips"
+      },
+      "dna_prompt_anchor": "@{Gu Tianyu}, 21-year-old arrogant athletic male student, sharp slicked-back dark brown hair, haughty sneering expression, tailored designer navy blazer over white collar shirt, glowing cyan spirit qi swirling around fingertips, holding a luminous jade-inscribed spirit blade, posture of extreme hubris, modern cultivation manhwa style, sharp linework, high contrast, vertical 9:16",
+      "reference_plate": "03_Bully_Gu_Tianyu.jpg",
+      "flowUuid": "80875c1d-dc98-47e6-a3ac-9ba142de78d2",
+      "flowName": "Character: Gu Tianyu",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "jiang_qingxue",
+      "name": "Jiang Qingxue",
+      "token": "@{Jiang Qingxue}",
+      "tier": 1,
+      "role": "Supporting Ally (Fairy Qingxue / Devoted In-Game Disciple)",
+      "category": "supporting",
+      "age": 21,
+      "stats_baseline": {
+        "cultivation_years": "260,000,000 Years",
+        "realm": "Saint Realm (Glacial Lotus Domain)",
+        "in_game_handle": "Fairy Qingxue"
+      },
+      "appearance": {
+        "hair": "Long flowing silk-black hair with frosted silver tips",
+        "eyes": "Sharp ice-blue phoenix eyes, cold aloof expression",
+        "physique": "Ethereal, tall, graceful, pristine posture",
+        "attire": "Modern white designer trench coat over pale cyan silk dress, frost mist condensing in palm"
+      },
+      "dna_prompt_anchor": "@{Jiang Qingxue}, 21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression, elegant modern white trench coat over pale cyan silk dress, frost mist condensing in palm, dark fantasy modern urban cultivation manhwa style, vertical 9:16",
+      "reference_plate": "04_Disciple_Jiang_Qingxue.jpg",
+      "flowUuid": "67c81f77-381d-4964-9107-d93dff4faf03",
+      "flowName": "Character: Jiang Qingxue",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "commander_han_feng",
+      "name": "Commander Han Feng",
+      "token": "@{Commander Han Feng}",
+      "tier": 2,
+      "role": "State Inspector (National Special Threat Bureau)",
+      "category": "supporting",
+      "age": 42,
+      "stats_baseline": {
+        "cultivation_years": "18,000,000 Years",
+        "realm": "Nascent Domain",
+        "in_game_handle": "Commander Han"
+      },
+      "appearance": {
+        "hair": "Short grizzled dark hair",
+        "eyes": "Tired, stern eyes with heavy dark circles, tactical cheek scar",
+        "physique": "Broad, muscular, seasoned military posture",
+        "attire": "Dark olive-drab tactical military trench coat with brass state insignia, glowing containment talisman in hand"
+      },
+      "dna_prompt_anchor": "@{Commander Han Feng}, 42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek, dark olive-drab tactical trench coat with brass state insignia, glowing tactical talisman in hand, dark fantasy modern cultivation manhwa style, vertical 9:16",
+      "reference_plate": "05_Inspector_Han_Feng.jpg",
+      "flowUuid": "3b815452-d36f-4f7d-b411-718d458f277a",
+      "flowName": "Character: Commander Han Feng",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "ye_xingchen",
+      "name": "Ye Xingchen",
+      "token": "@{Ye Xingchen}",
+      "tier": 1,
+      "role": "Apex Rival Whale (Lord Starfall / Global Rank #2)",
+      "category": "antagonist",
+      "age": 28,
+      "stats_baseline": {
+        "cultivation_years": "480,000,000 Years",
+        "realm": "Celestial Sovereign (Heavenly Constellation Domain)",
+        "in_game_handle": "Lord Starfall"
+      },
+      "appearance": {
+        "hair": "Long silver-streaked dark hair combed back",
+        "eyes": "Regal golden eyes full of cold imperial disdain",
+        "physique": "Imposing, aristocratic, commanding posture",
+        "attire": "Tailored charcoal bespoke three-piece suit adorned with celestial star-charts, swirling purple cosmic starlight halo floating behind shoulders"
+      },
+      "dna_prompt_anchor": "@{Ye Xingchen}, 28-year-old imposing aristocratic man, long silver-streaked dark hair, regal golden eyes full of cold disdain, tailored charcoal bespoke three-piece suit adorned with celestial star-charts, swirling purple cosmic starlight halo floating behind shoulders, imperial dominating aura, dark fantasy modern cultivation manhwa style, vertical 9:16",
+      "reference_plate": "06_Rival_Ye_Xingchen.jpg",
+      "flowUuid": "488bd39e-fb96-4e80-b8ce-f1e3cad4fa12",
+      "flowName": "Character: Ye Xingchen",
+      "episodes": [
+        "EP01"
+      ]
+    },
+    {
+      "id": "asura_blood_sovereign",
+      "name": "Asura Blood Sovereign",
+      "token": "@{Asura Blood Sovereign}",
+      "tier": 1,
+      "role": "Dimensional Boss (Class-SSS Asura Blood Sovereign / 450M-Year Despot)",
+      "category": "boss",
+      "age": "Ancient (450 Million Years)",
+      "stats_baseline": {
+        "cultivation_years": "450,000,000 Years",
+        "realm": "Asura Blood Emperor Realm (Class-SSS Dimensional Rift Despot)",
+        "in_game_handle": "Asura Blood Sovereign",
+        "weapons": "Six Demonic Blood-Forged Halberds & Cleavers",
+        "physique": "Six-Armed Asura War Body (Impervious Blood-Chitin Armor)"
+      },
+      "appearance": {
+        "hair": "Wild long crimson flame-like hair billowing upward",
+        "eyes": "Four burning demonic crimson eyes with glowing yellow pupils and dark sclera",
+        "physique": "Imposing eight-foot-tall demonic muscular frame, six muscular arms physically attached to broad shoulders",
+        "attire": "Barbed obsidian and blood-iron armor with glowing demonic runes, jagged bone shoulder pauldrons, swirling dark crimson blood-mist and black lightning"
+      },
+      "dna_prompt_anchor": "@{Asura Blood Sovereign}, 8-foot-tall demonic humanoid sovereign, six muscular obsidian-crimson armored arms each physically connected to shoulders, wild long crimson flame hair billowing outward, four burning red demonic eyes, ornate barbed dark crimson demon-iron armor with glowing ancient runes, jagged bone spikes on shoulders, suffocating dark blood-red mist and black lightning aura, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
+      "reference_plate": "07_Boss_Asura_Blood_Sovereign.jpg",
+      "flowUuid": "d11784e8-a049-4347-b39d-abd23b774d34",
+      "flowName": "Boss: Asura Blood Sovereign",
+      "episodes": [
+        "EP01",
+        "EP03",
+        "EP08"
+      ]
+    }
+  ]
+}

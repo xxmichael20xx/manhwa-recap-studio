@@ -1,0 +1,179 @@
+{
+  "scene": 21,
+  "text": "SYSTEM NOTICE: ACTIVE OUTPUT CALIBRATED TO 25.00% (250,000,000 YEARS) — APPRAISAL STATUS: TRANSCENDENT APEX / INFINITE OVERFLOW. The golden HUD hovered gracefully in front of his desk inside the clean room.",
+  "durationMs": 15120,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "NOTICE",
+      "startMs": 575,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "ACTIVE",
+      "startMs": 1313,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "OUTPUT",
+      "startMs": 1688,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "CALIBRATED",
+      "startMs": 2113,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 2688,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "25.00% (250,000,000 YEARS)",
+      "startMs": 2775,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "APPRAISAL",
+      "startMs": 5775,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "STATUS",
+      "startMs": 6288,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "TRANSCENDENT",
+      "startMs": 7088,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "APEX",
+      "startMs": 7713,
+      "endMs": 8150
+    },
+    {
+      "ttsWord": "/",
+      "startMs": 8163,
+      "endMs": 8488
+    },
+    {
+      "ttsWord": "INFINITE",
+      "startMs": 8500,
+      "endMs": 8900
+    },
+    {
+      "ttsWord": "OVERFLOW",
+      "startMs": 8913,
+      "endMs": 9563
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 10425,
+      "endMs": 10563
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 10575,
+      "endMs": 10950
+    },
+    {
+      "ttsWord": "HUD",
+      "startMs": 10963,
+      "endMs": 11188
+    },
+    {
+      "ttsWord": "hovered",
+      "startMs": 11200,
+      "endMs": 11538
+    },
+    {
+      "ttsWord": "gracefully",
+      "startMs": 11550,
+      "endMs": 12113
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 12125,
+      "endMs": 12225
+    },
+    {
+      "ttsWord": "front",
+      "startMs": 12238,
+      "endMs": 12438
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 12450,
+      "endMs": 12513
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 12525,
+      "endMs": 12650
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 12663,
+      "endMs": 13013
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 13025,
+      "endMs": 13500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 13513,
+      "endMs": 13575
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 13588,
+      "endMs": 13913
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 13925,
+      "endMs": 14250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM NOTICE:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1138
+    },
+    {
+      "text": "ACTIVE OUTPUT CALIBRATED TO 25.00% (250,000,000 YEARS)",
+      "startOffsetMs": 1313,
+      "endOffsetMs": 5688
+    },
+    {
+      "text": "APPRAISAL STATUS:",
+      "startOffsetMs": 5775,
+      "endOffsetMs": 6925
+    },
+    {
+      "text": "TRANSCENDENT APEX   INFINITE OVERFLOW.",
+      "startOffsetMs": 7088,
+      "endOffsetMs": 9663
+    },
+    {
+      "text": "The golden HUD hovered gracefully in front of",
+      "startOffsetMs": 10425,
+      "endOffsetMs": 12513
+    },
+    {
+      "text": "his desk inside the clean room.",
+      "startOffsetMs": 12525,
+      "endOffsetMs": 14350
+    }
+  ]
+}

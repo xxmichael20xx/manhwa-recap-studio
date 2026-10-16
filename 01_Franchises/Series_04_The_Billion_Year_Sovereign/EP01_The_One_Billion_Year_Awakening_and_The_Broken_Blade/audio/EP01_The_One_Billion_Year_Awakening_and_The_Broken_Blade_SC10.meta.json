@@ -1,0 +1,109 @@
+{
+  "scene": 10,
+  "text": "GLOBAL SYSTEM BROADCAST: THE HEAVENLY DAO SIMULATION HAS REACHED MAXIMUM DENSITY. REALITY CONVERGENCE COMMENCING IN TEN MINUTES.",
+  "durationMs": 9384,
+  "rawWords": [
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 438,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "BROADCAST",
+      "startMs": 875,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "THE",
+      "startMs": 1838,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "HEAVENLY",
+      "startMs": 1938,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "DAO",
+      "startMs": 2363,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "SIMULATION",
+      "startMs": 2650,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "HAS",
+      "startMs": 3400,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "REACHED",
+      "startMs": 3625,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "MAXIMUM",
+      "startMs": 3963,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "DENSITY",
+      "startMs": 4463,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "REALITY",
+      "startMs": 5913,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "CONVERGENCE",
+      "startMs": 6513,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "COMMENCING",
+      "startMs": 7088,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "IN",
+      "startMs": 7638,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "TEN",
+      "startMs": 7763,
+      "endMs": 8000
+    },
+    {
+      "ttsWord": "MINUTES",
+      "startMs": 8013,
+      "endMs": 8513
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "GLOBAL SYSTEM BROADCAST:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1688
+    },
+    {
+      "text": "THE HEAVENLY DAO SIMULATION HAS REACHED MAXIMUM DENSITY.",
+      "startOffsetMs": 1838,
+      "endOffsetMs": 5150
+    },
+    {
+      "text": "REALITY CONVERGENCE COMMENCING IN TEN MINUTES.",
+      "startOffsetMs": 5913,
+      "endOffsetMs": 8613
+    }
+  ]
+}

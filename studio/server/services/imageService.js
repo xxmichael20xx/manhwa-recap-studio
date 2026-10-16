@@ -612,8 +612,8 @@ export class ImageService {
     const imagesDir = this.getImagesDir(franchiseId, episodeId)
     await fs.mkdir(imagesDir, { recursive: true })
 
-    const cleanBase64 = zipBase64.replace(/^data:application\/[\w.-]+;base64,/, '').replace(/^data:application\/zip;base64,/, '').replace(/^data:application\/x-zip-compressed;base64,/, '')
-    const buffer = Buffer.from(cleanBase64, 'base64')
+    const cleanBase64 = zipBase64.includes(';base64,') ? zipBase64.split(';base64,')[1] : zipBase64.replace(/^data:base64,/, '')
+    const buffer = Buffer.from(cleanBase64.trim(), 'base64')
 
     const AdmZipModule = await import('adm-zip')
     const AdmZip = AdmZipModule.default || AdmZipModule
@@ -657,17 +657,25 @@ export class ImageService {
 
     for (const m of mappings) {
       const targetTag = m.scene.tag
-      const targetPath = path.join(imagesDir, `${targetTag}.jpg`)
+      const extMatch = m.file.name.match(/\.(png|jpe?g|webp)$/i)
+      const ext = extMatch ? (extMatch[1].toLowerCase() === 'jpeg' ? 'jpg' : extMatch[1].toLowerCase()) : 'jpg'
+      const filename = `${targetTag}.${ext}`
+      const targetPath = path.join(imagesDir, filename)
       const data = m.file.getData()
       await fs.writeFile(targetPath, data)
 
-      // If a placeholder PNG exists for this tag, remove it so it doesn't mask the high-fidelity JPG
-      const pngPath = path.join(imagesDir, `${targetTag}.png`)
-      try {
-        if (fsSync.existsSync(pngPath)) {
-          await fs.unlink(pngPath)
+      // Clean up alternate extensions to prevent ghost plate masking
+      const allExts = ['jpg', 'jpeg', 'png', 'webp']
+      for (const altExt of allExts) {
+        if (altExt !== ext) {
+          const altPath = path.join(imagesDir, `${targetTag}.${altExt}`)
+          try {
+            if (fsSync.existsSync(altPath)) {
+              await fs.unlink(altPath)
+            }
+          } catch (_) {}
         }
-      } catch (_) {}
+      }
 
       // Automatically verify and sanitize image against Studio Quality / Anti-Clutter Criteria
       let qaReport = null
@@ -725,7 +733,19 @@ export class ImageService {
         }
       }
 
-      // 2. Semantic n-gram and substring matching
+      // 2. Numerical / scene / panel prefix match (e.g. 01.jpg, scene_01.jpg, panel-01.png, cut_01.jpg)
+      const numMatch = file.name.match(/(?:scene|panel|image|shot|cut)?[-_ ]*0*(\d+)/i)
+      if (numMatch) {
+        const num = parseInt(numMatch[1], 10)
+        const targetTag = `IMG_${String(num).padStart(3, '0')}`
+        const matchedScene = scenes.find(s => s.tag === targetTag)
+        if (matchedScene) {
+          scoredPairs.push({ file, scene: matchedScene, score: 8000, slug })
+          return
+        }
+      }
+
+      // 3. Semantic n-gram and substring matching
       scenes.forEach(scene => {
         let score = 0
         const promptLower = (scene.prompt || '').toLowerCase()

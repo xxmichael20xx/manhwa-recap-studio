@@ -1,0 +1,159 @@
+{
+  "scene": 16,
+  "text": "Contemporary glass skyscrapers stood proud on reinforced bedrock as crystalline spirit veins sprouted through city avenues, infusing the clean night air with pure primordial energy.",
+  "durationMs": 11040,
+  "rawWords": [
+    {
+      "ttsWord": "Contemporary",
+      "startMs": 50,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 775,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "skyscrapers",
+      "startMs": 1088,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 1838,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "proud",
+      "startMs": 2138,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 2538,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "reinforced",
+      "startMs": 2700,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "bedrock",
+      "startMs": 3338,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3800,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "crystalline",
+      "startMs": 3938,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 4438,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "veins",
+      "startMs": 4850,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "sprouted",
+      "startMs": 5200,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5638,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "city",
+      "startMs": 5838,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "avenues",
+      "startMs": 6213,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "infusing",
+      "startMs": 7063,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7663,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 7763,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "night",
+      "startMs": 8088,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 8350,
+      "endMs": 8550
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8563,
+      "endMs": 8725
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 8738,
+      "endMs": 9050
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 9063,
+      "endMs": 9675
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 9688,
+      "endMs": 10175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Contemporary glass skyscrapers stood proud on reinforced",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3325
+    },
+    {
+      "text": "bedrock as crystalline spirit veins sprouted through city",
+      "startOffsetMs": 3338,
+      "endOffsetMs": 6200
+    },
+    {
+      "text": "avenues,",
+      "startOffsetMs": 6213,
+      "endOffsetMs": 6875
+    },
+    {
+      "text": "infusing the clean night air with pure primordial",
+      "startOffsetMs": 7063,
+      "endOffsetMs": 9675
+    },
+    {
+      "text": "energy.",
+      "startOffsetMs": 9688,
+      "endOffsetMs": 10275
+    }
+  ]
+}

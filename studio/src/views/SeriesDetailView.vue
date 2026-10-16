@@ -42,8 +42,9 @@
         <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 uppercase font-semibold">
           {{ franchise.folder }}
         </span>
-        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 font-bold">
-          {{ franchise.format || (franchise.id?.includes('02') ? '16:9 Landscape' : '9:16 Webtoon') }}
+        <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 font-bold flex items-center space-x-1">
+          <span>🔒</span>
+          <span>{{ franchise.format || (franchise.id?.includes('02') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}</span>
         </span>
       </div>
     </div>
@@ -362,6 +363,7 @@
               <!-- Textarea Input Area -->
               <textarea 
                 v-model="entityMapRawText" 
+                @paste="handleEntityMapPaste"
                 rows="7"
                 placeholder="Paste raw agent text, e.g.:&#10;I've pulled the absolute latest list of character entities for you. Here are all 16 UUIDs:&#10;&#10;Boss: Archon of Deletion: 030776ff-8016-4192-80ee-bcc02a6f1920 (Colossal automaton)&#10;Bramwell Locke: 16c4c742-5932-4c96-9c0c-c42aadbcb00a (Manhwa protagonist)&#10;Linnea Croft: 7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b&#10;..."
                 class="w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 font-mono text-xs text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none resize-y shadow-xs"
@@ -369,7 +371,7 @@
 
               <!-- Action Buttons Bar -->
               <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                <div class="flex items-center space-x-2">
+                <div class="flex flex-wrap items-center gap-2">
                   <button 
                     @click="syncEntityMapping"
                     :disabled="isSavingEntityMap || !entityMapRawText.trim()"
@@ -377,6 +379,25 @@
                   >
                     <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isSavingEntityMap }" />
                     <span>{{ isSavingEntityMap ? 'Synchronizing...' : `⚡ Parse & Sync Entity IDs (${entityCount} Mapped)` }}</span>
+                  </button>
+
+                  <button 
+                    @click="copyFlowAgentPrompt"
+                    class="px-3.5 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-500/30 text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer"
+                    title="Copy pre-formatted prompt to ask Google Flow chat agent for entity IDs"
+                  >
+                    <Sparkles class="w-3.5 h-3.5 text-purple-500" />
+                    <span>📋 Copy Flow Agent Prompt</span>
+                  </button>
+
+                  <button 
+                    v-if="entityMapRawText.trim()"
+                    @click="prettifyEntityMapping"
+                    class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+                    title="Separate concatenated entities into clean lines"
+                  >
+                    <Sparkles class="w-3.5 h-3.5 text-indigo-500" />
+                    <span>✨ Prettify Text</span>
                   </button>
 
                   <button 
@@ -1202,6 +1223,7 @@ import {
 } from 'lucide-vue-next'
 import {
   parseEntityMappingText,
+  normalizeEntityMappingText,
   saveEntityMapToStorage,
   loadEntityMapFromStorage,
   getTagModeFromStorage,
@@ -1755,26 +1777,94 @@ const getModelUuid = (model) => {
 
 const syncEntityMapping = async () => {
   const result = parseEntityMappingText(entityMapRawText.value)
+  // Automatically format the textarea with clean individual lines
+  if (result.normalizedText && result.normalizedText !== entityMapRawText.value) {
+    entityMapRawText.value = result.normalizedText
+  }
+
   parsedEntities.value = result.entities
   saveEntityMapToStorage(route.params.id, entityMapRawText.value, result.entities)
   
+  let charactersUpdated = 0
+  let matricesUpdated = 0
+
   try {
     isSavingEntityMap.value = true
-    await fetch(`/api/franchises/${route.params.id}/flow-entities`, {
+    const res = await fetch(`/api/franchises/${route.params.id}/flow-entities`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ rawText: entityMapRawText.value, entities: result.entities })
     })
+    if (res.ok) {
+      const data = await res.json()
+      charactersUpdated = data.charactersUpdated || 0
+      matricesUpdated = data.matricesUpdated || 0
+    }
   } catch (e) {
     console.warn('Failed to persist flow entities to server:', e)
   } finally {
     isSavingEntityMap.value = false
   }
 
+  // Refresh character models from server to reflect synced flowUuid
+  await loadModels()
+
+  const cascadeInfo = (charactersUpdated > 0 || matricesUpdated > 0)
+    ? ` • Cascaded to ${charactersUpdated} vault models & ${matricesUpdated} prompt matrices`
+    : ''
+
   triggerToast(
     'Flow Entity IDs Synchronized',
-    `Successfully mapped ${result.count} entities! Mode: ${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'}`
+    `Mapped ${result.count} entities${cascadeInfo}! Mode: ${promptTagMode.value === 'uuid' ? '@UUID' : '@{Token}'}`
   )
+}
+
+const handleEntityMapPaste = () => {
+  setTimeout(() => {
+    const result = parseEntityMappingText(entityMapRawText.value)
+    if (result.normalizedText && result.normalizedText !== entityMapRawText.value) {
+      entityMapRawText.value = result.normalizedText
+      triggerToast('Auto-Formatted Paste', `Reformatted ${result.count} entities into clean lines!`)
+    }
+  }, 50)
+}
+
+const prettifyEntityMapping = () => {
+  const result = parseEntityMappingText(entityMapRawText.value)
+  if (result.normalizedText) {
+    entityMapRawText.value = result.normalizedText
+    triggerToast('Text Prettified', `Formatted ${result.count} entities into clean individual lines!`)
+  }
+}
+
+const copyFlowAgentPrompt = async () => {
+  const characters = (models.value || []).filter(m => m.type === 'character' || m.type === 'boss' || m.category === 'Protagonist' || m.category === 'Antagonist' || m.category === 'Supporting').map(m => m.name)
+  const items = (models.value || []).filter(m => m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item').map(m => m.name)
+  const characterList = characters.length > 0 ? characters.map(c => `- ${c}`).join('\n') : '- (All registered characters)'
+  const itemList = items.length > 0 ? `\n\nAlso include registered signature weapons/items if assigned IDs:\n${items.map(i => `- ${i}`).join('\n')}` : ''
+  const promptText = `Please provide the complete, current list of all registered character and entity IDs for this project.
+
+CRITICAL FORMATTING INSTRUCTIONS:
+1. Output MUST be inside a single raw markdown code block (\`\`\`text ... \`\`\`).
+2. Each entity MUST be on its own separate line with a line break:
+<Entity Name>: <UUID>
+3. Strictly do NOT merge multiple entities onto the same line.
+4. Do NOT include bullets, asterisks, bold text, or conversational commentary.
+
+Required Output Format:
+\`\`\`text
+Name 1: 00000000-0000-0000-0000-000000000000
+Name 2: 00000000-0000-0000-0000-000000000000
+\`\`\`
+
+Ensure all of the following characters and bosses are included:
+${characterList}${itemList}`
+  try {
+    await navigator.clipboard.writeText(promptText)
+    triggerToast('Flow Agent Prompt Copied', 'Paste this prompt directly into Google Flow to get clean, code-blocked UUIDs!')
+  } catch (e) {
+    console.error('Failed to copy flow prompt:', e)
+  }
 }
 
 const togglePromptTagMode = (mode) => {
@@ -1806,7 +1896,7 @@ const loadFlowEntities = async () => {
   try {
     const res = await fetch(`/api/franchises/${route.params.id}/flow-entities?cb=${Date.now()}`)
     const data = await res.json()
-    if (data && data.rawText) {
+    if (data && typeof data.rawText === 'string') {
       entityMapRawText.value = data.rawText
       parsedEntities.value = data.entities || parseEntityMappingText(data.rawText).entities
       saveEntityMapToStorage(route.params.id, data.rawText, parsedEntities.value)

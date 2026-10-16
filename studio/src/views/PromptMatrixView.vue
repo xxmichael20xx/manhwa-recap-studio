@@ -469,14 +469,21 @@
               </div>
             </div>
 
-            <!-- Missing Image Empty Placeholder -->
+            <!-- Missing Image Empty Placeholder with Dropzone Capability -->
             <div 
               v-else
-              class="aspect-video w-full rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800/40 flex flex-col items-center justify-center text-slate-400 p-3 text-center"
+              @dragover.prevent
+              @drop.prevent="handlePromptPlateDrop($event, p.tag)"
+              class="aspect-video w-full rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-800/40 hover:border-purple-500 hover:bg-purple-50/20 dark:hover:bg-purple-950/20 flex flex-col items-center justify-center text-slate-400 p-3 text-center transition cursor-pointer group relative"
+              :title="`Drop replacement JPG/PNG or .ZIP archive for [${p.tag}]`"
             >
-              <AlertCircle class="w-6 h-6 text-amber-500/70 mb-1" />
-              <span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">No Plate on Disk</span>
-              <span class="text-[10px] font-mono text-slate-400 mt-0.5">Awaiting Google Flow generation</span>
+              <div v-if="uploadingPromptTags.has(p.tag)" class="absolute inset-0 bg-slate-950/80 backdrop-blur-xs flex flex-col items-center justify-center space-y-1 text-white rounded-xl z-10">
+                <Loader2 class="w-5 h-5 text-purple-400 animate-spin" />
+                <span class="text-[10px] font-mono font-bold">Uploading [{{ p.tag }}]...</span>
+              </div>
+              <Upload class="w-5 h-5 text-purple-500/70 mb-1 group-hover:scale-110 transition" />
+              <span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">Drop Plate or ZIP Here</span>
+              <span class="text-[10px] font-mono text-slate-400 mt-0.5">Auto-maps JPG, PNG, or .ZIP</span>
             </div>
           </div>
 
@@ -1138,8 +1145,11 @@
               <div>
                 <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                   <span>Google Flow System Instructions</span>
-                  <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 font-bold">
-                    {{ activeDirectiveFormat === '16:9' ? 'Format 2 (16:9)' : 'Format 1 (9:16)' }}
+                  <span class="text-xs font-mono px-2 py-0.5 rounded-full font-bold flex items-center space-x-1"
+                    :class="activeDirectiveFormat === '16:9' ? 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20' : 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20'"
+                  >
+                    <span>🔒</span>
+                    <span>{{ activeDirectiveFormat === '16:9' ? 'Format 2 (16:9 Landscape)' : 'Format 1 (9:16 Webtoon)' }}</span>
                   </span>
                 </h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
@@ -1180,25 +1190,32 @@
               </button>
             </div>
 
-            <div class="flex items-center space-x-1.5 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono">
-              <button 
-                @click="activeDirectiveFormat = '16:9'"
-                class="px-2.5 py-1 rounded-lg font-bold transition cursor-pointer flex items-center space-x-1"
-                :class="activeDirectiveFormat === '16:9' 
-                  ? 'bg-white dark:bg-slate-900 text-cyan-600 dark:text-cyan-400 shadow-xs' 
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+            <div class="flex items-center gap-2">
+              <!-- Batch Scope Selector when previewing Tier 2 -->
+              <select
+                v-if="directiveTierTab === 'batch' && dynamicBatches.length > 0"
+                v-model="previewDirectiveBatchIdx"
+                class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 cursor-pointer"
+                title="Preview smart batch header for a specific batch"
               >
-                <span>16:9 Landscape</span>
-              </button>
-              <button 
-                @click="activeDirectiveFormat = '9:16'"
-                class="px-2.5 py-1 rounded-lg font-bold transition cursor-pointer flex items-center space-x-1"
-                :class="activeDirectiveFormat === '9:16' 
-                  ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
+                <option :value="-1">Episode Scope (All {{ parsedPrompts.length }} Scenes)</option>
+                <option v-for="(b, bIdx) in dynamicBatches" :key="bIdx" :value="bIdx">
+                  {{ b.name }} ({{ b.startTag }}–{{ b.endTag }})
+                </option>
+              </select>
+
+              <!-- Locked Series Format Badge (Strictly Locked at Series Creation) -->
+              <div 
+                class="flex items-center space-x-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold border"
+                :class="activeDirectiveFormat === '16:9'
+                  ? 'bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800'
+                  : 'bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800'"
+                title="Aspect ratio is permanently locked by Series Bible"
               >
-                <span>9:16 Webtoon</span>
-              </button>
+                <span class="text-amber-500">🔒</span>
+                <span>{{ activeDirectiveFormat === '16:9' ? '16:9 Landscape' : '9:16 Webtoon' }}</span>
+                <span class="text-[10px] text-slate-400 font-normal uppercase">(Series Locked)</span>
+              </div>
             </div>
           </div>
 
@@ -1208,14 +1225,32 @@
               :class="directiveTierTab === 'master' ? 'bg-purple-50/60 dark:bg-purple-950/20 border-purple-200/60 dark:border-purple-500/20' : 'bg-cyan-50/60 dark:bg-cyan-950/20 border-cyan-200/60 dark:border-cyan-500/20'"
             >
               <ShieldCheck class="w-4 h-4 shrink-0 mt-0.5" :class="directiveTierTab === 'master' ? 'text-purple-600 dark:text-purple-400' : 'text-cyan-600 dark:text-cyan-400'" />
-              <p class="text-[11px] leading-relaxed" :class="directiveTierTab === 'master' ? 'text-purple-950 dark:text-purple-200' : 'text-cyan-950 dark:text-cyan-200'">
-                <template v-if="directiveTierTab === 'master'">
-                  <strong>Tier 1 — Where to paste:</strong> Paste once into Google Flow's <em>Agent Instructions</em> (or system directives). Decouples all negative quality guards, anatomy invariants, and zero-text rules so per-scene prompts stay laser-focused without attention dilution.
-                </template>
-                <template v-else>
-                  <strong>Tier 2 — Batch Collection Header:</strong> Prepended automatically when copying micro-chunks and full batches. Mandates collection isolation in Google Flow.
-                </template>
-              </p>
+              <div class="space-y-2 flex-1">
+                <p class="text-[11px] leading-relaxed" :class="directiveTierTab === 'master' ? 'text-purple-950 dark:text-purple-200' : 'text-cyan-950 dark:text-cyan-200'">
+                  <template v-if="directiveTierTab === 'master'">
+                    <strong>Tier 1 — Smart Context-Aware Master Instructions:</strong> Paste once into Google Flow's <em>Agent Instructions</em> panel. Automatically adapts to this episode's detected protagonist, boss/construct anti-morphing guards, and diegetic text objects (System UI, scrolls, steles, signs).
+                  </template>
+                  <template v-else>
+                    <strong>Tier 2 — Smart Per-Batch Header:</strong> Prepended automatically when copying any batch or chunk. Whitelists environmental text ONLY on scenes that actually contain UI panels/scrolls/signs and locks all other scenes to 100% pure textless.
+                  </template>
+                </p>
+
+                <!-- Smart Context Auto-Detection Badges -->
+                <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 border border-purple-300/60 dark:border-purple-700/60">
+                    🎯 Protagonist: {{ activeFlowIntelligence.protagonistLabel }}
+                  </span>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/90 dark:bg-slate-900/90 text-emerald-700 dark:text-emerald-300 border border-emerald-300/60 dark:border-emerald-700/60">
+                    📜 Env Text: {{ activeFlowIntelligence.diegeticSceneTags.length > 0 ? `${activeFlowIntelligence.diegeticSceneTags.length} Scene(s) Whitelisted` : '0 Scenes (100% Pure Textless Locked)' }}
+                  </span>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/90 dark:bg-slate-900/90 text-rose-700 dark:text-rose-300 border border-rose-300/60 dark:border-rose-700/60">
+                    🛡️ Anti-Morph: {{ activeFlowIntelligence.bossOrConstructList.length > 0 ? `${activeFlowIntelligence.bossOrConstructList.length} Boss/Construct Entity Guard(s)` : 'Standard Human Isolation' }}
+                  </span>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-white/90 dark:bg-slate-900/90 text-cyan-700 dark:text-cyan-300 border border-cyan-300/60 dark:border-cyan-700/60">
+                    🎭 Action Fidelity: {{ activeFlowIntelligence.nonCombatCount }} Dialogue/Calm vs {{ activeFlowIntelligence.combatCount }} Combat
+                  </span>
+                </div>
+              </div>
             </div>
 
             <!-- Code Preview Block -->
@@ -1418,7 +1453,7 @@ import {
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
   AlertCircle, AlertTriangle, Film, Loader2,
   Users, Download, ExternalLink, Sparkles, Tag, FileCode2, Hash,
-  ChevronDown, ChevronUp, Eye, ChevronLeft, ChevronRight, Clock
+  ChevronDown, ChevronUp, Eye, ChevronLeft, ChevronRight, Clock, Upload
 } from 'lucide-vue-next'
 import { 
   parseEntityMappingText, 
@@ -1585,23 +1620,24 @@ const episodeScopedModels = computed(() => {
   if (!currentEpId) return vaultModels.value
 
   return vaultModels.value.filter(m => {
-    // If model has explicit episodes list
+    if (/protagonist/i.test(m.category || '')) return true
+    const searchToken = (m.token || `@{${m.name}}`).toLowerCase()
+    const searchName = (m.flowName || m.name || '').replace(/^(Boss|Character|Commander|Lord):\s*/i, '').trim().toLowerCase()
+    const searchUuid = (m.flowUuid || '').toLowerCase()
+    const inPrompts = parsedPrompts.value.some(p => {
+      const promptLower = `${p.prompt || ''} ${(p.characterTokens || []).join(' ')}`.toLowerCase()
+      return (searchUuid && searchUuid.length >= 8 && promptLower.includes(searchUuid)) ||
+             promptLower.includes(searchToken) ||
+             (searchName && promptLower.includes(searchName))
+    })
+    if (inPrompts) return true
     if (Array.isArray(m.episodes) && m.episodes.length > 0) {
       return m.episodes.some(ep => {
         const epLower = ep.toLowerCase()
         return epLower.includes(currentEpId) || currentEpId.includes(epLower)
       })
     }
-    // Fallback: check if model token, flowName, or name is mentioned in parsedPrompts
-    const searchToken = (m.token || `@{${m.name}}`).toLowerCase()
-    const searchName = (m.flowName || m.name).toLowerCase()
-    const searchUuid = (m.flowUuid || '').toLowerCase()
-    return parsedPrompts.value.some(p => {
-      const promptLower = (p.prompt || '').toLowerCase()
-      return (searchUuid && promptLower.includes(searchUuid)) ||
-             promptLower.includes(searchToken) ||
-             promptLower.includes(searchName)
-    })
+    return false
   })
 })
 
@@ -2066,105 +2102,253 @@ const formatReferenceHeader = (_references) => {
   return ''
 }
 
-const getFlowMasterInstructions = (format = '16:9') => {
-  const is16x9 = format === '16:9'
-  if (is16x9) {
-    return `[SYSTEM DIRECTIVE: GOOGLE FLOW MASTER AGENT INSTRUCTIONS — 16:9 FULL BLEED LANDSCAPE]
+// =========================================================================
+// Smart Context-Aware Flow Instruction Engine (Episode & Batch Intelligence)
+// =========================================================================
 
-📁 SESSION & COLLECTION ISOLATION:
-1. Always create and isolate each batch within its dedicated collection. Never mix scenes across batches.
-2. STANDALONE SCENES: Generate EXACTLY ONE standalone, edge-to-edge 16:9 horizontal widescreen landscape image (1920x1080 full bleed) per <scene> node. Zero comic strips, zero multi-panel grids, zero storyboards, zero collages.
+const formatEntityWithId = (nameStr) => {
+  if (!nameStr) return ''
+  const clean = nameStr.replace(/^@\{?/, '').replace(/\}?$/, '').trim()
+  const map = parsedEntities.value || {}
+  let uuid = map[clean]
+  if (!uuid) {
+    for (const [k, v] of Object.entries(map)) {
+      if (k.toLowerCase() === clean.toLowerCase() || k.replace(/^(Boss|Character|Commander|Lord):\s*/i, '').trim().toLowerCase() === clean.toLowerCase()) {
+        uuid = v
+        break
+      }
+    }
+  }
+  if (!uuid && Array.isArray(vaultModels.value)) {
+    const m = vaultModels.value.find(vm => (vm.flowName || vm.name || '').toLowerCase().includes(clean.toLowerCase()))
+    if (m && m.flowUuid && !/^00000000-temp/i.test(m.flowUuid)) {
+      uuid = m.flowUuid
+    }
+  }
+  if (uuid && promptTagMode.value === 'uuid') {
+    return `${clean} (@${uuid})`
+  }
+  return `@{${clean}}`
+}
 
-🚫 ZERO-TEXT MANDATE (STRICTLY ENFORCED):
-- 100% pure textless illustration artwork.
-- ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, chapter titles, or UI labels.
+const analyzeFlowContext = (itemsList = null) => {
+  const items = Array.isArray(itemsList) && itemsList.length > 0 ? itemsList : (parsedPrompts.value || [])
+  const models = Array.isArray(vaultModels.value) && vaultModels.value.length > 0 ? vaultModels.value : (episodeScopedModels.value || [])
 
-👥 ACTOR & ANATOMICAL INTEGRITY:
-- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand, natural articulation. Complete limbs, pristine anatomy.
-- ZERO extra limbs, mutated hands, duplicate body parts, fused fingers, floating hands, or detached ghost limbs.
-- Every hand holding a weapon, bow, or prop MUST be physically and seamlessly attached to the forearm and shoulder.
-- SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Never clone or duplicate the main character. Diverse background faces and neutral indistinct crowd silhouettes.
-- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, fist impact, weapon strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger, random muscle man, or generic bystander.
-- Floating holographic screens must float freely in mid-air with zero disembodied hands touching the glass.
+  const nonHumanRegex = /\b(boss|automaton|puppet|golem|construct|chimera|wyrm|minotaur|seraph|archon|behemoth|beast|titan|monster|vanguard-0|mechanical|sentinel|overseer)\b/i
+  const allEpisodeItems = parsedPrompts.value || items
 
-🏛️ SPATIAL & CAMERA INTEGRITY:
-- Strictly adhere to the indoor or outdoor environment defined in the prompt. Single unified camera perspective (zero split 50/50 rooms or fractured non-Euclidean doorways).
+  // 1. Identify Protagonist (exclude Boss:, Location:, Prop:, Item:, and non-human constructs; rank by protagonist metadata then scene frequency)
+  const humanCharModels = models.filter(m => {
+    const label = (m.flowName || m.name || '').trim()
+    if (/^(Boss|Location|Prop|Item|Artifact|Monster|Construct|Environment):/i.test(label)) return false
+    if (nonHumanRegex.test(label)) return false
+    return true
+  })
 
-🎨 MASTER ART STYLE:
-- Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, pure textless artwork.`
-  } else {
-    return `[SYSTEM DIRECTIVE: GOOGLE FLOW MASTER AGENT INSTRUCTIONS — 9:16 AUTHENTIC WEBTOON STRIP]
+  let protagonistModel = humanCharModels.find(m => /protagonist|\bmc\b|main\s+character/i.test(`${m.category || ''} ${m.role || ''}`))
+  if (!protagonistModel && humanCharModels.length > 0) {
+    let bestScore = -1
+    for (const m of humanCharModels) {
+      const rawLabel = (m.flowName || m.name || '').replace(/^(Character|Commander|Lord):\s*/i, '').trim().toLowerCase()
+      const uuidLower = (m.flowUuid || '').toLowerCase()
+      let count = 0
+      for (const it of allEpisodeItems) {
+        const hay = `${it?.prompt || ''} ${it?.characterAnchor || ''} ${it?.character_ref || ''} ${it?.character_refs || ''} ${(it?.characterTokens || []).join(' ')}`.toLowerCase()
+        if ((rawLabel && hay.includes(rawLabel)) || (uuidLower && uuidLower.length >= 8 && hay.includes(uuidLower))) {
+          count++
+        }
+      }
+      if (count > bestScore) {
+        bestScore = count
+        protagonistModel = m
+      }
+    }
+  }
+  const protagonistRawName = protagonistModel
+    ? (protagonistModel.flowName || protagonistModel.name)
+    : (Object.keys(parsedEntities.value || {}).find(k => !/^(Boss|Location|Prop|Item|Artifact|Monster|Construct):/i.test(k) && !nonHumanRegex.test(k)) || 'Main Protagonist')
+  const protagonistLabel = formatEntityWithId(protagonistRawName)
 
-📁 SESSION & COLLECTION ISOLATION:
-1. Always create and isolate each batch within its dedicated collection. Never mix scenes across batches.
-2. STANDALONE SCENES: Generate EXACTLY ONE standalone 9:16 vertical manhwa aspect ratio (1080x1920) comic plate per <scene> node.
-3. 3-TIER COMPOSITION ENGINE: Support Tier A (Cinematic Hero Plate 30%), Tier B (Dual-Panel Split Strip 50%), and Tier C (Three-Panel Action Strip 20%).
+  // 2. Identify Bosses, Monsters, Constructs & Automatons appearing in the target items scope
+  const bossOrConstructSet = new Set()
+  const combinedItemsText = items.map(it => `${it?.prompt || ''} ${it?.characterAnchor || ''} ${it?.character_ref || ''} ${it?.character_refs || ''}`).join(' ').toLowerCase()
 
-🚫 ZERO-TEXT MANDATE (STRICTLY ENFORCED):
-- 100% pure textless illustration artwork.
-- ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, or chapter titles.
+  models.forEach(m => {
+    const label = m.flowName || m.name || ''
+    const combined = `${label} ${m.category || ''} ${m.role || ''} ${m.description || ''}`
+    if ((/^Boss:/i.test(label) || nonHumanRegex.test(combined)) && label.toLowerCase() !== protagonistRawName.toLowerCase()) {
+      const strippedLabel = label.replace(/^(Boss|Character|Commander|Lord):\s*/i, '').trim().toLowerCase()
+      const uuidLower = (m.flowUuid || '').toLowerCase()
+      const appearsInScope = items.length === 0 ||
+        (strippedLabel && combinedItemsText.includes(strippedLabel)) ||
+        (uuidLower && uuidLower.length >= 8 && combinedItemsText.includes(uuidLower))
+      if (appearsInScope) {
+        bossOrConstructSet.add(formatEntityWithId(label))
+      }
+    }
+  })
 
-👥 ACTOR & ANATOMICAL INTEGRITY:
-- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
-- SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Zero duplicate clones.
-- ZERO ANONYMOUS ACTOR INVARIANT: Every action beat, punch, strike, arrow release, or presence MUST feature the explicit named protagonist (@UUID / Character Anchor). NEVER generate an unnamed stranger or generic bystander.
+  // Also scan scene tokens & prompts for boss/construct entities
+  const morphRiskSceneTags = []
+  const diegeticSceneTags = []
+  const diegeticTypeSet = new Set()
+  let combatCount = 0
+  let nonCombatCount = 0
+  let tierACount = 0
+  let tierBCount = 0
+  let tierCCount = 0
 
-🎨 MASTER ART STYLE:
-- Dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16, pure textless artwork.`
+  // Positive diegetic environmental text detectors (ignoring negative tail mentions)
+  const systemUiRegex = /\b(system\s+(?:panel|window|screen|hud|interface|notification|alert|message|status)|holographic\s+(?:screen|panel|window|hud|display|interface|console)|status\s+(?:window|screen|panel|board)|floating\s+(?:hud|status|system|interface|window|panel)|diagnostic\s+(?:screen|window|panel|hud)|radar\s+console|ui\s+(?:panel|window|screen))\b/i
+  const scrollBookRegex = /\b(cultivation\s+scroll|ancient\s+scroll|unrolled\s+scroll|parchment\s+scroll|open\s+book|ancient\s+tome|grimoire|jade\s+slip|talisman\s+paper|written\s+ledger|blueprint)\b/i
+  const steleInscriptionRegex = /\b(stone\s+stele|stele\s+inscription|carved\s+tablet|monolith\s+inscription|engraved\s+pillar|runic\s+stele|leaderboard\s+stele|sect\s+monolith)\b/i
+  const signageRegex = /\b(shop\s+sign|storefront\s+sign|signboard|wooden\s+sign|sect\s+plaque|gate\s+plaque|tavern\s+sign|apothecar(?:y|ies)\s+sign|neon\s+sign|store\s+banner)\b/i
+  const combatRegex = /\b(strike|strikes|punch|punches|slash|slashes|cleave|cleaves|explosion|impact|shockwave|parry|clash|combat|battle|attack|attacks|siphon|pierce|shatter|decapitat|blood\s+spray)\b/i
+  const morphFeatureRegex = /\b(wings|twelve\s+wings|feathered\s+wings|mechanical\s+hand|puppet\s+hand|brass\s+joint|porcelain\s+limb|claws|tentacles|automaton\s+arm)\b/i
+
+  items.forEach((item, idx) => {
+    const rawTag = (item?.tag || `IMG_${String(idx + 1).padStart(3, '0')}`).replace(/[[\]]/g, '').toUpperCase()
+    const cleanBody = stripBoilerplateTail(item?.prompt || '')
+
+    if (/three-panel|four-panel|multi-panel/i.test(cleanBody)) tierCCount++
+    else if (/dual-panel|two-panel|split\s+strip/i.test(cleanBody)) tierBCount++
+    else tierACount++
+
+    if (combatRegex.test(cleanBody)) combatCount++
+    else nonCombatCount++
+
+    if (morphFeatureRegex.test(cleanBody) || nonHumanRegex.test(cleanBody)) {
+      morphRiskSceneTags.push(rawTag)
+      const tokens = item?.characterTokens || extractTokensFromText(cleanBody)
+      tokens.forEach(t => {
+        const cleanT = t.replace(/[@{}]/g, '').trim()
+        if (cleanT && cleanT.toLowerCase() !== protagonistRawName.toLowerCase() && nonHumanRegex.test(cleanT)) {
+          bossOrConstructSet.add(formatEntityWithId(cleanT))
+        }
+      })
+    }
+
+    // Check environmental text in core scene description (before negative boilerplate)
+    const strippedForTextCheck = cleanBody.replace(/\b(?:no|zero|without)\s+(?:ui|text|scroll|sign|hud|labels|captions|subtitles)[^.,;]*/gi, '')
+    let hasDiegetic = false
+    if (systemUiRegex.test(strippedForTextCheck)) {
+      hasDiegetic = true
+      diegeticTypeSet.add('glowing holographic System/UI status panels')
+    }
+    if (scrollBookRegex.test(strippedForTextCheck)) {
+      hasDiegetic = true
+      diegeticTypeSet.add('ancient cultivation scrolls/books/talismans')
+    }
+    if (steleInscriptionRegex.test(strippedForTextCheck)) {
+      hasDiegetic = true
+      diegeticTypeSet.add('stone stele/monolith inscriptions')
+    }
+    if (signageRegex.test(strippedForTextCheck)) {
+      hasDiegetic = true
+      diegeticTypeSet.add('in-world shop/sect signage')
+    }
+    if (hasDiegetic) {
+      diegeticSceneTags.push(rawTag)
+    }
+  })
+
+  return {
+    totalScenes: items.length,
+    protagonistRawName,
+    protagonistLabel,
+    bossOrConstructList: Array.from(bossOrConstructSet),
+    morphRiskSceneTags,
+    diegeticSceneTags,
+    diegeticTypes: Array.from(diegeticTypeSet),
+    combatCount,
+    nonCombatCount,
+    tierACount,
+    tierBCount,
+    tierCCount
   }
 }
 
-const getFlowDirectiveHeader = (collectionTitle, format = '16:9', isLean = false) => {
+const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
+  const is16x9 = format === '16:9'
+  const intel = analyzeFlowContext(itemsScope)
+  const bossClause = intel.bossOrConstructList.length > 0
+    ? `Specifically in this episode, keep ${intel.protagonistLabel}'s human anatomy 100% separate and distinct from ${intel.bossOrConstructList.join(', ')} (never transfer wings, claws, mechanical puppet hands, or boss weapons onto ${intel.protagonistLabel}).`
+    : `Keep each entity's anatomy, weapons, and features 100% distinct.`
+
+  const diegeticSummary = intel.diegeticSceneTags.length > 0
+    ? `ACTIVE EPISODE TEXT WHITELIST: Environmental text (${intel.diegeticTypes.join(', ')}) is present in ${intel.diegeticSceneTags.length} scene(s) [${intel.diegeticSceneTags.slice(0, 18).join(', ')}${intel.diegeticSceneTags.length > 18 ? '...' : ''}]. All other ${Math.max(0, intel.totalScenes - intel.diegeticSceneTags.length)} scenes in this episode MUST be 100% pure textless artwork.`
+    : `ACTIVE EPISODE TEXT LOCK: Zero environmental text objects were detected across all ${intel.totalScenes} scenes — enforce 100% pure textless illustration across the entire episode.`
+
+  const compositionRule = is16x9
+    ? `- STANDALONE 16:9 SCENE: Generate exactly ONE standalone 16:9 horizontal widescreen landscape image (1920x1080 full bleed) per <scene> node. Zero comic strips or multi-panel grids.`
+    : `- 3-TIER 9:16 WEBTOON COMPOSITION: Generate exactly ONE standalone vertical 9:16 (1080x1920) comic plate per <scene> node, following the specified layout tier (Episode Breakdown: ${intel.tierACount} Tier A Hero Plates, ${intel.tierBCount} Tier B Dual-Panel Split Strips, ${intel.tierCCount} Tier C Multi-Panel Strips).`
+
+  const aspectLabel = is16x9
+    ? 'horizontal 16:9 widescreen aspect ratio (1920x1080)'
+    : 'vertical 9:16 webtoon aspect ratio (1080x1920)'
+
+  return `STRICT OPERATIONAL DIRECTIVES (${is16x9 ? '16:9 FULL-BLEED LANDSCAPE' : '9:16 AUTHENTIC WEBTOON STRIP'})
+
+1. MANDATORY FILE NAMING:
+- ALWAYS automatically rename every generation to match the exact string provided in the filename="..." attribute of the user's XML <scene> node (e.g., IMG_001.jpg, IMG_002.jpg).
+- This action must be performed immediately following generation without requiring a separate "sync" command or further user input.
+
+2. TEXT CONTROL (STRICT NARRATIVE SILENCE):
+- FORBIDDEN (NARRATIVE & COMIC OVERLAYS): Strictly zero speech bubbles, dialogue balloons, thought bubbles, narrator caption boxes, subtitles, comic sound effects (SFX/onomatopoeia), Hangul (한글), or digital watermarks/numbers.
+- ALLOWED (ENVIRONMENTAL / DIEGETIC): Text is permitted ONLY when it is a logical, physical in-world part of the scene (e.g., glowing holographic system/UI status panels, text on an ancient cultivation scroll or book, stone stele inscriptions, or shop signage).
+- STYLE: All environmental text must be integrated naturally into the hand-drawn manhwa aesthetic. Never render prompt meta-labels (such as "Top block", "Middle", "Bottom", or "Environment") as visible text.
+- ${diegeticSummary}
+
+3. COMPOSITION, LOGIC & ANTI-MORPHING:
+- ANATOMY: Flawless human anatomy required. Exactly two arms, two legs, and five slender fingers per hand. Zero extra limbs, zero floating hands, or severed appendages. Every hand holding a weapon or prop must connect naturally to the wrist, forearm, and shoulder.
+- SINGLE PROTAGONIST: Strictly one instance of the protagonist (${intel.protagonistLabel}) per scene. No duplicate clones.
+- ANTI-MORPHING SUBJECT ISOLATION: Never merge, fuse, or transfer monster, boss, or mechanical automaton features (such as wings, claws, mechanical puppet hands, or boss weapons) onto the human protagonist. ${bossClause}
+- LITERAL ACTION FIDELITY: Depict ONLY the exact posture and action described in the <scene> prompt (${intel.nonCombatCount} non-combat/dialogue scenes vs ${intel.combatCount} combat scenes in this deck). If characters are sitting, talking, resting, or observing, NEVER hallucinate combat strikes, punches, kicks, or assassin attacks.
+${compositionRule}
+- ISOLATION: Isolate each batch within its dedicated collection as specified in the system directive.
+
+4. ART STYLE INVARIANT:
+- Dark fantasy action manhwa webtoon art style: sharp black ink linework, high contrast cel shading, dramatic manhwa lighting, ${aspectLabel}.
+- STRICTLY FORBIDDEN STYLE DRIFT: Never generate photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons. Pass this exact 2D manhwa art style invariant into every image generation tool call.`
+}
+
+const getFlowDirectiveHeader = (collectionTitle, format = '16:9', isLean = false, batchItems = null) => {
+  const is16x9 = format === '16:9'
+  const intel = analyzeFlowContext(batchItems)
+  const aspectShort = is16x9 ? '16:9 horizontal (1920x1080)' : '9:16 vertical manhwa (1080x1920)'
+
+  const batchTextRule = intel.diegeticSceneTags.length > 0
+    ? `Strictly ZERO speech bubbles, dialogue balloons, thought bubbles, SFX, Hangul (한글), or comic caption boxes. In-world environmental text (${intel.diegeticTypes.join(', ')}) is permitted ONLY in [${intel.diegeticSceneTags.join(', ')}]; all other scenes in "${collectionTitle}" MUST be 100% pure textless artwork.`
+    : `Zero environmental text objects exist in this batch — enforce 100% PURE TEXTLESS ILLUSTRATION across all ${intel.totalScenes} scenes in "${collectionTitle}" (zero speech bubbles, zero dialogue, zero SFX, zero Hangul, zero caption boxes, zero letters/numbers).`
+
+  const batchAntiMorphRule = intel.bossOrConstructList.length > 0
+    ? `Keep ${intel.protagonistLabel}'s human anatomy 100% separate from ${intel.bossOrConstructList.join(', ')} (never fuse boss wings, claws, or mechanical puppet hands onto ${intel.protagonistLabel}).`
+    : `Strictly one instance of ${intel.protagonistLabel} per scene; never clone the protagonist or merge features across characters.`
+
   if (isLean) {
     return `[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
-Isolate all generated images from this batch into "${collectionTitle}". Pure textless standalone manhwa artwork.`
+1. ISOLATION & AUTO-RENAME: Isolate all generated images from this batch into collection "${collectionTitle}". Immediately rename each generation to match its XML filename="..." attribute (e.g. IMG_001.jpg) without waiting for user input.
+2. SMART TEXT CONTROL: ${batchTextRule}
+3. ANTI-MORPHING & ACTION FIDELITY: ${batchAntiMorphRule} Depict ONLY the literal posture/action written (never hallucinate combat strikes or assassins in non-combat scenes).
+4. ART STYLE LOCK: Enforce 2D dark fantasy action manhwa art style, sharp black ink linework, high contrast cel shading, ${aspectShort}. Zero photorealistic 3D CGI or Western cartoon drift.`
   }
-
-  const is16x9 = format === '16:9'
-  const aspectInstruction = is16x9 
-    ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
-    : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
 
   return `[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
 
-📁 MANDATORY COLLECTION GROUPING & SESSION ISOLATION INSTRUCTION:
-1. TARGET COLLECTION: Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
-   "${collectionTitle}"
-   and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
-2. ZERO CROSS-BATCH CONTAMINATION: DO NOT assign, route, or link any of these generated images to prior collections or earlier batch threads (such as previous batches or older chat runs). Every image generated from this prompt must belong strictly and exclusively to "${collectionTitle}".
-3. HARD BATCH BOUNDARY: Treat this generation batch as a completely isolated container.
-
-🎨 GENERATION & COMPOSITION INVARIANTS:
-1. STANDALONE SCENES: Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
-2. ZERO GRIDS / ZERO STRIPS: DO NOT create multi-panel comic strips, storyboards, grids, collages, or contact sheets.
-3. 🚫 ABSOLUTE ZERO-TEXT & ZERO-KOREAN MANDATE (STRICTLY ENFORCED):
-   - Every generated image MUST be 100% pure, textless illustration artwork.
-   - ABSOLUTELY ZERO Korean characters / Hangul (한글), ZERO English words/letters, ZERO Japanese kanji/hiragana, ZERO numbers, ZERO speech bubbles, ZERO dialogue balloons, ZERO comic sound effects (SFX/onomatopoeia), ZERO subtitles, ZERO captions, ZERO watermarks, ZERO signatures, ZERO chapter titles, ZERO artist logos, ZERO burned-in filenames, and ZERO UI text.
-   - Never draw or overlay any words, glyphs, or letters onto the artwork under any circumstances.
-4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
-5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
-7. 🚫 MANDATORY MULTI-ACTOR ISOLATION & ZERO-CLONING MANDATE:
-   - When generating scenes with multiple characters or audience crowds, NEVER duplicate or clone the protagonist.
-   - There MUST be strictly ONE single instance of the named protagonist in the entire image frame.
-   - Secondary characters, examiners, and teachers MUST have distinctly different faces, uniforms, hair, and ages.
-   - NEVER render the protagonist handing an item to himself, sitting in the crowd while standing on stage, or facing a doppelgänger.
-8. 👥 MANDATORY BACKGROUND CROWD DE-IDENTIFICATION:
-   - Audience crowds, classrooms, and background students MUST be rendered as diverse, softly blurred, indistinct silhouettes with varied hairstyles, distinct neutral postures, and ZERO duplicate faces matching the protagonist.
-9. 🏛️ MANDATORY SPATIAL ENCLOSURE INTEGRITY:
-   - Strictly adhere to the specific room/location described in the scene. If the scene is set in a corridor, locker room, or street, DO NOT spawn stage pedestals, crystal orbs, or drapery from other scenes.
-10. 🔮 MANDATORY DECOUPLED FLOATING HUDs & ZERO DISEMBODIED HANDS:
-   - Floating holographic system screens, diagnostic menus, and stat windows must float freely in open space.
-   - Characters viewing the screen must have both arms anchored to their body (e.g. resting at sides, hand on quiver strap) with EXACTLY two arms. ZERO third hands, ZERO disembodied hands touching the holographic screen, ZERO hands inside or holding the UI glass.
-   - Pure textless UI: abstract glowing runes, numeric gauges, and energy waveforms only.
-11. 🚪 MANDATORY SINGLE-PERSPECTIVE THRESHOLD GEOMETRY:
-   - Doorways, airlocks, and entrance/exit transitions must be shot from ONE unified camera perspective inside a single space.
-   - NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
-12. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-13. 🏹 MANDATORY CHARACTER IDENTITY ANCHORING & ZERO-ANONYMOUS-ACTOR INVARIANT:
-   - When a scene depicts an action, combat strike, fist impact, arrow release, stat siphon, reaction, or presence involving a character, that character MUST be explicitly identified using their locked entity reference (@UUID / Character Anchor).
-   - NEVER replace the named character with a generic stranger, random fighter, or unnamed bystander.
-14. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
+STRICT OPERATIONAL DIRECTIVES FOR COLLECTION "${collectionTitle}":
+1. MANDATORY COLLECTION ISOLATION: Create and isolate 100% of generated scenes in this batch inside "${collectionTitle}". Never mix with prior batches.
+2. MANDATORY IMMEDIATE FILE NAMING: Automatically rename every generated asset to match the exact filename="..." attribute of its <scene> node (e.g. IMG_001.jpg) immediately after generation without waiting for a "sync" command.
+3. SMART TEXT CONTROL (SCENE-LOCKED):
+   - ${batchTextRule}
+   - Never render structural prompt words ("Top block", "Middle", "Bottom", "Environment") as visible caption boxes.
+4. ANATOMY & ANTI-MORPHING ISOLATION:
+   - Flawless human anatomy: exactly two arms, two legs, and five slender fingers per hand connected naturally to wrists and shoulders.
+   - ${batchAntiMorphRule}
+5. LITERAL ACTION FIDELITY (${intel.nonCombatCount} Calm/Dialogue vs ${intel.combatCount} Combat Scenes):
+   - Depict ONLY the exact posture and action written in each <scene>. Never invent punches, kicks, or assassin attacks during dialogue, sitting, or observation scenes.
+6. ART STYLE INVARIANT:
+   - Dark fantasy action manhwa webtoon art style: sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, ${aspectShort}. Never generate photorealistic 3D CGI renders or flat Western cartoons.`
 }
 
 // Helper to generate dynamic zero-padded batch codes (01, 02, ... 13)
@@ -2334,15 +2518,31 @@ const clearSelection = () => {
 const isDirectiveModalOpen = ref(false)
 const activeDirectiveFormat = ref('16:9') // '16:9' or '9:16'
 const directiveTierTab = ref('master') // 'master' (Tier 1) | 'batch' (Tier 2)
+const previewDirectiveBatchIdx = ref(-1) // -1 = All Episode, >=0 = specific batch index
 const copiedDirective = ref(false)
 const copiedMasterInstructions = ref(false)
 
+const activePreviewItems = computed(() => {
+  if (directiveTierTab.value === 'batch' && previewDirectiveBatchIdx.value >= 0 && dynamicBatches.value[previewDirectiveBatchIdx.value]) {
+    return dynamicBatches.value[previewDirectiveBatchIdx.value].items
+  }
+  return parsedPrompts.value
+})
+
+const activeFlowIntelligence = computed(() => {
+  return analyzeFlowContext(activePreviewItems.value)
+})
+
 const currentDirectiveText = computed(() => {
   if (directiveTierTab.value === 'master') {
-    return getFlowMasterInstructions(activeDirectiveFormat.value)
+    return getFlowMasterInstructions(activeDirectiveFormat.value, parsedPrompts.value)
   }
   const is16x9 = activeDirectiveFormat.value === '16:9'
-  return getFlowDirectiveHeader('Direct_Copy', is16x9 ? '16:9' : '9:16', isLeanPromptMode.value)
+  const bIdx = previewDirectiveBatchIdx.value
+  const targetBatch = bIdx >= 0 && dynamicBatches.value[bIdx] ? dynamicBatches.value[bIdx] : null
+  const colName = targetBatch ? targetBatch.collectionTitle : getCollectionName('Batch 01', 0)
+  const itemsScope = targetBatch ? targetBatch.items : parsedPrompts.value
+  return getFlowDirectiveHeader(colName, is16x9 ? '16:9' : '9:16', isLeanPromptMode.value, itemsScope)
 })
 
 const copyDirective = async () => {
@@ -2360,7 +2560,7 @@ const copyDirective = async () => {
 }
 
 const copyMasterAgentInstructions = async () => {
-  const text = getFlowMasterInstructions(activeDirectiveFormat.value)
+  const text = getFlowMasterInstructions(activeDirectiveFormat.value, parsedPrompts.value)
   try {
     await navigator.clipboard.writeText(text)
     copiedMasterInstructions.value = true
@@ -2439,7 +2639,7 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
   const isLean = isLeanPromptMode.value
   const collectionTitle = batch.collectionTitle || getCollectionName(batch.name)
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, chunk.items)
 
   const scenesXml = chunk.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -2506,7 +2706,7 @@ const copyBatchFullXml = async (batch, bIdx) => {
   const is16x9 = activeDirectiveFormat.value === '16:9'
   const isLean = isLeanPromptMode.value
   const collectionTitle = batch.collectionTitle || getCollectionName(batch.name)
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, batch.items)
 
   const scenesXml = batch.items.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -2563,7 +2763,7 @@ const copySelectedPrompts = async () => {
   const isLean = isLeanPromptMode.value
 
   const collectionTitle = getCollectionName('Selected')
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, selectedItems)
 
   const scenesXml = selectedItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -2611,7 +2811,7 @@ const copyMissingPrompts = async () => {
   const isLean = isLeanPromptMode.value
 
   const collectionTitle = getCollectionName('Missing')
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, missingItems)
 
   const scenesXml = missingItems.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -2658,7 +2858,7 @@ const copyAllMaster = async () => {
   const isLean = isLeanPromptMode.value
 
   const collectionTitle = getCollectionName('Master_Deck')
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, parsedPrompts.value)
 
   const scenesXml = parsedPrompts.value.map(p => {
     const rawId = p.tag.replace(/[^A-Za-z0-9]/g, '')
@@ -2701,6 +2901,127 @@ const copyAllMaster = async () => {
 }
 
 
+const uploadingPromptTags = ref(new Set())
+
+const handlePromptPlateDrop = async (event, tag) => {
+  const dt = event.dataTransfer
+  if (!dt) return
+
+  const items = dt.items ? Array.from(dt.items) : []
+  let files = []
+  if (items.length > 0 && items[0].webkitGetAsEntry) {
+    const traverseEntry = async (entry) => {
+      if (!entry) return
+      if (entry.isFile) {
+        await new Promise((resolve) => {
+          entry.file((file) => {
+            if (file) files.push(file)
+            resolve()
+          }, () => resolve())
+        })
+      } else if (entry.isDirectory) {
+        const dirReader = entry.createReader()
+        const readEntriesBatch = () => {
+          return new Promise((resolve) => {
+            dirReader.readEntries(async (entries) => {
+              if (!entries || entries.length === 0) {
+                resolve(false)
+              } else {
+                for (const subEntry of entries) {
+                  await traverseEntry(subEntry)
+                }
+                resolve(true)
+              }
+            }, () => resolve(false))
+          })
+        }
+        let hasMore = true
+        while (hasMore) {
+          hasMore = await readEntriesBatch()
+        }
+      }
+    }
+    const entries = items.map(item => item.webkitGetAsEntry ? item.webkitGetAsEntry() : null).filter(Boolean)
+    for (const entry of entries) {
+      await traverseEntry(entry)
+    }
+  }
+
+  if (files.length === 0 && dt.files && dt.files.length > 0) {
+    files = Array.from(dt.files)
+  }
+  if (files.length === 0) return
+
+  // 1. Check if a .zip archive was dropped
+  const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+  if (zipFile) {
+    uploadingPromptTags.value = new Set(uploadingPromptTags.value).add(tag)
+    try {
+      const match = tag.match(/IMG_?0*(\d+)/i)
+      const sceneNum = match ? parseInt(match[1], 10) : 1
+      const batchIndex = Math.floor((sceneNum - 1) / 24)
+
+      const base64Data = await new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = reject
+        reader.readAsDataURL(zipFile)
+      })
+
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload-zip`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          zipBase64: base64Data,
+          filename: zipFile.name,
+          batchIndex
+        })
+      })
+      const data = await res.json()
+      if (data.success) {
+        await loadEpisode()
+      }
+    } catch (err) {
+      console.error('Prompt drop ZIP upload failed:', err)
+    } finally {
+      const s = new Set(uploadingPromptTags.value)
+      s.delete(tag)
+      uploadingPromptTags.value = s
+    }
+    return
+  }
+
+  // 2. Individual image file
+  const imageFile = files.find(f => /\.(png|jpe?g|webp)$/i.test(f.name))
+  if (imageFile) {
+    uploadingPromptTags.value = new Set(uploadingPromptTags.value).add(tag)
+    try {
+      const base64Data = await new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = reject
+        reader.readAsDataURL(imageFile)
+      })
+
+      const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/upload`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tag, base64Data })
+      })
+      const data = await res.json()
+      if (data.success) {
+        await loadEpisode()
+      }
+    } catch (err) {
+      console.error('Prompt drop image upload failed:', err)
+    } finally {
+      const s = new Set(uploadingPromptTags.value)
+      s.delete(tag)
+      uploadingPromptTags.value = s
+    }
+  }
+}
+
 const loadEpisode = async () => {
   try {
     const [epRes, imgRes] = await Promise.all([
@@ -2719,9 +3040,16 @@ const loadEpisode = async () => {
 
     rawMarkdown.value = data.promptMatrix || ''
     
-    // Auto-detect Format (16:9 vs 9:16) from franchise ID and prompt matrix content
-    const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (rawMarkdown.value || '').includes('16:9')
-    activeDirectiveFormat.value = is16x9 ? '16:9' : '9:16'
+    // Strictly lock Aspect Ratio from Series Creation (never permit arbitrary flipping)
+    if (data.format) {
+      activeDirectiveFormat.value = data.format
+    } else {
+      const isSeries02 = (route.params.franchiseId || '').toLowerCase().includes('series_02')
+      const count9x16 = (rawMarkdown.value.match(/9:16|1080x1920/gi) || []).length
+      const count16x9 = (rawMarkdown.value.match(/16:9|1920x1080/gi) || []).length
+      const is16x9 = isSeries02 || (count16x9 > count9x16)
+      activeDirectiveFormat.value = is16x9 ? '16:9' : '9:16'
+    }
     
     parseMarkdownPrompts(rawMarkdown.value, imageMap)
   } catch (err) {
@@ -2884,7 +3212,8 @@ const copySinglePrompt = async (item, index) => {
   const bIdx = !isNaN(sceneNum) && sceneNum > 0 ? Math.floor((sceneNum - 1) / BATCH_SIZE) : 0
   const bCode = getBatchCode(bIdx)
   const collectionTitle = getCollectionName(`Batch ${bCode}`, bIdx)
-  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean)
+  const singleItemObj = typeof item === 'object' ? item : { tag, prompt: promptText }
+  const flowDirective = getFlowDirectiveHeader(collectionTitle, is16x9 ? '16:9' : '9:16', isLean, [singleItemObj])
   const payload = `${flowDirective}\n\n${sceneXml}`
   
   try {

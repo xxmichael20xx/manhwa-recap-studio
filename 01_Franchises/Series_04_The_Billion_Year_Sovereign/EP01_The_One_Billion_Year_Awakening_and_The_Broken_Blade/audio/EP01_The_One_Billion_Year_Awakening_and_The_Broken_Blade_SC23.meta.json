@@ -1,0 +1,179 @@
+{
+  "scene": 23,
+  "text": "Through the open doorway, excited shouts echoed down the fourth-floor corridor as university students poured onto the polished ceramic tiles, testing newly awakened qi sparks against the clean walls.",
+  "durationMs": 11808,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 288
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 300,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 438,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "doorway",
+      "startMs": 788,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "excited",
+      "startMs": 1538,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "shouts",
+      "startMs": 2088,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 2500,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 2863,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3088,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 3175,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 3813,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4363,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 4525,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 5088,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "poured",
+      "startMs": 5500,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 5863,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6075,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "polished",
+      "startMs": 6188,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "ceramic",
+      "startMs": 6625,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "tiles",
+      "startMs": 7088,
+      "endMs": 7575
+    },
+    {
+      "ttsWord": "testing",
+      "startMs": 7813,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "newly",
+      "startMs": 8238,
+      "endMs": 8538
+    },
+    {
+      "ttsWord": "awakened",
+      "startMs": 8550,
+      "endMs": 8975
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 8988,
+      "endMs": 9200
+    },
+    {
+      "ttsWord": "sparks",
+      "startMs": 9213,
+      "endMs": 9638
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 9650,
+      "endMs": 9950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9963,
+      "endMs": 10038
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 10050,
+      "endMs": 10375
+    },
+    {
+      "ttsWord": "walls",
+      "startMs": 10388,
+      "endMs": 10938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through the open doorway,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1388
+    },
+    {
+      "text": "excited shouts echoed down the fourth-floor corridor as",
+      "startOffsetMs": 1538,
+      "endOffsetMs": 4513
+    },
+    {
+      "text": "university students poured onto the polished ceramic tiles,",
+      "startOffsetMs": 4525,
+      "endOffsetMs": 7675
+    },
+    {
+      "text": "testing newly awakened qi sparks against the clean",
+      "startOffsetMs": 7813,
+      "endOffsetMs": 10375
+    },
+    {
+      "text": "walls.",
+      "startOffsetMs": 10388,
+      "endOffsetMs": 11038
+    }
+  ]
+}

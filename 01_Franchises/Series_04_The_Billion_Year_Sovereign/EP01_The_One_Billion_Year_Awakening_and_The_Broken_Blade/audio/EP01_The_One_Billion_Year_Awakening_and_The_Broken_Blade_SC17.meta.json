@@ -1,0 +1,179 @@
+{
+  "scene": 17,
+  "text": "SYSTEM ANNOUNCEMENT: REALITY CONVERGENCE COMPLETED. 10x CONTINENTAL EXPANSION STABILISED. CULTIVATION DATA MANIFESTED INTO PHYSICAL FLESH. A majestic translucent golden holographic system panel unfolded directly before Lu Chen's desk.",
+  "durationMs": 17928,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "ANNOUNCEMENT",
+      "startMs": 563,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "REALITY",
+      "startMs": 1413,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "CONVERGENCE",
+      "startMs": 1963,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "COMPLETED",
+      "startMs": 2525,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "10x",
+      "startMs": 4000,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "CONTINENTAL",
+      "startMs": 4625,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "EXPANSION",
+      "startMs": 5225,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "STABILISED",
+      "startMs": 5813,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 7525,
+      "endMs": 8250
+    },
+    {
+      "ttsWord": "DATA",
+      "startMs": 8263,
+      "endMs": 8538
+    },
+    {
+      "ttsWord": "MANIFESTED",
+      "startMs": 8550,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "INTO",
+      "startMs": 9238,
+      "endMs": 9463
+    },
+    {
+      "ttsWord": "PHYSICAL",
+      "startMs": 9475,
+      "endMs": 9913
+    },
+    {
+      "ttsWord": "FLESH",
+      "startMs": 9925,
+      "endMs": 10500
+    },
+    {
+      "ttsWord": "A",
+      "startMs": 11363,
+      "endMs": 11463
+    },
+    {
+      "ttsWord": "majestic",
+      "startMs": 11475,
+      "endMs": 12050
+    },
+    {
+      "ttsWord": "translucent",
+      "startMs": 12063,
+      "endMs": 12763
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 12775,
+      "endMs": 13100
+    },
+    {
+      "ttsWord": "holographic",
+      "startMs": 13113,
+      "endMs": 13750
+    },
+    {
+      "ttsWord": "system",
+      "startMs": 13763,
+      "endMs": 14200
+    },
+    {
+      "ttsWord": "panel",
+      "startMs": 14213,
+      "endMs": 14600
+    },
+    {
+      "ttsWord": "unfolded",
+      "startMs": 14613,
+      "endMs": 15125
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 15138,
+      "endMs": 15600
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 15613,
+      "endMs": 15975
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 15988,
+      "endMs": 16175
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 16188,
+      "endMs": 16550
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 16563,
+      "endMs": 17050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM ANNOUNCEMENT:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1250
+    },
+    {
+      "text": "REALITY CONVERGENCE COMPLETED.",
+      "startOffsetMs": 1413,
+      "endOffsetMs": 3238
+    },
+    {
+      "text": "10x CONTINENTAL EXPANSION STABILISED.",
+      "startOffsetMs": 4000,
+      "endOffsetMs": 6763
+    },
+    {
+      "text": "CULTIVATION DATA MANIFESTED INTO PHYSICAL FLESH.",
+      "startOffsetMs": 7525,
+      "endOffsetMs": 10600
+    },
+    {
+      "text": "A majestic translucent golden holographic system panel",
+      "startOffsetMs": 11363,
+      "endOffsetMs": 14600
+    },
+    {
+      "text": "unfolded directly before Lu Chen's desk.",
+      "startOffsetMs": 14613,
+      "endOffsetMs": 17150
+    }
+  ]
+}

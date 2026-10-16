@@ -1,0 +1,35 @@
+{
+  "series_id": "Series_04_The_Billion_Year_Sovereign",
+  "items": [
+    {
+      "id": "custom_spirit_blade",
+      "name": "Gu Syndicate Custom Spirit Blade",
+      "token": "@{Weapon: Custom Spirit Blade}",
+      "type": "Weapon",
+      "apparent_rank": "48,000-Year Golden Core Spirit Weapon",
+      "true_rank": "Mundane Alloy (Shattered on Contact with Lu Chen)",
+      "description": "A luminous cyan-edged modern high-frequency spirit saber inscribed with Golden Core talismans by the Gu Capital Syndicate. Shatters into powder upon striking Lu Chen's neck.",
+      "dna_prompt_anchor": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16"
+    },
+    {
+      "id": "heavenly_dao_simulator_hud",
+      "name": "Heavenly Dao Simulator Interface",
+      "token": "@{Item: Heavenly Dao Simulator HUD}",
+      "type": "Item",
+      "apparent_rank": "Archaic 2010s Browser Game UI",
+      "true_rank": "Reality Fusing Cosmic Dao Engine",
+      "description": "An archaic pixelated browser simulation interface running on Lu Chen's battered dorm laptop. Fuses with reality upon the 10-minute server shutdown countdown hitting zero.",
+      "dna_prompt_anchor": "@{Item: Heavenly Dao Simulator HUD}, glowing archaic golden holographic browser interface with simulated cultivation text log and 1,000,000,000 year accumulation counter, modern manhwa style, vertical 9:16"
+    },
+    {
+      "id": "heaven_earth_golden_stele",
+      "name": "Heaven-Earth Golden Stele",
+      "token": "@{Artifact: Heaven-Earth Stele}",
+      "type": "Artifact",
+      "apparent_rank": "Global Celestial Ranking Monument",
+      "true_rank": "Cosmic Heavenly Dao Authority Monolith",
+      "description": "A monolithic golden monument descending from the clouds over Earth's capital cities, projecting the real-time global cultivation rankings of all merged cultivators.",
+      "dna_prompt_anchor": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16"
+    }
+  ]
+}

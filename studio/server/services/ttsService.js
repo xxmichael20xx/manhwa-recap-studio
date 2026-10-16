@@ -205,17 +205,20 @@ export class TtsService {
           } catch (e) {}
         }
 
-        if (fileExists && !force) {
-          buffer = await fs.readFile(filePath)
-          const exactDurationSec = await this.getAudioDuration(filePath)
-          exactDurationMs = exactDurationSec > 0 
-            ? Math.round(exactDurationSec * 1000) 
-            : Math.round((buffer.length * 8 * 1000) / 48000)
-          
-          // Check for companion meta file with cached word-boundary timing
-          if (fsSync.existsSync(metaPath)) {
-            try {
-              const meta = JSON.parse(await fs.readFile(metaPath, 'utf-8'))
+        let isCacheValid = false
+        if (fileExists && !force && fsSync.existsSync(metaPath)) {
+          try {
+            const meta = JSON.parse(await fs.readFile(metaPath, 'utf-8'))
+            const cachedText = meta.text || (Array.isArray(meta.relativeCues) ? meta.relativeCues.map(c => c.text).join(' ') : '')
+            const normalize = s => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+            if (cachedText && normalize(cachedText) === normalize(text)) {
+              isCacheValid = true
+              buffer = await fs.readFile(filePath)
+              const exactDurationSec = await this.getAudioDuration(filePath)
+              exactDurationMs = exactDurationSec > 0 
+                ? Math.round(exactDurationSec * 1000) 
+                : Math.round((buffer.length * 8 * 1000) / 48000)
+              
               if (Array.isArray(meta.relativeCues) && meta.relativeCues.length > 0) {
                 parsedSentences = meta.relativeCues.map(c => ({
                   text: c.text,
@@ -226,10 +229,12 @@ export class TtsService {
               if (Array.isArray(meta.rawWords)) {
                 rawWords = meta.rawWords
               }
-            } catch (e) {}
-          }
-          success = true
-        } else {
+              success = true
+            }
+          } catch (e) {}
+        }
+
+        if (!isCacheValid) {
           // Needs synthesis: lazily initialize TTS client if not yet connected
           if (!tts) {
             tts = await createClientWithRetry()
@@ -449,7 +454,7 @@ export class TtsService {
             }
           }
 
-          if (!fsSync.existsSync(metaPath) && parsedSentences.length > 0) {
+          if (parsedSentences.length > 0) {
             try {
               const relativeCues = parsedSentences.map(c => ({
                 text: c.text,
@@ -458,6 +463,7 @@ export class TtsService {
               }))
               await fs.writeFile(metaPath, JSON.stringify({
                 scene: sceneIndex,
+                text,
                 durationMs: exactDurationMs,
                 rawWords,
                 relativeCues

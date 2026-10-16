@@ -843,6 +843,52 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
       }
     }
 
+    // 3. Bidirectional Parity Guard: detect any flow_entities that lack a character/item card
+    const flowEntitiesPath = path.join(vaultDir, 'flow_entities.json')
+    if (fs.existsSync(flowEntitiesPath)) {
+      try {
+        const flowData = JSON.parse(await fs.promises.readFile(flowEntitiesPath, 'utf-8'))
+        const existingNames = new Set(allItems.map(i => i.name.toLowerCase()))
+        allItems.forEach(i => {
+          if (i.flowName) existingNames.add(i.flowName.toLowerCase())
+          if (i.id) existingNames.add(i.id.toLowerCase())
+        })
+
+        const rawLines = (flowData.rawText || '').split('\n')
+        for (const line of rawLines) {
+          const match = line.match(/^([^:\r\n]+):\s*([a-f0-9-]{36}|00000000-[^\s\r\n]+)/i)
+          if (match) {
+            const rawEntityName = match[1].trim()
+            const cleanName = rawEntityName.replace(/^(Boss|Character|Weapon|Artifact):\s*/i, '').trim()
+            const uuid = match[2].trim()
+
+            if (!existingNames.has(rawEntityName.toLowerCase()) && !existingNames.has(cleanName.toLowerCase())) {
+              allItems.push({
+                id: cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '_'),
+                name: cleanName,
+                flowName: rawEntityName,
+                category: rawEntityName.toLowerCase().includes('boss') ? 'Antagonist' : 'Unregistered',
+                role: 'Unregistered Flow Entity',
+                type: 'unregistered',
+                tier: '⚠️ Missing from characters.json',
+                filename: null,
+                hasPlate: false,
+                isUnregistered: true,
+                url: null,
+                description: `⚠️ Detected in flow_entities.json with UUID ${uuid}, but missing from characters.json. Reference plate not generated.`,
+                dnaAnchor: `@{${cleanName}}`,
+                token: `@{${cleanName}}`,
+                flowUuid: uuid,
+                episodes: []
+              })
+            }
+          }
+        }
+      } catch (e) {
+        console.error('Error auditing flow entities parity:', e)
+      }
+    }
+
     res.json(allItems)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -883,18 +929,130 @@ app.get('/api/franchises/:franchiseId/flow-entities', async (req, res) => {
   }
 })
 
-// Save Flow Entity Mapping
+// Save Flow Entity Mapping & Auto-Cascade to characters.json and prompt matrices
 app.post('/api/franchises/:franchiseId/flow-entities', async (req, res) => {
   try {
     const { franchiseId } = req.params
     const { rawText, entities } = req.body
     const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    const franchisePath = path.resolve(projectRoot, '01_Franchises', franchiseId)
+    
     if (!fs.existsSync(vaultDir)) {
       await fs.promises.mkdir(vaultDir, { recursive: true })
     }
+    
+    // 1. Save flow_entities.json
     const filePath = path.join(vaultDir, 'flow_entities.json')
     await fs.promises.writeFile(filePath, JSON.stringify({ rawText: rawText || '', entities: entities || {} }, null, 2), 'utf-8')
-    res.json({ success: true, count: Object.keys(entities || {}).length })
+    
+    const entityEntries = Object.entries(entities || {})
+    const entityMapLower = {}
+    for (const [k, v] of entityEntries) {
+      entityMapLower[k.toLowerCase().trim()] = v
+      const stripped = k.replace(/^(Boss|Character|Weapon|Artifact):\s*/i, '').trim().toLowerCase()
+      entityMapLower[stripped] = v
+    }
+
+    // 2. Auto-Propagate into characters.json
+    let charactersUpdated = 0
+    const charPath = path.join(vaultDir, 'characters.json')
+    const charOldToNewUuidMap = {}
+
+    if (fs.existsSync(charPath) && entityEntries.length > 0) {
+      try {
+        const charRaw = JSON.parse(await fs.promises.readFile(charPath, 'utf-8'))
+        const isArray = Array.isArray(charRaw)
+        const charList = isArray ? charRaw : (charRaw.characters || [])
+        
+        for (const c of charList) {
+          const nameLower = (c.name || '').toLowerCase().trim()
+          const flowNameLower = (c.flowName || '').toLowerCase().trim()
+          const idLower = (c.id || '').toLowerCase().trim()
+          const tokenLower = (c.token || '').replace(/[@{}]/g, '').toLowerCase().trim()
+          
+          const newUuid = entityMapLower[nameLower] || 
+                          entityMapLower[flowNameLower] || 
+                          entityMapLower[idLower] || 
+                          entityMapLower[tokenLower]
+
+          if (newUuid) {
+            if (c.flowUuid && c.flowUuid !== newUuid) {
+              charOldToNewUuidMap[c.flowUuid] = newUuid
+            }
+            if (c.id) {
+              charOldToNewUuidMap[`00000000-temp-${c.id}`] = newUuid
+              charOldToNewUuidMap[`00000000-temp-${c.id.replace(/_/g, '-')}`] = newUuid
+            }
+            if (c.flowUuid !== newUuid) {
+              c.flowUuid = newUuid
+              charactersUpdated++
+            }
+          }
+        }
+
+        if (charactersUpdated > 0) {
+          await fs.promises.writeFile(charPath, JSON.stringify(charRaw, null, 2), 'utf-8')
+        }
+      } catch (err) {
+        console.error('Error auto-propagating to characters.json:', err)
+      }
+    }
+
+    // 3. Auto-Propagate into episodic 02_Prompt_Matrix.md files
+    let matricesUpdated = 0
+    if (fs.existsSync(franchisePath)) {
+      try {
+        const epDirs = await fs.promises.readdir(franchisePath, { withFileTypes: true })
+        for (const ep of epDirs) {
+          if (ep.isDirectory() && ep.name.startsWith('EP')) {
+            const matrixFile = path.join(franchisePath, ep.name, '02_Prompt_Matrix.md')
+            if (fs.existsSync(matrixFile)) {
+              let matrixContent = await fs.promises.readFile(matrixFile, 'utf-8')
+              let fileChanged = false
+
+              // Replace mapped old/temp UUIDs
+              for (const [oldId, newId] of Object.entries(charOldToNewUuidMap)) {
+                if (matrixContent.includes(oldId)) {
+                  matrixContent = matrixContent.replaceAll(oldId, newId)
+                  fileChanged = true
+                }
+              }
+
+              // Also check for direct name or token references in character_ref tags
+              for (const [name, uuid] of Object.entries(entities || {})) {
+                const tagRegex1 = new RegExp(`<character_ref>\\s*@{?${name}}?\\s*<\\/character_ref>`, 'gi')
+                if (tagRegex1.test(matrixContent)) {
+                  matrixContent = matrixContent.replace(tagRegex1, `<character_ref>${uuid}</character_ref>`)
+                  fileChanged = true
+                }
+              }
+
+              if (fileChanged) {
+                await fs.promises.writeFile(matrixFile, matrixContent, 'utf-8')
+                matricesUpdated++
+              }
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Error auto-propagating to prompt matrices:', err)
+      }
+    }
+
+    ActivityLogService.info(
+      'vault',
+      'Flow Entities Synchronized & Cascaded',
+      `Mapped ${entityEntries.length} entities. Auto-updated ${charactersUpdated} characters and ${matricesUpdated} prompt matrices.`,
+      { count: entityEntries.length, charactersUpdated, matricesUpdated },
+      franchiseId
+    )
+
+    res.json({
+      success: true,
+      count: entityEntries.length,
+      charactersUpdated,
+      matricesUpdated
+    })
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
@@ -957,6 +1115,19 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
     const ttsState = TtsService.getStatus(franchiseId, episodeId)
     const videoState = VideoService.getStatus(franchiseId, episodeId)
 
+    let format = franchiseId.toLowerCase().includes('series_02') ? '16:9' : '9:16'
+    try {
+      const biblePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+      if (fs.existsSync(biblePath)) {
+        const bibleContent = fs.readFileSync(biblePath, 'utf-8')
+        const formatMatch = bibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+        if (formatMatch) {
+          if (formatMatch[1].includes('16:9')) format = '16:9'
+          else if (formatMatch[1].includes('9:16')) format = '9:16'
+        }
+      }
+    } catch (_) {}
+
     res.json({
       totalScenes: scenes.length,
       imagesReady,
@@ -967,7 +1138,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       videoSize,
       imageState,
       ttsState,
-      videoState
+      videoState,
+      format
     })
   } catch (err) {
     res.status(500).json({ error: err.message })

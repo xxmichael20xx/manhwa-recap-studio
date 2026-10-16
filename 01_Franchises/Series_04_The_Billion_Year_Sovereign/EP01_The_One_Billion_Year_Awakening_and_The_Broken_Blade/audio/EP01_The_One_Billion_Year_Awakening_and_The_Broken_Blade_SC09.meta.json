@@ -1,0 +1,134 @@
+{
+  "scene": 9,
+  "text": "The laptop display transformed, lines of ancient gold calligraphy sweeping across the screen as a planetary countdown filled the monitor: 00:09:59.",
+  "durationMs": 10656,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "laptop",
+      "startMs": 200,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "display",
+      "startMs": 725,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "transformed",
+      "startMs": 1138,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "lines",
+      "startMs": 2100,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2463,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 2563,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "gold",
+      "startMs": 2963,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "calligraphy",
+      "startMs": 3275,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "sweeping",
+      "startMs": 3825,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 4288,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4675,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "screen",
+      "startMs": 4788,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5213,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5338,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "planetary",
+      "startMs": 5413,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 6038,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "filled",
+      "startMs": 6563,
+      "endMs": 6850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6863,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "monitor",
+      "startMs": 6925,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "00:09:59",
+      "startMs": 7750,
+      "endMs": 9788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The laptop display transformed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1988
+    },
+    {
+      "text": "lines of ancient gold calligraphy sweeping across the",
+      "startOffsetMs": 2100,
+      "endOffsetMs": 4775
+    },
+    {
+      "text": "screen as a planetary countdown filled the monitor:",
+      "startOffsetMs": 4788,
+      "endOffsetMs": 7513
+    },
+    {
+      "text": "00:09:59",
+      "startOffsetMs": 7750,
+      "endOffsetMs": 9888
+    }
+  ]
+}

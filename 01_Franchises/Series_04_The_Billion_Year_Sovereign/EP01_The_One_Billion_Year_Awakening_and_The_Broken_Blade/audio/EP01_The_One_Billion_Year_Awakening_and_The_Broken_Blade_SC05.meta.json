@@ -1,0 +1,179 @@
+{
+  "scene": 5,
+  "text": "Across the room, his round-faced roommate Wang Bao was excitedly mashing a mechanical keyboard, shouting over his headset as he tried to clear an online dungeon raid before midnight.",
+  "durationMs": 10848,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 525,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 638,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1200,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "round-faced",
+      "startMs": 1388,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "roommate",
+      "startMs": 2000,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2400,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2725,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2938,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "excitedly",
+      "startMs": 3113,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "mashing",
+      "startMs": 3675,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4125,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "mechanical",
+      "startMs": 4175,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "keyboard",
+      "startMs": 4750,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "shouting",
+      "startMs": 5538,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 6013,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6188,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "headset",
+      "startMs": 6325,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6775,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 6925,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "tried",
+      "startMs": 7025,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7313,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 7400,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7713,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "online",
+      "startMs": 7863,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "dungeon",
+      "startMs": 8338,
+      "endMs": 8775
+    },
+    {
+      "ttsWord": "raid",
+      "startMs": 8788,
+      "endMs": 9050
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 9063,
+      "endMs": 9388
+    },
+    {
+      "ttsWord": "midnight",
+      "startMs": 9400,
+      "endMs": 9975
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across the room,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1088
+    },
+    {
+      "text": "his round-faced roommate Wang Bao was excitedly mashing",
+      "startOffsetMs": 1200,
+      "endOffsetMs": 4113
+    },
+    {
+      "text": "a mechanical keyboard,",
+      "startOffsetMs": 4125,
+      "endOffsetMs": 5325
+    },
+    {
+      "text": "shouting over his headset as he tried to",
+      "startOffsetMs": 5538,
+      "endOffsetMs": 7388
+    },
+    {
+      "text": "clear an online dungeon raid before midnight.",
+      "startOffsetMs": 7400,
+      "endOffsetMs": 10075
+    }
+  ]
+}

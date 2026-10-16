@@ -13,13 +13,32 @@ export const COMMON_STOP_WORDS = new Set([
  * Google Flow Entity ID Mapper & Token Transformer Utility
  */
 
+export function normalizeEntityMappingText(rawText) {
+  if (!rawText || typeof rawText !== 'string') return ''
+  // 1. Strip markdown code fences if wrapped in ```text ... ```
+  let text = rawText.replace(/^```[a-z]*\s*/i, '').replace(/```\s*$/i, '')
+
+  // 2. Automatically split concatenated single-line outputs into separate lines
+  // Whenever a UUID is followed by space/text instead of a newline, insert a newline
+  text = text.replace(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})\s*/gi, (m, uuid) => uuid + '\n')
+
+  // 3. Clean up leading/trailing empty lines and whitespace
+  return text
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean)
+    .join('\n')
+}
+
 export function parseEntityMappingText(rawText) {
   if (!rawText || typeof rawText !== 'string') {
-    return { entities: {}, count: 0 }
+    return { entities: {}, count: 0, normalizedText: '' }
   }
 
+  // Pre-normalize text to handle single-line outputs seamlessly
+  const normalizedText = normalizeEntityMappingText(rawText)
   const entities = {}
-  const lines = rawText.split(/\r?\n/)
+  const lines = normalizedText.split(/\r?\n/)
   const uuidRegex = /([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i
 
   for (const line of lines) {
@@ -78,7 +97,8 @@ export function parseEntityMappingText(rawText) {
 
   return {
     entities,
-    count: Object.keys(entities).length
+    count: Object.keys(entities).length,
+    normalizedText
   }
 }
 
@@ -223,19 +243,19 @@ export const LEAN_MODE_STORAGE_KEY = 'manhwa_recap_lean_prompt_mode'
 export function stripBoilerplateTail(text) {
   if (!text || typeof text !== 'string') return ''
 
-  // 1. Common style intro marker: "dark fantasy action manhwa..."
-  const styleMatch = text.search(/[,.\s]+dark fantasy action manhwa/i)
-  if (styleMatch !== -1) {
-    return text.slice(0, styleMatch).trim()
-  }
-
-  // 2. Anatomical negative tail marker if style phrase wasn't found
+  // Strip only verbose anatomical negative boilerplate while ALWAYS preserving the core manhwa art style lock
   const anatomyMatch = text.search(/[,.\s]+(?:anatomically correct hands|no character cloning|textless manhwa illustration)/i)
+  let core = text
   if (anatomyMatch !== -1) {
-    return text.slice(0, anatomyMatch).trim()
+    core = text.slice(0, anatomyMatch).trim()
   }
 
-  return text.trim()
+  // Ensure every scene prompt retains the mandatory manhwa art style invariant for the diffusion tool call
+  if (!/sharp.*ink linework|high contrast cel shading/i.test(core)) {
+    core = `${core.replace(/[.,\s]+$/, '')}. Dark fantasy action manhwa art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting.`
+  }
+
+  return core.trim()
 }
 
 export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mode = 'token', options = {}) {

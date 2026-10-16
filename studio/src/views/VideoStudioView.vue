@@ -58,7 +58,10 @@
           </div>
           <h1 class="text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
             <span>Video Production & Compilation Studio</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">1080p 16:9</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold flex items-center space-x-1">
+              <span>🔒</span>
+              <span>{{ is16x9Format ? '1080p 16:9 Landscape' : '1080p 9:16 Webtoon' }}</span>
+            </span>
           </h1>
         </div>
       </div>
@@ -287,6 +290,12 @@
                 <p class="text-xs text-slate-500 dark:text-slate-400 max-w-lg mx-auto mt-1">
                   <strong>Click anywhere to browse files</strong>, or drag & drop a <strong>.ZIP archive</strong>, folder, or images directly here.
                 </p>
+                <div class="pt-2">
+                  <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-mono text-purple-600 dark:text-purple-400 font-semibold">
+                    <Sparkles class="w-3 h-3 text-purple-500" />
+                    <span>Smart Ingestion: .ZIP Archives • Folder Trees • Loose Images (JPG, PNG, WEBP)</span>
+                  </span>
+                </div>
               </div>
 
               <!-- Ingestion Action Buttons -->
@@ -323,7 +332,7 @@
               <input 
                 ref="zipFileInput" 
                 type="file" 
-                accept=".zip,application/zip,application/x-zip-compressed" 
+                accept=".zip,application/zip,application/x-zip-compressed,application/octet-stream" 
                 class="hidden" 
                 @change="handleZipFileInput" 
               />
@@ -340,7 +349,7 @@
                 ref="batchFileInput" 
                 type="file" 
                 multiple 
-                accept="image/*" 
+                accept="image/*,.zip,application/zip,application/x-zip-compressed,application/octet-stream" 
                 class="hidden" 
                 @change="handleBatchFileInput" 
               />
@@ -348,7 +357,7 @@
                 ref="batchScopedFileInput" 
                 type="file" 
                 multiple 
-                accept="image/*,.zip,application/zip,application/x-zip-compressed" 
+                accept="image/*,.zip,application/zip,application/x-zip-compressed,application/octet-stream" 
                 class="hidden" 
                 @change="handleBatchScopedFileInput" 
               />
@@ -2026,6 +2035,10 @@ const promptTagMode = ref('uuid') // 'uuid' | 'token'
 const isSavingEntityMap = ref(false)
 
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
+const is16x9Format = computed(() => {
+  if (pipeline.value?.format) return pipeline.value.format === '16:9'
+  return (route.params.franchiseId || '').toLowerCase().includes('series_02')
+})
 
 const syncEntityMapping = async () => {
   const result = parseEntityMappingText(entityMapRawText.value)
@@ -2472,13 +2485,25 @@ const handleZipFileInput = async (e) => {
 
 const handleFolderFileInput = async (e) => {
   const files = e.target ? Array.from(e.target.files) : []
-  await processBatchFiles(files)
+  if (files.length === 0) return
+  const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+  if (zipFile) {
+    await handleZipUpload(zipFile)
+  } else {
+    await processBatchFiles(files)
+  }
   if (e.target) e.target.value = ''
 }
 
 const handleBatchFileInput = async (e) => {
   const files = e.target ? Array.from(e.target.files) : []
-  await processBatchFiles(files)
+  if (files.length === 0) return
+  const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+  if (zipFile) {
+    await handleZipUpload(zipFile)
+  } else {
+    await processBatchFiles(files)
+  }
   if (e.target) e.target.value = ''
 }
 
@@ -3049,12 +3074,80 @@ const synthesizeAllBatches = async () => {
   }
 }
 
+/**
+ * Recursively extracts all files from DataTransfer (supporting dropped folders,
+ * nested directories, ZIP archives, and loose individual files via HTML5 File System API).
+ */
+const getFilesFromDataTransfer = async (dataTransfer) => {
+  const files = []
+  const items = dataTransfer.items ? Array.from(dataTransfer.items) : []
+  
+  if (items.length > 0 && items[0].webkitGetAsEntry) {
+    const traverseEntry = async (entry) => {
+      if (!entry) return
+      if (entry.isFile) {
+        await new Promise((resolve) => {
+          entry.file((file) => {
+            if (file) files.push(file)
+            resolve()
+          }, () => resolve())
+        })
+      } else if (entry.isDirectory) {
+        const dirReader = entry.createReader()
+        const readEntriesBatch = () => {
+          return new Promise((resolve) => {
+            dirReader.readEntries(async (entries) => {
+              if (!entries || entries.length === 0) {
+                resolve(false)
+              } else {
+                for (const subEntry of entries) {
+                  await traverseEntry(subEntry)
+                }
+                resolve(true)
+              }
+            }, () => resolve(false))
+          })
+        }
+        let hasMore = true
+        while (hasMore) {
+          hasMore = await readEntriesBatch()
+        }
+      }
+    }
+
+    const entries = items.map(item => item.webkitGetAsEntry ? item.webkitGetAsEntry() : null).filter(Boolean)
+    for (const entry of entries) {
+      await traverseEntry(entry)
+    }
+  }
+
+  // Fallback to standard dataTransfer.files if File System API was bypassed or yielded 0 files
+  if (files.length === 0 && dataTransfer.files && dataTransfer.files.length > 0) {
+    return Array.from(dataTransfer.files)
+  }
+
+  return files
+}
+
 const handleBatchScopedDrop = async (event, batchIndex) => {
   const dt = event.dataTransfer
   if (!dt) return
 
-  const files = Array.from(dt.files)
-  if (files.length === 0) return
+  const batchLabel = `Batch ${batchIndex + 1}`
+  triggerToast('Scanning Dropped Content', `Scanning files for ${batchLabel}...`, 'info', true)
+
+  let files = []
+  try {
+    files = await getFilesFromDataTransfer(dt)
+  } catch (err) {
+    console.warn('Error reading dropped files:', err)
+    files = Array.from(dt.files || [])
+  }
+
+  if (files.length === 0) {
+    triggerToast('Upload Notice', 'No files or images found in dropped content.', 'warning')
+    return
+  }
 
   const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
   if (zipFile) {
@@ -3066,8 +3159,25 @@ const handleBatchScopedDrop = async (event, batchIndex) => {
 }
 
 const handleBatchDrop = async (e) => {
-  const files = e.dataTransfer ? Array.from(e.dataTransfer.files) : []
-  if (files.length === 0) return
+  const dt = e.dataTransfer
+  if (!dt) return
+
+  batchUploading.value = true
+  triggerToast('Scanning Dropped Content', 'Scanning dropped files, archives, and folders...', 'info', true)
+
+  let files = []
+  try {
+    files = await getFilesFromDataTransfer(dt)
+  } catch (err) {
+    console.warn('Error reading dropped files:', err)
+    files = Array.from(dt.files || [])
+  }
+
+  if (files.length === 0) {
+    batchUploading.value = false
+    triggerToast('Upload Notice', 'No files or images found in dropped content.', 'warning')
+    return
+  }
 
   // Check if a .zip archive was dropped
   const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
@@ -3703,15 +3813,50 @@ const handleFileInput = async (event, tag) => {
 }
 
 const handleFileDrop = async (event, tag) => {
-  const file = event.dataTransfer.files[0]
-  if (!file) return
+  const dt = event.dataTransfer
+  if (!dt) return
+
+  let files = []
+  try {
+    files = await getFilesFromDataTransfer(dt)
+  } catch (err) {
+    files = Array.from(dt.files || [])
+  }
+  if (files.length === 0) return
+
+  // 1. If a .zip was dropped onto the card, infer batch from scene tag (e.g. IMG_025 is Batch 2)
+  const zipFile = files.find(f => f.name.toLowerCase().endsWith('.zip'))
+  if (zipFile) {
+    const match = tag.match(/IMG_?0*(\d+)/i)
+    const sceneNum = match ? parseInt(match[1], 10) : 1
+    const inferredBatchIndex = Math.floor((sceneNum - 1) / 24)
+    await handleZipUpload(zipFile, inferredBatchIndex)
+    return
+  }
+
+  // 2. If multiple files or folder were dropped onto the card, run processBatchFiles for that batch
+  if (files.length > 1) {
+    const match = tag.match(/IMG_?0*(\d+)/i)
+    const sceneNum = match ? parseInt(match[1], 10) : 1
+    const inferredBatchIndex = Math.floor((sceneNum - 1) / 24)
+    await processBatchFiles(files, inferredBatchIndex)
+    return
+  }
+
+  // 3. Single image file dropped on this specific scene card
+  const imageFile = files.find(f => /\.(png|jpe?g|webp)$/i.test(f.name))
+  if (!imageFile) {
+    triggerToast('Upload Notice', 'Please drop a PNG, JPG, WEBP image or ZIP archive.', 'warning')
+    return
+  }
+
   uploadingCardTags.value = new Set(uploadingCardTags.value).add(tag)
   triggerToast('Uploading Panel', `Uploading image for [${tag}]...`, 'info', true)
   const reader = new FileReader()
   reader.onload = async (e) => {
     await uploadBase64(tag, e.target.result)
   }
-  reader.readAsDataURL(file)
+  reader.readAsDataURL(imageFile)
 }
 
 const uploadBase64 = async (tag, base64Data) => {

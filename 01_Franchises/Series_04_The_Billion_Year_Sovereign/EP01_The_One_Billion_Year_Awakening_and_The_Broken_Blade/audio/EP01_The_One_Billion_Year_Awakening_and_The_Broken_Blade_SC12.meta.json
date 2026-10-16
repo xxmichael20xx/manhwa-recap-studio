@@ -1,0 +1,159 @@
+{
+  "scene": 12,
+  "text": "Lu Chen glanced out the fourth-floor glass window into the clear evening sky, his dark obsidian eyes picking up subtle geometric ripples in the atmospheric fabric.",
+  "durationMs": 9816,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 350,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "glanced",
+      "startMs": 613,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1038,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1188,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 1275,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 1900,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 2250,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2638,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2838,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 2950,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "evening",
+      "startMs": 3250,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 3588,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4288,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "dark",
+      "startMs": 4475,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 4763,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 5338,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "picking",
+      "startMs": 5675,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6000,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "subtle",
+      "startMs": 6150,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "geometric",
+      "startMs": 6500,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "ripples",
+      "startMs": 7113,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7513,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7613,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "atmospheric",
+      "startMs": 7700,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "fabric",
+      "startMs": 8363,
+      "endMs": 8938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen glanced out the fourth-floor glass window",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "into the clear evening sky,",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 4100
+    },
+    {
+      "text": "his dark obsidian eyes picking up subtle geometric",
+      "startOffsetMs": 4288,
+      "endOffsetMs": 7100
+    },
+    {
+      "text": "ripples in the atmospheric fabric.",
+      "startOffsetMs": 7113,
+      "endOffsetMs": 9038
+    }
+  ]
+}

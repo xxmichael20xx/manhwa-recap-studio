@@ -1,0 +1,144 @@
+{
+  "scene": 3,
+  "text": "On the bright screen, the retro interface of Heavenly Dao: Infinite Samsara ran quietly, ticking up cultivation numbers with rhythmic, archaic chimes.",
+  "durationMs": 10056,
+  "rawWords": [
+    {
+      "ttsWord": "On",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 238,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "bright",
+      "startMs": 338,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "screen",
+      "startMs": 625,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1288,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "retro",
+      "startMs": 1400,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "interface",
+      "startMs": 1838,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2400,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "Heavenly",
+      "startMs": 2513,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "Dao",
+      "startMs": 2925,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "Infinite",
+      "startMs": 3538,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "Samsara",
+      "startMs": 3975,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "ran",
+      "startMs": 4550,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "quietly",
+      "startMs": 4850,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "ticking",
+      "startMs": 5700,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6013,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 6175,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "numbers",
+      "startMs": 6838,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7163,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "rhythmic",
+      "startMs": 7338,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "archaic",
+      "startMs": 8063,
+      "endMs": 8538
+    },
+    {
+      "ttsWord": "chimes",
+      "startMs": 8550,
+      "endMs": 9175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "On the bright screen,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1175
+    },
+    {
+      "text": "the retro interface of Heavenly Dao:",
+      "startOffsetMs": 1288,
+      "endOffsetMs": 3375
+    },
+    {
+      "text": "Infinite Samsara ran quietly,",
+      "startOffsetMs": 3538,
+      "endOffsetMs": 5525
+    },
+    {
+      "text": "ticking up cultivation numbers with rhythmic,",
+      "startOffsetMs": 5700,
+      "endOffsetMs": 7900
+    },
+    {
+      "text": "archaic chimes.",
+      "startOffsetMs": 8063,
+      "endOffsetMs": 9275
+    }
+  ]
+}

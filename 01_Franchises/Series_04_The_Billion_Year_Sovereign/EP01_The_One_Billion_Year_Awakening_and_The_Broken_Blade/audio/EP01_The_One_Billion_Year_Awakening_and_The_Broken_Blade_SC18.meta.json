@@ -1,0 +1,169 @@
+{
+  "scene": 18,
+  "text": "Wang Bao collapsed backward onto his chair, gasping as brilliant crimson vitality wrapped around his forearms, bulking his frame with sixty-five years of simulated Body Refining strength.",
+  "durationMs": 11328,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 388,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "collapsed",
+      "startMs": 600,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 1113,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 1563,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1825,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "chair",
+      "startMs": 1975,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "gasping",
+      "startMs": 2663,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3188,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "brilliant",
+      "startMs": 3313,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 3750,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "vitality",
+      "startMs": 4150,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "wrapped",
+      "startMs": 4750,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 5075,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5388,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "forearms",
+      "startMs": 5538,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "bulking",
+      "startMs": 6438,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6825,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "frame",
+      "startMs": 6975,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7313,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "sixty-five",
+      "startMs": 7450,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 8113,
+      "endMs": 8413
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8425,
+      "endMs": 8513
+    },
+    {
+      "ttsWord": "simulated",
+      "startMs": 8525,
+      "endMs": 9125
+    },
+    {
+      "ttsWord": "Body",
+      "startMs": 9138,
+      "endMs": 9438
+    },
+    {
+      "ttsWord": "Refining",
+      "startMs": 9450,
+      "endMs": 9925
+    },
+    {
+      "ttsWord": "strength",
+      "startMs": 9938,
+      "endMs": 10450
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao collapsed backward onto his chair,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2488
+    },
+    {
+      "text": "gasping as brilliant crimson vitality wrapped around his",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 5525
+    },
+    {
+      "text": "forearms,",
+      "startOffsetMs": 5538,
+      "endOffsetMs": 6263
+    },
+    {
+      "text": "bulking his frame with sixty-five years of simulated",
+      "startOffsetMs": 6438,
+      "endOffsetMs": 9125
+    },
+    {
+      "text": "Body Refining strength.",
+      "startOffsetMs": 9138,
+      "endOffsetMs": 10550
+    }
+  ]
+}

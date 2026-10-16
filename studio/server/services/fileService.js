@@ -197,6 +197,17 @@ export class FileService {
       }
     } catch (_) {}
 
+    let format = franchiseId.toLowerCase().includes('series_02') ? '16:9' : '9:16'
+    try {
+      const biblePath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+      const bibleContent = await fs.readFile(biblePath, 'utf-8')
+      const formatMatch = bibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+      if (formatMatch) {
+        if (formatMatch[1].includes('16:9')) format = '16:9'
+        else if (formatMatch[1].includes('9:16')) format = '9:16'
+      }
+    } catch (_) {}
+
     const audit = script ? AntiSlopValidator.auditScript(script) : null
 
     return {
@@ -207,7 +218,8 @@ export class FileService {
       audioFiles,
       hasCompiledVideo,
       videoStats,
-      audit
+      audit,
+      format
     }
   }
 

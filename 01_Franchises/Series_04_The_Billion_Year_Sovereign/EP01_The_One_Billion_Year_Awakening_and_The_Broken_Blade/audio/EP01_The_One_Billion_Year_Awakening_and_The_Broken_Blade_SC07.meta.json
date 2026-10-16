@@ -1,0 +1,264 @@
+{
+  "scene": 7,
+  "text": "Lu Chen offered a faint, unbothered smirk, leaning back in his chair with both hands buried casually in his oversized charcoal-black hoodie pockets. \"Ten years of idle background grinding. It would feel rude to close the tab before the developers turn off the lights.\"",
+  "durationMs": 16800,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 338,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "offered",
+      "startMs": 600,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 913,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "faint",
+      "startMs": 1000,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "unbothered",
+      "startMs": 1625,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "smirk",
+      "startMs": 2200,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "leaning",
+      "startMs": 2900,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 3213,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3500,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3575,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "chair",
+      "startMs": 3738,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4088,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "both",
+      "startMs": 4250,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 4500,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "buried",
+      "startMs": 4850,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "casually",
+      "startMs": 5213,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5725,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5813,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "oversized",
+      "startMs": 5988,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "charcoal-black",
+      "startMs": 6613,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "hoodie",
+      "startMs": 7350,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "pockets",
+      "startMs": 7600,
+      "endMs": 8263
+    },
+    {
+      "ttsWord": "Ten",
+      "startMs": 9125,
+      "endMs": 9388
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 9400,
+      "endMs": 9700
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9713,
+      "endMs": 9813
+    },
+    {
+      "ttsWord": "idle",
+      "startMs": 9825,
+      "endMs": 10125
+    },
+    {
+      "ttsWord": "background",
+      "startMs": 10138,
+      "endMs": 10650
+    },
+    {
+      "ttsWord": "grinding",
+      "startMs": 10663,
+      "endMs": 11225
+    },
+    {
+      "ttsWord": "It",
+      "startMs": 12088,
+      "endMs": 12225
+    },
+    {
+      "ttsWord": "would",
+      "startMs": 12238,
+      "endMs": 12375
+    },
+    {
+      "ttsWord": "feel",
+      "startMs": 12388,
+      "endMs": 12688
+    },
+    {
+      "ttsWord": "rude",
+      "startMs": 12700,
+      "endMs": 12925
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 12938,
+      "endMs": 13038
+    },
+    {
+      "ttsWord": "close",
+      "startMs": 13050,
+      "endMs": 13388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 13400,
+      "endMs": 13500
+    },
+    {
+      "ttsWord": "tab",
+      "startMs": 13513,
+      "endMs": 13863
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 13875,
+      "endMs": 14200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 14213,
+      "endMs": 14288
+    },
+    {
+      "ttsWord": "developers",
+      "startMs": 14300,
+      "endMs": 14888
+    },
+    {
+      "ttsWord": "turn",
+      "startMs": 14900,
+      "endMs": 15113
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 15125,
+      "endMs": 15313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 15325,
+      "endMs": 15413
+    },
+    {
+      "ttsWord": "lights",
+      "startMs": 15425,
+      "endMs": 15938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen offered a faint,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1488
+    },
+    {
+      "text": "unbothered smirk,",
+      "startOffsetMs": 1625,
+      "endOffsetMs": 2725
+    },
+    {
+      "text": "leaning back in his chair with both hands",
+      "startOffsetMs": 2900,
+      "endOffsetMs": 4838
+    },
+    {
+      "text": "buried casually in his oversized charcoal-black hoodie pockets.",
+      "startOffsetMs": 4850,
+      "endOffsetMs": 8363
+    },
+    {
+      "text": "Ten years of idle background grinding.",
+      "startOffsetMs": 9125,
+      "endOffsetMs": 11325
+    },
+    {
+      "text": "It would feel rude to close the tab",
+      "startOffsetMs": 12088,
+      "endOffsetMs": 13863
+    },
+    {
+      "text": "before the developers turn off the lights.\"",
+      "startOffsetMs": 13875,
+      "endOffsetMs": 16038
+    }
+  ]
+}

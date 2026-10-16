@@ -76,7 +76,7 @@
 ## 🎯 The Goals of the Story
 
 1. **Immediate Micro-Goal (Strategic Throttling):**  
-   Lu Chen must actively cloak 99.999% of his Primordial Dao aura. If he lets his unshielded gravity loose, Earth's continental plates would rupture. He masquerades as a low-level mortal student to enjoy a peaceful everyday life.
+   Lu Chen operates at a calibrated 25.00% baseline (250,000,000 Years) of his Primordial Dao foundation, displaying an appraisal status of Transcendent Apex / Infinite Overflow whilst keeping 75% in deep internal reserve to preserve continental harmony.
 2. **Mid-Term Macro-Goal (Neutralising Simulated Calamities):**  
    Dimensional rifts spawn planetary-threat simulated raid bosses (possessing $100\text{M}–450\text{M}$ years of dark cultivation). Lu Chen discretely swats them away before they wipe out human civilisation, all whilst preserving his quiet mortal routine.
 3. **The Ultimate Payoff (Planetary Dominion):**  
@@ -128,5 +128,5 @@
 * **The Durability Disconnect:**
   > *"I felt that strike. It felt like a gentle spring breeze touching an iron mountain. Are you quite finished?"*
 * **The System HUD Announcements:**
-  > `[SYSTEM NOTICE: PRIMORDIAL VESSEL ENGAGED. 99.999% OF CULTIVATION CLOAKED TO PRESERVE CONTINENTAL INTEGRITY.]`  
+  > `[SYSTEM NOTICE: ACTIVE OUTPUT CALIBRATED TO 25.00% (250,000,000 YEARS) — APPRAISAL STATUS: TRANSCENDENT APEX / INFINITE OVERFLOW.]`  
   > `[SYSTEM WARNING: TARGET 'YE XINGCHEN' EXCEEDS TOLERANCE THRESHOLD. EXECUTING GRAVITATIONAL SANCTION.]`

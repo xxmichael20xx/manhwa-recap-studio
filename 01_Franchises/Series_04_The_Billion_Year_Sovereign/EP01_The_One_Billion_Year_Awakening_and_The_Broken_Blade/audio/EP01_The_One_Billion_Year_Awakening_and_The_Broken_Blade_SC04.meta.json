@@ -1,0 +1,134 @@
+{
+  "scene": 4,
+  "text": "SYSTEM NOTICE: SIMULATION TIME CONVERGENCE ATTAINED. TOTAL ACCUMULATED CULTIVATION: 1,000,000,000 YEARS. The brilliant golden notification illuminated the clean white room.",
+  "durationMs": 12864,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "NOTICE",
+      "startMs": 588,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "SIMULATION",
+      "startMs": 1300,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "TIME",
+      "startMs": 2013,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "CONVERGENCE",
+      "startMs": 2363,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "ATTAINED",
+      "startMs": 2913,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "TOTAL",
+      "startMs": 4363,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "ACCUMULATED",
+      "startMs": 4750,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 5463,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "1,000,000,000 YEARS",
+      "startMs": 6475,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 8538,
+      "endMs": 8688
+    },
+    {
+      "ttsWord": "brilliant",
+      "startMs": 8700,
+      "endMs": 9138
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 9150,
+      "endMs": 9538
+    },
+    {
+      "ttsWord": "notification",
+      "startMs": 9550,
+      "endMs": 10275
+    },
+    {
+      "ttsWord": "illuminated",
+      "startMs": 10288,
+      "endMs": 10900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10913,
+      "endMs": 11000
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 11013,
+      "endMs": 11338
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 11350,
+      "endMs": 11625
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 11638,
+      "endMs": 11988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM NOTICE:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1138
+    },
+    {
+      "text": "SIMULATION TIME CONVERGENCE ATTAINED.",
+      "startOffsetMs": 1300,
+      "endOffsetMs": 3600
+    },
+    {
+      "text": "TOTAL ACCUMULATED CULTIVATION:",
+      "startOffsetMs": 4363,
+      "endOffsetMs": 6313
+    },
+    {
+      "text": "1,000,000,000 YEARS",
+      "startOffsetMs": 6475,
+      "endOffsetMs": 7775
+    },
+    {
+      "text": "The brilliant golden notification illuminated the clean white",
+      "startOffsetMs": 8538,
+      "endOffsetMs": 11625
+    },
+    {
+      "text": "room.",
+      "startOffsetMs": 11638,
+      "endOffsetMs": 12088
+    }
+  ]
+}
