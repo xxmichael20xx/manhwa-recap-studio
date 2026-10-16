@@ -2491,59 +2491,7 @@ const copyNextBatchChunk = async (batch, bIdx) => {
   await copyChunk(batch, bIdx, chunkToCopy, chunkToCopy.chunkIndex)
 }
 
-const formatPromptForAutomator = (p) => {
-  if (!p) return ''
-  let text = p.prompt || ''
-  // Transform tokens according to current mode
-  text = transformTokens(text, parsedEntities.value, promptTagMode.value)
-  // Clean up excessive whitespace/newlines inside a single prompt
-  text = text.replace(/\r?\n+/g, ' ').replace(/\s+/g, ' ').trim()
-  return text
-}
 
-const copyBatchForFlowAutomator = async (batch, bIdx) => {
-  if (!batch || !batch.items.length) return
-  const automatorText = batch.items
-    .map(p => formatPromptForAutomator(p))
-    .filter(Boolean)
-    .join('\n\n')
-
-  try {
-    await writeToClipboardSafe(automatorText)
-    const key = `AUTOMATOR_${bIdx}`
-    activeCopiedKey.value = key
-    showToast(`Copied ${batch.items.length} scenes for Google Flow Automator! Paste into extension prompt box.`)
-    setTimeout(() => {
-      if (activeCopiedKey.value === key) {
-        activeCopiedKey.value = null
-      }
-    }, 2500)
-  } catch (err) {
-    console.error('Failed to copy for Flow Automator:', err)
-  }
-}
-
-const copySelectedForFlowAutomator = async () => {
-  const selectedItems = parsedPrompts.value.filter(p => selectedTags.value.has(p.tag))
-  if (!selectedItems.length) return
-  const automatorText = selectedItems
-    .map(p => formatPromptForAutomator(p))
-    .filter(Boolean)
-    .join('\n\n')
-
-  try {
-    await writeToClipboardSafe(automatorText)
-    activeCopiedKey.value = 'SELECTED_AUTOMATOR'
-    showToast(`Copied ${selectedItems.length} selected scenes for Google Flow Automator!`)
-    setTimeout(() => {
-      if (activeCopiedKey.value === 'SELECTED_AUTOMATOR') {
-        activeCopiedKey.value = null
-      }
-    }, 2500)
-  } catch (err) {
-    console.error('Failed to copy selected for Flow Automator:', err)
-  }
-}
 
 const copyBatchFullXml = async (batch, bIdx) => {
   if (isCopyDisabledDueToMissingUuids.value) {
