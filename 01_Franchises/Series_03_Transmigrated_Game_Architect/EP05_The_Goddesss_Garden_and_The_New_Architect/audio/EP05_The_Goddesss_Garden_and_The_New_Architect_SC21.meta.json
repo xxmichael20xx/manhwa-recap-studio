@@ -1,0 +1,143 @@
+{
+  "scene": 21,
+  "durationMs": 7944,
+  "rawWords": [
+    {
+      "ttsWord": "If",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 238,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "surrender",
+      "startMs": 388,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 888,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "weapons",
+      "startMs": 1063,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1500,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "agree",
+      "startMs": 1625,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1963,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "peel",
+      "startMs": 2063,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "potatoes",
+      "startMs": 2313,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2863,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2950,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "galley",
+      "startMs": 3038,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 3800,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "may",
+      "startMs": 3950,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "have",
+      "startMs": 4138,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4350,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "remaining",
+      "startMs": 4438,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "cargo",
+      "startMs": 4875,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "bays",
+      "startMs": 5275,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 6013,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "remarked",
+      "startMs": 6113,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 6538,
+      "endMs": 7063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "If they surrender their weapons and agree to",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2050
+    },
+    {
+      "text": "peel potatoes in the galley,",
+      "startOffsetMs": 2063,
+      "endOffsetMs": 3575
+    },
+    {
+      "text": "they may have the remaining cargo bays,'",
+      "startOffsetMs": 3800,
+      "endOffsetMs": 5825
+    },
+    {
+      "text": "I remarked calmly.",
+      "startOffsetMs": 6013,
+      "endOffsetMs": 7163
+    }
+  ]
+}

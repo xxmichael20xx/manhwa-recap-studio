@@ -1,0 +1,128 @@
+{
+  "scene": 54,
+  "durationMs": 7752,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "spent",
+      "startMs": 238,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 563,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 838,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 1275,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "admiring",
+      "startMs": 1563,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 2063,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "reflection",
+      "startMs": 2200,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "instead",
+      "startMs": 2788,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3163,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "fixing",
+      "startMs": 3263,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 3663,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 3825,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 4513,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "remarked",
+      "startMs": 4613,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5075,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5188,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 5263,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 5875,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "smirk",
+      "startMs": 6375,
+      "endMs": 6875
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You spent ten thousand years admiring your reflection",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2775
+    },
+    {
+      "text": "instead of fixing your code,'",
+      "startOffsetMs": 2788,
+      "endOffsetMs": 4313
+    },
+    {
+      "text": "I remarked with a dry,",
+      "startOffsetMs": 4513,
+      "endOffsetMs": 5725
+    },
+    {
+      "text": "deadpan smirk.",
+      "startOffsetMs": 5875,
+      "endOffsetMs": 6975
+    }
+  ]
+}

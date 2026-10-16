@@ -1,0 +1,98 @@
+{
+  "scene": 12,
+  "durationMs": 6792,
+  "rawWords": [
+    {
+      "ttsWord": "Resting",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 538,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 850,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "illuminated",
+      "startMs": 925,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "underground",
+      "startMs": 1600,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "hangar",
+      "startMs": 2138,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "sat",
+      "startMs": 2513,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2750,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "monumental",
+      "startMs": 2825,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 3488,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "hull",
+      "startMs": 3988,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4275,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4375,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "Silicon",
+      "startMs": 4463,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "Sub-Space",
+      "startMs": 4938,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "Ark",
+      "startMs": 5538,
+      "endMs": 5925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Resting within the illuminated underground hangar sat the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2813
+    },
+    {
+      "text": "monumental obsidian hull of the Silicon Sub-Space Ark.",
+      "startOffsetMs": 2825,
+      "endOffsetMs": 6025
+    }
+  ]
+}

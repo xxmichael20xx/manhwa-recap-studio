@@ -99,6 +99,8 @@
 
 [IMG_043] Infuriated by a filthy commoner daring to meet his gaze, Cassian drew his ancestral Sunfire Rapier, its solid gold hilt erupting into roaring solar flames that scorched the nearby cobblestones.
 
+<!-- ⚡ VIRAL CLIMAX HOOK (TIKTOK / SHORTS) -->
+[CLIMAX_START]
 [IMG_044] "Insolent slum worm! Die for your insolence!" Cassian roared, thrusting the flaming blade straight toward Bram's throat with lethal, aristocratic bloodlust.
 
 [IMG_045] Bram did not dodge. Standing perfectly relaxed, he raised his bare right index finger and gently tapped the flat side of the blazing golden blade as it screamed past his collar.
@@ -108,6 +110,7 @@
 [IMG_047] With full momentum behind his thrust, the brittle chalk blade snapped with a dry, ceramic crunch, detonating into a blinding cloud of white chalk dust that enveloped Cassian's face.
 
 [IMG_048] Cassian stood frozen, covered in ridiculous white chalk powder, gripping a bare golden hilt whilst Bram dusted off his fingers with a warm smile. "Do have a wonderful afternoon, my lord."
+[CLIMAX_END]
 
 
 ## 📦 BATCH 03 (Scenes 049 - 072)

@@ -1,0 +1,153 @@
+{
+  "scene": 88,
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "Ten",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 338,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 763,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 1088,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 1275,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 1625,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "labored",
+      "startMs": 1825,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 2188,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 2500,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "trial",
+      "startMs": 2700,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3375,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "entity",
+      "startMs": 3475,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "declared",
+      "startMs": 3863,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "Not",
+      "startMs": 5313,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "once",
+      "startMs": 5638,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 5963,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6150,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "empire",
+      "startMs": 6250,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "produced",
+      "startMs": 6713,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7125,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 7200,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "worthy",
+      "startMs": 7700,
+      "endMs": 8038
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8050,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8150,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "throne",
+      "startMs": 8238,
+      "endMs": 8688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ten thousand years this world has labored beneath",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2488
+    },
+    {
+      "text": "this trial,' the entity declared.",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 4550
+    },
+    {
+      "text": "Not once has an empire produced a sovereign",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 7688
+    },
+    {
+      "text": "worthy of the throne.'",
+      "startOffsetMs": 7700,
+      "endOffsetMs": 8788
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "scene": 176,
+  "durationMs": 7776,
+  "rawWords": [
+    {
+      "ttsWord": "Let",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 288,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "begin",
+      "startMs": 438,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 775,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 900,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "garbage",
+      "startMs": 1000,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "collection",
+      "startMs": 1400,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "pass",
+      "startMs": 1888,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 2575,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 2700,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "spinning",
+      "startMs": 3288,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 3650,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "chalk",
+      "startMs": 3800,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "stylus",
+      "startMs": 4125,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4663,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4838,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "conductor's",
+      "startMs": 4913,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "baton",
+      "startMs": 5463,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 5813,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6175,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "orchestra",
+      "startMs": 6275,
+      "endMs": 6900
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Let us begin with the garbage collection pass,'",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2450
+    },
+    {
+      "text": "I said,",
+      "startOffsetMs": 2575,
+      "endOffsetMs": 3125
+    },
+    {
+      "text": "spinning my chalk stylus like a conductor's baton",
+      "startOffsetMs": 3288,
+      "endOffsetMs": 5800
+    },
+    {
+      "text": "before an orchestra.",
+      "startOffsetMs": 5813,
+      "endOffsetMs": 7000
+    }
+  ]
+}

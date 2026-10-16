@@ -1,0 +1,118 @@
+{
+  "scene": 34,
+  "durationMs": 7032,
+  "rawWords": [
+    {
+      "ttsWord": "With",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 250,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "gentle",
+      "startMs": 338,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "snap",
+      "startMs": 738,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1125,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 1238,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 1400,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2150,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "weightless",
+      "startMs": 2288,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "steel",
+      "startMs": 2713,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "pins",
+      "startMs": 3063,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "shot",
+      "startMs": 3375,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 3700,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4113,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "streaks",
+      "startMs": 4313,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4688,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 4825,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "turquoise",
+      "startMs": 5150,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 5663,
+      "endMs": 6150
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "With a gentle snap of my fingers,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2050
+    },
+    {
+      "text": "the weightless steel pins shot forward like streaks",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 4675
+    },
+    {
+      "text": "of pure turquoise lightning.",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 6250
+    }
+  ]
+}

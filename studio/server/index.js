@@ -306,8 +306,8 @@ app.post('/api/episodes/:franchiseId/:episodeId/generate-prompts', async (req, r
 app.post('/api/episodes/:franchiseId/:episodeId/generate-tts', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
-    const { voice } = req.body
-    const result = await TtsService.generateEpisodeAudio(franchiseId, episodeId, voice)
+    const { voice, force, batchIndex } = req.body || {}
+    const result = await TtsService.generateEpisodeAudio(franchiseId, episodeId, voice, { force, batchIndex })
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -1149,6 +1149,83 @@ app.get('/api/episodes/:franchiseId/:episodeId/youtube-package', async (req, res
     res.json(pkg)
   } catch (err) {
     res.status(500).json({ error: err.message })
+  }
+})
+
+// Generate TikTok Climax Short (45-60s with 3s animated outro card)
+app.post('/api/episodes/:franchiseId/:episodeId/generate-climax-short', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const options = req.body || {}
+    const meta = await VideoService.extractClimaxShort(franchiseId, episodeId, options)
+    const pkg = await PackagingService.generateTikTokPackage(franchiseId, episodeId)
+    res.json({
+      success: true,
+      meta,
+      package: pkg
+    })
+  } catch (err) {
+    console.error('Error generating climax short:', err)
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Get TikTok Climax Short Metadata & Packaging
+app.get('/api/episodes/:franchiseId/:episodeId/climax-short', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const meta = await VideoService.getClimaxShortMetadata(franchiseId, episodeId)
+    const pkg = await PackagingService.generateTikTokPackage(franchiseId, episodeId)
+    res.json({
+      meta,
+      package: pkg
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Stream TikTok Climax Short Video (with Range support)
+app.get('/api/episodes/:franchiseId/:episodeId/shorts/:filename', (req, res) => {
+  const { franchiseId, episodeId, filename } = req.params
+  const safeFilename = path.basename(filename)
+  const filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, episodeId, 'shorts', safeFilename)
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send(`Short video (${safeFilename}) not found`)
+  }
+
+  const stat = fs.statSync(filePath)
+  const fileSize = stat.size
+  const range = req.headers.range
+  const isDownload = req.query.download === '1' || req.query.download === 'true'
+
+  if (isDownload) {
+    res.setHeader('Content-Disposition', `attachment; filename="${safeFilename}"`)
+  }
+
+  if (range) {
+    const parts = range.replace(/bytes=/, '').split('-')
+    const start = parseInt(parts[0], 10)
+    const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1
+    const chunksize = (end - start) + 1
+    const file = fs.createReadStream(filePath, { start, end })
+    const head = {
+      'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': chunksize,
+      'Content-Type': 'video/mp4',
+    }
+    res.writeHead(206, head)
+    file.pipe(res)
+  } else {
+    const head = {
+      'Content-Length': fileSize,
+      'Content-Type': 'video/mp4',
+      'Accept-Ranges': 'bytes'
+    }
+    res.writeHead(200, head)
+    fs.createReadStream(filePath).pipe(res)
   }
 })
 

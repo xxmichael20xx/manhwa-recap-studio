@@ -1,0 +1,128 @@
+{
+  "scene": 72,
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "impenetrable",
+      "startMs": 175,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "barrier",
+      "startMs": 900,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "clicked",
+      "startMs": 1338,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "politely",
+      "startMs": 1650,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "sliding",
+      "startMs": 2513,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 3025,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 3325,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3513,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "automatic",
+      "startMs": 3638,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "supermarket",
+      "startMs": 4175,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 4838,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5188,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "reveal",
+      "startMs": 5313,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5688,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "grand",
+      "startMs": 5813,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "stairway",
+      "startMs": 6150,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6650,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 6775,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "One",
+      "startMs": 7188,
+      "endMs": 7350
+    },
+    {
+      "ttsWord": "Hundred",
+      "startMs": 7363,
+      "endMs": 7813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The impenetrable barrier clicked politely,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2300
+    },
+    {
+      "text": "sliding open like an automatic supermarket door to",
+      "startOffsetMs": 2513,
+      "endOffsetMs": 5300
+    },
+    {
+      "text": "reveal the grand stairway to Floor One Hundred.",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 7913
+    }
+  ]
+}

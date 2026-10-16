@@ -1,0 +1,133 @@
+{
+  "scene": 57,
+  "durationMs": 8904,
+  "rawWords": [
+    {
+      "ttsWord": "On",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 288,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "Ninety-Seven",
+      "startMs": 638,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1600,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "gravity",
+      "startMs": 1713,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "inverted",
+      "startMs": 2163,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 2625,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "pulling",
+      "startMs": 3500,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "thousands",
+      "startMs": 3825,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4313,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "tons",
+      "startMs": 4413,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4775,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 4875,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "rubble",
+      "startMs": 5313,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 5613,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5900,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "artificial",
+      "startMs": 6013,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 6588,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "hole",
+      "startMs": 6913,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 7313,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7400,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "ceiling",
+      "startMs": 7500,
+      "endMs": 8025
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "On Floor Ninety-Seven the gravity inverted completely,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3350
+    },
+    {
+      "text": "pulling thousands of tons of floating rubble toward",
+      "startOffsetMs": 3500,
+      "endOffsetMs": 5888
+    },
+    {
+      "text": "an artificial black hole at the ceiling.",
+      "startOffsetMs": 5900,
+      "endOffsetMs": 8125
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "scene": 5,
+  "durationMs": 10632,
+  "rawWords": [
+    {
+      "ttsWord": "Let",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 288,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 488,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1063,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "aristocratic",
+      "startMs": 1150,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "elder",
+      "startMs": 1938,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "screamed",
+      "startMs": 2225,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "clutching",
+      "startMs": 3025,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3438,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 3488,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 3888,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "chest",
+      "startMs": 4225,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4575,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "useless",
+      "startMs": 4638,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "gold",
+      "startMs": 5138,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "coins",
+      "startMs": 5463,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "We",
+      "startMs": 6950,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "demand",
+      "startMs": 7138,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "sanctuary",
+      "startMs": 7600,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 8313,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "Locke's",
+      "startMs": 8825,
+      "endMs": 9138
+    },
+    {
+      "ttsWord": "perimeter",
+      "startMs": 9150,
+      "endMs": 9750
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Let us through!' an aristocratic elder screamed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2875
+    },
+    {
+      "text": "clutching a heavy iron chest of useless gold",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 5450
+    },
+    {
+      "text": "coins.",
+      "startOffsetMs": 5463,
+      "endOffsetMs": 6188
+    },
+    {
+      "text": "We demand sanctuary inside Locke's perimeter!'",
+      "startOffsetMs": 6950,
+      "endOffsetMs": 9850
+    }
+  ]
+}

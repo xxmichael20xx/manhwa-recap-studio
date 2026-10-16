@@ -1,0 +1,88 @@
+{
+  "scene": 77,
+  "durationMs": 7632,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "ANNOUNCEMENT",
+      "startMs": 550,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "FLOOR",
+      "startMs": 1375,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "ONE",
+      "startMs": 1800,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "HUNDRED",
+      "startMs": 1975,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "REACHED",
+      "startMs": 2313,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "ENTITY",
+      "startMs": 3675,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "BRAMWELL",
+      "startMs": 4463,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "LOCKE",
+      "startMs": 4900,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "COMMON",
+      "startMs": 5463,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "TOOL",
+      "startMs": 5850,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "POLISHER",
+      "startMs": 6113,
+      "endMs": 6763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM ANNOUNCEMENT:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1238
+    },
+    {
+      "text": "FLOOR ONE HUNDRED REACHED.",
+      "startOffsetMs": 1375,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "ENTITY:",
+      "startOffsetMs": 3675,
+      "endOffsetMs": 4300
+    },
+    {
+      "text": "BRAMWELL LOCKE, COMMON TOOL POLISHER.",
+      "startOffsetMs": 4463,
+      "endOffsetMs": 6863
+    }
+  ]
+}

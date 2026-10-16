@@ -1,0 +1,143 @@
+{
+  "scene": 46,
+  "durationMs": 9480,
+  "rawWords": [
+    {
+      "ttsWord": "Stepping",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "lightly",
+      "startMs": 575,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 925,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "boulder",
+      "startMs": 1125,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1500,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "boulder",
+      "startMs": 1625,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 2375,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "tapped",
+      "startMs": 2475,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "each",
+      "startMs": 2825,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 3063,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "platform",
+      "startMs": 3475,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4013,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 4138,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "stylus",
+      "startMs": 4288,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "resetting",
+      "startMs": 5175,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5650,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "gravitational",
+      "startMs": 5800,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "polarity",
+      "startMs": 6525,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7075,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "create",
+      "startMs": 7200,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7550,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "smooth",
+      "startMs": 7613,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "runway",
+      "startMs": 8063,
+      "endMs": 8613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Stepping lightly from boulder to boulder,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2175
+    },
+    {
+      "text": "I tapped each floating platform with my stylus,",
+      "startOffsetMs": 2375,
+      "endOffsetMs": 5000
+    },
+    {
+      "text": "resetting their gravitational polarity to create a smooth",
+      "startOffsetMs": 5175,
+      "endOffsetMs": 8050
+    },
+    {
+      "text": "runway.",
+      "startOffsetMs": 8063,
+      "endOffsetMs": 8713
+    }
+  ]
+}

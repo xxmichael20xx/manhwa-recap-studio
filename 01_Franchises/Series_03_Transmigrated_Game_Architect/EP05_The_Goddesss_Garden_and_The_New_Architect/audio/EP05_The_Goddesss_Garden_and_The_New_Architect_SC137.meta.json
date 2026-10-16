@@ -1,0 +1,98 @@
+{
+  "scene": 137,
+  "durationMs": 6264,
+  "rawWords": [
+    {
+      "ttsWord": "Then",
+      "startMs": 50,
+      "endMs": 288
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 300,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 538,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "shifted",
+      "startMs": 850,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1288,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1388,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "second",
+      "startMs": 1513,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "button",
+      "startMs": 1913,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 2538,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2925,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "vibrant",
+      "startMs": 3050,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "emerald",
+      "startMs": 3588,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3975,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 4125,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 4438,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "runes",
+      "startMs": 4850,
+      "endMs": 5388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Then my eyes shifted to the second button,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2363
+    },
+    {
+      "text": "glowing with vibrant emerald and warm golden runes.",
+      "startOffsetMs": 2538,
+      "endOffsetMs": 5488
+    }
+  ]
+}

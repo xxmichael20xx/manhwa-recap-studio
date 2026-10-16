@@ -1,0 +1,123 @@
+{
+  "scene": 81,
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "This",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 325,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "Demigod",
+      "startMs": 500,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 1063,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "Prime",
+      "startMs": 1575,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "Unit",
+      "startMs": 1913,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "Alpha",
+      "startMs": 2175,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2850,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "apex",
+      "startMs": 3000,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "guardian",
+      "startMs": 3500,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "appointed",
+      "startMs": 3900,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 4375,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 4650,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 5075,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "ago",
+      "startMs": 5325,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5613,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "govern",
+      "startMs": 5738,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6050,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "planetary",
+      "startMs": 6138,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "test",
+      "startMs": 6738,
+      "endMs": 7263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "This was Demigod Overseer Prime Unit Alpha,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2675
+    },
+    {
+      "text": "the apex guardian appointed ten thousand years ago",
+      "startOffsetMs": 2850,
+      "endOffsetMs": 5600
+    },
+    {
+      "text": "to govern the planetary test.",
+      "startOffsetMs": 5613,
+      "endOffsetMs": 7363
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "scene": 59,
+  "durationMs": 7488,
+  "rawWords": [
+    {
+      "ttsWord": "Releasing",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 588,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "stored",
+      "startMs": 700,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 1075,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "downward",
+      "startMs": 1438,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "we",
+      "startMs": 2200,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "propelled",
+      "startMs": 2350,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "ourselves",
+      "startMs": 2800,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "upward",
+      "startMs": 3350,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3738,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3925,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "event",
+      "startMs": 4013,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "horizon",
+      "startMs": 4350,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4925,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5100,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "launched",
+      "startMs": 5188,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "artillery",
+      "startMs": 5625,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "shell",
+      "startMs": 6138,
+      "endMs": 6613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Releasing the stored energy downward,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2050
+    },
+    {
+      "text": "we propelled ourselves upward through the event horizon",
+      "startOffsetMs": 2200,
+      "endOffsetMs": 4913
+    },
+    {
+      "text": "like a launched artillery shell.",
+      "startOffsetMs": 4925,
+      "endOffsetMs": 6713
+    }
+  ]
+}

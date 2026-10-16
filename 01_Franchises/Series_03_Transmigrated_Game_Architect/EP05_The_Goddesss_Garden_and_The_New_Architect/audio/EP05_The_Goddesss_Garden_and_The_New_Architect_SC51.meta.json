@@ -1,0 +1,58 @@
+{
+  "scene": 51,
+  "durationMs": 5976,
+  "rawWords": [
+    {
+      "ttsWord": "FLOOR",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "NINETY-SIX",
+      "startMs": 475,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "THE",
+      "startMs": 1513,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "CHRONO-MIRROR",
+      "startMs": 1650,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "VAULT",
+      "startMs": 2300,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "TIME",
+      "startMs": 3625,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "DISTORTION",
+      "startMs": 3950,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "ACTIVE",
+      "startMs": 4563,
+      "endMs": 5100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "FLOOR NINETY-SIX THE CHRONO-MIRROR VAULT.",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2863
+    },
+    {
+      "text": "TIME DISTORTION ACTIVE.",
+      "startOffsetMs": 3625,
+      "endOffsetMs": 5200
+    }
+  ]
+}

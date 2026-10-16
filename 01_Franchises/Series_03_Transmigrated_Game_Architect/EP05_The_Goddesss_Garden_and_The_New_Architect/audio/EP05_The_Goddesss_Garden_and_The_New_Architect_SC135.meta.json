@@ -1,0 +1,108 @@
+{
+  "scene": 135,
+  "durationMs": 6504,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "survivors",
+      "startMs": 188,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "aboard",
+      "startMs": 800,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 1175,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "vessel",
+      "startMs": 1300,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 1725,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "establish",
+      "startMs": 1850,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2413,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "new",
+      "startMs": 2475,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "civilization",
+      "startMs": 2713,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3575,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "zero",
+      "startMs": 3725,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "remnants",
+      "startMs": 4113,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4550,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4650,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "feudal",
+      "startMs": 4738,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 5088,
+      "endMs": 5638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The survivors aboard your vessel will establish a",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2463
+    },
+    {
+      "text": "new civilization with zero remnants of the feudal",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 5075
+    },
+    {
+      "text": "past.'",
+      "startOffsetMs": 5088,
+      "endOffsetMs": 5738
+    }
+  ]
+}

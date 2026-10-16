@@ -1,0 +1,78 @@
+{
+  "scene": 86,
+  "durationMs": 5928,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "Overseer's",
+      "startMs": 238,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 875,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "visor",
+      "startMs": 1250,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "flared",
+      "startMs": 1675,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2050,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 2213,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "mechanical",
+      "startMs": 2850,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "bewilderment",
+      "startMs": 3438,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 4063,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4425,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "halo",
+      "startMs": 4563,
+      "endMs": 5050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Overseer's golden visor flared with cold,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2713
+    },
+    {
+      "text": "mechanical bewilderment beneath its halo.",
+      "startOffsetMs": 2850,
+      "endOffsetMs": 5150
+    }
+  ]
+}

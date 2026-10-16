@@ -1,0 +1,143 @@
+{
+  "scene": 103,
+  "durationMs": 8856,
+  "rawWords": [
+    {
+      "ttsWord": "When",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 238,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "smoke",
+      "startMs": 338,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "cleared",
+      "startMs": 725,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 1375,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "linen",
+      "startMs": 1538,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "shirt",
+      "startMs": 1838,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2175,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 2338,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "unstained",
+      "startMs": 2925,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3888,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "cheap",
+      "startMs": 4100,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "cotton",
+      "startMs": 4438,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "weave",
+      "startMs": 4763,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "deflecting",
+      "startMs": 4925,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5450,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 5538,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "attack",
+      "startMs": 5938,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 6375,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "tearing",
+      "startMs": 6750,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7088,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 7150,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "thread",
+      "startMs": 7550,
+      "endMs": 7988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "When the smoke cleared,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1238
+    },
+    {
+      "text": "my linen shirt was completely unstained,",
+      "startOffsetMs": 1375,
+      "endOffsetMs": 3675
+    },
+    {
+      "text": "its cheap cotton weave deflecting the divine attack",
+      "startOffsetMs": 3888,
+      "endOffsetMs": 6363
+    },
+    {
+      "text": "without tearing a single thread.",
+      "startOffsetMs": 6375,
+      "endOffsetMs": 8088
+    }
+  ]
+}

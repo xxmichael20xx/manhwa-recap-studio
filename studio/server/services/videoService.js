@@ -897,11 +897,16 @@ export class VideoService {
       }
     }
 
-    // Audio Filter Chain: Narration + (Optional BGM with Sidechain Ducking) -> Output [aout]
+    // Audio Filter Chain: Narration + (Optional BGM with Calibrated Dynamic Sidechain Ducking) -> Output [aout]
     if (bgmPath) {
+      // Royalty-free ambient BGM tracks are pre-mastered at -33 dB mean volume.
+      // Calibrate so default -22 dB volume provides a clean -20 dB resting bed (+11 dB gain offset)
+      const calibratedGain = safeBgmVol + 33
+      const gainStr = calibratedGain >= 0 ? `+${calibratedGain}` : `${calibratedGain}`
+
       filterComplexParts.push(`[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`)
-      filterComplexParts.push(`[${bgmInputIdx}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${safeBgmVol}dB[bgm_base]`)
-      filterComplexParts.push(`[bgm_base][vo_sc]sidechaincompress=threshold=0.015:ratio=10:attack=12:release=350:link=average[bgm_ducked]`)
+      filterComplexParts.push(`[${bgmInputIdx}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${gainStr}dB[bgm_base]`)
+      filterComplexParts.push(`[bgm_base][vo_sc]sidechaincompress=threshold=0.08:ratio=2.5:attack=15:release=320:link=average[bgm_ducked]`)
       filterComplexParts.push(`[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`)
     } else {
       filterComplexParts.push(`[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[aout]`)
@@ -1323,9 +1328,22 @@ export class VideoService {
     const concatLines = resolvedFiles.map(p => `file '${p.replace(/\\/g, '/')}'`)
     await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
 
-    const outName = outputFilename || `00_Omnibus_${Date.now()}_1080p.mp4`
+    let outName = outputFilename
+    if (!outName) {
+      const now = new Date()
+      const pad = (n) => String(n).padStart(2, '0')
+      const ts = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`
+      outName = `00_Omnibus_${ts}_1080p.mp4`
+    }
     const omnibusDir = path.join(franchiseDir, 'omnibus')
     await fs.mkdir(omnibusDir, { recursive: true })
+    
+    // Guard against collision by appending timestamp if file already exists
+    if (fsSync.existsSync(path.join(omnibusDir, outName))) {
+      const ext = path.extname(outName)
+      const base = path.basename(outName, ext)
+      outName = `${base}_${Date.now()}${ext}`
+    }
     const omnibusOutputPath = path.join(omnibusDir, outName)
 
     const ffmpegArgs = [
@@ -1348,51 +1366,7 @@ export class VideoService {
 
         if (code === 0) {
           // Calculate 100% mathematically exact cumulative chapter timestamps via ffprobe
-          const chapterLedger = []
-          let accumulatedSeconds = 0
-
-          for (let i = 0; i < resolvedFiles.length; i++) {
-            const filePath = resolvedFiles[i]
-            const dur = await VideoService.getVideoDuration(filePath) || 0
-            const epDirName = path.basename(path.dirname(path.dirname(filePath)))
-            const epLabel = epDirName.replace(/^EP\d+_+/i, '').replace(/_/g, ' ') || `Episode ${i + 1}`
-
-            const formatTimestamp = (sec) => {
-              const s = Math.max(0, Math.floor(sec))
-              const h = Math.floor(s / 3600)
-              const m = Math.floor((s % 3600) / 60)
-              const remainderSec = s % 60
-              const pad = n => String(n).padStart(2, '0')
-              if (h > 0) return `${pad(h)}:${pad(m)}:${pad(remainderSec)}`
-              return `${pad(m)}:${pad(remainderSec)}`
-            }
-
-            chapterLedger.push({
-              partNumber: i + 1,
-              partLabel: `Part ${i + 1}`,
-              episodeId: epDirName,
-              episodeTitle: epLabel,
-              startTimestampFormatted: formatTimestamp(accumulatedSeconds),
-              startSeconds: accumulatedSeconds,
-              durationSeconds: dur,
-              filePath
-            })
-            accumulatedSeconds += dur
-          }
-
-          const metadata = {
-            franchiseId,
-            filename: outName,
-            totalDurationSeconds: accumulatedSeconds,
-            totalDurationFormatted: (accumulatedSeconds >= 3600)
-              ? `${Math.floor(accumulatedSeconds / 3600)}h ${Math.floor((accumulatedSeconds % 3600) / 60)}m ${Math.floor(accumulatedSeconds % 60)}s`
-              : `${Math.floor(accumulatedSeconds / 60)}m ${Math.floor(accumulatedSeconds % 60)}s`,
-            partCount: resolvedFiles.length,
-            partBadgeText: `1 - ${resolvedFiles.length}`,
-            chapters: chapterLedger,
-            youtubeChapterString: chapterLedger.map(c => `${c.startTimestampFormatted} Part ${c.partNumber}: ${c.episodeTitle}`).join('\n'),
-            generatedAt: new Date().toISOString()
-          }
+          const metadata = await VideoService.calculateOmnibusMetadataFromPaths(franchiseId, resolvedFiles, outName)
 
           const metaPath = path.join(omnibusDir, `${path.basename(outName, '.mp4')}_metadata.json`)
           await fs.writeFile(metaPath, JSON.stringify(metadata, null, 2), 'utf-8').catch(() => {})
@@ -1422,6 +1396,136 @@ export class VideoService {
     })
   }
 
+  static formatDuration(sec) {
+    const s = Math.max(0, Math.round(sec))
+    const h = Math.floor(s / 3600)
+    const m = Math.floor((s % 3600) / 60)
+    const remainderSec = s % 60
+    const pad = n => String(n).padStart(2, '0')
+    if (h > 0) return `${h}h ${pad(m)}m ${pad(remainderSec)}s`
+    return `${m}m ${pad(remainderSec)}s`
+  }
+
+  static enrichOmnibusMetadata(meta) {
+    if (!meta || !Array.isArray(meta.chapters) || meta.chapters.length === 0) {
+      return meta
+    }
+    const formatTs = (sec) => {
+      const s = Math.max(0, Math.floor(sec))
+      const h = Math.floor(s / 3600)
+      const m = Math.floor((s % 3600) / 60)
+      const remainderSec = s % 60
+      const pad = n => String(n).padStart(2, '0')
+      if (h > 0) return `${h}:${pad(m)}:${pad(remainderSec)}`
+      return `${pad(m)}:${pad(remainderSec)}`
+    }
+
+    let accumulated = 0
+    const enrichedChapters = meta.chapters.map((c, idx) => {
+      const dur = c.durationSeconds || 0
+      const startSec = c.startSeconds !== undefined ? c.startSeconds : accumulated
+      const endSec = startSec + dur
+      accumulated = endSec
+      const startFmt = formatTs(startSec)
+      const endFmt = formatTs(endSec)
+      const durFmt = VideoService.formatDuration(dur)
+      return {
+        ...c,
+        partNumber: c.partNumber || (idx + 1),
+        partLabel: c.partLabel || `Part ${idx + 1}`,
+        startSeconds: startSec,
+        endSeconds: endSec,
+        startTimestampFormatted: startFmt,
+        endTimestampFormatted: endFmt,
+        durationFormatted: durFmt,
+        summaryLine: `• Episode ${idx + 1} (${durFmt}): ${startFmt} - ${endFmt}`
+      }
+    })
+
+    const totalSec = meta.totalDurationSeconds || accumulated
+    const totalFmt = VideoService.formatDuration(totalSec)
+    const finalTimestamp = formatTs(totalSec)
+
+    const breakdownLines = enrichedChapters.map(c => c.summaryLine)
+    const chapterLines = enrichedChapters.map(c => `${c.startTimestampFormatted} Episode ${c.partNumber}: ${c.episodeTitle}`)
+    chapterLines.push(`${finalTimestamp} Series Finale & Epilogue (Full Story Complete)`)
+
+    return {
+      ...meta,
+      totalDurationSeconds: totalSec,
+      totalDurationFormatted: totalFmt,
+      finalTimestampFormatted: finalTimestamp,
+      chapters: enrichedChapters,
+      cumulativeBreakdownString: breakdownLines.join('\n'),
+      youtubeChapterString: chapterLines.join('\n')
+    }
+  }
+
+  static async calculateOmnibusMetadataFromPaths(franchiseId, masterFilePaths, outName = '') {
+    const chapterLedger = []
+    let accumulatedSeconds = 0
+
+    const formatTs = (sec) => {
+      const s = Math.max(0, Math.floor(sec))
+      const h = Math.floor(s / 3600)
+      const m = Math.floor((s % 3600) / 60)
+      const remainderSec = s % 60
+      const pad = n => String(n).padStart(2, '0')
+      if (h > 0) return `${h}:${pad(m)}:${pad(remainderSec)}`
+      return `${pad(m)}:${pad(remainderSec)}`
+    }
+
+    for (let i = 0; i < masterFilePaths.length; i++) {
+      const rawPath = masterFilePaths[i]
+      const fullPath = path.isAbsolute(rawPath) ? rawPath : path.resolve(projectRoot, rawPath)
+      const dur = await VideoService.getVideoDuration(fullPath) || 0
+      const epDirName = path.basename(path.dirname(path.dirname(fullPath)))
+      const epLabel = epDirName.replace(/^EP\d+_+/i, '').replace(/_/g, ' ') || `Episode ${i + 1}`
+
+      const startSec = accumulatedSeconds
+      const endSec = accumulatedSeconds + dur
+      const startFmt = formatTs(startSec)
+      const endFmt = formatTs(endSec)
+      const durFmt = VideoService.formatDuration(dur)
+
+      chapterLedger.push({
+        partNumber: i + 1,
+        partLabel: `Episode ${i + 1}`,
+        episodeId: epDirName,
+        episodeTitle: epLabel,
+        startTimestampFormatted: startFmt,
+        endTimestampFormatted: endFmt,
+        startSeconds: startSec,
+        endSeconds: endSec,
+        durationSeconds: dur,
+        durationFormatted: durFmt,
+        summaryLine: `• Episode ${i + 1} (${durFmt}): ${startFmt} - ${endFmt}`,
+        filePath: fullPath
+      })
+      accumulatedSeconds += dur
+    }
+
+    const totalDurationFormatted = VideoService.formatDuration(accumulatedSeconds)
+    const finalTimestampFormatted = formatTs(accumulatedSeconds)
+
+    return {
+      franchiseId,
+      filename: outName,
+      totalDurationSeconds: accumulatedSeconds,
+      totalDurationFormatted,
+      finalTimestampFormatted,
+      partCount: masterFilePaths.length,
+      partBadgeText: `1 - ${masterFilePaths.length}`,
+      chapters: chapterLedger,
+      cumulativeBreakdownString: chapterLedger.map(c => c.summaryLine).join('\n'),
+      youtubeChapterString: [
+        ...chapterLedger.map(c => `${c.startTimestampFormatted} Episode ${c.partNumber}: ${c.episodeTitle}`),
+        `${finalTimestampFormatted} Series Finale & Epilogue (Full Story Complete)`
+      ].join('\n'),
+      generatedAt: new Date().toISOString()
+    }
+  }
+
   /**
    * Probe and compute exact cumulative timestamps and chapter metadata for a set of master videos
    */
@@ -1434,56 +1538,53 @@ export class VideoService {
       if (fsSync.existsSync(omnibusDir)) {
         const metaFiles = fsSync.readdirSync(omnibusDir).filter(f => f.endsWith('_metadata.json'))
         if (metaFiles.length > 0) {
-          const latest = path.join(omnibusDir, metaFiles[metaFiles.length - 1])
-          try {
-            return JSON.parse(await fs.readFile(latest, 'utf-8'))
-          } catch (_) {}
+          const parsedMetas = []
+          for (const f of metaFiles) {
+            try {
+              const content = JSON.parse(await fs.readFile(path.join(omnibusDir, f), 'utf-8'))
+              const stat = fsSync.statSync(path.join(omnibusDir, f))
+              parsedMetas.push({ meta: content, mtime: stat.mtimeMs, partCount: content.partCount || 0 })
+            } catch (_) {}
+          }
+          if (parsedMetas.length > 0) {
+            parsedMetas.sort((a, b) => {
+              if (b.partCount !== a.partCount) return b.partCount - a.partCount
+              return b.mtime - a.mtime
+            })
+            return this.enrichOmnibusMetadata(parsedMetas[0].meta)
+          }
         }
       }
+
+      // Auto-discover compiled episodes in franchise if no metadata file found
+      try {
+        if (fsSync.existsSync(franchiseDir)) {
+          const entries = await fs.readdir(franchiseDir, { withFileTypes: true })
+          const epDirs = entries
+            .filter(e => e.isDirectory() && /^EP\d+/i.test(e.name))
+            .map(e => e.name)
+            .sort()
+
+          const discoveredMasterPaths = []
+          for (const epDir of epDirs) {
+            const masterPath = path.join(franchiseDir, epDir, 'video', '01_Episode_Master_1080p.mp4')
+            if (fsSync.existsSync(masterPath)) {
+              discoveredMasterPaths.push(masterPath)
+            }
+          }
+
+          if (discoveredMasterPaths.length > 0) {
+            return await this.calculateOmnibusMetadataFromPaths(franchiseId, discoveredMasterPaths)
+          }
+        }
+      } catch (err) {
+        console.error('Error auto-discovering omnibus masters:', err)
+      }
+
       return null
     }
 
-    const chapterLedger = []
-    let accumulatedSeconds = 0
-
-    for (let i = 0; i < masterFilePaths.length; i++) {
-      const rawPath = masterFilePaths[i]
-      const fullPath = path.isAbsolute(rawPath) ? rawPath : path.resolve(projectRoot, rawPath)
-      const dur = await VideoService.getVideoDuration(fullPath) || 0
-      const epDirName = path.basename(path.dirname(path.dirname(fullPath)))
-      const epLabel = epDirName.replace(/^EP\d+_+/i, '').replace(/_/g, ' ') || `Episode ${i + 1}`
-
-      const formatTimestamp = (sec) => {
-        const s = Math.max(0, Math.floor(sec))
-        const h = Math.floor(s / 3600)
-        const m = Math.floor((s % 3600) / 60)
-        const remainderSec = s % 60
-        const pad = n => String(n).padStart(2, '0')
-        if (h > 0) return `${pad(h)}:${pad(m)}:${pad(remainderSec)}`
-        return `${pad(m)}:${pad(remainderSec)}`
-      }
-
-      chapterLedger.push({
-        partNumber: i + 1,
-        partLabel: `Part ${i + 1}`,
-        episodeId: epDirName,
-        episodeTitle: epLabel,
-        startTimestampFormatted: formatTimestamp(accumulatedSeconds),
-        startSeconds: accumulatedSeconds,
-        durationSeconds: dur,
-        filePath: fullPath
-      })
-      accumulatedSeconds += dur
-    }
-
-    return {
-      franchiseId,
-      totalDurationSeconds: accumulatedSeconds,
-      partCount: masterFilePaths.length,
-      partBadgeText: `1 - ${masterFilePaths.length}`,
-      chapters: chapterLedger,
-      youtubeChapterString: chapterLedger.map(c => `${c.startTimestampFormatted} Part ${c.partNumber}: ${c.episodeTitle}`).join('\n')
-    }
+    return await this.calculateOmnibusMetadataFromPaths(franchiseId, masterFilePaths)
   }
 
   /**
@@ -1626,5 +1727,419 @@ export class VideoService {
       })
       throw err
     }
+  }
+
+  static formatTimestamp(seconds) {
+    const s = Math.max(0, Math.floor(seconds))
+    const m = Math.floor(s / 60)
+    const remainderSec = s % 60
+    return `${String(m).padStart(2, '0')}:${String(remainderSec).padStart(2, '0')}`
+  }
+
+  /**
+   * Parse climax start and end tags from script, with automatic timeline correlation
+   */
+  static async parseClimaxWindow(franchiseId, episodeId, totalDuration = 0) {
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const scriptPath = path.join(epPath, '01_Episode_Script.md')
+    let scriptContent = ''
+    try {
+      scriptContent = await fs.readFile(scriptPath, 'utf-8')
+    } catch (_) {}
+
+    const timeline = await this.parseDynamicTimeline(franchiseId, episodeId, totalDuration)
+    if (!timeline || timeline.length === 0) {
+      throw new Error('Unable to parse timeline for episode.')
+    }
+
+    // Check for [CLIMAX_START] and [CLIMAX_END] (or <!-- CLIMAX_START -->)
+    let startTag = null
+    let endTag = null
+    let inClimax = false
+    const scriptLines = scriptContent.split('\n')
+
+    for (let i = 0; i < scriptLines.length; i++) {
+      const line = scriptLines[i].trim()
+      if (/(?:\[CLIMAX_START\]|<!--\s*CLIMAX_START\s*-->)/i.test(line)) {
+        inClimax = true
+      } else if (/(?:\[CLIMAX_END\]|<!--\s*CLIMAX_END\s*-->)/i.test(line)) {
+        inClimax = false
+      }
+
+      if (inClimax) {
+        const m = line.match(/\[(IMG_\d+)\]/)
+        if (m) {
+          const tag = m[1].toUpperCase()
+          if (!startTag) startTag = tag
+          endTag = tag
+        }
+      }
+    }
+
+    // Fallback if no tags in script: look for scenes around scenes 44-48 or 20% mark
+    if (!startTag || !endTag) {
+      const candidates = timeline.filter(t => ['IMG_044', 'IMG_045', 'IMG_046', 'IMG_047', 'IMG_048'].includes(t.tag))
+      if (candidates.length >= 3) {
+        startTag = candidates[0].tag
+        endTag = candidates[candidates.length - 1].tag
+      } else {
+        const startIdx = Math.floor(timeline.length * 0.2)
+        const endIdx = Math.min(timeline.length - 1, startIdx + 5)
+        startTag = timeline[startIdx].tag
+        endTag = timeline[endIdx].tag
+      }
+    }
+
+    const startScene = timeline.find(t => t.tag === startTag) || timeline[0]
+    const endScene = timeline.find(t => t.tag === endTag) || timeline[Math.min(timeline.length - 1, 6)]
+
+    const startSeconds = Math.max(0, startScene.startTime)
+    const endSeconds = Math.min(totalDuration || endScene.endTime, endScene.endTime)
+    const durationSeconds = Math.max(15, endSeconds - startSeconds)
+
+    return {
+      startTag,
+      endTag,
+      startSeconds,
+      endSeconds,
+      durationSeconds,
+      formattedStart: this.formatTimestamp(startSeconds),
+      formattedEnd: this.formatTimestamp(endSeconds),
+      formattedDuration: `${Math.round(durationSeconds)}s`
+    }
+  }
+
+  /**
+   * Generates a 3-second styled 9:16 vertical outro card PNG
+   */
+  static async generateOutroCard(franchiseId, episodeId, outroPngPath) {
+    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+    const svg = `
+<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <radialGradient id='bgGrad' cx='50%' cy='45%' r='65%'>
+      <stop offset='0%' stop-color='#1e1b4b' stop-opacity='0.6'/>
+      <stop offset='60%' stop-color='#0f172a' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#020617' stop-opacity='1'/>
+    </radialGradient>
+    <linearGradient id='goldGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#FFE57F'/>
+      <stop offset='50%' stop-color='#FFD700'/>
+      <stop offset='100%' stop-color='#FFA000'/>
+    </linearGradient>
+    <filter id='glow' x='-20%' y='-20%' width='140%' height='140%'>
+      <feGaussianBlur stdDeviation='12' result='blur'/>
+      <feComposite in='SourceGraphic' in2='blur' operator='over'/>
+    </filter>
+  </defs>
+
+  <rect width='1080' height='1920' fill='url(#bgGrad)'/>
+
+  <!-- Center Decorative Glow Rings -->
+  <circle cx='540' cy='900' r='340' fill='none' stroke='rgba(255, 215, 0, 0.15)' stroke-width='2' stroke-dasharray='10 15'/>
+  <circle cx='540' cy='900' r='380' fill='none' stroke='rgba(99, 102, 241, 0.15)' stroke-width='1'/>
+
+  <!-- Gold Pill Badge -->
+  <g filter='url(#glow)'>
+    <rect x='260' y='680' width='560' height='76' rx='38' fill='url(#goldGrad)'/>
+    <text x='540' y='730' font-family='Montserrat, Arial Black, Impact, sans-serif' font-size='32' font-weight='900' letter-spacing='3' fill='#09090b' text-anchor='middle'>⚡ FULL EPISODE ON YOUTUBE</text>
+  </g>
+
+  <!-- Big Dramatic Callout -->
+  <text x='540' y='860' font-family='Montserrat, Arial Black, sans-serif' font-size='64' font-weight='900' fill='#ffffff' text-anchor='middle' letter-spacing='-1'>WHAT HAPPENS NEXT?</text>
+  
+  <text x='540' y='930' font-family='system-ui, -apple-system, sans-serif' font-size='34' font-weight='600' fill='#94a3b8' text-anchor='middle'>Watch The Complete Story Unfold</text>
+  <text x='540' y='980' font-family='system-ui, -apple-system, sans-serif' font-size='34' font-weight='600' fill='#94a3b8' text-anchor='middle'>In The Full-Length YouTube Master Cut</text>
+
+  <!-- Action Box -->
+  <rect x='160' y='1080' width='760' height='150' rx='24' fill='rgba(255, 255, 255, 0.04)' stroke='rgba(255, 215, 0, 0.4)' stroke-width='2'/>
+  <text x='540' y='1135' font-family='system-ui, -apple-system, sans-serif' font-size='26' font-weight='700' fill='#fbbf24' text-anchor='middle' letter-spacing='2'>SEARCH ON YOUTUBE:</text>
+  <text x='540' y='1185' font-family='Montserrat, Arial Black, Impact, sans-serif' font-size='34' font-weight='900' fill='#ffffff' text-anchor='middle'>${cleanFranchiseName}</text>
+
+  <!-- Bio link pointer -->
+  <text x='540' y='1320' font-family='system-ui, -apple-system, sans-serif' font-size='30' font-weight='700' fill='#38bdf8' text-anchor='middle'>🔗 Channel link in profile bio</text>
+  <text x='540' y='1370' font-family='system-ui, -apple-system, sans-serif' font-size='24' font-weight='500' fill='#64748b' text-anchor='middle'>Manhwa Recap Studio • Original Production</text>
+</svg>
+`
+    await sharp(Buffer.from(svg)).png().toFile(outroPngPath)
+    return outroPngPath
+  }
+
+  /**
+   * Helper to wrap subtitle text for vertical TikTok / Shorts screens (maxChars ~28)
+   */
+  static wrapSubtitleText(text, maxChars = 28) {
+    if (!text) return ''
+    const words = text.split(/\s+/)
+    const lines = []
+    let currentLine = ''
+    for (const word of words) {
+      if ((currentLine + ' ' + word).trim().length <= maxChars) {
+        currentLine = (currentLine + ' ' + word).trim()
+      } else {
+        if (currentLine) lines.push(currentLine)
+        currentLine = word
+      }
+    }
+    if (currentLine) lines.push(currentLine)
+    return lines.join('\n')
+  }
+
+  /**
+   * Slices and renders the 45-60s Climax short with 3s outro card in pristine 1080x1920 vertical format
+   * with perfectly proportioned, auto-wrapped subtitles that fit 100% within the video frame.
+   */
+  static async extractClimaxShort(franchiseId, episodeId, options = {}) {
+    const videoDir = this.getVideoDir(franchiseId, episodeId)
+    const masterPath = this.getMasterVideoPath(franchiseId, episodeId)
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    const subtitlesDir = TtsService.getSubtitlesDir(franchiseId, episodeId)
+    const srtPath = path.join(subtitlesDir, '01_Episode_Subtitles.srt')
+
+    // 1. Locate source master video for duration & mixed audio (voiceover + BGM + sidechain ducking)
+    let srcVideo = null
+    if (fsSync.existsSync(masterPath)) {
+      srcVideo = masterPath
+    } else if (fsSync.existsSync(videoDir)) {
+      const vids = fsSync.readdirSync(videoDir).filter(f => f.endsWith('.mp4') && f.includes('Master'))
+      if (vids.length > 0) {
+        srcVideo = path.join(videoDir, vids[0])
+      }
+    }
+
+    if (!srcVideo) {
+      throw new Error('Master video not found. Please compile the episode video first before generating the TikTok Climax Short.')
+    }
+
+    const dur = await this.getVideoDuration(srcVideo) || 2289
+    const window = await this.parseClimaxWindow(franchiseId, episodeId, dur)
+
+    const shortsDir = path.join(franchisesDir, franchiseId, episodeId, 'shorts')
+    await fs.mkdir(shortsDir, { recursive: true })
+
+    const tempDir = path.join(projectRoot, '.tmp', `climax_render_${franchiseId}_${episodeId}_${Date.now()}`)
+    await fs.mkdir(tempDir, { recursive: true })
+
+    const outputFilename = 'TikTok_Climax_Hook.mp4'
+    const outputPath = path.join(shortsDir, outputFilename)
+    const outroPngPath = path.join(tempDir, 'temp_outro.png')
+
+    try {
+      // 2. Query timeline beats for the climax window
+      const fullBeats = await this.parseDynamicTimeline(franchiseId, episodeId, dur)
+      const climaxBeats = fullBeats.filter(b => b.tag >= window.startTag && b.tag <= window.endTag)
+      const existingImages = fsSync.existsSync(imagesDir) ? await fs.readdir(imagesDir) : []
+
+      let visualBaseVideo = null
+
+      if (climaxBeats.length > 0 && existingImages.length > 0) {
+        // Native 1080x1920 Clean Scene Rendering (Zero stretching, Zero distorted pre-burned subtitles)
+        const renderedClipPaths = []
+        for (let i = 0; i < climaxBeats.length; i++) {
+          const beat = climaxBeats[i]
+          const imgFile = existingImages.find(f => f.startsWith(beat.tag)) || `${beat.tag}.jpg`
+          const imgPath = path.join(imagesDir, imgFile)
+          const clipOut = path.join(tempDir, `clip_${String(i).padStart(2, '0')}.mp4`)
+
+          let isLandscape = false
+          if (fsSync.existsSync(imgPath)) {
+            try {
+              const meta = await sharp(imgPath).metadata()
+              isLandscape = (meta.width / meta.height) > 1.2
+            } catch (_) {}
+          }
+
+          const vf = isLandscape
+            ? '[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=20[bg];[0:v]scale=1080:-1[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1'
+            : 'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1'
+
+          await new Promise((resolve, reject) => {
+            const proc = spawn('ffmpeg', [
+              '-y', '-loop', '1', '-t', String(beat.duration),
+              '-i', imgPath,
+              '-vf', vf,
+              '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-r', '24',
+              clipOut
+            ])
+            let err = ''
+            proc.stderr.on('data', d => { err += d.toString() })
+            proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Clip render failed: ${err.slice(-300)}`)))
+          })
+          renderedClipPaths.push(clipOut)
+        }
+
+        const concatList = path.join(tempDir, 'concat.txt')
+        await fs.writeFile(concatList, renderedClipPaths.map(p => `file '${p.replace(/\\/g, '/')}'`).join('\n'))
+        visualBaseVideo = path.join(tempDir, 'visual_base.mp4')
+        await new Promise((resolve, reject) => {
+          const proc = spawn('ffmpeg', ['-y', '-f', 'concat', '-safe', '0', '-i', concatList, '-c', 'copy', visualBaseVideo])
+          let err = ''
+          proc.stderr.on('data', d => { err += d.toString() })
+          proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Visual concat failed: ${err.slice(-300)}`)))
+        })
+      } else {
+        // Fallback: Center-crop from master video with proper 9:16 aspect ratio (608:1080)
+        visualBaseVideo = path.join(tempDir, 'visual_base.mp4')
+        await new Promise((resolve, reject) => {
+          const proc = spawn('ffmpeg', [
+            '-y',
+            '-ss', String(window.startSeconds),
+            '-t', String(window.durationSeconds),
+            '-i', srcVideo,
+            '-vf', 'crop=608:1080:(in_w-608)/2:0,scale=1080:1920,setsar=1',
+            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+            '-an', visualBaseVideo
+          ])
+          let err = ''
+          proc.stderr.on('data', d => { err += d.toString() })
+          proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Master crop fallback failed: ${err.slice(-300)}`)))
+        })
+      }
+
+      // 3. Extract High-Fidelity Audio Slice from Master Video (Voiceover + BGM + Ducking)
+      const audioSlice = path.join(tempDir, 'audio_slice.aac')
+      await new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', [
+          '-y',
+          '-ss', String(window.startSeconds),
+          '-t', String(window.durationSeconds),
+          '-i', srcVideo,
+          '-vn', '-c:a', 'aac', '-b:a', '192k',
+          audioSlice
+        ])
+        let err = ''
+        proc.stderr.on('data', d => { err += d.toString() })
+        proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Audio slice failed: ${err.slice(-300)}`)))
+      })
+
+      // 4. Generate Calibrated, Wrapped Vertical Subtitles (max 28 chars/line)
+      let hasSubtitles = false
+      const verticalSrtPath = path.join(tempDir, 'vertical_short.srt')
+      if (fsSync.existsSync(srtPath)) {
+        try {
+          const rawCues = await this.parseSrtCues(srtPath)
+          const formatTm = (sec) => {
+            const h = String(Math.floor(sec / 3600)).padStart(2, '0')
+            const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0')
+            const s = String(Math.floor(sec % 60)).padStart(2, '0')
+            const ms = String(Math.floor((sec % 1) * 1000)).padStart(3, '0')
+            return `${h}:${m}:${s},${ms}`
+          }
+
+          const shortCues = rawCues
+            .filter(c => c.endSec > window.startSeconds && c.startSec < window.endSeconds)
+            .map((c, idx) => {
+              const s = Math.max(0, c.startSec - window.startSeconds)
+              const e = Math.min(window.durationSeconds, c.endSec - window.startSeconds)
+              return `${idx + 1}\n${formatTm(s)} --> ${formatTm(e)}\n${VideoService.wrapSubtitleText(c.text, 28)}`
+            })
+
+          if (shortCues.length > 0) {
+            await fs.writeFile(verticalSrtPath, shortCues.join('\n\n'), 'utf-8')
+            hasSubtitles = true
+          }
+        } catch (subErr) {
+          console.warn('Could not generate vertical subtitles:', subErr.message)
+        }
+      }
+
+      // 5. Burn Calibrated Vertical Subtitles onto Visual Base + Mux Audio
+      const subtitledClimax = path.join(tempDir, 'subtitled_climax.mp4')
+      const safeSrt = verticalSrtPath.replace(/\\/g, '/').replace(/:/g, '\\:')
+      const subStyle = "force_style='PlayResX=1080,PlayResY=1920,FontSize=42,FontName=Arial,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BorderStyle=1,Outline=3,Shadow=2,Alignment=2,MarginV=280'"
+
+      const muxArgs = [
+        '-y',
+        '-i', visualBaseVideo,
+        '-i', audioSlice
+      ]
+
+      if (hasSubtitles) {
+        muxArgs.push('-vf', `subtitles='${safeSrt}':${subStyle}`)
+      }
+
+      muxArgs.push(
+        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+        '-c:a', 'aac', '-b:a', '192k',
+        subtitledClimax
+      )
+
+      await new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', muxArgs)
+        let err = ''
+        proc.stderr.on('data', d => { err += d.toString() })
+        proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Subtitled mux failed: ${err.slice(-300)}`)))
+      })
+
+      // 6. Generate Outro Card and Concatenate Final 1080x1920 Short
+      await this.generateOutroCard(franchiseId, episodeId, outroPngPath)
+
+      const concatFinalArgs = [
+        '-y',
+        '-i', subtitledClimax,
+        '-loop', '1', '-t', '3', '-i', outroPngPath,
+        '-f', 'lavfi', '-t', '3', '-i', 'anullsrc=r=48000:cl=stereo',
+        '-filter_complex',
+        '[1:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[v1];[0:v][0:a][v1][2:a]concat=n=2:v=1:a=1[outv][outa]',
+        '-map', '[outv]', '-map', '[outa]',
+        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+        '-c:a', 'aac', '-b:a', '192k',
+        outputPath
+      ]
+
+      await new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', concatFinalArgs)
+        let err = ''
+        proc.stderr.on('data', d => { err += d.toString() })
+        proc.on('close', c => c === 0 ? resolve() : reject(new Error(`Outro concat failed: ${err.slice(-300)}`)))
+      })
+
+      const totalShortDur = window.durationSeconds + 3
+      const stat = await fs.stat(outputPath)
+
+      const meta = {
+        franchiseId,
+        episodeId,
+        filename: outputFilename,
+        url: `/api/episodes/${franchiseId}/${episodeId}/shorts/${outputFilename}`,
+        filesize: stat.size,
+        filesizeFormatted: `${(stat.size / (1024 * 1024)).toFixed(1)} MB`,
+        startSeconds: window.startSeconds,
+        endSeconds: window.endSeconds,
+        durationSeconds: totalShortDur,
+        formattedDuration: `${Math.round(totalShortDur)}s`,
+        timecode: `${window.formattedStart} - ${window.formattedEnd}`,
+        startTag: window.startTag,
+        endTag: window.endTag,
+        generatedAt: new Date().toISOString()
+      }
+
+      const metaPath = path.join(shortsDir, 'TikTok_Climax_Hook_metadata.json')
+      await fs.writeFile(metaPath, JSON.stringify(meta, null, 2), 'utf-8')
+
+      return meta
+    } finally {
+      // Clean up temporary workspace
+      try {
+        await fs.rm(tempDir, { recursive: true, force: true })
+      } catch (_) {}
+    }
+  }
+
+  /**
+   * Retrieves existing climax short metadata if compiled
+   */
+  static async getClimaxShortMetadata(franchiseId, episodeId) {
+    const shortsDir = path.join(franchisesDir, franchiseId, episodeId, 'shorts')
+    const metaPath = path.join(shortsDir, 'TikTok_Climax_Hook_metadata.json')
+    const videoPath = path.join(shortsDir, 'TikTok_Climax_Hook.mp4')
+
+    if (fsSync.existsSync(metaPath) && fsSync.existsSync(videoPath)) {
+      try {
+        const raw = await fs.readFile(metaPath, 'utf-8')
+        return JSON.parse(raw)
+      } catch (_) {}
+    }
+    return null
   }
 }

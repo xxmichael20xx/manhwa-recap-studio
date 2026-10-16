@@ -1,0 +1,123 @@
+{
+  "scene": 22,
+  "durationMs": 7128,
+  "rawWords": [
+    {
+      "ttsWord": "Looking",
+      "startMs": 50,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 425,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 575,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 663,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "ticking",
+      "startMs": 763,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "holographic",
+      "startMs": 1113,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "purge",
+      "startMs": 1788,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "timer",
+      "startMs": 2138,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "hovering",
+      "startMs": 2475,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2850,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2913,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "cavern",
+      "startMs": 3000,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 3400,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 4000,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "picked",
+      "startMs": 4088,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4388,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 4500,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "polished",
+      "startMs": 4625,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "developer",
+      "startMs": 5088,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "stylus",
+      "startMs": 5550,
+      "endMs": 6250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Looking up at the ticking holographic purge timer",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2463
+    },
+    {
+      "text": "hovering in the cavern air,",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 3788
+    },
+    {
+      "text": "I picked up my polished developer stylus.",
+      "startOffsetMs": 4000,
+      "endOffsetMs": 6350
+    }
+  ]
+}

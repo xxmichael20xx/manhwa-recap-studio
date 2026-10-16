@@ -350,6 +350,8 @@
 
 <scene id="IMG_044">
   <tag>IMG_044</tag>
+  <climax>true</climax>
+  <viral_hook>99%</viral_hook>
   <layout>Tier B: Dual-Panel Split</layout>
   <character_refs>85907b43-f56f-4b92-9869-b3c40d8d0c17, 16c4c742-5932-4c96-9c0c-c42aadbcb00a</character_refs>
   <narrative_sync>"Insolent slum worm! Die for your insolence!" Cassian roared, thrusting the flaming blade straight toward Bram's throat with lethal, aristocratic bloodlust.</narrative_sync>
@@ -358,6 +360,8 @@
 
 <scene id="IMG_045">
   <tag>IMG_045</tag>
+  <climax>true</climax>
+  <viral_hook>99%</viral_hook>
   <layout>Tier B: Dual-Panel Split</layout>
   <character_refs>16c4c742-5932-4c96-9c0c-c42aadbcb00a, 85907b43-f56f-4b92-9869-b3c40d8d0c17</character_refs>
   <narrative_sync>Bram did not dodge. Standing perfectly relaxed, he raised his bare right index finger and gently tapped the flat side of the blazing golden blade as it screamed past his collar.</narrative_sync>
@@ -366,6 +370,8 @@
 
 <scene id="IMG_046">
   <tag>IMG_046</tag>
+  <climax>true</climax>
+  <viral_hook>99%</viral_hook>
   <layout>Tier B: Dual-Panel Split</layout>
   <character_refs>16c4c742-5932-4c96-9c0c-c42aadbcb00a, 85907b43-f56f-4b92-9869-b3c40d8d0c17</character_refs>
   <narrative_sync>[SOVEREIGN AUTHORITY: SEMANTIC REFACTORING EXECUTED. CONCEPT OVERWRITE: SUNFIRE ENCHANTMENT REPLACED WITH CHALK MINERAL POROSITY.] The golden flames extinguished instantly, the steel turning powdery white.</narrative_sync>
@@ -374,6 +380,8 @@
 
 <scene id="IMG_047">
   <tag>IMG_047</tag>
+  <climax>true</climax>
+  <viral_hook>99%</viral_hook>
   <layout>Tier C: Action Strip</layout>
   <character_ref>85907b43-f56f-4b92-9869-b3c40d8d0c17</character_ref>
   <narrative_sync>With full momentum behind his thrust, the brittle chalk blade snapped with a dry, ceramic crunch, detonating into a blinding cloud of white chalk dust that enveloped Cassian's face.</narrative_sync>
@@ -382,6 +390,8 @@
 
 <scene id="IMG_048">
   <tag>IMG_048</tag>
+  <climax>true</climax>
+  <viral_hook>99%</viral_hook>
   <layout>Tier B: Dual-Panel Split</layout>
   <character_refs>85907b43-f56f-4b92-9869-b3c40d8d0c17, 16c4c742-5932-4c96-9c0c-c42aadbcb00a</character_refs>
   <narrative_sync>Cassian stood frozen, covered in ridiculous white chalk powder, gripping a bare golden hilt whilst Bram dusted off his fingers with a warm smile. "Do have a wonderful afternoon, my lord."</narrative_sync>

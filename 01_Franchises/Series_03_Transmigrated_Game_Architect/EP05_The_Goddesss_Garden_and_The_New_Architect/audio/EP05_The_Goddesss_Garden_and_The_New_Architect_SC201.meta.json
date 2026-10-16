@@ -1,0 +1,123 @@
+{
+  "scene": 201,
+  "durationMs": 7560,
+  "rawWords": [
+    {
+      "ttsWord": "Cheers",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 450,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "overwhelming",
+      "startMs": 563,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "relief",
+      "startMs": 1225,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1638,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "celebration",
+      "startMs": 1763,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 2513,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2913,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3088,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "streets",
+      "startMs": 3200,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3600,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "families",
+      "startMs": 3763,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "embraced",
+      "startMs": 4200,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4750,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "church",
+      "startMs": 4888,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "bells",
+      "startMs": 5238,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "rang",
+      "startMs": 5600,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 5888,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6075,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "harmony",
+      "startMs": 6163,
+      "endMs": 6688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Cheers of overwhelming relief and celebration echoed through",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3075
+    },
+    {
+      "text": "the streets as families embraced and church bells",
+      "startOffsetMs": 3088,
+      "endOffsetMs": 5588
+    },
+    {
+      "text": "rang out in harmony.",
+      "startOffsetMs": 5600,
+      "endOffsetMs": 6788
+    }
+  ]
+}

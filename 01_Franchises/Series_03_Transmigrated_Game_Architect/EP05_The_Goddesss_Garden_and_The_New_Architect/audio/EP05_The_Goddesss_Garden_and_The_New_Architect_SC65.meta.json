@@ -1,0 +1,143 @@
+{
+  "scene": 65,
+  "durationMs": 8448,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 188,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 700,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "beam",
+      "startMs": 1475,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 1763,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "sucked",
+      "startMs": 1938,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "cleanly",
+      "startMs": 2288,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2738,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2938,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "rim",
+      "startMs": 3063,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3313,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3413,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "cup",
+      "startMs": 3513,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "swirling",
+      "startMs": 4100,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4550,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 4763,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 5050,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "leaves",
+      "startMs": 5338,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5650,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5888,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 5963,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "ceramic",
+      "startMs": 6375,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "vortex",
+      "startMs": 6875,
+      "endMs": 7575
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The entire apocalyptic beam was sucked cleanly into",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2925
+    },
+    {
+      "text": "the rim of the cup,",
+      "startOffsetMs": 2938,
+      "endOffsetMs": 3938
+    },
+    {
+      "text": "swirling like amber tea leaves into a quiet",
+      "startOffsetMs": 4100,
+      "endOffsetMs": 6363
+    },
+    {
+      "text": "ceramic vortex.",
+      "startOffsetMs": 6375,
+      "endOffsetMs": 7675
+    }
+  ]
+}

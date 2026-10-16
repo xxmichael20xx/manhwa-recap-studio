@@ -1,10 +1,10 @@
 {
   "franchiseId": "Series_03_Transmigrated_Game_Architect",
   "filename": "Series_03_Transmigrated_Game_Architect_tier2_Master_1080p.mp4",
-  "totalDurationSeconds": 8495.303834,
-  "totalDurationFormatted": "2h 21m 35s",
-  "partCount": 4,
-  "partBadgeText": "1 - 4",
+  "totalDurationSeconds": 10215.575126,
+  "totalDurationFormatted": "2h 50m 15s",
+  "partCount": 5,
+  "partBadgeText": "1 - 5",
   "chapters": [
     {
       "partNumber": 1,
@@ -45,8 +45,18 @@
       "startSeconds": 6627.072542,
       "durationSeconds": 1868.231292,
       "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP04_The_Open_Heresy_and_Floor_90\\video\\01_Episode_Master_1080p.mp4"
+    },
+    {
+      "partNumber": 5,
+      "partLabel": "Part 5",
+      "episodeId": "EP05_The_Goddesss_Garden_and_The_New_Architect",
+      "episodeTitle": "The Goddesss Garden and The New Architect",
+      "startTimestampFormatted": "02:21:35",
+      "startSeconds": 8495.303834,
+      "durationSeconds": 1720.271292,
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP05_The_Goddesss_Garden_and_The_New_Architect\\video\\01_Episode_Master_1080p.mp4"
     }
   ],
-  "youtubeChapterString": "00:00 Part 1: The Smiling Architect and The Chalk Rapier\n38:09 Part 2: The Architects Dilemma and Floor 35\n01:14:26 Part 3: The Blood Core Siege and Floor 70\n01:50:27 Part 4: The Open Heresy and Floor 90",
-  "generatedAt": "2026-10-15T02:14:19.052Z"
+  "youtubeChapterString": "00:00 Part 1: The Smiling Architect and The Chalk Rapier\n38:09 Part 2: The Architects Dilemma and Floor 35\n01:14:26 Part 3: The Blood Core Siege and Floor 70\n01:50:27 Part 4: The Open Heresy and Floor 90\n02:21:35 Part 5: The Goddesss Garden and The New Architect",
+  "generatedAt": "2026-10-15T12:39:27.408Z"
 }

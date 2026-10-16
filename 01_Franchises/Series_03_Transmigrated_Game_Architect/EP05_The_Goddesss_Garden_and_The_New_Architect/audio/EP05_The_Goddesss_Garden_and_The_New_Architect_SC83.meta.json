@@ -1,0 +1,108 @@
+{
+  "scene": 83,
+  "durationMs": 8400,
+  "rawWords": [
+    {
+      "ttsWord": "Halt",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "unregistered",
+      "startMs": 650,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "anomaly",
+      "startMs": 1313,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2088,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "Overseer's",
+      "startMs": 2213,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 2838,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "boomed",
+      "startMs": 3163,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "layered",
+      "startMs": 3800,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4150,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4275,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "metallic",
+      "startMs": 4363,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "reverberation",
+      "startMs": 4888,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5613,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 5725,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6013,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "harmonized",
+      "startMs": 6413,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "synths",
+      "startMs": 6988,
+      "endMs": 7525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Halt, unregistered anomaly,' the Overseer's voice boomed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3675
+    },
+    {
+      "text": "layered with the metallic reverberation of ten thousand",
+      "startOffsetMs": 3800,
+      "endOffsetMs": 6400
+    },
+    {
+      "text": "harmonized synths.",
+      "startOffsetMs": 6413,
+      "endOffsetMs": 7625
+    }
+  ]
+}

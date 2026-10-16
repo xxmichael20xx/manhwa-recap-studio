@@ -1,0 +1,118 @@
+{
+  "scene": 49,
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "Stepping",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 575,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 788,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "elevator",
+      "startMs": 875,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "platform",
+      "startMs": 1438,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 1975,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 2263,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "Ninety-Six",
+      "startMs": 2588,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3600,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "physical",
+      "startMs": 3725,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "laws",
+      "startMs": 4188,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4550,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "ordinary",
+      "startMs": 4663,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "reality",
+      "startMs": 5188,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "began",
+      "startMs": 5700,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6075,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "warp",
+      "startMs": 6200,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6550,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "dissolve",
+      "startMs": 6638,
+      "endMs": 7263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Stepping off the elevator platform onto Floor Ninety-Six",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3463
+    },
+    {
+      "text": "the physical laws of ordinary reality began to",
+      "startOffsetMs": 3600,
+      "endOffsetMs": 6188
+    },
+    {
+      "text": "warp and dissolve.",
+      "startOffsetMs": 6200,
+      "endOffsetMs": 7363
+    }
+  ]
+}

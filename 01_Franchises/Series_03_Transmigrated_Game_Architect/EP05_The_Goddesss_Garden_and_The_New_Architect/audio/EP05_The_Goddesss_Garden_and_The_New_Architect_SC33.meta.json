@@ -1,0 +1,73 @@
+{
+  "scene": 33,
+  "durationMs": 7080,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "SEWING",
+      "startMs": 950,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "NEEDLE",
+      "startMs": 1325,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "REFACTORED",
+      "startMs": 1625,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 2225,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "KINETIC",
+      "startMs": 2350,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "CARTRIDGE",
+      "startMs": 2763,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "MULTIPLIER",
+      "startMs": 4288,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "50x",
+      "startMs": 5350,
+      "endMs": 6213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 763
+    },
+    {
+      "text": "SEWING NEEDLE REFACTORED TO KINETIC CARTRIDGE.",
+      "startOffsetMs": 950,
+      "endOffsetMs": 3525
+    },
+    {
+      "text": "MULTIPLIER:",
+      "startOffsetMs": 4288,
+      "endOffsetMs": 5200
+    },
+    {
+      "text": "50x.",
+      "startOffsetMs": 5350,
+      "endOffsetMs": 6313
+    }
+  ]
+}

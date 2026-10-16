@@ -1,0 +1,128 @@
+{
+  "scene": 8,
+  "durationMs": 9000,
+  "rawWords": [
+    {
+      "ttsWord": "Behind",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 438,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "barricades",
+      "startMs": 525,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 1400,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1900,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "gates",
+      "startMs": 1988,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2313,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "Locke's",
+      "startMs": 2425,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "Sundries",
+      "startMs": 2788,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3225,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "Tea",
+      "startMs": 3363,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4063,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 4113,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "different",
+      "startMs": 4675,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "atmosphere",
+      "startMs": 5025,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5613,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 5725,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "focused",
+      "startMs": 6425,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "determination",
+      "startMs": 6850,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "prevailed",
+      "startMs": 7538,
+      "endMs": 8138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Behind the barricades,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1350
+    },
+    {
+      "text": "inside the gates of Locke's Sundries and Tea,",
+      "startOffsetMs": 1400,
+      "endOffsetMs": 3850
+    },
+    {
+      "text": "a completely different atmosphere of calm,",
+      "startOffsetMs": 4063,
+      "endOffsetMs": 6213
+    },
+    {
+      "text": "focused determination prevailed.",
+      "startOffsetMs": 6425,
+      "endOffsetMs": 8238
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "scene": 87,
+  "durationMs": 9312,
+  "rawWords": [
+    {
+      "ttsWord": "Impudent",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 500,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1125,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 1263,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "snarled",
+      "startMs": 1825,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 2613,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2975,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "Judgment",
+      "startMs": 3088,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "Lance",
+      "startMs": 3538,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 3888,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4163,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "ceiling",
+      "startMs": 4263,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 5638,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 5775,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "architecture",
+      "startMs": 6225,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6888,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 6988,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "Spire",
+      "startMs": 7150,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 7613,
+      "endMs": 7763
+    },
+    {
+      "ttsWord": "flawless",
+      "startMs": 7775,
+      "endMs": 8450
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Impudent mortal,' the Overseer snarled,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2450
+    },
+    {
+      "text": "raising the Judgment Lance toward the ceiling.",
+      "startOffsetMs": 2613,
+      "endOffsetMs": 4875
+    },
+    {
+      "text": "The divine architecture of this Spire is flawless.'",
+      "startOffsetMs": 5638,
+      "endOffsetMs": 8550
+    }
+  ]
+}

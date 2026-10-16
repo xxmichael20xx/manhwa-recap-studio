@@ -1,0 +1,128 @@
+{
+  "scene": 32,
+  "durationMs": 8184,
+  "rawWords": [
+    {
+      "ttsWord": "Drawing",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 513,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "ordinary",
+      "startMs": 788,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 1313,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "sewing",
+      "startMs": 1688,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "needles",
+      "startMs": 2050,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2400,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 2525,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "leather",
+      "startMs": 2663,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "artisan",
+      "startMs": 3000,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "vest",
+      "startMs": 3413,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 4113,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "flicked",
+      "startMs": 4200,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 4525,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "developer",
+      "startMs": 4663,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "stylus",
+      "startMs": 5175,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 5675,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 6063,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "retinal",
+      "startMs": 6213,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "interface",
+      "startMs": 6588,
+      "endMs": 7300
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Drawing three ordinary iron sewing needles from my",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2650
+    },
+    {
+      "text": "leather artisan vest,",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 3950
+    },
+    {
+      "text": "I flicked my developer stylus across my retinal",
+      "startOffsetMs": 4113,
+      "endOffsetMs": 6575
+    },
+    {
+      "text": "interface.",
+      "startOffsetMs": 6588,
+      "endOffsetMs": 7400
+    }
+  ]
+}

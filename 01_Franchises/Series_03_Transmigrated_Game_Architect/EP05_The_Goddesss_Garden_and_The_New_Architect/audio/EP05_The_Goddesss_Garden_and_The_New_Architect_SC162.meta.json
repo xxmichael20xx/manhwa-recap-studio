@@ -1,0 +1,133 @@
+{
+  "scene": 162,
+  "durationMs": 7608,
+  "rawWords": [
+    {
+      "ttsWord": "My",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 263,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "strength",
+      "startMs": 725,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "withered",
+      "startMs": 1138,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1475,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1650,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 1750,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "decayed",
+      "startMs": 2050,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 2813,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 3075,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "could",
+      "startMs": 3163,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "barely",
+      "startMs": 3350,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "keep",
+      "startMs": 3700,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 3925,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 4075,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "medicinal",
+      "startMs": 4438,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "herb",
+      "startMs": 4988,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "garden",
+      "startMs": 5213,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "alive",
+      "startMs": 5563,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5988,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6050,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "slums",
+      "startMs": 6125,
+      "endMs": 6725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "My divine strength withered as the world decayed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "until I could barely keep my small medicinal",
+      "startOffsetMs": 2813,
+      "endOffsetMs": 4975
+    },
+    {
+      "text": "herb garden alive in the slums.'",
+      "startOffsetMs": 4988,
+      "endOffsetMs": 6825
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "scene": 36,
+  "durationMs": 8328,
+  "rawWords": [
+    {
+      "ttsWord": "Secondary",
+      "startMs": 50,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 750,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "shockwaves",
+      "startMs": 1275,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "detonated",
+      "startMs": 1950,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 2475,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2950,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "automated",
+      "startMs": 3050,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "war",
+      "startMs": 3600,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "machines",
+      "startMs": 3813,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "blowing",
+      "startMs": 4688,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5038,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "clockwork",
+      "startMs": 5188,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "cores",
+      "startMs": 5713,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 6113,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 6338,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6513,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "backplates",
+      "startMs": 6688,
+      "endMs": 7463
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Secondary concussive shockwaves detonated inside the automated",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3588
+    },
+    {
+      "text": "war machines,",
+      "startOffsetMs": 3600,
+      "endOffsetMs": 4525
+    },
+    {
+      "text": "blowing their clockwork cores out through their backplates.",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 7563
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "scene": 126,
+  "durationMs": 7512,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 213,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "timer",
+      "startMs": 763,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "stopped",
+      "startMs": 1113,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "flashing",
+      "startMs": 1488,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 1988,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "turning",
+      "startMs": 2750,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3075,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3275,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 3363,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "authoritative",
+      "startMs": 4025,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 4688,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "gold",
+      "startMs": 5338,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5650,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "filled",
+      "startMs": 5813,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6113,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 6188,
+      "endMs": 6650
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The countdown timer stopped flashing crimson,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "turning into a calm,",
+      "startOffsetMs": 2750,
+      "endOffsetMs": 3850
+    },
+    {
+      "text": "authoritative celestial gold that filled the void.",
+      "startOffsetMs": 4025,
+      "endOffsetMs": 6750
+    }
+  ]
+}

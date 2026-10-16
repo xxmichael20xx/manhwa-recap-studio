@@ -1,0 +1,133 @@
+{
+  "scene": 24,
+  "durationMs": 9696,
+  "rawWords": [
+    {
+      "ttsWord": "Hold",
+      "startMs": 50,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 363,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "perimeter",
+      "startMs": 463,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "Vance",
+      "startMs": 1225,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1838,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 1963,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "quietly",
+      "startMs": 2238,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "stepping",
+      "startMs": 3113,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 3563,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3813,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "transit",
+      "startMs": 3913,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "circle",
+      "startMs": 4350,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 4750,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "Vanguard-Zero",
+      "startMs": 5200,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "It",
+      "startMs": 7000,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 7150,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "time",
+      "startMs": 7288,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7625,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "finish",
+      "startMs": 7725,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 8113,
+      "endMs": 8313
+    },
+    {
+      "ttsWord": "tower",
+      "startMs": 8325,
+      "endMs": 8825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Hold the perimeter,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1088
+    },
+    {
+      "text": "Vance,' I said quietly,",
+      "startOffsetMs": 1225,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "stepping onto the transit circle beside Vanguard-Zero",
+      "startOffsetMs": 3113,
+      "endOffsetMs": 6238
+    },
+    {
+      "text": "It is time to finish this tower.'",
+      "startOffsetMs": 7000,
+      "endOffsetMs": 8925
+    }
+  ]
+}

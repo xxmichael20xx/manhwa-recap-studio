@@ -1,0 +1,143 @@
+{
+  "scene": 106,
+  "durationMs": 11280,
+  "rawWords": [
+    {
+      "ttsWord": "Impossible",
+      "startMs": 50,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1800,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 1975,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "whispered",
+      "startMs": 2575,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3313,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "synthesized",
+      "startMs": 3525,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 4213,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "glitching",
+      "startMs": 4563,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4963,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "static",
+      "startMs": 5100,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "A",
+      "startMs": 6538,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "linen",
+      "startMs": 6663,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "shirt",
+      "startMs": 6988,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "cannot",
+      "startMs": 7388,
+      "endMs": 7738
+    },
+    {
+      "ttsWord": "possess",
+      "startMs": 7750,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8213,
+      "endMs": 8313
+    },
+    {
+      "ttsWord": "defensive",
+      "startMs": 8325,
+      "endMs": 8825
+    },
+    {
+      "ttsWord": "mass",
+      "startMs": 8838,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9238,
+      "endMs": 9300
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 9313,
+      "endMs": 9413
+    },
+    {
+      "ttsWord": "astral",
+      "startMs": 9425,
+      "endMs": 9825
+    },
+    {
+      "ttsWord": "bastion",
+      "startMs": 9838,
+      "endMs": 10413
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Impossible...'",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1050
+    },
+    {
+      "text": "the Overseer whispered,",
+      "startOffsetMs": 1800,
+      "endOffsetMs": 3125
+    },
+    {
+      "text": "its synthesized voice glitching with static.",
+      "startOffsetMs": 3313,
+      "endOffsetMs": 5775
+    },
+    {
+      "text": "A linen shirt cannot possess the defensive mass",
+      "startOffsetMs": 6538,
+      "endOffsetMs": 9225
+    },
+    {
+      "text": "of an astral bastion!'",
+      "startOffsetMs": 9238,
+      "endOffsetMs": 10513
+    }
+  ]
+}

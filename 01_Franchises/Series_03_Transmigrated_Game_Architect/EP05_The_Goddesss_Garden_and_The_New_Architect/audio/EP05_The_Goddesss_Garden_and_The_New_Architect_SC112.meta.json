@@ -1,0 +1,133 @@
+{
+  "scene": 112,
+  "durationMs": 8928,
+  "rawWords": [
+    {
+      "ttsWord": "Second",
+      "startMs": 50,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 963,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "Judgment",
+      "startMs": 1163,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "Lance",
+      "startMs": 1613,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "relies",
+      "startMs": 1925,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 2400,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2525,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "unverified",
+      "startMs": 2650,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "pointer",
+      "startMs": 3388,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "reference",
+      "startMs": 3763,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4188,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4288,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "Spire's",
+      "startMs": 4400,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "primary",
+      "startMs": 4888,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "battery",
+      "startMs": 5375,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 6138,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "explained",
+      "startMs": 6275,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6800,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6925,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 7013,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 7513,
+      "endMs": 8063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Second:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 725
+    },
+    {
+      "text": "your Judgment Lance relies on an unverified pointer",
+      "startOffsetMs": 963,
+      "endOffsetMs": 3750
+    },
+    {
+      "text": "reference to the Spire's primary battery,'",
+      "startOffsetMs": 3763,
+      "endOffsetMs": 5963
+    },
+    {
+      "text": "I explained with a deadpan smile.",
+      "startOffsetMs": 6138,
+      "endOffsetMs": 8163
+    }
+  ]
+}

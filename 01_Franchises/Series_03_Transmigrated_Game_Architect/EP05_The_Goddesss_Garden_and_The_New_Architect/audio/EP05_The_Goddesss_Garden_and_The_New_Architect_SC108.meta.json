@@ -1,0 +1,153 @@
+{
+  "scene": 108,
+  "durationMs": 9096,
+  "rawWords": [
+    {
+      "ttsWord": "Now",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 675,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 850,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "examine",
+      "startMs": 988,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1463,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "syntax",
+      "startMs": 1563,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "errors",
+      "startMs": 2125,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2450,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 2538,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 2675,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "loop",
+      "startMs": 3175,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 3738,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "continued",
+      "startMs": 3825,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 4650,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 5000,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "chalk",
+      "startMs": 5150,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "developer",
+      "startMs": 5463,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "stylus",
+      "startMs": 5950,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 6475,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6663,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "teacher",
+      "startMs": 6750,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 7150,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7488,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "blackboard",
+      "startMs": 7550,
+      "endMs": 8225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Now, let us examine the syntax errors in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2525
+    },
+    {
+      "text": "your combat loop,'",
+      "startOffsetMs": 2538,
+      "endOffsetMs": 3563
+    },
+    {
+      "text": "I continued,",
+      "startOffsetMs": 3738,
+      "endOffsetMs": 4475
+    },
+    {
+      "text": "raising my chalk developer stylus like a teacher",
+      "startOffsetMs": 4650,
+      "endOffsetMs": 7138
+    },
+    {
+      "text": "before a blackboard.",
+      "startOffsetMs": 7150,
+      "endOffsetMs": 8325
+    }
+  ]
+}

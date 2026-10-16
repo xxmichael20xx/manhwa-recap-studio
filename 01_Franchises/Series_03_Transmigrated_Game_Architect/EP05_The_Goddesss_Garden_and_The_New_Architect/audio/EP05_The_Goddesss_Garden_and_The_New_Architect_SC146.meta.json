@@ -1,0 +1,138 @@
+{
+  "scene": 146,
+  "durationMs": 8400,
+  "rawWords": [
+    {
+      "ttsWord": "Fine",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 475,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "vines",
+      "startMs": 850,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1263,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "blooming",
+      "startMs": 1400,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "night-blooming",
+      "startMs": 1788,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "jasmine",
+      "startMs": 2375,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "burst",
+      "startMs": 2900,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3263,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3413,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "seams",
+      "startMs": 3525,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3925,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4025,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "digital",
+      "startMs": 4138,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 4525,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "weaving",
+      "startMs": 5163,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5488,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "lush",
+      "startMs": 5550,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "fragrant",
+      "startMs": 5850,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "carpet",
+      "startMs": 6275,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6600,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6975,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 7075,
+      "endMs": 7538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Fine green vines of blooming night-blooming jasmine burst",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3250
+    },
+    {
+      "text": "through the seams of the digital code,",
+      "startOffsetMs": 3263,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "weaving a lush fragrant carpet across the void.",
+      "startOffsetMs": 5163,
+      "endOffsetMs": 7638
+    }
+  ]
+}

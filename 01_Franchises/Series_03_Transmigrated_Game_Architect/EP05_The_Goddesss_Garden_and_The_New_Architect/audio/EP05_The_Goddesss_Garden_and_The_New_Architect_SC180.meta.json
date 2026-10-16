@@ -1,0 +1,68 @@
+{
+  "scene": 180,
+  "durationMs": 6048,
+  "rawWords": [
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 450,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "REFACTORING",
+      "startMs": 913,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "IMPERIAL",
+      "startMs": 1913,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "NOBLE",
+      "startMs": 2513,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "BLOODLINE",
+      "startMs": 2863,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "PRIVILEGE",
+      "startMs": 3363,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "REMOVED",
+      "startMs": 3800,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "FROM",
+      "startMs": 4250,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "TAXONOMY",
+      "startMs": 4438,
+      "endMs": 5175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "GLOBAL SYSTEM REFACTORING:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1738
+    },
+    {
+      "text": "IMPERIAL NOBLE BLOODLINE PRIVILEGE REMOVED FROM TAXONOMY.",
+      "startOffsetMs": 1913,
+      "endOffsetMs": 5275
+    }
+  ]
+}

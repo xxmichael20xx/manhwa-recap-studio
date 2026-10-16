@@ -1,0 +1,108 @@
+{
+  "scene": 150,
+  "durationMs": 7944,
+  "rawWords": [
+    {
+      "ttsWord": "Her",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "long",
+      "startMs": 225,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "strawberry-blonde",
+      "startMs": 588,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "hair",
+      "startMs": 1450,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "floated",
+      "startMs": 1688,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2125,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "weightless",
+      "startMs": 2275,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 2675,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "waves",
+      "startMs": 3300,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "woven",
+      "startMs": 4013,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4400,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "delicate",
+      "startMs": 4550,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "stars",
+      "startMs": 5000,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5488,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "blooming",
+      "startMs": 5625,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 6000,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "blossoms",
+      "startMs": 6400,
+      "endMs": 7075
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Her long strawberry-blonde hair floated in weightless celestial",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3288
+    },
+    {
+      "text": "waves,",
+      "startOffsetMs": 3300,
+      "endOffsetMs": 3863
+    },
+    {
+      "text": "woven with delicate stars and blooming golden blossoms.",
+      "startOffsetMs": 4013,
+      "endOffsetMs": 7175
+    }
+  ]
+}

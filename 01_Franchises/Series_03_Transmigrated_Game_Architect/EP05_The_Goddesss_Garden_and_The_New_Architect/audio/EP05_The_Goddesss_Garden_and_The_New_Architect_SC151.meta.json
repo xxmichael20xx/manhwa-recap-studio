@@ -1,0 +1,133 @@
+{
+  "scene": 151,
+  "durationMs": 7200,
+  "rawWords": [
+    {
+      "ttsWord": "Draped",
+      "startMs": 50,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 425,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 663,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "shoulders",
+      "startMs": 813,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 1313,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1463,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "gown",
+      "startMs": 1538,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1838,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "woven",
+      "startMs": 1938,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "emerald",
+      "startMs": 2313,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "aurora",
+      "startMs": 2663,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "silk",
+      "startMs": 3088,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 3425,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "pooled",
+      "startMs": 3588,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 3913,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 4213,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "bare",
+      "startMs": 4350,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 4625,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4963,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "liquid",
+      "startMs": 5175,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "spring",
+      "startMs": 5525,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "water",
+      "startMs": 5875,
+      "endMs": 6325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Draped over her shoulders was a gown of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1925
+    },
+    {
+      "text": "woven emerald aurora silk that pooled around her",
+      "startOffsetMs": 1938,
+      "endOffsetMs": 4338
+    },
+    {
+      "text": "bare feet like liquid spring water.",
+      "startOffsetMs": 4350,
+      "endOffsetMs": 6425
+    }
+  ]
+}

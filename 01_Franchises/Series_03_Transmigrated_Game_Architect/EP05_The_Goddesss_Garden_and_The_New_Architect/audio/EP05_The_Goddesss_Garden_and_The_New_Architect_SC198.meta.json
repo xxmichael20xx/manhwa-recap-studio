@@ -1,0 +1,143 @@
+{
+  "scene": 198,
+  "durationMs": 8184,
+  "rawWords": [
+    {
+      "ttsWord": "Their",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "stolen",
+      "startMs": 275,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "wealth",
+      "startMs": 775,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1088,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "political",
+      "startMs": 1200,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "tyranny",
+      "startMs": 1688,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 2125,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "broken",
+      "startMs": 2288,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "forever",
+      "startMs": 2675,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 3450,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "power",
+      "startMs": 3638,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "stripped",
+      "startMs": 4000,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 4425,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4575,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "architect",
+      "startMs": 4700,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 5288,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "weighed",
+      "startMs": 5400,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5688,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "souls",
+      "startMs": 5838,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6288,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "found",
+      "startMs": 6400,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "them",
+      "startMs": 6688,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "lacking",
+      "startMs": 6825,
+      "endMs": 7313
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Their stolen wealth and political tyranny were broken",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "forever,",
+      "startOffsetMs": 2675,
+      "endOffsetMs": 3288
+    },
+    {
+      "text": "their power stripped by an architect who weighed",
+      "startOffsetMs": 3450,
+      "endOffsetMs": 5675
+    },
+    {
+      "text": "their souls and found them lacking.",
+      "startOffsetMs": 5688,
+      "endOffsetMs": 7413
+    }
+  ]
+}

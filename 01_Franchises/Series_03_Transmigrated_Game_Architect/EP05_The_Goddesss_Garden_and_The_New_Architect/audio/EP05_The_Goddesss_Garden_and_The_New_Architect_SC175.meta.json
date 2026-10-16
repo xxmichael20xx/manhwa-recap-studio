@@ -1,0 +1,123 @@
+{
+  "scene": 175,
+  "durationMs": 8520,
+  "rawWords": [
+    {
+      "ttsWord": "Every",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "law",
+      "startMs": 388,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 688,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "physics",
+      "startMs": 800,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 1513,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "talent",
+      "startMs": 1775,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "hierarchy",
+      "startMs": 2150,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3113,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 3325,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "line",
+      "startMs": 3563,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3913,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 4013,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "bloodline",
+      "startMs": 4575,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "privilege",
+      "startMs": 5075,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "flowed",
+      "startMs": 5513,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 5863,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 6263,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "developer",
+      "startMs": 6400,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "interface",
+      "startMs": 6913,
+      "endMs": 7638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Every law of physics,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1425
+    },
+    {
+      "text": "every talent hierarchy,",
+      "startOffsetMs": 1513,
+      "endOffsetMs": 2963
+    },
+    {
+      "text": "and every line of imperial bloodline privilege flowed",
+      "startOffsetMs": 3113,
+      "endOffsetMs": 5850
+    },
+    {
+      "text": "across my developer interface.",
+      "startOffsetMs": 5863,
+      "endOffsetMs": 7738
+    }
+  ]
+}

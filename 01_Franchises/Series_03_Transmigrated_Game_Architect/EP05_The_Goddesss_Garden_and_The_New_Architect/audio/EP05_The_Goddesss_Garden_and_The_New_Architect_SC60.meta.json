@@ -1,0 +1,133 @@
+{
+  "scene": 60,
+  "durationMs": 9048,
+  "rawWords": [
+    {
+      "ttsWord": "Floor",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "Ninety-Eight",
+      "startMs": 450,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "opened",
+      "startMs": 1038,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1363,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1575,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "ocean",
+      "startMs": 1725,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2063,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "liquid",
+      "startMs": 2175,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "starlight",
+      "startMs": 2525,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "guarded",
+      "startMs": 3063,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3413,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3550,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "Astral",
+      "startMs": 3675,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "Leviathan",
+      "startMs": 4088,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5013,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "mile-long",
+      "startMs": 5050,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "serpent",
+      "startMs": 5638,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "woven",
+      "startMs": 6050,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6438,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 6625,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 6938,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "radiation",
+      "startMs": 7438,
+      "endMs": 8175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Floor Ninety-Eight opened into an ocean of liquid",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2513
+    },
+    {
+      "text": "starlight guarded by the Astral Leviathan,",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 4775
+    },
+    {
+      "text": "a mile-long serpent woven from pure cosmic radiation.",
+      "startOffsetMs": 5013,
+      "endOffsetMs": 8275
+    }
+  ]
+}

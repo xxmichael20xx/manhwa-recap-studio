@@ -1,0 +1,123 @@
+{
+  "scene": 134,
+  "durationMs": 8352,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "Silicon",
+      "startMs": 213,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "Sub-Space",
+      "startMs": 700,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "Ark",
+      "startMs": 1288,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 1538,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "be",
+      "startMs": 1638,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "granted",
+      "startMs": 1763,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "infinite",
+      "startMs": 2175,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "warp",
+      "startMs": 2613,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "clearance",
+      "startMs": 2888,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3375,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "navigate",
+      "startMs": 3475,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4025,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "dimensional",
+      "startMs": 4113,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "slipstream",
+      "startMs": 4600,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5238,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5363,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "pristine",
+      "startMs": 5463,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "uncorrupted",
+      "startMs": 6213,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "universe",
+      "startMs": 6825,
+      "endMs": 7475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Silicon Sub-Space Ark will be granted infinite",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2600
+    },
+    {
+      "text": "warp clearance to navigate the dimensional slipstream to",
+      "startOffsetMs": 2613,
+      "endOffsetMs": 5350
+    },
+    {
+      "text": "a pristine, uncorrupted universe.'",
+      "startOffsetMs": 5363,
+      "endOffsetMs": 7575
+    }
+  ]
+}

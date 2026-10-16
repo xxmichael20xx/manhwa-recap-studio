@@ -1,0 +1,123 @@
+{
+  "scene": 19,
+  "durationMs": 7680,
+  "rawWords": [
+    {
+      "ttsWord": "Every",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "family",
+      "startMs": 388,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 838,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 963,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 1375,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 1725,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1913,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "designated",
+      "startMs": 2013,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "cabin",
+      "startMs": 2638,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "aboard",
+      "startMs": 3000,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3350,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "Ark",
+      "startMs": 3450,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 4138,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "replied",
+      "startMs": 4238,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4713,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4838,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "easy",
+      "startMs": 4963,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "reassuring",
+      "startMs": 5613,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 6225,
+      "endMs": 6813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Every family in District Nine has a designated",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "cabin aboard the Ark,'",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 3938
+    },
+    {
+      "text": "I replied with an easy,",
+      "startOffsetMs": 4138,
+      "endOffsetMs": 5438
+    },
+    {
+      "text": "reassuring smile.",
+      "startOffsetMs": 5613,
+      "endOffsetMs": 6913
+    }
+  ]
+}

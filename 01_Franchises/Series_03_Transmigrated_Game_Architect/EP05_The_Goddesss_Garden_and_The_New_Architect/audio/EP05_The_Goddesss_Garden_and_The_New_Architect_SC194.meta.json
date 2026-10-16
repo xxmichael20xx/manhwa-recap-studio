@@ -1,0 +1,138 @@
+{
+  "scene": 194,
+  "durationMs": 9240,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 200,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 975,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 1425,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 1775,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 1975,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "gone",
+      "startMs": 2525,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "replaced",
+      "startMs": 3188,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3700,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3850,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "vast",
+      "startMs": 3925,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "cloudless",
+      "startMs": 4688,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "sapphire",
+      "startMs": 5200,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "blue",
+      "startMs": 5775,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6075,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6225,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "empire",
+      "startMs": 6300,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 6850,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 7025,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "seen",
+      "startMs": 7250,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7563,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "centuries",
+      "startMs": 7688,
+      "endMs": 8375
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The apocalyptic crimson sky was completely gone,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2975
+    },
+    {
+      "text": "replaced by a vast,",
+      "startOffsetMs": 3188,
+      "endOffsetMs": 4550
+    },
+    {
+      "text": "cloudless sapphire blue that the empire had not",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 7238
+    },
+    {
+      "text": "seen in centuries.",
+      "startOffsetMs": 7250,
+      "endOffsetMs": 8475
+    }
+  ]
+}

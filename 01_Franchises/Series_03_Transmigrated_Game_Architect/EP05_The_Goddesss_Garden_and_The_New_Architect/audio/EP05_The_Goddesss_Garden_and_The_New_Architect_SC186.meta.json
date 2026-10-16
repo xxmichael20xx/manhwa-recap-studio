@@ -1,0 +1,73 @@
+{
+  "scene": 186,
+  "durationMs": 7440,
+  "rawWords": [
+    {
+      "ttsWord": "PLANETARY",
+      "startMs": 50,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "CONTAINER",
+      "startMs": 713,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "RESTABILIZATION",
+      "startMs": 1238,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "ONE",
+      "startMs": 2550,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "HUNDRED",
+      "startMs": 2738,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "PERCENT",
+      "startMs": 3063,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "COMPLETED",
+      "startMs": 3463,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "FACTORY",
+      "startMs": 4925,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "RESET",
+      "startMs": 5513,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "PURGED",
+      "startMs": 5988,
+      "endMs": 6563
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "PLANETARY CONTAINER RESTABILIZATION:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2350
+    },
+    {
+      "text": "ONE HUNDRED PERCENT COMPLETED.",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 4163
+    },
+    {
+      "text": "FACTORY RESET PURGED.",
+      "startOffsetMs": 4925,
+      "endOffsetMs": 6663
+    }
+  ]
+}

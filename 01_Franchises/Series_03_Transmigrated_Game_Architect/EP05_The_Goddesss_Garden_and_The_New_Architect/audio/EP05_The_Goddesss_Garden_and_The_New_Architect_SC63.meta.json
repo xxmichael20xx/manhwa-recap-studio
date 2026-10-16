@@ -1,0 +1,88 @@
+{
+  "scene": 63,
+  "durationMs": 8280,
+  "rawWords": [
+    {
+      "ttsWord": "ITEM",
+      "startMs": 50,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "REFACTORING",
+      "startMs": 425,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "CHIPPED",
+      "startMs": 1438,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "CERAMIC",
+      "startMs": 1725,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "TEACUP",
+      "startMs": 2238,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 2688,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "CELESTIAL",
+      "startMs": 2788,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "PRISMATIC",
+      "startMs": 3450,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "FUNNEL",
+      "startMs": 4013,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "CAPACITY",
+      "startMs": 5288,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "UNLIMITED",
+      "startMs": 6263,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "ENTROPY",
+      "startMs": 6850,
+      "endMs": 7413
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "ITEM REFACTORING:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1275
+    },
+    {
+      "text": "CHIPPED CERAMIC TEACUP TO CELESTIAL PRISMATIC FUNNEL.",
+      "startOffsetMs": 1438,
+      "endOffsetMs": 4525
+    },
+    {
+      "text": "CAPACITY:",
+      "startOffsetMs": 5288,
+      "endOffsetMs": 6125
+    },
+    {
+      "text": "UNLIMITED ENTROPY.",
+      "startOffsetMs": 6263,
+      "endOffsetMs": 7513
+    }
+  ]
+}

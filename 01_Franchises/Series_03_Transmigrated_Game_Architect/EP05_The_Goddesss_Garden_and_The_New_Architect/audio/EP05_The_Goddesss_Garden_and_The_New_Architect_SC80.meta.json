@@ -1,0 +1,113 @@
+{
+  "scene": 80,
+  "durationMs": 8376,
+  "rawWords": [
+    {
+      "ttsWord": "Twelve",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "colossal",
+      "startMs": 438,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "wings",
+      "startMs": 1013,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "composed",
+      "startMs": 1350,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1863,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "crystallized",
+      "startMs": 1963,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "solar",
+      "startMs": 2650,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "flares",
+      "startMs": 3013,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "unfolded",
+      "startMs": 3488,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 4038,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4388,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4513,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "each",
+      "startMs": 5188,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "feather",
+      "startMs": 5400,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "humming",
+      "startMs": 5700,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6000,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "reality-erasure",
+      "startMs": 6175,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 7088,
+      "endMs": 7500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Twelve colossal wings composed of crystallized solar flares",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3475
+    },
+    {
+      "text": "unfolded behind its back,",
+      "startOffsetMs": 3488,
+      "endOffsetMs": 5000
+    },
+    {
+      "text": "each feather humming with reality-erasure code.",
+      "startOffsetMs": 5188,
+      "endOffsetMs": 7600
+    }
+  ]
+}

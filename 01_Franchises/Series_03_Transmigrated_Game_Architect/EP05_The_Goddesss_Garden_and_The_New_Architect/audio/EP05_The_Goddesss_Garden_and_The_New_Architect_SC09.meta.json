@@ -1,0 +1,148 @@
+{
+  "scene": 9,
+  "durationMs": 9144,
+  "rawWords": [
+    {
+      "ttsWord": "Linnea",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Croft",
+      "startMs": 525,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "walked",
+      "startMs": 938,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 1275,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1463,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "bustling",
+      "startMs": 1575,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "crowd",
+      "startMs": 2038,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2438,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "baskets",
+      "startMs": 2588,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3088,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "soothing",
+      "startMs": 3200,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "lavender",
+      "startMs": 3600,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4138,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 4238,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "chamomile",
+      "startMs": 4600,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "handing",
+      "startMs": 5550,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "cups",
+      "startMs": 5850,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6188,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 6313,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "herbal",
+      "startMs": 6638,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 6963,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7250,
+      "endMs": 7350
+    },
+    {
+      "ttsWord": "frightened",
+      "startMs": 7363,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "children",
+      "startMs": 7763,
+      "endMs": 8263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Linnea Croft walked through the bustling crowd with",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2575
+    },
+    {
+      "text": "baskets of soothing lavender and dried chamomile,",
+      "startOffsetMs": 2588,
+      "endOffsetMs": 5325
+    },
+    {
+      "text": "handing cups of warm herbal tea to frightened",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7750
+    },
+    {
+      "text": "children.",
+      "startOffsetMs": 7763,
+      "endOffsetMs": 8363
+    }
+  ]
+}

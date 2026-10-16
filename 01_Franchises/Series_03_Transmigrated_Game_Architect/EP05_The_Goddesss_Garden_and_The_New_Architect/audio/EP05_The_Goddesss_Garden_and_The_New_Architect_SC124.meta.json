@@ -1,0 +1,113 @@
+{
+  "scene": 124,
+  "durationMs": 6432,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "braced",
+      "startMs": 238,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 663,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 750,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 863,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 1188,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 1500,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1663,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "tear",
+      "startMs": 1763,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "apart",
+      "startMs": 2063,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2413,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "digital",
+      "startMs": 2625,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "static",
+      "startMs": 3013,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 3763,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3888,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "cataclysm",
+      "startMs": 3988,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "never",
+      "startMs": 4675,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "arrived",
+      "startMs": 4963,
+      "endMs": 5563
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I braced for the world beneath us to",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1750
+    },
+    {
+      "text": "tear apart into digital static,",
+      "startOffsetMs": 1763,
+      "endOffsetMs": 3650
+    },
+    {
+      "text": "but the cataclysm never arrived.",
+      "startOffsetMs": 3763,
+      "endOffsetMs": 5663
+    }
+  ]
+}

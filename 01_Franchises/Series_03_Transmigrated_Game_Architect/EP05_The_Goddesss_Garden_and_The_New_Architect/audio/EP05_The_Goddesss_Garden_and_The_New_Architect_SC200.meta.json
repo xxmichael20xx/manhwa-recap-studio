@@ -1,0 +1,138 @@
+{
+  "scene": 200,
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "Thousands",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 563,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "commoners",
+      "startMs": 663,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "refugees",
+      "startMs": 1525,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2538,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "humble",
+      "startMs": 2700,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "artisans",
+      "startMs": 3038,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 3513,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 3838,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 4063,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4263,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "cobblestones",
+      "startMs": 4375,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 5500,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 5813,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 5963,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6038,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 6138,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 6438,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6850,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "weeping",
+      "startMs": 7025,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "joy",
+      "startMs": 7388,
+      "endMs": 7800
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Thousands of commoners,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1350
+    },
+    {
+      "text": "refugees,",
+      "startOffsetMs": 1525,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "and humble artisans stepped out onto the cobblestones,",
+      "startOffsetMs": 2538,
+      "endOffsetMs": 5300
+    },
+    {
+      "text": "looking up at the clear sky in weeping",
+      "startOffsetMs": 5500,
+      "endOffsetMs": 7375
+    },
+    {
+      "text": "joy.",
+      "startOffsetMs": 7388,
+      "endOffsetMs": 7900
+    }
+  ]
+}

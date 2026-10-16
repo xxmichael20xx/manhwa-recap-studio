@@ -1,0 +1,93 @@
+{
+  "scene": 118,
+  "durationMs": 6696,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "automaton",
+      "startMs": 200,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "proxy's",
+      "startMs": 925,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "punch",
+      "startMs": 1450,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "struck",
+      "startMs": 1788,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2100,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "center",
+      "startMs": 2213,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2613,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2713,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "Overseer's",
+      "startMs": 2825,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "platinum",
+      "startMs": 3463,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "breastplate",
+      "startMs": 3900,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4513,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "thunderous",
+      "startMs": 4675,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "finality",
+      "startMs": 5138,
+      "endMs": 5813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The automaton proxy's punch struck the center of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2700
+    },
+    {
+      "text": "the Overseer's platinum breastplate with thunderous finality.",
+      "startOffsetMs": 2713,
+      "endOffsetMs": 5913
+    }
+  ]
+}

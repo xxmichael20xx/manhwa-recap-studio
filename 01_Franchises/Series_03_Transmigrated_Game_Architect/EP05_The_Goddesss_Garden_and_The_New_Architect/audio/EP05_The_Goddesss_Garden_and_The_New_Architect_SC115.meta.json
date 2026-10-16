@@ -1,0 +1,108 @@
+{
+  "scene": 115,
+  "durationMs": 7248,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 213,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "demigod",
+      "startMs": 713,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 1325,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 1538,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1850,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1925,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "tiny",
+      "startMs": 2025,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 2425,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "stationery",
+      "startMs": 2713,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3425,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3550,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 3675,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4050,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 4188,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "psychological",
+      "startMs": 4775,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "paralysis",
+      "startMs": 5550,
+      "endMs": 6388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The towering demigod looked down at the tiny",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2413
+    },
+    {
+      "text": "wooden stationery in its hands with absolute psychological",
+      "startOffsetMs": 2425,
+      "endOffsetMs": 5538
+    },
+    {
+      "text": "paralysis.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 6488
+    }
+  ]
+}

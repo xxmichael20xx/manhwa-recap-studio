@@ -1,0 +1,118 @@
+{
+  "scene": 105,
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 225,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "lowered",
+      "startMs": 863,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 1200,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "lance",
+      "startMs": 1350,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2038,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 2200,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "visor",
+      "startMs": 2588,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 2988,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3513,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3663,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "internal",
+      "startMs": 3800,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "processing",
+      "startMs": 4275,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "logic",
+      "startMs": 4913,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "suffered",
+      "startMs": 5300,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5663,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "catastrophic",
+      "startMs": 5738,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "divide-by-zero",
+      "startMs": 6463,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "error",
+      "startMs": 7400,
+      "endMs": 7813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Overseer lowered its lance,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1888
+    },
+    {
+      "text": "its golden visor trembling as its internal processing",
+      "startOffsetMs": 2038,
+      "endOffsetMs": 4900
+    },
+    {
+      "text": "logic suffered a catastrophic divide-by-zero error.",
+      "startOffsetMs": 4913,
+      "endOffsetMs": 7913
+    }
+  ]
+}

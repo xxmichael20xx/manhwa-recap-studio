@@ -1,0 +1,128 @@
+{
+  "scene": 43,
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "On",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 288,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "Ninety-Three",
+      "startMs": 625,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 1613,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 1863,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "chimeric",
+      "startMs": 2175,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "gargoyles",
+      "startMs": 2638,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "swooped",
+      "startMs": 3175,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3538,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3675,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 3763,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "vault",
+      "startMs": 4300,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "shrieking",
+      "startMs": 4925,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 5413,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "curses",
+      "startMs": 5750,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "designed",
+      "startMs": 6150,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6600,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "shatter",
+      "startMs": 6675,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 7063,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "minds",
+      "startMs": 7350,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "On Floor Ninety-Three",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1463
+    },
+    {
+      "text": "Three, hundred chimeric gargoyles swooped from the obsidian",
+      "startOffsetMs": 1613,
+      "endOffsetMs": 4288
+    },
+    {
+      "text": "vault,",
+      "startOffsetMs": 4300,
+      "endOffsetMs": 4738
+    },
+    {
+      "text": "shrieking ancient curses designed to shatter mortal minds.",
+      "startOffsetMs": 4925,
+      "endOffsetMs": 8013
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "scene": 16,
+  "durationMs": 6648,
+  "rawWords": [
+    {
+      "ttsWord": "At",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 238,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 338,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "command",
+      "startMs": 713,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "plinth",
+      "startMs": 1138,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1800,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 1913,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2213,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 2288,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "cream",
+      "startMs": 2450,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "linen",
+      "startMs": 2813,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "shirt",
+      "startMs": 3063,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3438,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3563,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "sleeves",
+      "startMs": 3663,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "rolled",
+      "startMs": 4125,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "neatly",
+      "startMs": 4425,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4775,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 4888,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "forearms",
+      "startMs": 5038,
+      "endMs": 5788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "At the central command plinth,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1638
+    },
+    {
+      "text": "I stood in my cream linen shirt with",
+      "startOffsetMs": 1800,
+      "endOffsetMs": 3550
+    },
+    {
+      "text": "the sleeves rolled neatly to my forearms.",
+      "startOffsetMs": 3563,
+      "endOffsetMs": 5888
+    }
+  ]
+}

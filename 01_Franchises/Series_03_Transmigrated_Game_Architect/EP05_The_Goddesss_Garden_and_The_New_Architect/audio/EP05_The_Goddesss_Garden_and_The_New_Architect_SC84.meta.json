@@ -1,0 +1,143 @@
+{
+  "scene": 84,
+  "durationMs": 9936,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "stand",
+      "startMs": 250,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 638,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 713,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "summit",
+      "startMs": 813,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1200,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1313,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "Divine",
+      "startMs": 1413,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "Spire",
+      "startMs": 1850,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 2338,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 2688,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "blood",
+      "startMs": 3063,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 3638,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 3988,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "sponsorship",
+      "startMs": 4525,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5500,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 5613,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "consecrated",
+      "startMs": 5950,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 6650,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 7088,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7675,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 7813,
+      "endMs": 8363
+    },
+    {
+      "ttsWord": "proclaimed",
+      "startMs": 8375,
+      "endMs": 9063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You stand at the summit of the Divine",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1838
+    },
+    {
+      "text": "Spire without noble blood,",
+      "startOffsetMs": 1850,
+      "endOffsetMs": 3488
+    },
+    {
+      "text": "without imperial sponsorship,",
+      "startOffsetMs": 3638,
+      "endOffsetMs": 5338
+    },
+    {
+      "text": "and without consecrated combat mana,' the Overseer proclaimed.",
+      "startOffsetMs": 5500,
+      "endOffsetMs": 9163
+    }
+  ]
+}

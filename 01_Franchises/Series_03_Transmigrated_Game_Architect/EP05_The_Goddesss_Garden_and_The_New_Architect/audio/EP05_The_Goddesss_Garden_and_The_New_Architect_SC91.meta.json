@@ -1,0 +1,98 @@
+{
+  "scene": 91,
+  "durationMs": 6984,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "Overseer's",
+      "startMs": 238,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "wings",
+      "startMs": 875,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "flared",
+      "startMs": 1250,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 1638,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "scorching",
+      "startMs": 2500,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3025,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 3138,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 3413,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3788,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "pillars",
+      "startMs": 3950,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4413,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 4488,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 5250,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "fire",
+      "startMs": 5613,
+      "endMs": 6113
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Overseer's wings flared violently,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2313
+    },
+    {
+      "text": "scorching the white void with pillars of apocalyptic",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 5238
+    },
+    {
+      "text": "golden fire.",
+      "startOffsetMs": 5250,
+      "endOffsetMs": 6213
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "scene": 188,
+  "durationMs": 8568,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 500,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "continent",
+      "startMs": 613,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "withered",
+      "startMs": 1338,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "farmlands",
+      "startMs": 1675,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "erupted",
+      "startMs": 2188,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2663,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "lush",
+      "startMs": 2888,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 3225,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "wheat",
+      "startMs": 3550,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "fields",
+      "startMs": 3738,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4513,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "poisoned",
+      "startMs": 4688,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "rivers",
+      "startMs": 5125,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 5500,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "crystal",
+      "startMs": 5838,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 6250,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 6663,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6850,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 6925,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "sun.",
+      "startMs": 7275,
+      "endMs": 7700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across the continent,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1250
+    },
+    {
+      "text": "withered farmlands erupted into lush green wheat fields,",
+      "startOffsetMs": 1338,
+      "endOffsetMs": 4350
+    },
+    {
+      "text": "and poisoned rivers turned crystal clear under the",
+      "startOffsetMs": 4513,
+      "endOffsetMs": 6913
+    },
+    {
+      "text": "morning sun.",
+      "startOffsetMs": 6925,
+      "endOffsetMs": 7800
+    }
+  ]
+}

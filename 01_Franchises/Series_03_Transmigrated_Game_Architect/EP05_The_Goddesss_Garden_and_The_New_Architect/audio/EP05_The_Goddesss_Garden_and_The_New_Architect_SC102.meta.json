@@ -1,0 +1,93 @@
+{
+  "scene": 102,
+  "durationMs": 7608,
+  "rawWords": [
+    {
+      "ttsWord": "White-hot",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "shockwaves",
+      "startMs": 600,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "blasted",
+      "startMs": 1288,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "outward",
+      "startMs": 1813,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2213,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 2338,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "rings",
+      "startMs": 2800,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "illuminating",
+      "startMs": 3513,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4150,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "infinite",
+      "startMs": 4250,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 4700,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5075,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 5250,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "prismatic",
+      "startMs": 5713,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "glare",
+      "startMs": 6250,
+      "endMs": 6725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "White-hot shockwaves blasted outward in deafening rings,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3313
+    },
+    {
+      "text": "illuminating the infinite void with blinding prismatic glare.",
+      "startOffsetMs": 3513,
+      "endOffsetMs": 6825
+    }
+  ]
+}

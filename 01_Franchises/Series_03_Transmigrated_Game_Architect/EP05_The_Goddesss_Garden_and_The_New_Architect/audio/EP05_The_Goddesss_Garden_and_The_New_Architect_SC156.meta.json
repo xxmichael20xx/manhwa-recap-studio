@@ -1,0 +1,133 @@
+{
+  "scene": 156,
+  "durationMs": 7776,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "am",
+      "startMs": 238,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "still",
+      "startMs": 363,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 713,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 1363,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "neighbour",
+      "startMs": 1513,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1850,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 2050,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 2425,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "she",
+      "startMs": 3063,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "answered",
+      "startMs": 3288,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "walking",
+      "startMs": 4013,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 4425,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 4788,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "she",
+      "startMs": 5063,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 5238,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 5600,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "arm's",
+      "startMs": 5888,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "length",
+      "startMs": 6213,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 6463,
+      "endMs": 6900
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I am still Linnea,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1263
+    },
+    {
+      "text": "your neighbour from District Nine,'",
+      "startOffsetMs": 1363,
+      "endOffsetMs": 2888
+    },
+    {
+      "text": "she answered,",
+      "startOffsetMs": 3063,
+      "endOffsetMs": 3838
+    },
+    {
+      "text": "walking forward until she stood just arm's length",
+      "startOffsetMs": 4013,
+      "endOffsetMs": 6450
+    },
+    {
+      "text": "away.",
+      "startOffsetMs": 6463,
+      "endOffsetMs": 7000
+    }
+  ]
+}

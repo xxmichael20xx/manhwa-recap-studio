@@ -1,0 +1,143 @@
+{
+  "scene": 82,
+  "durationMs": 7872,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 213,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 388,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "gauntlet",
+      "startMs": 650,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "rested",
+      "startMs": 1088,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1438,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "Judgment",
+      "startMs": 1538,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "Lance",
+      "startMs": 1988,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2275,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2350,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "Creator",
+      "startMs": 2450,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "crackling",
+      "startMs": 3225,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3700,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 3838,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "erasure",
+      "startMs": 4400,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "runes",
+      "startMs": 4913,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5225,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "deleted",
+      "startMs": 5363,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5788,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 5863,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 6188,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 6500,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "tip",
+      "startMs": 6663,
+      "endMs": 7000
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In its right gauntlet rested the Judgment Lance",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2263
+    },
+    {
+      "text": "of the Creator,",
+      "startOffsetMs": 2275,
+      "endOffsetMs": 3063
+    },
+    {
+      "text": "crackling with absolute erasure runes that deleted the",
+      "startOffsetMs": 3225,
+      "endOffsetMs": 5850
+    },
+    {
+      "text": "void around its tip.",
+      "startOffsetMs": 5863,
+      "endOffsetMs": 7100
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "scene": 67,
+  "durationMs": 7632,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "delightful",
+      "startMs": 200,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "vintage",
+      "startMs": 725,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1463,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "murmured",
+      "startMs": 1550,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "politely",
+      "startMs": 1938,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "tipping",
+      "startMs": 2750,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3050,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "cup",
+      "startMs": 3150,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 3388,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3738,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "discharge",
+      "startMs": 3825,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4400,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 4500,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 4913,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 5375,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 5700,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5775,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "serpent's",
+      "startMs": 5863,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "core",
+      "startMs": 6325,
+      "endMs": 6763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A delightful vintage,' I murmured politely,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2600
+    },
+    {
+      "text": "tipping the cup forward to discharge the energy",
+      "startOffsetMs": 2750,
+      "endOffsetMs": 4900
+    },
+    {
+      "text": "directly back at the serpent's core.",
+      "startOffsetMs": 4913,
+      "endOffsetMs": 6863
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "scene": 48,
+  "durationMs": 10080,
+  "rawWords": [
+    {
+      "ttsWord": "PURGE",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "COUNTDOWN",
+      "startMs": 388,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "65:42:10",
+      "startMs": 1275,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "PROGRESSION",
+      "startMs": 5213,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "VELOCITY",
+      "startMs": 5763,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "EXCEEDS",
+      "startMs": 6363,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "PREDICTED",
+      "startMs": 6850,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "MODEL",
+      "startMs": 7325,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "BY",
+      "startMs": 7725,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "NINE",
+      "startMs": 7863,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "THOUSAND",
+      "startMs": 8225,
+      "endMs": 8650
+    },
+    {
+      "ttsWord": "PERCENT",
+      "startMs": 8663,
+      "endMs": 9213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "PURGE COUNTDOWN:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1100
+    },
+    {
+      "text": "65:42:10",
+      "startOffsetMs": 1275,
+      "endOffsetMs": 4450
+    },
+    {
+      "text": "PROGRESSION VELOCITY EXCEEDS PREDICTED MODEL BY NINE THOUSAND",
+      "startOffsetMs": 5213,
+      "endOffsetMs": 8650
+    },
+    {
+      "text": "PERCENT.",
+      "startOffsetMs": 8663,
+      "endOffsetMs": 9313
+    }
+  ]
+}

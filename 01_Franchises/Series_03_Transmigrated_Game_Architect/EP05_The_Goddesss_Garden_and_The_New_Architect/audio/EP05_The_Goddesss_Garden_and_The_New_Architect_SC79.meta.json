@@ -1,0 +1,113 @@
+{
+  "scene": 79,
+  "durationMs": 7320,
+  "rawWords": [
+    {
+      "ttsWord": "Descending",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 600,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 763,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "heart",
+      "startMs": 838,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1113,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1200,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "hyper-dimensional",
+      "startMs": 1263,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "prism",
+      "startMs": 2075,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "came",
+      "startMs": 2488,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2750,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "monumental",
+      "startMs": 2813,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "entity",
+      "startMs": 3488,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "clad",
+      "startMs": 3825,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4238,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "iridescent",
+      "startMs": 4338,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "platinum",
+      "startMs": 4900,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "ceremonial",
+      "startMs": 5325,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "plate",
+      "startMs": 6000,
+      "endMs": 6438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Descending from the heart of the hyper-dimensional prism",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2475
+    },
+    {
+      "text": "came a monumental entity clad in iridescent platinum",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 5313
+    },
+    {
+      "text": "ceremonial plate.",
+      "startOffsetMs": 5325,
+      "endOffsetMs": 6538
+    }
+  ]
+}

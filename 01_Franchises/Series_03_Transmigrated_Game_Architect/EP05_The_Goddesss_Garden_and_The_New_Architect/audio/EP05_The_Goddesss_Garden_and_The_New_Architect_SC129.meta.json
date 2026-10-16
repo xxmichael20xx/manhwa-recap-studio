@@ -1,0 +1,63 @@
+{
+  "scene": 129,
+  "durationMs": 6576,
+  "rawWords": [
+    {
+      "ttsWord": "CRITICAL",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "OVERRIDE",
+      "startMs": 563,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "RUNTIME",
+      "startMs": 1413,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "EXPIRED",
+      "startMs": 1925,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "SELECT",
+      "startMs": 3513,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "FINAL",
+      "startMs": 4038,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "RESOLUTION",
+      "startMs": 4450,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "DIRECTIVE",
+      "startMs": 5050,
+      "endMs": 5700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "CRITICAL OVERRIDE:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1238
+    },
+    {
+      "text": "RUNTIME EXPIRED.",
+      "startOffsetMs": 1413,
+      "endOffsetMs": 2750
+    },
+    {
+      "text": "SELECT FINAL RESOLUTION DIRECTIVE.",
+      "startOffsetMs": 3513,
+      "endOffsetMs": 5800
+    }
+  ]
+}

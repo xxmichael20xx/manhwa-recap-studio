@@ -1,0 +1,123 @@
+{
+  "scene": 29,
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "Massive",
+      "startMs": 50,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "hydraulic",
+      "startMs": 550,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "hammers",
+      "startMs": 1113,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "slammed",
+      "startMs": 1538,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 1925,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 2238,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2450,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "steel",
+      "startMs": 2563,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "arena",
+      "startMs": 2925,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 3275,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "sending",
+      "startMs": 4013,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "shockwaves",
+      "startMs": 4388,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5088,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "molten",
+      "startMs": 5188,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "metal",
+      "startMs": 5588,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "rolling",
+      "startMs": 5900,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6238,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "our",
+      "startMs": 6625,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "path",
+      "startMs": 6763,
+      "endMs": 7263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Massive hydraulic hammers slammed down onto the steel",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "arena floor,",
+      "startOffsetMs": 2925,
+      "endOffsetMs": 3813
+    },
+    {
+      "text": "sending shockwaves of molten metal rolling across our",
+      "startOffsetMs": 4013,
+      "endOffsetMs": 6750
+    },
+    {
+      "text": "path.",
+      "startOffsetMs": 6763,
+      "endOffsetMs": 7363
+    }
+  ]
+}

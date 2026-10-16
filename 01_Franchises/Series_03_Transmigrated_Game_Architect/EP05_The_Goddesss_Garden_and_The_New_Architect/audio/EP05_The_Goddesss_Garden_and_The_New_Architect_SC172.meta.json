@@ -1,0 +1,118 @@
+{
+  "scene": 172,
+  "durationMs": 7512,
+  "rawWords": [
+    {
+      "ttsWord": "Linnea",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "smiled",
+      "startMs": 525,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "brightly",
+      "startMs": 1038,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "placing",
+      "startMs": 1750,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 2163,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 2313,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "palm",
+      "startMs": 2688,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 3050,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "mine",
+      "startMs": 3250,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3563,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "our",
+      "startMs": 3700,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 3825,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "pressed",
+      "startMs": 4263,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 4638,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 4888,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "Option",
+      "startMs": 5238,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "Two",
+      "startMs": 5625,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5963,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "unison",
+      "startMs": 6113,
+      "endMs": 6638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Linnea smiled brightly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1613
+    },
+    {
+      "text": "placing her glowing palm over mine as our",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 3813
+    },
+    {
+      "text": "fingers pressed down upon Option Two in unison.",
+      "startOffsetMs": 3825,
+      "endOffsetMs": 6738
+    }
+  ]
+}

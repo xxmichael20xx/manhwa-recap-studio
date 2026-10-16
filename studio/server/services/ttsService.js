@@ -1,5 +1,6 @@
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts'
 import fs from 'fs/promises'
+import fsSync from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { spawn } from 'child_process'
@@ -77,7 +78,8 @@ export class TtsService {
     })
   }
 
-  static async generateEpisodeAudio(franchiseId, episodeId, voice = 'en-US-ChristopherNeural') {
+  static async generateEpisodeAudio(franchiseId, episodeId, voice = 'en-US-ChristopherNeural', options = {}) {
+    const { force = false, batchIndex = null } = options
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
     const audioDir = this.getAudioDir(franchiseId, episodeId)
@@ -132,16 +134,32 @@ export class TtsService {
       log: [`Connecting to Edge-TTS neural engine (${voice})...`]
     })
 
-    const createClient = async () => {
-      const client = new MsEdgeTTS()
-      await client.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
-        wordBoundaryEnabled: true,
-        sentenceBoundaryEnabled: true
-      })
-      return client
+    const createClientWithRetry = async (maxAttempts = 3) => {
+      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        try {
+          const client = new MsEdgeTTS()
+          await client.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, {
+            wordBoundaryEnabled: true,
+            sentenceBoundaryEnabled: true
+          })
+          return client
+        } catch (err) {
+          const is429 = /429|Too Many Requests/i.test(err.message)
+          if (attempt === maxAttempts) throw err
+          const waitMs = is429 ? Math.min(30000, attempt * 8000) : (attempt * 2000)
+          console.warn(`[Edge-TTS] Connection attempt ${attempt} failed (${err.message}). Retrying in ${waitMs/1000}s...`)
+          this.updateStatus(franchiseId, episodeId, {
+            status: 'running',
+            progress: 5,
+            message: `Edge-TTS cooldown: waiting ${waitMs/1000}s before reconnecting...`,
+            log: [`[Cooldown] Connection rejected (${err.message}). Waiting ${waitMs/1000}s before retry ${attempt + 1}/${maxAttempts}...`]
+          })
+          await new Promise(r => setTimeout(r, waitMs))
+        }
+      }
     }
 
-    let tts = await createClient()
+    let tts = null
 
     let globalTimeMs = 0
     let sceneIndex = 1
@@ -168,75 +186,146 @@ export class TtsService {
         const paddedIndex = String(sceneIndex).padStart(2, '0')
         const filename = `${episodeId}_SC${paddedIndex}.mp3`
         const filePath = path.join(audioDir, filename)
+        const metaPath = path.join(audioDir, `${episodeId}_SC${paddedIndex}.meta.json`)
 
         let success = false
-        let attempts = 0
         let buffer = null
         let rawWords = []
+        let exactDurationMs = 0
+        let parsedSentences = []
 
-        while (!success && attempts < 3) {
-          attempts++
+        // Check for existing valid audio on disk to prevent redundant network requests and avoid 429 throttling
+        let fileExists = false
+        if (fsSync.existsSync(filePath)) {
           try {
-            const res = await tts.toStream(text)
-            const chunks = []
-            rawWords = []
+            const stat = fsSync.statSync(filePath)
+            if (stat.size > 2048) {
+              fileExists = true
+            }
+          } catch (e) {}
+        }
 
-            if (res.metadataStream) {
-              res.metadataStream.on('data', d => {
-                const str = d.toString()
-                try {
-                  const json = JSON.parse(str.trim())
-                  if (json.Metadata) {
-                    for (const m of json.Metadata) {
-                      if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
-                        rawWords.push({
-                          ttsWord: m.Data.text.Text,
-                          startMs: Math.round(m.Data.Offset / 10000),
-                          endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
-                        })
+        if (fileExists && !force) {
+          buffer = await fs.readFile(filePath)
+          const exactDurationSec = await this.getAudioDuration(filePath)
+          exactDurationMs = exactDurationSec > 0 
+            ? Math.round(exactDurationSec * 1000) 
+            : Math.round((buffer.length * 8 * 1000) / 48000)
+          
+          // Check for companion meta file with cached word-boundary timing
+          if (fsSync.existsSync(metaPath)) {
+            try {
+              const meta = JSON.parse(await fs.readFile(metaPath, 'utf-8'))
+              if (Array.isArray(meta.relativeCues) && meta.relativeCues.length > 0) {
+                parsedSentences = meta.relativeCues.map(c => ({
+                  text: c.text,
+                  start: globalTimeMs + c.startOffsetMs,
+                  end: globalTimeMs + c.endOffsetMs
+                }))
+              }
+              if (Array.isArray(meta.rawWords)) {
+                rawWords = meta.rawWords
+              }
+            } catch (e) {}
+          }
+          success = true
+        } else {
+          // Needs synthesis: lazily initialize TTS client if not yet connected
+          if (!tts) {
+            tts = await createClientWithRetry()
+          }
+
+          let attempts = 0
+          while (!success && attempts < 3) {
+            attempts++
+            try {
+              const res = await tts.toStream(text)
+              const chunks = []
+              rawWords = []
+
+              if (res.metadataStream) {
+                res.metadataStream.on('data', d => {
+                  const str = d.toString()
+                  try {
+                    const json = JSON.parse(str.trim())
+                    if (json.Metadata) {
+                      for (const m of json.Metadata) {
+                        if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                          rawWords.push({
+                            ttsWord: m.Data.text.Text,
+                            startMs: Math.round(m.Data.Offset / 10000),
+                            endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                          })
+                        }
+                      }
+                    }
+                  } catch (e) {
+                    const matches = str.match(/\{[\s\S]*?"Metadata"\s*:\s*\[[\s\S]*?\][\s\S]*?\}/g)
+                    if (matches) {
+                      for (const block of matches) {
+                        try {
+                          const json = JSON.parse(block)
+                          if (json.Metadata) {
+                            for (const m of json.Metadata) {
+                              if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
+                                rawWords.push({
+                                  ttsWord: m.Data.text.Text,
+                                  startMs: Math.round(m.Data.Offset / 10000),
+                                  endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
+                                })
+                              }
+                            }
+                          }
+                        } catch (err) {}
                       }
                     }
                   }
-                } catch (e) {
-                  const matches = str.match(/\{[\s\S]*?"Metadata"\s*:\s*\[[\s\S]*?\][\s\S]*?\}/g)
-                  if (matches) {
-                    for (const block of matches) {
-                      try {
-                        const json = JSON.parse(block)
-                        if (json.Metadata) {
-                          for (const m of json.Metadata) {
-                            if (m.Type === 'WordBoundary' && m.Data && m.Data.text) {
-                              rawWords.push({
-                                ttsWord: m.Data.text.Text,
-                                startMs: Math.round(m.Data.Offset / 10000),
-                                endMs: Math.round((m.Data.Offset + m.Data.Duration) / 10000)
-                              })
-                            }
-                          }
-                        }
-                      } catch (err) {}
-                    }
-                  }
-                }
+                })
+              }
+
+              for await (const chunk of res.audioStream) {
+                chunks.push(chunk)
+              }
+
+              buffer = Buffer.concat(chunks)
+              if (buffer.length > 500) {
+                await fs.writeFile(filePath, buffer)
+                success = true
+                const exactDurationSec = await this.getAudioDuration(filePath)
+                exactDurationMs = exactDurationSec > 0 
+                  ? Math.round(exactDurationSec * 1000) 
+                  : Math.round((buffer.length * 8 * 1000) / 48000)
+              } else {
+                throw new Error('Incomplete audio buffer received')
+              }
+            } catch (err) {
+              const is429 = /429|Too Many Requests/i.test(err.message)
+              console.warn(`Retry ${attempts}/3 for scene ${sceneIndex}: ${err.message}`)
+              try { tts.close() } catch (e) {}
+              
+              const backoffMs = is429 
+                ? ([6000, 15000, 30000][attempts - 1] || 15000) 
+                : (1000 * attempts)
+              
+              const currentLogs = [...(this.getStatus(franchiseId, episodeId).log || [])]
+              this.updateStatus(franchiseId, episodeId, {
+                status: 'running',
+                progress: Math.min(85, Math.round(10 + (sceneIndex / extractedScenes.length) * 75)),
+                message: is429 
+                  ? `Rate limit (429) on scene ${sceneIndex}: cooling down ${backoffMs/1000}s...` 
+                  : `Retrying scene ${sceneIndex} in ${backoffMs/1000}s (${err.message})...`,
+                log: [...currentLogs.slice(-20), `[Retry ${attempts}/3] ${is429 ? 'Rate limit (429) cooldown' : 'Connection retry'} waiting ${backoffMs/1000}s...`]
               })
-            }
 
-            for await (const chunk of res.audioStream) {
-              chunks.push(chunk)
+              await new Promise(r => setTimeout(r, backoffMs))
+              tts = await createClientWithRetry()
             }
+          }
 
-            buffer = Buffer.concat(chunks)
-            if (buffer.length > 500) {
-              await fs.writeFile(filePath, buffer)
-              success = true
-            } else {
-              throw new Error('Incomplete audio buffer received')
-            }
-          } catch (err) {
-            console.warn(`Retry ${attempts}/3 for scene ${sceneIndex}: ${err.message}`)
-            try { tts.close() } catch (e) {}
-            await new Promise(r => setTimeout(r, 600 * attempts))
-            tts = await createClient()
+          // Adaptive inter-scene pacing delay to prevent triggering burst rate limits
+          if (success) {
+            const jitterMs = 700 + Math.floor(Math.random() * 500)
+            await new Promise(r => setTimeout(r, jitterMs))
           }
         }
 
@@ -360,6 +449,22 @@ export class TtsService {
             }
           }
 
+          if (!fsSync.existsSync(metaPath) && parsedSentences.length > 0) {
+            try {
+              const relativeCues = parsedSentences.map(c => ({
+                text: c.text,
+                startOffsetMs: c.start - globalTimeMs,
+                endOffsetMs: c.end - globalTimeMs
+              }))
+              await fs.writeFile(metaPath, JSON.stringify({
+                scene: sceneIndex,
+                durationMs: exactDurationMs,
+                rawWords,
+                relativeCues
+              }, null, 2), 'utf-8')
+            } catch (e) {}
+          }
+
           for (const s of parsedSentences) {
             allSubtitleEntries.push(s)
           }
@@ -392,9 +497,11 @@ export class TtsService {
     sceneIndex++
   }
 
-    try {
-      tts.close()
-    } catch (e) {}
+    if (tts) {
+      try {
+        tts.close()
+      } catch (e) {}
+    }
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'running',

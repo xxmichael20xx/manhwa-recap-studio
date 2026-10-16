@@ -123,7 +123,7 @@
 
     <!-- TAB 1: EPISODIC PRODUCTION PIPELINE -->
     <div v-if="activeTab === 'episodes'" class="space-y-6">
-      <div class="flex items-center justify-between">
+      <div class="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
             <Layers class="w-5 h-5 text-purple-600 dark:text-purple-400" />
@@ -133,6 +133,14 @@
             Individual episode workflows for script drafting, prompt matrix generation, voiceover sync, and 1080p video stitching.
           </p>
         </div>
+
+        <button 
+          @click="openSeriesClimaxModal"
+          class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold flex items-center space-x-2 shadow-md shadow-rose-900/20 transition cursor-pointer hover:scale-[1.02]"
+        >
+          <Zap class="w-4 h-4 text-amber-200" />
+          <span>🔥 Generate Series Climax Short</span>
+        </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -192,6 +200,22 @@
               <div class="text-[11px] font-bold text-slate-900 dark:text-slate-100">4. Video Studio</div>
               <div class="text-[9px] font-mono text-purple-600 dark:text-purple-400">3-Stage Stitcher</div>
             </router-link>
+          </div>
+
+          <!-- Viral Climax Short Generator Button -->
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+            <div class="flex items-center space-x-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+              <Sparkles class="w-3.5 h-3.5 text-amber-500" />
+              <span>Climax Hook:</span>
+              <span class="font-mono text-slate-700 dark:text-slate-300 font-semibold">45-60s TikTok / Shorts</span>
+            </div>
+            <button 
+              @click="openClimaxModal(ep)"
+              class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white text-xs font-bold flex items-center space-x-1.5 shadow-sm shadow-amber-900/20 transition cursor-pointer hover:scale-[1.02]"
+            >
+              <Zap class="w-3.5 h-3.5" />
+              <span>⚡ Climax Short</span>
+            </button>
           </div>
         </div>
       </div>
@@ -721,6 +745,9 @@
                 <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
                   🎬 Master Omnibus Movie (Parts 1 - {{ compiledEpisodes.length }} Compiled)
                 </option>
+                <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
+                  🏆 Complete Story Marathon (Full Series Complete)
+                </option>
               </optgroup>
               <optgroup label="Individual Episode Releases">
                 <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
@@ -930,6 +957,238 @@
         </div>
       </div>
     </div>
+
+    <!-- MODAL: TIKTOK / SHORTS VIRAL CLIMAX GENERATOR -->
+    <div 
+      v-if="isClimaxModalOpen" 
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto"
+      @click.self="closeClimaxModal"
+    >
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-150">
+        <!-- Header -->
+        <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-950/40">
+          <div class="flex items-center space-x-3">
+            <div class="p-2.5 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-500 text-white shadow-md shadow-amber-500/20">
+              <Zap class="w-5 h-5 fill-current" />
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <h3 class="text-base font-bold text-slate-900 dark:text-white">TikTok & Shorts Viral Climax Hook</h3>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 font-bold uppercase">
+                  Viral Acquisition Funnel
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                {{ selectedClimaxEpisode?.name || 'Episode' }} ({{ selectedClimaxEpisode?.id }}) • Slices the 45–60s peak face-slap climax to hook viewers into YouTube.
+              </p>
+            </div>
+          </div>
+          <button 
+            @click="closeClimaxModal"
+            class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+          >
+            <X class="w-5 h-5" />
+          </button>
+        </div>
+
+        <!-- Body -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+          <div v-if="isLoadingClimaxData" class="flex flex-col items-center justify-center py-16 space-y-3">
+            <Loader2 class="w-8 h-8 text-amber-500 animate-spin" />
+            <p class="text-xs font-mono text-slate-400">Loading Climax Short metadata & video...</p>
+          </div>
+
+          <div v-else class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <!-- Left Col (5 cols): Video Preview & Compiling Controls -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="bg-slate-950 rounded-2xl p-3 border border-slate-800 flex flex-col items-center justify-center shadow-inner relative overflow-hidden min-h-[420px]">
+                <!-- Video Element when compiled -->
+                <video 
+                  v-if="climaxData?.meta?.url" 
+                  controls 
+                  playsinline 
+                  class="w-full max-w-[240px] aspect-[9/16] rounded-xl shadow-2xl object-cover bg-black border border-slate-800"
+                  :src="climaxData.meta.url"
+                ></video>
+
+                <!-- Empty State when not compiled -->
+                <div v-else class="flex flex-col items-center justify-center text-center p-6 space-y-3 max-w-[240px]">
+                  <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                    <Zap class="w-8 h-8" />
+                  </div>
+                  <h4 class="text-sm font-bold text-white">No Climax Short Yet</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed">
+                    Slices the peak narrative face-slap from the master video, crops to vertical 9:16, and attaches a 3s animated YouTube CTA outro.
+                  </p>
+                </div>
+
+                <!-- Overlay Spinner when generating -->
+                <div 
+                  v-if="isGeneratingShort" 
+                  class="absolute inset-0 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-4 space-y-3 z-10"
+                >
+                  <Loader2 class="w-8 h-8 text-amber-400 animate-spin" />
+                  <p class="text-xs font-mono text-amber-200 font-semibold text-center">Slicing Climax & Attaching Outro...</p>
+                  <span class="text-[10px] font-mono text-slate-400">FFmpeg 1080x1920 single-pass render</span>
+                </div>
+              </div>
+
+              <!-- Compile Action Buttons -->
+              <div class="space-y-2">
+                <button 
+                  @click="generateClimaxShort(selectedClimaxEpisode?.id)"
+                  :disabled="isGeneratingShort"
+                  class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold flex items-center justify-center space-x-2 shadow-lg shadow-rose-900/20 transition cursor-pointer disabled:opacity-50 hover:scale-[1.01]"
+                >
+                  <Loader2 v-if="isGeneratingShort" class="w-4 h-4 animate-spin" />
+                  <Zap v-else class="w-4 h-4 text-amber-200" />
+                  <span>{{ climaxData?.meta?.url ? '⚡ Re-Generate Climax Short' : '⚡ Generate 60s Climax Short Now' }}</span>
+                </button>
+
+                <a 
+                  v-if="climaxData?.meta?.url"
+                  :href="`${climaxData.meta.url}?download=1`"
+                  download="TikTok_Climax_Hook.mp4"
+                  class="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center justify-center space-x-2 transition cursor-pointer border border-slate-200 dark:border-slate-700"
+                >
+                  <Download class="w-4 h-4 text-emerald-500" />
+                  <span>Download TikTok Video ({{ climaxData?.meta?.filesizeFormatted || '1080p MP4' }})</span>
+                </a>
+              </div>
+
+              <!-- Metadata Specs Pill Grid -->
+              <div v-if="climaxData?.meta" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-2 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400 font-mono text-[11px]">Runtime:</span>
+                  <span class="font-bold text-slate-900 dark:text-white font-mono">{{ climaxData.meta.formattedDuration }} (inc. 3s CTA outro)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400 font-mono text-[11px]">Timeline Slice:</span>
+                  <span class="font-bold text-emerald-600 dark:text-emerald-400 font-mono">{{ climaxData.meta.timecode }}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400 font-mono text-[11px]">Climax Tags:</span>
+                  <span class="font-bold text-amber-600 dark:text-amber-400 font-mono">[{{ climaxData.meta.startTag }} → {{ climaxData.meta.endTag }}]</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400 font-mono text-[11px]">Target Platforms:</span>
+                  <span class="font-bold text-purple-600 dark:text-purple-400">TikTok • YT Shorts • IG Reels</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Col (7 cols): Viral Copywriting, Hook Titles & Bio Funnel Hub -->
+            <div class="lg:col-span-7 space-y-5">
+              <!-- Section 1: 4 High-CTR Viral Hook Titles -->
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-2">
+                    <Sparkles class="w-4 h-4 text-amber-500" />
+                    <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                      High-CTR Viral Hook Titles (A/B Test)
+                    </h4>
+                  </div>
+                  <span class="text-[10px] font-mono text-slate-400">Click title to copy</span>
+                </div>
+
+                <div class="space-y-2">
+                  <div 
+                    v-for="(hook, idx) in (climaxData?.package?.viralHooks || defaultClimaxHooks)" 
+                    :key="idx"
+                    class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 transition group flex items-start justify-between gap-3"
+                  >
+                    <div class="space-y-1 min-w-0">
+                      <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                          {{ hook.hookType || 'Hook' }}
+                        </span>
+                        <span v-if="hook.ctrScore" class="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                          {{ hook.ctrScore }} CTR
+                        </span>
+                      </div>
+                      <p class="text-xs font-semibold text-slate-900 dark:text-white leading-snug">
+                        {{ hook.title }}
+                      </p>
+                    </div>
+
+                    <button 
+                      @click="copyClimaxText(`title_${idx}`, hook.title)"
+                      class="px-2.5 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 text-xs font-mono shrink-0 flex items-center space-x-1 transition cursor-pointer shadow-sm"
+                    >
+                      <Check v-if="copiedClimaxField === `title_${idx}`" class="w-3.5 h-3.5 text-emerald-500" />
+                      <Copy v-else class="w-3.5 h-3.5" />
+                      <span>{{ copiedClimaxField === `title_${idx}` ? 'Copied' : 'Copy' }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: TikTok / Shorts Caption & SEO Hashtags -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-mono uppercase text-slate-400 font-bold flex items-center space-x-1.5">
+                    <Hash class="w-3.5 h-3.5 text-rose-500" />
+                    <span>TikTok / Shorts Caption & Hashtag Pack</span>
+                  </label>
+                  <button 
+                    @click="copyClimaxText('caption', climaxData?.package?.caption || '')"
+                    class="text-xs font-mono text-purple-600 dark:text-purple-400 hover:underline flex items-center space-x-1 cursor-pointer"
+                  >
+                    <Check v-if="copiedClimaxField === 'caption'" class="w-3 h-3 text-emerald-500" />
+                    <Copy v-else class="w-3 h-3" />
+                    <span>{{ copiedClimaxField === 'caption' ? 'Copied Caption' : 'Copy Caption' }}</span>
+                  </button>
+                </div>
+                <textarea 
+                  readonly 
+                  :value="climaxData?.package?.caption || 'Loading TikTok caption...'"
+                  rows="5"
+                  class="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-mono text-slate-700 dark:text-slate-300 resize-none focus:outline-none"
+                ></textarea>
+              </div>
+
+              <!-- Section 3: High-Conversion Pinned Bio Comment -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-mono uppercase text-slate-400 font-bold flex items-center space-x-1.5">
+                    <Youtube class="w-3.5 h-3.5 text-rose-500" />
+                    <span>Pinned Bio-Funnel Comment</span>
+                  </label>
+                  <button 
+                    @click="copyClimaxText('pinnedComment', climaxData?.package?.pinnedComment || '')"
+                    class="text-xs font-mono text-purple-600 dark:text-purple-400 hover:underline flex items-center space-x-1 cursor-pointer"
+                  >
+                    <Check v-if="copiedClimaxField === 'pinnedComment'" class="w-3 h-3 text-emerald-500" />
+                    <Copy v-else class="w-3 h-3" />
+                    <span>{{ copiedClimaxField === 'pinnedComment' ? 'Copied Comment' : 'Copy Comment' }}</span>
+                  </button>
+                </div>
+                <textarea 
+                  readonly 
+                  :value="climaxData?.package?.pinnedComment || 'Loading pinned comment...'"
+                  rows="3"
+                  class="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-mono text-slate-700 dark:text-slate-300 resize-none focus:outline-none"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-950/40">
+          <div class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Zero-drift 45-60s slice • Lossless AAC Audio • 3s animated search CTA</span>
+          </div>
+          <button 
+            @click="closeClimaxModal"
+            class="px-4 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -939,7 +1198,7 @@ import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, Layers, FileText, Sparkles, Mic, Film, 
   Crown, Youtube, Copy, Download, Check, Loader2, X, Trash2,
-  Tag, ExternalLink, RefreshCw, Hash, ChevronDown
+  Tag, ExternalLink, RefreshCw, Hash, ChevronDown, Zap
 } from 'lucide-vue-next'
 import {
   parseEntityMappingText,
@@ -969,13 +1228,14 @@ const isDownloadingThumb = ref(false)
 const dynamicBadgeOptions = computed(() => {
   const options = [
     { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' },
-    { id: 'part_1', label: '🟡 Part 1 (Single Episode)', badgeText: 'PART 1' }
+    { id: 'complete', label: '🏆 Complete (Full Story Marathon)', badgeText: 'COMPLETE' },
+    { id: 'ep_1', label: '🟡 Episode 1 (Single Episode)', badgeText: 'EP 1' }
   ]
   const count = Math.max(2, availableEpisodes.value.length)
   for (let i = 2; i <= count; i++) {
     options.push({
-      id: `part_1_${i}`,
-      label: `🟡 Parts 1 - ${i} (${i === 2 ? 'Omnibus Movie' : `Parts 1-${i}`})`,
+      id: `ep_1_${i}`,
+      label: `🟡 Episodes 1 - ${i} (${i === 2 ? 'Omnibus Movie' : `Episodes 1-${i}`})`,
       badgeText: `1 - ${i}`
     })
   }
@@ -1148,7 +1408,8 @@ const omnibusMetadata = ref(null)
 
 const loadPackagingData = async () => {
   if (!selectedPackageEpisode.value) return
-  if (selectedPackageEpisode.value === 'omnibus_master') {
+  if (selectedPackageEpisode.value === 'omnibus_master' || selectedPackageEpisode.value === 'omnibus_complete') {
+    const isComplete = selectedPackageEpisode.value === 'omnibus_complete'
     try {
       const res = await fetch(`/api/franchises/${route.params.id}/omnibus-metadata`)
       const meta = await res.json()
@@ -1159,10 +1420,10 @@ const loadPackagingData = async () => {
       const basePkgRes = await fetch(`/api/episodes/${route.params.id}/${firstEp}/youtube-package`)
       const basePkg = await basePkgRes.json()
 
-      // Dynamically enhance package for Master Omnibus
+      // Dynamically enhance package for Master Omnibus / Complete Story Marathon
       const partCount = meta?.partCount || (compiledEpisodes.value.length >= 2 ? compiledEpisodes.value.length : 2)
-      const partBadge = meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1')
-      const durationStr = meta?.totalDurationFormatted || '1h 14m 26s'
+      const partBadge = isComplete ? 'COMPLETE' : (meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1'))
+      const durationStr = meta?.totalDurationFormatted || '2h 50m 16s'
 
       const canonicalTitle = route.params.id?.includes('Series_03')
         ? 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
@@ -1172,42 +1433,113 @@ const loadPackagingData = async () => {
         ? 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
         : (franchise.value?.name || 'Transmigrated Game Architect')
 
-      const omnibusTitles = [
+      const rawCompleteTitles = [
+        {
+          archetype: 'Complete Prefix (Binge Standard - Confirmed)',
+          ctrScore: '99%',
+          title: `(Complete) ${canonicalTitle}`
+        },
+        {
+          archetype: 'Full Story High-Visibility',
+          ctrScore: '98%',
+          title: `[Complete] ${canonicalTitle}`
+        },
+        {
+          archetype: 'Complete Series Marathon Bracket',
+          ctrScore: '96%',
+          title: `${canonicalTitle.length > 70 ? canonicalTitle.slice(0, 70).trim() + '...' : canonicalTitle} [Complete Marathon]`
+        },
+        {
+          archetype: 'Clean Pipe Marathon Standard',
+          ctrScore: '95%',
+          title: `${canonicalTitle.length > 70 ? canonicalTitle.slice(0, 70).trim() + '...' : canonicalTitle} | Complete Story`
+        },
+        {
+          archetype: 'Parenthetical Full Story',
+          ctrScore: '93%',
+          title: `(Full Story) ${canonicalTitle}`
+        }
+      ]
+
+      const rawOmnibusTitles = [
         {
           archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
           ctrScore: '99%',
-          title: `(Part ${partBadge}) ${canonicalTitle}`
+          title: `(Episodes ${partBadge}) ${canonicalTitle}`
         },
         {
           archetype: 'Canonical Suffix (Full Saga)',
           ctrScore: '97%',
-          title: `${canonicalTitle} (Part ${partBadge})`
+          title: `${canonicalTitle} (Episodes ${partBadge})`
         },
         {
           archetype: 'Clean Pipe Delimiter',
           ctrScore: '95%',
-          title: `${canonicalTitle} | Parts ${partBadge}`
+          title: `${canonicalTitle} | Episodes ${partBadge}`
         },
         {
           archetype: 'Bracket High-Visibility',
           ctrScore: '94%',
-          title: `[Parts ${partBadge}] ${canonicalTitle}`
+          title: `[Episodes ${partBadge}] ${canonicalTitle}`
         }
       ]
 
-      const dynamicChapterFallback = compiledEpisodes.value.map((ep, idx) => `00:00 Part ${idx + 1}: ${ep.name}`).join('\n')
+      const titles = (isComplete ? rawCompleteTitles : rawOmnibusTitles).map(t => {
+        let clean = t.title.trim()
+        if (clean.length > 100) clean = clean.slice(0, 97).trim() + '...'
+        return {
+          ...t,
+          title: clean,
+          charCount: clean.length,
+          isCompliant: clean.length <= 100
+        }
+      })
 
-      const omnibusDescription = `🎬 MULTI-PART MARATHON COMPILATION (${partBadge} FULL SAGA - ${durationStr})
+      const dynamicBreakdownFallback = compiledEpisodes.value.map((ep, idx) => `• Episode ${idx + 1}: ${ep.name}`).join('\n')
+      const dynamicChapterFallback = compiledEpisodes.value.map((ep, idx) => `00:00 Episode ${idx + 1}: ${ep.name}`).join('\n')
+
+      const completeDescription = `🏆 COMPLETE STORY MARATHON (FULL SERIES COMPLETE - ${durationStr})
+Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
+
+While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the entire 100-Floor Tower of Demigods using a discarded wooden broom.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CUMULATIVE EPISODE BREAKDOWN:
+${meta?.cumulativeBreakdownString || dynamicBreakdownFallback}
+
+⏱️ 100% MATHEMATICALLY ACCURATE CHAPTER TIMESTAMPS:
+${meta?.youtubeChapterString || dynamicChapterFallback}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎬 COMPLETE MARATHON PRODUCTION SPECS:
+• Series Title: ${franchise.value?.name || 'Transmigrated Game Architect'}
+• Compilation: Complete Series Marathon (Episodes 1 through ${partCount})
+• Total Master Runtime: ${durationStr}
+• Master Quality: 1080p 24FPS Cinematic Master Cut
+• Format: Authentic Webtoon Visual Flow
+
+💬 COMMUNITY MARATHON QUESTION:
+Now that you've watched the complete story from Floor 1 to Floor 100, which moment was the most satisfying: Bram turning the golden holy rapier into chalk, or confronting the Demigod Architect at the summit? Drop your thoughts below! 👇
+
+⚖️ COPYRIGHT & FAIR USE NOTICE:
+This production features original scripted manhwa recap storytelling, dynamic character lore, custom voiceover narration, and original visual staging. All rights reserved by Manhwa Recap Studio.`
+
+      const omnibusDescription = `🎬 MULTI-EPISODE MARATHON COMPILATION (${partBadge} FULL SAGA - ${durationStr})
 Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
 
 While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CUMULATIVE EPISODE BREAKDOWN:
+${meta?.cumulativeBreakdownString || dynamicBreakdownFallback}
+
 ⏱️ 100% MATHEMATICALLY ACCURATE CHAPTER TIMESTAMPS:
 ${meta?.youtubeChapterString || dynamicChapterFallback}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎬 SERIES & PRODUCTION SPECS:
 • Series Title: ${franchise.value?.name || 'Transmigrated Game Architect'}
-• Compilation: Parts ${partBadge} (Full Arc Feature / Season Movie)
+• Compilation: Episodes ${partBadge} (Full Arc Feature / Season Movie)
 • Total Master Runtime: ${durationStr}
 • Master Quality: 1080p 24FPS Cinematic Master Cut
 • Format: Authentic Webtoon Visual Flow
@@ -1218,14 +1550,17 @@ Which moment in this full compilation was the most satisfying: Bram turning the 
 ⚖️ COPYRIGHT & FAIR USE NOTICE:
 This production features original scripted manhwa recap storytelling, dynamic character lore, custom voiceover narration, and original visual staging. All rights reserved by Manhwa Recap Studio.`
 
-      activeThumbnailBadge.value = partBadge
+      activeThumbnailBadge.value = isComplete ? 'COMPLETE' : partBadge
       pkgData.value = {
         ...basePkg,
-        titles: omnibusTitles,
-        description: omnibusDescription,
-        pinnedComment: `Bram really rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 70 without breaking a sweat! 😭☕\n\nWhat was your favourite part of this full ${partBadge} saga? Drop your thoughts below! 👇`,
+        titles,
+        description: isComplete ? completeDescription : omnibusDescription,
+        pinnedComment: isComplete
+          ? `🏆 THE COMPLETE STORY MARATHON IS HERE! Bram rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 100 without breaking a sweat! 😭☕\n\nWhat was your favourite part across the entire complete story? Drop your thoughts below! 👇`
+          : `Bram really rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 70 without breaking a sweat! 😭☕\n\nWhat was your favourite part of this full ${partBadge} saga? Drop your thoughts below! 👇`,
         isOmnibus: true,
-        partBadgeText: partBadge
+        isComplete,
+        partBadgeText: isComplete ? 'COMPLETE' : partBadge
       }
     } catch (e) {
       console.error('Failed to load omnibus package data:', e)
@@ -1498,12 +1833,17 @@ const triggerOmnibusCompile = async () => {
   }
   isCompilingOmnibus.value = true
   try {
+    const now = new Date()
+    const pad = (n) => String(n).padStart(2, '0')
+    const ts = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`
+    const outputFilename = `${route.params.id}_${selectedTier.value}_Master_${ts}_1080p.mp4`
+
     const res = await fetch(`/api/franchises/${route.params.id}/stitch-master-omnibus`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         masterFilePaths: selectedEpisodes.value.map(epId => `01_Franchises/${route.params.id}/${epId}/video/01_Episode_Master_1080p.mp4`),
-        outputFilename: `${route.params.id}_${selectedTier.value}_Master_1080p.mp4`
+        outputFilename
       })
     })
     const data = await res.json()
@@ -1513,6 +1853,7 @@ const triggerOmnibusCompile = async () => {
     const savedName = data.filename || (data.output ? data.output.split(/[\\/]/).pop() : 'Master Omnibus')
     triggerToast('Multi-Episode Stitching Completed', `Saved to: ${savedName}`)
     await loadOmnibusFiles()
+    await loadPackagingData()
   } catch (err) {
     triggerToast('Stitching Error', err.message)
   } finally {
@@ -1537,6 +1878,94 @@ const deleteOmnibusFile = async (filename) => {
   } catch (err) {
     triggerToast('Delete Error', err.message)
   }
+}
+
+// TikTok / Shorts Viral Climax Funnel Engine
+const isClimaxModalOpen = ref(false)
+const selectedClimaxEpisode = ref(null)
+const climaxData = ref(null)
+const isGeneratingShort = ref(false)
+const isLoadingClimaxData = ref(false)
+const copiedClimaxField = ref(null)
+
+const defaultClimaxHooks = [
+  { title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀", hookType: "Noble Humiliation", ctrScore: "99%" },
+  { title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀", hookType: "Dramatic Shock", ctrScore: "97%" },
+  { title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]", hookType: "System Revelation", ctrScore: "95%" },
+  { title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕", hookType: "Deadpan Comedy", ctrScore: "94%" }
+]
+
+const openClimaxModal = (ep) => {
+  selectedClimaxEpisode.value = ep
+  isClimaxModalOpen.value = true
+  loadClimaxShort(ep.id)
+}
+
+const openSeriesClimaxModal = () => {
+  const ep1 = availableEpisodes.value[0]
+  if (!ep1) {
+    triggerToast('No Episodes Found', 'Please create or load Episode 1 first.')
+    return
+  }
+  openClimaxModal(ep1)
+}
+
+const closeClimaxModal = () => {
+  isClimaxModalOpen.value = false
+  climaxData.value = null
+}
+
+const loadClimaxShort = async (epId) => {
+  if (!epId || !route.params.id) return
+  isLoadingClimaxData.value = true
+  try {
+    const res = await fetch(`/api/episodes/${route.params.id}/${epId}/climax-short`)
+    if (res.ok) {
+      const data = await res.json()
+      climaxData.value = data
+    } else {
+      climaxData.value = null
+    }
+  } catch (err) {
+    console.error('Failed to load climax short:', err)
+    climaxData.value = null
+  } finally {
+    isLoadingClimaxData.value = false
+  }
+}
+
+const generateClimaxShort = async (epId) => {
+  if (!epId || !route.params.id) return
+  isGeneratingShort.value = true
+  try {
+    const res = await fetch(`/api/episodes/${route.params.id}/${epId}/generate-climax-short`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    const data = await res.json()
+    if (!res.ok || data.error) {
+      throw new Error(data.error || 'Failed to generate climax short')
+    }
+    climaxData.value = data
+    triggerToast('Viral Short Generated', 'TikTok & Shorts climax hook compiled successfully!')
+  } catch (err) {
+    console.error('Generation error:', err)
+    triggerToast('Compilation Error', err.message)
+  } finally {
+    isGeneratingShort.value = false
+  }
+}
+
+const copyClimaxText = (field, text) => {
+  if (!text) return
+  navigator.clipboard.writeText(text)
+  copiedClimaxField.value = field
+  triggerToast('Copied to Clipboard', text.length > 60 ? `${text.slice(0, 60)}...` : text)
+  setTimeout(() => {
+    if (copiedClimaxField.value === field) {
+      copiedClimaxField.value = null
+    }
+  }, 2000)
 }
 
 onMounted(() => {

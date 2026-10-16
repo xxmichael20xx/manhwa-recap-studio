@@ -1,0 +1,123 @@
+{
+  "scene": 196,
+  "durationMs": 7800,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 213,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "Upper",
+      "startMs": 313,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "Citadel",
+      "startMs": 638,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "Grand",
+      "startMs": 1488,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "Duke",
+      "startMs": 1863,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "Vane",
+      "startMs": 2100,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "Valerius",
+      "startMs": 2413,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3025,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3175,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "corrupt",
+      "startMs": 3275,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "oligarchs",
+      "startMs": 3713,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "stumbled",
+      "startMs": 4238,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 4613,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 4838,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5050,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "balconies",
+      "startMs": 5213,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5725,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 5888,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "shock",
+      "startMs": 6413,
+      "endMs": 6925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In the Upper Citadel,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1325
+    },
+    {
+      "text": "Grand Duke Vane Valerius and the corrupt oligarchs",
+      "startOffsetMs": 1488,
+      "endOffsetMs": 4225
+    },
+    {
+      "text": "stumbled out onto their balconies in absolute shock.",
+      "startOffsetMs": 4238,
+      "endOffsetMs": 7025
+    }
+  ]
+}

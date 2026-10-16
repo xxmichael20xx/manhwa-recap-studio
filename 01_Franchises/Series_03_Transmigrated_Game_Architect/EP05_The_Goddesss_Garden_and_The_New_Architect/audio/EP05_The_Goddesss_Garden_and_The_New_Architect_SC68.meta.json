@@ -1,0 +1,93 @@
+{
+  "scene": 68,
+  "durationMs": 6912,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "Leviathan",
+      "startMs": 200,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "dissolved",
+      "startMs": 825,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1313,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "shimmering",
+      "startMs": 1500,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "violet",
+      "startMs": 1963,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "particles",
+      "startMs": 2363,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "leaving",
+      "startMs": 3225,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 3538,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3900,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 3988,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "keycard",
+      "startMs": 4363,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4838,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 4938,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "Ninety-Nine",
+      "startMs": 5300,
+      "endMs": 6038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Leviathan dissolved into shimmering violet particles,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3038
+    },
+    {
+      "text": "leaving behind the golden keycard to Floor Ninety-Nine",
+      "startOffsetMs": 3225,
+      "endOffsetMs": 6138
+    }
+  ]
+}

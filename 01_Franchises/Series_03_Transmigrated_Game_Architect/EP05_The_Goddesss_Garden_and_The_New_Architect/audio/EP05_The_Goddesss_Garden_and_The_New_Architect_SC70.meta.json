@@ -1,0 +1,73 @@
+{
+  "scene": 70,
+  "durationMs": 6840,
+  "rawWords": [
+    {
+      "ttsWord": "CRITICAL",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "THRESHOLD",
+      "startMs": 475,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "ACCESS",
+      "startMs": 1313,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "DENIED",
+      "startMs": 1825,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 2288,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "NON-DIVINE",
+      "startMs": 2400,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "ENTITIES",
+      "startMs": 3025,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "ABSOLUTE",
+      "startMs": 4500,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "GATE",
+      "startMs": 5138,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "ACTIVE",
+      "startMs": 5425,
+      "endMs": 5975
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "CRITICAL THRESHOLD:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1188
+    },
+    {
+      "text": "ACCESS DENIED TO NON-DIVINE ENTITIES.",
+      "startOffsetMs": 1313,
+      "endOffsetMs": 3738
+    },
+    {
+      "text": "ABSOLUTE GATE ACTIVE.",
+      "startOffsetMs": 4500,
+      "endOffsetMs": 6075
+    }
+  ]
+}

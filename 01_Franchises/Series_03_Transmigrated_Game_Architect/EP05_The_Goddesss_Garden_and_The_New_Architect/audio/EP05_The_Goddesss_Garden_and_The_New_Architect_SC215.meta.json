@@ -1,0 +1,98 @@
+{
+  "scene": 215,
+  "durationMs": 7608,
+  "rawWords": [
+    {
+      "ttsWord": "No",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "more",
+      "startMs": 288,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "towers",
+      "startMs": 525,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "Bram",
+      "startMs": 1325,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 2650,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "asked",
+      "startMs": 3188,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "softly",
+      "startMs": 3513,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 4338,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4638,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4788,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5025,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 5175,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "golden-amber",
+      "startMs": 5513,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 6200,
+      "endMs": 6725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "No more towers,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1188
+    },
+    {
+      "text": "Bram?'",
+      "startOffsetMs": 1325,
+      "endOffsetMs": 1888
+    },
+    {
+      "text": "Linnea asked softly,",
+      "startOffsetMs": 2650,
+      "endOffsetMs": 4188
+    },
+    {
+      "text": "looking up into his warm golden-amber eyes.",
+      "startOffsetMs": 4338,
+      "endOffsetMs": 6825
+    }
+  ]
+}

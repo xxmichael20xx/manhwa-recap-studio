@@ -1,0 +1,128 @@
+{
+  "scene": 190,
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "architecture",
+      "startMs": 213,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 900,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "complete",
+      "startMs": 1050,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 1788,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 2513,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "breathed",
+      "startMs": 2663,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "softly",
+      "startMs": 3063,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "watching",
+      "startMs": 3913,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4300,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "last",
+      "startMs": 4400,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "lines",
+      "startMs": 4750,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5075,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 5188,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 5575,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "compile",
+      "startMs": 5863,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6400,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "zero",
+      "startMs": 6550,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "fatal",
+      "startMs": 6938,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "warnings",
+      "startMs": 7313,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The architecture is complete,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1650
+    },
+    {
+      "text": "Linnea,' I breathed softly,",
+      "startOffsetMs": 1788,
+      "endOffsetMs": 3713
+    },
+    {
+      "text": "watching the last lines of golden code compile",
+      "startOffsetMs": 3913,
+      "endOffsetMs": 6388
+    },
+    {
+      "text": "with zero fatal warnings.",
+      "startOffsetMs": 6400,
+      "endOffsetMs": 8013
+    }
+  ]
+}

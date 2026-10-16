@@ -1,0 +1,128 @@
+{
+  "scene": 96,
+  "durationMs": 8712,
+  "rawWords": [
+    {
+      "ttsWord": "Your",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "trial",
+      "startMs": 263,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "ends",
+      "startMs": 713,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 963,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "total",
+      "startMs": 1100,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "data",
+      "startMs": 1475,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "deletion",
+      "startMs": 1813,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "commoner",
+      "startMs": 2588,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3288,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 3425,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "hissed",
+      "startMs": 3975,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "Prepare",
+      "startMs": 5313,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5750,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "be",
+      "startMs": 5838,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "wiped",
+      "startMs": 5975,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6350,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6488,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "ledger",
+      "startMs": 6588,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6963,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "existence",
+      "startMs": 7063,
+      "endMs": 7850
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Your trial ends in total data deletion,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2475
+    },
+    {
+      "text": "commoner,' the Overseer hissed.",
+      "startOffsetMs": 2588,
+      "endOffsetMs": 4550
+    },
+    {
+      "text": "Prepare to be wiped from the ledger of",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 7050
+    },
+    {
+      "text": "existence.'",
+      "startOffsetMs": 7063,
+      "endOffsetMs": 7950
+    }
+  ]
+}

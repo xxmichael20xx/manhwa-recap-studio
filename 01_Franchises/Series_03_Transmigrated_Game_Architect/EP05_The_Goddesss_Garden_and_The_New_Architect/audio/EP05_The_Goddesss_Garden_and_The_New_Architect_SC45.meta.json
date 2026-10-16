@@ -1,0 +1,113 @@
+{
+  "scene": 45,
+  "durationMs": 7920,
+  "rawWords": [
+    {
+      "ttsWord": "On",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 288,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "Ninety-Four",
+      "startMs": 625,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1563,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "terrain",
+      "startMs": 1675,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "fractured",
+      "startMs": 2075,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2575,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 2800,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "magnetic",
+      "startMs": 3213,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "islands",
+      "startMs": 3725,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "drifting",
+      "startMs": 4163,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 4563,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4963,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "bottomless",
+      "startMs": 5050,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "abyss",
+      "startMs": 5563,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5900,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "crackling",
+      "startMs": 6013,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "plasma",
+      "startMs": 6475,
+      "endMs": 7038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "On Floor Ninety-Four the terrain fractured into floating",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "magnetic islands drifting across a bottomless abyss of",
+      "startOffsetMs": 3213,
+      "endOffsetMs": 6000
+    },
+    {
+      "text": "crackling plasma.",
+      "startOffsetMs": 6013,
+      "endOffsetMs": 7138
+    }
+  ]
+}

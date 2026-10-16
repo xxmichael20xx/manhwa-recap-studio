@@ -1,0 +1,83 @@
+{
+  "scene": 40,
+  "durationMs": 5088,
+  "rawWords": [
+    {
+      "ttsWord": "We",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "ascended",
+      "startMs": 250,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 725,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "pause",
+      "startMs": 1100,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 1513,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1675,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "screaming",
+      "startMs": 1788,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "gale",
+      "startMs": 2288,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2638,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2738,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 2825,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "Spire",
+      "startMs": 3200,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "conduit",
+      "startMs": 3650,
+      "endMs": 4225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "We ascended without pause through the screaming gale",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "of the central Spire conduit.",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 4325
+    }
+  ]
+}

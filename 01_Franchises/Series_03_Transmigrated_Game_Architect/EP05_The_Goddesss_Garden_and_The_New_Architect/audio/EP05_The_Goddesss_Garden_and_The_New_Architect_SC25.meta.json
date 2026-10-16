@@ -1,0 +1,123 @@
+{
+  "scene": 25,
+  "durationMs": 8088,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "spatial",
+      "startMs": 200,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "transit",
+      "startMs": 638,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "circle",
+      "startMs": 1075,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "flashed",
+      "startMs": 1475,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1938,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 2075,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 2550,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "heat",
+      "startMs": 2763,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "collapsing",
+      "startMs": 3375,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3938,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "physical",
+      "startMs": 4025,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "distance",
+      "startMs": 4475,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 4938,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 5300,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 5713,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6088,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 6200,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "Ninety-One",
+      "startMs": 6563,
+      "endMs": 7225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The spatial transit circle flashed with blinding white",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2750
+    },
+    {
+      "text": "heat,",
+      "startOffsetMs": 2763,
+      "endOffsetMs": 3213
+    },
+    {
+      "text": "collapsing the physical distance between District Nine and",
+      "startOffsetMs": 3375,
+      "endOffsetMs": 6188
+    },
+    {
+      "text": "Floor Ninety-One",
+      "startOffsetMs": 6200,
+      "endOffsetMs": 7325
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "scene": 7,
+  "durationMs": 12192,
+  "rawWords": [
+    {
+      "ttsWord": "Your",
+      "startMs": 50,
+      "endMs": 288
+    },
+    {
+      "ttsWord": "gold",
+      "startMs": 300,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "cannot",
+      "startMs": 613,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "purchase",
+      "startMs": 963,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1363,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 1450,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "second",
+      "startMs": 1850,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2225,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "survival",
+      "startMs": 2325,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "Vance",
+      "startMs": 3125,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "bellowed",
+      "startMs": 3450,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4075,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 4263,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "echoing",
+      "startMs": 4588,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 5050,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5225,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "shouting",
+      "startMs": 5300,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "crowd",
+      "startMs": 5738,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "Form",
+      "startMs": 7125,
+      "endMs": 7450
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7463,
+      "endMs": 7575
+    },
+    {
+      "ttsWord": "orderly",
+      "startMs": 7588,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "line",
+      "startMs": 7975,
+      "endMs": 8288
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 8300,
+      "endMs": 8650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8663,
+      "endMs": 8725
+    },
+    {
+      "ttsWord": "commoners",
+      "startMs": 8738,
+      "endMs": 9350
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 9575,
+      "endMs": 9688
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 9700,
+      "endMs": 9838
+    },
+    {
+      "ttsWord": "veterans",
+      "startMs": 9850,
+      "endMs": 10313
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 10325,
+      "endMs": 10450
+    },
+    {
+      "ttsWord": "turn",
+      "startMs": 10463,
+      "endMs": 10700
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 10713,
+      "endMs": 10850
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 10863,
+      "endMs": 11325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Your gold cannot purchase a single second of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2313
+    },
+    {
+      "text": "survival,' Vance bellowed,",
+      "startOffsetMs": 2325,
+      "endOffsetMs": 3938
+    },
+    {
+      "text": "his voice echoing over the shouting crowd.",
+      "startOffsetMs": 4075,
+      "endOffsetMs": 6363
+    },
+    {
+      "text": "Form an orderly line behind the commoners,",
+      "startOffsetMs": 7125,
+      "endOffsetMs": 9450
+    },
+    {
+      "text": "or my veterans will turn you away.'",
+      "startOffsetMs": 9575,
+      "endOffsetMs": 11425
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "scene": 95,
+  "durationMs": 7728,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "Overseer",
+      "startMs": 225,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "lowered",
+      "startMs": 850,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1175,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 1263,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "Judgment",
+      "startMs": 1638,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "Lance",
+      "startMs": 2088,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "aiming",
+      "startMs": 2725,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3000,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "tip",
+      "startMs": 3113,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 3388,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3875,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 3963,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "forehead",
+      "startMs": 4113,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4638,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4825,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "universe",
+      "startMs": 4888,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "began",
+      "startMs": 5400,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5788,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "collapse",
+      "startMs": 5913,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "inward",
+      "startMs": 6350,
+      "endMs": 6850
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Overseer lowered the glowing Judgment Lance,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "aiming the tip directly at my forehead as",
+      "startOffsetMs": 2725,
+      "endOffsetMs": 4813
+    },
+    {
+      "text": "the universe began to collapse inward.",
+      "startOffsetMs": 4825,
+      "endOffsetMs": 6950
+    }
+  ]
+}

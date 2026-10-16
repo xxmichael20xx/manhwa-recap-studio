@@ -1,0 +1,113 @@
+{
+  "scene": 56,
+  "durationMs": 7200,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "temporal",
+      "startMs": 213,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "phantoms",
+      "startMs": 625,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 1113,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1525,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "sparkling",
+      "startMs": 1738,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "stardust",
+      "startMs": 2288,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "losing",
+      "startMs": 3163,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 3538,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "anchors",
+      "startMs": 3750,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4125,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "reality",
+      "startMs": 4250,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4813,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4963,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 5038,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "sigh",
+      "startMs": 5438,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5738,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 5863,
+      "endMs": 6325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The temporal phantoms shattered into sparkling stardust,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3000
+    },
+    {
+      "text": "losing their anchors to reality with a single",
+      "startOffsetMs": 3163,
+      "endOffsetMs": 5425
+    },
+    {
+      "text": "sigh of wind.",
+      "startOffsetMs": 5438,
+      "endOffsetMs": 6425
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "scene": 117,
+  "durationMs": 7704,
+  "rawWords": [
+    {
+      "ttsWord": "Vanguard-Zero",
+      "startMs": 50,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "lunged",
+      "startMs": 988,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 1338,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1738,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 1888,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "speed",
+      "startMs": 2313,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3038,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "fist",
+      "startMs": 3225,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "charged",
+      "startMs": 3550,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4000,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "ninety",
+      "startMs": 4150,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "floors",
+      "startMs": 4500,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4913,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "concentrated",
+      "startMs": 5013,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 5700,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "arithmetic",
+      "startMs": 6113,
+      "endMs": 6838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Vanguard-Zero lunged forward with blinding speed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2813
+    },
+    {
+      "text": "its fist charged with ninety floors of concentrated",
+      "startOffsetMs": 3038,
+      "endOffsetMs": 5688
+    },
+    {
+      "text": "kinetic arithmetic.",
+      "startOffsetMs": 5700,
+      "endOffsetMs": 6938
+    }
+  ]
+}

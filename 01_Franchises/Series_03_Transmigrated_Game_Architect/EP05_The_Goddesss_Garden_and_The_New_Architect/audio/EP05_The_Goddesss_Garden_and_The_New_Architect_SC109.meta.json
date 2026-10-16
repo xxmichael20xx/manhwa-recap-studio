@@ -1,0 +1,123 @@
+{
+  "scene": 109,
+  "durationMs": 8040,
+  "rawWords": [
+    {
+      "ttsWord": "First",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 838,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "twelve",
+      "startMs": 1000,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "solar",
+      "startMs": 1363,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "wings",
+      "startMs": 1775,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "exhibit",
+      "startMs": 2075,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2513,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "severe",
+      "startMs": 2588,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "recursive",
+      "startMs": 3050,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "memory",
+      "startMs": 3588,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "leak",
+      "startMs": 3963,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "whenever",
+      "startMs": 4238,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 4575,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "channel",
+      "startMs": 4688,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 5038,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "erasure",
+      "startMs": 5425,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 6238,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "noted",
+      "startMs": 6275,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 6625,
+      "endMs": 7163
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "First:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 688
+    },
+    {
+      "text": "your twelve solar wings exhibit a severe recursive",
+      "startOffsetMs": 838,
+      "endOffsetMs": 3575
+    },
+    {
+      "text": "memory leak whenever you channel divine erasure,'",
+      "startOffsetMs": 3588,
+      "endOffsetMs": 6013
+    },
+    {
+      "text": "I noted calmly.",
+      "startOffsetMs": 6238,
+      "endOffsetMs": 7263
+    }
+  ]
+}

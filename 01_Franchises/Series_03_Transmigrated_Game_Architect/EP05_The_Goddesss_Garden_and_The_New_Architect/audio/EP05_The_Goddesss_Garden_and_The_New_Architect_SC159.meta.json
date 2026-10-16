@@ -1,0 +1,128 @@
+{
+  "scene": 159,
+  "durationMs": 8184,
+  "rawWords": [
+    {
+      "ttsWord": "Instead",
+      "startMs": 50,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 863,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 963,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "houses",
+      "startMs": 1338,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "hoarded",
+      "startMs": 1738,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2075,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 2175,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "bloodlines",
+      "startMs": 2838,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "turning",
+      "startMs": 3713,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4013,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "trial",
+      "startMs": 4100,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4513,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4775,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "brutal",
+      "startMs": 4863,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 5225,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "grinder",
+      "startMs": 5425,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 5900,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6038,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "own",
+      "startMs": 6238,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "petty",
+      "startMs": 6450,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "vanity",
+      "startMs": 6738,
+      "endMs": 7300
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Instead, the noble houses hoarded the celestial bloodlines,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3563
+    },
+    {
+      "text": "turning the trial into a brutal meat grinder",
+      "startOffsetMs": 3713,
+      "endOffsetMs": 5888
+    },
+    {
+      "text": "for their own petty vanity.'",
+      "startOffsetMs": 5900,
+      "endOffsetMs": 7400
+    }
+  ]
+}

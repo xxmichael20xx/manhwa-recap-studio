@@ -1,0 +1,118 @@
+{
+  "scene": 179,
+  "durationMs": 7656,
+  "rawWords": [
+    {
+      "ttsWord": "Next",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 738,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "accessed",
+      "startMs": 888,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1413,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "corrupted",
+      "startMs": 1513,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "class",
+      "startMs": 1988,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2400,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "talent",
+      "startMs": 2538,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "allocation",
+      "startMs": 2925,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "tables",
+      "startMs": 3550,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 3975,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4100,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 4188,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "houses",
+      "startMs": 4550,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4988,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "exploited",
+      "startMs": 5125,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 5663,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 5825,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "centuries",
+      "startMs": 6100,
+      "endMs": 6788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Next, I accessed the corrupted class and talent",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "allocation tables that the noble houses had exploited",
+      "startOffsetMs": 2925,
+      "endOffsetMs": 5650
+    },
+    {
+      "text": "for ten centuries.",
+      "startOffsetMs": 5663,
+      "endOffsetMs": 6888
+    }
+  ]
+}

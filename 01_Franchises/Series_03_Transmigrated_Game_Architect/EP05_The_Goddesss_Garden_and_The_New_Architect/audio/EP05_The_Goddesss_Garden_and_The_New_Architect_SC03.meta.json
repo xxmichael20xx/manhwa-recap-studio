@@ -1,0 +1,143 @@
+{
+  "scene": 3,
+  "durationMs": 9600,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 413,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 525,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 938,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1575,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "streets",
+      "startMs": 1688,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 2063,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "packed",
+      "startMs": 2188,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "shoulder-to-shoulder",
+      "startMs": 2525,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3413,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "thousands",
+      "startMs": 3563,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4050,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "commoners",
+      "startMs": 4150,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "refugees",
+      "startMs": 5038,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6063,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "terrified",
+      "startMs": 6250,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "shopkeepers",
+      "startMs": 6838,
+      "endMs": 7575
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 7588,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 7888,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 8063,
+      "endMs": 8125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8138,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 8238,
+      "endMs": 8725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down in District Nine,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1425
+    },
+    {
+      "text": "the streets were packed shoulder-to-shoulder with thousands of",
+      "startOffsetMs": 1575,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "commoners,",
+      "startOffsetMs": 4150,
+      "endOffsetMs": 4813
+    },
+    {
+      "text": "refugees,",
+      "startOffsetMs": 5038,
+      "endOffsetMs": 5900
+    },
+    {
+      "text": "and terrified shopkeepers looking up at the sky.",
+      "startOffsetMs": 6063,
+      "endOffsetMs": 8825
+    }
+  ]
+}

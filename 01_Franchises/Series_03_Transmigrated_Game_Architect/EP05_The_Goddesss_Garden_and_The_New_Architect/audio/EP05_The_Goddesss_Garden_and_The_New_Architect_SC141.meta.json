@@ -1,0 +1,123 @@
+{
+  "scene": 141,
+  "durationMs": 8232,
+  "rawWords": [
+    {
+      "ttsWord": "To",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "succeed",
+      "startMs": 200,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 738,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "Option",
+      "startMs": 988,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "Two",
+      "startMs": 1375,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1975,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "candidate",
+      "startMs": 2088,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "must",
+      "startMs": 2575,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "possess",
+      "startMs": 2825,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 3250,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "systemic",
+      "startMs": 3813,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "balance",
+      "startMs": 4363,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4813,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4975,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "direct",
+      "startMs": 5088,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "authorization",
+      "startMs": 5475,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6238,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6338,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "Origin",
+      "startMs": 6425,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "Deity",
+      "startMs": 6888,
+      "endMs": 7363
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "To succeed under Option Two,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1813
+    },
+    {
+      "text": "the candidate must possess absolute systemic balance and",
+      "startOffsetMs": 1975,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "the direct authorization of the Origin Deity.'",
+      "startOffsetMs": 4975,
+      "endOffsetMs": 7463
+    }
+  ]
+}

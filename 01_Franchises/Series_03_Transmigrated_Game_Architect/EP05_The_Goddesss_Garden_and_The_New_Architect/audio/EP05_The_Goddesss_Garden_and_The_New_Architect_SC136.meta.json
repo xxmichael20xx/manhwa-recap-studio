@@ -1,0 +1,138 @@
+{
+  "scene": 136,
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "It",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 213,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 375,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "enticing",
+      "startMs": 475,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "effortless",
+      "startMs": 1313,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "solution",
+      "startMs": 1763,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "abandon",
+      "startMs": 2513,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2963,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "corrupt",
+      "startMs": 3063,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "empire",
+      "startMs": 3475,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 4263,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4413,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "rot",
+      "startMs": 4513,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "collapse",
+      "startMs": 4775,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 5238,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "itself",
+      "startMs": 5350,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6050,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "start",
+      "startMs": 6175,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "fresh",
+      "startMs": 6500,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6800,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7175,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "stars",
+      "startMs": 7300,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "It was an enticing,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1225
+    },
+    {
+      "text": "effortless solution abandon the corrupt empire,",
+      "startOffsetMs": 1313,
+      "endOffsetMs": 4100
+    },
+    {
+      "text": "let the rot collapse on itself,",
+      "startOffsetMs": 4263,
+      "endOffsetMs": 5975
+    },
+    {
+      "text": "and start fresh across the stars.",
+      "startOffsetMs": 6050,
+      "endOffsetMs": 8013
+    }
+  ]
+}

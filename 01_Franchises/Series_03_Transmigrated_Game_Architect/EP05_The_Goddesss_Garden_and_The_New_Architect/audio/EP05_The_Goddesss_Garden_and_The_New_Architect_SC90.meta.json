@@ -1,0 +1,138 @@
+{
+  "scene": 90,
+  "durationMs": 9192,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "built",
+      "startMs": 238,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 513,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "system",
+      "startMs": 588,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 1050,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "rewards",
+      "startMs": 1225,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "arrogant",
+      "startMs": 1713,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "aristocrats",
+      "startMs": 2113,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 2788,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "hoarding",
+      "startMs": 2925,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 3263,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "skills",
+      "startMs": 3725,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "while",
+      "startMs": 4500,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "starving",
+      "startMs": 4688,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5100,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "infrastructure",
+      "startMs": 5188,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5913,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "utility",
+      "startMs": 5988,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6563,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "craftsmanship",
+      "startMs": 6688,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 7738,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "added",
+      "startMs": 7888,
+      "endMs": 8325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You built a system that rewards arrogant aristocrats",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2775
+    },
+    {
+      "text": "for hoarding combat skills,",
+      "startOffsetMs": 2788,
+      "endOffsetMs": 4325
+    },
+    {
+      "text": "while starving the infrastructure of utility and craftsmanship,'",
+      "startOffsetMs": 4500,
+      "endOffsetMs": 7575
+    },
+    {
+      "text": "I added.",
+      "startOffsetMs": 7738,
+      "endOffsetMs": 8425
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "scene": 140,
+  "durationMs": 7416,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 225,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "bear",
+      "startMs": 375,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 688,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "burden",
+      "startMs": 813,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1163,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "repairing",
+      "startMs": 1263,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 1738,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 2025,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 2463,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2763,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "corrupted",
+      "startMs": 2863,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 3363,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "rebuilding",
+      "startMs": 4013,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4550,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "broken",
+      "startMs": 4650,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 5050,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5375,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 5525,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "foundations",
+      "startMs": 5675,
+      "endMs": 6550
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You will bear the burden of repairing ten",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2013
+    },
+    {
+      "text": "thousand years of corrupted code,",
+      "startOffsetMs": 2025,
+      "endOffsetMs": 3800
+    },
+    {
+      "text": "rebuilding the broken world from its foundations.'",
+      "startOffsetMs": 4013,
+      "endOffsetMs": 6650
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "scene": 62,
+  "durationMs": 6408,
+  "rawWords": [
+    {
+      "ttsWord": "Reaching",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 500,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 663,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 813,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1513,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "pulled",
+      "startMs": 1588,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1900,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2038,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "plain",
+      "startMs": 2100,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "ceramic",
+      "startMs": 2450,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "teacup",
+      "startMs": 2950,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "chipped",
+      "startMs": 3388,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 3700,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4013,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "rim",
+      "startMs": 4125,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4375,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 4538,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "breakfast",
+      "startMs": 4863,
+      "endMs": 5538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Reaching into my pocket,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1375
+    },
+    {
+      "text": "I pulled out a plain ceramic teacup chipped",
+      "startOffsetMs": 1513,
+      "endOffsetMs": 3688
+    },
+    {
+      "text": "along the rim from morning breakfast.",
+      "startOffsetMs": 3700,
+      "endOffsetMs": 5638
+    }
+  ]
+}

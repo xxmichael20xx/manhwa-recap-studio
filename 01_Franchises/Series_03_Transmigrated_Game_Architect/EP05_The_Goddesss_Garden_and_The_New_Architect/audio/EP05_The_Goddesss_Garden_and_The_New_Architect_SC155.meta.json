@@ -1,0 +1,118 @@
+{
+  "scene": 155,
+  "durationMs": 6432,
+  "rawWords": [
+    {
+      "ttsWord": "Linnea",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "laughed",
+      "startMs": 525,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1138,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 1225,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "bell-like",
+      "startMs": 1550,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "sound",
+      "startMs": 1988,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 2325,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "seemed",
+      "startMs": 2450,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 2738,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "heal",
+      "startMs": 2813,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3088,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "frayed",
+      "startMs": 3188,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "fractures",
+      "startMs": 3500,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4038,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4138,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 4238,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 4500,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 4825,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 5175,
+      "endMs": 5550
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Linnea laughed, a clear bell-like sound that seemed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2725
+    },
+    {
+      "text": "to heal the frayed fractures of the white",
+      "startOffsetMs": 2738,
+      "endOffsetMs": 4488
+    },
+    {
+      "text": "void around us.",
+      "startOffsetMs": 4500,
+      "endOffsetMs": 5650
+    }
+  ]
+}

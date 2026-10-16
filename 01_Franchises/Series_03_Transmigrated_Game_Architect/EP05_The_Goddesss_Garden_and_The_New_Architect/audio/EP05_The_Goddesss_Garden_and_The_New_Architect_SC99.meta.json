@@ -1,0 +1,138 @@
+{
+  "scene": 99,
+  "durationMs": 7704,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "did",
+      "startMs": 200,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 375,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "dodge",
+      "startMs": 625,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "nor",
+      "startMs": 1263,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "did",
+      "startMs": 1500,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1625,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "flinch",
+      "startMs": 1738,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 2525,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "simply",
+      "startMs": 2625,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "adjusted",
+      "startMs": 3025,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 3488,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "collar",
+      "startMs": 3638,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4113,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 4238,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "firm",
+      "startMs": 4550,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4863,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4988,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "polite",
+      "startMs": 5050,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "relaxed",
+      "startMs": 5800,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "posture",
+      "startMs": 6263,
+      "endMs": 6838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I did not dodge,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1175
+    },
+    {
+      "text": "nor did I flinch;",
+      "startOffsetMs": 1263,
+      "endOffsetMs": 2338
+    },
+    {
+      "text": "I simply adjusted my collar and stood firm",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 4850
+    },
+    {
+      "text": "with a polite,",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 5588
+    },
+    {
+      "text": "relaxed posture.",
+      "startOffsetMs": 5800,
+      "endOffsetMs": 6938
+    }
+  ]
+}

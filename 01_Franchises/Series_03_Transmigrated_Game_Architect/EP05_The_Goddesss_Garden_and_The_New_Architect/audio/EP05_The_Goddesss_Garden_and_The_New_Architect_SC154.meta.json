@@ -1,0 +1,153 @@
+{
+  "scene": 154,
+  "durationMs": 9672,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 225,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 450,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "make",
+      "startMs": 538,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "sure",
+      "startMs": 738,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1000,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "teacups",
+      "startMs": 1113,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 1613,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "properly",
+      "startMs": 1738,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "polished",
+      "startMs": 2225,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 3013,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "chuckled",
+      "startMs": 3138,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "bowing",
+      "startMs": 3888,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4250,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "polite",
+      "startMs": 4388,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "unhurried",
+      "startMs": 5138,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "warmth",
+      "startMs": 5638,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "Or",
+      "startMs": 6975,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "should",
+      "startMs": 7175,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 7350,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "say",
+      "startMs": 7450,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "Your",
+      "startMs": 8050,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "Divinity",
+      "startMs": 8200,
+      "endMs": 8800
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I had to make sure the teacups were",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "properly polished,' I chuckled,",
+      "startOffsetMs": 1738,
+      "endOffsetMs": 3725
+    },
+    {
+      "text": "bowing with polite,",
+      "startOffsetMs": 3888,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "unhurried warmth.",
+      "startOffsetMs": 5138,
+      "endOffsetMs": 6213
+    },
+    {
+      "text": "Or should I say,",
+      "startOffsetMs": 6975,
+      "endOffsetMs": 7925
+    },
+    {
+      "text": "Your Divinity?'",
+      "startOffsetMs": 8050,
+      "endOffsetMs": 8900
+    }
+  ]
+}

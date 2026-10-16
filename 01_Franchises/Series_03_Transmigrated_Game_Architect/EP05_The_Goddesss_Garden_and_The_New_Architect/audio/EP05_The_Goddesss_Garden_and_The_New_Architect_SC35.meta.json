@@ -1,0 +1,98 @@
+{
+  "scene": 35,
+  "durationMs": 6984,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "supersonic",
+      "startMs": 200,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "projectiles",
+      "startMs": 938,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "pierced",
+      "startMs": 1675,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "cleanly",
+      "startMs": 2050,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2488,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2700,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "six-foot",
+      "startMs": 2813,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "adamantine",
+      "startMs": 3388,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "chest",
+      "startMs": 3975,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "plates",
+      "startMs": 4325,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4663,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4750,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "leading",
+      "startMs": 4850,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 5188,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "colossi",
+      "startMs": 5450,
+      "endMs": 6100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The supersonic projectiles pierced cleanly through the six-foot",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3375
+    },
+    {
+      "text": "adamantine chest plates of the leading three colossi.",
+      "startOffsetMs": 3388,
+      "endOffsetMs": 6200
+    }
+  ]
+}

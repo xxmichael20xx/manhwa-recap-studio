@@ -1,0 +1,98 @@
+{
+  "scene": 143,
+  "durationMs": 6024,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 150
+    },
+    {
+      "ttsWord": "fascinating",
+      "startMs": 163,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "choice",
+      "startMs": 850,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 1588,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "murmured",
+      "startMs": 1688,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 2100,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2200,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "empty",
+      "startMs": 2313,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 2663,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3038,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3163,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 3238,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "speculative",
+      "startMs": 3913,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 4563,
+      "endMs": 5150
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A fascinating choice,'",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1438
+    },
+    {
+      "text": "I murmured to the empty void with a",
+      "startOffsetMs": 1588,
+      "endOffsetMs": 3225
+    },
+    {
+      "text": "calm,",
+      "startOffsetMs": 3238,
+      "endOffsetMs": 3763
+    },
+    {
+      "text": "speculative smile.",
+      "startOffsetMs": 3913,
+      "endOffsetMs": 5250
+    }
+  ]
+}

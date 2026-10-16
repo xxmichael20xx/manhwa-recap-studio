@@ -1,0 +1,123 @@
+{
+  "scene": 174,
+  "durationMs": 7584,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 200,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 488,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "dissolved",
+      "startMs": 788,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1325,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1450,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "fundamental",
+      "startMs": 1550,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "code",
+      "startMs": 2175,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "matrix",
+      "startMs": 2475,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2963,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3063,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 3125,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "planet",
+      "startMs": 3625,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "unfurled",
+      "startMs": 4050,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 4563,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 4913,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5075,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 5213,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 5700,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "scrolls",
+      "startMs": 6088,
+      "endMs": 6700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The white void dissolved as the fundamental code",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2463
+    },
+    {
+      "text": "matrix of the entire planet unfurled around us",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 5063
+    },
+    {
+      "text": "in towering golden scrolls.",
+      "startOffsetMs": 5075,
+      "endOffsetMs": 6800
+    }
+  ]
+}

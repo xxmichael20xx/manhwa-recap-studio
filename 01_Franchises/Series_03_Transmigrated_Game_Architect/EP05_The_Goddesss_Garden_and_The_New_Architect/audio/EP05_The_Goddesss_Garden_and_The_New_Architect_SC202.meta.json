@@ -1,0 +1,133 @@
+{
+  "scene": 202,
+  "durationMs": 7320,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 363,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 450,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "corner",
+      "startMs": 550,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 925,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "Market Street",
+      "startMs": 1025,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1988,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 2113,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 2400,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2688,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "Locke's",
+      "startMs": 2788,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "Sundries",
+      "startMs": 3125,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3600,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "Tea",
+      "startMs": 3750,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 4050,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 4375,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 4725,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5000,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5100,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "cool",
+      "startMs": 5225,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 5513,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "breeze",
+      "startMs": 5850,
+      "endMs": 6438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down on the corner of Market Street the wooden",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "door of Locke's Sundries and Tea stood wide",
+      "startOffsetMs": 2400,
+      "endOffsetMs": 4713
+    },
+    {
+      "text": "open to the cool morning breeze.",
+      "startOffsetMs": 4725,
+      "endOffsetMs": 6538
+    }
+  ]
+}

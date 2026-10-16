@@ -1,0 +1,138 @@
+{
+  "scene": 208,
+  "durationMs": 8064,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "Imperial",
+      "startMs": 175,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "Watch",
+      "startMs": 788,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 1075,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "disbanded",
+      "startMs": 1213,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "Master",
+      "startMs": 2050,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "Locke",
+      "startMs": 2513,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "Vance",
+      "startMs": 3163,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "laughed",
+      "startMs": 3525,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "taking",
+      "startMs": 4225,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4538,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "seat",
+      "startMs": 4600,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 4938,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5063,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "stool",
+      "startMs": 5125,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5525,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5675,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "sigh",
+      "startMs": 5750,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6100,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 6263,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "contentment",
+      "startMs": 6513,
+      "endMs": 7188
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Imperial Watch is disbanded,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1925
+    },
+    {
+      "text": "Master Locke,'",
+      "startOffsetMs": 2050,
+      "endOffsetMs": 3013
+    },
+    {
+      "text": "Vance laughed,",
+      "startOffsetMs": 3163,
+      "endOffsetMs": 4075
+    },
+    {
+      "text": "taking a seat on a stool with a",
+      "startOffsetMs": 4225,
+      "endOffsetMs": 5738
+    },
+    {
+      "text": "sigh of deep contentment.",
+      "startOffsetMs": 5750,
+      "endOffsetMs": 7288
+    }
+  ]
+}

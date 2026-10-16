@@ -1,0 +1,118 @@
+{
+  "scene": 11,
+  "durationMs": 7488,
+  "rawWords": [
+    {
+      "ttsWord": "Deep",
+      "startMs": 50,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 363,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 713,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 838,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 1088,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 1413,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2025,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "subterranean",
+      "startMs": 2125,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "cellar",
+      "startMs": 2888,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "stairs",
+      "startMs": 3250,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "led",
+      "startMs": 3763,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3988,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4175,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "vast",
+      "startMs": 4275,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "cavern",
+      "startMs": 4675,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5025,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5125,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "Sub-Space",
+      "startMs": 5213,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "Sandbox",
+      "startMs": 5825,
+      "endMs": 6613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Deep beneath the tea shop floor,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1913
+    },
+    {
+      "text": "the subterranean cellar stairs led into the vast",
+      "startOffsetMs": 2025,
+      "endOffsetMs": 4663
+    },
+    {
+      "text": "cavern of the Sub-Space Sandbox.",
+      "startOffsetMs": 4675,
+      "endOffsetMs": 6713
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "scene": 92,
+  "durationMs": 7824,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "dare",
+      "startMs": 263,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "critique",
+      "startMs": 588,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1013,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "design",
+      "startMs": 1113,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1625,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1713,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Progenitors",
+      "startMs": 1800,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2775,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "demigod",
+      "startMs": 2925,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 3413,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4075,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 4250,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "shaking",
+      "startMs": 4575,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5000,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "dimensional",
+      "startMs": 5088,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "foundation",
+      "startMs": 5563,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6213,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6313,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "Spire",
+      "startMs": 6400,
+      "endMs": 6963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You dare critique the design of the Progenitors?'",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2650
+    },
+    {
+      "text": "the demigod roared,",
+      "startOffsetMs": 2775,
+      "endOffsetMs": 3875
+    },
+    {
+      "text": "its voice shaking the dimensional foundation of the",
+      "startOffsetMs": 4075,
+      "endOffsetMs": 6388
+    },
+    {
+      "text": "Spire.",
+      "startOffsetMs": 6400,
+      "endOffsetMs": 7063
+    }
+  ]
+}

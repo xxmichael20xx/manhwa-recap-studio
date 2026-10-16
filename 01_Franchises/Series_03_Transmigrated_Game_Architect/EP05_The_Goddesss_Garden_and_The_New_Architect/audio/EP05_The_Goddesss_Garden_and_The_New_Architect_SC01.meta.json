@@ -1,0 +1,78 @@
+{
+  "scene": 1,
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "Seventy-one",
+      "startMs": 50,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "hours",
+      "startMs": 750,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "fifty-nine",
+      "startMs": 1438,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "minutes",
+      "startMs": 2025,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2625,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "fifty-eight",
+      "startMs": 2813,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 3375,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "remaining",
+      "startMs": 3825,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 4313,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "total",
+      "startMs": 4638,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "planetary",
+      "startMs": 4988,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "purge",
+      "startMs": 5575,
+      "endMs": 6125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Seventy-one hours, fifty-nine minutes,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2513
+    },
+    {
+      "text": "and fifty-eight seconds remaining until total planetary purge.",
+      "startOffsetMs": 2625,
+      "endOffsetMs": 6225
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "scene": 2,
+  "durationMs": 7968,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "blood-red",
+      "startMs": 213,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "aurora",
+      "startMs": 725,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 1225,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1413,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 1488,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "capital",
+      "startMs": 2100,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 2525,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 2963,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3125,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "dying",
+      "startMs": 3225,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "heart",
+      "startMs": 3588,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "bathing",
+      "startMs": 4213,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4563,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "spires",
+      "startMs": 4650,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5188,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5313,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "ominous",
+      "startMs": 5463,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 5875,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "glare",
+      "startMs": 6613,
+      "endMs": 7088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The blood-red aurora over the imperial capital pulsed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2950
+    },
+    {
+      "text": "like a dying heart,",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 4025
+    },
+    {
+      "text": "bathing the spires in an ominous apocalyptic glare.",
+      "startOffsetMs": 4213,
+      "endOffsetMs": 7188
+    }
+  ]
+}

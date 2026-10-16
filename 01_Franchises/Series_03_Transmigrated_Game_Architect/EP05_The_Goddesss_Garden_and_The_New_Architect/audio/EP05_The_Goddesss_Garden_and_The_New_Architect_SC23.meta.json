@@ -1,0 +1,118 @@
+{
+  "scene": 23,
+  "durationMs": 7680,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "transit",
+      "startMs": 200,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "circle",
+      "startMs": 650,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1075,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1163,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 1263,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1563,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1650,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "workshop",
+      "startMs": 1750,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "flared",
+      "startMs": 2275,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2663,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 2813,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "amethyst",
+      "startMs": 3288,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "radiance",
+      "startMs": 3788,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "locking",
+      "startMs": 4625,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "coordinates",
+      "startMs": 5000,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5613,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 5750,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "Ninety-One",
+      "startMs": 6113,
+      "endMs": 6800
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The transit circle at the back of the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1738
+    },
+    {
+      "text": "workshop flared with blinding amethyst radiance,",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 4425
+    },
+    {
+      "text": "locking coordinates with Floor Ninety-One",
+      "startOffsetMs": 4625,
+      "endOffsetMs": 6900
+    }
+  ]
+}

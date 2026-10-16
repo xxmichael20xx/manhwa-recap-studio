@@ -1,0 +1,138 @@
+{
+  "scene": 153,
+  "durationMs": 8520,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 250,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 488,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "time",
+      "startMs": 613,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "getting",
+      "startMs": 950,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1188,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 1288,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "One",
+      "startMs": 1688,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "Hundred",
+      "startMs": 1863,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "Bram",
+      "startMs": 2463,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 3100,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 3500,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "softly",
+      "startMs": 3763,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 4688,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "lips",
+      "startMs": 4813,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "curving",
+      "startMs": 5138,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5525,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5750,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "familiar",
+      "startMs": 5825,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "mischievous",
+      "startMs": 6588,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 7075,
+      "endMs": 7638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You took your time getting to Floor One",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1850
+    },
+    {
+      "text": "Hundred, Bram,'",
+      "startOffsetMs": 1863,
+      "endOffsetMs": 2950
+    },
+    {
+      "text": "Linnea said softly,",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 4450
+    },
+    {
+      "text": "her lips curving into a familiar,",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 6438
+    },
+    {
+      "text": "mischievous smile.",
+      "startOffsetMs": 6588,
+      "endOffsetMs": 7738
+    }
+  ]
+}

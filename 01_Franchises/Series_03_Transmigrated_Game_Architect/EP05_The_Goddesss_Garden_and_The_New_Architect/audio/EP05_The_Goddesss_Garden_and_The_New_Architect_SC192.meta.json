@@ -1,0 +1,113 @@
+{
+  "scene": 192,
+  "durationMs": 7320,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 200,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 488,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "dissolved",
+      "startMs": 788,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 1263,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 1638,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "gently",
+      "startMs": 2125,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "depositing",
+      "startMs": 2500,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "our",
+      "startMs": 3150,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "boots",
+      "startMs": 3313,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 3675,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3950,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 4063,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "familiar",
+      "startMs": 4613,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "soil",
+      "startMs": 5125,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5500,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 5613,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 5988,
+      "endMs": 6438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The white void dissolved around us,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2038
+    },
+    {
+      "text": "gently depositing our boots onto the warm,",
+      "startOffsetMs": 2125,
+      "endOffsetMs": 4525
+    },
+    {
+      "text": "familiar soil of District Nine.",
+      "startOffsetMs": 4613,
+      "endOffsetMs": 6538
+    }
+  ]
+}

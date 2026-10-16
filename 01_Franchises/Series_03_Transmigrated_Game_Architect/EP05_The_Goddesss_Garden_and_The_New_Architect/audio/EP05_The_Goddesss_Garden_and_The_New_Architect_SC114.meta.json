@@ -1,0 +1,158 @@
+{
+  "scene": 114,
+  "durationMs": 10296,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "terrifying",
+      "startMs": 213,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "two-mile",
+      "startMs": 875,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "lance",
+      "startMs": 1400,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1700,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 1788,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "erasure",
+      "startMs": 2175,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "instantly",
+      "startMs": 2625,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "popped",
+      "startMs": 3125,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 3513,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3663,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "soap",
+      "startMs": 3738,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "bubble",
+      "startMs": 4088,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "transforming",
+      "startMs": 4713,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5400,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5613,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "ordinary",
+      "startMs": 5725,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "nine-inch",
+      "startMs": 6213,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 6700,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "compass",
+      "startMs": 6988,
+      "endMs": 7363
+    },
+    {
+      "ttsWord": "held",
+      "startMs": 7375,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "awkwardly",
+      "startMs": 7638,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 8150,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8238,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "Overseer's",
+      "startMs": 8338,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "gauntlet",
+      "startMs": 8938,
+      "endMs": 9425
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The terrifying two-mile lance of divine erasure instantly",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "popped like a soap bubble,",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 4525
+    },
+    {
+      "text": "transforming into an ordinary nine-inch wooden compass held",
+      "startOffsetMs": 4713,
+      "endOffsetMs": 7625
+    },
+    {
+      "text": "awkwardly in the Overseer's gauntlet.",
+      "startOffsetMs": 7638,
+      "endOffsetMs": 9525
+    }
+  ]
+}

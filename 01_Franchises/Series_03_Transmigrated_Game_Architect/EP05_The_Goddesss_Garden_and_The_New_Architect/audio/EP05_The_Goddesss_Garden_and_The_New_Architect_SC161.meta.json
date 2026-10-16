@@ -1,0 +1,153 @@
+{
+  "scene": 161,
+  "durationMs": 10008,
+  "rawWords": [
+    {
+      "ttsWord": "Because",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 450,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "despised",
+      "startMs": 588,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1213,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "craftsmen",
+      "startMs": 1300,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2113,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "farmers",
+      "startMs": 2225,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3025,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3163,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "builders",
+      "startMs": 3275,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4000,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "Tower",
+      "startMs": 4138,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "remained",
+      "startMs": 4513,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4925,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "impenetrable",
+      "startMs": 5013,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 5725,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 6038,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 6213,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "millennia",
+      "startMs": 6475,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 7275,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 7663,
+      "endMs": 7950
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7963,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "sorrowful",
+      "startMs": 8100,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 8650,
+      "endMs": 9125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Because they despised the craftsmen,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "the farmers, and the builders,",
+      "startOffsetMs": 2113,
+      "endOffsetMs": 3888
+    },
+    {
+      "text": "the Tower remained an impenetrable wall for ten",
+      "startOffsetMs": 4000,
+      "endOffsetMs": 6463
+    },
+    {
+      "text": "millennia,'",
+      "startOffsetMs": 6475,
+      "endOffsetMs": 7050
+    },
+    {
+      "text": "Linnea said with sorrowful eyes.",
+      "startOffsetMs": 7275,
+      "endOffsetMs": 9225
+    }
+  ]
+}

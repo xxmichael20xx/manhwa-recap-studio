@@ -629,8 +629,23 @@ export class PackagingService {
     try { script = await fs.readFile(scriptPath, 'utf-8') } catch (e) {}
 
     let totalDuration = 1920 // default 32m
-    if (fsSync.existsSync(masterAudioPath)) {
-      totalDuration = await VideoService.getAudioDuration(masterAudioPath)
+    const masterVideoPath = path.join(epPath, 'video', '01_Episode_Master_1080p.mp4')
+    if (fsSync.existsSync(masterVideoPath)) {
+      const vidDur = await VideoService.getVideoDuration(masterVideoPath)
+      if (vidDur > 0) totalDuration = vidDur
+    } else if (fsSync.existsSync(masterAudioPath)) {
+      const audDur = await VideoService.getAudioDuration(masterAudioPath)
+      if (audDur > 0) totalDuration = audDur
+    } else {
+      const duckedPath = path.join(epPath, 'audio', '01_Master_Narration_BGM_Ducked.mp3')
+      const narrPath = path.join(epPath, 'audio', '01_Master_Narration.wav')
+      if (fsSync.existsSync(duckedPath)) {
+        const dur = await VideoService.getAudioDuration(duckedPath)
+        if (dur > 0) totalDuration = dur
+      } else if (fsSync.existsSync(narrPath)) {
+        const dur = await VideoService.getAudioDuration(narrPath)
+        if (dur > 0) totalDuration = dur
+      }
     }
 
     // 1. Parse Dynamic Timeline
@@ -640,20 +655,43 @@ export class PackagingService {
     const scriptLines = script.split('\n')
     const chapters = []
 
+    const isSeries02 = franchiseId.includes('Series_02')
+    const isSeries03 = franchiseId.includes('Series_03')
+    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+    const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
+    const epNumMatch = episodeId.match(/EP0*(\d+)/i)
+    const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
+    const epNumPad = String(epNum).padStart(2, '0')
+    const partTag = `Episode ${epNum}`
+
     // Always start chapter 1 at 00:00 for YouTube compliance
     chapters.push({
       time: '00:00',
       seconds: 0,
-      title: 'Prologue: The Double F-Rank Scavenger'
+      title: `Episode 01: ${cleanEpisodeName}`
     })
 
-    // Find all acts in script and correlate with timeline beats
+    // Find all acts / batches in script and correlate with timeline beats
     for (let i = 0; i < scriptLines.length; i++) {
       const line = scriptLines[i].trim()
-      if (/^#{2,3}\s+(ACT\s+\d+|📦\s+Batch|[A-Z\s]+)/i.test(line) && line.toLowerCase().includes('act')) {
-        let actClean = line.replace(/^#{2,3}\s+/, '').replace(/\([^)]*\)/g, '').trim()
-        actClean = actClean.replace(/^ACT\s+(\d+[A-Z]?):\s*/i, 'Act $1: ')
-        
+      if (/^#{2,3}\s+(?:📦\s*)?(?:BATCH|ACT|EPISODE)\s+(\d+)/i.test(line)) {
+        const numMatch = line.match(/(?:BATCH|ACT|EPISODE)\s+(\d+)/i)
+        const num = numMatch ? numMatch[1] : ''
+        const numPad = num.length === 1 ? `0${num}` : num
+        const sceneMatch = line.match(/\((Scenes\s*[\d\s\-–—]+)\)/i)
+        const scenes = sceneMatch ? sceneMatch[1].trim() : ''
+
+        let rest = line.replace(/^#{2,3}\s+(?:📦\s*)?(?:BATCH|ACT|EPISODE)\s+\d+/i, '')
+        if (scenes) rest = rest.replace(/\(Scenes\s*[\d\s\-–—]+\)/i, '')
+        rest = rest.replace(/^[\s:\-–—]+|[\s:\-–—]+$/g, '').trim()
+
+        let chapterTitle = `Episode ${numPad}`
+        if (rest) {
+          chapterTitle += `: ${rest}`
+        } else if (scenes) {
+          chapterTitle += `: ${scenes}`
+        }
+
         // Find next [IMG_XXX] tag in script
         let tagFound = null
         for (let j = i; j < Math.min(i + 20, scriptLines.length); j++) {
@@ -672,7 +710,7 @@ export class PackagingService {
               chapters.push({
                 time: timeStr,
                 seconds: Math.round(beat.startTime),
-                title: actClean
+                title: chapterTitle
               })
             }
           }
@@ -680,24 +718,20 @@ export class PackagingService {
       }
     }
 
-    // Ensure Outro exists at near end
-    const outroSec = Math.max(0, totalDuration - 45)
-    chapters.push({
-      time: this.formatTimestamp(outroSec),
-      seconds: Math.round(outroSec),
-      title: 'Epilogue & Sovereign Ascendancy'
-    })
-
-    const isSeries02 = franchiseId.includes('Series_02')
-    const isSeries03 = franchiseId.includes('Series_03')
-    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
-    const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
+    // Ensure Episode Finale & End marker exists
+    const finaleSec = Math.max(0, totalDuration - 45)
+    const formattedFinale = this.formatTimestamp(finaleSec)
+    const formattedEnd = this.formatTimestamp(totalDuration)
+    if (!chapters.some(c => c.time === formattedFinale)) {
+      chapters.push({
+        time: formattedFinale,
+        seconds: Math.round(finaleSec),
+        title: `Episode Finale & Cliffhanger (Ends at ${formattedEnd})`
+      })
+    }
 
     // 3. Generate Unified Franchise Titles (Strict <= 100 Chars Hard Cap)
     const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
-    const epNumMatch = episodeId.match(/EP0*(\d+)/i)
-    const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
-    const partTag = `Part ${epNum}`
 
     const rawTitles = [
       {
@@ -750,7 +784,9 @@ While arrogant noble knights brag about ancestral holy relics, Bram quietly enha
 
 🔥 Series: ${cleanFranchiseName}
 🎬 Episode: ${cleanEpisodeName}
-⏱️ Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (Full 1080p 24FPS Cinematic Master)
+⏱️ FULL EPISODE RUNTIME & TIMELINE:
+• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
+• Episode Bounds: 00:00 - ${formattedEnd}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
@@ -781,7 +817,9 @@ Watch the full story of Caelen Vance as he transcends ordinary hunter classifica
 
 🔥 Series: ${cleanFranchiseName}
 🎬 Episode: ${cleanEpisodeName}
-⏱️ Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (Full 1080p 24FPS Cinematic Master)
+⏱️ FULL EPISODE RUNTIME & TIMELINE:
+• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
+• Episode Bounds: 00:00 - ${formattedEnd}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
@@ -811,7 +849,9 @@ Watch the full story of Caelen Vance as he transcends ordinary human hunter clas
 
 🔥 Series: ${cleanFranchiseName}
 🎬 Episode: ${cleanEpisodeName}
-⏱️ Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (Full 1080p 24FPS Cinematic Master)
+⏱️ FULL EPISODE RUNTIME & TIMELINE:
+• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
+• Episode Bounds: 00:00 - ${formattedEnd}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
@@ -900,6 +940,92 @@ This video is an original narrative adaptation and production. All scripts, lore
       thumbnailPrompts: thumbnailVariants,
       masterThumbnail,
       tags,
+      pinnedComment
+    }
+  }
+
+  static async generateTikTokPackage(franchiseId, episodeId) {
+    const isSeries03 = franchiseId.includes('Series_03')
+    const isSeries02 = franchiseId.includes('Series_02')
+    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+    const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
+
+    const viralHooks = isSeries03 ? [
+      {
+        title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀",
+        hookType: "Noble Humiliation / Reverse Curb-Stomp",
+        ctrScore: "99%"
+      },
+      {
+        title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀",
+        hookType: "Dramatic Shock",
+        ctrScore: "97%"
+      },
+      {
+        title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]",
+        hookType: "System Revelation",
+        ctrScore: "95%"
+      },
+      {
+        title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕",
+        hookType: "Deadpan Comedy",
+        ctrScore: "94%"
+      }
+    ] : isSeries02 ? [
+      {
+        title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀",
+        hookType: "Underdog Awakening",
+        ctrScore: "99%"
+      },
+      {
+        title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹",
+        hookType: "Boss Destruction",
+        ctrScore: "97%"
+      }
+    ] : [
+      {
+        title: "Abandoning the weakest double F-rank hunter in the catacombs was their biggest mistake 💀",
+        hookType: "Sovereign Awakening",
+        ctrScore: "99%"
+      },
+      {
+        title: "He was supposed to be dead, but his 100-Gravity domain crushed the titan in 0.1s 😭",
+        hookType: "Overpowered Retribution",
+        ctrScore: "97%"
+      }
+    ]
+
+    const caption = isSeries03
+      ? `Arrogant noble drew his ancestral Sunfire Rapier on an F-Rank slum craftsman... and learned why you never underestimate an ex-game developer 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch Episode 1 on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+      : `They mocked him as a useless F-Rank porter until the S-Rank Calamity broke through the barrier... and he stopped running 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch Episode 1 on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+
+    const hashtags = [
+      '#manhwarecap',
+      '#webtoon',
+      '#sololeveling',
+      '#animerecap',
+      '#manhwa',
+      '#overpoweredmc',
+      '#actionmanhwa',
+      '#levelingsystem',
+      '#recap',
+      '#animetiktok',
+      '#fyp',
+      '#viral'
+    ].join(' ')
+
+    const pinnedComment = `Full 38-minute story is live on our YouTube channel! Link in bio 🔗 Search "${cleanFranchiseName}" on YouTube!`
+
+    return {
+      success: true,
+      franchiseId,
+      episodeId,
+      franchiseName: cleanFranchiseName,
+      episodeName: cleanEpisodeName,
+      viralHooks,
+      recommendedTitle: viralHooks[0].title,
+      caption,
+      hashtags,
       pinnedComment
     }
   }

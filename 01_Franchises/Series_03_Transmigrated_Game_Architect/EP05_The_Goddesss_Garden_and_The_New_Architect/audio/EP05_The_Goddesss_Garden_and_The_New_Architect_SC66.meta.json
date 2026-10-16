@@ -1,0 +1,118 @@
+{
+  "scene": 66,
+  "durationMs": 7728,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "Astral",
+      "startMs": 213,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "Leviathan",
+      "startMs": 650,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "blinked",
+      "startMs": 1263,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 1588,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 1713,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 2363,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2675,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "stunned",
+      "startMs": 2800,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "mechanical",
+      "startMs": 3113,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "paralysis",
+      "startMs": 3650,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4375,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4538,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "ultimate",
+      "startMs": 4688,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "attack",
+      "startMs": 5075,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "vanished",
+      "startMs": 5488,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 5963,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6263,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "whisper",
+      "startMs": 6338,
+      "endMs": 6863
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Astral Leviathan blinked its celestial eyes in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2788
+    },
+    {
+      "text": "stunned mechanical paralysis as its ultimate attack vanished",
+      "startOffsetMs": 2800,
+      "endOffsetMs": 5950
+    },
+    {
+      "text": "without a whisper.",
+      "startOffsetMs": 5963,
+      "endOffsetMs": 6963
+    }
+  ]
+}

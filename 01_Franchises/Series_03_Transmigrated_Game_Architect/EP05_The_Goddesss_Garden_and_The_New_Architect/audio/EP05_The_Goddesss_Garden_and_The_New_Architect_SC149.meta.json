@@ -1,0 +1,143 @@
+{
+  "scene": 149,
+  "durationMs": 7968,
+  "rawWords": [
+    {
+      "ttsWord": "Walking",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 500,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 700,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 838,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "shimmering",
+      "startMs": 913,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 1363,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "light",
+      "startMs": 1688,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "came",
+      "startMs": 1950,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "Linnea",
+      "startMs": 2200,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "Croft",
+      "startMs": 2550,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 3338,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "she",
+      "startMs": 3463,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3625,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "no",
+      "startMs": 3788,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "longer",
+      "startMs": 4000,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "wearing",
+      "startMs": 4363,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 4625,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "patched",
+      "startMs": 4763,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "canvas",
+      "startMs": 5175,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "apron",
+      "startMs": 5600,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 6013,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "garden",
+      "startMs": 6188,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "gloves",
+      "startMs": 6538,
+      "endMs": 7100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Walking out from the shimmering green light came",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2188
+    },
+    {
+      "text": "Linnea Croft,",
+      "startOffsetMs": 2200,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "but she was no longer wearing her patched",
+      "startOffsetMs": 3338,
+      "endOffsetMs": 5163
+    },
+    {
+      "text": "canvas apron or garden gloves.",
+      "startOffsetMs": 5175,
+      "endOffsetMs": 7200
+    }
+  ]
+}
