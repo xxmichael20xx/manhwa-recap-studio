@@ -50,7 +50,7 @@ export class PackagingService {
    */
   static getCanonicalSeriesTitle(franchiseId) {
     if (franchiseId.includes('Series_04')) {
-      return '1 Billion Years Trapped In Cultivation, He Returns To Earth With Max Level Stats'
+      return 'He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save'
     }
     if (franchiseId.includes('Series_03')) {
       return 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
@@ -508,9 +508,18 @@ export class PackagingService {
     // Determine input image source buffer
     let inputBuffer = null
 
+    const rawVariantFile = targetFilename.replace(/\.jpg$/i, '_Raw.jpg')
+    const rawVariantPath = path.join(thumbDir, rawVariantFile)
+    const textlessVariantFile = targetFilename.replace(/\.jpg$/i, '_Textless.jpg')
+    const textlessVariantPath = path.join(thumbDir, textlessVariantFile)
+
     if (base64Data) {
       const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '')
       inputBuffer = Buffer.from(cleanBase64, 'base64')
+    } else if (fsSync.existsSync(rawVariantPath)) {
+      inputBuffer = await fs.readFile(rawVariantPath)
+    } else if (fsSync.existsSync(textlessVariantPath)) {
+      inputBuffer = await fs.readFile(textlessVariantPath)
     } else if (fsSync.existsSync(outputPath)) {
       inputBuffer = await fs.readFile(outputPath)
     } else {
@@ -698,6 +707,7 @@ export class PackagingService {
 
     const isSeries02 = franchiseId.includes('Series_02')
     const isSeries03 = franchiseId.includes('Series_03')
+    const isSeries04 = franchiseId.includes('Series_04')
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
     const epNumMatch = episodeId.match(/EP0*(\d+)/i)
@@ -774,7 +784,56 @@ export class PackagingService {
     // 3. Generate Unified Franchise Titles (Strict <= 100 Chars Hard Cap)
     const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
 
-    const rawTitles = [
+    const rawTitles = isSeries04 ? [
+      {
+        archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
+        title: `(${partTag}) ${canonicalTitle}`,
+        ctrScore: '99%',
+        style: 'Primary confirmed high-CTR franchise standard'
+      },
+      {
+        archetype: 'False Rank & Sleeper Sovereign',
+        title: 'Mocked as a Broke Night-Shift Clerk, He Awakened 1 Billion Years of Simulated Dao Power',
+        ctrScore: '98%',
+        style: 'Underdog night-shift worker vs 1-billion-year simulated Dao'
+      },
+      {
+        archetype: 'The Arrogant Bully & Kitchen Knife',
+        title: 'Arrogant S-Rank Scion Drew a Sacred Spirit Blade, So He Snapped It with a Kitchen Knife',
+        ctrScore: '97%',
+        style: 'Action face-slap with ordinary kitchen knife'
+      },
+      {
+        archetype: 'Global Leyline & Spectrometer Shock',
+        title: 'Blue Star Merged with Heavenly Dao, But His Dorm Room Overloaded the World Spectrometer',
+        ctrScore: '96%',
+        style: 'World-shattering measurement overflow and state investigation'
+      },
+      {
+        archetype: 'The 1-Billion-Year AFK Save Hook',
+        title: 'He Left An Idle Game Running For 10 Years, Unlocking 1 Billion Years of Cultivation on Earth',
+        ctrScore: '95%',
+        style: 'Curiosity hook explaining the 10-year idle game calculation'
+      },
+      {
+        archetype: 'Canonical Suffix (Direct Story)',
+        title: `${canonicalTitle} (${partTag})`,
+        ctrScore: '94%',
+        style: 'Consistent story title with episodic suffix'
+      },
+      {
+        archetype: 'Clean Pipe Delimiter',
+        title: `${canonicalTitle} | ${partTag}`,
+        ctrScore: '93%',
+        style: 'Modern YouTube clean metadata delimiter'
+      },
+      {
+        archetype: 'Bracket High-Visibility',
+        title: `[${partTag}] ${canonicalTitle}`,
+        ctrScore: '92%',
+        style: 'High-contrast bracket visual anchor'
+      }
+    ] : [
       {
         archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
         title: `(${partTag}) ${canonicalTitle}`,
@@ -818,7 +877,40 @@ export class PackagingService {
     const chapterText = chapters.map(c => `${c.time} - ${c.title}`).join('\n')
 
     // 5. Generate Full SEO Description
-    const description = isSeries03
+    const description = isSeries04
+      ? `For ten years, university student Lu Chen quietly ran an archaic idle cultivation simulator called Heavenly Dao: Infinite Samsara while working night shifts at a campus convenience store. When the game servers announce an abrupt permanent shutdown, physical reality expands tenfold—and the game world merges directly with Earth.
+
+While arrogant campus scions and corporate oligarchs brag about 50,000 years of cultivation, Lu Chen awakens with all ONE BILLION YEARS of simulated primordial sovereign power fully unlocked. Armed with an ordinary chipped kitchen knife, he effortlessly shatters sacred spirit blades, overloads state threat detectors, and begins his silent ascension as the hidden apex sovereign of Blue Star.
+
+🔥 Series: ${cleanFranchiseName}
+🎬 Episode: ${cleanEpisodeName}
+⏱️ FULL EPISODE RUNTIME & TIMELINE:
+• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
+• Episode Bounds: 00:00 - ${formattedEnd}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CHAPTER TIMESTAMPS:
+${chapterText}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💬 COMMUNITY QUESTION:
+If reality merged with your gaming save and you kept all your progress, would you hide your 1-billion-year power like Lu Chen, or flex it immediately on the first arrogant scion? Let me know in the comments below! 👇
+
+🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: The Guild Inquest & The Golden Stele Descent!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎵 MUSIC & AUDIO ATTRIBUTION:
+All background OST soundscapes and atmospheric scores are licensed royalty-free for creative production:
+- Qindu Campus Twilight Ambient (Nocturnal Lofi / Warm Strings)
+- Leyline Convergence Resonance (Low Sub-Bass Pulse)
+- Nephrite Dao Shatter Climax (High-Impact Transient Percussion)
+- Heavenly Dao Primordial Swell (Epic Ambient Synth)
+
+⚖️ DISCLAIMER:
+This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
+
+#manhwarecap #webtoon #cultivation #animerecap #manhwa #overpoweredmc #urbanxianxia #levelingsystem #recap`
+      : isSeries03
       ? `Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
 
 While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
@@ -945,7 +1037,9 @@ This video is an original narrative adaptation and production. All scripts, lore
     ].join(', ')
 
     // 8. Pinned Comment
-    const pinnedComment = isSeries03
+    const pinnedComment = isSeries04
+      ? `Lu Chen really deflected an S-Rank jade spirit blade using a dull dorm kitchen knife and kept eating late-night spicy beef jerky like nothing happened. 😭🥩\n\n🔔 Episode 02: The Guild Inquest & The Golden Stele Descent is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!\n\nQuestion for you guys: If reality merged with your gaming save and you kept all your progress, would you hide your 1-billion-year power like Lu Chen, or flex it immediately on the first arrogant scion? Drop your thoughts below! 👇`
+      : isSeries03
       ? `Bram really rewrote an ancestral S-Rank golden rapier into a stick of school chalk and siphoned 10,000 enhancement charges into his pocket without blinking. 😭☕\n\n🔔 Episode 02: Floors 11-35 & The Architect's Dilemma is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!\n\nWhat was your favourite moment from Episode 01: Bram pulverising the Floor 10 Minotaur with a single pine needle, or Lord Cassian realizing his sword turned to dust? Drop your thoughts below! 👇`
       : isSeries02
       ? `💬 Question for you guys: Would you have stepped in to save Ignis after he spent the morning mocking your bow, or let the Colossus crush him? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
@@ -986,59 +1080,156 @@ This video is an original narrative adaptation and production. All scripts, lore
   }
 
   static async generateTikTokPackage(franchiseId, episodeId) {
+    const isSeries04 = franchiseId.includes('Series_04')
     const isSeries03 = franchiseId.includes('Series_03')
     const isSeries02 = franchiseId.includes('Series_02')
+    const isSeries01 = franchiseId.includes('Series_01')
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
-    const viralHooks = isSeries03 ? [
-      {
-        title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀",
-        hookType: "Noble Humiliation / Reverse Curb-Stomp",
-        ctrScore: "99%"
-      },
-      {
-        title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀",
-        hookType: "Dramatic Shock",
-        ctrScore: "97%"
-      },
-      {
-        title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]",
-        hookType: "System Revelation",
-        ctrScore: "95%"
-      },
-      {
-        title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕",
-        hookType: "Deadpan Comedy",
-        ctrScore: "94%"
-      }
-    ] : isSeries02 ? [
-      {
-        title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀",
-        hookType: "Underdog Awakening",
-        ctrScore: "99%"
-      },
-      {
-        title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹",
-        hookType: "Boss Destruction",
-        ctrScore: "97%"
-      }
-    ] : [
-      {
-        title: "Abandoning the weakest double F-rank hunter in the catacombs was their biggest mistake 💀",
-        hookType: "Sovereign Awakening",
-        ctrScore: "99%"
-      },
-      {
-        title: "He was supposed to be dead, but his 100-Gravity domain crushed the titan in 0.1s 😭",
-        hookType: "Overpowered Retribution",
-        ctrScore: "97%"
-      }
-    ]
+    // 1. Markdown-First Truth Resolution: Inspect 03_YouTube_Package.md on disk
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')
+    let parsedHooksFromMd = []
 
-    const caption = isSeries03
-      ? `Arrogant noble drew his ancestral Sunfire Rapier on an F-Rank slum craftsman... and learned why you never underestimate an ex-game developer 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch Episode 1 on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
-      : `They mocked him as a useless F-Rank porter until the S-Rank Calamity broke through the barrier... and he stopped running 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch Episode 1 on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+    if (fsSync.existsSync(pkgMdPath)) {
+      try {
+        const mdContent = await fs.readFile(pkgMdPath, 'utf-8')
+        const titleRegex = /^\d+\.\s+\*\*(.+?)\*\*:\s*\r?\n\s+`?([^\r\n`]+)`?/gm
+        let match
+        const ctrScores = ['99%', '98%', '97%', '96%', '95%']
+        let idx = 0
+        while ((match = titleRegex.exec(mdContent)) !== null && idx < 5) {
+          const rawHookType = match[1].replace(/\s*\(\d+\s*chars\)/i, '').trim()
+          let titleText = match[2].trim()
+          // Clean leading part tags for TikTok punchiness if appropriate
+          if (titleText.startsWith('(Episode 1) ')) {
+            titleText = titleText.replace('(Episode 1) ', '') + ' 😭💀'
+          }
+          parsedHooksFromMd.push({
+            title: titleText,
+            hookType: rawHookType,
+            ctrScore: ctrScores[idx] || '95%'
+          })
+          idx++
+        }
+      } catch (mdErr) {
+        console.warn('Could not parse 03_YouTube_Package.md for TikTok hooks:', mdErr.message)
+      }
+    }
+
+    // 2. Select calibrated viral hooks (Prefer parsed Markdown -> then Bespoke Series -> then Safe Dynamic Fallback)
+    let viralHooks = []
+    if (parsedHooksFromMd.length >= 3) {
+      viralHooks = parsedHooksFromMd
+    } else if (isSeries04) {
+      viralHooks = [
+        {
+          title: "He ran an idle cultivation game for 10 years, then Earth merged with his save file 😭💀",
+          hookType: "Reality Convergence / AFK Save",
+          ctrScore: "99%"
+        },
+        {
+          title: "Arrogant S-Rank Scion drew a sacred jade blade, so he snapped it with a kitchen knife 💀",
+          hookType: "Action Shock / Weapon Shatter",
+          ctrScore: "98%"
+        },
+        {
+          title: "Mocked as a broke night-shift clerk until 1 billion years of Dao cultivation unlocked 😭",
+          hookType: "Underdog Awakening",
+          ctrScore: "97%"
+        },
+        {
+          title: "The state spectrometer tried measuring his power... and violently exploded with 1 billion years of Dao ⚡💀",
+          hookType: "Measurement Overflow",
+          ctrScore: "96%"
+        },
+        {
+          title: "He left an idle cultivation game running for 10 years, unlocking 1 billion years of power on Earth ☕",
+          hookType: "Curiosity Driver",
+          ctrScore: "95%"
+        }
+      ]
+    } else if (isSeries03) {
+      viralHooks = [
+        {
+          title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀",
+          hookType: "Noble Humiliation / Reverse Curb-Stomp",
+          ctrScore: "99%"
+        },
+        {
+          title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀",
+          hookType: "Dramatic Shock",
+          ctrScore: "97%"
+        },
+        {
+          title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]",
+          hookType: "System Revelation",
+          ctrScore: "95%"
+        },
+        {
+          title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕",
+          hookType: "Deadpan Comedy",
+          ctrScore: "94%"
+        }
+      ]
+    } else if (isSeries02) {
+      viralHooks = [
+        {
+          title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀",
+          hookType: "Underdog Awakening",
+          ctrScore: "99%"
+        },
+        {
+          title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹",
+          hookType: "Boss Destruction",
+          ctrScore: "97%"
+        }
+      ]
+    } else if (isSeries01) {
+      viralHooks = [
+        {
+          title: "Abandoning the scavenger in the dimensional abyss was their biggest mistake 💀",
+          hookType: "Sovereign Awakening",
+          ctrScore: "99%"
+        },
+        {
+          title: "He was supposed to be dead, but his Singularity Sovereign Protocol activated 😭",
+          hookType: "Overpowered Retribution",
+          ctrScore: "97%"
+        }
+      ]
+    } else {
+      // Safe Universal Dynamic Fallback (Zero Lore Bleed)
+      viralHooks = [
+        {
+          title: `They mocked him as the weakest in ${cleanFranchiseName}, until his true power awakened 💀`,
+          hookType: "Underdog Awakening",
+          ctrScore: "99%"
+        },
+        {
+          title: `Arrogant elite drew their sacred blade on an ordinary student... and instantly regretted it 😭`,
+          hookType: "Dramatic Shock",
+          ctrScore: "97%"
+        },
+        {
+          title: `He hid his true power until the dimensional crisis hit... [SOVEREIGN AWAKENING ACTIVATED]`,
+          hookType: "System Revelation",
+          ctrScore: "95%"
+        }
+      ]
+    }
+
+    // 3. Continuous Binge Story Caption (Zero Rigid Minute Mentions)
+    const caption = isSeries04
+      ? `Arrogant campus scion pulled a sacred jade blade on a broke student... until his 1-billion-year AFK cultivation save file unlocked into reality 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+      : isSeries03
+      ? `Arrogant noble drew his ancestral Sunfire Rapier on an F-Rank slum craftsman... and learned why you never underestimate an ex-game developer 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+      : isSeries02
+      ? `They mocked him as a useless F-Rank porter until the S-Rank Calamity broke through the barrier... and he stopped running 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+      : isSeries01
+      ? `Abandoning the scavenger in the dimensional abyss was their biggest mistake... until the Singularity Sovereign Protocol activated 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+      : `They underestimated him until the dimensional crisis hit... and his hidden sovereign power awakened 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
 
     const hashtags = [
       '#manhwarecap',
@@ -1055,7 +1246,8 @@ This video is an original narrative adaptation and production. All scripts, lore
       '#viral'
     ].join(' ')
 
-    const pinnedComment = `Full 38-minute story is live on our YouTube channel! Link in bio 🔗 Search "${cleanFranchiseName}" on YouTube!`
+    // 4. Continuous Binge Story Pinned Comment (Zero Minute Mentions)
+    const pinnedComment = `The full continuous story is live on our YouTube channel! Watch Episode 1 now (Link in bio 🔗) Search "${cleanFranchiseName}" on YouTube!`
 
     return {
       success: true,

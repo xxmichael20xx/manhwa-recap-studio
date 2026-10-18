@@ -6,6 +6,56 @@ import { spawn } from 'child_process'
 import sharp from 'sharp'
 
 export class MotionEngine {
+  static cachedEncoder = null
+  static activeProcesses = new Set()
+
+  static killAll() {
+    for (const proc of this.activeProcesses) {
+      try { proc.kill('SIGKILL') } catch (_) {}
+    }
+    this.activeProcesses.clear()
+  }
+
+  /**
+   * Auto-detect the fastest available hardware-accelerated H.264 encoder.
+   * Cascade: NVIDIA NVENC -> Windows Media Foundation (MFT) -> Intel QSV -> libx264 ultrafast fallback.
+   */
+  static async getOptimalH264Encoder() {
+    if (this.cachedEncoder) return this.cachedEncoder
+
+    const candidates = [
+      { name: 'h264_nvenc', args: ['-c:v', 'h264_nvenc', '-preset', 'p1', '-tune', 'll', '-rc', 'vbr', '-cq', '20', '-pix_fmt', 'yuv420p'] },
+      { name: 'h264_mf', args: ['-c:v', 'h264_mf', '-b:v', '14M', '-pix_fmt', 'yuv420p'] },
+      { name: 'h264_qsv', args: ['-c:v', 'h264_qsv', '-global_quality', '20', '-pix_fmt', 'nv12'] },
+      { name: 'libx264', args: ['-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '18', '-pix_fmt', 'yuv420p'] }
+    ]
+
+    for (const cand of candidates) {
+      try {
+        const works = await new Promise((resolve) => {
+          const testProc = spawn('ffmpeg', [
+            '-y',
+            '-f', 'lavfi',
+            '-i', 'color=c=black:s=128x128:d=0.04',
+            ...cand.args,
+            '-f', 'null',
+            '-'
+          ])
+          testProc.on('close', code => resolve(code === 0))
+          testProc.on('error', () => resolve(false))
+        })
+        if (works) {
+          console.log(`[MotionEngine] Hardware Acceleration Active: Using ${cand.name}`)
+          this.cachedEncoder = cand
+          return cand
+        }
+      } catch (_) {}
+    }
+
+    this.cachedEncoder = candidates[candidates.length - 1]
+    return this.cachedEncoder
+  }
+
   /**
    * Deterministically cycle through all 6 directional presets based on scene index
    */
@@ -47,12 +97,11 @@ export class MotionEngine {
 
   /**
    * Render a pristine 60 FPS Sub-Pixel Clip via Native C++ Skia Engine:
-   * - 100% Constant uniform linear velocity (zero acceleration jumps, zero pauses).
-   * - Pure floating-point sub-pixel anti-aliasing via native Skia C++ (eliminates all integer stair-stepping).
+   * - Supports dual-engine execution: 'old_cpu' (pure software libx264) vs 'new_gpu' (hardware h264_mf/nvenc).
+   * - 100% Constant uniform linear velocity.
    * - 40px feathered ambient drop-shadow + 1.5px delicate border.
-   * - Direct raw memory RGBA stream piped to FFmpeg (Zero Chromium, Zero WebSocket Base64 overhead).
    */
-  static async renderSceneClip({ imagePath, durationSec, fps = 24, motionIndex = 0, outputPath }) {
+  static async renderSceneClip({ imagePath, durationSec, fps = 24, motionIndex = 0, outputPath, encoder = 'auto' }) {
     const img = await loadImage(imagePath)
     const imgW = img.width
     const imgH = img.height
@@ -116,7 +165,18 @@ export class MotionEngine {
       sCtx.strokeRect(pad, pad, stripDisplayW, stripDisplayH)
     }
 
-    // 4. Initialize FFmpeg Raw RGBA Pipe (24 FPS + Ultrafast + FastStart)
+    // 4. Initialize FFmpeg Raw RGBA Pipe with Target Encoder (Old CPU vs New GPU)
+    let encoderArgs = []
+    let resolvedEncoderName = 'libx264'
+    if (encoder === 'old_cpu' || encoder === 'libx264') {
+      encoderArgs = ['-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '18', '-pix_fmt', 'yuv420p']
+      resolvedEncoderName = 'libx264 (CPU Software)'
+    } else {
+      const opt = await this.getOptimalH264Encoder()
+      encoderArgs = opt.args
+      resolvedEncoderName = opt.name
+    }
+
     const ffmpeg = spawn('ffmpeg', [
       '-y',
       '-f', 'rawvideo',
@@ -124,14 +184,13 @@ export class MotionEngine {
       '-s', '1920x1080',
       '-r', String(fps),
       '-i', '-',
-      '-c:v', 'libx264',
-      '-preset', 'ultrafast',
-      '-crf', '18',
-      '-pix_fmt', 'yuv420p',
+      ...encoderArgs,
       '-movflags', '+faststart',
       '-r', String(fps),
       outputPath
     ])
+
+    this.activeProcesses.add(ffmpeg)
 
     let ffmpegErr = ''
     ffmpeg.stderr.on('data', d => { ffmpegErr += d.toString() })
@@ -139,10 +198,14 @@ export class MotionEngine {
 
     const pipePromise = new Promise((resolve, reject) => {
       ffmpeg.on('close', code => {
+        this.activeProcesses.delete(ffmpeg)
         if (code === 0) resolve(outputPath)
         else reject(new Error(`FFmpeg rawvideo failed with code ${code}: ${ffmpegErr.slice(-400)}`))
       })
-      ffmpeg.on('error', reject)
+      ffmpeg.on('error', err => {
+        this.activeProcesses.delete(ffmpeg)
+        reject(err)
+      })
     })
 
     // 5. 100% Constant Uniform Linear Velocity Frame Loop with Stream Backpressure

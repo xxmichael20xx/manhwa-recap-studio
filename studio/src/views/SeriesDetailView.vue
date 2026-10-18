@@ -65,18 +65,43 @@
           </p>
         </div>
 
-        <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-mono">
-          <span class="text-slate-500">Total Episodes:</span>
-          <span class="font-bold text-purple-600 dark:text-purple-400">{{ franchise.episodes?.length || 0 }}</span>
-          <span class="text-slate-300 dark:text-slate-700">•</span>
-          <span class="text-slate-500">Vault Models:</span>
-          <span class="font-bold text-amber-600 dark:text-amber-400">{{ models.length }}</span>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <!-- Quick Obtain Episode 1 Action (Direct Master MP4 Download) -->
+          <a 
+            v-if="episode1?.hasCompiledVideo"
+            :href="`/api/episodes/${franchise.folder || $route.params.id}/${episode1.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
+            :download="`${franchise.folder}_${episode1.id}_Master_1080p.mp4`"
+            class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold font-mono flex items-center space-x-2 shadow-md shadow-purple-900/20 transition cursor-pointer hover:scale-[1.02] shrink-0"
+            title="Download Episode 1 Master Video (1080p MP4)"
+          >
+            <Download class="w-4 h-4 text-purple-200" />
+            <span>Download Episode 1 ({{ episode1.videoSizeFormatted || '1080p' }})</span>
+          </a>
+
+          <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-950 p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-mono">
+            <span class="text-slate-500">Total Episodes:</span>
+            <span class="font-bold text-purple-600 dark:text-purple-400">{{ franchise.episodes?.length || 0 }}</span>
+            <span class="text-slate-300 dark:text-slate-700">•</span>
+            <span class="text-slate-500">Vault Models:</span>
+            <span class="font-bold text-amber-600 dark:text-amber-400">{{ models.length }}</span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Top-Level Franchise Navigation Tabs -->
     <div class="flex items-center space-x-2 border-b border-slate-200 dark:border-slate-800 pb-2 overflow-x-auto">
+      <button 
+        @click="activeTab = 'bible'"
+        class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer shrink-0"
+        :class="activeTab === 'bible' 
+          ? 'bg-indigo-600 text-white shadow-md shadow-indigo-900/20' 
+          : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400'"
+      >
+        <BookOpen class="w-4 h-4" />
+        <span>0. Series Bible &amp; Roadmap</span>
+      </button>
+
       <button 
         @click="activeTab = 'episodes'"
         class="px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer shrink-0"
@@ -122,6 +147,92 @@
       </button>
     </div>
 
+    <!-- TAB 0: SERIES BIBLE & NARRATIVE ACT ROADMAP -->
+    <div v-if="activeTab === 'bible'" class="space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+              <BookOpen class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <span>Series Bible &amp; Multi-Episode Act Roadmap</span>
+            </h2>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-800">
+              Anti-Improvisation Gate
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            Master franchise worldbuilding lore, progression arithmetic, character DNA anchors, and locked multi-episode narrative arcs.
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button 
+            @click="copyToken(franchise?.bibleContent || '')"
+            :disabled="!franchise?.bibleContent"
+            class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 text-xs font-mono text-indigo-600 dark:text-indigo-400 flex items-center space-x-1.5 transition cursor-pointer shadow-xs hover:scale-[1.02] disabled:opacity-50"
+            title="Copy entire Series Bible markdown"
+          >
+            <Copy class="w-3.5 h-3.5" />
+            <span>Copy Full Bible Markdown</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- If Bible exists -->
+      <div v-if="franchise?.bibleContent" class="space-y-6">
+        <!-- Quick Specs Banner -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold">Official Title</span>
+            <div class="text-xs font-bold text-slate-900 dark:text-white truncate">{{ franchise?.name }}</div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold">Video Format</span>
+            <div class="text-xs font-bold text-slate-900 dark:text-white">{{ franchise?.format || 'Format 1: 9:16 Webtoon' }}</div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold">Lore Verification</span>
+            <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center space-x-1">
+              <Check class="w-3.5 h-3.5" />
+              <span>Series Bible Verified</span>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 space-y-1">
+            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold">Master Path</span>
+            <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate" title="00_Series_Bible_and_Character_DNA/Series_Bible.md">
+              00_Series_Bible.../Series_Bible.md
+            </div>
+          </div>
+        </div>
+
+        <!-- Markdown Document Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+            <div class="flex items-center space-x-2">
+              <FileText class="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <span class="text-xs font-bold font-mono text-slate-700 dark:text-slate-300">Series_Bible.md (Master Ground Truth)</span>
+            </div>
+            <span class="text-[10px] font-mono text-slate-400">
+              {{ (franchise.bibleContent.length / 1024).toFixed(1) }} KB • Markdown
+            </span>
+          </div>
+
+          <pre class="bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-5 text-xs font-mono text-slate-800 dark:text-slate-200 leading-relaxed overflow-x-auto whitespace-pre-wrap max-h-[680px] overflow-y-auto selection:bg-indigo-500 selection:text-white">{{ franchise.bibleContent }}</pre>
+        </div>
+      </div>
+
+      <!-- Missing Bible Alert -->
+      <div v-else class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-2xl p-8 text-center space-y-3">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+          <BookOpen class="w-6 h-6" />
+        </div>
+        <h3 class="text-sm font-bold text-amber-900 dark:text-amber-200">No Series Bible Found</h3>
+        <p class="text-xs text-amber-700 dark:text-amber-300 max-w-md mx-auto leading-relaxed">
+          This franchise requires a master <code class="font-mono font-bold">Series_Bible.md</code> inside <code class="font-mono">00_Series_Bible_and_Character_DNA/</code> before episodic scripts and acts can be drafted.
+        </p>
+      </div>
+    </div>
+
     <!-- TAB 1: EPISODIC PRODUCTION PIPELINE -->
     <div v-if="activeTab === 'episodes'" class="space-y-6">
       <div class="flex flex-wrap items-center justify-between gap-4">
@@ -164,6 +275,23 @@
             </div>
           </div>
 
+          <!-- Master Video Ready Banner (Direct 1-Click Download) -->
+          <div v-if="ep.hasCompiledVideo" class="p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-between gap-3">
+            <div class="flex items-center space-x-2 text-xs font-mono text-emerald-800 dark:text-emerald-300 font-bold min-w-0 truncate">
+              <Check class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <span class="truncate">Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
+            </div>
+            <a 
+              :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
+              :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
+              class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-mono flex items-center space-x-1.5 shadow-sm transition cursor-pointer hover:scale-[1.02] shrink-0"
+              :title="`Download ${ep.name} Master MP4`"
+            >
+              <Download class="w-3.5 h-3.5" />
+              <span>Download Video</span>
+            </a>
+          </div>
+
           <!-- Pipeline Step Cards (4 Focused Tools) -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <router-link 
@@ -203,20 +331,32 @@
             </router-link>
           </div>
 
-          <!-- Viral Climax Short Generator Button -->
-          <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+          <!-- Viral Climax Short Generator Button & Quick Download -->
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
             <div class="flex items-center space-x-1.5 text-[11px] text-slate-500 dark:text-slate-400">
               <Sparkles class="w-3.5 h-3.5 text-amber-500" />
               <span>Climax Hook:</span>
               <span class="font-mono text-slate-700 dark:text-slate-300 font-semibold">45-60s TikTok / Shorts</span>
             </div>
-            <button 
-              @click="openClimaxModal(ep)"
-              class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white text-xs font-bold flex items-center space-x-1.5 shadow-sm shadow-amber-900/20 transition cursor-pointer hover:scale-[1.02]"
-            >
-              <Zap class="w-3.5 h-3.5" />
-              <span>⚡ Climax Short</span>
-            </button>
+            <div class="flex items-center space-x-2">
+              <a 
+                v-if="ep.hasCompiledVideo"
+                :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
+                :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
+                class="px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-600 hover:text-white border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-bold font-mono flex items-center space-x-1.5 transition cursor-pointer hover:scale-[1.02]"
+                :title="`Obtain ${ep.id} Master MP4`"
+              >
+                <Download class="w-3.5 h-3.5" />
+                <span>Obtain MP4</span>
+              </a>
+              <button 
+                @click="openClimaxModal(ep)"
+                class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white text-xs font-bold flex items-center space-x-1.5 shadow-sm shadow-amber-900/20 transition cursor-pointer hover:scale-[1.02]"
+              >
+                <Zap class="w-3.5 h-3.5" />
+                <span>⚡ Climax Short</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -663,6 +803,16 @@
                   <Check class="w-3.5 h-3.5" />
                   <span>Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
                 </span>
+                <a 
+                  v-if="ep.hasCompiledVideo"
+                  :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
+                  :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
+                  class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 text-xs font-mono text-purple-600 dark:text-purple-400 flex items-center space-x-1 transition shadow-xs cursor-pointer hover:scale-[1.02]"
+                  :title="`Download ${ep.name} Master MP4`"
+                >
+                  <Download class="w-3 h-3" />
+                  <span>Download</span>
+                </a>
                 <span v-else class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-bold flex items-center space-x-1">
                   <span>⏳ Compilation Pending</span>
                 </span>
@@ -754,28 +904,41 @@
             </p>
           </div>
 
-          <!-- Episode / Master Omnibus Selector Dropdown -->
-          <div class="flex items-center space-x-2">
-            <label class="text-xs font-mono text-slate-400 font-semibold">Select Release Target:</label>
-            <select 
-              v-model="selectedPackageEpisode" 
-              @change="loadPackagingData"
-              class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
+          <!-- Episode / Master Omnibus Selector Dropdown & Quick Download -->
+          <div class="flex items-center space-x-3 flex-wrap gap-y-2">
+            <div class="flex items-center space-x-2">
+              <label class="text-xs font-mono text-slate-400 font-semibold">Select Release Target:</label>
+              <select 
+                v-model="selectedPackageEpisode" 
+                @change="loadPackagingData"
+                class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
+              >
+                <optgroup label="Compiled Master Releases">
+                  <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
+                    🎬 Master Omnibus Movie (Parts 1 - {{ compiledEpisodes.length }} Compiled)
+                  </option>
+                  <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
+                    🏆 Complete Story Marathon (Full Series Complete)
+                  </option>
+                </optgroup>
+                <optgroup label="Individual Episode Releases">
+                  <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
+                    {{ ep.name }}
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+
+            <a 
+              v-if="currentSelectedEpisodeVideoDownloadUrl"
+              :href="currentSelectedEpisodeVideoDownloadUrl"
+              :download="currentSelectedEpisodeVideoFilename"
+              class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold font-mono flex items-center space-x-1.5 shadow-sm shadow-purple-900/20 transition cursor-pointer hover:scale-[1.02]"
+              :title="`Download ${currentSelectedEpisode?.name || selectedPackageEpisode} Master Video`"
             >
-              <optgroup label="Compiled Master Releases">
-                <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
-                  🎬 Master Omnibus Movie (Parts 1 - {{ compiledEpisodes.length }} Compiled)
-                </option>
-                <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
-                  🏆 Complete Story Marathon (Full Series Complete)
-                </option>
-              </optgroup>
-              <optgroup label="Individual Episode Releases">
-                <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
-                  {{ ep.name }}
-                </option>
-              </optgroup>
-            </select>
+              <Download class="w-3.5 h-3.5" />
+              <span>Download Video ({{ currentSelectedEpisodeVideoSize }})</span>
+            </a>
           </div>
         </div>
 
@@ -1219,7 +1382,7 @@ import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, Layers, FileText, Sparkles, Mic, Film, 
   Crown, Youtube, Copy, Download, Check, Loader2, X, Trash2,
-  Tag, ExternalLink, RefreshCw, Hash, ChevronDown, Zap
+  Tag, ExternalLink, RefreshCw, Hash, ChevronDown, Zap, BookOpen
 } from 'lucide-vue-next'
 import {
   parseEntityMappingText,
@@ -1626,6 +1789,34 @@ const compiledEpisodes = computed(() => {
   return availableEpisodes.value.filter(ep => ep.hasCompiledVideo)
 })
 
+const episode1 = computed(() => {
+  return availableEpisodes.value.find(ep => /EP0*1/i.test(ep.id)) || availableEpisodes.value[0] || null
+})
+
+const currentSelectedEpisode = computed(() => {
+  if (!selectedPackageEpisode.value || selectedPackageEpisode.value.startsWith('omnibus')) return null
+  return availableEpisodes.value.find(e => e.id === selectedPackageEpisode.value) || null
+})
+
+const currentSelectedEpisodeVideoDownloadUrl = computed(() => {
+  if (currentSelectedEpisode.value?.hasCompiledVideo) {
+    const fId = franchise.value?.folder || route.params.id
+    const eId = currentSelectedEpisode.value.id
+    return `/api/episodes/${fId}/${eId}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`
+  }
+  return null
+})
+
+const currentSelectedEpisodeVideoFilename = computed(() => {
+  if (!currentSelectedEpisode.value) return 'Episode_Master_1080p.mp4'
+  const fId = franchise.value?.folder || route.params.id
+  return `${fId}_${currentSelectedEpisode.value.id}_Master_1080p.mp4`
+})
+
+const currentSelectedEpisodeVideoSize = computed(() => {
+  return currentSelectedEpisode.value?.videoSizeFormatted || '1080p'
+})
+
 const selectedEpisodeFilter = ref('all')
 
 const episodeScopedModels = computed(() => {
@@ -1969,12 +2160,35 @@ const isGeneratingShort = ref(false)
 const isLoadingClimaxData = ref(false)
 const copiedClimaxField = ref(null)
 
-const defaultClimaxHooks = [
-  { title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀", hookType: "Noble Humiliation", ctrScore: "99%" },
-  { title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀", hookType: "Dramatic Shock", ctrScore: "97%" },
-  { title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]", hookType: "System Revelation", ctrScore: "95%" },
-  { title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕", hookType: "Deadpan Comedy", ctrScore: "94%" }
-]
+const defaultClimaxHooks = computed(() => {
+  const currentId = route.params.id || ''
+  if (currentId.includes('Series_04')) {
+    return [
+      { title: "He ran an idle cultivation game for 10 years, then Earth merged with his save file 😭💀", hookType: "Reality Convergence", ctrScore: "99%" },
+      { title: "Arrogant S-Rank Scion drew a sacred jade blade, so he snapped it with a kitchen knife 💀", hookType: "Action Shock", ctrScore: "98%" },
+      { title: "Mocked as a broke night-shift clerk until 1 billion years of Dao cultivation unlocked 😭", hookType: "Underdog Awakening", ctrScore: "97%" },
+      { title: "The state spectrometer tried measuring his power... and violently exploded with 1 billion years of Dao ⚡💀", hookType: "Measurement Overflow", ctrScore: "96%" }
+    ]
+  }
+  if (currentId.includes('Series_03')) {
+    return [
+      { title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀", hookType: "Noble Humiliation", ctrScore: "99%" },
+      { title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀", hookType: "Dramatic Shock", ctrScore: "97%" },
+      { title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]", hookType: "System Revelation", ctrScore: "95%" },
+      { title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕", hookType: "Deadpan Comedy", ctrScore: "94%" }
+    ]
+  }
+  if (currentId.includes('Series_02')) {
+    return [
+      { title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
+      { title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹", hookType: "Boss Destruction", ctrScore: "97%" }
+    ]
+  }
+  return [
+    { title: "They mocked him as the weakest student until his true hidden sovereign power awakened 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
+    { title: "Arrogant elite drew their sacred blade on an ordinary student... and instantly regretted it 😭", hookType: "Dramatic Shock", ctrScore: "97%" }
+  ]
+})
 
 const openClimaxModal = (ep) => {
   selectedClimaxEpisode.value = ep
