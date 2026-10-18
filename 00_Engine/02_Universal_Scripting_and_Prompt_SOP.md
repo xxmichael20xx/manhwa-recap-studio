@@ -118,6 +118,14 @@ Every single prompt entry generated across all franchises must adhere unconditio
 ---
 
 
+14. **The Unconstrained Hyper-Dense Visual Prompt Invariant (Nano Banana 2.1 Engine Law):**
+    - **Zero Length Penalty:** Vision models such as Nano Banana 2.1 process highly complex, structured instructions with zero token-choke issues. Never abbreviate or truncate prompts.
+    - **Detail as Anti-Slop:** Doubling visual detail locks specific 2D manhwa cel-shading, prevents facial morphing, and stops anatomical chaos.
+    - **Mandatory Weapon & Prop Entity Extraction:** In Google Flow, weapons and key props MUST be registered as Character Entities with standalone 9:16 master reference plates and passed under character_refs for active image-to-image conditioning.
+    - **Zero Silent UI Truncation:** Lean Mode must default to alse so 100% of negative quality clauses and detailed scene instructions are copied into Google Flow.
+
+---
+
 ## 8. The Proactive Prompt Learning & Auto-Codification Protocol
 
 Whenever any prompt correction, visual slop defect, diffusion anomaly, or new generation constraint is identified, calibrated, or resolved during production turns:

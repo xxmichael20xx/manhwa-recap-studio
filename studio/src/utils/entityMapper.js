@@ -52,15 +52,22 @@ export function parseEntityMappingText(rawText) {
     const uuid = uuidMatch[1].toLowerCase()
 
     // Extract the entity name before the UUID
-    const beforeUuid = trimmed.split(uuidMatch[1])[0]
+    let beforeUuid = trimmed.split(uuidMatch[1])[0]
 
-    // Clean trailing colons and spaces
-    let cleanName = beforeUuid.replace(/[:\s]+$/, '').trim()
+    // Strip trailing UUID indicators like ", UUID: " or "- id:"
+    beforeUuid = beforeUuid.replace(/(?:[,\-\s]+)?(?:uuid|id)\s*[:=]?\s*$/i, '')
 
-    // Clean markdown bolding, bullets, and numbering
+    // Clean trailing colons, dashes, equal signs and spaces
+    let cleanName = beforeUuid.replace(/[:\s\-–—=]+$/, '').trim()
+
+    // Clean markdown bolding, bullets, numbering, and wrapper brackets
     cleanName = cleanName
-      .replace(/^[\s\-*•\d.]+/g, '') // strip bullets / numbering
+      .replace(/^[\s\-*•\d.)\]]+/g, '') // strip bullets, numbering, closing bracket
       .replace(/[*\x60_]/g, '')        // strip markdown formatting
+      .replace(/^[[(]/, '')            // strip leading [ or (
+      .replace(/[\])]$/, '')           // strip trailing ] or )
+      .replace(/^(?:character|item|entity|name)\s*[:\-]\s*/i, '') // strip leading label prefix
+      .replace(/[:\s\-–—=]+$/, '')     // strip trailing delimiters again
       .trim()
 
     if (cleanName && uuid) {
@@ -238,28 +245,13 @@ export function setTagModeToStorage(mode) {
   }
 }
 
-export const LEAN_MODE_STORAGE_KEY = 'manhwa_recap_lean_prompt_mode'
-
+// Full-fidelity invariant: Nano Banana 2.1 has zero length limit and thrives on full prompt detail
 export function stripBoilerplateTail(text) {
-  if (!text || typeof text !== 'string') return ''
-
-  // Strip only verbose anatomical negative boilerplate while ALWAYS preserving the core manhwa art style lock
-  const anatomyMatch = text.search(/[,.\s]+(?:anatomically correct hands|no character cloning|textless manhwa illustration)/i)
-  let core = text
-  if (anatomyMatch !== -1) {
-    core = text.slice(0, anatomyMatch).trim()
-  }
-
-  // Ensure every scene prompt retains the mandatory manhwa art style invariant for the diffusion tool call
-  if (!/sharp.*ink linework|high contrast cel shading/i.test(core)) {
-    core = `${core.replace(/[.,\s]+$/, '')}. Dark fantasy action manhwa art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting.`
-  }
-
-  return core.trim()
+  // Always return full prompt text without truncation to prevent slop and morphing
+  return text || ''
 }
 
 export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mode = 'token', options = {}) {
-  const isLean = Boolean(options && options.lean)
   const charRefs = []
   const itemRefs = []
   const text = promptText || ''
@@ -310,7 +302,7 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   if (charRefs.length === 0 && entityMap && typeof entityMap === 'object') {
     for (const [key, uuid] of Object.entries(entityMap)) {
       if (!uuid) continue
-      const isItem = /^(Weapon|Item):/i.test(key)
+      const isItem = /^(Weapon|Item|Artifact|Prop):/i.test(key)
       if (isItem) continue
       const tokenPattern = `@{${key}}`
       let hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
@@ -321,6 +313,7 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
         if (cleanKey.toLowerCase().includes('bramwell')) checkNames.push('Bram')
         if (cleanKey.toLowerCase().includes('cassian')) checkNames.push('Cassian')
         if (cleanKey.toLowerCase().includes('vance')) checkNames.push('Vance')
+        if (cleanKey.toLowerCase().includes('lu chen')) checkNames.push('Lu Chen')
         for (const n of checkNames) {
           if (!n || COMMON_STOP_WORDS.has(n.toLowerCase())) continue
           const re = new RegExp(`\\b${n}\\b`, 'i')
@@ -339,21 +332,22 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
     }
   }
 
-  // 3b. Dynamic lookup for items ONLY when no explicit item ref was provided
+  // 4. Dynamic lookup from entityMap for items/weapons (INDEPENDENT of whether charRefs has characters)
   if (itemRefs.length === 0 && entityMap && typeof entityMap === 'object') {
     for (const [key, uuid] of Object.entries(entityMap)) {
       if (!uuid) continue
-      const isItem = /^(Weapon|Item):/i.test(key)
-      if (!isItem) continue
-      const tokenPattern = `@{${key}}`
-      let hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
-      if (hasToken) {
-        if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+      const isItem = /^(Weapon|Item|Artifact|Prop):/i.test(key) || /blade|dao|bow|arrow|orb|console|spectrometer|stele/i.test(key)
+      if (isItem) {
+        const tokenPattern = `@{${key}}`
+        const cleanKey = key.replace(/^(Weapon|Item|Artifact|Prop):\s*/i, '').trim()
+        if (text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key) || text.includes(cleanKey)) {
+          if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+        }
       }
     }
   }
 
-  // 4. Hardcoded fallbacks for Series 02 if entityMap is missing specific keys
+  // 5. Hardcoded fallbacks for Series 04 & Series 02 if entityMap is missing specific keys
   if (text.includes('Caelen Vance - Phantom Marksman')) {
     const uuid = (entityMap && entityMap['Caelen Vance - Phantom Marksman']) || 'f16555b2-8ae8-40bb-8027-5b8a0c9d859c'
     if (!charRefs.includes(uuid)) charRefs.push(uuid)
@@ -382,26 +376,40 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
     if (!charRefs.includes(uuid)) charRefs.push(uuid)
   }
 
-  // Items fallbacks
+  // Series 04 Items / Weapons fallbacks
+  if (text.includes('Jade Spirit Blade') || text.includes('Jade Dao') || text.includes("Gu Tianyu's Jade Spirit Blade")) {
+    const uuid = (entityMap && (entityMap["Gu Tianyu's Jade Spirit Blade"] || entityMap['Weapon: Gu Tianyu\'s Jade Spirit Blade'])) || '80875c1d-weapon-dao0-0001-000000000008'
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('Tactical Spirit Spectrometer') || text.includes('spirit-spectrometer')) {
+    const uuid = (entityMap && (entityMap['Tactical Spirit Spectrometer'] || entityMap['Prop: Tactical Spirit Spectrometer'])) || '3b815452-prop-meter-0002-000000000009'
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+  if (text.includes('Heaven-Earth Golden Stele') || text.includes('Heaven-Earth Stele')) {
+    const uuid = (entityMap && (entityMap['Heaven-Earth Golden Stele'] || entityMap['Artifact: Heaven-Earth Stele'])) || 'a0000000-artf-stele-0003-000000000010'
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
+  }
+
+  // Series 02 Items / Weapons fallbacks
   if (text.includes('Void-Strung Heavy Recurve')) {
     const uuid = (entityMap && entityMap['Weapon: Void-Strung Heavy Recurve']) || 'e4b863c6-f8cf-46f4-b5c8-b9ef69dc0893'
-    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
   }
   if (text.includes('Ashwood Training Bow')) {
     const uuid = (entityMap && entityMap['Weapon: Ashwood Training Bow']) || 'dedb670f-9670-4341-a5eb-6587353d5cd7'
-    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
   }
   if (text.includes('Ethereal Siphon Arrow')) {
     const uuid = (entityMap && entityMap['Item: Ethereal Siphon Arrow']) || 'f6d5a575-29d5-4f37-a49e-eae728456316'
-    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
   }
   if (text.includes('Academy Awakening Orb')) {
     const uuid = (entityMap && entityMap['Item: Academy Awakening Orb']) || 'ceed8950-f216-41f8-ab79-c38f199cf85c'
-    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
   }
   if (text.includes('VIP Radar Console')) {
     const uuid = (entityMap && entityMap['Item: VIP Radar Console']) || '4a5d1028-8a9a-4cba-8398-b69cd5eb715f'
-    if (!itemRefs.includes(uuid)) itemRefs.push(uuid)
+    if (!itemRefs.includes(uuid) && !charRefs.includes(uuid)) itemRefs.push(uuid)
   }
 
   const uniqueChars = [...new Set(charRefs.filter(Boolean))]
@@ -421,7 +429,7 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   }
   openTag += `>`
 
-  const promptBody = isLean ? stripBoilerplateTail(text) : text
+  const promptBody = text
   const cleanBody = promptBody.replace(/^#\s*Filename:[^\n]*\n?/im, '').trim()
   const finalPrompt = transformTokens(cleanBody, entityMap, mode)
   return `${openTag}\n# Filename: ${filename}\n${finalPrompt}\n</scene>`

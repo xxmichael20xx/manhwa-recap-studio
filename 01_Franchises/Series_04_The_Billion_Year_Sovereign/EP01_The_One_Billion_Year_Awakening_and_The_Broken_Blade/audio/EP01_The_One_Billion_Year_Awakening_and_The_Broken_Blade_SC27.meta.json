@@ -1,0 +1,244 @@
+{
+  "scene": 27,
+  "text": "\"Fourth-floor commoners, listen closely!\" Gu Tianyu announced, his voice vibrating through every dorm room. \"From tonight onward, this entire floor answers to the Gu Clan. Ten spiritual spirit-stones per room every month, or you pack your luggage into the street.\"",
+  "durationMs": 18384,
+  "rawWords": [
+    {
+      "ttsWord": "Fourth-floor",
+      "startMs": 50,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "commoners",
+      "startMs": 788,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "listen",
+      "startMs": 1600,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "closely",
+      "startMs": 1963,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 3425,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 3650,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "announced",
+      "startMs": 4063,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4763,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 4963,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "vibrating",
+      "startMs": 5300,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5875,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 6088,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "dorm",
+      "startMs": 6425,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 6750,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "From",
+      "startMs": 7963,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "tonight",
+      "startMs": 8238,
+      "endMs": 8625
+    },
+    {
+      "ttsWord": "onward",
+      "startMs": 8638,
+      "endMs": 9063
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 9300,
+      "endMs": 9488
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 9500,
+      "endMs": 9975
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 9988,
+      "endMs": 10338
+    },
+    {
+      "ttsWord": "answers",
+      "startMs": 10350,
+      "endMs": 10775
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 10788,
+      "endMs": 10888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10900,
+      "endMs": 11000
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 11013,
+      "endMs": 11200
+    },
+    {
+      "ttsWord": "Clan",
+      "startMs": 11213,
+      "endMs": 11700
+    },
+    {
+      "ttsWord": "Ten",
+      "startMs": 12563,
+      "endMs": 12850
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 12863,
+      "endMs": 13450
+    },
+    {
+      "ttsWord": "spirit-stones",
+      "startMs": 13463,
+      "endMs": 14213
+    },
+    {
+      "ttsWord": "per",
+      "startMs": 14225,
+      "endMs": 14425
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 14438,
+      "endMs": 14675
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 14688,
+      "endMs": 14963
+    },
+    {
+      "ttsWord": "month",
+      "startMs": 14975,
+      "endMs": 15350
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 15638,
+      "endMs": 15775
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 15788,
+      "endMs": 15888
+    },
+    {
+      "ttsWord": "pack",
+      "startMs": 15900,
+      "endMs": 16200
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 16213,
+      "endMs": 16338
+    },
+    {
+      "ttsWord": "luggage",
+      "startMs": 16350,
+      "endMs": 16725
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 16738,
+      "endMs": 16938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 16950,
+      "endMs": 17050
+    },
+    {
+      "ttsWord": "street",
+      "startMs": 17063,
+      "endMs": 17513
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Fourth-floor commoners, listen closely!\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "Gu Tianyu announced,",
+      "startOffsetMs": 3425,
+      "endOffsetMs": 4663
+    },
+    {
+      "text": "his voice vibrating through every dorm room.",
+      "startOffsetMs": 4763,
+      "endOffsetMs": 7200
+    },
+    {
+      "text": "From tonight onward,",
+      "startOffsetMs": 7963,
+      "endOffsetMs": 9163
+    },
+    {
+      "text": "this entire floor answers to the Gu Clan.",
+      "startOffsetMs": 9300,
+      "endOffsetMs": 11800
+    },
+    {
+      "text": "Ten spiritual spirit-stones per room every month,",
+      "startOffsetMs": 12563,
+      "endOffsetMs": 15450
+    },
+    {
+      "text": "or you pack your luggage into the street.\"",
+      "startOffsetMs": 15638,
+      "endOffsetMs": 17613
+    }
+  ]
+}

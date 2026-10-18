@@ -1,0 +1,154 @@
+{
+  "scene": 46,
+  "text": "In an explosive flash of iridescent golden sparks, the forty-eight-thousand-year Golden Core spirit blade shattered into millions of microscopic metallic particles, disintegrating like brittle sugar.",
+  "durationMs": 11688,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 225,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "explosive",
+      "startMs": 313,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "flash",
+      "startMs": 963,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1375,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "iridescent",
+      "startMs": 1488,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 2063,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "sparks",
+      "startMs": 2425,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3175,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "forty-eight-thousand-year",
+      "startMs": 3313,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 4400,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "Core",
+      "startMs": 4788,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 5075,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "blade",
+      "startMs": 5500,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 5788,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6225,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "millions",
+      "startMs": 6450,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6925,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "microscopic",
+      "startMs": 7013,
+      "endMs": 7738
+    },
+    {
+      "ttsWord": "metallic",
+      "startMs": 7750,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "particles",
+      "startMs": 8238,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "disintegrating",
+      "startMs": 9038,
+      "endMs": 9788
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 9800,
+      "endMs": 10038
+    },
+    {
+      "ttsWord": "brittle",
+      "startMs": 10050,
+      "endMs": 10313
+    },
+    {
+      "ttsWord": "sugar",
+      "startMs": 10325,
+      "endMs": 10813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In an explosive flash of iridescent golden sparks,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3050
+    },
+    {
+      "text": "the forty-eight-thousand-year Golden Core spirit blade shattered",
+      "startOffsetMs": 3175,
+      "endOffsetMs": 6213
+    },
+    {
+      "text": "into millions of microscopic metallic particles,",
+      "startOffsetMs": 6225,
+      "endOffsetMs": 8913
+    },
+    {
+      "text": "disintegrating like brittle sugar.",
+      "startOffsetMs": 9038,
+      "endOffsetMs": 10913
+    }
+  ]
+}

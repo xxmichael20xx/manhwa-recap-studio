@@ -1,0 +1,129 @@
+{
+  "scene": 69,
+  "text": "Han Feng reflexively dropped the smoking meter, his grizzled hand trembling slightly as his cigarette ash fell onto his coat lapel.",
+  "durationMs": 8064,
+  "rawWords": [
+    {
+      "ttsWord": "Han",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 388,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "reflexively",
+      "startMs": 725,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "dropped",
+      "startMs": 1413,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1750,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "smoking",
+      "startMs": 1850,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "meter",
+      "startMs": 2325,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2875,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "grizzled",
+      "startMs": 3050,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 3438,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 3738,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "slightly",
+      "startMs": 4188,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4688,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4825,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "cigarette",
+      "startMs": 4963,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "ash",
+      "startMs": 5450,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "fell",
+      "startMs": 5725,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 6013,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6250,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "coat",
+      "startMs": 6400,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "lapel",
+      "startMs": 6675,
+      "endMs": 7200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Han Feng reflexively dropped the smoking meter,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2725
+    },
+    {
+      "text": "his grizzled hand trembling slightly as his cigarette",
+      "startOffsetMs": 2875,
+      "endOffsetMs": 5438
+    },
+    {
+      "text": "ash fell onto his coat lapel.",
+      "startOffsetMs": 5450,
+      "endOffsetMs": 7300
+    }
+  ]
+}

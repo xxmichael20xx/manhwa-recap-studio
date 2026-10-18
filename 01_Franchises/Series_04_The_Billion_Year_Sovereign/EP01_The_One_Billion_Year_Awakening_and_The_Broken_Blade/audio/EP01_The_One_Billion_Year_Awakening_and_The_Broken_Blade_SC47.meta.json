@@ -1,0 +1,154 @@
+{
+  "scene": 47,
+  "text": "The kinetic backlash travelled straight up Gu Tianyu's arm, rupturing his wrist tendons and blowing him backward into the hallway wall with a concussive thud.",
+  "durationMs": 8736,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 188,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "backlash",
+      "startMs": 613,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "travelled",
+      "startMs": 1150,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "straight",
+      "startMs": 1550,
+      "endMs": 1863
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 1875,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 2050,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "Tianyu's",
+      "startMs": 2238,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "arm",
+      "startMs": 2663,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "rupturing",
+      "startMs": 3200,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3650,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "wrist",
+      "startMs": 3825,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "tendons",
+      "startMs": 4113,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4588,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "blowing",
+      "startMs": 4713,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 5050,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 5200,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5638,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5850,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "hallway",
+      "startMs": 5938,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 6338,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6700,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6850,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 6913,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "thud",
+      "startMs": 7450,
+      "endMs": 7863
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The kinetic backlash travelled straight up Gu Tianyu's",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2650
+    },
+    {
+      "text": "arm, rupturing his wrist tendons and blowing him",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 5188
+    },
+    {
+      "text": "backward into the hallway wall with a concussive",
+      "startOffsetMs": 5200,
+      "endOffsetMs": 7438
+    },
+    {
+      "text": "thud.",
+      "startOffsetMs": 7450,
+      "endOffsetMs": 7963
+    }
+  ]
+}

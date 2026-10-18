@@ -1,0 +1,129 @@
+{
+  "scene": 33,
+  "text": "The thin composite door of Room 402 suddenly flew off its hinges with a violent crash, splintering against the internal concrete frame.",
+  "durationMs": 8832,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "thin",
+      "startMs": 213,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "composite",
+      "startMs": 538,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 1163,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1438,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 1550,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 2663,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "flew",
+      "startMs": 3100,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 3425,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3650,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "hinges",
+      "startMs": 3775,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4188,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4313,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "violent",
+      "startMs": 4375,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "crash",
+      "startMs": 4788,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "splintering",
+      "startMs": 5550,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 6100,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6463,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "internal",
+      "startMs": 6525,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 7000,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "frame",
+      "startMs": 7513,
+      "endMs": 7963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The thin composite door of Room 402 suddenly",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3088
+    },
+    {
+      "text": "flew off its hinges with a violent crash,",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "splintering against the internal concrete frame.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 8063
+    }
+  ]
+}

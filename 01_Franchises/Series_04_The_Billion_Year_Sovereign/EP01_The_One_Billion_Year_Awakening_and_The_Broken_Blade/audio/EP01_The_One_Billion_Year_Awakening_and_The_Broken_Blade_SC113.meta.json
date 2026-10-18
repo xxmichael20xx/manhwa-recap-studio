@@ -1,0 +1,169 @@
+{
+  "scene": 113,
+  "text": "Down on the campus plaza, two sleek Threat Bureau tactical scanning drones lifted smoothly into the night air, their cyan sensor rings sweeping across the dormitory windows.",
+  "durationMs": 10704,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 363,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 450,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 538,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "plaza",
+      "startMs": 963,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 1700,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "sleek",
+      "startMs": 1925,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 2313,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 2638,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 2975,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "scanning",
+      "startMs": 3513,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "drones",
+      "startMs": 3950,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "lifted",
+      "startMs": 4350,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "smoothly",
+      "startMs": 4688,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5225,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5413,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "night",
+      "startMs": 5500,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 5775,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6338,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 6500,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "sensor",
+      "startMs": 6988,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "rings",
+      "startMs": 7438,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "sweeping",
+      "startMs": 7713,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 8150,
+      "endMs": 8513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8525,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "dormitory",
+      "startMs": 8650,
+      "endMs": 9213
+    },
+    {
+      "ttsWord": "windows",
+      "startMs": 9225,
+      "endMs": 9838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down on the campus plaza,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1538
+    },
+    {
+      "text": "two sleek Threat Bureau tactical scanning drones lifted",
+      "startOffsetMs": 1700,
+      "endOffsetMs": 4675
+    },
+    {
+      "text": "smoothly into the night air,",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 6113
+    },
+    {
+      "text": "their cyan sensor rings sweeping across the dormitory",
+      "startOffsetMs": 6338,
+      "endOffsetMs": 9213
+    },
+    {
+      "text": "windows.",
+      "startOffsetMs": 9225,
+      "endOffsetMs": 9938
+    }
+  ]
+}

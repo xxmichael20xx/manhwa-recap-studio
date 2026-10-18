@@ -1,214 +1,219 @@
 {
   "scene": 22,
-  "text": "\"Twenty-five percent is plenty,\" Lu Chen murmured with a calm, amused deadpan smile. \"Two hundred and fifty million years is already enough to turn any high-level calamity into dust with a flick of my finger.\"",
-  "durationMs": 12864,
+  "text": "\"A billion years is a bit much for everyday campus life,\" Lu Chen murmured with a calm, amused deadpan smile. \"Holding back is just basic courtesy, unless someone really insists on turning themselves into dust.\"",
+  "durationMs": 14040,
   "rawWords": [
     {
-      "ttsWord": "Twenty-five",
+      "ttsWord": "A",
       "startMs": 50,
-      "endMs": 650
+      "endMs": 200
     },
     {
-      "ttsWord": "percent",
-      "startMs": 663,
-      "endMs": 1088
-    },
-    {
-      "ttsWord": "is",
-      "startMs": 1100,
-      "endMs": 1225
-    },
-    {
-      "ttsWord": "plenty",
-      "startMs": 1238,
-      "endMs": 1625
-    },
-    {
-      "ttsWord": "Lu",
-      "startMs": 1875,
-      "endMs": 2050
-    },
-    {
-      "ttsWord": "Chen",
-      "startMs": 2063,
-      "endMs": 2300
-    },
-    {
-      "ttsWord": "murmured",
-      "startMs": 2313,
-      "endMs": 2650
-    },
-    {
-      "ttsWord": "with",
-      "startMs": 2663,
-      "endMs": 2775
-    },
-    {
-      "ttsWord": "a",
-      "startMs": 2788,
-      "endMs": 2850
-    },
-    {
-      "ttsWord": "calm",
-      "startMs": 2863,
-      "endMs": 3238
-    },
-    {
-      "ttsWord": "amused",
-      "startMs": 3475,
-      "endMs": 3963
-    },
-    {
-      "ttsWord": "deadpan",
-      "startMs": 3975,
-      "endMs": 4463
-    },
-    {
-      "ttsWord": "smile",
-      "startMs": 4475,
-      "endMs": 5050
-    },
-    {
-      "ttsWord": "Two",
-      "startMs": 5913,
-      "endMs": 6138
-    },
-    {
-      "ttsWord": "hundred",
-      "startMs": 6150,
-      "endMs": 6425
-    },
-    {
-      "ttsWord": "and",
-      "startMs": 6438,
-      "endMs": 6525
-    },
-    {
-      "ttsWord": "fifty",
-      "startMs": 6538,
-      "endMs": 6900
-    },
-    {
-      "ttsWord": "million",
-      "startMs": 6913,
-      "endMs": 7288
+      "ttsWord": "billion",
+      "startMs": 213,
+      "endMs": 638
     },
     {
       "ttsWord": "years",
-      "startMs": 7300,
-      "endMs": 7663
+      "startMs": 650,
+      "endMs": 1013
     },
     {
       "ttsWord": "is",
-      "startMs": 7675,
-      "endMs": 7813
-    },
-    {
-      "ttsWord": "already",
-      "startMs": 7825,
-      "endMs": 8213
-    },
-    {
-      "ttsWord": "enough",
-      "startMs": 8225,
-      "endMs": 8525
-    },
-    {
-      "ttsWord": "to",
-      "startMs": 8538,
-      "endMs": 8638
-    },
-    {
-      "ttsWord": "turn",
-      "startMs": 8650,
-      "endMs": 8913
-    },
-    {
-      "ttsWord": "any",
-      "startMs": 8925,
-      "endMs": 9113
-    },
-    {
-      "ttsWord": "high-level",
-      "startMs": 9125,
-      "endMs": 9625
-    },
-    {
-      "ttsWord": "calamity",
-      "startMs": 9638,
-      "endMs": 10175
-    },
-    {
-      "ttsWord": "into",
-      "startMs": 10188,
-      "endMs": 10400
-    },
-    {
-      "ttsWord": "dust",
-      "startMs": 10413,
-      "endMs": 10788
-    },
-    {
-      "ttsWord": "with",
-      "startMs": 10800,
-      "endMs": 10888
+      "startMs": 1025,
+      "endMs": 1138
     },
     {
       "ttsWord": "a",
-      "startMs": 10900,
-      "endMs": 10950
+      "startMs": 1150,
+      "endMs": 1225
     },
     {
-      "ttsWord": "flick",
-      "startMs": 10963,
-      "endMs": 11263
+      "ttsWord": "bit",
+      "startMs": 1238,
+      "endMs": 1450
     },
     {
-      "ttsWord": "of",
-      "startMs": 11275,
-      "endMs": 11338
+      "ttsWord": "much",
+      "startMs": 1463,
+      "endMs": 1738
     },
     {
-      "ttsWord": "my",
-      "startMs": 11350,
-      "endMs": 11488
+      "ttsWord": "for",
+      "startMs": 1750,
+      "endMs": 1938
     },
     {
-      "ttsWord": "finger",
-      "startMs": 11500,
-      "endMs": 12000
+      "ttsWord": "everyday",
+      "startMs": 1950,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 2375,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "life",
+      "startMs": 2825,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 3463,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 3650,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "murmured",
+      "startMs": 3925,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4300,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4425,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 4500,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "amused",
+      "startMs": 5138,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 5613,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 6125,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "Holding",
+      "startMs": 7550,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 7950,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 8250,
+      "endMs": 8375
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 8388,
+      "endMs": 8650
+    },
+    {
+      "ttsWord": "basic",
+      "startMs": 8663,
+      "endMs": 9038
+    },
+    {
+      "ttsWord": "courtesy",
+      "startMs": 9050,
+      "endMs": 9625
+    },
+    {
+      "ttsWord": "unless",
+      "startMs": 9913,
+      "endMs": 10188
+    },
+    {
+      "ttsWord": "someone",
+      "startMs": 10200,
+      "endMs": 10538
+    },
+    {
+      "ttsWord": "really",
+      "startMs": 10550,
+      "endMs": 10838
+    },
+    {
+      "ttsWord": "insists",
+      "startMs": 10850,
+      "endMs": 11375
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 11388,
+      "endMs": 11563
+    },
+    {
+      "ttsWord": "turning",
+      "startMs": 11575,
+      "endMs": 11875
+    },
+    {
+      "ttsWord": "themselves",
+      "startMs": 11888,
+      "endMs": 12413
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 12425,
+      "endMs": 12663
+    },
+    {
+      "ttsWord": "dust",
+      "startMs": 12675,
+      "endMs": 13175
     }
   ],
   "relativeCues": [
     {
-      "text": "Twenty-five percent is plenty,\"",
+      "text": "A billion years is a bit much for",
       "startOffsetMs": 50,
-      "endOffsetMs": 1725
+      "endOffsetMs": 1938
+    },
+    {
+      "text": "everyday campus life,\"",
+      "startOffsetMs": 1950,
+      "endOffsetMs": 3288
     },
     {
       "text": "Lu Chen murmured with a calm,",
-      "startOffsetMs": 1875,
-      "endOffsetMs": 3338
+      "startOffsetMs": 3463,
+      "endOffsetMs": 4975
     },
     {
       "text": "amused deadpan smile.",
-      "startOffsetMs": 3475,
-      "endOffsetMs": 5150
+      "startOffsetMs": 5138,
+      "endOffsetMs": 6788
     },
     {
-      "text": "Two hundred and fifty million years is already",
-      "startOffsetMs": 5913,
-      "endOffsetMs": 8213
+      "text": "Holding back is just basic courtesy,",
+      "startOffsetMs": 7550,
+      "endOffsetMs": 9725
     },
     {
-      "text": "enough to turn any high-level calamity into dust",
-      "startOffsetMs": 8225,
-      "endOffsetMs": 10788
+      "text": "unless someone really insists on turning themselves into",
+      "startOffsetMs": 9913,
+      "endOffsetMs": 12663
     },
     {
-      "text": "with a flick of my finger.\"",
-      "startOffsetMs": 10800,
-      "endOffsetMs": 12100
+      "text": "dust.\"",
+      "startOffsetMs": 12675,
+      "endOffsetMs": 13275
     }
   ]
 }

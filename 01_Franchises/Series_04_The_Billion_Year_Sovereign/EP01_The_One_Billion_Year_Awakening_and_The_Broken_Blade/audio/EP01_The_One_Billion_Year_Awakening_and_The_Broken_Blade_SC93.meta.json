@@ -1,0 +1,284 @@
+{
+  "scene": 93,
+  "text": "\"Lu Chen! Are you deaf and blind?!\" Wang Bao whispered in pure hysteria, dumping the convenience store snacks onto his study desk. \"The Gu syndicate scion just got turned into a pretzel in our hallway, and there is a thirty-thousand-metre golden tombstone hanging in the sky!\"",
+  "durationMs": 18264,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 350,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "Are",
+      "startMs": 1750,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 1913,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "deaf",
+      "startMs": 2038,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2350,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "blind",
+      "startMs": 2450,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 3850,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 4200,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "whispered",
+      "startMs": 4413,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4850,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 4975,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "hysteria",
+      "startMs": 5275,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "dumping",
+      "startMs": 6175,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6513,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "convenience",
+      "startMs": 6613,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "store",
+      "startMs": 7238,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "snacks",
+      "startMs": 7513,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 7975,
+      "endMs": 8250
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 8263,
+      "endMs": 8388
+    },
+    {
+      "ttsWord": "study",
+      "startMs": 8400,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 8713,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 10088,
+      "endMs": 10238
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 10250,
+      "endMs": 10450
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 10463,
+      "endMs": 10975
+    },
+    {
+      "ttsWord": "scion",
+      "startMs": 10988,
+      "endMs": 11488
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 11500,
+      "endMs": 11713
+    },
+    {
+      "ttsWord": "got",
+      "startMs": 11725,
+      "endMs": 11913
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 11925,
+      "endMs": 12213
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 12225,
+      "endMs": 12413
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 12425,
+      "endMs": 12500
+    },
+    {
+      "ttsWord": "pretzel",
+      "startMs": 12513,
+      "endMs": 12938
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 12950,
+      "endMs": 13050
+    },
+    {
+      "ttsWord": "our",
+      "startMs": 13063,
+      "endMs": 13175
+    },
+    {
+      "ttsWord": "hallway",
+      "startMs": 13188,
+      "endMs": 13650
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 13925,
+      "endMs": 14050
+    },
+    {
+      "ttsWord": "there",
+      "startMs": 14063,
+      "endMs": 14200
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 14213,
+      "endMs": 14313
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 14325,
+      "endMs": 14388
+    },
+    {
+      "ttsWord": "thirty-thousand-metre",
+      "startMs": 14400,
+      "endMs": 15413
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 15425,
+      "endMs": 15788
+    },
+    {
+      "ttsWord": "tombstone",
+      "startMs": 15800,
+      "endMs": 16350
+    },
+    {
+      "ttsWord": "hanging",
+      "startMs": 16363,
+      "endMs": 16725
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 16738,
+      "endMs": 16800
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 16813,
+      "endMs": 16875
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 16888,
+      "endMs": 17388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen!",
+      "startOffsetMs": 50,
+      "endOffsetMs": 988
+    },
+    {
+      "text": "Are you deaf and blind?!\"",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 3088
+    },
+    {
+      "text": "Wang Bao whispered in pure hysteria,",
+      "startOffsetMs": 3850,
+      "endOffsetMs": 6000
+    },
+    {
+      "text": "dumping the convenience store snacks onto his study",
+      "startOffsetMs": 6175,
+      "endOffsetMs": 8700
+    },
+    {
+      "text": "desk.",
+      "startOffsetMs": 8713,
+      "endOffsetMs": 9325
+    },
+    {
+      "text": "The Gu syndicate scion just got turned into",
+      "startOffsetMs": 10088,
+      "endOffsetMs": 12413
+    },
+    {
+      "text": "a pretzel in our hallway,",
+      "startOffsetMs": 12425,
+      "endOffsetMs": 13750
+    },
+    {
+      "text": "and there is a thirty-thousand-metre golden tombstone hanging",
+      "startOffsetMs": 13925,
+      "endOffsetMs": 16725
+    },
+    {
+      "text": "in the sky!\"",
+      "startOffsetMs": 16738,
+      "endOffsetMs": 17488
+    }
+  ]
+}

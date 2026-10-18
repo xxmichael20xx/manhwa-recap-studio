@@ -1,0 +1,149 @@
+{
+  "scene": 43,
+  "text": "With a deafening sonic boom, Gu Tianyu slashed downward with full, lethal momentum, the razor-sharp edge screaming straight toward Lu Chen's exposed shoulder.",
+  "durationMs": 10008,
+  "rawWords": [
+    {
+      "ttsWord": "With",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 275,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 375,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "sonic",
+      "startMs": 838,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "boom",
+      "startMs": 1250,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 1863,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 2063,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "slashed",
+      "startMs": 2513,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "downward",
+      "startMs": 2938,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3350,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "full",
+      "startMs": 3500,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "lethal",
+      "startMs": 4138,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "momentum",
+      "startMs": 4475,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5275,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "razor-sharp",
+      "startMs": 5388,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "edge",
+      "startMs": 6063,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "screaming",
+      "startMs": 6313,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "straight",
+      "startMs": 6788,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 7175,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 7488,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 7663,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "exposed",
+      "startMs": 8063,
+      "endMs": 8588
+    },
+    {
+      "ttsWord": "shoulder",
+      "startMs": 8600,
+      "endMs": 9138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "With a deafening sonic boom,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "Gu Tianyu slashed downward with full,",
+      "startOffsetMs": 1863,
+      "endOffsetMs": 3950
+    },
+    {
+      "text": "lethal momentum,",
+      "startOffsetMs": 4138,
+      "endOffsetMs": 5100
+    },
+    {
+      "text": "the razor-sharp edge screaming straight toward Lu Chen's",
+      "startOffsetMs": 5275,
+      "endOffsetMs": 8050
+    },
+    {
+      "text": "exposed shoulder.",
+      "startOffsetMs": 8063,
+      "endOffsetMs": 9238
+    }
+  ]
+}

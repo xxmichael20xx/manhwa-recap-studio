@@ -1,0 +1,89 @@
+{
+  "scene": 79,
+  "text": "ANNOUNCEMENT: COMMENCING GLOBAL COUNTDOWN TO TOP 10,000 CONVERGENCE CULTIVATOR REVELATION. T-MINUS 12 HOURS.",
+  "durationMs": 8736,
+  "rawWords": [
+    {
+      "ttsWord": "ANNOUNCEMENT",
+      "startMs": 50,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "COMMENCING",
+      "startMs": 975,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 1488,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "COUNTDOWN",
+      "startMs": 1888,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 2450,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "TOP",
+      "startMs": 2550,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "10,000",
+      "startMs": 2888,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "CONVERGENCE",
+      "startMs": 3588,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "CULTIVATOR",
+      "startMs": 4125,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "REVELATION",
+      "startMs": 4738,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "T-MINUS",
+      "startMs": 6325,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "12 HOURS",
+      "startMs": 6913,
+      "endMs": 7875
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "ANNOUNCEMENT:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 800
+    },
+    {
+      "text": "COMMENCING GLOBAL COUNTDOWN TO TOP 10,000 CONVERGENCE",
+      "startOffsetMs": 975,
+      "endOffsetMs": 4113
+    },
+    {
+      "text": "CULTIVATOR REVELATION.",
+      "startOffsetMs": 4125,
+      "endOffsetMs": 5563
+    },
+    {
+      "text": "T-MINUS 12 HOURS",
+      "startOffsetMs": 6325,
+      "endOffsetMs": 7975
+    }
+  ]
+}

@@ -403,85 +403,1821 @@ years of primordial cultivation settled peacefully within his
 soul.
 
 102
-00:04:05,642 --> 00:04:06,730
+00:04:05,642 --> 00:04:06,780
 SYSTEM NOTICE:
 
 103
-00:04:06,905 --> 00:04:11,280
-ACTIVE OUTPUT CALIBRATED TO 25.00% (250,000,000 YEARS)
+00:04:06,967 --> 00:04:10,580
+1,000,000,000 YEARS PRIMORDIAL CULTIVATION FULLY SYNCHRONISED.
 
 104
-00:04:11,367 --> 00:04:12,517
-APPRAISAL STATUS:
+00:04:11,342 --> 00:04:13,292
+PLANETARY DAMPENING ENGAGED.
 
 105
-00:04:12,680 --> 00:04:15,255
-TRANSCENDENT APEX   INFINITE OVERFLOW.
-
-106
-00:04:16,017 --> 00:04:18,105
+00:04:14,055 --> 00:04:16,142
 The golden HUD hovered gracefully in front of
 
-107
-00:04:18,117 --> 00:04:19,942
+106
+00:04:16,155 --> 00:04:17,980
 his desk inside the clean room.
 
+107
+00:04:18,794 --> 00:04:20,682
+A billion years is a bit much for
+
 108
-00:04:20,762 --> 00:04:22,437
-Twenty-five percent is plenty,"
+00:04:20,694 --> 00:04:22,032
+everyday campus life,"
 
 109
-00:04:22,587 --> 00:04:24,050
+00:04:22,207 --> 00:04:23,719
 Lu Chen murmured with a calm,
 
 110
-00:04:24,187 --> 00:04:25,862
+00:04:23,882 --> 00:04:25,532
 amused deadpan smile.
 
 111
-00:04:26,625 --> 00:04:28,925
-Two hundred and fifty million years is already
+00:04:26,294 --> 00:04:28,469
+Holding back is just basic courtesy,
 
 112
-00:04:28,937 --> 00:04:31,500
-enough to turn any high-level calamity into dust
+00:04:28,657 --> 00:04:31,407
+unless someone really insists on turning themselves into
 
 113
-00:04:31,512 --> 00:04:32,812
-with a flick of my finger."
+00:04:31,419 --> 00:04:32,019
+dust."
 
 114
-00:04:33,626 --> 00:04:34,964
+00:04:32,834 --> 00:04:34,172
 Through the open doorway,
 
 115
-00:04:35,114 --> 00:04:38,089
+00:04:34,322 --> 00:04:37,297
 excited shouts echoed down the fourth-floor corridor as
 
 116
-00:04:38,101 --> 00:04:41,251
+00:04:37,309 --> 00:04:40,459
 university students poured onto the polished ceramic tiles,
 
 117
-00:04:41,389 --> 00:04:43,951
+00:04:40,597 --> 00:04:43,159
 testing newly awakened qi sparks against the clean
 
 118
-00:04:43,964 --> 00:04:44,614
+00:04:43,172 --> 00:04:43,822
 walls.
 
 119
-00:04:45,434 --> 00:04:47,009
+00:04:44,642 --> 00:04:46,217
 At the end of the bright corridor,
 
 120
-00:04:47,184 --> 00:04:49,984
+00:04:46,392 --> 00:04:49,192
 heavy, arrogant footsteps echoed over the commotion,
 
 121
-00:04:50,134 --> 00:04:52,384
+00:04:49,342 --> 00:04:51,592
 accompanied by the distinct metallic hum of an
 
 122
-00:04:52,397 --> 00:04:53,959
+00:04:51,605 --> 00:04:53,167
 unsheathed spirit blade.
+
+123
+00:04:53,978 --> 00:04:54,753
+Gu Tianyu,
+
+124
+00:04:54,916 --> 00:04:57,103
+flanked by two intimidated lackeys,
+
+125
+00:04:57,303 --> 00:04:59,328
+strutted down the Fourth Floor corridor,
+
+126
+00:04:59,541 --> 00:05:02,403
+his tailored navy designer blazer billowing with crackling
+
+127
+00:05:02,416 --> 00:05:04,091
+cyan spiritual pressure.
+
+128
+00:05:04,922 --> 00:05:07,485
+Every heavy step he took left hairline fractures
+
+129
+00:05:07,497 --> 00:05:09,910
+across the polished ceramic corridor tiles,
+
+130
+00:05:10,122 --> 00:05:12,947
+radiating forty-eight thousand years of raw Golden Core
+
+131
+00:05:12,960 --> 00:05:14,010
+spiritual weight.
+
+132
+00:05:14,834 --> 00:05:17,447
+Fourth-floor commoners, listen closely!"
+
+133
+00:05:18,209 --> 00:05:19,447
+Gu Tianyu announced,
+
+134
+00:05:19,547 --> 00:05:21,984
+his voice vibrating through every dorm room.
+
+135
+00:05:22,747 --> 00:05:23,947
+From tonight onward,
+
+136
+00:05:24,084 --> 00:05:26,584
+this entire floor answers to the Gu Clan.
+
+137
+00:05:27,347 --> 00:05:30,234
+Ten spiritual spirit-stones per room every month,
+
+138
+00:05:30,422 --> 00:05:32,397
+or you pack your luggage into the street."
+
+139
+00:05:33,218 --> 00:05:36,293
+Terrified students scrambled backward into their doorways,
+
+140
+00:05:36,456 --> 00:05:39,406
+clutching smartphone screens that flickered erratically under the
+
+141
+00:05:39,418 --> 00:05:42,056
+intense electromagnetic mana interference.
+
+142
+00:05:42,866 --> 00:05:44,279
+In Room 402
+
+143
+00:05:44,466 --> 00:05:46,879
+Wang Bao froze beside the metal bunk bed,
+
+144
+00:05:47,066 --> 00:05:49,616
+his crimson Body Refining glow dimming as cold
+
+145
+00:05:49,629 --> 00:05:51,629
+sweat broke out across his forehead.
+
+146
+00:05:52,442 --> 00:05:54,967
+Lu Chen, that's Gu Tianyu from the campus
+
+147
+00:05:54,980 --> 00:05:56,030
+fencing syndicate,"
+
+148
+00:05:56,217 --> 00:05:57,867
+Wang Bao whispered frantically,
+
+149
+00:05:58,030 --> 00:05:59,167
+his voice trembling.
+
+150
+00:05:59,930 --> 00:06:01,205
+Before the game ended,
+
+151
+00:06:01,292 --> 00:06:03,917
+his family dumped two million yuan into Golden
+
+152
+00:06:03,930 --> 00:06:04,855
+Core pills!
+
+153
+00:06:05,617 --> 00:06:06,780
+We can't fight him!"
+
+154
+00:06:07,610 --> 00:06:09,760
+Lu Chen casually took another sip from his
+
+155
+00:06:09,773 --> 00:06:11,223
+clear glass water tumbler,
+
+156
+00:06:11,460 --> 00:06:14,098
+setting it gently beside his glowing laptop without
+
+157
+00:06:14,110 --> 00:06:15,035
+turning his head.
+
+158
+00:06:15,866 --> 00:06:18,554
+Two million yuan for forty-eight thousand years?"
+
+159
+00:06:19,316 --> 00:06:20,954
+Lu Chen murmured in a calm,
+
+160
+00:06:21,091 --> 00:06:22,179
+deadpan tone.
+
+161
+00:06:22,941 --> 00:06:24,841
+He was horribly overcharged."
+
+162
+00:06:25,658 --> 00:06:28,696
+The thin composite door of Room 402 suddenly
+
+163
+00:06:28,708 --> 00:06:31,008
+flew off its hinges with a violent crash,
+
+164
+00:06:31,158 --> 00:06:33,671
+splintering against the internal concrete frame.
+
+165
+00:06:34,490 --> 00:06:36,678
+Gu Tianyu stepped across the threshold,
+
+166
+00:06:36,840 --> 00:06:39,253
+sneering in disgust as his sharp brown eyes
+
+167
+00:06:39,265 --> 00:06:41,828
+swept across the modest student desks and instant
+
+168
+00:06:41,840 --> 00:06:42,728
+noodle cups.
+
+169
+00:06:43,538 --> 00:06:44,838
+Room 402
+
+170
+00:06:44,988 --> 00:06:46,101
+Gu Tianyu barked,
+
+171
+00:06:46,226 --> 00:06:49,026
+twirling an ornate silver-and-jade dao blade that hummed
+
+172
+00:06:49,038 --> 00:06:50,638
+with cutting gale-force wind.
+
+173
+00:06:51,401 --> 00:06:52,401
+You two deaf?
+
+174
+00:06:53,163 --> 00:06:54,888
+Get on your knees and hand over your
+
+175
+00:06:54,901 --> 00:06:56,676
+initial convergence inventory."
+
+176
+00:06:57,506 --> 00:06:59,694
+Wang Bao instinctively lunged forward,
+
+177
+00:06:59,844 --> 00:07:02,156
+throwing his sturdy arms wide to shield Lu
+
+178
+00:07:02,169 --> 00:07:03,169
+Chen's desk.
+
+179
+00:07:03,931 --> 00:07:07,331
+Gu Tianyu, campus security is monitoring the floors!
+
+180
+00:07:08,094 --> 00:07:10,181
+You can't just rob other students!"
+
+181
+00:07:10,994 --> 00:07:12,157
+Campus security?"
+
+182
+00:07:12,919 --> 00:07:14,557
+Gu Tianyu laughed mockingly,
+
+183
+00:07:14,744 --> 00:07:16,757
+flicking his left wrist as a sudden burst
+
+184
+00:07:16,769 --> 00:07:19,007
+of cyan wind slapped Wang Bao against the
+
+185
+00:07:19,019 --> 00:07:20,382
+wall with zero effort.
+
+186
+00:07:21,194 --> 00:07:24,107
+Mundane security guards cannot even stand within twenty
+
+187
+00:07:24,119 --> 00:07:25,782
+paces of my spirit domain,"
+
+188
+00:07:25,982 --> 00:07:27,107
+Gu Tianyu sneered,
+
+189
+00:07:27,294 --> 00:07:29,532
+turning his haughty glare toward the quiet student
+
+190
+00:07:29,544 --> 00:07:30,507
+in the black hoodie.
+
+191
+00:07:31,322 --> 00:07:34,022
+Lu Chen slowly spun his swivel chair around,
+
+192
+00:07:34,235 --> 00:07:36,510
+resting his forearms comfortably on his knees as
+
+193
+00:07:36,522 --> 00:07:38,660
+he met Gu Tianyu's arrogant glare with utter
+
+194
+00:07:38,672 --> 00:07:39,222
+boredom.
+
+195
+00:07:40,034 --> 00:07:41,859
+You," Gu Tianyu snarled,
+
+196
+00:07:41,972 --> 00:07:45,022
+irritated by the protagonist's complete lack of terror.
+
+197
+00:07:45,784 --> 00:07:48,034
+Kneel down and kowtow three times.
+
+198
+00:07:48,797 --> 00:07:50,709
+Or I'll slice your arms off and throw
+
+199
+00:07:50,722 --> 00:07:52,447
+you out that fourth-floor window."
+
+200
+00:07:53,258 --> 00:07:55,346
+Lu Chen tilted his head slightly.
+
+201
+00:07:56,108 --> 00:07:57,846
+My chair is quite comfortable.
+
+202
+00:07:58,608 --> 00:08:00,621
+And my hoodie doesn't react well to cheap
+
+203
+00:08:00,633 --> 00:08:01,158
+metal."
+
+204
+00:08:01,970 --> 00:08:03,033
+Seeking death!"
+
+205
+00:08:03,795 --> 00:08:04,908
+Gu Tianyu roared,
+
+206
+00:08:05,020 --> 00:08:08,058
+his patience instantly snapping as forty-eight thousand years
+
+207
+00:08:08,070 --> 00:08:10,683
+of concentrated Golden Core qi ignited the jade
+
+208
+00:08:10,695 --> 00:08:12,658
+blade into blinding cyan fire.
+
+209
+00:08:13,490 --> 00:08:15,165
+With a deafening sonic boom,
+
+210
+00:08:15,303 --> 00:08:17,390
+Gu Tianyu slashed downward with full,
+
+211
+00:08:17,578 --> 00:08:18,540
+lethal momentum,
+
+212
+00:08:18,715 --> 00:08:21,490
+the razor-sharp edge screaming straight toward Lu Chen's
+
+213
+00:08:21,503 --> 00:08:22,678
+exposed shoulder.
+
+214
+00:08:23,498 --> 00:08:25,648
+The moment the high-grade spirit blade met the
+
+215
+00:08:25,661 --> 00:08:28,311
+soft cotton fabric of Lu Chen's black hoodie,
+
+216
+00:08:28,436 --> 00:08:30,173
+the space within the room shuddered.
+
+217
+00:08:30,986 --> 00:08:34,086
+A silent, unfathomable pulse of one billion years
+
+218
+00:08:34,099 --> 00:08:36,749
+of primordial passive rebound rippled through the blade
+
+219
+00:08:36,761 --> 00:08:38,199
+in less than a millisecond.
+
+220
+00:08:39,026 --> 00:08:42,026
+In an explosive flash of iridescent golden sparks,
+
+221
+00:08:42,151 --> 00:08:45,189
+the forty-eight-thousand-year Golden Core spirit blade shattered
+
+222
+00:08:45,201 --> 00:08:47,889
+into millions of microscopic metallic particles,
+
+223
+00:08:48,014 --> 00:08:49,889
+disintegrating like brittle sugar.
+
+224
+00:08:50,714 --> 00:08:53,314
+The kinetic backlash travelled straight up Gu Tianyu's
+
+225
+00:08:53,327 --> 00:08:55,852
+arm, rupturing his wrist tendons and blowing him
+
+226
+00:08:55,864 --> 00:08:58,102
+backward into the hallway wall with a concussive
+
+227
+00:08:58,114 --> 00:08:58,627
+thud.
+
+228
+00:08:59,450 --> 00:09:01,813
+Gu Tianyu slid down the cracked plaster,
+
+229
+00:09:01,975 --> 00:09:04,200
+coughing a mouthful of bright crimson blood as
+
+230
+00:09:04,213 --> 00:09:05,788
+his eyes bulged in primal,
+
+231
+00:09:05,900 --> 00:09:07,250
+uncomprehending horror.
+
+232
+00:09:08,066 --> 00:09:10,279
+The fourth-floor corridor froze in dead,
+
+233
+00:09:10,441 --> 00:09:11,791
+suffocating silence;
+
+234
+00:09:11,991 --> 00:09:14,404
+dozens of watching students stood paralysed,
+
+235
+00:09:14,479 --> 00:09:16,841
+jaws hanging slack in absolute shock.
+
+236
+00:09:17,666 --> 00:09:19,741
+In the doorway of Room 402
+
+237
+00:09:19,929 --> 00:09:22,354
+Lu Chen calmly pinched a microscopic speck of
+
+238
+00:09:22,366 --> 00:09:24,629
+metallic dust off his left hoodie sleeve,
+
+239
+00:09:24,816 --> 00:09:26,529
+dusting it away with a bored flick of
+
+240
+00:09:26,541 --> 00:09:27,254
+his finger.
+
+241
+00:09:28,082 --> 00:09:29,995
+Look at that," Lu Chen remarked in a
+
+242
+00:09:30,007 --> 00:09:30,482
+dry,
+
+243
+00:09:30,645 --> 00:09:33,007
+deadpan voice that echoed down the hallway.
+
+244
+00:09:33,770 --> 00:09:37,032
+Your spirit blade had a severe manufacturing defect.
+
+245
+00:09:37,795 --> 00:09:40,232
+I suggest contacting customer service."
+
+246
+00:09:41,066 --> 00:09:42,741
+Wang Bao crawled to his feet,
+
+247
+00:09:42,891 --> 00:09:44,941
+eyes wide as saucers as he stared at
+
+248
+00:09:44,954 --> 00:09:47,516
+the glittering pile of fine metallic powder scattered
+
+249
+00:09:47,529 --> 00:09:48,729
+across their doormat.
+
+250
+00:09:49,562 --> 00:09:50,450
+L-Lu Chen...
+
+251
+00:09:50,612 --> 00:09:53,137
+that was a top-tier Heavenly Dao heirloom spirit
+
+252
+00:09:53,150 --> 00:09:53,700
+weapon..."
+
+253
+00:09:54,462 --> 00:09:55,675
+Wang Bao stammered,
+
+254
+00:09:55,762 --> 00:09:57,562
+his mind completely rebooting.
+
+255
+00:09:58,325 --> 00:09:59,700
+It turned into chalk..."
+
+256
+00:10:00,530 --> 00:10:02,230
+Gu Tianyu clutched his limp,
+
+257
+00:10:02,368 --> 00:10:03,468
+bruised right arm,
+
+258
+00:10:03,643 --> 00:10:06,643
+shaking uncontrollably as his cultivation qi leaked through
+
+259
+00:10:06,655 --> 00:10:08,018
+his shattered meridians.
+
+260
+00:10:08,780 --> 00:10:09,205
+What...
+
+261
+00:10:09,380 --> 00:10:11,543
+what kind of cursed defensive artifact are you
+
+262
+00:10:11,555 --> 00:10:12,068
+wearing?!"
+
+263
+00:10:12,890 --> 00:10:14,728
+It's just cotton and polyester,
+
+264
+00:10:14,878 --> 00:10:16,903
+bought during last month's clearance sale,"
+
+265
+00:10:17,053 --> 00:10:18,465
+Lu Chen replied flatly,
+
+266
+00:10:18,640 --> 00:10:20,528
+picking up his room's door from the floor
+
+267
+00:10:20,540 --> 00:10:22,340
+and leaning it back against the frame.
+
+268
+00:10:23,162 --> 00:10:24,100
+Down the hallway,
+
+269
+00:10:24,175 --> 00:10:26,562
+dozens of smartphones were already held high,
+
+270
+00:10:26,800 --> 00:10:29,162
+recording the surreal scene as student group chats
+
+271
+00:10:29,175 --> 00:10:32,650
+ignited into frantic hysteria across the entire university.
+
+272
+00:10:33,482 --> 00:10:34,770
+Within three minutes,
+
+273
+00:10:34,882 --> 00:10:38,070
+tactical emergency sirens wailed through the night outside,
+
+274
+00:10:38,257 --> 00:10:40,295
+their blue and amber strobe lights painting the
+
+275
+00:10:40,307 --> 00:10:42,007
+fourth-floor glass windows.
+
+276
+00:10:42,818 --> 00:10:45,756
+Heavy armoured tactical transports from the National Special
+
+277
+00:10:45,768 --> 00:10:48,218
+Threat Bureau slammed to a halt across Qindu
+
+278
+00:10:48,231 --> 00:10:49,818
+University's central plaza,
+
+279
+00:10:49,981 --> 00:10:52,006
+cordoning off the dormitory quadrant.
+
+280
+00:10:52,826 --> 00:10:56,414
+Tactical enforcers in reinforced combat exosuits poured out,
+
+281
+00:10:56,614 --> 00:11:00,601
+brandishing anti-spirit assault rifles and perimeter dispersion shields.
+
+282
+00:11:01,418 --> 00:11:03,993
+Leading the task force was Commander Han Feng,
+
+283
+00:11:04,156 --> 00:11:06,706
+his olive-drab military trench coat flapping in the
+
+284
+00:11:06,718 --> 00:11:08,681
+crisp evening breeze as he stepped through the
+
+285
+00:11:08,693 --> 00:11:09,643
+front entrance.
+
+286
+00:11:10,466 --> 00:11:12,379
+Han Feng lit a cigarette with a flick
+
+287
+00:11:12,391 --> 00:11:13,104
+of his lighter,
+
+288
+00:11:13,241 --> 00:11:15,954
+his tired, scar-marked face grim under the bright
+
+289
+00:11:15,966 --> 00:11:17,304
+security floodlights.
+
+290
+00:11:18,122 --> 00:11:21,235
+Commander, our airborne resonance drones just registered
+
+291
+00:11:21,247 --> 00:11:24,010
+a Category-Nine kinetic spike originating from the fourth
+
+292
+00:11:24,022 --> 00:11:25,997
+floor of Dormitory Building Three,"
+
+293
+00:11:26,172 --> 00:11:27,322
+an analyst reported,
+
+294
+00:11:27,497 --> 00:11:29,710
+holding up a ruggedised tactical tablet.
+
+295
+00:11:30,530 --> 00:11:31,755
+On the tablet screen,
+
+296
+00:11:31,868 --> 00:11:33,880
+the energy wave was not a standard mana
+
+297
+00:11:33,893 --> 00:11:34,368
+ripple
+
+298
+00:11:34,605 --> 00:11:35,630
+it was a bottomless,
+
+299
+00:11:35,780 --> 00:11:39,205
+black-hole gravitational signature that briefly wiped out satellite
+
+300
+00:11:39,218 --> 00:11:40,643
+tracking over the district.
+
+301
+00:11:41,474 --> 00:11:43,312
+Han Feng took a deep drag of his
+
+302
+00:11:43,324 --> 00:11:43,924
+cigarette,
+
+303
+00:11:44,087 --> 00:11:46,249
+his stern eyes narrowing as he gazed up
+
+304
+00:11:46,262 --> 00:11:48,149
+at the quiet fourth-floor windows.
+
+305
+00:11:48,912 --> 00:11:49,974
+Category Nine?
+
+306
+00:11:50,737 --> 00:11:52,912
+Even the Golden Core monsters from the gaming
+
+307
+00:11:52,924 --> 00:11:55,162
+guilds only register Category Three."
+
+308
+00:11:55,994 --> 00:11:58,894
+Heavy combat boots thudded up the concrete stairwell
+
+309
+00:11:58,907 --> 00:12:01,107
+as Commander Han Feng and his squad reached
+
+310
+00:12:01,119 --> 00:12:02,494
+the fourth-floor corridor,
+
+311
+00:12:02,744 --> 00:12:05,294
+immediately parting the stunned crowd of students.
+
+312
+00:12:06,122 --> 00:12:08,572
+Han Feng paused beside the cratered wall,
+
+313
+00:12:08,760 --> 00:12:10,735
+looking down at the groaning Gu Tianyu and
+
+314
+00:12:10,747 --> 00:12:12,985
+the fine pile of powdered spirit-steel on the
+
+315
+00:12:12,997 --> 00:12:13,572
+floor.
+
+316
+00:12:14,402 --> 00:12:17,177
+Taking out a handheld tactical spirit-spectrometer
+
+317
+00:12:17,390 --> 00:12:20,027
+Han Feng calibrated the sensor nozzle and pointed
+
+318
+00:12:20,040 --> 00:12:22,740
+it toward the open doorway of Room 402
+
+319
+00:12:23,570 --> 00:12:25,620
+The digital readout glitched violently,
+
+320
+00:12:25,795 --> 00:12:28,345
+numbers rolling from thousands into millions before the
+
+321
+00:12:28,358 --> 00:12:31,133
+device's screen cracked from thermal overload and began
+
+322
+00:12:31,145 --> 00:12:32,433
+spewing white smoke.
+
+323
+00:12:33,266 --> 00:12:35,941
+Han Feng reflexively dropped the smoking meter,
+
+324
+00:12:36,091 --> 00:12:38,654
+his grizzled hand trembling slightly as his cigarette
+
+325
+00:12:38,666 --> 00:12:40,516
+ash fell onto his coat lapel.
+
+326
+00:12:41,330 --> 00:12:42,593
+Standing in the doorway,
+
+327
+00:12:42,768 --> 00:12:44,868
+Han Feng looked directly at Lu Chen,
+
+328
+00:12:45,093 --> 00:12:47,018
+who was casually leaning back in his desk
+
+329
+00:12:47,030 --> 00:12:47,493
+chair,
+
+330
+00:12:47,680 --> 00:12:50,068
+scrolling through a campus food delivery app.
+
+331
+00:12:50,882 --> 00:12:53,407
+Young man," Commander Han Feng asked in a
+
+332
+00:12:53,420 --> 00:12:53,882
+low,
+
+333
+00:12:54,032 --> 00:12:56,782
+gravelly voice, his hand resting warily on his
+
+334
+00:12:56,795 --> 00:12:58,032
+sidearm talisman.
+
+335
+00:12:58,795 --> 00:13:00,957
+Care to explain what just transpired in this
+
+336
+00:13:00,970 --> 00:13:01,407
+room?"
+
+337
+00:13:02,234 --> 00:13:03,884
+Lu Chen did not look up from his
+
+338
+00:13:03,897 --> 00:13:04,797
+phone screen.
+
+339
+00:13:05,559 --> 00:13:08,047
+A campus bully tripped over his own sword,
+
+340
+00:13:08,134 --> 00:13:08,872
+Commander.
+
+341
+00:13:09,634 --> 00:13:10,384
+By the way,
+
+342
+00:13:10,497 --> 00:13:12,909
+is delivery still permitted past curfew?"
+
+343
+00:13:13,730 --> 00:13:15,968
+Commander Han Feng stared at Lu Chen in
+
+344
+00:13:15,980 --> 00:13:17,218
+deadpan bewilderment,
+
+345
+00:13:17,418 --> 00:13:20,705
+the veteran crisis manager completely unequipped to process
+
+346
+00:13:20,718 --> 00:13:24,180
+the teenager's absolute lack of self-preservation or panic.
+
+347
+00:13:25,010 --> 00:13:26,148
+Outside the building,
+
+348
+00:13:26,285 --> 00:13:29,198
+the calm 2025 autumn night air suddenly turned
+
+349
+00:13:29,210 --> 00:13:30,160
+freezing cold,
+
+350
+00:13:30,335 --> 00:13:31,773
+the wind coming to a dead,
+
+351
+00:13:31,885 --> 00:13:33,348
+unnatural standstill.
+
+352
+00:13:34,178 --> 00:13:35,928
+Across Jiangnan Province,
+
+353
+00:13:36,103 --> 00:13:39,141
+streetlamps flickered and modern electric vehicles stalled as
+
+354
+00:13:39,153 --> 00:13:41,778
+a resonant primordial vibration rippled through the Earth's
+
+355
+00:13:41,791 --> 00:13:42,428
+crust.
+
+356
+00:13:43,250 --> 00:13:45,038
+High above the city skyline,
+
+357
+00:13:45,213 --> 00:13:47,375
+the heavy cloud cover was torn apart by
+
+358
+00:13:47,388 --> 00:13:50,163
+a colossal shockwave of iridescent purple and gold
+
+359
+00:13:50,175 --> 00:13:51,538
+celestial starlight.
+
+360
+00:13:52,370 --> 00:13:54,058
+GLOBAL SYSTEM BROADCAST:
+
+361
+00:13:54,220 --> 00:13:57,445
+THE HEAVEN-EARTH GOLDEN STELE HAS MANIFESTED IN STRATOSPHERIC
+
+362
+00:13:57,458 --> 00:13:57,958
+ORBIT.
+
+363
+00:13:58,778 --> 00:14:01,978
+A holographic broadcast banner ignited simultaneously
+
+364
+00:14:01,991 --> 00:14:03,778
+across every television screen,
+
+365
+00:14:03,966 --> 00:14:04,803
+smartphone,
+
+366
+00:14:05,003 --> 00:14:07,416
+and billboard across all seven continents.
+
+367
+00:14:08,234 --> 00:14:08,984
+ANNOUNCEMENT:
+
+368
+00:14:09,159 --> 00:14:12,297
+COMMENCING GLOBAL COUNTDOWN TO TOP 10,000 CONVERGENCE
+
+369
+00:14:12,309 --> 00:14:13,747
+CULTIVATOR REVELATION.
+
+370
+00:14:14,509 --> 00:14:16,159
+T-MINUS 12 HOURS
+
+371
+00:14:16,970 --> 00:14:18,570
+Piercing through the stratosphere,
+
+372
+00:14:18,733 --> 00:14:22,070
+an unfathomable ancient obsidian stele measuring thirty thousand
+
+373
+00:14:22,083 --> 00:14:24,220
+metres in height descended through the clouds,
+
+374
+00:14:24,358 --> 00:14:26,608
+glowing with divine golden inscriptions.
+
+375
+00:14:27,434 --> 00:14:29,972
+In the VIP penthouse of the Starfall Corporate
+
+376
+00:14:29,984 --> 00:14:30,497
+Tower,
+
+377
+00:14:30,684 --> 00:14:33,347
+Ye Xingchen stood beside floor-to-ceiling windows,
+
+378
+00:14:33,509 --> 00:14:36,222
+his cosmic purple aura flaring with supreme arrogance
+
+379
+00:14:36,234 --> 00:14:37,734
+as he gazed at the monument.
+
+380
+00:14:38,546 --> 00:14:40,959
+Four hundred and eighty million years of celestial
+
+381
+00:14:40,971 --> 00:14:41,759
+cultivation,"
+
+382
+00:14:41,971 --> 00:14:44,446
+Ye Xingchen muttered with cold imperial pride.
+
+383
+00:14:45,209 --> 00:14:47,484
+Rank One on that stone belongs solely to
+
+384
+00:14:47,496 --> 00:14:47,909
+me."
+
+385
+00:14:48,722 --> 00:14:50,360
+Back in Room 402
+
+386
+00:14:50,535 --> 00:14:52,822
+Lu Chen glanced out the clear glass window,
+
+387
+00:14:53,010 --> 00:14:55,847
+his calm obsidian eyes reflecting the majestic golden
+
+388
+00:14:55,860 --> 00:14:57,997
+starlight shimmering across the clouds.
+
+389
+00:14:58,826 --> 00:14:59,514
+A subtle,
+
+390
+00:14:59,676 --> 00:15:02,014
+knowing smirk touched Lu Chen's lips as the
+
+391
+00:15:02,026 --> 00:15:04,851
+internal system HUD whispered softly in his ear:
+
+392
+00:15:05,064 --> 00:15:06,514
+GLOBAL RANK 1 LOCKED:
+
+393
+00:15:06,664 --> 00:15:09,164
+PRIMORDIAL SOVEREIGN XIAO YAO'
+
+394
+00:15:09,314 --> 00:15:10,139
+CULTIVATION:
+
+395
+00:15:10,326 --> 00:15:11,589
+1,000,000,000 YEARS
+
+396
+00:15:12,410 --> 00:15:15,848
+Back in the fourth-floor corridor outside Room 402
+
+397
+00:15:16,048 --> 00:15:19,085
+Commander Han Feng's encrypted tactical earpiece emitted a
+
+398
+00:15:19,098 --> 00:15:21,123
+sharp high-priority red alert beep,
+
+399
+00:15:21,135 --> 00:15:23,948
+abruptly interrupting his interrogation of Lu Chen.
+
+400
+00:15:24,770 --> 00:15:26,895
+Han Feng pressed his grizzled finger to the
+
+401
+00:15:26,908 --> 00:15:29,308
+earpiece as the urgent voice of Threat Bureau
+
+402
+00:15:29,320 --> 00:15:32,358
+Chief Lin crackled through heavy atmospheric interference:
+
+403
+00:15:32,533 --> 00:15:33,445
+Commander Han!
+
+404
+00:15:34,208 --> 00:15:36,620
+Disregard the student scuffle immediately.
+
+405
+00:15:37,383 --> 00:15:40,795
+An extraterrestrial celestial anomaly has entered stratospheric
+
+406
+00:15:40,808 --> 00:15:41,345
+orbit!"
+
+407
+00:15:42,170 --> 00:15:44,295
+Han Feng turned his scarred face toward the
+
+408
+00:15:44,308 --> 00:15:45,308
+corridor window,
+
+409
+00:15:45,533 --> 00:15:48,670
+watching the shimmering golden atmospheric aurora reflect against
+
+410
+00:15:48,683 --> 00:15:51,270
+the polished brass insignia of his tactical trench
+
+411
+00:15:51,283 --> 00:15:51,758
+coat.
+
+412
+00:15:52,586 --> 00:15:55,649
+Understood, Command," Han Feng responded in a
+
+413
+00:15:55,661 --> 00:15:57,399
+disciplined military gravel.
+
+414
+00:15:58,161 --> 00:16:01,261
+Securing Qindu University perimeter as a Class-Two
+
+415
+00:16:01,274 --> 00:16:02,724
+observation outpost."
+
+416
+00:16:03,554 --> 00:16:05,129
+At the far end of the corridor,
+
+417
+00:16:05,317 --> 00:16:05,704
+heavy,
+
+418
+00:16:05,854 --> 00:16:08,992
+frantic footsteps echoed loudly up the concrete staircase
+
+419
+00:16:09,004 --> 00:16:11,579
+as chubby roommate Fatty Wang Bao scrambled onto
+
+420
+00:16:11,592 --> 00:16:12,292
+the landing.
+
+421
+00:16:13,106 --> 00:16:15,769
+Clutching two white plastic bags filled with iced
+
+422
+00:16:15,781 --> 00:16:18,081
+green tea bottles and spicy beef jerky,
+
+423
+00:16:18,319 --> 00:16:20,106
+Wang Bao froze in his tracks,
+
+424
+00:16:20,269 --> 00:16:22,519
+his round face going paper-white at the sight
+
+425
+00:16:22,531 --> 00:16:24,169
+of the cratered concrete wall.
+
+426
+00:16:24,986 --> 00:16:25,949
+Holy crap!"
+
+427
+00:16:26,711 --> 00:16:27,899
+Wang Bao squeaked,
+
+428
+00:16:27,986 --> 00:16:29,986
+his eyes bulging behind his fringe as he
+
+429
+00:16:29,999 --> 00:16:32,811
+spotted the unconscious Gu Tianyu being strapped onto
+
+430
+00:16:32,824 --> 00:16:35,999
+an anti-gravity medical stretcher by full-face visored bureau
+
+431
+00:16:36,011 --> 00:16:36,911
+paramedics.
+
+432
+00:16:37,730 --> 00:16:40,855
+Squeezing nervously past the tactical cordon barriers,
+
+433
+00:16:41,043 --> 00:16:44,268
+Wang Bao bolted inside Room 402 and slammed
+
+434
+00:16:44,280 --> 00:16:45,680
+the heavy wooden door shut,
+
+435
+00:16:45,880 --> 00:16:48,555
+hastily sliding all three deadbolts into place with
+
+436
+00:16:48,568 --> 00:16:49,730
+trembling fingers.
+
+437
+00:16:50,546 --> 00:16:51,484
+Lu Chen!
+
+438
+00:16:52,246 --> 00:16:53,584
+Are you deaf and blind?!"
+
+439
+00:16:54,346 --> 00:16:56,496
+Wang Bao whispered in pure hysteria,
+
+440
+00:16:56,671 --> 00:16:59,196
+dumping the convenience store snacks onto his study
+
+441
+00:16:59,209 --> 00:16:59,821
+desk.
+
+442
+00:17:00,584 --> 00:17:02,909
+The Gu syndicate scion just got turned into
+
+443
+00:17:02,921 --> 00:17:04,246
+a pretzel in our hallway,
+
+444
+00:17:04,421 --> 00:17:07,221
+and there is a thirty-thousand-metre golden tombstone hanging
+
+445
+00:17:07,234 --> 00:17:07,984
+in the sky!"
+
+446
+00:17:08,810 --> 00:17:11,010
+Lu Chen calmly unscrewed the cap of an
+
+447
+00:17:11,023 --> 00:17:12,348
+iced green tea bottle,
+
+448
+00:17:12,473 --> 00:17:13,360
+taking a measured,
+
+449
+00:17:13,560 --> 00:17:16,260
+refreshing sip without the faintest ripple of disturbance
+
+450
+00:17:16,273 --> 00:17:17,985
+in his calm obsidian eyes.
+
+451
+00:17:18,818 --> 00:17:20,206
+I noticed, Fatty,"
+
+452
+00:17:20,381 --> 00:17:21,968
+Lu Chen replied with a dry,
+
+453
+00:17:22,093 --> 00:17:23,243
+unbothered drawl.
+
+454
+00:17:24,006 --> 00:17:25,781
+Did you remember to ask the clerk for
+
+455
+00:17:25,793 --> 00:17:28,006
+extra chili seasoning on the beef jerky?"
+
+456
+00:17:28,826 --> 00:17:30,689
+Wang Bao stared at his roommate with his
+
+457
+00:17:30,701 --> 00:17:32,176
+mouth hanging wide open,
+
+458
+00:17:32,339 --> 00:17:35,564
+completely incapacitated by Lu Chen's surreal indifference
+
+459
+00:17:35,576 --> 00:17:37,264
+to the unfolding apocalypse.
+
+460
+00:17:38,090 --> 00:17:39,740
+Beyond the dormitory walls,
+
+461
+00:17:39,853 --> 00:17:42,915
+the entire metropolitan night skyline of Jiangnan was
+
+462
+00:17:42,928 --> 00:17:44,903
+bathed in a brilliant golden aurora,
+
+463
+00:17:45,140 --> 00:17:47,990
+reflecting against gleaming glass faculty towers.
+
+464
+00:17:48,818 --> 00:17:50,568
+Inside Room 402
+
+465
+00:17:50,743 --> 00:17:53,906
+Wang Bao's modern curved gaming monitors simultaneously
+
+466
+00:17:53,918 --> 00:17:56,343
+flashed red emergency broadcast banners:
+
+467
+00:17:56,531 --> 00:17:58,118
+GLOBAL SPECIAL BROADCAST:
+
+468
+00:17:58,256 --> 00:18:00,468
+PLANETARY SPIRIT EMERGENCE CONFIRMED.
+
+469
+00:18:01,298 --> 00:18:04,311
+Wang Bao frantically refreshed the official Ministry portal
+
+470
+00:18:04,323 --> 00:18:05,336
+on his smartphone,
+
+471
+00:18:05,523 --> 00:18:07,898
+his round face sweating profusely under the bright
+
+472
+00:18:07,911 --> 00:18:10,436
+4000K LED ceiling lights.
+
+473
+00:18:11,258 --> 00:18:14,408
+The live digital spirit-energy telemetry displayed on Wang
+
+474
+00:18:14,421 --> 00:18:17,908
+Bao's laptop screen registered an unprecedented four-hundred-percent
+
+475
+00:18:17,921 --> 00:18:20,971
+surge in ambient atmospheric qi across Jiangnan.
+
+476
+00:18:21,794 --> 00:18:24,019
+Lu Chen leaned back comfortably in his mesh
+
+477
+00:18:24,032 --> 00:18:24,857
+desk chair,
+
+478
+00:18:25,044 --> 00:18:27,494
+casually twisting the green cap onto his cold
+
+479
+00:18:27,507 --> 00:18:29,469
+tea bottle with an unbothered smirk.
+
+480
+00:18:30,290 --> 00:18:32,740
+Down on the university central plaza beneath their
+
+481
+00:18:32,753 --> 00:18:33,290
+window,
+
+482
+00:18:33,453 --> 00:18:36,178
+Commander Han Feng supervised the rapid deployment of
+
+483
+00:18:36,190 --> 00:18:39,015
+a sleek Threat Bureau mobile operations vehicle.
+
+484
+00:18:39,842 --> 00:18:43,167
+Han Feng gripped his handheld Tactical Spirit Spectrometer,
+
+485
+00:18:43,392 --> 00:18:46,017
+watching the brass analog needle slam hard against
+
+486
+00:18:46,030 --> 00:18:49,280
+the maximum overload threshold with crackling amber sparks.
+
+487
+00:18:50,090 --> 00:18:52,978
+The spectrometer's amber digital display cast a sharp
+
+488
+00:18:52,990 --> 00:18:55,765
+glow across Han Feng's scarred cheek as directional
+
+489
+00:18:55,778 --> 00:18:58,453
+telemetry locked onto the fourth floor of Dormitory
+
+490
+00:18:58,465 --> 00:18:59,028
+4.
+
+491
+00:18:59,858 --> 00:19:02,883
+Lu Chen, look at the international trade boards!"
+
+492
+00:19:03,646 --> 00:19:04,821
+Wang Bao shrieked,
+
+493
+00:19:04,933 --> 00:19:08,033
+pointing his trembling finger at international stock exchanges
+
+494
+00:19:08,046 --> 00:19:11,283
+plummeting as virtual spirit stones traded for millions.
+
+495
+00:19:12,098 --> 00:19:14,398
+Lu Chen glanced with mild amusement at his
+
+496
+00:19:14,411 --> 00:19:16,736
+private translucent golden system HUD,
+
+497
+00:19:16,898 --> 00:19:19,948
+casually reviewing his billion-year accumulated inventory
+
+498
+00:19:19,961 --> 00:19:21,648
+of divine spirit stones.
+
+499
+00:19:22,466 --> 00:19:25,054
+In the panoramic penthouse of Starfall Tower,
+
+500
+00:19:25,241 --> 00:19:27,316
+Ye Xingchen stood with arms crossed,
+
+501
+00:19:27,479 --> 00:19:30,129
+gazing out through floor-to-ceiling glass at the colossal
+
+502
+00:19:30,141 --> 00:19:31,616
+Heaven-Earth Golden Stele.
+
+503
+00:19:32,450 --> 00:19:35,700
+Ye Xingchen spoke into an encrypted gold-trimmed communicator,
+
+504
+00:19:35,913 --> 00:19:39,088
+barking cold corporate orders to Starfall syndicate executives
+
+505
+00:19:39,100 --> 00:19:41,775
+to monopolise all regional spirit reserves.
+
+506
+00:19:42,602 --> 00:19:45,390
+On a floating holographic comms panel before him,
+
+507
+00:19:45,577 --> 00:19:48,340
+a Starfall syndicate director bowed obsequiously,
+
+508
+00:19:48,477 --> 00:19:51,502
+confirming the deployment of private enforcement squads.
+
+509
+00:19:52,322 --> 00:19:54,860
+Ye Xingchen smiled with arrogant condescension,
+
+510
+00:19:55,010 --> 00:19:58,410
+cosmic purple starlight dancing effortlessly between his manicured
+
+511
+00:19:58,422 --> 00:20:01,385
+fingers in anticipation of his Rank 1 coronation.
+
+512
+00:20:02,210 --> 00:20:04,448
+High above the glittering city skyline,
+
+513
+00:20:04,610 --> 00:20:07,385
+the Heaven-Earth Golden Stele descended smoothly through the
+
+514
+00:20:07,398 --> 00:20:08,273
+cloud layer,
+
+515
+00:20:08,498 --> 00:20:11,860
+its divine calligraphy illuminating orbital satellite arrays.
+
+516
+00:20:12,674 --> 00:20:15,874
+The monumental stele released a resonant celestial acoustic
+
+517
+00:20:15,887 --> 00:20:17,999
+chime as its golden countdown shifted:
+
+518
+00:20:18,237 --> 00:20:19,562
+REVELATION COUNTDOWN:
+
+519
+00:20:19,749 --> 00:20:21,224
+T-MINUS 06:00:00
+
+520
+00:20:22,058 --> 00:20:23,546
+Down on the campus plaza,
+
+521
+00:20:23,708 --> 00:20:26,683
+two sleek Threat Bureau tactical scanning drones lifted
+
+522
+00:20:26,696 --> 00:20:28,121
+smoothly into the night air,
+
+523
+00:20:28,346 --> 00:20:31,221
+their cyan sensor rings sweeping across the dormitory
+
+524
+00:20:31,233 --> 00:20:31,946
+windows.
+
+525
+00:20:32,762 --> 00:20:36,362
+A tactical drone hovered directly outside Room 402's
+
+526
+00:20:36,375 --> 00:20:37,550
+clear glass window,
+
+527
+00:20:37,762 --> 00:20:40,662
+aiming its high-resolution spiritual scanner at Lu Chen's
+
+528
+00:20:40,675 --> 00:20:41,587
+study desk.
+
+529
+00:20:42,410 --> 00:20:43,748
+Without turning his head,
+
+530
+00:20:43,885 --> 00:20:46,135
+Lu Chen casually lifted two fingers,
+
+531
+00:20:46,298 --> 00:20:49,098
+releasing an imperceptible ripple of primordial aura that
+
+532
+00:20:49,110 --> 00:20:51,348
+gently dispersed the drone's scanning beam.
+
+533
+00:20:52,178 --> 00:20:54,353
+Inside the mobile command van below,
+
+534
+00:20:54,516 --> 00:20:57,566
+two technical specialists scratched their heads in confusion
+
+535
+00:20:57,578 --> 00:20:59,728
+as their diagnostics monitor displayed:
+
+536
+00:20:59,953 --> 00:21:00,778
+TARGET READING:
+
+537
+00:21:00,953 --> 00:21:02,841
+STANDARD ZERO-QI STUDENT.
+
+538
+00:21:03,674 --> 00:21:04,887
+Outside the vehicle,
+
+539
+00:21:04,999 --> 00:21:07,874
+Commander Han Feng stared up at Room 402's
+
+540
+00:21:07,887 --> 00:21:08,999
+illuminated window,
+
+541
+00:21:09,212 --> 00:21:12,012
+his weathered military intuition screaming that something was
+
+542
+00:21:12,024 --> 00:21:13,274
+fundamentally amiss.
+
+543
+00:21:14,090 --> 00:21:16,115
+Back inside Room 402
+
+544
+00:21:16,303 --> 00:21:18,340
+Wang Bao tore open a foil packet of
+
+545
+00:21:18,353 --> 00:21:20,715
+spicy beef jerky with trembling hands,
+
+546
+00:21:20,903 --> 00:21:23,990
+seeking solace in late-night convenience store snacks.
+
+547
+00:21:24,818 --> 00:21:27,281
+You brought exactly one bag of beef jerky
+
+548
+00:21:27,293 --> 00:21:29,643
+to survive a global dimensional convergence?"
+
+549
+00:21:30,406 --> 00:21:31,881
+Lu Chen asked in a dry,
+
+550
+00:21:32,031 --> 00:21:33,093
+deadpan drawl.
+
+551
+00:21:33,914 --> 00:21:36,139
+As the golden countdown in the clouds pulsed
+
+552
+00:21:36,152 --> 00:21:36,777
+rhythmically,
+
+553
+00:21:36,952 --> 00:21:39,852
+Lu Chen's private HUD chimed with quiet majesty:
+
+554
+00:21:40,039 --> 00:21:41,564
+PRIMORDIAL AUTHORITY SYNC:
+
+555
+00:21:41,789 --> 00:21:43,264
+100% COMPLETE.
+
+556
+00:21:44,027 --> 00:21:45,339
+CORONATION IMMINENT.

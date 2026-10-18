@@ -174,6 +174,11 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   3. **Zero-Reminder Standard:** The operator should never have to manually remind the agent to update master codices. Codification is an automated studio invariant.
 
 
+---
 
-
-
+### 19. The Unconstrained Hyper-Dense Visual Prompt Invariant (Nano Banana 2.1 Engine Law)
+* **Defect:** Prompts artificially abbreviated or simplified due to imaginary token-choke limits, leading to generic AI slop, facial morphing, costume hallucinations, and loss of 2D manhwa linework.
+* **Fix (The Exhaustive Visual Density Standard):**
+  1. **Zero Technical Token Penalty:** Vision engines like Nano Banana 2.1 natively parse long, structured prompts. Doubling visual detail reinforces aesthetic constraints.
+  2. **Non-Contradictory Visual Focus:** Prompts describe pure visible scene geometry, camera lenses, lighting, and wardrobe without abstract meta-commentary.
+  3. **Mandatory Weapon & Prop Entity Extraction:** Weapons and props are registered as Character Entities with dedicated 9:16 reference plates and mapped to `character_refs` for active image conditioning.

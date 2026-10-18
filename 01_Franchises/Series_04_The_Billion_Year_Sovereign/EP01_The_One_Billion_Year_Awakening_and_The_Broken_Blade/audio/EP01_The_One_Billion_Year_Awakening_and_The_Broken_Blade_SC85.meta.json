@@ -1,0 +1,164 @@
+{
+  "scene": 85,
+  "text": "Back in the fourth-floor corridor outside Room 402, Commander Han Feng's encrypted tactical earpiece emitted a sharp high-priority red alert beep, abruptly interrupting his interrogation of Lu Chen.",
+  "durationMs": 12360,
+  "rawWords": [
+    {
+      "ttsWord": "Back",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 375,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 450,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 538,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 1175,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "outside",
+      "startMs": 1738,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 2263,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 3688,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 4113,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "Feng's",
+      "startMs": 4388,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "encrypted",
+      "startMs": 4763,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 5325,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "earpiece",
+      "startMs": 5825,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "emitted",
+      "startMs": 6325,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6688,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 6738,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "high-priority",
+      "startMs": 7113,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "red",
+      "startMs": 7813,
+      "endMs": 8013
+    },
+    {
+      "ttsWord": "alert",
+      "startMs": 8025,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "beep",
+      "startMs": 8363,
+      "endMs": 8663
+    },
+    {
+      "ttsWord": "abruptly",
+      "startMs": 8775,
+      "endMs": 9313
+    },
+    {
+      "ttsWord": "interrupting",
+      "startMs": 9325,
+      "endMs": 9850
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 9863,
+      "endMs": 10000
+    },
+    {
+      "ttsWord": "interrogation",
+      "startMs": 10013,
+      "endMs": 10750
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 10763,
+      "endMs": 10863
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 10875,
+      "endMs": 11050
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 11063,
+      "endMs": 11488
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Back in the fourth-floor corridor outside Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3488
+    },
+    {
+      "text": "Commander Han Feng's encrypted tactical earpiece emitted a",
+      "startOffsetMs": 3688,
+      "endOffsetMs": 6725
+    },
+    {
+      "text": "sharp high-priority red alert beep,",
+      "startOffsetMs": 6738,
+      "endOffsetMs": 8763
+    },
+    {
+      "text": "abruptly interrupting his interrogation of Lu Chen.",
+      "startOffsetMs": 8775,
+      "endOffsetMs": 11588
+    }
+  ]
+}

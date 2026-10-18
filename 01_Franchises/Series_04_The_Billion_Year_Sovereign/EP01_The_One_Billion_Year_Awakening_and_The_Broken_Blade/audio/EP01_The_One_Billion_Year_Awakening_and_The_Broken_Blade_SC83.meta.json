@@ -1,0 +1,149 @@
+{
+  "scene": 83,
+  "text": "Back in Room 402, Lu Chen glanced out the clear glass window, his calm obsidian eyes reflecting the majestic golden starlight shimmering across the clouds.",
+  "durationMs": 10104,
+  "rawWords": [
+    {
+      "ttsWord": "Back",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 388,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 538,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1863,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 2038,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "glanced",
+      "startMs": 2313,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 2763,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2900,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 3000,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 3288,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 3613,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4338,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 4513,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 4850,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 5413,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "reflecting",
+      "startMs": 5713,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6213,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "majestic",
+      "startMs": 6288,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 6838,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "starlight",
+      "startMs": 7188,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "shimmering",
+      "startMs": 7688,
+      "endMs": 8125
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 8138,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8513,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 8613,
+      "endMs": 9225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Back in Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1688
+    },
+    {
+      "text": "Lu Chen glanced out the clear glass window,",
+      "startOffsetMs": 1863,
+      "endOffsetMs": 4150
+    },
+    {
+      "text": "his calm obsidian eyes reflecting the majestic golden",
+      "startOffsetMs": 4338,
+      "endOffsetMs": 7175
+    },
+    {
+      "text": "starlight shimmering across the clouds.",
+      "startOffsetMs": 7188,
+      "endOffsetMs": 9325
+    }
+  ]
+}

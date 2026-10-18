@@ -1,0 +1,129 @@
+{
+  "scene": 75,
+  "text": "Across Jiangnan Province, streetlamps flickered and modern electric vehicles stalled as a resonant primordial vibration rippled through the Earth's crust.",
+  "durationMs": 9072,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 538,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "Province",
+      "startMs": 1125,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "streetlamps",
+      "startMs": 1975,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "flickered",
+      "startMs": 2613,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3050,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "modern",
+      "startMs": 3200,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "electric",
+      "startMs": 3538,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "vehicles",
+      "startMs": 3988,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "stalled",
+      "startMs": 4475,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4900,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5025,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "resonant",
+      "startMs": 5100,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 5525,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "vibration",
+      "startMs": 6063,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "rippled",
+      "startMs": 6713,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 7063,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7238,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "Earth's",
+      "startMs": 7350,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "crust",
+      "startMs": 7663,
+      "endMs": 8200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across Jiangnan Province,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1800
+    },
+    {
+      "text": "streetlamps flickered and modern electric vehicles stalled as",
+      "startOffsetMs": 1975,
+      "endOffsetMs": 5013
+    },
+    {
+      "text": "a resonant primordial vibration rippled through the Earth's",
+      "startOffsetMs": 5025,
+      "endOffsetMs": 7650
+    },
+    {
+      "text": "crust.",
+      "startOffsetMs": 7663,
+      "endOffsetMs": 8300
+    }
+  ]
+}

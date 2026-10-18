@@ -1,0 +1,124 @@
+{
+  "scene": 32,
+  "text": "\"Two million yuan for forty-eight thousand years?\" Lu Chen murmured in a calm, deadpan tone. \"He was horribly overcharged.\"",
+  "durationMs": 9792,
+  "rawWords": [
+    {
+      "ttsWord": "Two",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "million",
+      "startMs": 288,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "yuan",
+      "startMs": 700,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 1075,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "forty-eight",
+      "startMs": 1238,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 1725,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 2150,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 3500,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 3800,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "murmured",
+      "startMs": 4075,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4438,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4575,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 4638,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 5275,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "tone",
+      "startMs": 5788,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "He",
+      "startMs": 7125,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 7300,
+      "endMs": 7463
+    },
+    {
+      "ttsWord": "horribly",
+      "startMs": 7475,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "overcharged",
+      "startMs": 8075,
+      "endMs": 8925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Two million yuan for forty-eight thousand years?\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2738
+    },
+    {
+      "text": "Lu Chen murmured in a calm,",
+      "startOffsetMs": 3500,
+      "endOffsetMs": 5138
+    },
+    {
+      "text": "deadpan tone.",
+      "startOffsetMs": 5275,
+      "endOffsetMs": 6363
+    },
+    {
+      "text": "He was horribly overcharged.\"",
+      "startOffsetMs": 7125,
+      "endOffsetMs": 9025
+    }
+  ]
+}

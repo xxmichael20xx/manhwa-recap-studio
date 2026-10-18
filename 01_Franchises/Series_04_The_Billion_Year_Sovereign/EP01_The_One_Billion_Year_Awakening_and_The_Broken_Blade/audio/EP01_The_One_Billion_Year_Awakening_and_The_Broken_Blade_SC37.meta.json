@@ -1,0 +1,164 @@
+{
+  "scene": 37,
+  "text": "\"Campus security?\" Gu Tianyu laughed mockingly, flicking his left wrist as a sudden burst of cyan wind slapped Wang Bao against the wall with zero effort.",
+  "durationMs": 10200,
+  "rawWords": [
+    {
+      "ttsWord": "Campus",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "security",
+      "startMs": 475,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 1975,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 2213,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "laughed",
+      "startMs": 2613,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "mockingly",
+      "startMs": 2950,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "flicking",
+      "startMs": 3800,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4150,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 4313,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "wrist",
+      "startMs": 4575,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4950,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5050,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "sudden",
+      "startMs": 5125,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "burst",
+      "startMs": 5513,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5825,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 5913,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 6400,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "slapped",
+      "startMs": 6700,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 7138,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 7438,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 7688,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7988,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 8075,
+      "endMs": 8388
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8400,
+      "endMs": 8550
+    },
+    {
+      "ttsWord": "zero",
+      "startMs": 8563,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "effort",
+      "startMs": 8900,
+      "endMs": 9338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Campus security?\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1213
+    },
+    {
+      "text": "Gu Tianyu laughed mockingly,",
+      "startOffsetMs": 1975,
+      "endOffsetMs": 3613
+    },
+    {
+      "text": "flicking his left wrist as a sudden burst",
+      "startOffsetMs": 3800,
+      "endOffsetMs": 5813
+    },
+    {
+      "text": "of cyan wind slapped Wang Bao against the",
+      "startOffsetMs": 5825,
+      "endOffsetMs": 8063
+    },
+    {
+      "text": "wall with zero effort.",
+      "startOffsetMs": 8075,
+      "endOffsetMs": 9438
+    }
+  ]
+}

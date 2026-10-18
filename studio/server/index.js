@@ -290,6 +290,74 @@ app.post('/api/audit', (req, res) => {
   }
 })
 
+// Prompt Matrix Audit (Deterministic Pre-Flight Linter)
+const handlePromptMatrixAudit = async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const epPath = path.resolve(projectRoot, '01_Franchises', franchiseId, episodeId)
+    const scriptPath = path.join(epPath, '01_Episode_Script.md')
+    const promptPath = path.join(epPath, '02_Prompt_Matrix.md')
+
+    let scriptText = req.body?.script || ''
+    let promptMatrixText = req.body?.promptMatrix || ''
+
+    if (!scriptText && fs.existsSync(scriptPath)) {
+      scriptText = await fs.promises.readFile(scriptPath, 'utf-8')
+    }
+    if (!promptMatrixText && fs.existsSync(promptPath)) {
+      promptMatrixText = await fs.promises.readFile(promptPath, 'utf-8')
+    }
+
+    // Load character vault
+    const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    let characters = []
+    let items = []
+    let flowEntities = {}
+
+    const charsPath = path.join(vaultDir, 'characters.json')
+    if (fs.existsSync(charsPath)) {
+      try {
+        const cData = JSON.parse(await fs.promises.readFile(charsPath, 'utf-8'))
+        characters = cData.characters || []
+      } catch (e) {}
+    }
+
+    const itemsPath = path.join(vaultDir, 'items.json')
+    if (fs.existsSync(itemsPath)) {
+      try {
+        const iData = JSON.parse(await fs.promises.readFile(itemsPath, 'utf-8'))
+        items = iData.items || []
+      } catch (e) {}
+    }
+
+    const flowPath = path.join(vaultDir, 'flow_entities.json')
+    if (fs.existsSync(flowPath)) {
+      try {
+        const fData = JSON.parse(await fs.promises.readFile(flowPath, 'utf-8'))
+        flowEntities = fData.entities || {}
+      } catch (e) {}
+    }
+
+    const audit = AntiSlopValidator.auditPromptMatrix(scriptText, promptMatrixText, {
+      characters,
+      items,
+      flowEntities
+    })
+
+    res.json({
+      success: true,
+      franchiseId,
+      episodeId,
+      ...audit
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+}
+
+app.get('/api/episodes/:franchiseId/:episodeId/prompt-matrix-audit', handlePromptMatrixAudit)
+app.post('/api/episodes/:franchiseId/:episodeId/prompt-matrix-audit', handlePromptMatrixAudit)
+
 // Generate Prompt Matrix
 app.post('/api/episodes/:franchiseId/:episodeId/generate-prompts', async (req, res) => {
   try {

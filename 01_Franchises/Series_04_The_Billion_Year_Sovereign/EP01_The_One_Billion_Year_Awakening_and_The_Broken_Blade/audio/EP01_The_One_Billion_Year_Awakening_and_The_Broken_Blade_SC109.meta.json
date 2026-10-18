@@ -1,0 +1,129 @@
+{
+  "scene": 109,
+  "text": "On a floating holographic comms panel before him, a Starfall syndicate director bowed obsequiously, confirming the deployment of private enforcement squads.",
+  "durationMs": 9720,
+  "rawWords": [
+    {
+      "ttsWord": "On",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 250,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 325,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "holographic",
+      "startMs": 763,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "comms",
+      "startMs": 1400,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "panel",
+      "startMs": 1800,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 2163,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 2525,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3025,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 3088,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 3650,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "director",
+      "startMs": 4100,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "bowed",
+      "startMs": 4525,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "obsequiously",
+      "startMs": 4813,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "confirming",
+      "startMs": 5925,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6488,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "deployment",
+      "startMs": 6588,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7088,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "private",
+      "startMs": 7213,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "enforcement",
+      "startMs": 7600,
+      "endMs": 8163
+    },
+    {
+      "ttsWord": "squads",
+      "startMs": 8175,
+      "endMs": 8850
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "On a floating holographic comms panel before him,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2838
+    },
+    {
+      "text": "a Starfall syndicate director bowed obsequiously,",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 5788
+    },
+    {
+      "text": "confirming the deployment of private enforcement squads.",
+      "startOffsetMs": 5925,
+      "endOffsetMs": 8950
+    }
+  ]
+}

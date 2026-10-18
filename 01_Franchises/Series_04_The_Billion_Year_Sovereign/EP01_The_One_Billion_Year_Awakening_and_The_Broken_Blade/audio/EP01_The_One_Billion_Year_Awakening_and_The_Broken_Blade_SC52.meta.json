@@ -1,0 +1,154 @@
+{
+  "scene": 52,
+  "text": "Wang Bao crawled to his feet, eyes wide as saucers as he stared at the glittering pile of fine metallic powder scattered across their doormat.",
+  "durationMs": 8496,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 400,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "crawled",
+      "startMs": 650,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1013,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1125,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 1288,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 1875,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 2188,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2500,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "saucers",
+      "startMs": 2638,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3188,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 3325,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 3438,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3863,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3938,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "glittering",
+      "startMs": 4038,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "pile",
+      "startMs": 4463,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4850,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "fine",
+      "startMs": 4950,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "metallic",
+      "startMs": 5250,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "powder",
+      "startMs": 5750,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "scattered",
+      "startMs": 6088,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6513,
+      "endMs": 6888
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6900,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "doormat",
+      "startMs": 7063,
+      "endMs": 7613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao crawled to his feet,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "eyes wide as saucers as he stared at",
+      "startOffsetMs": 1875,
+      "endOffsetMs": 3925
+    },
+    {
+      "text": "the glittering pile of fine metallic powder scattered",
+      "startOffsetMs": 3938,
+      "endOffsetMs": 6500
+    },
+    {
+      "text": "across their doormat.",
+      "startOffsetMs": 6513,
+      "endOffsetMs": 7713
+    }
+  ]
+}

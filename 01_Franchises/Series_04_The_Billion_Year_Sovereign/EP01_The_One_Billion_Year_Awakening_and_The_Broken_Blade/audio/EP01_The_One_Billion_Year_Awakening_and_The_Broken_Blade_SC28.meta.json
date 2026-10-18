@@ -1,0 +1,119 @@
+{
+  "scene": 28,
+  "text": "Terrified students scrambled backward into their doorways, clutching smartphone screens that flickered erratically under the intense electromagnetic mana interference.",
+  "durationMs": 9648,
+  "rawWords": [
+    {
+      "ttsWord": "Terrified",
+      "startMs": 50,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 688,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "scrambled",
+      "startMs": 1125,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 1625,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2050,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 2263,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "doorways",
+      "startMs": 2438,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "clutching",
+      "startMs": 3288,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "smartphone",
+      "startMs": 3700,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "screens",
+      "startMs": 4350,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 4800,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "flickered",
+      "startMs": 4938,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "erratically",
+      "startMs": 5338,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 5963,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6163,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "intense",
+      "startMs": 6250,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "electromagnetic",
+      "startMs": 6713,
+      "endMs": 7638
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 7650,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "interference",
+      "startMs": 7975,
+      "endMs": 8788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Terrified students scrambled backward into their doorways,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3125
+    },
+    {
+      "text": "clutching smartphone screens that flickered erratically under the",
+      "startOffsetMs": 3288,
+      "endOffsetMs": 6238
+    },
+    {
+      "text": "intense electromagnetic mana interference.",
+      "startOffsetMs": 6250,
+      "endOffsetMs": 8888
+    }
+  ]
+}

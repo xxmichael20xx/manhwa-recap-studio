@@ -1,0 +1,189 @@
+{
+  "scene": 54,
+  "text": "Gu Tianyu clutched his limp, bruised right arm, shaking uncontrollably as his cultivation qi leaked through his shattered meridians. \"What... what kind of cursed defensive artifact are you wearing?!\"",
+  "durationMs": 12360,
+  "rawWords": [
+    {
+      "ttsWord": "Gu",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 288,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "clutched",
+      "startMs": 750,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1150,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "limp",
+      "startMs": 1325,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "bruised",
+      "startMs": 1888,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 2275,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "arm",
+      "startMs": 2563,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "shaking",
+      "startMs": 3163,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "uncontrollably",
+      "startMs": 3613,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4463,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4613,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 4763,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 5475,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "leaked",
+      "startMs": 5700,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5988,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6175,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 6300,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "meridians",
+      "startMs": 6725,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "What",
+      "startMs": 8300,
+      "endMs": 8625
+    },
+    {
+      "ttsWord": "what",
+      "startMs": 8900,
+      "endMs": 9075
+    },
+    {
+      "ttsWord": "kind",
+      "startMs": 9088,
+      "endMs": 9313
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9325,
+      "endMs": 9413
+    },
+    {
+      "ttsWord": "cursed",
+      "startMs": 9425,
+      "endMs": 9788
+    },
+    {
+      "ttsWord": "defensive",
+      "startMs": 9800,
+      "endMs": 10313
+    },
+    {
+      "ttsWord": "artifact",
+      "startMs": 10325,
+      "endMs": 10850
+    },
+    {
+      "ttsWord": "are",
+      "startMs": 10863,
+      "endMs": 10950
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 10963,
+      "endMs": 11063
+    },
+    {
+      "ttsWord": "wearing",
+      "startMs": 11075,
+      "endMs": 11488
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Gu Tianyu clutched his limp,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1750
+    },
+    {
+      "text": "bruised right arm,",
+      "startOffsetMs": 1888,
+      "endOffsetMs": 2988
+    },
+    {
+      "text": "shaking uncontrollably as his cultivation qi leaked through",
+      "startOffsetMs": 3163,
+      "endOffsetMs": 6163
+    },
+    {
+      "text": "his shattered meridians.",
+      "startOffsetMs": 6175,
+      "endOffsetMs": 7538
+    },
+    {
+      "text": "What...",
+      "startOffsetMs": 8300,
+      "endOffsetMs": 8725
+    },
+    {
+      "text": "what kind of cursed defensive artifact are you",
+      "startOffsetMs": 8900,
+      "endOffsetMs": 11063
+    },
+    {
+      "text": "wearing?!\"",
+      "startOffsetMs": 11075,
+      "endOffsetMs": 11588
+    }
+  ]
+}

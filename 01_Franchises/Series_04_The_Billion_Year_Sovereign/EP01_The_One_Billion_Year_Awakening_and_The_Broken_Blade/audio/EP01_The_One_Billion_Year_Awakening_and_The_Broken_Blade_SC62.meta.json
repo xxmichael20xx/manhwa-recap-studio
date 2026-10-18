@@ -1,0 +1,179 @@
+{
+  "scene": 62,
+  "text": "\"Commander, our airborne resonance drones just registered a Category-Nine kinetic spike originating from the fourth floor of Dormitory Building Three,\" an analyst reported, holding up a ruggedised tactical tablet.",
+  "durationMs": 12408,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "our",
+      "startMs": 850,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "airborne",
+      "startMs": 1075,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 1538,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "drones",
+      "startMs": 1988,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 2450,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "registered",
+      "startMs": 2713,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3175,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "Category-Nine",
+      "startMs": 3250,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 4050,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "spike",
+      "startMs": 4450,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "originating",
+      "startMs": 4813,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5413,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5563,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "fourth",
+      "startMs": 5638,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 5950,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6363,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "Dormitory",
+      "startMs": 6488,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "Building",
+      "startMs": 7063,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 7450,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 8100,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "analyst",
+      "startMs": 8238,
+      "endMs": 8663
+    },
+    {
+      "ttsWord": "reported",
+      "startMs": 8675,
+      "endMs": 9150
+    },
+    {
+      "ttsWord": "holding",
+      "startMs": 9425,
+      "endMs": 9738
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 9750,
+      "endMs": 9863
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9875,
+      "endMs": 9913
+    },
+    {
+      "ttsWord": "ruggedised",
+      "startMs": 9925,
+      "endMs": 10563
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 10575,
+      "endMs": 11025
+    },
+    {
+      "ttsWord": "tablet",
+      "startMs": 11038,
+      "endMs": 11538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander, our airborne resonance drones just registered",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "a Category-Nine kinetic spike originating from the fourth",
+      "startOffsetMs": 3175,
+      "endOffsetMs": 5938
+    },
+    {
+      "text": "floor of Dormitory Building Three,\"",
+      "startOffsetMs": 5950,
+      "endOffsetMs": 7925
+    },
+    {
+      "text": "an analyst reported,",
+      "startOffsetMs": 8100,
+      "endOffsetMs": 9250
+    },
+    {
+      "text": "holding up a ruggedised tactical tablet.",
+      "startOffsetMs": 9425,
+      "endOffsetMs": 11638
+    }
+  ]
+}

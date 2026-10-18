@@ -1,0 +1,159 @@
+{
+  "scene": 65,
+  "text": "Heavy combat boots thudded up the concrete stairwell as Commander Han Feng and his squad reached the fourth-floor corridor, immediately parting the stunned crowd of students.",
+  "durationMs": 10128,
+  "rawWords": [
+    {
+      "ttsWord": "Heavy",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 388,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "boots",
+      "startMs": 913,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "thudded",
+      "startMs": 1313,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 1588,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1738,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 1838,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "stairwell",
+      "startMs": 2363,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2963,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 3088,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 3550,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 3800,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4200,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4275,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "squad",
+      "startMs": 4413,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "reached",
+      "startMs": 4863,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5175,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 5275,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 5913,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "immediately",
+      "startMs": 6800,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "parting",
+      "startMs": 7325,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7700,
+      "endMs": 7775
+    },
+    {
+      "ttsWord": "stunned",
+      "startMs": 7788,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "crowd",
+      "startMs": 8200,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8538,
+      "endMs": 8613
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 8625,
+      "endMs": 9250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Heavy combat boots thudded up the concrete stairwell",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2950
+    },
+    {
+      "text": "as Commander Han Feng and his squad reached",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 5163
+    },
+    {
+      "text": "the fourth-floor corridor,",
+      "startOffsetMs": 5175,
+      "endOffsetMs": 6550
+    },
+    {
+      "text": "immediately parting the stunned crowd of students.",
+      "startOffsetMs": 6800,
+      "endOffsetMs": 9350
+    }
+  ]
+}

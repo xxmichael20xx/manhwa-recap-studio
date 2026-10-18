@@ -1,0 +1,134 @@
+{
+  "scene": 114,
+  "text": "A tactical drone hovered directly outside Room 402's clear glass window, aiming its high-resolution spiritual scanner at Lu Chen's study desk.",
+  "durationMs": 9648,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 188,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "drone",
+      "startMs": 738,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "hovered",
+      "startMs": 1050,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 1400,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "outside",
+      "startMs": 1925,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "Room",
+      "startMs": 2450,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "402's",
+      "startMs": 2713,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 3663,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 3975,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 4300,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "aiming",
+      "startMs": 5050,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 5325,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "high-resolution",
+      "startMs": 5450,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 6263,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "scanner",
+      "startMs": 6813,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 7325,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 7438,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 7600,
+      "endMs": 7950
+    },
+    {
+      "ttsWord": "study",
+      "startMs": 7963,
+      "endMs": 8263
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 8275,
+      "endMs": 8775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A tactical drone hovered directly outside Room 402's",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3650
+    },
+    {
+      "text": "clear glass window,",
+      "startOffsetMs": 3663,
+      "endOffsetMs": 4838
+    },
+    {
+      "text": "aiming its high-resolution spiritual scanner at Lu Chen's",
+      "startOffsetMs": 5050,
+      "endOffsetMs": 7950
+    },
+    {
+      "text": "study desk.",
+      "startOffsetMs": 7963,
+      "endOffsetMs": 8875
+    }
+  ]
+}

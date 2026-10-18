@@ -1127,9 +1127,16 @@ export class VideoService {
         try { await fs.unlink(concatListPath) } catch (_) {}
 
         if (code === 0) {
+          let isFullEpisodeStitch = false
           try {
-            // Also copy to standard master path for backwards-compatibility
-            await fs.copyFile(masterOutputPath, standardMasterPath)
+            // Only overwrite the standard full-episode master if ALL batches were stitched
+            const scenes = await ImageService.getPromptMatrixScenes(franchiseId, episodeId)
+            const totalBatches = Math.ceil((scenes?.length || 24) / 24)
+            isFullEpisodeStitch = (!targetLetters || targetLetters.length === 0) && batchFiles.length >= totalBatches
+
+            if (isFullEpisodeStitch) {
+              await fs.copyFile(masterOutputPath, standardMasterPath)
+            }
           } catch (_) {}
 
           const successMsg = `Master Video (${descriptor}) stitched successfully from ${batchFiles.length} batches (${batchFiles.map(b => 'Batch ' + b.code).join(', ')}) in <2 seconds!`
@@ -1137,6 +1144,7 @@ export class VideoService {
             status: 'completed',
             progress: 100,
             message: successMsg,
+            filename: isFullEpisodeStitch ? '01_Episode_Master_1080p.mp4' : masterOutputFilename,
             log: [
               ...(this.compilationState[key]?.log || []),
               `⚡ Master assembly complete: ${masterOutputFilename} losslessly joined from ${batchFiles.length} batches.`
@@ -1153,10 +1161,12 @@ export class VideoService {
           resolve({
             success: true,
             videoPath: masterOutputPath,
-            filename: masterOutputFilename,
+            filename: isFullEpisodeStitch ? '01_Episode_Master_1080p.mp4' : masterOutputFilename,
+            outputFilename: masterOutputFilename,
             descriptor,
             url: `/api/episodes/${franchiseId}/${episodeId}/video-stream?file=${masterOutputFilename}`,
-            batchCount: batchFiles.length
+            batchCount: batchFiles.length,
+            isFullEpisodeStitch
           })
         } else {
           console.error('FFmpeg batch stitching failed:', stderr.slice(-800))

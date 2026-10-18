@@ -1,0 +1,159 @@
+{
+  "scene": 73,
+  "text": "Commander Han Feng stared at Lu Chen in deadpan bewilderment, the veteran crisis manager completely unequipped to process the teenager's absolute lack of self-preservation or panic.",
+  "durationMs": 11280,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 525,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 800,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 1125,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1513,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1625,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 1800,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2175,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 2300,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "bewilderment",
+      "startMs": 2788,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3738,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "veteran",
+      "startMs": 3863,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "crisis",
+      "startMs": 4250,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "manager",
+      "startMs": 4738,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 5225,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "unequipped",
+      "startMs": 5813,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6400,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "process",
+      "startMs": 6500,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7038,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "teenager's",
+      "startMs": 7163,
+      "endMs": 7763
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 7775,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "lack",
+      "startMs": 8350,
+      "endMs": 8625
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8638,
+      "endMs": 8725
+    },
+    {
+      "ttsWord": "self-preservation",
+      "startMs": 8738,
+      "endMs": 9700
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 9713,
+      "endMs": 9838
+    },
+    {
+      "ttsWord": "panic",
+      "startMs": 9850,
+      "endMs": 10400
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander Han Feng stared at Lu Chen in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "deadpan bewilderment,",
+      "startOffsetMs": 2300,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "the veteran crisis manager completely unequipped to process",
+      "startOffsetMs": 3738,
+      "endOffsetMs": 7025
+    },
+    {
+      "text": "the teenager's absolute lack of self-preservation or panic.",
+      "startOffsetMs": 7038,
+      "endOffsetMs": 10500
+    }
+  ]
+}

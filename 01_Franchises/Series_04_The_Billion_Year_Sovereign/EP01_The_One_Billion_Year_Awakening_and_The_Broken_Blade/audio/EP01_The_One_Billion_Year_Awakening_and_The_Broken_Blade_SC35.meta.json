@@ -1,0 +1,194 @@
+{
+  "scene": 35,
+  "text": "\"Room 402,\" Gu Tianyu barked, twirling an ornate silver-and-jade dao blade that hummed with cutting gale-force wind. \"You two deaf? Get on your knees and hand over your initial convergence inventory.\"",
+  "durationMs": 13968,
+  "rawWords": [
+    {
+      "ttsWord": "Room 402",
+      "startMs": 50,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 1500,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 1713,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "barked",
+      "startMs": 2075,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "twirling",
+      "startMs": 2738,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3138,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "ornate",
+      "startMs": 3225,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "silver-and-jade",
+      "startMs": 3613,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "dao",
+      "startMs": 4438,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "blade",
+      "startMs": 4738,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5075,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "hummed",
+      "startMs": 5213,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5550,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "cutting",
+      "startMs": 5700,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "gale-force",
+      "startMs": 6013,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 6588,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "You",
+      "startMs": 7913,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 8125,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "deaf",
+      "startMs": 8350,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "Get",
+      "startMs": 9675,
+      "endMs": 9863
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 9875,
+      "endMs": 10025
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 10038,
+      "endMs": 10150
+    },
+    {
+      "ttsWord": "knees",
+      "startMs": 10163,
+      "endMs": 10550
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 10563,
+      "endMs": 10663
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 10675,
+      "endMs": 11025
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 11038,
+      "endMs": 11225
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 11238,
+      "endMs": 11400
+    },
+    {
+      "ttsWord": "initial",
+      "startMs": 11413,
+      "endMs": 11800
+    },
+    {
+      "ttsWord": "convergence",
+      "startMs": 11813,
+      "endMs": 12350
+    },
+    {
+      "ttsWord": "inventory",
+      "startMs": 12363,
+      "endMs": 13088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1350
+    },
+    {
+      "text": "Gu Tianyu barked,",
+      "startOffsetMs": 1500,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "twirling an ornate silver-and-jade dao blade that hummed",
+      "startOffsetMs": 2738,
+      "endOffsetMs": 5538
+    },
+    {
+      "text": "with cutting gale-force wind.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7150
+    },
+    {
+      "text": "You two deaf?",
+      "startOffsetMs": 7913,
+      "endOffsetMs": 8913
+    },
+    {
+      "text": "Get on your knees and hand over your",
+      "startOffsetMs": 9675,
+      "endOffsetMs": 11400
+    },
+    {
+      "text": "initial convergence inventory.\"",
+      "startOffsetMs": 11413,
+      "endOffsetMs": 13188
+    }
+  ]
+}

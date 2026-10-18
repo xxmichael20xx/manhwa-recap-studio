@@ -44,6 +44,15 @@ To prevent ambiguity, never refer to content simply as a "video". Use this stand
 | **Tier 3** | **Season Movie / Cinematic Cut**| **1.5–2.5 Hours** | ~12,000–20,000 words| Merged compilation of 3–5 episodes for massive AVD. |
 | **Tier 4** | **Grand Omnibus / Marathon** | **3.0+ Hours** | ~25,000+ words | Multi-season binge-watch compilation. |
 
+### 🔄 Flexible Organic Episodic Scaling Law (Zero Rigid Quotas)
+
+1. **Absolute Ban on Rigid Batch Quotas:** Episodes across all franchises have **NO mandatory batch quota**. Strictly forbidden from forcing an episode to be arbitrarily 3 batches, 9 batches, or 13 batches.
+2. **Organic Narrative-Driven Length ($\lceil N_{\text{scenes}} / 24 \rceil$):** An episode's runtime and scene count are governed strictly by the organic progression of its story arc, natural micro-payoffs, and climactic cliffhangers. An episode can be dynamically cut off or extended whenever the narrative requires it.
+3. **Dynamic Modular Partitioning:** Whatever total scene count $N_{\text{scenes}}$ the organic story requires is simply partitioned into sequential 24-scene Google Flow batches (`Batch 01`, `Batch 02`, ..., `Batch K`), where the terminal batch may contain $\le 24$ scenes.
+4. **Mandatory Dynamic Visual Invariant (Zero Static Shots):**
+   - **Strict Ban on Flat Static Panels:** Strictly forbidden from generating static, talking-head single panels where characters merely stand or converse without active kinetic energy.
+   - **Mandatory ~70% Multi-Panel Architecture:** Every batch MUST maintain a ~70% ratio of **Tier B (Dual-Panel Split Strips)** and **Tier C (Three-Panel Action Strips)**, featuring action-vs-reaction contrast, Dutch angles, kinetic tracking, and micro-beat breakdowns.
+
 ---
 
 ## 🔒 The 8 Aligned Core Pillars (The 70/30 Calibrated Hybrid Standard)
@@ -182,6 +191,21 @@ To guarantee organic narration synchronization, eliminate rapid screen flashing,
    - **Clause-Level Precision:** In `01_Episode_Script.md`, every single `[IMG_XXX]` tag MUST precede the exact, immediate spoken clause or sentence where that visual action begins. Never place a tag before introductory or transitional clauses that belong to a different plate.
    - **Absolute Ban on Compound Multi-Action Grouping:** If a narrative sentence or paragraph contains multiple sequential actions (e.g. character equipping a weapon, walking through an airlock, descending stairs), each action MUST be split into its own distinct sentence and assigned its own dedicated `[IMG_XXX]` tag. Never lump multiple visual beats under a single tag.
    - **Sequential SRT Triangulation:** In automated timeline compilation (`VideoService.parseDynamicTimeline()`), the script text following `[IMG_XXX]` is matched directly against forced-alignment SRT subtitle cues. A single unanchored or lumped tag causes every subsequent scene in that 24-scene batch to cascade out of alignment by 5–20 seconds.
+
+---
+
+## 🏛️ The Unconstrained Hyper-Dense Visual Prompt Invariant (Nano Banana 2.1 Engine Law)
+1. **Zero Technical Token Choke:** Google Flow's underlying vision models (such as Nano Banana 2.1) are architected to process highly complex, structured instructions. Artificial prompt abbreviation, concise summaries, and word-budget cutting are **STRICTLY FORBIDDEN**.
+2. **Detail as Anti-Slop Reinforcement:** For high-fidelity webtoon pipelines, increasing visual prompt density directly reinforces the sharp 2D manhwa cel-shaded art style and prevents the diffusion model from drifting into generic aesthetics, western cartooning, or anatomical chaos.
+3. **Pure Visual Scene Focus:** Prompts must remain 100% focused on concrete visual scene descriptions (exact camera framing, subject positioning, skeletal contact mechanics, multi-source lighting, and locked environment coordinates), strictly omitting contradictory meta-instructions or conversational filler.
+4. **Mandatory Weapon, Tactical Prop & Monolith Character Entity Extraction (Google Flow Parity):**
+   - Because Google Flow conditions image references exclusively through Character Entities (`@UUID`), signature weapons, tactical props, and monumental artifacts MUST be registered as first-class **Character Entities** in Google Flow.
+   - Every signature weapon/prop must have:
+     1) A dedicated 9:16 vertical textless master reference plate in `character_vault/` and `00_Characters/`.
+     2) An official entry in `characters.json` with token `@{...}`.
+     3) A mapped UUID in `flow_entities.json`.
+     4) Mandatory dual-binding in prompt matrices (e.g. `<character_refs>` containing both `@Character` and `@Weapon`).
+5. **Full-Prompt Default (Zero Silent UI Truncation):** In Manhwa Recap Studio's `PromptMatrixView.vue`, Lean Mode must default to `false`, guaranteeing that 100% of the hyper-dense prompt body and negative quality clauses are copied to Google Flow.
 
 ---
 

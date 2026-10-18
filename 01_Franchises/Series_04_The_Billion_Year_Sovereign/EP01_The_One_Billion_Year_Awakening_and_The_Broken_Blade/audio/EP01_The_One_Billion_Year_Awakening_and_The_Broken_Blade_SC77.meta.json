@@ -1,0 +1,84 @@
+{
+  "scene": 77,
+  "text": "GLOBAL SYSTEM BROADCAST: THE HEAVEN-EARTH GOLDEN STELE HAS MANIFESTED IN STRATOSPHERIC ORBIT.",
+  "durationMs": 6408,
+  "rawWords": [
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 450,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "BROADCAST",
+      "startMs": 900,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "THE",
+      "startMs": 1900,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "HEAVEN-EARTH",
+      "startMs": 2000,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "GOLDEN",
+      "startMs": 2563,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "STELE",
+      "startMs": 2950,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "HAS",
+      "startMs": 3375,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "MANIFESTED",
+      "startMs": 3588,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "IN",
+      "startMs": 4263,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "STRATOSPHERIC",
+      "startMs": 4400,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "ORBIT",
+      "startMs": 5138,
+      "endMs": 5538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "GLOBAL SYSTEM BROADCAST:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1738
+    },
+    {
+      "text": "THE HEAVEN-EARTH GOLDEN STELE HAS MANIFESTED IN STRATOSPHERIC",
+      "startOffsetMs": 1900,
+      "endOffsetMs": 5125
+    },
+    {
+      "text": "ORBIT.",
+      "startOffsetMs": 5138,
+      "endOffsetMs": 5638
+    }
+  ]
+}
