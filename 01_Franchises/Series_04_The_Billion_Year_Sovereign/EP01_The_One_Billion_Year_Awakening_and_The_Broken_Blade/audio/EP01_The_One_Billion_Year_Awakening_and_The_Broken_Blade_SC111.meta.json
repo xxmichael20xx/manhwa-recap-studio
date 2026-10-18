@@ -1,0 +1,144 @@
+{
+  "scene": 111,
+  "text": "High above the glittering city skyline, the Heaven-Earth Golden Stele descended smoothly through the cloud layer, its divine calligraphy illuminating orbital satellite arrays.",
+  "durationMs": 10464,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 338,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 688,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "glittering",
+      "startMs": 800,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "city",
+      "startMs": 1225,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "skyline",
+      "startMs": 1550,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2450,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "Heaven-Earth",
+      "startMs": 2538,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 3125,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 3513,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "descended",
+      "startMs": 3863,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "smoothly",
+      "startMs": 4375,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4925,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5125,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "cloud",
+      "startMs": 5238,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "layer",
+      "startMs": 5613,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 6338,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 6500,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "calligraphy",
+      "startMs": 6925,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "illuminating",
+      "startMs": 7488,
+      "endMs": 8125
+    },
+    {
+      "ttsWord": "orbital",
+      "startMs": 8138,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "satellite",
+      "startMs": 8488,
+      "endMs": 8988
+    },
+    {
+      "ttsWord": "arrays",
+      "startMs": 9000,
+      "endMs": 9600
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High above the glittering city skyline,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "the Heaven-Earth Golden Stele descended smoothly through the",
+      "startOffsetMs": 2450,
+      "endOffsetMs": 5225
+    },
+    {
+      "text": "cloud layer,",
+      "startOffsetMs": 5238,
+      "endOffsetMs": 6113
+    },
+    {
+      "text": "its divine calligraphy illuminating orbital satellite arrays.",
+      "startOffsetMs": 6338,
+      "endOffsetMs": 9700
+    }
+  ]
+}

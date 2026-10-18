@@ -1,0 +1,149 @@
+{
+  "scene": 58,
+  "text": "Heavy armoured tactical transports from the National Special Threat Bureau slammed to a halt across Qindu University's central plaza, cordoning off the dormitory quadrant.",
+  "durationMs": 10008,
+  "rawWords": [
+    {
+      "ttsWord": "Heavy",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "armoured",
+      "startMs": 413,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 813,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "transports",
+      "startMs": 1300,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1925,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2063,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "National",
+      "startMs": 2138,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "Special",
+      "startMs": 2600,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 3000,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 3325,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "slammed",
+      "startMs": 3725,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4188,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4313,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "halt",
+      "startMs": 4400,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 4713,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "Qindu",
+      "startMs": 5100,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "University's",
+      "startMs": 5463,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 6163,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "plaza",
+      "startMs": 6488,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "cordoning",
+      "startMs": 7213,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 7688,
+      "endMs": 7863
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7875,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "dormitory",
+      "startMs": 7988,
+      "endMs": 8550
+    },
+    {
+      "ttsWord": "quadrant",
+      "startMs": 8563,
+      "endMs": 9138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Heavy armoured tactical transports from the National Special",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2988
+    },
+    {
+      "text": "Threat Bureau slammed to a halt across Qindu",
+      "startOffsetMs": 3000,
+      "endOffsetMs": 5450
+    },
+    {
+      "text": "University's central plaza,",
+      "startOffsetMs": 5463,
+      "endOffsetMs": 7050
+    },
+    {
+      "text": "cordoning off the dormitory quadrant.",
+      "startOffsetMs": 7213,
+      "endOffsetMs": 9238
+    }
+  ]
+}

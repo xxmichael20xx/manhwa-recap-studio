@@ -1,0 +1,134 @@
+{
+  "scene": 100,
+  "text": "The live digital spirit-energy telemetry displayed on Wang Bao's laptop screen registered an unprecedented four-hundred-percent surge in ambient atmospheric qi across Jiangnan.",
+  "durationMs": 10536,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "live",
+      "startMs": 213,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "digital",
+      "startMs": 525,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "spirit-energy",
+      "startMs": 888,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "telemetry",
+      "startMs": 1663,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "displayed",
+      "startMs": 2238,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 2775,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2913,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "Bao's",
+      "startMs": 3213,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "laptop",
+      "startMs": 3563,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "screen",
+      "startMs": 4050,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "registered",
+      "startMs": 4450,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4913,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "unprecedented",
+      "startMs": 5038,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "four-hundred-percent",
+      "startMs": 5813,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "surge",
+      "startMs": 6713,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7088,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "ambient",
+      "startMs": 7250,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "atmospheric",
+      "startMs": 7675,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 8338,
+      "endMs": 8563
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 8575,
+      "endMs": 8963
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 8975,
+      "endMs": 9663
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The live digital spirit-energy telemetry displayed on Wang",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "Bao's laptop screen registered an unprecedented four-hundred-percent",
+      "startOffsetMs": 3213,
+      "endOffsetMs": 6700
+    },
+    {
+      "text": "surge in ambient atmospheric qi across Jiangnan.",
+      "startOffsetMs": 6713,
+      "endOffsetMs": 9763
+    }
+  ]
+}

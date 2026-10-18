@@ -2397,7 +2397,7 @@ const copyModelToken = async (model) => {
 
 const copyModelDna = async (model) => {
   if (!model) return
-  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
   try {
     await navigator.clipboard.writeText(textToCopy)
     copiedVaultId.value = model.id
@@ -2533,7 +2533,8 @@ const getFlowDirectiveHeader = (collectionTitle) => {
 5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
 6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. ART STYLE: Dark fantasy action manhwa webtoon art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, textless ${aspectInstruction}.`
+8. CONTEXT-AWARE CROWD & EXTRAS STAGING: Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.
+9. ART STYLE: Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless ${aspectInstruction}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.`
 }
 
 // Failed & Cluttered Prompts Drawer State
@@ -4265,10 +4266,17 @@ const startPolling = (isBatch = false, bObj = null, isAutoQueue = false, isStitc
 
         // Auto-select compiled batch preview or master video in player
         if (isBatch && bObj) {
-          const expectedFilename = `01_Episode_Batch_${bObj.letter}_Preview.mp4`
-          if (videoFiles.value.some(f => f.filename === expectedFilename)) {
-            selectedVideoFile.value = expectedFilename
+          const targetCode = bObj.batchCode || getBatchCode(bObj.index ?? 0)
+          const targetLetter = bObj.letter || getBatchLetter(bObj.index ?? 0)
+          const matchedFile = videoFiles.value.find(f => 
+            f.filename === `01_Episode_Batch_${targetCode}_Preview.mp4` ||
+            f.filename === `01_Episode_Batch_${targetLetter}_Preview.mp4`
+          )
+          if (matchedFile) {
+            selectedVideoFile.value = matchedFile.filename
           }
+        } else if (isStitch && data.filename) {
+          selectedVideoFile.value = data.filename
         } else {
           selectedVideoFile.value = '01_Episode_Master_1080p.mp4'
         }

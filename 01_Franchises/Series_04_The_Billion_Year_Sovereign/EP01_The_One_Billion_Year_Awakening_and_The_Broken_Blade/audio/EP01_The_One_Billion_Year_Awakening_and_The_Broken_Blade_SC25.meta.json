@@ -1,0 +1,154 @@
+{
+  "scene": 25,
+  "text": "Gu Tianyu, flanked by two intimidated lackeys, strutted down the Fourth Floor corridor, his tailored navy designer blazer billowing with crackling cyan spiritual pressure.",
+  "durationMs": 10944,
+  "rawWords": [
+    {
+      "ttsWord": "Gu",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 275,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "flanked",
+      "startMs": 988,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 1363,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 1513,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "intimidated",
+      "startMs": 1838,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "lackeys",
+      "startMs": 2575,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "strutted",
+      "startMs": 3375,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 3750,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4000,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "Fourth",
+      "startMs": 4075,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "Floor",
+      "startMs": 4388,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 4750,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5613,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "tailored",
+      "startMs": 5788,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "navy",
+      "startMs": 6225,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "designer",
+      "startMs": 6538,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "blazer",
+      "startMs": 7025,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "billowing",
+      "startMs": 7425,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7838,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "crackling",
+      "startMs": 8000,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 8488,
+      "endMs": 8963
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 8975,
+      "endMs": 9538
+    },
+    {
+      "ttsWord": "pressure",
+      "startMs": 9550,
+      "endMs": 10063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Gu Tianyu,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 825
+    },
+    {
+      "text": "flanked by two intimidated lackeys,",
+      "startOffsetMs": 988,
+      "endOffsetMs": 3175
+    },
+    {
+      "text": "strutted down the Fourth Floor corridor,",
+      "startOffsetMs": 3375,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "his tailored navy designer blazer billowing with crackling",
+      "startOffsetMs": 5613,
+      "endOffsetMs": 8475
+    },
+    {
+      "text": "cyan spiritual pressure.",
+      "startOffsetMs": 8488,
+      "endOffsetMs": 10163
+    }
+  ]
+}

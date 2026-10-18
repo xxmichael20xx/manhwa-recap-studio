@@ -1,0 +1,229 @@
+{
+  "scene": 64,
+  "text": "Han Feng took a deep drag of his cigarette, his stern eyes narrowing as he gazed up at the quiet fourth-floor windows. \"Category Nine? Even the Golden Core monsters from the gaming guilds only register Category Three.\"",
+  "durationMs": 14520,
+  "rawWords": [
+    {
+      "ttsWord": "Han",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 388,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 763,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 950,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 1063,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "drag",
+      "startMs": 1338,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1675,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1750,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "cigarette",
+      "startMs": 1900,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2663,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "stern",
+      "startMs": 2825,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3188,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "narrowing",
+      "startMs": 3513,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4075,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 4200,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "gazed",
+      "startMs": 4300,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4675,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 4838,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4913,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 5000,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 5388,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "windows",
+      "startMs": 6013,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "Category",
+      "startMs": 7488,
+      "endMs": 8013
+    },
+    {
+      "ttsWord": "Nine",
+      "startMs": 8025,
+      "endMs": 8450
+    },
+    {
+      "ttsWord": "Even",
+      "startMs": 9313,
+      "endMs": 9588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9600,
+      "endMs": 9688
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 9700,
+      "endMs": 10088
+    },
+    {
+      "ttsWord": "Core",
+      "startMs": 10100,
+      "endMs": 10338
+    },
+    {
+      "ttsWord": "monsters",
+      "startMs": 10350,
+      "endMs": 10875
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 10888,
+      "endMs": 11013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 11025,
+      "endMs": 11113
+    },
+    {
+      "ttsWord": "gaming",
+      "startMs": 11125,
+      "endMs": 11488
+    },
+    {
+      "ttsWord": "guilds",
+      "startMs": 11500,
+      "endMs": 11925
+    },
+    {
+      "ttsWord": "only",
+      "startMs": 11938,
+      "endMs": 12188
+    },
+    {
+      "ttsWord": "register",
+      "startMs": 12200,
+      "endMs": 12638
+    },
+    {
+      "ttsWord": "Category",
+      "startMs": 12650,
+      "endMs": 13175
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 13188,
+      "endMs": 13638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Han Feng took a deep drag of his",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1888
+    },
+    {
+      "text": "cigarette,",
+      "startOffsetMs": 1900,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "his stern eyes narrowing as he gazed up",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 4825
+    },
+    {
+      "text": "at the quiet fourth-floor windows.",
+      "startOffsetMs": 4838,
+      "endOffsetMs": 6725
+    },
+    {
+      "text": "Category Nine?",
+      "startOffsetMs": 7488,
+      "endOffsetMs": 8550
+    },
+    {
+      "text": "Even the Golden Core monsters from the gaming",
+      "startOffsetMs": 9313,
+      "endOffsetMs": 11488
+    },
+    {
+      "text": "guilds only register Category Three.\"",
+      "startOffsetMs": 11500,
+      "endOffsetMs": 13738
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "scene": 120,
+  "text": "As the golden countdown in the clouds pulsed rhythmically, Lu Chen's private HUD chimed with quiet majesty: PRIMORDIAL AUTHORITY SYNC: 100% COMPLETE. CORONATION IMMINENT.",
+  "durationMs": 12240,
+  "rawWords": [
+    {
+      "ttsWord": "As",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 288,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 413,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 825,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1350,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1413,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 1500,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 1913,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "rhythmically",
+      "startMs": 2288,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 3088,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 3263,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "private",
+      "startMs": 3650,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "HUD",
+      "startMs": 4075,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "chimed",
+      "startMs": 4350,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4763,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 4888,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "majesty",
+      "startMs": 5288,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "PRIMORDIAL",
+      "startMs": 6175,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "AUTHORITY",
+      "startMs": 6788,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "SYNC",
+      "startMs": 7225,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "100%",
+      "startMs": 7925,
+      "endMs": 8750
+    },
+    {
+      "ttsWord": "COMPLETE",
+      "startMs": 8763,
+      "endMs": 9300
+    },
+    {
+      "ttsWord": "CORONATION",
+      "startMs": 10163,
+      "endMs": 10838
+    },
+    {
+      "ttsWord": "IMMINENT",
+      "startMs": 10850,
+      "endMs": 11375
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "As the golden countdown in the clouds pulsed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2275
+    },
+    {
+      "text": "rhythmically,",
+      "startOffsetMs": 2288,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "Lu Chen's private HUD chimed with quiet majesty:",
+      "startOffsetMs": 3088,
+      "endOffsetMs": 5988
+    },
+    {
+      "text": "PRIMORDIAL AUTHORITY SYNC:",
+      "startOffsetMs": 6175,
+      "endOffsetMs": 7700
+    },
+    {
+      "text": "100% COMPLETE.",
+      "startOffsetMs": 7925,
+      "endOffsetMs": 9400
+    },
+    {
+      "text": "CORONATION IMMINENT.",
+      "startOffsetMs": 10163,
+      "endOffsetMs": 11475
+    }
+  ]
+}

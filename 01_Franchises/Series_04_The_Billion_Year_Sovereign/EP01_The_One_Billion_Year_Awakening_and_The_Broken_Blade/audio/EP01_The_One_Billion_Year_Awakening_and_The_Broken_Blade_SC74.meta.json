@@ -1,0 +1,139 @@
+{
+  "scene": 74,
+  "text": "Outside the building, the calm 2025 autumn night air suddenly turned freezing cold, the wind coming to a dead, unnatural standstill.",
+  "durationMs": 9168,
+  "rawWords": [
+    {
+      "ttsWord": "Outside",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 575,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "building",
+      "startMs": 663,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1325,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 1438,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "2025",
+      "startMs": 1775,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "autumn",
+      "startMs": 2750,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "night",
+      "startMs": 3075,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 3325,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 3525,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 3963,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "freezing",
+      "startMs": 4250,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 4725,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5375,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 5513,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "coming",
+      "startMs": 5825,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6125,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6275,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "dead",
+      "startMs": 6388,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "unnatural",
+      "startMs": 6925,
+      "endMs": 7513
+    },
+    {
+      "ttsWord": "standstill",
+      "startMs": 7525,
+      "endMs": 8288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Outside the building,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1188
+    },
+    {
+      "text": "the calm 2025 autumn night air suddenly turned",
+      "startOffsetMs": 1325,
+      "endOffsetMs": 4238
+    },
+    {
+      "text": "freezing cold,",
+      "startOffsetMs": 4250,
+      "endOffsetMs": 5200
+    },
+    {
+      "text": "the wind coming to a dead,",
+      "startOffsetMs": 5375,
+      "endOffsetMs": 6813
+    },
+    {
+      "text": "unnatural standstill.",
+      "startOffsetMs": 6925,
+      "endOffsetMs": 8388
+    }
+  ]
+}

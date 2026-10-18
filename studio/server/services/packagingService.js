@@ -49,6 +49,9 @@ export class PackagingService {
    * Leaves at least 16 chars for (Part 1 - {nth}) while staying strictly <= 100 chars
    */
   static getCanonicalSeriesTitle(franchiseId) {
+    if (franchiseId.includes('Series_04')) {
+      return '1 Billion Years Trapped In Cultivation, He Returns To Earth With Max Level Stats'
+    }
     if (franchiseId.includes('Series_03')) {
       return 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
     }
@@ -72,9 +75,47 @@ export class PackagingService {
 
     const isSeries01 = franchiseId.includes('Series_01')
     const isSeries03 = franchiseId.includes('Series_03')
+    const isSeries04 = franchiseId.includes('Series_04')
 
     // Concept definitions calibrated for maximum CTR & storytelling contrast
-    const baseVariants = isSeries03 ? [
+    const baseVariants = isSeries04 ? [
+      {
+        id: 'concept_a',
+        name: 'Concept A: The Sleeper Student vs 1-Billion-Year Primordial Sovereign',
+        subtitle: 'Split-Contrast (Left Casual Streetwear Student / Right Primordial Sovereign with Cosmic Golden Halo)',
+        badgeText: '1-BILLION YR',
+        subBadgeText: 'HIDDEN SOVEREIGN',
+        badgeColorPreset: 'gold_crimson',
+        badgePosition: 'bottom_left',
+        composition: 'Left 45% Lu Chen in casual black streetwear pullover hoodie with hands in pockets on sunny modern campus / Right 55% Lu Chen surrounded by floating golden celestial Dao starlight runes and cosmic primordial nebula',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 20-year-old male protagonist Lu Chen in oversized charcoal-black streetwear pullover hoodie, relaxed unbothered posture, hands in pockets, standing on bright modern sunny university campus. Right half: The same protagonist standing majestic with glowing golden starlight pupils, surrounded by floating golden Primordial Dao glyphs, swirling cosmic nebula motes, and shattered divine steles. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright high-key lighting, vibrant clean cel shading, 16:9 horizontal, textless artwork.`,
+        filename: '01_Thumbnail_Concept_A.jpg'
+      },
+      {
+        id: 'concept_b',
+        name: 'Concept B: The Syndicate Scion Shock & Jade Blade Shatter',
+        subtitle: 'Center Dynamic / Bully Shock (Shattered Nephrite Dao & Broken Mortal Blade)',
+        badgeText: 'MORTAL BLADE',
+        subBadgeText: 'S-RANK SHATTER',
+        badgeColorPreset: 'cyan_hud',
+        badgePosition: 'bottom_left',
+        composition: 'Gu Tianyu clutching his trembling wrist in cold sweat as his glowing jade dao is snapped in half by a plain chipped kitchen knife held by Lu Chen',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension dramatic manhwa composition. In foreground: Arrogant student Gu Tianyu in tailored navy blazer, eyes wide with cold sweat and horrified disbelief as his glowing luminous cyan nephrite dao snaps cleanly in half. In center: Lu Chen casually deflecting the strike using an ordinary chipped stainless-steel kitchen knife, looking completely unbothered with a calm deadpan expression. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright vibrant cel shading, high contrast contemporary lighting, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_B.jpg'
+      },
+      {
+        id: 'concept_c',
+        name: 'Concept C: The Golden Stele Calamity Solo Cleave',
+        subtitle: 'Epic Monolith / Primordial Sovereign Starlight Cleave',
+        badgeText: 'SOLO SOVEREIGN',
+        subBadgeText: 'GOLDEN STELE',
+        badgeColorPreset: 'crimson_flame',
+        badgePosition: 'bottom_left',
+        composition: 'Colossal Heaven-Earth Golden Stele floating above modern metropolitan skyline while Lu Chen unleashes a blinding vertical golden sword beam',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic modern urban cultivation panorama. Colossal ancient Heaven-Earth Golden Stele monolith floating above glass skyscrapers in modern metropolis. In foreground: Protagonist Lu Chen in casual streetwear swinging a chipped steel blade, unleashing a monumental vertical pillar of golden celestial starlight slicing the clouds apart. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright high-key lighting, vibrant clean cel shading, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_C.jpg'
+      }
+    ] : isSeries03 ? [
       {
         id: 'concept_a',
         name: 'Concept A: The Sleeper Craftsman Transformation (Common Polisher vs Demigod Architect)',

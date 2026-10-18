@@ -1713,7 +1713,7 @@ const copyVaultToken = async (model) => {
 
 const copyVaultDna = async (model) => {
   if (!model) return
-  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting`
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
   try {
     await navigator.clipboard.writeText(textToCopy)
     copiedVaultId.value = model.id
@@ -1838,30 +1838,21 @@ const prettifyEntityMapping = () => {
 }
 
 const copyFlowAgentPrompt = async () => {
-  const characters = (models.value || []).filter(m => m.type === 'character' || m.type === 'boss' || m.category === 'Protagonist' || m.category === 'Antagonist' || m.category === 'Supporting').map(m => m.name)
-  const items = (models.value || []).filter(m => m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item').map(m => m.name)
-  const characterList = characters.length > 0 ? characters.map(c => `- ${c}`).join('\n') : '- (All registered characters)'
-  const itemList = items.length > 0 ? `\n\nAlso include registered signature weapons/items if assigned IDs:\n${items.map(i => `- ${i}`).join('\n')}` : ''
-  const promptText = `Please provide the complete, current list of all registered character and entity IDs for this project.
+  const characters = (models.value || []).filter(m => m.type === 'character' || m.type === 'boss' || m.category === 'Protagonist' || m.category === 'Antagonist' || m.category === 'Supporting').map(m => m.flowName || m.name)
+  const items = (models.value || []).filter(m => m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item').map(m => m.flowName || m.name)
+  const allEntities = [...new Set([...characters, ...items])]
+  const entityList = allEntities.length > 0 
+    ? `\n\nList:\n${allEntities.map(e => `- ${e}`).join('\n')}` 
+    : ''
 
-CRITICAL FORMATTING INSTRUCTIONS:
-1. Output MUST be inside a single raw markdown code block (\`\`\`text ... \`\`\`).
-2. Each entity MUST be on its own separate line with a line break:
-<Entity Name>: <UUID>
-3. Strictly do NOT merge multiple entities onto the same line.
-4. Do NOT include bullets, asterisks, bold text, or conversational commentary.
+  const promptText = `Please list all characters and items in this project with their UUIDs:
 
-Required Output Format:
-\`\`\`text
-Name 1: 00000000-0000-0000-0000-000000000000
-Name 2: 00000000-0000-0000-0000-000000000000
-\`\`\`
+Format:
+Name: UUID${entityList}`
 
-Ensure all of the following characters and bosses are included:
-${characterList}${itemList}`
   try {
     await navigator.clipboard.writeText(promptText)
-    triggerToast('Flow Agent Prompt Copied', 'Paste this prompt directly into Google Flow to get clean, code-blocked UUIDs!')
+    triggerToast('Flow Agent Prompt Copied', 'Paste directly into Google Flow chat to get character UUIDs!')
   } catch (e) {
     console.error('Failed to copy flow prompt:', e)
   }

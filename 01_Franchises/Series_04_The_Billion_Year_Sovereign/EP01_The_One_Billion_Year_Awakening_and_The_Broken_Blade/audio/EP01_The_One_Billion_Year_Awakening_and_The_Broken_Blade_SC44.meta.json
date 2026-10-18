@@ -1,0 +1,134 @@
+{
+  "scene": 44,
+  "text": "The moment the high-grade spirit blade met the soft cotton fabric of Lu Chen's black hoodie, the space within the room shuddered.",
+  "durationMs": 7488,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "moment",
+      "startMs": 188,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 563,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "high-grade",
+      "startMs": 650,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 1188,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "blade",
+      "startMs": 1625,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "met",
+      "startMs": 1925,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2113,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "soft",
+      "startMs": 2213,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "cotton",
+      "startMs": 2638,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "fabric",
+      "startMs": 2963,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3425,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 3538,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 3713,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 4138,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "hoodie",
+      "startMs": 4450,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4988,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "space",
+      "startMs": 5100,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 5513,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5788,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 5888,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "shuddered",
+      "startMs": 6138,
+      "endMs": 6625
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The moment the high-grade spirit blade met the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2200
+    },
+    {
+      "text": "soft cotton fabric of Lu Chen's black hoodie,",
+      "startOffsetMs": 2213,
+      "endOffsetMs": 4863
+    },
+    {
+      "text": "the space within the room shuddered.",
+      "startOffsetMs": 4988,
+      "endOffsetMs": 6725
+    }
+  ]
+}

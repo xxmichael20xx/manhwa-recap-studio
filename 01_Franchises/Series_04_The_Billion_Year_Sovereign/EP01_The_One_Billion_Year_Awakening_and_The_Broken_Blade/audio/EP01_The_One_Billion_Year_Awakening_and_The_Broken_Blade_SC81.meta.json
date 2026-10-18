@@ -1,0 +1,179 @@
+{
+  "scene": 81,
+  "text": "In the VIP penthouse of the Starfall Corporate Tower, Ye Xingchen stood beside floor-to-ceiling windows, his cosmic purple aura flaring with supreme arrogance as he gazed at the monument.",
+  "durationMs": 11112,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 213,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "VIP",
+      "startMs": 288,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "penthouse",
+      "startMs": 913,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1450,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1550,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 1650,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "Corporate",
+      "startMs": 2213,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "Tower",
+      "startMs": 2600,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 3300,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 3400,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 3875,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 4175,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "floor-to-ceiling",
+      "startMs": 4588,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "windows",
+      "startMs": 5350,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6125,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 6288,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "purple",
+      "startMs": 6775,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "aura",
+      "startMs": 7125,
+      "endMs": 7350
+    },
+    {
+      "ttsWord": "flaring",
+      "startMs": 7363,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7763,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 7900,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "arrogance",
+      "startMs": 8363,
+      "endMs": 8838
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 8850,
+      "endMs": 8975
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 8988,
+      "endMs": 9075
+    },
+    {
+      "ttsWord": "gazed",
+      "startMs": 9088,
+      "endMs": 9500
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 9513,
+      "endMs": 9575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9588,
+      "endMs": 9650
+    },
+    {
+      "ttsWord": "monument",
+      "startMs": 9663,
+      "endMs": 10250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In the VIP penthouse of the Starfall Corporate",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "Tower,",
+      "startOffsetMs": 2600,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "Ye Xingchen stood beside floor-to-ceiling windows,",
+      "startOffsetMs": 3300,
+      "endOffsetMs": 5963
+    },
+    {
+      "text": "his cosmic purple aura flaring with supreme arrogance",
+      "startOffsetMs": 6125,
+      "endOffsetMs": 8838
+    },
+    {
+      "text": "as he gazed at the monument.",
+      "startOffsetMs": 8850,
+      "endOffsetMs": 10350
+    }
+  ]
+}

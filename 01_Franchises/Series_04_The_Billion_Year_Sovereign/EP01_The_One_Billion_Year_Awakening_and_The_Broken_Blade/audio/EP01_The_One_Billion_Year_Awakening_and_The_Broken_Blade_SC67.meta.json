@@ -1,0 +1,129 @@
+{
+  "scene": 67,
+  "text": "Taking out a handheld tactical spirit-spectrometer, Han Feng calibrated the sensor nozzle and pointed it toward the open doorway of Room 402.",
+  "durationMs": 9168,
+  "rawWords": [
+    {
+      "ttsWord": "Taking",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 413,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 575,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "handheld",
+      "startMs": 625,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 1163,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "spirit-spectrometer",
+      "startMs": 1650,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 3038,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 3275,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "calibrated",
+      "startMs": 3600,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4213,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "sensor",
+      "startMs": 4313,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "nozzle",
+      "startMs": 4713,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5213,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "pointed",
+      "startMs": 5338,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 5688,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 5825,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6075,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 6175,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "doorway",
+      "startMs": 6513,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6963,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 7113,
+      "endMs": 8288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Taking out a handheld tactical spirit-spectrometer",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "Han Feng calibrated the sensor nozzle and pointed",
+      "startOffsetMs": 3038,
+      "endOffsetMs": 5675
+    },
+    {
+      "text": "it toward the open doorway of Room 402",
+      "startOffsetMs": 5688,
+      "endOffsetMs": 8388
+    }
+  ]
+}

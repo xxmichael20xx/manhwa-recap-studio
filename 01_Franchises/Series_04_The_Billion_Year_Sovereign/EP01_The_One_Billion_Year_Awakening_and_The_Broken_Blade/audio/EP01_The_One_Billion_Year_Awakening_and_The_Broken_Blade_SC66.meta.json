@@ -1,0 +1,149 @@
+{
+  "scene": 66,
+  "text": "Han Feng paused beside the cratered wall, looking down at the groaning Gu Tianyu and the fine pile of powdered spirit-steel on the floor.",
+  "durationMs": 8280,
+  "rawWords": [
+    {
+      "ttsWord": "Han",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 388,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "paused",
+      "startMs": 738,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 1150,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1550,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "cratered",
+      "startMs": 1638,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 2050,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 2688,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 2975,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3263,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3338,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "groaning",
+      "startMs": 3438,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 3825,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 4025,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4538,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4675,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "fine",
+      "startMs": 4763,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "pile",
+      "startMs": 5113,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5475,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "powdered",
+      "startMs": 5588,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "spirit-steel",
+      "startMs": 5988,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 6750,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6850,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 6925,
+      "endMs": 7400
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Han Feng paused beside the cratered wall,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "looking down at the groaning Gu Tianyu and",
+      "startOffsetMs": 2688,
+      "endOffsetMs": 4663
+    },
+    {
+      "text": "the fine pile of powdered spirit-steel on the",
+      "startOffsetMs": 4675,
+      "endOffsetMs": 6913
+    },
+    {
+      "text": "floor.",
+      "startOffsetMs": 6925,
+      "endOffsetMs": 7500
+    }
+  ]
+}

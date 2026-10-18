@@ -1,0 +1,184 @@
+{
+  "scene": 55,
+  "text": "\"It's just cotton and polyester, bought during last month's clearance sale,\" Lu Chen replied flatly, picking up his room's door from the floor and leaning it back against the frame.",
+  "durationMs": 10272,
+  "rawWords": [
+    {
+      "ttsWord": "It's",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 288,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "cotton",
+      "startMs": 550,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 900,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "polyester",
+      "startMs": 1025,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "bought",
+      "startMs": 2038,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "during",
+      "startMs": 2313,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "last",
+      "startMs": 2563,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "month's",
+      "startMs": 2888,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "clearance",
+      "startMs": 3175,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "sale",
+      "startMs": 3600,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 4213,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 4375,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "replied",
+      "startMs": 4613,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "flatly",
+      "startMs": 5025,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "picking",
+      "startMs": 5800,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6113,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6238,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "room's",
+      "startMs": 6400,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 6750,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 7038,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7175,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 7250,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7700,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "leaning",
+      "startMs": 7825,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 8125,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 8238,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 8513,
+      "endMs": 8850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8863,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "frame",
+      "startMs": 8938,
+      "endMs": 9400
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "It's just cotton and polyester,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1888
+    },
+    {
+      "text": "bought during last month's clearance sale,\"",
+      "startOffsetMs": 2038,
+      "endOffsetMs": 4063
+    },
+    {
+      "text": "Lu Chen replied flatly,",
+      "startOffsetMs": 4213,
+      "endOffsetMs": 5625
+    },
+    {
+      "text": "picking up his room's door from the floor",
+      "startOffsetMs": 5800,
+      "endOffsetMs": 7688
+    },
+    {
+      "text": "and leaning it back against the frame.",
+      "startOffsetMs": 7700,
+      "endOffsetMs": 9500
+    }
+  ]
+}

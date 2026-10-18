@@ -1,0 +1,134 @@
+{
+  "scene": 108,
+  "text": "Ye Xingchen spoke into an encrypted gold-trimmed communicator, barking cold corporate orders to Starfall syndicate executives to monopolise all regional spirit reserves.",
+  "durationMs": 10152,
+  "rawWords": [
+    {
+      "ttsWord": "Ye",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 250,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "spoke",
+      "startMs": 713,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1050,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1300,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "encrypted",
+      "startMs": 1400,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "gold-trimmed",
+      "startMs": 1900,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "communicator",
+      "startMs": 2513,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "barking",
+      "startMs": 3513,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 3925,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "corporate",
+      "startMs": 4238,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "orders",
+      "startMs": 4613,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4975,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 5088,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 5650,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "executives",
+      "startMs": 6075,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6700,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "monopolise",
+      "startMs": 6813,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "all",
+      "startMs": 7538,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "regional",
+      "startMs": 7800,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 8213,
+      "endMs": 8613
+    },
+    {
+      "ttsWord": "reserves",
+      "startMs": 8625,
+      "endMs": 9275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ye Xingchen spoke into an encrypted gold-trimmed communicator,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3300
+    },
+    {
+      "text": "barking cold corporate orders to Starfall syndicate executives",
+      "startOffsetMs": 3513,
+      "endOffsetMs": 6688
+    },
+    {
+      "text": "to monopolise all regional spirit reserves.",
+      "startOffsetMs": 6700,
+      "endOffsetMs": 9375
+    }
+  ]
+}

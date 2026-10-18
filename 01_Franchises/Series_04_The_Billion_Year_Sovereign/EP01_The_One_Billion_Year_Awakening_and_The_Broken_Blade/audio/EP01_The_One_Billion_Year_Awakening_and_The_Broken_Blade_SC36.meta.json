@@ -1,0 +1,179 @@
+{
+  "scene": 36,
+  "text": "Wang Bao instinctively lunged forward, throwing his sturdy arms wide to shield Lu Chen's desk. \"Gu Tianyu, campus security is monitoring the floors! You can't just rob other students!\"",
+  "durationMs": 13488,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 400,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "instinctively",
+      "startMs": 663,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "lunged",
+      "startMs": 1300,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 1675,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "throwing",
+      "startMs": 2388,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2763,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "sturdy",
+      "startMs": 2900,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "arms",
+      "startMs": 3325,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 3713,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4038,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "shield",
+      "startMs": 4125,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 4538,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 4713,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 5100,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 6475,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 6713,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 7425,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "security",
+      "startMs": 7838,
+      "endMs": 8388
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 8400,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "monitoring",
+      "startMs": 8538,
+      "endMs": 9063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9075,
+      "endMs": 9138
+    },
+    {
+      "ttsWord": "floors",
+      "startMs": 9150,
+      "endMs": 9775
+    },
+    {
+      "ttsWord": "You",
+      "startMs": 10638,
+      "endMs": 10813
+    },
+    {
+      "ttsWord": "can't",
+      "startMs": 10825,
+      "endMs": 11125
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 11138,
+      "endMs": 11400
+    },
+    {
+      "ttsWord": "rob",
+      "startMs": 11413,
+      "endMs": 11725
+    },
+    {
+      "ttsWord": "other",
+      "startMs": 11738,
+      "endMs": 11963
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 11975,
+      "endMs": 12625
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao instinctively lunged forward,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2238
+    },
+    {
+      "text": "throwing his sturdy arms wide to shield Lu",
+      "startOffsetMs": 2388,
+      "endOffsetMs": 4700
+    },
+    {
+      "text": "Chen's desk.",
+      "startOffsetMs": 4713,
+      "endOffsetMs": 5713
+    },
+    {
+      "text": "Gu Tianyu, campus security is monitoring the floors!",
+      "startOffsetMs": 6475,
+      "endOffsetMs": 9875
+    },
+    {
+      "text": "You can't just rob other students!\"",
+      "startOffsetMs": 10638,
+      "endOffsetMs": 12725
+    }
+  ]
+}

@@ -75,9 +75,9 @@ const toggleTheme = () => {
 }
 
 const copyMasterDna = () => {
-  const masterAnchor = `Caelen Vance, 18-year-old male academy student, messy raven-black hair, sharp piercing violet-amethyst eyes, calm analytical expression, fitted charcoal-gray academy combat tunic with silver clasps, fingerless tactical grip gloves, dark utility trousers, dark fantasy action manhwa webtoon art style, sharp ink linework, cinematic lighting --cref [CHARACTER_URL] --cw 80 --ar 16:9 --style raw`
+  const masterAnchor = `Lu Chen, 20-year-old East Asian male manhwa protagonist, messy soft raven-black hair with relaxed fringe, deep calm obsidian eyes with subtle golden starlight flecks, deadpan bored expression, oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark grey casual utility trousers, minimalist white sneakers, hands in hoodie pockets, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
   navigator.clipboard.writeText(masterAnchor)
-  alert('✨ Copied Caelen Vance Master Character DNA Prompt Anchor to Clipboard!')
+  alert('✨ Copied Lu Chen Master Character DNA Prompt Anchor to Clipboard!')
 }
 
 onMounted(() => {

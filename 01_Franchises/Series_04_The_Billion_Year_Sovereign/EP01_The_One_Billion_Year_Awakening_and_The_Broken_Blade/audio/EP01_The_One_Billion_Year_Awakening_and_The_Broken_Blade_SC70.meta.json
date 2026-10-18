@@ -1,0 +1,169 @@
+{
+  "scene": 70,
+  "text": "Standing in the doorway, Han Feng looked directly at Lu Chen, who was casually leaning back in his desk chair, scrolling through a campus food delivery app.",
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "Standing",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 563,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 625,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "doorway",
+      "startMs": 725,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 1488,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 1725,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 2100,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 2325,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 2825,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 2938,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 3100,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 3813,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3900,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "casually",
+      "startMs": 4088,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "leaning",
+      "startMs": 4575,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4913,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5200,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5275,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 5425,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "chair",
+      "startMs": 5750,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "scrolling",
+      "startMs": 6400,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 6925,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7113,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 7188,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "food",
+      "startMs": 7625,
+      "endMs": 7863
+    },
+    {
+      "ttsWord": "delivery",
+      "startMs": 7875,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "app.",
+      "startMs": 8350,
+      "endMs": 8688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Standing in the doorway,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1313
+    },
+    {
+      "text": "Han Feng looked directly at Lu Chen,",
+      "startOffsetMs": 1488,
+      "endOffsetMs": 3588
+    },
+    {
+      "text": "who was casually leaning back in his desk",
+      "startOffsetMs": 3813,
+      "endOffsetMs": 5738
+    },
+    {
+      "text": "chair,",
+      "startOffsetMs": 5750,
+      "endOffsetMs": 6213
+    },
+    {
+      "text": "scrolling through a campus food delivery app.",
+      "startOffsetMs": 6400,
+      "endOffsetMs": 8788
+    }
+  ]
+}

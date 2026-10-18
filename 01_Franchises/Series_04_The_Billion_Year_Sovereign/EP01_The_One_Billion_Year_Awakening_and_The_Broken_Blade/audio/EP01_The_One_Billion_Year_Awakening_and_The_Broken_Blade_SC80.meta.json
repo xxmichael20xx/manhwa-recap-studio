@@ -1,0 +1,149 @@
+{
+  "scene": 80,
+  "text": "Piercing through the stratosphere, an unfathomable ancient obsidian stele measuring thirty thousand metres in height descended through the clouds, glowing with divine golden inscriptions.",
+  "durationMs": 10464,
+  "rawWords": [
+    {
+      "ttsWord": "Piercing",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 500,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 688,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "stratosphere",
+      "startMs": 800,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1813,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "unfathomable",
+      "startMs": 1938,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 2738,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 3075,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "stele",
+      "startMs": 3625,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "measuring",
+      "startMs": 3975,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 4400,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 4725,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "metres",
+      "startMs": 5163,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5525,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "height",
+      "startMs": 5625,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "descended",
+      "startMs": 5900,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 6400,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6563,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 6663,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 7438,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7800,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 7938,
+      "endMs": 8363
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 8375,
+      "endMs": 8738
+    },
+    {
+      "ttsWord": "inscriptions",
+      "startMs": 8750,
+      "endMs": 9588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Piercing through the stratosphere,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1650
+    },
+    {
+      "text": "an unfathomable ancient obsidian stele measuring thirty thousand",
+      "startOffsetMs": 1813,
+      "endOffsetMs": 5150
+    },
+    {
+      "text": "metres in height descended through the clouds,",
+      "startOffsetMs": 5163,
+      "endOffsetMs": 7300
+    },
+    {
+      "text": "glowing with divine golden inscriptions.",
+      "startOffsetMs": 7438,
+      "endOffsetMs": 9688
+    }
+  ]
+}

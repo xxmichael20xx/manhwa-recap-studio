@@ -1,0 +1,179 @@
+{
+  "scene": 92,
+  "text": "Squeezing nervously past the tactical cordon barriers, Wang Bao bolted inside Room 402 and slammed the heavy wooden door shut, hastily sliding all three deadbolts into place with trembling fingers.",
+  "durationMs": 12816,
+  "rawWords": [
+    {
+      "ttsWord": "Squeezing",
+      "startMs": 50,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "nervously",
+      "startMs": 663,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 1163,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1525,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 1625,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "cordon",
+      "startMs": 2150,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "barriers",
+      "startMs": 2513,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 3363,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 3700,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "bolted",
+      "startMs": 3925,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 4350,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 4863,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6050,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "slammed",
+      "startMs": 6213,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6600,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 6675,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 7013,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 7313,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "shut",
+      "startMs": 7550,
+      "endMs": 7900
+    },
+    {
+      "ttsWord": "hastily",
+      "startMs": 8200,
+      "endMs": 8675
+    },
+    {
+      "ttsWord": "sliding",
+      "startMs": 8688,
+      "endMs": 9163
+    },
+    {
+      "ttsWord": "all",
+      "startMs": 9175,
+      "endMs": 9375
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 9388,
+      "endMs": 9663
+    },
+    {
+      "ttsWord": "deadbolts",
+      "startMs": 9675,
+      "endMs": 10188
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 10200,
+      "endMs": 10375
+    },
+    {
+      "ttsWord": "place",
+      "startMs": 10388,
+      "endMs": 10738
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 10750,
+      "endMs": 10875
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 10888,
+      "endMs": 11325
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 11338,
+      "endMs": 11950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Squeezing nervously past the tactical cordon barriers,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3175
+    },
+    {
+      "text": "Wang Bao bolted inside Room 402 and slammed",
+      "startOffsetMs": 3363,
+      "endOffsetMs": 6588
+    },
+    {
+      "text": "the heavy wooden door shut,",
+      "startOffsetMs": 6600,
+      "endOffsetMs": 8000
+    },
+    {
+      "text": "hastily sliding all three deadbolts into place with",
+      "startOffsetMs": 8200,
+      "endOffsetMs": 10875
+    },
+    {
+      "text": "trembling fingers.",
+      "startOffsetMs": 10888,
+      "endOffsetMs": 12050
+    }
+  ]
+}

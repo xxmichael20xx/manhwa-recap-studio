@@ -1,0 +1,159 @@
+{
+  "scene": 82,
+  "text": "\"Four hundred and eighty million years of celestial cultivation,\" Ye Xingchen muttered with cold imperial pride. \"Rank One on that stone belongs solely to me.\"",
+  "durationMs": 10176,
+  "rawWords": [
+    {
+      "ttsWord": "Four",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 325,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 613,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "eighty",
+      "startMs": 775,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "million",
+      "startMs": 1000,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 1400,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1725,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 1825,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 2475,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 3475,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 3575,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "muttered",
+      "startMs": 4013,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4350,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 4500,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 4838,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "pride",
+      "startMs": 5350,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "Rank",
+      "startMs": 6713,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "One",
+      "startMs": 7075,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 7325,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 7438,
+      "endMs": 7638
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 7650,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "belongs",
+      "startMs": 8063,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "solely",
+      "startMs": 8488,
+      "endMs": 8863
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 8875,
+      "endMs": 8988
+    },
+    {
+      "ttsWord": "me",
+      "startMs": 9000,
+      "endMs": 9313
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Four hundred and eighty million years of celestial",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2463
+    },
+    {
+      "text": "cultivation,\"",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 3263
+    },
+    {
+      "text": "Ye Xingchen muttered with cold imperial pride.",
+      "startOffsetMs": 3475,
+      "endOffsetMs": 5950
+    },
+    {
+      "text": "Rank One on that stone belongs solely to",
+      "startOffsetMs": 6713,
+      "endOffsetMs": 8988
+    },
+    {
+      "text": "me.\"",
+      "startOffsetMs": 9000,
+      "endOffsetMs": 9413
+    }
+  ]
+}

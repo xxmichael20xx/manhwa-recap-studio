@@ -1,0 +1,144 @@
+{
+  "scene": 103,
+  "text": "Han Feng gripped his handheld Tactical Spirit Spectrometer, watching the brass analog needle slam hard against the maximum overload threshold with crackling amber sparks.",
+  "durationMs": 10248,
+  "rawWords": [
+    {
+      "ttsWord": "Han",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 388,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "gripped",
+      "startMs": 713,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1013,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "handheld",
+      "startMs": 1150,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "Tactical",
+      "startMs": 1663,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "Spirit",
+      "startMs": 2163,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "Spectrometer",
+      "startMs": 2550,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "watching",
+      "startMs": 3600,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3975,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "brass",
+      "startMs": 4075,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "analog",
+      "startMs": 4438,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "needle",
+      "startMs": 4963,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "slam",
+      "startMs": 5263,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "hard",
+      "startMs": 5625,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 5938,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6238,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "maximum",
+      "startMs": 6313,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "overload",
+      "startMs": 6850,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "threshold",
+      "startMs": 7313,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7863,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "crackling",
+      "startMs": 8000,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 8513,
+      "endMs": 8763
+    },
+    {
+      "ttsWord": "sparks",
+      "startMs": 8775,
+      "endMs": 9388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Han Feng gripped his handheld Tactical Spirit Spectrometer,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3375
+    },
+    {
+      "text": "watching the brass analog needle slam hard against",
+      "startOffsetMs": 3600,
+      "endOffsetMs": 6225
+    },
+    {
+      "text": "the maximum overload threshold with crackling amber sparks.",
+      "startOffsetMs": 6238,
+      "endOffsetMs": 9488
+    }
+  ]
+}

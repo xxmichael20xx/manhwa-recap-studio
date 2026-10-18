@@ -1,0 +1,164 @@
+{
+  "scene": 89,
+  "text": "At the far end of the corridor, heavy, frantic footsteps echoed loudly up the concrete staircase as chubby roommate Fatty Wang Bao scrambled onto the landing.",
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "At",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 238,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "far",
+      "startMs": 338,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "end",
+      "startMs": 663,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 813,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 875,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 975,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 1813,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "frantic",
+      "startMs": 2350,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "footsteps",
+      "startMs": 2775,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 3338,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 3688,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4113,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4263,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 4363,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "staircase",
+      "startMs": 4888,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5500,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "chubby",
+      "startMs": 5700,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "roommate",
+      "startMs": 6050,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "Fatty",
+      "startMs": 6450,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 6813,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 7088,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "scrambled",
+      "startMs": 7288,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 7850,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8088,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "landing",
+      "startMs": 8200,
+      "endMs": 8688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "At the far end of the corridor,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1625
+    },
+    {
+      "text": "heavy,",
+      "startOffsetMs": 1813,
+      "endOffsetMs": 2200
+    },
+    {
+      "text": "frantic footsteps echoed loudly up the concrete staircase",
+      "startOffsetMs": 2350,
+      "endOffsetMs": 5488
+    },
+    {
+      "text": "as chubby roommate Fatty Wang Bao scrambled onto",
+      "startOffsetMs": 5500,
+      "endOffsetMs": 8075
+    },
+    {
+      "text": "the landing.",
+      "startOffsetMs": 8088,
+      "endOffsetMs": 8788
+    }
+  ]
+}

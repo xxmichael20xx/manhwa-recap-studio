@@ -1,0 +1,144 @@
+{
+  "scene": 99,
+  "text": "Wang Bao frantically refreshed the official Ministry portal on his smartphone, his round face sweating profusely under the bright 4000K LED ceiling lights.",
+  "durationMs": 9960,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 413,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "frantically",
+      "startMs": 638,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "refreshed",
+      "startMs": 1188,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1713,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "official",
+      "startMs": 1788,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "Ministry",
+      "startMs": 2225,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "portal",
+      "startMs": 2675,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 3075,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3175,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "smartphone",
+      "startMs": 3313,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4275,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "round",
+      "startMs": 4463,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "face",
+      "startMs": 4763,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "sweating",
+      "startMs": 5075,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "profusely",
+      "startMs": 5413,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 6050,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6263,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "bright",
+      "startMs": 6363,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "4000K",
+      "startMs": 6663,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "LED",
+      "startMs": 7675,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "ceiling",
+      "startMs": 8200,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "lights",
+      "startMs": 8613,
+      "endMs": 9088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao frantically refreshed the official Ministry portal",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3063
+    },
+    {
+      "text": "on his smartphone,",
+      "startOffsetMs": 3075,
+      "endOffsetMs": 4088
+    },
+    {
+      "text": "his round face sweating profusely under the bright",
+      "startOffsetMs": 4275,
+      "endOffsetMs": 6650
+    },
+    {
+      "text": "4000K LED ceiling lights.",
+      "startOffsetMs": 6663,
+      "endOffsetMs": 9188
+    }
+  ]
+}

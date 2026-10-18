@@ -1,0 +1,144 @@
+{
+  "scene": 31,
+  "text": "Lu Chen casually took another sip from his clear glass water tumbler, setting it gently beside his glowing laptop without turning his head.",
+  "durationMs": 8256,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 338,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "casually",
+      "startMs": 613,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 1075,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "another",
+      "startMs": 1275,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "sip",
+      "startMs": 1625,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1913,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2063,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 2213,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 2513,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "water",
+      "startMs": 2850,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "tumbler",
+      "startMs": 3150,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "setting",
+      "startMs": 3900,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 4275,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "gently",
+      "startMs": 4400,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 4763,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5163,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 5313,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "laptop",
+      "startMs": 5675,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 6213,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "turning",
+      "startMs": 6550,
+      "endMs": 6850
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6863,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "head",
+      "startMs": 7013,
+      "endMs": 7375
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen casually took another sip from his",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2200
+    },
+    {
+      "text": "clear glass water tumbler,",
+      "startOffsetMs": 2213,
+      "endOffsetMs": 3663
+    },
+    {
+      "text": "setting it gently beside his glowing laptop without",
+      "startOffsetMs": 3900,
+      "endOffsetMs": 6538
+    },
+    {
+      "text": "turning his head.",
+      "startOffsetMs": 6550,
+      "endOffsetMs": 7475
+    }
+  ]
+}

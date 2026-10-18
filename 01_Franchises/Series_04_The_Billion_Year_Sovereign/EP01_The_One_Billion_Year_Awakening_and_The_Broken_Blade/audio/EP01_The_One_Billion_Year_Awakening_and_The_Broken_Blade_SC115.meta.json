@@ -1,0 +1,149 @@
+{
+  "scene": 115,
+  "text": "Without turning his head, Lu Chen casually lifted two fingers, releasing an imperceptible ripple of primordial aura that gently dispersed the drone's scanning beam.",
+  "durationMs": 9768,
+  "rawWords": [
+    {
+      "ttsWord": "Without",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "turning",
+      "startMs": 513,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 838,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "head",
+      "startMs": 1000,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1525,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 1725,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "casually",
+      "startMs": 2013,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "lifted",
+      "startMs": 2475,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2913,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 3150,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "releasing",
+      "startMs": 3938,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4413,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "imperceptible",
+      "startMs": 4500,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "ripple",
+      "startMs": 5238,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5500,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 5625,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "aura",
+      "startMs": 6275,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6575,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "gently",
+      "startMs": 6750,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "dispersed",
+      "startMs": 7100,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7638,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "drone's",
+      "startMs": 7738,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "scanning",
+      "startMs": 8100,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "beam",
+      "startMs": 8513,
+      "endMs": 8888
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Without turning his head,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1388
+    },
+    {
+      "text": "Lu Chen casually lifted two fingers,",
+      "startOffsetMs": 1525,
+      "endOffsetMs": 3775
+    },
+    {
+      "text": "releasing an imperceptible ripple of primordial aura that",
+      "startOffsetMs": 3938,
+      "endOffsetMs": 6738
+    },
+    {
+      "text": "gently dispersed the drone's scanning beam.",
+      "startOffsetMs": 6750,
+      "endOffsetMs": 8988
+    }
+  ]
+}

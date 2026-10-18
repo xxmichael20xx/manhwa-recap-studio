@@ -1,0 +1,154 @@
+{
+  "scene": 104,
+  "text": "The spectrometer's amber digital display cast a sharp glow across Han Feng's scarred cheek as directional telemetry locked onto the fourth floor of Dormitory 4.",
+  "durationMs": 9768,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "spectrometer's",
+      "startMs": 200,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 1025,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "digital",
+      "startMs": 1325,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "display",
+      "startMs": 1713,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "cast",
+      "startMs": 2138,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2525,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 2575,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "glow",
+      "startMs": 2950,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 3300,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 3713,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "Feng's",
+      "startMs": 3988,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "scarred",
+      "startMs": 4313,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "cheek",
+      "startMs": 4688,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5038,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "directional",
+      "startMs": 5238,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "telemetry",
+      "startMs": 5738,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "locked",
+      "startMs": 6313,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 6700,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6925,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "fourth",
+      "startMs": 7025,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 7338,
+      "endMs": 7738
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7750,
+      "endMs": 7863
+    },
+    {
+      "ttsWord": "Dormitory",
+      "startMs": 7875,
+      "endMs": 8413
+    },
+    {
+      "ttsWord": "4",
+      "startMs": 8425,
+      "endMs": 8888
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The spectrometer's amber digital display cast a sharp",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2938
+    },
+    {
+      "text": "glow across Han Feng's scarred cheek as directional",
+      "startOffsetMs": 2950,
+      "endOffsetMs": 5725
+    },
+    {
+      "text": "telemetry locked onto the fourth floor of Dormitory",
+      "startOffsetMs": 5738,
+      "endOffsetMs": 8413
+    },
+    {
+      "text": "4.",
+      "startOffsetMs": 8425,
+      "endOffsetMs": 8988
+    }
+  ]
+}

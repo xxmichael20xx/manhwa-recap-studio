@@ -1,0 +1,164 @@
+{
+  "scene": 42,
+  "text": "\"Seeking death!\" Gu Tianyu roared, his patience instantly snapping as forty-eight thousand years of concentrated Golden Core qi ignited the jade blade into blinding cyan fire.",
+  "durationMs": 11520,
+  "rawWords": [
+    {
+      "ttsWord": "Seeking",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "death",
+      "startMs": 525,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 1875,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 2113,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 2525,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3100,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "patience",
+      "startMs": 3263,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "instantly",
+      "startMs": 3725,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "snapping",
+      "startMs": 4250,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4775,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "forty-eight",
+      "startMs": 4913,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 5400,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 5850,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6150,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "concentrated",
+      "startMs": 6250,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 6950,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "Core",
+      "startMs": 7325,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 7663,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "ignited",
+      "startMs": 7900,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8350,
+      "endMs": 8438
+    },
+    {
+      "ttsWord": "jade",
+      "startMs": 8450,
+      "endMs": 8763
+    },
+    {
+      "ttsWord": "blade",
+      "startMs": 8775,
+      "endMs": 9088
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 9100,
+      "endMs": 9263
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 9275,
+      "endMs": 9675
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 9688,
+      "endMs": 10138
+    },
+    {
+      "ttsWord": "fire",
+      "startMs": 10150,
+      "endMs": 10638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Seeking death!\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1113
+    },
+    {
+      "text": "Gu Tianyu roared,",
+      "startOffsetMs": 1875,
+      "endOffsetMs": 2988
+    },
+    {
+      "text": "his patience instantly snapping as forty-eight thousand years",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 6138
+    },
+    {
+      "text": "of concentrated Golden Core qi ignited the jade",
+      "startOffsetMs": 6150,
+      "endOffsetMs": 8763
+    },
+    {
+      "text": "blade into blinding cyan fire.",
+      "startOffsetMs": 8775,
+      "endOffsetMs": 10738
+    }
+  ]
+}

@@ -27,24 +27,24 @@
 ## ⚖️ Power Scaling & Progression Arithmetic (Strict Invariants)
 
 * **The Protagonist (Lu Chen):** **1,000,000,000 Years Total** — The undisputed, solitary apex (*The Primordial Sovereign / Xiao Yao Tianzun*).
-* **Active Output Calibration (25% Transcendent Apex):**  
-  Upon awakening, Lu Chen effortlessly synchronises **25.00% ($250,000,000\text{ Years}$)** into his active vessel. He reserves the remaining 75% simply because 250M years already dwarfs virtually every entity on Blue Star, rendering further output excessive for everyday collegiate life.
+* **100% Sovereign Synchronisation & Dynamic Planetary Throttle:**  
+  Lu Chen awakens with 100% of his 1,000,000,000 years of cultivation fully unlocked within his primordial core. To prevent Blue Star's tectonic plates and campus dormitories from collapsing under infinite gravitational mass, he voluntarily dampens his active aura to 0.001% (dorm camouflage) and 0.01% (effortless scion curb-stomping). When facing global oligarchs like Ye Xingchen (480M Years) or Calamity Bosses (450M Years), Lu Chen can dynamically release 500M+ to 1B Years on demand, effortlessly dwarfing the world's apex whales.
 * **Global Power Hierarchy:**
   * Ordinary students / Citizens: $10 – 500$ years (Body Refining / Basic Qi).
   * Arrogant Campus Scions: $5,000 – 50,000$ years (Foundation Establishment / Golden Core).
   * National Enforcers: $1,000,000 – 20,000,000$ years.
   * World's Top 3 Whales & Ancient Bosses: Capped between **$260,000,000$ and $480,000,000$ Years**.
 * **The Absolute Invulnerability Law ($\text{Attack} - \text{Defence} \le 0 \implies 0\text{ Dmg}$):**  
-  Cultivation scaling is exponential. At $250\text{M Years}$ active output, Lu Chen's passive spiritual density vaporises incoming mundane attacks before they touch him. When scions brandish Golden Core blades, the weapons shatter upon entering his ten-metre spatial domain.
+  Cultivation scaling is exponential. At 1B Years unlocked, Lu Chen's passive spiritual density vaporises incoming mundane attacks before they touch him. When scions brandish Golden Core blades, the weapons shatter upon entering his ten-metre spatial domain.
 
 ---
 
 ## 👥 Locked Character Vault (Option A Roster)
 
 1. **Protagonist (MC): Lu Chen (陆晨)**
-   - **Role:** Relaxed, deadpan 2nd-year university student; unbothered 25% active apex sovereign.
+   - **Role:** Relaxed, deadpan 2nd-year university student; unbothered 1-billion-year sovereign apex.
    - **In-Game Handle / Dao Title:** *"Xiao Yao"* / *The Primordial Sovereign (太初天尊)*
-   - **Cultivation Base:** 1,000,000,000 Years Total (250,000,000 Years Active / 25% Output)
+   - **Cultivation Base:** 1,000,000,000 Years Fully Unlocked (Dynamic On-Demand Planetary Throttle)
    - **DNA Prompt:** `@{Lu Chen}, 20-year-old East Asian male, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression, clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers, hands in pockets, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16`
 
 2. **Roommate / Sidekick: Wang Bao (Fatty Wang / 王宝)**

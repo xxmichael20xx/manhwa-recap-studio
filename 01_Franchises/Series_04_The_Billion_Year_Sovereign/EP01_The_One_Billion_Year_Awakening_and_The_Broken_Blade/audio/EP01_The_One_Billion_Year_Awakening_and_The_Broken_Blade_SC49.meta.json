@@ -1,0 +1,129 @@
+{
+  "scene": 49,
+  "text": "The fourth-floor corridor froze in dead, suffocating silence; dozens of watching students stood paralysed, jaws hanging slack in absolute shock.",
+  "durationMs": 9600,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 213,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 850,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "froze",
+      "startMs": 1338,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1713,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "dead",
+      "startMs": 1850,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "suffocating",
+      "startMs": 2425,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "silence",
+      "startMs": 3088,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "dozens",
+      "startMs": 3975,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4375,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "watching",
+      "startMs": 4463,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 4875,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 5300,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "paralysed",
+      "startMs": 5613,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "jaws",
+      "startMs": 6463,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "hanging",
+      "startMs": 6838,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "slack",
+      "startMs": 7188,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7563,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 7700,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "shock",
+      "startMs": 8213,
+      "endMs": 8725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The fourth-floor corridor froze in dead,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2263
+    },
+    {
+      "text": "suffocating silence;",
+      "startOffsetMs": 2425,
+      "endOffsetMs": 3775
+    },
+    {
+      "text": "dozens of watching students stood paralysed,",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6388
+    },
+    {
+      "text": "jaws hanging slack in absolute shock.",
+      "startOffsetMs": 6463,
+      "endOffsetMs": 8825
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "scene": 26,
+  "text": "Every heavy step he took left hairline fractures across the polished ceramic corridor tiles, radiating forty-eight thousand years of raw Golden Core spiritual weight.",
+  "durationMs": 9912,
+  "rawWords": [
+    {
+      "ttsWord": "Every",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 400,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "step",
+      "startMs": 700,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 1038,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 1150,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 1388,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "hairline",
+      "startMs": 1638,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "fractures",
+      "startMs": 2088,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 2625,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3013,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "polished",
+      "startMs": 3125,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "ceramic",
+      "startMs": 3563,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 4000,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "tiles",
+      "startMs": 4450,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "radiating",
+      "startMs": 5250,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "forty-eight",
+      "startMs": 5788,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6263,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 6713,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7025,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "raw",
+      "startMs": 7150,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 7425,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "Core",
+      "startMs": 7813,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 8088,
+      "endMs": 8663
+    },
+    {
+      "ttsWord": "weight",
+      "startMs": 8675,
+      "endMs": 9038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Every heavy step he took left hairline fractures",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "across the polished ceramic corridor tiles,",
+      "startOffsetMs": 2625,
+      "endOffsetMs": 5038
+    },
+    {
+      "text": "radiating forty-eight thousand years of raw Golden Core",
+      "startOffsetMs": 5250,
+      "endOffsetMs": 8075
+    },
+    {
+      "text": "spiritual weight.",
+      "startOffsetMs": 8088,
+      "endOffsetMs": 9138
+    }
+  ]
+}
