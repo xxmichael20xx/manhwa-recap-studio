@@ -1,0 +1,119 @@
+{
+  "scene": 234,
+  "text": "The streets of Oakhaven were paved with rough cobblestones, flanked by timber-framed taverns, blacksmith forges, and apothecary shops.",
+  "durationMs": 8952,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "streets",
+      "startMs": 213,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 575,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 688,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 1200,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "paved",
+      "startMs": 1338,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1788,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "rough",
+      "startMs": 1950,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "cobblestones",
+      "startMs": 2225,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "flanked",
+      "startMs": 3313,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3700,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "timber-framed",
+      "startMs": 3825,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "taverns",
+      "startMs": 4575,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "blacksmith",
+      "startMs": 5375,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "forges",
+      "startMs": 5913,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6688,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "apothecary",
+      "startMs": 6838,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "shops",
+      "startMs": 7500,
+      "endMs": 8088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The streets of Oakhaven were paved with rough",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2213
+    },
+    {
+      "text": "cobblestones,",
+      "startOffsetMs": 2225,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "flanked by timber-framed taverns,",
+      "startOffsetMs": 3313,
+      "endOffsetMs": 5225
+    },
+    {
+      "text": "blacksmith forges, and apothecary shops.",
+      "startOffsetMs": 5375,
+      "endOffsetMs": 8188
+    }
+  ]
+}

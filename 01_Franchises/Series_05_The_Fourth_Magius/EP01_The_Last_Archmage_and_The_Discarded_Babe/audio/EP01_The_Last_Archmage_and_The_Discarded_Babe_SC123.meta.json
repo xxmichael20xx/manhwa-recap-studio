@@ -1,0 +1,139 @@
+{
+  "scene": 123,
+  "text": "Michael knelt, his left thumb resting on the blackwood staff while his right hand picked up three small river pebbles from his pocket.",
+  "durationMs": 7704,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "knelt",
+      "startMs": 475,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1000,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 1188,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "thumb",
+      "startMs": 1463,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "resting",
+      "startMs": 1775,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 2163,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2275,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 2363,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 2850,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "while",
+      "startMs": 3300,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3525,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 3688,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 3938,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "picked",
+      "startMs": 4288,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4563,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 4725,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 5000,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 5388,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "pebbles",
+      "startMs": 5650,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6063,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6200,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 6338,
+      "endMs": 6838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael knelt, his left thumb resting on the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2350
+    },
+    {
+      "text": "blackwood staff while his right hand picked up",
+      "startOffsetMs": 2363,
+      "endOffsetMs": 4713
+    },
+    {
+      "text": "three small river pebbles from his pocket.",
+      "startOffsetMs": 4725,
+      "endOffsetMs": 6938
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "scene": 69,
+  "text": "\"Break through!\" Michael commanded in his mind, actively directing the celestial fire along the precise anatomical pathways of his spinal column.",
+  "durationMs": 9864,
+  "rawWords": [
+    {
+      "ttsWord": "Break",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 400,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1750,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "commanded",
+      "startMs": 2175,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2675,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2775,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "mind",
+      "startMs": 2938,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "actively",
+      "startMs": 3613,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "directing",
+      "startMs": 4088,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4563,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 4663,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "fire",
+      "startMs": 5300,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 5738,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6050,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "precise",
+      "startMs": 6138,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "anatomical",
+      "startMs": 6613,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "pathways",
+      "startMs": 7288,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7888,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7975,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "spinal",
+      "startMs": 8113,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "column",
+      "startMs": 8513,
+      "endMs": 8988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Break through!\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 988
+    },
+    {
+      "text": "Michael commanded in his mind,",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 3438
+    },
+    {
+      "text": "actively directing the celestial fire along the precise",
+      "startOffsetMs": 3613,
+      "endOffsetMs": 6600
+    },
+    {
+      "text": "anatomical pathways of his spinal column.",
+      "startOffsetMs": 6613,
+      "endOffsetMs": 9088
+    }
+  ]
+}

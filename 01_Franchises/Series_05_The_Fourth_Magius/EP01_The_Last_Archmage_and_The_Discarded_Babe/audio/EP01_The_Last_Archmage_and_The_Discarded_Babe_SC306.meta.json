@@ -1,0 +1,124 @@
+{
+  "scene": 306,
+  "text": "The corrosive venom slammed against the earthen rampart, sizzling violently and eating through three feet of solid stone within seconds.",
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "corrosive",
+      "startMs": 213,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "venom",
+      "startMs": 750,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "slammed",
+      "startMs": 1100,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 1538,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1863,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "earthen",
+      "startMs": 1963,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "rampart",
+      "startMs": 2350,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "sizzling",
+      "startMs": 3100,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 3575,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4138,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "eating",
+      "startMs": 4313,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4613,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 4850,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 5175,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5475,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "solid",
+      "startMs": 5588,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 5988,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 6375,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 6663,
+      "endMs": 7275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The corrosive venom slammed against the earthen rampart,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2925
+    },
+    {
+      "text": "sizzling violently and eating through three feet of",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 5575
+    },
+    {
+      "text": "solid stone within seconds.",
+      "startOffsetMs": 5588,
+      "endOffsetMs": 7375
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "scene": 162,
+  "text": "Michael walked over to the fallen wolf, inspected its dense hide, and nodded with practical satisfaction.",
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "walked",
+      "startMs": 488,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 800,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1038,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1138,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "fallen",
+      "startMs": 1250,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "wolf",
+      "startMs": 1663,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "inspected",
+      "startMs": 2250,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2838,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "dense",
+      "startMs": 3013,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "hide",
+      "startMs": 3325,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3975,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "nodded",
+      "startMs": 4150,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4513,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "practical",
+      "startMs": 4663,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "satisfaction",
+      "startMs": 5188,
+      "endMs": 6125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael walked over to the fallen wolf,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2113
+    },
+    {
+      "text": "inspected its dense hide,",
+      "startOffsetMs": 2250,
+      "endOffsetMs": 3800
+    },
+    {
+      "text": "and nodded with practical satisfaction.",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6225
+    }
+  ]
+}

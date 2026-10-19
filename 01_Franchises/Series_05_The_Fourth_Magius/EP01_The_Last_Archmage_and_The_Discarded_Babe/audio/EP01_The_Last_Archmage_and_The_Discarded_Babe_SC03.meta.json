@@ -1,0 +1,164 @@
+{
+  "scene": 3,
+  "text": "Encircling the mountain peak in hovering airships and golden chariots were hundreds of high mages from the United Imperial Inquisitions, their staves trained directly upon Michael's chest.",
+  "durationMs": 10464,
+  "rawWords": [
+    {
+      "ttsWord": "Encircling",
+      "startMs": 50,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 713,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "mountain",
+      "startMs": 788,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "peak",
+      "startMs": 1175,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1450,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "hovering",
+      "startMs": 1563,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "airships",
+      "startMs": 2013,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2513,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 2625,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "chariots",
+      "startMs": 3013,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 3525,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "hundreds",
+      "startMs": 3650,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4025,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "high",
+      "startMs": 4100,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "mages",
+      "startMs": 4325,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4788,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4938,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "United",
+      "startMs": 4988,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "Imperial",
+      "startMs": 5413,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "Inquisitions",
+      "startMs": 5950,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 7025,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "staves",
+      "startMs": 7200,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "trained",
+      "startMs": 7600,
+      "endMs": 7913
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 7925,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 8350,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 8650,
+      "endMs": 9050
+    },
+    {
+      "ttsWord": "chest",
+      "startMs": 9063,
+      "endMs": 9588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Encircling the mountain peak in hovering airships and",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "golden chariots were hundreds of high mages from",
+      "startOffsetMs": 2625,
+      "endOffsetMs": 4925
+    },
+    {
+      "text": "the United Imperial Inquisitions,",
+      "startOffsetMs": 4938,
+      "endOffsetMs": 6813
+    },
+    {
+      "text": "their staves trained directly upon Michael's chest.",
+      "startOffsetMs": 7025,
+      "endOffsetMs": 9688
+    }
+  ]
+}

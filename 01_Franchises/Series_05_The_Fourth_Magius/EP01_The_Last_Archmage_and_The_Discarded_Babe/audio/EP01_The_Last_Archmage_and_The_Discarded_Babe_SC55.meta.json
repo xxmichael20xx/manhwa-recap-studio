@@ -1,0 +1,144 @@
+{
+  "scene": 55,
+  "text": "The wood was remarkably dense — ironwood oak, seasoned by lightning strikes, perfectly weighted to serve as a walking staff and defensive bludgeon.",
+  "durationMs": 9120,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "wood",
+      "startMs": 200,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 475,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "remarkably",
+      "startMs": 663,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "dense",
+      "startMs": 1250,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "ironwood",
+      "startMs": 2013,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "oak",
+      "startMs": 2500,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "seasoned",
+      "startMs": 3025,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3500,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 3638,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "strikes",
+      "startMs": 4075,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "perfectly",
+      "startMs": 4850,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "weighted",
+      "startMs": 5325,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5650,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "serve",
+      "startMs": 5738,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6113,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6238,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "walking",
+      "startMs": 6313,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 6738,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7150,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "defensive",
+      "startMs": 7238,
+      "endMs": 7763
+    },
+    {
+      "ttsWord": "bludgeon",
+      "startMs": 7775,
+      "endMs": 8250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The wood was remarkably dense",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1813
+    },
+    {
+      "text": "ironwood oak,",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 2875
+    },
+    {
+      "text": "seasoned by lightning strikes,",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 4700
+    },
+    {
+      "text": "perfectly weighted to serve as a walking staff",
+      "startOffsetMs": 4850,
+      "endOffsetMs": 7138
+    },
+    {
+      "text": "and defensive bludgeon.",
+      "startOffsetMs": 7150,
+      "endOffsetMs": 8350
+    }
+  ]
+}

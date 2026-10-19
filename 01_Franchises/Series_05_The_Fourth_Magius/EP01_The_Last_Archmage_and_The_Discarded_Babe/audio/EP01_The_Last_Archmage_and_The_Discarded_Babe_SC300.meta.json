@@ -1,0 +1,164 @@
+{
+  "scene": 300,
+  "text": "With a single sweep of its barbed tail, the wyrm demolished forty feet of the wooden palisade, sending timber beams and watchmen flying into the air.",
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "With",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 263,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 338,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "sweep",
+      "startMs": 738,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1075,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 1188,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "barbed",
+      "startMs": 1325,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "tail",
+      "startMs": 1700,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2388,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "wyrm",
+      "startMs": 2525,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "demolished",
+      "startMs": 3375,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "forty",
+      "startMs": 3900,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 4213,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4488,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4588,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 4688,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "palisade",
+      "startMs": 4950,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "sending",
+      "startMs": 5850,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "timber",
+      "startMs": 6225,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "beams",
+      "startMs": 6550,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6950,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "watchmen",
+      "startMs": 7075,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "flying",
+      "startMs": 7550,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 8000,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8188,
+      "endMs": 8263
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 8275,
+      "endMs": 8688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "With a single sweep of its barbed tail,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2225
+    },
+    {
+      "text": "the wyrm demolished forty feet of the wooden",
+      "startOffsetMs": 2388,
+      "endOffsetMs": 4938
+    },
+    {
+      "text": "palisade,",
+      "startOffsetMs": 4950,
+      "endOffsetMs": 5675
+    },
+    {
+      "text": "sending timber beams and watchmen flying into the",
+      "startOffsetMs": 5850,
+      "endOffsetMs": 8263
+    },
+    {
+      "text": "air.",
+      "startOffsetMs": 8275,
+      "endOffsetMs": 8788
+    }
+  ]
+}

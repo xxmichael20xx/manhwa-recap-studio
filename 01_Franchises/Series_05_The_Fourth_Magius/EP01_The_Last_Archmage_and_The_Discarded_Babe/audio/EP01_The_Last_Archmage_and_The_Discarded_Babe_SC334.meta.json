@@ -1,0 +1,174 @@
+{
+  "scene": 334,
+  "text": "\"Master Rowan, do you have a sufficiently large cleaver?\" Michael asked in his calm, deadpan tone. \"Wyrm venom glands fetch a handsome price at the capital market.\"",
+  "durationMs": 12024,
+  "rawWords": [
+    {
+      "ttsWord": "Master",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 563,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "do",
+      "startMs": 1138,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 1238,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "have",
+      "startMs": 1350,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1525,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "sufficiently",
+      "startMs": 1600,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "large",
+      "startMs": 2200,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "cleaver",
+      "startMs": 2550,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 3875,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "asked",
+      "startMs": 4313,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4638,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4713,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 4863,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 5475,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "tone",
+      "startMs": 5975,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "Wyrm",
+      "startMs": 7313,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "venom",
+      "startMs": 8188,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "glands",
+      "startMs": 8513,
+      "endMs": 8938
+    },
+    {
+      "ttsWord": "fetch",
+      "startMs": 8950,
+      "endMs": 9188
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9200,
+      "endMs": 9263
+    },
+    {
+      "ttsWord": "handsome",
+      "startMs": 9275,
+      "endMs": 9700
+    },
+    {
+      "ttsWord": "price",
+      "startMs": 9713,
+      "endMs": 10100
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 10113,
+      "endMs": 10188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10200,
+      "endMs": 10275
+    },
+    {
+      "ttsWord": "capital",
+      "startMs": 10288,
+      "endMs": 10675
+    },
+    {
+      "ttsWord": "market",
+      "startMs": 10688,
+      "endMs": 11163
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Master Rowan, do you have a sufficiently large",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2538
+    },
+    {
+      "text": "cleaver?\"",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "Michael asked in his calm,",
+      "startOffsetMs": 3875,
+      "endOffsetMs": 5338
+    },
+    {
+      "text": "deadpan tone.",
+      "startOffsetMs": 5475,
+      "endOffsetMs": 6550
+    },
+    {
+      "text": "Wyrm venom glands fetch a handsome price at",
+      "startOffsetMs": 7313,
+      "endOffsetMs": 10188
+    },
+    {
+      "text": "the capital market.\"",
+      "startOffsetMs": 10200,
+      "endOffsetMs": 11263
+    }
+  ]
+}

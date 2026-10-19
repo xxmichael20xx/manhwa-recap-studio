@@ -1,0 +1,224 @@
+{
+  "scene": 336,
+  "text": "The ancient five-hundred-year-old resonance mirror in Patriarch Valerius's private study violently shattered into ten thousand pieces as a blinding star-tier mana signature pulsed from the northern frontier — and Valerius's cold grey eyes narrowed in sudden, chilling dread.",
+  "durationMs": 15384,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 238,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "five-hundred-year-old",
+      "startMs": 638,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 1513,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "mirror",
+      "startMs": 1975,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2325,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "Patriarch",
+      "startMs": 2475,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "Valerius's",
+      "startMs": 3100,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "private",
+      "startMs": 3800,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "study",
+      "startMs": 4238,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 4588,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 5100,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5538,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 5763,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6038,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "pieces",
+      "startMs": 6463,
+      "endMs": 6888
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6900,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7038,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 7113,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "star-tier",
+      "startMs": 7550,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 8088,
+      "endMs": 8363
+    },
+    {
+      "ttsWord": "signature",
+      "startMs": 8375,
+      "endMs": 8875
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 8888,
+      "endMs": 9250
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 9263,
+      "endMs": 9375
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9388,
+      "endMs": 9450
+    },
+    {
+      "ttsWord": "northern",
+      "startMs": 9463,
+      "endMs": 9813
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 9825,
+      "endMs": 10388
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 10713,
+      "endMs": 10813
+    },
+    {
+      "ttsWord": "Valerius's",
+      "startMs": 10825,
+      "endMs": 11500
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 11513,
+      "endMs": 11838
+    },
+    {
+      "ttsWord": "grey",
+      "startMs": 11850,
+      "endMs": 12175
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 12188,
+      "endMs": 12538
+    },
+    {
+      "ttsWord": "narrowed",
+      "startMs": 12550,
+      "endMs": 12950
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 12963,
+      "endMs": 13075
+    },
+    {
+      "ttsWord": "sudden",
+      "startMs": 13088,
+      "endMs": 13450
+    },
+    {
+      "ttsWord": "chilling",
+      "startMs": 13688,
+      "endMs": 14050
+    },
+    {
+      "ttsWord": "dread",
+      "startMs": 14063,
+      "endMs": 14500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The ancient five-hundred-year-old resonance mirror in Patriarch",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3088
+    },
+    {
+      "text": "Valerius's private study violently shattered into ten thousand",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 6450
+    },
+    {
+      "text": "pieces as a blinding star-tier mana signature pulsed",
+      "startOffsetMs": 6463,
+      "endOffsetMs": 9250
+    },
+    {
+      "text": "from the northern frontier",
+      "startOffsetMs": 9263,
+      "endOffsetMs": 10488
+    },
+    {
+      "text": "and Valerius's cold grey eyes narrowed in sudden,",
+      "startOffsetMs": 10713,
+      "endOffsetMs": 13550
+    },
+    {
+      "text": "chilling dread.",
+      "startOffsetMs": 13688,
+      "endOffsetMs": 14600
+    }
+  ]
+}

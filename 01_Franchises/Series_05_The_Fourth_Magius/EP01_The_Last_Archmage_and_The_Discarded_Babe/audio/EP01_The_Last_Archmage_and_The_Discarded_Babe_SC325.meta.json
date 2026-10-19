@@ -1,0 +1,159 @@
+{
+  "scene": 325,
+  "text": "A blinding shockwave of cyan lightning exploded outward, blowing away the toxic mist, shattering the windows of thirty buildings, and pinning the dust to the ground.",
+  "durationMs": 10200,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 188,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "shockwave",
+      "startMs": 663,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1300,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 1413,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 1925,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "exploded",
+      "startMs": 2300,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "outward",
+      "startMs": 2888,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "blowing",
+      "startMs": 3638,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 3988,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4250,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "toxic",
+      "startMs": 4375,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "mist",
+      "startMs": 4850,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "shattering",
+      "startMs": 5513,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5988,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "windows",
+      "startMs": 6088,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6525,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 6625,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "buildings",
+      "startMs": 6975,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7663,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "pinning",
+      "startMs": 7850,
+      "endMs": 8163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8175,
+      "endMs": 8288
+    },
+    {
+      "ttsWord": "dust",
+      "startMs": 8300,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 8613,
+      "endMs": 8688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8700,
+      "endMs": 8788
+    },
+    {
+      "ttsWord": "ground",
+      "startMs": 8800,
+      "endMs": 9338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A blinding shockwave of cyan lightning exploded outward,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3463
+    },
+    {
+      "text": "blowing away the toxic mist,",
+      "startOffsetMs": 3638,
+      "endOffsetMs": 5325
+    },
+    {
+      "text": "shattering the windows of thirty buildings,",
+      "startOffsetMs": 5513,
+      "endOffsetMs": 7625
+    },
+    {
+      "text": "and pinning the dust to the ground.",
+      "startOffsetMs": 7663,
+      "endOffsetMs": 9438
+    }
+  ]
+}

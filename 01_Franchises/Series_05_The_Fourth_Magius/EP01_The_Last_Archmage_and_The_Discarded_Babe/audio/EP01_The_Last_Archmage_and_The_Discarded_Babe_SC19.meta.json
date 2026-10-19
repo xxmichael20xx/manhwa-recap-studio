@@ -1,0 +1,114 @@
+{
+  "scene": 19,
+  "text": "He tried to push himself upward, expecting the towering height and dense musculature of his sovereign archmage physique.",
+  "durationMs": 7128,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "tried",
+      "startMs": 225,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 525,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "push",
+      "startMs": 613,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "himself",
+      "startMs": 900,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "upward",
+      "startMs": 1325,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "expecting",
+      "startMs": 1988,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2513,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 2625,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "height",
+      "startMs": 3125,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3475,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "dense",
+      "startMs": 3600,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "musculature",
+      "startMs": 3913,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4563,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4650,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 4813,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "archmage",
+      "startMs": 5250,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "physique",
+      "startMs": 5713,
+      "endMs": 6250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He tried to push himself upward,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1838
+    },
+    {
+      "text": "expecting the towering height and dense musculature of",
+      "startOffsetMs": 1988,
+      "endOffsetMs": 4638
+    },
+    {
+      "text": "his sovereign archmage physique.",
+      "startOffsetMs": 4650,
+      "endOffsetMs": 6350
+    }
+  ]
+}

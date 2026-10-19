@@ -1,0 +1,129 @@
+{
+  "scene": 62,
+  "text": "The moment Michael's fingertips brushed the golden constellation clasp, a violent surge of blinding white energy erupted from the cover.",
+  "durationMs": 8088,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "moment",
+      "startMs": 188,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 525,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "fingertips",
+      "startMs": 1000,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "brushed",
+      "startMs": 1613,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2000,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 2100,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "constellation",
+      "startMs": 2475,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "clasp",
+      "startMs": 3213,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3975,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "violent",
+      "startMs": 4050,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "surge",
+      "startMs": 4488,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4838,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 4963,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 5425,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 5725,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "erupted",
+      "startMs": 6100,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6575,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6713,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "cover",
+      "startMs": 6800,
+      "endMs": 7225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The moment Michael's fingertips brushed the golden constellation",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "clasp,",
+      "startOffsetMs": 3213,
+      "endOffsetMs": 3800
+    },
+    {
+      "text": "a violent surge of blinding white energy erupted",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6563
+    },
+    {
+      "text": "from the cover.",
+      "startOffsetMs": 6575,
+      "endOffsetMs": 7325
+    }
+  ]
+}

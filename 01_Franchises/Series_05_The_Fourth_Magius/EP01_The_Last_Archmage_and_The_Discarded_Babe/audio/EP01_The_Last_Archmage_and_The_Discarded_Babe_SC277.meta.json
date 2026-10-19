@@ -1,0 +1,179 @@
+{
+  "scene": 277,
+  "text": "He knew the vicious, prideful nature of the great houses all too well — he had retired from the imperial army precisely because he could no longer stomach their cruelty.",
+  "durationMs": 9792,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "knew",
+      "startMs": 250,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 475,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "vicious",
+      "startMs": 588,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "prideful",
+      "startMs": 1338,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "nature",
+      "startMs": 1813,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2163,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2250,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "great",
+      "startMs": 2350,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "houses",
+      "startMs": 2613,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "all",
+      "startMs": 3075,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "too",
+      "startMs": 3313,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "well",
+      "startMs": 3550,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 4225,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4325,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "retired",
+      "startMs": 4438,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4938,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5075,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 5138,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "army",
+      "startMs": 5750,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "precisely",
+      "startMs": 6050,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "because",
+      "startMs": 6675,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 7000,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "could",
+      "startMs": 7100,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "no",
+      "startMs": 7275,
+      "endMs": 7450
+    },
+    {
+      "ttsWord": "longer",
+      "startMs": 7463,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "stomach",
+      "startMs": 7800,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 8188,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "cruelty",
+      "startMs": 8363,
+      "endMs": 8913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He knew the vicious,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1225
+    },
+    {
+      "text": "prideful nature of the great houses all too",
+      "startOffsetMs": 1338,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "well",
+      "startOffsetMs": 3550,
+      "endOffsetMs": 3988
+    },
+    {
+      "text": "he had retired from the imperial army precisely",
+      "startOffsetMs": 4225,
+      "endOffsetMs": 6663
+    },
+    {
+      "text": "because he could no longer stomach their cruelty.",
+      "startOffsetMs": 6675,
+      "endOffsetMs": 9013
+    }
+  ]
+}

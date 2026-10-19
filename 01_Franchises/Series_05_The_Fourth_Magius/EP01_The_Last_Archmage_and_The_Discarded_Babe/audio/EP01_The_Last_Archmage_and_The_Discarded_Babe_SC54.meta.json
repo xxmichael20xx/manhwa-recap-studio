@@ -1,0 +1,149 @@
+{
+  "scene": 54,
+  "text": "He picked up a smooth, heavy blackwood branch from the forest floor, stripping the damp bark with his fingernails to test its tensile density.",
+  "durationMs": 8328,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "picked",
+      "startMs": 238,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 550,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 675,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "smooth",
+      "startMs": 763,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 1513,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 1763,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "branch",
+      "startMs": 2275,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2625,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2763,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "forest",
+      "startMs": 2850,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 3300,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "stripping",
+      "startMs": 3975,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4363,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "damp",
+      "startMs": 4488,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "bark",
+      "startMs": 4800,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5088,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5188,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "fingernails",
+      "startMs": 5338,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5925,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "test",
+      "startMs": 6038,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 6400,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "tensile",
+      "startMs": 6550,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "density",
+      "startMs": 6913,
+      "endMs": 7463
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He picked up a smooth,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1363
+    },
+    {
+      "text": "heavy blackwood branch from the forest floor,",
+      "startOffsetMs": 1513,
+      "endOffsetMs": 3763
+    },
+    {
+      "text": "stripping the damp bark with his fingernails to",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6025
+    },
+    {
+      "text": "test its tensile density.",
+      "startOffsetMs": 6038,
+      "endOffsetMs": 7563
+    }
+  ]
+}

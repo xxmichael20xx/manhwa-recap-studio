@@ -1,0 +1,149 @@
+{
+  "scene": 68,
+  "text": "A lesser child would have blacked out from shock, but Michael ground his teeth together until his gums bled, keeping his eyes wide open.",
+  "durationMs": 8352,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "lesser",
+      "startMs": 175,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "child",
+      "startMs": 563,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "would",
+      "startMs": 963,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "have",
+      "startMs": 1075,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "blacked",
+      "startMs": 1213,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1575,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1788,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "shock",
+      "startMs": 1950,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 2688,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2838,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "ground",
+      "startMs": 3213,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3538,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "teeth",
+      "startMs": 3700,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "together",
+      "startMs": 3963,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 4413,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4700,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "gums",
+      "startMs": 4863,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "bled",
+      "startMs": 5213,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "keeping",
+      "startMs": 5863,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6213,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 6388,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 6738,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 7063,
+      "endMs": 7475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A lesser child would have blacked out from",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1938
+    },
+    {
+      "text": "shock, but Michael ground his teeth together until",
+      "startOffsetMs": 1950,
+      "endOffsetMs": 4688
+    },
+    {
+      "text": "his gums bled,",
+      "startOffsetMs": 4700,
+      "endOffsetMs": 5688
+    },
+    {
+      "text": "keeping his eyes wide open.",
+      "startOffsetMs": 5863,
+      "endOffsetMs": 7575
+    }
+  ]
+}

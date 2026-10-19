@@ -1,0 +1,134 @@
+{
+  "scene": 46,
+  "text": "Absorbing the memories, Michael let out a slow, dry chuckle from his tiny chest, his knuckles clenching into the cold gravel.",
+  "durationMs": 8040,
+  "rawWords": [
+    {
+      "ttsWord": "Absorbing",
+      "startMs": 50,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 613,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "memories",
+      "startMs": 688,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1375,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 1775,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1950,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2113,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "slow",
+      "startMs": 2175,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 2900,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "chuckle",
+      "startMs": 3175,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3575,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3725,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "tiny",
+      "startMs": 3875,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "chest",
+      "startMs": 4213,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4938,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "knuckles",
+      "startMs": 5113,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "clenching",
+      "startMs": 5538,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6038,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6213,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 6325,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "gravel",
+      "startMs": 6650,
+      "endMs": 7175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Absorbing the memories,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1338
+    },
+    {
+      "text": "Michael let out a slow,",
+      "startOffsetMs": 1375,
+      "endOffsetMs": 2738
+    },
+    {
+      "text": "dry chuckle from his tiny chest,",
+      "startOffsetMs": 2900,
+      "endOffsetMs": 4788
+    },
+    {
+      "text": "his knuckles clenching into the cold gravel.",
+      "startOffsetMs": 4938,
+      "endOffsetMs": 7275
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "scene": 256,
+  "text": "\"Midnight harvest preserves the volatile saponins before the morning sun degrades the cell membranes,\" Michael explained calmly, as if discussing the weather.",
+  "durationMs": 9120,
+  "rawWords": [
+    {
+      "ttsWord": "Midnight",
+      "startMs": 50,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "harvest",
+      "startMs": 550,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "preserves",
+      "startMs": 988,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1438,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "volatile",
+      "startMs": 1538,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "saponins",
+      "startMs": 1963,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 2538,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2888,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 2963,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "sun",
+      "startMs": 3313,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "degrades",
+      "startMs": 3588,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4025,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "cell",
+      "startMs": 4138,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "membranes",
+      "startMs": 4425,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 5338,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "explained",
+      "startMs": 5688,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 6163,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6913,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 7088,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "discussing",
+      "startMs": 7213,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7738,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "weather",
+      "startMs": 7838,
+      "endMs": 8250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Midnight harvest preserves the volatile saponins before the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2950
+    },
+    {
+      "text": "morning sun degrades the cell membranes,\"",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 5150
+    },
+    {
+      "text": "Michael explained calmly,",
+      "startOffsetMs": 5338,
+      "endOffsetMs": 6738
+    },
+    {
+      "text": "as if discussing the weather.",
+      "startOffsetMs": 6913,
+      "endOffsetMs": 8350
+    }
+  ]
+}

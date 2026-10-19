@@ -1,0 +1,104 @@
+{
+  "scene": 183,
+  "text": "Michael's heart gave a firm, excited thrum within his chest. \"Finally. The vessel is ready.\"",
+  "durationMs": 7944,
+  "rawWords": [
+    {
+      "ttsWord": "Michael's",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "heart",
+      "startMs": 513,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "gave",
+      "startMs": 800,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 988,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "firm",
+      "startMs": 1075,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "excited",
+      "startMs": 1663,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "thrum",
+      "startMs": 2175,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 2463,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2738,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "chest",
+      "startMs": 2913,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "Finally",
+      "startMs": 4325,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 5900,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "vessel",
+      "startMs": 6050,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 6500,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "ready",
+      "startMs": 6650,
+      "endMs": 7063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael's heart gave a firm,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1550
+    },
+    {
+      "text": "excited thrum within his chest.",
+      "startOffsetMs": 1663,
+      "endOffsetMs": 3563
+    },
+    {
+      "text": "Finally.",
+      "startOffsetMs": 4325,
+      "endOffsetMs": 5150
+    },
+    {
+      "text": "The vessel is ready.\"",
+      "startOffsetMs": 5900,
+      "endOffsetMs": 7163
+    }
+  ]
+}

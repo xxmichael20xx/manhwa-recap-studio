@@ -1,0 +1,129 @@
+{
+  "scene": 235,
+  "text": "Michael observed the social hierarchy in action: mercenary swordsmen bowed respectfully whenever a robed mage carrying an enchanted staff walked past.",
+  "durationMs": 9408,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "observed",
+      "startMs": 475,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 938,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "social",
+      "startMs": 1050,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "hierarchy",
+      "startMs": 1488,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2138,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "action",
+      "startMs": 2275,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "mercenary",
+      "startMs": 3000,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "swordsmen",
+      "startMs": 3538,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "bowed",
+      "startMs": 4075,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "respectfully",
+      "startMs": 4388,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "whenever",
+      "startMs": 5050,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5450,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "robed",
+      "startMs": 5513,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "mage",
+      "startMs": 5888,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "carrying",
+      "startMs": 6225,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6675,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "enchanted",
+      "startMs": 6750,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 7275,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "walked",
+      "startMs": 7663,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 7988,
+      "endMs": 8525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael observed the social hierarchy in action:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2775
+    },
+    {
+      "text": "mercenary swordsmen bowed respectfully whenever a robed mage",
+      "startOffsetMs": 3000,
+      "endOffsetMs": 6213
+    },
+    {
+      "text": "carrying an enchanted staff walked past.",
+      "startOffsetMs": 6225,
+      "endOffsetMs": 8625
+    }
+  ]
+}

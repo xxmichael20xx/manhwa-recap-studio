@@ -1,0 +1,129 @@
+{
+  "scene": 176,
+  "text": "By the time the summer solstice arrived, two full years had passed since the night Michael was discarded by House Montrey.",
+  "durationMs": 7416,
+  "rawWords": [
+    {
+      "ttsWord": "By",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 238,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "time",
+      "startMs": 363,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 675,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "summer",
+      "startMs": 788,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "solstice",
+      "startMs": 1138,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "arrived",
+      "startMs": 1638,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2400,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "full",
+      "startMs": 2663,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 2963,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 3288,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "passed",
+      "startMs": 3438,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "since",
+      "startMs": 3825,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4063,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "night",
+      "startMs": 4150,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 4425,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 4788,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "discarded",
+      "startMs": 4950,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 5500,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 5650,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 5963,
+      "endMs": 6538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "By the time the summer solstice arrived,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2300
+    },
+    {
+      "text": "two full years had passed since the night",
+      "startOffsetMs": 2400,
+      "endOffsetMs": 4413
+    },
+    {
+      "text": "Michael was discarded by House Montrey.",
+      "startOffsetMs": 4425,
+      "endOffsetMs": 6638
+    }
+  ]
+}

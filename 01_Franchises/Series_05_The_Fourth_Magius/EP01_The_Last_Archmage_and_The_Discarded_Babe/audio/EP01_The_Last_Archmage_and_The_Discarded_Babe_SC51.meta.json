@@ -1,0 +1,129 @@
+{
+  "scene": 51,
+  "text": "A mortal five-year-old child left here would perish from hypothermia within two hours, or be torn apart by scavengers before dawn.",
+  "durationMs": 8424,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 175,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "five-year-old",
+      "startMs": 525,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "child",
+      "startMs": 1188,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 1613,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "here",
+      "startMs": 1863,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "would",
+      "startMs": 2138,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "perish",
+      "startMs": 2300,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2725,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "hypothermia",
+      "startMs": 2863,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 3613,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 3938,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "hours",
+      "startMs": 4200,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 4975,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "be",
+      "startMs": 5138,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "torn",
+      "startMs": 5275,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "apart",
+      "startMs": 5550,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 5938,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "scavengers",
+      "startMs": 6088,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 6750,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "dawn",
+      "startMs": 7113,
+      "endMs": 7563
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A mortal five-year-old child left here would perish",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2713
+    },
+    {
+      "text": "from hypothermia within two hours,",
+      "startOffsetMs": 2725,
+      "endOffsetMs": 4788
+    },
+    {
+      "text": "or be torn apart by scavengers before dawn.",
+      "startOffsetMs": 4975,
+      "endOffsetMs": 7663
+    }
+  ]
+}

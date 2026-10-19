@@ -1,0 +1,139 @@
+{
+  "scene": 172,
+  "text": "Every morning at dawn, the boy performed three hundred repetitions of basic strikes with a heavy stone log strapped across his shoulders.",
+  "durationMs": 8184,
+  "rawWords": [
+    {
+      "ttsWord": "Every",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 375,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 750,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "dawn",
+      "startMs": 875,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1500,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 1613,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "performed",
+      "startMs": 1825,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 2375,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 2663,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "repetitions",
+      "startMs": 2950,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3625,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "basic",
+      "startMs": 3750,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "strikes",
+      "startMs": 4150,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4575,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4700,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 4763,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 5100,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "log",
+      "startMs": 5475,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "strapped",
+      "startMs": 5775,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6163,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6525,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "shoulders",
+      "startMs": 6650,
+      "endMs": 7300
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Every morning at dawn,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1350
+    },
+    {
+      "text": "the boy performed three hundred repetitions of basic",
+      "startOffsetMs": 1500,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "strikes with a heavy stone log strapped across",
+      "startOffsetMs": 4150,
+      "endOffsetMs": 6513
+    },
+    {
+      "text": "his shoulders.",
+      "startOffsetMs": 6525,
+      "endOffsetMs": 7400
+    }
+  ]
+}

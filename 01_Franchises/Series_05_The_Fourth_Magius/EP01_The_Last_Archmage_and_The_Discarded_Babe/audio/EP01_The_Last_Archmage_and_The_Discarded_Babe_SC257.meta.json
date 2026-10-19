@@ -1,0 +1,114 @@
+{
+  "scene": 257,
+  "text": "\"The roots were then dried using indirect hickory smoke at precisely forty degrees. Zero mold, zero potency decay.\"",
+  "durationMs": 8808,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 213,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 550,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "then",
+      "startMs": 675,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 913,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "using",
+      "startMs": 1275,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "indirect",
+      "startMs": 1625,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "hickory",
+      "startMs": 2050,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "smoke",
+      "startMs": 2438,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 2863,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "precisely",
+      "startMs": 2950,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "forty",
+      "startMs": 3525,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "degrees",
+      "startMs": 3850,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "Zero",
+      "startMs": 5375,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "mold",
+      "startMs": 5838,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "zero",
+      "startMs": 6450,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "potency",
+      "startMs": 6850,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "decay",
+      "startMs": 7388,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The roots were then dried using indirect hickory",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2425
+    },
+    {
+      "text": "smoke at precisely forty degrees.",
+      "startOffsetMs": 2438,
+      "endOffsetMs": 4613
+    },
+    {
+      "text": "Zero mold, zero potency decay.\"",
+      "startOffsetMs": 5375,
+      "endOffsetMs": 8013
+    }
+  ]
+}

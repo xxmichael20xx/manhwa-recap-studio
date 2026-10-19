@@ -44,7 +44,7 @@
         </span>
         <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 font-bold flex items-center space-x-1">
           <span>🔒</span>
-          <span>{{ franchise.format || (franchise.id?.includes('02') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}</span>
+          <span>{{ franchise.format || ((franchise.id?.includes('02') || franchise.id?.includes('05') || (franchise.bibleContent || '').includes('16:9')) ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}</span>
         </span>
       </div>
     </div>
@@ -590,8 +590,27 @@
                 </div>
               </div>
 
-              <!-- Model Thumbnail Preview (16:9) with Hover Zoom -->
-              <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
+              <!-- Model Thumbnail Preview (16:9) with Drag-and-Drop Image Updating -->
+              <div 
+                class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border relative group transition-all duration-200"
+                :class="[
+                  dragOverModelId === model.id 
+                    ? 'ring-2 ring-purple-500 border-purple-500 scale-[1.02] shadow-lg shadow-purple-500/20' 
+                    : 'border-slate-200 dark:border-slate-800'
+                ]"
+                @dragover.prevent="dragOverModelId = model.id"
+                @dragleave.prevent="dragOverModelId === model.id ? dragOverModelId = null : null"
+                @drop.prevent="handleDropPlate($event, model)"
+              >
+                <!-- Hidden file input for manual browse -->
+                <input 
+                  type="file" 
+                  :id="`plate-file-input-${model.id}`" 
+                  accept="image/png,image/jpeg,image/webp" 
+                  class="hidden" 
+                  @change="handleFileChange($event, model)"
+                />
+
                 <img 
                   v-if="model.hasPlate"
                   :src="model.url" 
@@ -601,10 +620,34 @@
                 <div v-else class="w-full h-full flex flex-col items-center justify-center text-slate-500 space-y-1">
                   <Crown class="w-6 h-6 opacity-40" />
                   <span class="text-[9px] font-mono">Plate Pending</span>
+                  <span class="text-[8px] font-mono text-purple-600 dark:text-purple-400">Drop Image Here</span>
                 </div>
 
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
+                <!-- Active Uploading Spinner Overlay -->
+                <div 
+                  v-if="uploadingModelId === model.id" 
+                  class="absolute inset-0 bg-black/80 backdrop-blur-xs flex flex-col items-center justify-center space-y-1.5 z-20"
+                >
+                  <Loader2 class="w-6 h-6 text-purple-400 animate-spin" />
+                  <span class="text-[10px] font-mono text-white font-bold">Updating Plate...</span>
+                </div>
+
+                <!-- Drag-Over Visual Overlay -->
+                <div 
+                  v-if="dragOverModelId === model.id" 
+                  class="absolute inset-0 bg-purple-600/80 backdrop-blur-xs flex flex-col items-center justify-center space-y-1 z-20 text-white pointer-events-none"
+                >
+                  <Upload class="w-7 h-7 animate-bounce" />
+                  <span class="text-[11px] font-mono font-bold">Drop Image to Update Plate</span>
+                </div>
+
+                <!-- Hover Actions Overlay -->
+                <div 
+                  v-if="uploadingModelId !== model.id && dragOverModelId !== model.id" 
+                  class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2 z-10"
+                >
                   <a 
+                    v-if="model.hasPlate"
                     :href="model.url" 
                     target="_blank" 
                     class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition"
@@ -613,11 +656,19 @@
                     <ExternalLink class="w-3.5 h-3.5" />
                   </a>
                   <button 
+                    v-if="model.hasPlate"
                     @click="downloadVaultPlate(model)"
                     class="p-1.5 rounded-lg bg-black/70 hover:bg-black text-white backdrop-blur-xs transition cursor-pointer"
                     title="Download Image"
                   >
                     <Download class="w-3.5 h-3.5" />
+                  </button>
+                  <button 
+                    @click="triggerBrowseFileInput(model.id)"
+                    class="p-1.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white backdrop-blur-xs transition cursor-pointer flex items-center space-x-1"
+                    title="Upload / Replace Reference Plate"
+                  >
+                    <Upload class="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
@@ -650,7 +701,7 @@
               </p>
             </div>
 
-            <!-- 4-Button Toolbar (Plate, Name, Token, DNA) -->
+            <!-- 4-Button Toolbar (Plate, Name, Prompt, DNA) -->
             <div class="grid grid-cols-4 gap-1.5 pt-2.5 border-t border-slate-200/80 dark:border-slate-800/80">
               <button 
                 @click="downloadVaultPlate(model)"
@@ -675,16 +726,16 @@
               </button>
 
               <button 
-                @click="copyVaultToken(model)"
+                @click="copyVaultPrompt(model)"
                 class="py-1.5 px-1 rounded-lg transition cursor-pointer text-[10px] font-mono font-semibold flex items-center justify-center space-x-1"
-                :class="copiedVaultId === model.id && copiedVaultType === 'token' 
+                :class="copiedVaultId === model.id && copiedVaultType === 'prompt' 
                   ? 'bg-emerald-600 text-white' 
                   : 'bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 dark:text-purple-400'"
-                title="Copy Google Flow Token (@{...})"
+                title="Copy Full Generation Prompt for Google Flow / Midjourney"
               >
-                <Check v-if="copiedVaultId === model.id && copiedVaultType === 'token'" class="w-3 h-3 shrink-0" />
-                <Copy v-else class="w-3 h-3 shrink-0" />
-                <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'token' ? 'Copied' : 'Token' }}</span>
+                <Check v-if="copiedVaultId === model.id && copiedVaultType === 'prompt'" class="w-3 h-3 shrink-0" />
+                <Sparkles v-else class="w-3 h-3 shrink-0" />
+                <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'prompt' ? 'Copied' : 'Prompt' }}</span>
               </button>
 
               <button 
@@ -696,7 +747,7 @@
                 title="Copy Visual DNA Prompt Anchor"
               >
                 <Check v-if="copiedVaultId === model.id && copiedVaultType === 'dna'" class="w-3 h-3 shrink-0" />
-                <Sparkles v-else class="w-3 h-3 shrink-0" />
+                <Copy v-else class="w-3 h-3 shrink-0" />
                 <span class="truncate">{{ copiedVaultId === model.id && copiedVaultType === 'dna' ? 'Copied' : 'DNA' }}</span>
               </button>
             </div>
@@ -1382,7 +1433,7 @@ import { useRoute } from 'vue-router'
 import { 
   ArrowLeft, Layers, FileText, Sparkles, Mic, Film, 
   Crown, Youtube, Copy, Download, Check, Loader2, X, Trash2,
-  Tag, ExternalLink, RefreshCw, Hash, ChevronDown, Zap, BookOpen
+  Tag, ExternalLink, RefreshCw, Hash, ChevronDown, Zap, BookOpen, Upload
 } from 'lucide-vue-next'
 import {
   parseEntityMappingText,
@@ -1852,6 +1903,8 @@ const filteredModels = computed(() => {
 
 const copiedVaultId = ref(null)
 const copiedVaultType = ref(null)
+const dragOverModelId = ref(null)
+const uploadingModelId = ref(null)
 
 const getCategoryBadgeClass = (category) => {
   const cat = (category || '').toLowerCase()
@@ -1902,6 +1955,30 @@ const copyVaultToken = async (model) => {
   }
 }
 
+const copyVaultPrompt = async (model) => {
+  if (!model) return
+  let promptText = model.generationPrompt
+  if (!promptText) {
+    const rawDna = model.fullDna || model.dnaAnchor || model.description || model.name
+    const cleanDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
+    promptText = `16:9 horizontal widescreen cinematic composition. ${cleanDna}. Dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, completely textless artwork, no words, no speech bubbles, no banners.`
+  }
+  try {
+    await navigator.clipboard.writeText(promptText)
+    copiedVaultId.value = model.id
+    copiedVaultType.value = 'prompt'
+    triggerToast('Full Generation Prompt Copied', model.name)
+    setTimeout(() => {
+      if (copiedVaultId.value === model.id && copiedVaultType === 'prompt') {
+        copiedVaultId.value = null
+        copiedVaultType.value = null
+      }
+    }, 2000)
+  } catch (err) {
+    console.error('Clipboard error:', err)
+  }
+}
+
 const copyVaultDna = async (model) => {
   if (!model) return
   const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
@@ -1940,10 +2017,77 @@ const downloadVaultPlate = async (model) => {
   }
 }
 
+const triggerBrowseFileInput = (modelId) => {
+  const input = document.getElementById(`plate-file-input-${modelId}`)
+  if (input) input.click()
+}
+
+const handleFileChange = (e, model) => {
+  const file = e.target.files?.[0]
+  if (file) {
+    uploadPlateImageFile(file, model)
+  }
+  e.target.value = ''
+}
+
+const handleDropPlate = (e, model) => {
+  dragOverModelId.value = null
+  const file = e.dataTransfer?.files?.[0]
+  if (file) {
+    uploadPlateImageFile(file, model)
+  }
+}
+
+const uploadPlateImageFile = (file, model) => {
+  if (!file || !file.type.startsWith('image/')) {
+    triggerToast('Upload Error', 'Please drop a valid image file (JPG, PNG, WEBP)')
+    return
+  }
+
+  uploadingModelId.value = model.id
+  const reader = new FileReader()
+  reader.onload = async (event) => {
+    try {
+      const base64Data = event.target.result
+      const franchiseId = franchise.value?.folder || route.params.id
+      const res = await fetch(`/api/franchises/${franchiseId}/character-models/${model.id}/upload-plate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          base64Data,
+          filename: model.filename
+        })
+      })
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}))
+        throw new Error(errData.error || `HTTP ${res.status}`)
+      }
+
+      const result = await res.json()
+      model.hasPlate = true
+      model.filename = result.filename
+      model.url = result.url
+
+      triggerToast('Plate Updated', `Reference plate for ${model.name} was successfully updated.`)
+    } catch (err) {
+      console.error('Failed to upload character plate:', err)
+      triggerToast('Upload Failed', err.message)
+    } finally {
+      uploadingModelId.value = null
+    }
+  }
+  reader.onerror = () => {
+    uploadingModelId.value = null
+    triggerToast('Upload Error', 'Failed to read image file')
+  }
+  reader.readAsDataURL(file)
+}
+
 // Google Flow Entity ID Mapping State
 const entityMapRawText = ref('')
 const parsedEntities = ref({})
-const promptTagMode = ref('uuid') // 'uuid' | 'token'
+const promptTagMode = ref('token') // 'token' | 'uuid'
 const isSavingEntityMap = ref(false)
 const isEntityMapperAccordionOpen = ref(true)
 

@@ -1,0 +1,149 @@
+{
+  "scene": 31,
+  "text": "In this aristocratic empire, a noble child's entire worth was measured during the Newborn Vessel Appraisal, an ancient ceremony conducted within hours of birth.",
+  "durationMs": 9912,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 238,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "aristocratic",
+      "startMs": 450,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "empire",
+      "startMs": 1225,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2025,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 2050,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "child's",
+      "startMs": 2438,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 2875,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "worth",
+      "startMs": 3413,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3688,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "measured",
+      "startMs": 3863,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "during",
+      "startMs": 4288,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4513,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "Newborn",
+      "startMs": 4588,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "Vessel",
+      "startMs": 5050,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "Appraisal",
+      "startMs": 5425,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6238,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 6388,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "ceremony",
+      "startMs": 6750,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "conducted",
+      "startMs": 7300,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 7825,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "hours",
+      "startMs": 8150,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8513,
+      "endMs": 8613
+    },
+    {
+      "ttsWord": "birth",
+      "startMs": 8625,
+      "endMs": 9038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In this aristocratic empire,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1850
+    },
+    {
+      "text": "a noble child's entire worth was measured during",
+      "startOffsetMs": 2025,
+      "endOffsetMs": 4500
+    },
+    {
+      "text": "the Newborn Vessel Appraisal,",
+      "startOffsetMs": 4513,
+      "endOffsetMs": 6075
+    },
+    {
+      "text": "an ancient ceremony conducted within hours of birth.",
+      "startOffsetMs": 6238,
+      "endOffsetMs": 9138
+    }
+  ]
+}

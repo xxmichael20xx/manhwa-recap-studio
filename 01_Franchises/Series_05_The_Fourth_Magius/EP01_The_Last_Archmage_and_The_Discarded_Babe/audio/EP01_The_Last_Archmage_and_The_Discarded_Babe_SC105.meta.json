@@ -1,0 +1,89 @@
+{
+  "scene": 105,
+  "text": "Next came the revolutionary core of Michael's philosophy: The Dual-Discipline Doctrine of Mana-Forged Flesh.",
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "Next",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "came",
+      "startMs": 463,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 713,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "revolutionary",
+      "startMs": 813,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "core",
+      "startMs": 1600,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1913,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 2000,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "philosophy",
+      "startMs": 2463,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 3463,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "Dual-Discipline",
+      "startMs": 3600,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "Doctrine",
+      "startMs": 4363,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4813,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "Mana-Forged",
+      "startMs": 4925,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "Flesh",
+      "startMs": 5600,
+      "endMs": 6138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Next came the revolutionary core of Michael's philosophy:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3263
+    },
+    {
+      "text": "The Dual-Discipline Doctrine of Mana-Forged Flesh.",
+      "startOffsetMs": 3463,
+      "endOffsetMs": 6238
+    }
+  ]
+}

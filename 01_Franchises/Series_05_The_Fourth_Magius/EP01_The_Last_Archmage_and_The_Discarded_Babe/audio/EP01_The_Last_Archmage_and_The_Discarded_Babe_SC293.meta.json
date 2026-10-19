@@ -1,0 +1,169 @@
+{
+  "scene": 293,
+  "text": "Michael set down his tea and vaulted out of the loft window, landing lightly on the courtyard flagstones beside Rowan, who was already strapping on his heavy battle-axe.",
+  "durationMs": 9912,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "set",
+      "startMs": 463,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 725,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 975,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 1163,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1413,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "vaulted",
+      "startMs": 1525,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1938,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2088,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2163,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "loft",
+      "startMs": 2275,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 2588,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "landing",
+      "startMs": 3288,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "lightly",
+      "startMs": 3675,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 4050,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4150,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "courtyard",
+      "startMs": 4238,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "flagstones",
+      "startMs": 4688,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 5413,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 5850,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 6563,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 6638,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "already",
+      "startMs": 6800,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "strapping",
+      "startMs": 7213,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 7700,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7800,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 7950,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "battle-axe",
+      "startMs": 8250,
+      "endMs": 9050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael set down his tea and vaulted out",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2075
+    },
+    {
+      "text": "of the loft window,",
+      "startOffsetMs": 2088,
+      "endOffsetMs": 3100
+    },
+    {
+      "text": "landing lightly on the courtyard flagstones beside Rowan,",
+      "startOffsetMs": 3288,
+      "endOffsetMs": 6313
+    },
+    {
+      "text": "who was already strapping on his heavy battle-axe",
+      "startOffsetMs": 6563,
+      "endOffsetMs": 9150
+    }
+  ]
+}

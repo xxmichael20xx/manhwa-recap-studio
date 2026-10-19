@@ -1,0 +1,174 @@
+{
+  "scene": 299,
+  "text": "Six glowing crimson eyes burned along its horned skull, and corrosive purple fumes hissed from its gaping maw, melting the grass beneath its tread into bubbling slag.",
+  "durationMs": 9912,
+  "rawWords": [
+    {
+      "ttsWord": "Six",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 438,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 813,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 1313,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "burned",
+      "startMs": 1638,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 1938,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2263,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "horned",
+      "startMs": 2388,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "skull",
+      "startMs": 2675,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3363,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "corrosive",
+      "startMs": 3475,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "purple",
+      "startMs": 4000,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "fumes",
+      "startMs": 4338,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "hissed",
+      "startMs": 4713,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5013,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 5138,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "gaping",
+      "startMs": 5275,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "maw",
+      "startMs": 5638,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "melting",
+      "startMs": 6225,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6550,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "grass",
+      "startMs": 6638,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 7025,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 7388,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "tread",
+      "startMs": 7538,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7863,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "bubbling",
+      "startMs": 8063,
+      "endMs": 8488
+    },
+    {
+      "ttsWord": "slag",
+      "startMs": 8500,
+      "endMs": 9038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Six glowing crimson eyes burned along its horned",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "skull,",
+      "startOffsetMs": 2675,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "and corrosive purple fumes hissed from its gaping",
+      "startOffsetMs": 3363,
+      "endOffsetMs": 5625
+    },
+    {
+      "text": "maw,",
+      "startOffsetMs": 5638,
+      "endOffsetMs": 6013
+    },
+    {
+      "text": "melting the grass beneath its tread into bubbling",
+      "startOffsetMs": 6225,
+      "endOffsetMs": 8488
+    },
+    {
+      "text": "slag.",
+      "startOffsetMs": 8500,
+      "endOffsetMs": 9138
+    }
+  ]
+}

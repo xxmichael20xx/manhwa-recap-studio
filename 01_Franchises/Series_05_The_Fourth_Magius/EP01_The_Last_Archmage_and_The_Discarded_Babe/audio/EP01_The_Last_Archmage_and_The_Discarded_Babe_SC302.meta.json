@@ -1,0 +1,104 @@
+{
+  "scene": 302,
+  "text": "A squad of imperial battle-mages formed a firing line, desperately chanting a Tier 3 Firestorm barrage.",
+  "durationMs": 7224,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "squad",
+      "startMs": 175,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 600,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 700,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "battle-mages",
+      "startMs": 1263,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "formed",
+      "startMs": 2000,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2300,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "firing",
+      "startMs": 2375,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "line",
+      "startMs": 2875,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "desperately",
+      "startMs": 3475,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "chanting",
+      "startMs": 3950,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4400,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 4488,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "3",
+      "startMs": 4800,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "Firestorm",
+      "startMs": 5113,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "barrage",
+      "startMs": 5738,
+      "endMs": 6363
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A squad of imperial battle-mages formed a firing",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2863
+    },
+    {
+      "text": "line,",
+      "startOffsetMs": 2875,
+      "endOffsetMs": 3288
+    },
+    {
+      "text": "desperately chanting a Tier 3 Firestorm barrage.",
+      "startOffsetMs": 3475,
+      "endOffsetMs": 6463
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "scene": 42,
+  "text": "\"Shall we place him in the servant quarters, Patriarch?\" Elder Cassius had inquired with a cruel sneer.",
+  "durationMs": 7176,
+  "rawWords": [
+    {
+      "ttsWord": "Shall",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "we",
+      "startMs": 338,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "place",
+      "startMs": 438,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 763,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 888,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 963,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "servant",
+      "startMs": 1050,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "quarters",
+      "startMs": 1438,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "Patriarch",
+      "startMs": 2038,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "Elder",
+      "startMs": 3625,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "Cassius",
+      "startMs": 3988,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4525,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "inquired",
+      "startMs": 4688,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5213,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5350,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "cruel",
+      "startMs": 5425,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "sneer",
+      "startMs": 5788,
+      "endMs": 6313
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Shall we place him in the servant quarters,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2013
+    },
+    {
+      "text": "Patriarch?\"",
+      "startOffsetMs": 2038,
+      "endOffsetMs": 2863
+    },
+    {
+      "text": "Elder Cassius had inquired with a cruel sneer.",
+      "startOffsetMs": 3625,
+      "endOffsetMs": 6413
+    }
+  ]
+}

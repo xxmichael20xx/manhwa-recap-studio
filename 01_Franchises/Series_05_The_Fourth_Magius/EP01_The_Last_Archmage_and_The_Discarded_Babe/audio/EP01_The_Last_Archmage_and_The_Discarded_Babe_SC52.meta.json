@@ -1,0 +1,139 @@
+{
+  "scene": 52,
+  "text": "But inside this fragile vessel resided the cold, calculating mind of a Tier 10 Continental Sovereign who had survived a thousand near-death crises.",
+  "durationMs": 9192,
+  "rawWords": [
+    {
+      "ttsWord": "But",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 225,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 700,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "fragile",
+      "startMs": 888,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "vessel",
+      "startMs": 1313,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "resided",
+      "startMs": 1700,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2175,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 2275,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "calculating",
+      "startMs": 2963,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "mind",
+      "startMs": 3588,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3900,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3963,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 4050,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "10",
+      "startMs": 4388,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "Continental",
+      "startMs": 4675,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "Sovereign",
+      "startMs": 5275,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 5788,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 5925,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "survived",
+      "startMs": 6075,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6588,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6650,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "near-death",
+      "startMs": 7175,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "crises",
+      "startMs": 7625,
+      "endMs": 8313
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "But inside this fragile vessel resided the cold,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2800
+    },
+    {
+      "text": "calculating mind of a Tier 10 Continental Sovereign",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 5775
+    },
+    {
+      "text": "who had survived a thousand near-death crises.",
+      "startOffsetMs": 5788,
+      "endOffsetMs": 8413
+    }
+  ]
+}

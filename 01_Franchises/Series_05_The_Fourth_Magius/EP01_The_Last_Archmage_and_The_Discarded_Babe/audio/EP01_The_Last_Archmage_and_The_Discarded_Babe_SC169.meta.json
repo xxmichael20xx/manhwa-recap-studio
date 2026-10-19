@@ -1,0 +1,89 @@
+{
+  "scene": 169,
+  "text": "Time passed across the Blackwood Frontier with the steady, quiet march of the seasons.",
+  "durationMs": 5592,
+  "rawWords": [
+    {
+      "ttsWord": "Time",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "passed",
+      "startMs": 388,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 750,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1138,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "Blackwood",
+      "startMs": 1250,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "Frontier",
+      "startMs": 1725,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2275,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2400,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "steady",
+      "startMs": 2500,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 3150,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "march",
+      "startMs": 3538,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3863,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3963,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "seasons",
+      "startMs": 4050,
+      "endMs": 4725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Time passed across the Blackwood Frontier with the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2488
+    },
+    {
+      "text": "steady, quiet march of the seasons.",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 4825
+    }
+  ]
+}

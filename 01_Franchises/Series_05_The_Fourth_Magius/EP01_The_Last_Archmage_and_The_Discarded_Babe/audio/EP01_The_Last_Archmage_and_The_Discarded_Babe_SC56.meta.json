@@ -1,0 +1,139 @@
+{
+  "scene": 56,
+  "text": "As he limped past a rushing riverbank winding through the pines, a faint pulse of familiar celestial warmth brushed against his subconscious.",
+  "durationMs": 8544,
+  "rawWords": [
+    {
+      "ttsWord": "As",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 288,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "limped",
+      "startMs": 400,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 763,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1100,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "rushing",
+      "startMs": 1150,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "riverbank",
+      "startMs": 1613,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "winding",
+      "startMs": 2125,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2550,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2725,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "pines",
+      "startMs": 2838,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3638,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "faint",
+      "startMs": 3738,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "pulse",
+      "startMs": 4050,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4363,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "familiar",
+      "startMs": 4475,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 4938,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "warmth",
+      "startMs": 5588,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "brushed",
+      "startMs": 5963,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 6338,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6688,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "subconscious",
+      "startMs": 6800,
+      "endMs": 7675
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "As he limped past a rushing riverbank winding",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2538
+    },
+    {
+      "text": "through the pines,",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 3463
+    },
+    {
+      "text": "a faint pulse of familiar celestial warmth brushed",
+      "startOffsetMs": 3638,
+      "endOffsetMs": 6325
+    },
+    {
+      "text": "against his subconscious.",
+      "startOffsetMs": 6338,
+      "endOffsetMs": 7775
+    }
+  ]
+}

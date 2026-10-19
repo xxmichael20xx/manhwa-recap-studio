@@ -1,0 +1,134 @@
+{
+  "scene": 189,
+  "text": "Colossal stone golems the size of mountains were tearing the earth apart, while sky-spanning dragons rained black fire upon burning citadels.",
+  "durationMs": 8592,
+  "rawWords": [
+    {
+      "ttsWord": "Colossal",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 600,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "golems",
+      "startMs": 988,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1438,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "size",
+      "startMs": 1550,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1938,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "mountains",
+      "startMs": 2025,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 2488,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "tearing",
+      "startMs": 2600,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2963,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "earth",
+      "startMs": 3063,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "apart",
+      "startMs": 3313,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "while",
+      "startMs": 4013,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "sky-spanning",
+      "startMs": 4200,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "dragons",
+      "startMs": 4888,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "rained",
+      "startMs": 5363,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 5688,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "fire",
+      "startMs": 5988,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 6375,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "burning",
+      "startMs": 6725,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "citadels",
+      "startMs": 7063,
+      "endMs": 7725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Colossal stone golems the size of mountains were",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "tearing the earth apart,",
+      "startOffsetMs": 2600,
+      "endOffsetMs": 3825
+    },
+    {
+      "text": "while sky-spanning dragons rained black fire upon burning",
+      "startOffsetMs": 4013,
+      "endOffsetMs": 7050
+    },
+    {
+      "text": "citadels.",
+      "startOffsetMs": 7063,
+      "endOffsetMs": 7825
+    }
+  ]
+}

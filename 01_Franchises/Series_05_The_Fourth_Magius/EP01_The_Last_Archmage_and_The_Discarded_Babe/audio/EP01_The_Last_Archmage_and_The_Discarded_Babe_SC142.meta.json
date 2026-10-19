@@ -1,0 +1,119 @@
+{
+  "scene": 142,
+  "text": "\"You spent ten minutes stalking me downwind, yet your footwork rustled seven dry branches,\" Michael commented in deadpan boredom.",
+  "durationMs": 7920,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "spent",
+      "startMs": 238,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 575,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "minutes",
+      "startMs": 813,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "stalking",
+      "startMs": 1113,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "me",
+      "startMs": 1513,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "downwind",
+      "startMs": 1638,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "yet",
+      "startMs": 2525,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 2713,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "footwork",
+      "startMs": 2875,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "rustled",
+      "startMs": 3325,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "seven",
+      "startMs": 3688,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 4025,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "branches",
+      "startMs": 4300,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 5100,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "commented",
+      "startMs": 5463,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5988,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 6125,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "boredom",
+      "startMs": 6588,
+      "endMs": 7050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You spent ten minutes stalking me downwind,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2350
+    },
+    {
+      "text": "yet your footwork rustled seven dry branches,\" Michael",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 5450
+    },
+    {
+      "text": "commented in deadpan boredom.",
+      "startOffsetMs": 5463,
+      "endOffsetMs": 7150
+    }
+  ]
+}

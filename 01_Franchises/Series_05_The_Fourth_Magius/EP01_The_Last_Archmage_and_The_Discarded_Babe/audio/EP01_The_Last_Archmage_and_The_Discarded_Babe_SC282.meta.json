@@ -1,0 +1,169 @@
+{
+  "scene": 282,
+  "text": "Michael caught the key in mid-air, offering a rare, subtle smile. \"A mutually beneficial arrangement. In return, I will supply your shop with Grade-A medicinal extracts.\"",
+  "durationMs": 12408,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "caught",
+      "startMs": 475,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 750,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "key",
+      "startMs": 863,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1138,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "mid-air",
+      "startMs": 1275,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "offering",
+      "startMs": 1963,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2375,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "rare",
+      "startMs": 2450,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "subtle",
+      "startMs": 3050,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 3425,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "A",
+      "startMs": 4863,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "mutually",
+      "startMs": 4988,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "beneficial",
+      "startMs": 5475,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "arrangement",
+      "startMs": 6075,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "In",
+      "startMs": 7638,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "return",
+      "startMs": 7825,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 8525,
+      "endMs": 8588
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 8600,
+      "endMs": 8713
+    },
+    {
+      "ttsWord": "supply",
+      "startMs": 8725,
+      "endMs": 9113
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 9125,
+      "endMs": 9275
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 9288,
+      "endMs": 9650
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 9663,
+      "endMs": 9800
+    },
+    {
+      "ttsWord": "Grade-A",
+      "startMs": 9813,
+      "endMs": 10213
+    },
+    {
+      "ttsWord": "medicinal",
+      "startMs": 10225,
+      "endMs": 10788
+    },
+    {
+      "ttsWord": "extracts",
+      "startMs": 10800,
+      "endMs": 11538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael caught the key in mid-air offering a",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2438
+    },
+    {
+      "text": "rare,",
+      "startOffsetMs": 2450,
+      "endOffsetMs": 2900
+    },
+    {
+      "text": "subtle smile.",
+      "startOffsetMs": 3050,
+      "endOffsetMs": 4100
+    },
+    {
+      "text": "A mutually beneficial arrangement.",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 6875
+    },
+    {
+      "text": "In return, I will supply your shop with",
+      "startOffsetMs": 7638,
+      "endOffsetMs": 9800
+    },
+    {
+      "text": "Grade-A medicinal extracts.\"",
+      "startOffsetMs": 9813,
+      "endOffsetMs": 11638
+    }
+  ]
+}

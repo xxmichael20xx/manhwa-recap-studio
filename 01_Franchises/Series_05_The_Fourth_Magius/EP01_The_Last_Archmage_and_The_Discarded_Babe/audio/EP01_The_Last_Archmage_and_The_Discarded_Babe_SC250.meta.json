@@ -1,0 +1,114 @@
+{
+  "scene": 250,
+  "text": "Without arguing, Michael opened the flap of his satchel and withdrew a bundle wrapped in clean birch bark.",
+  "durationMs": 6576,
+  "rawWords": [
+    {
+      "ttsWord": "Without",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "arguing",
+      "startMs": 525,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1263,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "opened",
+      "startMs": 1613,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1900,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "flap",
+      "startMs": 1975,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2338,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2438,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "satchel",
+      "startMs": 2600,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3138,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "withdrew",
+      "startMs": 3250,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3675,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "bundle",
+      "startMs": 3763,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "wrapped",
+      "startMs": 4188,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4500,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 4613,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "birch",
+      "startMs": 4963,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "bark",
+      "startMs": 5263,
+      "endMs": 5700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Without arguing,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1113
+    },
+    {
+      "text": "Michael opened the flap of his satchel and",
+      "startOffsetMs": 1263,
+      "endOffsetMs": 3238
+    },
+    {
+      "text": "withdrew a bundle wrapped in clean birch bark.",
+      "startOffsetMs": 3250,
+      "endOffsetMs": 5800
+    }
+  ]
+}

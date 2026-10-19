@@ -1,0 +1,89 @@
+{
+  "scene": 154,
+  "text": "\"Physics dictates that force without sufficient structural hardness produces self-destruction,\" Michael remarked coldly.",
+  "durationMs": 7152,
+  "rawWords": [
+    {
+      "ttsWord": "Physics",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "dictates",
+      "startMs": 575,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 1100,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "force",
+      "startMs": 1263,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 1663,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "sufficient",
+      "startMs": 1988,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "structural",
+      "startMs": 2475,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "hardness",
+      "startMs": 2938,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "produces",
+      "startMs": 3350,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "self-destruction",
+      "startMs": 3875,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 5000,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "remarked",
+      "startMs": 5300,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "coldly",
+      "startMs": 5725,
+      "endMs": 6275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Physics dictates that force without sufficient structural hardness",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3338
+    },
+    {
+      "text": "produces self-destruction",
+      "startOffsetMs": 3350,
+      "endOffsetMs": 4813
+    },
+    {
+      "text": "Michael remarked coldly.",
+      "startOffsetMs": 5000,
+      "endOffsetMs": 6375
+    }
+  ]
+}

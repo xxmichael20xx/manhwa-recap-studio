@@ -1,0 +1,169 @@
+{
+  "scene": 212,
+  "text": "He strapped the disguised Primordial Codex securely inside his inner tunic pocket, took his blackwood staff in hand, and cast one final look at his forest sanctuary.",
+  "durationMs": 10392,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "strapped",
+      "startMs": 238,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 688,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "disguised",
+      "startMs": 800,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 1388,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 1975,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "securely",
+      "startMs": 2413,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 2938,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3363,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "inner",
+      "startMs": 3500,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "tunic",
+      "startMs": 3788,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 4150,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 4863,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5025,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 5150,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 5638,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6038,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 6150,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6788,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "cast",
+      "startMs": 6963,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 7338,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "final",
+      "startMs": 7550,
+      "endMs": 7913
+    },
+    {
+      "ttsWord": "look",
+      "startMs": 7925,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 8125,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 8188,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "forest",
+      "startMs": 8338,
+      "endMs": 8738
+    },
+    {
+      "ttsWord": "sanctuary",
+      "startMs": 8750,
+      "endMs": 9513
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He strapped the disguised Primordial Codex securely inside",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3350
+    },
+    {
+      "text": "his inner tunic pocket,",
+      "startOffsetMs": 3363,
+      "endOffsetMs": 4688
+    },
+    {
+      "text": "took his blackwood staff in hand,",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 6613
+    },
+    {
+      "text": "and cast one final look at his forest",
+      "startOffsetMs": 6788,
+      "endOffsetMs": 8738
+    },
+    {
+      "text": "sanctuary.",
+      "startOffsetMs": 8750,
+      "endOffsetMs": 9613
+    }
+  ]
+}

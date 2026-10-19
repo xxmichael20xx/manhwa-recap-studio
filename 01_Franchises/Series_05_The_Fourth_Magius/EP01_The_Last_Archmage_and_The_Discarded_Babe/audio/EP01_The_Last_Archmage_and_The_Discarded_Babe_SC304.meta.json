@@ -1,0 +1,129 @@
+{
+  "scene": 304,
+  "text": "The wyrm let out an ear-piercing subterranean roar and exhaled a wide spray of boiling purple venom across the town plaza.",
+  "durationMs": 8304,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "wyrm",
+      "startMs": 238,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 1075,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1263,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1438,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "ear-piercing",
+      "startMs": 1538,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "subterranean",
+      "startMs": 2200,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "roar",
+      "startMs": 2988,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3413,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "exhaled",
+      "startMs": 3600,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4100,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 4163,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "spray",
+      "startMs": 4525,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4875,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "boiling",
+      "startMs": 5013,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "purple",
+      "startMs": 5425,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "venom",
+      "startMs": 5763,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6075,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6463,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "town",
+      "startMs": 6575,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "plaza",
+      "startMs": 6875,
+      "endMs": 7425
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The wyrm let out an ear-piercing subterranean roar",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3400
+    },
+    {
+      "text": "and exhaled a wide spray of boiling purple",
+      "startOffsetMs": 3413,
+      "endOffsetMs": 5750
+    },
+    {
+      "text": "venom across the town plaza.",
+      "startOffsetMs": 5763,
+      "endOffsetMs": 7525
+    }
+  ]
+}

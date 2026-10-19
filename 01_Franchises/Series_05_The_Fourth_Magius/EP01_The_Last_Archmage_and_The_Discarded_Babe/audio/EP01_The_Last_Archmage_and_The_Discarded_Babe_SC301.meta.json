@@ -1,0 +1,139 @@
+{
+  "scene": 301,
+  "text": "The pompous young noble students from the courtyard screamed in terror, dropping their wands into the mud and fleeing like frightened sheep.",
+  "durationMs": 7632,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "pompous",
+      "startMs": 200,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "young",
+      "startMs": 688,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 950,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 1263,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1700,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1838,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "courtyard",
+      "startMs": 1925,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "screamed",
+      "startMs": 2438,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2913,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "terror",
+      "startMs": 3025,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "dropping",
+      "startMs": 3688,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 4125,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "wands",
+      "startMs": 4275,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4600,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4800,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "mud",
+      "startMs": 4913,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5200,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "fleeing",
+      "startMs": 5325,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 5738,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "frightened",
+      "startMs": 5950,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "sheep",
+      "startMs": 6338,
+      "endMs": 6763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The pompous young noble students from the courtyard",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2425
+    },
+    {
+      "text": "screamed in terror,",
+      "startOffsetMs": 2438,
+      "endOffsetMs": 3500
+    },
+    {
+      "text": "dropping their wands into the mud and fleeing",
+      "startOffsetMs": 3688,
+      "endOffsetMs": 5725
+    },
+    {
+      "text": "like frightened sheep.",
+      "startOffsetMs": 5738,
+      "endOffsetMs": 6863
+    }
+  ]
+}

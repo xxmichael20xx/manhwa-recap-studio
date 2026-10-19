@@ -1,0 +1,109 @@
+{
+  "scene": 192,
+  "text": "The sheer agony of holding the cosmic memory was ten times worse than unsealing his mana vessels.",
+  "durationMs": 6312,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "sheer",
+      "startMs": 200,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "agony",
+      "startMs": 563,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 950,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "holding",
+      "startMs": 1050,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1400,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 1500,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "memory",
+      "startMs": 2013,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2400,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 2600,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "times",
+      "startMs": 2875,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "worse",
+      "startMs": 3300,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "than",
+      "startMs": 3625,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "unsealing",
+      "startMs": 3800,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4375,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 4525,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "vessels",
+      "startMs": 4825,
+      "endMs": 5438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The sheer agony of holding the cosmic memory",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "was ten times worse than unsealing his mana",
+      "startOffsetMs": 2400,
+      "endOffsetMs": 4813
+    },
+    {
+      "text": "vessels.",
+      "startOffsetMs": 4825,
+      "endOffsetMs": 5538
+    }
+  ]
+}

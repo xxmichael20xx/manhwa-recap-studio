@@ -1,0 +1,169 @@
+{
+  "scene": 85,
+  "text": "He then turned his gaze toward a majestic obsidian pedestal hovering in the centre of the library, upon which rested a massive grimoire chained with crimson lightning.",
+  "durationMs": 9408,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "then",
+      "startMs": 238,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 513,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 775,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "gaze",
+      "startMs": 925,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 1250,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1513,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "majestic",
+      "startMs": 1550,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 2150,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "pedestal",
+      "startMs": 2700,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "hovering",
+      "startMs": 3200,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3600,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3663,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "centre",
+      "startMs": 3750,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4100,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4188,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "library",
+      "startMs": 4300,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 5213,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "which",
+      "startMs": 5550,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "rested",
+      "startMs": 5750,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6113,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "massive",
+      "startMs": 6175,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "grimoire",
+      "startMs": 6650,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "chained",
+      "startMs": 7113,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7488,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 7625,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 8063,
+      "endMs": 8525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He then turned his gaze toward a majestic",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2138
+    },
+    {
+      "text": "obsidian pedestal hovering in the centre of the",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 4288
+    },
+    {
+      "text": "library,",
+      "startOffsetMs": 4300,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "upon which rested a massive grimoire chained with",
+      "startOffsetMs": 5213,
+      "endOffsetMs": 7613
+    },
+    {
+      "text": "crimson lightning.",
+      "startOffsetMs": 7625,
+      "endOffsetMs": 8625
+    }
+  ]
+}

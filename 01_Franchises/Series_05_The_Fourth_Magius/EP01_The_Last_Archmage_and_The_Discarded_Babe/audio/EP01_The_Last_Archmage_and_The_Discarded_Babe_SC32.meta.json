@@ -1,0 +1,134 @@
+{
+  "scene": 32,
+  "text": "In the grand mirrored ancestral hall of House Montrey, sixty high-ranking family elders had gathered around an ornate marble baptismal font.",
+  "durationMs": 8520,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 213,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "grand",
+      "startMs": 313,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "mirrored",
+      "startMs": 650,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "ancestral",
+      "startMs": 975,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "hall",
+      "startMs": 1588,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1863,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 1950,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 2238,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "sixty",
+      "startMs": 3050,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "high-ranking",
+      "startMs": 3450,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "family",
+      "startMs": 4050,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "elders",
+      "startMs": 4463,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4863,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "gathered",
+      "startMs": 5013,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 5388,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5738,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "ornate",
+      "startMs": 5850,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "marble",
+      "startMs": 6250,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "baptismal",
+      "startMs": 6600,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "font",
+      "startMs": 7200,
+      "endMs": 7650
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In the grand mirrored ancestral hall of House",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2225
+    },
+    {
+      "text": "Montrey,",
+      "startOffsetMs": 2238,
+      "endOffsetMs": 2863
+    },
+    {
+      "text": "sixty high-ranking family elders had gathered around an",
+      "startOffsetMs": 3050,
+      "endOffsetMs": 5838
+    },
+    {
+      "text": "ornate marble baptismal font.",
+      "startOffsetMs": 5850,
+      "endOffsetMs": 7750
+    }
+  ]
+}

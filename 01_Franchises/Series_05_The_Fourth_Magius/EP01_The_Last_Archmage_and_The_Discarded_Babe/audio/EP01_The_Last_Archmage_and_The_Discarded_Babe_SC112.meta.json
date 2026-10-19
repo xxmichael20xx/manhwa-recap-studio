@@ -1,0 +1,109 @@
+{
+  "scene": 112,
+  "text": "Sweat poured from Michael's forehead, his small muscles trembling under the sheer pressure of the internal compression.",
+  "durationMs": 6744,
+  "rawWords": [
+    {
+      "ttsWord": "Sweat",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "poured",
+      "startMs": 500,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 838,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 975,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "forehead",
+      "startMs": 1388,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2125,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 2288,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "muscles",
+      "startMs": 2638,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 3063,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 3588,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3775,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "sheer",
+      "startMs": 3863,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "pressure",
+      "startMs": 4163,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4588,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4688,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "internal",
+      "startMs": 4750,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "compression",
+      "startMs": 5238,
+      "endMs": 5875
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Sweat poured from Michael's forehead,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1988
+    },
+    {
+      "text": "his small muscles trembling under the sheer pressure",
+      "startOffsetMs": 2125,
+      "endOffsetMs": 4575
+    },
+    {
+      "text": "of the internal compression.",
+      "startOffsetMs": 4588,
+      "endOffsetMs": 5975
+    }
+  ]
+}

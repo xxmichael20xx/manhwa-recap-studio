@@ -1,0 +1,154 @@
+{
+  "scene": 6,
+  "text": "Michael wiped a thin streak of blood from his jaw, his radiant sapphire eyes gazing back at the encircling army with cold, amused deadpan calm.",
+  "durationMs": 9312,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "wiped",
+      "startMs": 475,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 763,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "thin",
+      "startMs": 838,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "streak",
+      "startMs": 1188,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1513,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "blood",
+      "startMs": 1650,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 1963,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2113,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "jaw",
+      "startMs": 2288,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2913,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "radiant",
+      "startMs": 3100,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "sapphire",
+      "startMs": 3488,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 4125,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "gazing",
+      "startMs": 4438,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4838,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 5138,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5213,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "encircling",
+      "startMs": 5288,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "army",
+      "startMs": 5925,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6250,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 6450,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "amused",
+      "startMs": 7038,
+      "endMs": 7513
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 7525,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "calm",
+      "startMs": 8000,
+      "endMs": 8438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael wiped a thin streak of blood from",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2100
+    },
+    {
+      "text": "his jaw, his radiant sapphire eyes gazing back",
+      "startOffsetMs": 2113,
+      "endOffsetMs": 5125
+    },
+    {
+      "text": "at the encircling army with cold,",
+      "startOffsetMs": 5138,
+      "endOffsetMs": 6925
+    },
+    {
+      "text": "amused deadpan calm.",
+      "startOffsetMs": 7038,
+      "endOffsetMs": 8538
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "rawText": "I've pulled the latest character and item entities for Series 05: The Fourth Magius. Here are the active entities and their IDs:\n\nMichael Montrey: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00001 (Protagonist Child)\nApex Archmage Michael: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00002 (Past Life Sovereign)\nPatriarch Valerius Montrey: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00003 (Antagonist Patriarch)\nHead Elder Cassius: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00004 (Antagonist Proctor)\nElder Rowan Thorne: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00005 (Supporting Mentor)\nCalamity Abyssal Wyrm: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00006 (Colossal Boss)\nThe Primordial Codex: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00007 (Divine Artifact)\nCarved Blackwood Staff: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00008 (Signature Weapon)\nMontrey Crest Amulet: 5c18a240-3b8e-4d1a-9f5e-11a2e4f00009 (Noble Relic)",
+  "entities": {
+    "Michael Montrey": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00001",
+    "Michael": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00001",
+    "Apex Archmage Michael": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00002",
+    "Michael Montrey (Apex Archmage)": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00002",
+    "Patriarch Valerius Montrey": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00003",
+    "Patriarch Valerius": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00003",
+    "Valerius Montrey": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00003",
+    "Head Elder Cassius": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00004",
+    "Elder Cassius": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00004",
+    "Elder Rowan Thorne": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00005",
+    "Elder Rowan": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00005",
+    "Rowan Thorne": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00005",
+    "Calamity Abyssal Wyrm": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00006",
+    "Boss: Calamity Abyssal Wyrm": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00006",
+    "Abyssal Wyrm": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00006",
+    "The Primordial Codex": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00007",
+    "Artifact: The Primordial Codex": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00007",
+    "Primordial Codex": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00007",
+    "Carved Blackwood Staff": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00008",
+    "Weapon: Carved Blackwood Staff": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00008",
+    "Blackwood Staff": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00008",
+    "Montrey Crest Amulet": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
+    "Item: Montrey Crest Amulet": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
+    "Crest Amulet": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
+    "Grand Inquisitor": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00010",
+    "Grand Inquisitor Malakor": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00010"
+  }
+}

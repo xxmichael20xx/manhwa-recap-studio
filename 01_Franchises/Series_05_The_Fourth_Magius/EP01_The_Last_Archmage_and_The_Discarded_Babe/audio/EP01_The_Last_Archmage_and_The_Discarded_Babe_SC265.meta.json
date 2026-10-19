@@ -1,0 +1,159 @@
+{
+  "scene": 265,
+  "text": "Michael accepted the silver crowns with a textbook courtly nod, transferring the coins into his inner pocket. \"Your business honor does you credit, Master Thorne.\"",
+  "durationMs": 10416,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "accepted",
+      "startMs": 488,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 950,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "silver",
+      "startMs": 1063,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "crowns",
+      "startMs": 1475,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1938,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2075,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "textbook",
+      "startMs": 2150,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "courtly",
+      "startMs": 2688,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "nod",
+      "startMs": 3038,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "transferring",
+      "startMs": 3675,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4250,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "coins",
+      "startMs": 4338,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4763,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5000,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "inner",
+      "startMs": 5138,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 5388,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "Your",
+      "startMs": 6763,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "business",
+      "startMs": 7000,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "honor",
+      "startMs": 7425,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "does",
+      "startMs": 7738,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 7975,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "credit",
+      "startMs": 8088,
+      "endMs": 8450
+    },
+    {
+      "ttsWord": "Master",
+      "startMs": 8638,
+      "endMs": 9050
+    },
+    {
+      "ttsWord": "Thorne",
+      "startMs": 9063,
+      "endMs": 9538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael accepted the silver crowns with a textbook",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2675
+    },
+    {
+      "text": "courtly nod,",
+      "startOffsetMs": 2688,
+      "endOffsetMs": 3513
+    },
+    {
+      "text": "transferring the coins into his inner pocket.",
+      "startOffsetMs": 3675,
+      "endOffsetMs": 6000
+    },
+    {
+      "text": "Your business honor does you credit,",
+      "startOffsetMs": 6763,
+      "endOffsetMs": 8550
+    },
+    {
+      "text": "Master Thorne.\"",
+      "startOffsetMs": 8638,
+      "endOffsetMs": 9638
+    }
+  ]
+}

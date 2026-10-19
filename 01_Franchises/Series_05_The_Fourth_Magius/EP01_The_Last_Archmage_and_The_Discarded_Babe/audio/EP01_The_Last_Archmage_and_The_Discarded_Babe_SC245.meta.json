@@ -1,0 +1,119 @@
+{
+  "scene": 245,
+  "text": "Rowan looked up from grinding blue crystals in a stone mortar, his weathered hazel eyes assessing the young customer.",
+  "durationMs": 6864,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 463,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 700,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 888,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "grinding",
+      "startMs": 1063,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "blue",
+      "startMs": 1513,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "crystals",
+      "startMs": 1738,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2250,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2363,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 2438,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "mortar",
+      "startMs": 2800,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3438,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "weathered",
+      "startMs": 3600,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "hazel",
+      "startMs": 3913,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 4388,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "assessing",
+      "startMs": 4638,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5138,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "young",
+      "startMs": 5200,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "customer",
+      "startMs": 5463,
+      "endMs": 6000
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan looked up from grinding blue crystals in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2350
+    },
+    {
+      "text": "a stone mortar,",
+      "startOffsetMs": 2363,
+      "endOffsetMs": 3263
+    },
+    {
+      "text": "his weathered hazel eyes assessing the young customer.",
+      "startOffsetMs": 3438,
+      "endOffsetMs": 6100
+    }
+  ]
+}

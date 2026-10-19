@@ -1,0 +1,119 @@
+{
+  "scene": 203,
+  "text": "Michael exhaled a long breath, wiping the dried blood from his upper lip with the back of his sleeve.",
+  "durationMs": 6216,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "exhaled",
+      "startMs": 525,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1025,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "long",
+      "startMs": 1088,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "breath",
+      "startMs": 1425,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "wiping",
+      "startMs": 2050,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2450,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 2538,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "blood",
+      "startMs": 2900,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3213,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3363,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "upper",
+      "startMs": 3513,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "lip",
+      "startMs": 3775,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4063,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4175,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4263,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4563,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4638,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "sleeve",
+      "startMs": 4800,
+      "endMs": 5338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael exhaled a long breath,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1913
+    },
+    {
+      "text": "wiping the dried blood from his upper lip",
+      "startOffsetMs": 2050,
+      "endOffsetMs": 4050
+    },
+    {
+      "text": "with the back of his sleeve.",
+      "startOffsetMs": 4063,
+      "endOffsetMs": 5438
+    }
+  ]
+}

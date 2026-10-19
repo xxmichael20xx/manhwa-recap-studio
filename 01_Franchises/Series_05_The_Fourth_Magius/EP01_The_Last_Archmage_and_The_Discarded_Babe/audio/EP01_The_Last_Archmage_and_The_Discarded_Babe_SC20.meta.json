@@ -1,0 +1,99 @@
+{
+  "scene": 20,
+  "text": "Instead, his arms wobbled pathetically beneath him, his tiny fingers sinking into thick, icy mud.",
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "Instead",
+      "startMs": 50,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 875,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "arms",
+      "startMs": 1063,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "wobbled",
+      "startMs": 1450,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "pathetically",
+      "startMs": 1850,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 2463,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 2813,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3313,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "tiny",
+      "startMs": 3500,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 3850,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "sinking",
+      "startMs": 4288,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4663,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "thick",
+      "startMs": 4850,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "icy",
+      "startMs": 5425,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "mud",
+      "startMs": 5750,
+      "endMs": 6138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Instead, his arms wobbled pathetically beneath him,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3175
+    },
+    {
+      "text": "his tiny fingers sinking into thick,",
+      "startOffsetMs": 3313,
+      "endOffsetMs": 5313
+    },
+    {
+      "text": "icy mud.",
+      "startOffsetMs": 5425,
+      "endOffsetMs": 6238
+    }
+  ]
+}

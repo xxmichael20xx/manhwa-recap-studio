@@ -1,0 +1,129 @@
+{
+  "scene": 10,
+  "text": "But instead of raising a defensive shield, Michael placed his bloodied palm directly against the constellation clasp of the Primordial Codex.",
+  "durationMs": 8352,
+  "rawWords": [
+    {
+      "ttsWord": "But",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "instead",
+      "startMs": 213,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 563,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 675,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1063,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "defensive",
+      "startMs": 1125,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "shield",
+      "startMs": 1638,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2350,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "placed",
+      "startMs": 2725,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3100,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "bloodied",
+      "startMs": 3238,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "palm",
+      "startMs": 3650,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 3950,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 4450,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4788,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "constellation",
+      "startMs": 4888,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "clasp",
+      "startMs": 5625,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6050,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6125,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 6225,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 6825,
+      "endMs": 7488
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "But instead of raising a defensive shield,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2200
+    },
+    {
+      "text": "Michael placed his bloodied palm directly against the",
+      "startOffsetMs": 2350,
+      "endOffsetMs": 4875
+    },
+    {
+      "text": "constellation clasp of the Primordial Codex.",
+      "startOffsetMs": 4888,
+      "endOffsetMs": 7588
+    }
+  ]
+}

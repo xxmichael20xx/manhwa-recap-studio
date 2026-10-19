@@ -1,0 +1,104 @@
+{
+  "scene": 153,
+  "text": "The wolf let out a bewildered, agonized whimper, its amber eyes bulging in sheer predator confusion.",
+  "durationMs": 6576,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "wolf",
+      "startMs": 213,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 525,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 725,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 900,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "bewildered",
+      "startMs": 963,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "agonized",
+      "startMs": 1725,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "whimper",
+      "startMs": 2300,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2963,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 3100,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3488,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "bulging",
+      "startMs": 3788,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4225,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "sheer",
+      "startMs": 4313,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "predator",
+      "startMs": 4613,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "confusion",
+      "startMs": 5050,
+      "endMs": 5713
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The wolf let out a bewildered,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1600
+    },
+    {
+      "text": "agonized whimper,",
+      "startOffsetMs": 1725,
+      "endOffsetMs": 2788
+    },
+    {
+      "text": "its amber eyes bulging in sheer predator confusion.",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 5813
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "scene": 74,
+  "text": "His small heart beat with steady, athletic power, pumping liquid mana through every muscle fiber and tendon.",
+  "durationMs": 7080,
+  "rawWords": [
+    {
+      "ttsWord": "His",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 263,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "heart",
+      "startMs": 613,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "beat",
+      "startMs": 925,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1188,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "steady",
+      "startMs": 1350,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "athletic",
+      "startMs": 1925,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "power",
+      "startMs": 2438,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "pumping",
+      "startMs": 3150,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "liquid",
+      "startMs": 3538,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 3888,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4225,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 4450,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "muscle",
+      "startMs": 4763,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "fiber",
+      "startMs": 5113,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5600,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "tendon",
+      "startMs": 5725,
+      "endMs": 6213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "His small heart beat with steady,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1888
+    },
+    {
+      "text": "athletic power,",
+      "startOffsetMs": 1925,
+      "endOffsetMs": 2975
+    },
+    {
+      "text": "pumping liquid mana through every muscle fiber and",
+      "startOffsetMs": 3150,
+      "endOffsetMs": 5713
+    },
+    {
+      "text": "tendon.",
+      "startOffsetMs": 5725,
+      "endOffsetMs": 6313
+    }
+  ]
+}

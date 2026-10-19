@@ -1,0 +1,159 @@
+{
+  "scene": 28,
+  "text": "The iron gates slammed shut with a concussive boom that rattled the gravel, leaving the small boy alone in the freezing mud of the outer wilderness.",
+  "durationMs": 8664,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 225,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "gates",
+      "startMs": 625,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "slammed",
+      "startMs": 1013,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "shut",
+      "startMs": 1413,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1800,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1938,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 2000,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "boom",
+      "startMs": 2575,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 2913,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "rattled",
+      "startMs": 3113,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3413,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "gravel",
+      "startMs": 3513,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "leaving",
+      "startMs": 4250,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4538,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 4625,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 5025,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "alone",
+      "startMs": 5275,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5700,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5763,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "freezing",
+      "startMs": 5850,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "mud",
+      "startMs": 6325,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6575,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6675,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "outer",
+      "startMs": 6800,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "wilderness",
+      "startMs": 7113,
+      "endMs": 7788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The iron gates slammed shut with a concussive",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2563
+    },
+    {
+      "text": "boom that rattled the gravel,",
+      "startOffsetMs": 2575,
+      "endOffsetMs": 4050
+    },
+    {
+      "text": "leaving the small boy alone in the freezing",
+      "startOffsetMs": 4250,
+      "endOffsetMs": 6313
+    },
+    {
+      "text": "mud of the outer wilderness.",
+      "startOffsetMs": 6325,
+      "endOffsetMs": 7888
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "scene": 134,
+  "text": "\"I will remain in this forest for two full years. I will build my sanctuary, forge my body to absolute peak human durability, and master Tier 1 combat arcana before stepping onto the imperial stage.\"",
+  "durationMs": 13824,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 213,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "remain",
+      "startMs": 375,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 750,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 838,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "forest",
+      "startMs": 1025,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 1463,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 1588,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "full",
+      "startMs": 1850,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 2138,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 3550,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 3713,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "build",
+      "startMs": 3888,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 4188,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "sanctuary",
+      "startMs": 4350,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "forge",
+      "startMs": 5363,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 5700,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "body",
+      "startMs": 5850,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6200,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 6325,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "peak",
+      "startMs": 6938,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "human",
+      "startMs": 7213,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "durability",
+      "startMs": 7500,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 8475,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "master",
+      "startMs": 8650,
+      "endMs": 9088
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 9100,
+      "endMs": 9425
+    },
+    {
+      "ttsWord": "1",
+      "startMs": 9438,
+      "endMs": 9675
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 9688,
+      "endMs": 10138
+    },
+    {
+      "ttsWord": "arcana",
+      "startMs": 10150,
+      "endMs": 10688
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 10700,
+      "endMs": 11038
+    },
+    {
+      "ttsWord": "stepping",
+      "startMs": 11050,
+      "endMs": 11475
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 11488,
+      "endMs": 11725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 11738,
+      "endMs": 11813
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 11825,
+      "endMs": 12375
+    },
+    {
+      "ttsWord": "stage",
+      "startMs": 12388,
+      "endMs": 12963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I will remain in this forest for two",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1838
+    },
+    {
+      "text": "full years.",
+      "startOffsetMs": 1850,
+      "endOffsetMs": 2788
+    },
+    {
+      "text": "I will build my sanctuary,",
+      "startOffsetMs": 3550,
+      "endOffsetMs": 5200
+    },
+    {
+      "text": "forge my body to absolute peak human durability,",
+      "startOffsetMs": 5363,
+      "endOffsetMs": 8275
+    },
+    {
+      "text": "and master Tier 1 combat arcana before stepping",
+      "startOffsetMs": 8475,
+      "endOffsetMs": 11475
+    },
+    {
+      "text": "onto the imperial stage.\"",
+      "startOffsetMs": 11488,
+      "endOffsetMs": 13063
+    }
+  ]
+}

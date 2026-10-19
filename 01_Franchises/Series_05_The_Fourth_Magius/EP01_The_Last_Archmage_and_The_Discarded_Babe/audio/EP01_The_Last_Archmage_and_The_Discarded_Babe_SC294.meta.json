@@ -1,0 +1,54 @@
+{
+  "scene": 294,
+  "text": "\"What's happening, Rowan?\" Michael asked calmly.",
+  "durationMs": 4512,
+  "rawWords": [
+    {
+      "ttsWord": "What's",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "happening",
+      "startMs": 313,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 1063,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2350,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "asked",
+      "startMs": 2788,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 3100,
+      "endMs": 3650
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "What's happening,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 875
+    },
+    {
+      "text": "Rowan?\"",
+      "startOffsetMs": 1063,
+      "endOffsetMs": 1588
+    },
+    {
+      "text": "Michael asked calmly.",
+      "startOffsetMs": 2350,
+      "endOffsetMs": 3750
+    }
+  ]
+}

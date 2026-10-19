@@ -1,0 +1,139 @@
+{
+  "scene": 333,
+  "text": "Michael calmly wiped a speck of dust from his tunic, looked down at the bewildered veteran battle-mage, and offered a polite nod.",
+  "durationMs": 7608,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 475,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "wiped",
+      "startMs": 875,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1188,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "speck",
+      "startMs": 1263,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1600,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "dust",
+      "startMs": 1725,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2025,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2150,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "tunic",
+      "startMs": 2313,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 3000,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 3200,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3475,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3550,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "bewildered",
+      "startMs": 3638,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "veteran",
+      "startMs": 4138,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "battle-mage",
+      "startMs": 4500,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5438,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "offered",
+      "startMs": 5600,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5913,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "polite",
+      "startMs": 5975,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "nod",
+      "startMs": 6338,
+      "endMs": 6738
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael calmly wiped a speck of dust from",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2138
+    },
+    {
+      "text": "his tunic,",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "looked down at the bewildered veteran battle-mage",
+      "startOffsetMs": 3000,
+      "endOffsetMs": 5263
+    },
+    {
+      "text": "and offered a polite nod.",
+      "startOffsetMs": 5438,
+      "endOffsetMs": 6838
+    }
+  ]
+}

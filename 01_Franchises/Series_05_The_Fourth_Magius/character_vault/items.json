@@ -1,0 +1,46 @@
+{
+  "series_id": "Series_05_The_Fourth_Magius",
+  "items": [
+    {
+      "id": "the_primordial_codex",
+      "name": "The Primordial Codex",
+      "token": "@{Artifact: The Primordial Codex}",
+      "type": "Artifact",
+      "apparent_rank": "Weathered Antique Tome",
+      "true_rank": "Divine Relic of the First Magicians (Tier 13 Magius Key)",
+      "description": "An ancient leather-bound grimoire sealed with golden celestial constellation clasps. Holds the gateway to the infinite White Library and ancient master spell heritages.",
+      "dna_prompt_anchor": "@{Artifact: The Primordial Codex}, thick ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation runes etched on cover, intricate brass corner clasps, divine arcane glow, dark fantasy manhwa style, horizontal 16:9, widescreen, cinematic composition",
+      "reference_plate": "07_Artifact_Primordial_Codex.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00007",
+      "flowName": "The Primordial Codex"
+    },
+    {
+      "id": "carved_blackwood_staff",
+      "name": "Carved Blackwood Staff",
+      "token": "@{Weapon: Carved Blackwood Staff}",
+      "type": "Weapon",
+      "apparent_rank": "Common Hardwood Walking Stick",
+      "true_rank": "Mana-Reinforced Kinetic Focus (+450 Impact Resistance)",
+      "description": "A dense, smooth blackwood staff whittled by young Michael from lightning-struck ironwood. Balanced to channel rapid kinetic bursts and blunt physical strikes.",
+      "dna_prompt_anchor": "@{Weapon: Carved Blackwood Staff}, sleek dense polished blackwood quarterstaff, faint cyan mana spiral veins carved along grain, iron-reinforced base, dark fantasy manhwa style, horizontal 16:9, widescreen, cinematic composition",
+      "reference_plate": "08_Weapon_Blackwood_Staff.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00008",
+      "flowName": "Carved Blackwood Staff",
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_crest_amulet",
+      "name": "Montrey Crest Amulet",
+      "token": "@{Item: Montrey Crest Amulet}",
+      "type": "Item",
+      "apparent_rank": "Aristocratic Heritage Medallion",
+      "true_rank": "Noble Identification Seal (Wind-Lightning Lineage)",
+      "description": "A heavy platinum amulet bearing the coiled dragon and lightning sigil of House Montrey, dropped into the mud when the infant was discarded.",
+      "dna_prompt_anchor": "@{Item: Montrey Crest Amulet}, circular platinum noble medallion set with glowing star sapphire, engraved with coiled winged dragon and lightning bolt, dark fantasy manhwa style, horizontal 16:9, widescreen, cinematic composition",
+      "reference_plate": "09_Item_Montrey_Crest_Amulet.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
+      "flowName": "Montrey Crest Amulet",
+      "hasPlate": true
+    }
+  ]
+}

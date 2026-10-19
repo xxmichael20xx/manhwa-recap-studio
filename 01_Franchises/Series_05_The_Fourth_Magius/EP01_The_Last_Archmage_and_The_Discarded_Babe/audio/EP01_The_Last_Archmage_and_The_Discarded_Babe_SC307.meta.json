@@ -1,0 +1,134 @@
+{
+  "scene": 307,
+  "text": "Rowan grunted in agony as venom splashed across his shoulder guard, forcing the veteran battle-mage to his knees in the mud.",
+  "durationMs": 7512,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "grunted",
+      "startMs": 438,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 863,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "agony",
+      "startMs": 1000,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1463,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "venom",
+      "startMs": 1625,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "splashed",
+      "startMs": 1963,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 2463,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2838,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "shoulder",
+      "startMs": 2963,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "guard",
+      "startMs": 3350,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "forcing",
+      "startMs": 3988,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4400,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "veteran",
+      "startMs": 4475,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "battle-mage",
+      "startMs": 4863,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5463,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5588,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "knees",
+      "startMs": 5738,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6100,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6188,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "mud",
+      "startMs": 6263,
+      "endMs": 6650
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan grunted in agony as venom splashed across",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "his shoulder guard,",
+      "startOffsetMs": 2838,
+      "endOffsetMs": 3788
+    },
+    {
+      "text": "forcing the veteran battle-mage to his knees in",
+      "startOffsetMs": 3988,
+      "endOffsetMs": 6175
+    },
+    {
+      "text": "the mud.",
+      "startOffsetMs": 6188,
+      "endOffsetMs": 6750
+    }
+  ]
+}

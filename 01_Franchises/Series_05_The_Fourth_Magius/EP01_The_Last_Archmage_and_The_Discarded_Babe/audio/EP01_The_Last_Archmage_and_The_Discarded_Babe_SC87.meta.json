@@ -1,0 +1,169 @@
+{
+  "scene": 87,
+  "text": "Michael reached out his right hand to touch the binding, but before his fingers made contact, a searing wall of mental backlash pushed him back three paces.",
+  "durationMs": 9288,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "reached",
+      "startMs": 488,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 813,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 963,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 1125,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 1375,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1663,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "touch",
+      "startMs": 1738,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2075,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "binding",
+      "startMs": 2188,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 2925,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 3063,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3388,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 3563,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "made",
+      "startMs": 3975,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "contact",
+      "startMs": 4225,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5063,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "searing",
+      "startMs": 5138,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 5550,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5825,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "mental",
+      "startMs": 5925,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "backlash",
+      "startMs": 6250,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "pushed",
+      "startMs": 6838,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 7150,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 7275,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 7563,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "paces",
+      "startMs": 7800,
+      "endMs": 8425
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael reached out his right hand to touch",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2063
+    },
+    {
+      "text": "the binding,",
+      "startOffsetMs": 2075,
+      "endOffsetMs": 2738
+    },
+    {
+      "text": "but before his fingers made contact,",
+      "startOffsetMs": 2925,
+      "endOffsetMs": 4950
+    },
+    {
+      "text": "a searing wall of mental backlash pushed him",
+      "startOffsetMs": 5063,
+      "endOffsetMs": 7263
+    },
+    {
+      "text": "back three paces.",
+      "startOffsetMs": 7275,
+      "endOffsetMs": 8525
+    }
+  ]
+}

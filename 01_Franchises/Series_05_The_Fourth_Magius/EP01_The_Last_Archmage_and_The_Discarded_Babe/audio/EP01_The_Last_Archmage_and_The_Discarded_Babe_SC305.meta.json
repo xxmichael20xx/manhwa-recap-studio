@@ -1,0 +1,149 @@
+{
+  "scene": 305,
+  "text": "Rowan lunged forward, slamming his hands onto the cobblestones and raising a massive Tier 4 earthen wall to shield a group of trapped children.",
+  "durationMs": 8736,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "lunged",
+      "startMs": 475,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 775,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "slamming",
+      "startMs": 1488,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1950,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 2100,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 2463,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2713,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "cobblestones",
+      "startMs": 2825,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3613,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 3763,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4150,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "massive",
+      "startMs": 4200,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 4675,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "4",
+      "startMs": 4988,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "earthen",
+      "startMs": 5388,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 5763,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6100,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "shield",
+      "startMs": 6213,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6575,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "group",
+      "startMs": 6638,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6888,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "trapped",
+      "startMs": 7000,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "children",
+      "startMs": 7350,
+      "endMs": 7863
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan lunged forward,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1325
+    },
+    {
+      "text": "slamming his hands onto the cobblestones and raising",
+      "startOffsetMs": 1488,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "a massive Tier 4 earthen wall to shield",
+      "startOffsetMs": 4150,
+      "endOffsetMs": 6563
+    },
+    {
+      "text": "a group of trapped children.",
+      "startOffsetMs": 6575,
+      "endOffsetMs": 7963
+    }
+  ]
+}

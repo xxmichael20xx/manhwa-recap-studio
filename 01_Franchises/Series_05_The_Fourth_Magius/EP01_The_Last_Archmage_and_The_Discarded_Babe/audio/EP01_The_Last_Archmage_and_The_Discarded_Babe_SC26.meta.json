@@ -1,0 +1,129 @@
+{
+  "scene": 26,
+  "text": "Standing upon the carriage's rear platform were two cloaked household guards, their sneering faces illuminated by the magical carriage lanterns.",
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "Standing",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 575,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 875,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "carriage's",
+      "startMs": 963,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "rear",
+      "startMs": 1500,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "platform",
+      "startMs": 1775,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 2325,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2450,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "cloaked",
+      "startMs": 2738,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "household",
+      "startMs": 3075,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "guards",
+      "startMs": 3550,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 4263,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "sneering",
+      "startMs": 4438,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "faces",
+      "startMs": 4900,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "illuminated",
+      "startMs": 5363,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 5988,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6138,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "magical",
+      "startMs": 6238,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "carriage",
+      "startMs": 6725,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "lanterns",
+      "startMs": 7125,
+      "endMs": 7813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Standing upon the carriage's rear platform were two",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2725
+    },
+    {
+      "text": "cloaked household guards,",
+      "startOffsetMs": 2738,
+      "endOffsetMs": 4113
+    },
+    {
+      "text": "their sneering faces illuminated by the magical carriage",
+      "startOffsetMs": 4263,
+      "endOffsetMs": 7113
+    },
+    {
+      "text": "lanterns.",
+      "startOffsetMs": 7125,
+      "endOffsetMs": 7913
+    }
+  ]
+}

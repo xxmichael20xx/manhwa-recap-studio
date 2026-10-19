@@ -1,0 +1,139 @@
+{
+  "scene": 313,
+  "text": "\"Michael, get back!\" Rowan roared through the toxic smoke, reaching out with a bloodied hand. \"You can't stop that monster! Run!\"",
+  "durationMs": 10920,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "get",
+      "startMs": 750,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 963,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 2288,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 2738,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3050,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3225,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "toxic",
+      "startMs": 3338,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "smoke",
+      "startMs": 3813,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "reaching",
+      "startMs": 4488,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 4863,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5050,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5175,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "bloodied",
+      "startMs": 5250,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 5638,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "You",
+      "startMs": 6988,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "can't",
+      "startMs": 7175,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "stop",
+      "startMs": 7488,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 7850,
+      "endMs": 8013
+    },
+    {
+      "ttsWord": "monster",
+      "startMs": 8025,
+      "endMs": 8650
+    },
+    {
+      "ttsWord": "Run",
+      "startMs": 9513,
+      "endMs": 10050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael, get back!\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1525
+    },
+    {
+      "text": "Rowan roared through the toxic smoke,",
+      "startOffsetMs": 2288,
+      "endOffsetMs": 4325
+    },
+    {
+      "text": "reaching out with a bloodied hand.",
+      "startOffsetMs": 4488,
+      "endOffsetMs": 6225
+    },
+    {
+      "text": "You can't stop that monster!",
+      "startOffsetMs": 6988,
+      "endOffsetMs": 8750
+    },
+    {
+      "text": "Run!\"",
+      "startOffsetMs": 9513,
+      "endOffsetMs": 10150
+    }
+  ]
+}

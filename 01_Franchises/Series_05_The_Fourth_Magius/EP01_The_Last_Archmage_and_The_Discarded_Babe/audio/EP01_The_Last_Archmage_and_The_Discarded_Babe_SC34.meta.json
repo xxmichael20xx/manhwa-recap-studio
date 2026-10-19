@@ -1,0 +1,134 @@
+{
+  "scene": 34,
+  "text": "Cassius struck the bell, releasing a resonant harmonic pitch designed to excite the dormant mana channels of an infant's cardiovascular network.",
+  "durationMs": 8496,
+  "rawWords": [
+    {
+      "ttsWord": "Cassius",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "struck",
+      "startMs": 538,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 825,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "bell",
+      "startMs": 938,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "releasing",
+      "startMs": 1550,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2000,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "resonant",
+      "startMs": 2063,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "harmonic",
+      "startMs": 2488,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "pitch",
+      "startMs": 3025,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "designed",
+      "startMs": 3350,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3788,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "excite",
+      "startMs": 3888,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4313,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "dormant",
+      "startMs": 4425,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 4788,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "channels",
+      "startMs": 5088,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5563,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5650,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "infant's",
+      "startMs": 5750,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "cardiovascular",
+      "startMs": 6175,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "network",
+      "startMs": 7050,
+      "endMs": 7613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Cassius struck the bell,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1375
+    },
+    {
+      "text": "releasing a resonant harmonic pitch designed to excite",
+      "startOffsetMs": 1550,
+      "endOffsetMs": 4300
+    },
+    {
+      "text": "the dormant mana channels of an infant's cardiovascular",
+      "startOffsetMs": 4313,
+      "endOffsetMs": 7038
+    },
+    {
+      "text": "network.",
+      "startOffsetMs": 7050,
+      "endOffsetMs": 7713
+    }
+  ]
+}

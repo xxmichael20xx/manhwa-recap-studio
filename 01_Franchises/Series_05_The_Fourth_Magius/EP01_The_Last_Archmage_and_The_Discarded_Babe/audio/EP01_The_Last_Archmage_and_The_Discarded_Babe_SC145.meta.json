@@ -1,0 +1,129 @@
+{
+  "scene": 145,
+  "text": "The timber wolf crossed the thirty-foot clearing in a fraction of a second, its muscular body propelled by feral predatory fury.",
+  "durationMs": 7944,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "timber",
+      "startMs": 213,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "wolf",
+      "startMs": 575,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "crossed",
+      "startMs": 888,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1288,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "thirty-foot",
+      "startMs": 1400,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "clearing",
+      "startMs": 2000,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2425,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2500,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "fraction",
+      "startMs": 2563,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3063,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3150,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "second",
+      "startMs": 3225,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3988,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "muscular",
+      "startMs": 4150,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "body",
+      "startMs": 4650,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "propelled",
+      "startMs": 4963,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 5450,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "feral",
+      "startMs": 5588,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "predatory",
+      "startMs": 5975,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "fury",
+      "startMs": 6550,
+      "endMs": 7063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The timber wolf crossed the thirty-foot clearing in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2488
+    },
+    {
+      "text": "a fraction of a second,",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 3775
+    },
+    {
+      "text": "its muscular body propelled by feral predatory fury.",
+      "startOffsetMs": 3988,
+      "endOffsetMs": 7163
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "scene": 53,
+  "text": "\"First priority: shelter and kinetic warmth,\" Michael diagnosed aloud, walking forward with measured, deliberate strides.",
+  "durationMs": 8376,
+  "rawWords": [
+    {
+      "ttsWord": "First",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "priority",
+      "startMs": 463,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "shelter",
+      "startMs": 1350,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1888,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 2025,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "warmth",
+      "startMs": 2475,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 3063,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "diagnosed",
+      "startMs": 3425,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "aloud",
+      "startMs": 4038,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "walking",
+      "startMs": 4775,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 5188,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5588,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "measured",
+      "startMs": 5738,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "deliberate",
+      "startMs": 6400,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "strides",
+      "startMs": 6850,
+      "endMs": 7500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "First priority:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1138
+    },
+    {
+      "text": "shelter and kinetic warmth,\" Michael diagnosed aloud,",
+      "startOffsetMs": 1350,
+      "endOffsetMs": 4575
+    },
+    {
+      "text": "walking forward with measured,",
+      "startOffsetMs": 4775,
+      "endOffsetMs": 6288
+    },
+    {
+      "text": "deliberate strides.",
+      "startOffsetMs": 6400,
+      "endOffsetMs": 7600
+    }
+  ]
+}

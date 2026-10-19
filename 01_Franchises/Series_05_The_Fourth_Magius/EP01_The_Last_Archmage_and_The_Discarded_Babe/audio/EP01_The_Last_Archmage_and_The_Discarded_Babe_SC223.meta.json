@@ -1,0 +1,79 @@
+{
+  "scene": 223,
+  "text": "\"Next!\" the corporal barked, stamping a parchment for an armored dwarven blacksmith.",
+  "durationMs": 5568,
+  "rawWords": [
+    {
+      "ttsWord": "Next",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 738,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "corporal",
+      "startMs": 863,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "barked",
+      "startMs": 1288,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "stamping",
+      "startMs": 1900,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2400,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "parchment",
+      "startMs": 2475,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 2988,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3138,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "armored",
+      "startMs": 3250,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "dwarven",
+      "startMs": 3588,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "blacksmith",
+      "startMs": 4013,
+      "endMs": 4700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Next!\" the corporal barked,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1775
+    },
+    {
+      "text": "stamping a parchment for an armored dwarven blacksmith.",
+      "startOffsetMs": 1900,
+      "endOffsetMs": 4800
+    }
+  ]
+}

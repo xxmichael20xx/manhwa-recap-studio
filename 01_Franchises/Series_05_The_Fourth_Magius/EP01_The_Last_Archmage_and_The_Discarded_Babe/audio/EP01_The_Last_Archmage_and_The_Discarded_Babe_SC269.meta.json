@@ -1,0 +1,119 @@
+{
+  "scene": 269,
+  "text": "With a casual motion, Rowan reached out and hooked the chain, pulling the concealed platinum amulet into the light.",
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "With",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 263,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "casual",
+      "startMs": 350,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "motion",
+      "startMs": 838,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 1500,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "reached",
+      "startMs": 1850,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 2175,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2413,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "hooked",
+      "startMs": 2513,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2788,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "chain",
+      "startMs": 2875,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "pulling",
+      "startMs": 3600,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3913,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "concealed",
+      "startMs": 4013,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "platinum",
+      "startMs": 4538,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "amulet",
+      "startMs": 4975,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5413,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5625,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "light",
+      "startMs": 5750,
+      "endMs": 6138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "With a casual motion,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1375
+    },
+    {
+      "text": "Rowan reached out and hooked the chain,",
+      "startOffsetMs": 1500,
+      "endOffsetMs": 3413
+    },
+    {
+      "text": "pulling the concealed platinum amulet into the light.",
+      "startOffsetMs": 3600,
+      "endOffsetMs": 6238
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "scene": 221,
+  "text": "Michael adjusted the straps of his herb rucksack and strolled calmly toward the pedestrian registration queue.",
+  "durationMs": 6480,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "adjusted",
+      "startMs": 463,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 975,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "straps",
+      "startMs": 1075,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1500,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1588,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "herb",
+      "startMs": 1763,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "rucksack",
+      "startMs": 2038,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2600,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "strolled",
+      "startMs": 2725,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 3113,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 3550,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3850,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "pedestrian",
+      "startMs": 3938,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "registration",
+      "startMs": 4525,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "queue",
+      "startMs": 5213,
+      "endMs": 5600
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael adjusted the straps of his herb rucksack",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "and strolled calmly toward the pedestrian registration queue.",
+      "startOffsetMs": 2600,
+      "endOffsetMs": 5700
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "scene": 276,
+  "text": "Rowan stood in stunned silence, his veteran mind connecting the pieces of the horrific scandal.",
+  "durationMs": 5904,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 463,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 750,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "stunned",
+      "startMs": 875,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "silence",
+      "startMs": 1238,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2025,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "veteran",
+      "startMs": 2188,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "mind",
+      "startMs": 2563,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "connecting",
+      "startMs": 2863,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3325,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "pieces",
+      "startMs": 3425,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3875,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3988,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "horrific",
+      "startMs": 4050,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "scandal",
+      "startMs": 4475,
+      "endMs": 5038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan stood in stunned silence,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1925
+    },
+    {
+      "text": "his veteran mind connecting the pieces of the",
+      "startOffsetMs": 2025,
+      "endOffsetMs": 4038
+    },
+    {
+      "text": "horrific scandal.",
+      "startOffsetMs": 4050,
+      "endOffsetMs": 5138
+    }
+  ]
+}

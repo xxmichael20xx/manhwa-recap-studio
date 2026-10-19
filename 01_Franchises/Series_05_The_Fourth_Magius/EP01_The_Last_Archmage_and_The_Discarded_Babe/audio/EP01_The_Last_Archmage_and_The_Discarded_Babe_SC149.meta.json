@@ -1,0 +1,94 @@
+{
+  "scene": 149,
+  "text": "The beast's jaws clamped down with bone-crushing pressure, its four-inch fangs biting into Michael's skin.",
+  "durationMs": 6624,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "beast's",
+      "startMs": 213,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "jaws",
+      "startMs": 663,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "clamped",
+      "startMs": 1050,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 1438,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1738,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "bone-crushing",
+      "startMs": 1900,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "pressure",
+      "startMs": 2575,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3313,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "four-inch",
+      "startMs": 3475,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "fangs",
+      "startMs": 3913,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "biting",
+      "startMs": 4325,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4738,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 4913,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 5325,
+      "endMs": 5763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The beast's jaws clamped down with bone-crushing pressure,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3100
+    },
+    {
+      "text": "its four-inch fangs biting into Michael's skin.",
+      "startOffsetMs": 3313,
+      "endOffsetMs": 5863
+    }
+  ]
+}

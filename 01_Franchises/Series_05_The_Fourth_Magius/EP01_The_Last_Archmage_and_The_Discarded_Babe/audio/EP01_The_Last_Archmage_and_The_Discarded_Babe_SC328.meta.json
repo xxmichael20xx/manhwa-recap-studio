@@ -1,0 +1,74 @@
+{
+  "scene": 328,
+  "text": "An eerie, breathless silence descended over the devastated plaza of Oakhaven.",
+  "durationMs": 5232,
+  "rawWords": [
+    {
+      "ttsWord": "An",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "eerie",
+      "startMs": 225,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "breathless",
+      "startMs": 775,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "silence",
+      "startMs": 1250,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "descended",
+      "startMs": 1725,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 2225,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2400,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "devastated",
+      "startMs": 2525,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "plaza",
+      "startMs": 3175,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3588,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 3738,
+      "endMs": 4350
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "An eerie, breathless silence descended over the devastated",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "plaza of Oakhaven.",
+      "startOffsetMs": 3175,
+      "endOffsetMs": 4450
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "scene": 103,
+  "text": "He crushed the lichen between flat river stones, extracting its viscous green sap and rubbing it over the cuts and bruises covering his arms and legs.",
+  "durationMs": 9000,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "crushed",
+      "startMs": 238,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 663,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "lichen",
+      "startMs": 775,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 1175,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "flat",
+      "startMs": 1563,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 1925,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "stones",
+      "startMs": 2163,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "extracting",
+      "startMs": 2988,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3600,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "viscous",
+      "startMs": 3725,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 4188,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "sap",
+      "startMs": 4513,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4900,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "rubbing",
+      "startMs": 5038,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 5325,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 5425,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5613,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "cuts",
+      "startMs": 5725,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6038,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "bruises",
+      "startMs": 6163,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "covering",
+      "startMs": 6588,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6975,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "arms",
+      "startMs": 7125,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7513,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "legs",
+      "startMs": 7638,
+      "endMs": 8125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He crushed the lichen between flat river stones,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "extracting its viscous green sap and rubbing it",
+      "startOffsetMs": 2988,
+      "endOffsetMs": 5413
+    },
+    {
+      "text": "over the cuts and bruises covering his arms",
+      "startOffsetMs": 5425,
+      "endOffsetMs": 7500
+    },
+    {
+      "text": "and legs.",
+      "startOffsetMs": 7513,
+      "endOffsetMs": 8225
+    }
+  ]
+}

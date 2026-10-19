@@ -1,0 +1,144 @@
+{
+  "scene": 255,
+  "text": "\"This... this was harvested at midnight during the waning moon, wasn't it?\" Rowan muttered in disbelief, looking up at the boy.",
+  "durationMs": 8520,
+  "rawWords": [
+    {
+      "ttsWord": "This",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 725,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 950,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "harvested",
+      "startMs": 1113,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1650,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "midnight",
+      "startMs": 1775,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "during",
+      "startMs": 2250,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2475,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "waning",
+      "startMs": 2575,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "moon",
+      "startMs": 2925,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "wasn't",
+      "startMs": 3463,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 3763,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 4825,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "muttered",
+      "startMs": 5200,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5550,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "disbelief",
+      "startMs": 5688,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 6600,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6938,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 7088,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7163,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 7250,
+      "endMs": 7638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "This...",
+      "startOffsetMs": 50,
+      "endOffsetMs": 600
+    },
+    {
+      "text": "this was harvested at midnight during the waning",
+      "startOffsetMs": 725,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "moon,",
+      "startOffsetMs": 2925,
+      "endOffsetMs": 3313
+    },
+    {
+      "text": "wasn't it?\"",
+      "startOffsetMs": 3463,
+      "endOffsetMs": 4063
+    },
+    {
+      "text": "Rowan muttered in disbelief,",
+      "startOffsetMs": 4825,
+      "endOffsetMs": 6500
+    },
+    {
+      "text": "looking up at the boy.",
+      "startOffsetMs": 6600,
+      "endOffsetMs": 7738
+    }
+  ]
+}

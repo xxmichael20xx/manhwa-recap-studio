@@ -1,0 +1,149 @@
+{
+  "scene": 187,
+  "text": "The chains of crimson lightning shattered with an ear-splitting crack, and the library around him dissolved into a chaotic swirling storm of cosmic memory.",
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "chains",
+      "startMs": 200,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 588,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 700,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 1188,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 1550,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2000,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2138,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "ear-splitting",
+      "startMs": 2238,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "crack",
+      "startMs": 2788,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3525,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3613,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "library",
+      "startMs": 3713,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 4238,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 4588,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "dissolved",
+      "startMs": 4713,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5188,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5400,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "chaotic",
+      "startMs": 5488,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "swirling",
+      "startMs": 5975,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "storm",
+      "startMs": 6463,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6813,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 6938,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "memory",
+      "startMs": 7438,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The chains of crimson lightning shattered with an",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2225
+    },
+    {
+      "text": "ear-splitting crack,",
+      "startOffsetMs": 2238,
+      "endOffsetMs": 3325
+    },
+    {
+      "text": "and the library around him dissolved into a",
+      "startOffsetMs": 3525,
+      "endOffsetMs": 5475
+    },
+    {
+      "text": "chaotic swirling storm of cosmic memory.",
+      "startOffsetMs": 5488,
+      "endOffsetMs": 8013
+    }
+  ]
+}

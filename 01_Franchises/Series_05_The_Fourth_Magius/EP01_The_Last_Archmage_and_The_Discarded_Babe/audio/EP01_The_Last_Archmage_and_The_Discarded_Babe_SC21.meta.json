@@ -1,0 +1,174 @@
+{
+  "scene": 21,
+  "text": "Michael looked down at his trembling limbs in utter disbelief — his body was that of a frail, malnourished five-year-old child, dressed only in a rough-spun grey burlap sackcloth.",
+  "durationMs": 10920,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 500,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 725,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1000,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1063,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 1213,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "limbs",
+      "startMs": 1713,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2050,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "utter",
+      "startMs": 2188,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "disbelief",
+      "startMs": 2425,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3438,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "body",
+      "startMs": 3613,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3988,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 4175,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4363,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4438,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "frail",
+      "startMs": 4525,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "malnourished",
+      "startMs": 5288,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "five-year-old",
+      "startMs": 5850,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "child",
+      "startMs": 6450,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "dressed",
+      "startMs": 7138,
+      "endMs": 7500
+    },
+    {
+      "ttsWord": "only",
+      "startMs": 7513,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7813,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7900,
+      "endMs": 7950
+    },
+    {
+      "ttsWord": "rough-spun",
+      "startMs": 7963,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "grey",
+      "startMs": 8538,
+      "endMs": 8800
+    },
+    {
+      "ttsWord": "burlap",
+      "startMs": 8813,
+      "endMs": 9250
+    },
+    {
+      "ttsWord": "sackcloth",
+      "startMs": 9263,
+      "endMs": 10038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael looked down at his trembling limbs in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2175
+    },
+    {
+      "text": "utter disbelief",
+      "startOffsetMs": 2188,
+      "endOffsetMs": 3225
+    },
+    {
+      "text": "his body was that of a frail,",
+      "startOffsetMs": 3438,
+      "endOffsetMs": 5088
+    },
+    {
+      "text": "malnourished five-year-old child,",
+      "startOffsetMs": 5288,
+      "endOffsetMs": 7025
+    },
+    {
+      "text": "dressed only in a rough-spun grey burlap sackcloth.",
+      "startOffsetMs": 7138,
+      "endOffsetMs": 10138
+    }
+  ]
+}

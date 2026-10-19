@@ -1,0 +1,99 @@
+{
+  "scene": 188,
+  "text": "Michael found his consciousness transported into an ancient apocalyptic battlefield ten thousand years in the past.",
+  "durationMs": 6840,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "found",
+      "startMs": 450,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 750,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "consciousness",
+      "startMs": 900,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "transported",
+      "startMs": 1488,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2138,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2375,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 2525,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 2888,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "battlefield",
+      "startMs": 3613,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 4238,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 4500,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 4925,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5263,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5338,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 5413,
+      "endMs": 5963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael found his consciousness transported into an ancient",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2875
+    },
+    {
+      "text": "apocalyptic battlefield ten thousand years in the past.",
+      "startOffsetMs": 2888,
+      "endOffsetMs": 6063
+    }
+  ]
+}

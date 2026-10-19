@@ -1,0 +1,129 @@
+{
+  "scene": 219,
+  "text": "Long caravans of heavy wooden wagons, escorted by armored mercenaries with steel broadswords, were lined up before the massive oak tollgate.",
+  "durationMs": 8880,
+  "rawWords": [
+    {
+      "ttsWord": "Long",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "caravans",
+      "startMs": 438,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1013,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 1113,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 1425,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "wagons",
+      "startMs": 1700,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "escorted",
+      "startMs": 2475,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3000,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "armored",
+      "startMs": 3163,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "mercenaries",
+      "startMs": 3550,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4225,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "steel",
+      "startMs": 4375,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "broadswords",
+      "startMs": 4725,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 5738,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "lined",
+      "startMs": 5875,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6188,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 6350,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6688,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "massive",
+      "startMs": 6775,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "oak",
+      "startMs": 7200,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "tollgate",
+      "startMs": 7425,
+      "endMs": 8013
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Long caravans of heavy wooden wagons,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2338
+    },
+    {
+      "text": "escorted by armored mercenaries with steel broadswords,",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 5550
+    },
+    {
+      "text": "were lined up before the massive oak tollgate.",
+      "startOffsetMs": 5738,
+      "endOffsetMs": 8113
+    }
+  ]
+}

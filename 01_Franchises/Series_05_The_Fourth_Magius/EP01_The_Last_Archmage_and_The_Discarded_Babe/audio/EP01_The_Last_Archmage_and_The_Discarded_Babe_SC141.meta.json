@@ -1,0 +1,154 @@
+{
+  "scene": 141,
+  "text": "Michael calmly finished his skewer of roasted meat, placed the wooden skewer neatly into the embers, and stood up with his blackwood staff in hand.",
+  "durationMs": 8640,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 475,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "finished",
+      "startMs": 888,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1288,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "skewer",
+      "startMs": 1413,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1838,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "roasted",
+      "startMs": 1963,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 2375,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "placed",
+      "startMs": 2950,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3313,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 3413,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "skewer",
+      "startMs": 3713,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "neatly",
+      "startMs": 4088,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4500,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4700,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "embers",
+      "startMs": 4800,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5525,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 5688,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 5925,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6088,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6175,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 6313,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 6813,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7200,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 7313,
+      "endMs": 7775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael calmly finished his skewer of roasted meat,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2775
+    },
+    {
+      "text": "placed the wooden skewer neatly into the embers,",
+      "startOffsetMs": 2950,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "and stood up with his blackwood staff in",
+      "startOffsetMs": 5525,
+      "endOffsetMs": 7300
+    },
+    {
+      "text": "hand.",
+      "startOffsetMs": 7313,
+      "endOffsetMs": 7875
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "scene": 12,
+  "text": "A blinding tear in the fabric of spacetime detonated from the centre of the book, unfurling a pitch-black gravitational singularity that pulled the sky, the clouds, and the incoming spells inward.",
+  "durationMs": 11448,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 188,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "tear",
+      "startMs": 663,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 963,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1038,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "fabric",
+      "startMs": 1125,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1600,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "spacetime",
+      "startMs": 1700,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "detonated",
+      "startMs": 2325,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2863,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3000,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "centre",
+      "startMs": 3088,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3463,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3550,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "book",
+      "startMs": 3650,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "unfurling",
+      "startMs": 4263,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4800,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "pitch-black",
+      "startMs": 4875,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "gravitational",
+      "startMs": 5438,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "singularity",
+      "startMs": 6175,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6875,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "pulled",
+      "startMs": 7063,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7313,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 7400,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8075,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 8200,
+      "endMs": 8738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 8963,
+      "endMs": 9088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9100,
+      "endMs": 9175
+    },
+    {
+      "ttsWord": "incoming",
+      "startMs": 9188,
+      "endMs": 9688
+    },
+    {
+      "ttsWord": "spells",
+      "startMs": 9700,
+      "endMs": 10075
+    },
+    {
+      "ttsWord": "inward",
+      "startMs": 10088,
+      "endMs": 10575
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A blinding tear in the fabric of spacetime",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2313
+    },
+    {
+      "text": "detonated from the centre of the book,",
+      "startOffsetMs": 2325,
+      "endOffsetMs": 4063
+    },
+    {
+      "text": "unfurling a pitch-black gravitational singularity that pulled",
+      "startOffsetMs": 4263,
+      "endOffsetMs": 7300
+    },
+    {
+      "text": "the sky, the clouds,",
+      "startOffsetMs": 7313,
+      "endOffsetMs": 8838
+    },
+    {
+      "text": "and the incoming spells inward.",
+      "startOffsetMs": 8963,
+      "endOffsetMs": 10675
+    }
+  ]
+}

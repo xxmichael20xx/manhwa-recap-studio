@@ -1,0 +1,104 @@
+{
+  "scene": 194,
+  "text": "Blood trickled from his nostrils and ears, his pulse hammering at two hundred beats per minute.",
+  "durationMs": 5688,
+  "rawWords": [
+    {
+      "ttsWord": "Blood",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "trickled",
+      "startMs": 400,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 800,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 938,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "nostrils",
+      "startMs": 1075,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1613,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "ears",
+      "startMs": 1738,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2375,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "pulse",
+      "startMs": 2538,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "hammering",
+      "startMs": 2863,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3300,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 3438,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 3650,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "beats",
+      "startMs": 3975,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "per",
+      "startMs": 4275,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "minute",
+      "startMs": 4425,
+      "endMs": 4813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Blood trickled from his nostrils and ears,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2250
+    },
+    {
+      "text": "his pulse hammering at two hundred beats per",
+      "startOffsetMs": 2375,
+      "endOffsetMs": 4413
+    },
+    {
+      "text": "minute.",
+      "startOffsetMs": 4425,
+      "endOffsetMs": 4913
+    }
+  ]
+}

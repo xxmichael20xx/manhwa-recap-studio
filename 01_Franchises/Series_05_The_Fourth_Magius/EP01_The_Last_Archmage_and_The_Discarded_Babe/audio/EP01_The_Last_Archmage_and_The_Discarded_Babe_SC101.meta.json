@@ -1,0 +1,134 @@
+{
+  "scene": 101,
+  "text": "Using the sharp edge of a split flintstone, Michael began cutting thick hemlock boughs, constructing a lean-to shelter against the limestone wall.",
+  "durationMs": 8856,
+  "rawWords": [
+    {
+      "ttsWord": "Using",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 450,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 525,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "edge",
+      "startMs": 900,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1150,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1225,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "split",
+      "startMs": 1300,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "flintstone",
+      "startMs": 1663,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2550,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "began",
+      "startMs": 2850,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "cutting",
+      "startMs": 3250,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "thick",
+      "startMs": 3575,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "hemlock",
+      "startMs": 3838,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "boughs",
+      "startMs": 4300,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "constructing",
+      "startMs": 4975,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5563,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "lean-to",
+      "startMs": 5625,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "shelter",
+      "startMs": 6063,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 6575,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6888,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "limestone",
+      "startMs": 6988,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 7575,
+      "endMs": 7988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Using the sharp edge of a split flintstone,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "Michael began cutting thick hemlock boughs,",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 4825
+    },
+    {
+      "text": "constructing a lean-to shelter against the limestone wall.",
+      "startOffsetMs": 4975,
+      "endOffsetMs": 8088
+    }
+  ]
+}

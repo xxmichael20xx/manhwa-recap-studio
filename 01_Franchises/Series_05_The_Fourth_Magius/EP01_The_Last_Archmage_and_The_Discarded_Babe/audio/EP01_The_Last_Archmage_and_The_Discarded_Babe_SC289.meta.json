@@ -1,0 +1,204 @@
+{
+  "scene": 289,
+  "text": "\"Twelve seconds of chanting, thirty paces of backward drift, and an output that couldn't boil an egg,\" Michael noted dryly. \"If a goblin rushed him, he would be skewered before the fourth syllable.\"",
+  "durationMs": 12552,
+  "rawWords": [
+    {
+      "ttsWord": "Twelve",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 438,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 850,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "chanting",
+      "startMs": 950,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 1738,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "paces",
+      "startMs": 2025,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2463,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 2588,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "drift",
+      "startMs": 3013,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3713,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3838,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "output",
+      "startMs": 3975,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 4450,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "couldn't",
+      "startMs": 4638,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "boil",
+      "startMs": 4938,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5250,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "egg",
+      "startMs": 5388,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 5975,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "noted",
+      "startMs": 6338,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "dryly",
+      "startMs": 6638,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "If",
+      "startMs": 8038,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 8213,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "goblin",
+      "startMs": 8313,
+      "endMs": 8775
+    },
+    {
+      "ttsWord": "rushed",
+      "startMs": 8788,
+      "endMs": 9075
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 9088,
+      "endMs": 9313
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 9538,
+      "endMs": 9625
+    },
+    {
+      "ttsWord": "would",
+      "startMs": 9638,
+      "endMs": 9750
+    },
+    {
+      "ttsWord": "be",
+      "startMs": 9763,
+      "endMs": 9875
+    },
+    {
+      "ttsWord": "skewered",
+      "startMs": 9888,
+      "endMs": 10363
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 10375,
+      "endMs": 10713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10725,
+      "endMs": 10800
+    },
+    {
+      "ttsWord": "fourth",
+      "startMs": 10813,
+      "endMs": 11113
+    },
+    {
+      "ttsWord": "syllable",
+      "startMs": 11125,
+      "endMs": 11688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Twelve seconds of chanting,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1563
+    },
+    {
+      "text": "thirty paces of backward drift,",
+      "startOffsetMs": 1738,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "and an output that couldn't boil an egg,\"",
+      "startOffsetMs": 3713,
+      "endOffsetMs": 5800
+    },
+    {
+      "text": "Michael noted dryly.",
+      "startOffsetMs": 5975,
+      "endOffsetMs": 7275
+    },
+    {
+      "text": "If a goblin rushed him,",
+      "startOffsetMs": 8038,
+      "endOffsetMs": 9413
+    },
+    {
+      "text": "he would be skewered before the fourth syllable.\"",
+      "startOffsetMs": 9538,
+      "endOffsetMs": 11788
+    }
+  ]
+}

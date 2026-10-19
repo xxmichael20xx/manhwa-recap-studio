@@ -1,0 +1,119 @@
+{
+  "scene": 150,
+  "text": "But instead of blood spraying, a sharp metallic CLANG rang out through the clearing, like iron striking granite.",
+  "durationMs": 6888,
+  "rawWords": [
+    {
+      "ttsWord": "But",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "instead",
+      "startMs": 213,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 575,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "blood",
+      "startMs": 713,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "spraying",
+      "startMs": 1000,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1750,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 1788,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "metallic",
+      "startMs": 2138,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "CLANG",
+      "startMs": 2638,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "rang",
+      "startMs": 3038,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 3300,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3513,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3688,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "clearing",
+      "startMs": 3800,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 4500,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 4725,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "striking",
+      "startMs": 5063,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "granite",
+      "startMs": 5525,
+      "endMs": 6025
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "But instead of blood spraying,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1600
+    },
+    {
+      "text": "a sharp metallic CLANG rang out through the",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 3788
+    },
+    {
+      "text": "clearing,",
+      "startOffsetMs": 3800,
+      "endOffsetMs": 4338
+    },
+    {
+      "text": "like iron striking granite.",
+      "startOffsetMs": 4500,
+      "endOffsetMs": 6125
+    }
+  ]
+}

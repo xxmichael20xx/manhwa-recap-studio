@@ -1,0 +1,164 @@
+{
+  "scene": 239,
+  "text": "Michael ignored the pompous displays, his sharp gaze searching the shop signs until he spotted an weathered wooden shingle depicting a mortar, pestle, and an oak branch.",
+  "durationMs": 9816,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "ignored",
+      "startMs": 475,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 863,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "pompous",
+      "startMs": 950,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "displays",
+      "startMs": 1375,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2263,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 2400,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "gaze",
+      "startMs": 2763,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "searching",
+      "startMs": 3038,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3438,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 3513,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "signs",
+      "startMs": 3863,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 4288,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 4575,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "spotted",
+      "startMs": 4688,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5150,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "weathered",
+      "startMs": 5263,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 5575,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "shingle",
+      "startMs": 5875,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "depicting",
+      "startMs": 6238,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6713,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "mortar",
+      "startMs": 6763,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "pestle",
+      "startMs": 7313,
+      "endMs": 7763
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7963,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 8075,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "oak",
+      "startMs": 8213,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "branch",
+      "startMs": 8413,
+      "endMs": 8950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael ignored the pompous displays,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2125
+    },
+    {
+      "text": "his sharp gaze searching the shop signs until",
+      "startOffsetMs": 2263,
+      "endOffsetMs": 4563
+    },
+    {
+      "text": "he spotted an weathered wooden shingle depicting a",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 6750
+    },
+    {
+      "text": "mortar, pestle, and an oak branch.",
+      "startOffsetMs": 6763,
+      "endOffsetMs": 9050
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "scene": 316,
+  "text": "Blinding cyan lightning ignited along the length of his blackwood staff, crackling with a terrifying high-frequency whine that drowned out the roaring wyrm.",
+  "durationMs": 9336,
+  "rawWords": [
+    {
+      "ttsWord": "Blinding",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 538,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 1050,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "ignited",
+      "startMs": 1425,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 1863,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2175,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "length",
+      "startMs": 2288,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2575,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2663,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 2800,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 3288,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "crackling",
+      "startMs": 4050,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4538,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4663,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "terrifying",
+      "startMs": 4738,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "high-frequency",
+      "startMs": 5375,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "whine",
+      "startMs": 6138,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6450,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "drowned",
+      "startMs": 6575,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 6938,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7100,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "roaring",
+      "startMs": 7200,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "wyrm",
+      "startMs": 7563,
+      "endMs": 8463
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Blinding cyan lightning ignited along the length of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2650
+    },
+    {
+      "text": "his blackwood staff,",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 3875
+    },
+    {
+      "text": "crackling with a terrifying high-frequency whine that drowned",
+      "startOffsetMs": 4050,
+      "endOffsetMs": 6925
+    },
+    {
+      "text": "out the roaring wyrm.",
+      "startOffsetMs": 6938,
+      "endOffsetMs": 8563
+    }
+  ]
+}

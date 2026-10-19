@@ -1,0 +1,99 @@
+{
+  "scene": 137,
+  "text": "Three pairs of glowing amber eyes emerged from the shadowy treeline fifty yards from Michael's campsite.",
+  "durationMs": 6576,
+  "rawWords": [
+    {
+      "ttsWord": "Three",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "pairs",
+      "startMs": 375,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 750,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 863,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 1275,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 1650,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "emerged",
+      "startMs": 2013,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2500,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2638,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "shadowy",
+      "startMs": 2713,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "treeline",
+      "startMs": 3238,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "fifty",
+      "startMs": 3750,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "yards",
+      "startMs": 4125,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4500,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 4638,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "campsite",
+      "startMs": 5050,
+      "endMs": 5700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Three pairs of glowing amber eyes emerged from",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "the shadowy treeline fifty yards from Michael's campsite.",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 5800
+    }
+  ]
+}

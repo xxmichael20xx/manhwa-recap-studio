@@ -1,0 +1,134 @@
+{
+  "scene": 98,
+  "text": "Two miles past the river bend, he discovered a natural limestone outcrop nestled beneath the roots of a colossal ancient pine tree.",
+  "durationMs": 8040,
+  "rawWords": [
+    {
+      "ttsWord": "Two",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "miles",
+      "startMs": 263,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "past",
+      "startMs": 663,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1050,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 1150,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "bend",
+      "startMs": 1413,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 2013,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "discovered",
+      "startMs": 2125,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2600,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "natural",
+      "startMs": 2650,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "limestone",
+      "startMs": 3138,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "outcrop",
+      "startMs": 3763,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "nestled",
+      "startMs": 4250,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 4675,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4988,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 5100,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5413,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5475,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "colossal",
+      "startMs": 5550,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 6113,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "pine",
+      "startMs": 6463,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "tree",
+      "startMs": 6750,
+      "endMs": 7163
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Two miles past the river bend,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1875
+    },
+    {
+      "text": "he discovered a natural limestone outcrop nestled beneath",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 4975
+    },
+    {
+      "text": "the roots of a colossal ancient pine tree.",
+      "startOffsetMs": 4988,
+      "endOffsetMs": 7263
+    }
+  ]
+}

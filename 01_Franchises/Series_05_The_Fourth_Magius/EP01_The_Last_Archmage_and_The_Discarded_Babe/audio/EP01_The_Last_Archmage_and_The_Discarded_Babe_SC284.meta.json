@@ -1,0 +1,129 @@
+{
+  "scene": 284,
+  "text": "In the courtyard behind the shop, three teenage students from the Oakhaven Municipal Magic Academy were practicing spellcasting under the streetlamps.",
+  "durationMs": 8736,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 213,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "courtyard",
+      "startMs": 313,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 825,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1163,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 1225,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 1888,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "teenage",
+      "startMs": 2213,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 2713,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3125,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3263,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 3375,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "Municipal",
+      "startMs": 3875,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "Magic",
+      "startMs": 4400,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "Academy",
+      "startMs": 4775,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 5300,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "practicing",
+      "startMs": 5450,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "spellcasting",
+      "startMs": 6025,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 6813,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7000,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "streetlamps",
+      "startMs": 7088,
+      "endMs": 7863
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In the courtyard behind the shop,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1763
+    },
+    {
+      "text": "three teenage students from the Oakhaven Municipal Magic",
+      "startOffsetMs": 1888,
+      "endOffsetMs": 4763
+    },
+    {
+      "text": "Academy were practicing spellcasting under the streetlamps.",
+      "startOffsetMs": 4775,
+      "endOffsetMs": 7963
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "scene": 185,
+  "text": "He stood before the central obsidian pedestal, where the chained crimson-lightning grimoire hovered waiting for him.",
+  "durationMs": 6480,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 238,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 538,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 900,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 1000,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 1388,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "pedestal",
+      "startMs": 1925,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "where",
+      "startMs": 2700,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2825,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "chained",
+      "startMs": 2913,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "crimson-lightning",
+      "startMs": 3300,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "grimoire",
+      "startMs": 4050,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "hovered",
+      "startMs": 4488,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "waiting",
+      "startMs": 4825,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 5163,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 5350,
+      "endMs": 5613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He stood before the central obsidian pedestal,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2563
+    },
+    {
+      "text": "where the chained crimson-lightning grimoire hovered waiting for",
+      "startOffsetMs": 2700,
+      "endOffsetMs": 5338
+    },
+    {
+      "text": "him.",
+      "startOffsetMs": 5350,
+      "endOffsetMs": 5713
+    }
+  ]
+}

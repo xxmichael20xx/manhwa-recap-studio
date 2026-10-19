@@ -1,0 +1,149 @@
+{
+  "scene": 9,
+  "text": "Ten thousand elemental lances of blinding plasma, compressed lightning, and molten brimstone erupted simultaneously, converging upon the lonely summit in an apocalyptic storm.",
+  "durationMs": 11064,
+  "rawWords": [
+    {
+      "ttsWord": "Ten",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 338,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "elemental",
+      "startMs": 763,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "lances",
+      "startMs": 1250,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1700,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 1838,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "plasma",
+      "startMs": 2300,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "compressed",
+      "startMs": 3025,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 3550,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4275,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "molten",
+      "startMs": 4413,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "brimstone",
+      "startMs": 4800,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "erupted",
+      "startMs": 5338,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "simultaneously",
+      "startMs": 5763,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "converging",
+      "startMs": 7038,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 7575,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7850,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "lonely",
+      "startMs": 7938,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "summit",
+      "startMs": 8313,
+      "endMs": 8738
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 8750,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 8900,
+      "endMs": 8975
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 8988,
+      "endMs": 9688
+    },
+    {
+      "ttsWord": "storm",
+      "startMs": 9700,
+      "endMs": 10200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ten thousand elemental lances of blinding plasma,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2913
+    },
+    {
+      "text": "compressed lightning,",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 4088
+    },
+    {
+      "text": "and molten brimstone erupted simultaneously,",
+      "startOffsetMs": 4275,
+      "endOffsetMs": 6900
+    },
+    {
+      "text": "converging upon the lonely summit in an apocalyptic",
+      "startOffsetMs": 7038,
+      "endOffsetMs": 9688
+    },
+    {
+      "text": "storm.",
+      "startOffsetMs": 9700,
+      "endOffsetMs": 10300
+    }
+  ]
+}

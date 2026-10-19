@@ -1,0 +1,139 @@
+{
+  "scene": 270,
+  "text": "The moment Rowan saw the star sapphire and the coiled dragon-lightning crest, the veteran battle-mage stiffened as if struck by an arrow.",
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "moment",
+      "startMs": 188,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 550,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "saw",
+      "startMs": 888,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1125,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "star",
+      "startMs": 1250,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "sapphire",
+      "startMs": 1638,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2313,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2388,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "coiled",
+      "startMs": 2488,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "dragon-lightning",
+      "startMs": 2900,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "crest",
+      "startMs": 3600,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4338,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "veteran",
+      "startMs": 4463,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "battle-mage",
+      "startMs": 4850,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "stiffened",
+      "startMs": 5400,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5850,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 6013,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "struck",
+      "startMs": 6125,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 6500,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6688,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "arrow",
+      "startMs": 6838,
+      "endMs": 7263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The moment Rowan saw the star sapphire and",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2375
+    },
+    {
+      "text": "the coiled dragon-lightning crest,",
+      "startOffsetMs": 2388,
+      "endOffsetMs": 4163
+    },
+    {
+      "text": "the veteran battle-mage stiffened as if struck by",
+      "startOffsetMs": 4338,
+      "endOffsetMs": 6675
+    },
+    {
+      "text": "an arrow.",
+      "startOffsetMs": 6688,
+      "endOffsetMs": 7363
+    }
+  ]
+}

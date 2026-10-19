@@ -1,0 +1,124 @@
+{
+  "scene": 311,
+  "text": "He gripped his carved blackwood staff in both hands, his cyan eyes narrowing as his mind executed lightning-fast calculations.",
+  "durationMs": 8376,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "gripped",
+      "startMs": 238,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 538,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "carved",
+      "startMs": 700,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 1075,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 1550,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1975,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "both",
+      "startMs": 2100,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 2338,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3050,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 3225,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3763,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "narrowing",
+      "startMs": 4100,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4675,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4813,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "mind",
+      "startMs": 4950,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "executed",
+      "startMs": 5275,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "lightning-fast",
+      "startMs": 5863,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "calculations",
+      "startMs": 6588,
+      "endMs": 7513
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He gripped his carved blackwood staff in both",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2325
+    },
+    {
+      "text": "hands,",
+      "startOffsetMs": 2338,
+      "endOffsetMs": 2900
+    },
+    {
+      "text": "his cyan eyes narrowing as his mind executed",
+      "startOffsetMs": 3050,
+      "endOffsetMs": 5850
+    },
+    {
+      "text": "lightning-fast calculations.",
+      "startOffsetMs": 5863,
+      "endOffsetMs": 7613
+    }
+  ]
+}

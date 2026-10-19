@@ -1,0 +1,232 @@
+{
+  "series_id": "Series_05_The_Fourth_Magius",
+  "series_title": "The Fourth Magius: Rebirth of the Discarded Scion",
+  "format": "16:9 Full-Bleed Landscape",
+  "archetype": "Dual-Discipline Sovereign (Arcane Spellcraft + Kinetic Mana-Forged Flesh)",
+  "characters": [
+    {
+      "id": "michael_montrey_child",
+      "name": "Michael Montrey (Child)",
+      "token": "@{Michael Montrey}",
+      "tier": 1,
+      "role": "Protagonist (Child Phase, Age 5-7)",
+      "age": 5,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Dual-Vessel Sovereign (Apparent: Talentless Orphan)",
+        "strength": 14,
+        "agility": 15,
+        "constitution": 20,
+        "perception": 35,
+        "talent": "Vessel Mana-Forging & Primordial Arcana"
+      },
+      "appearance": {
+        "hair": "Messy raven-black hair falling naturally over forehead",
+        "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
+        "physique": "Small 5-year-old boy build, but carrying himself with immaculate balance, straight posture, and quiet dignity",
+        "attire": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, simple leather hide wraps for shoes",
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, tucked small bone hunting knife"
+      },
+      "dna_prompt_anchor": "@{Michael Montrey}, 5-year-old male manhwa protagonist, messy raven-black hair, piercing glowing cyan eyes, calm intense analytical expression, wearing rough-spun grey tunic with hemp cord belt, patched charcoal trousers, quiet confident stance, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "01_Protagonist_Michael_Montrey_Child.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00001",
+      "flowName": "Michael Montrey",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "michael_montrey_apex",
+      "name": "Apex Archmage Michael",
+      "token": "@{Apex Archmage Michael}",
+      "tier": 1,
+      "role": "Protagonist (Past Life Tier 10 Sovereign)",
+      "age": 28,
+      "stats_baseline": {
+        "level": 100,
+        "class": "Tier 10 Continental Archmage",
+        "strength": 65,
+        "agility": 70,
+        "constitution": 85,
+        "perception": 120,
+        "talent": "Primordial Elemental Synthesis"
+      },
+      "appearance": {
+        "hair": "Long windswept raven-black hair tied loosely behind shoulders",
+        "eyes": "Radiant sapphire eyes pulsing with ancient concentric spell rings",
+        "physique": "Tall, lean, commanding aristocratic archmage build with battle-hardened poise",
+        "attire": "Midnight-blue high-collared archmage mantle embroidered with glowing golden celestial constellations, dark leather combat doublet beneath",
+        "weapons": "The Primordial Codex radiating golden divine light hovering beside his right hand"
+      },
+      "dna_prompt_anchor": "@{Michael Montrey (Apex Archmage)}, handsome 28-year-old male archmage sovereign, flowing dark raven hair, radiant glowing sapphire eyes with arcane circles, commanding stern expression, high-collared midnight-blue mantle with glowing golden runes, holding a celestial divine grimoire, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, epic magical aura, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "02_Past_Life_Michael_Apex.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00002",
+      "flowName": "Apex Archmage Michael",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "patriarch_valerius_montrey",
+      "name": "Patriarch Valerius Montrey",
+      "token": "@{Patriarch Valerius Montrey}",
+      "tier": 1,
+      "role": "Antagonist (Head of House Montrey / Biological Father)",
+      "age": 45,
+      "stats_baseline": {
+        "level": 65,
+        "class": "Tier 7 High Archmage (Wind-Lightning Lineage)",
+        "strength": 22,
+        "agility": 28,
+        "constitution": 30,
+        "perception": 55,
+        "talent": "Ancestral Gale Tempest"
+      },
+      "appearance": {
+        "hair": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, manicured short beard",
+        "eyes": "Cold, merciless steel-grey eyes brimming with ruthless aristocratic pride",
+        "physique": "Tall, broad-shouldered nobleman carrying an ornate wind-attuned silver cane",
+        "attire": "Opulent sapphire-velvet coat lined with ermine fur, gilded silver frogging, high-collared silk cravat pinned with the Montrey dragon brooch",
+        "weapons": "Wind-attuned platinum cane with a concealed enchanted thrusting blade"
+      },
+      "dna_prompt_anchor": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp cold grey eyes, cruel proud expression, wearing sapphire-velvet fur-lined coat with ornate silver dragon embroidery, holding a platinum cane, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "03_Antagonist_Patriarch_Valerius.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00003",
+      "flowName": "Patriarch Valerius Montrey",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "elder_cassius_montrey",
+      "name": "Head Elder Cassius Montrey",
+      "token": "@{Head Elder Cassius}",
+      "tier": 1,
+      "role": "Antagonist (House Elder / Discard Order Proctor)",
+      "age": 62,
+      "stats_baseline": {
+        "level": 58,
+        "class": "Tier 6 Circle Evaluator",
+        "strength": 15,
+        "agility": 18,
+        "constitution": 22,
+        "perception": 48,
+        "talent": "Vessel Appraisal & Lineage Purging"
+      },
+      "appearance": {
+        "hair": "Thin, receding snow-white hair, gaunt wrinkled face with hooked nose",
+        "eyes": "Narrowed, hooded dark eyes filled with elitist contempt and zero empathy",
+        "physique": "Slightly hunched, lean frame wearing ceremonial arcane robes",
+        "attire": "Heavy dark-navy ceremonial robes with silver lightning runes along sleeves, wearing obsidian diagnostic rings on fingers",
+        "weapons": "Carrying an ornate brass diagnostic resonance bell used to test infant mana flow"
+      },
+      "dna_prompt_anchor": "@{Head Elder Cassius}, 62-year-old gaunt ruthless noble elder, thin white hair, hooked nose, sneering contemptuous face, dark navy ceremonial robes with silver runes, holding an antique diagnostic brass bell, dark fantasy manhwa art style, sharp ink linework, stark cold shadows, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "04_Antagonist_Elder_Cassius.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00004",
+      "flowName": "Head Elder Cassius",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "elder_rowan_thorne",
+      "name": "Elder Rowan Thorne",
+      "token": "@{Elder Rowan Thorne}",
+      "tier": 1,
+      "role": "Supporting Ally (Frontier Veteran Battle-Mage & Herbalist)",
+      "age": 55,
+      "stats_baseline": {
+        "level": 40,
+        "class": "Tier 4 Retired Battle-Mage / Earth Craftsman",
+        "strength": 35,
+        "agility": 22,
+        "constitution": 38,
+        "perception": 30,
+        "talent": "Earthen Fortification & Plant Extraction"
+      },
+      "appearance": {
+        "hair": "Rough-cut grizzled salt-and-pepper hair with a thick unkempt beard",
+        "eyes": "Warm, weathered hazel eyes bearing scars of ancient frontier skirmishes, honest and observant",
+        "physique": "Sturdy, stocky barrel-chested build with heavy calloused forearms",
+        "attire": "Durable brown leather hunter doublet over woollen tunic, canvas work trousers tucked into muddy frontier boots, leather tool belt carrying dried herb satchels",
+        "weapons": "Heavy iron-shod oak quarterstaff leaning against workbench, curved steel skinning knife"
+      },
+      "dna_prompt_anchor": "@{Elder Rowan Thorne}, 55-year-old burly frontier veteran mentor, rugged salt-and-pepper beard, weathered kind hazel eyes, warm encouraging smile, brown leather doublet, rolled sleeves, calloused hands, carrying an iron-shod walking staff, dark fantasy manhwa art style, sharp ink linework, warm earthy lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "05_Supporting_Elder_Rowan.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00005",
+      "flowName": "Elder Rowan Thorne",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "calamity_abyssal_wyrm",
+      "name": "Calamity Abyssal Wyrm",
+      "token": "@{Boss: Calamity Abyssal Wyrm}",
+      "tier": 1,
+      "role": "Boss / Colossal Entity (Ancient Blackwood Calamity)",
+      "age": 400,
+      "stats_baseline": {
+        "level": 35,
+        "class": "Tier 4 Rift Beast Calamity",
+        "strength": 75,
+        "agility": 45,
+        "constitution": 80,
+        "perception": 40,
+        "talent": "Abyssal Venom Breath & Subterranean Trample"
+      },
+      "appearance": {
+        "hair": "Zero hair; colossal armored serpentine dragon with jagged obsidian scales",
+        "eyes": "Six glowing crimson predatory eyes arranged along its horned reptilian skull",
+        "physique": "Fifteen-metre serpentine body with segmented armored carapace, dripping noxious purple corrosive venom from its maw",
+        "attire": "None; primal beast",
+        "weapons": "Needle-sharp obsidian fangs, barbed tail club capable of shattering castle ramparts"
+      },
+      "dna_prompt_anchor": "@{Boss: Calamity Abyssal Wyrm}, colossal 15-metre serpentine dragon beast, jagged obsidian armor scales, six glowing crimson eyes, venomous purple corrosive fumes erupting from maw, massive horned skull, dark fantasy action manhwa art style, sharp ink linework, cinematic dark volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "06_Boss_Abyssal_Wyrm.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00006",
+      "flowName": "Calamity Abyssal Wyrm",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "grand_inquisitor_malakor",
+      "name": "Grand Inquisitor Malakor",
+      "token": "@{Grand Inquisitor}",
+      "tier": 1,
+      "role": "Antagonist (Prelate of the United Imperial Inquisitions)",
+      "age": 60,
+      "stats_baseline": {
+        "level": 85,
+        "class": "Tier 8 Imperial High Inquisitor (Solar-Holy Lineage)",
+        "strength": 25,
+        "agility": 28,
+        "constitution": 35,
+        "perception": 70,
+        "talent": "Holy Retribution & Coordinated Fleet Bombardment"
+      },
+      "appearance": {
+        "hair": "Receding severe silver hair, gaunt aristocratic face contorted with fanatical righteous fury",
+        "eyes": "Blazing amber-gold eyes filled with zealous fanaticism",
+        "physique": "Tall, skeletal, imposing religious prelate stance",
+        "attire": "High-collared ivory and gold ceremonial inquisitor robes, heavy golden sunburst gorget, embroidered celestial runes on mantle",
+        "weapons": "Ornate platinum staff topped with a large glowing multifaceted diamond crystal"
+      },
+      "dna_prompt_anchor": "@{Grand Inquisitor}, austere 60-year-old imperial inquisitor prelate, receding silver hair, gaunt severe face, sharp manic eyes, high-collared ivory-and-gold ceremonial robes, gold sunburst gorget, holding a soaring platinum staff topped with a faceted glowing diamond crystal, dark fantasy action manhwa art style, sharp ink linework, cinematic volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "07_Antagonist_Grand_Inquisitor.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00010",
+      "flowName": "Grand Inquisitor",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    }
+  ]
+}

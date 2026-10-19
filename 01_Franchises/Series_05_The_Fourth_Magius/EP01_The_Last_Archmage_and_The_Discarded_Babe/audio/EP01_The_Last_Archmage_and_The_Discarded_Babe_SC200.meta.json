@@ -1,0 +1,89 @@
+{
+  "scene": 200,
+  "text": "SPELL IMPRINTED PERMANENTLY: CELESTIAL THUNDER-STRIKE (TIER 1). INTEGRATED DIRECTLY INTO FLESH AND CORE.",
+  "durationMs": 8208,
+  "rawWords": [
+    {
+      "ttsWord": "SPELL",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "IMPRINTED",
+      "startMs": 475,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "PERMANENTLY",
+      "startMs": 988,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "CELESTIAL",
+      "startMs": 1863,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "THUNDER-STRIKE",
+      "startMs": 2488,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "TIER",
+      "startMs": 3425,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "1",
+      "startMs": 3700,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "INTEGRATED",
+      "startMs": 4913,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "DIRECTLY",
+      "startMs": 5525,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "INTO",
+      "startMs": 6075,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "FLESH",
+      "startMs": 6300,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "AND",
+      "startMs": 6700,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "CORE",
+      "startMs": 6838,
+      "endMs": 7325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SPELL IMPRINTED PERMANENTLY:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1700
+    },
+    {
+      "text": "CELESTIAL THUNDER-STRIKE TIER 1).",
+      "startOffsetMs": 1863,
+      "endOffsetMs": 4150
+    },
+    {
+      "text": "INTEGRATED DIRECTLY INTO FLESH AND CORE.",
+      "startOffsetMs": 4913,
+      "endOffsetMs": 7425
+    }
+  ]
+}

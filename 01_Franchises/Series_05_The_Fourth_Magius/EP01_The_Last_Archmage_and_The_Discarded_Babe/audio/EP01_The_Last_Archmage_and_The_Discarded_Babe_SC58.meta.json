@@ -1,0 +1,109 @@
+{
+  "scene": 58,
+  "text": "Half-submerged beneath grey river stones and tangled reed roots lay a thick rectangular object covered in silt.",
+  "durationMs": 7056,
+  "rawWords": [
+    {
+      "ttsWord": "Half-submerged",
+      "startMs": 50,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 888,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "grey",
+      "startMs": 1213,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 1500,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "stones",
+      "startMs": 1813,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2300,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "tangled",
+      "startMs": 2438,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "reed",
+      "startMs": 2863,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 3125,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "lay",
+      "startMs": 3488,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3713,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "thick",
+      "startMs": 3788,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "rectangular",
+      "startMs": 4113,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "object",
+      "startMs": 4788,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "covered",
+      "startMs": 5250,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5563,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "silt",
+      "startMs": 5713,
+      "endMs": 6188
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Half-submerged beneath grey river stones and tangled reed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "roots lay a thick rectangular object covered in",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 5700
+    },
+    {
+      "text": "silt.",
+      "startOffsetMs": 5713,
+      "endOffsetMs": 6288
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "scene": 320,
+  "text": "Mid-air, Michael planted his left foot against the beast's lower snout, executing a frame-perfect kinetic pivot that redirected the wyrm's biting momentum into the earth.",
+  "durationMs": 10560,
+  "rawWords": [
+    {
+      "ttsWord": "Mid-air",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 838,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "planted",
+      "startMs": 1150,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1538,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 1725,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "foot",
+      "startMs": 1975,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 2238,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2550,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "beast's",
+      "startMs": 2663,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "lower",
+      "startMs": 3063,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "snout",
+      "startMs": 3400,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "executing",
+      "startMs": 4125,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4663,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "frame-perfect",
+      "startMs": 4725,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 5463,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "pivot",
+      "startMs": 5888,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6238,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "redirected",
+      "startMs": 6438,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6975,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "wyrm's",
+      "startMs": 7088,
+      "endMs": 8038
+    },
+    {
+      "ttsWord": "biting",
+      "startMs": 8050,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "momentum",
+      "startMs": 8413,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 8900,
+      "endMs": 9138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9150,
+      "endMs": 9263
+    },
+    {
+      "ttsWord": "earth",
+      "startMs": 9275,
+      "endMs": 9688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Mid-air",
+      "startOffsetMs": 50,
+      "endOffsetMs": 675
+    },
+    {
+      "text": "Michael planted his left foot against the beast's",
+      "startOffsetMs": 838,
+      "endOffsetMs": 3050
+    },
+    {
+      "text": "lower snout,",
+      "startOffsetMs": 3063,
+      "endOffsetMs": 3925
+    },
+    {
+      "text": "executing a frame-perfect kinetic pivot that redirected the",
+      "startOffsetMs": 4125,
+      "endOffsetMs": 7075
+    },
+    {
+      "text": "wyrm's biting momentum into the earth.",
+      "startOffsetMs": 7088,
+      "endOffsetMs": 9788
+    }
+  ]
+}

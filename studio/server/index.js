@@ -762,20 +762,50 @@ function formatAppearance(appearance, fallbackRole = '') {
   return fallbackRole
 }
 
+function buildModelGenerationPrompt(item, format = '16:9 Full-Bleed Landscape', isItem = false) {
+  if (item.generation_prompt) return item.generation_prompt
+  if (item.generationPrompt) return item.generationPrompt
+
+  const isLandscape = (format || '').includes('16:9') || (item.dna_prompt_anchor || '').includes('16:9')
+  const ratioPrefix = isLandscape 
+    ? '16:9 horizontal widescreen cinematic composition.' 
+    : 'Vertical 9:16 portrait.'
+  const ratioSuffix = isLandscape 
+    ? 'horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.' 
+    : 'vertical 9:16, completely textless artwork, no speech bubbles, no words, no banners.'
+
+  let desc = ''
+  if (item.dna_prompt_anchor) {
+    desc = item.dna_prompt_anchor.replace(/^@\{[^}]+\},\s*/, '')
+    if (desc.includes('horizontal 16:9') || desc.includes('vertical 9:16')) {
+      return `${ratioPrefix} ${desc}`
+    }
+  } else if (!isItem && item.appearance) {
+    desc = formatAppearance(item.appearance, item.role || '')
+  } else {
+    desc = item.description || item.visual_dna || item.name
+  }
+
+  return `${ratioPrefix} ${item.name}, ${desc}. Dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, ${ratioSuffix}`
+}
+
 app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   try {
     const { franchiseId } = req.params
     const modelsDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models')
     const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    const charFilesDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Characters')
     
     const allItems = []
 
     // 1. Ingest Characters
     const vaultCharPath = path.join(vaultDir, 'characters.json')
     const manifestCharPath = path.join(modelsDir, 'character_models.json')
+    let seriesFormat = '16:9 Full-Bleed Landscape'
     
     if (fs.existsSync(vaultCharPath)) {
       const rawVault = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
+      if (rawVault.format) seriesFormat = rawVault.format
       const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
       for (const c of charList) {
         const roleStr = (c.role || 'Character').toLowerCase()
@@ -793,12 +823,16 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
                              roleStr.includes('vip')
         const roleCategory = c.category || (isAntagonist ? 'Antagonist' : (isSupporting ? 'Supporting' : 'Protagonist'))
         const plateFile = c.reference_plate || `${c.id}.jpg`
-        const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+        const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
+                           fs.existsSync(path.join(modelsDir, plateFile)) ||
+                           fs.existsSync(path.join(charFilesDir, plateFile))
+        const flowName = c.flowName || (c.token ? c.token.replace(/[@{}]/g, '') : c.name)
+        const genPrompt = buildModelGenerationPrompt(c, seriesFormat, false)
         
         allItems.push({
           id: c.id,
           name: c.name,
-          flowName: c.token ? c.token.replace(/[@{}]/g, '') : c.name,
+          flowName: flowName,
           category: roleCategory,
           role: roleCategory,
           type: 'character',
@@ -810,6 +844,7 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           dnaAnchor: c.dna_prompt_anchor || c.token || c.name,
           fullDna: c.dna_prompt_anchor || '',
           token: c.token || `@{${c.name}}`,
+          generationPrompt: genPrompt,
           flowUuid: c.flowUuid || null,
           episodes: Array.isArray(c.episodes) ? c.episodes : []
         })
@@ -833,11 +868,13 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
       if (rawItems.weapons) {
         for (const [key, item] of Object.entries(rawItems.weapons)) {
           const plateFile = item.reference_plate || `${key}.jpg`
-          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
+                             fs.existsSync(path.join(modelsDir, plateFile)) ||
+                             fs.existsSync(path.join(charFilesDir, plateFile))
           allItems.push({
             id: key,
             name: item.name,
-            flowName: item.token ? item.token.replace(/[@{}]/g, '') : item.name,
+            flowName: item.flowName || (item.token ? item.token.replace(/[@{}]/g, '') : item.name),
             category: 'Weapons',
             role: 'Weapons',
             type: 'weapon',
@@ -848,7 +885,9 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             description: item.visual_dna || `${item.name} (${item.category || 'Signature Weapon'})`,
             dnaAnchor: item.token || `@{Weapon: ${item.name}}`,
             fullDna: item.visual_dna || '',
-            token: item.token || `@{Weapon: ${item.name}}`
+            token: item.token || `@{Weapon: ${item.name}}`,
+            generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
+            flowUuid: item.flowUuid || null
           })
         }
       }
@@ -859,11 +898,13 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           const plateFile = item.reference_plate || `${key}.jpg`
           const isArtifact = (item.category || '').toLowerCase().includes('relic') || (item.category || '').toLowerCase().includes('artifact') || key.includes('artifact') || key.includes('core')
           const categoryName = isArtifact ? 'Artifacts' : 'Props'
-          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || fs.existsSync(path.join(modelsDir, plateFile))
+          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
+                             fs.existsSync(path.join(modelsDir, plateFile)) ||
+                             fs.existsSync(path.join(charFilesDir, plateFile))
           allItems.push({
             id: key,
             name: item.name,
-            flowName: item.token ? item.token.replace(/[@{}]/g, '') : item.name,
+            flowName: item.flowName || (item.token ? item.token.replace(/[@{}]/g, '') : item.name),
             category: categoryName,
             role: categoryName,
             type: isArtifact ? 'artifact' : 'prop',
@@ -874,9 +915,42 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             description: item.visual_dna || `${item.name} (${item.category || 'Prop/Artifact'})`,
             dnaAnchor: item.token || `@{${item.name}}`,
             fullDna: item.visual_dna || '',
-            token: item.token || `@{${item.name}}`
+            token: item.token || `@{${item.name}}`,
+            generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
+            flowUuid: item.flowUuid || null
           })
         }
+      }
+
+      // C. Array of items (e.g. { items: [ ... ] } or [ ... ])
+      const itemsList = Array.isArray(rawItems) ? rawItems : (Array.isArray(rawItems.items) ? rawItems.items : [])
+      for (const item of itemsList) {
+        const itemType = (item.type || item.category || 'Item').toLowerCase()
+        const isWeapon = itemType.includes('weapon') || (item.category && item.category.toLowerCase().includes('weapon'))
+        const isArtifact = itemType.includes('artifact') || itemType.includes('relic') || (item.category && item.category.toLowerCase().includes('relic'))
+        const categoryName = isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : 'Props')
+        const plateFile = item.reference_plate || `${item.id}.jpg`
+        const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
+                           fs.existsSync(path.join(modelsDir, plateFile)) ||
+                           fs.existsSync(path.join(charFilesDir, plateFile))
+        allItems.push({
+          id: item.id,
+          name: item.name,
+          flowName: item.flowName || (item.token ? item.token.replace(/[@{}]/g, '') : item.name),
+          category: categoryName,
+          role: categoryName,
+          type: isWeapon ? 'weapon' : (isArtifact ? 'artifact' : 'prop'),
+          tier: item.true_rank || item.apparent_rank || item.category || categoryName,
+          filename: plateFile,
+          hasPlate: diskExists,
+          url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
+          description: item.description || item.visual_dna || `${item.name} (${categoryName})`,
+          dnaAnchor: item.dna_prompt_anchor || item.token || `@{${item.name}}`,
+          fullDna: item.dna_prompt_anchor || item.visual_dna || '',
+          token: item.token || `@{${item.name}}`,
+          generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
+          flowUuid: item.flowUuid || null
+        })
       }
     }
 
@@ -904,14 +978,15 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             url: `/api/franchises/${franchiseId}/character-models/${f}`,
             description: cleanName,
             dnaAnchor: `@{${cleanName}}`,
-            token: `@{${cleanName}}`
+            token: `@{${cleanName}}`,
+            generationPrompt: `16:9 horizontal widescreen cinematic composition. ${cleanName}, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, completely textless artwork, no words, no banners.`
           }
         })
         return res.json(images)
       }
     }
 
-    // 3. Bidirectional Parity Guard: detect any flow_entities that lack a character/item card
+    // 4. Bidirectional Parity Guard: detect any flow_entities that lack a character/item card
     const flowEntitiesPath = path.join(vaultDir, 'flow_entities.json')
     if (fs.existsSync(flowEntitiesPath)) {
       try {
@@ -920,6 +995,11 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
         allItems.forEach(i => {
           if (i.flowName) existingNames.add(i.flowName.toLowerCase())
           if (i.id) existingNames.add(i.id.toLowerCase())
+          if (i.name) {
+            existingNames.add(i.name.toLowerCase())
+            existingNames.add(i.name.toLowerCase().replace(/^(boss|character|weapon|artifact|prop|item):\s*/i, ''))
+            existingNames.add(i.name.toLowerCase().replace(/\s*\([^)]*\)$/, ''))
+          }
         })
 
         const rawLines = (flowData.rawText || '').split('\n')
@@ -963,6 +1043,132 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   }
 })
 
+// Upload & Replace Character / Item Model Reference Plate (Base64)
+app.post('/api/franchises/:franchiseId/character-models/:modelId/upload-plate', async (req, res) => {
+  try {
+    const { franchiseId, modelId } = req.params
+    const { base64Data, filename: customFilename } = req.body
+    if (!base64Data) {
+      return res.status(400).json({ error: 'base64Data is required' })
+    }
+
+    const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    const charFilesDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Characters')
+    const modelsDir = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models')
+    
+    await fs.promises.mkdir(vaultDir, { recursive: true })
+
+    // Determine extension
+    let ext = 'jpg'
+    const match = base64Data.match(/^data:image\/([a-zA-Z0-9+]+);base64,/)
+    if (match) {
+      const sub = match[1].toLowerCase()
+      if (sub === 'png') ext = 'png'
+      else if (sub === 'webp') ext = 'webp'
+      else if (sub === 'jpeg' || sub === 'jpg') ext = 'jpg'
+    }
+
+    // Lookup metadata in characters.json or items.json
+    const vaultCharPath = path.join(vaultDir, 'characters.json')
+    const vaultItemsPath = path.join(vaultDir, 'items.json')
+    let targetFilename = customFilename || null
+
+    let charData = null
+    let charIndex = -1
+    let itemData = null
+    let itemKey = null
+    let itemIndex = -1
+
+    if (fs.existsSync(vaultCharPath)) {
+      try {
+        const raw = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
+        const list = Array.isArray(raw) ? raw : (raw.characters || [])
+        charIndex = list.findIndex(c => c.id === modelId || c.name === modelId || c.flowName === modelId || c.reference_plate === modelId)
+        if (charIndex !== -1) {
+          charData = raw
+          if (!targetFilename && list[charIndex].reference_plate) {
+            targetFilename = list[charIndex].reference_plate
+          }
+        }
+      } catch (_) {}
+    }
+
+    if (!charData && fs.existsSync(vaultItemsPath)) {
+      try {
+        const raw = JSON.parse(await fs.promises.readFile(vaultItemsPath, 'utf-8'))
+        if (Array.isArray(raw.items)) {
+          itemIndex = raw.items.findIndex(i => i.id === modelId || i.name === modelId || i.reference_plate === modelId)
+          if (itemIndex !== -1) {
+            itemData = raw
+            if (!targetFilename && raw.items[itemIndex].reference_plate) {
+              targetFilename = raw.items[itemIndex].reference_plate
+            }
+          }
+        } else if (raw.weapons && raw.weapons[modelId]) {
+          itemData = raw
+          itemKey = modelId
+          if (!targetFilename && raw.weapons[modelId].reference_plate) {
+            targetFilename = raw.weapons[modelId].reference_plate
+          }
+        } else if (raw.key_props_and_artifacts && raw.key_props_and_artifacts[modelId]) {
+          itemData = raw
+          itemKey = modelId
+          if (!targetFilename && raw.key_props_and_artifacts[modelId].reference_plate) {
+            targetFilename = raw.key_props_and_artifacts[modelId].reference_plate
+          }
+        }
+      } catch (_) {}
+    }
+
+    if (!targetFilename) {
+      targetFilename = `${modelId.replace(/[^a-zA-Z0-9_-]/g, '_')}.${ext}`
+    }
+
+    // Save image buffer to vaultDir
+    const cleanBase64 = base64Data.replace(/^data:image\/\w+;base64,/, '')
+    const buffer = Buffer.from(cleanBase64, 'base64')
+    const targetPath = path.join(vaultDir, targetFilename)
+    await fs.promises.writeFile(targetPath, buffer)
+
+    // Mirror to 00_Characters if directory exists
+    if (fs.existsSync(charFilesDir)) {
+      await fs.promises.writeFile(path.join(charFilesDir, targetFilename), buffer)
+    }
+
+    // Mirror to modelsDir if directory exists
+    if (fs.existsSync(modelsDir)) {
+      await fs.promises.writeFile(path.join(modelsDir, targetFilename), buffer)
+    }
+
+    // Update characters.json or items.json
+    if (charData) {
+      const list = Array.isArray(charData) ? charData : charData.characters
+      list[charIndex].reference_plate = targetFilename
+      list[charIndex].hasPlate = true
+      await fs.promises.writeFile(vaultCharPath, JSON.stringify(charData, null, 2), 'utf-8')
+    } else if (itemData) {
+      if (itemIndex !== -1) {
+        itemData.items[itemIndex].reference_plate = targetFilename
+        itemData.items[itemIndex].hasPlate = true
+      } else if (itemKey && itemData.weapons && itemData.weapons[itemKey]) {
+        itemData.weapons[itemKey].reference_plate = targetFilename
+      } else if (itemKey && itemData.key_props_and_artifacts && itemData.key_props_and_artifacts[itemKey]) {
+        itemData.key_props_and_artifacts[itemKey].reference_plate = targetFilename
+      }
+      await fs.promises.writeFile(vaultItemsPath, JSON.stringify(itemData, null, 2), 'utf-8')
+    }
+
+    res.json({
+      success: true,
+      filename: targetFilename,
+      url: `/api/franchises/${franchiseId}/character-models/${targetFilename}?t=${Date.now()}`
+    })
+  } catch (err) {
+    console.error('Error uploading character reference plate:', err)
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Stream Character / Item Model Reference Plate Image
 app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) => {
   const { franchiseId, filename } = req.params
@@ -971,10 +1177,13 @@ app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) =>
   if (!fs.existsSync(filePath)) {
     filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'models', filename)
   }
+  if (!fs.existsSync(filePath)) {
+    filePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Characters', filename)
+  }
 
   if (fs.existsSync(filePath)) {
     const ext = path.extname(filename).toLowerCase()
-    res.setHeader('Content-Type', ext === '.png' ? 'image/png' : 'image/jpeg')
+    res.setHeader('Content-Type', ext === '.png' ? 'image/png' : (ext === '.webp' ? 'image/webp' : 'image/jpeg'))
     const readStream = fs.createReadStream(filePath)
     readStream.pipe(res)
   } else {
@@ -1183,18 +1392,32 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
     const ttsState = TtsService.getStatus(franchiseId, episodeId)
     const videoState = VideoService.getStatus(franchiseId, episodeId)
 
-    let format = franchiseId.toLowerCase().includes('series_02') ? '16:9' : '9:16'
+    let format = '9:16'
     try {
       const biblePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
       if (fs.existsSync(biblePath)) {
         const bibleContent = fs.readFileSync(biblePath, 'utf-8')
-        const formatMatch = bibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+        const formatMatch = bibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
         if (formatMatch) {
           if (formatMatch[1].includes('16:9')) format = '16:9'
           else if (formatMatch[1].includes('9:16')) format = '9:16'
         }
       }
     } catch (_) {}
+
+    if (format !== '16:9') {
+      try {
+        const charPath = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault', 'characters.json')
+        if (fs.existsSync(charPath)) {
+          const charData = JSON.parse(fs.readFileSync(charPath, 'utf-8'))
+          if (charData.format && charData.format.includes('16:9')) format = '16:9'
+        }
+      } catch (_) {}
+    }
+
+    if (format !== '16:9' && franchiseId.toLowerCase().includes('series_02')) {
+      format = '16:9'
+    }
 
     res.json({
       totalScenes: scenes.length,

@@ -1,0 +1,99 @@
+{
+  "scene": 120,
+  "text": "Leaving his shelter secure, Michael stepped into the surrounding thickets to test his hunting prowess.",
+  "durationMs": 6096,
+  "rawWords": [
+    {
+      "ttsWord": "Leaving",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 450,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "shelter",
+      "startMs": 600,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "secure",
+      "startMs": 1013,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1763,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 2075,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 2425,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2588,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "surrounding",
+      "startMs": 2700,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "thickets",
+      "startMs": 3225,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3650,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "test",
+      "startMs": 3763,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4100,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "hunting",
+      "startMs": 4225,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "prowess",
+      "startMs": 4588,
+      "endMs": 5225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Leaving his shelter secure,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1588
+    },
+    {
+      "text": "Michael stepped into the surrounding thickets to test",
+      "startOffsetMs": 1763,
+      "endOffsetMs": 4088
+    },
+    {
+      "text": "his hunting prowess.",
+      "startOffsetMs": 4100,
+      "endOffsetMs": 5325
+    }
+  ]
+}

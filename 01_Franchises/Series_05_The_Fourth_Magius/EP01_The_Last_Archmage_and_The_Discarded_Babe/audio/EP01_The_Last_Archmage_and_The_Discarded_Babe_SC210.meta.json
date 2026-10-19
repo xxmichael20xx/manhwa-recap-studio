@@ -1,0 +1,114 @@
+{
+  "scene": 210,
+  "text": "Now that he possessed lethal combat sovereignty, Michael knew it was time to establish contact with human society.",
+  "durationMs": 7152,
+  "rawWords": [
+    {
+      "ttsWord": "Now",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 375,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 513,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "possessed",
+      "startMs": 625,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "lethal",
+      "startMs": 1150,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 1488,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "sovereignty",
+      "startMs": 1975,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2825,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "knew",
+      "startMs": 3138,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 3350,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3463,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "time",
+      "startMs": 3613,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3938,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "establish",
+      "startMs": 4063,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "contact",
+      "startMs": 4638,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5188,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "human",
+      "startMs": 5313,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "society",
+      "startMs": 5600,
+      "endMs": 6275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Now that he possessed lethal combat sovereignty,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2650
+    },
+    {
+      "text": "Michael knew it was time to establish contact",
+      "startOffsetMs": 2825,
+      "endOffsetMs": 5175
+    },
+    {
+      "text": "with human society.",
+      "startOffsetMs": 5188,
+      "endOffsetMs": 6375
+    }
+  ]
+}

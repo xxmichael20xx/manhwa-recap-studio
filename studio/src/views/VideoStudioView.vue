@@ -2037,7 +2037,7 @@ const isSavingEntityMap = ref(false)
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
 const is16x9Format = computed(() => {
   if (pipeline.value?.format) return pipeline.value.format === '16:9'
-  return (route.params.franchiseId || '').toLowerCase().includes('series_02')
+  return (route.params.franchiseId || '').toLowerCase().includes('series_02') || (route.params.franchiseId || '').toLowerCase().includes('series_05') || (franchise.value?.bibleContent || '').includes('16:9')
 })
 
 const syncEntityMapping = async () => {
@@ -2508,7 +2508,10 @@ const handleBatchFileInput = async (e) => {
 }
 
 const getFlowDirectiveHeader = (collectionTitle) => {
-  const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || (franchise.value?.bibleContent || '').includes('16:9')
+  const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || 
+    (franchise.value?.bibleContent || '').includes('16:9') || 
+    (franchise.value?.videoFormat || '').includes('16:9') || 
+    (franchise.value?.seriesBible?.videoFormat || '').includes('16:9')
   const aspectInstruction = is16x9 
     ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
     : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
@@ -2534,7 +2537,9 @@ const getFlowDirectiveHeader = (collectionTitle) => {
 6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
 8. CONTEXT-AWARE CROWD & EXTRAS STAGING: Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.
-9. ART STYLE: Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless ${aspectInstruction}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.`
+9. ART STYLE: Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless ${aspectInstruction}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.
+10. CHARACTER ENTITY REFERENCE MAPPING:
+    - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. @{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}).`
 }
 
 // Failed & Cluttered Prompts Drawer State

@@ -1,0 +1,154 @@
+{
+  "scene": 156,
+  "text": "A pulse of concentrated cyan kinetic mana detonated through the wood upon impact, sending the two-hundred-pound predator flying twenty feet backward into a pine trunk.",
+  "durationMs": 9696,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "pulse",
+      "startMs": 188,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 513,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "concentrated",
+      "startMs": 625,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 1338,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 1800,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 2238,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "detonated",
+      "startMs": 2563,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3100,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3288,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "wood",
+      "startMs": 3388,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 3538,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "impact",
+      "startMs": 3863,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "sending",
+      "startMs": 4688,
+      "endMs": 5038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5050,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "two-hundred-pound",
+      "startMs": 5150,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "predator",
+      "startMs": 5963,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "flying",
+      "startMs": 6350,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "twenty",
+      "startMs": 6725,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 7025,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 7300,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7725,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7950,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "pine",
+      "startMs": 8038,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "trunk",
+      "startMs": 8350,
+      "endMs": 8813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A pulse of concentrated cyan kinetic mana detonated",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3088
+    },
+    {
+      "text": "through the wood upon impact,",
+      "startOffsetMs": 3100,
+      "endOffsetMs": 4513
+    },
+    {
+      "text": "sending the two-hundred-pound predator flying twenty feet backward",
+      "startOffsetMs": 4688,
+      "endOffsetMs": 7713
+    },
+    {
+      "text": "into a pine trunk.",
+      "startOffsetMs": 7725,
+      "endOffsetMs": 8913
+    }
+  ]
+}

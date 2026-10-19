@@ -1,0 +1,144 @@
+{
+  "scene": 264,
+  "text": "\"The guild market rate is twelve silver, but I don't cheat genius. Twenty crowns, lad. And consider this shop your permanent trading post.\"",
+  "durationMs": 10704,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "guild",
+      "startMs": 213,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "market",
+      "startMs": 513,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "rate",
+      "startMs": 888,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 1125,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "twelve",
+      "startMs": 1263,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "silver",
+      "startMs": 1625,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 2338,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 2475,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "don't",
+      "startMs": 2550,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "cheat",
+      "startMs": 2825,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "genius",
+      "startMs": 3088,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "Twenty",
+      "startMs": 4600,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "crowns",
+      "startMs": 4975,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "lad",
+      "startMs": 5788,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "And",
+      "startMs": 7163,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "consider",
+      "startMs": 7350,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 7838,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 8000,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 8363,
+      "endMs": 8488
+    },
+    {
+      "ttsWord": "permanent",
+      "startMs": 8500,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "trading",
+      "startMs": 8938,
+      "endMs": 9300
+    },
+    {
+      "ttsWord": "post",
+      "startMs": 9313,
+      "endMs": 9838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The guild market rate is twelve silver,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2200
+    },
+    {
+      "text": "but I don't cheat genius.",
+      "startOffsetMs": 2338,
+      "endOffsetMs": 3838
+    },
+    {
+      "text": "Twenty crowns, lad.",
+      "startOffsetMs": 4600,
+      "endOffsetMs": 6400
+    },
+    {
+      "text": "And consider this shop your permanent trading post.\"",
+      "startOffsetMs": 7163,
+      "endOffsetMs": 9938
+    }
+  ]
+}

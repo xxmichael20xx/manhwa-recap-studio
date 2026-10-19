@@ -1,0 +1,99 @@
+{
+  "scene": 165,
+  "text": "By sunrise, Michael had secured food, warmth, and clothing sufficient for the upcoming winter season.",
+  "durationMs": 7080,
+  "rawWords": [
+    {
+      "ttsWord": "By",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "sunrise",
+      "startMs": 250,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1150,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 1563,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "secured",
+      "startMs": 1738,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "food",
+      "startMs": 2213,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "warmth",
+      "startMs": 2863,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3513,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "clothing",
+      "startMs": 3688,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "sufficient",
+      "startMs": 4113,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 4638,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4763,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "upcoming",
+      "startMs": 4863,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "winter",
+      "startMs": 5388,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "season",
+      "startMs": 5688,
+      "endMs": 6200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "By sunrise, Michael had secured food,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2700
+    },
+    {
+      "text": "warmth, and clothing sufficient for the upcoming winter",
+      "startOffsetMs": 2863,
+      "endOffsetMs": 5675
+    },
+    {
+      "text": "season.",
+      "startOffsetMs": 5688,
+      "endOffsetMs": 6300
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "scene": 318,
+  "text": "The seven-year-old boy broke the sound barrier, traveling thirty yards in a blinding flash of cyan light that left a vacuum trail through the purple venom mist.",
+  "durationMs": 9264,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "seven-year-old",
+      "startMs": 213,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 938,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "broke",
+      "startMs": 1150,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1450,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "sound",
+      "startMs": 1563,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "barrier",
+      "startMs": 1963,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "traveling",
+      "startMs": 2638,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 3125,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "yards",
+      "startMs": 3463,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3838,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3950,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 4025,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "flash",
+      "startMs": 4500,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4925,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 5025,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "light",
+      "startMs": 5550,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5775,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 5913,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6125,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "vacuum",
+      "startMs": 6188,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "trail",
+      "startMs": 6625,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 7013,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7200,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "purple",
+      "startMs": 7313,
+      "endMs": 7638
+    },
+    {
+      "ttsWord": "venom",
+      "startMs": 7650,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "mist",
+      "startMs": 7938,
+      "endMs": 8388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The seven-year-old boy broke the sound barrier,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2488
+    },
+    {
+      "text": "traveling thirty yards in a blinding flash of",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 5013
+    },
+    {
+      "text": "cyan light that left a vacuum trail through",
+      "startOffsetMs": 5025,
+      "endOffsetMs": 7188
+    },
+    {
+      "text": "the purple venom mist.",
+      "startOffsetMs": 7200,
+      "endOffsetMs": 8488
+    }
+  ]
+}

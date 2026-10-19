@@ -1,0 +1,149 @@
+{
+  "scene": 36,
+  "text": "But when the chime washed over baby Michael, the infant lay completely still, his skin remaining pale, matte, and entirely devoid of magical resonance.",
+  "durationMs": 9840,
+  "rawWords": [
+    {
+      "ttsWord": "But",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "when",
+      "startMs": 225,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 363,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "chime",
+      "startMs": 438,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "washed",
+      "startMs": 813,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 1200,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "baby",
+      "startMs": 1450,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1775,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2475,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "infant",
+      "startMs": 2588,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "lay",
+      "startMs": 3013,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 3175,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "still",
+      "startMs": 3763,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4438,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 4600,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "remaining",
+      "startMs": 4925,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "pale",
+      "startMs": 5338,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "matte",
+      "startMs": 6000,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6563,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "entirely",
+      "startMs": 6700,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "devoid",
+      "startMs": 7288,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7738,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "magical",
+      "startMs": 7825,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 8313,
+      "endMs": 8975
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "But when the chime washed over baby Michael,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2338
+    },
+    {
+      "text": "the infant lay completely still,",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 4288
+    },
+    {
+      "text": "his skin remaining pale,",
+      "startOffsetMs": 4438,
+      "endOffsetMs": 5838
+    },
+    {
+      "text": "matte, and entirely devoid of magical resonance.",
+      "startOffsetMs": 6000,
+      "endOffsetMs": 9075
+    }
+  ]
+}

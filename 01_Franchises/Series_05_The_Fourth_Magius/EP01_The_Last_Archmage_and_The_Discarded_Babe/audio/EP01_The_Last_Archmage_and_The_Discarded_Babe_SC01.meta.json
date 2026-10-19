@@ -1,0 +1,164 @@
+{
+  "scene": 1,
+  "text": "High above the shattered obsidian plateau of Mount Calamity, the stormy crimson sky warped and groaned under the weight of ten thousand interlocking arcane barrier circles.",
+  "durationMs": 9936,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 338,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 675,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 763,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 1200,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "plateau",
+      "startMs": 1738,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2225,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "Mount",
+      "startMs": 2325,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "Calamity",
+      "startMs": 2613,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3413,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "stormy",
+      "startMs": 3538,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 3975,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 4438,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "warped",
+      "startMs": 4750,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5150,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "groaned",
+      "startMs": 5250,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 5650,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5850,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "weight",
+      "startMs": 5963,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6200,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 6313,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6588,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "interlocking",
+      "startMs": 6988,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "arcane",
+      "startMs": 7575,
+      "endMs": 8000
+    },
+    {
+      "ttsWord": "barrier",
+      "startMs": 8013,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "circles",
+      "startMs": 8413,
+      "endMs": 9063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High above the shattered obsidian plateau of Mount",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2600
+    },
+    {
+      "text": "Calamity,",
+      "startOffsetMs": 2613,
+      "endOffsetMs": 3250
+    },
+    {
+      "text": "the stormy crimson sky warped and groaned under",
+      "startOffsetMs": 3413,
+      "endOffsetMs": 5838
+    },
+    {
+      "text": "the weight of ten thousand interlocking arcane barrier",
+      "startOffsetMs": 5850,
+      "endOffsetMs": 8400
+    },
+    {
+      "text": "circles.",
+      "startOffsetMs": 8413,
+      "endOffsetMs": 9163
+    }
+  ]
+}

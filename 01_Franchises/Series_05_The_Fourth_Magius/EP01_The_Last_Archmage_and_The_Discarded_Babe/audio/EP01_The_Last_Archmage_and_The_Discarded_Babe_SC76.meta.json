@@ -1,0 +1,134 @@
+{
+  "scene": 76,
+  "text": "Michael blinked, and suddenly his conscious mind was pulled out of his physical surroundings, plunging into a realm of pure white light.",
+  "durationMs": 7896,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "blinked",
+      "startMs": 463,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1075,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 1225,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1675,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "conscious",
+      "startMs": 1838,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "mind",
+      "startMs": 2313,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2638,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "pulled",
+      "startMs": 2775,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 3088,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3238,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3300,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "physical",
+      "startMs": 3450,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "surroundings",
+      "startMs": 3875,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "plunging",
+      "startMs": 4863,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5338,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5550,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "realm",
+      "startMs": 5625,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5925,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 6063,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 6388,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "light",
+      "startMs": 6650,
+      "endMs": 7013
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael blinked, and suddenly his conscious mind was",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2763
+    },
+    {
+      "text": "pulled out of his physical surroundings,",
+      "startOffsetMs": 2775,
+      "endOffsetMs": 4713
+    },
+    {
+      "text": "plunging into a realm of pure white light.",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 7113
+    }
+  ]
+}

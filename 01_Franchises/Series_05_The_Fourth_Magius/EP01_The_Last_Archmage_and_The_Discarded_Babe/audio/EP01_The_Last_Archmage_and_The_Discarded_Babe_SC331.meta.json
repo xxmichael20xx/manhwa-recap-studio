@@ -1,0 +1,134 @@
+{
+  "scene": 331,
+  "text": "The retreating guards and cowering young noble students stared in paralyzed shock, their wands slipping from numb fingers into the puddles.",
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "retreating",
+      "startMs": 200,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "guards",
+      "startMs": 713,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1138,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "cowering",
+      "startMs": 1275,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "young",
+      "startMs": 1788,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 2075,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 2400,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 2838,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3175,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "paralyzed",
+      "startMs": 3288,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "shock",
+      "startMs": 3875,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 4625,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "wands",
+      "startMs": 4800,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "slipping",
+      "startMs": 5113,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5525,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "numb",
+      "startMs": 5713,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 5963,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6388,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6613,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "puddles",
+      "startMs": 6725,
+      "endMs": 7275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The retreating guards and cowering young noble students",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "stared in paralyzed shock,",
+      "startOffsetMs": 2838,
+      "endOffsetMs": 4450
+    },
+    {
+      "text": "their wands slipping from numb fingers into the",
+      "startOffsetMs": 4625,
+      "endOffsetMs": 6713
+    },
+    {
+      "text": "puddles.",
+      "startOffsetMs": 6725,
+      "endOffsetMs": 7375
+    }
+  ]
+}

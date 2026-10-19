@@ -1,0 +1,154 @@
+{
+  "scene": 11,
+  "text": "ANCIENT RELIC RESONANCE: CARRIER SOUL PURITY 100%. PRIMORDIAL LAW INVERSION ACTIVATED. The grimoire whispered in a voice of ancient thunder directly inside Michael's consciousness.",
+  "durationMs": 13392,
+  "rawWords": [
+    {
+      "ttsWord": "ANCIENT",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "RELIC",
+      "startMs": 500,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "RESONANCE",
+      "startMs": 825,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "CARRIER",
+      "startMs": 1700,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "SOUL",
+      "startMs": 2150,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "PURITY",
+      "startMs": 2475,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "100%",
+      "startMs": 2900,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "PRIMORDIAL",
+      "startMs": 4850,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "LAW",
+      "startMs": 5475,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "INVERSION",
+      "startMs": 5750,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "ACTIVATED",
+      "startMs": 6263,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 7838,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "grimoire",
+      "startMs": 8000,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "whispered",
+      "startMs": 8513,
+      "endMs": 8938
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 8950,
+      "endMs": 9038
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9050,
+      "endMs": 9100
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 9113,
+      "endMs": 9475
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9488,
+      "endMs": 9575
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 9588,
+      "endMs": 9975
+    },
+    {
+      "ttsWord": "thunder",
+      "startMs": 9988,
+      "endMs": 10288
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 10300,
+      "endMs": 10800
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 10813,
+      "endMs": 11275
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 11288,
+      "endMs": 11688
+    },
+    {
+      "ttsWord": "consciousness",
+      "startMs": 11700,
+      "endMs": 12525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "ANCIENT RELIC RESONANCE:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1513
+    },
+    {
+      "text": "CARRIER SOUL PURITY 100%.",
+      "startOffsetMs": 1700,
+      "endOffsetMs": 4088
+    },
+    {
+      "text": "PRIMORDIAL LAW INVERSION ACTIVATED.",
+      "startOffsetMs": 4850,
+      "endOffsetMs": 7075
+    },
+    {
+      "text": "The grimoire whispered in a voice of ancient",
+      "startOffsetMs": 7838,
+      "endOffsetMs": 9975
+    },
+    {
+      "text": "thunder directly inside Michael's consciousness.",
+      "startOffsetMs": 9988,
+      "endOffsetMs": 12625
+    }
+  ]
+}

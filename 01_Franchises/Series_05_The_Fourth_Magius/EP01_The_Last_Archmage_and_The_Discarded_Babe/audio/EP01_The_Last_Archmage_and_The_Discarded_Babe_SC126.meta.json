@@ -1,0 +1,89 @@
+{
+  "scene": 126,
+  "text": "The hare collapsed without even a twitch, preserving the meat and pelt completely intact.",
+  "durationMs": 5664,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "hare",
+      "startMs": 200,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "collapsed",
+      "startMs": 475,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 1000,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "even",
+      "startMs": 1325,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1550,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "twitch",
+      "startMs": 1625,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "preserving",
+      "startMs": 2275,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2788,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 2888,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3188,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "pelt",
+      "startMs": 3313,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 3600,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "intact",
+      "startMs": 4163,
+      "endMs": 4788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The hare collapsed without even a twitch,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2175
+    },
+    {
+      "text": "preserving the meat and pelt completely intact.",
+      "startOffsetMs": 2275,
+      "endOffsetMs": 4888
+    }
+  ]
+}

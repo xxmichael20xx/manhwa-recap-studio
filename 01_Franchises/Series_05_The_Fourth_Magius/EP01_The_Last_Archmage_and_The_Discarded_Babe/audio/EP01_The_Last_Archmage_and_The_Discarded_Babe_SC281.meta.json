@@ -1,0 +1,214 @@
+{
+  "scene": 281,
+  "text": "\"There's a loft above the shop with a clean mattress, a hearth, and an anvil in the back courtyard. Stay here whenever you're in town. No rent. Consider it my contribution to spiting your father.\"",
+  "durationMs": 13968,
+  "rawWords": [
+    {
+      "ttsWord": "There's",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 288,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "loft",
+      "startMs": 363,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 738,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1050,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 1125,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1538,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1663,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 1738,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "mattress",
+      "startMs": 2075,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2850,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "hearth",
+      "startMs": 2900,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3538,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3700,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "anvil",
+      "startMs": 3838,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4275,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4363,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4438,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "courtyard",
+      "startMs": 4713,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "Stay",
+      "startMs": 6213,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "here",
+      "startMs": 6638,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "whenever",
+      "startMs": 6913,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "you're",
+      "startMs": 7275,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7450,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "town",
+      "startMs": 7550,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "No",
+      "startMs": 8888,
+      "endMs": 9213
+    },
+    {
+      "ttsWord": "rent",
+      "startMs": 9225,
+      "endMs": 9638
+    },
+    {
+      "ttsWord": "Consider",
+      "startMs": 10500,
+      "endMs": 10975
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 10988,
+      "endMs": 11063
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 11075,
+      "endMs": 11225
+    },
+    {
+      "ttsWord": "contribution",
+      "startMs": 11238,
+      "endMs": 11925
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 11938,
+      "endMs": 12025
+    },
+    {
+      "ttsWord": "spiting",
+      "startMs": 12038,
+      "endMs": 12438
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 12450,
+      "endMs": 12563
+    },
+    {
+      "ttsWord": "father",
+      "startMs": 12575,
+      "endMs": 13100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "There's a loft above the shop with a",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "clean mattress, a hearth,",
+      "startOffsetMs": 1738,
+      "endOffsetMs": 3413
+    },
+    {
+      "text": "and an anvil in the back courtyard.",
+      "startOffsetMs": 3538,
+      "endOffsetMs": 5450
+    },
+    {
+      "text": "Stay here whenever you're in town.",
+      "startOffsetMs": 6213,
+      "endOffsetMs": 8125
+    },
+    {
+      "text": "No rent.",
+      "startOffsetMs": 8888,
+      "endOffsetMs": 9738
+    },
+    {
+      "text": "Consider it my contribution to spiting your father.\"",
+      "startOffsetMs": 10500,
+      "endOffsetMs": 13200
+    }
+  ]
+}

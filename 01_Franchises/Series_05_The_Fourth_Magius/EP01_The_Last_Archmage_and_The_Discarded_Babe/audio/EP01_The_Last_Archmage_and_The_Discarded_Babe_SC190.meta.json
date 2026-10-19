@@ -1,0 +1,114 @@
+{
+  "scene": 190,
+  "text": "Standing atop a shattered ziggurat, an ancient archmage raised his staff, chanting the mathematical equations of celestial thunder.",
+  "durationMs": 8304,
+  "rawWords": [
+    {
+      "ttsWord": "Standing",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "atop",
+      "startMs": 600,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 938,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 1013,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "ziggurat",
+      "startMs": 1475,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2313,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 2525,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "archmage",
+      "startMs": 2888,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "raised",
+      "startMs": 3375,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3713,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 3850,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "chanting",
+      "startMs": 4538,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4938,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "mathematical",
+      "startMs": 5013,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "equations",
+      "startMs": 5675,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6238,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 6338,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "thunder",
+      "startMs": 6938,
+      "endMs": 7438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Standing atop a shattered ziggurat,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2138
+    },
+    {
+      "text": "an ancient archmage raised his staff,",
+      "startOffsetMs": 2313,
+      "endOffsetMs": 4413
+    },
+    {
+      "text": "chanting the mathematical equations of celestial thunder.",
+      "startOffsetMs": 4538,
+      "endOffsetMs": 7538
+    }
+  ]
+}

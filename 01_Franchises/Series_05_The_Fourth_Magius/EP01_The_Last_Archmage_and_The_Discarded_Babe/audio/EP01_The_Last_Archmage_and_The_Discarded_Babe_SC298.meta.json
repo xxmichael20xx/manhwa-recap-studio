@@ -1,0 +1,139 @@
+{
+  "scene": 298,
+  "text": "The serpentine beast stretched fifteen metres in length, its body armored in razor-sharp obsidian scales that deflected the guards' ballista bolts like toothpicks.",
+  "durationMs": 9600,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "serpentine",
+      "startMs": 213,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "beast",
+      "startMs": 875,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "stretched",
+      "startMs": 1163,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "fifteen",
+      "startMs": 1563,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "metres",
+      "startMs": 2075,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2450,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "length",
+      "startMs": 2588,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 3238,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "body",
+      "startMs": 3413,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "armored",
+      "startMs": 3788,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4138,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "razor-sharp",
+      "startMs": 4288,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 4913,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "scales",
+      "startMs": 5463,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5938,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "deflected",
+      "startMs": 6075,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6588,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "guards'",
+      "startMs": 6688,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "ballista",
+      "startMs": 7000,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "bolts",
+      "startMs": 7450,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 7763,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "toothpicks",
+      "startMs": 7988,
+      "endMs": 8725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The serpentine beast stretched fifteen metres in length,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3038
+    },
+    {
+      "text": "its body armored in razor-sharp obsidian scales that",
+      "startOffsetMs": 3238,
+      "endOffsetMs": 6063
+    },
+    {
+      "text": "deflected the guards' ballista bolts like toothpicks.",
+      "startOffsetMs": 6075,
+      "endOffsetMs": 8825
+    }
+  ]
+}

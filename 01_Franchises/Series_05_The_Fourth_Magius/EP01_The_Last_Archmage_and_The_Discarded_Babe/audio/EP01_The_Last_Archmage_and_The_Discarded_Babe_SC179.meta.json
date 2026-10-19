@@ -1,0 +1,139 @@
+{
+  "scene": 179,
+  "text": "His messy raven hair fell neatly around high cheekbones, and his cyan eyes shone with an unmistakable depth of sharp intellectual genius.",
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "His",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "messy",
+      "startMs": 288,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "raven",
+      "startMs": 638,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "hair",
+      "startMs": 1000,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "fell",
+      "startMs": 1250,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "neatly",
+      "startMs": 1538,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 1863,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "high",
+      "startMs": 2200,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "cheekbones",
+      "startMs": 2400,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3413,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3563,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 3713,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 4238,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "shone",
+      "startMs": 4525,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4900,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5025,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "unmistakable",
+      "startMs": 5163,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "depth",
+      "startMs": 5925,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6238,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 6325,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "intellectual",
+      "startMs": 6688,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "genius",
+      "startMs": 7275,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "His messy raven hair fell neatly around high",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "cheekbones,",
+      "startOffsetMs": 2400,
+      "endOffsetMs": 3238
+    },
+    {
+      "text": "and his cyan eyes shone with an unmistakable",
+      "startOffsetMs": 3413,
+      "endOffsetMs": 5913
+    },
+    {
+      "text": "depth of sharp intellectual genius.",
+      "startOffsetMs": 5925,
+      "endOffsetMs": 8013
+    }
+  ]
+}

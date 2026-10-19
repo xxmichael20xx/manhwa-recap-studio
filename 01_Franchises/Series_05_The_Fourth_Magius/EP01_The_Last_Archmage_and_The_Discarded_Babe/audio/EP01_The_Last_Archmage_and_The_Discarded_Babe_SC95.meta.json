@@ -1,0 +1,164 @@
+{
+  "scene": 95,
+  "text": "Clutched in his left hand, the Primordial Codex shrank in size, shifting its appearance into a weathered, leather-bound notebook that looked like an ordinary child's diary.",
+  "durationMs": 9984,
+  "rawWords": [
+    {
+      "ttsWord": "Clutched",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 450,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 525,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 688,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 925,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1488,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 1600,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 2213,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "shrank",
+      "startMs": 2663,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3038,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "size",
+      "startMs": 3175,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "shifting",
+      "startMs": 3900,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4350,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "appearance",
+      "startMs": 4475,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4950,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5188,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "weathered",
+      "startMs": 5275,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "leather-bound",
+      "startMs": 5913,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "notebook",
+      "startMs": 6488,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 6950,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 7125,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 7325,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7488,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "ordinary",
+      "startMs": 7613,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "child's",
+      "startMs": 8100,
+      "endMs": 8563
+    },
+    {
+      "ttsWord": "diary",
+      "startMs": 8575,
+      "endMs": 9113
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Clutched in his left hand,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1363
+    },
+    {
+      "text": "the Primordial Codex shrank in size,",
+      "startOffsetMs": 1488,
+      "endOffsetMs": 3750
+    },
+    {
+      "text": "shifting its appearance into a weathered,",
+      "startOffsetMs": 3900,
+      "endOffsetMs": 5750
+    },
+    {
+      "text": "leather-bound notebook that looked like an ordinary child's",
+      "startOffsetMs": 5913,
+      "endOffsetMs": 8563
+    },
+    {
+      "text": "diary.",
+      "startOffsetMs": 8575,
+      "endOffsetMs": 9213
+    }
+  ]
+}

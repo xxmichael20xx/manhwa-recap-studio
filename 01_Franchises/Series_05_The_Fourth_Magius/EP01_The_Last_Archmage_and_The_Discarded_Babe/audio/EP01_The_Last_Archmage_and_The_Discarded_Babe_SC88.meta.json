@@ -1,0 +1,94 @@
+{
+  "scene": 88,
+  "text": "WARNING: MASTER COMBAT TOMES REQUIRE VESSEL ENDURANCE TRIALS. RECKLESS INGESTION WILL COLLAPSE MORTAL CONSCIOUSNESS.",
+  "durationMs": 8616,
+  "rawWords": [
+    {
+      "ttsWord": "WARNING",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "MASTER",
+      "startMs": 750,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "COMBAT",
+      "startMs": 1138,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "TOMES",
+      "startMs": 1638,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "REQUIRE",
+      "startMs": 2013,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "VESSEL",
+      "startMs": 2463,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "ENDURANCE",
+      "startMs": 2838,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "TRIALS",
+      "startMs": 3325,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "RECKLESS",
+      "startMs": 4825,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "INGESTION",
+      "startMs": 5338,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "WILL",
+      "startMs": 5988,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "COLLAPSE",
+      "startMs": 6125,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "MORTAL",
+      "startMs": 6588,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "CONSCIOUSNESS",
+      "startMs": 6913,
+      "endMs": 7750
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "WARNING:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 600
+    },
+    {
+      "text": "MASTER COMBAT TOMES REQUIRE VESSEL ENDURANCE TRIALS.",
+      "startOffsetMs": 750,
+      "endOffsetMs": 4063
+    },
+    {
+      "text": "RECKLESS INGESTION WILL COLLAPSE MORTAL CONSCIOUSNESS.",
+      "startOffsetMs": 4825,
+      "endOffsetMs": 7850
+    }
+  ]
+}

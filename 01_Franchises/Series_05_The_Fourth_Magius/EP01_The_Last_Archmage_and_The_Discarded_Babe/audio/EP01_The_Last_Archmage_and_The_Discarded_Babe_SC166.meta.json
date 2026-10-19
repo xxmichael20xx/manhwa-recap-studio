@@ -1,0 +1,129 @@
+{
+  "scene": 166,
+  "text": "He sat atop the limestone ledge, watching the morning sun illuminate the sea of green pines stretching toward the distant horizon.",
+  "durationMs": 7824,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "sat",
+      "startMs": 225,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "atop",
+      "startMs": 525,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 900,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "limestone",
+      "startMs": 1013,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "ledge",
+      "startMs": 1638,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "watching",
+      "startMs": 2250,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2625,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 2700,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "sun",
+      "startMs": 3050,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "illuminate",
+      "startMs": 3338,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3888,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "sea",
+      "startMs": 4000,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4325,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 4450,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "pines",
+      "startMs": 4788,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "stretching",
+      "startMs": 5163,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 5600,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5888,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "distant",
+      "startMs": 5988,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "horizon",
+      "startMs": 6350,
+      "endMs": 6963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He sat atop the limestone ledge,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2113
+    },
+    {
+      "text": "watching the morning sun illuminate the sea of",
+      "startOffsetMs": 2250,
+      "endOffsetMs": 4438
+    },
+    {
+      "text": "green pines stretching toward the distant horizon.",
+      "startOffsetMs": 4450,
+      "endOffsetMs": 7063
+    }
+  ]
+}

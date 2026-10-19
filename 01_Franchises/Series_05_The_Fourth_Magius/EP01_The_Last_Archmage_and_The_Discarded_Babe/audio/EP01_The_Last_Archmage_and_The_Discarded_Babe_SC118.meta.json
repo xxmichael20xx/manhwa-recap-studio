@@ -1,0 +1,124 @@
+{
+  "scene": 118,
+  "text": "Through these channels, he infused his own refined mana, transforming the common dead wood into a semi-conductive kinetic weapon.",
+  "durationMs": 7896,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "these",
+      "startMs": 325,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "channels",
+      "startMs": 575,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 1325,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "infused",
+      "startMs": 1450,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1950,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "own",
+      "startMs": 2113,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "refined",
+      "startMs": 2338,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 2788,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "transforming",
+      "startMs": 3375,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4038,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "common",
+      "startMs": 4138,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "dead",
+      "startMs": 4525,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "wood",
+      "startMs": 4825,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5000,
+      "endMs": 5238
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5250,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "semi-conductive",
+      "startMs": 5325,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 6188,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "weapon",
+      "startMs": 6588,
+      "endMs": 7013
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through these channels,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1188
+    },
+    {
+      "text": "he infused his own refined mana,",
+      "startOffsetMs": 1325,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "transforming the common dead wood into a semi-conductive",
+      "startOffsetMs": 3375,
+      "endOffsetMs": 6175
+    },
+    {
+      "text": "kinetic weapon.",
+      "startOffsetMs": 6188,
+      "endOffsetMs": 7113
+    }
+  ]
+}

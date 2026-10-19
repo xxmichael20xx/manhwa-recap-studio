@@ -1,0 +1,149 @@
+{
+  "scene": 127,
+  "text": "Michael retrieved the game, dressed it cleanly by the stream using his flint knife, and washed the meat in the running spring water.",
+  "durationMs": 7656,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "retrieved",
+      "startMs": 475,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 925,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "game",
+      "startMs": 1025,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "dressed",
+      "startMs": 1613,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 1950,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "cleanly",
+      "startMs": 2050,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 2463,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2625,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "stream",
+      "startMs": 2750,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "using",
+      "startMs": 3163,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3463,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "flint",
+      "startMs": 3625,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "knife",
+      "startMs": 3900,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4575,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "washed",
+      "startMs": 4713,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5150,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 5238,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5500,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5600,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "running",
+      "startMs": 5700,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "spring",
+      "startMs": 6000,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "water",
+      "startMs": 6350,
+      "endMs": 6788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael retrieved the game,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1475
+    },
+    {
+      "text": "dressed it cleanly by the stream using his",
+      "startOffsetMs": 1613,
+      "endOffsetMs": 3613
+    },
+    {
+      "text": "flint knife,",
+      "startOffsetMs": 3625,
+      "endOffsetMs": 4375
+    },
+    {
+      "text": "and washed the meat in the running spring",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 6338
+    },
+    {
+      "text": "water.",
+      "startOffsetMs": 6350,
+      "endOffsetMs": 6888
+    }
+  ]
+}

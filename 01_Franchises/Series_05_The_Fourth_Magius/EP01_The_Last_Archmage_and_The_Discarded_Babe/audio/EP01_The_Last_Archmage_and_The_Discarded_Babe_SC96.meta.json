@@ -1,0 +1,114 @@
+{
+  "scene": 96,
+  "text": "Michael slipped the disguised book into the breast pocket of his tunic and gripped his blackwood quarterstaff firmly.",
+  "durationMs": 6552,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "slipped",
+      "startMs": 475,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 850,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "disguised",
+      "startMs": 950,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "book",
+      "startMs": 1563,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1788,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2000,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "breast",
+      "startMs": 2113,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 2438,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2800,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2900,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "tunic",
+      "startMs": 3075,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3513,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "gripped",
+      "startMs": 3625,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3938,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 4063,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "quarterstaff",
+      "startMs": 4575,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "firmly",
+      "startMs": 5150,
+      "endMs": 5688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael slipped the disguised book into the breast",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2425
+    },
+    {
+      "text": "pocket of his tunic and gripped his blackwood",
+      "startOffsetMs": 2438,
+      "endOffsetMs": 4563
+    },
+    {
+      "text": "quarterstaff firmly.",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 5788
+    }
+  ]
+}

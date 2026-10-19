@@ -1,0 +1,149 @@
+{
+  "scene": 159,
+  "text": "They looked at the five-year-old human child standing in the firelight, whose eyes now glowed with the chilling, ancient authority of an apex sovereign.",
+  "durationMs": 8568,
+  "rawWords": [
+    {
+      "ttsWord": "They",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 225,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 500,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 575,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "five-year-old",
+      "startMs": 675,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "human",
+      "startMs": 1338,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "child",
+      "startMs": 1675,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "standing",
+      "startMs": 2038,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2488,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2550,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "firelight",
+      "startMs": 2638,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "whose",
+      "startMs": 3563,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3813,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "now",
+      "startMs": 4138,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "glowed",
+      "startMs": 4400,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4775,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4888,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "chilling",
+      "startMs": 4988,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 5613,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "authority",
+      "startMs": 5938,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6438,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6525,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "apex",
+      "startMs": 6700,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 7163,
+      "endMs": 7700
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "They looked at the five-year-old human child standing",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2475
+    },
+    {
+      "text": "in the firelight,",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 3363
+    },
+    {
+      "text": "whose eyes now glowed with the chilling,",
+      "startOffsetMs": 3563,
+      "endOffsetMs": 5500
+    },
+    {
+      "text": "ancient authority of an apex sovereign.",
+      "startOffsetMs": 5613,
+      "endOffsetMs": 7800
+    }
+  ]
+}

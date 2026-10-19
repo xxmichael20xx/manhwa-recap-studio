@@ -1,0 +1,134 @@
+{
+  "scene": 24,
+  "text": "It was the ancestral outer courtyard of House Montrey, one of the five founding Great Archmage Houses of the Valerius Empire.",
+  "durationMs": 7536,
+  "rawWords": [
+    {
+      "ttsWord": "It",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 213,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 375,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "ancestral",
+      "startMs": 488,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "outer",
+      "startMs": 1125,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "courtyard",
+      "startMs": 1375,
+      "endMs": 1863
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1875,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 1963,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 2250,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 3038,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3188,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3275,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 3375,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "founding",
+      "startMs": 3738,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "Great",
+      "startMs": 4138,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "Archmage",
+      "startMs": 4450,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "Houses",
+      "startMs": 4888,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5313,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5413,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "Valerius",
+      "startMs": 5488,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "Empire",
+      "startMs": 6075,
+      "endMs": 6663
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "It was the ancestral outer courtyard of House",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2238
+    },
+    {
+      "text": "Montrey,",
+      "startOffsetMs": 2250,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "one of the five founding Great Archmage Houses",
+      "startOffsetMs": 3038,
+      "endOffsetMs": 5300
+    },
+    {
+      "text": "of the Valerius Empire.",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 6763
+    }
+  ]
+}

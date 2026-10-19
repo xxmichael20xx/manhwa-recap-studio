@@ -1,0 +1,124 @@
+{
+  "scene": 15,
+  "text": "\"Let the old world burn,\" Michael thought quietly as darkness consumed his thoughts. \"I am done carrying their fragile civilization.\"",
+  "durationMs": 8952,
+  "rawWords": [
+    {
+      "ttsWord": "Let",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 275,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "old",
+      "startMs": 388,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 650,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "burn",
+      "startMs": 1000,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1575,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "thought",
+      "startMs": 1888,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "quietly",
+      "startMs": 2213,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2763,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "darkness",
+      "startMs": 2913,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "consumed",
+      "startMs": 3375,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3888,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "thoughts",
+      "startMs": 4063,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 5463,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "am",
+      "startMs": 5663,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "done",
+      "startMs": 5800,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "carrying",
+      "startMs": 6100,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6550,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "fragile",
+      "startMs": 6713,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "civilization",
+      "startMs": 7175,
+      "endMs": 8088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Let the old world burn,\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1413
+    },
+    {
+      "text": "Michael thought quietly as darkness consumed his thoughts.",
+      "startOffsetMs": 1575,
+      "endOffsetMs": 4700
+    },
+    {
+      "text": "I am done carrying their fragile civilization.\"",
+      "startOffsetMs": 5463,
+      "endOffsetMs": 8188
+    }
+  ]
+}

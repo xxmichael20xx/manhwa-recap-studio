@@ -47,13 +47,13 @@ export class FileService {
               franchiseDisplayName = titleMatch[1].trim()
             }
 
-            const formatMatch = seriesBibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+            const formatMatch = seriesBibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
             if (formatMatch) {
               const rawFmt = formatMatch[1].trim()
-              if (rawFmt.includes('9:16')) {
-                videoFormat = 'Format 1: 9:16 Webtoon'
-              } else if (rawFmt.includes('16:9')) {
+              if (rawFmt.includes('16:9')) {
                 videoFormat = 'Format 2: 16:9 Landscape'
+              } else if (rawFmt.includes('9:16')) {
+                videoFormat = 'Format 1: 9:16 Webtoon'
               } else {
                 videoFormat = rawFmt
               }
@@ -197,16 +197,34 @@ export class FileService {
       }
     } catch (_) {}
 
-    let format = franchiseId.toLowerCase().includes('series_02') ? '16:9' : '9:16'
+    let format = '9:16'
     try {
       const biblePath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
       const bibleContent = await fs.readFile(biblePath, 'utf-8')
-      const formatMatch = bibleContent.match(/Video Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/)
+      const formatMatch = bibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
       if (formatMatch) {
         if (formatMatch[1].includes('16:9')) format = '16:9'
         else if (formatMatch[1].includes('9:16')) format = '9:16'
       }
     } catch (_) {}
+
+    if (format !== '16:9') {
+      try {
+        const charPath = path.join(franchisesDir, franchiseId, 'character_vault', 'characters.json')
+        const charData = JSON.parse(await fs.readFile(charPath, 'utf-8'))
+        if (charData.format && charData.format.includes('16:9')) {
+          format = '16:9'
+        }
+      } catch (_) {}
+    }
+
+    if (format !== '16:9' && promptMatrix) {
+      const count16x9 = (promptMatrix.match(/16:9|1920x1080|horizontal\s+16:9/gi) || []).length
+      const count9x16 = (promptMatrix.match(/9:16|1080x1920|vertical\s+9:16/gi) || []).length
+      if (count16x9 > count9x16 || franchiseId.toLowerCase().includes('series_02')) {
+        format = '16:9'
+      }
+    }
 
     const audit = script ? AntiSlopValidator.auditScript(script) : null
 

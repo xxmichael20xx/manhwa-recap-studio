@@ -1,0 +1,134 @@
+{
+  "scene": 285,
+  "text": "A pompous fifteen-year-old noble boy in a red velvet coat was bragging loudly to his peers while waving an enchanted rowan wand.",
+  "durationMs": 7896,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "pompous",
+      "startMs": 188,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "fifteen-year-old",
+      "startMs": 675,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "noble",
+      "startMs": 1438,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 1813,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2138,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2263,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "red",
+      "startMs": 2325,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "velvet",
+      "startMs": 2625,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "coat",
+      "startMs": 3000,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 3325,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "bragging",
+      "startMs": 3488,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 3950,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4388,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4513,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "peers",
+      "startMs": 4663,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "while",
+      "startMs": 5088,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "waving",
+      "startMs": 5288,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5663,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "enchanted",
+      "startMs": 5725,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "rowan",
+      "startMs": 6225,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "wand",
+      "startMs": 6563,
+      "endMs": 7025
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A pompous fifteen-year-old noble boy in a red",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "velvet coat was bragging loudly to his peers",
+      "startOffsetMs": 2625,
+      "endOffsetMs": 5075
+    },
+    {
+      "text": "while waving an enchanted rowan wand.",
+      "startOffsetMs": 5088,
+      "endOffsetMs": 7125
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "scene": 275,
+  "text": "\"The crest is merely a souvenir — a reminder that aristocratic lineage is blind, arrogant, and entirely inconsequential.\"",
+  "durationMs": 8208,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "crest",
+      "startMs": 200,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 600,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "merely",
+      "startMs": 713,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1100,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "souvenir",
+      "startMs": 1175,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2150,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "reminder",
+      "startMs": 2175,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 2688,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "aristocratic",
+      "startMs": 2850,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "lineage",
+      "startMs": 3600,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 4025,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "blind",
+      "startMs": 4163,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "arrogant",
+      "startMs": 4863,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5550,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "entirely",
+      "startMs": 5688,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "inconsequential",
+      "startMs": 6325,
+      "endMs": 7338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The crest is merely a souvenir",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1913
+    },
+    {
+      "text": "a reminder that aristocratic lineage is blind,",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 4725
+    },
+    {
+      "text": "arrogant, and entirely inconsequential.\"",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 7438
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "scene": 5,
+  "text": "\"Surrender the forbidden grimoire, Sovereign Michael!\" the Grand Inquisitor roared through a voice-amplifying wind glyph. \"That relic belongs to the Council! You have exhausted your mana reserves — you cannot cast another spell!\"",
+  "durationMs": 14880,
+  "rawWords": [
+    {
+      "ttsWord": "Surrender",
+      "startMs": 50,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 613,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "forbidden",
+      "startMs": 713,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "grimoire",
+      "startMs": 1175,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "Sovereign",
+      "startMs": 1888,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2350,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3075,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "Grand",
+      "startMs": 3188,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "Inquisitor",
+      "startMs": 3525,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 4125,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4438,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4625,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "voice-amplifying",
+      "startMs": 4688,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 5600,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "glyph",
+      "startMs": 5875,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "That",
+      "startMs": 7225,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "relic",
+      "startMs": 7538,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "belongs",
+      "startMs": 7863,
+      "endMs": 8288
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 8300,
+      "endMs": 8388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8400,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "Council",
+      "startMs": 8513,
+      "endMs": 9113
+    },
+    {
+      "ttsWord": "You",
+      "startMs": 9975,
+      "endMs": 10150
+    },
+    {
+      "ttsWord": "have",
+      "startMs": 10163,
+      "endMs": 10363
+    },
+    {
+      "ttsWord": "exhausted",
+      "startMs": 10375,
+      "endMs": 10950
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 10963,
+      "endMs": 11075
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 11088,
+      "endMs": 11388
+    },
+    {
+      "ttsWord": "reserves",
+      "startMs": 11400,
+      "endMs": 12000
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 12263,
+      "endMs": 12400
+    },
+    {
+      "ttsWord": "cannot",
+      "startMs": 12413,
+      "endMs": 12813
+    },
+    {
+      "ttsWord": "cast",
+      "startMs": 12825,
+      "endMs": 13175
+    },
+    {
+      "ttsWord": "another",
+      "startMs": 13188,
+      "endMs": 13500
+    },
+    {
+      "ttsWord": "spell",
+      "startMs": 13513,
+      "endMs": 14013
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Surrender the forbidden grimoire,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1800
+    },
+    {
+      "text": "Sovereign Michael!\"",
+      "startOffsetMs": 1888,
+      "endOffsetMs": 2888
+    },
+    {
+      "text": "the Grand Inquisitor roared through a voice-amplifying wind",
+      "startOffsetMs": 3075,
+      "endOffsetMs": 5863
+    },
+    {
+      "text": "glyph.",
+      "startOffsetMs": 5875,
+      "endOffsetMs": 6450
+    },
+    {
+      "text": "That relic belongs to the Council!",
+      "startOffsetMs": 7225,
+      "endOffsetMs": 9213
+    },
+    {
+      "text": "You have exhausted your mana reserves",
+      "startOffsetMs": 9975,
+      "endOffsetMs": 12100
+    },
+    {
+      "text": "you cannot cast another spell!\"",
+      "startOffsetMs": 12263,
+      "endOffsetMs": 14113
+    }
+  ]
+}

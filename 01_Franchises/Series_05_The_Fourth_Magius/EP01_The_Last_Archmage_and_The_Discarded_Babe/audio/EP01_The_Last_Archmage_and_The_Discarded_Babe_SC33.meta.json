@@ -1,0 +1,159 @@
+{
+  "scene": 33,
+  "text": "Head Elder Cassius Montrey, a gaunt man with cruel, hooded eyes, had stepped forward holding a heavy brass resonance bell inscribed with elemental wind runes.",
+  "durationMs": 10200,
+  "rawWords": [
+    {
+      "ttsWord": "Head",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "Elder",
+      "startMs": 338,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "Cassius",
+      "startMs": 688,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 1175,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1988,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "gaunt",
+      "startMs": 2088,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "man",
+      "startMs": 2400,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2713,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "cruel",
+      "startMs": 2875,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "hooded",
+      "startMs": 3625,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3888,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4575,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 4725,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 5063,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "holding",
+      "startMs": 5438,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5838,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 5900,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "brass",
+      "startMs": 6225,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 6600,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "bell",
+      "startMs": 7050,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "inscribed",
+      "startMs": 7300,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7863,
+      "endMs": 7988
+    },
+    {
+      "ttsWord": "elemental",
+      "startMs": 8000,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 8513,
+      "endMs": 8750
+    },
+    {
+      "ttsWord": "runes",
+      "startMs": 8763,
+      "endMs": 9338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Head Elder Cassius Montrey,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1800
+    },
+    {
+      "text": "a gaunt man with cruel,",
+      "startOffsetMs": 1988,
+      "endOffsetMs": 3413
+    },
+    {
+      "text": "hooded eyes,",
+      "startOffsetMs": 3625,
+      "endOffsetMs": 4388
+    },
+    {
+      "text": "had stepped forward holding a heavy brass resonance",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 7038
+    },
+    {
+      "text": "bell inscribed with elemental wind runes.",
+      "startOffsetMs": 7050,
+      "endOffsetMs": 9438
+    }
+  ]
+}

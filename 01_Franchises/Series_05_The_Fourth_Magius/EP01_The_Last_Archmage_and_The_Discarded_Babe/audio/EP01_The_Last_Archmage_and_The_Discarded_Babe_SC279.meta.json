@@ -1,0 +1,119 @@
+{
+  "scene": 279,
+  "text": "\"They threw away a boy who understands master-tier alchemy at seven years old because a brass toy didn't chime.\"",
+  "durationMs": 6792,
+  "rawWords": [
+    {
+      "ttsWord": "They",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "threw",
+      "startMs": 263,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 500,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 813,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 900,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 1213,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "understands",
+      "startMs": 1388,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "master-tier",
+      "startMs": 2013,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "alchemy",
+      "startMs": 2725,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 3188,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "seven",
+      "startMs": 3300,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 3663,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "old",
+      "startMs": 3963,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "because",
+      "startMs": 4238,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4525,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "brass",
+      "startMs": 4600,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "toy",
+      "startMs": 4975,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "didn't",
+      "startMs": 5200,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "chime",
+      "startMs": 5463,
+      "endMs": 5913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "They threw away a boy who understands master-tier",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2713
+    },
+    {
+      "text": "alchemy at seven years old because a brass",
+      "startOffsetMs": 2725,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "toy didn't chime.\"",
+      "startOffsetMs": 4975,
+      "endOffsetMs": 6013
+    }
+  ]
+}

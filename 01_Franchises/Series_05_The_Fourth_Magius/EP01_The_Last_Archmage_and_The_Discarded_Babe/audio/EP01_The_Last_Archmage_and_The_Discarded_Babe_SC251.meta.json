@@ -1,0 +1,159 @@
+{
+  "scene": 251,
+  "text": "Unfolding the bark, Michael revealed twelve perfectly cured sprigs of Winter-Iron Moss, their silver speckles glistening with natural oil, dried without a single torn fiber.",
+  "durationMs": 10752,
+  "rawWords": [
+    {
+      "ttsWord": "Unfolding",
+      "startMs": 50,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 675,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "bark",
+      "startMs": 775,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1275,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "revealed",
+      "startMs": 1663,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "twelve",
+      "startMs": 2088,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "perfectly",
+      "startMs": 2450,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "cured",
+      "startMs": 2950,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "sprigs",
+      "startMs": 3313,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3763,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "Winter-Iron",
+      "startMs": 3875,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "Moss",
+      "startMs": 4463,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5175,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "silver",
+      "startMs": 5350,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "speckles",
+      "startMs": 5750,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "glistening",
+      "startMs": 6250,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6713,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "natural",
+      "startMs": 6850,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "oil",
+      "startMs": 7338,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 7950,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 8288,
+      "endMs": 8563
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 8575,
+      "endMs": 8625
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 8638,
+      "endMs": 9025
+    },
+    {
+      "ttsWord": "torn",
+      "startMs": 9038,
+      "endMs": 9338
+    },
+    {
+      "ttsWord": "fiber",
+      "startMs": 9350,
+      "endMs": 9875
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Unfolding the bark,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1250
+    },
+    {
+      "text": "Michael revealed twelve perfectly cured sprigs of Winter-Iron",
+      "startOffsetMs": 1275,
+      "endOffsetMs": 4450
+    },
+    {
+      "text": "Moss,",
+      "startOffsetMs": 4463,
+      "endOffsetMs": 5013
+    },
+    {
+      "text": "their silver speckles glistening with natural oil,",
+      "startOffsetMs": 5175,
+      "endOffsetMs": 7800
+    },
+    {
+      "text": "dried without a single torn fiber.",
+      "startOffsetMs": 7950,
+      "endOffsetMs": 9975
+    }
+  ]
+}

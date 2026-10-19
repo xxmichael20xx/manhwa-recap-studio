@@ -485,18 +485,36 @@ export class AntiSlopValidator {
         if (wp.regex.test(combined)) {
           const isDestruction = weaponDestructionRegex.test(combined)
           const isIdiom = idiomTermsRegex.test(combined)
-          const isBound = s.boundRefs.some(r => r.toLowerCase().includes(wp.uuid.toLowerCase()))
+          const isBound = s.boundRefs.some(r => {
+            const rLower = r.toLowerCase().trim()
+            const rClean = rLower.replace(/[@{}]/g, '').replace(/^(weapon|item|artifact|prop):\s*/i, '').trim()
+            const wpNameClean = wp.name.toLowerCase().replace(/[@{}]/g, '').replace(/^(weapon|item|artifact|prop):\s*/i, '').trim()
+            const wpTokenClean = (wp.token || '').toLowerCase().replace(/[@{}]/g, '').replace(/^(weapon|item|artifact|prop):\s*/i, '').trim()
+            return (
+              (wp.uuid && rLower.includes(wp.uuid.toLowerCase())) ||
+              rClean === wpNameClean ||
+              rClean.includes(wpNameClean) ||
+              wpNameClean.includes(rClean) ||
+              (wpTokenClean && (rClean === wpTokenClean || rClean.includes(wpTokenClean)))
+            )
+          })
 
           if (isDestruction) {
-            // State 4: Destroyed/Dust -> UUID is strictly forbidden from character_refs when characters are present!
-            const hasLivingCharacters = s.boundRefs.some(r => r.toLowerCase() !== wp.uuid.toLowerCase())
+            // State 4: Destroyed/Dust -> UUID / Token is strictly forbidden from character_refs when characters are present!
+            const hasLivingCharacters = s.boundRefs.some(r => {
+              const rLower = r.toLowerCase().trim()
+              const rClean = rLower.replace(/[@{}]/g, '').replace(/^(weapon|item|artifact|prop):\s*/i, '').trim()
+              const wpNameClean = wp.name.toLowerCase().replace(/[@{}]/g, '').replace(/^(weapon|item|artifact|prop):\s*/i, '').trim()
+              const isThisWeapon = (wp.uuid && rLower.includes(wp.uuid.toLowerCase())) || rClean === wpNameClean || rClean.includes(wpNameClean)
+              return !isThisWeapon
+            })
             if (isBound && hasLivingCharacters) {
               weaponLifecycleViolations.push({
                 tag: s.tag,
                 type: 'ZOMBIE_WEAPON_BOUND',
                 entity: wp.name,
                 uuid: wp.uuid,
-                reason: `Zombie Weapon Error: ${wp.name} is described as shattered/dust, but its UUID is bound in character_refs alongside a character! This forces Google Flow to equip the dead weapon onto the character.`
+                reason: `Zombie Weapon Error: ${wp.name} is described as shattered/dust, but is bound in character_refs alongside a character! This forces Google Flow to equip the dead weapon onto the character.`
               })
             }
           } else if (isIdiom) {
@@ -519,7 +537,17 @@ export class AntiSlopValidator {
                 type: 'MISSING_ACTIVE_BINDING',
                 entity: wp.name,
                 uuid: wp.uuid,
-                reason: `Missing Binding: ${wp.name} is actively wielded in prompt, but its UUID is missing from character_refs.`
+                reason: `Missing Binding: ${wp.name} is actively wielded in prompt, but is missing from character_refs / item_refs.`
+              })
+            }
+            // Chronological acquisition check: Carved Blackwood Staff cannot appear before Scene 54
+            if (wp.name.toLowerCase().includes('blackwood staff') && s.num < 54 && isBound) {
+              weaponLifecycleViolations.push({
+                tag: s.tag,
+                type: 'CHRONOLOGICAL_WEAPON_LEAK',
+                entity: wp.name,
+                uuid: wp.uuid,
+                reason: `Chronological Weapon Leak: ${wp.name} is bound in ${s.tag} before its canonical creation/acquisition in Scene 054.`
               })
             }
           }
@@ -568,14 +596,57 @@ export class AntiSlopValidator {
     if (charactersList && charactersList.length > 0) {
       charactersList.forEach(c => {
         const ageVal = parseInt(String(c.age || '').replace(/[^0-9]/g, ''), 10)
-        if (!isNaN(ageVal) && ageVal >= 10 && ageVal <= 120) {
+        if (!isNaN(ageVal) && ageVal >= 1 && ageVal <= 120) {
           const rawName = c.name || c.flowName || ''
-          const cleanName = rawName.replace(/\s*\([^)]*\)/g, '').replace(/^(Commander|Instructor|Director|Lord|Grand Duke|Chief Proctor|High Chancellor|High Director|Shadow Assassin):\s*/i, '').trim()
-          const esc = cleanName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const parenMatch = rawName.match(/\(([^)]+)\)/)
+          const qualifier = parenMatch ? parenMatch[1].trim() : ''
+          const baseName = rawName.replace(/\s*\([^)]*\)/g, '').replace(/^(Commander|Instructor|Director|Lord|Grand Duke|Chief Proctor|High Chancellor|High Director|Shadow Assassin):\s*/i, '').trim()
+          
+          let regex = null
+          let excludePattern = null
+
+          if (qualifier) {
+            // Check if there are other models sharing the base name
+            const othersWithSameBase = charactersList.filter(o => {
+              const oBase = (o.name || o.flowName || '').replace(/\s*\([^)]*\)/g, '').replace(/^(Commander|Instructor|Director|Lord|Grand Duke|Chief Proctor|High Chancellor|High Director|Shadow Assassin):\s*/i, '').trim()
+              return o !== c && oBase.toLowerCase() === baseName.toLowerCase()
+            })
+
+            if (othersWithSameBase.length > 0) {
+              const escQual = qualifier.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+              const escFlow = (c.flowName || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+              const escRaw = rawName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+              const terms = [escQual, escRaw]
+              if (escFlow && escFlow.toLowerCase() !== baseName.toLowerCase()) {
+                terms.push(escFlow)
+              }
+              if (/^(?:child|young|infant|youth)\b/i.test(qualifier)) {
+                regex = new RegExp(`\\b${baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+                const otherQualifiers = othersWithSameBase.map(o => {
+                  const m = (o.name || '').match(/\(([^)]+)\)/)
+                  return m ? m[1].trim() : (o.flowName || '')
+                }).filter(Boolean)
+                if (otherQualifiers.length > 0) {
+                  const escOthers = otherQualifiers.map(q => q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')
+                  excludePattern = new RegExp(`\\b(?:${escOthers})\\b`, 'i')
+                }
+              } else {
+                regex = new RegExp(`\\b(?:${terms.join('|')})\\b`, 'i')
+              }
+            } else {
+              const esc = baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+              regex = new RegExp(`\\b${esc}\\b`, 'i')
+            }
+          } else {
+            const esc = baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+            regex = new RegExp(`\\b${esc}\\b`, 'i')
+          }
+
           demographicChecks.push({
             name: rawName,
             age: ageVal,
-            regex: new RegExp(`\\b${esc}\\b`, 'i')
+            regex,
+            excludePattern
           })
         }
       })
@@ -596,13 +667,16 @@ export class AntiSlopValidator {
     const demoFailing = []
     for (const s of matrixScenes) {
       for (const d of demographicChecks) {
-        if (d.regex.test(s.prompt)) {
+        if (d.regex && d.regex.test(s.prompt)) {
           // Find any age mentions near character or in prompt
           const ageMatches = [...s.prompt.matchAll(/(\d+)-year-old/gi)]
           for (const am of ageMatches) {
             const ageVal = parseInt(am[1], 10)
             const matchIndex = am.index
             const promptBeforeAge = s.prompt.slice(Math.max(0, matchIndex - 60), matchIndex + 60)
+            if (d.excludePattern && d.excludePattern.test(promptBeforeAge)) {
+              continue
+            }
             if (d.regex.test(promptBeforeAge) && ageVal !== d.age) {
               demoFailing.push({
                 tag: s.tag,
@@ -651,6 +725,25 @@ export class AntiSlopValidator {
           stagingViolations.push({
             tag: s.tag,
             reason: `Scene features multiple actors but lacks directorial staging (Screen Left/Right thirds, OTS silhouette, or distinct Tier B Upper/Lower panel separation).`
+          })
+        }
+      }
+
+      // Directorial Check: Bombardment & Barrage Target Bullseye Invariant
+      const hasTerrainTargetLeak = /\b(?:converging\s+upon\s+(?:the\s+)?(?:summit|ground|mountain|cliffs?|landscape|terrain)|bombarding\s+(?:the\s+)?(?:summit|mountain|ground))\b/i.test(s.prompt)
+      const isIncomingConvergence = /\b(?:converging|raining\s+down|incoming\s+(?:artillery|bombardment|barrage|salvo|beams?)|simultaneous\s+(?:apocalyptic\s+)?bombardment|erupted\s+simultaneously,\s+converging)\b/i.test(s.narrativeSync + ' ' + s.prompt)
+
+      if (hasTerrainTargetLeak) {
+        stagingViolations.push({
+          tag: s.tag,
+          reason: `Bombardment Target Leak: Prompt explicitly targets terrain/scenery ('${s.prompt.match(/\b(?:converging\s+upon\s+(?:the\s+)?(?:summit|ground|mountain|cliffs?|landscape|terrain)|bombarding\s+(?:the\s+)?(?:summit|mountain|ground))\b/i)[0]}') instead of pinning the character as the focal bullseye.`
+        })
+      } else if (isIncomingConvergence) {
+        const hasTargetBullseye = /\b(?:bullseye|converging\s+directly\s+upon|zeroed\s+in\s+and\s+converging|singular\s+lethal\s+target|striking\s+the\s+beast's|converging\s+upon\s+@\{)/i.test(s.prompt)
+        if (!hasTargetBullseye) {
+          stagingViolations.push({
+            tag: s.tag,
+            reason: `Bombardment Target Leak: Scene depicts incoming projectile convergence/bombardment but lacks a pinned target bullseye (e.g. 'singular lethal bullseye', 'zeroed in and converging directly upon @{Character}'). Diffusion will render empty scenery.`
           })
         }
       }

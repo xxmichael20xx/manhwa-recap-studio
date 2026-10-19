@@ -1,0 +1,139 @@
+{
+  "scene": 252,
+  "text": "Beside them, Michael placed three pristine roots of Frost-Thistle, harvested with their delicate root hairs completely intact and preserved in damp moss.",
+  "durationMs": 9120,
+  "rawWords": [
+    {
+      "ttsWord": "Beside",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "them",
+      "startMs": 538,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 950,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "placed",
+      "startMs": 1275,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 1675,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "pristine",
+      "startMs": 1913,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 2425,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2700,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "Frost-Thistle",
+      "startMs": 2800,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "harvested",
+      "startMs": 3838,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4338,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 4463,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "delicate",
+      "startMs": 4625,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "root",
+      "startMs": 5100,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "hairs",
+      "startMs": 5313,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 5650,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "intact",
+      "startMs": 6213,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6750,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "preserved",
+      "startMs": 6850,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7313,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "damp",
+      "startMs": 7438,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "moss",
+      "startMs": 7700,
+      "endMs": 8238
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Beside them, Michael placed three pristine roots of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2788
+    },
+    {
+      "text": "Frost-Thistle",
+      "startOffsetMs": 2800,
+      "endOffsetMs": 3625
+    },
+    {
+      "text": "harvested with their delicate root hairs completely intact",
+      "startOffsetMs": 3838,
+      "endOffsetMs": 6738
+    },
+    {
+      "text": "and preserved in damp moss.",
+      "startOffsetMs": 6750,
+      "endOffsetMs": 8338
+    }
+  ]
+}

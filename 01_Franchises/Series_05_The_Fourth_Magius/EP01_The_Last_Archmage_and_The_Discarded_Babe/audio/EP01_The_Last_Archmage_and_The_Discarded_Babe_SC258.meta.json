@@ -1,0 +1,79 @@
+{
+  "scene": 258,
+  "text": "Rowan stared at Michael as if the boy had sprouted three heads.",
+  "durationMs": 4320,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 450,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 813,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 900,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1350,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 1500,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1638,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 1750,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 2013,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "sprouted",
+      "startMs": 2200,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 2675,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "heads",
+      "startMs": 2950,
+      "endMs": 3450
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan stared at Michael as if the boy",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "had sprouted three heads.",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 3550
+    }
+  ]
+}

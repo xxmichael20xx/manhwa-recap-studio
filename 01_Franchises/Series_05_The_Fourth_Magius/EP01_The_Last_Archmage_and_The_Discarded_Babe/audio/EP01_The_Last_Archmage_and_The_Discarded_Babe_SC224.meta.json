@@ -1,0 +1,134 @@
+{
+  "scene": 224,
+  "text": "When Michael stepped forward with his blackwood staff, the corporal looked down from his high wooden stool, blinking in utter bewilderment.",
+  "durationMs": 7968,
+  "rawWords": [
+    {
+      "ttsWord": "When",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 263,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 613,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 963,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1363,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1488,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 1638,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 2138,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2888,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "corporal",
+      "startMs": 3013,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 3450,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 3675,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3988,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4138,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "high",
+      "startMs": 4275,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 4538,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "stool",
+      "startMs": 4863,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "blinking",
+      "startMs": 5600,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6025,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "utter",
+      "startMs": 6163,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "bewilderment",
+      "startMs": 6388,
+      "endMs": 7088
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "When Michael stepped forward with his blackwood staff,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2738
+    },
+    {
+      "text": "the corporal looked down from his high wooden",
+      "startOffsetMs": 2888,
+      "endOffsetMs": 4850
+    },
+    {
+      "text": "stool,",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "blinking in utter bewilderment.",
+      "startOffsetMs": 5600,
+      "endOffsetMs": 7188
+    }
+  ]
+}

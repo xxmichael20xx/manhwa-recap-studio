@@ -1,0 +1,124 @@
+{
+  "scene": 312,
+  "text": "\"Target: Fifteen metres. Mass: Eighteen tons. Weakness: The third cranial suture beneath the central crimson eye.\"",
+  "durationMs": 10296,
+  "rawWords": [
+    {
+      "ttsWord": "Target",
+      "startMs": 50,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "Fifteen",
+      "startMs": 775,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "metres",
+      "startMs": 1325,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "Mass",
+      "startMs": 2763,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "Eighteen",
+      "startMs": 3525,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "tons",
+      "startMs": 4000,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "Weakness",
+      "startMs": 5475,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 6363,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "third",
+      "startMs": 6500,
+      "endMs": 6850
+    },
+    {
+      "ttsWord": "cranial",
+      "startMs": 6863,
+      "endMs": 7338
+    },
+    {
+      "ttsWord": "suture",
+      "startMs": 7350,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 7800,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8125,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 8238,
+      "endMs": 8613
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 8625,
+      "endMs": 9050
+    },
+    {
+      "ttsWord": "eye",
+      "startMs": 9063,
+      "endMs": 9400
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Target:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 638
+    },
+    {
+      "text": "Fifteen metres.",
+      "startOffsetMs": 775,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "Mass:",
+      "startOffsetMs": 2763,
+      "endOffsetMs": 3388
+    },
+    {
+      "text": "Eighteen tons.",
+      "startOffsetMs": 3525,
+      "endOffsetMs": 4713
+    },
+    {
+      "text": "Weakness:",
+      "startOffsetMs": 5475,
+      "endOffsetMs": 6225
+    },
+    {
+      "text": "The third cranial suture beneath the central crimson",
+      "startOffsetMs": 6363,
+      "endOffsetMs": 9050
+    },
+    {
+      "text": "eye.\"",
+      "startOffsetMs": 9063,
+      "endOffsetMs": 9500
+    }
+  ]
+}

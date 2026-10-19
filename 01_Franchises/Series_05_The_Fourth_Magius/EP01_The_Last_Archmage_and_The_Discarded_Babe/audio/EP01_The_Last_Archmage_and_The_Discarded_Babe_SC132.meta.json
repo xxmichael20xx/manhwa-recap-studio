@@ -1,0 +1,99 @@
+{
+  "scene": 132,
+  "text": "To the north stretched the untamed monster ranges, home to ancient ruins and dimensional rift anomalies.",
+  "durationMs": 6720,
+  "rawWords": [
+    {
+      "ttsWord": "To",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 200,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "north",
+      "startMs": 325,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "stretched",
+      "startMs": 638,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1050,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "untamed",
+      "startMs": 1163,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "monster",
+      "startMs": 1738,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "ranges",
+      "startMs": 2200,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "home",
+      "startMs": 2975,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3213,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 3350,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "ruins",
+      "startMs": 3750,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4175,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "dimensional",
+      "startMs": 4300,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "rift",
+      "startMs": 4838,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "anomalies",
+      "startMs": 5113,
+      "endMs": 5838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "To the north stretched the untamed monster ranges,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2813
+    },
+    {
+      "text": "home to ancient ruins and dimensional rift anomalies.",
+      "startOffsetMs": 2975,
+      "endOffsetMs": 5938
+    }
+  ]
+}

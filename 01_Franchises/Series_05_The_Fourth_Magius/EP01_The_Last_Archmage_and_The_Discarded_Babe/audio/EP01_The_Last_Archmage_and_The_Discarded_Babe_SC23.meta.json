@@ -1,0 +1,179 @@
+{
+  "scene": 23,
+  "text": "Through the blinding downpour ahead, two colossal wrought-iron gates soared fifty metres into the night, decorated with the platinum crest of a winged dragon coiled around a lightning bolt.",
+  "durationMs": 10632,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 313,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "blinding",
+      "startMs": 438,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "downpour",
+      "startMs": 900,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "ahead",
+      "startMs": 1438,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2038,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "colossal",
+      "startMs": 2250,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "wrought-iron",
+      "startMs": 2813,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "gates",
+      "startMs": 3338,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "soared",
+      "startMs": 3688,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "fifty",
+      "startMs": 3975,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "metres",
+      "startMs": 4350,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4738,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4925,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "night",
+      "startMs": 5025,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "decorated",
+      "startMs": 5650,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6213,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6325,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "platinum",
+      "startMs": 6425,
+      "endMs": 6850
+    },
+    {
+      "ttsWord": "crest",
+      "startMs": 6863,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7238,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7288,
+      "endMs": 7363
+    },
+    {
+      "ttsWord": "winged",
+      "startMs": 7375,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "dragon",
+      "startMs": 7713,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "coiled",
+      "startMs": 8150,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 8538,
+      "endMs": 8825
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 8838,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 8900,
+      "endMs": 9325
+    },
+    {
+      "ttsWord": "bolt",
+      "startMs": 9338,
+      "endMs": 9750
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through the blinding downpour ahead,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1875
+    },
+    {
+      "text": "two colossal wrought-iron gates soared fifty metres into",
+      "startOffsetMs": 2038,
+      "endOffsetMs": 4913
+    },
+    {
+      "text": "the night,",
+      "startOffsetMs": 4925,
+      "endOffsetMs": 5438
+    },
+    {
+      "text": "decorated with the platinum crest of a winged",
+      "startOffsetMs": 5650,
+      "endOffsetMs": 7700
+    },
+    {
+      "text": "dragon coiled around a lightning bolt.",
+      "startOffsetMs": 7713,
+      "endOffsetMs": 9850
+    }
+  ]
+}

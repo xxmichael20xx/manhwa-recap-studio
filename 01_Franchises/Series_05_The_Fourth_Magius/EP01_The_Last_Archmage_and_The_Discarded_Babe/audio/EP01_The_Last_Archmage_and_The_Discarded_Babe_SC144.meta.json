@@ -1,0 +1,129 @@
+{
+  "scene": 144,
+  "text": "The lead wolf let out an enraged snarl and lunged through the darkness, jaws wide open aiming straight for Michael's throat.",
+  "durationMs": 7536,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "lead",
+      "startMs": 213,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "wolf",
+      "startMs": 475,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 788,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 975,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 1150,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "enraged",
+      "startMs": 1275,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "snarl",
+      "startMs": 1788,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2313,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "lunged",
+      "startMs": 2463,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2850,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3013,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "darkness",
+      "startMs": 3138,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "jaws",
+      "startMs": 3963,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 4338,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 4700,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "aiming",
+      "startMs": 5013,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "straight",
+      "startMs": 5350,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 5688,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 5825,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "throat",
+      "startMs": 6275,
+      "endMs": 6675
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The lead wolf let out an enraged snarl",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2300
+    },
+    {
+      "text": "and lunged through the darkness,",
+      "startOffsetMs": 2313,
+      "endOffsetMs": 3825
+    },
+    {
+      "text": "jaws wide open aiming straight for Michael's throat.",
+      "startOffsetMs": 3963,
+      "endOffsetMs": 6775
+    }
+  ]
+}

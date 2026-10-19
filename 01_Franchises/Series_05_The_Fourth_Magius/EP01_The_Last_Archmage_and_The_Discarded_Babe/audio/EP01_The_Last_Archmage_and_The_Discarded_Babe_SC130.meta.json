@@ -1,0 +1,129 @@
+{
+  "scene": 130,
+  "text": "While chewing the protein-rich meat, Michael opened the Primordial Codex on his lap, absorbing pages from the Foundations of Runic Cartography.",
+  "durationMs": 8808,
+  "rawWords": [
+    {
+      "ttsWord": "While",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "chewing",
+      "startMs": 338,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 650,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "protein-rich",
+      "startMs": 750,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 1488,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1975,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "opened",
+      "startMs": 2413,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2700,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 2788,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 3400,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 3888,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4013,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "lap",
+      "startMs": 4175,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "absorbing",
+      "startMs": 4813,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "pages",
+      "startMs": 5325,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5788,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5925,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "Foundations",
+      "startMs": 6000,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6688,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "Runic",
+      "startMs": 6813,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "Cartography",
+      "startMs": 7125,
+      "endMs": 7925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "While chewing the protein-rich meat,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1863
+    },
+    {
+      "text": "Michael opened the Primordial Codex on his lap,",
+      "startOffsetMs": 1975,
+      "endOffsetMs": 4625
+    },
+    {
+      "text": "absorbing pages from the Foundations of Runic Cartography.",
+      "startOffsetMs": 4813,
+      "endOffsetMs": 8025
+    }
+  ]
+}

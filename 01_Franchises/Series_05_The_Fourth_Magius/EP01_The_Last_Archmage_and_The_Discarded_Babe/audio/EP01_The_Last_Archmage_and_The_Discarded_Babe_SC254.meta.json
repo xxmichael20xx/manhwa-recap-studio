@@ -1,0 +1,139 @@
+{
+  "scene": 254,
+  "text": "He smelled the root, crushed a microscopic speck between his fingernails, and felt the pure, uncorrupted medicinal potency surge into his skin.",
+  "durationMs": 9216,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "smelled",
+      "startMs": 238,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 638,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "root",
+      "startMs": 750,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "crushed",
+      "startMs": 1375,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1750,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "microscopic",
+      "startMs": 1800,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "speck",
+      "startMs": 2575,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 2925,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3250,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "fingernails",
+      "startMs": 3425,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4350,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "felt",
+      "startMs": 4525,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4788,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 4875,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "uncorrupted",
+      "startMs": 5588,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "medicinal",
+      "startMs": 6175,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "potency",
+      "startMs": 6638,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "surge",
+      "startMs": 7138,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7538,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7763,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 7900,
+      "endMs": 8338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He smelled the root,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1200
+    },
+    {
+      "text": "crushed a microscopic speck between his fingernails,",
+      "startOffsetMs": 1375,
+      "endOffsetMs": 4213
+    },
+    {
+      "text": "and felt the pure,",
+      "startOffsetMs": 4350,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "uncorrupted medicinal potency surge into his skin.",
+      "startOffsetMs": 5588,
+      "endOffsetMs": 8438
+    }
+  ]
+}

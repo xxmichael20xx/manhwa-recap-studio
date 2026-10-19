@@ -1,0 +1,99 @@
+{
+  "scene": 75,
+  "text": "SYSTEM HARMONIZATION COMPLETE: TIER 1 DUAL-VESSEL AWAKENED. INNATE AUTHORITY: MANA-FORGED VESSEL and PRIMORDIAL ARCHIVE.",
+  "durationMs": 9336,
+  "rawWords": [
+    {
+      "ttsWord": "SYSTEM",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "HARMONIZATION",
+      "startMs": 563,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "COMPLETE",
+      "startMs": 1413,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "TIER",
+      "startMs": 2200,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "1",
+      "startMs": 2500,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "DUAL-VESSEL",
+      "startMs": 2725,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "AWAKENED",
+      "startMs": 3313,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "INNATE",
+      "startMs": 4763,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "AUTHORITY",
+      "startMs": 5163,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "MANA-FORGED",
+      "startMs": 5975,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "VESSEL",
+      "startMs": 6613,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7075,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "PRIMORDIAL",
+      "startMs": 7188,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "ARCHIVE",
+      "startMs": 7800,
+      "endMs": 8463
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "SYSTEM HARMONIZATION COMPLETE:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2025
+    },
+    {
+      "text": "TIER 1 DUAL-VESSEL AWAKENED.",
+      "startOffsetMs": 2200,
+      "endOffsetMs": 4000
+    },
+    {
+      "text": "INNATE AUTHORITY:",
+      "startOffsetMs": 4763,
+      "endOffsetMs": 5813
+    },
+    {
+      "text": "MANA-FORGED VESSEL and PRIMORDIAL ARCHIVE.",
+      "startOffsetMs": 5975,
+      "endOffsetMs": 8563
+    }
+  ]
+}

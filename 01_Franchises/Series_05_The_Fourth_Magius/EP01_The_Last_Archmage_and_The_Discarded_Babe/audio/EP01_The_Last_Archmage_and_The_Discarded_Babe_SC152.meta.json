@@ -1,0 +1,124 @@
+{
+  "scene": 152,
+  "text": "The wolf's two front serrated fangs snapped cleanly off against Michael's mana-reinforced forearm, shards of tooth flying into the dirt.",
+  "durationMs": 8352,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "wolf's",
+      "startMs": 200,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 588,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "front",
+      "startMs": 850,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "serrated",
+      "startMs": 1100,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "fangs",
+      "startMs": 1600,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "snapped",
+      "startMs": 2000,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "cleanly",
+      "startMs": 2438,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 2863,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 3138,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 3488,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "mana-reinforced",
+      "startMs": 3888,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "forearm",
+      "startMs": 4788,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "shards",
+      "startMs": 5550,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5963,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "tooth",
+      "startMs": 6075,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "flying",
+      "startMs": 6375,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6800,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6988,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "dirt",
+      "startMs": 7113,
+      "endMs": 7475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The wolf's two front serrated fangs snapped cleanly",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2850
+    },
+    {
+      "text": "off against Michael's mana-reinforced forearm,",
+      "startOffsetMs": 2863,
+      "endOffsetMs": 5388
+    },
+    {
+      "text": "shards of tooth flying into the dirt.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7575
+    }
+  ]
+}

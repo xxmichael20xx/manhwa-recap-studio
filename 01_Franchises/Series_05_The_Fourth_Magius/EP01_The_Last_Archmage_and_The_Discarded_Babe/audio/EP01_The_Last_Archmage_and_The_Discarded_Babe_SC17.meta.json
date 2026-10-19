@@ -1,0 +1,124 @@
+{
+  "scene": 17,
+  "text": "Then, the deafening silence of the void was violently pierced by the sound of torrential rain hammering against cold stone.",
+  "durationMs": 7488,
+  "rawWords": [
+    {
+      "ttsWord": "Then",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 625,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 775,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "silence",
+      "startMs": 1225,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1750,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1850,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 1938,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2350,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 2525,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "pierced",
+      "startMs": 3038,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3475,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3600,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "sound",
+      "startMs": 3725,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4100,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "torrential",
+      "startMs": 4175,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "rain",
+      "startMs": 4700,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "hammering",
+      "startMs": 4963,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 5400,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 5800,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 6113,
+      "endMs": 6625
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Then, the deafening silence of the void was",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2513
+    },
+    {
+      "text": "violently pierced by the sound of torrential rain",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 4950
+    },
+    {
+      "text": "hammering against cold stone.",
+      "startOffsetMs": 4963,
+      "endOffsetMs": 6725
+    }
+  ]
+}

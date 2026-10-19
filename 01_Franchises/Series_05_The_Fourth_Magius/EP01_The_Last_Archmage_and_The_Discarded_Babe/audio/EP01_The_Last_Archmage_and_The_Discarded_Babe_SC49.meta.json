@@ -1,0 +1,129 @@
+{
+  "scene": 49,
+  "text": "Michael pushed himself up onto his feet, using every ounce of his sovereign willpower to steady his shivering, malnourished legs.",
+  "durationMs": 8040,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "pushed",
+      "startMs": 488,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "himself",
+      "startMs": 800,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 1238,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 1400,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1675,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "feet",
+      "startMs": 1850,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "using",
+      "startMs": 2463,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 2850,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "ounce",
+      "startMs": 3138,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3413,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3500,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 3663,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "willpower",
+      "startMs": 4125,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4688,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "steady",
+      "startMs": 4800,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5175,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "shivering",
+      "startMs": 5325,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "malnourished",
+      "startMs": 6075,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "legs",
+      "startMs": 6688,
+      "endMs": 7175
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael pushed himself up onto his feet,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2275
+    },
+    {
+      "text": "using every ounce of his sovereign willpower to",
+      "startOffsetMs": 2463,
+      "endOffsetMs": 4788
+    },
+    {
+      "text": "steady his shivering,",
+      "startOffsetMs": 4800,
+      "endOffsetMs": 5900
+    },
+    {
+      "text": "malnourished legs.",
+      "startOffsetMs": 6075,
+      "endOffsetMs": 7275
+    }
+  ]
+}

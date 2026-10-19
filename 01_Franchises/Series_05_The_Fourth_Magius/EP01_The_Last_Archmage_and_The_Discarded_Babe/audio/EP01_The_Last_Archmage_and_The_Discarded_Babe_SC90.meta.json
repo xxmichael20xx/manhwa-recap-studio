@@ -1,0 +1,89 @@
+{
+  "scene": 90,
+  "text": "Michael smiled broadly, a genuine spark of respect dancing in his cyan eyes.",
+  "durationMs": 5832,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "smiled",
+      "startMs": 475,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "broadly",
+      "startMs": 963,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1688,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "genuine",
+      "startMs": 1775,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "spark",
+      "startMs": 2238,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2613,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "respect",
+      "startMs": 2725,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "dancing",
+      "startMs": 3188,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3700,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3775,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 3925,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 4425,
+      "endMs": 4950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael smiled broadly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1550
+    },
+    {
+      "text": "a genuine spark of respect dancing in his",
+      "startOffsetMs": 1688,
+      "endOffsetMs": 3913
+    },
+    {
+      "text": "cyan eyes.",
+      "startOffsetMs": 3925,
+      "endOffsetMs": 5050
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "scene": 30,
+  "text": "This five-year-old body had also been named Michael Montrey — the biological youngest son of Patriarch Valerius Montrey, born to a gentle commoner concubine who had passed away during childbirth.",
+  "durationMs": 11760,
+  "rawWords": [
+    {
+      "ttsWord": "This",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "five-year-old",
+      "startMs": 325,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "body",
+      "startMs": 1025,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 1375,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "also",
+      "startMs": 1550,
+      "endMs": 1863
+    },
+    {
+      "ttsWord": "been",
+      "startMs": 1875,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "named",
+      "startMs": 2075,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2363,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 2700,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3525,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "biological",
+      "startMs": 3638,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "youngest",
+      "startMs": 4350,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "son",
+      "startMs": 4788,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4988,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "Patriarch",
+      "startMs": 5088,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "Valerius",
+      "startMs": 5713,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 6263,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "born",
+      "startMs": 7038,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7325,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7438,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "gentle",
+      "startMs": 7538,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "commoner",
+      "startMs": 7900,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "concubine",
+      "startMs": 8288,
+      "endMs": 8950
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 8963,
+      "endMs": 9075
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 9088,
+      "endMs": 9213
+    },
+    {
+      "ttsWord": "passed",
+      "startMs": 9225,
+      "endMs": 9550
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 9563,
+      "endMs": 9900
+    },
+    {
+      "ttsWord": "during",
+      "startMs": 9913,
+      "endMs": 10163
+    },
+    {
+      "ttsWord": "childbirth",
+      "startMs": 10175,
+      "endMs": 10888
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "This five-year-old body had also been named Michael",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2688
+    },
+    {
+      "text": "Montrey",
+      "startOffsetMs": 2700,
+      "endOffsetMs": 3300
+    },
+    {
+      "text": "the biological youngest son of Patriarch Valerius Montrey,",
+      "startOffsetMs": 3525,
+      "endOffsetMs": 6850
+    },
+    {
+      "text": "born to a gentle commoner concubine who had",
+      "startOffsetMs": 7038,
+      "endOffsetMs": 9213
+    },
+    {
+      "text": "passed away during childbirth.",
+      "startOffsetMs": 9225,
+      "endOffsetMs": 10988
+    }
+  ]
+}

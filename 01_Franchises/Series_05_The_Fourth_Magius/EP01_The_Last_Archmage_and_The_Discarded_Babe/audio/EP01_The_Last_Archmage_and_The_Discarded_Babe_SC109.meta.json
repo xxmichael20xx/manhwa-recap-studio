@@ -1,0 +1,139 @@
+{
+  "scene": 109,
+  "text": "Instead of storing the forest's mana passively in his core, Michael actively forced the energy outward into his circulatory and skeletal systems.",
+  "durationMs": 8832,
+  "rawWords": [
+    {
+      "ttsWord": "Instead",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 488,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "storing",
+      "startMs": 588,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 963,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "forest's",
+      "startMs": 1050,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 1588,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "passively",
+      "startMs": 1913,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2513,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2600,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "core",
+      "startMs": 2750,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 3413,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "actively",
+      "startMs": 3763,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "forced",
+      "startMs": 4188,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4588,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 4688,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "outward",
+      "startMs": 5150,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5563,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5775,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "circulatory",
+      "startMs": 5900,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6675,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "skeletal",
+      "startMs": 6813,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "systems",
+      "startMs": 7300,
+      "endMs": 7950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Instead of storing the forest's mana passively in",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2588
+    },
+    {
+      "text": "his core,",
+      "startOffsetMs": 2600,
+      "endOffsetMs": 3213
+    },
+    {
+      "text": "Michael actively forced the energy outward into his",
+      "startOffsetMs": 3413,
+      "endOffsetMs": 5888
+    },
+    {
+      "text": "circulatory and skeletal systems.",
+      "startOffsetMs": 5900,
+      "endOffsetMs": 8050
+    }
+  ]
+}

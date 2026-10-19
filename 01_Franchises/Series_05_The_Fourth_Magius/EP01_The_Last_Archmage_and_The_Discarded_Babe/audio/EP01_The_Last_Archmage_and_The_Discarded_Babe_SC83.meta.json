@@ -1,0 +1,119 @@
+{
+  "scene": 83,
+  "text": "Michael skimmed through the pages, noting that the text flowed effortlessly into his memory without resistance or mental fatigue.",
+  "durationMs": 7464,
+  "rawWords": [
+    {
+      "ttsWord": "Michael",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "skimmed",
+      "startMs": 475,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 875,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1050,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "pages",
+      "startMs": 1163,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "noting",
+      "startMs": 1938,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 2325,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2438,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "text",
+      "startMs": 2550,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "flowed",
+      "startMs": 2925,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "effortlessly",
+      "startMs": 3213,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3850,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4088,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "memory",
+      "startMs": 4238,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "without",
+      "startMs": 4638,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "resistance",
+      "startMs": 5000,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 5550,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "mental",
+      "startMs": 5713,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "fatigue",
+      "startMs": 6025,
+      "endMs": 6588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Michael skimmed through the pages,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1813
+    },
+    {
+      "text": "noting that the text flowed effortlessly into his",
+      "startOffsetMs": 1938,
+      "endOffsetMs": 4225
+    },
+    {
+      "text": "memory without resistance or mental fatigue.",
+      "startOffsetMs": 4238,
+      "endOffsetMs": 6688
+    }
+  ]
+}

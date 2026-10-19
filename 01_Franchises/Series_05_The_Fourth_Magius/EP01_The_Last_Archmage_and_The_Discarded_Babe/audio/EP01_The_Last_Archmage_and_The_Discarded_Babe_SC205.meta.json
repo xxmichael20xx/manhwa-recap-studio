@@ -1,0 +1,114 @@
+{
+  "scene": 205,
+  "text": "A deafening concussive shockwave detonated instantly, pulverizing the six-foot granite boulder into a cloud of powdery grey sand.",
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 213,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 663,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "shockwave",
+      "startMs": 1188,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "detonated",
+      "startMs": 1813,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "instantly",
+      "startMs": 2313,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "pulverizing",
+      "startMs": 3200,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3850,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "six-foot",
+      "startMs": 3938,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "granite",
+      "startMs": 4463,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "boulder",
+      "startMs": 4863,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5225,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5475,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "cloud",
+      "startMs": 5550,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5925,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "powdery",
+      "startMs": 6025,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "grey",
+      "startMs": 6475,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "sand",
+      "startMs": 6725,
+      "endMs": 7275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A deafening concussive shockwave detonated instantly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3000
+    },
+    {
+      "text": "pulverizing the six-foot granite boulder into a cloud",
+      "startOffsetMs": 3200,
+      "endOffsetMs": 5913
+    },
+    {
+      "text": "of powdery grey sand.",
+      "startOffsetMs": 5925,
+      "endOffsetMs": 7375
+    }
+  ]
+}

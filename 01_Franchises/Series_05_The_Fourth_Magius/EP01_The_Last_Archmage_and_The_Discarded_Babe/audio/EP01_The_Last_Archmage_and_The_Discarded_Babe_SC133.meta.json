@@ -1,0 +1,184 @@
+{
+  "scene": 133,
+  "text": "\"I am five years old,\" Michael reasoned aloud between bites. \"If I enter human settlements now, I will be seized as an unowned orphan and sold into indentured guild labour.\"",
+  "durationMs": 11352,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "am",
+      "startMs": 250,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 388,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 750,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "old",
+      "startMs": 1038,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1563,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "reasoned",
+      "startMs": 1963,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "aloud",
+      "startMs": 2313,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 2688,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "bites",
+      "startMs": 3075,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "If",
+      "startMs": 4463,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 4663,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "enter",
+      "startMs": 4800,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "human",
+      "startMs": 5088,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "settlements",
+      "startMs": 5438,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "now",
+      "startMs": 5925,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 6538,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 6663,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "be",
+      "startMs": 6788,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "seized",
+      "startMs": 6913,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 7400,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7538,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "unowned",
+      "startMs": 7688,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "orphan",
+      "startMs": 8100,
+      "endMs": 8513
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 8525,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "sold",
+      "startMs": 8650,
+      "endMs": 9000
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 9013,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "indentured",
+      "startMs": 9238,
+      "endMs": 9738
+    },
+    {
+      "ttsWord": "guild",
+      "startMs": 9750,
+      "endMs": 10025
+    },
+    {
+      "ttsWord": "labour",
+      "startMs": 10038,
+      "endMs": 10488
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I am five years old,\" Michael reasoned aloud",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2675
+    },
+    {
+      "text": "between bites.",
+      "startOffsetMs": 2688,
+      "endOffsetMs": 3700
+    },
+    {
+      "text": "If I enter human settlements now,",
+      "startOffsetMs": 4463,
+      "endOffsetMs": 6350
+    },
+    {
+      "text": "I will be seized as an unowned orphan",
+      "startOffsetMs": 6538,
+      "endOffsetMs": 8513
+    },
+    {
+      "text": "and sold into indentured guild labour.\"",
+      "startOffsetMs": 8525,
+      "endOffsetMs": 10588
+    }
+  ]
+}

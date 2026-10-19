@@ -1,0 +1,114 @@
+{
+  "scene": 238,
+  "text": "\"They spend three years learning to ignite a candle from five paces, and suddenly believe they are demigods.\"",
+  "durationMs": 6840,
+  "rawWords": [
+    {
+      "ttsWord": "They",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "spend",
+      "startMs": 238,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "three",
+      "startMs": 613,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 913,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "learning",
+      "startMs": 1238,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1550,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "ignite",
+      "startMs": 1688,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2063,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "candle",
+      "startMs": 2138,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2563,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 2775,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "paces",
+      "startMs": 3138,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3950,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 4125,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "believe",
+      "startMs": 4588,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 5000,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "are",
+      "startMs": 5125,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "demigods",
+      "startMs": 5238,
+      "endMs": 5975
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "They spend three years learning to ignite a",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2125
+    },
+    {
+      "text": "candle from five paces,",
+      "startOffsetMs": 2138,
+      "endOffsetMs": 3800
+    },
+    {
+      "text": "and suddenly believe they are demigods.\"",
+      "startOffsetMs": 3950,
+      "endOffsetMs": 6075
+    }
+  ]
+}

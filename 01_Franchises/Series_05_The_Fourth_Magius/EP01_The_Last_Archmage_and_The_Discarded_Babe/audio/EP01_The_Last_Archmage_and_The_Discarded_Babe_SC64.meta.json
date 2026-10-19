@@ -1,0 +1,79 @@
+{
+  "scene": 64,
+  "text": "CARRIER RECOGNITION: ARCHMAGE MICHAEL. SOUL BINDING CONFIRMED. COMMENCING ANATOMICAL HARMONIZATION.",
+  "durationMs": 8736,
+  "rawWords": [
+    {
+      "ttsWord": "CARRIER",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "RECOGNITION",
+      "startMs": 513,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "ARCHMAGE",
+      "startMs": 1475,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "MICHAEL",
+      "startMs": 1925,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "SOUL",
+      "startMs": 3300,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "BINDING",
+      "startMs": 3713,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "CONFIRMED",
+      "startMs": 4125,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "COMMENCING",
+      "startMs": 5700,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "ANATOMICAL",
+      "startMs": 6288,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "HARMONIZATION",
+      "startMs": 6963,
+      "endMs": 7875
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "CARRIER RECOGNITION:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1313
+    },
+    {
+      "text": "ARCHMAGE MICHAEL.",
+      "startOffsetMs": 1475,
+      "endOffsetMs": 2538
+    },
+    {
+      "text": "SOUL BINDING CONFIRMED.",
+      "startOffsetMs": 3300,
+      "endOffsetMs": 4938
+    },
+    {
+      "text": "COMMENCING ANATOMICAL HARMONIZATION.",
+      "startOffsetMs": 5700,
+      "endOffsetMs": 7975
+    }
+  ]
+}

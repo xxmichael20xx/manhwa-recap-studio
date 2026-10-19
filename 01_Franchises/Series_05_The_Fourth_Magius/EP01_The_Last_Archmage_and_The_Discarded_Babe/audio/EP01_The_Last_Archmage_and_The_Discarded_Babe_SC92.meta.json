@@ -1,0 +1,94 @@
+{
+  "scene": 92,
+  "text": "\"I must forge this mortal shell until it can bear the weight of ancient sovereignty.\"",
+  "durationMs": 5016,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "must",
+      "startMs": 200,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "forge",
+      "startMs": 513,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 875,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 1075,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "shell",
+      "startMs": 1388,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 1775,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 2088,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "can",
+      "startMs": 2188,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "bear",
+      "startMs": 2350,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2625,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "weight",
+      "startMs": 2738,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2963,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 3063,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "sovereignty",
+      "startMs": 3450,
+      "endMs": 4138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I must forge this mortal shell until it",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2175
+    },
+    {
+      "text": "can bear the weight of ancient sovereignty.\"",
+      "startOffsetMs": 2188,
+      "endOffsetMs": 4238
+    }
+  ]
+}

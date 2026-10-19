@@ -1,0 +1,129 @@
+{
+  "scene": 111,
+  "text": "Every repetition of the breathing cycle was excruciating, feeling as though fine steel wires were being drawn through his bone marrow.",
+  "durationMs": 7920,
+  "rawWords": [
+    {
+      "ttsWord": "Every",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "repetition",
+      "startMs": 400,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1000,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1100,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "breathing",
+      "startMs": 1200,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "cycle",
+      "startMs": 1588,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2000,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "excruciating",
+      "startMs": 2150,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "feeling",
+      "startMs": 3263,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3675,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "though",
+      "startMs": 3813,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "fine",
+      "startMs": 4000,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "steel",
+      "startMs": 4375,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "wires",
+      "startMs": 4775,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 5188,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "being",
+      "startMs": 5313,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "drawn",
+      "startMs": 5550,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5938,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6125,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "bone",
+      "startMs": 6288,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "marrow",
+      "startMs": 6575,
+      "endMs": 7038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Every repetition of the breathing cycle was excruciating,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3063
+    },
+    {
+      "text": "feeling as though fine steel wires were being",
+      "startOffsetMs": 3263,
+      "endOffsetMs": 5538
+    },
+    {
+      "text": "drawn through his bone marrow.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7138
+    }
+  ]
+}

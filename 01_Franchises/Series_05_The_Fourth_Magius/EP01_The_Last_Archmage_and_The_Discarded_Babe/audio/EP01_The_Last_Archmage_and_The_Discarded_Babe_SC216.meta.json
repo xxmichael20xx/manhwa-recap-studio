@@ -1,0 +1,109 @@
+{
+  "scene": 216,
+  "text": "But with mana-forged leg muscles and flawless cardiovascular pacing, Michael covered the distance in under six hours.",
+  "durationMs": 7464,
+  "rawWords": [
+    {
+      "ttsWord": "But",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 225,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "mana-forged",
+      "startMs": 400,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "leg",
+      "startMs": 1113,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "muscles",
+      "startMs": 1363,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1813,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "flawless",
+      "startMs": 1938,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "cardiovascular",
+      "startMs": 2425,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "pacing",
+      "startMs": 3313,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 4075,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "covered",
+      "startMs": 4400,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4725,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "distance",
+      "startMs": 4825,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5313,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 5488,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "six",
+      "startMs": 5725,
+      "endMs": 6038
+    },
+    {
+      "ttsWord": "hours",
+      "startMs": 6050,
+      "endMs": 6588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "But with mana-forged leg muscles and flawless cardiovascular",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3300
+    },
+    {
+      "text": "pacing,",
+      "startOffsetMs": 3313,
+      "endOffsetMs": 3875
+    },
+    {
+      "text": "Michael covered the distance in under six hours.",
+      "startOffsetMs": 4075,
+      "endOffsetMs": 6688
+    }
+  ]
+}

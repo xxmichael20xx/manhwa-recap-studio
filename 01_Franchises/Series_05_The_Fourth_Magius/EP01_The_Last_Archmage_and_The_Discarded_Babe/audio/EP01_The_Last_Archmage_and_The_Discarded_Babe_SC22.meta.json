@@ -1,0 +1,114 @@
+{
+  "scene": 22,
+  "text": "\"What in the heavens happened to my vessel?\" Michael muttered, his high-pitched toddler voice startling his own ears.",
+  "durationMs": 7536,
+  "rawWords": [
+    {
+      "ttsWord": "What",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 288,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 363,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "heavens",
+      "startMs": 438,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "happened",
+      "startMs": 838,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1175,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 1250,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "vessel",
+      "startMs": 1388,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2738,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "muttered",
+      "startMs": 3138,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3713,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "high-pitched",
+      "startMs": 3888,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "toddler",
+      "startMs": 4525,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 4963,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "startling",
+      "startMs": 5275,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5763,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "own",
+      "startMs": 5938,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "ears",
+      "startMs": 6150,
+      "endMs": 6663
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "What in the heavens happened to my vessel?\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1975
+    },
+    {
+      "text": "Michael muttered, his high-pitched toddler voice startling",
+      "startOffsetMs": 2738,
+      "endOffsetMs": 5750
+    },
+    {
+      "text": "his own ears.",
+      "startOffsetMs": 5763,
+      "endOffsetMs": 6763
+    }
+  ]
+}

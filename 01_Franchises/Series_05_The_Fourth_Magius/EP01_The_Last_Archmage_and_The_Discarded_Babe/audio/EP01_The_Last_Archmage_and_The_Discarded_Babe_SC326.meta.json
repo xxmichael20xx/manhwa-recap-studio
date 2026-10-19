@@ -1,0 +1,124 @@
+{
+  "scene": 326,
+  "text": "The fifteen-metre wyrm's armored obsidian skull fractured into a spiderweb of glowing cracks, the force traveling through its entire spine.",
+  "durationMs": 8976,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "fifteen-metre",
+      "startMs": 188,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "wyrm's",
+      "startMs": 988,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "armored",
+      "startMs": 1925,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 2288,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "skull",
+      "startMs": 2825,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "fractured",
+      "startMs": 3125,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3613,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3850,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "spiderweb",
+      "startMs": 3925,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4563,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 4700,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "cracks",
+      "startMs": 5038,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5788,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "force",
+      "startMs": 5913,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "traveling",
+      "startMs": 6238,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 6738,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 6950,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 7088,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "spine",
+      "startMs": 7575,
+      "endMs": 8100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The fifteen-metre wyrm's armored obsidian skull",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "fractured into a spiderweb of glowing cracks,",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 5650
+    },
+    {
+      "text": "the force traveling through its entire spine.",
+      "startOffsetMs": 5788,
+      "endOffsetMs": 8200
+    }
+  ]
+}

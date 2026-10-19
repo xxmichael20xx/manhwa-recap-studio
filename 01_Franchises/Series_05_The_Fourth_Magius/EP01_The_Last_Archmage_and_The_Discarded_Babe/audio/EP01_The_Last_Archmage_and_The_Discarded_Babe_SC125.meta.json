@@ -1,0 +1,134 @@
+{
+  "scene": 125,
+  "text": "The pebble flew with the velocity of a crossbow bolt, striking the hare cleanly between its horns with an instantaneous crack.",
+  "durationMs": 7608,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "pebble",
+      "startMs": 200,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "flew",
+      "startMs": 550,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 875,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1025,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "velocity",
+      "startMs": 1113,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1713,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1788,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "crossbow",
+      "startMs": 1863,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "bolt",
+      "startMs": 2400,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "striking",
+      "startMs": 3025,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3525,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "hare",
+      "startMs": 3613,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "cleanly",
+      "startMs": 3888,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 4300,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4663,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "horns",
+      "startMs": 4788,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5188,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5313,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "instantaneous",
+      "startMs": 5413,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "crack",
+      "startMs": 6213,
+      "endMs": 6725
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The pebble flew with the velocity of a",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1850
+    },
+    {
+      "text": "crossbow bolt,",
+      "startOffsetMs": 1863,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "striking the hare cleanly between its horns with",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 5300
+    },
+    {
+      "text": "an instantaneous crack.",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 6825
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "scene": 218,
+  "text": "It was Oakhaven, the premier frontier hub connecting the wild northern monster ranges with the civilized southern provinces of the Valerius Empire.",
+  "durationMs": 8784,
+  "rawWords": [
+    {
+      "ttsWord": "It",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 200,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 413,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1213,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "premier",
+      "startMs": 1325,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 1750,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "hub",
+      "startMs": 2275,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "connecting",
+      "startMs": 2500,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2963,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "wild",
+      "startMs": 3075,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "northern",
+      "startMs": 3488,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "monster",
+      "startMs": 3825,
+      "endMs": 4238
+    },
+    {
+      "ttsWord": "ranges",
+      "startMs": 4250,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4713,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4850,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "civilized",
+      "startMs": 4950,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "southern",
+      "startMs": 5550,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "provinces",
+      "startMs": 5913,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6550,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6663,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "Valerius",
+      "startMs": 6738,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "Empire",
+      "startMs": 7325,
+      "endMs": 7913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "It was Oakhaven,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1075
+    },
+    {
+      "text": "the premier frontier hub connecting the wild northern",
+      "startOffsetMs": 1213,
+      "endOffsetMs": 3813
+    },
+    {
+      "text": "monster ranges with the civilized southern provinces of",
+      "startOffsetMs": 3825,
+      "endOffsetMs": 6650
+    },
+    {
+      "text": "the Valerius Empire.",
+      "startOffsetMs": 6663,
+      "endOffsetMs": 8013
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "scene": 243,
+  "text": "Behind the heavy oak counter stood a burly, fifty-five-year-old man with broad shoulders, a thick salt-and-pepper beard, and calloused hands.",
+  "durationMs": 8808,
+  "rawWords": [
+    {
+      "ttsWord": "Behind",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 450,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 525,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "oak",
+      "startMs": 888,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "counter",
+      "startMs": 1100,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 1500,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1738,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "burly",
+      "startMs": 1813,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "fifty-five-year-old",
+      "startMs": 2488,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "man",
+      "startMs": 3425,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3725,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "broad",
+      "startMs": 3875,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "shoulders",
+      "startMs": 4200,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5025,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "thick",
+      "startMs": 5113,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "salt-and-pepper",
+      "startMs": 5413,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "beard",
+      "startMs": 6188,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6763,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "calloused",
+      "startMs": 6950,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 7413,
+      "endMs": 7925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Behind the heavy oak counter stood a burly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2350
+    },
+    {
+      "text": "fifty-five-year-old man with broad shoulders,",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 4863
+    },
+    {
+      "text": "a thick salt-and-pepper beard,",
+      "startOffsetMs": 5025,
+      "endOffsetMs": 6638
+    },
+    {
+      "text": "and calloused hands.",
+      "startOffsetMs": 6763,
+      "endOffsetMs": 8025
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "scene": 140,
+  "text": "It looked at the small five-year-old boy sitting beside the fire pit, expecting an easy meal of helpless tender meat.",
+  "durationMs": 7080,
+  "rawWords": [
+    {
+      "ttsWord": "It",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "looked",
+      "startMs": 250,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 475,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 550,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 650,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "five-year-old",
+      "startMs": 1038,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 1725,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "sitting",
+      "startMs": 1938,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 2300,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2700,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "fire",
+      "startMs": 2775,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "pit",
+      "startMs": 3138,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "expecting",
+      "startMs": 3738,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4275,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "easy",
+      "startMs": 4375,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "meal",
+      "startMs": 4675,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4988,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "helpless",
+      "startMs": 5088,
+      "endMs": 5513
+    },
+    {
+      "ttsWord": "tender",
+      "startMs": 5525,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "meat",
+      "startMs": 5850,
+      "endMs": 6200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "It looked at the small five-year-old boy sitting",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "beside the fire pit,",
+      "startOffsetMs": 2300,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "expecting an easy meal of helpless tender meat.",
+      "startOffsetMs": 3738,
+      "endOffsetMs": 6300
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "scene": 296,
+  "text": "Through the town gate, screaming mercenaries and terrified townspeople were retreating in frantic disarray.",
+  "durationMs": 6864,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 313,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "town",
+      "startMs": 438,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "gate",
+      "startMs": 788,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "screaming",
+      "startMs": 1363,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "mercenaries",
+      "startMs": 1900,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2713,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "terrified",
+      "startMs": 2800,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "townspeople",
+      "startMs": 3438,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 4163,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "retreating",
+      "startMs": 4313,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4838,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "frantic",
+      "startMs": 4938,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "disarray",
+      "startMs": 5375,
+      "endMs": 5988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through the town gate,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1200
+    },
+    {
+      "text": "screaming mercenaries and terrified townspeople were retreating",
+      "startOffsetMs": 1363,
+      "endOffsetMs": 4825
+    },
+    {
+      "text": "in frantic disarray.",
+      "startOffsetMs": 4838,
+      "endOffsetMs": 6088
+    }
+  ]
+}

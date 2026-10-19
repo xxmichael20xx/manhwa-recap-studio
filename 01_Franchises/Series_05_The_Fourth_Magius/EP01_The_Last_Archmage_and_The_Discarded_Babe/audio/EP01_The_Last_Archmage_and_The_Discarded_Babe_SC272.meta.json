@@ -1,0 +1,129 @@
+{
+  "scene": 272,
+  "text": "\"You're of the blood of House Montrey? What is an aristocratic scion doing wandering the monster frontier alone in wolf skins?\"",
+  "durationMs": 8136,
+  "rawWords": [
+    {
+      "ttsWord": "You're",
+      "startMs": 50,
+      "endMs": 288
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 300,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 400,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "blood",
+      "startMs": 500,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 750,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 838,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 1125,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "What",
+      "startMs": 2550,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 2775,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2913,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "aristocratic",
+      "startMs": 3000,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "scion",
+      "startMs": 3725,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "doing",
+      "startMs": 4263,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "wandering",
+      "startMs": 4550,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4988,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "monster",
+      "startMs": 5063,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 5500,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "alone",
+      "startMs": 5988,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6375,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "wolf",
+      "startMs": 6488,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "skins",
+      "startMs": 6700,
+      "endMs": 7275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You're of the blood of House Montrey?",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1788
+    },
+    {
+      "text": "What is an aristocratic scion doing wandering the",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 5050
+    },
+    {
+      "text": "monster frontier alone in wolf skins?\"",
+      "startOffsetMs": 5063,
+      "endOffsetMs": 7375
+    }
+  ]
+}

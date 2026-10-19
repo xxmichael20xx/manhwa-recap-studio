@@ -1,0 +1,134 @@
+{
+  "scene": 195,
+  "text": "Inside the memory trial, Michael clamped his mental jaws shut, refusing to surrender an inch of ground to the apocalyptic illusion.",
+  "durationMs": 8232,
+  "rawWords": [
+    {
+      "ttsWord": "Inside",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 588,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "memory",
+      "startMs": 650,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "trial",
+      "startMs": 1025,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 1725,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "clamped",
+      "startMs": 2050,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2400,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "mental",
+      "startMs": 2525,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "jaws",
+      "startMs": 2875,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "shut",
+      "startMs": 3200,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "refusing",
+      "startMs": 3900,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4400,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "surrender",
+      "startMs": 4513,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 5038,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "inch",
+      "startMs": 5138,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5388,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "ground",
+      "startMs": 5513,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5888,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5975,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "apocalyptic",
+      "startMs": 6075,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "illusion",
+      "startMs": 6838,
+      "endMs": 7350
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Inside the memory trial,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1575
+    },
+    {
+      "text": "Michael clamped his mental jaws shut,",
+      "startOffsetMs": 1725,
+      "endOffsetMs": 3688
+    },
+    {
+      "text": "refusing to surrender an inch of ground to",
+      "startOffsetMs": 3900,
+      "endOffsetMs": 5963
+    },
+    {
+      "text": "the apocalyptic illusion.",
+      "startOffsetMs": 5975,
+      "endOffsetMs": 7450
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "scene": 104,
+  "text": "The soothing medicinal compound seeped through his skin, accelerating cell division and sealing his lacerations within minutes.",
+  "durationMs": 7656,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "soothing",
+      "startMs": 213,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "medicinal",
+      "startMs": 625,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "compound",
+      "startMs": 1138,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "seeped",
+      "startMs": 1713,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2038,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2225,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 2388,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "accelerating",
+      "startMs": 3038,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "cell",
+      "startMs": 3738,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "division",
+      "startMs": 4000,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4488,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "sealing",
+      "startMs": 4613,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5013,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "lacerations",
+      "startMs": 5188,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 5988,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "minutes",
+      "startMs": 6288,
+      "endMs": 6775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The soothing medicinal compound seeped through his skin,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2888
+    },
+    {
+      "text": "accelerating cell division and sealing his lacerations within",
+      "startOffsetMs": 3038,
+      "endOffsetMs": 6275
+    },
+    {
+      "text": "minutes.",
+      "startOffsetMs": 6288,
+      "endOffsetMs": 6875
+    }
+  ]
+}

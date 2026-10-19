@@ -1,0 +1,139 @@
+{
+  "scene": 35,
+  "text": "In a true scion of House Montrey, the infant's skin would instantly glow with brilliant sapphire lightning veins, proving their bloodline inheritance.",
+  "durationMs": 9144,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 213,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "true",
+      "startMs": 288,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "scion",
+      "startMs": 588,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1050,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 1138,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 1413,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2150,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "infant's",
+      "startMs": 2275,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 2750,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "would",
+      "startMs": 3088,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "instantly",
+      "startMs": 3213,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "glow",
+      "startMs": 3738,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4075,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "brilliant",
+      "startMs": 4275,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "sapphire",
+      "startMs": 4713,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "lightning",
+      "startMs": 5300,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "veins",
+      "startMs": 5700,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "proving",
+      "startMs": 6475,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6825,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "bloodline",
+      "startMs": 6975,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "inheritance",
+      "startMs": 7500,
+      "endMs": 8275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In a true scion of House Montrey,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "the infant's skin would instantly glow with brilliant",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 4700
+    },
+    {
+      "text": "sapphire lightning veins,",
+      "startOffsetMs": 4713,
+      "endOffsetMs": 6275
+    },
+    {
+      "text": "proving their bloodline inheritance.",
+      "startOffsetMs": 6475,
+      "endOffsetMs": 8375
+    }
+  ]
+}

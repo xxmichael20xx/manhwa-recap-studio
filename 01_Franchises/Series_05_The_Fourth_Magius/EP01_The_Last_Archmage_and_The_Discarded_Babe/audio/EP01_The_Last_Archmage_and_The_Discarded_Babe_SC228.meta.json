@@ -1,0 +1,104 @@
+{
+  "scene": 228,
+  "text": "The surrounding mercenaries in the queue chuckled loudly, finding the seven-year-old boy's deadpan, mature demeanor hilarious.",
+  "durationMs": 7872,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "surrounding",
+      "startMs": 200,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "mercenaries",
+      "startMs": 763,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1413,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1513,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "queue",
+      "startMs": 1600,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "chuckled",
+      "startMs": 1850,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 2275,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "finding",
+      "startMs": 3063,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3413,
+      "endMs": 3500
+    },
+    {
+      "ttsWord": "seven-year-old",
+      "startMs": 3513,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "boy's",
+      "startMs": 4225,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 4550,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "mature",
+      "startMs": 5388,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "demeanor",
+      "startMs": 5775,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "hilarious",
+      "startMs": 6200,
+      "endMs": 7000
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The surrounding mercenaries in the queue chuckled loudly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2850
+    },
+    {
+      "text": "finding the seven-year-old boy's deadpan,",
+      "startOffsetMs": 3063,
+      "endOffsetMs": 5188
+    },
+    {
+      "text": "mature demeanor hilarious.",
+      "startOffsetMs": 5388,
+      "endOffsetMs": 7100
+    }
+  ]
+}

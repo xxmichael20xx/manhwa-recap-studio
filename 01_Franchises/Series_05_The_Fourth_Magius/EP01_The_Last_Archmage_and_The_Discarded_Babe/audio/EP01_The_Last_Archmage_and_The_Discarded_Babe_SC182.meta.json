@@ -1,0 +1,69 @@
+{
+  "scene": 182,
+  "text": "CONDITIONS MET FOR RESIDUE TRIAL 1: MASTER COMBAT TOMES ACCESSIBLE.",
+  "durationMs": 5136,
+  "rawWords": [
+    {
+      "ttsWord": "CONDITIONS",
+      "startMs": 50,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "MET",
+      "startMs": 625,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "FOR",
+      "startMs": 825,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "RESIDUE",
+      "startMs": 1000,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "TRIAL",
+      "startMs": 1425,
+      "endMs": 1863
+    },
+    {
+      "ttsWord": "1",
+      "startMs": 1875,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "MASTER",
+      "startMs": 2375,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "COMBAT",
+      "startMs": 2763,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "TOMES",
+      "startMs": 3250,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "ACCESSIBLE",
+      "startMs": 3600,
+      "endMs": 4263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "CONDITIONS MET FOR RESIDUE TRIAL 1:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2238
+    },
+    {
+      "text": "MASTER COMBAT TOMES ACCESSIBLE.",
+      "startOffsetMs": 2375,
+      "endOffsetMs": 4363
+    }
+  ]
+}

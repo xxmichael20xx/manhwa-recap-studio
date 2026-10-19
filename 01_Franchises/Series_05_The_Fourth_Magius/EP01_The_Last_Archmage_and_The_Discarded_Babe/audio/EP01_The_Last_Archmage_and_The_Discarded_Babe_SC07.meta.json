@@ -1,0 +1,219 @@
+{
+  "scene": 7,
+  "text": "\"You gathered eight hundred high mages and thirty siege dreadnoughts just to corner one exhausted man?\" Michael asked, his dry voice echoing across the silent canyon. \"I asked for an execution squad, not an insecure parade.\"",
+  "durationMs": 14832,
+  "rawWords": [
+    {
+      "ttsWord": "You",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "gathered",
+      "startMs": 238,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "eight",
+      "startMs": 638,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 788,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "high",
+      "startMs": 1088,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "mages",
+      "startMs": 1313,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1813,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 1950,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "siege",
+      "startMs": 2300,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "dreadnoughts",
+      "startMs": 2650,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 3250,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3463,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "corner",
+      "startMs": 3563,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 3925,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "exhausted",
+      "startMs": 4100,
+      "endMs": 4638
+    },
+    {
+      "ttsWord": "man",
+      "startMs": 4650,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 5888,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "asked",
+      "startMs": 6338,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6888,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 7063,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 7338,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "echoing",
+      "startMs": 7713,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 8113,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8488,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "silent",
+      "startMs": 8613,
+      "endMs": 9013
+    },
+    {
+      "ttsWord": "canyon",
+      "startMs": 9025,
+      "endMs": 9538
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 10400,
+      "endMs": 10600
+    },
+    {
+      "ttsWord": "asked",
+      "startMs": 10613,
+      "endMs": 10938
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 10950,
+      "endMs": 11075
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 11088,
+      "endMs": 11175
+    },
+    {
+      "ttsWord": "execution",
+      "startMs": 11188,
+      "endMs": 11838
+    },
+    {
+      "ttsWord": "squad",
+      "startMs": 11850,
+      "endMs": 12338
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 12525,
+      "endMs": 12750
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 12763,
+      "endMs": 12850
+    },
+    {
+      "ttsWord": "insecure",
+      "startMs": 12863,
+      "endMs": 13375
+    },
+    {
+      "ttsWord": "parade",
+      "startMs": 13388,
+      "endMs": 13950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "You gathered eight hundred high mages and thirty",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "siege dreadnoughts just to corner one exhausted man?\"",
+      "startOffsetMs": 2300,
+      "endOffsetMs": 5125
+    },
+    {
+      "text": "Michael asked, his dry voice echoing across the",
+      "startOffsetMs": 5888,
+      "endOffsetMs": 8600
+    },
+    {
+      "text": "silent canyon.",
+      "startOffsetMs": 8613,
+      "endOffsetMs": 9638
+    },
+    {
+      "text": "I asked for an execution squad,",
+      "startOffsetMs": 10400,
+      "endOffsetMs": 12438
+    },
+    {
+      "text": "not an insecure parade.\"",
+      "startOffsetMs": 12525,
+      "endOffsetMs": 14050
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "scene": 248,
+  "text": "\"I am here to sell prime-grade wild medicinal roots harvested from the deep Blackwood valley.\"",
+  "durationMs": 5712,
+  "rawWords": [
+    {
+      "ttsWord": "I",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "am",
+      "startMs": 250,
+      "endMs": 350
+    },
+    {
+      "ttsWord": "here",
+      "startMs": 363,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 600,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "sell",
+      "startMs": 688,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "prime-grade",
+      "startMs": 1000,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "wild",
+      "startMs": 1663,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "medicinal",
+      "startMs": 2013,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 2550,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "harvested",
+      "startMs": 2800,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3363,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3500,
+      "endMs": 3600
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 3613,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "Blackwood",
+      "startMs": 3850,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "valley",
+      "startMs": 4350,
+      "endMs": 4838
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "I am here to sell prime-grade wild medicinal",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2538
+    },
+    {
+      "text": "roots harvested from the deep Blackwood valley.\"",
+      "startOffsetMs": 2550,
+      "endOffsetMs": 4938
+    }
+  ]
+}

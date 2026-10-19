@@ -1,0 +1,114 @@
+{
+  "scene": 171,
+  "text": "While aristocratic nobles in the capital sat huddled around enchanted fire-hearths, Michael trained bare-chested in the freezing snow.",
+  "durationMs": 8088,
+  "rawWords": [
+    {
+      "ttsWord": "While",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "aristocratic",
+      "startMs": 350,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "nobles",
+      "startMs": 1113,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1550,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1638,
+      "endMs": 1713
+    },
+    {
+      "ttsWord": "capital",
+      "startMs": 1725,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "sat",
+      "startMs": 2188,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "huddled",
+      "startMs": 2488,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "around",
+      "startMs": 2838,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "enchanted",
+      "startMs": 3163,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "fire-hearths",
+      "startMs": 3663,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 4725,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "trained",
+      "startMs": 5075,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "bare-chested",
+      "startMs": 5475,
+      "endMs": 6088
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6100,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6200,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "freezing",
+      "startMs": 6275,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "snow",
+      "startMs": 6738,
+      "endMs": 7213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "While aristocratic nobles in the capital sat huddled",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "around enchanted fire-hearths",
+      "startOffsetMs": 2838,
+      "endOffsetMs": 4550
+    },
+    {
+      "text": "Michael trained bare-chested in the freezing snow.",
+      "startOffsetMs": 4725,
+      "endOffsetMs": 7313
+    }
+  ]
+}

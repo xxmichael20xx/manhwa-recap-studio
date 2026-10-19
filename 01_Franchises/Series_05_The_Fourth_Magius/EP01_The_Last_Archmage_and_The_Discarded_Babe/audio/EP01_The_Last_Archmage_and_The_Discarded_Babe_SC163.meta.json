@@ -1,0 +1,94 @@
+{
+  "scene": 163,
+  "text": "\"Exquisite winter pelts. This will make an exceptional sleeping blanket and durable winter boots.\"",
+  "durationMs": 7008,
+  "rawWords": [
+    {
+      "ttsWord": "Exquisite",
+      "startMs": 50,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "winter",
+      "startMs": 725,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "pelts",
+      "startMs": 1050,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "This",
+      "startMs": 2488,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 2763,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "make",
+      "startMs": 2875,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 3100,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "exceptional",
+      "startMs": 3200,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "sleeping",
+      "startMs": 3813,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "blanket",
+      "startMs": 4275,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4750,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "durable",
+      "startMs": 4900,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "winter",
+      "startMs": 5325,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "boots",
+      "startMs": 5613,
+      "endMs": 6125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Exquisite winter pelts.",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "This will make an exceptional sleeping blanket and",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 4888
+    },
+    {
+      "text": "durable winter boots.\"",
+      "startOffsetMs": 4900,
+      "endOffsetMs": 6225
+    }
+  ]
+}

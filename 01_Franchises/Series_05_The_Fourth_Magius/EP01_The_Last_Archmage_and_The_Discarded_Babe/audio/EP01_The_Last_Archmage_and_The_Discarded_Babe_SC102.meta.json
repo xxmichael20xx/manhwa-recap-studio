@@ -1,0 +1,159 @@
+{
+  "scene": 102,
+  "text": "Next, he gathered clusters of a grey-speckled lichen clinging to the damp rocks — Winter-Iron Moss, an herb prized in ancient alchemical records for tissue regeneration.",
+  "durationMs": 10776,
+  "rawWords": [
+    {
+      "ttsWord": "Next",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 763,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "gathered",
+      "startMs": 888,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "clusters",
+      "startMs": 1275,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1813,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1900,
+      "endMs": 1975
+    },
+    {
+      "ttsWord": "grey-speckled",
+      "startMs": 1988,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "lichen",
+      "startMs": 2638,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "clinging",
+      "startMs": 3013,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3388,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3500,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "damp",
+      "startMs": 3638,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "rocks",
+      "startMs": 3963,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "Winter-Iron",
+      "startMs": 4700,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "Moss",
+      "startMs": 5288,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6000,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "herb",
+      "startMs": 6163,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "prized",
+      "startMs": 6450,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6938,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 7075,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "alchemical",
+      "startMs": 7425,
+      "endMs": 8000
+    },
+    {
+      "ttsWord": "records",
+      "startMs": 8013,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 8413,
+      "endMs": 8575
+    },
+    {
+      "ttsWord": "tissue",
+      "startMs": 8588,
+      "endMs": 8988
+    },
+    {
+      "ttsWord": "regeneration",
+      "startMs": 9000,
+      "endMs": 9913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Next, he gathered clusters of a grey-speckled lichen",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3000
+    },
+    {
+      "text": "clinging to the damp rocks",
+      "startOffsetMs": 3013,
+      "endOffsetMs": 4525
+    },
+    {
+      "text": "Winter-Iron Moss,",
+      "startOffsetMs": 4700,
+      "endOffsetMs": 5825
+    },
+    {
+      "text": "an herb prized in ancient alchemical records for",
+      "startOffsetMs": 6000,
+      "endOffsetMs": 8575
+    },
+    {
+      "text": "tissue regeneration.",
+      "startOffsetMs": 8588,
+      "endOffsetMs": 10013
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "scene": 143,
+  "text": "\"Your hunting technique is as sloppy as the Montrey family elders' politics.\"",
+  "durationMs": 5208,
+  "rawWords": [
+    {
+      "ttsWord": "Your",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "hunting",
+      "startMs": 275,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "technique",
+      "startMs": 625,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 1150,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1338,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "sloppy",
+      "startMs": 1475,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2000,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2138,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 2225,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "family",
+      "startMs": 2688,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "elders'",
+      "startMs": 3138,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "politics",
+      "startMs": 3525,
+      "endMs": 4325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Your hunting technique is as sloppy as the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2213
+    },
+    {
+      "text": "Montrey family elders' politics.\"",
+      "startOffsetMs": 2225,
+      "endOffsetMs": 4425
+    }
+  ]
+}

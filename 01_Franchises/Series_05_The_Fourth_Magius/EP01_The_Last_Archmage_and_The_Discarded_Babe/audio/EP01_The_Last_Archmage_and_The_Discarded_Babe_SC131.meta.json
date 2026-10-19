@@ -1,0 +1,139 @@
+{
+  "scene": 131,
+  "text": "He sketched a mental map of the territory: thirty miles to the south lay Oakhaven, the nearest frontier trading post and mercenary hub.",
+  "durationMs": 8496,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 225
+    },
+    {
+      "ttsWord": "sketched",
+      "startMs": 238,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 625,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "mental",
+      "startMs": 688,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "map",
+      "startMs": 1025,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1300,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1400,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "territory",
+      "startMs": 1500,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 2438,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "miles",
+      "startMs": 2725,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3138,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3238,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "south",
+      "startMs": 3350,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "lay",
+      "startMs": 3713,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 4000,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4788,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "nearest",
+      "startMs": 4900,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 5325,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "trading",
+      "startMs": 5800,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "post",
+      "startMs": 6188,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6625,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "mercenary",
+      "startMs": 6725,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "hub",
+      "startMs": 7250,
+      "endMs": 7613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He sketched a mental map of the territory:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2238
+    },
+    {
+      "text": "thirty miles to the south lay Oakhaven,",
+      "startOffsetMs": 2438,
+      "endOffsetMs": 4625
+    },
+    {
+      "text": "the nearest frontier trading post and mercenary hub.",
+      "startOffsetMs": 4788,
+      "endOffsetMs": 7713
+    }
+  ]
+}

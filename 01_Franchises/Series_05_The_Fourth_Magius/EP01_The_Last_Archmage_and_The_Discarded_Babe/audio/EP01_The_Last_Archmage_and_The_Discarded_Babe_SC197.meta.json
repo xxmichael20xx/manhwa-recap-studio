@@ -1,0 +1,114 @@
+{
+  "scene": 197,
+  "text": "He began aggressively breaking down the incoming thunder equations, parsing the mathematical matrices into clean, manageable sub-routines.",
+  "durationMs": 8640,
+  "rawWords": [
+    {
+      "ttsWord": "He",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "began",
+      "startMs": 213,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "aggressively",
+      "startMs": 575,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "breaking",
+      "startMs": 1188,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 1600,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1850,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "incoming",
+      "startMs": 1925,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "thunder",
+      "startMs": 2438,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "equations",
+      "startMs": 2800,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "parsing",
+      "startMs": 3750,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4163,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "mathematical",
+      "startMs": 4238,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "matrices",
+      "startMs": 4875,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5463,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 5675,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "manageable",
+      "startMs": 6300,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "sub-routines",
+      "startMs": 6800,
+      "endMs": 7763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "He began aggressively breaking down the incoming thunder",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2788
+    },
+    {
+      "text": "equations,",
+      "startOffsetMs": 2800,
+      "endOffsetMs": 3563
+    },
+    {
+      "text": "parsing the mathematical matrices into clean,",
+      "startOffsetMs": 3750,
+      "endOffsetMs": 6163
+    },
+    {
+      "text": "manageable sub-routines",
+      "startOffsetMs": 6300,
+      "endOffsetMs": 7863
+    }
+  ]
+}

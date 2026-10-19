@@ -1,0 +1,169 @@
+{
+  "scene": 246,
+  "text": "\"Afternoon, lad,\" Rowan said in a deep, gravelly baritone. \"If you're here for cough syrup or mint lozenges, they're on the bottom shelf near the window.\"",
+  "durationMs": 10656,
+  "rawWords": [
+    {
+      "ttsWord": "Afternoon",
+      "startMs": 50,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "lad",
+      "startMs": 963,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "Rowan",
+      "startMs": 1575,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 1938,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2200,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2288,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 2400,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "gravelly",
+      "startMs": 2963,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "baritone",
+      "startMs": 3425,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "If",
+      "startMs": 4975,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "you're",
+      "startMs": 5163,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "here",
+      "startMs": 5375,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 5638,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "cough",
+      "startMs": 5800,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "syrup",
+      "startMs": 6113,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 6563,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "mint",
+      "startMs": 6688,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "lozenges",
+      "startMs": 6950,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "they're",
+      "startMs": 7838,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 8038,
+      "endMs": 8150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8163,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "bottom",
+      "startMs": 8250,
+      "endMs": 8575
+    },
+    {
+      "ttsWord": "shelf",
+      "startMs": 8588,
+      "endMs": 8988
+    },
+    {
+      "ttsWord": "near",
+      "startMs": 9000,
+      "endMs": 9188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9200,
+      "endMs": 9288
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 9300,
+      "endMs": 9775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Afternoon,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 813
+    },
+    {
+      "text": "lad,\" Rowan said in a deep,",
+      "startOffsetMs": 963,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "gravelly baritone.",
+      "startOffsetMs": 2963,
+      "endOffsetMs": 4213
+    },
+    {
+      "text": "If you're here for cough syrup or mint",
+      "startOffsetMs": 4975,
+      "endOffsetMs": 6938
+    },
+    {
+      "text": "lozenges, they're on the bottom shelf near the",
+      "startOffsetMs": 6950,
+      "endOffsetMs": 9288
+    },
+    {
+      "text": "window.\"",
+      "startOffsetMs": 9300,
+      "endOffsetMs": 9875
+    }
+  ]
+}

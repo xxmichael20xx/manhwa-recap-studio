@@ -1,0 +1,169 @@
+{
+  "scene": 4,
+  "text": "Clutched securely beneath Michael's left arm was an ancient tome bound in weathered dragon leather, glowing with intricate celestial constellations — the long-lost Primordial Codex of the First Magicians.",
+  "durationMs": 11784,
+  "rawWords": [
+    {
+      "ttsWord": "Clutched",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "securely",
+      "startMs": 450,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 963,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "Michael's",
+      "startMs": 1300,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "left",
+      "startMs": 1763,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "arm",
+      "startMs": 2038,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2350,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2488,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 2638,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "tome",
+      "startMs": 3038,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "bound",
+      "startMs": 3338,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3700,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "weathered",
+      "startMs": 3813,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "dragon",
+      "startMs": 4100,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "leather",
+      "startMs": 4500,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 5100,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5450,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "intricate",
+      "startMs": 5588,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 6013,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "constellations",
+      "startMs": 6638,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7850,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "long-lost",
+      "startMs": 7975,
+      "endMs": 8563
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 8575,
+      "endMs": 9125
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 9138,
+      "endMs": 9625
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9638,
+      "endMs": 9725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9738,
+      "endMs": 9825
+    },
+    {
+      "ttsWord": "First",
+      "startMs": 9838,
+      "endMs": 10175
+    },
+    {
+      "ttsWord": "Magicians",
+      "startMs": 10188,
+      "endMs": 10900
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Clutched securely beneath Michael's left arm was an",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "ancient tome bound in weathered dragon leather,",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 4913
+    },
+    {
+      "text": "glowing with intricate celestial constellations",
+      "startOffsetMs": 5100,
+      "endOffsetMs": 7638
+    },
+    {
+      "text": "the long-lost Primordial Codex of the First Magicians.",
+      "startOffsetMs": 7850,
+      "endOffsetMs": 11000
+    }
+  ]
+}

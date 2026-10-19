@@ -1,0 +1,99 @@
+{
+  "scene": 213,
+  "text": "\"Thank you for the two years of shelter,\" Michael said quietly to the quiet limestone cave.",
+  "durationMs": 5640,
+  "rawWords": [
+    {
+      "ttsWord": "Thank",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 350,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 500,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 600,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 725,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 975,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1263,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "shelter",
+      "startMs": 1338,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 2063,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "said",
+      "startMs": 2375,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "quietly",
+      "startMs": 2625,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3113,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3225,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 3325,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "limestone",
+      "startMs": 3725,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "cave",
+      "startMs": 4288,
+      "endMs": 4775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Thank you for the two years of shelter,\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1913
+    },
+    {
+      "text": "Michael said quietly to the quiet limestone cave.",
+      "startOffsetMs": 2063,
+      "endOffsetMs": 4875
+    }
+  ]
+}

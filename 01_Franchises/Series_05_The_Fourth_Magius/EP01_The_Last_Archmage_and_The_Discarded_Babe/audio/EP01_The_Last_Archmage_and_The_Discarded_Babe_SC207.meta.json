@@ -1,0 +1,84 @@
+{
+  "scene": 207,
+  "text": "Just pure, instant, sound-barrier-breaking kinetic devastation delivered through a five-millisecond physical tap.",
+  "durationMs": 7224,
+  "rawWords": [
+    {
+      "ttsWord": "Just",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 388,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "instant",
+      "startMs": 1000,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "sound-barrier-breaking",
+      "startMs": 1713,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "kinetic",
+      "startMs": 2813,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "devastation",
+      "startMs": 3238,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "delivered",
+      "startMs": 3913,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4363,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4538,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "five-millisecond",
+      "startMs": 4613,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "physical",
+      "startMs": 5538,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "tap",
+      "startMs": 5950,
+      "endMs": 6363
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Just pure, instant,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1575
+    },
+    {
+      "text": "sound-barrier-breaking kinetic devastation delivered through a five-millisecond",
+      "startOffsetMs": 1713,
+      "endOffsetMs": 5525
+    },
+    {
+      "text": "physical tap.",
+      "startOffsetMs": 5538,
+      "endOffsetMs": 6463
+    }
+  ]
+}

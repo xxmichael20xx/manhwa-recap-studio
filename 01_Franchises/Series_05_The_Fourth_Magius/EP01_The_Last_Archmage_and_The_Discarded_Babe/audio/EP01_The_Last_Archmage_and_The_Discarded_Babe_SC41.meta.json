@@ -1,0 +1,164 @@
+{
+  "scene": 41,
+  "text": "\"A defect,\" Valerius spoke, his voice void of any paternal warmth. \"House Montrey has produced Grand Archmages for eight hundred years. We do not raise parasites.\"",
+  "durationMs": 12312,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "defect",
+      "startMs": 213,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "Valerius",
+      "startMs": 913,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "spoke",
+      "startMs": 1450,
+      "endMs": 1863
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2075,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 2275,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "void",
+      "startMs": 2638,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2938,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "any",
+      "startMs": 3038,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "paternal",
+      "startMs": 3238,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "warmth",
+      "startMs": 3750,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "House",
+      "startMs": 5088,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "Montrey",
+      "startMs": 5413,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 5925,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "produced",
+      "startMs": 6125,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "Grand",
+      "startMs": 6575,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "Archmages",
+      "startMs": 6913,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 7613,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "eight",
+      "startMs": 7813,
+      "endMs": 7950
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 7963,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 8288,
+      "endMs": 8800
+    },
+    {
+      "ttsWord": "We",
+      "startMs": 9663,
+      "endMs": 9825
+    },
+    {
+      "ttsWord": "do",
+      "startMs": 9838,
+      "endMs": 9963
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 9975,
+      "endMs": 10263
+    },
+    {
+      "ttsWord": "raise",
+      "startMs": 10275,
+      "endMs": 10550
+    },
+    {
+      "ttsWord": "parasites",
+      "startMs": 10563,
+      "endMs": 11450
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A defect,\" Valerius spoke,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1963
+    },
+    {
+      "text": "his voice void of any paternal warmth.",
+      "startOffsetMs": 2075,
+      "endOffsetMs": 4325
+    },
+    {
+      "text": "House Montrey has produced Grand Archmages for eight",
+      "startOffsetMs": 5088,
+      "endOffsetMs": 7950
+    },
+    {
+      "text": "hundred years.",
+      "startOffsetMs": 7963,
+      "endOffsetMs": 8900
+    },
+    {
+      "text": "We do not raise parasites.\"",
+      "startOffsetMs": 9663,
+      "endOffsetMs": 11550
+    }
+  ]
+}

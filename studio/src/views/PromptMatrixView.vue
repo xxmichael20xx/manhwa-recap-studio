@@ -1338,7 +1338,7 @@
               <div class="space-y-2 flex-1">
                 <p class="text-[11px] leading-relaxed" :class="directiveTierTab === 'master' ? 'text-purple-950 dark:text-purple-200' : 'text-cyan-950 dark:text-cyan-200'">
                   <template v-if="directiveTierTab === 'master'">
-                    <strong>Tier 1 — Smart Context-Aware Master Instructions:</strong> Paste once into Google Flow's <em>Agent Instructions</em> panel. Automatically adapts to this episode's detected protagonist, boss/construct anti-morphing guards, and diegetic text objects (System UI, scrolls, steles, signs).
+                    <strong>Tier 1 — Smart Context-Aware Master Instructions:</strong> Paste once into Google Flow's <em>Agent Instructions</em> panel (document icon &rarr; + Add instruction). Enforces <code>@{Character Name}</code> entity mapping, detected protagonist, boss/construct anti-morphing guards, and text silencing.
                   </template>
                   <template v-else>
                     <strong>Tier 2 — Smart Per-Batch Header:</strong> Prepended automatically when copying any batch or chunk. Whitelists environmental text ONLY on scenes that actually contain UI panels/scrolls/signs and locks all other scenes to 100% pure textless.
@@ -1615,7 +1615,7 @@ const failingChecks = computed(() => {
 // Google Flow Entity Mapping State
 const entityMapRawText = ref('')
 const parsedEntities = ref({})
-const promptTagMode = ref('uuid') // 'uuid' | 'token'
+const promptTagMode = ref('token') // 'token' | 'uuid'
 
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
 
@@ -1688,7 +1688,10 @@ const unmappedCharacterEntities = computed(() => {
   return unmapped
 })
 
-const isCopyDisabledDueToMissingUuids = computed(() => unmappedCharacterEntities.value.length > 0)
+const isCopyDisabledDueToMissingUuids = computed(() => {
+  if (promptTagMode.value !== 'uuid') return false
+  return unmappedCharacterEntities.value.length > 0
+})
 
 const copyFlowUuidPrompt = async () => {
   const characters = (vaultModels.value || [])
@@ -2421,7 +2424,10 @@ const analyzeFlowContext = (itemsList = null) => {
     nonCombatCount,
     tierACount,
     tierBCount,
-    tierCCount
+    tierCCount,
+    detectedEntityTags: models.length > 0
+      ? models.map(m => formatEntityWithId(m.flowName || m.name)).filter(Boolean).slice(0, 6)
+      : []
   }
 }
 
@@ -2443,6 +2449,10 @@ const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
   const aspectLabel = is16x9
     ? 'horizontal 16:9 widescreen aspect ratio (1920x1080)'
     : 'vertical 9:16 webtoon aspect ratio (1080x1920)'
+  const artStyleAspect = is16x9 ? 'horizontal 16:9' : 'vertical 9:16'
+  const entityListStr = intel.detectedEntityTags && intel.detectedEntityTags.length > 0
+    ? intel.detectedEntityTags.join(', ')
+    : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
 
   return `STRICT OPERATIONAL DIRECTIVES (${is16x9 ? '16:9 FULL-BLEED LANDSCAPE' : '9:16 AUTHENTIC WEBTOON STRIP'})
 
@@ -2466,14 +2476,21 @@ ${compositionRule}
 - ISOLATION: Isolate each batch within its dedicated collection as specified in the system directive.
 
 4. ART STYLE INVARIANT:
-- Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16. Clean contemporary architecture, modern cityscapes, and high-clarity lighting, ${aspectLabel}.
-- STRICTLY FORBIDDEN STYLE DRIFT: Never generate gloomy dark medieval fantasy, castles, photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons. Pass this exact 2D manhwa art style invariant into every image generation tool call.`
+- Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, ${artStyleAspect}. Clean contemporary architecture, modern cityscapes, and high-clarity lighting, ${aspectLabel}.
+- STRICTLY FORBIDDEN STYLE DRIFT: Never generate gloomy dark medieval fantasy, castles, photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons. Pass this exact 2D manhwa art style invariant into every image generation tool call.
+
+5. CHARACTER ENTITY REFERENCE MAPPING RULE:
+- Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${entityListStr}).
+- Resolve each @{Name} tag to its corresponding visual identity, facial features, hair, and signature attire locked in the project entity bible before generating. Never invent random appearances for tagged characters.`
 }
 
 const getFlowDirectiveHeader = (collectionTitle, format = '16:9', batchItems = null) => {
   const is16x9 = format === '16:9'
   const intel = analyzeFlowContext(batchItems)
   const aspectShort = is16x9 ? '16:9 horizontal (1920x1080)' : '9:16 vertical manhwa (1080x1920)'
+  const entityListStr = intel.detectedEntityTags && intel.detectedEntityTags.length > 0
+    ? intel.detectedEntityTags.join(', ')
+    : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
 
   const batchTextRule = intel.diegeticSceneTags.length > 0
     ? `Strictly ZERO speech bubbles, dialogue balloons, thought bubbles, SFX, Hangul (한글), or comic caption boxes. In-world environmental text (${intel.diegeticTypes.join(', ')}) is permitted ONLY in [${intel.diegeticSceneTags.join(', ')}]; all other scenes in "${collectionTitle}" MUST be 100% pure textless artwork.`
@@ -2499,7 +2516,9 @@ STRICT OPERATIONAL DIRECTIVES FOR COLLECTION "${collectionTitle}":
 6. LITERAL ACTION FIDELITY (${intel.nonCombatCount} Calm/Dialogue vs ${intel.combatCount} Combat Scenes):
    - Depict ONLY the exact posture and action written in each <scene>. Never invent punches, kicks, or assassin attacks during dialogue, sitting, or observation scenes.
 7. ART STYLE INVARIANT:
-   - Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, ${aspectShort}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.`
+   - Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, ${aspectShort}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.
+8. CHARACTER ENTITY REFERENCE MAPPING:
+   - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${entityListStr}).`
 }
 
 // Helper to generate dynamic zero-padded batch codes (01, 02, ... 13)
@@ -3217,15 +3236,11 @@ const loadEpisode = async () => {
     rawMarkdown.value = data.promptMatrix || ''
     
     // Strictly lock Aspect Ratio from Series Creation (never permit arbitrary flipping)
-    if (data.format) {
-      activeDirectiveFormat.value = data.format
-    } else {
-      const isSeries02 = (route.params.franchiseId || '').toLowerCase().includes('series_02')
-      const count9x16 = (rawMarkdown.value.match(/9:16|1080x1920/gi) || []).length
-      const count16x9 = (rawMarkdown.value.match(/16:9|1920x1080/gi) || []).length
-      const is16x9 = isSeries02 || (count16x9 > count9x16)
-      activeDirectiveFormat.value = is16x9 ? '16:9' : '9:16'
-    }
+    const count9x16 = (rawMarkdown.value.match(/9:16|1080x1920/gi) || []).length
+    const count16x9 = (rawMarkdown.value.match(/16:9|1920x1080/gi) || []).length
+    const isPrompt16x9 = count16x9 > count9x16
+    const isSeries16x9 = (data.format && data.format.includes('16:9')) || isPrompt16x9 || (route.params.franchiseId || '').toLowerCase().includes('series_02')
+    activeDirectiveFormat.value = isSeries16x9 ? '16:9' : '9:16'
     
     parseMarkdownPrompts(rawMarkdown.value, imageMap)
   } catch (err) {

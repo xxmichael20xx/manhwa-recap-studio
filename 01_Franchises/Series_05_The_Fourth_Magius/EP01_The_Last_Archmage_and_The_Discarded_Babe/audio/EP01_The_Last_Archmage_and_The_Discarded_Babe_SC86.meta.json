@@ -1,0 +1,119 @@
+{
+  "scene": 86,
+  "text": "Above the tome, floating golden runes displayed its title: Tier 1 Master Combat Arcana: The Celestial Thunder-Strike Array.",
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "Above",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 438,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "tome",
+      "startMs": 538,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 1238,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 1638,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "runes",
+      "startMs": 2075,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "displayed",
+      "startMs": 2388,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2863,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "title",
+      "startMs": 3025,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 3738,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "1",
+      "startMs": 4025,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "Master",
+      "startMs": 4288,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "Combat",
+      "startMs": 4688,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "Arcana",
+      "startMs": 5163,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 6000,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "Celestial",
+      "startMs": 6113,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "Thunder-Strike",
+      "startMs": 6750,
+      "endMs": 7350
+    },
+    {
+      "ttsWord": "Array",
+      "startMs": 7363,
+      "endMs": 7813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Above the tome,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1075
+    },
+    {
+      "text": "floating golden runes displayed its title:",
+      "startOffsetMs": 1238,
+      "endOffsetMs": 3550
+    },
+    {
+      "text": "Tier 1 Master Combat Arcana:",
+      "startOffsetMs": 3738,
+      "endOffsetMs": 5788
+    },
+    {
+      "text": "The Celestial Thunder-Strike Array.",
+      "startOffsetMs": 6000,
+      "endOffsetMs": 7913
+    }
+  ]
+}

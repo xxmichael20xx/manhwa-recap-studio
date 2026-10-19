@@ -1,0 +1,144 @@
+{
+  "scene": 232,
+  "text": "\"Three days validity. Don't cause trouble, don't sleep in the alleys, and stay away from District Four if you value your skin.\"",
+  "durationMs": 8640,
+  "rawWords": [
+    {
+      "ttsWord": "Three",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "days",
+      "startMs": 400,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "validity",
+      "startMs": 738,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "Don't",
+      "startMs": 2213,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "cause",
+      "startMs": 2488,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "trouble",
+      "startMs": 2750,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "don't",
+      "startMs": 3350,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "sleep",
+      "startMs": 3575,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3913,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3988,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "alleys",
+      "startMs": 4075,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4813,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "stay",
+      "startMs": 5000,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 5275,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5588,
+      "endMs": 5775
+    },
+    {
+      "ttsWord": "District",
+      "startMs": 5788,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "Four",
+      "startMs": 6188,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 6550,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 6675,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "value",
+      "startMs": 6800,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 7150,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "skin",
+      "startMs": 7325,
+      "endMs": 7775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Three days validity.",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1450
+    },
+    {
+      "text": "Don't cause trouble,",
+      "startOffsetMs": 2213,
+      "endOffsetMs": 3238
+    },
+    {
+      "text": "don't sleep in the alleys,",
+      "startOffsetMs": 3350,
+      "endOffsetMs": 4688
+    },
+    {
+      "text": "and stay away from District Four if you",
+      "startOffsetMs": 4813,
+      "endOffsetMs": 6788
+    },
+    {
+      "text": "value your skin.\"",
+      "startOffsetMs": 6800,
+      "endOffsetMs": 7875
+    }
+  ]
+}

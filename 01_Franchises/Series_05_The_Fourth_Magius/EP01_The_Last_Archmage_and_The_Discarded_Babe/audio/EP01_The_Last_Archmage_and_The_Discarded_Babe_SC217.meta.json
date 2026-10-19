@@ -1,0 +1,139 @@
+{
+  "scene": 217,
+  "text": "By late afternoon, the dense tree canopy thinned out, revealing a broad river valley fortified with twenty-foot wooden palisades and stone watchtowers.",
+  "durationMs": 9696,
+  "rawWords": [
+    {
+      "ttsWord": "By",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "late",
+      "startMs": 263,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "afternoon",
+      "startMs": 563,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1363,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "dense",
+      "startMs": 1500,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "tree",
+      "startMs": 1813,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "canopy",
+      "startMs": 2088,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "thinned",
+      "startMs": 2550,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 2863,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "revealing",
+      "startMs": 3438,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3913,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "broad",
+      "startMs": 3988,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 4350,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "valley",
+      "startMs": 4638,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "fortified",
+      "startMs": 4988,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5650,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "twenty-foot",
+      "startMs": 5813,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 6413,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "palisades",
+      "startMs": 6700,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7413,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 7575,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "watchtowers",
+      "startMs": 7950,
+      "endMs": 8813
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "By late afternoon,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1238
+    },
+    {
+      "text": "the dense tree canopy thinned out,",
+      "startOffsetMs": 1363,
+      "endOffsetMs": 3225
+    },
+    {
+      "text": "revealing a broad river valley fortified with twenty-foot",
+      "startOffsetMs": 3438,
+      "endOffsetMs": 6400
+    },
+    {
+      "text": "wooden palisades and stone watchtowers.",
+      "startOffsetMs": 6413,
+      "endOffsetMs": 8913
+    }
+  ]
+}

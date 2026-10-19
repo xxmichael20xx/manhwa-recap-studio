@@ -1,0 +1,139 @@
+{
+  "scene": 13,
+  "text": "The grand dreadnoughts and screaming inquisitors were violently sucked into the collapsing dimensional vacuum as the mountain peak vanished from the mortal realm.",
+  "durationMs": 8520,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "grand",
+      "startMs": 213,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "dreadnoughts",
+      "startMs": 563,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1138,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "screaming",
+      "startMs": 1275,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "inquisitors",
+      "startMs": 1775,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 2450,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 2588,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "sucked",
+      "startMs": 3138,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3538,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3713,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "collapsing",
+      "startMs": 3825,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "dimensional",
+      "startMs": 4350,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "vacuum",
+      "startMs": 4825,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5325,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5475,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "mountain",
+      "startMs": 5563,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "peak",
+      "startMs": 5938,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "vanished",
+      "startMs": 6225,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6688,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6825,
+      "endMs": 6888
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 6900,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "realm",
+      "startMs": 7238,
+      "endMs": 7650
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The grand dreadnoughts and screaming inquisitors were violently",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3125
+    },
+    {
+      "text": "sucked into the collapsing dimensional vacuum as the",
+      "startOffsetMs": 3138,
+      "endOffsetMs": 5550
+    },
+    {
+      "text": "mountain peak vanished from the mortal realm.",
+      "startOffsetMs": 5563,
+      "endOffsetMs": 7750
+    }
+  ]
+}

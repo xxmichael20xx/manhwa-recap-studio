@@ -1,0 +1,109 @@
+{
+  "scene": 214,
+  "text": "Turning southward, the seven-year-old boy set off along the river trail toward the frontier town of Oakhaven.",
+  "durationMs": 6696,
+  "rawWords": [
+    {
+      "ttsWord": "Turning",
+      "startMs": 50,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "southward",
+      "startMs": 425,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1213,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "seven-year-old",
+      "startMs": 1338,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "boy",
+      "startMs": 2038,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "set",
+      "startMs": 2263,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 2538,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 2775,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3125,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 3225,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "trail",
+      "startMs": 3488,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 3888,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4163,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 4238,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "town",
+      "startMs": 4763,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5100,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "Oakhaven",
+      "startMs": 5213,
+      "endMs": 5825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Turning southward, the seven-year-old boy set off along",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "the river trail toward the frontier town of",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 5200
+    },
+    {
+      "text": "Oakhaven.",
+      "startOffsetMs": 5213,
+      "endOffsetMs": 5925
+    }
+  ]
+}

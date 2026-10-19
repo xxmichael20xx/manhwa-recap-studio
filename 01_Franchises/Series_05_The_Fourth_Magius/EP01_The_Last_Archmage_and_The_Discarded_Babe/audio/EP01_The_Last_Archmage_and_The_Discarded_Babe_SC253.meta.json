@@ -1,0 +1,169 @@
+{
+  "scene": 253,
+  "text": "Rowan's easy smile vanished instantly. His eyes widened, and he leaned over the counter, picking up a sprig of the Winter-Iron Moss with trembling, experienced fingers.",
+  "durationMs": 11280,
+  "rawWords": [
+    {
+      "ttsWord": "Rowan's",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "easy",
+      "startMs": 538,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 888,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "vanished",
+      "startMs": 1325,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "instantly",
+      "startMs": 1750,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "His",
+      "startMs": 3263,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3525,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "widened",
+      "startMs": 3850,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4550,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 4713,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "leaned",
+      "startMs": 4838,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 5138,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5325,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "counter",
+      "startMs": 5425,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "picking",
+      "startMs": 6150,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6488,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6613,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "sprig",
+      "startMs": 6688,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7075,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7163,
+      "endMs": 7250
+    },
+    {
+      "ttsWord": "Winter-Iron",
+      "startMs": 7263,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "Moss",
+      "startMs": 7850,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8225,
+      "endMs": 8375
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 8388,
+      "endMs": 8900
+    },
+    {
+      "ttsWord": "experienced",
+      "startMs": 9163,
+      "endMs": 9838
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 9850,
+      "endMs": 10413
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rowan's easy smile vanished instantly.",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "His eyes widened,",
+      "startOffsetMs": 3263,
+      "endOffsetMs": 4450
+    },
+    {
+      "text": "and he leaned over the counter,",
+      "startOffsetMs": 4550,
+      "endOffsetMs": 6000
+    },
+    {
+      "text": "picking up a sprig of the Winter-Iron Moss",
+      "startOffsetMs": 6150,
+      "endOffsetMs": 8213
+    },
+    {
+      "text": "with trembling,",
+      "startOffsetMs": 8225,
+      "endOffsetMs": 9000
+    },
+    {
+      "text": "experienced fingers.",
+      "startOffsetMs": 9163,
+      "endOffsetMs": 10513
+    }
+  ]
+}

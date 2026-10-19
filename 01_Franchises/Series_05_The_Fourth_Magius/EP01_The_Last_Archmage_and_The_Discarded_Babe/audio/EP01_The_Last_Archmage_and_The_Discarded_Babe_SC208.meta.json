@@ -1,0 +1,99 @@
+{
+  "scene": 208,
+  "text": "\"Flawless,\" Michael whispered, a small smirk playing on his lips. \"An instant-cast, zero-vulnerability combat spell.\"",
+  "durationMs": 9192,
+  "rawWords": [
+    {
+      "ttsWord": "Flawless",
+      "startMs": 50,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 900,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "whispered",
+      "startMs": 1288,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2013,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 2075,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "smirk",
+      "startMs": 2463,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "playing",
+      "startMs": 2900,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 3250,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3375,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "lips",
+      "startMs": 3550,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "An",
+      "startMs": 4900,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "instant-cast",
+      "startMs": 5075,
+      "endMs": 5963
+    },
+    {
+      "ttsWord": "zero-vulnerability",
+      "startMs": 6163,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "combat",
+      "startMs": 7313,
+      "endMs": 7813
+    },
+    {
+      "ttsWord": "spell",
+      "startMs": 7825,
+      "endMs": 8325
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Flawless,\" Michael whispered,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1838
+    },
+    {
+      "text": "a small smirk playing on his lips.",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "An instant-cast zero-vulnerability combat spell.\"",
+      "startOffsetMs": 4900,
+      "endOffsetMs": 8425
+    }
+  ]
+}

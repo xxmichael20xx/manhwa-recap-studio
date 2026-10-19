@@ -1,0 +1,164 @@
+{
+  "scene": 8,
+  "text": "The Grand Inquisitor's face twisted with rage, raising his diamond-tipped staff to signal the coordinated bombardment. \"Vaporise him! Leave not a single ash of his flesh!\"",
+  "durationMs": 12216,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "Grand",
+      "startMs": 213,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "Inquisitor's",
+      "startMs": 575,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "face",
+      "startMs": 1225,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "twisted",
+      "startMs": 1525,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1950,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "rage",
+      "startMs": 2125,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 2850,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3225,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "diamond-tipped",
+      "startMs": 3388,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 4038,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4450,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "signal",
+      "startMs": 4550,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4963,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "coordinated",
+      "startMs": 5063,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "bombardment",
+      "startMs": 5700,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "Vaporise",
+      "startMs": 7313,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 7988,
+      "endMs": 8288
+    },
+    {
+      "ttsWord": "Leave",
+      "startMs": 9150,
+      "endMs": 9488
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 9500,
+      "endMs": 9738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9750,
+      "endMs": 9800
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 9813,
+      "endMs": 10263
+    },
+    {
+      "ttsWord": "ash",
+      "startMs": 10275,
+      "endMs": 10513
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 10525,
+      "endMs": 10600
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 10613,
+      "endMs": 10775
+    },
+    {
+      "ttsWord": "flesh",
+      "startMs": 10788,
+      "endMs": 11350
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Grand Inquisitor's face twisted with rage,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "raising his diamond-tipped staff to signal the coordinated",
+      "startOffsetMs": 2850,
+      "endOffsetMs": 5688
+    },
+    {
+      "text": "bombardment.",
+      "startOffsetMs": 5700,
+      "endOffsetMs": 6550
+    },
+    {
+      "text": "Vaporise him!",
+      "startOffsetMs": 7313,
+      "endOffsetMs": 8388
+    },
+    {
+      "text": "Leave not a single ash of his flesh!\"",
+      "startOffsetMs": 9150,
+      "endOffsetMs": 11450
+    }
+  ]
+}

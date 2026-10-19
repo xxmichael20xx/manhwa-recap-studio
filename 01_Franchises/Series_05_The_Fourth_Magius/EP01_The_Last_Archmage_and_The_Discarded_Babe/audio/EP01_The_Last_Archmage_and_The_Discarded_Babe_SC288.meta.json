@@ -1,0 +1,154 @@
+{
+  "scene": 288,
+  "text": "Sitting by his open window with a cup of chamomile tea, seven-year-old Michael shook his head in quiet amusement, blowing gently on the hot tea.",
+  "durationMs": 8928,
+  "rawWords": [
+    {
+      "ttsWord": "Sitting",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 463,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 650,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 875,
+      "endMs": 1163
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 1175,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1550,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1700,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "cup",
+      "startMs": 1775,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2013,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "chamomile",
+      "startMs": 2138,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 2700,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "seven-year-old",
+      "startMs": 3363,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "Michael",
+      "startMs": 4025,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "shook",
+      "startMs": 4350,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4625,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "head",
+      "startMs": 4788,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5000,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 5113,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "amusement",
+      "startMs": 5513,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "blowing",
+      "startMs": 6338,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "gently",
+      "startMs": 6738,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 7188,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7325,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "hot",
+      "startMs": 7400,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 7688,
+      "endMs": 8063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Sitting by his open window with a cup",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "of chamomile tea,",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 3150
+    },
+    {
+      "text": "seven-year-old Michael shook his head in quiet amusement,",
+      "startOffsetMs": 3363,
+      "endOffsetMs": 6150
+    },
+    {
+      "text": "blowing gently on the hot tea.",
+      "startOffsetMs": 6338,
+      "endOffsetMs": 8163
+    }
+  ]
+}

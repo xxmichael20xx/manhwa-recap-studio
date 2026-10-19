@@ -1,0 +1,124 @@
+{
+  "scene": 67,
+  "text": "The agony was instantaneous and overwhelming — like molten bronze being poured through every capillary, vein, and bone marrow cavity.",
+  "durationMs": 8712,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "agony",
+      "startMs": 225,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 650,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "instantaneous",
+      "startMs": 813,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1700,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "overwhelming",
+      "startMs": 1888,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 2850,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "molten",
+      "startMs": 3050,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "bronze",
+      "startMs": 3450,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "being",
+      "startMs": 3863,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "poured",
+      "startMs": 4138,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4475,
+      "endMs": 4663
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 4675,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "capillary",
+      "startMs": 5000,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "vein",
+      "startMs": 5888,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6538,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "bone",
+      "startMs": 6675,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "marrow",
+      "startMs": 6975,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "cavity",
+      "startMs": 7300,
+      "endMs": 7850
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The agony was instantaneous and overwhelming",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "like molten bronze being poured through every capillary,",
+      "startOffsetMs": 2850,
+      "endOffsetMs": 5725
+    },
+    {
+      "text": "vein,",
+      "startOffsetMs": 5888,
+      "endOffsetMs": 6363
+    },
+    {
+      "text": "and bone marrow cavity.",
+      "startOffsetMs": 6538,
+      "endOffsetMs": 7950
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "scene": 291,
+  "text": "Three rapid, frantic bell strikes echoed from the northern stone watchtower — the universal imperial signal for an unpredicted Tier 4 Calamity breach.",
+  "durationMs": 9456,
+  "rawWords": [
+    {
+      "ttsWord": "Three",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "rapid",
+      "startMs": 400,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "frantic",
+      "startMs": 1063,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "bell",
+      "startMs": 1525,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "strikes",
+      "startMs": 1763,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 2138,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2500,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2638,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "northern",
+      "startMs": 2713,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 3113,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "watchtower",
+      "startMs": 3475,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4450,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "universal",
+      "startMs": 4513,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 5113,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "signal",
+      "startMs": 5650,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 6075,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6238,
+      "endMs": 6338
+    },
+    {
+      "ttsWord": "unpredicted",
+      "startMs": 6350,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "Tier",
+      "startMs": 6963,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "4",
+      "startMs": 7225,
+      "endMs": 7513
+    },
+    {
+      "ttsWord": "Calamity",
+      "startMs": 7525,
+      "endMs": 8013
+    },
+    {
+      "ttsWord": "breach",
+      "startMs": 8025,
+      "endMs": 8575
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Three rapid, frantic bell strikes echoed from the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2700
+    },
+    {
+      "text": "northern stone watchtower",
+      "startOffsetMs": 2713,
+      "endOffsetMs": 4238
+    },
+    {
+      "text": "the universal imperial signal for an unpredicted Tier",
+      "startOffsetMs": 4450,
+      "endOffsetMs": 7213
+    },
+    {
+      "text": "4 Calamity breach.",
+      "startOffsetMs": 7225,
+      "endOffsetMs": 8675
+    }
+  ]
+}

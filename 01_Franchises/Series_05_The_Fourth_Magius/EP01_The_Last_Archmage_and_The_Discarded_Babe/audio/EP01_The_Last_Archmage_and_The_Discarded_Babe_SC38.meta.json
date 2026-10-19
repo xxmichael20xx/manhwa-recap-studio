@@ -1,0 +1,134 @@
+{
+  "scene": 38,
+  "text": "DIAGNOSTIC VERDICT: ZERO MANA CONDUCTIVITY. COMPLETE VESSEL ATROPHY. UNRESONANT DUD. The floating ancestral mirror declared in harsh crimson runes.",
+  "durationMs": 12624,
+  "rawWords": [
+    {
+      "ttsWord": "DIAGNOSTIC",
+      "startMs": 50,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "VERDICT",
+      "startMs": 825,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "ZERO",
+      "startMs": 1550,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "MANA",
+      "startMs": 1938,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "CONDUCTIVITY",
+      "startMs": 2275,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "COMPLETE",
+      "startMs": 4025,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "VESSEL",
+      "startMs": 4500,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "ATROPHY",
+      "startMs": 4913,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "UNRESONANT",
+      "startMs": 6363,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "DUD",
+      "startMs": 7050,
+      "endMs": 7463
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 8325,
+      "endMs": 8463
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 8475,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "ancestral",
+      "startMs": 8938,
+      "endMs": 9488
+    },
+    {
+      "ttsWord": "mirror",
+      "startMs": 9500,
+      "endMs": 9800
+    },
+    {
+      "ttsWord": "declared",
+      "startMs": 9813,
+      "endMs": 10275
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 10288,
+      "endMs": 10388
+    },
+    {
+      "ttsWord": "harsh",
+      "startMs": 10400,
+      "endMs": 10725
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 10738,
+      "endMs": 11200
+    },
+    {
+      "ttsWord": "runes",
+      "startMs": 11213,
+      "endMs": 11750
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "DIAGNOSTIC VERDICT:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1425
+    },
+    {
+      "text": "ZERO MANA CONDUCTIVITY.",
+      "startOffsetMs": 1550,
+      "endOffsetMs": 3263
+    },
+    {
+      "text": "COMPLETE VESSEL ATROPHY.",
+      "startOffsetMs": 4025,
+      "endOffsetMs": 5600
+    },
+    {
+      "text": "UNRESONANT DUD.",
+      "startOffsetMs": 6363,
+      "endOffsetMs": 7563
+    },
+    {
+      "text": "The floating ancestral mirror declared in harsh crimson",
+      "startOffsetMs": 8325,
+      "endOffsetMs": 11200
+    },
+    {
+      "text": "runes.",
+      "startOffsetMs": 11213,
+      "endOffsetMs": 11850
+    }
+  ]
+}

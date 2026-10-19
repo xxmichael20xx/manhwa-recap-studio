@@ -1,0 +1,94 @@
+{
+  "scene": 287,
+  "text": "The other students applauded enthusiastically, acting as if they had witnessed a divine miracle.",
+  "durationMs": 6000,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "other",
+      "startMs": 225,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 500,
+      "endMs": 900
+    },
+    {
+      "ttsWord": "applauded",
+      "startMs": 913,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "enthusiastically",
+      "startMs": 1363,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "acting",
+      "startMs": 2688,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3100,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 3250,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 3375,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 3500,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "witnessed",
+      "startMs": 3688,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4125,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 4188,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "miracle",
+      "startMs": 4600,
+      "endMs": 5138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The other students applauded enthusiastically,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2513
+    },
+    {
+      "text": "acting as if they had witnessed a divine",
+      "startOffsetMs": 2688,
+      "endOffsetMs": 4588
+    },
+    {
+      "text": "miracle.",
+      "startOffsetMs": 4600,
+      "endOffsetMs": 5238
+    }
+  ]
+}

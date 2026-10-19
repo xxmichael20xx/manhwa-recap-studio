@@ -231,9 +231,9 @@ export function loadEntityMapFromStorage(franchiseId) {
 
 export function getTagModeFromStorage() {
   try {
-    return localStorage.getItem(TAG_MODE_STORAGE_KEY) || localStorage.getItem(LEGACY_TAG_MODE_STORAGE_KEY) || 'uuid'
+    return localStorage.getItem(TAG_MODE_STORAGE_KEY) || localStorage.getItem(LEGACY_TAG_MODE_STORAGE_KEY) || 'token'
   } catch (e) {
-    return 'uuid'
+    return 'token'
   }
 }
 

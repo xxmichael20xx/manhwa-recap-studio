@@ -1,0 +1,149 @@
+{
+  "scene": 161,
+  "text": "The two wolves did not hesitate — they turned and bolted into the dark thickets at top speed, whimpering as they vanished into the mist.",
+  "durationMs": 7944,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 213,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "wolves",
+      "startMs": 475,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "did",
+      "startMs": 888,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 1025,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "hesitate",
+      "startMs": 1250,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 2100,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 2238,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2563,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "bolted",
+      "startMs": 2663,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3025,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3238,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "dark",
+      "startMs": 3363,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "thickets",
+      "startMs": 3650,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 4038,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "top",
+      "startMs": 4175,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "speed",
+      "startMs": 4463,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "whimpering",
+      "startMs": 5138,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5588,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "they",
+      "startMs": 5700,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "vanished",
+      "startMs": 5825,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6313,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6513,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "mist",
+      "startMs": 6600,
+      "endMs": 7063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The two wolves did not hesitate",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1913
+    },
+    {
+      "text": "they turned and bolted into the dark thickets",
+      "startOffsetMs": 2100,
+      "endOffsetMs": 4025
+    },
+    {
+      "text": "at top speed,",
+      "startOffsetMs": 4038,
+      "endOffsetMs": 4988
+    },
+    {
+      "text": "whimpering as they vanished into the mist.",
+      "startOffsetMs": 5138,
+      "endOffsetMs": 7163
+    }
+  ]
+}

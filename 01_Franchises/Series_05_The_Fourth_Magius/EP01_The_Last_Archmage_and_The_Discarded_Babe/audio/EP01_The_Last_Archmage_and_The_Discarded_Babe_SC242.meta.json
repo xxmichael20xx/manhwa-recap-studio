@@ -1,0 +1,144 @@
+{
+  "scene": 242,
+  "text": "The shop was filled with towering shelves of dried roots, glass jars of powdered monster bones, and copper alembics bubbling over small spirit burners.",
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 175,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 575,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "filled",
+      "startMs": 775,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1088,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 1238,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "shelves",
+      "startMs": 1713,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2125,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 2225,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 2563,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 3225,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "jars",
+      "startMs": 3600,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3975,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "powdered",
+      "startMs": 4075,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "monster",
+      "startMs": 4463,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "bones",
+      "startMs": 4875,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5625,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "copper",
+      "startMs": 5813,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "alembics",
+      "startMs": 6188,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "bubbling",
+      "startMs": 6663,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 7088,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "small",
+      "startMs": 7313,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 7688,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "burners",
+      "startMs": 8113,
+      "endMs": 8688
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The shop was filled with towering shelves of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2213
+    },
+    {
+      "text": "dried roots, glass jars of powdered monster bones,",
+      "startOffsetMs": 2225,
+      "endOffsetMs": 5438
+    },
+    {
+      "text": "and copper alembics bubbling over small spirit burners.",
+      "startOffsetMs": 5625,
+      "endOffsetMs": 8788
+    }
+  ]
+}

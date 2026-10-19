@@ -1,0 +1,124 @@
+{
+  "scene": 231,
+  "text": "The guard stared at the coins, then shrugged, stamping a temporary wooden entry token and sliding it across the counter.",
+  "durationMs": 7488,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "guard",
+      "startMs": 213,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 550,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 938,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1013,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "coins",
+      "startMs": 1113,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "then",
+      "startMs": 1838,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "shrugged",
+      "startMs": 2063,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "stamping",
+      "startMs": 2800,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3288,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "temporary",
+      "startMs": 3350,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 3925,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "entry",
+      "startMs": 4263,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "token",
+      "startMs": 4588,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5000,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "sliding",
+      "startMs": 5125,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 5588,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 5663,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6025,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "counter",
+      "startMs": 6125,
+      "endMs": 6613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The guard stared at the coins,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1750
+    },
+    {
+      "text": "then shrugged, stamping a temporary wooden entry token",
+      "startOffsetMs": 1838,
+      "endOffsetMs": 4988
+    },
+    {
+      "text": "and sliding it across the counter.",
+      "startOffsetMs": 5000,
+      "endOffsetMs": 6713
+    }
+  ]
+}
