@@ -1,0 +1,199 @@
+{
+  "scene": 216,
+  "text": "Burying both hands comfortably inside his oversized charcoal hoodie pockets, Lu Chen offered a serene, unbothered deadpan smirk: \"One billion years. Now let us see who dares disrupt my university degree.\"",
+  "durationMs": 13944,
+  "rawWords": [
+    {
+      "ttsWord": "Burying",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "both",
+      "startMs": 538,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 800,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "comfortably",
+      "startMs": 1188,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 1738,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2188,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "oversized",
+      "startMs": 2363,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "charcoal",
+      "startMs": 2988,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "hoodie",
+      "startMs": 3475,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "pockets",
+      "startMs": 3738,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 4538,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 4725,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "offered",
+      "startMs": 5000,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5313,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "serene",
+      "startMs": 5375,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "unbothered",
+      "startMs": 6125,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 6688,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "smirk",
+      "startMs": 7188,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "One",
+      "startMs": 7863,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "billion",
+      "startMs": 8113,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 8488,
+      "endMs": 9013
+    },
+    {
+      "ttsWord": "Now",
+      "startMs": 9875,
+      "endMs": 10175
+    },
+    {
+      "ttsWord": "let",
+      "startMs": 10188,
+      "endMs": 10363
+    },
+    {
+      "ttsWord": "us",
+      "startMs": 10375,
+      "endMs": 10500
+    },
+    {
+      "ttsWord": "see",
+      "startMs": 10513,
+      "endMs": 10788
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 10800,
+      "endMs": 10950
+    },
+    {
+      "ttsWord": "dares",
+      "startMs": 10963,
+      "endMs": 11313
+    },
+    {
+      "ttsWord": "disrupt",
+      "startMs": 11325,
+      "endMs": 11825
+    },
+    {
+      "ttsWord": "my",
+      "startMs": 11838,
+      "endMs": 11938
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 11950,
+      "endMs": 12575
+    },
+    {
+      "ttsWord": "degree",
+      "startMs": 12588,
+      "endMs": 13075
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Burying both hands comfortably inside his oversized charcoal",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3463
+    },
+    {
+      "text": "hoodie pockets,",
+      "startOffsetMs": 3475,
+      "endOffsetMs": 4388
+    },
+    {
+      "text": "Lu Chen offered a serene,",
+      "startOffsetMs": 4538,
+      "endOffsetMs": 5975
+    },
+    {
+      "text": "unbothered deadpan smirk:",
+      "startOffsetMs": 6125,
+      "endOffsetMs": 7700
+    },
+    {
+      "text": "One billion years.",
+      "startOffsetMs": 7863,
+      "endOffsetMs": 9113
+    },
+    {
+      "text": "Now let us see who dares disrupt my",
+      "startOffsetMs": 9875,
+      "endOffsetMs": 11938
+    },
+    {
+      "text": "university degree.\"",
+      "startOffsetMs": 11950,
+      "endOffsetMs": 13175
+    }
+  ]
+}

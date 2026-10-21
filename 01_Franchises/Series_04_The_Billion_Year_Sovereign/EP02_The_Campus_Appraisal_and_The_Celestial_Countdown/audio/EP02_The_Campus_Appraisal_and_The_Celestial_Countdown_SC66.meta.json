@@ -1,0 +1,139 @@
+{
+  "scene": 66,
+  "text": "Pushing aside two junior aides, Commander Han Feng marched with heavy, authoritative strides directly toward Platform Three, his dark trench coat billowing.",
+  "durationMs": 9888,
+  "rawWords": [
+    {
+      "ttsWord": "Pushing",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "aside",
+      "startMs": 438,
+      "endMs": 875
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 888,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "junior",
+      "startMs": 1138,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "aides",
+      "startMs": 1575,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 2063,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 2525,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 2813,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "marched",
+      "startMs": 3150,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3538,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 3663,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "authoritative",
+      "startMs": 4325,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "strides",
+      "startMs": 4988,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 5413,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 5913,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "Platform",
+      "startMs": 6250,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 6838,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7450,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "dark",
+      "startMs": 7638,
+      "endMs": 7900
+    },
+    {
+      "ttsWord": "trench",
+      "startMs": 7913,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "coat",
+      "startMs": 8250,
+      "endMs": 8513
+    },
+    {
+      "ttsWord": "billowing",
+      "startMs": 8525,
+      "endMs": 9025
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Pushing aside two junior aides,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2050
+    },
+    {
+      "text": "Commander Han Feng marched with heavy,",
+      "startOffsetMs": 2063,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "authoritative strides directly toward Platform Three,",
+      "startOffsetMs": 4325,
+      "endOffsetMs": 7313
+    },
+    {
+      "text": "his dark trench coat billowing.",
+      "startOffsetMs": 7450,
+      "endOffsetMs": 9125
+    }
+  ]
+}

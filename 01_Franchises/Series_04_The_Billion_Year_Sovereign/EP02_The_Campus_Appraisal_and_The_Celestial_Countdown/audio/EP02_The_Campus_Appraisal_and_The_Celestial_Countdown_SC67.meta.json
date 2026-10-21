@@ -1,0 +1,129 @@
+{
+  "scene": 67,
+  "text": "The mocking laughter in the grandstands abruptly died down as students witnessed the state's top crisis inspector personally approaching the turf.",
+  "durationMs": 8232,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "mocking",
+      "startMs": 175,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "laughter",
+      "startMs": 588,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1000,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1075,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "grandstands",
+      "startMs": 1163,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "abruptly",
+      "startMs": 1788,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "died",
+      "startMs": 2300,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 2675,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2975,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 3113,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "witnessed",
+      "startMs": 3525,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3988,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "state's",
+      "startMs": 4088,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "top",
+      "startMs": 4500,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "crisis",
+      "startMs": 4763,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "inspector",
+      "startMs": 5263,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "personally",
+      "startMs": 5825,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "approaching",
+      "startMs": 6313,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6813,
+      "endMs": 6888
+    },
+    {
+      "ttsWord": "turf",
+      "startMs": 6900,
+      "endMs": 7350
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The mocking laughter in the grandstands abruptly died",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "down as students witnessed the state's top crisis",
+      "startOffsetMs": 2675,
+      "endOffsetMs": 5250
+    },
+    {
+      "text": "inspector personally approaching the turf.",
+      "startOffsetMs": 5263,
+      "endOffsetMs": 7450
+    }
+  ]
+}

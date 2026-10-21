@@ -1,0 +1,154 @@
+{
+  "scene": 75,
+  "text": "From the lead limousine stepped Chief Enforcer Gu Biao, a towering, muscular martial cultivator radiating two hundred thousand years of suffocating Nascent Domain pressure.",
+  "durationMs": 10248,
+  "rawWords": [
+    {
+      "ttsWord": "From",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 288,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "lead",
+      "startMs": 400,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "limousine",
+      "startMs": 675,
+      "endMs": 1188
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 1200,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "Chief",
+      "startMs": 1525,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 1838,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 2375,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "Biao",
+      "startMs": 2575,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3225,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 3300,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "muscular",
+      "startMs": 4113,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "martial",
+      "startMs": 4550,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "cultivator",
+      "startMs": 4975,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "radiating",
+      "startMs": 5575,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 6088,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 6300,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6613,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 7038,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7338,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "suffocating",
+      "startMs": 7438,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "Nascent",
+      "startMs": 8063,
+      "endMs": 8438
+    },
+    {
+      "ttsWord": "Domain",
+      "startMs": 8450,
+      "endMs": 8850
+    },
+    {
+      "ttsWord": "pressure",
+      "startMs": 8863,
+      "endMs": 9375
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "From the lead limousine stepped Chief Enforcer Gu",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2563
+    },
+    {
+      "text": "Biao,",
+      "startOffsetMs": 2575,
+      "endOffsetMs": 3050
+    },
+    {
+      "text": "a towering,",
+      "startOffsetMs": 3225,
+      "endOffsetMs": 3925
+    },
+    {
+      "text": "muscular martial cultivator radiating two hundred thousand years",
+      "startOffsetMs": 4113,
+      "endOffsetMs": 7325
+    },
+    {
+      "text": "of suffocating Nascent Domain pressure.",
+      "startOffsetMs": 7338,
+      "endOffsetMs": 9475
+    }
+  ]
+}

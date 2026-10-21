@@ -246,13 +246,6 @@
           </p>
         </div>
 
-        <button 
-          @click="openSeriesClimaxModal"
-          class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold flex items-center space-x-2 shadow-md shadow-rose-900/20 transition cursor-pointer hover:scale-[1.02]"
-        >
-          <Zap class="w-4 h-4 text-amber-200" />
-          <span>🔥 Generate Series Climax Short</span>
-        </button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -267,11 +260,14 @@
               <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">{{ ep.name }}</h3>
               <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">{{ ep.id }}</p>
             </div>
-            <div v-if="ep.audit" class="text-right shrink-0">
-              <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
-                {{ ep.audit.overallScore }}% Anti-Slop
+            <div class="text-right shrink-0">
+              <span v-if="ep.audioDurationFormatted" class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/20">
+                ⏱️ {{ ep.audioDurationFormatted }}
               </span>
-              <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-1">~{{ ep.audit.wordCount }} words ({{ ep.audit.estimatedMinutes }}m)</p>
+              <span v-else-if="ep.audioCount > 0" class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/20">
+                🎙️ {{ ep.audioCount }} VO Audio Files
+              </span>
+              <p v-if="ep.sceneCount" class="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-1">{{ ep.sceneCount }} Scenes</p>
             </div>
           </div>
 
@@ -309,7 +305,7 @@
             >
               <Sparkles class="w-4 h-4 mx-auto text-amber-500 dark:text-amber-400 group-hover:scale-110 transition-transform" />
               <div class="text-[11px] font-bold text-slate-900 dark:text-slate-100">2. Prompt Matrix</div>
-              <div class="text-[9px] font-mono text-amber-600 dark:text-amber-400">312 Scenes</div>
+              <div class="text-[9px] font-mono text-amber-600 dark:text-amber-400">{{ ep.scenesCount || 0 }} Scenes</div>
             </router-link>
 
             <router-link 
@@ -331,33 +327,6 @@
             </router-link>
           </div>
 
-          <!-- Viral Climax Short Generator Button & Quick Download -->
-          <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
-            <div class="flex items-center space-x-1.5 text-[11px] text-slate-500 dark:text-slate-400">
-              <Sparkles class="w-3.5 h-3.5 text-amber-500" />
-              <span>Climax Hook:</span>
-              <span class="font-mono text-slate-700 dark:text-slate-300 font-semibold">45-60s TikTok / Shorts</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <a 
-                v-if="ep.hasCompiledVideo"
-                :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
-                :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
-                class="px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-600 hover:text-white border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-bold font-mono flex items-center space-x-1.5 transition cursor-pointer hover:scale-[1.02]"
-                :title="`Obtain ${ep.id} Master MP4`"
-              >
-                <Download class="w-3.5 h-3.5" />
-                <span>Obtain MP4</span>
-              </a>
-              <button 
-                @click="openClimaxModal(ep)"
-                class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white text-xs font-bold flex items-center space-x-1.5 shadow-sm shadow-amber-900/20 transition cursor-pointer hover:scale-[1.02]"
-              >
-                <Zap class="w-3.5 h-3.5" />
-                <span>⚡ Climax Short</span>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -428,136 +397,16 @@
               >
                 Weapons & Items
               </button>
-            </div>
-          </div>
-          <!-- Google Flow Entity ID Mapper & Token Synchronizer Accordion -->
-          <div class="rounded-xl border border-purple-500/30 bg-purple-50/50 dark:bg-purple-950/20 overflow-hidden">
-            <button 
-              @click="isEntityMapperAccordionOpen = !isEntityMapperAccordionOpen"
-              class="w-full p-4 flex items-center justify-between text-left cursor-pointer hover:bg-purple-500/10 transition-colors select-none"
-            >
-              <div class="flex items-center space-x-2.5">
-                <div class="p-1.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
-                  <Hash class="w-4 h-4" />
-                </div>
-                <div>
-                  <h3 class="text-xs font-bold font-mono uppercase text-slate-900 dark:text-white flex items-center space-x-2">
-                    <span>Google Flow Entity ID Mapper & Synchronizer</span>
-                    <span 
-                      class="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border"
-                      :class="entityCount > 0 
-                        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' 
-                        : 'bg-slate-200 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'"
-                    >
-                      {{ entityCount }} Entities Mapped
-                    </span>
-                  </h3>
-                  <p class="text-[11px] text-slate-500 dark:text-slate-400">
-                    Series-level UUID dictionary: maps names to Google Flow UUIDs to auto-replace <code>@{Name}</code> with <code>@UUID</code> across all episodes.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center space-x-2">
-                <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">
-                  {{ isEntityMapperAccordionOpen ? 'Hide Mapper' : 'Open Mapper' }}
-                </span>
-                <ChevronDown class="w-4 h-4 text-purple-500 transition-transform duration-200" :class="{ 'rotate-180': isEntityMapperAccordionOpen }" />
-              </div>
-            </button>
-
-            <!-- Collapsible Mapper Body -->
-            <div v-if="isEntityMapperAccordionOpen" class="p-4 pt-1 border-t border-purple-500/20 space-y-3">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-[11px] font-mono text-slate-500">
-                  Paste lines formatted as <code>Flow Name: UUID</code>. Click "Read & Sync" to persist across all episodes.
-                </span>
-
-                <!-- Active Output Format Toggle -->
-                <div class="flex items-center space-x-1 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
-                  <span class="text-[10px] font-bold uppercase text-slate-500 px-1.5">Output:</span>
-                  <button 
-                    @click="togglePromptTagMode('token')"
-                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-                    :class="promptTagMode === 'token' 
-                      ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-                  >
-                    <span>🏷️ @{Token}</span>
-                  </button>
-                  <button 
-                    @click="togglePromptTagMode('uuid')"
-                    class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-                    :class="promptTagMode === 'uuid' 
-                      ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-                  >
-                    <span>🔑 @UUID</span>
-                    <span v-if="entityCount > 0" class="text-[10px] px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black">
-                      {{ entityCount }}
-                    </span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Textarea Input Area -->
-              <textarea 
-                v-model="entityMapRawText" 
-                @paste="handleEntityMapPaste"
-                rows="7"
-                placeholder="Paste raw agent text, e.g.:&#10;I've pulled the absolute latest list of character entities for you. Here are all 16 UUIDs:&#10;&#10;Boss: Archon of Deletion: 030776ff-8016-4192-80ee-bcc02a6f1920 (Colossal automaton)&#10;Bramwell Locke: 16c4c742-5932-4c96-9c0c-c42aadbcb00a (Manhwa protagonist)&#10;Linnea Croft: 7cf4d027-6863-4e4b-8f93-f58ceb6f0b0b&#10;..."
-                class="w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 font-mono text-xs text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-purple-500 focus:outline-none resize-y shadow-xs"
-              ></textarea>
-
-              <!-- Action Buttons Bar -->
-              <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
-                <div class="flex flex-wrap items-center gap-2">
-                  <button 
-                    @click="syncEntityMapping"
-                    :disabled="isSavingEntityMap || !entityMapRawText.trim()"
-                    class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-2 transition shadow-md shadow-purple-950/20 disabled:opacity-50 cursor-pointer"
-                  >
-                    <RefreshCw class="w-3.5 h-3.5" :class="{ 'animate-spin': isSavingEntityMap }" />
-                    <span>{{ isSavingEntityMap ? 'Synchronizing...' : `⚡ Parse & Sync Entity IDs (${entityCount} Mapped)` }}</span>
-                  </button>
-
-                  <button 
-                    @click="copyFlowAgentPrompt"
-                    class="px-3.5 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-500/30 text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer"
-                    title="Copy pre-formatted prompt to ask Google Flow chat agent for entity IDs"
-                  >
-                    <Sparkles class="w-3.5 h-3.5 text-purple-500" />
-                    <span>📋 Copy Flow Agent Prompt</span>
-                  </button>
-
-                  <button 
-                    v-if="entityMapRawText.trim()"
-                    @click="prettifyEntityMapping"
-                    class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
-                    title="Separate concatenated entities into clean lines"
-                  >
-                    <Sparkles class="w-3.5 h-3.5 text-indigo-500" />
-                    <span>✨ Prettify Text</span>
-                  </button>
-
-                  <button 
-                    v-if="entityCount > 0"
-                    @click="copyCurrentEntityMapping"
-                    class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold flex items-center space-x-1.5 transition cursor-pointer"
-                  >
-                    <Copy class="w-3.5 h-3.5" />
-                    <span>Copy Mapping Text</span>
-                  </button>
-                </div>
-
-                <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                  Active mode: <strong class="text-purple-600 dark:text-purple-400">{{ promptTagMode === 'uuid' ? '@UUID replacement' : '@{Name} tokens' }}</strong>
-                </div>
-              </div>
+              <button 
+                @click="vaultFilter = 'locations'"
+                class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition cursor-pointer"
+                :class="vaultFilter === 'locations' ? 'bg-amber-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'"
+              >
+                World & Locations
+              </button>
             </div>
           </div>
         </div>
-
         <!-- Character & Item Cards Grid (Matches Uploaded Screenshot Design) -->
         <div class="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-4 pt-2">
           <div 
@@ -579,26 +428,26 @@
                     </span>
                     <span 
                       class="text-[9px] font-mono px-1.5 py-0.5 rounded-full font-bold border"
-                      :class="getModelUuid(model) 
+                      :class="model.hasPlate 
                         ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
-                        : 'bg-slate-200/80 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'"
-                      :title="getModelUuid(model) ? `Mapped to UUID: ${getModelUuid(model)}` : 'No UUID mapped yet. Paste mapping in textarea above.'"
+                        : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'"
+                      :title="model.hasPlate ? 'Master Reference Plate Active' : 'Plate Pending'"
                     >
-                      {{ getModelUuid(model) ? 'Mapped' : 'Pending' }}
+                      {{ model.hasPlate ? 'Ready' : 'Pending' }}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <!-- Model Thumbnail Preview (16:9) with Drag-and-Drop Image Updating -->
+              <!-- Model Thumbnail Preview (Dynamic Format: 16:9 vs 9:16) with Drag-and-Drop Image Updating -->
               <div 
-                class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border relative group transition-all duration-200"
                 :class="[
+                  isVerticalFormat ? 'aspect-[9/16] max-h-64' : 'aspect-video',
                   dragOverModelId === model.id 
                     ? 'ring-2 ring-purple-500 border-purple-500 scale-[1.02] shadow-lg shadow-purple-500/20' 
                     : 'border-slate-200 dark:border-slate-800'
                 ]"
-                @dragover.prevent="dragOverModelId = model.id"
+                class="w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border relative group transition-all duration-200"
                 @dragleave.prevent="dragOverModelId === model.id ? dragOverModelId = null : null"
                 @drop.prevent="handleDropPlate($event, model)"
               >
@@ -993,6 +842,32 @@
           </div>
         </div>
 
+        <!-- Sub-Tab Pill Switcher (YouTube vs TikTok & Shorts) -->
+        <div class="flex items-center space-x-2 bg-slate-100 dark:bg-slate-950 p-1 rounded-xl border border-slate-200 dark:border-slate-800 w-fit">
+          <button 
+            @click="launchpadSubTab = 'youtube'"
+            :class="launchpadSubTab === 'youtube' 
+              ? 'bg-rose-600 text-white font-bold shadow-md shadow-rose-900/20' 
+              : 'text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400'"
+            class="px-4 py-2 rounded-lg text-xs font-mono flex items-center space-x-2 transition cursor-pointer"
+          >
+            <Youtube class="w-4 h-4" />
+            <span>YouTube Launchpad</span>
+          </button>
+          <button 
+            @click="selectTikTokSubTab"
+            :class="launchpadSubTab === 'tiktok' 
+              ? 'bg-gradient-to-r from-amber-500 to-rose-500 text-white font-bold shadow-md shadow-rose-900/20' 
+              : 'text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400'"
+            class="px-4 py-2 rounded-lg text-xs font-mono flex items-center space-x-2 transition cursor-pointer"
+          >
+            <Zap class="w-4 h-4" />
+            <span>TikTok &amp; Shorts Kit</span>
+          </button>
+        </div>
+
+        <!-- SUB-TAB 1: YOUTUBE LAUNCHPAD -->
+        <div v-if="launchpadSubTab === 'youtube'" class="space-y-6">
         <!-- 1. The 3 High-CTR Master Thumbnails Showcase -->
         <div class="space-y-4 pt-2">
           <div class="flex items-center justify-between">
@@ -1190,44 +1065,11 @@
             ></textarea>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- MODAL: TIKTOK / SHORTS VIRAL CLIMAX GENERATOR -->
-    <div 
-      v-if="isClimaxModalOpen" 
-      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto"
-      @click.self="closeClimaxModal"
-    >
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-150">
-        <!-- Header -->
-        <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-950/40">
-          <div class="flex items-center space-x-3">
-            <div class="p-2.5 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-500 text-white shadow-md shadow-amber-500/20">
-              <Zap class="w-5 h-5 fill-current" />
-            </div>
-            <div>
-              <div class="flex items-center space-x-2">
-                <h3 class="text-base font-bold text-slate-900 dark:text-white">TikTok & Shorts Viral Climax Hook</h3>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 font-bold uppercase">
-                  Viral Acquisition Funnel
-                </span>
-              </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                {{ selectedClimaxEpisode?.name || 'Episode' }} ({{ selectedClimaxEpisode?.id }}) • Slices the 45–60s peak face-slap climax to hook viewers into YouTube.
-              </p>
-            </div>
-          </div>
-          <button 
-            @click="closeClimaxModal"
-            class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
-          >
-            <X class="w-5 h-5" />
-          </button>
         </div>
+        <!-- END SUB-TAB 1 -->
 
-        <!-- Body -->
-        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+        <!-- SUB-TAB 2: TIKTOK & YOUTUBE SHORTS KIT -->
+        <div v-else-if="launchpadSubTab === 'tiktok'" class="space-y-6">
           <div v-if="isLoadingClimaxData" class="flex flex-col items-center justify-center py-16 space-y-3">
             <Loader2 class="w-8 h-8 text-amber-500 animate-spin" />
             <p class="text-xs font-mono text-slate-400">Loading Climax Short metadata & video...</p>
@@ -1271,7 +1113,7 @@
               <!-- Compile Action Buttons -->
               <div class="space-y-2">
                 <button 
-                  @click="generateClimaxShort(selectedClimaxEpisode?.id)"
+                  @click="generateClimaxShort(currentClimaxEpisodeId)"
                   :disabled="isGeneratingShort"
                   class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold flex items-center justify-center space-x-2 shadow-lg shadow-rose-900/20 transition cursor-pointer disabled:opacity-50 hover:scale-[1.01]"
                 >
@@ -1314,7 +1156,28 @@
 
             <!-- Right Col (7 cols): Viral Copywriting, Hook Titles & Bio Funnel Hub -->
             <div class="lg:col-span-7 space-y-5">
-              <!-- Section 1: 4 High-CTR Viral Hook Titles -->
+              <!-- On-Screen Video Hook Overlay -->
+              <div v-if="climaxData?.package?.hookOverlayText" class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-mono uppercase text-slate-400 font-bold flex items-center space-x-1.5">
+                    <Sparkles class="w-3.5 h-3.5 text-amber-500" />
+                    <span>On-Screen Video Hook Overlay</span>
+                  </label>
+                  <button 
+                    @click="copyClimaxText('overlay', climaxData.package.hookOverlayText)"
+                    class="text-xs font-mono text-purple-600 dark:text-purple-400 hover:underline flex items-center space-x-1 cursor-pointer"
+                  >
+                    <Check v-if="copiedClimaxField === 'overlay'" class="w-3 h-3 text-emerald-500" />
+                    <Copy v-else class="w-3 h-3" />
+                    <span>{{ copiedClimaxField === 'overlay' ? 'Copied' : 'Copy' }}</span>
+                  </button>
+                </div>
+                <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl text-xs font-semibold text-amber-700 dark:text-amber-300 leading-relaxed">
+                  {{ climaxData.package.hookOverlayText }}
+                </div>
+              </div>
+
+              <!-- High-CTR Viral Hook Titles -->
               <div class="space-y-2.5">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center space-x-2">
@@ -1358,12 +1221,12 @@
                 </div>
               </div>
 
-              <!-- Section 2: TikTok / Shorts Caption & SEO Hashtags -->
+              <!-- TikTok / Shorts Caption & SEO Hashtags -->
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
                   <label class="text-xs font-mono uppercase text-slate-400 font-bold flex items-center space-x-1.5">
                     <Hash class="w-3.5 h-3.5 text-rose-500" />
-                    <span>TikTok / Shorts Caption & Hashtag Pack</span>
+                    <span>TikTok / Shorts Caption &amp; Hashtag Pack</span>
                   </label>
                   <button 
                     @click="copyClimaxText('caption', climaxData?.package?.caption || '')"
@@ -1382,7 +1245,7 @@
                 ></textarea>
               </div>
 
-              <!-- Section 3: High-Conversion Pinned Bio Comment -->
+              <!-- High-Conversion Pinned Bio Comment -->
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
                   <label class="text-xs font-mono uppercase text-slate-400 font-bold flex items-center space-x-1.5">
@@ -1408,22 +1271,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Footer -->
-        <div class="px-6 py-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-950/40">
-          <div class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400">
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span>Zero-drift 45-60s slice • Lossless AAC Audio • 3s animated search CTA</span>
-          </div>
-          <button 
-            @click="closeClimaxModal"
-            class="px-4 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition cursor-pointer"
-          >
-            Close
-          </button>
-        </div>
+        <!-- END SUB-TAB 2 -->
       </div>
     </div>
+
   </div>
 </template>
 
@@ -1443,9 +1294,27 @@ import {
   getTagModeFromStorage,
   setTagModeToStorage
 } from '../utils/entityMapper.js'
+import { getFranchiseDefaultVaultDna } from '../utils/franchiseStyleHelper.js'
 
 const route = useRoute()
 const franchise = ref(null)
+const launchpadSubTab = ref('youtube') // 'youtube' | 'tiktok'
+
+const currentClimaxEpisodeId = computed(() => {
+  if (selectedPackageEpisode.value && selectedPackageEpisode.value !== 'omnibus_master' && selectedPackageEpisode.value !== 'omnibus_complete') {
+    return selectedPackageEpisode.value
+  }
+  return availableEpisodes.value[0]?.id || ''
+})
+
+const selectTikTokSubTab = () => {
+  launchpadSubTab.value = 'tiktok'
+  const epId = currentClimaxEpisodeId.value
+  if (epId) {
+    loadClimaxShort(epId)
+  }
+}
+
 const activeTab = ref(route.query.tab || 'episodes')
 const vaultFilter = ref('all')
 const models = ref([])
@@ -1868,6 +1737,14 @@ const currentSelectedEpisodeVideoSize = computed(() => {
   return currentSelectedEpisode.value?.videoSizeFormatted || '1080p'
 })
 
+const isVerticalFormat = computed(() => {
+  const fmt = franchise.value?.format || ''
+  if (fmt.includes('9:16')) return true
+  if (fmt.includes('16:9')) return false
+  const fId = (franchise.value?.id || franchise.value?.folder || route.params.id || '').toLowerCase()
+  return !(fId.includes('02') || fId.includes('05') || fId.includes('abyssal') || fId.includes('fourth_magius'))
+})
+
 const selectedEpisodeFilter = ref('all')
 
 const episodeScopedModels = computed(() => {
@@ -1877,7 +1754,7 @@ const episodeScopedModels = computed(() => {
     if (Array.isArray(m.episodes) && m.episodes.length > 0) {
       return m.episodes.some(ep => ep.toLowerCase().includes(targetEp) || targetEp.includes(ep.toLowerCase()))
     }
-    return true
+    return /protagonist/i.test(m.category || '')
   })
 })
 
@@ -1888,7 +1765,7 @@ const getEpisodeModelCount = (epId) => {
     if (Array.isArray(m.episodes) && m.episodes.length > 0) {
       return m.episodes.some(ep => ep.toLowerCase().includes(targetEp) || targetEp.includes(ep.toLowerCase()))
     }
-    return true
+    return /protagonist/i.test(m.category || '')
   }).length
 }
 
@@ -1897,7 +1774,8 @@ const filteredModels = computed(() => {
   if (vaultFilter.value === 'all') return base
   if (vaultFilter.value === 'protagonist') return base.filter(m => m.category === 'Protagonist')
   if (vaultFilter.value === 'antagonist') return base.filter(m => m.category === 'Antagonist')
-  if (vaultFilter.value === 'item') return base.filter(m => m.type === 'item' || m.type === 'weapon' || m.category === 'Item')
+  if (vaultFilter.value === 'item') return base.filter(m => m.type === 'item' || m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item' || m.category === 'Weapons' || m.category === 'Artifacts' || m.category === 'Props')
+  if (vaultFilter.value === 'locations') return base.filter(m => m.type === 'location' || m.category === 'Locations' || m.category === 'World Setting')
   return base
 })
 
@@ -1961,7 +1839,8 @@ const copyVaultPrompt = async (model) => {
   if (!promptText) {
     const rawDna = model.fullDna || model.dnaAnchor || model.description || model.name
     const cleanDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
-    promptText = `16:9 horizontal widescreen cinematic composition. ${cleanDna}. Dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, completely textless artwork, no words, no speech bubbles, no banners.`
+    const isVert = isVerticalFormat.value
+    promptText = `${isVert ? '9:16 vertical manhwa composition' : '16:9 horizontal widescreen cinematic composition'}. ${cleanDna}. Dark fantasy modern urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, ${isVert ? 'vertical 9:16' : 'horizontal 16:9'}, completely textless artwork, no words, no speech bubbles, no banners.`
   }
   try {
     await navigator.clipboard.writeText(promptText)
@@ -1981,7 +1860,7 @@ const copyVaultPrompt = async (model) => {
 
 const copyVaultDna = async (model) => {
   if (!model) return
-  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || getFranchiseDefaultVaultDna(franchise.value?.folder || route.params.id, model.name)
   try {
     await navigator.clipboard.writeText(textToCopy)
     copiedVaultId.value = model.id
@@ -2172,26 +2051,6 @@ const prettifyEntityMapping = () => {
   }
 }
 
-const copyFlowAgentPrompt = async () => {
-  const characters = (models.value || []).filter(m => m.type === 'character' || m.type === 'boss' || m.category === 'Protagonist' || m.category === 'Antagonist' || m.category === 'Supporting').map(m => m.flowName || m.name)
-  const items = (models.value || []).filter(m => m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item').map(m => m.flowName || m.name)
-  const allEntities = [...new Set([...characters, ...items])]
-  const entityList = allEntities.length > 0 
-    ? `\n\nList:\n${allEntities.map(e => `- ${e}`).join('\n')}` 
-    : ''
-
-  const promptText = `Please list all characters and items in this project with their UUIDs:
-
-Format:
-Name: UUID${entityList}`
-
-  try {
-    await navigator.clipboard.writeText(promptText)
-    triggerToast('Flow Agent Prompt Copied', 'Paste directly into Google Flow chat to get character UUIDs!')
-  } catch (e) {
-    console.error('Failed to copy flow prompt:', e)
-  }
-}
 
 const togglePromptTagMode = (mode) => {
   promptTagMode.value = mode
@@ -2306,6 +2165,14 @@ const copiedClimaxField = ref(null)
 
 const defaultClimaxHooks = computed(() => {
   const currentId = route.params.id || ''
+  if (currentId.includes('Series_05')) {
+    return [
+      { title: "They discarded the baby in the snow until 1,000 years of Archmage memory awakened 😭💀", hookType: "Underdog Awakening", ctrScore: "99%" },
+      { title: "Arrogant Patriarch tried sealing an infant's mana... and shattered the entire testing crystal 💀", hookType: "Noble Humiliation", ctrScore: "98%" },
+      { title: "The imperial court mocked the 5-year-old until he cast a forbidden 9th-circle spell with a stick 😭⚡", hookType: "Action Shock", ctrScore: "97%" },
+      { title: "Mocked as a mana-less bastard babe, but he was the Empire's founder reincarnated 👑💀", hookType: "Founder Revelation", ctrScore: "96%" }
+    ]
+  }
   if (currentId.includes('Series_04')) {
     return [
       { title: "He ran an idle cultivation game for 10 years, then Earth merged with his save file 😭💀", hookType: "Reality Convergence", ctrScore: "99%" },
@@ -2329,8 +2196,8 @@ const defaultClimaxHooks = computed(() => {
     ]
   }
   return [
-    { title: "They mocked him as the weakest student until his true hidden sovereign power awakened 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
-    { title: "Arrogant elite drew their sacred blade on an ordinary student... and instantly regretted it 😭", hookType: "Dramatic Shock", ctrScore: "97%" }
+    { title: "They mocked him as powerless until his true hidden sovereign foundation awakened 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
+    { title: "Arrogant elite drew their sacred weapon on him... and instantly regretted it 😭", hookType: "Dramatic Shock", ctrScore: "97%" }
   ]
 })
 

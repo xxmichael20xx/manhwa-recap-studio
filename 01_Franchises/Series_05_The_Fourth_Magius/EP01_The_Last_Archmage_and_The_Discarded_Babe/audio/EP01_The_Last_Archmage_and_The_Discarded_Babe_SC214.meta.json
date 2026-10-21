@@ -1,109 +1,144 @@
 {
   "scene": 214,
-  "text": "Turning southward, the seven-year-old boy set off along the river trail toward the frontier town of Oakhaven.",
-  "durationMs": 6696,
+  "text": "Slinging the bulging herb rucksack across his shoulders, the seven-year-old boy set off southward along the river trail toward the frontier town of Oakhaven.",
+  "durationMs": 9144,
   "rawWords": [
     {
-      "ttsWord": "Turning",
+      "ttsWord": "Slinging",
       "startMs": 50,
-      "endMs": 413
-    },
-    {
-      "ttsWord": "southward",
-      "startMs": 425,
-      "endMs": 988
+      "endMs": 563
     },
     {
       "ttsWord": "the",
-      "startMs": 1213,
-      "endMs": 1325
+      "startMs": 575,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "bulging",
+      "startMs": 700,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "herb",
+      "startMs": 1138,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "rucksack",
+      "startMs": 1363,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 1850,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2238,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "shoulders",
+      "startMs": 2363,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3150,
+      "endMs": 3275
     },
     {
       "ttsWord": "seven-year-old",
-      "startMs": 1338,
-      "endMs": 2025
+      "startMs": 3288,
+      "endMs": 3988
     },
     {
       "ttsWord": "boy",
-      "startMs": 2038,
-      "endMs": 2250
-    },
-    {
-      "ttsWord": "set",
-      "startMs": 2263,
-      "endMs": 2525
-    },
-    {
-      "ttsWord": "off",
-      "startMs": 2538,
-      "endMs": 2763
-    },
-    {
-      "ttsWord": "along",
-      "startMs": 2775,
-      "endMs": 3113
-    },
-    {
-      "ttsWord": "the",
-      "startMs": 3125,
-      "endMs": 3213
-    },
-    {
-      "ttsWord": "river",
-      "startMs": 3225,
-      "endMs": 3475
-    },
-    {
-      "ttsWord": "trail",
-      "startMs": 3488,
-      "endMs": 3875
-    },
-    {
-      "ttsWord": "toward",
-      "startMs": 3888,
-      "endMs": 4150
-    },
-    {
-      "ttsWord": "the",
-      "startMs": 4163,
+      "startMs": 4000,
       "endMs": 4225
     },
     {
-      "ttsWord": "frontier",
+      "ttsWord": "set",
       "startMs": 4238,
-      "endMs": 4750
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 4513,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "southward",
+      "startMs": 4713,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 5225,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5550,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "river",
+      "startMs": 5650,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "trail",
+      "startMs": 5925,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 6325,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6600,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "frontier",
+      "startMs": 6675,
+      "endMs": 7175
     },
     {
       "ttsWord": "town",
-      "startMs": 4763,
-      "endMs": 5088
+      "startMs": 7188,
+      "endMs": 7513
     },
     {
       "ttsWord": "of",
-      "startMs": 5100,
-      "endMs": 5200
+      "startMs": 7525,
+      "endMs": 7638
     },
     {
       "ttsWord": "Oakhaven",
-      "startMs": 5213,
-      "endMs": 5825
+      "startMs": 7650,
+      "endMs": 8263
     }
   ],
   "relativeCues": [
     {
-      "text": "Turning southward, the seven-year-old boy set off along",
+      "text": "Slinging the bulging herb rucksack across his shoulders,",
       "startOffsetMs": 50,
-      "endOffsetMs": 3113
+      "endOffsetMs": 3025
     },
     {
-      "text": "the river trail toward the frontier town of",
-      "startOffsetMs": 3125,
-      "endOffsetMs": 5200
+      "text": "the seven-year-old boy set off southward along the",
+      "startOffsetMs": 3150,
+      "endOffsetMs": 5638
     },
     {
-      "text": "Oakhaven.",
-      "startOffsetMs": 5213,
-      "endOffsetMs": 5925
+      "text": "river trail toward the frontier town of Oakhaven.",
+      "startOffsetMs": 5650,
+      "endOffsetMs": 8363
     }
   ]
 }

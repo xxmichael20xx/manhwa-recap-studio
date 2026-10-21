@@ -1,0 +1,194 @@
+{
+  "scene": 143,
+  "text": "Lu Chen tilted his head in deadpan innocence. \"I drank a two-dollar bottle of sweetened iced green tea from the campus shop. Wang Bao has the receipt if the state needs auditing.\"",
+  "durationMs": 12096,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 325,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "tilted",
+      "startMs": 613,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 963,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "head",
+      "startMs": 1125,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1375,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 1513,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "innocence",
+      "startMs": 2013,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 3563,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "drank",
+      "startMs": 3713,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4050,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "two-dollar",
+      "startMs": 4138,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "bottle",
+      "startMs": 4700,
+      "endMs": 5000
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5013,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "sweetened",
+      "startMs": 5113,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "iced",
+      "startMs": 5563,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 5875,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 6188,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6513,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6688,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 6775,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "shop",
+      "startMs": 7163,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 8475,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 8825,
+      "endMs": 9088
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 9100,
+      "endMs": 9350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9363,
+      "endMs": 9438
+    },
+    {
+      "ttsWord": "receipt",
+      "startMs": 9450,
+      "endMs": 9875
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 9888,
+      "endMs": 10000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10013,
+      "endMs": 10113
+    },
+    {
+      "ttsWord": "state",
+      "startMs": 10125,
+      "endMs": 10425
+    },
+    {
+      "ttsWord": "needs",
+      "startMs": 10438,
+      "endMs": 10688
+    },
+    {
+      "ttsWord": "auditing",
+      "startMs": 10700,
+      "endMs": 11225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen tilted his head in deadpan innocence.",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2800
+    },
+    {
+      "text": "I drank a two-dollar bottle of sweetened iced",
+      "startOffsetMs": 3563,
+      "endOffsetMs": 5863
+    },
+    {
+      "text": "green tea from the campus shop.",
+      "startOffsetMs": 5875,
+      "endOffsetMs": 7713
+    },
+    {
+      "text": "Wang Bao has the receipt if the state",
+      "startOffsetMs": 8475,
+      "endOffsetMs": 10425
+    },
+    {
+      "text": "needs auditing.\"",
+      "startOffsetMs": 10438,
+      "endOffsetMs": 11325
+    }
+  ]
+}

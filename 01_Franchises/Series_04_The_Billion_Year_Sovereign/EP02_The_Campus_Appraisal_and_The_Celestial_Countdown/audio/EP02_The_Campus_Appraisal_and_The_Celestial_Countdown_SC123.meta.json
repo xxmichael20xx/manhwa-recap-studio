@@ -1,0 +1,124 @@
+{
+  "scene": 123,
+  "text": "\"Take me to that dormitory immediately, Commander,\" Jiang Qingxue requested, her melodious voice carrying an urgent, unyielding chill.",
+  "durationMs": 9096,
+  "rawWords": [
+    {
+      "ttsWord": "Take",
+      "startMs": 50,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "me",
+      "startMs": 325,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 513,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 638,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "dormitory",
+      "startMs": 900,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "immediately",
+      "startMs": 1525,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 2400,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 3213,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 3588,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "requested",
+      "startMs": 4075,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 5013,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "melodious",
+      "startMs": 5138,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 5713,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "carrying",
+      "startMs": 6075,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6525,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "urgent",
+      "startMs": 6625,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "unyielding",
+      "startMs": 7213,
+      "endMs": 7775
+    },
+    {
+      "ttsWord": "chill",
+      "startMs": 7788,
+      "endMs": 8213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Take me to that dormitory immediately,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "Commander,\"",
+      "startOffsetMs": 2400,
+      "endOffsetMs": 3038
+    },
+    {
+      "text": "Jiang Qingxue requested,",
+      "startOffsetMs": 3213,
+      "endOffsetMs": 4800
+    },
+    {
+      "text": "her melodious voice carrying an urgent,",
+      "startOffsetMs": 5013,
+      "endOffsetMs": 7138
+    },
+    {
+      "text": "unyielding chill.",
+      "startOffsetMs": 7213,
+      "endOffsetMs": 8313
+    }
+  ]
+}

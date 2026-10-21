@@ -1,0 +1,154 @@
+{
+  "scene": 74,
+  "text": "Heavily armed private syndicate security personnel in tailored black bespoke suits and opaque dark tactical sunglasses leapt from the vehicles, clearing pedestrians with ruthless efficiency.",
+  "durationMs": 11088,
+  "rawWords": [
+    {
+      "ttsWord": "Heavily",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "armed",
+      "startMs": 525,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "private",
+      "startMs": 900,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 1313,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "security",
+      "startMs": 1788,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "personnel",
+      "startMs": 2288,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2863,
+      "endMs": 2975
+    },
+    {
+      "ttsWord": "tailored",
+      "startMs": 2988,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 3413,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "bespoke",
+      "startMs": 3725,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "suits",
+      "startMs": 4163,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4550,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "opaque",
+      "startMs": 4738,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "dark",
+      "startMs": 5125,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 5400,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "sunglasses",
+      "startMs": 5850,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "leapt",
+      "startMs": 6575,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 6813,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6950,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "vehicles",
+      "startMs": 7025,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "clearing",
+      "startMs": 7863,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "pedestrians",
+      "startMs": 8238,
+      "endMs": 8863
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8875,
+      "endMs": 9038
+    },
+    {
+      "ttsWord": "ruthless",
+      "startMs": 9050,
+      "endMs": 9488
+    },
+    {
+      "ttsWord": "efficiency",
+      "startMs": 9500,
+      "endMs": 10225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Heavily armed private syndicate security personnel in tailored",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3400
+    },
+    {
+      "text": "black bespoke suits and opaque dark tactical sunglasses",
+      "startOffsetMs": 3413,
+      "endOffsetMs": 6563
+    },
+    {
+      "text": "leapt from the vehicles,",
+      "startOffsetMs": 6575,
+      "endOffsetMs": 7713
+    },
+    {
+      "text": "clearing pedestrians with ruthless efficiency.",
+      "startOffsetMs": 7863,
+      "endOffsetMs": 10325
+    }
+  ]
+}

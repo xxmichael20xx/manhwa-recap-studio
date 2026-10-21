@@ -1,0 +1,25 @@
+[SYSTEM DIRECTIVE: TARGET COLLECTION "EP01 Fixes" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
+
+STRICT OPERATIONAL DIRECTIVES FOR THIS RUN:
+1. MANDATORY COLLECTION ISOLATION: Create and isolate 100% of generated scenes in this run inside collection "EP01 Fixes". Never mix into general library or previous collections.
+2. MANDATORY IMMEDIATE FILE NAMING: Automatically rename every generated image to match its exact filename="..." attribute immediately after generation without waiting for prompting.
+3. ABSOLUTE ASPECT RATIO LOCK: Strictly 16:9 horizontal widescreen (1920x1080 full bleed), dark fantasy high-magic action manhwa style. Zero text, zero speech bubbles.
+4. CHARACTER WARDROBE CONTINUITY: Strictly enforce @{Michael Montrey (Wolf-Skin)} in tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots. Maintain 100% winter-wolf leather attire continuity across all scenes.
+
+<scenes_deck batch="Fixes_04_Wardrobe_Continuity" count="2" format="16:9" collection="EP01 Fixes">
+  <scene id="IMG_273" filename="IMG_273.jpg">
+    <tag>IMG_273</tag>
+    <layout>Tier C: Three-Panel Action Strip</layout>
+    <character_ref>Michael Montrey (Wolf-Skin)</character_ref>
+    <narrative_sync>Michael calmly lifted the dragon crest medallion from the counter, holding the heirloom with complete composure.</narrative_sync>
+    <prompt>Three-panel horizontal manhwa action strip. Left block: Young Michael picking up the platinum dragon crest medallion from the cedar counter by its silver chain. Featuring @{Michael Montrey (Wolf-Skin)} (7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, quiet confident stance). Center block: Dynamic medium shot of Michael holding the coiled dragon crest medallion resting against his leather belt, unbothered by the discovery. Right block: Close-up profile of Michael looking across the counter with steady cyan eyes, exuding quiet aristocratic sovereign authority. Spatial Enclosure: Rowan Thorne's rustic apothecary shop in Oakhaven, high ceilings with polished cedar timber beams, floor-to-ceiling wooden apothecary cabinets with brass drawer pulls, dried medicinal herbs hanging in bundles from rafters, glass jars of amber alchemical reagents, warm hearth light, diamond-pane windows under bright clear skies. High fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous blue arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 widescreen, cinematic composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.</prompt>
+  </scene>
+
+  <scene id="IMG_335" filename="IMG_335.jpg">
+    <tag>IMG_335</tag>
+    <layout>Tier B: Dual-Panel Split</layout>
+    <character_ref>Michael Montrey (Wolf-Skin)</character_ref>
+    <narrative_sync>But five hundred miles away, in the ancestral sanctum of House Montrey in the imperial capital, a sudden catastrophic tremor shook the foundations.</narrative_sync>
+    <prompt>Dual-panel manhwa webtoon comic strip. Top block: Establishing split shot: Peaceful early dawn creeping over Oakhaven's plaza contrasting with a deep ominous subterranean tremor shaking the monumental marble foundations of House Montrey's imperial estate 500 miles away. Featuring @{Michael Montrey (Wolf-Skin)} (7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, quiet confident stance). Bottom block: Imperial ancestral estate of House Montrey: Colossal ivory castle spires and gothic dragon statues vibrating as an unprecedented seismic mana shockwave ripples through the throne sanctum. Spatial Enclosure: Early dawn light breaking over the devastated town plaza of Oakhaven, transitioning to the ancestral fortress sanctum of House Montrey in the imperial capital under turbulent skies. High fantasy action manhwa webtoon art style, clean elegant lighting, luminous blue arcane starlight, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge widescreen landscape composition, anatomically correct hands, precisely 5 fingers, physically connected wrists, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.</prompt>
+  </scene>
+</scenes_deck>

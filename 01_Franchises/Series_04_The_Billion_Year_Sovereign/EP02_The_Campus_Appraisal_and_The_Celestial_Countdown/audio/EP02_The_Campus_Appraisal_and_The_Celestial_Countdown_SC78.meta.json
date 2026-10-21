@@ -1,0 +1,144 @@
+{
+  "scene": 78,
+  "text": "Crushing spiritual shockwaves rippled outward from Chief Enforcer Gu Biao's boots, spiderwebbing the concrete paving stones and scattering fallen leaves into miniature cyclones.",
+  "durationMs": 10632,
+  "rawWords": [
+    {
+      "ttsWord": "Crushing",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 525,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "shockwaves",
+      "startMs": 1138,
+      "endMs": 1825
+    },
+    {
+      "ttsWord": "rippled",
+      "startMs": 1838,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "outward",
+      "startMs": 2188,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2588,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "Chief",
+      "startMs": 2763,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 3050,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 3575,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "Biao's",
+      "startMs": 3775,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "boots",
+      "startMs": 4150,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "spiderwebbing",
+      "startMs": 4825,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5500,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 5600,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "paving",
+      "startMs": 6138,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "stones",
+      "startMs": 6525,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7013,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "scattering",
+      "startMs": 7150,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "fallen",
+      "startMs": 7663,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "leaves",
+      "startMs": 8088,
+      "endMs": 8363
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 8375,
+      "endMs": 8575
+    },
+    {
+      "ttsWord": "miniature",
+      "startMs": 8588,
+      "endMs": 9000
+    },
+    {
+      "ttsWord": "cyclones",
+      "startMs": 9013,
+      "endMs": 9763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Crushing spiritual shockwaves rippled outward from Chief Enforcer",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3563
+    },
+    {
+      "text": "Gu Biao's boots,",
+      "startOffsetMs": 3575,
+      "endOffsetMs": 4675
+    },
+    {
+      "text": "spiderwebbing the concrete paving stones and scattering fallen",
+      "startOffsetMs": 4825,
+      "endOffsetMs": 8075
+    },
+    {
+      "text": "leaves into miniature cyclones.",
+      "startOffsetMs": 8088,
+      "endOffsetMs": 9863
+    }
+  ]
+}

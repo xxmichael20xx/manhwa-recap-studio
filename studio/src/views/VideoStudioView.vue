@@ -2020,6 +2020,10 @@ import {
   getTagModeFromStorage, 
   setTagModeToStorage 
 } from '../utils/entityMapper.js'
+import { 
+  getFranchiseArtStyleDirective, 
+  getFranchiseDefaultVaultDna 
+} from '../utils/franchiseStyleHelper.js'
 
 const route = useRoute()
 const activeStage = ref('visuals')
@@ -2029,15 +2033,24 @@ const generatingStoryboards = ref(false)
 const storyboardFeedback = ref('')
 
 // Google Flow Entity ID Mapping State
+const franchise = ref(null)
+const episodeData = ref(null)
 const entityMapRawText = ref('')
 const parsedEntities = ref({})
-const promptTagMode = ref('uuid') // 'uuid' | 'token'
+const promptTagMode = ref('token') // 'token' default
 const isSavingEntityMap = ref(false)
 
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
 const is16x9Format = computed(() => {
   if (pipeline.value?.format) return pipeline.value.format === '16:9'
-  return (route.params.franchiseId || '').toLowerCase().includes('series_02') || (route.params.franchiseId || '').toLowerCase().includes('series_05') || (franchise.value?.bibleContent || '').includes('16:9')
+  const fid = (route.params.franchiseId || '').toLowerCase()
+  if (fid.includes('series_02') || fid.includes('series_05')) return true
+  if (franchise.value) {
+    return (franchise.value.bibleContent || '').includes('16:9') ||
+           (franchise.value.videoFormat || '').includes('16:9') ||
+           (franchise.value.seriesBible?.videoFormat || '').includes('16:9')
+  }
+  return false
 })
 
 const syncEntityMapping = async () => {
@@ -2218,6 +2231,7 @@ const runVisualAlignmentValidation = async (targetBatchIndex = null) => {
 
       // Synchronously refresh main sequencer view in background
       loadScenes()
+      loadEpisodeData()
       loadPipelineStatus()
 
       scanFeedback.value = `✓ Updated at ${lastScannedTime.value}`
@@ -2264,6 +2278,7 @@ const runVisualQaAudit = async (autoFix = false) => {
       qaAuditReport.value = data
       cacheBuster.value = Date.now()
       loadScenes()
+      loadEpisodeData()
       loadPipelineStatus()
 
       if (data.isFullyClean) {
@@ -2397,7 +2412,7 @@ const copyModelToken = async (model) => {
 
 const copyModelDna = async (model) => {
   if (!model) return
-  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || getFranchiseDefaultVaultDna(route.params.franchiseId, model.name)
   try {
     await navigator.clipboard.writeText(textToCopy)
     copiedVaultId.value = model.id
@@ -2508,13 +2523,14 @@ const handleBatchFileInput = async (e) => {
 }
 
 const getFlowDirectiveHeader = (collectionTitle) => {
-  const is16x9 = (route.params.franchiseId || '').toLowerCase().includes('series_02') || 
-    (franchise.value?.bibleContent || '').includes('16:9') || 
-    (franchise.value?.videoFormat || '').includes('16:9') || 
-    (franchise.value?.seriesBible?.videoFormat || '').includes('16:9')
+  const is16x9 = is16x9Format.value
+
+
+
   const aspectInstruction = is16x9 
     ? '16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)'
     : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
+  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, is16x9 ? '16:9' : '9:16')
 
   return `[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
 
@@ -2536,8 +2552,8 @@ const getFlowDirectiveHeader = (collectionTitle) => {
 5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
 6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. CONTEXT-AWARE CROWD & EXTRAS STAGING: Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.
-9. ART STYLE: Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless ${aspectInstruction}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.
+8. CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule}
+9. ART STYLE (${styleDirective.styleName}): ${styleDirective.genreRule} ${styleDirective.forbiddenRule}
 10. CHARACTER ENTITY REFERENCE MAPPING:
     - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. @{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}).`
 }
@@ -3724,6 +3740,15 @@ const deleteSelectedVideoFile = async () => {
   }
 }
 
+const loadEpisodeData = async () => {
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}`)
+    if (res.ok) {
+      episodeData.value = await res.json()
+    }
+  } catch (e) {}
+}
+
 const loadPipelineStatus = async () => {
   try {
     const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/pipeline-status`)
@@ -4316,7 +4341,8 @@ const handleSwitchStage = (stage) => {
 }
 
 onMounted(() => {
-  loadPipelineStatus()
+  loadEpisodeData()
+      loadPipelineStatus()
   loadScenes()
   loadSubtitles()
   loadBgmTracks()

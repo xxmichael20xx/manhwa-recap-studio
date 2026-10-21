@@ -1,0 +1,124 @@
+{
+  "scene": 134,
+  "text": "Wang Bao slid open the top deadbolt and pulled the wooden door inward, expecting another squad of Threat Bureau inspectors.",
+  "durationMs": 7704,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 400,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "slid",
+      "startMs": 663,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 1088,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1325,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "top",
+      "startMs": 1413,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "deadbolt",
+      "startMs": 1738,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 2250,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "pulled",
+      "startMs": 2375,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2663,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "wooden",
+      "startMs": 2763,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 3050,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "inward",
+      "startMs": 3288,
+      "endMs": 3700
+    },
+    {
+      "ttsWord": "expecting",
+      "startMs": 3975,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "another",
+      "startMs": 4525,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "squad",
+      "startMs": 4850,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5213,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 5313,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 5638,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "inspectors",
+      "startMs": 6025,
+      "endMs": 6825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao slid open the top deadbolt and",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2363
+    },
+    {
+      "text": "pulled the wooden door inward,",
+      "startOffsetMs": 2375,
+      "endOffsetMs": 3800
+    },
+    {
+      "text": "expecting another squad of Threat Bureau inspectors.",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6925
+    }
+  ]
+}

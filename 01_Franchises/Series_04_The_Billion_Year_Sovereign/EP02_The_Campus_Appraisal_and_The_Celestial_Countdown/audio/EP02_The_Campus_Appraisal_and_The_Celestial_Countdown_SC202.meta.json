@@ -1,0 +1,119 @@
+{
+  "scene": 202,
+  "text": "The stele burned with celestial violet characters: GLOBAL RANK 2: 'LORD STARFALL' (Ye Xingchen) — CULTIVATION: 480,000,000 YEARS.",
+  "durationMs": 10344,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "stele",
+      "startMs": 200,
+      "endMs": 600
+    },
+    {
+      "ttsWord": "burned",
+      "startMs": 613,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 938,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 1075,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "violet",
+      "startMs": 1688,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "characters",
+      "startMs": 2100,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 3025,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "RANK",
+      "startMs": 3425,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "2",
+      "startMs": 3750,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "LORD",
+      "startMs": 4413,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "STARFALL",
+      "startMs": 4713,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 5663,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 5800,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 6625,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "480,000,000 YEARS",
+      "startMs": 7700,
+      "endMs": 9475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The stele burned with celestial violet characters:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2850
+    },
+    {
+      "text": "GLOBAL RANK 2:",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 4175
+    },
+    {
+      "text": "LORD STARFALL'",
+      "startOffsetMs": 4413,
+      "endOffsetMs": 5463
+    },
+    {
+      "text": "Ye Xingchen)",
+      "startOffsetMs": 5663,
+      "endOffsetMs": 6425
+    },
+    {
+      "text": "CULTIVATION:",
+      "startOffsetMs": 6625,
+      "endOffsetMs": 7525
+    },
+    {
+      "text": "480,000,000 YEARS",
+      "startOffsetMs": 7700,
+      "endOffsetMs": 9575
+    }
+  ]
+}

@@ -887,7 +887,8 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             fullDna: item.visual_dna || '',
             token: item.token || `@{Weapon: ${item.name}}`,
             generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
-            flowUuid: item.flowUuid || null
+            flowUuid: item.flowUuid || null,
+            episodes: Array.isArray(item.episodes) ? item.episodes : []
           })
         }
       }
@@ -917,7 +918,8 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             fullDna: item.visual_dna || '',
             token: item.token || `@{${item.name}}`,
             generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
-            flowUuid: item.flowUuid || null
+            flowUuid: item.flowUuid || null,
+            episodes: Array.isArray(item.episodes) ? item.episodes : []
           })
         }
       }
@@ -928,7 +930,8 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
         const itemType = (item.type || item.category || 'Item').toLowerCase()
         const isWeapon = itemType.includes('weapon') || (item.category && item.category.toLowerCase().includes('weapon'))
         const isArtifact = itemType.includes('artifact') || itemType.includes('relic') || (item.category && item.category.toLowerCase().includes('relic'))
-        const categoryName = isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : 'Props')
+        const isLocation = itemType.includes('location') || itemType.includes('world') || itemType.includes('setting') || (item.category && (item.category.toLowerCase().includes('location') || item.category.toLowerCase().includes('world')))
+        const categoryName = isLocation ? 'Locations' : (isWeapon ? 'Weapons' : (isArtifact ? 'Artifacts' : 'Props'))
         const plateFile = item.reference_plate || `${item.id}.jpg`
         const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
                            fs.existsSync(path.join(modelsDir, plateFile)) ||
@@ -939,7 +942,7 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           flowName: item.flowName || (item.token ? item.token.replace(/[@{}]/g, '') : item.name),
           category: categoryName,
           role: categoryName,
-          type: isWeapon ? 'weapon' : (isArtifact ? 'artifact' : 'prop'),
+          type: isLocation ? 'location' : (isWeapon ? 'weapon' : (isArtifact ? 'artifact' : 'prop')),
           tier: item.true_rank || item.apparent_rank || item.category || categoryName,
           filename: plateFile,
           hasPlate: diskExists,
@@ -949,7 +952,8 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           fullDna: item.dna_prompt_anchor || item.visual_dna || '',
           token: item.token || `@{${item.name}}`,
           generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
-          flowUuid: item.flowUuid || null
+            flowUuid: item.flowUuid || null,
+            episodes: Array.isArray(item.episodes) ? item.episodes : []
         })
       }
     }
@@ -979,65 +983,43 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             description: cleanName,
             dnaAnchor: `@{${cleanName}}`,
             token: `@{${cleanName}}`,
-            generationPrompt: `16:9 horizontal widescreen cinematic composition. ${cleanName}, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, completely textless artwork, no words, no banners.`
+            generationPrompt: `${seriesFormat.includes('9:16') ? '9:16 vertical manhwa composition' : '16:9 horizontal widescreen cinematic composition'}. ${cleanName}, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, ${seriesFormat.includes('9:16') ? 'vertical 9:16' : 'horizontal 16:9'}, completely textless artwork, no words, no speech bubbles, no banners.`,
+            episodes: []
           }
         })
         return res.json(images)
       }
     }
 
-    // 4. Bidirectional Parity Guard: detect any flow_entities that lack a character/item card
-    const flowEntitiesPath = path.join(vaultDir, 'flow_entities.json')
-    if (fs.existsSync(flowEntitiesPath)) {
-      try {
-        const flowData = JSON.parse(await fs.promises.readFile(flowEntitiesPath, 'utf-8'))
-        const existingNames = new Set(allItems.map(i => i.name.toLowerCase()))
-        allItems.forEach(i => {
-          if (i.flowName) existingNames.add(i.flowName.toLowerCase())
-          if (i.id) existingNames.add(i.id.toLowerCase())
-          if (i.name) {
-            existingNames.add(i.name.toLowerCase())
-            existingNames.add(i.name.toLowerCase().replace(/^(boss|character|weapon|artifact|prop|item):\s*/i, ''))
-            existingNames.add(i.name.toLowerCase().replace(/\s*\([^)]*\)$/, ''))
-          }
-        })
+    // 5. Universal Deduplication Guard: merge/filter by unique reference plate filename and id
+    const deduplicated = []
+    const plateIndexMap = new Map()
+    const idIndexMap = new Map()
 
-        const rawLines = (flowData.rawText || '').split('\n')
-        for (const line of rawLines) {
-          const match = line.match(/^([^:\r\n]+):\s*([a-f0-9-]{36}|00000000-[^\s\r\n]+)/i)
-          if (match) {
-            const rawEntityName = match[1].trim()
-            const cleanName = rawEntityName.replace(/^(Boss|Character|Weapon|Artifact):\s*/i, '').trim()
-            const uuid = match[2].trim()
+    for (const item of allItems) {
+      const plateKey = item.filename ? item.filename.toLowerCase() : null
+      const idKey = item.id ? item.id.toLowerCase() : null
 
-            if (!existingNames.has(rawEntityName.toLowerCase()) && !existingNames.has(cleanName.toLowerCase())) {
-              allItems.push({
-                id: cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '_'),
-                name: cleanName,
-                flowName: rawEntityName,
-                category: rawEntityName.toLowerCase().includes('boss') ? 'Antagonist' : 'Unregistered',
-                role: 'Unregistered Flow Entity',
-                type: 'unregistered',
-                tier: '⚠️ Missing from characters.json',
-                filename: null,
-                hasPlate: false,
-                isUnregistered: true,
-                url: null,
-                description: `⚠️ Detected in flow_entities.json with UUID ${uuid}, but missing from characters.json. Reference plate not generated.`,
-                dnaAnchor: `@{${cleanName}}`,
-                token: `@{${cleanName}}`,
-                flowUuid: uuid,
-                episodes: []
-              })
-            }
-          }
+      const existingIndex = (plateKey && plateIndexMap.has(plateKey))
+        ? plateIndexMap.get(plateKey)
+        : (idKey && idIndexMap.has(idKey) ? idIndexMap.get(idKey) : -1)
+
+      if (existingIndex >= 0) {
+        const existing = deduplicated[existingIndex]
+        if (!existing.flowUuid && item.flowUuid) existing.flowUuid = item.flowUuid
+        if ((!existing.episodes || existing.episodes.length === 0) && item.episodes && item.episodes.length > 0) {
+          existing.episodes = item.episodes
         }
-      } catch (e) {
-        console.error('Error auditing flow entities parity:', e)
+        continue
       }
+
+      const newIndex = deduplicated.length
+      if (plateKey) plateIndexMap.set(plateKey, newIndex)
+      if (idKey) idIndexMap.set(idKey, newIndex)
+      deduplicated.push(item)
     }
 
-    res.json(allItems)
+    res.json(deduplicated)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

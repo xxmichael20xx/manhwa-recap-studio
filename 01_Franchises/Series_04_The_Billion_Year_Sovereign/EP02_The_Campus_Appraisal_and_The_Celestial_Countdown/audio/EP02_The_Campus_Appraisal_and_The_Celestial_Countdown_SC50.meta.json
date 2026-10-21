@@ -1,0 +1,129 @@
+{
+  "scene": 50,
+  "text": "Curious murmurs rippled through the nearby bleachers as students noticed the quiet second-year who seemed entirely unbothered by the military presence.",
+  "durationMs": 8640,
+  "rawWords": [
+    {
+      "ttsWord": "Curious",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "murmurs",
+      "startMs": 538,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "rippled",
+      "startMs": 988,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 1350,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1525,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "nearby",
+      "startMs": 1625,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "bleachers",
+      "startMs": 2063,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2638,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 2788,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "noticed",
+      "startMs": 3213,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3600,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 3700,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "second-year",
+      "startMs": 4100,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "who",
+      "startMs": 4725,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "seemed",
+      "startMs": 4850,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "entirely",
+      "startMs": 5175,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "unbothered",
+      "startMs": 5800,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 6388,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6525,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "military",
+      "startMs": 6625,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "presence",
+      "startMs": 7125,
+      "endMs": 7763
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Curious murmurs rippled through the nearby bleachers as",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2775
+    },
+    {
+      "text": "students noticed the quiet second-year who seemed entirely",
+      "startOffsetMs": 2788,
+      "endOffsetMs": 5788
+    },
+    {
+      "text": "unbothered by the military presence.",
+      "startOffsetMs": 5800,
+      "endOffsetMs": 7863
+    }
+  ]
+}

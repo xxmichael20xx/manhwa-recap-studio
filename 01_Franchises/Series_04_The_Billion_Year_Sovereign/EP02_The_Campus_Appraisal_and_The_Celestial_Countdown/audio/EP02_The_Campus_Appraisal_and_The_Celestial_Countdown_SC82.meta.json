@@ -1,0 +1,144 @@
+{
+  "scene": 82,
+  "text": "\"A twelve-year unranked mortal ant... you dare disrespect the Gu Capital Syndicate?!\" Chief Enforcer Gu Biao snarled, advancing with thunderous, predatory strides.",
+  "durationMs": 11016,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "twelve-year",
+      "startMs": 200,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "unranked",
+      "startMs": 800,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 1213,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "ant",
+      "startMs": 1588,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 2150,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "dare",
+      "startMs": 2300,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "disrespect",
+      "startMs": 2588,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3238,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 3338,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "Capital",
+      "startMs": 3538,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "Syndicate",
+      "startMs": 3963,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "Chief",
+      "startMs": 5350,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 5675,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 6238,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "Biao",
+      "startMs": 6438,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "snarled",
+      "startMs": 6750,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "advancing",
+      "startMs": 7525,
+      "endMs": 8038
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8050,
+      "endMs": 8175
+    },
+    {
+      "ttsWord": "thunderous",
+      "startMs": 8188,
+      "endMs": 8763
+    },
+    {
+      "ttsWord": "predatory",
+      "startMs": 8888,
+      "endMs": 9463
+    },
+    {
+      "ttsWord": "strides",
+      "startMs": 9475,
+      "endMs": 10138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A twelve-year unranked mortal ant...",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2000
+    },
+    {
+      "text": "you dare disrespect the Gu Capital Syndicate?!\"",
+      "startOffsetMs": 2150,
+      "endOffsetMs": 4588
+    },
+    {
+      "text": "Chief Enforcer Gu Biao snarled,",
+      "startOffsetMs": 5350,
+      "endOffsetMs": 7400
+    },
+    {
+      "text": "advancing with thunderous,",
+      "startOffsetMs": 7525,
+      "endOffsetMs": 8863
+    },
+    {
+      "text": "predatory strides.",
+      "startOffsetMs": 8888,
+      "endOffsetMs": 10238
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "scene": 71,
+  "text": "\"Commander, as I told your officer, cheap knockoff blades have structural flaws. Perhaps his syndicate bought it on clearance,\" Lu Chen replied in a dry, deadpan drawl.",
+  "durationMs": 11544,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 825,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "I",
+      "startMs": 975,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "told",
+      "startMs": 1063,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 1375,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "officer",
+      "startMs": 1538,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "cheap",
+      "startMs": 2275,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "knockoff",
+      "startMs": 2563,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "blades",
+      "startMs": 3100,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "have",
+      "startMs": 3475,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "structural",
+      "startMs": 3663,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "flaws",
+      "startMs": 4175,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "Perhaps",
+      "startMs": 5675,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6138,
+      "endMs": 6275
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 6288,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "bought",
+      "startMs": 6750,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 6988,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 7075,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "clearance",
+      "startMs": 7238,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 8038,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 8225,
+      "endMs": 8463
+    },
+    {
+      "ttsWord": "replied",
+      "startMs": 8475,
+      "endMs": 8913
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 8925,
+      "endMs": 9025
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9038,
+      "endMs": 9100
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 9113,
+      "endMs": 9475
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 9725,
+      "endMs": 10200
+    },
+    {
+      "ttsWord": "drawl",
+      "startMs": 10213,
+      "endMs": 10663
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander, as I told your officer,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2150
+    },
+    {
+      "text": "cheap knockoff blades have structural flaws.",
+      "startOffsetMs": 2275,
+      "endOffsetMs": 4913
+    },
+    {
+      "text": "Perhaps his syndicate bought it on clearance,\"",
+      "startOffsetMs": 5675,
+      "endOffsetMs": 7888
+    },
+    {
+      "text": "Lu Chen replied in a dry,",
+      "startOffsetMs": 8038,
+      "endOffsetMs": 9575
+    },
+    {
+      "text": "deadpan drawl.",
+      "startOffsetMs": 9725,
+      "endOffsetMs": 10763
+    }
+  ]
+}

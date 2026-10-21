@@ -1,0 +1,149 @@
+{
+  "scene": 146,
+  "text": "In the ultra-luxurious panoramic penthouse of Starfall Tower, twenty-eight-year-old corporate syndicate oligarch Ye Xingchen stood looking out over the city with cold, imperial disdain.",
+  "durationMs": 10632,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 213,
+      "endMs": 313
+    },
+    {
+      "ttsWord": "ultra-luxurious",
+      "startMs": 325,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "panoramic",
+      "startMs": 1313,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "penthouse",
+      "startMs": 1950,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2475,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 2575,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "Tower",
+      "startMs": 3113,
+      "endMs": 3550
+    },
+    {
+      "ttsWord": "twenty-eight-year-old",
+      "startMs": 3800,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "corporate",
+      "startMs": 4538,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 4925,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "oligarch",
+      "startMs": 5375,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 5850,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 5963,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 6425,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 6738,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 7050,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 7275,
+      "endMs": 7438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7450,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "city",
+      "startMs": 7550,
+      "endMs": 7863
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7875,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 8038,
+      "endMs": 8413
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 8625,
+      "endMs": 9138
+    },
+    {
+      "ttsWord": "disdain",
+      "startMs": 9150,
+      "endMs": 9750
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In the ultra-luxurious panoramic penthouse of Starfall Tower,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3650
+    },
+    {
+      "text": "twenty-eight-year-old corporate syndicate oligarch Ye Xingchen stood looking",
+      "startOffsetMs": 3800,
+      "endOffsetMs": 7038
+    },
+    {
+      "text": "out over the city with cold,",
+      "startOffsetMs": 7050,
+      "endOffsetMs": 8513
+    },
+    {
+      "text": "imperial disdain.",
+      "startOffsetMs": 8625,
+      "endOffsetMs": 9850
+    }
+  ]
+}

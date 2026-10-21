@@ -1,0 +1,109 @@
+{
+  "scene": 173,
+  "text": "The stele's golden countdown dropped to five minutes: T-MINUS 00:05:00, broadcast simultaneously across billions of screens worldwide.",
+  "durationMs": 9168,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "stele's",
+      "startMs": 213,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 663,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 1050,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "dropped",
+      "startMs": 1613,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 1913,
+      "endMs": 2000
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 2013,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "minutes",
+      "startMs": 2350,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "T-MINUS",
+      "startMs": 3013,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "00:05:00",
+      "startMs": 3575,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "broadcast",
+      "startMs": 4575,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "simultaneously",
+      "startMs": 5225,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6163,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "billions",
+      "startMs": 6550,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7013,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "screens",
+      "startMs": 7113,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "worldwide",
+      "startMs": 7538,
+      "endMs": 8300
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The stele's golden countdown dropped to five minutes:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2850
+    },
+    {
+      "text": "T-MINUS 00:05:00",
+      "startOffsetMs": 3013,
+      "endOffsetMs": 4425
+    },
+    {
+      "text": "broadcast simultaneously across billions of screens worldwide.",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 8400
+    }
+  ]
+}

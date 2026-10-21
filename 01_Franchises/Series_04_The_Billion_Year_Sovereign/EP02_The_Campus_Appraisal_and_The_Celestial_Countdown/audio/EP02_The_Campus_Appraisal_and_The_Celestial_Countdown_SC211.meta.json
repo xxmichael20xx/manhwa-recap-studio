@@ -1,0 +1,159 @@
+{
+  "scene": 211,
+  "text": "Inside the Starfall Tower penthouse, the crystal champagne flute slipped from Ye Xingchen's numb fingers, shattering into a thousand sparkling shards against the marble floor.",
+  "durationMs": 10368,
+  "rawWords": [
+    {
+      "ttsWord": "Inside",
+      "startMs": 50,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 563,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 650,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "Tower",
+      "startMs": 1225,
+      "endMs": 1563
+    },
+    {
+      "ttsWord": "penthouse",
+      "startMs": 1575,
+      "endMs": 2225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2425,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "crystal",
+      "startMs": 2563,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "champagne",
+      "startMs": 2975,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "flute",
+      "startMs": 3575,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "slipped",
+      "startMs": 3925,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4288,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 4425,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "Xingchen's",
+      "startMs": 4550,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "numb",
+      "startMs": 5075,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 5350,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "shattering",
+      "startMs": 6113,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 6638,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6850,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 6925,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "sparkling",
+      "startMs": 7388,
+      "endMs": 7863
+    },
+    {
+      "ttsWord": "shards",
+      "startMs": 7875,
+      "endMs": 8263
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 8275,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8613,
+      "endMs": 8663
+    },
+    {
+      "ttsWord": "marble",
+      "startMs": 8675,
+      "endMs": 9013
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 9025,
+      "endMs": 9500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Inside the Starfall Tower penthouse,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2325
+    },
+    {
+      "text": "the crystal champagne flute slipped from Ye Xingchen's",
+      "startOffsetMs": 2425,
+      "endOffsetMs": 5063
+    },
+    {
+      "text": "numb fingers,",
+      "startOffsetMs": 5075,
+      "endOffsetMs": 5950
+    },
+    {
+      "text": "shattering into a thousand sparkling shards against the",
+      "startOffsetMs": 6113,
+      "endOffsetMs": 8663
+    },
+    {
+      "text": "marble floor.",
+      "startOffsetMs": 8675,
+      "endOffsetMs": 9600
+    }
+  ]
+}

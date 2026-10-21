@@ -1,0 +1,134 @@
+{
+  "scene": 73,
+  "text": "A convoy of four sleek black luxury executive spirit-sedans crashed through the exterior campus gates, high-performance tyres screeching violently against the asphalt.",
+  "durationMs": 10392,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "convoy",
+      "startMs": 200,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 763,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "four",
+      "startMs": 875,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "sleek",
+      "startMs": 1213,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 1600,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "luxury",
+      "startMs": 1913,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "executive",
+      "startMs": 2375,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "spirit-sedans",
+      "startMs": 2913,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "crashed",
+      "startMs": 3788,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 4288,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4450,
+      "endMs": 4513
+    },
+    {
+      "ttsWord": "exterior",
+      "startMs": 4525,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 5188,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "gates",
+      "startMs": 5613,
+      "endMs": 6000
+    },
+    {
+      "ttsWord": "high-performance",
+      "startMs": 6313,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "tyres",
+      "startMs": 7025,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "screeching",
+      "startMs": 7413,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 7900,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 8413,
+      "endMs": 8750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8763,
+      "endMs": 8850
+    },
+    {
+      "ttsWord": "asphalt",
+      "startMs": 8863,
+      "endMs": 9513
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A convoy of four sleek black luxury executive",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2900
+    },
+    {
+      "text": "spirit-sedans crashed through the exterior campus gates,",
+      "startOffsetMs": 2913,
+      "endOffsetMs": 6100
+    },
+    {
+      "text": "high-performance tyres screeching violently against the asphalt.",
+      "startOffsetMs": 6313,
+      "endOffsetMs": 9613
+    }
+  ]
+}

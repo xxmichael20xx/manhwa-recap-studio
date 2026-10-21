@@ -1,0 +1,134 @@
+{
+  "scene": 86,
+  "text": "Lu Chen took a casual, unhurried step forward, slicing through the suffocating gravity field as if strolling through warm summer rain.",
+  "durationMs": 8304,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 338,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 538,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 725,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "casual",
+      "startMs": 813,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "unhurried",
+      "startMs": 1613,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "step",
+      "startMs": 2100,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "forward",
+      "startMs": 2413,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "slicing",
+      "startMs": 3125,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3663,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3838,
+      "endMs": 3938
+    },
+    {
+      "ttsWord": "suffocating",
+      "startMs": 3950,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "gravity",
+      "startMs": 4563,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "field",
+      "startMs": 5000,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5413,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "if",
+      "startMs": 5563,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "strolling",
+      "startMs": 5663,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 6150,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 6375,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "summer",
+      "startMs": 6700,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "rain",
+      "startMs": 7050,
+      "endMs": 7438
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen took a casual,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1488
+    },
+    {
+      "text": "unhurried step forward,",
+      "startOffsetMs": 1613,
+      "endOffsetMs": 2950
+    },
+    {
+      "text": "slicing through the suffocating gravity field as if",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 5650
+    },
+    {
+      "text": "strolling through warm summer rain.",
+      "startOffsetMs": 5663,
+      "endOffsetMs": 7538
+    }
+  ]
+}

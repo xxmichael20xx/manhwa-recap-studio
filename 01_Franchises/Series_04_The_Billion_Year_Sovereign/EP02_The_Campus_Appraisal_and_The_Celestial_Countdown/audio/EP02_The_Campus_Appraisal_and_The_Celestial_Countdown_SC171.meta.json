@@ -1,0 +1,154 @@
+{
+  "scene": 171,
+  "text": "Iridescent violet and golden aurora curtains swept across the daytime sky from the Arctic circle to the equator, painting the atmosphere in divine celestial colours.",
+  "durationMs": 9792,
+  "rawWords": [
+    {
+      "ttsWord": "Iridescent",
+      "startMs": 50,
+      "endMs": 638
+    },
+    {
+      "ttsWord": "violet",
+      "startMs": 650,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 1125,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 1238,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "aurora",
+      "startMs": 1625,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "curtains",
+      "startMs": 2063,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "swept",
+      "startMs": 2488,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 2813,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3200,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "daytime",
+      "startMs": 3325,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 3825,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4200,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4350,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "Arctic",
+      "startMs": 4450,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "circle",
+      "startMs": 4813,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5213,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5325,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "equator",
+      "startMs": 5413,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "painting",
+      "startMs": 6225,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6563,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "atmosphere",
+      "startMs": 6663,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7275,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 7388,
+      "endMs": 7775
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 7788,
+      "endMs": 8375
+    },
+    {
+      "ttsWord": "colours",
+      "startMs": 8388,
+      "endMs": 8925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Iridescent violet and golden aurora curtains swept across",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3188
+    },
+    {
+      "text": "the daytime sky from the Arctic circle to",
+      "startOffsetMs": 3200,
+      "endOffsetMs": 5313
+    },
+    {
+      "text": "the equator,",
+      "startOffsetMs": 5325,
+      "endOffsetMs": 6025
+    },
+    {
+      "text": "painting the atmosphere in divine celestial colours.",
+      "startOffsetMs": 6225,
+      "endOffsetMs": 9025
+    }
+  ]
+}

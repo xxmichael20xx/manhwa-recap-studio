@@ -1,0 +1,149 @@
+{
+  "scene": 55,
+  "text": "With effortless indifference, Lu Chen pulled his right hand from his pocket and tapped two slender fingertips against the crystal pillar's smooth jade surface.",
+  "durationMs": 8928,
+  "rawWords": [
+    {
+      "ttsWord": "With",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "effortless",
+      "startMs": 275,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "indifference",
+      "startMs": 750,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1600,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 1788,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "pulled",
+      "startMs": 2075,
+      "endMs": 2350
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2363,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 2525,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 2763,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3100,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3238,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 3375,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3838,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "tapped",
+      "startMs": 3975,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 4363,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "slender",
+      "startMs": 4575,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "fingertips",
+      "startMs": 4963,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 5575,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5900,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "crystal",
+      "startMs": 5988,
+      "endMs": 6363
+    },
+    {
+      "ttsWord": "pillar's",
+      "startMs": 6375,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "smooth",
+      "startMs": 6750,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "jade",
+      "startMs": 7125,
+      "endMs": 7413
+    },
+    {
+      "ttsWord": "surface",
+      "startMs": 7425,
+      "endMs": 8063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "With effortless indifference,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1475
+    },
+    {
+      "text": "Lu Chen pulled his right hand from his",
+      "startOffsetMs": 1600,
+      "endOffsetMs": 3363
+    },
+    {
+      "text": "pocket and tapped two slender fingertips against the",
+      "startOffsetMs": 3375,
+      "endOffsetMs": 5975
+    },
+    {
+      "text": "crystal pillar's smooth jade surface.",
+      "startOffsetMs": 5988,
+      "endOffsetMs": 8163
+    }
+  ]
+}

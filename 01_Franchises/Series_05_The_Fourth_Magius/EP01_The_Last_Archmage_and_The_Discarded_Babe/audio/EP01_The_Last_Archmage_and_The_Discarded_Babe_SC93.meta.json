@@ -1,7 +1,7 @@
 {
   "scene": 93,
-  "text": "With a conscious thought, Michael severed his mental link with the White Library, snapping his consciousness back into his five-year-old physical body.",
-  "durationMs": 8352,
+  "text": "With a conscious thought, Michael released his mental link with the White Library, snapping his consciousness back into his five-year-old physical body.",
+  "durationMs": 8400,
   "rawWords": [
     {
       "ttsWord": "With",
@@ -25,93 +25,93 @@
     },
     {
       "ttsWord": "Michael",
-      "startMs": 1313,
-      "endMs": 1675
+      "startMs": 1325,
+      "endMs": 1700
     },
     {
-      "ttsWord": "severed",
-      "startMs": 1688,
-      "endMs": 2013
+      "ttsWord": "released",
+      "startMs": 1713,
+      "endMs": 2100
     },
     {
       "ttsWord": "his",
-      "startMs": 2025,
-      "endMs": 2175
+      "startMs": 2113,
+      "endMs": 2225
     },
     {
       "ttsWord": "mental",
-      "startMs": 2188,
-      "endMs": 2525
+      "startMs": 2238,
+      "endMs": 2575
     },
     {
       "ttsWord": "link",
-      "startMs": 2538,
-      "endMs": 2775
+      "startMs": 2588,
+      "endMs": 2825
     },
     {
       "ttsWord": "with",
-      "startMs": 2788,
-      "endMs": 2900
+      "startMs": 2838,
+      "endMs": 2950
     },
     {
       "ttsWord": "the",
-      "startMs": 2913,
-      "endMs": 3013
+      "startMs": 2963,
+      "endMs": 3063
     },
     {
       "ttsWord": "White",
-      "startMs": 3025,
-      "endMs": 3300
+      "startMs": 3075,
+      "endMs": 3350
     },
     {
       "ttsWord": "Library",
-      "startMs": 3313,
-      "endMs": 3850
+      "startMs": 3363,
+      "endMs": 3900
     },
     {
       "ttsWord": "snapping",
-      "startMs": 4175,
-      "endMs": 4638
+      "startMs": 4225,
+      "endMs": 4688
     },
     {
       "ttsWord": "his",
-      "startMs": 4650,
-      "endMs": 4788
+      "startMs": 4700,
+      "endMs": 4838
     },
     {
       "ttsWord": "consciousness",
-      "startMs": 4800,
-      "endMs": 5400
+      "startMs": 4850,
+      "endMs": 5450
     },
     {
       "ttsWord": "back",
-      "startMs": 5413,
-      "endMs": 5700
+      "startMs": 5463,
+      "endMs": 5750
     },
     {
       "ttsWord": "into",
-      "startMs": 5713,
-      "endMs": 5913
+      "startMs": 5763,
+      "endMs": 5963
     },
     {
       "ttsWord": "his",
-      "startMs": 5925,
-      "endMs": 6063
+      "startMs": 5975,
+      "endMs": 6113
     },
     {
       "ttsWord": "five-year-old",
-      "startMs": 6075,
-      "endMs": 6638
+      "startMs": 6125,
+      "endMs": 6688
     },
     {
       "ttsWord": "physical",
-      "startMs": 6650,
-      "endMs": 7050
+      "startMs": 6700,
+      "endMs": 7100
     },
     {
       "ttsWord": "body",
-      "startMs": 7063,
-      "endMs": 7488
+      "startMs": 7113,
+      "endMs": 7538
     }
   ],
   "relativeCues": [
@@ -121,24 +121,24 @@
       "endOffsetMs": 1250
     },
     {
-      "text": "Michael severed his mental link with the White",
-      "startOffsetMs": 1313,
-      "endOffsetMs": 3300
+      "text": "Michael released his mental link with the White",
+      "startOffsetMs": 1325,
+      "endOffsetMs": 3350
     },
     {
       "text": "Library,",
-      "startOffsetMs": 3313,
-      "endOffsetMs": 3950
+      "startOffsetMs": 3363,
+      "endOffsetMs": 4000
     },
     {
       "text": "snapping his consciousness back into his five-year-old physical",
-      "startOffsetMs": 4175,
-      "endOffsetMs": 7050
+      "startOffsetMs": 4225,
+      "endOffsetMs": 7100
     },
     {
       "text": "body.",
-      "startOffsetMs": 7063,
-      "endOffsetMs": 7588
+      "startOffsetMs": 7113,
+      "endOffsetMs": 7638
     }
   ]
 }

@@ -1,0 +1,154 @@
+{
+  "scene": 177,
+  "text": "Down on the athletic turf, Commander Han Feng gripped his Tactical Spirit Spectrometer, watching its internal analog dials pulse in eerie synchronisation with the stele.",
+  "durationMs": 10272,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 375,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 475,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "athletic",
+      "startMs": 575,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "turf",
+      "startMs": 1125,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 1688,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 2138,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 2413,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "gripped",
+      "startMs": 2738,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3038,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "Tactical",
+      "startMs": 3175,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "Spirit",
+      "startMs": 3663,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "Spectrometer",
+      "startMs": 4050,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "watching",
+      "startMs": 5113,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 5513,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "internal",
+      "startMs": 5638,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "analog",
+      "startMs": 6175,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "dials",
+      "startMs": 6663,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "pulse",
+      "startMs": 7063,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7413,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "eerie",
+      "startMs": 7538,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "synchronisation",
+      "startMs": 7813,
+      "endMs": 8675
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8688,
+      "endMs": 8800
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8813,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "stele",
+      "startMs": 8900,
+      "endMs": 9400
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down on the athletic turf,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1613
+    },
+    {
+      "text": "Commander Han Feng gripped his Tactical Spirit Spectrometer,",
+      "startOffsetMs": 1688,
+      "endOffsetMs": 4875
+    },
+    {
+      "text": "watching its internal analog dials pulse in eerie",
+      "startOffsetMs": 5113,
+      "endOffsetMs": 7800
+    },
+    {
+      "text": "synchronisation with the stele.",
+      "startOffsetMs": 7813,
+      "endOffsetMs": 9500
+    }
+  ]
+}

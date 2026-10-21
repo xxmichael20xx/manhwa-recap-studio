@@ -1,7 +1,7 @@
 {
   "scene": 138,
-  "text": "They were Blood-Fanged Timber Wolves — savage frontier predators known for hunting in coordinated packs and ripping through chainmail armor.",
-  "durationMs": 8112,
+  "text": "They were Crimson-Fanged Timber Wolves — savage frontier predators known for hunting in coordinated packs and ripping through chainmail armor.",
+  "durationMs": 8304,
   "rawWords": [
     {
       "ttsWord": "They",
@@ -14,106 +14,106 @@
       "endMs": 363
     },
     {
-      "ttsWord": "Blood-Fanged",
+      "ttsWord": "Crimson-Fanged",
       "startMs": 375,
-      "endMs": 963
+      "endMs": 1125
     },
     {
       "ttsWord": "Timber",
-      "startMs": 975,
-      "endMs": 1288
+      "startMs": 1138,
+      "endMs": 1450
     },
     {
       "ttsWord": "Wolves",
-      "startMs": 1300,
-      "endMs": 1738
+      "startMs": 1463,
+      "endMs": 1900
     },
     {
       "ttsWord": "savage",
-      "startMs": 2025,
-      "endMs": 2500
+      "startMs": 2188,
+      "endMs": 2663
     },
     {
       "ttsWord": "frontier",
-      "startMs": 2513,
-      "endMs": 2988
+      "startMs": 2675,
+      "endMs": 3163
     },
     {
       "ttsWord": "predators",
-      "startMs": 3000,
-      "endMs": 3513
+      "startMs": 3175,
+      "endMs": 3688
     },
     {
       "ttsWord": "known",
-      "startMs": 3525,
-      "endMs": 3825
-    },
-    {
-      "ttsWord": "for",
-      "startMs": 3838,
+      "startMs": 3700,
       "endMs": 4000
     },
     {
-      "ttsWord": "hunting",
+      "ttsWord": "for",
       "startMs": 4013,
-      "endMs": 4350
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "hunting",
+      "startMs": 4175,
+      "endMs": 4525
     },
     {
       "ttsWord": "in",
-      "startMs": 4363,
-      "endMs": 4463
+      "startMs": 4538,
+      "endMs": 4638
     },
     {
       "ttsWord": "coordinated",
-      "startMs": 4475,
-      "endMs": 5100
+      "startMs": 4650,
+      "endMs": 5275
     },
     {
       "ttsWord": "packs",
-      "startMs": 5113,
-      "endMs": 5500
+      "startMs": 5288,
+      "endMs": 5675
     },
     {
       "ttsWord": "and",
-      "startMs": 5513,
-      "endMs": 5688
+      "startMs": 5688,
+      "endMs": 5863
     },
     {
       "ttsWord": "ripping",
-      "startMs": 5700,
-      "endMs": 6038
+      "startMs": 5875,
+      "endMs": 6213
     },
     {
       "ttsWord": "through",
-      "startMs": 6050,
-      "endMs": 6250
+      "startMs": 6225,
+      "endMs": 6425
     },
     {
       "ttsWord": "chainmail",
-      "startMs": 6263,
-      "endMs": 6825
+      "startMs": 6438,
+      "endMs": 7000
     },
     {
       "ttsWord": "armor",
-      "startMs": 6838,
-      "endMs": 7238
+      "startMs": 7013,
+      "endMs": 7425
     }
   ],
   "relativeCues": [
     {
-      "text": "They were Blood-Fanged Timber Wolves",
+      "text": "They were Crimson-Fanged Timber Wolves",
       "startOffsetMs": 50,
-      "endOffsetMs": 1838
+      "endOffsetMs": 2000
     },
     {
       "text": "savage frontier predators known for hunting in coordinated",
-      "startOffsetMs": 2025,
-      "endOffsetMs": 5100
+      "startOffsetMs": 2188,
+      "endOffsetMs": 5275
     },
     {
       "text": "packs and ripping through chainmail armor.",
-      "startOffsetMs": 5113,
-      "endOffsetMs": 7338
+      "startOffsetMs": 5288,
+      "endOffsetMs": 7525
     }
   ]
 }

@@ -41,6 +41,21 @@
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
       "flowName": "Montrey Crest Amulet",
       "hasPlate": true
+    },
+    {
+      "id": "world_setting_valerius_empire",
+      "name": "The Crystalline Arcane Bastion",
+      "token": "@{Location: The Crystalline Arcane Bastion}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Imperial Capital & Great House Ancestral Realm",
+      "true_rank": "The High-Magic Transmigration Realm",
+      "description": "The soaring crystalline capital and ancestral territory of the Valerius Empire where Michael transmigrated into House Montrey. Features pale silver granite cathedral spires with glowing blue mana crystals, hovering arcane circles, silver wyverns, and reflective marble terraces.",
+      "dna_prompt_anchor": "@{Location: The Crystalline Arcane Bastion}, 16:9 horizontal widescreen concept landscape illustration. The ancestral seat and imperial capital of the Valerius Empire where Michael transmigrated. Majestic aristocratic high-magic medieval empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above domes and spires, sleek silver wyverns soaring in clear cobalt skies, grand reflective polished marble terraces with crystal fountains, arched stone viaducts spanning lush green hills, dark fantasy action manhwa art style, sharp black ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, completely textless artwork, zero words, no speech bubbles, no banners.",
+      "reference_plate": "00_World_Setting_Canonical.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00000",
+      "flowName": "The Crystalline Arcane Bastion",
+      "hasPlate": true
     }
   ]
 }

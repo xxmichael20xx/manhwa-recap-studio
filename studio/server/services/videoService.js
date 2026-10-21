@@ -978,9 +978,9 @@ export class VideoService {
       filterComplexParts.push(`[1:a]volume=1.0,aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[vo_main][vo_sc]`)
       filterComplexParts.push(`[${bgmInputIdx}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,volume=${gainStr}dB[bgm_base]`)
       filterComplexParts.push(`[bgm_base][vo_sc]sidechaincompress=threshold=0.08:ratio=2.5:attack=15:release=320:link=average[bgm_ducked]`)
-      filterComplexParts.push(`[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false[aout]`)
+      filterComplexParts.push(`[vo_main][bgm_ducked]amix=inputs=2:duration=first:dropout_transition=2:normalize=false,loudnorm=I=-14:TP=-1.5:LRA=7[aout]`)
     } else {
-      filterComplexParts.push(`[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[aout]`)
+      filterComplexParts.push(`[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,loudnorm=I=-14:TP=-1.5:LRA=7[aout]`)
     }
 
     const filterComplex = filterComplexParts.join(';')
@@ -1852,12 +1852,18 @@ export class VideoService {
   /**
    * Parse climax start and end tags from script, with automatic timeline correlation
    */
-  static async parseClimaxWindow(franchiseId, episodeId, totalDuration = 0) {
+  static async parseClimaxWindow(franchiseId, episodeId, totalDuration = 0, options = {}) {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
+    const packagePath = path.join(epPath, '03_YouTube_Package.md')
     let scriptContent = ''
     try {
       scriptContent = await fs.readFile(scriptPath, 'utf-8')
+    } catch (_) {}
+
+    let packageContent = ''
+    try {
+      packageContent = await fs.readFile(packagePath, 'utf-8')
     } catch (_) {}
 
     const timeline = await this.parseDynamicTimeline(franchiseId, episodeId, totalDuration)
@@ -1865,42 +1871,85 @@ export class VideoService {
       throw new Error('Unable to parse timeline for episode.')
     }
 
-    // Check for [CLIMAX_START] and [CLIMAX_END] (or <!-- CLIMAX_START -->)
-    let startTag = null
-    let endTag = null
+    let startTag = options.startTag || null
+    let endTag = options.endTag || null
     let inClimax = false
-    const scriptLines = scriptContent.split('\n')
+    const tagPrefix = options.shortTag || 'CLIMAX'
+    const startRegex = new RegExp('(?:\\[' + tagPrefix + '_START\\]|<!--\\s*' + tagPrefix + '_START\\s*-->)', 'i')
+    const endRegex = new RegExp('(?:\\[' + tagPrefix + '_END\\]|<!--\\s*' + tagPrefix + '_END\\s*-->)', 'i')
 
-    for (let i = 0; i < scriptLines.length; i++) {
-      const line = scriptLines[i].trim()
-      if (/(?:\[CLIMAX_START\]|<!--\s*CLIMAX_START\s*-->)/i.test(line)) {
-        inClimax = true
-      } else if (/(?:\[CLIMAX_END\]|<!--\s*CLIMAX_END\s*-->)/i.test(line)) {
-        inClimax = false
-      }
+    // 1. Check script tags
+    if (!startTag || !endTag) {
+      const scriptLines = scriptContent.split('\n')
+      for (let i = 0; i < scriptLines.length; i++) {
+        const line = scriptLines[i].trim()
+        if (startRegex.test(line)) {
+          inClimax = true
+        } else if (endRegex.test(line)) {
+          inClimax = false
+        }
 
-      if (inClimax) {
-        const m = line.match(/\[(IMG_\d+)\]/)
-        if (m) {
-          const tag = m[1].toUpperCase()
-          if (!startTag) startTag = tag
-          endTag = tag
+        if (inClimax) {
+          const m = line.match(/\[(IMG_\d+)\]/)
+          if (m) {
+            const tag = m[1].toUpperCase()
+            if (!startTag) startTag = tag
+            endTag = tag
+          }
         }
       }
     }
 
-    // Fallback if no tags in script: look for scenes around scenes 44-48 or 20% mark
+    // 2. Check 03_YouTube_Package.md for Timecode Range or Target Slice
     if (!startTag || !endTag) {
-      const candidates = timeline.filter(t => ['IMG_044', 'IMG_045', 'IMG_046', 'IMG_047', 'IMG_048'].includes(t.tag))
-      if (candidates.length >= 3) {
-        startTag = candidates[0].tag
-        endTag = candidates[candidates.length - 1].tag
-      } else {
-        const startIdx = Math.floor(timeline.length * 0.2)
-        const endIdx = Math.min(timeline.length - 1, startIdx + 5)
-        startTag = timeline[startIdx].tag
-        endTag = timeline[endIdx].tag
+      const tcMatch = packageContent.match(/Timecode Range[\*:\s]+(\d+:\d+(?::\d+)?)\s*[\-–—]\s*(\d+:\d+(?::\d+)?)/i)
+      if (tcMatch) {
+        const parseTc = (tc) => {
+          const parts = tc.trim().split(':').map(Number)
+          if (parts.length === 2) return parts[0] * 60 + parts[1]
+          if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2]
+          return 0
+        }
+        const startSec = parseTc(tcMatch[1])
+        const endSec = parseTc(tcMatch[2])
+        const windowScenes = timeline.filter(t => t.startTime >= startSec - 2 && t.endTime <= endSec + 5)
+        if (windowScenes.length > 0) {
+          startTag = windowScenes[0].tag
+          endTag = windowScenes[windowScenes.length - 1].tag
+        }
       }
+    }
+
+    // 3. Fallback: Intelligent dynamic positioning based on episode length
+    if (!startTag || !endTag) {
+      if (timeline.length <= 50) {
+        const candidates = timeline.filter(t => ['IMG_044', 'IMG_045', 'IMG_046', 'IMG_047', 'IMG_048'].includes(t.tag))
+        if (candidates.length >= 3) {
+          startTag = candidates[0].tag
+          endTag = candidates[candidates.length - 1].tag
+        }
+      } else {
+        // High-retention climax: scan the 88% - 93% mark spanning ~48s
+        const startIdx = Math.floor(timeline.length * 0.88)
+        const candidateScenes = []
+        let span = 0
+        for (let i = startIdx; i < timeline.length; i++) {
+          candidateScenes.push(timeline[i])
+          span += timeline[i].duration
+          if (span >= 48) break
+        }
+        if (candidateScenes.length > 0) {
+          startTag = candidateScenes[0].tag
+          endTag = candidateScenes[candidateScenes.length - 1].tag
+        }
+      }
+    }
+
+    // Safety fallback
+    if (!startTag || !endTag) {
+      const startIdx = Math.max(0, timeline.length - 6)
+      startTag = timeline[startIdx].tag
+      endTag = timeline[timeline.length - 1].tag
     }
 
     const startScene = timeline.find(t => t.tag === startTag) || timeline[0]
@@ -2025,7 +2074,7 @@ export class VideoService {
     }
 
     const dur = await this.getVideoDuration(srcVideo) || 2289
-    const window = await this.parseClimaxWindow(franchiseId, episodeId, dur)
+    const window = await this.parseClimaxWindow(franchiseId, episodeId, dur, options)
 
     const shortsDir = path.join(franchisesDir, franchiseId, episodeId, 'shorts')
     await fs.mkdir(shortsDir, { recursive: true })
@@ -2033,7 +2082,7 @@ export class VideoService {
     const tempDir = path.join(projectRoot, '.tmp', `climax_render_${franchiseId}_${episodeId}_${Date.now()}`)
     await fs.mkdir(tempDir, { recursive: true })
 
-    const outputFilename = 'TikTok_Climax_Hook.mp4'
+    const outputFilename = options.filename || 'TikTok_Climax_Hook.mp4'
     const outputPath = path.join(shortsDir, outputFilename)
     const outroPngPath = path.join(tempDir, 'temp_outro.png')
 
@@ -2063,7 +2112,7 @@ export class VideoService {
           }
 
           const vf = isLandscape
-            ? '[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=20[bg];[0:v]scale=1080:-1[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1'
+            ? 'split[bg][fg];[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=20[bg_blur];[fg]scale=1080:-1[fg_scaled];[bg_blur][fg_scaled]overlay=(W-w)/2:(H-h)/2,setsar=1'
             : 'scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1'
 
           await new Promise((resolve, reject) => {
@@ -2117,7 +2166,7 @@ export class VideoService {
           '-ss', String(window.startSeconds),
           '-t', String(window.durationSeconds),
           '-i', srcVideo,
-          '-vn', '-c:a', 'aac', '-b:a', '192k',
+          '-vn', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2',
           audioSlice
         ])
         let err = ''

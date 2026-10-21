@@ -1,0 +1,124 @@
+{
+  "scene": 160,
+  "text": "Global financial stock exchanges abruptly suspended all trading as sovereign currencies plummeted, replaced by virtual spirit commodities trading for billions.",
+  "durationMs": 9816,
+  "rawWords": [
+    {
+      "ttsWord": "Global",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "financial",
+      "startMs": 450,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "stock",
+      "startMs": 1013,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "exchanges",
+      "startMs": 1363,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "abruptly",
+      "startMs": 1950,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "suspended",
+      "startMs": 2463,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "all",
+      "startMs": 3075,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "trading",
+      "startMs": 3300,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3750,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 3888,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "currencies",
+      "startMs": 4338,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "plummeted",
+      "startMs": 4888,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "replaced",
+      "startMs": 5650,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 6150,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "virtual",
+      "startMs": 6275,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 6763,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "commodities",
+      "startMs": 7163,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "trading",
+      "startMs": 7763,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 8150,
+      "endMs": 8313
+    },
+    {
+      "ttsWord": "billions",
+      "startMs": 8325,
+      "endMs": 8950
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Global financial stock exchanges abruptly suspended",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3063
+    },
+    {
+      "text": "all trading as sovereign currencies plummeted,",
+      "startOffsetMs": 3075,
+      "endOffsetMs": 5425
+    },
+    {
+      "text": "replaced by virtual spirit commodities trading for billions.",
+      "startOffsetMs": 5650,
+      "endOffsetMs": 9050
+    }
+  ]
+}

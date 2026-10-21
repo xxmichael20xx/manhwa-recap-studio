@@ -1,0 +1,134 @@
+{
+  "scene": 182,
+  "text": "Through the sole of his shoe, Lu Chen channeled an imperceptible, tranquil wisp of primordial dampening into the continental tectonic bedrock.",
+  "durationMs": 8496,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 313,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "sole",
+      "startMs": 425,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 788,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 875,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "shoe",
+      "startMs": 1000,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1625,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 1800,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "channeled",
+      "startMs": 2088,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2463,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "imperceptible",
+      "startMs": 2563,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "tranquil",
+      "startMs": 3588,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "wisp",
+      "startMs": 4063,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4363,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 4488,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "dampening",
+      "startMs": 5088,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5588,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5763,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "continental",
+      "startMs": 5875,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "tectonic",
+      "startMs": 6463,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "bedrock",
+      "startMs": 7025,
+      "endMs": 7613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through the sole of his shoe,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1450
+    },
+    {
+      "text": "Lu Chen channeled an imperceptible,",
+      "startOffsetMs": 1625,
+      "endOffsetMs": 3425
+    },
+    {
+      "text": "tranquil wisp of primordial dampening into the continental",
+      "startOffsetMs": 3588,
+      "endOffsetMs": 6450
+    },
+    {
+      "text": "tectonic bedrock.",
+      "startOffsetMs": 6463,
+      "endOffsetMs": 7713
+    }
+  ]
+}

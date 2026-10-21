@@ -1,0 +1,114 @@
+{
+  "scene": 178,
+  "text": "The spectrometer's amber vacuum tubes flashed rhythmic pulses, registering harmonic resonance with primordial leylines deep beneath Jiangnan Province.",
+  "durationMs": 9408,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "spectrometer's",
+      "startMs": 200,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "amber",
+      "startMs": 1025,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "vacuum",
+      "startMs": 1325,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "tubes",
+      "startMs": 1825,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "flashed",
+      "startMs": 2275,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "rhythmic",
+      "startMs": 2713,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "pulses",
+      "startMs": 3063,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "registering",
+      "startMs": 3875,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "harmonic",
+      "startMs": 4388,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 4888,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5350,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 5488,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "leylines",
+      "startMs": 6075,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 6625,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 6925,
+      "endMs": 7250
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 7263,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "Province",
+      "startMs": 7863,
+      "endMs": 8525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The spectrometer's amber vacuum tubes flashed rhythmic pulses,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3688
+    },
+    {
+      "text": "registering harmonic resonance with primordial leylines deep",
+      "startOffsetMs": 3875,
+      "endOffsetMs": 6913
+    },
+    {
+      "text": "beneath Jiangnan Province.",
+      "startOffsetMs": 6925,
+      "endOffsetMs": 8625
+    }
+  ]
+}

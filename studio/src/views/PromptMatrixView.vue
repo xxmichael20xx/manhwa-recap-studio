@@ -159,41 +159,13 @@
           Clear ({{ selectedTags.size }})
         </button>
 
-        <!-- Format Output Toggle (@{Token} vs @UUID) -->
-        <div class="flex items-center space-x-1 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl text-xs font-mono border border-slate-300 dark:border-slate-700">
-          <span class="text-[10px] font-bold uppercase text-slate-500 px-1.5">Format:</span>
-          <button 
-            @click="togglePromptTagMode('token')"
-            class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-            :class="promptTagMode === 'token' 
-              ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-            title="Display & copy with human-readable tokens like @{Name}"
-          >
-            <span>🏷️ @{Token}</span>
-          </button>
-          <button 
-            @click="togglePromptTagMode('uuid')"
-            class="px-2.5 py-1 rounded-lg transition cursor-pointer font-bold flex items-center space-x-1"
-            :class="promptTagMode === 'uuid' 
-              ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
-              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'"
-            title="Display & copy with Google Flow entity UUIDs like @UUID"
-          >
-            <span>🔑 @UUID</span>
-            <span v-if="entityCount > 0" class="text-[10px] px-1.5 py-0.2 rounded-full bg-purple-500/20 text-purple-600 dark:text-purple-400 font-black">
-              {{ entityCount }}
-            </span>
-          </button>
-        </div>
-
         <!-- Copy Selected Button -->
         <button 
           v-if="selectedTags.size > 0"
           @click="copySelectedPrompts"
-          :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+          :disabled="isCopyDisabledDueToAudit"
           class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm"
-          :class="(isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
+          :class="(isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
         >
           <Check v-if="activeCopiedKey === 'SELECTED'" class="w-3.5 h-3.5 text-emerald-300" />
           <Zap v-else class="w-3.5 h-3.5 text-purple-200" />
@@ -204,9 +176,9 @@
         <button 
           v-if="missingCount > 0 && selectedTags.size === 0"
           @click="copyMissingPrompts"
-          :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+          :disabled="isCopyDisabledDueToAudit"
           class="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold font-mono flex items-center space-x-1.5 transition shadow-sm"
-          :class="(isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
+          :class="(isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
         >
           <Check v-if="activeCopiedKey === 'MISSING'" class="w-3.5 h-3.5 text-emerald-300" />
           <AlertTriangle v-else class="w-3.5 h-3.5 text-amber-200" />
@@ -238,52 +210,7 @@
         </div>
       </div>
 
-            <!-- Mandatory Character Entity UUID Gate Warning Banner -->
-      <div 
-        v-if="isCopyDisabledDueToMissingUuids" 
-        class="mb-3 p-4 rounded-xl border border-rose-300 dark:border-rose-900/80 bg-rose-50 dark:bg-rose-950/40 shadow-xs flex items-start space-x-3 text-rose-900 dark:text-rose-200"
-      >
-        <AlertTriangle class="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
-        <div class="space-y-1 text-xs">
-          <div class="font-bold flex items-center space-x-2">
-            <span class="text-sm font-semibold text-rose-700 dark:text-rose-300">Prompt Matrix Copying Locked</span>
-            <span class="px-2 py-0.5 rounded-full bg-rose-200/80 dark:bg-rose-900 text-[10px] font-mono font-bold text-rose-800 dark:text-rose-200">
-              {{ unmappedCharacterEntities.length }} Missing UUID{{ unmappedCharacterEntities.length > 1 ? 's' : '' }}
-            </span>
-          </div>
-          <p class="text-rose-700 dark:text-rose-300 leading-relaxed">
-            Copying prompt chunks or batch XML is disabled to prevent generation drift. The following character entities do not have valid Google Flow UUIDs configured in Character DNA / Vault:
-          </p>
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <span 
-              v-for="char in unmappedCharacterEntities" 
-              :key="char"
-              class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-800 font-mono text-[11px] font-semibold text-rose-700 dark:text-rose-300 shadow-2xs"
-            >
-              @{{ char }}
-            </span>
-          </div>
-          <div class="flex flex-wrap items-center gap-2 pt-2">
-            <button 
-              @click="copyFlowUuidPrompt"
-              class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer shadow-xs"
-              title="Copy simplified prompt to ask Google Flow for character UUIDs"
-            >
-              <Copy class="w-3.5 h-3.5" />
-              <span>📋 Copy Flow UUID Prompt</span>
-            </button>
-            <router-link
-              :to="{ name: 'series-detail', params: { id: route.params.franchiseId } }"
-              class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800 text-xs font-mono font-bold flex items-center space-x-1.5 transition"
-            >
-              <ExternalLink class="w-3.5 h-3.5" />
-              <span>Go to Character Vault to Paste UUIDs</span>
-            </router-link>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mandatory Pre-Flight Audit Gate Warning Banner -->
+            <!-- Mandatory Pre-Flight Audit Gate Warning Banner -->
       <div 
         v-if="isCopyDisabledDueToAudit" 
         class="mb-3 p-4 rounded-xl border border-rose-300 dark:border-rose-900/80 bg-rose-50 dark:bg-rose-950/40 shadow-xs flex items-start space-x-3 text-rose-900 dark:text-rose-200"
@@ -666,9 +593,9 @@
           <div class="shrink-0 pt-1 flex flex-row lg:flex-col items-center gap-2">
             <button 
               @click="copySinglePrompt(p, index)"
-              :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+              :disabled="isCopyDisabledDueToAudit"
               class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center space-x-2 transition-all shadow-sm w-full justify-center"
-              :class="(isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit) ? 'opacity-40 cursor-not-allowed' : 'hover:bg-purple-600 hover:text-white hover:border-purple-600 cursor-pointer'"
+              :class="(isCopyDisabledDueToAudit) ? 'opacity-40 cursor-not-allowed' : 'hover:bg-purple-600 hover:text-white hover:border-purple-600 cursor-pointer'"
             >
               <Check v-if="copiedIndex === index" class="w-3.5 h-3.5 text-emerald-500" />
               <Copy v-else class="w-3.5 h-3.5 text-slate-400" />
@@ -727,37 +654,7 @@
                 </button>
               </div>
 
-                            <!-- Drawer Character Entity UUID Gate Banner -->
-              <div 
-                v-if="isCopyDisabledDueToMissingUuids" 
-                class="mt-4 p-3.5 rounded-xl border border-rose-300 dark:border-rose-900/80 bg-rose-50 dark:bg-rose-950/50 shadow-xs flex items-start space-x-2.5 text-rose-900 dark:text-rose-200 text-xs"
-              >
-                <AlertTriangle class="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
-                <div class="space-y-1.5 flex-1">
-                  <span class="font-bold text-rose-700 dark:text-rose-300 block">Copying Disabled: Missing Character UUIDs</span>
-                  <p class="text-[11px] text-rose-700 dark:text-rose-300 leading-normal">
-                    Please map UUIDs for: <span class="font-mono font-semibold">{{ unmappedCharacterEntities.join(', ') }}</span> in the Character Vault before copying chunks.
-                  </p>
-                  <div class="flex items-center space-x-2 pt-1">
-                    <button 
-                      @click="copyFlowUuidPrompt"
-                      class="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-[11px] font-mono font-bold flex items-center space-x-1 transition cursor-pointer"
-                    >
-                      <Copy class="w-3 h-3" />
-                      <span>📋 Copy Flow UUID Prompt</span>
-                    </button>
-                    <router-link
-                      :to="{ name: 'series-detail', params: { id: route.params.franchiseId } }"
-                      class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800 text-[11px] font-mono font-bold flex items-center space-x-1 transition"
-                    >
-                      <ExternalLink class="w-3 h-3" />
-                      <span>Vault</span>
-                    </router-link>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Dispatch Progress Tracker -->
+                            <!-- Dispatch Progress Tracker -->
               <div class="mt-5 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
                 <div class="flex items-center justify-between text-sm">
                   <span class="font-semibold text-slate-700 dark:text-slate-300">Dispatch Progress</span>
@@ -807,7 +704,7 @@
                     </p>
                     <button 
                       @click="copyMissingPrompts"
-                      :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+                      :disabled="isCopyDisabledDueToAudit"
                       class="w-full py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-mono font-bold transition shadow-xs flex items-center justify-center space-x-1 cursor-pointer disabled:opacity-50"
                     >
                       <span>{{ activeCopiedKey === 'MISSING' ? 'Copied Missing XML!' : `⚡ Copy ${missingCount} Missing Prompts` }}</span>
@@ -959,10 +856,10 @@
                   <div class="flex items-center space-x-2 shrink-0 ml-3">
                     <button
                       @click="copyBatchFullXml(batch, bIdx)"
-                      :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+                      :disabled="isCopyDisabledDueToAudit"
                       class="px-3.5 py-2 rounded-xl text-xs font-mono font-bold flex items-center space-x-1.5 transition-all shadow-xs"
                       :class="[
-                        (isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit)
+                        (isCopyDisabledDueToAudit)
                           ? 'opacity-40 cursor-not-allowed bg-slate-400 text-white'
                           : (batch.isFullyCopied || activeCopiedKey === `FULL_${bIdx}`
                               ? 'bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer shadow-emerald-950/20'
@@ -982,9 +879,9 @@
               <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
                 <button 
                   @click="copyAllMaster"
-                  :disabled="isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit"
+                  :disabled="isCopyDisabledDueToAudit"
                   class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-sm font-bold flex items-center justify-center space-x-2 transition-all"
-                  :class="(isCopyDisabledDueToMissingUuids || isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'hover:border-purple-500/40 hover:text-slate-900 dark:hover:text-white cursor-pointer'"
+                  :class="(isCopyDisabledDueToAudit) ? 'opacity-50 cursor-not-allowed' : 'hover:border-purple-500/40 hover:text-slate-900 dark:hover:text-white cursor-pointer'"
                 >
                   <Copy class="w-4 h-4 text-purple-500 dark:text-purple-400" />
                   <span>{{ activeCopiedKey === 'ALL' ? 'All Scenes Copied!' : `Copy Entire Episode (All ${parsedPrompts.length} Scenes)` }}</span>
@@ -1040,14 +937,6 @@
                   </div>
                 </div>
                 <div class="flex items-center space-x-2">
-                  <button 
-                    @click="copyFlowUuidPrompt"
-                    class="px-3 py-1.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-500/30 text-xs font-mono font-bold flex items-center space-x-1.5 transition cursor-pointer"
-                    title="Copy simplified prompt to ask Google Flow for character UUIDs"
-                  >
-                    <Sparkles class="w-3.5 h-3.5 text-purple-500" />
-                    <span>📋 Copy Flow UUID Prompt</span>
-                  </button>
                   <button 
                     @click="isVaultDrawerOpen = false"
                     class="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
@@ -1117,7 +1006,7 @@
                     </div>
 
                     <!-- Model Thumbnail Preview (16:9) -->
-                    <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group">
+                    <div :class="[activeDirectiveFormat === '9:16' ? 'aspect-[9/16] max-h-64' : 'aspect-video', 'w-full rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 relative group']">
                       <img :src="model.url" :alt="model.name" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                       <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
                         <a 
@@ -1574,6 +1463,10 @@ import {
   getTagModeFromStorage, 
   setTagModeToStorage 
 } from '../utils/entityMapper.js'
+import { 
+  getFranchiseArtStyleDirective, 
+  getFranchiseDefaultVaultDna 
+} from '../utils/franchiseStyleHelper.js'
 
 const route = useRoute()
 
@@ -1615,7 +1508,7 @@ const failingChecks = computed(() => {
 // Google Flow Entity Mapping State
 const entityMapRawText = ref('')
 const parsedEntities = ref({})
-const promptTagMode = ref('token') // 'token' | 'uuid'
+const promptTagMode = ref('token')
 
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
 
@@ -1688,42 +1581,10 @@ const unmappedCharacterEntities = computed(() => {
   return unmapped
 })
 
-const isCopyDisabledDueToMissingUuids = computed(() => {
-  if (promptTagMode.value !== 'uuid') return false
-  return unmappedCharacterEntities.value.length > 0
-})
+const isCopyDisabledDueToMissingUuids = computed(() => false)
 
-const copyFlowUuidPrompt = async () => {
-  const characters = (vaultModels.value || [])
-    .filter(m => m.type === 'character' || m.type === 'boss' || ['protagonist', 'antagonist', 'supporting', 'vip', 'boss'].includes(m.category?.toLowerCase()))
-    .map(m => m.flowName || m.name)
-  
-  const items = (vaultModels.value || [])
-    .filter(m => m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category?.toLowerCase() === 'item')
-    .map(m => m.flowName || m.name)
 
-  const allEntities = [...new Set([...characters, ...items, ...unmappedCharacterEntities.value])].filter(Boolean)
-  const entityList = allEntities.length > 0 
-    ? `\n\nList:\n${allEntities.map(e => `- ${e}`).join('\n')}` 
-    : ''
-
-  const promptText = `Please list all characters and items in this project with their UUIDs:
-
-Format:
-Name: UUID${entityList}`
-
-  try {
-    await navigator.clipboard.writeText(promptText)
-    showToast('📋 Flow UUID Prompt Copied! Paste into Google Flow chat to retrieve UUIDs.')
-  } catch (e) {
-    console.error('Failed to copy flow prompt:', e)
-  }
-}
-
-const togglePromptTagMode = (mode) => {
-  promptTagMode.value = mode
-  setTagModeToStorage(mode)
-}
+const togglePromptTagMode = () => {}
 
 const getDisplayPrompt = (p) => {
   if (!p || !p.prompt) return ''
@@ -1780,24 +1641,13 @@ const episodeScopedModels = computed(() => {
   if (!currentEpId) return vaultModels.value
 
   return vaultModels.value.filter(m => {
-    if (/protagonist/i.test(m.category || '')) return true
-    const searchToken = (m.token || `@{${m.name}}`).toLowerCase()
-    const searchName = (m.flowName || m.name || '').replace(/^(Boss|Character|Commander|Lord):\s*/i, '').trim().toLowerCase()
-    const searchUuid = (m.flowUuid || '').toLowerCase()
-    const inPrompts = parsedPrompts.value.some(p => {
-      const promptLower = `${p.prompt || ''} ${(p.characterTokens || []).join(' ')}`.toLowerCase()
-      return (searchUuid && searchUuid.length >= 8 && promptLower.includes(searchUuid)) ||
-             promptLower.includes(searchToken) ||
-             (searchName && promptLower.includes(searchName))
-    })
-    if (inPrompts) return true
     if (Array.isArray(m.episodes) && m.episodes.length > 0) {
       return m.episodes.some(ep => {
         const epLower = ep.toLowerCase()
         return epLower.includes(currentEpId) || currentEpId.includes(epLower)
       })
     }
-    return false
+    return /protagonist/i.test(m.category || '')
   })
 })
 
@@ -1808,12 +1658,14 @@ const vaultCategories = computed(() => {
   const weapons = models.filter(m => m.category === 'Weapons').length
   const artifacts = models.filter(m => m.category === 'Artifacts').length
   const props = models.filter(m => m.category === 'Props').length
+  const locations = models.filter(m => m.category === 'Locations' || m.type === 'location').length
 
   const list = [{ key: 'all', label: 'All', count: total }]
   if (chars > 0) list.push({ key: 'characters', label: 'Characters', count: chars })
   if (weapons > 0) list.push({ key: 'Weapons', label: 'Weapons', count: weapons })
   if (artifacts > 0) list.push({ key: 'Artifacts', label: 'Artifacts', count: artifacts })
   if (props > 0) list.push({ key: 'Props', label: 'Props', count: props })
+  if (locations > 0) list.push({ key: 'Locations', label: 'Locations', count: locations })
   return list
 })
 
@@ -1824,6 +1676,7 @@ const getCategoryBadgeClass = (category) => {
   if (cat.includes('supporting')) return 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800'
   if (cat.includes('weapon')) return 'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800'
   if (cat.includes('artifact')) return 'bg-violet-100 dark:bg-violet-950/80 text-violet-700 dark:text-violet-300 border-violet-300 dark:border-violet-800'
+  if (cat.includes('location')) return 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
   if (cat.includes('prop')) return 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800'
   return 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
 }
@@ -1881,7 +1734,7 @@ const copyVaultToken = async (model) => {
 
 const copyVaultDna = async (model) => {
   if (!model) return
-  const textToCopy = model.fullDna || model.dnaAnchor || model.description || `${model.name}, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
+  const textToCopy = model.fullDna || model.dnaAnchor || model.description || getFranchiseDefaultVaultDna(route.params.franchiseId, model.name)
   try {
     await navigator.clipboard.writeText(textToCopy)
     copiedVaultId.value = model.id
@@ -2268,25 +2121,6 @@ const formatReferenceHeader = (_references) => {
 const formatEntityWithId = (nameStr) => {
   if (!nameStr) return ''
   const clean = nameStr.replace(/^@\{?/, '').replace(/\}?$/, '').trim()
-  const map = parsedEntities.value || {}
-  let uuid = map[clean]
-  if (!uuid) {
-    for (const [k, v] of Object.entries(map)) {
-      if (k.toLowerCase() === clean.toLowerCase() || k.replace(/^(Boss|Character|Commander|Lord):\s*/i, '').trim().toLowerCase() === clean.toLowerCase()) {
-        uuid = v
-        break
-      }
-    }
-  }
-  if (!uuid && Array.isArray(vaultModels.value)) {
-    const m = vaultModels.value.find(vm => (vm.flowName || vm.name || '').toLowerCase().includes(clean.toLowerCase()))
-    if (m && m.flowUuid && !/^00000000-temp/i.test(m.flowUuid)) {
-      uuid = m.flowUuid
-    }
-  }
-  if (uuid && promptTagMode.value === 'uuid') {
-    return `${clean} (@${uuid})`
-  }
   return `@{${clean}}`
 }
 
@@ -2366,6 +2200,14 @@ const analyzeFlowContext = (itemsList = null) => {
   const combatRegex = /\b(strike|strikes|punch|punches|slash|slashes|cleave|cleaves|explosion|impact|shockwave|parry|clash|combat|battle|attack|attacks|siphon|pierce|shatter|decapitat|blood\s+spray)\b/i
   const morphFeatureRegex = /\b(wings|twelve\s+wings|feathered\s+wings|mechanical\s+hand|puppet\s+hand|brass\s+joint|porcelain\s+limb|claws|tentacles|automaton\s+arm)\b/i
 
+  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId)
+  const vocab = styleDirective?.vocabulary || {
+    diegeticScrolls: 'in-world scrolls/documents/books',
+    diegeticSignage: 'in-world shop/building signage',
+    diegeticSteles: 'stone stele/monolith inscriptions',
+    diegeticUi: 'glowing holographic system/UI panels'
+  }
+
   items.forEach((item, idx) => {
     const rawTag = (item?.tag || `IMG_${String(idx + 1).padStart(3, '0')}`).replace(/[[\]]/g, '').toUpperCase()
     const cleanBody = item?.prompt || ''
@@ -2393,19 +2235,19 @@ const analyzeFlowContext = (itemsList = null) => {
     let hasDiegetic = false
     if (systemUiRegex.test(strippedForTextCheck)) {
       hasDiegetic = true
-      diegeticTypeSet.add('glowing holographic System/UI status panels')
+      diegeticTypeSet.add(vocab.diegeticUi)
     }
     if (scrollBookRegex.test(strippedForTextCheck)) {
       hasDiegetic = true
-      diegeticTypeSet.add('ancient cultivation scrolls/books/talismans')
+      diegeticTypeSet.add(vocab.diegeticScrolls)
     }
     if (steleInscriptionRegex.test(strippedForTextCheck)) {
       hasDiegetic = true
-      diegeticTypeSet.add('stone stele/monolith inscriptions')
+      diegeticTypeSet.add(vocab.diegeticSteles)
     }
     if (signageRegex.test(strippedForTextCheck)) {
       hasDiegetic = true
-      diegeticTypeSet.add('in-world shop/sect signage')
+      diegeticTypeSet.add(vocab.diegeticSignage)
     }
     if (hasDiegetic) {
       diegeticSceneTags.push(rawTag)
@@ -2454,9 +2296,12 @@ const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
     ? intel.detectedEntityTags.join(', ')
     : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
 
-  return `STRICT OPERATIONAL DIRECTIVES (${is16x9 ? '16:9 FULL-BLEED LANDSCAPE' : '9:16 AUTHENTIC WEBTOON STRIP'})
+  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, format)
 
-1. MANDATORY FILE NAMING:
+  return `[SYSTEM DIRECTIVE: GLOBAL PROJECT INVARIANTS]
+
+STRICT OPERATIONAL DIRECTIVES FOR ENTIRE EPISODE (${aspectLabel}):
+1. FILE NAMING CONVENTION (ZERO EXCEPTIONS):
 - ALWAYS automatically rename every generation to match the exact string provided in the filename="..." attribute of the user's XML <scene> node (e.g., IMG_001.jpg, IMG_002.jpg).
 - This action must be performed immediately following generation without requiring a separate "sync" command or further user input.
 
@@ -2469,15 +2314,15 @@ const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
 3. COMPOSITION, LOGIC & ANTI-MORPHING:
 - ANATOMY & SCENE TYPE (CHARACTER VS UNPOPULATED ENVIRONMENT): For scenes featuring characters, flawless human anatomy required: exactly two arms, two legs, and five slender fingers per hand. Zero extra limbs, zero floating hands, or severed appendages. Every hand holding a weapon or prop must connect naturally to the wrist, forearm, and shoulder. For unpopulated environment/landscape scenes: strictly ZERO humans, zero people, zero figures in the sky, and zero floating bystanders.
 - SINGLE PROTAGONIST: Strictly one instance of the protagonist (${intel.protagonistLabel}) per scene. No duplicate clones.
-- CONTEXT-AWARE CROWD & EXTRAS STAGING: Natural background students, pedestrians, onlookers, and ambient extras in soft depth-of-field blur are explicitly permitted ONLY in public and communal environments (university campus paths, lecture halls, city boulevards, public auditoriums). In private interior scenes (e.g. private dorm rooms, secluded meditation chambers, high-security command rooms), maintain strict isolation with zero extraneous strangers. In all cases: strictly zero foreground strangers stealing primary focus, zero clone audience copies, and zero floating bystanders.
+- CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule} In all cases: strictly zero foreground strangers stealing primary focus, zero clone audience copies, and zero floating bystanders.
 - ANTI-MORPHING SUBJECT ISOLATION: Never merge, fuse, or transfer monster, boss, or mechanical automaton features (such as wings, claws, mechanical puppet hands, or boss weapons) onto the human protagonist. ${bossClause}
 - LITERAL ACTION FIDELITY: Depict ONLY the exact posture and action described in the <scene> prompt (${intel.nonCombatCount} non-combat/dialogue scenes vs ${intel.combatCount} combat scenes in this deck). If characters are sitting, talking, resting, or observing, NEVER hallucinate combat strikes, punches, kicks, or assassin attacks.
 ${compositionRule}
 - ISOLATION: Isolate each batch within its dedicated collection as specified in the system directive.
 
-4. ART STYLE INVARIANT:
-- Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, ${artStyleAspect}. Clean contemporary architecture, modern cityscapes, and high-clarity lighting, ${aspectLabel}.
-- STRICTLY FORBIDDEN STYLE DRIFT: Never generate gloomy dark medieval fantasy, castles, photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons. Pass this exact 2D manhwa art style invariant into every image generation tool call.
+4. ART STYLE INVARIANT (${styleDirective.styleName}):
+- ${styleDirective.genreRule}
+- ${styleDirective.forbiddenRule}
 
 5. CHARACTER ENTITY REFERENCE MAPPING RULE:
 - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${entityListStr}).
@@ -2487,7 +2332,7 @@ ${compositionRule}
 const getFlowDirectiveHeader = (collectionTitle, format = '16:9', batchItems = null) => {
   const is16x9 = format === '16:9'
   const intel = analyzeFlowContext(batchItems)
-  const aspectShort = is16x9 ? '16:9 horizontal (1920x1080)' : '9:16 vertical manhwa (1080x1920)'
+  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, format)
   const entityListStr = intel.detectedEntityTags && intel.detectedEntityTags.length > 0
     ? intel.detectedEntityTags.join(', ')
     : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
@@ -2512,11 +2357,12 @@ STRICT OPERATIONAL DIRECTIVES FOR COLLECTION "${collectionTitle}":
    - Flawless human anatomy for character scenes: exactly two arms, two legs, and five slender fingers per hand connected naturally to wrists and shoulders. For unpopulated environment scenes, enforce zero humans, zero people, zero figures in the sky, and zero floating bystanders.
    - ${batchAntiMorphRule}
 5. CONTEXT-AWARE CROWD & EXTRAS STAGING:
-   - Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.
+   - ${styleDirective.crowdRule}
 6. LITERAL ACTION FIDELITY (${intel.nonCombatCount} Calm/Dialogue vs ${intel.combatCount} Combat Scenes):
    - Depict ONLY the exact posture and action written in each <scene>. Never invent punches, kicks, or assassin attacks during dialogue, sitting, or observation scenes.
-7. ART STYLE INVARIANT:
-   - Modern 2025 urban cultivation manhwa webtoon art style: sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, ${aspectShort}. Clean modern architecture and cityscapes. Never generate gloomy dark medieval fantasy, photorealistic 3D CGI renders, or flat Western cartoons.
+7. ART STYLE INVARIANT (${styleDirective.styleName}):
+   - ${styleDirective.genreRule}
+   - ${styleDirective.forbiddenRule}
 8. CHARACTER ENTITY REFERENCE MAPPING:
    - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${entityListStr}).`
 }
@@ -2797,10 +2643,7 @@ const writeToClipboardSafe = async (text) => {
 }
 
 const copyChunk = async (batch, bIdx, chunk, cIdx) => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -2853,10 +2696,7 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
 }
 
 const copyNextBatchChunk = async (batch, bIdx) => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -2870,10 +2710,7 @@ const copyNextBatchChunk = async (batch, bIdx) => {
 
 
 const copyBatchFullXml = async (batch, bIdx) => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -2927,10 +2764,7 @@ const copyBatchFullXml = async (batch, bIdx) => {
 }
 
 const copySelectedPrompts = async () => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -2977,10 +2811,7 @@ const copySelectedPrompts = async () => {
 }
 
 const copyMissingPrompts = async () => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -3027,10 +2858,7 @@ const copyMissingPrompts = async () => {
 }
 
 const copyAllMaster = async () => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return
@@ -3386,10 +3214,7 @@ const parseMarkdownPrompts = (markdown, imageMap = new Map()) => {
 }
 
 const copySinglePrompt = async (item, index) => {
-  if (isCopyDisabledDueToMissingUuids.value) {
-    showToast(`⚠️ Copy Locked: Missing Google Flow UUIDs for: ${unmappedCharacterEntities.value.join(', ')}. Map character entities first!`)
-    return
-  }
+  
   if (isCopyDisabledDueToAudit.value) {
     showToast(`⚠️ Copy Locked: Pre-Flight Prompt Matrix Audit has not passed (Score: ${promptAuditReport.value?.overallScore || 0}%). Resolve failing scenes first!`)
     return

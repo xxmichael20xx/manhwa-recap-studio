@@ -23,7 +23,22 @@ export class PackagingService {
   /**
    * Format seconds to YouTube timestamp (MM:SS or HH:MM:SS)
    */
-  static formatTimestamp(seconds) {
+    /**
+   * Parse YouTube timestamp string (MM:SS or HH:MM:SS) to seconds
+   */
+  static parseTimestampToSeconds(str) {
+    if (!str) return 0
+    const parts = str.trim().split(':').map(p => parseInt(p, 10))
+    if (parts.length === 3) {
+      return (parts[0] * 3600) + (parts[1] * 60) + parts[2]
+    }
+    if (parts.length === 2) {
+      return (parts[0] * 60) + parts[1]
+    }
+    return 0
+  }
+
+static formatTimestamp(seconds) {
     const sec = Math.max(0, Math.floor(seconds))
     const h = Math.floor(sec / 3600)
     const m = Math.floor((sec % 3600) / 60)
@@ -49,6 +64,9 @@ export class PackagingService {
    * Leaves at least 16 chars for (Part 1 - {nth}) while staying strictly <= 100 chars
    */
   static getCanonicalSeriesTitle(franchiseId) {
+    if (franchiseId.includes('Series_05')) {
+      return 'The Fourth Magius: The Last Archmage and The Discarded Babe'
+    }
     if (franchiseId.includes('Series_04')) {
       return 'He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save'
     }
@@ -76,9 +94,47 @@ export class PackagingService {
     const isSeries01 = franchiseId.includes('Series_01')
     const isSeries03 = franchiseId.includes('Series_03')
     const isSeries04 = franchiseId.includes('Series_04')
+    const isSeries05 = franchiseId.includes('Series_05')
 
     // Concept definitions calibrated for maximum CTR & storytelling contrast
-    const baseVariants = isSeries04 ? [
+    const baseVariants = isSeries05 ? [
+      {
+        id: 'concept_a',
+        name: 'Concept A: The Split Transformation (Discarded Babe vs Sovereign Archmage)',
+        subtitle: 'Split-Contrast (Left Humble Frontier Toddler / Right Celestial Sovereign with Primordial Codex)',
+        badgeText: 'DISCARDED BABE',
+        subBadgeText: 'LAST ARCHMAGE',
+        badgeColorPreset: 'gold_crimson',
+        badgePosition: 'bottom_left',
+        composition: 'Left 45% 5-year-old Michael Montrey in rough linen tunic holding blackwood staff in snowy forest / Right 55% 28-year-old Michael Montrey in midnight celestial mantle surrounded by glowing constellation runes and Primordial Codex',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 5-year-old male child protagonist Michael Montrey in rough-spun grey linen tunic with hemp belt, holding a carved blackwood walking staff, standing in snowdrifts of ancient pine forest with calm analytical cyan eyes. Right half: Handsome 28-year-old archmage sovereign Michael Montrey in high-collared midnight-blue mantle embroidered with glowing golden celestial constellations, glowing sapphire eyes with concentric arcane circles, holding the ancient glowing Primordial Codex. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, rich dramatic lighting, vibrant cel shading, 16:9 horizontal, textless artwork.`,
+        filename: '01_Thumbnail_Concept_A.jpg'
+      },
+      {
+        id: 'concept_b',
+        name: 'Concept B: The Patriarch\'s Panic & Mana Crystal Burst',
+        subtitle: 'Center Dynamic / Aristocrat Shock (Shattered Mana Crystal & Celestial Burst)',
+        badgeText: 'MANA BURST',
+        subBadgeText: 'SEAL SHATTER',
+        badgeColorPreset: 'cyan_hud',
+        badgePosition: 'bottom_left',
+        composition: 'In foreground: Patriarch Valerius in velvet fur coat clutching trembling head in cold sweat as testing crystal sphere shatters in blinding golden starlight. In center: Michael Montrey touching the shattered pedestal with calm unbothered expression',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension dramatic manhwa composition. In foreground: Arrogant 45-year-old aristocratic Patriarch Valerius in sapphire-velvet fur-lined coat with ornate silver embroidery, eyes wide in horrified shock and cold sweat running down his face. In center: 5-year-old Michael Montrey placing hand on a colossal gothic mana testing sphere that is violently cracking and erupting with blinding golden celestial constellation runes and shockwaves. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant lighting, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_B.jpg'
+      },
+      {
+        id: 'concept_c',
+        name: 'Concept C: The Blackwood Calamity Solo Cleave',
+        subtitle: 'Epic Forest Battlefield / Celestial Arcane Nova Cleave',
+        badgeText: 'SOLO ARCHMAGE',
+        subBadgeText: 'ANCIENT SPELL',
+        badgeColorPreset: 'crimson_flame',
+        badgePosition: 'bottom_left',
+        composition: 'Wide battlefield: 5-year-old Michael Montrey raising blackwood walking staff, unleashing a monumental vertical pillar of golden celestial constellation starlight disintegrating corrupted abyssal wyrm',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic dark fantasy battlefield manhwa composition. Colossal shadow wyrm monster roaring in agony as a monumental vertical beam of golden celestial constellation starlight cleaves it in half. In foreground: 5-year-old protagonist Michael Montrey in rough linen tunic holding blackwood staff, eyes glowing piercing cyan, completely calm and unbothered. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, cinematic dramatic lighting, horizontal 16:9.`,
+        filename: '01_Thumbnail_Concept_C.jpg'
+      }
+    ] : isSeries04 ? [
       {
         id: 'concept_a',
         name: 'Concept A: The Sleeper Student vs 1-Billion-Year Primordial Sovereign',
@@ -670,9 +726,13 @@ export class PackagingService {
   /**
    * Monotonically parse script acts and timestamps from SRT, generating full package
    */
+  /**
+   * Markdown-First Truth Package Generator (Cognitive Agent Output Parser)
+   */
   static async generatePackage(franchiseId, episodeId) {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
+    const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')
     const masterAudioPath = TtsService.getAudioFilePath(franchiseId, episodeId, '01_Episode_Master.mp3')
 
     let script = ''
@@ -698,568 +758,262 @@ export class PackagingService {
       }
     }
 
-    // 1. Parse Dynamic Timeline
-    const timeline = await VideoService.parseDynamicTimeline(franchiseId, episodeId, totalDuration)
-
-    // 2. Parse Acts and extract clean chapter markers
-    const scriptLines = script.split('\n')
-    const chapters = []
-
-    const isSeries02 = franchiseId.includes('Series_02')
-    const isSeries03 = franchiseId.includes('Series_03')
-    const isSeries04 = franchiseId.includes('Series_04')
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
+    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
     const epNumMatch = episodeId.match(/EP0*(\d+)/i)
     const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
-    const epNumPad = String(epNum).padStart(2, '0')
     const partTag = `Episode ${epNum}`
 
-    // Always start chapter 1 at 00:00 for YouTube compliance
-    chapters.push({
-      time: '00:00',
-      seconds: 0,
-      title: `Episode 01: ${cleanEpisodeName}`
-    })
+    let titles = []
+    let chapters = []
+    let description = ''
+    let pinnedComment = ''
+    let isPending = true
 
-    // Find all acts / batches in script and correlate with timeline beats
-    for (let i = 0; i < scriptLines.length; i++) {
-      const line = scriptLines[i].trim()
-      if (/^#{2,3}\s+(?:📦\s*)?(?:BATCH|ACT|EPISODE)\s+(\d+)/i.test(line)) {
-        const numMatch = line.match(/(?:BATCH|ACT|EPISODE)\s+(\d+)/i)
-        const num = numMatch ? numMatch[1] : ''
-        const numPad = num.length === 1 ? `0${num}` : num
-        const sceneMatch = line.match(/\((Scenes\s*[\d\s\-–—]+)\)/i)
-        const scenes = sceneMatch ? sceneMatch[1].trim() : ''
+    // 1. Markdown-First Truth Resolution: Parse 03_YouTube_Package.md created by Agent
+    if (fsSync.existsSync(pkgMdPath)) {
+      try {
+        const pkgContent = await fs.readFile(pkgMdPath, 'utf-8')
+        isPending = false
 
-        let rest = line.replace(/^#{2,3}\s+(?:📦\s*)?(?:BATCH|ACT|EPISODE)\s+\d+/i, '')
-        if (scenes) rest = rest.replace(/\(Scenes\s*[\d\s\-–—]+\)/i, '')
-        rest = rest.replace(/^[\s:\-–—]+|[\s:\-–—]+$/g, '').trim()
-
-        let chapterTitle = `Episode ${numPad}`
-        if (rest) {
-          chapterTitle += `: ${rest}`
-        } else if (scenes) {
-          chapterTitle += `: ${scenes}`
-        }
-
-        // Find next [IMG_XXX] tag in script
-        let tagFound = null
-        for (let j = i; j < Math.min(i + 20, scriptLines.length); j++) {
-          const match = scriptLines[j].match(/\[(IMG_\d+)\]/)
-          if (match) {
-            tagFound = match[1].toUpperCase()
-            break
+        // Parse Titles
+        const rawFoundTitles = []
+        const lines = pkgContent.split(/\r?\n/)
+        for (const line of lines) {
+          const m = line.match(/^\d+\.\s+\*\*([^\*]+)\*\*(?:\s*\((\d+)\s*chars\))?/)
+          if (m) {
+            rawFoundTitles.push(m[1].trim())
           }
         }
 
-        if (tagFound) {
-          const beat = timeline.find(b => b.tag === tagFound)
-          if (beat && beat.startTime > 30) {
-            const timeStr = this.formatTimestamp(beat.startTime)
-            if (!chapters.some(c => c.time === timeStr)) {
+        if (rawFoundTitles.length > 0) {
+          const ctrScores = ['99%', '98%', '97%', '96%', '95%', '94%', '93%', '92%', '91%', '90%']
+          titles = rawFoundTitles.slice(0, 10).map((t, idx) => ({
+            archetype: `High-CTR Archetype ${idx + 1}`,
+            title: t,
+            ctrScore: ctrScores[idx] || '92%',
+            charCount: t.length,
+            isCompliant: t.length <= 100
+          }))
+        }
+
+        // Parse Chapters
+        const chapterBlockMatch = pkgContent.match(/⏱️\s*(?:EPISODE CHAPTERS|CHAPTER TIMESTAMPS):\s*\r?\n([\s\S]*?)(?:\r?\n\s*━|\r?\n\s*#|\r?\n\s*```|$)/i)
+        if (chapterBlockMatch && chapterBlockMatch[1]) {
+          const rawLines = chapterBlockMatch[1].split(/\r?\n/)
+          for (const rawLine of rawLines) {
+            const lineMatch = rawLine.match(/^(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—]\s*(.+)$/)
+            if (lineMatch) {
               chapters.push({
-                time: timeStr,
-                seconds: Math.round(beat.startTime),
-                title: chapterTitle
+                time: lineMatch[1].trim(),
+                seconds: this.parseTimestampToSeconds(lineMatch[1].trim()),
+                title: lineMatch[2].trim()
               })
             }
           }
         }
+
+        // Parse SEO Description Box
+        const descBlockMatch = pkgContent.match(/##\s*📝\s*SEO Description Box[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        if (descBlockMatch && descBlockMatch[1]) {
+          description = descBlockMatch[1].trim()
+        }
+
+        // Parse Pinned Community Comment
+        const commentBlockMatch = pkgContent.match(/##\s*📌\s*Pinned Community Comment[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        if (commentBlockMatch && commentBlockMatch[1]) {
+          pinnedComment = commentBlockMatch[1].trim()
+        }
+      } catch (err) {
+        console.warn('Could not parse 03_YouTube_Package.md:', err.message)
       }
     }
 
-    // Ensure Episode Finale & End marker exists
-    const finaleSec = Math.max(0, totalDuration - 45)
-    const formattedFinale = this.formatTimestamp(finaleSec)
-    const formattedEnd = this.formatTimestamp(totalDuration)
-    if (!chapters.some(c => c.time === formattedFinale)) {
-      chapters.push({
-        time: formattedFinale,
-        seconds: Math.round(finaleSec),
-        title: `Episode Finale & Cliffhanger (Ends at ${formattedEnd})`
-      })
+    // 2. Safe Dynamic Fallbacks if Markdown is pending
+    if (titles.length === 0) {
+      titles = [
+        { archetype: 'Canonical Prefix (Binge Standard)', title: `(${partTag}) ${canonicalTitle}`, ctrScore: '99%', charCount: `(${partTag}) ${canonicalTitle}`.length, isCompliant: true },
+        { archetype: 'Canonical Suffix (Direct Story)', title: `${canonicalTitle} (${partTag})`, ctrScore: '97%', charCount: `${canonicalTitle} (${partTag})`.length, isCompliant: true },
+        { archetype: 'Clean Pipe Delimiter', title: `${canonicalTitle} | ${partTag}`, ctrScore: '95%', charCount: `${canonicalTitle} | ${partTag}`.length, isCompliant: true },
+        { archetype: 'Bracket High-Visibility', title: `[${partTag}] ${canonicalTitle}`, ctrScore: '94%', charCount: `[${partTag}] ${canonicalTitle}`.length, isCompliant: true }
+      ]
     }
 
-    // 3. Generate Unified Franchise Titles (Strict <= 100 Chars Hard Cap)
-    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
-
-    const rawTitles = isSeries04 ? [
-      {
-        archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
-        title: `(${partTag}) ${canonicalTitle}`,
-        ctrScore: '99%',
-        style: 'Primary confirmed high-CTR franchise standard'
-      },
-      {
-        archetype: 'False Rank & Sleeper Sovereign',
-        title: 'Mocked as a Broke Night-Shift Clerk, He Awakened 1 Billion Years of Simulated Dao Power',
-        ctrScore: '98%',
-        style: 'Underdog night-shift worker vs 1-billion-year simulated Dao'
-      },
-      {
-        archetype: 'The Arrogant Bully & Kitchen Knife',
-        title: 'Arrogant S-Rank Scion Drew a Sacred Spirit Blade, So He Snapped It with a Kitchen Knife',
-        ctrScore: '97%',
-        style: 'Action face-slap with ordinary kitchen knife'
-      },
-      {
-        archetype: 'Global Leyline & Spectrometer Shock',
-        title: 'Blue Star Merged with Heavenly Dao, But His Dorm Room Overloaded the World Spectrometer',
-        ctrScore: '96%',
-        style: 'World-shattering measurement overflow and state investigation'
-      },
-      {
-        archetype: 'The 1-Billion-Year AFK Save Hook',
-        title: 'He Left An Idle Game Running For 10 Years, Unlocking 1 Billion Years of Cultivation on Earth',
-        ctrScore: '95%',
-        style: 'Curiosity hook explaining the 10-year idle game calculation'
-      },
-      {
-        archetype: 'Canonical Suffix (Direct Story)',
-        title: `${canonicalTitle} (${partTag})`,
-        ctrScore: '94%',
-        style: 'Consistent story title with episodic suffix'
-      },
-      {
-        archetype: 'Clean Pipe Delimiter',
-        title: `${canonicalTitle} | ${partTag}`,
-        ctrScore: '93%',
-        style: 'Modern YouTube clean metadata delimiter'
-      },
-      {
-        archetype: 'Bracket High-Visibility',
-        title: `[${partTag}] ${canonicalTitle}`,
-        ctrScore: '92%',
-        style: 'High-contrast bracket visual anchor'
-      }
-    ] : [
-      {
-        archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
-        title: `(${partTag}) ${canonicalTitle}`,
-        ctrScore: '99%',
-        style: 'Primary confirmed high-CTR franchise standard'
-      },
-      {
-        archetype: 'Canonical Suffix (Direct Story)',
-        title: `${canonicalTitle} (${partTag})`,
-        ctrScore: '97%',
-        style: 'Consistent story title with episodic suffix'
-      },
-      {
-        archetype: 'Clean Pipe Delimiter',
-        title: `${canonicalTitle} | ${partTag}`,
-        ctrScore: '95%',
-        style: 'Modern YouTube clean metadata delimiter'
-      },
-      {
-        archetype: 'Bracket High-Visibility',
-        title: `[${partTag}] ${canonicalTitle}`,
-        ctrScore: '94%',
-        style: 'High-contrast bracket visual anchor'
-      }
-    ]
-
-    const titles = rawTitles.map(t => {
-      let cleanTitle = t.title.trim()
-      if (cleanTitle.length > 100) {
-        cleanTitle = cleanTitle.slice(0, 97).trim() + '...'
-      }
-      return {
-        ...t,
-        title: cleanTitle,
-        charCount: cleanTitle.length,
-        isCompliant: cleanTitle.length <= 100
-      }
-    })
-
-    // 4. Generate Chapter Text for Description
+    // In accordance with Plain Episode Timestamp Standard:
+    // Standalone individual episodes omit internal chapter timestamps completely.
+    // Plain episode timestamps are strictly reserved for multi-episode compilations.
     const chapterText = chapters.map(c => `${c.time} - ${c.title}`).join('\n')
 
-    // 5. Generate Full SEO Description
-    const description = isSeries04
-      ? `For ten years, university student Lu Chen quietly ran an archaic idle cultivation simulator called Heavenly Dao: Infinite Samsara while working night shifts at a campus convenience store. When the game servers announce an abrupt permanent shutdown, physical reality expands tenfold—and the game world merges directly with Earth.
-
-While arrogant campus scions and corporate oligarchs brag about 50,000 years of cultivation, Lu Chen awakens with all ONE BILLION YEARS of simulated primordial sovereign power fully unlocked. Armed with an ordinary chipped kitchen knife, he effortlessly shatters sacred spirit blades, overloads state threat detectors, and begins his silent ascension as the hidden apex sovereign of Blue Star.
-
-🔥 Series: ${cleanFranchiseName}
-🎬 Episode: ${cleanEpisodeName}
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
-• Episode Bounds: 00:00 - ${formattedEnd}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CHAPTER TIMESTAMPS:
-${chapterText}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💬 COMMUNITY QUESTION:
-If reality merged with your gaming save and you kept all your progress, would you hide your 1-billion-year power like Lu Chen, or flex it immediately on the first arrogant scion? Let me know in the comments below! 👇
-
-🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: The Guild Inquest & The Golden Stele Descent!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎵 MUSIC & AUDIO ATTRIBUTION:
-All background OST soundscapes and atmospheric scores are licensed royalty-free for creative production:
-- Qindu Campus Twilight Ambient (Nocturnal Lofi / Warm Strings)
-- Leyline Convergence Resonance (Low Sub-Bass Pulse)
-- Nephrite Dao Shatter Climax (High-Impact Transient Percussion)
-- Heavenly Dao Primordial Swell (Epic Ambient Synth)
-
-⚖️ DISCLAIMER:
-This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
-
-#manhwarecap #webtoon #cultivation #animerecap #manhwa #overpoweredmc #urbanxianxia #levelingsystem #recap`
-      : isSeries03
-      ? `Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
-
-While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
-
-🔥 Series: ${cleanFranchiseName}
-🎬 Episode: ${cleanEpisodeName}
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
-• Episode Bounds: 00:00 - ${formattedEnd}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CHAPTER TIMESTAMPS:
-${chapterText}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💬 COMMUNITY QUESTION:
-If you transmigrated with Bram's ability to rewrite two words in any item's System name, what everyday object would you turn into a demigod weapon first? Drop your thoughts below! 👇
-
-🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: Floors 11-35 & The Architect's Dilemma!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎵 MUSIC & AUDIO ATTRIBUTION:
-All background OST soundscapes and atmospheric dungeon scores are licensed royalty-free for creative production:
-- Outer Slums Tea Shop Ambience (Warm Acoustic Strings)
-- Imperial Aristocracy Tension (Minor Harmonic Strings)
-- Siphon Surge & Sovereign Bank (Hypersonic Bass Resonance)
-- Floor 10 Boss Calamity Cleave (Volcanic Low Drone)
-
-⚖️ DISCLAIMER:
-This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
-
-#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap`
-      : isSeries02 
-      ? `They mocked him as a useless F-Rank student archer and assigned him to the academy's trash division, unaware that an apocalyptic Red Gate calamity would awaken the Omniscient Siphon System...
-
-Watch the full story of Caelen Vance as he transcends ordinary hunter classifications, wielding the Void-Strung Heavy Recurve with 6,500 lbs draw force, Mach 2.5 phantom agility, and unstoppable stat-siphoning power to shatter the S-Rank Abyssal Obsidian Colossus.
-
-🔥 Series: ${cleanFranchiseName}
-🎬 Episode: ${cleanEpisodeName}
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
-• Episode Bounds: 00:00 - ${formattedEnd}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CHAPTER TIMESTAMPS:
-${chapterText}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💬 COMMUNITY QUESTION:
-Would you have stepped in to save Ignis after he spent the morning mocking your bow, or let the Colossus crush him? Drop your thoughts below! 👇
-
-🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: The Guild Inquest & Dimensional Incursion!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎵 MUSIC & AUDIO ATTRIBUTION:
-All background OST soundscapes and atmospheric scores are licensed royalty-free for creative production:
-- District 9 Academy Tension (Suspense / Strings)
-- Red Gate Calamity Siren (Volcanic Magma Drone)
-- Siphon Surge Climax (Hypersonic Mach-4 Bass Drop)
-- Sovereign Ascendancy Epilogue (Ambient Synth Pad)
-
-⚖️ DISCLAIMER:
-This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
-
-#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap`
-      : `They abandoned the weakest Double F-Rank hunter in the depths of the Imperial Catacombs, unaware that his terminal crisis would trigger the awakening of the legendary Singularity Protocol...
-
-Watch the full story of Caelen Vance as he transcends ordinary human hunter classifications, mastering spatial shears, low-gravity inversions, and unstoppable calculation velocity to become the world's first unshakeable Sovereign Pillar.
-
-🔥 Series: ${cleanFranchiseName}
-🎬 Episode: ${cleanEpisodeName}
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})
-• Episode Bounds: 00:00 - ${formattedEnd}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CHAPTER TIMESTAMPS:
-${chapterText}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-💬 COMMUNITY QUESTION:
-Would you have spared Lord Vane on that collapsing bridge, or eliminated him right away? Let me know your thoughts in the comments below! 👇
-
-🔔 Subscribe to the channel and turn on notifications so you don't miss Episode 02: The Guild Inquest & Dimensional Incursion!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎵 MUSIC & AUDIO ATTRIBUTION:
-All background OST soundscapes and atmospheric scores are licensed royalty-free for creative production:
-- Catacombs Sub-Bass Drone (Atmospheric / Suspense)
-- Betrayal Melancholic Ambience (A-Minor Harmonic Pad)
-- Awakening Power Surge (Open Fifth Sovereign Swell)
-- Combat Dungeon Raid (High-Stakes Low Percussion)
-
-⚖️ DISCLAIMER:
-This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
-
-#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap`
-
-    // 6. Get Multi-Variant Thumbnail Studio concepts
-    const thumbnailVariants = await this.getThumbnailVariants(franchiseId, episodeId)
-
-    // 7. Tags string
-    const tags = [
-      'manhwa recap',
-      'webtoon recap',
-      'anime recap',
-      'solo leveling',
-      'manhwa',
-      'webtoon',
-      'overpowered mc',
-      'manhwa with overpowered mc',
-      'f rank to god rank',
-      'system manhwa',
-      'regression manhwa',
-      'manhwa recap full',
-      'best manhwa recap',
-      'action manhwa recap',
-      'leveling manhwa',
-      'singularity protocol',
-      'double f rank',
-      'junkies manhwa',
-      'manhwa cult',
-      'dragon tea'
-    ].join(', ')
-
-    // 8. Pinned Comment
-    const pinnedComment = isSeries04
-      ? `Lu Chen really deflected an S-Rank jade spirit blade using a dull dorm kitchen knife and kept eating late-night spicy beef jerky like nothing happened. 😭🥩\n\n🔔 Episode 02: The Guild Inquest & The Golden Stele Descent is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!\n\nQuestion for you guys: If reality merged with your gaming save and you kept all your progress, would you hide your 1-billion-year power like Lu Chen, or flex it immediately on the first arrogant scion? Drop your thoughts below! 👇`
-      : isSeries03
-      ? `Bram really rewrote an ancestral S-Rank golden rapier into a stick of school chalk and siphoned 10,000 enhancement charges into his pocket without blinking. 😭☕\n\n🔔 Episode 02: Floors 11-35 & The Architect's Dilemma is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!\n\nWhat was your favourite moment from Episode 01: Bram pulverising the Floor 10 Minotaur with a single pine needle, or Lord Cassian realizing his sword turned to dust? Drop your thoughts below! 👇`
-      : isSeries02
-      ? `💬 Question for you guys: Would you have stepped in to save Ignis after he spent the morning mocking your bow, or let the Colossus crush him? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
-      : `💬 Question for you guys: Would you have spared Lord Vane on that collapsing bridge, or eliminated him right away? Let me know in the comments below! 👇\n\n🔔 Episode 02: The Guild Inquest & Dimensional Incursion is already in production! Make sure to Subscribe and hit the bell icon so you don't miss the next upload!`
-
-    // 9. Master Generated Thumbnail Detection (default to concept_a or first with image)
-    const masterVariant = thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0]
-    const masterThumbnail = {
-      filename: masterVariant.filename,
-      url: masterVariant.url || `/api/episodes/${franchiseId}/${episodeId}/thumbnail/${masterVariant.filename}`,
-      badgeText: masterVariant.badgeText,
-      subBadgeText: masterVariant.subBadgeText,
-      style: masterVariant.subtitle,
-      hasImage: masterVariant.hasImage,
-      fileSize: masterVariant.fileSize,
-      fileSizeFormatted: masterVariant.fileSizeFormatted,
-      isYouTubeCompliant: masterVariant.isYouTubeCompliant
+    if (!description) {
+      const formattedEnd = this.formatTimestamp(totalDuration)
+      description = `🔥 Series: ${cleanFranchiseName}\n🎬 Episode: ${cleanEpisodeName}\n⏱️ Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${formattedEnd})\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterText}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔔 Subscribe to @ManhwaRecapStudio for weekly full-length manhwa recap sagas!`
     }
+
+    if (!pinnedComment) {
+      pinnedComment = `🔥 Episode 1 of ${cleanFranchiseName} is live! Drop a comment below with your favourite scene, and subscribe for Episode 2! ⚔️`
+    }
+
+    const thumbnailVariants = await this.getThumbnailVariants(franchiseId, episodeId)
+    const masterThumbnail = thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0]
 
     return {
       success: true,
+      isPending,
       franchiseId,
       episodeId,
       franchiseName: cleanFranchiseName,
       episodeName: cleanEpisodeName,
-      totalDurationSeconds: totalDuration,
+      canonicalTitle,
+      partTag,
+      totalDuration,
       formattedDuration: this.formatTimestamp(totalDuration),
       titles,
       chapters,
-      description,
       chapterText,
+      description,
+      pinnedComment,
       thumbnailVariants,
       thumbnailPrompts: thumbnailVariants,
       masterThumbnail,
-      tags,
-      pinnedComment
+      tags: ['#manhwarecap', '#webtoon', '#animerecap', '#manhwa', '#actionmanhwa']
     }
   }
 
+  /**
+   * Markdown-First Truth TikTok & Shorts Package Generator
+   */
   static async generateTikTokPackage(franchiseId, episodeId) {
-    const isSeries04 = franchiseId.includes('Series_04')
-    const isSeries03 = franchiseId.includes('Series_03')
-    const isSeries02 = franchiseId.includes('Series_02')
-    const isSeries01 = franchiseId.includes('Series_01')
+    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
     const cleanEpisodeName = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
-    // 1. Markdown-First Truth Resolution: Inspect 03_YouTube_Package.md on disk
-    const epPath = path.join(franchisesDir, franchiseId, episodeId)
-    const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')
-    let parsedHooksFromMd = []
+    let viralHooks = []
+    let hookOverlayText = ''
+    let caption = ''
+    let pinnedComment = ''
+    let isPending = true
 
     if (fsSync.existsSync(pkgMdPath)) {
       try {
         const mdContent = await fs.readFile(pkgMdPath, 'utf-8')
-        const titleRegex = /^\d+\.\s+\*\*(.+?)\*\*:\s*\r?\n\s+`?([^\r\n`]+)`?/gm
-        let match
-        const ctrScores = ['99%', '98%', '97%', '96%', '95%']
-        let idx = 0
-        while ((match = titleRegex.exec(mdContent)) !== null && idx < 5) {
-          const rawHookType = match[1].replace(/\s*\(\d+\s*chars\)/i, '').trim()
-          let titleText = match[2].trim()
-          // Clean leading part tags for TikTok punchiness if appropriate
-          if (titleText.startsWith('(Episode 1) ')) {
-            titleText = titleText.replace('(Episode 1) ', '') + ' 😭💀'
-          }
-          parsedHooksFromMd.push({
-            title: titleText,
-            hookType: rawHookType,
-            ctrScore: ctrScores[idx] || '95%'
-          })
-          idx++
+        isPending = false
+
+        // Parse Climax Video Hook & On-Screen Overlay
+        const hookMatch = mdContent.match(/###\s*1\.\s*Climax Video Hook[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        if (hookMatch && hookMatch[1]) {
+          hookOverlayText = hookMatch[1].trim()
         }
-      } catch (mdErr) {
-        console.warn('Could not parse 03_YouTube_Package.md for TikTok hooks:', mdErr.message)
+
+        // Parse Suggested Viral Caption & Hashtags
+        const captionMatch = mdContent.match(/###\s*2\.\s*Suggested Viral Caption[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        if (captionMatch && captionMatch[1]) {
+          caption = captionMatch[1].trim()
+        }
+
+        // Parse Pinned Bio Comment
+        const bioMatch = mdContent.match(/###\s*3\.\s*Pinned Bio Comment[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        if (bioMatch && bioMatch[1]) {
+          pinnedComment = bioMatch[1].trim()
+        }
+
+        // Parse titles as viral hooks (< 100 characters strictly enforced)
+        const ctrScores = ['99%', '98%', '97%', '96%', '95%']
+        
+        // Check for dedicated Shorts viral titles section first
+        const shortsSectionMatch = mdContent.match(/###\s*(?:[0-9.]*\s*)?(?:Viral\s+)?Shorts\s+Titles[^\n]*\r?\n([\s\S]*?)(?:\r?\n###|\r?\n---|$)/i)
+        if (shortsSectionMatch && shortsSectionMatch[1]) {
+          const sLines = shortsSectionMatch[1].split(/\r?\n/)
+          for (const sLine of sLines) {
+            const sm = sLine.match(/^\d+\.\s+(?:\*\*)?([^\*\r\n]+)(?:\*\*)?/)
+            if (sm && viralHooks.length < 5) {
+              let t = sm[1].trim()
+              if (!t.endsWith('💀') && !t.endsWith('☕') && !t.endsWith('😭') && !t.endsWith('🔥')) {
+                t += ' 💀'
+              }
+              if (t.length > 95) t = t.substring(0, 92) + '... 💀'
+              viralHooks.push({
+                title: t,
+                hookType: `Viral Hook ${viralHooks.length + 1}`,
+                ctrScore: ctrScores[viralHooks.length] || '95%'
+              })
+            }
+          }
+        }
+
+        // Fallback: parse main titles with defensive < 100 char trimming
+        if (viralHooks.length === 0) {
+          const lines = mdContent.split(/\r?\n/)
+          let idx = 0
+          for (const line of lines) {
+            const m = line.match(/^\d+\.\s+\*\*([^\*]+)\*\*/)
+            if (m && idx < 5) {
+              let t = m[1].trim()
+              // Strict < 100 character defense: ensure title + emoji is <= 95 characters
+              if (t.length > 88) {
+                t = t.substring(0, 85) + '...'
+              }
+              t = t + ' 💀'
+              viralHooks.push({
+                title: t,
+                hookType: `Viral Hook ${idx + 1}`,
+                ctrScore: ctrScores[idx] || '95%'
+              })
+              idx++
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('Could not parse 03_YouTube_Package.md for TikTok:', err.message)
       }
     }
 
-    // 2. Select calibrated viral hooks (Prefer parsed Markdown -> then Bespoke Series -> then Safe Dynamic Fallback)
-    let viralHooks = []
-    if (parsedHooksFromMd.length >= 3) {
-      viralHooks = parsedHooksFromMd
-    } else if (isSeries04) {
+    if (viralHooks.length === 0) {
       viralHooks = [
-        {
-          title: "He ran an idle cultivation game for 10 years, then Earth merged with his save file 😭💀",
-          hookType: "Reality Convergence / AFK Save",
-          ctrScore: "99%"
-        },
-        {
-          title: "Arrogant S-Rank Scion drew a sacred jade blade, so he snapped it with a kitchen knife 💀",
-          hookType: "Action Shock / Weapon Shatter",
-          ctrScore: "98%"
-        },
-        {
-          title: "Mocked as a broke night-shift clerk until 1 billion years of Dao cultivation unlocked 😭",
-          hookType: "Underdog Awakening",
-          ctrScore: "97%"
-        },
-        {
-          title: "The state spectrometer tried measuring his power... and violently exploded with 1 billion years of Dao ⚡💀",
-          hookType: "Measurement Overflow",
-          ctrScore: "96%"
-        },
-        {
-          title: "He left an idle cultivation game running for 10 years, unlocking 1 billion years of power on Earth ☕",
-          hookType: "Curiosity Driver",
-          ctrScore: "95%"
-        }
-      ]
-    } else if (isSeries03) {
-      viralHooks = [
-        {
-          title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀",
-          hookType: "Noble Humiliation / Reverse Curb-Stomp",
-          ctrScore: "99%"
-        },
-        {
-          title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀",
-          hookType: "Dramatic Shock",
-          ctrScore: "97%"
-        },
-        {
-          title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]",
-          hookType: "System Revelation",
-          ctrScore: "95%"
-        },
-        {
-          title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕",
-          hookType: "Deadpan Comedy",
-          ctrScore: "94%"
-        }
-      ]
-    } else if (isSeries02) {
-      viralHooks = [
-        {
-          title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀",
-          hookType: "Underdog Awakening",
-          ctrScore: "99%"
-        },
-        {
-          title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹",
-          hookType: "Boss Destruction",
-          ctrScore: "97%"
-        }
-      ]
-    } else if (isSeries01) {
-      viralHooks = [
-        {
-          title: "Abandoning the scavenger in the dimensional abyss was their biggest mistake 💀",
-          hookType: "Sovereign Awakening",
-          ctrScore: "99%"
-        },
-        {
-          title: "He was supposed to be dead, but his Singularity Sovereign Protocol activated 😭",
-          hookType: "Overpowered Retribution",
-          ctrScore: "97%"
-        }
-      ]
-    } else {
-      // Safe Universal Dynamic Fallback (Zero Lore Bleed)
-      viralHooks = [
-        {
-          title: `They mocked him as the weakest in ${cleanFranchiseName}, until his true power awakened 💀`,
-          hookType: "Underdog Awakening",
-          ctrScore: "99%"
-        },
-        {
-          title: `Arrogant elite drew their sacred blade on an ordinary student... and instantly regretted it 😭`,
-          hookType: "Dramatic Shock",
-          ctrScore: "97%"
-        },
-        {
-          title: `He hid his true power until the dimensional crisis hit... [SOVEREIGN AWAKENING ACTIVATED]`,
-          hookType: "System Revelation",
-          ctrScore: "95%"
-        }
+        { title: `They discarded him in the mud... 7 years later, he shattered a Calamity Wyrm with a stick 💀`, hookType: 'Underdog Revenge', ctrScore: '99%' },
+        { title: `Arrogant nobles mocked his 'zero mana' until ancient archmage arcana awakened 😭`, hookType: 'Noble Shock', ctrScore: '98%' },
+        { title: `He solo-cleaved an S-Rank Calamity Beast with an ordinary wooden quarterstaff ☕`, hookType: 'Combat Face-Slap', ctrScore: '96%' }
       ]
     }
 
-    // 3. Continuous Binge Story Caption (Zero Rigid Minute Mentions)
-    const caption = isSeries04
-      ? `Arrogant campus scion pulled a sacred jade blade on a broke student... until his 1-billion-year AFK cultivation save file unlocked into reality 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
-      : isSeries03
-      ? `Arrogant noble drew his ancestral Sunfire Rapier on an F-Rank slum craftsman... and learned why you never underestimate an ex-game developer 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
-      : isSeries02
-      ? `They mocked him as a useless F-Rank porter until the S-Rank Calamity broke through the barrier... and he stopped running 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
-      : isSeries01
-      ? `Abandoning the scavenger in the dimensional abyss was their biggest mistake... until the Singularity Sovereign Protocol activated 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
-      : `They underestimated him until the dimensional crisis hit... and his hidden sovereign power awakened 😭💀\n\n🔥 Series: ${cleanFranchiseName}\n🎬 Watch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwarecap #webtoon #sololeveling #animerecap #manhwa #overpoweredmc #actionmanhwa #levelingsystem #recap #animetiktok #fyp #viral`
+    if (!hookOverlayText) {
+      hookOverlayText = `When arrogant nobles discard a 'zero-mana infant', unaware he re-forged his mortal flesh with ancient arcana...`
+    }
+
+    if (!caption) {
+      caption = `They threw him in the freezing mud at birth... 7 years later, he pulverised a Tier 4 Calamity Wyrm with a wooden stick! 💀\n\nWatch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwa #manhwarecap #webtoon #animerecap #isekai #magic #overpowered #actionmanhwa`
+    }
+
+    if (!pinnedComment) {
+      pinnedComment = `The full continuous story is live on our YouTube channel! Watch Episode 1 now (Link in bio 🔗) Search "${cleanFranchiseName}" on YouTube!`
+    }
 
     const hashtags = [
       '#manhwarecap',
       '#webtoon',
-      '#sololeveling',
       '#animerecap',
       '#manhwa',
       '#overpoweredmc',
       '#actionmanhwa',
-      '#levelingsystem',
-      '#recap',
-      '#animetiktok',
       '#fyp',
       '#viral'
     ].join(' ')
 
-    // 4. Continuous Binge Story Pinned Comment (Zero Minute Mentions)
-    const pinnedComment = `The full continuous story is live on our YouTube channel! Watch Episode 1 now (Link in bio 🔗) Search "${cleanFranchiseName}" on YouTube!`
-
     return {
       success: true,
+      isPending,
       franchiseId,
       episodeId,
       franchiseName: cleanFranchiseName,
       episodeName: cleanEpisodeName,
       viralHooks,
-      recommendedTitle: viralHooks[0].title,
+      recommendedTitle: viralHooks[0]?.title || '',
+      hookOverlayText,
       caption,
       hashtags,
       pinnedComment
     }
   }
 }
+

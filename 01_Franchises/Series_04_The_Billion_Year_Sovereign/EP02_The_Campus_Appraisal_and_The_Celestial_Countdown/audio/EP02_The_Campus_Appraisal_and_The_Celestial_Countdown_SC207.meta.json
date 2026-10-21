@@ -1,0 +1,154 @@
+{
+  "scene": 207,
+  "text": "Blinding white primordial radiance exploded from the stele's apex, shoving Rank Two downward like a common footstool to make way for the solitary supreme sovereign.",
+  "durationMs": 9864,
+  "rawWords": [
+    {
+      "ttsWord": "Blinding",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 538,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 800,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "radiance",
+      "startMs": 1413,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "exploded",
+      "startMs": 1813,
+      "endMs": 2388
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2400,
+      "endMs": 2525
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2538,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "stele's",
+      "startMs": 2625,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "apex",
+      "startMs": 3075,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "shoving",
+      "startMs": 3913,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "Rank",
+      "startMs": 4338,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "Two",
+      "startMs": 4663,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "downward",
+      "startMs": 4900,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 5350,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5513,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "common",
+      "startMs": 5600,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "footstool",
+      "startMs": 5963,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6563,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "make",
+      "startMs": 6663,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "way",
+      "startMs": 6888,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 7138,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7275,
+      "endMs": 7363
+    },
+    {
+      "ttsWord": "solitary",
+      "startMs": 7375,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 7975,
+      "endMs": 8425
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 8438,
+      "endMs": 8988
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Blinding white primordial radiance exploded from the stele's",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3063
+    },
+    {
+      "text": "apex,",
+      "startOffsetMs": 3075,
+      "endOffsetMs": 3725
+    },
+    {
+      "text": "shoving Rank Two downward like a common footstool",
+      "startOffsetMs": 3913,
+      "endOffsetMs": 6550
+    },
+    {
+      "text": "to make way for the solitary supreme sovereign.",
+      "startOffsetMs": 6563,
+      "endOffsetMs": 9088
+    }
+  ]
+}

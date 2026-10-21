@@ -1,0 +1,139 @@
+{
+  "scene": 98,
+  "text": "A gentle polar gale swept through the university campus, weaving intricate fractal frost patterns across the stadium bleachers and glass skyscraper facades.",
+  "durationMs": 9408,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "gentle",
+      "startMs": 200,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "polar",
+      "startMs": 575,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "gale",
+      "startMs": 975,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "swept",
+      "startMs": 1300,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 1675,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1850,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 1913,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 2513,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "weaving",
+      "startMs": 3350,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "intricate",
+      "startMs": 3700,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "fractal",
+      "startMs": 4075,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "frost",
+      "startMs": 4500,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "patterns",
+      "startMs": 4900,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 5300,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5688,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 5813,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "bleachers",
+      "startMs": 6263,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6750,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 6875,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "skyscraper",
+      "startMs": 7200,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "facades",
+      "startMs": 7838,
+      "endMs": 8538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A gentle polar gale swept through the university",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "campus,",
+      "startOffsetMs": 2513,
+      "endOffsetMs": 3150
+    },
+    {
+      "text": "weaving intricate fractal frost patterns across the stadium",
+      "startOffsetMs": 3350,
+      "endOffsetMs": 6250
+    },
+    {
+      "text": "bleachers and glass skyscraper facades.",
+      "startOffsetMs": 6263,
+      "endOffsetMs": 8638
+    }
+  ]
+}

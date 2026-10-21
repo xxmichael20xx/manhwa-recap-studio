@@ -1,7 +1,7 @@
 {
   "scene": 27,
-  "text": "\"Good riddance to bad blood,\" one guard scoffed, tossing a small silver coin into the puddle beside the shivering child. \"Be grateful the Patriarch didn't have your neck snapped in the cradle.\"",
-  "durationMs": 11856,
+  "text": "\"Good riddance to a worthless defect,\" one guard scoffed, tossing a small silver coin into the puddle beside the shivering child. \"Be grateful the Patriarch didn't have you discarded in the gutter.\"",
+  "durationMs": 12192,
   "rawWords": [
     {
       "ttsWord": "Good",
@@ -11,184 +11,184 @@
     {
       "ttsWord": "riddance",
       "startMs": 288,
-      "endMs": 650
+      "endMs": 663
     },
     {
       "ttsWord": "to",
-      "startMs": 663,
-      "endMs": 775
-    },
-    {
-      "ttsWord": "bad",
-      "startMs": 788,
-      "endMs": 1100
-    },
-    {
-      "ttsWord": "blood",
-      "startMs": 1113,
-      "endMs": 1463
-    },
-    {
-      "ttsWord": "one",
-      "startMs": 1700,
-      "endMs": 1988
-    },
-    {
-      "ttsWord": "guard",
-      "startMs": 2000,
-      "endMs": 2300
-    },
-    {
-      "ttsWord": "scoffed",
-      "startMs": 2313,
-      "endMs": 2850
-    },
-    {
-      "ttsWord": "tossing",
-      "startMs": 3088,
-      "endMs": 3500
+      "startMs": 675,
+      "endMs": 788
     },
     {
       "ttsWord": "a",
-      "startMs": 3513,
-      "endMs": 3563
+      "startMs": 800,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "worthless",
+      "startMs": 900,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "defect",
+      "startMs": 1388,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 2150,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "guard",
+      "startMs": 2463,
+      "endMs": 2763
+    },
+    {
+      "ttsWord": "scoffed",
+      "startMs": 2775,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "tossing",
+      "startMs": 3550,
+      "endMs": 3950
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3963,
+      "endMs": 4013
     },
     {
       "ttsWord": "small",
-      "startMs": 3575,
-      "endMs": 3963
+      "startMs": 4025,
+      "endMs": 4413
     },
     {
       "ttsWord": "silver",
-      "startMs": 3975,
-      "endMs": 4350
+      "startMs": 4425,
+      "endMs": 4800
     },
     {
       "ttsWord": "coin",
-      "startMs": 4363,
-      "endMs": 4700
+      "startMs": 4813,
+      "endMs": 5150
     },
     {
       "ttsWord": "into",
-      "startMs": 4713,
-      "endMs": 4875
+      "startMs": 5163,
+      "endMs": 5325
     },
     {
       "ttsWord": "the",
-      "startMs": 4888,
-      "endMs": 5000
+      "startMs": 5338,
+      "endMs": 5438
     },
     {
       "ttsWord": "puddle",
-      "startMs": 5013,
-      "endMs": 5350
+      "startMs": 5450,
+      "endMs": 5788
     },
     {
       "ttsWord": "beside",
-      "startMs": 5363,
-      "endMs": 5775
+      "startMs": 5800,
+      "endMs": 6213
     },
     {
       "ttsWord": "the",
-      "startMs": 5788,
-      "endMs": 5850
+      "startMs": 6225,
+      "endMs": 6288
     },
     {
       "ttsWord": "shivering",
-      "startMs": 5863,
-      "endMs": 6300
+      "startMs": 6300,
+      "endMs": 6738
     },
     {
       "ttsWord": "child",
-      "startMs": 6313,
-      "endMs": 6900
+      "startMs": 6750,
+      "endMs": 7325
     },
     {
       "ttsWord": "Be",
-      "startMs": 7763,
-      "endMs": 7925
+      "startMs": 8188,
+      "endMs": 8350
     },
     {
       "ttsWord": "grateful",
-      "startMs": 7938,
-      "endMs": 8375
+      "startMs": 8363,
+      "endMs": 8813
     },
     {
       "ttsWord": "the",
-      "startMs": 8388,
-      "endMs": 8488
+      "startMs": 8825,
+      "endMs": 8925
     },
     {
       "ttsWord": "Patriarch",
-      "startMs": 8500,
-      "endMs": 9150
+      "startMs": 8938,
+      "endMs": 9613
     },
     {
       "ttsWord": "didn't",
-      "startMs": 9163,
-      "endMs": 9375
+      "startMs": 9625,
+      "endMs": 9838
     },
     {
       "ttsWord": "have",
-      "startMs": 9388,
-      "endMs": 9575
+      "startMs": 9850,
+      "endMs": 10000
     },
     {
-      "ttsWord": "your",
-      "startMs": 9588,
-      "endMs": 9688
+      "ttsWord": "you",
+      "startMs": 10013,
+      "endMs": 10113
     },
     {
-      "ttsWord": "neck",
-      "startMs": 9700,
-      "endMs": 9925
-    },
-    {
-      "ttsWord": "snapped",
-      "startMs": 9938,
-      "endMs": 10363
+      "ttsWord": "discarded",
+      "startMs": 10125,
+      "endMs": 10688
     },
     {
       "ttsWord": "in",
-      "startMs": 10375,
-      "endMs": 10425
+      "startMs": 10700,
+      "endMs": 10788
     },
     {
       "ttsWord": "the",
-      "startMs": 10438,
-      "endMs": 10500
+      "startMs": 10800,
+      "endMs": 10875
     },
     {
-      "ttsWord": "cradle",
-      "startMs": 10513,
-      "endMs": 10988
+      "ttsWord": "gutter",
+      "startMs": 10888,
+      "endMs": 11313
     }
   ],
   "relativeCues": [
     {
-      "text": "Good riddance to bad blood,\" one guard scoffed,",
+      "text": "Good riddance to a worthless defect,\" one guard",
       "startOffsetMs": 50,
-      "endOffsetMs": 2950
+      "endOffsetMs": 2763
     },
     {
-      "text": "tossing a small silver coin into the puddle",
-      "startOffsetMs": 3088,
-      "endOffsetMs": 5350
+      "text": "scoffed, tossing a small silver coin into the",
+      "startOffsetMs": 2775,
+      "endOffsetMs": 5438
     },
     {
-      "text": "beside the shivering child.",
-      "startOffsetMs": 5363,
-      "endOffsetMs": 7000
+      "text": "puddle beside the shivering child.",
+      "startOffsetMs": 5450,
+      "endOffsetMs": 7425
     },
     {
-      "text": "Be grateful the Patriarch didn't have your neck",
-      "startOffsetMs": 7763,
-      "endOffsetMs": 9925
+      "text": "Be grateful the Patriarch didn't have you discarded",
+      "startOffsetMs": 8188,
+      "endOffsetMs": 10688
     },
     {
-      "text": "snapped in the cradle.\"",
-      "startOffsetMs": 9938,
-      "endOffsetMs": 11088
+      "text": "in the gutter.\"",
+      "startOffsetMs": 10700,
+      "endOffsetMs": 11413
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "scene": 318,
-  "text": "The seven-year-old boy broke the sound barrier, traveling thirty yards in a blinding flash of cyan light that left a vacuum trail through the purple venom mist.",
+  "text": "The seven-year-old boy broke the sound barrier, traveling thirty yards in a blinding flash of cyan light that left a vacuum trail through the purple rift mist.",
   "durationMs": 9264,
   "rawWords": [
     {
@@ -40,97 +40,97 @@
     },
     {
       "ttsWord": "traveling",
-      "startMs": 2638,
-      "endMs": 3113
+      "startMs": 2650,
+      "endMs": 3125
     },
     {
       "ttsWord": "thirty",
-      "startMs": 3125,
-      "endMs": 3450
+      "startMs": 3138,
+      "endMs": 3463
     },
     {
       "ttsWord": "yards",
-      "startMs": 3463,
-      "endMs": 3825
+      "startMs": 3475,
+      "endMs": 3838
     },
     {
       "ttsWord": "in",
-      "startMs": 3838,
-      "endMs": 3938
+      "startMs": 3850,
+      "endMs": 3950
     },
     {
       "ttsWord": "a",
-      "startMs": 3950,
-      "endMs": 4013
+      "startMs": 3963,
+      "endMs": 4025
     },
     {
       "ttsWord": "blinding",
-      "startMs": 4025,
-      "endMs": 4488
+      "startMs": 4038,
+      "endMs": 4500
     },
     {
       "ttsWord": "flash",
-      "startMs": 4500,
-      "endMs": 4913
+      "startMs": 4513,
+      "endMs": 4925
     },
     {
       "ttsWord": "of",
-      "startMs": 4925,
-      "endMs": 5013
+      "startMs": 4938,
+      "endMs": 5025
     },
     {
       "ttsWord": "cyan",
-      "startMs": 5025,
-      "endMs": 5538
+      "startMs": 5038,
+      "endMs": 5550
     },
     {
       "ttsWord": "light",
-      "startMs": 5550,
-      "endMs": 5763
+      "startMs": 5563,
+      "endMs": 5775
     },
     {
       "ttsWord": "that",
-      "startMs": 5775,
-      "endMs": 5900
+      "startMs": 5788,
+      "endMs": 5913
     },
     {
       "ttsWord": "left",
-      "startMs": 5913,
-      "endMs": 6113
+      "startMs": 5925,
+      "endMs": 6125
     },
     {
       "ttsWord": "a",
-      "startMs": 6125,
-      "endMs": 6175
+      "startMs": 6138,
+      "endMs": 6188
     },
     {
       "ttsWord": "vacuum",
-      "startMs": 6188,
-      "endMs": 6613
+      "startMs": 6200,
+      "endMs": 6625
     },
     {
       "ttsWord": "trail",
-      "startMs": 6625,
-      "endMs": 7000
+      "startMs": 6638,
+      "endMs": 7013
     },
     {
       "ttsWord": "through",
-      "startMs": 7013,
-      "endMs": 7188
+      "startMs": 7025,
+      "endMs": 7200
     },
     {
       "ttsWord": "the",
-      "startMs": 7200,
-      "endMs": 7300
+      "startMs": 7213,
+      "endMs": 7313
     },
     {
       "ttsWord": "purple",
-      "startMs": 7313,
-      "endMs": 7638
+      "startMs": 7325,
+      "endMs": 7675
     },
     {
-      "ttsWord": "venom",
-      "startMs": 7650,
+      "ttsWord": "rift",
+      "startMs": 7688,
       "endMs": 7925
     },
     {
@@ -147,17 +147,17 @@
     },
     {
       "text": "traveling thirty yards in a blinding flash of",
-      "startOffsetMs": 2638,
-      "endOffsetMs": 5013
+      "startOffsetMs": 2650,
+      "endOffsetMs": 5025
     },
     {
       "text": "cyan light that left a vacuum trail through",
-      "startOffsetMs": 5025,
-      "endOffsetMs": 7188
+      "startOffsetMs": 5038,
+      "endOffsetMs": 7200
     },
     {
-      "text": "the purple venom mist.",
-      "startOffsetMs": 7200,
+      "text": "the purple rift mist.",
+      "startOffsetMs": 7213,
       "endOffsetMs": 8488
     }
   ]

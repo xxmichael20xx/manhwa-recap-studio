@@ -1,0 +1,169 @@
+{
+  "scene": 72,
+  "text": "Commander Han Feng stared into Lu Chen's unshakable eyes for five long seconds, then exhaled a slow, raspy chuckle. \"Clearance, is it? We shall see.\"",
+  "durationMs": 12336,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 525,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 813,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "stared",
+      "startMs": 1150,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1550,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1750,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 1950,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "unshakable",
+      "startMs": 2388,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3125,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 3438,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 3588,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "long",
+      "startMs": 3988,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 4300,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "then",
+      "startMs": 5138,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "exhaled",
+      "startMs": 5375,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5875,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "slow",
+      "startMs": 5938,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "raspy",
+      "startMs": 6700,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "chuckle",
+      "startMs": 7088,
+      "endMs": 7575
+    },
+    {
+      "ttsWord": "Clearance",
+      "startMs": 8438,
+      "endMs": 9025
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 9275,
+      "endMs": 9413
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 9425,
+      "endMs": 9663
+    },
+    {
+      "ttsWord": "We",
+      "startMs": 10525,
+      "endMs": 10688
+    },
+    {
+      "ttsWord": "shall",
+      "startMs": 10700,
+      "endMs": 11013
+    },
+    {
+      "ttsWord": "see",
+      "startMs": 11025,
+      "endMs": 11475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander Han Feng stared into Lu Chen's unshakable",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3113
+    },
+    {
+      "text": "eyes for five long seconds,",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "then exhaled a slow,",
+      "startOffsetMs": 5138,
+      "endOffsetMs": 6525
+    },
+    {
+      "text": "raspy chuckle.",
+      "startOffsetMs": 6700,
+      "endOffsetMs": 7675
+    },
+    {
+      "text": "Clearance,",
+      "startOffsetMs": 8438,
+      "endOffsetMs": 9125
+    },
+    {
+      "text": "is it?",
+      "startOffsetMs": 9275,
+      "endOffsetMs": 9763
+    },
+    {
+      "text": "We shall see.\"",
+      "startOffsetMs": 10525,
+      "endOffsetMs": 11575
+    }
+  ]
+}

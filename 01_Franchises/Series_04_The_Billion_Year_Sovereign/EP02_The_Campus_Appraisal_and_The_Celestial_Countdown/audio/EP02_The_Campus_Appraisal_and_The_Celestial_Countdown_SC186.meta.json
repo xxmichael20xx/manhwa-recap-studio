@@ -1,0 +1,129 @@
+{
+  "scene": 186,
+  "text": "\"To the coronation of the Starfall Sovereign,\" Ye Xingchen toasted softly, his corporate directors raising their glasses in subservient adulation.",
+  "durationMs": 8808,
+  "rawWords": [
+    {
+      "ttsWord": "To",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 188,
+      "endMs": 288
+    },
+    {
+      "ttsWord": "coronation",
+      "startMs": 300,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 925,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1025,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 1125,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "Sovereign",
+      "startMs": 1713,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 2488,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 2588,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "toasted",
+      "startMs": 3038,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "softly",
+      "startMs": 3475,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4288,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "corporate",
+      "startMs": 4450,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "directors",
+      "startMs": 4838,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "raising",
+      "startMs": 5363,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 5738,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "glasses",
+      "startMs": 5888,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6413,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "subservient",
+      "startMs": 6563,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "adulation",
+      "startMs": 7188,
+      "endMs": 7925
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "To the coronation of the Starfall Sovereign,\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2313
+    },
+    {
+      "text": "Ye Xingchen toasted softly,",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 4138
+    },
+    {
+      "text": "his corporate directors raising their glasses in subservient",
+      "startOffsetMs": 4288,
+      "endOffsetMs": 7175
+    },
+    {
+      "text": "adulation.",
+      "startOffsetMs": 7188,
+      "endOffsetMs": 8025
+    }
+  ]
+}

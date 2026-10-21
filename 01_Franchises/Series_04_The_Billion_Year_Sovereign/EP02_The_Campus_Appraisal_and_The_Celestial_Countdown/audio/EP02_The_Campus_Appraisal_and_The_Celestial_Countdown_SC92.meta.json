@@ -1,0 +1,194 @@
+{
+  "scene": 92,
+  "text": "Lu Chen glanced at the shattered silver knuckles with mild, deadpan curiosity. \"Your syndicate really needs to improve its bone density. Throwing punches at thin air seems hazardous to your health.\"",
+  "durationMs": 13344,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 350,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "glanced",
+      "startMs": 625,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1088,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1163,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "shattered",
+      "startMs": 1238,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "silver",
+      "startMs": 1700,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "knuckles",
+      "startMs": 2063,
+      "endMs": 2463
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2475,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "mild",
+      "startMs": 2638,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "deadpan",
+      "startMs": 3313,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "curiosity",
+      "startMs": 3800,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "Your",
+      "startMs": 5488,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 5738,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "really",
+      "startMs": 6300,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "needs",
+      "startMs": 6588,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6913,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "improve",
+      "startMs": 7025,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 7438,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "bone",
+      "startMs": 7575,
+      "endMs": 7850
+    },
+    {
+      "ttsWord": "density",
+      "startMs": 7863,
+      "endMs": 8438
+    },
+    {
+      "ttsWord": "Throwing",
+      "startMs": 9300,
+      "endMs": 9738
+    },
+    {
+      "ttsWord": "punches",
+      "startMs": 9750,
+      "endMs": 10213
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 10225,
+      "endMs": 10350
+    },
+    {
+      "ttsWord": "thin",
+      "startMs": 10363,
+      "endMs": 10650
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 10663,
+      "endMs": 10888
+    },
+    {
+      "ttsWord": "seems",
+      "startMs": 10900,
+      "endMs": 11238
+    },
+    {
+      "ttsWord": "hazardous",
+      "startMs": 11250,
+      "endMs": 11788
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 11800,
+      "endMs": 11900
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 11913,
+      "endMs": 12050
+    },
+    {
+      "ttsWord": "health",
+      "startMs": 12063,
+      "endMs": 12475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen glanced at the shattered silver knuckles",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2463
+    },
+    {
+      "text": "with mild, deadpan curiosity.",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 4725
+    },
+    {
+      "text": "Your syndicate really needs to improve its bone",
+      "startOffsetMs": 5488,
+      "endOffsetMs": 7850
+    },
+    {
+      "text": "density.",
+      "startOffsetMs": 7863,
+      "endOffsetMs": 8538
+    },
+    {
+      "text": "Throwing punches at thin air seems hazardous to",
+      "startOffsetMs": 9300,
+      "endOffsetMs": 11900
+    },
+    {
+      "text": "your health.\"",
+      "startOffsetMs": 11913,
+      "endOffsetMs": 12575
+    }
+  ]
+}

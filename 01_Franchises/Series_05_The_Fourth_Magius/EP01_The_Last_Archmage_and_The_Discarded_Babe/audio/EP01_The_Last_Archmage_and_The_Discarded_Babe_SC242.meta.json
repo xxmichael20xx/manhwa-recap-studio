@@ -1,7 +1,7 @@
 {
   "scene": 242,
-  "text": "The shop was filled with towering shelves of dried roots, glass jars of powdered monster bones, and copper alembics bubbling over small spirit burners.",
-  "durationMs": 9552,
+  "text": "The shop was filled with towering shelves of dried roots, glass jars of luminous blue mana crystals, dried silver roots, and copper alembics bubbling over small spirit burners.",
+  "durationMs": 11352,
   "rawWords": [
     {
       "ttsWord": "The",
@@ -11,134 +11,164 @@
     {
       "ttsWord": "shop",
       "startMs": 175,
-      "endMs": 563
+      "endMs": 575
     },
     {
       "ttsWord": "was",
-      "startMs": 575,
-      "endMs": 763
+      "startMs": 588,
+      "endMs": 775
     },
     {
       "ttsWord": "filled",
-      "startMs": 775,
-      "endMs": 1075
+      "startMs": 788,
+      "endMs": 1088
     },
     {
       "ttsWord": "with",
-      "startMs": 1088,
-      "endMs": 1225
+      "startMs": 1100,
+      "endMs": 1250
     },
     {
       "ttsWord": "towering",
-      "startMs": 1238,
-      "endMs": 1700
+      "startMs": 1263,
+      "endMs": 1725
     },
     {
       "ttsWord": "shelves",
-      "startMs": 1713,
-      "endMs": 2113
+      "startMs": 1738,
+      "endMs": 2138
     },
     {
       "ttsWord": "of",
-      "startMs": 2125,
-      "endMs": 2213
+      "startMs": 2150,
+      "endMs": 2238
     },
     {
       "ttsWord": "dried",
-      "startMs": 2225,
-      "endMs": 2550
+      "startMs": 2250,
+      "endMs": 2575
     },
     {
       "ttsWord": "roots",
-      "startMs": 2563,
-      "endMs": 2988
+      "startMs": 2588,
+      "endMs": 3013
     },
     {
       "ttsWord": "glass",
-      "startMs": 3225,
-      "endMs": 3588
+      "startMs": 3250,
+      "endMs": 3613
     },
     {
       "ttsWord": "jars",
-      "startMs": 3600,
-      "endMs": 3963
+      "startMs": 3625,
+      "endMs": 4000
     },
     {
       "ttsWord": "of",
-      "startMs": 3975,
-      "endMs": 4063
+      "startMs": 4013,
+      "endMs": 4100
     },
     {
-      "ttsWord": "powdered",
-      "startMs": 4075,
-      "endMs": 4450
+      "ttsWord": "luminous",
+      "startMs": 4113,
+      "endMs": 4575
     },
     {
-      "ttsWord": "monster",
-      "startMs": 4463,
-      "endMs": 4863
+      "ttsWord": "blue",
+      "startMs": 4588,
+      "endMs": 4838
     },
     {
-      "ttsWord": "bones",
-      "startMs": 4875,
-      "endMs": 5338
+      "ttsWord": "mana",
+      "startMs": 4850,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "crystals",
+      "startMs": 5175,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "dried",
+      "startMs": 6038,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "silver",
+      "startMs": 6388,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "roots",
+      "startMs": 6813,
+      "endMs": 7175
     },
     {
       "ttsWord": "and",
-      "startMs": 5625,
-      "endMs": 5800
+      "startMs": 7425,
+      "endMs": 7588
     },
     {
       "ttsWord": "copper",
-      "startMs": 5813,
-      "endMs": 6175
+      "startMs": 7600,
+      "endMs": 7963
     },
     {
       "ttsWord": "alembics",
-      "startMs": 6188,
-      "endMs": 6650
+      "startMs": 7975,
+      "endMs": 8438
     },
     {
       "ttsWord": "bubbling",
-      "startMs": 6663,
-      "endMs": 7075
+      "startMs": 8450,
+      "endMs": 8875
     },
     {
       "ttsWord": "over",
-      "startMs": 7088,
-      "endMs": 7300
+      "startMs": 8888,
+      "endMs": 9088
     },
     {
       "ttsWord": "small",
-      "startMs": 7313,
-      "endMs": 7675
+      "startMs": 9100,
+      "endMs": 9450
     },
     {
       "ttsWord": "spirit",
-      "startMs": 7688,
-      "endMs": 8100
+      "startMs": 9463,
+      "endMs": 9888
     },
     {
       "ttsWord": "burners",
-      "startMs": 8113,
-      "endMs": 8688
+      "startMs": 9900,
+      "endMs": 10488
     }
   ],
   "relativeCues": [
     {
       "text": "The shop was filled with towering shelves of",
       "startOffsetMs": 50,
-      "endOffsetMs": 2213
+      "endOffsetMs": 2238
     },
     {
-      "text": "dried roots, glass jars of powdered monster bones,",
-      "startOffsetMs": 2225,
-      "endOffsetMs": 5438
+      "text": "dried roots, glass jars of luminous blue mana",
+      "startOffsetMs": 2250,
+      "endOffsetMs": 5163
+    },
+    {
+      "text": "crystals,",
+      "startOffsetMs": 5175,
+      "endOffsetMs": 5863
+    },
+    {
+      "text": "dried silver roots,",
+      "startOffsetMs": 6038,
+      "endOffsetMs": 7275
     },
     {
       "text": "and copper alembics bubbling over small spirit burners.",
-      "startOffsetMs": 5625,
-      "endOffsetMs": 8788
+      "startOffsetMs": 7425,
+      "endOffsetMs": 10588
     }
   ]
 }

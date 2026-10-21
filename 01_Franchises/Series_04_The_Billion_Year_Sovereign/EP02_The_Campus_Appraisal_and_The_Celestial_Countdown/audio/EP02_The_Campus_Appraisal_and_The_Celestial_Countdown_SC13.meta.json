@@ -1,0 +1,164 @@
+{
+  "scene": 13,
+  "text": "Through the open window, the sharp acoustic thrum of heavy rotor blades filled the morning air as two sleek tactical command helicopters descended towards the university stadium.",
+  "durationMs": 10176,
+  "rawWords": [
+    {
+      "ttsWord": "Through",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 313,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 450,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 788,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1463,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "sharp",
+      "startMs": 1538,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "acoustic",
+      "startMs": 1863,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "thrum",
+      "startMs": 2388,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2588,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 2700,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "rotor",
+      "startMs": 3025,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "blades",
+      "startMs": 3338,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "filled",
+      "startMs": 3750,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4038,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 4100,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 4500,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4800,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 4950,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "sleek",
+      "startMs": 5188,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 5563,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "command",
+      "startMs": 6063,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "helicopters",
+      "startMs": 6463,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "descended",
+      "startMs": 7138,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "towards",
+      "startMs": 7625,
+      "endMs": 8013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8025,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 8100,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 8713,
+      "endMs": 9313
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Through the open window,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1325
+    },
+    {
+      "text": "the sharp acoustic thrum of heavy rotor blades",
+      "startOffsetMs": 1463,
+      "endOffsetMs": 3738
+    },
+    {
+      "text": "filled the morning air as two sleek tactical",
+      "startOffsetMs": 3750,
+      "endOffsetMs": 6050
+    },
+    {
+      "text": "command helicopters descended towards the university stadium.",
+      "startOffsetMs": 6063,
+      "endOffsetMs": 9413
+    }
+  ]
+}

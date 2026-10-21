@@ -1,0 +1,179 @@
+{
+  "scene": 166,
+  "text": "\"That bloke Ye Xingchen is proper full of himself, isn't he?\" Wang Bao muttered between chews. \"Acting like he already owns the solar system before the stone even speaks.\"",
+  "durationMs": 12000,
+  "rawWords": [
+    {
+      "ttsWord": "That",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "bloke",
+      "startMs": 338,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 625,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 750,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 1188,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "proper",
+      "startMs": 1313,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "full",
+      "startMs": 1738,
+      "endMs": 1963
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1975,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "himself",
+      "startMs": 2063,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "isn't",
+      "startMs": 2800,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 3038,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 4138,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 4513,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "muttered",
+      "startMs": 4763,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 5163,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "chews",
+      "startMs": 5550,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "Acting",
+      "startMs": 7000,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 7400,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 7600,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "already",
+      "startMs": 7738,
+      "endMs": 8150
+    },
+    {
+      "ttsWord": "owns",
+      "startMs": 8163,
+      "endMs": 8450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8463,
+      "endMs": 8563
+    },
+    {
+      "ttsWord": "solar",
+      "startMs": 8575,
+      "endMs": 8938
+    },
+    {
+      "ttsWord": "system",
+      "startMs": 8950,
+      "endMs": 9363
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 9375,
+      "endMs": 9700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9713,
+      "endMs": 9813
+    },
+    {
+      "ttsWord": "stone",
+      "startMs": 9825,
+      "endMs": 10250
+    },
+    {
+      "ttsWord": "even",
+      "startMs": 10263,
+      "endMs": 10525
+    },
+    {
+      "ttsWord": "speaks",
+      "startMs": 10538,
+      "endMs": 11138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "That bloke Ye Xingchen is proper full of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2050
+    },
+    {
+      "text": "himself, isn't he?\"",
+      "startOffsetMs": 2063,
+      "endOffsetMs": 3375
+    },
+    {
+      "text": "Wang Bao muttered between chews.",
+      "startOffsetMs": 4138,
+      "endOffsetMs": 6238
+    },
+    {
+      "text": "Acting like he already owns the solar system",
+      "startOffsetMs": 7000,
+      "endOffsetMs": 9363
+    },
+    {
+      "text": "before the stone even speaks.\"",
+      "startOffsetMs": 9375,
+      "endOffsetMs": 11238
+    }
+  ]
+}

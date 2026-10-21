@@ -97,6 +97,7 @@ export class TtsService {
       const tag = tagMatches[i][1].toUpperCase()
       let rawBlock = tagMatches[i][2]
       let cleanText = rawBlock
+        .replace(/<!--[\s\S]*?-->/g, '')
         .replace(/^#{1,6}\s+[^\n]+/gm, '')
         .replace(/^>\s+[^\n]+/gm, '')
         .replace(/\*\*Runtime:\*\*.*$/gm, '')
@@ -105,6 +106,8 @@ export class TtsService {
         .replace(/```[\s\S]*?```/g, '')
         .replace(/\[END OF .*?\]/gi, '')
         .replace(/---+/g, '')
+        .replace(/@\{([^}]+)\}/g, '$1')
+        .replace(/@([a-zA-Z0-9_]+)/g, '$1')
         .trim()
       if (cleanText.length > 0) {
         extractedScenes.push({ tag, text: cleanText })
@@ -168,8 +171,11 @@ export class TtsService {
     for (const item of extractedScenes) {
       let text = item.text
       
-      // Clean markdown tags from spoken text and normalize dashes for clean tokenization
-      text = text.replace(/\*\*\[(.*?)\]\*\*/g, '$1')
+      // Clean HTML comments, character binding tokens and markdown tags from spoken text
+      text = text.replace(/<!--[\s\S]*?-->/g, '')
+                 .replace(/@\{([^}]+)\}/g, '$1')
+                 .replace(/@([a-zA-Z0-9_]+)/g, '$1')
+                 .replace(/\*\*\[(.*?)\]\*\*/g, '$1')
                  .replace(/\*\*(.*?)\*\*/g, '$1')
                  .replace(/\*(.*?)\*/g, '$1')
                  .replace(/\[(.*?)\]/g, '$1')
@@ -539,6 +545,21 @@ export class TtsService {
     if (generatedAudioFiles.length > 0) {
       await this.concatenateAudioFiles(generatedAudioFiles, masterAudioPath)
     }
+    // Write real audio telemetry cache
+    const totalSeconds = Math.round(globalTimeMs / 1000)
+    const mins = Math.floor(totalSeconds / 60)
+    const secs = totalSeconds % 60
+    const formattedDuration = `${mins}m ${secs}s`
+    const telemetryPath = path.join(audioDir, 'audio_telemetry.json')
+    try {
+      await fs.writeFile(telemetryPath, JSON.stringify({
+        totalSeconds,
+        formattedDuration,
+        trackCount: results.length,
+        voice,
+        measuredAt: new Date().toISOString()
+      }, null, 2), 'utf-8')
+    } catch (e) {}
 
     this.updateStatus(franchiseId, episodeId, {
       status: 'completed',

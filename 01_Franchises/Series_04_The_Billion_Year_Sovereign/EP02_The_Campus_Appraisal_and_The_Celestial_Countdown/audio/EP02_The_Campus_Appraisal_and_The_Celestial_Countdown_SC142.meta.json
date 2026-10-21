@@ -1,0 +1,164 @@
+{
+  "scene": 142,
+  "text": "\"Excuse me,\" Jiang Qingxue spoke softly, her melodious voice carrying quiet hesitation. \"Did either of you brew an ancient celestial lotus tea in this room this morning?\"",
+  "durationMs": 11544,
+  "rawWords": [
+    {
+      "ttsWord": "Excuse",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "me",
+      "startMs": 600,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 1050,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 1450,
+      "endMs": 1938
+    },
+    {
+      "ttsWord": "spoke",
+      "startMs": 1950,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "softly",
+      "startMs": 2325,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 3213,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "melodious",
+      "startMs": 3325,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "voice",
+      "startMs": 3900,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "carrying",
+      "startMs": 4263,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "quiet",
+      "startMs": 4725,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "hesitation",
+      "startMs": 5125,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "Did",
+      "startMs": 6800,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "either",
+      "startMs": 7000,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7325,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 7413,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "brew",
+      "startMs": 7563,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7800,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 7975,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 8338,
+      "endMs": 8938
+    },
+    {
+      "ttsWord": "lotus",
+      "startMs": 8950,
+      "endMs": 9288
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 9300,
+      "endMs": 9550
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 9563,
+      "endMs": 9650
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 9663,
+      "endMs": 9850
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 9863,
+      "endMs": 10075
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 10088,
+      "endMs": 10263
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 10275,
+      "endMs": 10663
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Excuse me,\" Jiang Qingxue spoke softly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3000
+    },
+    {
+      "text": "her melodious voice carrying quiet hesitation.",
+      "startOffsetMs": 3213,
+      "endOffsetMs": 6038
+    },
+    {
+      "text": "Did either of you brew an ancient celestial",
+      "startOffsetMs": 6800,
+      "endOffsetMs": 8938
+    },
+    {
+      "text": "lotus tea in this room this morning?\"",
+      "startOffsetMs": 8950,
+      "endOffsetMs": 10763
+    }
+  ]
+}

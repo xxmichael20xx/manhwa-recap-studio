@@ -1,0 +1,144 @@
+{
+  "scene": 101,
+  "text": "Cruising serenely behind them was a pearl-white state VIP supersonic transport aircraft, its sleek titanium fuselage emblazoned with the Chancellor's golden dragon insignia.",
+  "durationMs": 10800,
+  "rawWords": [
+    {
+      "ttsWord": "Cruising",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "serenely",
+      "startMs": 488,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 988,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "them",
+      "startMs": 1363,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 1538,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1675,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "pearl-white",
+      "startMs": 1763,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "state",
+      "startMs": 2300,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "VIP",
+      "startMs": 2625,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "supersonic",
+      "startMs": 3238,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "transport",
+      "startMs": 3938,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "aircraft",
+      "startMs": 4475,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 5363,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "sleek",
+      "startMs": 5538,
+      "endMs": 5813
+    },
+    {
+      "ttsWord": "titanium",
+      "startMs": 5825,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "fuselage",
+      "startMs": 6438,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "emblazoned",
+      "startMs": 7100,
+      "endMs": 7638
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7650,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7763,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "Chancellor's",
+      "startMs": 7850,
+      "endMs": 8463
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 8475,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "dragon",
+      "startMs": 8825,
+      "endMs": 9238
+    },
+    {
+      "ttsWord": "insignia",
+      "startMs": 9250,
+      "endMs": 9938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Cruising serenely behind them was a pearl-white state",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2613
+    },
+    {
+      "text": "VIP supersonic transport aircraft,",
+      "startOffsetMs": 2625,
+      "endOffsetMs": 5163
+    },
+    {
+      "text": "its sleek titanium fuselage emblazoned with the Chancellor's",
+      "startOffsetMs": 5363,
+      "endOffsetMs": 8463
+    },
+    {
+      "text": "golden dragon insignia.",
+      "startOffsetMs": 8475,
+      "endOffsetMs": 10038
+    }
+  ]
+}

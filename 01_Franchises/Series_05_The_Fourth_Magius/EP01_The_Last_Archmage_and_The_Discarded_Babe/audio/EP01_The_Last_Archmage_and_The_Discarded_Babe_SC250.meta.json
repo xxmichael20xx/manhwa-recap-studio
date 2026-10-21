@@ -1,7 +1,7 @@
 {
   "scene": 250,
-  "text": "Without arguing, Michael opened the flap of his satchel and withdrew a bundle wrapped in clean birch bark.",
-  "durationMs": 6576,
+  "text": "Without arguing, Michael opened the flap of his herb rucksack and withdrew a bundle wrapped in clean birch bark.",
+  "durationMs": 6888,
   "rawWords": [
     {
       "ttsWord": "Without",
@@ -41,57 +41,62 @@
     {
       "ttsWord": "his",
       "startMs": 2438,
-      "endMs": 2588
+      "endMs": 2600
     },
     {
-      "ttsWord": "satchel",
-      "startMs": 2600,
-      "endMs": 3125
+      "ttsWord": "herb",
+      "startMs": 2613,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "rucksack",
+      "startMs": 2888,
+      "endMs": 3463
     },
     {
       "ttsWord": "and",
-      "startMs": 3138,
-      "endMs": 3238
+      "startMs": 3475,
+      "endMs": 3563
     },
     {
       "ttsWord": "withdrew",
-      "startMs": 3250,
-      "endMs": 3663
+      "startMs": 3575,
+      "endMs": 3988
     },
     {
       "ttsWord": "a",
-      "startMs": 3675,
-      "endMs": 3750
+      "startMs": 4000,
+      "endMs": 4075
     },
     {
       "ttsWord": "bundle",
-      "startMs": 3763,
-      "endMs": 4175
+      "startMs": 4088,
+      "endMs": 4500
     },
     {
       "ttsWord": "wrapped",
-      "startMs": 4188,
-      "endMs": 4488
+      "startMs": 4513,
+      "endMs": 4813
     },
     {
       "ttsWord": "in",
-      "startMs": 4500,
-      "endMs": 4600
+      "startMs": 4825,
+      "endMs": 4925
     },
     {
       "ttsWord": "clean",
-      "startMs": 4613,
-      "endMs": 4950
+      "startMs": 4938,
+      "endMs": 5275
     },
     {
       "ttsWord": "birch",
-      "startMs": 4963,
-      "endMs": 5250
+      "startMs": 5288,
+      "endMs": 5575
     },
     {
       "ttsWord": "bark",
-      "startMs": 5263,
-      "endMs": 5700
+      "startMs": 5588,
+      "endMs": 6025
     }
   ],
   "relativeCues": [
@@ -101,14 +106,19 @@
       "endOffsetMs": 1113
     },
     {
-      "text": "Michael opened the flap of his satchel and",
+      "text": "Michael opened the flap of his herb rucksack",
       "startOffsetMs": 1263,
-      "endOffsetMs": 3238
+      "endOffsetMs": 3463
     },
     {
-      "text": "withdrew a bundle wrapped in clean birch bark.",
-      "startOffsetMs": 3250,
-      "endOffsetMs": 5800
+      "text": "and withdrew a bundle wrapped in clean birch",
+      "startOffsetMs": 3475,
+      "endOffsetMs": 5575
+    },
+    {
+      "text": "bark.",
+      "startOffsetMs": 5588,
+      "endOffsetMs": 6125
     }
   ]
 }

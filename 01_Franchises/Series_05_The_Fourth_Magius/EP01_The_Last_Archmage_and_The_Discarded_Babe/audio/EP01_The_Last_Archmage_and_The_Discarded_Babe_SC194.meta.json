@@ -1,104 +1,114 @@
 {
   "scene": 194,
-  "text": "Blood trickled from his nostrils and ears, his pulse hammering at two hundred beats per minute.",
-  "durationMs": 5688,
+  "text": "Cyan mana sparks flickered from his brow and temples, his pulse hammering at two hundred beats per minute.",
+  "durationMs": 6576,
   "rawWords": [
     {
-      "ttsWord": "Blood",
+      "ttsWord": "Cyan",
       "startMs": 50,
-      "endMs": 388
+      "endMs": 575
     },
     {
-      "ttsWord": "trickled",
-      "startMs": 400,
-      "endMs": 788
+      "ttsWord": "mana",
+      "startMs": 588,
+      "endMs": 863
+    },
+    {
+      "ttsWord": "sparks",
+      "startMs": 875,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "flickered",
+      "startMs": 1325,
+      "endMs": 1713
     },
     {
       "ttsWord": "from",
-      "startMs": 800,
-      "endMs": 925
+      "startMs": 1725,
+      "endMs": 1850
     },
     {
       "ttsWord": "his",
-      "startMs": 938,
-      "endMs": 1063
+      "startMs": 1863,
+      "endMs": 2000
     },
     {
-      "ttsWord": "nostrils",
-      "startMs": 1075,
-      "endMs": 1600
+      "ttsWord": "brow",
+      "startMs": 2013,
+      "endMs": 2375
     },
     {
       "ttsWord": "and",
-      "startMs": 1613,
-      "endMs": 1725
+      "startMs": 2388,
+      "endMs": 2513
     },
     {
-      "ttsWord": "ears",
-      "startMs": 1738,
-      "endMs": 2150
+      "ttsWord": "temples",
+      "startMs": 2525,
+      "endMs": 3025
     },
     {
       "ttsWord": "his",
-      "startMs": 2375,
-      "endMs": 2525
+      "startMs": 3263,
+      "endMs": 3413
     },
     {
       "ttsWord": "pulse",
-      "startMs": 2538,
-      "endMs": 2850
+      "startMs": 3425,
+      "endMs": 3738
     },
     {
       "ttsWord": "hammering",
-      "startMs": 2863,
-      "endMs": 3288
+      "startMs": 3750,
+      "endMs": 4188
     },
     {
       "ttsWord": "at",
-      "startMs": 3300,
-      "endMs": 3425
+      "startMs": 4200,
+      "endMs": 4325
     },
     {
       "ttsWord": "two",
-      "startMs": 3438,
-      "endMs": 3638
+      "startMs": 4338,
+      "endMs": 4525
     },
     {
       "ttsWord": "hundred",
-      "startMs": 3650,
-      "endMs": 3963
+      "startMs": 4538,
+      "endMs": 4850
     },
     {
       "ttsWord": "beats",
-      "startMs": 3975,
-      "endMs": 4263
+      "startMs": 4863,
+      "endMs": 5150
     },
     {
       "ttsWord": "per",
-      "startMs": 4275,
-      "endMs": 4413
+      "startMs": 5163,
+      "endMs": 5300
     },
     {
       "ttsWord": "minute",
-      "startMs": 4425,
-      "endMs": 4813
+      "startMs": 5313,
+      "endMs": 5700
     }
   ],
   "relativeCues": [
     {
-      "text": "Blood trickled from his nostrils and ears,",
+      "text": "Cyan mana sparks flickered from his brow and",
       "startOffsetMs": 50,
-      "endOffsetMs": 2250
+      "endOffsetMs": 2513
     },
     {
-      "text": "his pulse hammering at two hundred beats per",
-      "startOffsetMs": 2375,
-      "endOffsetMs": 4413
+      "text": "temples, his pulse hammering at two hundred beats",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 5150
     },
     {
-      "text": "minute.",
-      "startOffsetMs": 4425,
-      "endOffsetMs": 4913
+      "text": "per minute.",
+      "startOffsetMs": 5163,
+      "endOffsetMs": 5800
     }
   ]
 }

@@ -1,0 +1,129 @@
+{
+  "scene": 129,
+  "text": "As she turned toward Room 402, an unfathomably faint wisp of spiritual aroma drifted through the microscopic door gap into the corridor.",
+  "durationMs": 9096,
+  "rawWords": [
+    {
+      "ttsWord": "As",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "she",
+      "startMs": 263,
+      "endMs": 413
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 425,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 775,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 1050,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2475,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "unfathomably",
+      "startMs": 2638,
+      "endMs": 3450
+    },
+    {
+      "ttsWord": "faint",
+      "startMs": 3463,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "wisp",
+      "startMs": 3800,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4113,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 4238,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "aroma",
+      "startMs": 4875,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "drifted",
+      "startMs": 5263,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5688,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5863,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "microscopic",
+      "startMs": 5950,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "door",
+      "startMs": 6738,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "gap",
+      "startMs": 7013,
+      "endMs": 7313
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7325,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7500,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 7613,
+      "endMs": 8213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "As she turned toward Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2300
+    },
+    {
+      "text": "an unfathomably faint wisp of spiritual aroma drifted",
+      "startOffsetMs": 2475,
+      "endOffsetMs": 5675
+    },
+    {
+      "text": "through the microscopic door gap into the corridor.",
+      "startOffsetMs": 5688,
+      "endOffsetMs": 8313
+    }
+  ]
+}

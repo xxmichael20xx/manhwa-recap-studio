@@ -1,0 +1,124 @@
+{
+  "scene": 141,
+  "text": "Jiang Qingxue examined her Celestial Star Astrolabe, but the divination needle lay completely dormant under Lu Chen's zero-trace planetary dampening.",
+  "durationMs": 9384,
+  "rawWords": [
+    {
+      "ttsWord": "Jiang",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 475,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "examined",
+      "startMs": 1013,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 1525,
+      "endMs": 1638
+    },
+    {
+      "ttsWord": "Celestial",
+      "startMs": 1650,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "Star",
+      "startMs": 2275,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "Astrolabe",
+      "startMs": 2663,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 3563,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3700,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "divination",
+      "startMs": 3813,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "needle",
+      "startMs": 4438,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "lay",
+      "startMs": 4725,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "completely",
+      "startMs": 4913,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "dormant",
+      "startMs": 5488,
+      "endMs": 5900
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 5913,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 6163,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "Chen's",
+      "startMs": 6325,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "zero-trace",
+      "startMs": 6725,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "planetary",
+      "startMs": 7338,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "dampening",
+      "startMs": 7938,
+      "endMs": 8500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Jiang Qingxue examined her Celestial Star Astrolabe,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3363
+    },
+    {
+      "text": "but the divination needle lay completely dormant under",
+      "startOffsetMs": 3563,
+      "endOffsetMs": 6150
+    },
+    {
+      "text": "Lu Chen's zero-trace planetary dampening.",
+      "startOffsetMs": 6163,
+      "endOffsetMs": 8600
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "scene": 47,
+  "text": "The resonance pillar flashed with a warm, steady crimson glow, and the screen declared: APPRAISAL: Wang Bao — 65 YEARS (BODY REFINING STAGE TWO).",
+  "durationMs": 11136,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 213,
+      "endMs": 675
+    },
+    {
+      "ttsWord": "pillar",
+      "startMs": 688,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "flashed",
+      "startMs": 1050,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1513,
+      "endMs": 1613
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1625,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "warm",
+      "startMs": 1700,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "steady",
+      "startMs": 2363,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "crimson",
+      "startMs": 2738,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "glow",
+      "startMs": 3163,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3838,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3975,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "screen",
+      "startMs": 4075,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "declared",
+      "startMs": 4450,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "APPRAISAL",
+      "startMs": 5263,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 6150,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 6463,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "65 YEARS",
+      "startMs": 7150,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "BODY",
+      "startMs": 8563,
+      "endMs": 8900
+    },
+    {
+      "ttsWord": "REFINING",
+      "startMs": 8913,
+      "endMs": 9413
+    },
+    {
+      "ttsWord": "STAGE",
+      "startMs": 9425,
+      "endMs": 9838
+    },
+    {
+      "ttsWord": "TWO",
+      "startMs": 9850,
+      "endMs": 10250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The resonance pillar flashed with a warm,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2213
+    },
+    {
+      "text": "steady crimson glow,",
+      "startOffsetMs": 2363,
+      "endOffsetMs": 3663
+    },
+    {
+      "text": "and the screen declared:",
+      "startOffsetMs": 3838,
+      "endOffsetMs": 5088
+    },
+    {
+      "text": "APPRAISAL:",
+      "startOffsetMs": 5263,
+      "endOffsetMs": 5938
+    },
+    {
+      "text": "Wang Bao",
+      "startOffsetMs": 6150,
+      "endOffsetMs": 6900
+    },
+    {
+      "text": "65 YEARS BODY REFINING STAGE TWO).",
+      "startOffsetMs": 7150,
+      "endOffsetMs": 10350
+    }
+  ]
+}

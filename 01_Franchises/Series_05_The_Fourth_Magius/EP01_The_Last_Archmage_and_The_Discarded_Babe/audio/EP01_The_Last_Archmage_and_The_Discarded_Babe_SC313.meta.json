@@ -1,7 +1,7 @@
 {
   "scene": 313,
-  "text": "\"Michael, get back!\" Rowan roared through the toxic smoke, reaching out with a bloodied hand. \"You can't stop that monster! Run!\"",
-  "durationMs": 10920,
+  "text": "\"Michael, get back!\" Rowan roared through the billowing rift smoke, reaching out with a bruised hand. \"You can't stop that monster! Run!\"",
+  "durationMs": 11256,
   "rawWords": [
     {
       "ttsWord": "Michael",
@@ -26,87 +26,92 @@
     {
       "ttsWord": "roared",
       "startMs": 2738,
-      "endMs": 3038
+      "endMs": 3050
     },
     {
       "ttsWord": "through",
-      "startMs": 3050,
-      "endMs": 3213
+      "startMs": 3063,
+      "endMs": 3250
     },
     {
       "ttsWord": "the",
-      "startMs": 3225,
-      "endMs": 3325
+      "startMs": 3263,
+      "endMs": 3363
     },
     {
-      "ttsWord": "toxic",
-      "startMs": 3338,
-      "endMs": 3800
+      "ttsWord": "billowing",
+      "startMs": 3375,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "rift",
+      "startMs": 3863,
+      "endMs": 4088
     },
     {
       "ttsWord": "smoke",
-      "startMs": 3813,
-      "endMs": 4225
+      "startMs": 4100,
+      "endMs": 4550
     },
     {
       "ttsWord": "reaching",
-      "startMs": 4488,
-      "endMs": 4850
+      "startMs": 4813,
+      "endMs": 5175
     },
     {
       "ttsWord": "out",
-      "startMs": 4863,
-      "endMs": 5038
+      "startMs": 5188,
+      "endMs": 5375
     },
     {
       "ttsWord": "with",
-      "startMs": 5050,
-      "endMs": 5163
+      "startMs": 5388,
+      "endMs": 5513
     },
     {
       "ttsWord": "a",
-      "startMs": 5175,
-      "endMs": 5238
+      "startMs": 5525,
+      "endMs": 5588
     },
     {
-      "ttsWord": "bloodied",
-      "startMs": 5250,
-      "endMs": 5625
+      "ttsWord": "bruised",
+      "startMs": 5600,
+      "endMs": 6000
     },
     {
       "ttsWord": "hand",
-      "startMs": 5638,
-      "endMs": 6125
+      "startMs": 6013,
+      "endMs": 6475
     },
     {
       "ttsWord": "You",
-      "startMs": 6988,
-      "endMs": 7163
+      "startMs": 7338,
+      "endMs": 7513
     },
     {
       "ttsWord": "can't",
-      "startMs": 7175,
-      "endMs": 7475
+      "startMs": 7525,
+      "endMs": 7825
     },
     {
       "ttsWord": "stop",
-      "startMs": 7488,
-      "endMs": 7838
+      "startMs": 7838,
+      "endMs": 8188
     },
     {
       "ttsWord": "that",
-      "startMs": 7850,
-      "endMs": 8013
+      "startMs": 8200,
+      "endMs": 8363
     },
     {
       "ttsWord": "monster",
-      "startMs": 8025,
-      "endMs": 8650
+      "startMs": 8375,
+      "endMs": 9000
     },
     {
       "ttsWord": "Run",
-      "startMs": 9513,
-      "endMs": 10050
+      "startMs": 9863,
+      "endMs": 10400
     }
   ],
   "relativeCues": [
@@ -116,24 +121,24 @@
       "endOffsetMs": 1525
     },
     {
-      "text": "Rowan roared through the toxic smoke,",
+      "text": "Rowan roared through the billowing rift smoke,",
       "startOffsetMs": 2288,
-      "endOffsetMs": 4325
+      "endOffsetMs": 4650
     },
     {
-      "text": "reaching out with a bloodied hand.",
-      "startOffsetMs": 4488,
-      "endOffsetMs": 6225
+      "text": "reaching out with a bruised hand.",
+      "startOffsetMs": 4813,
+      "endOffsetMs": 6575
     },
     {
       "text": "You can't stop that monster!",
-      "startOffsetMs": 6988,
-      "endOffsetMs": 8750
+      "startOffsetMs": 7338,
+      "endOffsetMs": 9100
     },
     {
       "text": "Run!\"",
-      "startOffsetMs": 9513,
-      "endOffsetMs": 10150
+      "startOffsetMs": 9863,
+      "endOffsetMs": 10500
     }
   ]
 }

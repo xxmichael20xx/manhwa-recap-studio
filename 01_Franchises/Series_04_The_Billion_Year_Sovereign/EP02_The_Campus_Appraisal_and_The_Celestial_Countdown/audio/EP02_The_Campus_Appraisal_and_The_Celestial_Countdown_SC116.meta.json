@@ -1,0 +1,124 @@
+{
+  "scene": 116,
+  "text": "Jiang Qingxue offered a distant, polite nod, waving away bureaucratic formality with a soft flick of her white-coated wrist.",
+  "durationMs": 8160,
+  "rawWords": [
+    {
+      "ttsWord": "Jiang",
+      "startMs": 50,
+      "endMs": 475
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 488,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "offered",
+      "startMs": 1063,
+      "endMs": 1413
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1425,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "distant",
+      "startMs": 1513,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "polite",
+      "startMs": 2188,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "nod",
+      "startMs": 2550,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "waving",
+      "startMs": 3175,
+      "endMs": 3538
+    },
+    {
+      "ttsWord": "away",
+      "startMs": 3550,
+      "endMs": 3838
+    },
+    {
+      "ttsWord": "bureaucratic",
+      "startMs": 3850,
+      "endMs": 4525
+    },
+    {
+      "ttsWord": "formality",
+      "startMs": 4538,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5125,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5275,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "soft",
+      "startMs": 5338,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "flick",
+      "startMs": 5738,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6038,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 6138,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "white-coated",
+      "startMs": 6275,
+      "endMs": 6800
+    },
+    {
+      "ttsWord": "wrist",
+      "startMs": 6813,
+      "endMs": 7288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Jiang Qingxue offered a distant,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2088
+    },
+    {
+      "text": "polite nod,",
+      "startOffsetMs": 2188,
+      "endOffsetMs": 3013
+    },
+    {
+      "text": "waving away bureaucratic formality with a soft flick",
+      "startOffsetMs": 3175,
+      "endOffsetMs": 6025
+    },
+    {
+      "text": "of her white-coated wrist.",
+      "startOffsetMs": 6038,
+      "endOffsetMs": 7388
+    }
+  ]
+}

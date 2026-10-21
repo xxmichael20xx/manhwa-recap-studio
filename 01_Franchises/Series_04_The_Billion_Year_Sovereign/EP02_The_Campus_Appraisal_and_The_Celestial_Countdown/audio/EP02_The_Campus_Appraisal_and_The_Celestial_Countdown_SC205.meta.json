@@ -1,0 +1,99 @@
+{
+  "scene": 205,
+  "text": "However, high above the clouds... the Heaven-Earth Golden Stele did not conclude its revelation.",
+  "durationMs": 6288,
+  "rawWords": [
+    {
+      "ttsWord": "However",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "high",
+      "startMs": 825,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 1025,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1363,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 1463,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2263,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "Heaven-Earth",
+      "startMs": 2375,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 2925,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 3313,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "did",
+      "startMs": 3725,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "not",
+      "startMs": 3875,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "conclude",
+      "startMs": 4113,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4550,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "revelation",
+      "startMs": 4700,
+      "endMs": 5425
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "However,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 675
+    },
+    {
+      "text": "high above the clouds...",
+      "startOffsetMs": 825,
+      "endOffsetMs": 2113
+    },
+    {
+      "text": "the Heaven-Earth Golden Stele did not conclude its",
+      "startOffsetMs": 2263,
+      "endOffsetMs": 4688
+    },
+    {
+      "text": "revelation.",
+      "startOffsetMs": 4700,
+      "endOffsetMs": 5525
+    }
+  ]
+}

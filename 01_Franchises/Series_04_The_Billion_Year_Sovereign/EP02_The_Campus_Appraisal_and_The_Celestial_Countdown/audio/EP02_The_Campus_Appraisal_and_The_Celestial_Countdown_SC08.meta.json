@@ -1,0 +1,144 @@
+{
+  "scene": 8,
+  "text": "Across the room, his round-faced roommate Wang Bao was doing enthusiastic, rapid-fire one-handed push-ups against the concrete floor, grinning wildly with overflowing energy.",
+  "durationMs": 10968,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 525,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 638,
+      "endMs": 1000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1138,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "round-faced",
+      "startMs": 1325,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "roommate",
+      "startMs": 1938,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2338,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2688,
+      "endMs": 2900
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2913,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "doing",
+      "startMs": 3100,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "enthusiastic",
+      "startMs": 3375,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "rapid-fire",
+      "startMs": 4588,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "one-handed",
+      "startMs": 5275,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "push-ups",
+      "startMs": 5800,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 6250,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6563,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 6663,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "floor",
+      "startMs": 7175,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "grinning",
+      "startMs": 7888,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "wildly",
+      "startMs": 8225,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8713,
+      "endMs": 8888
+    },
+    {
+      "ttsWord": "overflowing",
+      "startMs": 8900,
+      "endMs": 9575
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 9588,
+      "endMs": 10100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across the room,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1100
+    },
+    {
+      "text": "his round-faced roommate Wang Bao was doing enthusiastic,",
+      "startOffsetMs": 1138,
+      "endOffsetMs": 4375
+    },
+    {
+      "text": "rapid-fire one-handed push-ups against the concrete floor,",
+      "startOffsetMs": 4588,
+      "endOffsetMs": 7688
+    },
+    {
+      "text": "grinning wildly with overflowing energy.",
+      "startOffsetMs": 7888,
+      "endOffsetMs": 10200
+    }
+  ]
+}

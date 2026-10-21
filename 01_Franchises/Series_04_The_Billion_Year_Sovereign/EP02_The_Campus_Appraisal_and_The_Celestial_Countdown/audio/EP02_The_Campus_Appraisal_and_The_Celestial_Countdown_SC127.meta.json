@@ -1,0 +1,124 @@
+{
+  "scene": 127,
+  "text": "Jiang Qingxue extended a slender bare finger, touching the center of the concrete fracture to commune with residual spiritual frequencies.",
+  "durationMs": 8496,
+  "rawWords": [
+    {
+      "ttsWord": "Jiang",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 475,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "extended",
+      "startMs": 1063,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1613,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "slender",
+      "startMs": 1688,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "bare",
+      "startMs": 2125,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "finger",
+      "startMs": 2350,
+      "endMs": 2788
+    },
+    {
+      "ttsWord": "touching",
+      "startMs": 3063,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3400,
+      "endMs": 3475
+    },
+    {
+      "ttsWord": "center",
+      "startMs": 3488,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3838,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3913,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 4013,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "fracture",
+      "startMs": 4550,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 5000,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "commune",
+      "startMs": 5125,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5550,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "residual",
+      "startMs": 5713,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 6225,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "frequencies",
+      "startMs": 6775,
+      "endMs": 7613
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Jiang Qingxue extended a slender bare finger,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2888
+    },
+    {
+      "text": "touching the center of the concrete fracture to",
+      "startOffsetMs": 3063,
+      "endOffsetMs": 5113
+    },
+    {
+      "text": "commune with residual spiritual frequencies.",
+      "startOffsetMs": 5125,
+      "endOffsetMs": 7713
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "scene": 153,
+  "text": "Ye Xingchen stepped directly before the main optical lens, crossing his hands behind his back with the arrogant grace of a conqueror preparing to receive a crown.",
+  "durationMs": 9048,
+  "rawWords": [
+    {
+      "ttsWord": "Ye",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 250,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 713,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 1050,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 1500,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1850,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "main",
+      "startMs": 1938,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "optical",
+      "startMs": 2225,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "lens",
+      "startMs": 2650,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "crossing",
+      "startMs": 3350,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3788,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 3925,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "behind",
+      "startMs": 4238,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4600,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "back",
+      "startMs": 4750,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5075,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5188,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "arrogant",
+      "startMs": 5263,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "grace",
+      "startMs": 5725,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6063,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6125,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "conqueror",
+      "startMs": 6213,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "preparing",
+      "startMs": 6675,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7138,
+      "endMs": 7250
+    },
+    {
+      "ttsWord": "receive",
+      "startMs": 7263,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7613,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "crown",
+      "startMs": 7688,
+      "endMs": 8188
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ye Xingchen stepped directly before the main optical",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2638
+    },
+    {
+      "text": "lens,",
+      "startOffsetMs": 2650,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "crossing his hands behind his back with the",
+      "startOffsetMs": 3350,
+      "endOffsetMs": 5250
+    },
+    {
+      "text": "arrogant grace of a conqueror preparing to receive",
+      "startOffsetMs": 5263,
+      "endOffsetMs": 7600
+    },
+    {
+      "text": "a crown.",
+      "startOffsetMs": 7613,
+      "endOffsetMs": 8288
+    }
+  ]
+}

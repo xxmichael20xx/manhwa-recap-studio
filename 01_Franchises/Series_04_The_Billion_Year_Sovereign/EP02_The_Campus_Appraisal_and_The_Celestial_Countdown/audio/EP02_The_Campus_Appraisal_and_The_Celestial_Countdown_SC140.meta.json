@@ -1,0 +1,144 @@
+{
+  "scene": 140,
+  "text": "Lu Chen lowered his phone slightly, offering a harmless collegiate smile. \"Good morning. Are the Threat Bureau doing door-to-door hygiene inspections now?\"",
+  "durationMs": 10944,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 338
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 350,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "lowered",
+      "startMs": 663,
+      "endMs": 963
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 975,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "phone",
+      "startMs": 1150,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "slightly",
+      "startMs": 1438,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "offering",
+      "startMs": 2225,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2688,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "harmless",
+      "startMs": 2738,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "collegiate",
+      "startMs": 3188,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "smile",
+      "startMs": 3650,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "Good",
+      "startMs": 5088,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 5275,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "Are",
+      "startMs": 6600,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6775,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 6888,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 7225,
+      "endMs": 7613
+    },
+    {
+      "ttsWord": "doing",
+      "startMs": 7625,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "door-to-door",
+      "startMs": 7950,
+      "endMs": 8538
+    },
+    {
+      "ttsWord": "hygiene",
+      "startMs": 8550,
+      "endMs": 9025
+    },
+    {
+      "ttsWord": "inspections",
+      "startMs": 9038,
+      "endMs": 9688
+    },
+    {
+      "ttsWord": "now",
+      "startMs": 9700,
+      "endMs": 10063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen lowered his phone slightly,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2088
+    },
+    {
+      "text": "offering a harmless collegiate smile.",
+      "startOffsetMs": 2225,
+      "endOffsetMs": 4325
+    },
+    {
+      "text": "Good morning.",
+      "startOffsetMs": 5088,
+      "endOffsetMs": 5838
+    },
+    {
+      "text": "Are the Threat Bureau doing door-to-door hygiene inspections",
+      "startOffsetMs": 6600,
+      "endOffsetMs": 9688
+    },
+    {
+      "text": "now?\"",
+      "startOffsetMs": 9700,
+      "endOffsetMs": 10163
+    }
+  ]
+}

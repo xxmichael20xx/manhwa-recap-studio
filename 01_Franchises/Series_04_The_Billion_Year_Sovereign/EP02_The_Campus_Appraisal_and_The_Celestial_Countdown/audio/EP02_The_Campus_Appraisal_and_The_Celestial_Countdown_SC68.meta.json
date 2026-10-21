@@ -1,0 +1,149 @@
+{
+  "scene": 68,
+  "text": "Commander Han Feng halted two paces before Lu Chen, his scarred face casting a grim shadow as he locked eyes with the unbothered youth.",
+  "durationMs": 8448,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 525,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 788,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "halted",
+      "startMs": 1125,
+      "endMs": 1538
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 1550,
+      "endMs": 1738
+    },
+    {
+      "ttsWord": "paces",
+      "startMs": 1750,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 2200,
+      "endMs": 2538
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 2550,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 2725,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3375,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "scarred",
+      "startMs": 3538,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "face",
+      "startMs": 3900,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "casting",
+      "startMs": 4200,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4625,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "grim",
+      "startMs": 4700,
+      "endMs": 4988
+    },
+    {
+      "ttsWord": "shadow",
+      "startMs": 5000,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 5475,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 5625,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "locked",
+      "startMs": 5725,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 6075,
+      "endMs": 6388
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6400,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6525,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "unbothered",
+      "startMs": 6638,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "youth",
+      "startMs": 7163,
+      "endMs": 7588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander Han Feng halted two paces before Lu",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2713
+    },
+    {
+      "text": "Chen,",
+      "startOffsetMs": 2725,
+      "endOffsetMs": 3200
+    },
+    {
+      "text": "his scarred face casting a grim shadow as",
+      "startOffsetMs": 3375,
+      "endOffsetMs": 5613
+    },
+    {
+      "text": "he locked eyes with the unbothered youth.",
+      "startOffsetMs": 5625,
+      "endOffsetMs": 7688
+    }
+  ]
+}

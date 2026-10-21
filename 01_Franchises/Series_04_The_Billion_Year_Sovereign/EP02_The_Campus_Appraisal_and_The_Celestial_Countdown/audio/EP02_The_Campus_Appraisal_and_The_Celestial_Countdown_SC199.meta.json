@@ -1,0 +1,119 @@
+{
+  "scene": 199,
+  "text": "Rank Three blazed with radiant glacial azure starlight: GLOBAL RANK 3: 'FAIRY QINGXUE' (Jiang Qingxue) — CULTIVATION: 260,000,000 YEARS.",
+  "durationMs": 11160,
+  "rawWords": [
+    {
+      "ttsWord": "Rank",
+      "startMs": 50,
+      "endMs": 375
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 388,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "blazed",
+      "startMs": 713,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1163,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "radiant",
+      "startMs": 1325,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "glacial",
+      "startMs": 1738,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "azure",
+      "startMs": 2250,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "starlight",
+      "startMs": 2588,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 3488,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "RANK",
+      "startMs": 3900,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "3",
+      "startMs": 4150,
+      "endMs": 4538
+    },
+    {
+      "ttsWord": "FAIRY",
+      "startMs": 4850,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "QINGXUE",
+      "startMs": 5188,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 6050,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 6463,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 7350,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "260,000,000 YEARS",
+      "startMs": 8438,
+      "endMs": 10288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Rank Three blazed with radiant glacial azure starlight:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3275
+    },
+    {
+      "text": "GLOBAL RANK 3:",
+      "startOffsetMs": 3488,
+      "endOffsetMs": 4638
+    },
+    {
+      "text": "FAIRY QINGXUE' Jiang Qingxue)",
+      "startOffsetMs": 4850,
+      "endOffsetMs": 7125
+    },
+    {
+      "text": "CULTIVATION:",
+      "startOffsetMs": 7350,
+      "endOffsetMs": 8213
+    },
+    {
+      "text": "260,000,000 YEARS",
+      "startOffsetMs": 8438,
+      "endOffsetMs": 10388
+    }
+  ]
+}

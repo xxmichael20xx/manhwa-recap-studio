@@ -1,0 +1,164 @@
+{
+  "scene": 43,
+  "text": "Standing in the queue for Platform Three, Wang Bao wiped cold sweat from his forehead with his red gaming t-shirt sleeve, his throat dry with mounting anxiety.",
+  "durationMs": 10008,
+  "rawWords": [
+    {
+      "ttsWord": "Standing",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 575,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 638,
+      "endMs": 725
+    },
+    {
+      "ttsWord": "queue",
+      "startMs": 738,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 1063,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "Platform",
+      "startMs": 1225,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 1800,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2500,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2825,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "wiped",
+      "startMs": 3038,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 3425,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "sweat",
+      "startMs": 3750,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 4088,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4238,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "forehead",
+      "startMs": 4388,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4850,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4950,
+      "endMs": 5088
+    },
+    {
+      "ttsWord": "red",
+      "startMs": 5100,
+      "endMs": 5325
+    },
+    {
+      "ttsWord": "gaming",
+      "startMs": 5338,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "t-shirt",
+      "startMs": 5725,
+      "endMs": 6225
+    },
+    {
+      "ttsWord": "sleeve",
+      "startMs": 6238,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7013,
+      "endMs": 7200
+    },
+    {
+      "ttsWord": "throat",
+      "startMs": 7213,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "dry",
+      "startMs": 7500,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7813,
+      "endMs": 8000
+    },
+    {
+      "ttsWord": "mounting",
+      "startMs": 8013,
+      "endMs": 8425
+    },
+    {
+      "ttsWord": "anxiety",
+      "startMs": 8438,
+      "endMs": 9125
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Standing in the queue for Platform Three,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2288
+    },
+    {
+      "text": "Wang Bao wiped cold sweat from his forehead",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 4838
+    },
+    {
+      "text": "with his red gaming t-shirt sleeve,",
+      "startOffsetMs": 4850,
+      "endOffsetMs": 6825
+    },
+    {
+      "text": "his throat dry with mounting anxiety.",
+      "startOffsetMs": 7013,
+      "endOffsetMs": 9225
+    }
+  ]
+}

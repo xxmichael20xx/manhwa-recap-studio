@@ -2,24 +2,40 @@
   "series_id": "Series_04_The_Billion_Year_Sovereign",
   "items": [
     {
-      "id": "custom_spirit_blade",
+      "id": "gu_tianyu_spirit_dao",
       "name": "Gu Syndicate Custom Spirit Blade",
       "token": "@{Weapon: Custom Spirit Blade}",
       "type": "Weapon",
       "apparent_rank": "48,000-Year Golden Core Spirit Weapon",
       "true_rank": "Mundane Alloy (Shattered on Contact with Lu Chen)",
       "description": "A luminous cyan-edged modern high-frequency spirit saber inscribed with Golden Core talismans by the Gu Capital Syndicate. Shatters into powder upon striking Lu Chen's neck.",
-      "dna_prompt_anchor": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16"
+      "dna_prompt_anchor": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16",
+      "reference_plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
+      "episodes": ["EP01", "EP02"]
+    },
+    {
+      "id": "tactical_spirit_spectrometer",
+      "name": "Tactical Spirit Spectrometer",
+      "token": "@{Prop: Tactical Spirit Spectrometer}",
+      "type": "Prop",
+      "apparent_rank": "Threat Bureau Spirit-Energy Sensor",
+      "true_rank": "Military Grade Spatial Leyline Analyzer",
+      "description": "Ruggedized dark olive-drab and brushed-brass handheld spirit spectrometer used by Inspector Han Feng to measure atmospheric qi density.",
+      "dna_prompt_anchor": "@{Prop: Tactical Spirit Spectrometer}, ruggedized dark olive-drab and brass rectangular handheld sensor, glowing amber vacuum-tube digital readout, circular quartz crystal lens, modern manhwa style, vertical 9:16",
+      "reference_plate": "09_Prop_Tactical_Spirit_Spectrometer.jpg",
+      "episodes": ["EP01", "EP02"]
     },
     {
       "id": "heavenly_dao_simulator_hud",
       "name": "Heavenly Dao Simulator Interface",
       "token": "@{Item: Heavenly Dao Simulator HUD}",
       "type": "Item",
-      "apparent_rank": "Archaic 2010s Browser Game UI",
+      "apparent_rank": "Modern Floating Cultivation System HUD",
       "true_rank": "Reality Fusing Cosmic Dao Engine",
-      "description": "An archaic pixelated browser simulation interface running on Lu Chen's battered dorm laptop. Fuses with reality upon the 10-minute server shutdown countdown hitting zero.",
-      "dna_prompt_anchor": "@{Item: Heavenly Dao Simulator HUD}, glowing archaic golden holographic browser interface with simulated cultivation text log and 1,000,000,000 year accumulation counter, modern manhwa style, vertical 9:16"
+      "description": "A sleek translucent holographic cultivation system interface floating in mid-air in front of Lu Chen. Displays real-time primordial Dao accumulation, reality-fusion countdown, and breakthrough milestones with glowing golden celestial glyphs.",
+      "dna_prompt_anchor": "@{Item: Heavenly Dao Simulator HUD}, sleek translucent dark obsidian-glass holographic cultivation system window floating in mid-air, glowing golden celestial runes, modern minimalist gauges, starlight particles, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "reference_plate": "13_Item_Heavenly_Dao_Simulator_HUD.jpg",
+      "episodes": ["EP01", "EP02"]
     },
     {
       "id": "heaven_earth_golden_stele",
@@ -29,7 +45,21 @@
       "apparent_rank": "Global Celestial Ranking Monument",
       "true_rank": "Cosmic Heavenly Dao Authority Monolith",
       "description": "A monolithic golden monument descending from the clouds over Earth's capital cities, projecting the real-time global cultivation rankings of all merged cultivators.",
-      "dna_prompt_anchor": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16"
+      "dna_prompt_anchor": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16",
+      "reference_plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
+      "episodes": ["EP01", "EP02"]
+    },
+    {
+      "id": "celestial_star_astrolabe",
+      "name": "Celestial Star Astrolabe",
+      "token": "@{Item: Celestial Star Astrolabe}",
+      "type": "Prop",
+      "apparent_rank": "Ancient Starlight Divination Instrument",
+      "true_rank": "Primordial Starlight Leyline Tracker",
+      "description": "An intricate spherical brass and celestial-silver armillary astrolabe used by Jiang Qingxue to track cosmic primordial origin energy anomalies.",
+      "dna_prompt_anchor": "@{Item: Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe with rotating gimbal rings and suspended cyan starlight core, modern manhwa style, vertical 9:16",
+      "reference_plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
+      "episodes": ["EP02"]
     }
   ]
 }

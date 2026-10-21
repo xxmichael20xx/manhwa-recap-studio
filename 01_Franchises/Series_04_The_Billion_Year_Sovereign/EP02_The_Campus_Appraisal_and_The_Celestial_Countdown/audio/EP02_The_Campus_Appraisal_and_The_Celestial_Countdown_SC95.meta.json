@@ -1,0 +1,199 @@
+{
+  "scene": 95,
+  "text": "\"Chief Enforcer Gu Biao! This campus is a designated national defense perimeter under active Golden Stele observation! Evacuate your personnel in ten seconds or face summary field execution!\" Commander Han Feng roared.",
+  "durationMs": 16152,
+  "rawWords": [
+    {
+      "ttsWord": "Chief",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 375,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 938,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "Biao",
+      "startMs": 1150,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "This",
+      "startMs": 2438,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 2700,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 3213,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3338,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "designated",
+      "startMs": 3438,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "national",
+      "startMs": 4075,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "defense",
+      "startMs": 4513,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "perimeter",
+      "startMs": 4938,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "under",
+      "startMs": 5488,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "active",
+      "startMs": 5800,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 6163,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 6538,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "observation",
+      "startMs": 6950,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "Evacuate",
+      "startMs": 8575,
+      "endMs": 9238
+    },
+    {
+      "ttsWord": "your",
+      "startMs": 9250,
+      "endMs": 9363
+    },
+    {
+      "ttsWord": "personnel",
+      "startMs": 9375,
+      "endMs": 9925
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 9938,
+      "endMs": 10063
+    },
+    {
+      "ttsWord": "ten",
+      "startMs": 10075,
+      "endMs": 10350
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 10363,
+      "endMs": 10788
+    },
+    {
+      "ttsWord": "or",
+      "startMs": 10800,
+      "endMs": 10938
+    },
+    {
+      "ttsWord": "face",
+      "startMs": 10950,
+      "endMs": 11275
+    },
+    {
+      "ttsWord": "summary",
+      "startMs": 11288,
+      "endMs": 11650
+    },
+    {
+      "ttsWord": "field",
+      "startMs": 11663,
+      "endMs": 12025
+    },
+    {
+      "ttsWord": "execution",
+      "startMs": 12038,
+      "endMs": 12813
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 13675,
+      "endMs": 14163
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 14175,
+      "endMs": 14450
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 14463,
+      "endMs": 14813
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 14825,
+      "endMs": 15288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Chief Enforcer Gu Biao!",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1675
+    },
+    {
+      "text": "This campus is a designated national defense perimeter",
+      "startOffsetMs": 2438,
+      "endOffsetMs": 5475
+    },
+    {
+      "text": "under active Golden Stele observation!",
+      "startOffsetMs": 5488,
+      "endOffsetMs": 7813
+    },
+    {
+      "text": "Evacuate your personnel in ten seconds or face",
+      "startOffsetMs": 8575,
+      "endOffsetMs": 11275
+    },
+    {
+      "text": "summary field execution!\"",
+      "startOffsetMs": 11288,
+      "endOffsetMs": 12913
+    },
+    {
+      "text": "Commander Han Feng roared.",
+      "startOffsetMs": 13675,
+      "endOffsetMs": 15388
+    }
+  ]
+}

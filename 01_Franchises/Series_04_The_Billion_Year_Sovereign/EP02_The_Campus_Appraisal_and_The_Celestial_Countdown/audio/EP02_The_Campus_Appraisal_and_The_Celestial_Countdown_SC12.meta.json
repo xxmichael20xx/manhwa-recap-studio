@@ -1,0 +1,209 @@
+{
+  "scene": 12,
+  "text": "\"The campus administration just declared martial mobilization! Every single university student is ordered to assemble on the central athletic track for mandatory Threat Bureau appraisal!\" Wang Bao yelled, his comical eyes wide with shock.",
+  "durationMs": 15456,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 200,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "administration",
+      "startMs": 638,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "just",
+      "startMs": 1463,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "declared",
+      "startMs": 1675,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "martial",
+      "startMs": 2100,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "mobilization",
+      "startMs": 2488,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "Every",
+      "startMs": 4238,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "single",
+      "startMs": 4575,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 4963,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "student",
+      "startMs": 5563,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 5988,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "ordered",
+      "startMs": 6113,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6425,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "assemble",
+      "startMs": 6538,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 7000,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7100,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "central",
+      "startMs": 7188,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "athletic",
+      "startMs": 7575,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "track",
+      "startMs": 8038,
+      "endMs": 8388
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 8400,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "mandatory",
+      "startMs": 8538,
+      "endMs": 9125
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 9138,
+      "endMs": 9450
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 9463,
+      "endMs": 9838
+    },
+    {
+      "ttsWord": "appraisal",
+      "startMs": 9850,
+      "endMs": 10463
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 11325,
+      "endMs": 11663
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 11675,
+      "endMs": 11888
+    },
+    {
+      "ttsWord": "yelled",
+      "startMs": 11900,
+      "endMs": 12338
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 12550,
+      "endMs": 12725
+    },
+    {
+      "ttsWord": "comical",
+      "startMs": 12738,
+      "endMs": 13238
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 13250,
+      "endMs": 13550
+    },
+    {
+      "ttsWord": "wide",
+      "startMs": 13563,
+      "endMs": 13875
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 13888,
+      "endMs": 14025
+    },
+    {
+      "ttsWord": "shock",
+      "startMs": 14038,
+      "endMs": 14588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The campus administration just declared martial mobilization!",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3475
+    },
+    {
+      "text": "Every single university student is ordered to assemble",
+      "startOffsetMs": 4238,
+      "endOffsetMs": 6988
+    },
+    {
+      "text": "on the central athletic track for mandatory Threat",
+      "startOffsetMs": 7000,
+      "endOffsetMs": 9450
+    },
+    {
+      "text": "Bureau appraisal!\"",
+      "startOffsetMs": 9463,
+      "endOffsetMs": 10563
+    },
+    {
+      "text": "Wang Bao yelled,",
+      "startOffsetMs": 11325,
+      "endOffsetMs": 12438
+    },
+    {
+      "text": "his comical eyes wide with shock.",
+      "startOffsetMs": 12550,
+      "endOffsetMs": 14688
+    }
+  ]
+}

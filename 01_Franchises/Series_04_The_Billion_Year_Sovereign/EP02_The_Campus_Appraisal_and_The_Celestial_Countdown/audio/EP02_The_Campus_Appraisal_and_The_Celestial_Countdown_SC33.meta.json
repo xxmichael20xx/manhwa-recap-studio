@@ -1,0 +1,134 @@
+{
+  "scene": 33,
+  "text": "Murmurs of relief rippled through the grandstands as candidate after candidate averaged between fifteen and two hundred years of foundational physical enhancement.",
+  "durationMs": 8928,
+  "rawWords": [
+    {
+      "ttsWord": "Murmurs",
+      "startMs": 50,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 550,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "relief",
+      "startMs": 663,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "rippled",
+      "startMs": 1050,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 1388,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1563,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "grandstands",
+      "startMs": 1675,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 2338,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "candidate",
+      "startMs": 2488,
+      "endMs": 3000
+    },
+    {
+      "ttsWord": "after",
+      "startMs": 3013,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "candidate",
+      "startMs": 3288,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "averaged",
+      "startMs": 3775,
+      "endMs": 4213
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 4225,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "fifteen",
+      "startMs": 4588,
+      "endMs": 5225
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5238,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 5388,
+      "endMs": 5588
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 5600,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 5900,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6213,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "foundational",
+      "startMs": 6313,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "physical",
+      "startMs": 6950,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "enhancement",
+      "startMs": 7388,
+      "endMs": 8063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Murmurs of relief rippled through the grandstands as",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2475
+    },
+    {
+      "text": "candidate after candidate averaged between fifteen and two",
+      "startOffsetMs": 2488,
+      "endOffsetMs": 5588
+    },
+    {
+      "text": "hundred years of foundational physical enhancement.",
+      "startOffsetMs": 5600,
+      "endOffsetMs": 8163
+    }
+  ]
+}

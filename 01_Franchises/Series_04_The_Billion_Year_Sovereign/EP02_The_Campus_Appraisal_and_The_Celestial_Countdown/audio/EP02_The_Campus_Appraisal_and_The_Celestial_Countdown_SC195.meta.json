@@ -1,0 +1,114 @@
+{
+  "scene": 195,
+  "text": "A monumental header blazed at the summit of the clouds: GLOBAL CULTIVATION LEADERBOARD: TOP TEN SUPREME CULTIVATORS.",
+  "durationMs": 7824,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "monumental",
+      "startMs": 175,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "header",
+      "startMs": 838,
+      "endMs": 1125
+    },
+    {
+      "ttsWord": "blazed",
+      "startMs": 1138,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 1600,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1675,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "summit",
+      "startMs": 1775,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2175,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2288,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 2375,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "GLOBAL",
+      "startMs": 3188,
+      "endMs": 3588
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 3600,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "LEADERBOARD",
+      "startMs": 4275,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "TOP",
+      "startMs": 5100,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "TEN",
+      "startMs": 5400,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "SUPREME",
+      "startMs": 5663,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "CULTIVATORS",
+      "startMs": 6125,
+      "endMs": 6963
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A monumental header blazed at the summit of",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2275
+    },
+    {
+      "text": "the clouds:",
+      "startOffsetMs": 2288,
+      "endOffsetMs": 3025
+    },
+    {
+      "text": "GLOBAL CULTIVATION LEADERBOARD:",
+      "startOffsetMs": 3188,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "TOP TEN SUPREME CULTIVATORS.",
+      "startOffsetMs": 5100,
+      "endOffsetMs": 7063
+    }
+  ]
+}

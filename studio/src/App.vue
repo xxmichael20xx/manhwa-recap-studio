@@ -55,13 +55,16 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
 import Header from './components/Header.vue'
 import GlobalActivityModal from './components/GlobalActivityModal.vue'
+import { getFranchiseDefaultVaultDna } from './utils/franchiseStyleHelper.js'
 
 const isMobileSidebarOpen = ref(false)
 const isActivityModalOpen = ref(false)
 const isDark = ref(true)
+const route = useRoute()
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
@@ -75,9 +78,11 @@ const toggleTheme = () => {
 }
 
 const copyMasterDna = () => {
-  const masterAnchor = `Lu Chen, 20-year-old East Asian male manhwa protagonist, messy soft raven-black hair with relaxed fringe, deep calm obsidian eyes with subtle golden starlight flecks, deadpan bored expression, oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark grey casual utility trousers, minimalist white sneakers, hands in hoodie pockets, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading`
+  const franchiseId = route.params.franchiseId || route.params.id || 'Series_05_The_Fourth_Magius'
+  const cleanName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+  const masterAnchor = getFranchiseDefaultVaultDna(franchiseId, 'Protagonist')
   navigator.clipboard.writeText(masterAnchor)
-  alert('✨ Copied Lu Chen Master Character DNA Prompt Anchor to Clipboard!')
+  alert(`✨ Copied Master Character DNA Anchor for ${cleanName} to Clipboard!`)
 }
 
 onMounted(() => {

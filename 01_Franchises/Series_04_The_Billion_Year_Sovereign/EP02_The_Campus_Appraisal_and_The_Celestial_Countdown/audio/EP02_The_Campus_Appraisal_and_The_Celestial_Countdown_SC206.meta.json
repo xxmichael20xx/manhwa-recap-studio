@@ -1,0 +1,129 @@
+{
+  "scene": 206,
+  "text": "The entire thirty-thousand-metre monolith violently convulsed with deafening celestial thunder, the atmospheric pressure across Earth plummeting into an absolute vacuum.",
+  "durationMs": 9792,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 188,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "thirty-thousand-metre",
+      "startMs": 675,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "monolith",
+      "startMs": 1688,
+      "endMs": 2163
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 2175,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "convulsed",
+      "startMs": 2713,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3263,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 3400,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 3825,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "thunder",
+      "startMs": 4438,
+      "endMs": 4838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5100,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "atmospheric",
+      "startMs": 5213,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "pressure",
+      "startMs": 5875,
+      "endMs": 6288
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6300,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "Earth",
+      "startMs": 6713,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "plummeting",
+      "startMs": 6988,
+      "endMs": 7450
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7463,
+      "endMs": 7675
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 7688,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 7813,
+      "endMs": 8325
+    },
+    {
+      "ttsWord": "vacuum",
+      "startMs": 8338,
+      "endMs": 8913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The entire thirty-thousand-metre monolith violently convulsed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3250
+    },
+    {
+      "text": "with deafening celestial thunder,",
+      "startOffsetMs": 3263,
+      "endOffsetMs": 4938
+    },
+    {
+      "text": "the atmospheric pressure across Earth plummeting into an",
+      "startOffsetMs": 5100,
+      "endOffsetMs": 7800
+    },
+    {
+      "text": "absolute vacuum.",
+      "startOffsetMs": 7813,
+      "endOffsetMs": 9013
+    }
+  ]
+}

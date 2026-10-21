@@ -1,7 +1,7 @@
 {
   "scene": 7,
-  "text": "\"You gathered eight hundred high mages and thirty siege dreadnoughts just to corner one exhausted man?\" Michael asked, his dry voice echoing across the silent canyon. \"I asked for an execution squad, not an insecure parade.\"",
-  "durationMs": 14832,
+  "text": "\"You gathered eight hundred high mages and thirty siege dreadnoughts just to corner one exhausted man?\" Michael asked, his dry voice echoing across the silent canyon. \"I asked for an elite strike force, not an insecure parade.\"",
+  "durationMs": 14712,
   "rawWords": [
     {
       "ttsWord": "You",
@@ -151,37 +151,42 @@
     {
       "ttsWord": "an",
       "startMs": 11088,
-      "endMs": 11175
+      "endMs": 11150
     },
     {
-      "ttsWord": "execution",
-      "startMs": 11188,
-      "endMs": 11838
+      "ttsWord": "elite",
+      "startMs": 11163,
+      "endMs": 11450
     },
     {
-      "ttsWord": "squad",
-      "startMs": 11850,
-      "endMs": 12338
+      "ttsWord": "strike",
+      "startMs": 11463,
+      "endMs": 11813
+    },
+    {
+      "ttsWord": "force",
+      "startMs": 11825,
+      "endMs": 12275
     },
     {
       "ttsWord": "not",
-      "startMs": 12525,
-      "endMs": 12750
+      "startMs": 12425,
+      "endMs": 12650
     },
     {
       "ttsWord": "an",
-      "startMs": 12763,
-      "endMs": 12850
+      "startMs": 12663,
+      "endMs": 12750
     },
     {
       "ttsWord": "insecure",
-      "startMs": 12863,
-      "endMs": 13375
+      "startMs": 12763,
+      "endMs": 13275
     },
     {
       "ttsWord": "parade",
-      "startMs": 13388,
-      "endMs": 13950
+      "startMs": 13288,
+      "endMs": 13850
     }
   ],
   "relativeCues": [
@@ -206,14 +211,14 @@
       "endOffsetMs": 9638
     },
     {
-      "text": "I asked for an execution squad,",
+      "text": "I asked for an elite strike force,",
       "startOffsetMs": 10400,
-      "endOffsetMs": 12438
+      "endOffsetMs": 12375
     },
     {
       "text": "not an insecure parade.\"",
-      "startOffsetMs": 12525,
-      "endOffsetMs": 14050
+      "startOffsetMs": 12425,
+      "endOffsetMs": 13950
     }
   ]
 }

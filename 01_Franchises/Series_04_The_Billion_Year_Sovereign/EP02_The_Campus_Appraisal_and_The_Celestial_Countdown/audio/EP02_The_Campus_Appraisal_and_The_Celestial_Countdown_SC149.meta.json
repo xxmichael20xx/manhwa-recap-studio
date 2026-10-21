@@ -1,0 +1,164 @@
+{
+  "scene": 149,
+  "text": "Four hundred and eighty million years of supreme Celestial Sovereign cultivation pulsed within his soul, placing him firmly at the apex of global wealth and military power.",
+  "durationMs": 10104,
+  "rawWords": [
+    {
+      "ttsWord": "Four",
+      "startMs": 50,
+      "endMs": 300
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 313,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 600,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "eighty",
+      "startMs": 763,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "million",
+      "startMs": 988,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 1388,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1713,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 1800,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "Celestial",
+      "startMs": 2250,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "Sovereign",
+      "startMs": 2900,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 3388,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 4075,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 4475,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4700,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "soul",
+      "startMs": 4863,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "placing",
+      "startMs": 5550,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 5963,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "firmly",
+      "startMs": 6113,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 6575,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6663,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "apex",
+      "startMs": 6775,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7288,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "global",
+      "startMs": 7400,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "wealth",
+      "startMs": 7800,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 8125,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "military",
+      "startMs": 8250,
+      "endMs": 8738
+    },
+    {
+      "ttsWord": "power",
+      "startMs": 8750,
+      "endMs": 9225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Four hundred and eighty million years of supreme",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2238
+    },
+    {
+      "text": "Celestial Sovereign cultivation pulsed within his soul,",
+      "startOffsetMs": 2250,
+      "endOffsetMs": 5350
+    },
+    {
+      "text": "placing him firmly at the apex of global",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7788
+    },
+    {
+      "text": "wealth and military power.",
+      "startOffsetMs": 7800,
+      "endOffsetMs": 9325
+    }
+  ]
+}

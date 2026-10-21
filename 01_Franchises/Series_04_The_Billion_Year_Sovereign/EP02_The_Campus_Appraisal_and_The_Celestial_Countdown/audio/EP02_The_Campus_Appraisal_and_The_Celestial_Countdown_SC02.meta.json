@@ -1,0 +1,154 @@
+{
+  "scene": 2,
+  "text": "High above the city, the monumental thirty-thousand-metre Heaven-Earth Golden Stele hung motionless in the troposphere, casting a colossal golden shadow across the entire municipality.",
+  "durationMs": 11040,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 338,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 675,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "city",
+      "startMs": 775,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1375,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "monumental",
+      "startMs": 1463,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "thirty-thousand-metre",
+      "startMs": 2100,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "Heaven-Earth",
+      "startMs": 3138,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 3675,
+      "endMs": 4038
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 4050,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "hung",
+      "startMs": 4438,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "motionless",
+      "startMs": 4725,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5300,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5400,
+      "endMs": 5463
+    },
+    {
+      "ttsWord": "troposphere",
+      "startMs": 5475,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "casting",
+      "startMs": 6413,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6838,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "colossal",
+      "startMs": 6913,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 7438,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "shadow",
+      "startMs": 7813,
+      "endMs": 8238
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 8250,
+      "endMs": 8638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8650,
+      "endMs": 8725
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 8738,
+      "endMs": 9238
+    },
+    {
+      "ttsWord": "municipality",
+      "startMs": 9250,
+      "endMs": 10163
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High above the city,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1250
+    },
+    {
+      "text": "the monumental thirty-thousand-metre Heaven-Earth Golden Stele",
+      "startOffsetMs": 1375,
+      "endOffsetMs": 4425
+    },
+    {
+      "text": "hung motionless in the troposphere,",
+      "startOffsetMs": 4438,
+      "endOffsetMs": 6263
+    },
+    {
+      "text": "casting a colossal golden shadow across the entire",
+      "startOffsetMs": 6413,
+      "endOffsetMs": 9238
+    },
+    {
+      "text": "municipality.",
+      "startOffsetMs": 9250,
+      "endOffsetMs": 10263
+    }
+  ]
+}

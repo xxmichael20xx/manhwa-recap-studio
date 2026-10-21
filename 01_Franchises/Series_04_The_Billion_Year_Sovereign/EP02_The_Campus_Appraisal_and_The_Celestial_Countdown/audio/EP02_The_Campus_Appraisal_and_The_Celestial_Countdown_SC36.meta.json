@@ -1,0 +1,144 @@
+{
+  "scene": 36,
+  "text": "The crystalline pillar violently roared with bright cyan illumination, and the digital scoreboard flashed: APPRAISAL: ZHAO LEI — 5,400 YEARS (FOUNDATION ESTABLISHMENT REALM).",
+  "durationMs": 12456,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "crystalline",
+      "startMs": 200,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "pillar",
+      "startMs": 725,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "violently",
+      "startMs": 1038,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 1563,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1900,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "bright",
+      "startMs": 2063,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "cyan",
+      "startMs": 2375,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "illumination",
+      "startMs": 2838,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3825,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3938,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "digital",
+      "startMs": 4063,
+      "endMs": 4425
+    },
+    {
+      "ttsWord": "scoreboard",
+      "startMs": 4438,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "flashed",
+      "startMs": 4988,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "APPRAISAL",
+      "startMs": 5763,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "ZHAO",
+      "startMs": 6663,
+      "endMs": 6963
+    },
+    {
+      "ttsWord": "LEI",
+      "startMs": 6975,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "5,400 YEARS",
+      "startMs": 7863,
+      "endMs": 9625
+    },
+    {
+      "ttsWord": "FOUNDATION",
+      "startMs": 9863,
+      "endMs": 10438
+    },
+    {
+      "ttsWord": "ESTABLISHMENT",
+      "startMs": 10450,
+      "endMs": 11138
+    },
+    {
+      "ttsWord": "REALM",
+      "startMs": 11150,
+      "endMs": 11575
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The crystalline pillar violently roared with bright cyan",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "illumination,",
+      "startOffsetMs": 2838,
+      "endOffsetMs": 3663
+    },
+    {
+      "text": "and the digital scoreboard flashed:",
+      "startOffsetMs": 3825,
+      "endOffsetMs": 5600
+    },
+    {
+      "text": "APPRAISAL:",
+      "startOffsetMs": 5763,
+      "endOffsetMs": 6450
+    },
+    {
+      "text": "ZHAO LEI",
+      "startOffsetMs": 6663,
+      "endOffsetMs": 7650
+    },
+    {
+      "text": "5,400 YEARS FOUNDATION ESTABLISHMENT REALM).",
+      "startOffsetMs": 7863,
+      "endOffsetMs": 11675
+    }
+  ]
+}

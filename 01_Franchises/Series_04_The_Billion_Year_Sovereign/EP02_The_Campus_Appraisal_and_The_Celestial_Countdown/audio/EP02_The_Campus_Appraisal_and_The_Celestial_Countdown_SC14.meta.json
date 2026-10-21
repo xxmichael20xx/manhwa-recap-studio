@@ -1,0 +1,144 @@
+{
+  "scene": 14,
+  "text": "Outside in the fourth-floor corridor, yellow holographic hazard tape sealed off the cratered concrete wall where Gu Tianyu had crashed the previous evening.",
+  "durationMs": 8928,
+  "rawWords": [
+    {
+      "ttsWord": "Outside",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 600,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 663,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "fourth-floor",
+      "startMs": 750,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "corridor",
+      "startMs": 1375,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "yellow",
+      "startMs": 2188,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "holographic",
+      "startMs": 2463,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "hazard",
+      "startMs": 3150,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "tape",
+      "startMs": 3538,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "sealed",
+      "startMs": 3813,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 4175,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4338,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "cratered",
+      "startMs": 4450,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 4863,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "wall",
+      "startMs": 5388,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "where",
+      "startMs": 5750,
+      "endMs": 5913
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 5925,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 6138,
+      "endMs": 6513
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 6525,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "crashed",
+      "startMs": 6675,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7063,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "previous",
+      "startMs": 7150,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "evening",
+      "startMs": 7638,
+      "endMs": 8063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Outside in the fourth-floor corridor,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1988
+    },
+    {
+      "text": "yellow holographic hazard tape sealed off the cratered",
+      "startOffsetMs": 2188,
+      "endOffsetMs": 4850
+    },
+    {
+      "text": "concrete wall where Gu Tianyu had crashed the",
+      "startOffsetMs": 4863,
+      "endOffsetMs": 7138
+    },
+    {
+      "text": "previous evening.",
+      "startOffsetMs": 7150,
+      "endOffsetMs": 8163
+    }
+  ]
+}

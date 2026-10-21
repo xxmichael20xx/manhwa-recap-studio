@@ -1,0 +1,179 @@
+{
+  "scene": 154,
+  "text": "\"Citizens of Blue Star,\" Ye Xingchen addressed the world in a smooth, resonant baritone that echoed through billions of speakers. \"The archaic era of mortal governance has officially concluded.\"",
+  "durationMs": 12144,
+  "rawWords": [
+    {
+      "ttsWord": "Citizens",
+      "startMs": 50,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 700,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "Blue",
+      "startMs": 850,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "Star",
+      "startMs": 1088,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 1750,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 1863,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "addressed",
+      "startMs": 2300,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2738,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 2838,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3188,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3275,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "smooth",
+      "startMs": 3350,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "resonant",
+      "startMs": 4188,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "baritone",
+      "startMs": 4600,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5125,
+      "endMs": 5313
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 5325,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5688,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "billions",
+      "startMs": 5900,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6363,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "speakers",
+      "startMs": 6450,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "The",
+      "startMs": 7988,
+      "endMs": 8125
+    },
+    {
+      "ttsWord": "archaic",
+      "startMs": 8138,
+      "endMs": 8713
+    },
+    {
+      "ttsWord": "era",
+      "startMs": 8725,
+      "endMs": 8988
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9000,
+      "endMs": 9125
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 9138,
+      "endMs": 9463
+    },
+    {
+      "ttsWord": "governance",
+      "startMs": 9475,
+      "endMs": 9938
+    },
+    {
+      "ttsWord": "has",
+      "startMs": 9950,
+      "endMs": 10113
+    },
+    {
+      "ttsWord": "officially",
+      "startMs": 10125,
+      "endMs": 10638
+    },
+    {
+      "ttsWord": "concluded",
+      "startMs": 10650,
+      "endMs": 11275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Citizens of Blue Star,\" Ye Xingchen addressed the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2825
+    },
+    {
+      "text": "world in a smooth,",
+      "startOffsetMs": 2838,
+      "endOffsetMs": 3950
+    },
+    {
+      "text": "resonant baritone that echoed through billions of speakers.",
+      "startOffsetMs": 4188,
+      "endOffsetMs": 7225
+    },
+    {
+      "text": "The archaic era of mortal governance has officially",
+      "startOffsetMs": 7988,
+      "endOffsetMs": 10638
+    },
+    {
+      "text": "concluded.\"",
+      "startOffsetMs": 10650,
+      "endOffsetMs": 11375
+    }
+  ]
+}

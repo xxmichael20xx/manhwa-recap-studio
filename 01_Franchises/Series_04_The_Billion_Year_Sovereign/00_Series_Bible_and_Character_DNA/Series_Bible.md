@@ -39,7 +39,7 @@
 
 ---
 
-## 👥 Locked Character Vault (Option A Roster)
+## 👥 Locked Character Vault (All 13 Canonical Models)
 
 1. **Protagonist (MC): Lu Chen (陆晨)**
    - **Role:** Relaxed, deadpan 2nd-year university student; unbothered 1-billion-year sovereign apex.
@@ -83,17 +83,43 @@
    - **Cultivation Base:** 450,000,000 Years (Asura Blood Emperor Realm)
    - **DNA Prompt:** `@{Asura Blood Sovereign}, 8-foot-tall demonic humanoid sovereign, six muscular obsidian-crimson armored arms each physically connected to shoulders, wild long crimson flame hair billowing outward, four burning red demonic eyes, ornate barbed dark crimson demon-iron armor with glowing ancient runes, jagged bone spikes on shoulders, suffocating dark blood-red mist and black lightning aura, modern 2025 action manhwa art style, sharp ink linework, cinematic dramatic lighting, vertical 9:16`
 
+8. **Weapon: Gu Tianyu's Jade Spirit Blade (顾天宇的碧玉灵刃)**
+   - **Role:** Gu Syndicate Custom Spirit Saber; 48,000-year Golden Core weapon shattered upon Lu Chen's skin.
+   - **DNA Prompt:** `@{Gu Tianyu's Jade Spirit Blade}, ornate Chinese spirit dao saber, curved forged silver-steel blade with razor-sharp translucent luminous cyan jade cutting edge faintly glowing with cyan wind-spirit runes, ornate sculpted white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, flowing cyan silk tassel, vertical 3/4 angle, modern 2025 urban cultivation manhwa art style, vertical 9:16`
+
+9. **Prop: Tactical Spirit Spectrometer (战术灵能分光仪)**
+   - **Role:** National Threat Bureau handheld spiritual energy detector; overloaded by Lu Chen's primordial aura.
+   - **DNA Prompt:** `@{Tactical Spirit Spectrometer}, handheld military-grade tactical spirit-energy spectrometer, ruggedized dark olive-drab and brushed-brass rectangular casing with reinforced black rubber bumpers, circular brass sensor nozzle with glowing quartz crystal lens, analog sweep gauge needle alongside glowing amber vacuum-tube digital counter readout, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+10. **Monumental Artifact: Heaven-Earth Golden Stele (天地金榜)**
+    - **Role:** Global celestial ranking monument; counts down and projects the Top 10 Supreme Cultivators across troposphere.
+    - **DNA Prompt:** `@{Heaven-Earth Golden Stele}, colossal thirty-thousand-metre ancient celestial ranking monument, towering rectangular obsidian-and-gold monolith floating motionless in troposphere, intricate divine golden calligraphy inscriptions and celestial star-maps deeply carved into mirror-black stone surface radiating warm golden luminescence, swirling violet and golden starlight nebula rings, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+11. **Antagonist Enforcer: Chief Enforcer Gu Biao (顾彪)**
+    - **Role:** Gu Capital Syndicate Chief Enforcer; 200,000-year Nascent Domain brute.
+    - **Cultivation Base:** 200,000 Years (Nascent Domain Realm)
+    - **DNA Prompt:** `@{Chief Enforcer Gu Biao}, 35-year-old imposing East Asian male enforcer, towering muscular 6-foot-4 frame, broad shoulders, buzz-cut dark hair, brutal scarred jawline, dark tactical sunglasses over predatory eyes, open designer charcoal-black trench coat over dark silk vest and tailored trousers, heavy combat boots, silver-threaded combat knuckle rings, crackling dark-crimson gravitational spirit aura, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+12. **Prop: Celestial Star Astrolabe (天星浑天仪)**
+    - **Role:** Jiang Qingxue's high-precision starlight divination instrument; used to calculate Xiao Yao's physical coordinates.
+    - **DNA Prompt:** `@{Celestial Star Astrolabe}, ancient handheld celestial star astrolabe, spherical brass-and-celestial-silver armillary astrolabe with concentric rotating gimbal rings etched with glowing cyan starlight constellations, suspended luminous cyan spirit crystal core pulsing with delicate starlight, slender silver divination needles, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+13. **In-World HUD: Heavenly Dao Simulator Interface (天道模拟器界面)**
+    - **Role:** Lu Chen's reality-fusing idle cultivation simulator HUD; displays primordial cultivation tally and causal dampening status.
+    - **DNA Prompt:** `@{Heavenly Dao Simulator Interface}, sleek futuristic Dao-infused holographic cultivation system interface window floating vertically in mid-air at eye level, translucent dark tempered obsidian-glass HUD, minimalist chamfered corners, ultra-fine glowing celestial gold borders with luminescent cyan circuit traces, circular Dao progression ring pulsing with golden starlight motes displaying golden digits '1,000,000,000' and 'REALM: PRIMORDIAL SOVEREIGN', modern 2025 urban cultivation manhwa style, vertical 9:16`
+
 ---
 
 ## 🎭 The Identity Engine: The Double-Blind System
 
 * **IGN vs Legal Name:**  
-  The celestial rankings only project his in-game handle: **`[Rank 1: Xiao Yao / The Primordial Sovereign]`**. Nobody knows that "Xiao Yao" is the quiet university student **Lu Chen** living in Dormitory Room 402.
+  The celestial rankings project his in-game handle: **`[GLOBAL RANK 1: 'XIAO YAO' (THE PRIMORDIAL SOVEREIGN) — 1,000,000,000 YEARS]`**. When the Stele attempts to expose his real name, his 1-Billion-Year primordial authority shatters the inscription into **`[REAL IDENTITY: REDACTED BY PRIMORDIAL SOVEREIGN AUTHORITY]`**, while his private floating **`@{Heavenly Dao Simulator Interface}`** confirms: `[HOST: LU CHEN (DAO TITLE: XIAO YAO) — GLOBAL RANK 1 CROWNED. MORTAL IDENTITY CLOAK: ACTIVE]`.
 * **The Transcendent Apex Appraisal HUD:**  
   State aura detectors and appraisal talismans cannot compute his magnitude, rendering ordinary sensors overloaded while his personal in-world System HUD cleanly displays:
   ```
   [TARGET APPRAISAL: LU CHEN]
-  ACTIVE SYNCHRONISATION: 25.00% (250,000,000 YEARS)
+  ACTIVE SYNCHRONISATION: 100.00% (1,000,000,000 YEARS)
+  PLANETARY DAMPENING: ACTIVE (OUTPUT CAPPED AT 0.00001% FOR DORMITORY RESIDENCE)
   STATUS: TRANSCENDENT APEX / INFINITE OVERFLOW
   THREAT CLASSIFICATION: BEYOND MEASUREMENT / APEX
   ```
@@ -104,20 +130,34 @@
 
 ---
 
-## 🗺️ Narrative Arcs & Multi-Climax Structure
+## 🗺️ Narrative Arcs & Multi-Climax Structure (Season 1: 18 Episodes across 4 Arcs)
 
-* **Arc 1: The Convergence & The Dormitory Awakening (Episodes 1–3)**
-  * *Setup:* Reality fuses with the simulator. Roommates rejoice over lifting desks. Gu Tianyu (48,000 years) starts extorting dorm buildings.
-  * **🔥 Climax 1 (The Hallway Blade Shatter):** Gu Tianyu strikes Lu Chen with his 48,000-year Golden Core spirit blade. Upon impact with Lu Chen’s skin, the blade shatters into powder from pure passive recoil. Lu Chen deadpans: *"Your cheap blade had a manufacturing defect."*
-* **Arc 2: The Heaven-Earth Golden Stele & The Global Hunt (Episodes 4–7)**
-  * *Setup:* A celestial leaderboard descends across the sky above every capital city on Earth, counting down the Top 10,000 Cultivators.
-  * **🔥 Climax 2 (The 1-Billion-Year Shockwave):** Ranks 10 through 2 are revealed ($150\text{M}–480\text{M}$ years). Then Rank 1 drops:  
-    `[GLOBAL RANK 1: 'Xiao Yao' / The Primordial Sovereign — Cultivation: 1,000,000,000 Years]`  
-    The astronomical number defies comprehension. The system masks his real-world identity, sparking an urgent global manhunt.
-* **Arc 3: The Abyssal Rift & The 450M-Year Despot (Episodes 8–12)**
-  * *Setup:* A Class-SSS Dimensional Rift ruptures over Jiangnan Province. The **Asura Blood Sovereign** (450 Million Years) emerges and swats away national enforcers.
-  * **🔥 Climax 3 (The Grocery Bag Exorcism):** Lu Chen, walking back from a convenience store with instant noodles, finds his path blocked. Annoyed by the detour, he releases $0.0001\%$ of his aura. The 450M-year boss drops to its knees in primal terror before disintegrating. A military drone captures a blurry silhouette of Lu Chen's hoodie, birthing the viral legend of the "Hooded Sovereign."
-* **Arc 4: The Great Syndicate Conclave & The Grand Unveiling (Episodes 13–18)**
-  * *Setup:* Rank 2 player **Ye Xingchen** (*Lord Starfall*, 480 Million Years) blockades Qindu University with a *Heavenly Constellation Domain*, believing Rank 1 is hiding there.
-  * **🔥 Climax 4 (The Grand Face-Slap & Planetary Domination):** Lu Chen calmly walks into the open sky step by step. Ye Xingchen mocks the "mortal ant," but Lu Chen speaks one command: **"Kneel."**  
-    The 1-Billion-Year aura unlocks. The 480M-year domain shatters like glass. Ye Xingchen and hundreds of elite guild masters are pinned flat to the ground under inescapable gravitational suppression, as live global broadcast cameras zoom in on Lu Chen's face.
+### 📦 Arc 1: The Convergence & The Qindu Campus Awakening (Episodes 1–3)
+* **Episode 01 (Completed — 21m 46s, 84 Scenes):** *The One-Billion-Year Awakening & The Broken Blade*
+  * Reality fuses with the simulator. Lu Chen awakens with 1B Years unlocked. Gu Tianyu strikes with his 48,000-year Golden Core spirit blade, which shatters into fine powder upon Lu Chen's passive skin recoil.
+* **Episode 02 (Completed — 36m 11s, 216 Scenes):** *The Campus Appraisal & The Celestial Countdown*
+  * Commander Han Feng's Threat Bureau locks down Qindu University. Lu Chen overflows the Tactical Spirit Spectrometer (`999,999,999+ OVERFLOW`). Chief Enforcer Gu Biao (`200,000 Years`) is humiliated. The Heaven-Earth Golden Stele reaches zero and crowns **`[GLOBAL RANK 1: 'XIAO YAO' — 1,000,000,000 YEARS]`** with legal identity redacted by Sovereign authority.
+* **Episode 03 (Upcoming — Climax of Arc 1):** *The Campus Lockdown & The Impostor Sovereign*
+  * Fallout on Qindu University track: Han Feng's fried spectrometer data and Jiang Qingxue's astrolabe trace confirm Rank #1 was physically on campus when the Stele chimed. A rogue prodigy claims to be 'Xiao Yao's' disciple to extort the university, leading to a decisive campus face-slap that concludes Arc 1.
+
+### 📦 Arc 2: The Global Manhunt & The Jiangnan Syndicate War (Episodes 4–7)
+* **Episode 04:** *The Disciple's Search & The Black-Market Spirit Auction*  
+  Jiang Qingxue arrives at Qindu University to find her master. Lu Chen casually pawns an introductory simulator pill to pay dorm fees, sparking a multi-billion-dollar oligarch bidding frenzy.
+* **Episode 05:** *The Gu Capital Patriarch's Wrath*  
+  Gu Tianyu's father, Chairman Gu, deploys a 15-Million-Year private mercenary elder to eliminate Dorm 402 under a regional communications blackout.
+* **Episode 06:** *The Forbidden Formation & The Silent Erasure*  
+  The Gu syndicate seals the collegiate district with an ancient slaughter formation; Lu Chen neutralises the array with a single step on his way to breakfast.
+* **Episode 07 (Arc 2 Climax):** *The Fall of the Gu Zaibatsu*  
+  Lu Chen releases 0.01% of his aura to disintegrate the syndicate's headquarters, cementing Jiangnan as the undisputed domain of an untouchable hidden entity.
+
+### 📦 Arc 3: The Abyssal Rift & The 450M-Year Despot (Episodes 8–12)
+* **Episodes 08–09:** Dimensional rifts tear open over Blue Star; international armed forces fail against ancient rift horrors.
+* **Episodes 10–11:** Class-SSS Dimensional Rift ruptures over Jiangnan. The **Asura Blood Sovereign (`450,000,000 Years`)** emerges, swatting away national defense divisions.
+* **Episode 12 (Arc 3 Climax — The Grocery Bag Exorcism):**  
+  Lu Chen, walking home with instant noodles, finds his sidewalk blocked. Annoyed by the disturbance, he releases 0.0001% aura, forcing the 450M-year boss to its knees in primal terror before disintegrating. A military drone captures a blurry silhouette of his hoodie, creating the viral global legend of the **"Hooded Sovereign."**
+
+### 📦 Arc 4: The Great Syndicate Conclave & The Grand Unveiling (Episodes 13–18)
+* **Episodes 13–15:** Global coalition led by Rank 2 **Ye Xingchen (`Lord Starfall`, `480,000,000 Years`)** blockades Jiangnan to locate and subjugate 'Xiao Yao'.
+* **Episodes 16–17:** Ye Xingchen surrounds Qindu University with his *Heavenly Constellation Domain*, holding campus students hostage to force 'Xiao Yao' out.
+* **Episode 18 (Season 1 Climax — The Grand Face-Slap):**  
+  Lu Chen steps into the sky. Ye Xingchen mocks the "mortal student," but Lu Chen speaks one word: **"Kneel."** The 1-Billion-Year aura unlocks, shattering the constellation domain and pinning Ye Xingchen and hundreds of elite guild oligarchs flat to the ground as live global television broadcasts zoom in on Lu Chen's face.

@@ -1,0 +1,149 @@
+{
+  "scene": 108,
+  "text": "Jiang Qingxue walked down the floating ice lotus stairs step by step, her every movement embodying the peerless majesty of a living immortal fairy.",
+  "durationMs": 9000,
+  "rawWords": [
+    {
+      "ttsWord": "Jiang",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 475,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "walked",
+      "startMs": 988,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 1313,
+      "endMs": 1513
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1525,
+      "endMs": 1600
+    },
+    {
+      "ttsWord": "floating",
+      "startMs": 1613,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "ice",
+      "startMs": 2063,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "lotus",
+      "startMs": 2288,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "stairs",
+      "startMs": 2650,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "step",
+      "startMs": 3000,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 3300,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "step",
+      "startMs": 3450,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 4188,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 4388,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "movement",
+      "startMs": 4625,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "embodying",
+      "startMs": 5063,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5613,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "peerless",
+      "startMs": 5713,
+      "endMs": 6163
+    },
+    {
+      "ttsWord": "majesty",
+      "startMs": 6175,
+      "endMs": 6763
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 6775,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 6850,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "living",
+      "startMs": 6925,
+      "endMs": 7238
+    },
+    {
+      "ttsWord": "immortal",
+      "startMs": 7250,
+      "endMs": 7625
+    },
+    {
+      "ttsWord": "fairy",
+      "startMs": 7638,
+      "endMs": 8138
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Jiang Qingxue walked down the floating ice lotus",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2638
+    },
+    {
+      "text": "stairs step by step,",
+      "startOffsetMs": 2650,
+      "endOffsetMs": 3975
+    },
+    {
+      "text": "her every movement embodying the peerless majesty of",
+      "startOffsetMs": 4188,
+      "endOffsetMs": 6838
+    },
+    {
+      "text": "a living immortal fairy.",
+      "startOffsetMs": 6850,
+      "endOffsetMs": 8238
+    }
+  ]
+}

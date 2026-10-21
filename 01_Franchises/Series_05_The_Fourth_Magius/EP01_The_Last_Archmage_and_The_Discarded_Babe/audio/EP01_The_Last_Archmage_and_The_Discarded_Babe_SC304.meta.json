@@ -1,7 +1,7 @@
 {
   "scene": 304,
-  "text": "The wyrm let out an ear-piercing subterranean roar and exhaled a wide spray of boiling purple venom across the town plaza.",
-  "durationMs": 8304,
+  "text": "The wyrm let out an ear-piercing subterranean roar and exhaled a wide spray of boiling violet wyrm plasma across the town plaza.",
+  "durationMs": 9456,
   "rawWords": [
     {
       "ttsWord": "The",
@@ -31,99 +31,104 @@
     {
       "ttsWord": "ear-piercing",
       "startMs": 1538,
-      "endMs": 2188
+      "endMs": 2175
     },
     {
       "ttsWord": "subterranean",
-      "startMs": 2200,
-      "endMs": 2975
+      "startMs": 2188,
+      "endMs": 2963
     },
     {
       "ttsWord": "roar",
-      "startMs": 2988,
-      "endMs": 3400
+      "startMs": 2975,
+      "endMs": 3388
     },
     {
       "ttsWord": "and",
-      "startMs": 3413,
-      "endMs": 3588
+      "startMs": 3400,
+      "endMs": 3575
     },
     {
       "ttsWord": "exhaled",
-      "startMs": 3600,
-      "endMs": 4088
+      "startMs": 3588,
+      "endMs": 4075
     },
     {
       "ttsWord": "a",
-      "startMs": 4100,
-      "endMs": 4150
+      "startMs": 4088,
+      "endMs": 4138
     },
     {
       "ttsWord": "wide",
-      "startMs": 4163,
-      "endMs": 4513
+      "startMs": 4150,
+      "endMs": 4500
     },
     {
       "ttsWord": "spray",
-      "startMs": 4525,
-      "endMs": 4863
+      "startMs": 4513,
+      "endMs": 4850
     },
     {
       "ttsWord": "of",
-      "startMs": 4875,
-      "endMs": 5000
+      "startMs": 4863,
+      "endMs": 4988
     },
     {
       "ttsWord": "boiling",
-      "startMs": 5013,
-      "endMs": 5413
+      "startMs": 5000,
+      "endMs": 5400
     },
     {
-      "ttsWord": "purple",
-      "startMs": 5425,
-      "endMs": 5750
+      "ttsWord": "violet",
+      "startMs": 5413,
+      "endMs": 5825
     },
     {
-      "ttsWord": "venom",
-      "startMs": 5763,
-      "endMs": 6063
+      "ttsWord": "wyrm",
+      "startMs": 5838,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "plasma",
+      "startMs": 6663,
+      "endMs": 7213
     },
     {
       "ttsWord": "across",
-      "startMs": 6075,
-      "endMs": 6450
+      "startMs": 7225,
+      "endMs": 7600
     },
     {
       "ttsWord": "the",
-      "startMs": 6463,
-      "endMs": 6563
+      "startMs": 7613,
+      "endMs": 7713
     },
     {
       "ttsWord": "town",
-      "startMs": 6575,
-      "endMs": 6863
+      "startMs": 7725,
+      "endMs": 8013
     },
     {
       "ttsWord": "plaza",
-      "startMs": 6875,
-      "endMs": 7425
+      "startMs": 8025,
+      "endMs": 8588
     }
   ],
   "relativeCues": [
     {
       "text": "The wyrm let out an ear-piercing subterranean roar",
       "startOffsetMs": 50,
-      "endOffsetMs": 3400
+      "endOffsetMs": 3388
     },
     {
-      "text": "and exhaled a wide spray of boiling purple",
-      "startOffsetMs": 3413,
-      "endOffsetMs": 5750
+      "text": "and exhaled a wide spray of boiling violet",
+      "startOffsetMs": 3400,
+      "endOffsetMs": 5825
     },
     {
-      "text": "venom across the town plaza.",
-      "startOffsetMs": 5763,
-      "endOffsetMs": 7525
+      "text": "wyrm plasma across the town plaza.",
+      "startOffsetMs": 5838,
+      "endOffsetMs": 8688
     }
   ]
 }

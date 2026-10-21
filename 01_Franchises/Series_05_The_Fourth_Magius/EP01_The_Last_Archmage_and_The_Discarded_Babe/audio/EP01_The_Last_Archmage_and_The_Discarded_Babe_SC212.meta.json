@@ -1,169 +1,244 @@
 {
   "scene": 212,
-  "text": "He strapped the disguised Primordial Codex securely inside his inner tunic pocket, took his blackwood staff in hand, and cast one final look at his forest sanctuary.",
-  "durationMs": 10392,
+  "text": "Clad in his tailored charcoal winter-wolf leather tunic with its soft wolf-fur collar, he strapped the disguised Primordial Codex securely inside his inner breast pocket, took his blackwood staff in hand, and cast one final look at his forest sanctuary.",
+  "durationMs": 14424,
   "rawWords": [
     {
-      "ttsWord": "He",
+      "ttsWord": "Clad",
       "startMs": 50,
-      "endMs": 225
-    },
-    {
-      "ttsWord": "strapped",
-      "startMs": 238,
-      "endMs": 675
-    },
-    {
-      "ttsWord": "the",
-      "startMs": 688,
-      "endMs": 788
-    },
-    {
-      "ttsWord": "disguised",
-      "startMs": 800,
-      "endMs": 1375
-    },
-    {
-      "ttsWord": "Primordial",
-      "startMs": 1388,
-      "endMs": 1963
-    },
-    {
-      "ttsWord": "Codex",
-      "startMs": 1975,
-      "endMs": 2400
-    },
-    {
-      "ttsWord": "securely",
-      "startMs": 2413,
-      "endMs": 2925
-    },
-    {
-      "ttsWord": "inside",
-      "startMs": 2938,
-      "endMs": 3350
-    },
-    {
-      "ttsWord": "his",
-      "startMs": 3363,
-      "endMs": 3488
-    },
-    {
-      "ttsWord": "inner",
-      "startMs": 3500,
-      "endMs": 3775
-    },
-    {
-      "ttsWord": "tunic",
-      "startMs": 3788,
-      "endMs": 4138
-    },
-    {
-      "ttsWord": "pocket",
-      "startMs": 4150,
-      "endMs": 4588
-    },
-    {
-      "ttsWord": "took",
-      "startMs": 4863,
-      "endMs": 5013
-    },
-    {
-      "ttsWord": "his",
-      "startMs": 5025,
-      "endMs": 5138
-    },
-    {
-      "ttsWord": "blackwood",
-      "startMs": 5150,
-      "endMs": 5625
-    },
-    {
-      "ttsWord": "staff",
-      "startMs": 5638,
-      "endMs": 6025
+      "endMs": 363
     },
     {
       "ttsWord": "in",
-      "startMs": 6038,
-      "endMs": 6138
-    },
-    {
-      "ttsWord": "hand",
-      "startMs": 6150,
-      "endMs": 6513
-    },
-    {
-      "ttsWord": "and",
-      "startMs": 6788,
-      "endMs": 6950
-    },
-    {
-      "ttsWord": "cast",
-      "startMs": 6963,
-      "endMs": 7325
-    },
-    {
-      "ttsWord": "one",
-      "startMs": 7338,
-      "endMs": 7538
-    },
-    {
-      "ttsWord": "final",
-      "startMs": 7550,
-      "endMs": 7913
-    },
-    {
-      "ttsWord": "look",
-      "startMs": 7925,
-      "endMs": 8113
-    },
-    {
-      "ttsWord": "at",
-      "startMs": 8125,
-      "endMs": 8175
+      "startMs": 375,
+      "endMs": 450
     },
     {
       "ttsWord": "his",
-      "startMs": 8188,
-      "endMs": 8325
+      "startMs": 463,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "tailored",
+      "startMs": 625,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "charcoal",
+      "startMs": 1025,
+      "endMs": 1488
+    },
+    {
+      "ttsWord": "winter-wolf",
+      "startMs": 1500,
+      "endMs": 2013
+    },
+    {
+      "ttsWord": "leather",
+      "startMs": 2025,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "tunic",
+      "startMs": 2313,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 2675,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 2825,
+      "endMs": 2963
+    },
+    {
+      "ttsWord": "soft",
+      "startMs": 2975,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "wolf-fur",
+      "startMs": 3325,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "collar",
+      "startMs": 3750,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 4488,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "strapped",
+      "startMs": 4588,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4988,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "disguised",
+      "startMs": 5088,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "Primordial",
+      "startMs": 5663,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "Codex",
+      "startMs": 6225,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "securely",
+      "startMs": 6663,
+      "endMs": 7138
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 7150,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7563,
+      "endMs": 7688
+    },
+    {
+      "ttsWord": "inner",
+      "startMs": 7700,
+      "endMs": 7963
+    },
+    {
+      "ttsWord": "breast",
+      "startMs": 7975,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "pocket",
+      "startMs": 8288,
+      "endMs": 8713
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 8950,
+      "endMs": 9100
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 9113,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "blackwood",
+      "startMs": 9238,
+      "endMs": 9713
+    },
+    {
+      "ttsWord": "staff",
+      "startMs": 9725,
+      "endMs": 10113
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 10125,
+      "endMs": 10225
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 10238,
+      "endMs": 10600
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 10863,
+      "endMs": 11025
+    },
+    {
+      "ttsWord": "cast",
+      "startMs": 11038,
+      "endMs": 11400
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 11413,
+      "endMs": 11600
+    },
+    {
+      "ttsWord": "final",
+      "startMs": 11613,
+      "endMs": 11963
+    },
+    {
+      "ttsWord": "look",
+      "startMs": 11975,
+      "endMs": 12163
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 12175,
+      "endMs": 12225
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 12238,
+      "endMs": 12388
     },
     {
       "ttsWord": "forest",
-      "startMs": 8338,
-      "endMs": 8738
+      "startMs": 12400,
+      "endMs": 12788
     },
     {
       "ttsWord": "sanctuary",
-      "startMs": 8750,
-      "endMs": 9513
+      "startMs": 12800,
+      "endMs": 13563
     }
   ],
   "relativeCues": [
     {
-      "text": "He strapped the disguised Primordial Codex securely inside",
+      "text": "Clad in his tailored charcoal winter-wolf leather tunic",
       "startOffsetMs": 50,
-      "endOffsetMs": 3350
+      "endOffsetMs": 2663
     },
     {
-      "text": "his inner tunic pocket,",
-      "startOffsetMs": 3363,
-      "endOffsetMs": 4688
+      "text": "with its soft wolf-fur collar,",
+      "startOffsetMs": 2675,
+      "endOffsetMs": 4263
+    },
+    {
+      "text": "he strapped the disguised Primordial Codex securely inside",
+      "startOffsetMs": 4488,
+      "endOffsetMs": 7550
+    },
+    {
+      "text": "his inner breast pocket,",
+      "startOffsetMs": 7563,
+      "endOffsetMs": 8813
     },
     {
       "text": "took his blackwood staff in hand,",
-      "startOffsetMs": 4863,
-      "endOffsetMs": 6613
+      "startOffsetMs": 8950,
+      "endOffsetMs": 10700
     },
     {
       "text": "and cast one final look at his forest",
-      "startOffsetMs": 6788,
-      "endOffsetMs": 8738
+      "startOffsetMs": 10863,
+      "endOffsetMs": 12788
     },
     {
       "text": "sanctuary.",
-      "startOffsetMs": 8750,
-      "endOffsetMs": 9613
+      "startOffsetMs": 12800,
+      "endOffsetMs": 13663
     }
   ]
 }

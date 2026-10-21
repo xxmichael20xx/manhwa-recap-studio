@@ -1,0 +1,189 @@
+{
+  "scene": 60,
+  "text": "Down by the track barriers, Wang Bao turned bright red with fury, shaking his fists at the grandstands as he shouted at the top of his lungs to defend his roommate.",
+  "durationMs": 9792,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 388
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 400,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 550,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "track",
+      "startMs": 663,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "barriers",
+      "startMs": 1025,
+      "endMs": 1625
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 1813,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2138,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "turned",
+      "startMs": 2325,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "bright",
+      "startMs": 2713,
+      "endMs": 3050
+    },
+    {
+      "ttsWord": "red",
+      "startMs": 3063,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3275,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "fury",
+      "startMs": 3425,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "shaking",
+      "startMs": 4188,
+      "endMs": 4588
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4600,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "fists",
+      "startMs": 4775,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 5175,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5263,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "grandstands",
+      "startMs": 5350,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6000,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 6150,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "shouted",
+      "startMs": 6250,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 6700,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6788,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "top",
+      "startMs": 6888,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7188,
+      "endMs": 7263
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7275,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "lungs",
+      "startMs": 7438,
+      "endMs": 7775
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7788,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "defend",
+      "startMs": 7888,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 8288,
+      "endMs": 8425
+    },
+    {
+      "ttsWord": "roommate",
+      "startMs": 8438,
+      "endMs": 8913
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down by the track barriers,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1725
+    },
+    {
+      "text": "Wang Bao turned bright red with fury,",
+      "startOffsetMs": 1813,
+      "endOffsetMs": 3950
+    },
+    {
+      "text": "shaking his fists at the grandstands as he",
+      "startOffsetMs": 4188,
+      "endOffsetMs": 6238
+    },
+    {
+      "text": "shouted at the top of his lungs to",
+      "startOffsetMs": 6250,
+      "endOffsetMs": 7875
+    },
+    {
+      "text": "defend his roommate.",
+      "startOffsetMs": 7888,
+      "endOffsetMs": 9013
+    }
+  ]
+}

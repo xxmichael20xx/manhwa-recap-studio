@@ -1,0 +1,139 @@
+{
+  "scene": 188,
+  "text": "Global television news anchors spoke in hushed, trembling whispers: \"Sixty seconds remaining until the Heavenly Dao crowns the apex master of Earth.\"",
+  "durationMs": 9288,
+  "rawWords": [
+    {
+      "ttsWord": "Global",
+      "startMs": 50,
+      "endMs": 438
+    },
+    {
+      "ttsWord": "television",
+      "startMs": 450,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "news",
+      "startMs": 1050,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "anchors",
+      "startMs": 1338,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "spoke",
+      "startMs": 1738,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2050,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "hushed",
+      "startMs": 2150,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 2738,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "whispers",
+      "startMs": 3213,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "Sixty",
+      "startMs": 4038,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 4450,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "remaining",
+      "startMs": 4888,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 5363,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5638,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "Heavenly",
+      "startMs": 5725,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "Dao",
+      "startMs": 6150,
+      "endMs": 6438
+    },
+    {
+      "ttsWord": "crowns",
+      "startMs": 6450,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6875,
+      "endMs": 6975
+    },
+    {
+      "ttsWord": "apex",
+      "startMs": 6988,
+      "endMs": 7463
+    },
+    {
+      "ttsWord": "master",
+      "startMs": 7475,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7888,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "Earth",
+      "startMs": 7988,
+      "endMs": 8413
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Global television news anchors spoke in hushed,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2675
+    },
+    {
+      "text": "trembling whispers:",
+      "startOffsetMs": 2738,
+      "endOffsetMs": 3838
+    },
+    {
+      "text": "Sixty seconds remaining until the Heavenly Dao crowns",
+      "startOffsetMs": 4038,
+      "endOffsetMs": 6863
+    },
+    {
+      "text": "the apex master of Earth.\"",
+      "startOffsetMs": 6875,
+      "endOffsetMs": 8513
+    }
+  ]
+}

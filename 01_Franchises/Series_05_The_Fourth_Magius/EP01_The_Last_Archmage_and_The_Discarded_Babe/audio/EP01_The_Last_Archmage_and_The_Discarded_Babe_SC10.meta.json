@@ -1,7 +1,7 @@
 {
   "scene": 10,
-  "text": "But instead of raising a defensive shield, Michael placed his bloodied palm directly against the constellation clasp of the Primordial Codex.",
-  "durationMs": 8352,
+  "text": "But instead of raising a defensive shield, Michael placed his mana-singed palm directly against the constellation clasp of the Primordial Codex.",
+  "durationMs": 8616,
   "rawWords": [
     {
       "ttsWord": "But",
@@ -46,67 +46,67 @@
     {
       "ttsWord": "placed",
       "startMs": 2725,
-      "endMs": 3088
+      "endMs": 3075
     },
     {
       "ttsWord": "his",
-      "startMs": 3100,
-      "endMs": 3225
+      "startMs": 3088,
+      "endMs": 3200
     },
     {
-      "ttsWord": "bloodied",
-      "startMs": 3238,
-      "endMs": 3638
+      "ttsWord": "mana-singed",
+      "startMs": 3213,
+      "endMs": 3875
     },
     {
       "ttsWord": "palm",
-      "startMs": 3650,
-      "endMs": 3938
+      "startMs": 3888,
+      "endMs": 4175
     },
     {
       "ttsWord": "directly",
-      "startMs": 3950,
-      "endMs": 4438
+      "startMs": 4188,
+      "endMs": 4675
     },
     {
       "ttsWord": "against",
-      "startMs": 4450,
-      "endMs": 4775
+      "startMs": 4688,
+      "endMs": 5013
     },
     {
       "ttsWord": "the",
-      "startMs": 4788,
-      "endMs": 4875
+      "startMs": 5025,
+      "endMs": 5113
     },
     {
       "ttsWord": "constellation",
-      "startMs": 4888,
-      "endMs": 5613
+      "startMs": 5125,
+      "endMs": 5863
     },
     {
       "ttsWord": "clasp",
-      "startMs": 5625,
-      "endMs": 6038
+      "startMs": 5875,
+      "endMs": 6288
     },
     {
       "ttsWord": "of",
-      "startMs": 6050,
-      "endMs": 6113
+      "startMs": 6300,
+      "endMs": 6375
     },
     {
       "ttsWord": "the",
-      "startMs": 6125,
-      "endMs": 6213
+      "startMs": 6388,
+      "endMs": 6463
     },
     {
       "ttsWord": "Primordial",
-      "startMs": 6225,
-      "endMs": 6813
+      "startMs": 6475,
+      "endMs": 7063
     },
     {
       "ttsWord": "Codex",
-      "startMs": 6825,
-      "endMs": 7488
+      "startMs": 7075,
+      "endMs": 7738
     }
   ],
   "relativeCues": [
@@ -116,14 +116,14 @@
       "endOffsetMs": 2200
     },
     {
-      "text": "Michael placed his bloodied palm directly against the",
+      "text": "Michael placed his mana-singed palm directly against the",
       "startOffsetMs": 2350,
-      "endOffsetMs": 4875
+      "endOffsetMs": 5113
     },
     {
       "text": "constellation clasp of the Primordial Codex.",
-      "startOffsetMs": 4888,
-      "endOffsetMs": 7588
+      "startOffsetMs": 5125,
+      "endOffsetMs": 7838
     }
   ]
 }

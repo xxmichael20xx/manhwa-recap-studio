@@ -1,0 +1,124 @@
+{
+  "scene": 65,
+  "text": "Commander Han Feng's weathered military intuition screamed that the student walking off Platform Three was anything but an unranked mortal.",
+  "durationMs": 7896,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 513,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "Feng's",
+      "startMs": 788,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "weathered",
+      "startMs": 1163,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "military",
+      "startMs": 1513,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "intuition",
+      "startMs": 2050,
+      "endMs": 2638
+    },
+    {
+      "ttsWord": "screamed",
+      "startMs": 2650,
+      "endMs": 3075
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 3088,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3200,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "student",
+      "startMs": 3288,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "walking",
+      "startMs": 3663,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "off",
+      "startMs": 4075,
+      "endMs": 4250
+    },
+    {
+      "ttsWord": "Platform",
+      "startMs": 4263,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 4838,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 5163,
+      "endMs": 5388
+    },
+    {
+      "ttsWord": "anything",
+      "startMs": 5400,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 5863,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6000,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "unranked",
+      "startMs": 6138,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 6600,
+      "endMs": 7013
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander Han Feng's weathered military intuition screamed",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3075
+    },
+    {
+      "text": "that the student walking off Platform Three was",
+      "startOffsetMs": 3088,
+      "endOffsetMs": 5388
+    },
+    {
+      "text": "anything but an unranked mortal.",
+      "startOffsetMs": 5400,
+      "endOffsetMs": 7113
+    }
+  ]
+}

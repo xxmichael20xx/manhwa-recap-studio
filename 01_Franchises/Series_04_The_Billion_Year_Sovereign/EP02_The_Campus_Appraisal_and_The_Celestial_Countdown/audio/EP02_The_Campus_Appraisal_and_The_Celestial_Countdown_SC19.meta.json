@@ -1,0 +1,124 @@
+{
+  "scene": 19,
+  "text": "Beside him, a junior Threat Bureau technical analyst tapped rapidly on an encrypted terminal, shaking his head in sheer disbelief.",
+  "durationMs": 8352,
+  "rawWords": [
+    {
+      "ttsWord": "Beside",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 513,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 950,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "junior",
+      "startMs": 1050,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 1463,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 1800,
+      "endMs": 2125
+    },
+    {
+      "ttsWord": "technical",
+      "startMs": 2138,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "analyst",
+      "startMs": 2688,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "tapped",
+      "startMs": 3200,
+      "endMs": 3513
+    },
+    {
+      "ttsWord": "rapidly",
+      "startMs": 3525,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 4063,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4200,
+      "endMs": 4275
+    },
+    {
+      "ttsWord": "encrypted",
+      "startMs": 4288,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "terminal",
+      "startMs": 4825,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "shaking",
+      "startMs": 5550,
+      "endMs": 5925
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5938,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "head",
+      "startMs": 6088,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6313,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "sheer",
+      "startMs": 6425,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "disbelief",
+      "startMs": 6725,
+      "endMs": 7475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Beside him, a junior Threat Bureau technical analyst",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3188
+    },
+    {
+      "text": "tapped rapidly on an encrypted terminal,",
+      "startOffsetMs": 3200,
+      "endOffsetMs": 5363
+    },
+    {
+      "text": "shaking his head in sheer disbelief.",
+      "startOffsetMs": 5550,
+      "endOffsetMs": 7575
+    }
+  ]
+}

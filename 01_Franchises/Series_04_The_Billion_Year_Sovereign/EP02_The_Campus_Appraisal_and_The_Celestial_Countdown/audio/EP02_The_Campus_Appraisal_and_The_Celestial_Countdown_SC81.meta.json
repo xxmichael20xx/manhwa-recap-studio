@@ -1,0 +1,169 @@
+{
+  "scene": 81,
+  "text": "Wang Bao froze in his tracks, his chubby knees knocking together as the weight of two hundred thousand years of hostile spiritual cultivation bore down upon his shoulders.",
+  "durationMs": 9672,
+  "rawWords": [
+    {
+      "ttsWord": "Wang",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 413,
+      "endMs": 625
+    },
+    {
+      "ttsWord": "froze",
+      "startMs": 638,
+      "endMs": 1025
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 1038,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1125,
+      "endMs": 1250
+    },
+    {
+      "ttsWord": "tracks",
+      "startMs": 1263,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1988,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "chubby",
+      "startMs": 2163,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "knees",
+      "startMs": 2525,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "knocking",
+      "startMs": 2825,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "together",
+      "startMs": 3200,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3700,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3825,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "weight",
+      "startMs": 3938,
+      "endMs": 4150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4163,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 4275,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 4488,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "thousand",
+      "startMs": 4788,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 5213,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5500,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "hostile",
+      "startMs": 5575,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 5988,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 6550,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "bore",
+      "startMs": 7225,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 7488,
+      "endMs": 7750
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 7763,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 8038,
+      "endMs": 8138
+    },
+    {
+      "ttsWord": "shoulders",
+      "startMs": 8150,
+      "endMs": 8800
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Wang Bao froze in his tracks,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1875
+    },
+    {
+      "text": "his chubby knees knocking together as the weight",
+      "startOffsetMs": 1988,
+      "endOffsetMs": 4150
+    },
+    {
+      "text": "of two hundred thousand years of hostile spiritual",
+      "startOffsetMs": 4163,
+      "endOffsetMs": 6538
+    },
+    {
+      "text": "cultivation bore down upon his shoulders.",
+      "startOffsetMs": 6550,
+      "endOffsetMs": 8900
+    }
+  ]
+}

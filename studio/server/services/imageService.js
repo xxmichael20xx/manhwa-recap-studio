@@ -67,6 +67,12 @@ export class ImageService {
       const idx = existingLower.indexOf(c.toLowerCase())
       if (idx !== -1) return existingFiles[idx]
     }
+
+    // Fallback: match prefix if browser or downloader appended timestamps (e.g. IMG_025.jpg_20261019215929.jpg or IMG_025 (1).jpg)
+    const regexPattern = new RegExp(`^IMG_?0*${num}(?:[._-].*)?\\.(jpg|jpeg|png|webp)$`, 'i')
+    const regexMatch = existingFiles.find(f => regexPattern.test(f))
+    if (regexMatch) return regexMatch
+
     return null
   }
 

@@ -1,0 +1,129 @@
+{
+  "scene": 51,
+  "text": "Across the field, several syndicate cronies associated with Gu Tianyu scoffed loudly, expecting another mundane commoner with negligible spirit strength.",
+  "durationMs": 9504,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 513,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "field",
+      "startMs": 625,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "several",
+      "startMs": 1275,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 1688,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "cronies",
+      "startMs": 2150,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "associated",
+      "startMs": 2575,
+      "endMs": 3238
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3250,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 3425,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "Tianyu",
+      "startMs": 3650,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "scoffed",
+      "startMs": 4025,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 4488,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "expecting",
+      "startMs": 5263,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "another",
+      "startMs": 5800,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "mundane",
+      "startMs": 6125,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "commoner",
+      "startMs": 6575,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7000,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "negligible",
+      "startMs": 7163,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "spirit",
+      "startMs": 7713,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "strength",
+      "startMs": 8113,
+      "endMs": 8638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across the field,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1138
+    },
+    {
+      "text": "several syndicate cronies associated with Gu Tianyu scoffed",
+      "startOffsetMs": 1275,
+      "endOffsetMs": 4475
+    },
+    {
+      "text": "loudly,",
+      "startOffsetMs": 4488,
+      "endOffsetMs": 5075
+    },
+    {
+      "text": "expecting another mundane commoner with negligible spirit strength.",
+      "startOffsetMs": 5263,
+      "endOffsetMs": 8738
+    }
+  ]
+}

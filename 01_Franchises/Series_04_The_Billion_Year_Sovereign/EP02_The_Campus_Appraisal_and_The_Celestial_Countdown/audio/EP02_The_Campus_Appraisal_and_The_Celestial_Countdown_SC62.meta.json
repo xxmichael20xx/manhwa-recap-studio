@@ -1,0 +1,129 @@
+{
+  "scene": 62,
+  "text": "However, inside the shaded VIP observation canopy, Commander Han Feng's handheld Tactical Spirit Spectrometer suddenly shrieked with an ear-piercing frequency alert.",
+  "durationMs": 10800,
+  "rawWords": [
+    {
+      "ttsWord": "However",
+      "startMs": 50,
+      "endMs": 588
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 813,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1288,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "shaded",
+      "startMs": 1350,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "VIP",
+      "startMs": 1775,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "observation",
+      "startMs": 2425,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "canopy",
+      "startMs": 3125,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 3975,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 4425,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "Feng's",
+      "startMs": 4700,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "handheld",
+      "startMs": 5075,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "Tactical",
+      "startMs": 5575,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "Spirit",
+      "startMs": 6063,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "Spectrometer",
+      "startMs": 6475,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 7175,
+      "endMs": 7575
+    },
+    {
+      "ttsWord": "shrieked",
+      "startMs": 7588,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 8075,
+      "endMs": 8188
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 8200,
+      "endMs": 8288
+    },
+    {
+      "ttsWord": "ear-piercing",
+      "startMs": 8300,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "frequency",
+      "startMs": 8938,
+      "endMs": 9475
+    },
+    {
+      "ttsWord": "alert",
+      "startMs": 9488,
+      "endMs": 9938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "However, inside the shaded VIP observation canopy,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3775
+    },
+    {
+      "text": "Commander Han Feng's handheld Tactical Spirit Spectrometer",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 7163
+    },
+    {
+      "text": "suddenly shrieked with an ear-piercing frequency alert.",
+      "startOffsetMs": 7175,
+      "endOffsetMs": 10038
+    }
+  ]
+}

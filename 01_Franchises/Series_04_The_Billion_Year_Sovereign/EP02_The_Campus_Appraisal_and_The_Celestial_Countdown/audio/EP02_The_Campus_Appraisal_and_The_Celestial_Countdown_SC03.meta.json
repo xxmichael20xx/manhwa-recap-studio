@@ -1,0 +1,184 @@
+{
+  "scene": 3,
+  "text": "Etched along the stele's obsidian spine, massive divine calligraphy pulsed with rhythmic luminescence, counting down the hours until the global rankings were revealed: COUNTDOWN TO LEADERBOARD REVELATION: T-MINUS 04:00:00.",
+  "durationMs": 13536,
+  "rawWords": [
+    {
+      "ttsWord": "Etched",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 375,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 700,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "stele's",
+      "startMs": 800,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 1250,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "spine",
+      "startMs": 1788,
+      "endMs": 2213
+    },
+    {
+      "ttsWord": "massive",
+      "startMs": 2500,
+      "endMs": 2875
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 2888,
+      "endMs": 3275
+    },
+    {
+      "ttsWord": "calligraphy",
+      "startMs": 3288,
+      "endMs": 3800
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 3813,
+      "endMs": 4225
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4238,
+      "endMs": 4363
+    },
+    {
+      "ttsWord": "rhythmic",
+      "startMs": 4375,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "luminescence",
+      "startMs": 4763,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "counting",
+      "startMs": 5763,
+      "endMs": 6125
+    },
+    {
+      "ttsWord": "down",
+      "startMs": 6138,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6388,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "hours",
+      "startMs": 6488,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "until",
+      "startMs": 6913,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7225,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "global",
+      "startMs": 7338,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "rankings",
+      "startMs": 7725,
+      "endMs": 8163
+    },
+    {
+      "ttsWord": "were",
+      "startMs": 8175,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "revealed",
+      "startMs": 8288,
+      "endMs": 8788
+    },
+    {
+      "ttsWord": "COUNTDOWN",
+      "startMs": 9088,
+      "endMs": 9588
+    },
+    {
+      "ttsWord": "TO",
+      "startMs": 9600,
+      "endMs": 9800
+    },
+    {
+      "ttsWord": "LEADERBOARD",
+      "startMs": 9813,
+      "endMs": 10350
+    },
+    {
+      "ttsWord": "REVELATION",
+      "startMs": 10363,
+      "endMs": 11013
+    },
+    {
+      "ttsWord": "T-MINUS",
+      "startMs": 11300,
+      "endMs": 11863
+    },
+    {
+      "ttsWord": "04:00:00",
+      "startMs": 11875,
+      "endMs": 12675
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Etched along the stele's obsidian spine,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2313
+    },
+    {
+      "text": "massive divine calligraphy pulsed with rhythmic luminescence,",
+      "startOffsetMs": 2500,
+      "endOffsetMs": 5575
+    },
+    {
+      "text": "counting down the hours until the global rankings",
+      "startOffsetMs": 5763,
+      "endOffsetMs": 8163
+    },
+    {
+      "text": "were revealed:",
+      "startOffsetMs": 8175,
+      "endOffsetMs": 8888
+    },
+    {
+      "text": "COUNTDOWN TO LEADERBOARD REVELATION:",
+      "startOffsetMs": 9088,
+      "endOffsetMs": 11113
+    },
+    {
+      "text": "T-MINUS 04:00:00",
+      "startOffsetMs": 11300,
+      "endOffsetMs": 12775
+    }
+  ]
+}

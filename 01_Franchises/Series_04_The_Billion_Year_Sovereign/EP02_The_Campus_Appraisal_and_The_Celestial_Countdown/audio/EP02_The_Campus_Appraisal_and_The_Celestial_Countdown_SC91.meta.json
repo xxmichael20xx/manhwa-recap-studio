@@ -1,0 +1,184 @@
+{
+  "scene": 91,
+  "text": "Stumbling backward four paces with sheer existential horror in his eyes, Chief Enforcer Gu Biao clutched his trembling right hand, shaking like an autumn leaf before the unmoving youth.",
+  "durationMs": 11088,
+  "rawWords": [
+    {
+      "ttsWord": "Stumbling",
+      "startMs": 50,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 675,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "four",
+      "startMs": 1150,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "paces",
+      "startMs": 1450,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1900,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "sheer",
+      "startMs": 2050,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "existential",
+      "startMs": 2350,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "horror",
+      "startMs": 3025,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3400,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3500,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3663,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "Chief",
+      "startMs": 4325,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 4613,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 5150,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "Biao",
+      "startMs": 5350,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "clutched",
+      "startMs": 5650,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 6038,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "trembling",
+      "startMs": 6163,
+      "endMs": 6625
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 6638,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "hand",
+      "startMs": 6838,
+      "endMs": 7175
+    },
+    {
+      "ttsWord": "shaking",
+      "startMs": 7463,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 7888,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 8075,
+      "endMs": 8213
+    },
+    {
+      "ttsWord": "autumn",
+      "startMs": 8225,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "leaf",
+      "startMs": 8538,
+      "endMs": 8813
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 8825,
+      "endMs": 9163
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 9175,
+      "endMs": 9275
+    },
+    {
+      "ttsWord": "unmoving",
+      "startMs": 9288,
+      "endMs": 9788
+    },
+    {
+      "ttsWord": "youth",
+      "startMs": 9800,
+      "endMs": 10225
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Stumbling backward four paces with sheer existential horror",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3388
+    },
+    {
+      "text": "in his eyes,",
+      "startOffsetMs": 3400,
+      "endOffsetMs": 4175
+    },
+    {
+      "text": "Chief Enforcer Gu Biao clutched his trembling right",
+      "startOffsetMs": 4325,
+      "endOffsetMs": 6825
+    },
+    {
+      "text": "hand,",
+      "startOffsetMs": 6838,
+      "endOffsetMs": 7275
+    },
+    {
+      "text": "shaking like an autumn leaf before the unmoving",
+      "startOffsetMs": 7463,
+      "endOffsetMs": 9788
+    },
+    {
+      "text": "youth.",
+      "startOffsetMs": 9800,
+      "endOffsetMs": 10325
+    }
+  ]
+}

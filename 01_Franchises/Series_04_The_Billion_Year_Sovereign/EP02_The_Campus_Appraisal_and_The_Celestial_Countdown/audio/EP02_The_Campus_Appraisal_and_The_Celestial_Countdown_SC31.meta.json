@@ -1,0 +1,114 @@
+{
+  "scene": 31,
+  "text": "The engineering student exhaled a joyous gasp, pumping his fist as fellow classmates cheered from the sideline barriers.",
+  "durationMs": 7656,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "engineering",
+      "startMs": 188,
+      "endMs": 800
+    },
+    {
+      "ttsWord": "student",
+      "startMs": 813,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "exhaled",
+      "startMs": 1213,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1713,
+      "endMs": 1763
+    },
+    {
+      "ttsWord": "joyous",
+      "startMs": 1775,
+      "endMs": 2188
+    },
+    {
+      "ttsWord": "gasp",
+      "startMs": 2200,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "pumping",
+      "startMs": 2950,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3313,
+      "endMs": 3463
+    },
+    {
+      "ttsWord": "fist",
+      "startMs": 3475,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3838,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "fellow",
+      "startMs": 3988,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "classmates",
+      "startMs": 4313,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "cheered",
+      "startMs": 4950,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 5313,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5450,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "sideline",
+      "startMs": 5538,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "barriers",
+      "startMs": 6113,
+      "endMs": 6775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The engineering student exhaled a joyous gasp,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2800
+    },
+    {
+      "text": "pumping his fist as fellow classmates cheered from",
+      "startOffsetMs": 2950,
+      "endOffsetMs": 5438
+    },
+    {
+      "text": "the sideline barriers.",
+      "startOffsetMs": 5450,
+      "endOffsetMs": 6875
+    }
+  ]
+}

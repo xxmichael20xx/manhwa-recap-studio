@@ -1,0 +1,149 @@
+{
+  "scene": 150,
+  "text": "Around the obsidian boardroom table, dozens of Starfall Syndicate executive directors and guild oligarchs bowed their heads to the polished marble in subservient worship.",
+  "durationMs": 9696,
+  "rawWords": [
+    {
+      "ttsWord": "Around",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 438,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 538,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "boardroom",
+      "startMs": 1100,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "table",
+      "startMs": 1513,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "dozens",
+      "startMs": 2200,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2575,
+      "endMs": 2663
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 2675,
+      "endMs": 3213
+    },
+    {
+      "ttsWord": "Syndicate",
+      "startMs": 3225,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "executive",
+      "startMs": 3663,
+      "endMs": 4200
+    },
+    {
+      "ttsWord": "directors",
+      "startMs": 4213,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4750,
+      "endMs": 4850
+    },
+    {
+      "ttsWord": "guild",
+      "startMs": 4863,
+      "endMs": 5188
+    },
+    {
+      "ttsWord": "oligarchs",
+      "startMs": 5200,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "bowed",
+      "startMs": 5763,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 6063,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "heads",
+      "startMs": 6200,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 6513,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6625,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "polished",
+      "startMs": 6738,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "marble",
+      "startMs": 7175,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7550,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "subservient",
+      "startMs": 7675,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "worship",
+      "startMs": 8313,
+      "endMs": 8825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Around the obsidian boardroom table,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2013
+    },
+    {
+      "text": "dozens of Starfall Syndicate executive directors and guild",
+      "startOffsetMs": 2200,
+      "endOffsetMs": 5188
+    },
+    {
+      "text": "oligarchs bowed their heads to the polished marble",
+      "startOffsetMs": 5200,
+      "endOffsetMs": 7538
+    },
+    {
+      "text": "in subservient worship.",
+      "startOffsetMs": 7550,
+      "endOffsetMs": 8925
+    }
+  ]
+}

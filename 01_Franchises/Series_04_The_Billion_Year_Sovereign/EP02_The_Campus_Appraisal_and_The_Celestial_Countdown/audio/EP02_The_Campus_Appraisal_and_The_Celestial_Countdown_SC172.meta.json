@@ -1,0 +1,119 @@
+{
+  "scene": 172,
+  "text": "Orbital weather satellites beamed live feeds showing radiant mandala rings of pure primordial mana expanding across Earth's continental landmasses.",
+  "durationMs": 9168,
+  "rawWords": [
+    {
+      "ttsWord": "Orbital",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "weather",
+      "startMs": 500,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "satellites",
+      "startMs": 788,
+      "endMs": 1375
+    },
+    {
+      "ttsWord": "beamed",
+      "startMs": 1388,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "live",
+      "startMs": 1738,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "feeds",
+      "startMs": 2038,
+      "endMs": 2413
+    },
+    {
+      "ttsWord": "showing",
+      "startMs": 2425,
+      "endMs": 2813
+    },
+    {
+      "ttsWord": "radiant",
+      "startMs": 2825,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "mandala",
+      "startMs": 3188,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "rings",
+      "startMs": 3725,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4075,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "pure",
+      "startMs": 4200,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 4563,
+      "endMs": 5150
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 5163,
+      "endMs": 5488
+    },
+    {
+      "ttsWord": "expanding",
+      "startMs": 5500,
+      "endMs": 6050
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6063,
+      "endMs": 6488
+    },
+    {
+      "ttsWord": "Earth's",
+      "startMs": 6500,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "continental",
+      "startMs": 6825,
+      "endMs": 7400
+    },
+    {
+      "ttsWord": "landmasses",
+      "startMs": 7413,
+      "endMs": 8288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Orbital weather satellites beamed live feeds showing radiant",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3175
+    },
+    {
+      "text": "mandala rings of pure primordial mana expanding across",
+      "startOffsetMs": 3188,
+      "endOffsetMs": 6488
+    },
+    {
+      "text": "Earth's continental landmasses.",
+      "startOffsetMs": 6500,
+      "endOffsetMs": 8388
+    }
+  ]
+}

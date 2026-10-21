@@ -1,0 +1,124 @@
+{
+  "scene": 159,
+  "text": "At Tokyo's Shibuya crossing, thousands of pedestrians stood shoulder-to-shoulder, gazing up at giant building screens in absolute, hushed apprehension.",
+  "durationMs": 9696,
+  "rawWords": [
+    {
+      "ttsWord": "At",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "Tokyo's",
+      "startMs": 263,
+      "endMs": 788
+    },
+    {
+      "ttsWord": "Shibuya",
+      "startMs": 800,
+      "endMs": 1275
+    },
+    {
+      "ttsWord": "crossing",
+      "startMs": 1288,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "thousands",
+      "startMs": 2100,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2575,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "pedestrians",
+      "startMs": 2663,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 3375,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "shoulder-to-shoulder",
+      "startMs": 3663,
+      "endMs": 4600
+    },
+    {
+      "ttsWord": "gazing",
+      "startMs": 4888,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 5300,
+      "endMs": 5450
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 5463,
+      "endMs": 5563
+    },
+    {
+      "ttsWord": "giant",
+      "startMs": 5575,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "building",
+      "startMs": 5988,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "screens",
+      "startMs": 6325,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6763,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 6938,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "hushed",
+      "startMs": 7813,
+      "endMs": 8088
+    },
+    {
+      "ttsWord": "apprehension",
+      "startMs": 8100,
+      "endMs": 8825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "At Tokyo's Shibuya crossing,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1950
+    },
+    {
+      "text": "thousands of pedestrians stood shoulder-to-shoulder",
+      "startOffsetMs": 2100,
+      "endOffsetMs": 4700
+    },
+    {
+      "text": "gazing up at giant building screens in absolute,",
+      "startOffsetMs": 4888,
+      "endOffsetMs": 7638
+    },
+    {
+      "text": "hushed apprehension.",
+      "startOffsetMs": 7813,
+      "endOffsetMs": 8925
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "scene": 193,
+  "text": "A world-shattering primordial acoustic chime echoed simultaneously inside the spiritual consciousness of eight billion humans across the planet.",
+  "durationMs": 8592,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 175
+    },
+    {
+      "ttsWord": "world-shattering",
+      "startMs": 188,
+      "endMs": 988
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 1000,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "acoustic",
+      "startMs": 1600,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "chime",
+      "startMs": 2100,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "echoed",
+      "startMs": 2450,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "simultaneously",
+      "startMs": 2850,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 3825,
+      "endMs": 4263
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4275,
+      "endMs": 4338
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 4350,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "consciousness",
+      "startMs": 4950,
+      "endMs": 5613
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5625,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "eight",
+      "startMs": 5763,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "billion",
+      "startMs": 6000,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "humans",
+      "startMs": 6363,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "across",
+      "startMs": 6763,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7138,
+      "endMs": 7225
+    },
+    {
+      "ttsWord": "planet",
+      "startMs": 7238,
+      "endMs": 7713
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A world-shattering primordial acoustic chime echoed simultaneously",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3813
+    },
+    {
+      "text": "inside the spiritual consciousness of eight billion humans",
+      "startOffsetMs": 3825,
+      "endOffsetMs": 6750
+    },
+    {
+      "text": "across the planet.",
+      "startOffsetMs": 6763,
+      "endOffsetMs": 7813
+    }
+  ]
+}

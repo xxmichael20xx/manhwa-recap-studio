@@ -1,0 +1,154 @@
+{
+  "scene": 49,
+  "text": "Protagonist Lu Chen casually stepped out of the student line, strolling toward Platform Three with both hands buried deep inside his oversized charcoal-black hoodie pockets.",
+  "durationMs": 10320,
+  "rawWords": [
+    {
+      "ttsWord": "Protagonist",
+      "startMs": 50,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 763,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 925,
+      "endMs": 1200
+    },
+    {
+      "ttsWord": "casually",
+      "startMs": 1213,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 1675,
+      "endMs": 2050
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 2063,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2213,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2288,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "student",
+      "startMs": 2388,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "line",
+      "startMs": 2763,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "strolling",
+      "startMs": 3388,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 3863,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "Platform",
+      "startMs": 4175,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 4750,
+      "endMs": 5075
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5088,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "both",
+      "startMs": 5263,
+      "endMs": 5500
+    },
+    {
+      "ttsWord": "hands",
+      "startMs": 5513,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "buried",
+      "startMs": 5875,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "deep",
+      "startMs": 6275,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "inside",
+      "startMs": 6563,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7013,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "oversized",
+      "startMs": 7175,
+      "endMs": 7788
+    },
+    {
+      "ttsWord": "charcoal-black",
+      "startMs": 7800,
+      "endMs": 8513
+    },
+    {
+      "ttsWord": "hoodie",
+      "startMs": 8525,
+      "endMs": 8775
+    },
+    {
+      "ttsWord": "pockets",
+      "startMs": 8788,
+      "endMs": 9450
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Protagonist Lu Chen casually stepped out of the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2375
+    },
+    {
+      "text": "student line,",
+      "startOffsetMs": 2388,
+      "endOffsetMs": 3163
+    },
+    {
+      "text": "strolling toward Platform Three with both hands buried",
+      "startOffsetMs": 3388,
+      "endOffsetMs": 6263
+    },
+    {
+      "text": "deep inside his oversized charcoal-black hoodie pockets.",
+      "startOffsetMs": 6275,
+      "endOffsetMs": 9550
+    }
+  ]
+}

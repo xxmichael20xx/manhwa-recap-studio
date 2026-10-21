@@ -1,0 +1,139 @@
+{
+  "scene": 169,
+  "text": "High in the stratosphere, the celestial digits on the Heaven-Earth Golden Stele shifted with concussive weight into the single-digit countdown: T-MINUS 00:09:59.",
+  "durationMs": 10944,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 338,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 413,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "stratosphere",
+      "startMs": 500,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1438,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 1538,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "digits",
+      "startMs": 2188,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 2600,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2713,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "Heaven-Earth",
+      "startMs": 2788,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 3350,
+      "endMs": 3725
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 3738,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "shifted",
+      "startMs": 4075,
+      "endMs": 4550
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4563,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 4713,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "weight",
+      "startMs": 5263,
+      "endMs": 5550
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5563,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5763,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "single-digit",
+      "startMs": 5875,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 6563,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "T-MINUS",
+      "startMs": 7413,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "00:09:59",
+      "startMs": 7988,
+      "endMs": 10063
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High in the stratosphere,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1325
+    },
+    {
+      "text": "the celestial digits on the Heaven-Earth Golden Stele",
+      "startOffsetMs": 1438,
+      "endOffsetMs": 4063
+    },
+    {
+      "text": "shifted with concussive weight into the single-digit countdown:",
+      "startOffsetMs": 4075,
+      "endOffsetMs": 7213
+    },
+    {
+      "text": "T-MINUS 00:09:59",
+      "startOffsetMs": 7413,
+      "endOffsetMs": 10163
+    }
+  ]
+}

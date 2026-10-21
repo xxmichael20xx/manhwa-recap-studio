@@ -1,0 +1,124 @@
+{
+  "scene": 131,
+  "text": "Trembling with hopeful anticipation, Jiang Qingxue stepped onto the black rubber welcome mat of Room 402 and raised two delicate knuckles.",
+  "durationMs": 9168,
+  "rawWords": [
+    {
+      "ttsWord": "Trembling",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 500,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "hopeful",
+      "startMs": 625,
+      "endMs": 1038
+    },
+    {
+      "ttsWord": "anticipation",
+      "startMs": 1050,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 2213,
+      "endMs": 2575
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 2588,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 3038,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 3413,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3650,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "black",
+      "startMs": 3763,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "rubber",
+      "startMs": 4100,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "welcome",
+      "startMs": 4400,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "mat",
+      "startMs": 4775,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5025,
+      "endMs": 5138
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 5150,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6425,
+      "endMs": 6613
+    },
+    {
+      "ttsWord": "raised",
+      "startMs": 6625,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 7075,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "delicate",
+      "startMs": 7288,
+      "endMs": 7700
+    },
+    {
+      "ttsWord": "knuckles",
+      "startMs": 7713,
+      "endMs": 8288
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Trembling with hopeful anticipation,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2025
+    },
+    {
+      "text": "Jiang Qingxue stepped onto the black rubber welcome",
+      "startOffsetMs": 2213,
+      "endOffsetMs": 4763
+    },
+    {
+      "text": "mat of Room 402 and raised two delicate knuckles.",
+      "startOffsetMs": 4775,
+      "endOffsetMs": 8388
+    }
+  ]
+}

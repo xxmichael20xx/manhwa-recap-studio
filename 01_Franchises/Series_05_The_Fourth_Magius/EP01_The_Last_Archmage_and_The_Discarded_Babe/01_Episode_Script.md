@@ -19,15 +19,15 @@
 
 [IMG_005] "Surrender the forbidden grimoire, Sovereign Michael!" the Grand Inquisitor roared through a voice-amplifying wind glyph. "That relic belongs to the Council! You have exhausted your mana reserves—you cannot cast another spell!"
 
-[IMG_006] Michael wiped a thin streak of blood from his jaw, his radiant sapphire eyes gazing back at the encircling army with cold, amused deadpan calm.
+[IMG_006] Michael wiped a thin streak of mana dust from his jaw, his radiant sapphire eyes gazing back at the encircling army with cold, amused deadpan calm.
 
-[IMG_007] "You gathered eight hundred high mages and thirty siege dreadnoughts just to corner one exhausted man?" Michael asked, his dry voice echoing across the silent canyon. "I asked for an execution squad, not an insecure parade."
+[IMG_007] "You gathered eight hundred high mages and thirty siege dreadnoughts just to corner one exhausted man?" Michael asked, his dry voice echoing across the silent canyon. "I asked for an elite strike force, not an insecure parade."
 
 [IMG_008] The Grand Inquisitor's face twisted with rage, raising his diamond-tipped staff to signal the coordinated bombardment. "Vaporise him! Leave not a single ash of his flesh!"
 
 [IMG_009] Ten thousand elemental lances of blinding plasma, compressed lightning, and molten brimstone erupted simultaneously, converging upon the lonely summit in an apocalyptic storm.
 
-[IMG_010] But instead of raising a defensive shield, Michael placed his bloodied palm directly against the constellation clasp of the Primordial Codex.
+[IMG_010] But instead of raising a defensive shield, Michael placed his mana-singed palm directly against the constellation clasp of the Primordial Codex.
 
 [IMG_011] [ANCIENT RELIC RESONANCE: CARRIER SOUL PURITY 100%. PRIMORDIAL LAW INVERSION ACTIVATED.] The grimoire whispered in a voice of ancient thunder directly inside Michael's consciousness.
 
@@ -49,7 +49,7 @@
 
 [IMG_020] Instead, his arms wobbled pathetically beneath him, his tiny fingers sinking into thick, icy mud.
 
-[IMG_021] Michael looked down at his trembling limbs in utter disbelief—his body was that of a frail, malnourished five-year-old child, dressed only in a rough-spun grey burlap sackcloth.
+[IMG_021] Michael looked down at his trembling limbs in utter disbelief—his body was that of a frail, exhausted five-year-old child, dressed only in a rough-spun grey burlap sackcloth.
 
 [IMG_022] "What in the heavens happened to my vessel?" Michael muttered, his high-pitched toddler voice startling his own ears.
 
@@ -64,7 +64,7 @@
 
 [IMG_026] Standing upon the carriage's rear platform were two cloaked household guards, their sneering faces illuminated by the magical carriage lanterns.
 
-[IMG_027] "Good riddance to bad blood," one guard scoffed, tossing a small silver coin into the puddle beside the shivering child. "Be grateful the Patriarch didn't have your neck snapped in the cradle."
+[IMG_027] "Good riddance to a worthless defect," one guard scoffed, tossing a small silver coin into the puddle beside the shivering child. "Be grateful the Patriarch didn't have you discarded in the gutter."
 
 [IMG_028] The iron gates slammed shut with a concussive boom that rattled the gravel, leaving the small boy alone in the freezing mud of the outer wilderness.
 
@@ -98,6 +98,7 @@
 
 [IMG_043] "No," Valerius replied coldly, turning his gaze away. "The rival houses must never learn our bloodline produced a child with closed vessels. Confine him to the outer gatehouse until his fifth year, then discard him into the Blackwood Frontier."
 
+<!-- SHORT_EARLY_START -->
 [IMG_044] For five agonizing years, the young boy had been kept locked in a damp stone cell beside the kennels, fed scraps and ignored by every servant in the estate.
 
 [IMG_045] And on this stormy midnight, upon turning five, the guards had dragged the child outside the estate borders and dumped him into the freezing mud.
@@ -107,15 +108,16 @@
 [IMG_047] "Discarded by his own father for having closed mana vessels," Michael whispered, his cyan eyes burning through the rain. "How delightfully cliché."
 
 [IMG_048] "You arrogant aristocrats spent centuries appraising mana vessels with rudimentary bronze toys, never understanding the true architecture of human anatomy."
+<!-- SHORT_EARLY_END -->
 
 
 ## 📦 BATCH 03 (Scenes 049 - 072)
 
-[IMG_049] Michael pushed himself up onto his feet, using every ounce of his sovereign willpower to steady his shivering, malnourished legs.
+[IMG_049] Michael pushed himself up onto his feet, using every ounce of his sovereign willpower to steady his trembling stance.
 
 [IMG_050] The Blackwood Frontier stretched endlessly before him—a primeval forest shrouded in perennial grey mist, infamous for harboring savage rift beasts and outcasts.
 
-[IMG_051] A mortal five-year-old child left here would perish from hypothermia within two hours, or be torn apart by scavengers before dawn.
+[IMG_051] An ordinary five-year-old child left here would quickly succumb to the harsh winter elements and prowling predatory beasts before dawn.
 
 [IMG_052] But inside this fragile vessel resided the cold, calculating mind of a Tier 10 Continental Sovereign who had survived a thousand near-death crises.
 
@@ -147,9 +149,9 @@
 
 [IMG_066] Inside Michael's chest, the sealed, calcified mana vessels that the Montrey elders had deemed "dead" were struck by a wave of celestial liquid fire.
 
-[IMG_067] The agony was instantaneous and overwhelming—like molten bronze being poured through every capillary, vein, and bone marrow cavity.
+[IMG_067] The arcane awakening was instantaneous and intense—like liquid golden starlight surging through every dormant meridian pathway and vessel.
 
-[IMG_068] A lesser child would have blacked out from shock, but Michael ground his teeth together until his gums bled, keeping his eyes wide open.
+[IMG_068] An ordinary novice would have collapsed from sensory overload, but Michael set his jaw in iron resolve, keeping his glowing eyes wide open.
 
 [IMG_069] "Break through!" Michael commanded in his mind, actively directing the celestial fire along the precise anatomical pathways of his spinal column.
 
@@ -202,7 +204,7 @@
 
 [IMG_092] "I must forge this mortal shell until it can bear the weight of ancient sovereignty."
 
-[IMG_093] With a conscious thought, Michael severed his mental link with the White Library, snapping his consciousness back into his five-year-old physical body.
+[IMG_093] With a conscious thought, Michael released his mental link with the White Library, snapping his consciousness back into his five-year-old physical body.
 
 [IMG_094] The rain in the Blackwood Forest had slowed to a gentle drizzle, the first grey light of dawn creeping through the canopy.
 
@@ -241,7 +243,7 @@
 
 [IMG_110] He began with his bones—forcing pressurized mana into the porous interior of his femurs, ribs, and forearms.
 
-[IMG_111] Every repetition of the breathing cycle was excruciating, feeling as though fine steel wires were being drawn through his bone marrow.
+[IMG_111] Every repetition of the breathing cycle was deeply demanding, feeling as though fine mana threads were being aligned through his bone marrow.
 
 [IMG_112] Sweat poured from Michael's forehead, his small muscles trembling under the sheer pressure of the internal compression.
 
@@ -298,7 +300,7 @@
 
 [IMG_137] Three pairs of glowing amber eyes emerged from the shadowy treeline fifty yards from Michael's campsite.
 
-[IMG_138] They were Blood-Fanged Timber Wolves—savage frontier predators known for hunting in coordinated packs and ripping through chainmail armor.
+[IMG_138] They were Crimson-Fanged Timber Wolves—savage frontier predators known for hunting in coordinated packs and ripping through chainmail armor.
 
 [IMG_139] The lead wolf, a massive beast with grey-mottled fur and scarred shoulders, stepped forward, saliva dripping from its four-inch serrated fangs.
 
@@ -323,9 +325,9 @@
 
 [IMG_148] Shifting his weight onto his back foot, Michael raised his left forearm horizontally, allowing the wolf's jaws to snap directly onto his flesh.
 
-[IMG_149] The beast's jaws clamped down with bone-crushing pressure, its four-inch fangs biting into Michael's skin.
+[IMG_149] The beast's jaws clamped down with bone-crushing pressure, driving its four-inch fangs directly against Michael's reinforced arm.
 
-[IMG_150] But instead of blood spraying, a sharp metallic *CLANG* rang out through the clearing, like iron striking granite.
+[IMG_150] But instead of skin piercing, a sharp metallic *CLANG* rang out through the clearing, like iron striking granite.
 
 [IMG_151] [DURABILITY THRESHOLD ACTIVE: INCOMING BITE FORCE 350 N. VESSEL ARMOR RATING 800 N. DAMAGE RESULT: 0.]
 
@@ -412,14 +414,14 @@
 
 [IMG_191] The raw kinetic feedback of that ancient spell slammed directly into Michael's seven-year-old soul, threatening to tear his mind into microscopic shreds.
 
-[IMG_192] The sheer agony of holding the cosmic memory was ten times worse than unsealing his mana vessels.
+[IMG_192] The sheer cognitive strain of holding the cosmic memory was ten times greater than unsealing his mana vessels.
 
 
 ## 📦 BATCH 09 (Scenes 193 - 216)
 
 [IMG_193] In the physical world, Michael's body on the limestone rock was surrounded by arcs of violent cyan electrical discharge that scorched the moss around him.
 
-[IMG_194] Blood trickled from his nostrils and ears, his pulse hammering at two hundred beats per minute.
+[IMG_194] Cyan mana sparks flickered from his brow and temples, his pulse hammering at two hundred beats per minute.
 
 [IMG_195] Inside the memory trial, Michael clamped his mental jaws shut, refusing to surrender an inch of ground to the apocalyptic illusion.
 
@@ -437,11 +439,11 @@
 
 [IMG_202] The morning air smelled intensely of ozone, and a faint circle of crystalline blue sparks danced across his knuckles.
 
-[IMG_203] Michael exhaled a long breath, wiping the dried blood from his upper lip with the back of his sleeve.
+[IMG_203] Michael exhaled a long breath, wiping the glowing mana residue from his upper lip with the back of his sleeve.
 
 [IMG_204] He picked up his blackwood staff, channeled a single pulse of his newly awakened Thunder-Strike through the wood, and tapped the boulder beside him.
 
-[IMG_205] A deafening concussive shockwave detonated instantly, pulverizing the six-foot granite boulder into a cloud of powdery grey sand.
+[IMG_205] A deafening concussive shockwave detonated instantly, pulverizing the six-foot granite boulder into a cloud of fine granite dust.
 
 [IMG_206] Zero chanting. Zero magic wand. Zero three-minute circle drawing.
 
@@ -455,11 +457,11 @@
 
 [IMG_211] He packed his leather rucksack with bundles of rare dried medicinal herbs: cured Winter-Iron Moss, wild ginseng roots, and five jars of refined wolf marrow salve.
 
-[IMG_212] He strapped the disguised Primordial Codex securely inside his inner tunic pocket, took his blackwood staff in hand, and cast one final look at his forest sanctuary.
+[IMG_212] Clad in his tailored charcoal winter-wolf leather tunic with its soft wolf-fur collar, he strapped the disguised Primordial Codex securely inside his inner breast pocket, took his blackwood staff in hand, and cast one final look at his forest sanctuary.
 
 [IMG_213] "Thank you for the two years of shelter," Michael said quietly to the quiet limestone cave.
 
-[IMG_214] Turning southward, the seven-year-old boy set off along the river trail toward the frontier town of Oakhaven.
+[IMG_214] Slinging the bulging herb rucksack across his shoulders, the seven-year-old boy set off southward along the river trail toward the frontier town of Oakhaven.
 
 [IMG_215] Thirty miles through dense mountain terrain was a journey that took ordinary merchants three full days with guard escorts.
 
@@ -484,7 +486,7 @@
 
 [IMG_224] When Michael stepped forward with his blackwood staff, the corporal looked down from his high wooden stool, blinking in utter bewilderment.
 
-[IMG_225] Standing before him was a seven-year-old child, dressed in impeccably tailored wolf-leather garments, carrying a heavy satchel, and walking completely alone without parents or escorts.
+[IMG_225] Standing before him was a solitary seven-year-old child emerged straight from the deadly monster frontier, clad in tailored wolf-skins with a dark fur collar, carrying a heavy herb rucksack, and walking completely alone without parents or escorts.
 
 [IMG_226] "What's this then?" the guard grumbled, resting his gauntleted hand on the desk. "Where are your parents, brat? Did you get separated from a caravan?"
 
@@ -521,7 +523,7 @@
 
 [IMG_241] Michael pushed open the timber door, the brass chime tinkling pleasantly in the quiet, dim interior of the apothecary shop.
 
-[IMG_242] The shop was filled with towering shelves of dried roots, glass jars of powdered monster bones, and copper alembics bubbling over small spirit burners.
+[IMG_242] The shop was filled with towering shelves of dried roots, glass jars of luminous blue mana crystals, dried silver roots, and copper alembics bubbling over small spirit burners.
 
 [IMG_243] Behind the heavy oak counter stood a burly, fifty-five-year-old man with broad shoulders, a thick salt-and-pepper beard, and calloused hands.
 
@@ -537,7 +539,7 @@
 
 [IMG_249] Rowan raised a thick eyebrow in amusement. "Kids usually bring me dandelion weeds and expect silver crowns, son. The deep forest is full of poisonous lookalikes."
 
-[IMG_250] Without arguing, Michael opened the flap of his satchel and withdrew a bundle wrapped in clean birch bark.
+[IMG_250] Without arguing, Michael opened the flap of his herb rucksack and withdrew a bundle wrapped in clean birch bark.
 
 [IMG_251] Unfolding the bark, Michael revealed twelve perfectly cured sprigs of *Winter-Iron Moss*, their silver speckles glistening with natural oil, dried without a single torn fiber.
 
@@ -549,7 +551,7 @@
 
 [IMG_255] "This... this was harvested at midnight during the waning moon, wasn't it?" Rowan muttered in disbelief, looking up at the boy.
 
-[IMG_256] "Midnight harvest preserves the volatile saponins before the morning sun degrades the cell membranes," Michael explained calmly, as if discussing the weather.
+[IMG_256] "Midnight harvest preserves the pure lunar mana circulating within the root before the morning sun disperses its essence," Michael explained calmly, as if discussing the weather.
 
 [IMG_257] "The roots were then dried using indirect hickory smoke at precisely forty degrees. Zero mold, zero potency decay."
 
@@ -584,9 +586,9 @@
 
 [IMG_271] "The Montrey dragon crest..." Rowan gasped under his breath, his eyes darting between the amulet and the boy's sharp, raven-haired features.
 
-[IMG_272] "You're of the blood of House Montrey? What is an aristocratic scion doing wandering the monster frontier alone in wolf skins?"
+[IMG_272] "You're a scion of House Montrey? What is an aristocratic scion doing wandering the monster frontier alone in wolf skins?"
 
-[IMG_273] Michael gently pulled the amulet back, tucking it back inside his tunic without the slightest change in his heartbeat.
+[IMG_273] Michael calmly lifted the dragon crest medallion from the counter, holding the heirloom with complete, unbothered composure.
 
 [IMG_274] "House Montrey discarded me into the mud when I was an infant because their diagnostic bells declared my mana vessels sealed and useless."
 
@@ -651,13 +653,13 @@
 
 [IMG_303] The firestorm struck the beast's chest in a roaring explosion of orange flame, but when the smoke cleared, the obsidian scales were completely unscathed.
 
-[IMG_304] The wyrm let out an ear-piercing subterranean roar and exhaled a wide spray of boiling purple venom across the town plaza.
+[IMG_304] The wyrm let out an ear-piercing subterranean roar and exhaled a wide spray of boiling violet wyrm plasma across the town plaza.
 
 [IMG_305] Rowan lunged forward, slamming his hands onto the cobblestones and raising a massive Tier 4 earthen wall to shield a group of trapped children.
 
-[IMG_306] The corrosive venom slammed against the earthen rampart, sizzling violently and eating through three feet of solid stone within seconds.
+[IMG_306] The corrosive violet breath slammed against the earthen rampart, sizzling violently and eating through three feet of solid stone within seconds.
 
-[IMG_307] Rowan grunted in agony as venom splashed across his shoulder guard, forcing the veteran battle-mage to his knees in the mud.
+[IMG_307] Rowan grunted under impact as caustic mist splashed across his shoulder guard, forcing the veteran battle-mage to his knees in the mud.
 
 [IMG_308] The wyrm coiled its massive body, raising its spiked horned head twenty feet into the air, preparing to crush Rowan and the children beneath its titanic weight.
 
@@ -665,14 +667,15 @@
 
 [IMG_310] But amidst the screaming panic, seven-year-old Michael stepped forward calmly into the center of the devastated plaza.
 
-[IMG_311] He gripped his carved blackwood staff in both hands, his cyan eyes narrowing as his mind executed lightning-fast calculations.
+[IMG_311] He gripped his carved blackwood staff in both hands, his cyan eyes narrowing as his mind performed lightning-fast calculations.
 
 [IMG_312] "Target: Fifteen metres. Mass: Eighteen tons. Weakness: The third cranial suture beneath the central crimson eye."
 
 
 ## 📦 BATCH 14 (Scenes 313 - 336)
 
-[IMG_313] "Michael, get back!" Rowan roared through the toxic smoke, reaching out with a bloodied hand. "You can't stop that monster! Run!"
+<!-- CLIMAX_START -->
+[IMG_313] "Michael, get back!" Rowan roared through the billowing rift smoke, reaching out with a bruised hand. "You can't stop that monster! Run!"
 
 [IMG_314] Michael did not look back. He took a single deep breath, triggering the **Celestial Thunder-Strike Array** integrated into his bone marrow.
 
@@ -682,9 +685,10 @@
 
 [IMG_317] Michael bent his knees and launched himself forward, detonating the cobblestones beneath his boots into an explosive crater of shattered rock.
 
-[IMG_318] The seven-year-old boy broke the sound barrier, traveling thirty yards in a blinding flash of cyan light that left a vacuum trail through the purple venom mist.
+[IMG_318] The seven-year-old boy broke the sound barrier, traveling thirty yards in a blinding flash of cyan light that left a vacuum trail through the purple rift mist.
+<!-- CLIMAX_END -->
 
-[IMG_319] The Abyssal Wyrm caught the motion and snapped its massive jaws downward, attempting to swallow the child whole.
+[IMG_319] The Abyssal Wyrm caught the motion and snapped its massive jaws downward, attempting to crush the young mage beneath its strike.
 
 [IMG_320] Mid-air, Michael planted his left foot against the beast's lower snout, executing a frame-perfect kinetic pivot that redirected the wyrm's biting momentum into the earth.
 
@@ -696,7 +700,7 @@
 
 [IMG_324] The blackwood staff struck the skull with a concussive detonation resembling a thunderbolt striking an iron anvil.
 
-[IMG_325] A blinding shockwave of cyan lightning exploded outward, blowing away the toxic mist, shattering the windows of thirty buildings, and pinning the dust to the ground.
+[IMG_325] A blinding shockwave of cyan lightning exploded outward, blowing away the rift mist, shattering the windows of thirty buildings, and pinning the dust to the ground.
 
 [IMG_326] The fifteen-metre wyrm's armored obsidian skull fractured into a spiderweb of glowing cracks, the force traveling through its entire spine.
 
@@ -710,11 +714,11 @@
 
 [IMG_331] The retreating guards and cowering young noble students stared in paralyzed shock, their wands slipping from numb fingers into the puddles.
 
-[IMG_332] A seven-year-old child had just single-handedly killed a Tier 4 Calamity Rift Beast with a wooden stick in under three seconds.
+[IMG_332] A seven-year-old child had just single-handedly defeated a Tier 4 Calamity Rift Beast with a wooden stick in under three seconds.
 
 [IMG_333] Michael calmly wiped a speck of dust from his tunic, looked down at the bewildered veteran battle-mage, and offered a polite nod.
 
-[IMG_334] "Master Rowan, do you have a sufficiently large cleaver?" Michael asked in his calm, deadpan tone. "Wyrm venom glands fetch a handsome price at the capital market."
+[IMG_334] "Master Rowan, do you have a sufficiently large harvesting blade?" Michael asked in his calm, deadpan tone. "Wyrm mana cores fetch a handsome price at the capital market."
 
 [IMG_335] But five hundred miles away, in the ancestral sanctum of House Montrey in the imperial capital, a sudden catastrophic tremor shook the foundations.
 

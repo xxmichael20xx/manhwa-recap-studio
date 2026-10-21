@@ -1,7 +1,7 @@
 {
   "scene": 325,
-  "text": "A blinding shockwave of cyan lightning exploded outward, blowing away the toxic mist, shattering the windows of thirty buildings, and pinning the dust to the ground.",
-  "durationMs": 10200,
+  "text": "A blinding shockwave of cyan lightning exploded outward, blowing away the rift mist, shattering the windows of thirty buildings, and pinning the dust to the ground.",
+  "durationMs": 10032,
   "rawWords": [
     {
       "ttsWord": "A",
@@ -51,87 +51,87 @@
     {
       "ttsWord": "away",
       "startMs": 3988,
-      "endMs": 4238
+      "endMs": 4250
     },
     {
       "ttsWord": "the",
-      "startMs": 4250,
-      "endMs": 4363
+      "startMs": 4263,
+      "endMs": 4388
     },
     {
-      "ttsWord": "toxic",
-      "startMs": 4375,
-      "endMs": 4838
+      "ttsWord": "rift",
+      "startMs": 4400,
+      "endMs": 4675
     },
     {
       "ttsWord": "mist",
-      "startMs": 4850,
-      "endMs": 5225
+      "startMs": 4688,
+      "endMs": 5050
     },
     {
       "ttsWord": "shattering",
-      "startMs": 5513,
-      "endMs": 5975
+      "startMs": 5338,
+      "endMs": 5788
     },
     {
       "ttsWord": "the",
-      "startMs": 5988,
-      "endMs": 6075
+      "startMs": 5800,
+      "endMs": 5888
     },
     {
       "ttsWord": "windows",
-      "startMs": 6088,
-      "endMs": 6513
+      "startMs": 5900,
+      "endMs": 6325
     },
     {
       "ttsWord": "of",
-      "startMs": 6525,
-      "endMs": 6613
+      "startMs": 6338,
+      "endMs": 6425
     },
     {
       "ttsWord": "thirty",
-      "startMs": 6625,
-      "endMs": 6963
+      "startMs": 6438,
+      "endMs": 6775
     },
     {
       "ttsWord": "buildings",
-      "startMs": 6975,
-      "endMs": 7525
+      "startMs": 6788,
+      "endMs": 7338
     },
     {
       "ttsWord": "and",
-      "startMs": 7663,
-      "endMs": 7838
+      "startMs": 7488,
+      "endMs": 7663
     },
     {
       "ttsWord": "pinning",
-      "startMs": 7850,
-      "endMs": 8163
+      "startMs": 7675,
+      "endMs": 7988
     },
     {
       "ttsWord": "the",
-      "startMs": 8175,
-      "endMs": 8288
+      "startMs": 8000,
+      "endMs": 8113
     },
     {
       "ttsWord": "dust",
-      "startMs": 8300,
-      "endMs": 8600
+      "startMs": 8125,
+      "endMs": 8413
     },
     {
       "ttsWord": "to",
-      "startMs": 8613,
-      "endMs": 8688
+      "startMs": 8425,
+      "endMs": 8500
     },
     {
       "ttsWord": "the",
-      "startMs": 8700,
-      "endMs": 8788
+      "startMs": 8513,
+      "endMs": 8600
     },
     {
       "ttsWord": "ground",
-      "startMs": 8800,
-      "endMs": 9338
+      "startMs": 8613,
+      "endMs": 9150
     }
   ],
   "relativeCues": [
@@ -141,19 +141,19 @@
       "endOffsetMs": 3463
     },
     {
-      "text": "blowing away the toxic mist,",
+      "text": "blowing away the rift mist,",
       "startOffsetMs": 3638,
-      "endOffsetMs": 5325
+      "endOffsetMs": 5150
     },
     {
       "text": "shattering the windows of thirty buildings,",
-      "startOffsetMs": 5513,
-      "endOffsetMs": 7625
+      "startOffsetMs": 5338,
+      "endOffsetMs": 7438
     },
     {
       "text": "and pinning the dust to the ground.",
-      "startOffsetMs": 7663,
-      "endOffsetMs": 9438
+      "startOffsetMs": 7488,
+      "endOffsetMs": 9250
     }
   ]
 }

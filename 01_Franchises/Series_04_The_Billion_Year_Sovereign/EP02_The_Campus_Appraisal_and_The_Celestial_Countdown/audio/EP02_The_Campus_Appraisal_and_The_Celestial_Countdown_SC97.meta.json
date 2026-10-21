@@ -1,0 +1,139 @@
+{
+  "scene": 97,
+  "text": "High above Jiangnan Province, the azure sky suddenly deepened into a pristine crystalline sapphire, the atmospheric temperature plummeting twenty degrees in seconds.",
+  "durationMs": 9984,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 338,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 675,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "Province",
+      "startMs": 1238,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2013,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "azure",
+      "startMs": 2150,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "sky",
+      "startMs": 2513,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "suddenly",
+      "startMs": 2850,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "deepened",
+      "startMs": 3325,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 3775,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4000,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "pristine",
+      "startMs": 4088,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "crystalline",
+      "startMs": 4575,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "sapphire",
+      "startMs": 5075,
+      "endMs": 5700
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5963,
+      "endMs": 6063
+    },
+    {
+      "ttsWord": "atmospheric",
+      "startMs": 6075,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "temperature",
+      "startMs": 6750,
+      "endMs": 7163
+    },
+    {
+      "ttsWord": "plummeting",
+      "startMs": 7175,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "twenty",
+      "startMs": 7613,
+      "endMs": 7900
+    },
+    {
+      "ttsWord": "degrees",
+      "startMs": 7913,
+      "endMs": 8350
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 8363,
+      "endMs": 8500
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 8513,
+      "endMs": 9113
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High above Jiangnan Province,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1938
+    },
+    {
+      "text": "the azure sky suddenly deepened into a pristine",
+      "startOffsetMs": 2013,
+      "endOffsetMs": 4563
+    },
+    {
+      "text": "crystalline sapphire,",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 5800
+    },
+    {
+      "text": "the atmospheric temperature plummeting twenty degrees in seconds.",
+      "startOffsetMs": 5963,
+      "endOffsetMs": 9213
+    }
+  ]
+}

@@ -37,6 +37,38 @@
       "hasPlate": true
     },
     {
+      "id": "michael_montrey_wolf_skin",
+      "name": "Michael Montrey (Wolf-Skin)",
+      "token": "@{Michael Montrey (Wolf-Skin)}",
+      "tier": 1,
+      "role": "Protagonist (Frontier Wolf-Skin Phase, Age 7)",
+      "age": 7,
+      "stats_baseline": {
+        "level": 5,
+        "class": "Dual-Vessel Sovereign (Apparent: Talentless Child)",
+        "strength": 28,
+        "agility": 32,
+        "constitution": 45,
+        "perception": 50,
+        "talent": "Vessel Mana-Forging & Primordial Arcana"
+      },
+      "appearance": {
+        "hair": "Messy raven-black hair falling naturally over forehead",
+        "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
+        "physique": "Wiry 7-year-old boy build, straight posture, immaculate balance, quiet confident stance",
+        "attire": "Tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack",
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, etched with subtle cyan mana spiral veins"
+      },
+      "dna_prompt_anchor": "@{Michael Montrey (Wolf-Skin)}, 7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "01b_Protagonist_Michael_Wolf_Skin_16x9.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00011",
+      "flowName": "Michael Montrey (Wolf-Skin)",
+      "episodes": [
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
       "id": "michael_montrey_apex",
       "name": "Apex Archmage Michael",
       "token": "@{Apex Archmage Michael}",

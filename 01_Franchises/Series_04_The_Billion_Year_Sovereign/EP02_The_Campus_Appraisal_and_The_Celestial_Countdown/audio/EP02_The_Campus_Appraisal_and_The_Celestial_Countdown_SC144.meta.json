@@ -1,0 +1,214 @@
+{
+  "scene": 144,
+  "text": "Yielding to etiquette, Jiang Qingxue placed a delicate white nephrite jade communication talisman upon the study desk: \"If you observe anything unusual, channel a sliver of qi into this talisman. It will summon me directly.\"",
+  "durationMs": 14256,
+  "rawWords": [
+    {
+      "ttsWord": "Yielding",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 500,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "etiquette",
+      "startMs": 625,
+      "endMs": 1088
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 1338,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 1713,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "placed",
+      "startMs": 2263,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 2625,
+      "endMs": 2700
+    },
+    {
+      "ttsWord": "delicate",
+      "startMs": 2713,
+      "endMs": 3163
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 3175,
+      "endMs": 3425
+    },
+    {
+      "ttsWord": "nephrite",
+      "startMs": 3438,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "jade",
+      "startMs": 3888,
+      "endMs": 4163
+    },
+    {
+      "ttsWord": "communication",
+      "startMs": 4175,
+      "endMs": 4875
+    },
+    {
+      "ttsWord": "talisman",
+      "startMs": 4888,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 5388,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5663,
+      "endMs": 5738
+    },
+    {
+      "ttsWord": "study",
+      "startMs": 5750,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 6088,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "If",
+      "startMs": 6850,
+      "endMs": 6950
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 6963,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "observe",
+      "startMs": 7100,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "anything",
+      "startMs": 7500,
+      "endMs": 7913
+    },
+    {
+      "ttsWord": "unusual",
+      "startMs": 7925,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "channel",
+      "startMs": 8750,
+      "endMs": 9100
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 9113,
+      "endMs": 9175
+    },
+    {
+      "ttsWord": "sliver",
+      "startMs": 9188,
+      "endMs": 9613
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 9625,
+      "endMs": 9713
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 9725,
+      "endMs": 10013
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 10025,
+      "endMs": 10225
+    },
+    {
+      "ttsWord": "this",
+      "startMs": 10238,
+      "endMs": 10425
+    },
+    {
+      "ttsWord": "talisman",
+      "startMs": 10438,
+      "endMs": 11075
+    },
+    {
+      "ttsWord": "It",
+      "startMs": 11938,
+      "endMs": 12088
+    },
+    {
+      "ttsWord": "will",
+      "startMs": 12100,
+      "endMs": 12225
+    },
+    {
+      "ttsWord": "summon",
+      "startMs": 12238,
+      "endMs": 12588
+    },
+    {
+      "ttsWord": "me",
+      "startMs": 12600,
+      "endMs": 12725
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 12738,
+      "endMs": 13388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Yielding to etiquette,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1188
+    },
+    {
+      "text": "Jiang Qingxue placed a delicate white nephrite jade",
+      "startOffsetMs": 1338,
+      "endOffsetMs": 4163
+    },
+    {
+      "text": "communication talisman upon the study desk:",
+      "startOffsetMs": 4175,
+      "endOffsetMs": 6625
+    },
+    {
+      "text": "If you observe anything unusual,",
+      "startOffsetMs": 6850,
+      "endOffsetMs": 8625
+    },
+    {
+      "text": "channel a sliver of qi into this talisman.",
+      "startOffsetMs": 8750,
+      "endOffsetMs": 11175
+    },
+    {
+      "text": "It will summon me directly.\"",
+      "startOffsetMs": 11938,
+      "endOffsetMs": 13488
+    }
+  ]
+}

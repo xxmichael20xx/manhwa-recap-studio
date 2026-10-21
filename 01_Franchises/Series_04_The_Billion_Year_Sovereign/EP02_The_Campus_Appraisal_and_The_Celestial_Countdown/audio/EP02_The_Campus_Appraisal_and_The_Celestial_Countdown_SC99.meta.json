@@ -1,0 +1,124 @@
+{
+  "scene": 99,
+  "text": "Students shivered in surprise, pulling their jackets tight as shimmering diamond-dust motes drifted through the morning air like winter snowfall.",
+  "durationMs": 8016,
+  "rawWords": [
+    {
+      "ttsWord": "Students",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "shivered",
+      "startMs": 575,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 963,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "surprise",
+      "startMs": 1075,
+      "endMs": 1675
+    },
+    {
+      "ttsWord": "pulling",
+      "startMs": 1925,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 2250,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "jackets",
+      "startMs": 2388,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "tight",
+      "startMs": 2900,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3213,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "shimmering",
+      "startMs": 3325,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "diamond-dust",
+      "startMs": 3788,
+      "endMs": 4450
+    },
+    {
+      "ttsWord": "motes",
+      "startMs": 4463,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "drifted",
+      "startMs": 4788,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 5188,
+      "endMs": 5338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5350,
+      "endMs": 5425
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 5438,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "air",
+      "startMs": 5800,
+      "endMs": 5975
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 5988,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "winter",
+      "startMs": 6188,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "snowfall",
+      "startMs": 6488,
+      "endMs": 7150
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Students shivered in surprise,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1775
+    },
+    {
+      "text": "pulling their jackets tight as shimmering diamond-dust motes",
+      "startOffsetMs": 1925,
+      "endOffsetMs": 4775
+    },
+    {
+      "text": "drifted through the morning air like winter snowfall.",
+      "startOffsetMs": 4788,
+      "endOffsetMs": 7250
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "scene": 174,
+  "text": "Eight billion humans on Earth stepped out onto balconies, sidewalks, rooftops, and campus grounds, gazing up at the heavens in absolute, breathless anticipation.",
+  "durationMs": 10656,
+  "rawWords": [
+    {
+      "ttsWord": "Eight",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "billion",
+      "startMs": 338,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "humans",
+      "startMs": 725,
+      "endMs": 1138
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 1150,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "Earth",
+      "startMs": 1325,
+      "endMs": 1575
+    },
+    {
+      "ttsWord": "stepped",
+      "startMs": 1588,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 1938,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "onto",
+      "startMs": 2150,
+      "endMs": 2363
+    },
+    {
+      "ttsWord": "balconies",
+      "startMs": 2375,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "sidewalks",
+      "startMs": 3175,
+      "endMs": 3863
+    },
+    {
+      "ttsWord": "rooftops",
+      "startMs": 4063,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4900,
+      "endMs": 5050
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 5063,
+      "endMs": 5475
+    },
+    {
+      "ttsWord": "grounds",
+      "startMs": 5488,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "gazing",
+      "startMs": 6238,
+      "endMs": 6650
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 6663,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "at",
+      "startMs": 6838,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6925,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "heavens",
+      "startMs": 7013,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7438,
+      "endMs": 7588
+    },
+    {
+      "ttsWord": "absolute",
+      "startMs": 7600,
+      "endMs": 8163
+    },
+    {
+      "ttsWord": "breathless",
+      "startMs": 8363,
+      "endMs": 8850
+    },
+    {
+      "ttsWord": "anticipation",
+      "startMs": 8863,
+      "endMs": 9788
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Eight billion humans on Earth stepped out onto",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2363
+    },
+    {
+      "text": "balconies, sidewalks, rooftops,",
+      "startOffsetMs": 2375,
+      "endOffsetMs": 4775
+    },
+    {
+      "text": "and campus grounds,",
+      "startOffsetMs": 4900,
+      "endOffsetMs": 6113
+    },
+    {
+      "text": "gazing up at the heavens in absolute,",
+      "startOffsetMs": 6238,
+      "endOffsetMs": 8263
+    },
+    {
+      "text": "breathless anticipation.",
+      "startOffsetMs": 8363,
+      "endOffsetMs": 9888
+    }
+  ]
+}

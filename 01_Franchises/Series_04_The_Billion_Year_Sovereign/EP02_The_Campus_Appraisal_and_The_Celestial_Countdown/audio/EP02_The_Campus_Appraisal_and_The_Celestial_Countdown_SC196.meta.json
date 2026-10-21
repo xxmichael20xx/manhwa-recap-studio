@@ -1,0 +1,169 @@
+{
+  "scene": 196,
+  "text": "Ranks Ten through Seven scrolled into view, unveiling ancient reclusive warlords and national marshals wielding one hundred and twenty to one hundred and eighty million years of power.",
+  "durationMs": 10248,
+  "rawWords": [
+    {
+      "ttsWord": "Ranks",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "Ten",
+      "startMs": 463,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 750,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "Seven",
+      "startMs": 950,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "scrolled",
+      "startMs": 1338,
+      "endMs": 1750
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1763,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "view",
+      "startMs": 1963,
+      "endMs": 2288
+    },
+    {
+      "ttsWord": "unveiling",
+      "startMs": 2588,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 3213,
+      "endMs": 3563
+    },
+    {
+      "ttsWord": "reclusive",
+      "startMs": 3575,
+      "endMs": 4100
+    },
+    {
+      "ttsWord": "warlords",
+      "startMs": 4113,
+      "endMs": 4675
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 4688,
+      "endMs": 4825
+    },
+    {
+      "ttsWord": "national",
+      "startMs": 4838,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "marshals",
+      "startMs": 5225,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "wielding",
+      "startMs": 5700,
+      "endMs": 6113
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 6125,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 6313,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6600,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "twenty",
+      "startMs": 6675,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7025,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 7138,
+      "endMs": 7350
+    },
+    {
+      "ttsWord": "hundred",
+      "startMs": 7363,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7663,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "eighty",
+      "startMs": 7838,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "million",
+      "startMs": 8075,
+      "endMs": 8450
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 8463,
+      "endMs": 8775
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 8788,
+      "endMs": 8875
+    },
+    {
+      "ttsWord": "power",
+      "startMs": 8888,
+      "endMs": 9388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ranks Ten through Seven scrolled into view,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2388
+    },
+    {
+      "text": "unveiling ancient reclusive warlords and national marshals",
+      "startOffsetMs": 2588,
+      "endOffsetMs": 5688
+    },
+    {
+      "text": "wielding one hundred and twenty to one hundred",
+      "startOffsetMs": 5700,
+      "endOffsetMs": 7650
+    },
+    {
+      "text": "and eighty million years of power.",
+      "startOffsetMs": 7663,
+      "endOffsetMs": 9488
+    }
+  ]
+}

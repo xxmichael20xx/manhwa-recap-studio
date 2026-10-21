@@ -1,0 +1,144 @@
+{
+  "scene": 7,
+  "text": "Twenty-year-old university student Lu Chen stood calmly beside his bed, pulling on his signature oversized charcoal-black streetwear pullover hoodie over clean casual trousers.",
+  "durationMs": 10488,
+  "rawWords": [
+    {
+      "ttsWord": "Twenty-year-old",
+      "startMs": 50,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "university",
+      "startMs": 725,
+      "endMs": 1288
+    },
+    {
+      "ttsWord": "student",
+      "startMs": 1300,
+      "endMs": 1688
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 1700,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 1850,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 2213,
+      "endMs": 2488
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 2500,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "beside",
+      "startMs": 2875,
+      "endMs": 3263
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3275,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "bed",
+      "startMs": 3425,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "pulling",
+      "startMs": 4038,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 4400,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 4513,
+      "endMs": 4650
+    },
+    {
+      "ttsWord": "signature",
+      "startMs": 4663,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "oversized",
+      "startMs": 5225,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "charcoal-black",
+      "startMs": 5838,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "streetwear",
+      "startMs": 6563,
+      "endMs": 7050
+    },
+    {
+      "ttsWord": "pullover",
+      "startMs": 7063,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "hoodie",
+      "startMs": 7538,
+      "endMs": 7888
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 7900,
+      "endMs": 8125
+    },
+    {
+      "ttsWord": "clean",
+      "startMs": 8138,
+      "endMs": 8463
+    },
+    {
+      "ttsWord": "casual",
+      "startMs": 8475,
+      "endMs": 8925
+    },
+    {
+      "ttsWord": "trousers",
+      "startMs": 8938,
+      "endMs": 9625
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Twenty-year-old university student Lu Chen stood calmly beside",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3263
+    },
+    {
+      "text": "his bed,",
+      "startOffsetMs": 3275,
+      "endOffsetMs": 3850
+    },
+    {
+      "text": "pulling on his signature oversized charcoal-black streetwear",
+      "startOffsetMs": 4038,
+      "endOffsetMs": 7050
+    },
+    {
+      "text": "pullover hoodie over clean casual trousers.",
+      "startOffsetMs": 7063,
+      "endOffsetMs": 9725
+    }
+  ]
+}

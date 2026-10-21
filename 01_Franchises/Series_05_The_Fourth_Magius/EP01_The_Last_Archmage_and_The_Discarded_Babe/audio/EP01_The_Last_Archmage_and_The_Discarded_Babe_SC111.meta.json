@@ -1,6 +1,6 @@
 {
   "scene": 111,
-  "text": "Every repetition of the breathing cycle was excruciating, feeling as though fine steel wires were being drawn through his bone marrow.",
+  "text": "Every repetition of the breathing cycle was deeply demanding, feeling as though fine mana threads were being aligned through his bone marrow.",
   "durationMs": 7920,
   "rawWords": [
     {
@@ -36,46 +36,51 @@
     {
       "ttsWord": "was",
       "startMs": 2000,
-      "endMs": 2138
+      "endMs": 2175
     },
     {
-      "ttsWord": "excruciating",
-      "startMs": 2150,
-      "endMs": 2963
+      "ttsWord": "deeply",
+      "startMs": 2188,
+      "endMs": 2550
+    },
+    {
+      "ttsWord": "demanding",
+      "startMs": 2563,
+      "endMs": 3113
     },
     {
       "ttsWord": "feeling",
-      "startMs": 3263,
-      "endMs": 3663
+      "startMs": 3413,
+      "endMs": 3813
     },
     {
       "ttsWord": "as",
-      "startMs": 3675,
-      "endMs": 3800
+      "startMs": 3825,
+      "endMs": 3950
     },
     {
       "ttsWord": "though",
-      "startMs": 3813,
-      "endMs": 3988
+      "startMs": 3963,
+      "endMs": 4138
     },
     {
       "ttsWord": "fine",
-      "startMs": 4000,
-      "endMs": 4363
+      "startMs": 4150,
+      "endMs": 4500
     },
     {
-      "ttsWord": "steel",
-      "startMs": 4375,
-      "endMs": 4763
+      "ttsWord": "mana",
+      "startMs": 4513,
+      "endMs": 4788
     },
     {
-      "ttsWord": "wires",
-      "startMs": 4775,
-      "endMs": 5175
+      "ttsWord": "threads",
+      "startMs": 4800,
+      "endMs": 5188
     },
     {
       "ttsWord": "were",
-      "startMs": 5188,
+      "startMs": 5200,
       "endMs": 5300
     },
     {
@@ -84,13 +89,13 @@
       "endMs": 5538
     },
     {
-      "ttsWord": "drawn",
+      "ttsWord": "aligned",
       "startMs": 5550,
-      "endMs": 5925
+      "endMs": 5938
     },
     {
       "ttsWord": "through",
-      "startMs": 5938,
+      "startMs": 5950,
       "endMs": 6113
     },
     {
@@ -111,17 +116,22 @@
   ],
   "relativeCues": [
     {
-      "text": "Every repetition of the breathing cycle was excruciating,",
+      "text": "Every repetition of the breathing cycle was deeply",
       "startOffsetMs": 50,
-      "endOffsetMs": 3063
+      "endOffsetMs": 2550
     },
     {
-      "text": "feeling as though fine steel wires were being",
-      "startOffsetMs": 3263,
+      "text": "demanding,",
+      "startOffsetMs": 2563,
+      "endOffsetMs": 3213
+    },
+    {
+      "text": "feeling as though fine mana threads were being",
+      "startOffsetMs": 3413,
       "endOffsetMs": 5538
     },
     {
-      "text": "drawn through his bone marrow.",
+      "text": "aligned through his bone marrow.",
       "startOffsetMs": 5550,
       "endOffsetMs": 7138
     }

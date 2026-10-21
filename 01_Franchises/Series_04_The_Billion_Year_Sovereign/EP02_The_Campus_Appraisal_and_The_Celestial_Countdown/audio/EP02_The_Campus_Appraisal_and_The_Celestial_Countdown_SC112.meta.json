@@ -1,0 +1,129 @@
+{
+  "scene": 112,
+  "text": "The Celestial Star Astrolabe had detected an infinitesimal, split-second wisp of primordial origin energy over Qindu University during the morning appraisal.",
+  "durationMs": 9552,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 200
+    },
+    {
+      "ttsWord": "Celestial",
+      "startMs": 213,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "Star",
+      "startMs": 863,
+      "endMs": 1225
+    },
+    {
+      "ttsWord": "Astrolabe",
+      "startMs": 1238,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 1788,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "detected",
+      "startMs": 1938,
+      "endMs": 2375
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2388,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "infinitesimal",
+      "startMs": 2488,
+      "endMs": 3338
+    },
+    {
+      "ttsWord": "split-second",
+      "startMs": 3638,
+      "endMs": 4325
+    },
+    {
+      "ttsWord": "wisp",
+      "startMs": 4338,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4625,
+      "endMs": 4725
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 4738,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "origin",
+      "startMs": 5363,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "energy",
+      "startMs": 5800,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 6225,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "Qindu",
+      "startMs": 6463,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "University",
+      "startMs": 6800,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "during",
+      "startMs": 7438,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7675,
+      "endMs": 7738
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 7750,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "appraisal",
+      "startMs": 8063,
+      "endMs": 8675
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The Celestial Star Astrolabe had detected an infinitesimal,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3438
+    },
+    {
+      "text": "split-second wisp of primordial origin energy over Qindu",
+      "startOffsetMs": 3638,
+      "endOffsetMs": 6788
+    },
+    {
+      "text": "University during the morning appraisal.",
+      "startOffsetMs": 6800,
+      "endOffsetMs": 8775
+    }
+  ]
+}

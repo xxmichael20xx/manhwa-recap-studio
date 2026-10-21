@@ -1,0 +1,159 @@
+{
+  "scene": 93,
+  "text": "Tactical sirens wailed loudly as two Threat Bureau armoured interception buggies skidded to a halt, and Commander Han Feng leaped out flanked by twelve armed riflemen.",
+  "durationMs": 10032,
+  "rawWords": [
+    {
+      "ttsWord": "Tactical",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "sirens",
+      "startMs": 575,
+      "endMs": 1050
+    },
+    {
+      "ttsWord": "wailed",
+      "startMs": 1063,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 1450,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 1900,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2050,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "Threat",
+      "startMs": 2288,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "Bureau",
+      "startMs": 2625,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "armoured",
+      "startMs": 3025,
+      "endMs": 3375
+    },
+    {
+      "ttsWord": "interception",
+      "startMs": 3388,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "buggies",
+      "startMs": 4025,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "skidded",
+      "startMs": 4413,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 4763,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4900,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "halt",
+      "startMs": 4988,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5663,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "Commander",
+      "startMs": 5800,
+      "endMs": 6238
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 6250,
+      "endMs": 6500
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 6513,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "leaped",
+      "startMs": 6875,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 7138,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "flanked",
+      "startMs": 7338,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 7725,
+      "endMs": 7838
+    },
+    {
+      "ttsWord": "twelve",
+      "startMs": 7850,
+      "endMs": 8250
+    },
+    {
+      "ttsWord": "armed",
+      "startMs": 8263,
+      "endMs": 8525
+    },
+    {
+      "ttsWord": "riflemen",
+      "startMs": 8538,
+      "endMs": 9163
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Tactical sirens wailed loudly as two Threat Bureau",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3013
+    },
+    {
+      "text": "armoured interception buggies skidded to a halt,",
+      "startOffsetMs": 3025,
+      "endOffsetMs": 5463
+    },
+    {
+      "text": "and Commander Han Feng leaped out flanked by",
+      "startOffsetMs": 5663,
+      "endOffsetMs": 7838
+    },
+    {
+      "text": "twelve armed riflemen.",
+      "startOffsetMs": 7850,
+      "endOffsetMs": 9263
+    }
+  ]
+}

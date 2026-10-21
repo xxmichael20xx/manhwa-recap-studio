@@ -1,0 +1,149 @@
+{
+  "scene": 133,
+  "text": "Inside Room 402, Wang Bao jumped up from his desk chair, clutching an open bag of barbecue shrimp chips as the sudden knock startled him.",
+  "durationMs": 9408,
+  "rawWords": [
+    {
+      "ttsWord": "Inside",
+      "startMs": 50,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 588,
+      "endMs": 1700
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 1988,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2275,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "jumped",
+      "startMs": 2525,
+      "endMs": 2850
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 2863,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 3050,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3188,
+      "endMs": 3325
+    },
+    {
+      "ttsWord": "desk",
+      "startMs": 3338,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "chair",
+      "startMs": 3650,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "clutching",
+      "startMs": 4375,
+      "endMs": 4775
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 4788,
+      "endMs": 4888
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 4900,
+      "endMs": 5200
+    },
+    {
+      "ttsWord": "bag",
+      "startMs": 5213,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5538,
+      "endMs": 5650
+    },
+    {
+      "ttsWord": "barbecue",
+      "startMs": 5663,
+      "endMs": 6175
+    },
+    {
+      "ttsWord": "shrimp",
+      "startMs": 6188,
+      "endMs": 6525
+    },
+    {
+      "ttsWord": "chips",
+      "startMs": 6538,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6938,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7088,
+      "endMs": 7188
+    },
+    {
+      "ttsWord": "sudden",
+      "startMs": 7200,
+      "endMs": 7563
+    },
+    {
+      "ttsWord": "knock",
+      "startMs": 7575,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "startled",
+      "startMs": 7838,
+      "endMs": 8250
+    },
+    {
+      "ttsWord": "him",
+      "startMs": 8263,
+      "endMs": 8525
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Inside Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1800
+    },
+    {
+      "text": "Wang Bao jumped up from his desk chair,",
+      "startOffsetMs": 1988,
+      "endOffsetMs": 4175
+    },
+    {
+      "text": "clutching an open bag of barbecue shrimp chips",
+      "startOffsetMs": 4375,
+      "endOffsetMs": 6925
+    },
+    {
+      "text": "as the sudden knock startled him.",
+      "startOffsetMs": 6938,
+      "endOffsetMs": 8625
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "scene": 190,
+  "text": "In every nation on Earth, millions of voices joined in a spontaneous global countdown: \"Five... Four...\"",
+  "durationMs": 8112,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "every",
+      "startMs": 275,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "nation",
+      "startMs": 525,
+      "endMs": 913
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 925,
+      "endMs": 1075
+    },
+    {
+      "ttsWord": "Earth",
+      "startMs": 1088,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "millions",
+      "startMs": 1663,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2150,
+      "endMs": 2238
+    },
+    {
+      "ttsWord": "voices",
+      "startMs": 2250,
+      "endMs": 2725
+    },
+    {
+      "ttsWord": "joined",
+      "startMs": 2738,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3100,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 3200,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "spontaneous",
+      "startMs": 3263,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "global",
+      "startMs": 4025,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 4425,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "Five",
+      "startMs": 5238,
+      "endMs": 5788
+    },
+    {
+      "ttsWord": "Four",
+      "startMs": 6650,
+      "endMs": 7263
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In every nation on Earth,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1563
+    },
+    {
+      "text": "millions of voices joined in a spontaneous global",
+      "startOffsetMs": 1663,
+      "endOffsetMs": 4413
+    },
+    {
+      "text": "countdown:",
+      "startOffsetMs": 4425,
+      "endOffsetMs": 5113
+    },
+    {
+      "text": "Five...",
+      "startOffsetMs": 5238,
+      "endOffsetMs": 5888
+    },
+    {
+      "text": "Four...\"",
+      "startOffsetMs": 6650,
+      "endOffsetMs": 7363
+    }
+  ]
+}

@@ -17,6 +17,17 @@ The series is set within the sprawling, semi-feudal **Valerius Empire**, a realm
 * **The Common Caste:** Individuals born with dormant or closed mana vessels are relegated to manual labour, low-ranking imperial infantry, or mercenary foot soldiers.
 * **House Montrey:** One of the empire's five founding Archmage Houses, celebrated for their sapphire-crested ancestral towers and hereditary wind-lightning arcana. To House Montrey, a child born with closed mana vessels is considered an unpardonable blemish on the bloodline, deserving only immediate erasure or abandonment.
 
+### 🏰 Canonical World Setting: The Crystalline Arcane Bastion of Valerius
+The canonical visual format for the high-magic realm where Michael transmigrates into House Montrey:
+* **Location & Lore Identity:** The ancestral seat and imperial capital realm of the Valerius Empire.
+* **Canonical Reference Plate:** `00_World_Setting_Canonical.jpg` (16:9 Landscape Full Bleed Widescreen)
+* **Architectural Format & Visual DNA:**
+  * **Pale Silver Granite & Luminous Crystals:** Majestic gothic cathedral spires and palace towers crafted from pale silver granite, crowned with glowing star-sapphire blue mana crystal tips.
+  * **Hovering Arcane Halos:** Glowing ethereal cyan/azure magic circles (mana summoning rings and containment seals) faintly rotating horizontally above the cathedral domes and observatory spires.
+  * **Sovereign Silver Drakes:** High-noon clear cobalt sky with gentle sunbeams, where sleek silver-scaled Rift Wyverns and patrol drakes soar in graceful formation.
+  * **Reflective Marble Terraces & Aqueducts:** Expansive polished marble courtyards with crystal water fountains flanked by multi-tiered arched viaducts spanning lush emerald forested valleys below.
+  * **Atmosphere:** Clean, pristine, scholarly high-magic empire with bright daylight cel shading, sharp black ink linework, and 100% pure textless artwork.
+
 ---
 
 ## ⚡ The 13-Tier Magic Hierarchy & The Legend of the Magius

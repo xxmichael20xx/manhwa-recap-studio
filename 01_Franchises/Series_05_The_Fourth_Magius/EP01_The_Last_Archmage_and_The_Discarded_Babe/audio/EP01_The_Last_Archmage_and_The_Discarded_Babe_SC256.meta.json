@@ -1,7 +1,7 @@
 {
   "scene": 256,
-  "text": "\"Midnight harvest preserves the volatile saponins before the morning sun degrades the cell membranes,\" Michael explained calmly, as if discussing the weather.",
-  "durationMs": 9120,
+  "text": "\"Midnight harvest preserves the pure lunar mana circulating within the root before the morning sun disperses its essence,\" Michael explained calmly, as if discussing the weather.",
+  "durationMs": 10080,
   "rawWords": [
     {
       "ttsWord": "Midnight",
@@ -16,124 +16,149 @@
     {
       "ttsWord": "preserves",
       "startMs": 988,
-      "endMs": 1425
+      "endMs": 1438
     },
     {
       "ttsWord": "the",
-      "startMs": 1438,
-      "endMs": 1525
+      "startMs": 1450,
+      "endMs": 1550
     },
     {
-      "ttsWord": "volatile",
-      "startMs": 1538,
-      "endMs": 1950
+      "ttsWord": "pure",
+      "startMs": 1563,
+      "endMs": 1863
     },
     {
-      "ttsWord": "saponins",
-      "startMs": 1963,
-      "endMs": 2525
+      "ttsWord": "lunar",
+      "startMs": 1875,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 2188,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "circulating",
+      "startMs": 2488,
+      "endMs": 3113
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 3125,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3400,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "root",
+      "startMs": 3500,
+      "endMs": 3763
     },
     {
       "ttsWord": "before",
-      "startMs": 2538,
-      "endMs": 2875
+      "startMs": 3775,
+      "endMs": 4113
     },
     {
       "ttsWord": "the",
-      "startMs": 2888,
-      "endMs": 2950
+      "startMs": 4125,
+      "endMs": 4188
     },
     {
       "ttsWord": "morning",
-      "startMs": 2963,
-      "endMs": 3300
+      "startMs": 4200,
+      "endMs": 4538
     },
     {
       "ttsWord": "sun",
-      "startMs": 3313,
-      "endMs": 3575
+      "startMs": 4550,
+      "endMs": 4800
     },
     {
-      "ttsWord": "degrades",
-      "startMs": 3588,
-      "endMs": 4013
+      "ttsWord": "disperses",
+      "startMs": 4813,
+      "endMs": 5350
     },
     {
-      "ttsWord": "the",
-      "startMs": 4025,
-      "endMs": 4125
+      "ttsWord": "its",
+      "startMs": 5363,
+      "endMs": 5500
     },
     {
-      "ttsWord": "cell",
-      "startMs": 4138,
-      "endMs": 4413
-    },
-    {
-      "ttsWord": "membranes",
-      "startMs": 4425,
-      "endMs": 5050
+      "ttsWord": "essence",
+      "startMs": 5513,
+      "endMs": 5988
     },
     {
       "ttsWord": "Michael",
-      "startMs": 5338,
-      "endMs": 5675
-    },
-    {
-      "ttsWord": "explained",
-      "startMs": 5688,
-      "endMs": 6150
-    },
-    {
-      "ttsWord": "calmly",
-      "startMs": 6163,
+      "startMs": 6300,
       "endMs": 6638
     },
     {
+      "ttsWord": "explained",
+      "startMs": 6650,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "calmly",
+      "startMs": 7125,
+      "endMs": 7588
+    },
+    {
       "ttsWord": "as",
-      "startMs": 6913,
-      "endMs": 7075
+      "startMs": 7863,
+      "endMs": 8038
     },
     {
       "ttsWord": "if",
-      "startMs": 7088,
-      "endMs": 7200
+      "startMs": 8050,
+      "endMs": 8163
     },
     {
       "ttsWord": "discussing",
-      "startMs": 7213,
-      "endMs": 7725
+      "startMs": 8175,
+      "endMs": 8675
     },
     {
       "ttsWord": "the",
-      "startMs": 7738,
-      "endMs": 7825
+      "startMs": 8688,
+      "endMs": 8775
     },
     {
       "ttsWord": "weather",
-      "startMs": 7838,
-      "endMs": 8250
+      "startMs": 8788,
+      "endMs": 9200
     }
   ],
   "relativeCues": [
     {
-      "text": "Midnight harvest preserves the volatile saponins before the",
+      "text": "Midnight harvest preserves the pure lunar mana circulating",
       "startOffsetMs": 50,
-      "endOffsetMs": 2950
+      "endOffsetMs": 3113
     },
     {
-      "text": "morning sun degrades the cell membranes,\"",
-      "startOffsetMs": 2963,
-      "endOffsetMs": 5150
+      "text": "within the root before the morning sun disperses",
+      "startOffsetMs": 3125,
+      "endOffsetMs": 5350
+    },
+    {
+      "text": "its essence,\"",
+      "startOffsetMs": 5363,
+      "endOffsetMs": 6088
     },
     {
       "text": "Michael explained calmly,",
-      "startOffsetMs": 5338,
-      "endOffsetMs": 6738
+      "startOffsetMs": 6300,
+      "endOffsetMs": 7688
     },
     {
       "text": "as if discussing the weather.",
-      "startOffsetMs": 6913,
-      "endOffsetMs": 8350
+      "startOffsetMs": 7863,
+      "endOffsetMs": 9300
     }
   ]
 }

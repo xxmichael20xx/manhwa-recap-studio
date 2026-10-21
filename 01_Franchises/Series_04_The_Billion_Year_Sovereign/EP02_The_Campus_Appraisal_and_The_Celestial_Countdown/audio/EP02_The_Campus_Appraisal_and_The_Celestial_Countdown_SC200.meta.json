@@ -1,0 +1,164 @@
+{
+  "scene": 200,
+  "text": "Across Jiangnan, millions screamed in patriotic celebration, but Jiang Qingxue closed her eyes in silent prayer, caring nothing for her rank: \"Master... where are you?\"",
+  "durationMs": 10944,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 525
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 538,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "millions",
+      "startMs": 1388,
+      "endMs": 1788
+    },
+    {
+      "ttsWord": "screamed",
+      "startMs": 1800,
+      "endMs": 2200
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 2213,
+      "endMs": 2313
+    },
+    {
+      "ttsWord": "patriotic",
+      "startMs": 2325,
+      "endMs": 2925
+    },
+    {
+      "ttsWord": "celebration",
+      "startMs": 2938,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "but",
+      "startMs": 3975,
+      "endMs": 4125
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 4138,
+      "endMs": 4475
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 4488,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "closed",
+      "startMs": 4975,
+      "endMs": 5375
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 5388,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 5550,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5863,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "silent",
+      "startMs": 6000,
+      "endMs": 6413
+    },
+    {
+      "ttsWord": "prayer",
+      "startMs": 6425,
+      "endMs": 6788
+    },
+    {
+      "ttsWord": "caring",
+      "startMs": 7075,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "nothing",
+      "startMs": 7400,
+      "endMs": 7738
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 7750,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 7888,
+      "endMs": 8025
+    },
+    {
+      "ttsWord": "rank",
+      "startMs": 8038,
+      "endMs": 8438
+    },
+    {
+      "ttsWord": "Master",
+      "startMs": 8613,
+      "endMs": 9163
+    },
+    {
+      "ttsWord": "where",
+      "startMs": 9488,
+      "endMs": 9663
+    },
+    {
+      "ttsWord": "are",
+      "startMs": 9675,
+      "endMs": 9825
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 9838,
+      "endMs": 10075
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across Jiangnan, millions screamed in patriotic celebration,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3775
+    },
+    {
+      "text": "but Jiang Qingxue closed her eyes in silent",
+      "startOffsetMs": 3975,
+      "endOffsetMs": 6413
+    },
+    {
+      "text": "prayer,",
+      "startOffsetMs": 6425,
+      "endOffsetMs": 6888
+    },
+    {
+      "text": "caring nothing for her rank:",
+      "startOffsetMs": 7075,
+      "endOffsetMs": 8538
+    },
+    {
+      "text": "Master...",
+      "startOffsetMs": 8613,
+      "endOffsetMs": 9263
+    },
+    {
+      "text": "where are you?\"",
+      "startOffsetMs": 9488,
+      "endOffsetMs": 10175
+    }
+  ]
+}

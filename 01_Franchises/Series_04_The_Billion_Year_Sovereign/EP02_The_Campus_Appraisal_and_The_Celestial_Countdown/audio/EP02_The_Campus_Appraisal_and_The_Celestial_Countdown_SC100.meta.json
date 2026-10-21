@@ -1,0 +1,154 @@
+{
+  "scene": 100,
+  "text": "Four supersonic state fighter jets streaked through the upper atmosphere in tight diamond escort formation, sonic booms muffled by a radiant barrier of glacial mana.",
+  "durationMs": 9720,
+  "rawWords": [
+    {
+      "ttsWord": "Four",
+      "startMs": 50,
+      "endMs": 263
+    },
+    {
+      "ttsWord": "supersonic",
+      "startMs": 275,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "state",
+      "startMs": 988,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "fighter",
+      "startMs": 1313,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "jets",
+      "startMs": 1663,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "streaked",
+      "startMs": 1963,
+      "endMs": 2275
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 2288,
+      "endMs": 2450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 2463,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "upper",
+      "startMs": 2575,
+      "endMs": 2913
+    },
+    {
+      "ttsWord": "atmosphere",
+      "startMs": 2925,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3500,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "tight",
+      "startMs": 3663,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "diamond",
+      "startMs": 3975,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "escort",
+      "startMs": 4363,
+      "endMs": 4750
+    },
+    {
+      "ttsWord": "formation",
+      "startMs": 4763,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "sonic",
+      "startMs": 5675,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "booms",
+      "startMs": 6088,
+      "endMs": 6450
+    },
+    {
+      "ttsWord": "muffled",
+      "startMs": 6463,
+      "endMs": 6875
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 6888,
+      "endMs": 7025
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 7038,
+      "endMs": 7113
+    },
+    {
+      "ttsWord": "radiant",
+      "startMs": 7125,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "barrier",
+      "startMs": 7538,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7938,
+      "endMs": 8038
+    },
+    {
+      "ttsWord": "glacial",
+      "startMs": 8050,
+      "endMs": 8425
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 8438,
+      "endMs": 8850
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Four supersonic state fighter jets streaked through the",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2563
+    },
+    {
+      "text": "upper atmosphere in tight diamond escort formation,",
+      "startOffsetMs": 2575,
+      "endOffsetMs": 5463
+    },
+    {
+      "text": "sonic booms muffled by a radiant barrier of",
+      "startOffsetMs": 5675,
+      "endOffsetMs": 8038
+    },
+    {
+      "text": "glacial mana.",
+      "startOffsetMs": 8050,
+      "endOffsetMs": 8950
+    }
+  ]
+}

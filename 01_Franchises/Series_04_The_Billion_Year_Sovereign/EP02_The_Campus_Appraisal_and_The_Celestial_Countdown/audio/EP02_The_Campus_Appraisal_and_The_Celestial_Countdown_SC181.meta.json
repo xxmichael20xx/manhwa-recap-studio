@@ -1,0 +1,119 @@
+{
+  "scene": 181,
+  "text": "Sitting on the concrete park bench, Lu Chen gently lowered his right sneaker flat against the campus lawn soil.",
+  "durationMs": 7080,
+  "rawWords": [
+    {
+      "ttsWord": "Sitting",
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 463,
+      "endMs": 575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 588,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "concrete",
+      "startMs": 675,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "park",
+      "startMs": 1225,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "bench",
+      "startMs": 1538,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 2163,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 2350,
+      "endMs": 2613
+    },
+    {
+      "ttsWord": "gently",
+      "startMs": 2625,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "lowered",
+      "startMs": 2950,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3313,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "right",
+      "startMs": 3500,
+      "endMs": 3738
+    },
+    {
+      "ttsWord": "sneaker",
+      "startMs": 3750,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "flat",
+      "startMs": 4188,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 4575,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4875,
+      "endMs": 4950
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 4963,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "lawn",
+      "startMs": 5375,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "soil",
+      "startMs": 5700,
+      "endMs": 6200
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Sitting on the concrete park bench,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2025
+    },
+    {
+      "text": "Lu Chen gently lowered his right sneaker flat",
+      "startOffsetMs": 2163,
+      "endOffsetMs": 4563
+    },
+    {
+      "text": "against the campus lawn soil.",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 6300
+    }
+  ]
+}

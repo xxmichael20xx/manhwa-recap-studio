@@ -1,7 +1,7 @@
 {
   "scene": 332,
-  "text": "A seven-year-old child had just single-handedly killed a Tier 4 Calamity Rift Beast with a wooden stick in under three seconds.",
-  "durationMs": 7872,
+  "text": "A seven-year-old child had just single-handedly defeated a Tier 4 Calamity Rift Beast with a wooden stick in under three seconds.",
+  "durationMs": 7920,
   "rawWords": [
     {
       "ttsWord": "A",
@@ -16,114 +16,114 @@
     {
       "ttsWord": "child",
       "startMs": 863,
-      "endMs": 1275
+      "endMs": 1288
     },
     {
       "ttsWord": "had",
-      "startMs": 1288,
-      "endMs": 1438
+      "startMs": 1300,
+      "endMs": 1450
     },
     {
       "ttsWord": "just",
-      "startMs": 1450,
-      "endMs": 1675
+      "startMs": 1463,
+      "endMs": 1688
     },
     {
       "ttsWord": "single-handedly",
-      "startMs": 1688,
-      "endMs": 2450
+      "startMs": 1700,
+      "endMs": 2438
     },
     {
-      "ttsWord": "killed",
-      "startMs": 2463,
-      "endMs": 2788
+      "ttsWord": "defeated",
+      "startMs": 2450,
+      "endMs": 2913
     },
     {
       "ttsWord": "a",
-      "startMs": 2800,
-      "endMs": 2863
+      "startMs": 2925,
+      "endMs": 3000
     },
     {
       "ttsWord": "Tier",
-      "startMs": 2875,
-      "endMs": 3200
+      "startMs": 3013,
+      "endMs": 3300
     },
     {
       "ttsWord": "4",
-      "startMs": 3213,
-      "endMs": 3500
+      "startMs": 3313,
+      "endMs": 3600
     },
     {
       "ttsWord": "Calamity",
-      "startMs": 3513,
-      "endMs": 4025
+      "startMs": 3613,
+      "endMs": 4113
     },
     {
       "ttsWord": "Rift",
-      "startMs": 4038,
-      "endMs": 4375
+      "startMs": 4125,
+      "endMs": 4475
     },
     {
       "ttsWord": "Beast",
-      "startMs": 4388,
-      "endMs": 4750
+      "startMs": 4488,
+      "endMs": 4838
     },
     {
       "ttsWord": "with",
-      "startMs": 4763,
-      "endMs": 4850
+      "startMs": 4850,
+      "endMs": 4938
     },
     {
       "ttsWord": "a",
-      "startMs": 4863,
-      "endMs": 4925
+      "startMs": 4950,
+      "endMs": 5013
     },
     {
       "ttsWord": "wooden",
-      "startMs": 4938,
-      "endMs": 5263
+      "startMs": 5025,
+      "endMs": 5350
     },
     {
       "ttsWord": "stick",
-      "startMs": 5275,
-      "endMs": 5600
+      "startMs": 5363,
+      "endMs": 5675
     },
     {
       "ttsWord": "in",
-      "startMs": 5613,
-      "endMs": 5850
+      "startMs": 5688,
+      "endMs": 5900
     },
     {
       "ttsWord": "under",
-      "startMs": 5863,
-      "endMs": 6088
+      "startMs": 5913,
+      "endMs": 6138
     },
     {
       "ttsWord": "three",
-      "startMs": 6100,
-      "endMs": 6363
+      "startMs": 6150,
+      "endMs": 6413
     },
     {
       "ttsWord": "seconds",
-      "startMs": 6375,
-      "endMs": 7000
+      "startMs": 6425,
+      "endMs": 7050
     }
   ],
   "relativeCues": [
     {
-      "text": "A seven-year-old child had just single-handedly killed a",
+      "text": "A seven-year-old child had just single-handedly defeated a",
       "startOffsetMs": 50,
-      "endOffsetMs": 2863
+      "endOffsetMs": 3000
     },
     {
       "text": "Tier 4 Calamity Rift Beast with a wooden",
-      "startOffsetMs": 2875,
-      "endOffsetMs": 5263
+      "startOffsetMs": 3013,
+      "endOffsetMs": 5350
     },
     {
       "text": "stick in under three seconds.",
-      "startOffsetMs": 5275,
-      "endOffsetMs": 7100
+      "startOffsetMs": 5363,
+      "endOffsetMs": 7150
     }
   ]
 }

@@ -1,0 +1,144 @@
+{
+  "scene": 57,
+  "text": "The stadium jumbotron chimed with a dull, unimpressive tone, flashing the official reading: APPRAISAL: Lu Chen — 12 YEARS (MORTAL CADET / UNRANKED).",
+  "durationMs": 11112,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 188
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 200,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "jumbotron",
+      "startMs": 700,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "chimed",
+      "startMs": 1325,
+      "endMs": 1725
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1738,
+      "endMs": 1838
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 1850,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "dull",
+      "startMs": 1963,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "unimpressive",
+      "startMs": 2525,
+      "endMs": 3150
+    },
+    {
+      "ttsWord": "tone",
+      "startMs": 3163,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "flashing",
+      "startMs": 3863,
+      "endMs": 4375
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4388,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "official",
+      "startMs": 4475,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "reading",
+      "startMs": 4938,
+      "endMs": 5300
+    },
+    {
+      "ttsWord": "APPRAISAL",
+      "startMs": 5613,
+      "endMs": 6188
+    },
+    {
+      "ttsWord": "Lu",
+      "startMs": 6500,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 6700,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "12 YEARS",
+      "startMs": 7413,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "MORTAL",
+      "startMs": 8425,
+      "endMs": 8775
+    },
+    {
+      "ttsWord": "CADET",
+      "startMs": 8788,
+      "endMs": 9175
+    },
+    {
+      "ttsWord": "/",
+      "startMs": 9188,
+      "endMs": 9600
+    },
+    {
+      "ttsWord": "UNRANKED",
+      "startMs": 9613,
+      "endMs": 10250
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The stadium jumbotron chimed with a dull,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2438
+    },
+    {
+      "text": "unimpressive tone,",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 3675
+    },
+    {
+      "text": "flashing the official reading:",
+      "startOffsetMs": 3863,
+      "endOffsetMs": 5400
+    },
+    {
+      "text": "APPRAISAL:",
+      "startOffsetMs": 5613,
+      "endOffsetMs": 6288
+    },
+    {
+      "text": "Lu Chen",
+      "startOffsetMs": 6500,
+      "endOffsetMs": 7225
+    },
+    {
+      "text": "12 YEARS MORTAL CADET   UNRANKED).",
+      "startOffsetMs": 7413,
+      "endOffsetMs": 10350
+    }
+  ]
+}

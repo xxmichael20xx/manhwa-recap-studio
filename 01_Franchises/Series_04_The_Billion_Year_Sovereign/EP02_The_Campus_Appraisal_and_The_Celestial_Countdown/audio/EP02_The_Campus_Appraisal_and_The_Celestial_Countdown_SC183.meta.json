@@ -1,0 +1,114 @@
+{
+  "scene": 183,
+  "text": "Infinitesimal golden primordial filaments wove instantaneously through the continental crust, reinforcing Blue Star's structural matrix against gravitational collapse.",
+  "durationMs": 10200,
+  "rawWords": [
+    {
+      "ttsWord": "Infinitesimal",
+      "startMs": 50,
+      "endMs": 950
+    },
+    {
+      "ttsWord": "golden",
+      "startMs": 963,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 1338,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "filaments",
+      "startMs": 1925,
+      "endMs": 2425
+    },
+    {
+      "ttsWord": "wove",
+      "startMs": 2438,
+      "endMs": 2713
+    },
+    {
+      "ttsWord": "instantaneously",
+      "startMs": 2725,
+      "endMs": 3650
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3663,
+      "endMs": 3850
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3863,
+      "endMs": 3963
+    },
+    {
+      "ttsWord": "continental",
+      "startMs": 3975,
+      "endMs": 4575
+    },
+    {
+      "ttsWord": "crust",
+      "startMs": 4588,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "reinforcing",
+      "startMs": 5313,
+      "endMs": 6013
+    },
+    {
+      "ttsWord": "Blue",
+      "startMs": 6025,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "Star's",
+      "startMs": 6275,
+      "endMs": 6675
+    },
+    {
+      "ttsWord": "structural",
+      "startMs": 6688,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "matrix",
+      "startMs": 7163,
+      "endMs": 7600
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 7613,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "gravitational",
+      "startMs": 7988,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "collapse",
+      "startMs": 8713,
+      "endMs": 9338
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Infinitesimal golden primordial filaments wove instantaneously",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3650
+    },
+    {
+      "text": "through the continental crust,",
+      "startOffsetMs": 3663,
+      "endOffsetMs": 5113
+    },
+    {
+      "text": "reinforcing Blue Star's structural matrix against gravitational collapse.",
+      "startOffsetMs": 5313,
+      "endOffsetMs": 9438
+    }
+  ]
+}

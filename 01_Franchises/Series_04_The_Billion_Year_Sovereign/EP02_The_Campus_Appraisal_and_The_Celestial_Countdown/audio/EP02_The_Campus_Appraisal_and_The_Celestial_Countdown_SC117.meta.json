@@ -1,0 +1,154 @@
+{
+  "scene": 117,
+  "text": "Across the field by the willow walkway, Wang Bao's eyes bugged out like dinner plates, his chubby mouth opening and closing in complete vocal paralysis.",
+  "durationMs": 9504,
+  "rawWords": [
+    {
+      "ttsWord": "Across",
+      "startMs": 50,
+      "endMs": 500
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 513,
+      "endMs": 613
+    },
+    {
+      "ttsWord": "field",
+      "startMs": 625,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 988,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1125,
+      "endMs": 1238
+    },
+    {
+      "ttsWord": "willow",
+      "startMs": 1250,
+      "endMs": 1550
+    },
+    {
+      "ttsWord": "walkway",
+      "startMs": 1563,
+      "endMs": 2063
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2338,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "Bao's",
+      "startMs": 2638,
+      "endMs": 3025
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 3038,
+      "endMs": 3350
+    },
+    {
+      "ttsWord": "bugged",
+      "startMs": 3363,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "out",
+      "startMs": 3700,
+      "endMs": 3900
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 3913,
+      "endMs": 4138
+    },
+    {
+      "ttsWord": "dinner",
+      "startMs": 4150,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "plates",
+      "startMs": 4425,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5088,
+      "endMs": 5263
+    },
+    {
+      "ttsWord": "chubby",
+      "startMs": 5275,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "mouth",
+      "startMs": 5588,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "opening",
+      "startMs": 5950,
+      "endMs": 6350
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 6363,
+      "endMs": 6463
+    },
+    {
+      "ttsWord": "closing",
+      "startMs": 6475,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6938,
+      "endMs": 7038
+    },
+    {
+      "ttsWord": "complete",
+      "startMs": 7050,
+      "endMs": 7463
+    },
+    {
+      "ttsWord": "vocal",
+      "startMs": 7475,
+      "endMs": 7800
+    },
+    {
+      "ttsWord": "paralysis",
+      "startMs": 7813,
+      "endMs": 8638
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Across the field by the willow walkway,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2163
+    },
+    {
+      "text": "Wang Bao's eyes bugged out like dinner plates,",
+      "startOffsetMs": 2338,
+      "endOffsetMs": 4963
+    },
+    {
+      "text": "his chubby mouth opening and closing in complete",
+      "startOffsetMs": 5088,
+      "endOffsetMs": 7463
+    },
+    {
+      "text": "vocal paralysis.",
+      "startOffsetMs": 7475,
+      "endOffsetMs": 8738
+    }
+  ]
+}

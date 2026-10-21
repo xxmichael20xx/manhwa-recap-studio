@@ -1,0 +1,134 @@
+{
+  "scene": 163,
+  "text": "Several syndicate scions cheered Ye Xingchen's name, loudly hailing Lord Starfall as the rightful sovereign and future supreme emperor of Blue Star.",
+  "durationMs": 8904,
+  "rawWords": [
+    {
+      "ttsWord": "Several",
+      "startMs": 50,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "syndicate",
+      "startMs": 500,
+      "endMs": 975
+    },
+    {
+      "ttsWord": "scions",
+      "startMs": 988,
+      "endMs": 1450
+    },
+    {
+      "ttsWord": "cheered",
+      "startMs": 1463,
+      "endMs": 1775
+    },
+    {
+      "ttsWord": "Ye",
+      "startMs": 1788,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "Xingchen's",
+      "startMs": 1913,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "name",
+      "startMs": 2413,
+      "endMs": 2750
+    },
+    {
+      "ttsWord": "loudly",
+      "startMs": 2988,
+      "endMs": 3388
+    },
+    {
+      "ttsWord": "hailing",
+      "startMs": 3400,
+      "endMs": 3788
+    },
+    {
+      "ttsWord": "Lord",
+      "startMs": 3800,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "Starfall",
+      "startMs": 4063,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 4713,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4825,
+      "endMs": 4925
+    },
+    {
+      "ttsWord": "rightful",
+      "startMs": 4938,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 5375,
+      "endMs": 5825
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 5838,
+      "endMs": 5938
+    },
+    {
+      "ttsWord": "future",
+      "startMs": 5950,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 6338,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "emperor",
+      "startMs": 6788,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 7163,
+      "endMs": 7288
+    },
+    {
+      "ttsWord": "Blue",
+      "startMs": 7300,
+      "endMs": 7513
+    },
+    {
+      "ttsWord": "Star",
+      "startMs": 7525,
+      "endMs": 8038
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Several syndicate scions cheered Ye Xingchen's name,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2850
+    },
+    {
+      "text": "loudly hailing Lord Starfall as the rightful sovereign",
+      "startOffsetMs": 2988,
+      "endOffsetMs": 5825
+    },
+    {
+      "text": "and future supreme emperor of Blue Star.",
+      "startOffsetMs": 5838,
+      "endOffsetMs": 8138
+    }
+  ]
+}

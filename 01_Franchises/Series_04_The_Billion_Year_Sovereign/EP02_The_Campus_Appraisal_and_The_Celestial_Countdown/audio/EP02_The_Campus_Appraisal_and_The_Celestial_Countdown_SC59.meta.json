@@ -1,0 +1,179 @@
+{
+  "scene": 59,
+  "text": "\"Twelve years?! A decade of server simulator grinding and the bloke only got twelve years of mortal qi?!\" Qian Kang roared from the VIP rails, wiping tears of hilarity.",
+  "durationMs": 12336,
+  "rawWords": [
+    {
+      "ttsWord": "Twelve",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 375,
+      "endMs": 888
+    },
+    {
+      "ttsWord": "A",
+      "startMs": 1750,
+      "endMs": 1900
+    },
+    {
+      "ttsWord": "decade",
+      "startMs": 1913,
+      "endMs": 2300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2313,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "server",
+      "startMs": 2413,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "simulator",
+      "startMs": 2788,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "grinding",
+      "startMs": 3375,
+      "endMs": 3925
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3938,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4025,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "bloke",
+      "startMs": 4125,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "only",
+      "startMs": 4475,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "got",
+      "startMs": 4725,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "twelve",
+      "startMs": 4975,
+      "endMs": 5288
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 5300,
+      "endMs": 5600
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5613,
+      "endMs": 5688
+    },
+    {
+      "ttsWord": "mortal",
+      "startMs": 5700,
+      "endMs": 6025
+    },
+    {
+      "ttsWord": "qi",
+      "startMs": 6038,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "Qian",
+      "startMs": 7288,
+      "endMs": 7725
+    },
+    {
+      "ttsWord": "Kang",
+      "startMs": 7738,
+      "endMs": 8100
+    },
+    {
+      "ttsWord": "roared",
+      "startMs": 8113,
+      "endMs": 8400
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 8413,
+      "endMs": 8550
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8563,
+      "endMs": 8625
+    },
+    {
+      "ttsWord": "VIP",
+      "startMs": 8638,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "rails",
+      "startMs": 9238,
+      "endMs": 9738
+    },
+    {
+      "ttsWord": "wiping",
+      "startMs": 9938,
+      "endMs": 10363
+    },
+    {
+      "ttsWord": "tears",
+      "startMs": 10375,
+      "endMs": 10725
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 10738,
+      "endMs": 10825
+    },
+    {
+      "ttsWord": "hilarity",
+      "startMs": 10838,
+      "endMs": 11475
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Twelve years?!",
+      "startOffsetMs": 50,
+      "endOffsetMs": 988
+    },
+    {
+      "text": "A decade of server simulator grinding and the",
+      "startOffsetMs": 1750,
+      "endOffsetMs": 4113
+    },
+    {
+      "text": "bloke only got twelve years of mortal qi?!\"",
+      "startOffsetMs": 4125,
+      "endOffsetMs": 6525
+    },
+    {
+      "text": "Qian Kang roared from the VIP rails,",
+      "startOffsetMs": 7288,
+      "endOffsetMs": 9838
+    },
+    {
+      "text": "wiping tears of hilarity.",
+      "startOffsetMs": 9938,
+      "endOffsetMs": 11575
+    }
+  ]
+}

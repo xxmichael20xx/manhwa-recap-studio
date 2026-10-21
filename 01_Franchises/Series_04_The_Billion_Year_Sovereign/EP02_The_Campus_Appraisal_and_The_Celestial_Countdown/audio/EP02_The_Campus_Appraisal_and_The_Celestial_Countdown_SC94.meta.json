@@ -1,0 +1,159 @@
+{
+  "scene": 94,
+  "text": "Commander Han Feng drew his heavy tactical sidearm, leveling the barrel directly between Chief Enforcer Gu Biao's eyes as glowing containment talismans ignited along the barrel.",
+  "durationMs": 10368,
+  "rawWords": [
+    {
+      "ttsWord": "Commander",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "Han",
+      "startMs": 525,
+      "endMs": 775
+    },
+    {
+      "ttsWord": "Feng",
+      "startMs": 788,
+      "endMs": 1113
+    },
+    {
+      "ttsWord": "drew",
+      "startMs": 1125,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1350,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 1538,
+      "endMs": 1800
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 1813,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "sidearm",
+      "startMs": 2338,
+      "endMs": 2888
+    },
+    {
+      "ttsWord": "leveling",
+      "startMs": 3175,
+      "endMs": 3525
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3538,
+      "endMs": 3638
+    },
+    {
+      "ttsWord": "barrel",
+      "startMs": 3650,
+      "endMs": 3975
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 3988,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "between",
+      "startMs": 4450,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "Chief",
+      "startMs": 4825,
+      "endMs": 5113
+    },
+    {
+      "ttsWord": "Enforcer",
+      "startMs": 5125,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "Gu",
+      "startMs": 5650,
+      "endMs": 5838
+    },
+    {
+      "ttsWord": "Biao's",
+      "startMs": 5850,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 6338,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6700,
+      "endMs": 6825
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 6838,
+      "endMs": 7150
+    },
+    {
+      "ttsWord": "containment",
+      "startMs": 7163,
+      "endMs": 7663
+    },
+    {
+      "ttsWord": "talismans",
+      "startMs": 7675,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "ignited",
+      "startMs": 8238,
+      "endMs": 8663
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 8675,
+      "endMs": 8975
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8988,
+      "endMs": 9063
+    },
+    {
+      "ttsWord": "barrel",
+      "startMs": 9075,
+      "endMs": 9500
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Commander Han Feng drew his heavy tactical sidearm,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2988
+    },
+    {
+      "text": "leveling the barrel directly between Chief Enforcer Gu",
+      "startOffsetMs": 3175,
+      "endOffsetMs": 5838
+    },
+    {
+      "text": "Biao's eyes as glowing containment talismans ignited along",
+      "startOffsetMs": 5850,
+      "endOffsetMs": 8975
+    },
+    {
+      "text": "the barrel.",
+      "startOffsetMs": 8988,
+      "endOffsetMs": 9600
+    }
+  ]
+}

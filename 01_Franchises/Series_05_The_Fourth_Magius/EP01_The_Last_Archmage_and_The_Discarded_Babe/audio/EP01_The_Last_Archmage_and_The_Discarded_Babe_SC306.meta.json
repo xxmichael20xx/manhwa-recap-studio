@@ -1,7 +1,7 @@
 {
   "scene": 306,
-  "text": "The corrosive venom slammed against the earthen rampart, sizzling violently and eating through three feet of solid stone within seconds.",
-  "durationMs": 8136,
+  "text": "The corrosive violet breath slammed against the earthen rampart, sizzling violently and eating through three feet of solid stone within seconds.",
+  "durationMs": 8448,
   "rawWords": [
     {
       "ttsWord": "The",
@@ -14,111 +14,121 @@
       "endMs": 738
     },
     {
-      "ttsWord": "venom",
+      "ttsWord": "violet",
       "startMs": 750,
-      "endMs": 1088
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "breath",
+      "startMs": 1163,
+      "endMs": 1438
     },
     {
       "ttsWord": "slammed",
-      "startMs": 1100,
-      "endMs": 1525
+      "startMs": 1450,
+      "endMs": 1863
     },
     {
       "ttsWord": "against",
-      "startMs": 1538,
-      "endMs": 1850
+      "startMs": 1875,
+      "endMs": 2175
     },
     {
       "ttsWord": "the",
-      "startMs": 1863,
-      "endMs": 1950
+      "startMs": 2188,
+      "endMs": 2275
     },
     {
       "ttsWord": "earthen",
-      "startMs": 1963,
-      "endMs": 2338
+      "startMs": 2288,
+      "endMs": 2663
     },
     {
       "ttsWord": "rampart",
-      "startMs": 2350,
-      "endMs": 2825
+      "startMs": 2675,
+      "endMs": 3150
     },
     {
       "ttsWord": "sizzling",
-      "startMs": 3100,
-      "endMs": 3563
+      "startMs": 3438,
+      "endMs": 3900
     },
     {
       "ttsWord": "violently",
-      "startMs": 3575,
-      "endMs": 4125
+      "startMs": 3913,
+      "endMs": 4463
     },
     {
       "ttsWord": "and",
-      "startMs": 4138,
-      "endMs": 4300
+      "startMs": 4475,
+      "endMs": 4625
     },
     {
       "ttsWord": "eating",
-      "startMs": 4313,
-      "endMs": 4600
+      "startMs": 4638,
+      "endMs": 4925
     },
     {
       "ttsWord": "through",
-      "startMs": 4613,
-      "endMs": 4838
+      "startMs": 4938,
+      "endMs": 5138
     },
     {
       "ttsWord": "three",
-      "startMs": 4850,
-      "endMs": 5163
+      "startMs": 5150,
+      "endMs": 5475
     },
     {
       "ttsWord": "feet",
-      "startMs": 5175,
-      "endMs": 5463
+      "startMs": 5488,
+      "endMs": 5775
     },
     {
       "ttsWord": "of",
-      "startMs": 5475,
-      "endMs": 5575
+      "startMs": 5788,
+      "endMs": 5888
     },
     {
       "ttsWord": "solid",
-      "startMs": 5588,
-      "endMs": 5975
+      "startMs": 5900,
+      "endMs": 6288
     },
     {
       "ttsWord": "stone",
-      "startMs": 5988,
-      "endMs": 6363
+      "startMs": 6300,
+      "endMs": 6675
     },
     {
       "ttsWord": "within",
-      "startMs": 6375,
-      "endMs": 6650
+      "startMs": 6688,
+      "endMs": 6963
     },
     {
       "ttsWord": "seconds",
-      "startMs": 6663,
-      "endMs": 7275
+      "startMs": 6975,
+      "endMs": 7588
     }
   ],
   "relativeCues": [
     {
-      "text": "The corrosive venom slammed against the earthen rampart,",
+      "text": "The corrosive violet breath slammed against the earthen",
       "startOffsetMs": 50,
-      "endOffsetMs": 2925
+      "endOffsetMs": 2663
+    },
+    {
+      "text": "rampart,",
+      "startOffsetMs": 2675,
+      "endOffsetMs": 3250
     },
     {
       "text": "sizzling violently and eating through three feet of",
-      "startOffsetMs": 3100,
-      "endOffsetMs": 5575
+      "startOffsetMs": 3438,
+      "endOffsetMs": 5888
     },
     {
       "text": "solid stone within seconds.",
-      "startOffsetMs": 5588,
-      "endOffsetMs": 7375
+      "startOffsetMs": 5900,
+      "endOffsetMs": 7688
     }
   ]
 }

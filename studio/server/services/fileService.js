@@ -73,6 +73,8 @@ export class FileService {
               let scriptContent = ''
               let promptMatrixContent = ''
               let audioCount = 0
+              let audioDurationFormatted = null
+              let audioDurationSeconds = 0
 
               try {
                 scriptContent = await fs.readFile(path.join(epPath, '01_Episode_Script.md'), 'utf-8')
@@ -85,6 +87,11 @@ export class FileService {
               try {
                 const audioFiles = await fs.readdir(path.join(epPath, 'audio'))
                 audioCount = audioFiles.filter(f => f.endsWith('.mp3') || f.endsWith('.wav')).length
+                try {
+                  const tData = JSON.parse(await fs.readFile(path.join(epPath, 'audio', 'audio_telemetry.json'), 'utf-8'))
+                  audioDurationFormatted = tData.formattedDuration
+                  audioDurationSeconds = tData.totalSeconds
+                } catch (e) {}
               } catch (e) {}
 
               // Ignore empty scratch/temp episode directories that lack both script and prompt matrix
@@ -131,6 +138,10 @@ export class FileService {
                 }
               } catch (_) {}
 
+              const scenesMatch = promptMatrixContent ? promptMatrixContent.match(/<scene id="/g) : null
+              const scriptScenesMatch = scriptContent ? scriptContent.match(/\[IMG_\d+\]/g) : null
+              const scenesCount = scenesMatch ? scenesMatch.length : (scriptScenesMatch ? scriptScenesMatch.length : 0)
+
               episodes.push({
                 id: sub.name,
                 name: episodeDisplayName,
@@ -139,7 +150,10 @@ export class FileService {
                 hasCompiledVideo,
                 videoSizeFormatted,
                 audioCount,
-                audit
+                audioDurationFormatted,
+                audioDurationSeconds,
+                audit,
+                scenesCount
               })
             }
           }
@@ -227,8 +241,13 @@ export class FileService {
     }
 
     const audit = script ? AntiSlopValidator.auditScript(script) : null
+    let audioTelemetry = null
+    try {
+      audioTelemetry = JSON.parse(await fs.readFile(path.join(epPath, 'audio', 'audio_telemetry.json'), 'utf-8'))
+    } catch (e) {}
 
     return {
+      audioTelemetry,
       franchiseId,
       episodeId,
       script,

@@ -1,0 +1,189 @@
+{
+  "scene": 213,
+  "text": "Atop the stadium tower, Jiang Qingxue fell to her knees, hot tears of reverent joy shimmering in her ice-blue phoenix eyes: \"Master... it is you! You truly are here!\"",
+  "durationMs": 12264,
+  "rawWords": [
+    {
+      "ttsWord": "Atop",
+      "startMs": 50,
+      "endMs": 463
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 475,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 575,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "tower",
+      "startMs": 1075,
+      "endMs": 1525
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 1775,
+      "endMs": 2138
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 2150,
+      "endMs": 2738
+    },
+    {
+      "ttsWord": "fell",
+      "startMs": 2750,
+      "endMs": 3013
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 3025,
+      "endMs": 3138
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 3150,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "knees",
+      "startMs": 3300,
+      "endMs": 3763
+    },
+    {
+      "ttsWord": "hot",
+      "startMs": 4050,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "tears",
+      "startMs": 4300,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4638,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "reverent",
+      "startMs": 4750,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "joy",
+      "startMs": 5113,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "shimmering",
+      "startMs": 5375,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 5900,
+      "endMs": 5950
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 5963,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "ice-blue",
+      "startMs": 6150,
+      "endMs": 6638
+    },
+    {
+      "ttsWord": "phoenix",
+      "startMs": 6650,
+      "endMs": 7088
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 7100,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "Master",
+      "startMs": 7750,
+      "endMs": 8300
+    },
+    {
+      "ttsWord": "it",
+      "startMs": 8625,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "is",
+      "startMs": 8713,
+      "endMs": 8900
+    },
+    {
+      "ttsWord": "you",
+      "startMs": 8913,
+      "endMs": 9250
+    },
+    {
+      "ttsWord": "You",
+      "startMs": 10113,
+      "endMs": 10325
+    },
+    {
+      "ttsWord": "truly",
+      "startMs": 10338,
+      "endMs": 10813
+    },
+    {
+      "ttsWord": "are",
+      "startMs": 10825,
+      "endMs": 10975
+    },
+    {
+      "ttsWord": "here",
+      "startMs": 10988,
+      "endMs": 11388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Atop the stadium tower,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1625
+    },
+    {
+      "text": "Jiang Qingxue fell to her knees,",
+      "startOffsetMs": 1775,
+      "endOffsetMs": 3863
+    },
+    {
+      "text": "hot tears of reverent joy shimmering in her",
+      "startOffsetMs": 4050,
+      "endOffsetMs": 6138
+    },
+    {
+      "text": "ice-blue phoenix eyes:",
+      "startOffsetMs": 6150,
+      "endOffsetMs": 7638
+    },
+    {
+      "text": "Master...",
+      "startOffsetMs": 7750,
+      "endOffsetMs": 8400
+    },
+    {
+      "text": "it is you!",
+      "startOffsetMs": 8625,
+      "endOffsetMs": 9350
+    },
+    {
+      "text": "You truly are here!\"",
+      "startOffsetMs": 10113,
+      "endOffsetMs": 11488
+    }
+  ]
+}

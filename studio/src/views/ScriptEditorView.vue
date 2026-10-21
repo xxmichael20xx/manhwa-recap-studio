@@ -105,8 +105,8 @@
               <div class="text-lg font-extrabold text-slate-900 dark:text-white font-mono mt-1">{{ audit.wordCount || 0 }}</div>
             </div>
             <div class="bg-slate-50 dark:bg-slate-950/60 p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
-              <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Runtime @ 140 WPM</div>
-              <div class="text-lg font-extrabold text-amber-500 dark:text-amber-400 font-mono mt-1">{{ audit.estimatedMinutes || 0 }}m</div>
+              <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Voiceover Runtime</div>
+              <div class="text-lg font-extrabold text-purple-600 dark:text-purple-400 font-mono mt-1">{{ audioTelemetry?.formattedDuration || (audit.wordCount ? Math.round(audit.wordCount / 140) + 'm (Est)' : '--') }}</div>
             </div>
           </div>
 
@@ -242,8 +242,6 @@
                 <!-- Stats summary -->
                 <div class="flex items-center space-x-3 text-[11px] font-mono text-slate-500 dark:text-slate-400">
                   <span>{{ item.wordCount }} words</span>
-                  <span>•</span>
-                  <span>{{ item.estimatedMinutes }}m runtime</span>
                 </div>
 
                 <!-- Preview Snippet -->

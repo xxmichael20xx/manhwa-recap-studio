@@ -1,0 +1,134 @@
+{
+  "scene": 198,
+  "text": "International news anchors screamed into their microphones as the entire world held its breath for the unveiling of the supreme Top Three.",
+  "durationMs": 7848,
+  "rawWords": [
+    {
+      "ttsWord": "International",
+      "startMs": 50,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "news",
+      "startMs": 750,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "anchors",
+      "startMs": 1075,
+      "endMs": 1475
+    },
+    {
+      "ttsWord": "screamed",
+      "startMs": 1488,
+      "endMs": 1925
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 1938,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "their",
+      "startMs": 2125,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "microphones",
+      "startMs": 2263,
+      "endMs": 2988
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 3000,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3138,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 3213,
+      "endMs": 3750
+    },
+    {
+      "ttsWord": "world",
+      "startMs": 3763,
+      "endMs": 4063
+    },
+    {
+      "ttsWord": "held",
+      "startMs": 4075,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 4325,
+      "endMs": 4438
+    },
+    {
+      "ttsWord": "breath",
+      "startMs": 4450,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 4800,
+      "endMs": 4913
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4925,
+      "endMs": 5025
+    },
+    {
+      "ttsWord": "unveiling",
+      "startMs": 5038,
+      "endMs": 5625
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5638,
+      "endMs": 5713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5725,
+      "endMs": 5800
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 5813,
+      "endMs": 6263
+    },
+    {
+      "ttsWord": "Top",
+      "startMs": 6275,
+      "endMs": 6550
+    },
+    {
+      "ttsWord": "Three",
+      "startMs": 6563,
+      "endMs": 6975
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "International news anchors screamed into their microphones as",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3125
+    },
+    {
+      "text": "the entire world held its breath for the",
+      "startOffsetMs": 3138,
+      "endOffsetMs": 5025
+    },
+    {
+      "text": "unveiling of the supreme Top Three.",
+      "startOffsetMs": 5038,
+      "endOffsetMs": 7075
+    }
+  ]
+}

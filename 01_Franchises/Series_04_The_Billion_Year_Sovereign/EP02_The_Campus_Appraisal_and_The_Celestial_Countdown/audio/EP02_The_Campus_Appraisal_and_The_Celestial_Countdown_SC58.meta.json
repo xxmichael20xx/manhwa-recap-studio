@@ -1,0 +1,139 @@
+{
+  "scene": 58,
+  "text": "A heavy silence gripped the stadium for two stunned seconds, before the entire arena erupted into deafening, hysterical laughter from the grandstands.",
+  "durationMs": 9264,
+  "rawWords": [
+    {
+      "ttsWord": "A",
+      "startMs": 50,
+      "endMs": 163
+    },
+    {
+      "ttsWord": "heavy",
+      "startMs": 175,
+      "endMs": 488
+    },
+    {
+      "ttsWord": "silence",
+      "startMs": 500,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "gripped",
+      "startMs": 1025,
+      "endMs": 1325
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1338,
+      "endMs": 1425
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 1438,
+      "endMs": 1913
+    },
+    {
+      "ttsWord": "for",
+      "startMs": 1925,
+      "endMs": 2075
+    },
+    {
+      "ttsWord": "two",
+      "startMs": 2088,
+      "endMs": 2338
+    },
+    {
+      "ttsWord": "stunned",
+      "startMs": 2350,
+      "endMs": 2675
+    },
+    {
+      "ttsWord": "seconds",
+      "startMs": 2688,
+      "endMs": 3225
+    },
+    {
+      "ttsWord": "before",
+      "startMs": 3488,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3838,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 3900,
+      "endMs": 4413
+    },
+    {
+      "ttsWord": "arena",
+      "startMs": 4425,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "erupted",
+      "startMs": 4875,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5363,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "deafening",
+      "startMs": 5588,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "hysterical",
+      "startMs": 6313,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "laughter",
+      "startMs": 6913,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 7313,
+      "endMs": 7450
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 7463,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "grandstands",
+      "startMs": 7550,
+      "endMs": 8388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "A heavy silence gripped the stadium for two",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2338
+    },
+    {
+      "text": "stunned seconds,",
+      "startOffsetMs": 2350,
+      "endOffsetMs": 3325
+    },
+    {
+      "text": "before the entire arena erupted into deafening,",
+      "startOffsetMs": 3488,
+      "endOffsetMs": 6175
+    },
+    {
+      "text": "hysterical laughter from the grandstands.",
+      "startOffsetMs": 6313,
+      "endOffsetMs": 8488
+    }
+  ]
+}

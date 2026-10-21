@@ -1,0 +1,104 @@
+{
+  "scene": 209,
+  "text": "Beneath the title, the astronomical cultivation tally ignited with world-shattering cosmic majesty: CULTIVATION: 1,000,000,000 YEARS.",
+  "durationMs": 9096,
+  "rawWords": [
+    {
+      "ttsWord": "Beneath",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 438,
+      "endMs": 538
+    },
+    {
+      "ttsWord": "title",
+      "startMs": 550,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1250,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "astronomical",
+      "startMs": 1375,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 2163,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "tally",
+      "startMs": 2838,
+      "endMs": 3200
+    },
+    {
+      "ttsWord": "ignited",
+      "startMs": 3213,
+      "endMs": 3675
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 3688,
+      "endMs": 3825
+    },
+    {
+      "ttsWord": "world-shattering",
+      "startMs": 3838,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 4625,
+      "endMs": 5100
+    },
+    {
+      "ttsWord": "majesty",
+      "startMs": 5113,
+      "endMs": 5725
+    },
+    {
+      "ttsWord": "CULTIVATION",
+      "startMs": 6050,
+      "endMs": 6775
+    },
+    {
+      "ttsWord": "1,000,000,000 YEARS",
+      "startMs": 7063,
+      "endMs": 8213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Beneath the title,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1113
+    },
+    {
+      "text": "the astronomical cultivation tally ignited with world-shattering",
+      "startOffsetMs": 1250,
+      "endOffsetMs": 4613
+    },
+    {
+      "text": "cosmic majesty:",
+      "startOffsetMs": 4625,
+      "endOffsetMs": 5825
+    },
+    {
+      "text": "CULTIVATION:",
+      "startOffsetMs": 6050,
+      "endOffsetMs": 6875
+    },
+    {
+      "text": "1,000,000,000 YEARS",
+      "startOffsetMs": 7063,
+      "endOffsetMs": 8313
+    }
+  ]
+}

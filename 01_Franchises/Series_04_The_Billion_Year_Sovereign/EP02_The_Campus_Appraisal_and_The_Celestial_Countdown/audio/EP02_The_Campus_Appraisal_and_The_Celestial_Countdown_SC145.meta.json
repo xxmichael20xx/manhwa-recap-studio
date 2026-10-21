@@ -1,0 +1,164 @@
+{
+  "scene": 145,
+  "text": "High above the clouds, the divine gold calligraphy on the Heaven-Earth Golden Stele pulsed with concussive resonance as the countdown plummeted to thirty minutes: T-MINUS 00:30:00.",
+  "durationMs": 10800,
+  "rawWords": [
+    {
+      "ttsWord": "High",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "above",
+      "startMs": 338,
+      "endMs": 663
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 675,
+      "endMs": 763
+    },
+    {
+      "ttsWord": "clouds",
+      "startMs": 775,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1550,
+      "endMs": 1663
+    },
+    {
+      "ttsWord": "divine",
+      "startMs": 1675,
+      "endMs": 2113
+    },
+    {
+      "ttsWord": "gold",
+      "startMs": 2125,
+      "endMs": 2438
+    },
+    {
+      "ttsWord": "calligraphy",
+      "startMs": 2450,
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 3075,
+      "endMs": 3175
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3188,
+      "endMs": 3250
+    },
+    {
+      "ttsWord": "Heaven-Earth",
+      "startMs": 3263,
+      "endMs": 3813
+    },
+    {
+      "ttsWord": "Golden",
+      "startMs": 3825,
+      "endMs": 4188
+    },
+    {
+      "ttsWord": "Stele",
+      "startMs": 4200,
+      "endMs": 4563
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 4575,
+      "endMs": 5013
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5025,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "concussive",
+      "startMs": 5138,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "resonance",
+      "startMs": 5688,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6163,
+      "endMs": 6300
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6313,
+      "endMs": 6400
+    },
+    {
+      "ttsWord": "countdown",
+      "startMs": 6413,
+      "endMs": 6925
+    },
+    {
+      "ttsWord": "plummeted",
+      "startMs": 6938,
+      "endMs": 7375
+    },
+    {
+      "ttsWord": "to",
+      "startMs": 7388,
+      "endMs": 7488
+    },
+    {
+      "ttsWord": "thirty",
+      "startMs": 7500,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "minutes",
+      "startMs": 7838,
+      "endMs": 8275
+    },
+    {
+      "ttsWord": "T-MINUS",
+      "startMs": 8550,
+      "endMs": 9113
+    },
+    {
+      "ttsWord": "00:30:00",
+      "startMs": 9125,
+      "endMs": 9938
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "High above the clouds,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1438
+    },
+    {
+      "text": "the divine gold calligraphy on the Heaven-Earth Golden",
+      "startOffsetMs": 1550,
+      "endOffsetMs": 4188
+    },
+    {
+      "text": "Stele pulsed with concussive resonance as the countdown",
+      "startOffsetMs": 4200,
+      "endOffsetMs": 6925
+    },
+    {
+      "text": "plummeted to thirty minutes:",
+      "startOffsetMs": 6938,
+      "endOffsetMs": 8375
+    },
+    {
+      "text": "T-MINUS 00:30:00",
+      "startOffsetMs": 8550,
+      "endOffsetMs": 10038
+    }
+  ]
+}

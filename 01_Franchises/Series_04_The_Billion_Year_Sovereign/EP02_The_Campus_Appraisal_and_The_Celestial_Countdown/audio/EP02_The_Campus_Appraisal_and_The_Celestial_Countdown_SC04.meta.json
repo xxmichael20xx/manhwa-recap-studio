@@ -1,0 +1,164 @@
+{
+  "scene": 4,
+  "text": "Down within the reinforced iron gates of Qindu University, the entire campus had transformed overnight into an active tactical outpost, surrounded by armoured state transport vehicles.",
+  "durationMs": 11400,
+  "rawWords": [
+    {
+      "ttsWord": "Down",
+      "startMs": 50,
+      "endMs": 400
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 413,
+      "endMs": 713
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 725,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "reinforced",
+      "startMs": 825,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 1513,
+      "endMs": 1850
+    },
+    {
+      "ttsWord": "gates",
+      "startMs": 1863,
+      "endMs": 2150
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2163,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "Qindu",
+      "startMs": 2275,
+      "endMs": 2625
+    },
+    {
+      "ttsWord": "University",
+      "startMs": 2638,
+      "endMs": 3313
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3588,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "entire",
+      "startMs": 3675,
+      "endMs": 4175
+    },
+    {
+      "ttsWord": "campus",
+      "startMs": 4188,
+      "endMs": 4625
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 4638,
+      "endMs": 4763
+    },
+    {
+      "ttsWord": "transformed",
+      "startMs": 4775,
+      "endMs": 5400
+    },
+    {
+      "ttsWord": "overnight",
+      "startMs": 5413,
+      "endMs": 5863
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 5875,
+      "endMs": 6100
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6113,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "active",
+      "startMs": 6263,
+      "endMs": 6600
+    },
+    {
+      "ttsWord": "tactical",
+      "startMs": 6613,
+      "endMs": 7125
+    },
+    {
+      "ttsWord": "outpost",
+      "startMs": 7138,
+      "endMs": 7713
+    },
+    {
+      "ttsWord": "surrounded",
+      "startMs": 7975,
+      "endMs": 8475
+    },
+    {
+      "ttsWord": "by",
+      "startMs": 8488,
+      "endMs": 8650
+    },
+    {
+      "ttsWord": "armoured",
+      "startMs": 8663,
+      "endMs": 9013
+    },
+    {
+      "ttsWord": "state",
+      "startMs": 9025,
+      "endMs": 9338
+    },
+    {
+      "ttsWord": "transport",
+      "startMs": 9350,
+      "endMs": 9875
+    },
+    {
+      "ttsWord": "vehicles",
+      "startMs": 9888,
+      "endMs": 10538
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Down within the reinforced iron gates of Qindu",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2625
+    },
+    {
+      "text": "University,",
+      "startOffsetMs": 2638,
+      "endOffsetMs": 3413
+    },
+    {
+      "text": "the entire campus had transformed overnight into an",
+      "startOffsetMs": 3588,
+      "endOffsetMs": 6250
+    },
+    {
+      "text": "active tactical outpost,",
+      "startOffsetMs": 6263,
+      "endOffsetMs": 7813
+    },
+    {
+      "text": "surrounded by armoured state transport vehicles.",
+      "startOffsetMs": 7975,
+      "endOffsetMs": 10638
+    }
+  ]
+}

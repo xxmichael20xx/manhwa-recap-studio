@@ -1,7 +1,7 @@
 {
   "scene": 319,
-  "text": "The Abyssal Wyrm caught the motion and snapped its massive jaws downward, attempting to swallow the child whole.",
-  "durationMs": 7248,
+  "text": "The Abyssal Wyrm caught the motion and snapped its massive jaws downward, attempting to crush the young mage beneath its strike.",
+  "durationMs": 8040,
   "rawWords": [
     {
       "ttsWord": "The",
@@ -26,89 +26,109 @@
     {
       "ttsWord": "the",
       "startMs": 1813,
-      "endMs": 1875
+      "endMs": 1888
     },
     {
       "ttsWord": "motion",
-      "startMs": 1888,
-      "endMs": 2313
+      "startMs": 1900,
+      "endMs": 2325
     },
     {
       "ttsWord": "and",
-      "startMs": 2325,
-      "endMs": 2438
+      "startMs": 2338,
+      "endMs": 2450
     },
     {
       "ttsWord": "snapped",
-      "startMs": 2450,
-      "endMs": 2863
+      "startMs": 2463,
+      "endMs": 2888
     },
     {
       "ttsWord": "its",
-      "startMs": 2875,
-      "endMs": 2988
+      "startMs": 2900,
+      "endMs": 3013
     },
     {
       "ttsWord": "massive",
-      "startMs": 3000,
-      "endMs": 3425
+      "startMs": 3025,
+      "endMs": 3450
     },
     {
       "ttsWord": "jaws",
-      "startMs": 3438,
-      "endMs": 3788
+      "startMs": 3463,
+      "endMs": 3813
     },
     {
       "ttsWord": "downward",
-      "startMs": 3800,
-      "endMs": 4300
+      "startMs": 3825,
+      "endMs": 4325
     },
     {
       "ttsWord": "attempting",
-      "startMs": 4513,
-      "endMs": 4938
+      "startMs": 4575,
+      "endMs": 5000
     },
     {
       "ttsWord": "to",
-      "startMs": 4950,
-      "endMs": 5038
+      "startMs": 5013,
+      "endMs": 5125
     },
     {
-      "ttsWord": "swallow",
-      "startMs": 5050,
+      "ttsWord": "crush",
+      "startMs": 5138,
       "endMs": 5488
     },
     {
       "ttsWord": "the",
       "startMs": 5500,
-      "endMs": 5600
+      "endMs": 5575
     },
     {
-      "ttsWord": "child",
-      "startMs": 5613,
-      "endMs": 5988
+      "ttsWord": "young",
+      "startMs": 5588,
+      "endMs": 5875
     },
     {
-      "ttsWord": "whole",
-      "startMs": 6000,
-      "endMs": 6375
+      "ttsWord": "mage",
+      "startMs": 5888,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "beneath",
+      "startMs": 6225,
+      "endMs": 6563
+    },
+    {
+      "ttsWord": "its",
+      "startMs": 6575,
+      "endMs": 6700
+    },
+    {
+      "ttsWord": "strike",
+      "startMs": 6713,
+      "endMs": 7175
     }
   ],
   "relativeCues": [
     {
       "text": "The Abyssal Wyrm caught the motion and snapped",
       "startOffsetMs": 50,
-      "endOffsetMs": 2863
+      "endOffsetMs": 2888
     },
     {
       "text": "its massive jaws downward,",
-      "startOffsetMs": 2875,
-      "endOffsetMs": 4400
+      "startOffsetMs": 2900,
+      "endOffsetMs": 4425
     },
     {
-      "text": "attempting to swallow the child whole.",
-      "startOffsetMs": 4513,
-      "endOffsetMs": 6475
+      "text": "attempting to crush the young mage beneath its",
+      "startOffsetMs": 4575,
+      "endOffsetMs": 6700
+    },
+    {
+      "text": "strike.",
+      "startOffsetMs": 6713,
+      "endOffsetMs": 7275
     }
   ]
 }

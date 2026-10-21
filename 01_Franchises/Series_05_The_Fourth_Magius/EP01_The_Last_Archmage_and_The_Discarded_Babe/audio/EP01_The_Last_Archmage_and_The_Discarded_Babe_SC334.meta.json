@@ -1,7 +1,7 @@
 {
   "scene": 334,
-  "text": "\"Master Rowan, do you have a sufficiently large cleaver?\" Michael asked in his calm, deadpan tone. \"Wyrm venom glands fetch a handsome price at the capital market.\"",
-  "durationMs": 12024,
+  "text": "\"Master Rowan, do you have a sufficiently large harvesting blade?\" Michael asked in his calm, deadpan tone. \"Wyrm mana cores fetch a handsome price at the capital market.\"",
+  "durationMs": 12480,
   "rawWords": [
     {
       "ttsWord": "Master",
@@ -16,127 +16,132 @@
     {
       "ttsWord": "do",
       "startMs": 1138,
-      "endMs": 1225
+      "endMs": 1213
     },
     {
       "ttsWord": "you",
-      "startMs": 1238,
-      "endMs": 1338
+      "startMs": 1225,
+      "endMs": 1325
     },
     {
       "ttsWord": "have",
-      "startMs": 1350,
-      "endMs": 1513
+      "startMs": 1338,
+      "endMs": 1500
     },
     {
       "ttsWord": "a",
-      "startMs": 1525,
-      "endMs": 1588
+      "startMs": 1513,
+      "endMs": 1575
     },
     {
       "ttsWord": "sufficiently",
-      "startMs": 1600,
-      "endMs": 2188
+      "startMs": 1588,
+      "endMs": 2175
     },
     {
       "ttsWord": "large",
-      "startMs": 2200,
+      "startMs": 2188,
       "endMs": 2538
     },
     {
-      "ttsWord": "cleaver",
+      "ttsWord": "harvesting",
       "startMs": 2550,
-      "endMs": 3013
+      "endMs": 3063
+    },
+    {
+      "ttsWord": "blade",
+      "startMs": 3075,
+      "endMs": 3513
     },
     {
       "ttsWord": "Michael",
-      "startMs": 3875,
-      "endMs": 4300
+      "startMs": 4375,
+      "endMs": 4800
     },
     {
       "ttsWord": "asked",
-      "startMs": 4313,
-      "endMs": 4625
+      "startMs": 4813,
+      "endMs": 5125
     },
     {
       "ttsWord": "in",
-      "startMs": 4638,
-      "endMs": 4700
+      "startMs": 5138,
+      "endMs": 5200
     },
     {
       "ttsWord": "his",
-      "startMs": 4713,
-      "endMs": 4850
+      "startMs": 5213,
+      "endMs": 5350
     },
     {
       "ttsWord": "calm",
-      "startMs": 4863,
-      "endMs": 5238
+      "startMs": 5363,
+      "endMs": 5738
     },
     {
       "ttsWord": "deadpan",
-      "startMs": 5475,
-      "endMs": 5963
+      "startMs": 5975,
+      "endMs": 6463
     },
     {
       "ttsWord": "tone",
-      "startMs": 5975,
-      "endMs": 6450
+      "startMs": 6475,
+      "endMs": 6950
     },
     {
       "ttsWord": "Wyrm",
-      "startMs": 7313,
-      "endMs": 8175
+      "startMs": 7813,
+      "endMs": 8638
     },
     {
-      "ttsWord": "venom",
-      "startMs": 8188,
-      "endMs": 8500
+      "ttsWord": "mana",
+      "startMs": 8650,
+      "endMs": 8950
     },
     {
-      "ttsWord": "glands",
-      "startMs": 8513,
-      "endMs": 8938
+      "ttsWord": "cores",
+      "startMs": 8963,
+      "endMs": 9363
     },
     {
       "ttsWord": "fetch",
-      "startMs": 8950,
-      "endMs": 9188
+      "startMs": 9375,
+      "endMs": 9613
     },
     {
       "ttsWord": "a",
-      "startMs": 9200,
-      "endMs": 9263
+      "startMs": 9625,
+      "endMs": 9688
     },
     {
       "ttsWord": "handsome",
-      "startMs": 9275,
-      "endMs": 9700
+      "startMs": 9700,
+      "endMs": 10138
     },
     {
       "ttsWord": "price",
-      "startMs": 9713,
-      "endMs": 10100
+      "startMs": 10150,
+      "endMs": 10538
     },
     {
       "ttsWord": "at",
-      "startMs": 10113,
-      "endMs": 10188
+      "startMs": 10550,
+      "endMs": 10625
     },
     {
       "ttsWord": "the",
-      "startMs": 10200,
-      "endMs": 10275
+      "startMs": 10638,
+      "endMs": 10713
     },
     {
       "ttsWord": "capital",
-      "startMs": 10288,
-      "endMs": 10675
+      "startMs": 10725,
+      "endMs": 11113
     },
     {
       "ttsWord": "market",
-      "startMs": 10688,
-      "endMs": 11163
+      "startMs": 11125,
+      "endMs": 11613
     }
   ],
   "relativeCues": [
@@ -146,29 +151,29 @@
       "endOffsetMs": 2538
     },
     {
-      "text": "cleaver?\"",
+      "text": "harvesting blade?\"",
       "startOffsetMs": 2550,
-      "endOffsetMs": 3113
+      "endOffsetMs": 3613
     },
     {
       "text": "Michael asked in his calm,",
-      "startOffsetMs": 3875,
-      "endOffsetMs": 5338
+      "startOffsetMs": 4375,
+      "endOffsetMs": 5838
     },
     {
       "text": "deadpan tone.",
-      "startOffsetMs": 5475,
-      "endOffsetMs": 6550
+      "startOffsetMs": 5975,
+      "endOffsetMs": 7050
     },
     {
-      "text": "Wyrm venom glands fetch a handsome price at",
-      "startOffsetMs": 7313,
-      "endOffsetMs": 10188
+      "text": "Wyrm mana cores fetch a handsome price at",
+      "startOffsetMs": 7813,
+      "endOffsetMs": 10625
     },
     {
       "text": "the capital market.\"",
-      "startOffsetMs": 10200,
-      "endOffsetMs": 11263
+      "startOffsetMs": 10638,
+      "endOffsetMs": 11713
     }
   ]
 }

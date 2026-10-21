@@ -1,0 +1,129 @@
+{
+  "scene": 137,
+  "text": "\"F-F-Fairy Qingxue?!\" Wang Bao stammered in hysterical disbelief, his chubby knees knocking together as he scrambled backward into the room.",
+  "durationMs": 9480,
+  "rawWords": [
+    {
+      "ttsWord": "F-F-Fairy",
+      "startMs": 50,
+      "endMs": 750
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 763,
+      "endMs": 1363
+    },
+    {
+      "ttsWord": "Wang",
+      "startMs": 2225,
+      "endMs": 2563
+    },
+    {
+      "ttsWord": "Bao",
+      "startMs": 2575,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "stammered",
+      "startMs": 2813,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 3313,
+      "endMs": 3413
+    },
+    {
+      "ttsWord": "hysterical",
+      "startMs": 3425,
+      "endMs": 4025
+    },
+    {
+      "ttsWord": "disbelief",
+      "startMs": 4038,
+      "endMs": 4738
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 5000,
+      "endMs": 5175
+    },
+    {
+      "ttsWord": "chubby",
+      "startMs": 5188,
+      "endMs": 5538
+    },
+    {
+      "ttsWord": "knees",
+      "startMs": 5550,
+      "endMs": 5850
+    },
+    {
+      "ttsWord": "knocking",
+      "startMs": 5863,
+      "endMs": 6213
+    },
+    {
+      "ttsWord": "together",
+      "startMs": 6225,
+      "endMs": 6713
+    },
+    {
+      "ttsWord": "as",
+      "startMs": 6725,
+      "endMs": 6838
+    },
+    {
+      "ttsWord": "he",
+      "startMs": 6850,
+      "endMs": 6938
+    },
+    {
+      "ttsWord": "scrambled",
+      "startMs": 6950,
+      "endMs": 7450
+    },
+    {
+      "ttsWord": "backward",
+      "startMs": 7463,
+      "endMs": 7875
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 7888,
+      "endMs": 8113
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8125,
+      "endMs": 8225
+    },
+    {
+      "ttsWord": "room",
+      "startMs": 8238,
+      "endMs": 8600
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "F-F-Fairy Qingxue?!\"",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1463
+    },
+    {
+      "text": "Wang Bao stammered in hysterical disbelief,",
+      "startOffsetMs": 2225,
+      "endOffsetMs": 4838
+    },
+    {
+      "text": "his chubby knees knocking together as he scrambled",
+      "startOffsetMs": 5000,
+      "endOffsetMs": 7450
+    },
+    {
+      "text": "backward into the room.",
+      "startOffsetMs": 7463,
+      "endOffsetMs": 8700
+    }
+  ]
+}

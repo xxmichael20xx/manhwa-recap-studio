@@ -1,149 +1,144 @@
 {
   "scene": 68,
-  "text": "A lesser child would have blacked out from shock, but Michael ground his teeth together until his gums bled, keeping his eyes wide open.",
-  "durationMs": 8352,
+  "text": "An ordinary novice would have collapsed from sensory overload, but Michael set his jaw in iron resolve, keeping his glowing eyes wide open.",
+  "durationMs": 8976,
   "rawWords": [
     {
-      "ttsWord": "A",
+      "ttsWord": "An",
       "startMs": 50,
-      "endMs": 163
+      "endMs": 238
     },
     {
-      "ttsWord": "lesser",
-      "startMs": 175,
-      "endMs": 550
+      "ttsWord": "ordinary",
+      "startMs": 250,
+      "endMs": 725
     },
     {
-      "ttsWord": "child",
-      "startMs": 563,
-      "endMs": 950
+      "ttsWord": "novice",
+      "startMs": 738,
+      "endMs": 1175
     },
     {
       "ttsWord": "would",
-      "startMs": 963,
-      "endMs": 1063
+      "startMs": 1188,
+      "endMs": 1313
     },
     {
       "ttsWord": "have",
-      "startMs": 1075,
-      "endMs": 1200
+      "startMs": 1325,
+      "endMs": 1463
     },
     {
-      "ttsWord": "blacked",
-      "startMs": 1213,
-      "endMs": 1563
-    },
-    {
-      "ttsWord": "out",
-      "startMs": 1575,
-      "endMs": 1775
+      "ttsWord": "collapsed",
+      "startMs": 1475,
+      "endMs": 1975
     },
     {
       "ttsWord": "from",
-      "startMs": 1788,
-      "endMs": 1938
+      "startMs": 1988,
+      "endMs": 2125
     },
     {
-      "ttsWord": "shock",
-      "startMs": 1950,
-      "endMs": 2450
+      "ttsWord": "sensory",
+      "startMs": 2138,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "overload",
+      "startMs": 2663,
+      "endMs": 3188
     },
     {
       "ttsWord": "but",
-      "startMs": 2688,
-      "endMs": 2825
+      "startMs": 3463,
+      "endMs": 3600
     },
     {
       "ttsWord": "Michael",
-      "startMs": 2838,
-      "endMs": 3200
+      "startMs": 3613,
+      "endMs": 3963
     },
     {
-      "ttsWord": "ground",
-      "startMs": 3213,
-      "endMs": 3525
-    },
-    {
-      "ttsWord": "his",
-      "startMs": 3538,
-      "endMs": 3688
-    },
-    {
-      "ttsWord": "teeth",
-      "startMs": 3700,
-      "endMs": 3950
-    },
-    {
-      "ttsWord": "together",
-      "startMs": 3963,
-      "endMs": 4400
-    },
-    {
-      "ttsWord": "until",
-      "startMs": 4413,
-      "endMs": 4688
+      "ttsWord": "set",
+      "startMs": 3975,
+      "endMs": 4188
     },
     {
       "ttsWord": "his",
-      "startMs": 4700,
-      "endMs": 4850
+      "startMs": 4200,
+      "endMs": 4375
     },
     {
-      "ttsWord": "gums",
-      "startMs": 4863,
+      "ttsWord": "jaw",
+      "startMs": 4388,
+      "endMs": 4700
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 4713,
+      "endMs": 4900
+    },
+    {
+      "ttsWord": "iron",
+      "startMs": 4913,
       "endMs": 5200
     },
     {
-      "ttsWord": "bled",
+      "ttsWord": "resolve",
       "startMs": 5213,
-      "endMs": 5588
+      "endMs": 5763
     },
     {
       "ttsWord": "keeping",
-      "startMs": 5863,
-      "endMs": 6200
+      "startMs": 6038,
+      "endMs": 6388
     },
     {
       "ttsWord": "his",
-      "startMs": 6213,
-      "endMs": 6375
+      "startMs": 6400,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "glowing",
+      "startMs": 6550,
+      "endMs": 6975
     },
     {
       "ttsWord": "eyes",
-      "startMs": 6388,
-      "endMs": 6725
+      "startMs": 6988,
+      "endMs": 7325
     },
     {
       "ttsWord": "wide",
-      "startMs": 6738,
-      "endMs": 7050
+      "startMs": 7338,
+      "endMs": 7663
     },
     {
       "ttsWord": "open",
-      "startMs": 7063,
-      "endMs": 7475
+      "startMs": 7675,
+      "endMs": 8100
     }
   ],
   "relativeCues": [
     {
-      "text": "A lesser child would have blacked out from",
+      "text": "An ordinary novice would have collapsed from sensory",
       "startOffsetMs": 50,
-      "endOffsetMs": 1938
+      "endOffsetMs": 2650
     },
     {
-      "text": "shock, but Michael ground his teeth together until",
-      "startOffsetMs": 1950,
-      "endOffsetMs": 4688
+      "text": "overload,",
+      "startOffsetMs": 2663,
+      "endOffsetMs": 3288
     },
     {
-      "text": "his gums bled,",
-      "startOffsetMs": 4700,
-      "endOffsetMs": 5688
+      "text": "but Michael set his jaw in iron resolve,",
+      "startOffsetMs": 3463,
+      "endOffsetMs": 5863
     },
     {
-      "text": "keeping his eyes wide open.",
-      "startOffsetMs": 5863,
-      "endOffsetMs": 7575
+      "text": "keeping his glowing eyes wide open.",
+      "startOffsetMs": 6038,
+      "endOffsetMs": 8200
     }
   ]
 }

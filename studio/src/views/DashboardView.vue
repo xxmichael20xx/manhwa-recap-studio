@@ -92,10 +92,10 @@
                   <span class="font-medium text-slate-900 dark:text-slate-100 truncate max-w-[140px]">{{ ep.name }}</span>
                 </div>
                 <div class="flex items-center space-x-2 font-mono text-[10px]">
-                  <span v-if="ep.audit?.isAntiSlopCertified" class="text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-500/20 font-semibold">
-                    {{ ep.audit.overallScore }}% Anti-Slop
+                  <span v-if="ep.audioDurationFormatted" class="text-purple-700 dark:text-purple-400 bg-purple-50 dark:bg-purple-500/10 px-1.5 py-0.5 rounded border border-purple-200 dark:border-purple-500/20 font-semibold">
+                    ⏱️ {{ ep.audioDurationFormatted }}
                   </span>
-                  <span v-if="ep.audioCount > 0" class="text-purple-600 dark:text-purple-400 font-semibold">
+                  <span v-else-if="ep.audioCount > 0" class="text-purple-600 dark:text-purple-400 font-semibold">
                     {{ ep.audioCount }} VO
                   </span>
                 </div>

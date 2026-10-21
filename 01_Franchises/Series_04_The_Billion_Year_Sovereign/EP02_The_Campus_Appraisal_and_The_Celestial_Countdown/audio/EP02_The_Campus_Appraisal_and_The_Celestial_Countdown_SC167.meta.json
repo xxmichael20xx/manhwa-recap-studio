@@ -1,0 +1,164 @@
+{
+  "scene": 167,
+  "text": "Lu Chen took a slow, measured sip from his cold canned green tea, looking up into the troposphere with a serene, unbothered smirk in his obsidian eyes.",
+  "durationMs": 9456,
+  "rawWords": [
+    {
+      "ttsWord": "Lu",
+      "startMs": 50,
+      "endMs": 325
+    },
+    {
+      "ttsWord": "Chen",
+      "startMs": 338,
+      "endMs": 550
+    },
+    {
+      "ttsWord": "took",
+      "startMs": 563,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 750,
+      "endMs": 813
+    },
+    {
+      "ttsWord": "slow",
+      "startMs": 825,
+      "endMs": 1300
+    },
+    {
+      "ttsWord": "measured",
+      "startMs": 1550,
+      "endMs": 1888
+    },
+    {
+      "ttsWord": "sip",
+      "startMs": 1900,
+      "endMs": 2175
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 2188,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2338,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "cold",
+      "startMs": 2488,
+      "endMs": 2800
+    },
+    {
+      "ttsWord": "canned",
+      "startMs": 2813,
+      "endMs": 3100
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 3113,
+      "endMs": 3400
+    },
+    {
+      "ttsWord": "tea",
+      "startMs": 3413,
+      "endMs": 3775
+    },
+    {
+      "ttsWord": "looking",
+      "startMs": 4075,
+      "endMs": 4350
+    },
+    {
+      "ttsWord": "up",
+      "startMs": 4363,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "into",
+      "startMs": 4513,
+      "endMs": 4688
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4700,
+      "endMs": 4788
+    },
+    {
+      "ttsWord": "troposphere",
+      "startMs": 4800,
+      "endMs": 5438
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 5450,
+      "endMs": 5575
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 5588,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "serene",
+      "startMs": 5650,
+      "endMs": 6150
+    },
+    {
+      "ttsWord": "unbothered",
+      "startMs": 6400,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "smirk",
+      "startMs": 6913,
+      "endMs": 7300
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7313,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 7400,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "obsidian",
+      "startMs": 7538,
+      "endMs": 8050
+    },
+    {
+      "ttsWord": "eyes",
+      "startMs": 8063,
+      "endMs": 8588
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Lu Chen took a slow,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1400
+    },
+    {
+      "text": "measured sip from his cold canned green tea,",
+      "startOffsetMs": 1550,
+      "endOffsetMs": 3875
+    },
+    {
+      "text": "looking up into the troposphere with a serene,",
+      "startOffsetMs": 4075,
+      "endOffsetMs": 6250
+    },
+    {
+      "text": "unbothered smirk in his obsidian eyes.",
+      "startOffsetMs": 6400,
+      "endOffsetMs": 8688
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "scene": 26,
+  "text": "Erected along the center of the green turf field stood five colossal five-metre-tall crystalline Spirit Resonance Pillars, each carved from translucent spirit-jade that hummed with ambient mana.",
+  "durationMs": 10920,
+  "rawWords": [
+    {
+      "ttsWord": "Erected",
+      "startMs": 50,
+      "endMs": 513
+    },
+    {
+      "ttsWord": "along",
+      "startMs": 525,
+      "endMs": 838
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 850,
+      "endMs": 938
+    },
+    {
+      "ttsWord": "center",
+      "startMs": 950,
+      "endMs": 1313
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 1325,
+      "endMs": 1400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1413,
+      "endMs": 1500
+    },
+    {
+      "ttsWord": "green",
+      "startMs": 1513,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "turf",
+      "startMs": 1825,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "field",
+      "startMs": 2113,
+      "endMs": 2475
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 2488,
+      "endMs": 2775
+    },
+    {
+      "ttsWord": "five",
+      "startMs": 2788,
+      "endMs": 3125
+    },
+    {
+      "ttsWord": "colossal",
+      "startMs": 3138,
+      "endMs": 3625
+    },
+    {
+      "ttsWord": "five-metre-tall",
+      "startMs": 3638,
+      "endMs": 4488
+    },
+    {
+      "ttsWord": "crystalline",
+      "startMs": 4500,
+      "endMs": 4963
+    },
+    {
+      "ttsWord": "Spirit",
+      "startMs": 4975,
+      "endMs": 5363
+    },
+    {
+      "ttsWord": "Resonance",
+      "startMs": 5375,
+      "endMs": 5763
+    },
+    {
+      "ttsWord": "Pillars",
+      "startMs": 5775,
+      "endMs": 6250
+    },
+    {
+      "ttsWord": "each",
+      "startMs": 6525,
+      "endMs": 6738
+    },
+    {
+      "ttsWord": "carved",
+      "startMs": 6750,
+      "endMs": 7100
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 7113,
+      "endMs": 7275
+    },
+    {
+      "ttsWord": "translucent",
+      "startMs": 7288,
+      "endMs": 7938
+    },
+    {
+      "ttsWord": "spirit-jade",
+      "startMs": 7950,
+      "endMs": 8575
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 8588,
+      "endMs": 8700
+    },
+    {
+      "ttsWord": "hummed",
+      "startMs": 8713,
+      "endMs": 9063
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 9075,
+      "endMs": 9200
+    },
+    {
+      "ttsWord": "ambient",
+      "startMs": 9213,
+      "endMs": 9613
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 9625,
+      "endMs": 10050
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Erected along the center of the green turf",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2100
+    },
+    {
+      "text": "field stood five colossal five-metre-tall crystalline Spirit",
+      "startOffsetMs": 2113,
+      "endOffsetMs": 5363
+    },
+    {
+      "text": "Resonance Pillars,",
+      "startOffsetMs": 5375,
+      "endOffsetMs": 6350
+    },
+    {
+      "text": "each carved from translucent spirit-jade that hummed with",
+      "startOffsetMs": 6525,
+      "endOffsetMs": 9200
+    },
+    {
+      "text": "ambient mana.",
+      "startOffsetMs": 9213,
+      "endOffsetMs": 10150
+    }
+  ]
+}

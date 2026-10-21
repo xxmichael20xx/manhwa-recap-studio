@@ -1,0 +1,139 @@
+{
+  "scene": 135,
+  "text": "Standing directly on his rubber welcome mat was Jiang Qingxue, her peerless glacial presence flooding the dormitory threshold like an imperial sovereign.",
+  "durationMs": 8976,
+  "rawWords": [
+    {
+      "ttsWord": "Standing",
+      "startMs": 50,
+      "endMs": 563
+    },
+    {
+      "ttsWord": "directly",
+      "startMs": 575,
+      "endMs": 1063
+    },
+    {
+      "ttsWord": "on",
+      "startMs": 1075,
+      "endMs": 1175
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 1188,
+      "endMs": 1338
+    },
+    {
+      "ttsWord": "rubber",
+      "startMs": 1350,
+      "endMs": 1650
+    },
+    {
+      "ttsWord": "welcome",
+      "startMs": 1663,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "mat",
+      "startMs": 2050,
+      "endMs": 2325
+    },
+    {
+      "ttsWord": "was",
+      "startMs": 2338,
+      "endMs": 2500
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 2513,
+      "endMs": 2863
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 2875,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 3763,
+      "endMs": 3888
+    },
+    {
+      "ttsWord": "peerless",
+      "startMs": 3900,
+      "endMs": 4313
+    },
+    {
+      "ttsWord": "glacial",
+      "startMs": 4325,
+      "endMs": 4713
+    },
+    {
+      "ttsWord": "presence",
+      "startMs": 4725,
+      "endMs": 5163
+    },
+    {
+      "ttsWord": "flooding",
+      "startMs": 5175,
+      "endMs": 5525
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5538,
+      "endMs": 5638
+    },
+    {
+      "ttsWord": "dormitory",
+      "startMs": 5650,
+      "endMs": 6200
+    },
+    {
+      "ttsWord": "threshold",
+      "startMs": 6213,
+      "endMs": 6725
+    },
+    {
+      "ttsWord": "like",
+      "startMs": 6738,
+      "endMs": 6900
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 6913,
+      "endMs": 7000
+    },
+    {
+      "ttsWord": "imperial",
+      "startMs": 7013,
+      "endMs": 7525
+    },
+    {
+      "ttsWord": "sovereign",
+      "startMs": 7538,
+      "endMs": 8100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Standing directly on his rubber welcome mat was",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "Jiang Qingxue,",
+      "startOffsetMs": 2513,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "her peerless glacial presence flooding the dormitory threshold",
+      "startOffsetMs": 3763,
+      "endOffsetMs": 6725
+    },
+    {
+      "text": "like an imperial sovereign.",
+      "startOffsetMs": 6738,
+      "endOffsetMs": 8200
+    }
+  ]
+}

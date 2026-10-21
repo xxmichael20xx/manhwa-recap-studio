@@ -1,7 +1,7 @@
 {
   "scene": 21,
-  "text": "Michael looked down at his trembling limbs in utter disbelief — his body was that of a frail, malnourished five-year-old child, dressed only in a rough-spun grey burlap sackcloth.",
-  "durationMs": 10920,
+  "text": "Michael looked down at his trembling limbs in utter disbelief — his body was that of a frail, exhausted five-year-old child, dressed only in a rough-spun grey burlap sackcloth.",
+  "durationMs": 10824,
   "rawWords": [
     {
       "ttsWord": "Michael",
@@ -51,97 +51,97 @@
     {
       "ttsWord": "disbelief",
       "startMs": 2425,
-      "endMs": 3125
+      "endMs": 3113
     },
     {
       "ttsWord": "his",
-      "startMs": 3438,
-      "endMs": 3600
+      "startMs": 3425,
+      "endMs": 3588
     },
     {
       "ttsWord": "body",
-      "startMs": 3613,
-      "endMs": 3975
+      "startMs": 3600,
+      "endMs": 3963
     },
     {
       "ttsWord": "was",
-      "startMs": 3988,
-      "endMs": 4163
+      "startMs": 3975,
+      "endMs": 4150
     },
     {
       "ttsWord": "that",
-      "startMs": 4175,
-      "endMs": 4350
+      "startMs": 4163,
+      "endMs": 4338
     },
     {
       "ttsWord": "of",
-      "startMs": 4363,
-      "endMs": 4425
+      "startMs": 4350,
+      "endMs": 4413
     },
     {
       "ttsWord": "a",
-      "startMs": 4438,
-      "endMs": 4513
+      "startMs": 4425,
+      "endMs": 4500
     },
     {
       "ttsWord": "frail",
-      "startMs": 4525,
-      "endMs": 4988
+      "startMs": 4513,
+      "endMs": 4963
     },
     {
-      "ttsWord": "malnourished",
-      "startMs": 5288,
+      "ttsWord": "exhausted",
+      "startMs": 5238,
       "endMs": 5838
     },
     {
       "ttsWord": "five-year-old",
       "startMs": 5850,
-      "endMs": 6438
+      "endMs": 6475
     },
     {
       "ttsWord": "child",
-      "startMs": 6450,
+      "startMs": 6488,
       "endMs": 6925
     },
     {
       "ttsWord": "dressed",
-      "startMs": 7138,
-      "endMs": 7500
+      "startMs": 7125,
+      "endMs": 7475
     },
     {
       "ttsWord": "only",
-      "startMs": 7513,
-      "endMs": 7800
+      "startMs": 7488,
+      "endMs": 7763
     },
     {
       "ttsWord": "in",
-      "startMs": 7813,
-      "endMs": 7888
+      "startMs": 7775,
+      "endMs": 7850
     },
     {
       "ttsWord": "a",
-      "startMs": 7900,
-      "endMs": 7950
+      "startMs": 7863,
+      "endMs": 7913
     },
     {
       "ttsWord": "rough-spun",
-      "startMs": 7963,
-      "endMs": 8525
+      "startMs": 7925,
+      "endMs": 8475
     },
     {
       "ttsWord": "grey",
-      "startMs": 8538,
-      "endMs": 8800
+      "startMs": 8488,
+      "endMs": 8750
     },
     {
       "ttsWord": "burlap",
-      "startMs": 8813,
-      "endMs": 9250
+      "startMs": 8763,
+      "endMs": 9200
     },
     {
       "ttsWord": "sackcloth",
-      "startMs": 9263,
-      "endMs": 10038
+      "startMs": 9213,
+      "endMs": 9963
     }
   ],
   "relativeCues": [
@@ -153,22 +153,22 @@
     {
       "text": "utter disbelief",
       "startOffsetMs": 2188,
-      "endOffsetMs": 3225
+      "endOffsetMs": 3213
     },
     {
       "text": "his body was that of a frail,",
-      "startOffsetMs": 3438,
-      "endOffsetMs": 5088
+      "startOffsetMs": 3425,
+      "endOffsetMs": 5063
     },
     {
-      "text": "malnourished five-year-old child,",
-      "startOffsetMs": 5288,
+      "text": "exhausted five-year-old child,",
+      "startOffsetMs": 5238,
       "endOffsetMs": 7025
     },
     {
       "text": "dressed only in a rough-spun grey burlap sackcloth.",
-      "startOffsetMs": 7138,
-      "endOffsetMs": 10138
+      "startOffsetMs": 7125,
+      "endOffsetMs": 10063
     }
   ]
 }

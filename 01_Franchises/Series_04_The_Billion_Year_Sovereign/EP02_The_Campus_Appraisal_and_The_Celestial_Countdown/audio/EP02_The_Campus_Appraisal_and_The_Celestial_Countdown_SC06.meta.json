@@ -1,0 +1,144 @@
+{
+  "scene": 6,
+  "text": "In dormitory Room 402, bright morning sunlight poured through the clear glass window, illuminating the tidy birch study desks and neatly arranged textbooks.",
+  "durationMs": 10248,
+  "rawWords": [
+    {
+      "ttsWord": "In",
+      "startMs": 50,
+      "endMs": 250
+    },
+    {
+      "ttsWord": "dormitory",
+      "startMs": 263,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "Room 402",
+      "startMs": 863,
+      "endMs": 1988
+    },
+    {
+      "ttsWord": "bright",
+      "startMs": 2238,
+      "endMs": 2513
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 2525,
+      "endMs": 2838
+    },
+    {
+      "ttsWord": "sunlight",
+      "startMs": 2850,
+      "endMs": 3363
+    },
+    {
+      "ttsWord": "poured",
+      "startMs": 3375,
+      "endMs": 3713
+    },
+    {
+      "ttsWord": "through",
+      "startMs": 3725,
+      "endMs": 3875
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3888,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "clear",
+      "startMs": 4000,
+      "endMs": 4288
+    },
+    {
+      "ttsWord": "glass",
+      "startMs": 4300,
+      "endMs": 4613
+    },
+    {
+      "ttsWord": "window",
+      "startMs": 4625,
+      "endMs": 5063
+    },
+    {
+      "ttsWord": "illuminating",
+      "startMs": 5400,
+      "endMs": 5988
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6000,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "tidy",
+      "startMs": 6088,
+      "endMs": 6425
+    },
+    {
+      "ttsWord": "birch",
+      "startMs": 6438,
+      "endMs": 6750
+    },
+    {
+      "ttsWord": "study",
+      "startMs": 6763,
+      "endMs": 7075
+    },
+    {
+      "ttsWord": "desks",
+      "startMs": 7088,
+      "endMs": 7538
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 7550,
+      "endMs": 7763
+    },
+    {
+      "ttsWord": "neatly",
+      "startMs": 7775,
+      "endMs": 8063
+    },
+    {
+      "ttsWord": "arranged",
+      "startMs": 8075,
+      "endMs": 8600
+    },
+    {
+      "ttsWord": "textbooks",
+      "startMs": 8613,
+      "endMs": 9388
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "In dormitory Room 402",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2088
+    },
+    {
+      "text": "bright morning sunlight poured through the clear glass",
+      "startOffsetMs": 2238,
+      "endOffsetMs": 4613
+    },
+    {
+      "text": "window,",
+      "startOffsetMs": 4625,
+      "endOffsetMs": 5163
+    },
+    {
+      "text": "illuminating the tidy birch study desks and neatly",
+      "startOffsetMs": 5400,
+      "endOffsetMs": 8063
+    },
+    {
+      "text": "arranged textbooks.",
+      "startOffsetMs": 8075,
+      "endOffsetMs": 9488
+    }
+  ]
+}

@@ -27,10 +27,10 @@
       },
       "dna_prompt_anchor": "@{Lu Chen}, 20-year-old East Asian male, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression, clean oversized charcoal-black pullover hoodie with sleeves covering wrists, dark casual utility trousers, hands in pockets, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "01_Protagonist_Lu_Chen.jpg",
-      "flowUuid": "7ae04cf3-44e8-4f25-856e-2310c84eb9fb",
       "flowName": "Character: Lu Chen",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -54,10 +54,10 @@
       },
       "dna_prompt_anchor": "@{Wang Bao}, 20-year-old chubby East Asian male student, round cheerful face, short spiky black hair, expressive wide comical eyes, red graphic gaming t-shirt, beige cargo shorts, enthusiastic energetic posture, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "02_Sidekick_Wang_Bao.jpg",
-      "flowUuid": "9b2efd3b-0020-4eaa-aa51-a83dac5b6c65",
       "flowName": "Character: Wang Bao",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -82,10 +82,10 @@
       },
       "dna_prompt_anchor": "@{Gu Tianyu}, 21-year-old arrogant athletic male student, sharp slicked-back dark brown hair, haughty sneering expression, tailored designer navy blazer over white collar shirt, glowing cyan spirit qi swirling around fingertips, holding a luminous jade-inscribed spirit blade, posture of extreme hubris, modern cultivation manhwa style, sharp linework, high contrast, vertical 9:16",
       "reference_plate": "03_Bully_Gu_Tianyu.jpg",
-      "flowUuid": "80875c1d-dc98-47e6-a3ac-9ba142de78d2",
       "flowName": "Character: Gu Tianyu",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -109,10 +109,10 @@
       },
       "dna_prompt_anchor": "@{Jiang Qingxue}, 21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression, elegant modern white trench coat over pale cyan silk dress, frost mist condensing in palm, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "04_Disciple_Jiang_Qingxue.jpg",
-      "flowUuid": "67c81f77-381d-4964-9107-d93dff4faf03",
       "flowName": "Character: Jiang Qingxue",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -136,10 +136,10 @@
       },
       "dna_prompt_anchor": "@{Commander Han Feng}, 42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek, dark olive-drab tactical trench coat with brass state insignia, glowing tactical talisman in hand, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "05_Inspector_Han_Feng.jpg",
-      "flowUuid": "3b815452-d36f-4f7d-b411-718d458f277a",
       "flowName": "Character: Commander Han Feng",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -163,10 +163,10 @@
       },
       "dna_prompt_anchor": "@{Ye Xingchen}, 28-year-old imposing aristocratic man, long silver-streaked dark hair, regal golden eyes full of cold disdain, tailored charcoal bespoke three-piece suit adorned with celestial star-charts, swirling purple cosmic starlight halo floating behind shoulders, imperial dominating aura, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "06_Rival_Ye_Xingchen.jpg",
-      "flowUuid": "488bd39e-fb96-4e80-b8ce-f1e3cad4fa12",
       "flowName": "Character: Ye Xingchen",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -192,8 +192,10 @@
       },
       "dna_prompt_anchor": "@{Asura Blood Sovereign}, 8-foot-tall demonic humanoid sovereign, six muscular obsidian-crimson armored arms each physically connected to shoulders, wild long crimson flame hair billowing outward, four burning red demonic eyes, ornate barbed dark crimson demon-iron armor with glowing ancient runes, jagged bone spikes on shoulders, suffocating dark blood-red mist and black lightning aura, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
       "reference_plate": "07_Boss_Asura_Blood_Sovereign.jpg",
-      "flowUuid": "d11784e8-a049-4347-b39d-abd23b774d34",
-      "flowName": "Boss: Asura Blood Sovereign"
+      "flowName": "Boss: Asura Blood Sovereign",
+      "episodes": [
+        "EP01"
+      ]
     },
     {
       "id": "gu_tianyu_spirit_dao",
@@ -217,10 +219,10 @@
       },
       "dna_prompt_anchor": "@{Gu Tianyu's Jade Spirit Blade}, single-edged curved Chinese dao saber, forged silver-steel core with glowing translucent cyan jade cutting edge, white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, cyan silk tassel hanging from pommel, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
       "reference_plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
-      "flowUuid": "781340b1-d696-447f-afee-76b355fcc7f8",
       "flowName": "Character: Gu Tianyu's Jade Spirit Blade",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -244,10 +246,10 @@
       },
       "dna_prompt_anchor": "@{Tactical Spirit Spectrometer}, handheld military tactical spirit-spectrometer, ruggedized olive-drab and brushed brass housing, circular brass sensor nozzle with quartz crystal lens, glowing amber vacuum-tube digital counter, analog sweep gauge, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16",
       "reference_plate": "09_Prop_Tactical_Spirit_Spectrometer.jpg",
-      "flowUuid": "4c17b746-de54-4fe0-adc6-90f0dfa24bcb",
       "flowName": "Character: Tactical Spirit Spectrometer",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
       ]
     },
     {
@@ -270,10 +272,89 @@
       },
       "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental 30,000-metre colossal obsidian-gold celestial monolith descending through dark stratospheric storm clouds, glowing divine golden calligraphy inscriptions along central axis, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation action manhwa art style, sharp ink linework, volumetric starlight lighting, vertical 9:16",
       "reference_plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
-      "flowUuid": "396a19a4-787b-48a0-aece-d5bf41d543ae",
       "flowName": "Character: Heaven-Earth Golden Stele",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP02"
+      ]
+    },
+    {
+      "id": "gu_biao",
+      "name": "Chief Enforcer Gu Biao",
+      "token": "@{Chief Enforcer Gu Biao}",
+      "tier": 2,
+      "role": "Antagonist Enforcer (Gu Capital Syndicate Chief Enforcer / 200,000-Year Nascent Domain)",
+      "category": "antagonist",
+      "age": 35,
+      "stats_baseline": {
+        "cultivation_years": "200,000 Years",
+        "realm": "Nascent Domain Realm",
+        "weapons": "Silver-Threaded Combat Knuckle Rings",
+        "syndicate": "Gu Capital Syndicate"
+      },
+      "appearance": {
+        "hair": "Sharp buzz-cut dark black hair",
+        "eyes": "Dark tactical sunglasses over bloodshot predatory eyes",
+        "physique": "Towering muscular 6-foot-4 enforcer build, scarred brutal jawline",
+        "attire": "Open charcoal-black designer trench coat over dark silk vest, tailored trousers, combat boots, silver-threaded knuckle rings on both fists"
+      },
+      "dna_prompt_anchor": "@{Chief Enforcer Gu Biao}, 35-year-old imposing East Asian male enforcer, towering muscular 6-foot-4 frame, buzz-cut dark hair, brutal scarred jawline, dark tactical sunglasses, arrogant sneering expression, open designer charcoal-black trench coat over dark silk vest, silver-threaded combat knuckle rings glinting on both fists, faint dark crimson gravity aura, modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, high contrast cel shading, vertical 9:16",
+      "reference_plate": "11_Enforcer_Gu_Biao.jpg",
+      "flowName": "Character: Chief Enforcer Gu Biao",
+      "episodes": [
+        "EP02"
+      ]
+    },
+    {
+      "id": "celestial_star_astrolabe",
+      "name": "Celestial Star Astrolabe",
+      "token": "@{Celestial Star Astrolabe}",
+      "tier": 2,
+      "role": "Prop (High-Precision Starlight Divination Instrument)",
+      "category": "prop",
+      "age": 100000,
+      "stats_baseline": {
+        "realm": "Celestial Spirit Instrument",
+        "wielder": "Jiang Qingxue",
+        "composition": "Spherical brass-and-celestial-silver armillary sphere with suspended starlight crystal core"
+      },
+      "appearance": {
+        "casing": "Intricate spherical brass and celestial-silver armillary astrolabe with concentric rotating gimbal rings",
+        "engravings": "Etched glowing cyan starlight constellations and astronomical glyphs",
+        "core": "Luminous faceted cyan spirit crystal core suspended at center",
+        "needles": "Fine slender silver divination needles aligned with cosmic coordinates"
+      },
+      "dna_prompt_anchor": "@{Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, suspended luminous cyan spirit crystal core, slender silver divination needles, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "reference_plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
+      "flowName": "Character: Celestial Star Astrolabe",
+      "episodes": [
+        "EP02"
+      ]
+    },
+    {
+      "id": "heavenly_dao_simulator_hud",
+      "name": "Heavenly Dao Simulator Interface",
+      "token": "@{Heavenly Dao Simulator Interface}",
+      "tier": 1,
+      "role": "Prop / Interface (Lu Chen's Reality-Fusing Modern Floating Cultivation System HUD)",
+      "category": "prop",
+      "age": 1000000000,
+      "stats_baseline": {
+        "realm": "Primordial Sovereign Origin Engine",
+        "wielder": "Lu Chen",
+        "composition": "Translucent tempered obsidian-glass holographic HUD floating in mid-air with golden celestial astrolabe rings"
+      },
+      "appearance": {
+        "interface": "Translucent dark obsidian-glass holographic HUD window floating vertically at eye level with glowing celestial gold borders and cyan circuit traces",
+        "log": "Minimalist header 'HEAVENLY DAO SIMULATION ENGINE', glowing golden numbers '1,000,000,000' and 'REALM: PRIMORDIAL SOVEREIGN'",
+        "projection": "Golden primordial Dao nebula rings, delicate celestial constellation spirit-qi gauges, and iridescent code motes drifting in ambient air"
+      },
+      "dna_prompt_anchor": "@{Heavenly Dao Simulator Interface}, sleek translucent dark obsidian-glass holographic cultivation system HUD floating in mid-air, glowing celestial gold astrolabe progression rings, minimalist cultivation stat gauges, starlight nebula motes, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "reference_plate": "13_Item_Heavenly_Dao_Simulator_HUD.jpg",
+      "flowName": "Character: Heavenly Dao Simulator Interface",
+      "episodes": [
+        "EP01",
+        "EP02"
       ]
     }
   ]

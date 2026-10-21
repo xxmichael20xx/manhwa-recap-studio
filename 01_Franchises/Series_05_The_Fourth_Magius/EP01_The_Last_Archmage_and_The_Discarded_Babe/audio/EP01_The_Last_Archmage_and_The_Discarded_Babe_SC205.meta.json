@@ -1,7 +1,7 @@
 {
   "scene": 205,
-  "text": "A deafening concussive shockwave detonated instantly, pulverizing the six-foot granite boulder into a cloud of powdery grey sand.",
-  "durationMs": 8136,
+  "text": "A deafening concussive shockwave detonated instantly, pulverizing the six-foot granite boulder into a cloud of fine granite dust.",
+  "durationMs": 8088,
   "rawWords": [
     {
       "ttsWord": "A",
@@ -56,42 +56,42 @@
     {
       "ttsWord": "boulder",
       "startMs": 4863,
-      "endMs": 5213
+      "endMs": 5200
     },
     {
       "ttsWord": "into",
-      "startMs": 5225,
-      "endMs": 5463
+      "startMs": 5213,
+      "endMs": 5450
     },
     {
       "ttsWord": "a",
-      "startMs": 5475,
-      "endMs": 5538
+      "startMs": 5463,
+      "endMs": 5525
     },
     {
       "ttsWord": "cloud",
-      "startMs": 5550,
-      "endMs": 5913
+      "startMs": 5538,
+      "endMs": 5900
     },
     {
       "ttsWord": "of",
-      "startMs": 5925,
-      "endMs": 6013
+      "startMs": 5913,
+      "endMs": 5988
     },
     {
-      "ttsWord": "powdery",
-      "startMs": 6025,
-      "endMs": 6463
+      "ttsWord": "fine",
+      "startMs": 6000,
+      "endMs": 6325
     },
     {
-      "ttsWord": "grey",
-      "startMs": 6475,
-      "endMs": 6713
+      "ttsWord": "granite",
+      "startMs": 6338,
+      "endMs": 6725
     },
     {
-      "ttsWord": "sand",
-      "startMs": 6725,
-      "endMs": 7275
+      "ttsWord": "dust",
+      "startMs": 6738,
+      "endMs": 7225
     }
   ],
   "relativeCues": [
@@ -103,12 +103,12 @@
     {
       "text": "pulverizing the six-foot granite boulder into a cloud",
       "startOffsetMs": 3200,
-      "endOffsetMs": 5913
+      "endOffsetMs": 5900
     },
     {
-      "text": "of powdery grey sand.",
-      "startOffsetMs": 5925,
-      "endOffsetMs": 7375
+      "text": "of fine granite dust.",
+      "startOffsetMs": 5913,
+      "endOffsetMs": 7325
     }
   ]
 }

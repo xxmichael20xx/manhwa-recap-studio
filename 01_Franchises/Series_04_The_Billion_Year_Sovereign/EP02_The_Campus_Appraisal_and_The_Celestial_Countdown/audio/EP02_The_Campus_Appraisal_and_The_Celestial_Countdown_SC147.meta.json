@@ -1,0 +1,144 @@
+{
+  "scene": 147,
+  "text": "Ye Xingchen smoothed the silk lapels of his bespoke suit, his manicured fingers adorned with platinum rings that crackled with condensed starlight mana.",
+  "durationMs": 8688,
+  "rawWords": [
+    {
+      "ttsWord": "Ye",
+      "startMs": 50,
+      "endMs": 238
+    },
+    {
+      "ttsWord": "Xingchen",
+      "startMs": 250,
+      "endMs": 700
+    },
+    {
+      "ttsWord": "smoothed",
+      "startMs": 713,
+      "endMs": 1150
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 1163,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "silk",
+      "startMs": 1275,
+      "endMs": 1588
+    },
+    {
+      "ttsWord": "lapels",
+      "startMs": 1600,
+      "endMs": 2025
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 2038,
+      "endMs": 2100
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2113,
+      "endMs": 2250
+    },
+    {
+      "ttsWord": "bespoke",
+      "startMs": 2263,
+      "endMs": 2688
+    },
+    {
+      "ttsWord": "suit",
+      "startMs": 2700,
+      "endMs": 3038
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 3288,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "manicured",
+      "startMs": 3450,
+      "endMs": 3988
+    },
+    {
+      "ttsWord": "fingers",
+      "startMs": 4000,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "adorned",
+      "startMs": 4400,
+      "endMs": 4813
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 4825,
+      "endMs": 4938
+    },
+    {
+      "ttsWord": "platinum",
+      "startMs": 4950,
+      "endMs": 5413
+    },
+    {
+      "ttsWord": "rings",
+      "startMs": 5425,
+      "endMs": 5750
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 5763,
+      "endMs": 5888
+    },
+    {
+      "ttsWord": "crackled",
+      "startMs": 5900,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 6338,
+      "endMs": 6475
+    },
+    {
+      "ttsWord": "condensed",
+      "startMs": 6488,
+      "endMs": 6913
+    },
+    {
+      "ttsWord": "starlight",
+      "startMs": 6925,
+      "endMs": 7388
+    },
+    {
+      "ttsWord": "mana",
+      "startMs": 7400,
+      "endMs": 7825
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Ye Xingchen smoothed the silk lapels of his",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2250
+    },
+    {
+      "text": "bespoke suit,",
+      "startOffsetMs": 2263,
+      "endOffsetMs": 3138
+    },
+    {
+      "text": "his manicured fingers adorned with platinum rings that",
+      "startOffsetMs": 3288,
+      "endOffsetMs": 5888
+    },
+    {
+      "text": "crackled with condensed starlight mana.",
+      "startOffsetMs": 5900,
+      "endOffsetMs": 7925
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "scene": 53,
+  "text": "Deep within his primordial spiritual core, an unfathomable ocean of one billion years of supreme celestial cultivation pulsed with infinite cosmic majesty.",
+  "durationMs": 9984,
+  "rawWords": [
+    {
+      "ttsWord": "Deep",
+      "startMs": 50,
+      "endMs": 363
+    },
+    {
+      "ttsWord": "within",
+      "startMs": 375,
+      "endMs": 650
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 663,
+      "endMs": 825
+    },
+    {
+      "ttsWord": "primordial",
+      "startMs": 838,
+      "endMs": 1438
+    },
+    {
+      "ttsWord": "spiritual",
+      "startMs": 1450,
+      "endMs": 2038
+    },
+    {
+      "ttsWord": "core",
+      "startMs": 2050,
+      "endMs": 2400
+    },
+    {
+      "ttsWord": "an",
+      "startMs": 2700,
+      "endMs": 2825
+    },
+    {
+      "ttsWord": "unfathomable",
+      "startMs": 2838,
+      "endMs": 3663
+    },
+    {
+      "ttsWord": "ocean",
+      "startMs": 3675,
+      "endMs": 4000
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4013,
+      "endMs": 4113
+    },
+    {
+      "ttsWord": "one",
+      "startMs": 4125,
+      "endMs": 4388
+    },
+    {
+      "ttsWord": "billion",
+      "startMs": 4400,
+      "endMs": 4800
+    },
+    {
+      "ttsWord": "years",
+      "startMs": 4813,
+      "endMs": 5125
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 5138,
+      "endMs": 5213
+    },
+    {
+      "ttsWord": "supreme",
+      "startMs": 5225,
+      "endMs": 5675
+    },
+    {
+      "ttsWord": "celestial",
+      "startMs": 5688,
+      "endMs": 6325
+    },
+    {
+      "ttsWord": "cultivation",
+      "startMs": 6338,
+      "endMs": 7013
+    },
+    {
+      "ttsWord": "pulsed",
+      "startMs": 7025,
+      "endMs": 7425
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 7438,
+      "endMs": 7550
+    },
+    {
+      "ttsWord": "infinite",
+      "startMs": 7563,
+      "endMs": 7975
+    },
+    {
+      "ttsWord": "cosmic",
+      "startMs": 7988,
+      "endMs": 8463
+    },
+    {
+      "ttsWord": "majesty",
+      "startMs": 8475,
+      "endMs": 9100
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Deep within his primordial spiritual core,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2500
+    },
+    {
+      "text": "an unfathomable ocean of one billion years of",
+      "startOffsetMs": 2700,
+      "endOffsetMs": 5213
+    },
+    {
+      "text": "supreme celestial cultivation pulsed with infinite cosmic majesty.",
+      "startOffsetMs": 5225,
+      "endOffsetMs": 9200
+    }
+  ]
+}

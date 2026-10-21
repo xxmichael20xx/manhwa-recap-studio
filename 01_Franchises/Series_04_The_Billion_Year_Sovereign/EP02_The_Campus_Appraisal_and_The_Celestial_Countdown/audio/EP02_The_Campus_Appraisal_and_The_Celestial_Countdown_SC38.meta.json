@@ -1,0 +1,129 @@
+{
+  "scene": 38,
+  "text": "Zhao Lei smirked with insufferable pride, crossing his arms and offering a mocking half-bow toward the ordinary students waiting in line.",
+  "durationMs": 8088,
+  "rawWords": [
+    {
+      "ttsWord": "Zhao",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "Lei",
+      "startMs": 438,
+      "endMs": 688
+    },
+    {
+      "ttsWord": "smirked",
+      "startMs": 700,
+      "endMs": 1100
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1113,
+      "endMs": 1213
+    },
+    {
+      "ttsWord": "insufferable",
+      "startMs": 1225,
+      "endMs": 1813
+    },
+    {
+      "ttsWord": "pride",
+      "startMs": 1825,
+      "endMs": 2263
+    },
+    {
+      "ttsWord": "crossing",
+      "startMs": 2525,
+      "endMs": 2950
+    },
+    {
+      "ttsWord": "his",
+      "startMs": 2963,
+      "endMs": 3088
+    },
+    {
+      "ttsWord": "arms",
+      "startMs": 3100,
+      "endMs": 3488
+    },
+    {
+      "ttsWord": "and",
+      "startMs": 3500,
+      "endMs": 3613
+    },
+    {
+      "ttsWord": "offering",
+      "startMs": 3625,
+      "endMs": 4013
+    },
+    {
+      "ttsWord": "a",
+      "startMs": 4025,
+      "endMs": 4075
+    },
+    {
+      "ttsWord": "mocking",
+      "startMs": 4088,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "half-bow",
+      "startMs": 4475,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "toward",
+      "startMs": 4988,
+      "endMs": 5275
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 5288,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "ordinary",
+      "startMs": 5363,
+      "endMs": 5875
+    },
+    {
+      "ttsWord": "students",
+      "startMs": 5888,
+      "endMs": 6313
+    },
+    {
+      "ttsWord": "waiting",
+      "startMs": 6325,
+      "endMs": 6688
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 6700,
+      "endMs": 6813
+    },
+    {
+      "ttsWord": "line",
+      "startMs": 6825,
+      "endMs": 7213
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Zhao Lei smirked with insufferable pride,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2363
+    },
+    {
+      "text": "crossing his arms and offering a mocking half-bow",
+      "startOffsetMs": 2525,
+      "endOffsetMs": 4975
+    },
+    {
+      "text": "toward the ordinary students waiting in line.",
+      "startOffsetMs": 4988,
+      "endOffsetMs": 7313
+    }
+  ]
+}

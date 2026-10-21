@@ -1,0 +1,179 @@
+{
+  "scene": 1,
+  "text": "Dawn broke over the newly expanded metropolitan skyline of Jiangnan, where towering crystalline skyscrapers reflected the crisp morning sunlight against ancient mountain peaks that had surged from the earth.",
+  "durationMs": 11424,
+  "rawWords": [
+    {
+      "ttsWord": "Dawn",
+      "startMs": 50,
+      "endMs": 425
+    },
+    {
+      "ttsWord": "broke",
+      "startMs": 438,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "over",
+      "startMs": 750,
+      "endMs": 925
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 938,
+      "endMs": 1013
+    },
+    {
+      "ttsWord": "newly",
+      "startMs": 1025,
+      "endMs": 1350
+    },
+    {
+      "ttsWord": "expanded",
+      "startMs": 1363,
+      "endMs": 1875
+    },
+    {
+      "ttsWord": "metropolitan",
+      "startMs": 1888,
+      "endMs": 2588
+    },
+    {
+      "ttsWord": "skyline",
+      "startMs": 2600,
+      "endMs": 3188
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 3200,
+      "endMs": 3288
+    },
+    {
+      "ttsWord": "Jiangnan",
+      "startMs": 3300,
+      "endMs": 3913
+    },
+    {
+      "ttsWord": "where",
+      "startMs": 4250,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "towering",
+      "startMs": 4413,
+      "endMs": 4863
+    },
+    {
+      "ttsWord": "crystalline",
+      "startMs": 4875,
+      "endMs": 5350
+    },
+    {
+      "ttsWord": "skyscrapers",
+      "startMs": 5363,
+      "endMs": 6075
+    },
+    {
+      "ttsWord": "reflected",
+      "startMs": 6088,
+      "endMs": 6575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 6588,
+      "endMs": 6663
+    },
+    {
+      "ttsWord": "crisp",
+      "startMs": 6675,
+      "endMs": 6988
+    },
+    {
+      "ttsWord": "morning",
+      "startMs": 7000,
+      "endMs": 7325
+    },
+    {
+      "ttsWord": "sunlight",
+      "startMs": 7338,
+      "endMs": 7825
+    },
+    {
+      "ttsWord": "against",
+      "startMs": 7838,
+      "endMs": 8200
+    },
+    {
+      "ttsWord": "ancient",
+      "startMs": 8213,
+      "endMs": 8538
+    },
+    {
+      "ttsWord": "mountain",
+      "startMs": 8550,
+      "endMs": 8875
+    },
+    {
+      "ttsWord": "peaks",
+      "startMs": 8888,
+      "endMs": 9225
+    },
+    {
+      "ttsWord": "that",
+      "startMs": 9238,
+      "endMs": 9338
+    },
+    {
+      "ttsWord": "had",
+      "startMs": 9350,
+      "endMs": 9488
+    },
+    {
+      "ttsWord": "surged",
+      "startMs": 9500,
+      "endMs": 9888
+    },
+    {
+      "ttsWord": "from",
+      "startMs": 9900,
+      "endMs": 10025
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 10038,
+      "endMs": 10125
+    },
+    {
+      "ttsWord": "earth",
+      "startMs": 10138,
+      "endMs": 10550
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "Dawn broke over the newly expanded metropolitan skyline",
+      "startOffsetMs": 50,
+      "endOffsetMs": 3188
+    },
+    {
+      "text": "of Jiangnan,",
+      "startOffsetMs": 3200,
+      "endOffsetMs": 4013
+    },
+    {
+      "text": "where towering crystalline skyscrapers reflected the crisp morning",
+      "startOffsetMs": 4250,
+      "endOffsetMs": 7325
+    },
+    {
+      "text": "sunlight against ancient mountain peaks that had surged",
+      "startOffsetMs": 7338,
+      "endOffsetMs": 9888
+    },
+    {
+      "text": "from the earth.",
+      "startOffsetMs": 9900,
+      "endOffsetMs": 10650
+    }
+  ]
+}

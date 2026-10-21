@@ -1,0 +1,164 @@
+{
+  "scene": 175,
+  "text": "At Qindu University, Jiang Qingxue stood alone upon the open roof of the stadium press tower, her white designer trench coat billowing in the high-altitude wind.",
+  "durationMs": 10152,
+  "rawWords": [
+    {
+      "ttsWord": "At",
+      "startMs": 50,
+      "endMs": 275
+    },
+    {
+      "ttsWord": "Qindu",
+      "startMs": 288,
+      "endMs": 738
+    },
+    {
+      "ttsWord": "University",
+      "startMs": 750,
+      "endMs": 1463
+    },
+    {
+      "ttsWord": "Jiang",
+      "startMs": 1725,
+      "endMs": 2088
+    },
+    {
+      "ttsWord": "Qingxue",
+      "startMs": 2100,
+      "endMs": 2650
+    },
+    {
+      "ttsWord": "stood",
+      "startMs": 2663,
+      "endMs": 2938
+    },
+    {
+      "ttsWord": "alone",
+      "startMs": 2950,
+      "endMs": 3300
+    },
+    {
+      "ttsWord": "upon",
+      "startMs": 3313,
+      "endMs": 3575
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 3588,
+      "endMs": 3688
+    },
+    {
+      "ttsWord": "open",
+      "startMs": 3700,
+      "endMs": 4050
+    },
+    {
+      "ttsWord": "roof",
+      "startMs": 4063,
+      "endMs": 4300
+    },
+    {
+      "ttsWord": "of",
+      "startMs": 4313,
+      "endMs": 4400
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 4413,
+      "endMs": 4500
+    },
+    {
+      "ttsWord": "stadium",
+      "startMs": 4513,
+      "endMs": 4975
+    },
+    {
+      "ttsWord": "press",
+      "startMs": 4988,
+      "endMs": 5250
+    },
+    {
+      "ttsWord": "tower",
+      "startMs": 5263,
+      "endMs": 5663
+    },
+    {
+      "ttsWord": "her",
+      "startMs": 5988,
+      "endMs": 6138
+    },
+    {
+      "ttsWord": "white",
+      "startMs": 6150,
+      "endMs": 6375
+    },
+    {
+      "ttsWord": "designer",
+      "startMs": 6388,
+      "endMs": 6863
+    },
+    {
+      "ttsWord": "trench",
+      "startMs": 6875,
+      "endMs": 7213
+    },
+    {
+      "ttsWord": "coat",
+      "startMs": 7225,
+      "endMs": 7475
+    },
+    {
+      "ttsWord": "billowing",
+      "startMs": 7488,
+      "endMs": 7925
+    },
+    {
+      "ttsWord": "in",
+      "startMs": 7938,
+      "endMs": 8000
+    },
+    {
+      "ttsWord": "the",
+      "startMs": 8013,
+      "endMs": 8075
+    },
+    {
+      "ttsWord": "high-altitude",
+      "startMs": 8088,
+      "endMs": 8788
+    },
+    {
+      "ttsWord": "wind",
+      "startMs": 8800,
+      "endMs": 9275
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "At Qindu University,",
+      "startOffsetMs": 50,
+      "endOffsetMs": 1563
+    },
+    {
+      "text": "Jiang Qingxue stood alone upon the open roof",
+      "startOffsetMs": 1725,
+      "endOffsetMs": 4300
+    },
+    {
+      "text": "of the stadium press tower,",
+      "startOffsetMs": 4313,
+      "endOffsetMs": 5763
+    },
+    {
+      "text": "her white designer trench coat billowing in the",
+      "startOffsetMs": 5988,
+      "endOffsetMs": 8075
+    },
+    {
+      "text": "high-altitude wind.",
+      "startOffsetMs": 8088,
+      "endOffsetMs": 9375
+    }
+  ]
+}

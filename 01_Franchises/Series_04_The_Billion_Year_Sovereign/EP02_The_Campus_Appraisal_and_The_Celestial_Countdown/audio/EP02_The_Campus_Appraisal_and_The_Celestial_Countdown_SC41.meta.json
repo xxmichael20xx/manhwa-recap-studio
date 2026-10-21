@@ -1,0 +1,104 @@
+{
+  "scene": 41,
+  "text": "The jumbotron blazed with triumphant fanfare: APPRAISAL: QIAN KANG — 11,200 YEARS (LATE FOUNDATION ESTABLISHMENT REALM).",
+  "durationMs": 9648,
+  "rawWords": [
+    {
+      "ttsWord": "The",
+      "startMs": 50,
+      "endMs": 213
+    },
+    {
+      "ttsWord": "jumbotron",
+      "startMs": 225,
+      "endMs": 850
+    },
+    {
+      "ttsWord": "blazed",
+      "startMs": 863,
+      "endMs": 1263
+    },
+    {
+      "ttsWord": "with",
+      "startMs": 1275,
+      "endMs": 1388
+    },
+    {
+      "ttsWord": "triumphant",
+      "startMs": 1400,
+      "endMs": 1950
+    },
+    {
+      "ttsWord": "fanfare",
+      "startMs": 1963,
+      "endMs": 2600
+    },
+    {
+      "ttsWord": "APPRAISAL",
+      "startMs": 2850,
+      "endMs": 3438
+    },
+    {
+      "ttsWord": "QIAN",
+      "startMs": 3725,
+      "endMs": 4088
+    },
+    {
+      "ttsWord": "KANG",
+      "startMs": 4100,
+      "endMs": 4463
+    },
+    {
+      "ttsWord": "11,200 YEARS",
+      "startMs": 4800,
+      "endMs": 6538
+    },
+    {
+      "ttsWord": "LATE",
+      "startMs": 6813,
+      "endMs": 7063
+    },
+    {
+      "ttsWord": "FOUNDATION",
+      "startMs": 7075,
+      "endMs": 7650
+    },
+    {
+      "ttsWord": "ESTABLISHMENT",
+      "startMs": 7663,
+      "endMs": 8338
+    },
+    {
+      "ttsWord": "REALM",
+      "startMs": 8350,
+      "endMs": 8775
+    }
+  ],
+  "relativeCues": [
+    {
+      "text": "The jumbotron blazed with triumphant fanfare:",
+      "startOffsetMs": 50,
+      "endOffsetMs": 2700
+    },
+    {
+      "text": "APPRAISAL:",
+      "startOffsetMs": 2850,
+      "endOffsetMs": 3538
+    },
+    {
+      "text": "QIAN KANG",
+      "startOffsetMs": 3725,
+      "endOffsetMs": 4563
+    },
+    {
+      "text": "11,200 YEARS",
+      "startOffsetMs": 4800,
+      "endOffsetMs": 6638
+    },
+    {
+      "text": "LATE FOUNDATION ESTABLISHMENT REALM).",
+      "startOffsetMs": 6813,
+      "endOffsetMs": 8875
+    }
+  ]
+}

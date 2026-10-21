@@ -1,7 +1,7 @@
 {
   "scene": 67,
-  "text": "The agony was instantaneous and overwhelming — like molten bronze being poured through every capillary, vein, and bone marrow cavity.",
-  "durationMs": 8712,
+  "text": "The arcane awakening was instantaneous and intense — like liquid golden starlight surging through every dormant meridian pathway and vessel.",
+  "durationMs": 8664,
   "rawWords": [
     {
       "ttsWord": "The",
@@ -9,116 +9,111 @@
       "endMs": 213
     },
     {
-      "ttsWord": "agony",
+      "ttsWord": "arcane",
       "startMs": 225,
-      "endMs": 638
+      "endMs": 688
+    },
+    {
+      "ttsWord": "awakening",
+      "startMs": 700,
+      "endMs": 1225
     },
     {
       "ttsWord": "was",
-      "startMs": 650,
-      "endMs": 800
+      "startMs": 1238,
+      "endMs": 1375
     },
     {
       "ttsWord": "instantaneous",
-      "startMs": 813,
-      "endMs": 1688
+      "startMs": 1388,
+      "endMs": 2250
     },
     {
       "ttsWord": "and",
-      "startMs": 1700,
-      "endMs": 1875
+      "startMs": 2263,
+      "endMs": 2425
     },
     {
-      "ttsWord": "overwhelming",
-      "startMs": 1888,
-      "endMs": 2525
+      "ttsWord": "intense",
+      "startMs": 2438,
+      "endMs": 3025
     },
     {
       "ttsWord": "like",
-      "startMs": 2850,
-      "endMs": 3038
+      "startMs": 3325,
+      "endMs": 3563
     },
     {
-      "ttsWord": "molten",
-      "startMs": 3050,
-      "endMs": 3438
+      "ttsWord": "liquid",
+      "startMs": 3575,
+      "endMs": 3925
     },
     {
-      "ttsWord": "bronze",
-      "startMs": 3450,
-      "endMs": 3850
+      "ttsWord": "golden",
+      "startMs": 3938,
+      "endMs": 4288
     },
     {
-      "ttsWord": "being",
-      "startMs": 3863,
-      "endMs": 4125
+      "ttsWord": "starlight",
+      "startMs": 4300,
+      "endMs": 4800
     },
     {
-      "ttsWord": "poured",
-      "startMs": 4138,
-      "endMs": 4463
+      "ttsWord": "surging",
+      "startMs": 4813,
+      "endMs": 5238
     },
     {
       "ttsWord": "through",
-      "startMs": 4475,
-      "endMs": 4663
+      "startMs": 5250,
+      "endMs": 5450
     },
     {
       "ttsWord": "every",
-      "startMs": 4675,
-      "endMs": 4988
+      "startMs": 5463,
+      "endMs": 5775
     },
     {
-      "ttsWord": "capillary",
-      "startMs": 5000,
-      "endMs": 5625
+      "ttsWord": "dormant",
+      "startMs": 5788,
+      "endMs": 6138
     },
     {
-      "ttsWord": "vein",
-      "startMs": 5888,
-      "endMs": 6263
+      "ttsWord": "meridian",
+      "startMs": 6150,
+      "endMs": 6588
+    },
+    {
+      "ttsWord": "pathway",
+      "startMs": 6600,
+      "endMs": 7138
     },
     {
       "ttsWord": "and",
-      "startMs": 6538,
-      "endMs": 6663
-    },
-    {
-      "ttsWord": "bone",
-      "startMs": 6675,
-      "endMs": 6963
-    },
-    {
-      "ttsWord": "marrow",
-      "startMs": 6975,
+      "startMs": 7150,
       "endMs": 7288
     },
     {
-      "ttsWord": "cavity",
+      "ttsWord": "vessel",
       "startMs": 7300,
-      "endMs": 7850
+      "endMs": 7800
     }
   ],
   "relativeCues": [
     {
-      "text": "The agony was instantaneous and overwhelming",
+      "text": "The arcane awakening was instantaneous and intense",
       "startOffsetMs": 50,
-      "endOffsetMs": 2625
+      "endOffsetMs": 3125
     },
     {
-      "text": "like molten bronze being poured through every capillary,",
-      "startOffsetMs": 2850,
-      "endOffsetMs": 5725
+      "text": "like liquid golden starlight surging through every dormant",
+      "startOffsetMs": 3325,
+      "endOffsetMs": 6138
     },
     {
-      "text": "vein,",
-      "startOffsetMs": 5888,
-      "endOffsetMs": 6363
-    },
-    {
-      "text": "and bone marrow cavity.",
-      "startOffsetMs": 6538,
-      "endOffsetMs": 7950
+      "text": "meridian pathway and vessel.",
+      "startOffsetMs": 6150,
+      "endOffsetMs": 7900
     }
   ]
 }
