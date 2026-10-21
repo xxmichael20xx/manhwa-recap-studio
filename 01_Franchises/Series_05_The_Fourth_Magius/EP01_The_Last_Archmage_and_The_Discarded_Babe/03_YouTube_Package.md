@@ -1,58 +1,72 @@
 # 🚀 YouTube Release Package: Series 05 Episode 01
 
 > **Franchise:** Series 05: The Fourth Magius  
-> **Episode:** EP01 — The Last Archmage & The Discarded Babe (48-Minute Full Saga)  
+> **Episode:** EP01 — The Last Archmage and The Discarded Babe (48-Minute Full Saga)  
 > **Master Video:** `video/01_Episode_Master_1080p.mp4` (Duration: 48:02)  
 > **Thumbnail Directory:** `thumbnails/`  
 
 ---
 
-## 🏷️ 10 High-CTR Title Archetypes (All ≤ 100 Characters)
+## 🎯 1. Locked Canonical YouTube Title (Strictly ≤ 100 Characters)
 
-1. **Reborn as a Discarded Babe, He Awoke Ancient God-Tier Arcana & Cleaved Calamity Beasts with a Stick** (99 chars)
-2. **Abandoned by Noble Parents for Zero Mana, He Secretly Mastered Forbidden Arcana to Solo S-Rank Beasts** (99 chars)
-3. **Discarded as a Defective Infant, He Was Actually the 10th-Tier Archmage Sovereign in a Mortal Vessel** (99 chars)
-4. **He Was Thrown in the Mud for Having No Talent, but He Possessed the Primordial Codex of the Ancients** (99 chars)
-5. **Arrogant Nobles Discarded Him at Birth, Unaware He Rewrote the Laws of Magic to Shatter Calamities** (97 chars)
-6. **When the Noble Clan Discarded Their Defective Son, They Didn't Know He Was the Reborn Archmage God** (97 chars)
-7. **Born with 'Zero Mana', He Mastered Mana-Forged Flesh and Obliterated a Calamity Beast in 3 Seconds** (98 chars)
-8. **The Abandoned Scion Awoke the Primordial Grimoire and Solos Calamity Beasts While Examiners Panic** (97 chars)
-9. **Abandoned in the Mud at Birth, the Discarded Heir Solos a Tier 4 Calamity Beast with a Wooden Staff** (99 chars)
-10. **Reborn as an Abandoned Child, He Mastered Ancient Chantless Magic to Humiliate Arrogant High Nobles** (99 chars)
+1. **(Episode 1) The Fourth Magius: The Last Archmage and The Discarded Babe** (70 chars)
 
 ---
 
-## 📝 SEO Description Box & Cumulative Chapters
+## 🖼️ 2. Locked Master 16:9 High-CTR Visual Thumbnail (Concept A)
 
-```
+### Concept A: The Split Transformation (Discarded Babe vs Sovereign Archmage) — [LOCKED]
+- **Visual Composition:** Custom 16:9 widescreen split-contrast illustration.
+  - **Left Half (45%):** 5-year-old Michael Montrey in rough-spun grey linen tunic holding a carved blackwood walking staff in the snowdrifts of Oakhaven forest with calm analytical cyan eyes.
+  - **Right Half (55%):** 28-year-old Tier 10 Archmage Sovereign Michael Montrey in high-collared midnight-blue mantle embroidered with glowing golden celestial constellations, holding the glowing Primordial Codex.
+- **Badge Engine:** Top-Left Yellow `PART 1` / `1 - 2` Dynamic Badge
+- **File:** `01_Thumbnail_Concept_A.jpg` (MozJPEG, YouTube <2MB Compliant)
+
+---
+
+## 📝 SEO Description Box
+
+```text
 Reborn into the body of an infant discarded by the imperial Montrey clan for having "zero mana conductivity," former Tier 10 Continental Archmage Michael Montrey awakens the Primordial Codex. 
 
 While arrogant nobles rely on stationary circle-chanting, Michael pioneers Mana-Forged Flesh—infusing dense arcane particles directly into his bone marrow. When a Tier 4 Calamity Abyssal Wyrm breaches the frontier town of Oakhaven, the cowering nobles learn why the child they threw away was their house's only hope.
 
-🔔 Subscribe for weekly full-length manhwa recap sagas: @ManhwaRecapStudio
+🔥 Series: The Fourth Magius: Rebirth of the Discarded Scion
+🎬 Episode: Episode 01: The Last Archmage and The Discarded Babe
+⏱️ FULL EPISODE RUNTIME & TIMELINE:
+• Full Runtime: 48.0 Minutes (48:02)
+• Episode Bounds: 00:00 - 48:02
 
-#manhwa #manhwarecap #webtoon #animerecap #isekai #magic #fantasy #actionmanhwa
+💬 COMMUNITY QUESTION:
+If you were reborn with "zero mana conductivity" but retained all your past-life Tier 10 Archmage knowledge, would you rebuild your vessel in secret in the frontier like Michael, or take immediate revenge on the Montrey clan? Let me know in the comments below! 👇
+
+🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎵 MUSIC & AUDIO ATTRIBUTION:
+All background OST soundscapes and atmospheric scores are licensed royalty-free for creative production:
+- Oakhaven Frontier Winter Ambient (Nocturnal Lofi / Warm Strings)
+- White Library Primordial Resonance (Low Sub-Bass Pulse)
+- Calamity Wyrm Siege Climax (High-Impact Transient Percussion)
+- Fourth Magius Sovereign Swell (Epic Ambient Synth)
+
+⚖️ DISCLAIMER:
+This video is an original narrative adaptation and production. All scripts, lore mechanics, visual designs, voiceovers, and motion assemblies were created with original creative transformation under fair use principles.
+
+#manhwarecap #webtoon #fantasy #animerecap #manhwa #overpoweredmc #isekai #archmage #magic #recap
 ```
 
 ---
 
 ## 📌 Pinned Community Comment
 
-```
+```text
 🔥 The noble family thought they discarded a "talentless parasite"... but they just threw away the future Fourth Magius! 
 
 Drop a comment below: What did you think of Michael casually asking for a harvesting blade after one-shotting a Tier 4 Calamity Wyrm? 💀
 
-Episode 2 is dropping soon! Subscribe and hit the bell so you don't miss Michael's entrance into the imperial trials! ⚔️
+🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!
 ```
-
----
-
-## 🖼️ Active Master Thumbnails (Saved in `thumbnails/`)
-
-1. `01_Thumbnail_Concept_A.jpg` / `01_Thumbnail_Dual_Incarnation.jpg` — The Dual-Incarnation Legacy (28yo Archmage Sovereign & Reborn Child Jointly Holding The Primordial Codex)
-2. `01_Thumbnail_Concept_B.jpg` — The Proctor Panic & Diagnostic Bell Shatter (Head Elder Cassius Shock)
-3. `01_Thumbnail_Concept_C.jpg` — The Calamity Solo Cleave (Wyrm Skull Detonation)
 
 ---
 

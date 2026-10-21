@@ -1013,6 +1013,9 @@ export class VideoService {
       '-r', '24',
       '-c:a', 'aac',
       '-b:a', '192k',
+      // Lock audio to 48 kHz stereo so every episode master is omnibus-concat compatible
+      '-ar', '48000',
+      '-ac', '2',
       '-shortest',
       targetVideoPath.replace(/\\/g, '/')
     )
@@ -1459,12 +1462,29 @@ export class VideoService {
     }
     const omnibusOutputPath = path.join(omnibusDir, outName)
 
+    // Guard: concat demuxer with -c copy corrupts timing when audio sample rates/channels differ
+    // (e.g. a 96 kHz part stamped as 48 kHz => audio doubles in length). Probe and re-encode audio only if mismatched.
+    const probeAudio = (file) => new Promise((resolve) => {
+      const p = spawn('ffprobe', ['-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=codec_name,sample_rate,channels', '-of', 'csv=p=0', file])
+      let out = ''
+      p.stdout.on('data', d => { out += d.toString() })
+      p.on('close', () => resolve(out.trim()))
+      p.on('error', () => resolve(''))
+    })
+    const audioSignatures = await Promise.all(resolvedFiles.map(probeAudio))
+    const audioMismatch = new Set(audioSignatures).size > 1
+    if (audioMismatch) {
+      console.warn(`[Omnibus] Audio mismatch (${audioSignatures.join(' | ')}). Normalising audio to AAC 48 kHz stereo; video stream-copied.`)
+    }
+
     const ffmpegArgs = [
       '-y',
       '-f', 'concat',
       '-safe', '0',
       '-i', concatListPath.replace(/\\/g, '/'),
-      '-c', 'copy',
+      ...(audioMismatch
+        ? ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2']
+        : ['-c', 'copy']),
       '-movflags', '+faststart',
       omnibusOutputPath.replace(/\\/g, '/')
     ]

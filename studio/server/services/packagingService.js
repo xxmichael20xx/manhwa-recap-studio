@@ -100,7 +100,7 @@ static formatTimestamp(seconds) {
     const baseVariants = isSeries05 ? [
       {
         id: 'concept_a',
-        name: 'Concept A: The Split Transformation (Discarded Babe vs Sovereign Archmage)',
+        name: 'Concept A: The Split Transformation (Discarded Babe vs Sovereign Archmage) (Locked Master Thumbnail)',
         subtitle: 'Split-Contrast (Left Humble Frontier Toddler / Right Celestial Sovereign with Primordial Codex)',
         badgeText: 'DISCARDED BABE',
         subBadgeText: 'LAST ARCHMAGE',
@@ -109,59 +109,11 @@ static formatTimestamp(seconds) {
         composition: 'Left 45% 5-year-old Michael Montrey in rough linen tunic holding blackwood staff in snowy forest / Right 55% 28-year-old Michael Montrey in midnight celestial mantle surrounded by glowing constellation runes and Primordial Codex',
         prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 5-year-old male child protagonist Michael Montrey in rough-spun grey linen tunic with hemp belt, holding a carved blackwood walking staff, standing in snowdrifts of ancient pine forest with calm analytical cyan eyes. Right half: Handsome 28-year-old archmage sovereign Michael Montrey in high-collared midnight-blue mantle embroidered with glowing golden celestial constellations, glowing sapphire eyes with concentric arcane circles, holding the ancient glowing Primordial Codex. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, rich dramatic lighting, vibrant cel shading, 16:9 horizontal, textless artwork.`,
         filename: '01_Thumbnail_Concept_A.jpg'
-      },
-      {
-        id: 'concept_b',
-        name: 'Concept B: The Patriarch\'s Panic & Mana Crystal Burst',
-        subtitle: 'Center Dynamic / Aristocrat Shock (Shattered Mana Crystal & Celestial Burst)',
-        badgeText: 'MANA BURST',
-        subBadgeText: 'SEAL SHATTER',
-        badgeColorPreset: 'cyan_hud',
-        badgePosition: 'bottom_left',
-        composition: 'In foreground: Patriarch Valerius in velvet fur coat clutching trembling head in cold sweat as testing crystal sphere shatters in blinding golden starlight. In center: Michael Montrey touching the shattered pedestal with calm unbothered expression',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension dramatic manhwa composition. In foreground: Arrogant 45-year-old aristocratic Patriarch Valerius in sapphire-velvet fur-lined coat with ornate silver embroidery, eyes wide in horrified shock and cold sweat running down his face. In center: 5-year-old Michael Montrey placing hand on a colossal gothic mana testing sphere that is violently cracking and erupting with blinding golden celestial constellation runes and shockwaves. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_B.jpg'
-      },
-      {
-        id: 'concept_c',
-        name: 'Concept C: The Blackwood Calamity Solo Cleave',
-        subtitle: 'Epic Forest Battlefield / Celestial Arcane Nova Cleave',
-        badgeText: 'SOLO ARCHMAGE',
-        subBadgeText: 'ANCIENT SPELL',
-        badgeColorPreset: 'crimson_flame',
-        badgePosition: 'bottom_left',
-        composition: 'Wide battlefield: 5-year-old Michael Montrey raising blackwood walking staff, unleashing a monumental vertical pillar of golden celestial constellation starlight disintegrating corrupted abyssal wyrm',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic dark fantasy battlefield manhwa composition. Colossal shadow wyrm monster roaring in agony as a monumental vertical beam of golden celestial constellation starlight cleaves it in half. In foreground: 5-year-old protagonist Michael Montrey in rough linen tunic holding blackwood staff, eyes glowing piercing cyan, completely calm and unbothered. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, cinematic dramatic lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_C.jpg'
       }
     ] : isSeries04 ? [
       {
-        id: 'concept_a',
-        name: 'Concept A: The Sleeper Student vs 1-Billion-Year Primordial Sovereign',
-        subtitle: 'Split-Contrast (Left Casual Streetwear Student / Right Primordial Sovereign with Cosmic Golden Halo)',
-        badgeText: '1-BILLION YR',
-        subBadgeText: 'HIDDEN SOVEREIGN',
-        badgeColorPreset: 'gold_crimson',
-        badgePosition: 'bottom_left',
-        composition: 'Left 45% Lu Chen in casual black streetwear pullover hoodie with hands in pockets on sunny modern campus / Right 55% Lu Chen surrounded by floating golden celestial Dao starlight runes and cosmic primordial nebula',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 20-year-old male protagonist Lu Chen in oversized charcoal-black streetwear pullover hoodie, relaxed unbothered posture, hands in pockets, standing on bright modern sunny university campus. Right half: The same protagonist standing majestic with glowing golden starlight pupils, surrounded by floating golden Primordial Dao glyphs, swirling cosmic nebula motes, and shattered divine steles. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright high-key lighting, vibrant clean cel shading, 16:9 horizontal, textless artwork.`,
-        filename: '01_Thumbnail_Concept_A.jpg'
-      },
-      {
-        id: 'concept_b',
-        name: 'Concept B: The Syndicate Scion Shock & Jade Blade Shatter',
-        subtitle: 'Center Dynamic / Bully Shock (Shattered Nephrite Dao & Broken Mortal Blade)',
-        badgeText: 'MORTAL BLADE',
-        subBadgeText: 'S-RANK SHATTER',
-        badgeColorPreset: 'cyan_hud',
-        badgePosition: 'bottom_left',
-        composition: 'Gu Tianyu clutching his trembling wrist in cold sweat as his glowing jade dao is snapped in half by a plain chipped kitchen knife held by Lu Chen',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension dramatic manhwa composition. In foreground: Arrogant student Gu Tianyu in tailored navy blazer, eyes wide with cold sweat and horrified disbelief as his glowing luminous cyan nephrite dao snaps cleanly in half. In center: Lu Chen casually deflecting the strike using an ordinary chipped stainless-steel kitchen knife, looking completely unbothered with a calm deadpan expression. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright vibrant cel shading, high contrast contemporary lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_B.jpg'
-      },
-      {
         id: 'concept_c',
-        name: 'Concept C: The Golden Stele Calamity Solo Cleave',
+        name: 'Concept C: The Golden Stele Calamity Solo Cleave (Locked Master Thumbnail)',
         subtitle: 'Epic Monolith / Primordial Sovereign Starlight Cleave',
         badgeText: 'SOLO SOVEREIGN',
         subBadgeText: 'GOLDEN STELE',
@@ -815,13 +767,13 @@ static formatTimestamp(seconds) {
         }
 
         // Parse SEO Description Box
-        const descBlockMatch = pkgContent.match(/##\s*📝\s*SEO Description Box[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        const descBlockMatch = pkgContent.match(/##\s*[^\n]*Description Box[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
         if (descBlockMatch && descBlockMatch[1]) {
           description = descBlockMatch[1].trim()
         }
 
         // Parse Pinned Community Comment
-        const commentBlockMatch = pkgContent.match(/##\s*📌\s*Pinned Community Comment[^\n]*\r?\n+```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+        const commentBlockMatch = pkgContent.match(/##\s*[^\n]*Pinned Community[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
         if (commentBlockMatch && commentBlockMatch[1]) {
           pinnedComment = commentBlockMatch[1].trim()
         }
@@ -830,13 +782,12 @@ static formatTimestamp(seconds) {
       }
     }
 
-    // 2. Safe Dynamic Fallbacks if Markdown is pending
+    // 2. Safe Dynamic Fallbacks if Markdown is pending (Single Locked Canonical Title Standard)
+    const rangeTag = epNum > 1 ? `Episode 1-${epNum}` : 'Episode 1'
     if (titles.length === 0) {
+      const lockedTitle = `(${rangeTag}) ${canonicalTitle}`
       titles = [
-        { archetype: 'Canonical Prefix (Binge Standard)', title: `(${partTag}) ${canonicalTitle}`, ctrScore: '99%', charCount: `(${partTag}) ${canonicalTitle}`.length, isCompliant: true },
-        { archetype: 'Canonical Suffix (Direct Story)', title: `${canonicalTitle} (${partTag})`, ctrScore: '97%', charCount: `${canonicalTitle} (${partTag})`.length, isCompliant: true },
-        { archetype: 'Clean Pipe Delimiter', title: `${canonicalTitle} | ${partTag}`, ctrScore: '95%', charCount: `${canonicalTitle} | ${partTag}`.length, isCompliant: true },
-        { archetype: 'Bracket High-Visibility', title: `[${partTag}] ${canonicalTitle}`, ctrScore: '94%', charCount: `[${partTag}] ${canonicalTitle}`.length, isCompliant: true }
+        { archetype: 'Locked Canonical Title (Accumulative Standard)', title: lockedTitle, ctrScore: '99%', charCount: lockedTitle.length, isCompliant: lockedTitle.length <= 100 }
       ]
     }
 

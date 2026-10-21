@@ -1,0 +1,42 @@
+{
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "filename": "Series_04_The_Billion_Year_Sovereign_tier2_Master_1080p.mp4",
+  "totalDurationSeconds": 3485.813959,
+  "totalDurationFormatted": "58m 06s",
+  "finalTimestampFormatted": "58:05",
+  "partCount": 2,
+  "partBadgeText": "1 - 2",
+  "chapters": [
+    {
+      "partNumber": 1,
+      "partLabel": "Episode 1",
+      "episodeId": "EP01_The_One_Billion_Year_Awakening_and_The_Broken_Blade",
+      "episodeTitle": "The One Billion Year Awakening and The Broken Blade",
+      "startTimestampFormatted": "00:00",
+      "endTimestampFormatted": "21:46",
+      "startSeconds": 0,
+      "endSeconds": 1306.103292,
+      "durationSeconds": 1306.103292,
+      "durationFormatted": "21m 46s",
+      "summaryLine": "• Episode 1 (21m 46s): 00:00 - 21:46",
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_04_The_Billion_Year_Sovereign\\EP01_The_One_Billion_Year_Awakening_and_The_Broken_Blade\\video\\01_Episode_Master_1080p.mp4"
+    },
+    {
+      "partNumber": 2,
+      "partLabel": "Episode 2",
+      "episodeId": "EP02_The_Campus_Appraisal_and_The_Celestial_Countdown",
+      "episodeTitle": "The Campus Appraisal and The Celestial Countdown",
+      "startTimestampFormatted": "21:46",
+      "endTimestampFormatted": "58:05",
+      "startSeconds": 1306.103292,
+      "endSeconds": 3485.813959,
+      "durationSeconds": 2179.710667,
+      "durationFormatted": "36m 20s",
+      "summaryLine": "• Episode 2 (36m 20s): 21:46 - 58:05",
+      "filePath": "C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_04_The_Billion_Year_Sovereign\\EP02_The_Campus_Appraisal_and_The_Celestial_Countdown\\video\\01_Episode_Master_1080p.mp4"
+    }
+  ],
+  "cumulativeBreakdownString": "• Episode 1 (21m 46s): 00:00 - 21:46\n• Episode 2 (36m 20s): 21:46 - 58:05",
+  "youtubeChapterString": "00:00 Episode 1: The One Billion Year Awakening and The Broken Blade\n21:46 Episode 2: The Campus Appraisal and The Celestial Countdown\n58:05 Series Finale & Epilogue (Full Story Complete)",
+  "generatedAt": "2026-10-21T14:17:35.115Z"
+}

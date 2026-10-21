@@ -873,12 +873,12 @@
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
               <Sparkles class="w-4 h-4 text-amber-500" />
-              <span>The 3 High-CTR Visual Thumbnail Showcase (Zero-Tag Pure Storytelling)</span>
+              <span>{{ (pkgData?.thumbnailVariants || []).length === 1 ? "Locked Master YouTube Thumbnail (Zero-Tag Pure Storytelling)" : "The 3 High-CTR Visual Thumbnail Showcase (Zero-Tag Pure Storytelling)" }}</span>
             </h3>
             <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">100% YouTube Compliant (<2MB MozJPEG)</span>
           </div>
 
-          <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">
+          <div :class="(pkgData?.thumbnailVariants || []).length === 1 ? 'max-w-md' : 'grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6'">
             <div 
               v-for="(variant, idx) in (pkgData?.thumbnailVariants || [])" 
               :key="variant.id || idx"
@@ -1525,144 +1525,68 @@ const loadPackagingData = async () => {
       const basePkgRes = await fetch(`/api/episodes/${route.params.id}/${firstEp}/youtube-package`)
       const basePkg = await basePkgRes.json()
 
-      // Dynamically enhance package for Master Omnibus / Complete Story Marathon
+      // Dynamically enhance package for Master Omnibus / Complete Story Marathon using Locked Episode 1 Package Truth
       const partCount = meta?.partCount || (compiledEpisodes.value.length >= 2 ? compiledEpisodes.value.length : 2)
       const partBadge = isComplete ? 'COMPLETE' : (meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1'))
-      const durationStr = meta?.totalDurationFormatted || '2h 50m 16s'
+      const compactRange = `1-${partCount}`
+      const totalSec = meta?.totalDurationSeconds || basePkg?.totalDuration || 3486
+      const totalMinsDecimal = (totalSec / 60).toFixed(1)
+      const finalTs = meta?.finalTimestampFormatted || basePkg?.formattedDuration || '58:06'
 
-      const canonicalTitle = route.params.id?.includes('Series_03')
-        ? 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
-        : route.params.id?.includes('Series_02')
-        ? 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
-        : route.params.id?.includes('Series_01')
-        ? 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
-        : (franchise.value?.name || 'Transmigrated Game Architect')
+      // Extract base canonical title from basePkg (strip leading (Episode X) prefix if present)
+      const rawBaseTitle = basePkg?.titles?.[0]?.title || basePkg?.canonicalTitle || ''
+      const canonicalTitle = rawBaseTitle.replace(/^\((?:Episode|Episodes|Part|Parts)\s+[^)]+\)\s*/i, '').trim() ||
+        (route.params.id?.includes('Series_05')
+          ? 'The Fourth Magius: The Last Archmage and The Discarded Babe'
+          : route.params.id?.includes('Series_04')
+          ? 'He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save'
+          : route.params.id?.includes('Series_03')
+          ? 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
+          : route.params.id?.includes('Series_02')
+          ? 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
+          : route.params.id?.includes('Series_01')
+          ? 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
+          : (franchise.value?.name || 'Manhwa Recap Saga'))
 
-      const rawCompleteTitles = [
+      const prefixTag = isComplete ? '(Complete)' : `(Episode ${compactRange})`
+      const lockedOmnibusTitle = `${prefixTag} ${canonicalTitle}`.trim()
+
+      const titles = [
         {
-          archetype: 'Complete Prefix (Binge Standard - Confirmed)',
+          archetype: isComplete ? 'Locked Complete Series Title' : `Locked Canonical Title (Episode ${compactRange})`,
           ctrScore: '99%',
-          title: `(Complete) ${canonicalTitle}`
-        },
-        {
-          archetype: 'Full Story High-Visibility',
-          ctrScore: '98%',
-          title: `[Complete] ${canonicalTitle}`
-        },
-        {
-          archetype: 'Complete Series Marathon Bracket',
-          ctrScore: '96%',
-          title: `${canonicalTitle.length > 70 ? canonicalTitle.slice(0, 70).trim() + '...' : canonicalTitle} [Complete Marathon]`
-        },
-        {
-          archetype: 'Clean Pipe Marathon Standard',
-          ctrScore: '95%',
-          title: `${canonicalTitle.length > 70 ? canonicalTitle.slice(0, 70).trim() + '...' : canonicalTitle} | Complete Story`
-        },
-        {
-          archetype: 'Parenthetical Full Story',
-          ctrScore: '93%',
-          title: `(Full Story) ${canonicalTitle}`
+          title: lockedOmnibusTitle,
+          charCount: lockedOmnibusTitle.length,
+          isCompliant: lockedOmnibusTitle.length <= 100
         }
       ]
 
-      const rawOmnibusTitles = [
-        {
-          archetype: 'Canonical Prefix (Binge Standard - Confirmed)',
-          ctrScore: '99%',
-          title: `(Episodes ${partBadge}) ${canonicalTitle}`
-        },
-        {
-          archetype: 'Canonical Suffix (Full Saga)',
-          ctrScore: '97%',
-          title: `${canonicalTitle} (Episodes ${partBadge})`
-        },
-        {
-          archetype: 'Clean Pipe Delimiter',
-          ctrScore: '95%',
-          title: `${canonicalTitle} | Episodes ${partBadge}`
-        },
-        {
-          archetype: 'Bracket High-Visibility',
-          ctrScore: '94%',
-          title: `[Episodes ${partBadge}] ${canonicalTitle}`
-        }
-      ]
+      // Build Plain Episode Timestamps block (1 line per compiled episode + Finale)
+      const chapterLines = Array.isArray(meta?.chapters) && meta.chapters.length > 0
+        ? [
+            ...meta.chapters.map((c, idx) => `${c.startTimestampFormatted} - Episode ${String(c.partNumber || (idx + 1)).padStart(2, '0')}: ${c.episodeTitle} (${c.durationFormatted})`),
+            `${finalTs} - Series Finale & Epilogue`
+          ].join('\n')
+        : (meta?.youtubeChapterString || compiledEpisodes.value.map((ep, idx) => `00:00 - Episode 0${idx + 1}: ${ep.name}`).join('\n'))
 
-      const titles = (isComplete ? rawCompleteTitles : rawOmnibusTitles).map(t => {
-        let clean = t.title.trim()
-        if (clean.length > 100) clean = clean.slice(0, 97).trim() + '...'
-        return {
-          ...t,
-          title: clean,
-          charCount: clean.length,
-          isCompliant: clean.length <= 100
-        }
-      })
+      const timestampBlock = `\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`
 
-      const dynamicBreakdownFallback = compiledEpisodes.value.map((ep, idx) => `• Episode ${idx + 1}: ${ep.name}`).join('\n')
-      const dynamicChapterFallback = compiledEpisodes.value.map((ep, idx) => `00:00 Episode ${idx + 1}: ${ep.name}`).join('\n')
-
-      const completeDescription = `🏆 COMPLETE STORY MARATHON (FULL SERIES COMPLETE - ${durationStr})
-Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
-
-While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the entire 100-Floor Tower of Demigods using a discarded wooden broom.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CUMULATIVE EPISODE BREAKDOWN:
-${meta?.cumulativeBreakdownString || dynamicBreakdownFallback}
-
-⏱️ 100% MATHEMATICALLY ACCURATE CHAPTER TIMESTAMPS:
-${meta?.youtubeChapterString || dynamicChapterFallback}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎬 COMPLETE MARATHON PRODUCTION SPECS:
-• Series Title: ${franchise.value?.name || 'Transmigrated Game Architect'}
-• Compilation: Complete Series Marathon (Episodes 1 through ${partCount})
-• Total Master Runtime: ${durationStr}
-• Master Quality: 1080p 24FPS Cinematic Master Cut
-• Format: Authentic Webtoon Visual Flow
-
-💬 COMMUNITY MARATHON QUESTION:
-Now that you've watched the complete story from Floor 1 to Floor 100, which moment was the most satisfying: Bram turning the golden holy rapier into chalk, or confronting the Demigod Architect at the summit? Drop your thoughts below! 👇
-
-⚖️ COPYRIGHT & FAIR USE NOTICE:
-This production features original scripted manhwa recap storytelling, dynamic character lore, custom voiceover narration, and original visual staging. All rights reserved by Manhwa Recap Studio.`
-
-      const omnibusDescription = `🎬 MULTI-EPISODE MARATHON COMPILATION (${partBadge} FULL SAGA - ${durationStr})
-Mocked by the imperial proctors as having the most useless talent in the empire—[Common Tool Polisher]—Bram was cast out into the outer slums to rot. The feudal lords had no idea he was a former lead VR game architect from Earth, and his talent was the universe's ultimate underlying reality hack: Uncapped Recursive Enhancement and Semantic Refactoring.
-
-While arrogant noble knights brag about ancestral holy relics, Bram quietly enhances ordinary kitchen knives to +500 kinetic impact, rewrites legendary imperial rapiers into brittle chalk, and solo-speedruns the lethal 100-Floor Tower of Demigods using a discarded wooden broom.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️ CUMULATIVE EPISODE BREAKDOWN:
-${meta?.cumulativeBreakdownString || dynamicBreakdownFallback}
-
-⏱️ 100% MATHEMATICALLY ACCURATE CHAPTER TIMESTAMPS:
-${meta?.youtubeChapterString || dynamicChapterFallback}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎬 SERIES & PRODUCTION SPECS:
-• Series Title: ${franchise.value?.name || 'Transmigrated Game Architect'}
-• Compilation: Episodes ${partBadge} (Full Arc Feature / Season Movie)
-• Total Master Runtime: ${durationStr}
-• Master Quality: 1080p 24FPS Cinematic Master Cut
-• Format: Authentic Webtoon Visual Flow
-
-💬 COMMUNITY MARATHON QUESTION:
-Which moment in this full compilation was the most satisfying: Bram turning the golden holy rapier into chalk, or pulverizing the Floor 10 Minotaur with a single pine needle? Let us know below!
-
-⚖️ COPYRIGHT & FAIR USE NOTICE:
-This production features original scripted manhwa recap storytelling, dynamic character lore, custom voiceover narration, and original visual staging. All rights reserved by Manhwa Recap Studio.`
+      // Mutate ONLY the dynamic slots in Episode 1's locked description
+      let omnibusDescription = basePkg?.description || ''
+      if (omnibusDescription) {
+        omnibusDescription = omnibusDescription
+          .replace(/🎬 Episode:[^\n]+/, isComplete ? `🎬 Compilation: Complete Series Marathon (Episodes 01 - ${String(partCount).padStart(2, '0')})` : `🎬 Episode: Episodes 01 - ${String(partCount).padStart(2, '0')} Compiled Saga`)
+          .replace(/• Full Runtime:[^\n]+/, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
+          .replace(/• Episode Bounds:[^\n]+/, `• Episode Bounds: 00:00 - ${finalTs}\n${timestampBlock.trim()}`)
+          .replace(/🔔 Subscribe[^\n]+/, isComplete ? "🔔 Subscribe to the channel and check out our other full-length manhwa series and complete marathon sagas!" : "🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!")
+      }
 
       activeThumbnailBadge.value = isComplete ? 'COMPLETE' : partBadge
       pkgData.value = {
         ...basePkg,
         titles,
-        description: isComplete ? completeDescription : omnibusDescription,
-        pinnedComment: isComplete
-          ? `🏆 THE COMPLETE STORY MARATHON IS HERE! Bram rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 100 without breaking a sweat! 😭☕\n\nWhat was your favourite part across the entire complete story? Drop your thoughts below! 👇`
-          : `Bram really rewrote an ancestral S-Rank golden rapier into chalk, siphoned 10,000 enhancement charges, and conquered Floors 1 through 70 without breaking a sweat! 😭☕\n\nWhat was your favourite part of this full ${partBadge} saga? Drop your thoughts below! 👇`,
+        description: omnibusDescription,
+        pinnedComment: basePkg?.pinnedComment || '',
         isOmnibus: true,
         isComplete,
         partBadgeText: isComplete ? 'COMPLETE' : partBadge
