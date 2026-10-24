@@ -545,6 +545,53 @@ export class AntiSlopValidator {
       failingScenes: formatAspectViolations
     })
 
+    // -------------------------------------------------------------
+    // Gate 9: Metaphor & Animal Chimera De-Identification Guard (Law 3 & 3b)
+    // -------------------------------------------------------------
+    const unindexedAnimalViolations = []
+    const figurativeAnimalRegex = /\b(parrot|canary|sparrow|pigeon|woodpecker|chick|rooster|duck|goose|chimpanzee|monkey|ape|donkey|pig|hog|toad|frog|cockroach|mosquito|housefly|blowfly)\b/i
+    const chimeraWearRegex = /\b(parrot|bird|animal|creature|beast|dog|cat|wolf|monkey|ape|bear|tiger|lion|rat|pig|chicken|toad)\b[^.]*\b(?:wearing|dressed in|donning|draped in)\b/i
+    const metaphorLabelRegex = /\b(?:mental juxtaposition|comic juxtaposition|caricature|figurative metaphor|metaphorical)\b/i
+
+    matrixScenes.forEach(scene => {
+      const p = scene.prompt || ''
+      const vaultNamesLower = []
+      if (characterVault && typeof characterVault === 'object') {
+        const charList = characterVault.characters || characterVault.models || (Array.isArray(characterVault) ? characterVault : [])
+        charList.forEach(c => { if (c.name) vaultNamesLower.push(c.name.toLowerCase()) })
+        const itemList = characterVault.items || []
+        itemList.forEach(i => { if (i.name) vaultNamesLower.push(i.name.toLowerCase()) })
+      }
+      const isVaultAnimal = vaultNamesLower.some(e => figurativeAnimalRegex.test(e))
+      
+      if (chimeraWearRegex.test(p) && !isVaultAnimal) {
+        unindexedAnimalViolations.push(scene.id)
+      } else if (metaphorLabelRegex.test(p)) {
+        unindexedAnimalViolations.push(scene.id)
+      } else if (figurativeAnimalRegex.test(p) && !isVaultAnimal) {
+        const isMaterialOrFood = /\b(?:goose down|duck roast|peking duck|leather|feather trim)\b/i.test(p)
+        if (!isMaterialOrFood) {
+          unindexedAnimalViolations.push(scene.id)
+        }
+      }
+    })
+
+    const gate9Passed = unindexedAnimalViolations.length === 0
+    const gate9Score = gate9Passed ? 100 : Math.max(0, Math.round(((totalScenes - unindexedAnimalViolations.length) / Math.max(1, totalScenes)) * 100))
+    if (!gate9Passed) {
+      unindexedAnimalViolations.forEach(t => failingScenesList.add(t))
+    }
+    checks.push({
+      id: 'metaphor_chimera_guard',
+      name: 'Gate 9: Metaphor & Animal Chimera De-Identification Guard (Law 3 & 3b)',
+      passed: gate9Passed,
+      score: gate9Score,
+      details: gate9Passed
+        ? 'Zero unindexed animal chimeras or figurative metaphors detected in visual prompts.'
+        : `${unindexedAnimalViolations.length} scenes contain literal animal chimeras or figurative metaphors. De-identify into diegetic human staging!`,
+      failingScenes: unindexedAnimalViolations
+    })
+
     // Compute Overall Health Score
     const totalScoreSum = checks.reduce((acc, c) => acc + c.score, 0)
     const overallScore = Math.round(totalScoreSum / checks.length)
