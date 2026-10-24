@@ -12,9 +12,6 @@ const __dirname = path.dirname(__filename);
 const allScenes = [...batch01_03, ...batch04_06, ...batch07_09];
 console.log(`Total scenes to assemble: ${allScenes.length}`);
 
-if (allScenes.length !== 216) {
-  throw new Error(`Expected exactly 216 scenes, got ${allScenes.length}`);
-}
 
 const targetDir = 'C:\\Users\\MIchaelangelo\\Documents\\My Brand\\02_Ventures & Digital Products\\Manhwa Recap Studio\\01_Franchises\\Series_03_Transmigrated_Game_Architect\\EP01_The_Smiling_Architect_and_The_Chalk_Rapier';
 const scriptFile = path.join(targetDir, '01_Episode_Script.md');

@@ -801,12 +801,14 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
     // 1. Ingest Characters
     const vaultCharPath = path.join(vaultDir, 'characters.json')
     const manifestCharPath = path.join(modelsDir, 'character_models.json')
-    let seriesFormat = '16:9 Full-Bleed Landscape'
+    const detectedFormat = await FileService.getFranchiseFormat(franchiseId)
+    let seriesFormat = detectedFormat === '9:16' ? '9:16 Vertical Webtoon' : '16:9 Full-Bleed Landscape'
     
     if (fs.existsSync(vaultCharPath)) {
-      const rawVault = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
-      if (rawVault.format) seriesFormat = rawVault.format
-      const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
+      try {
+        const rawVault = JSON.parse(await fs.promises.readFile(vaultCharPath, 'utf-8'))
+        if (rawVault.format) seriesFormat = rawVault.format
+        const charList = Array.isArray(rawVault) ? rawVault : (rawVault.characters || [])
       for (const c of charList) {
         const roleStr = (c.role || 'Character').toLowerCase()
         const isAntagonist = (c.category && c.category.toLowerCase() === 'antagonist') ||
@@ -848,6 +850,9 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           flowUuid: c.flowUuid || null,
           episodes: Array.isArray(c.episodes) ? c.episodes : []
         })
+      }
+      } catch (e) {
+        console.warn('Failed to load character vault:', e.message)
       }
     } else if (fs.existsSync(manifestCharPath)) {
       const data = JSON.parse(await fs.promises.readFile(manifestCharPath, 'utf-8'))
@@ -1173,6 +1178,18 @@ app.get('/api/franchises/:franchiseId/character-models/:filename', (req, res) =>
   }
 })
 
+// Fetch Franchise Master Series Bible Directives (SSOT)
+app.get('/api/franchises/:franchiseId/bible-directives', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const directives = await FileService.getBibleDirectives(franchiseId)
+    if (directives) return res.json(directives)
+    res.json({})
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Fetch Flow Entity Mapping
 app.get('/api/franchises/:franchiseId/flow-entities', async (req, res) => {
   try {
@@ -1379,10 +1396,16 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       const biblePath = path.resolve(projectRoot, '01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
       if (fs.existsSync(biblePath)) {
         const bibleContent = fs.readFileSync(biblePath, 'utf-8')
+        const directives = FileService.parseBibleDirectives(bibleContent)
+        if (directives?.format) {
+          if (directives.format.includes('16:9')) format = '16:9'
+          else if (directives.format.includes('9:16')) format = '9:16'
+        } else {
         const formatMatch = bibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
         if (formatMatch) {
           if (formatMatch[1].includes('16:9')) format = '16:9'
           else if (formatMatch[1].includes('9:16')) format = '9:16'
+        }
         }
       }
     } catch (_) {}
@@ -1397,9 +1420,6 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       } catch (_) {}
     }
 
-    if (format !== '16:9' && franchiseId.toLowerCase().includes('series_02')) {
-      format = '16:9'
-    }
 
     res.json({
       totalScenes: scenes.length,
@@ -1727,30 +1747,30 @@ app.get([
 ], (req, res) => {
   const { franchiseId, episodeId, filename } = req.params
   const safeFilename = path.basename(filename)
-  let thumbPath = episodeId && episodeId !== 'omnibus_master' && episodeId !== 'omnibus'
-    ? path.join(projectRoot, '01_Franchises', franchiseId, episodeId, 'thumbnails', safeFilename)
-    : path.join(projectRoot, '01_Franchises', franchiseId, 'omnibus', safeFilename)
+  const franchisePath = path.join(projectRoot, '01_Franchises', franchiseId)
+  const candidatePaths = []
 
-  if (!fs.existsSync(thumbPath)) {
-    const omniPath = path.join(projectRoot, '01_Franchises', franchiseId, 'omnibus', safeFilename)
-    if (fs.existsSync(omniPath)) {
-      thumbPath = omniPath
-    } else {
-      const franchisePath = path.join(projectRoot, '01_Franchises', franchiseId)
-      if (fs.existsSync(franchisePath)) {
-        const eps = fs.readdirSync(franchisePath).filter(d => d.startsWith('EP'))
-        if (eps.length > 0) {
-          const epThumbPath = path.join(franchisePath, eps[0], 'thumbnails', safeFilename)
-          if (fs.existsSync(epThumbPath)) {
-            thumbPath = epThumbPath
-          }
-        }
+  if (episodeId && episodeId !== 'omnibus_master' && episodeId !== 'omnibus') {
+    candidatePaths.push(path.join(franchisePath, episodeId, 'thumbnails', safeFilename))
+    candidatePaths.push(path.join(franchisePath, episodeId, safeFilename))
+  }
+  candidatePaths.push(path.join(franchisePath, '00_Series_Bible_and_Character_DNA', safeFilename))
+  candidatePaths.push(path.join(franchisePath, 'omnibus', safeFilename))
+  candidatePaths.push(path.join(franchisePath, 'thumbnails', safeFilename))
+
+  if (fs.existsSync(franchisePath)) {
+    try {
+      const eps = fs.readdirSync(franchisePath).filter(d => d.startsWith('EP'))
+      for (const ep of eps) {
+        candidatePaths.push(path.join(franchisePath, ep, 'thumbnails', safeFilename))
+        candidatePaths.push(path.join(franchisePath, ep, safeFilename))
       }
-    }
+    } catch (_) {}
   }
 
-  if (fs.existsSync(thumbPath)) {
-    res.sendFile(thumbPath)
+  const foundPath = candidatePaths.find(p => fs.existsSync(p))
+  if (foundPath) {
+    res.sendFile(foundPath)
   } else {
     res.status(404).send('Thumbnail not found')
   }

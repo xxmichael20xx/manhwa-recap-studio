@@ -30,7 +30,8 @@
       "flowName": "Character: Lu Chen",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -49,15 +50,16 @@
       "appearance": {
         "hair": "Short spiky black hair",
         "eyes": "Expressive wide comical eyes",
-        "physique": "Chubby, stout, energetic student frame",
+        "physique": "Chubby, double chin, round cheerful face, stout, energetic student frame",
         "attire": "Red graphic gaming t-shirt, beige cargo shorts, sneakers"
       },
-      "dna_prompt_anchor": "@{Wang Bao}, 20-year-old chubby East Asian male student, round cheerful face, short spiky black hair, expressive wide comical eyes, red graphic gaming t-shirt, beige cargo shorts, enthusiastic energetic posture, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Wang Bao}, 20-year-old chubby East Asian male student, round cheerful face, double chin, short spiky black hair, expressive wide comical eyes, red graphic gaming t-shirt, beige cargo shorts, enthusiastic energetic posture, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "02_Sidekick_Wang_Bao.jpg",
       "flowName": "Character: Wang Bao",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -85,7 +87,8 @@
       "flowName": "Character: Gu Tianyu",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -112,7 +115,8 @@
       "flowName": "Character: Jiang Qingxue",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -131,7 +135,7 @@
       "appearance": {
         "hair": "Short grizzled dark hair",
         "eyes": "Tired, stern eyes with heavy dark circles, tactical cheek scar",
-        "physique": "Broad, muscular, seasoned military posture",
+        "physique": "Broad, muscular, seasoned military posture, military commander",
         "attire": "Dark olive-drab tactical military trench coat with brass state insignia, glowing containment talisman in hand"
       },
       "dna_prompt_anchor": "@{Commander Han Feng}, 42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek, dark olive-drab tactical trench coat with brass state insignia, glowing tactical talisman in hand, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
@@ -139,7 +143,8 @@
       "flowName": "Character: Commander Han Feng",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -166,7 +171,8 @@
       "flowName": "Character: Ye Xingchen",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -249,7 +255,8 @@
       "flowName": "Character: Tactical Spirit Spectrometer",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -275,7 +282,8 @@
       "flowName": "Character: Heaven-Earth Golden Stele",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -302,7 +310,8 @@
       "reference_plate": "11_Enforcer_Gu_Biao.jpg",
       "flowName": "Character: Chief Enforcer Gu Biao",
       "episodes": [
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -328,7 +337,8 @@
       "reference_plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
       "flowName": "Character: Celestial Star Astrolabe",
       "episodes": [
-        "EP02"
+        "EP02",
+        "EP03"
       ]
     },
     {
@@ -354,7 +364,35 @@
       "flowName": "Character: Heavenly Dao Simulator Interface",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03"
+      ]
+    },
+    {
+      "id": "mo_yufeng",
+      "name": "Mo Yufeng",
+      "token": "@{Mo Yufeng}",
+      "tier": 2,
+      "role": "Antagonist Impostor (Arrogant Rogue Prodigy / Self-Proclaimed Sovereign's Disciple)",
+      "category": "antagonist",
+      "age": 22,
+      "stats_baseline": {
+        "cultivation_years": "85,000 Years",
+        "realm": "Peak Golden Core Realm (Half-Step Nascent Soul)",
+        "in_game_handle": "Sword Prodigy Mo",
+        "weapons": "Forged Primordial Token & Gilded Spirit Saber"
+      },
+      "appearance": {
+        "hair": "Sharp swept-back crimson-tinted dark hair",
+        "eyes": "Haughty, sneering, arrogant dark amber eyes",
+        "physique": "Athletic, tall, pompous boastful posture",
+        "attire": "Ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash"
+      },
+      "dna_prompt_anchor": "@{Mo Yufeng}, 22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash, holding a forged glowing dragon-crested golden jade token, aura of pompous vanity and golden core spirit sparks, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "reference_plate": "14_Antagonist_Mo_Yufeng.jpg",
+      "flowName": "Character: Mo Yufeng",
+      "episodes": [
+        "EP03"
       ]
     }
   ]

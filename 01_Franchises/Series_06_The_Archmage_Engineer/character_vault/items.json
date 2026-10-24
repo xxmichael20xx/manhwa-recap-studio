@@ -1,0 +1,59 @@
+{
+  "series_id": "Series_06_The_Archmage_Engineer",
+  "items": [
+    {
+      "id": "lumina",
+      "name": "LUMINA",
+      "token": "@{LUMINA}",
+      "type": "Item",
+      "category": "Items",
+      "apparent_rank": "Warm Floating Sky-Blue UI Panel",
+      "true_rank": "Cale Dawson's Sentient AI Companion & Spell Scanner",
+      "description": "A warm, friendly sky-blue and soft-gold floating UI window with a cute glowing Emoji smiley face in the top-right corner. Stores 100% of Cale Dawson's past-life Earth knowledge and learns magic by scanning magic books and live spells.",
+      "dna_prompt_anchor": "@{LUMINA}, warm friendly translucent sky-blue and soft-gold rounded floating magical UI window hovering in mid-air, featuring a large cute expressive glowing happy Emoji smiley face icon in the top-right corner, clean graphical mana bars, zero text, bright Korean fantasy manhwa art style, horizontal 16:9, widescreen",
+      "reference_plate": "02_AI_Companion_LUMINA.jpg",
+      "flowName": "LUMINA",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "old_miller_farm",
+      "name": "Old Miller Farm",
+      "token": "@{Old Miller Farm}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Humble Frontier Dirt Homestead",
+      "true_rank": "Pre-Awakening Miller Family Farm",
+      "description": "The rustic, muddy wooden cottage and hand-dug dirt field in the Emerald Alpine Valley before Ace's Age-10 Awakening.",
+      "dna_prompt_anchor": "@{Old Miller Farm}, 16:9 widescreen Korean manhwa background of the humble rustic Old Miller Farm before modernisation, set in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a weathered wooden cottage with thatched roof, muddy dirt yard, simple hand-dug water ditch, and wooden fence, horizontal 16:9",
+      "reference_plate": "12_Location_Old_Miller_Farm.jpg",
+      "flowName": "Old Miller Farm",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "miller_sanctuary_farm",
+      "name": "Miller Sanctuary Farm",
+      "token": "@{Miller Sanctuary Farm}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Clean Country Estate",
+      "true_rank": "Modern-Medieval Magitech Sanctuary Oasis",
+      "description": "The upgraded Miller family farm in the Emerald Alpine Valley featuring polished oak-and-stone architecture, clear glass windows, spotless white-stone water aqueducts, fragrant purple lavender fields, a brass water-wheel, and a sleek wind turbine.",
+      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, spotless white-stone water aqueducts, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, horizontal 16:9",
+      "reference_plate": "13_Location_Miller_Sanctuary_Farm.jpg",
+      "flowName": "Miller Sanctuary Farm",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    }
+  ]
+}

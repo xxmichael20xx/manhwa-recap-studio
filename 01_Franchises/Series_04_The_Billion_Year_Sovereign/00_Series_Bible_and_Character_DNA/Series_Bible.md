@@ -108,6 +108,11 @@
     - **Role:** Lu Chen's reality-fusing idle cultivation simulator HUD; displays primordial cultivation tally and causal dampening status.
     - **DNA Prompt:** `@{Heavenly Dao Simulator Interface}, sleek futuristic Dao-infused holographic cultivation system interface window floating vertically in mid-air at eye level, translucent dark tempered obsidian-glass HUD, minimalist chamfered corners, ultra-fine glowing celestial gold borders with luminescent cyan circuit traces, circular Dao progression ring pulsing with golden starlight motes displaying golden digits '1,000,000,000' and 'REALM: PRIMORDIAL SOVEREIGN', modern 2025 urban cultivation manhwa style, vertical 9:16`
 
+14. **Antagonist Impostor: Mo Yufeng (莫羽峰)**
+    - **Role:** Arrogant rogue prodigy from Northern Tianhai Clan; self-proclaimed sole closed-door disciple of Xiao Yao.
+    - **Cultivation Base:** 85,000 Years (Peak Golden Core Realm / Half-Step Nascent Soul)
+    - **DNA Prompt:** `@{Mo Yufeng}, 22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash, holding a forged glowing dragon-crested golden jade token, aura of pompous vanity and golden core spirit sparks, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16`
+
 ---
 
 ## 🎭 The Identity Engine: The Double-Blind System
@@ -161,3 +166,35 @@
 * **Episodes 16–17:** Ye Xingchen surrounds Qindu University with his *Heavenly Constellation Domain*, holding campus students hostage to force 'Xiao Yao' out.
 * **Episode 18 (Season 1 Climax — The Grand Face-Slap):**  
   Lu Chen steps into the sky. Ye Xingchen mocks the "mortal student," but Lu Chen speaks one word: **"Kneel."** The 1-Billion-Year aura unlocks, shattering the constellation domain and pinning Ye Xingchen and hundreds of elite guild oligarchs flat to the ground as live global television broadcasts zoom in on Lu Chen's face.
+
+
+---
+
+## 🎨 Studio & Google Flow Master Directives (SSOT)
+
+<!-- STUDIO_BIBLE_DIRECTIVES_START
+{
+  "styleName": "Modern 2025 Urban Cultivation",
+  "format": "9:16",
+  "voiceId": "en-GB-RyanNeural",
+  "genreRule": "Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless 9:16 vertical manhwa aspect ratio (1080x1920 vertical format). Clean modern architecture, university campus pathways, lecture halls, and contemporary cityscapes.",
+  "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate gloomy dark medieval fantasy, castles, photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons.",
+  "crowdRule": "Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.",
+  "defaultVaultDna": "modern 2025 urban cultivation manhwa webtoon art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading",
+  "exampleEntities": [
+    "@{Lu Chen}",
+    "@{Wang Bao}",
+    "@{Gu Tianyu}",
+    "@{Jiang Qingxue}",
+    "@{Commander Han Feng}",
+    "@{Heavenly Dao Simulator Interface}"
+  ],
+  "vocabulary": {
+    "diegeticScrolls": "ancient cultivation scrolls/jade slips/blueprints",
+    "diegeticSignage": "modern storefront/university campus signage",
+    "diegeticSteles": "cultivation leaderboard monoliths",
+    "diegeticUi": "holographic system status windows"
+  },
+  "spatialEnclosures": {}
+}
+STUDIO_BIBLE_DIRECTIVES_END -->

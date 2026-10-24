@@ -94,3 +94,28 @@ Equipped with a friendly smile, rolled-up craftsman sleeves, and a calm, polite 
 - **Batches 01–04 (Phase 1):** Ascending Floors 91–99; noble houses collapsing in panic and begging for shelter aboard the Sub-Space Silicon Ark; Bram prioritizing commoners and honest craftsmen.
 - **Batches 05–08 (Phase 2 & 3):** Floor 100 white void; confronting the Demigod Overseer Prime Unit Alpha; Bram's deadpan bug report disintegrating the boss; the 00:00:00 timer paradox where the Spire demands a reality decision.
 - **Batches 09–12 (Phase 4 & 5):** Linnea Croft reveals her true identity as the Origin Goddess; explaining why the Tower remained unconquered for 10,000 years (corrupt talent monopolies); Bram and Linnea rewrite the world OS into an open, merit-based system; Locke's Sundries & Tea epilogue.
+
+
+---
+
+## 🎨 Studio & Google Flow Master Directives (SSOT)
+
+<!-- STUDIO_BIBLE_DIRECTIVES_START
+{
+  "styleName": "Fantasy Dungeon Tower & Game Architect",
+  "format": "9:16",
+  "voiceId": "en-GB-RyanNeural",
+  "genreRule": "High fantasy tower cultivation manhwa webtoon art style, sharp ink linework, high contrast cel shading, vibrant architectural holographic blueprint arrays, textless 9:16 vertical manhwa aspect ratio (1080x1920 vertical format). Colossal dungeon tower floors, floating stone labyrinth arenas, and mystical chamber architecture.",
+  "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate modern cars, modern city streetlights, photorealistic 3D CGI renders, or flat Western comic book cartoons.",
+  "crowdRule": "Dungeon raid party members, spectators, and guild examinees in soft depth-of-field blur permitted in public tower plazas and examination halls. Private architect workshops remain strictly isolated.",
+  "defaultVaultDna": "high fantasy tower cultivation manhwa webtoon art style, sharp ink linework, high contrast cel shading, dynamic lighting, textless artwork",
+  "exampleEntities": [],
+  "vocabulary": {
+    "diegeticScrolls": "architectural blueprint arrays/tomes",
+    "diegeticSignage": "tower plaza/guild signage",
+    "diegeticSteles": "dungeon monolith stele inscriptions",
+    "diegeticUi": "system blueprint diagnostic HUDs"
+  },
+  "spatialEnclosures": {}
+}
+STUDIO_BIBLE_DIRECTIVES_END -->

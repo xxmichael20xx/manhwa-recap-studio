@@ -53,3 +53,28 @@ By quietly farming 500 low-tier vermin in the refuse depths, Caelen's physical s
 - **Batches F–H (Scenes 121–192):** Academy Dungeon Trials; deliberate sandbagging with 5% draw power; proctors notice acoustic anomalies on satellite radar.
 - **Batches I–L (Scenes 193–288):** Red Gate mutation; S-Rank Boss emerges; Ignis collapses in panic; Caelen reveals his true phantom ballistic nuke from 1.5 km away.
 - **Batch M (Scenes 289–312):** Immediate aftermath, total classmate shock, and the Ticking Clock cliffhanger: Ministry Black Ops deployed to find the "Phantom Marksman".
+
+
+---
+
+## 🎨 Studio & Google Flow Master Directives (SSOT)
+
+<!-- STUDIO_BIBLE_DIRECTIVES_START
+{
+  "styleName": "Dark Fantasy Dungeon Hunter & Regression",
+  "format": "16:9",
+  "voiceId": "en-GB-RyanNeural",
+  "genreRule": "Dark fantasy dungeon raid manhwa webtoon art style, sharp black ink linework, high contrast dramatic cel shading, kinetic action lighting, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed). Vast subterranean cavern arenas, glowing crystal fissures, ancient ruined dungeon vaults, and rugged hunter outposts.",
+  "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate flat Western cartoons, casual modern streetwear where tactical armor is required, or photorealistic 3D CGI.",
+  "crowdRule": "Hunter association raid members and medical personnel permitted in staging arenas. Boss chambers and private guild vaults remain strictly isolated.",
+  "defaultVaultDna": "dark fantasy dungeon raid manhwa webtoon art style, sharp black ink linework, high contrast dramatic cel shading, textless artwork",
+  "exampleEntities": [],
+  "vocabulary": {
+    "diegeticScrolls": "hunter license documents/ancient scrolls",
+    "diegeticSignage": "hunter outpost/association signage",
+    "diegeticSteles": "dungeon gate runic steles",
+    "diegeticUi": "hunter status window displays"
+  },
+  "spatialEnclosures": {}
+}
+STUDIO_BIBLE_DIRECTIVES_END -->

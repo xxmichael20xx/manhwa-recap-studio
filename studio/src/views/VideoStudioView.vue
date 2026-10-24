@@ -2043,12 +2043,11 @@ const isSavingEntityMap = ref(false)
 const entityCount = computed(() => Object.keys(parsedEntities.value).length)
 const is16x9Format = computed(() => {
   if (pipeline.value?.format) return pipeline.value.format === '16:9'
-  const fid = (route.params.franchiseId || '').toLowerCase()
-  if (fid.includes('series_02') || fid.includes('series_05')) return true
   if (franchise.value) {
     return (franchise.value.bibleContent || '').includes('16:9') ||
            (franchise.value.videoFormat || '').includes('16:9') ||
-           (franchise.value.seriesBible?.videoFormat || '').includes('16:9')
+           (franchise.value.seriesBible?.videoFormat || '').includes('16:9') ||
+           (franchise.value.bibleDirectives?.format || '').includes('16:9')
   }
   return false
 })
@@ -2555,7 +2554,7 @@ const getFlowDirectiveHeader = (collectionTitle) => {
 8. CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule}
 9. ART STYLE (${styleDirective.styleName}): ${styleDirective.genreRule} ${styleDirective.forbiddenRule}
 10. CHARACTER ENTITY REFERENCE MAPPING:
-    - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. @{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}).`
+    - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${styleDirective.exampleEntities?.length ? styleDirective.exampleEntities.join(', ') : '@{Main Protagonist}'}).`
 }
 
 // Failed & Cluttered Prompts Drawer State
@@ -2863,7 +2862,7 @@ const copyFailedXmlPrompts = () => {
     return `<scene id="${tag}" filename="${filename}">\n# Filename: ${filename}\n${finalPrompt}\n</scene>`
   }).join('\n\n')
 
-  const fRaw = route.params.franchiseId || 'Series_02'
+  const fRaw = route.params.franchiseId || franchise.value?.id || 'Series'
   const eRaw = route.params.episodeId || 'EP01'
   const collectionTitle = getCollectionName(`Failed_${targetList.length}`)
   const header = getFlowDirectiveHeader(collectionTitle)
@@ -3489,7 +3488,7 @@ const processBatchFiles = async (files, targetBatchIndex = null) => {
 
 // BGM & Sidechain Ducking State
 const bgmTracks = ref([])
-const selectedBgmTrack = ref('01_Catacombs_SubBass_Drone.mp3')
+const selectedBgmTrack = ref('')
 const selectedBgmVolume = ref(-22)
 const activePreviewTrack = ref(null)
 const bgmAudioPlayer = ref(null)
@@ -3505,6 +3504,9 @@ const loadBgmTracks = async () => {
     const data = await res.json()
     if (Array.isArray(data) && data.length > 0) {
       bgmTracks.value = data
+      if (!selectedBgmTrack.value || !data.some(t => t.filename === selectedBgmTrack.value)) {
+        selectedBgmTrack.value = data[0].filename
+      }
     }
   } catch (e) {
     console.warn('Failed to load BGM tracks:', e)

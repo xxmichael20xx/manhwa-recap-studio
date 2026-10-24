@@ -1,0 +1,18 @@
+{
+  "rawText": "Active Google Flow Native @{Character Name} Entities for Series 06: The Archmage Engineer (13 Models Locked):\n\n01. @{Ace Miller} (Protagonist, Age 10)\n02. @{LUMINA} (Sentient AI Companion UI Panel)\n03. @{Garrett Miller} (Father — Earth Affinity)\n04. @{Clara Miller} (Mother — Water/Nature Affinity)\n05. @{Maya Miller} (Older Sister — Wind Affinity)\n06. @{Princess Seraphina} (Runaway Royal Princess)\n07. @{Sir Roland Vance} (Royal Knight Escort)\n08. @{Emperor Aldrich} (Emperor of Solaris)\n09. @{Empress Evelyn} (Empress of Solaris)\n10. @{Grand Councilor Malakor} (Imperial Mage Councilor)\n11. @{Goddess Celestia} (Goddess of Nature & Purity)\n12. @{Old Miller Farm} (Location — Farm Before Upgrade)\n13. @{Miller Sanctuary Farm} (Location — Farm After Upgrade)",
+  "entities": {
+    "Ace Miller": "@{Ace Miller}",
+    "LUMINA": "@{LUMINA}",
+    "Garrett Miller": "@{Garrett Miller}",
+    "Clara Miller": "@{Clara Miller}",
+    "Maya Miller": "@{Maya Miller}",
+    "Princess Seraphina": "@{Princess Seraphina}",
+    "Sir Roland Vance": "@{Sir Roland Vance}",
+    "Emperor Aldrich": "@{Emperor Aldrich}",
+    "Empress Evelyn": "@{Empress Evelyn}",
+    "Grand Councilor Malakor": "@{Grand Councilor Malakor}",
+    "Goddess Celestia": "@{Goddess Celestia}",
+    "Old Miller Farm": "@{Old Miller Farm}",
+    "Miller Sanctuary Farm": "@{Miller Sanctuary Farm}"
+  }
+}

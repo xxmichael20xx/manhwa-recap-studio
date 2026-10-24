@@ -1,0 +1,413 @@
+{
+  "series_id": "Series_06_The_Archmage_Engineer",
+  "series_title": "The Archmage Engineer: Building a Modern Sanctuary in a Medieval World",
+  "format": "16:9 Full-Bleed Landscape",
+  "token_standard": "@{Character Name}",
+  "archetype": "Archetype C: Hidden Crafter / Cozy Modern-Medieval Kingdom-Builder",
+  "characters": [
+    {
+      "id": "ace_miller",
+      "name": "Ace Miller",
+      "token": "@{Ace Miller}",
+      "tier": 1,
+      "role": "Protagonist (Age 10 Bookworm Engineer / Past Life: Cale Dawson)",
+      "category": "protagonist",
+      "age": 10,
+      "stats_baseline": {
+        "level": 10,
+        "class": "Modern-Medieval Archmage Engineer (Apparent: Country Bookworm)",
+        "affinities": "All 8 Affinities (Fire, Earth, Wind, Water/Nature + Dark, Light, Time, Space)",
+        "innate_talent": "LUMINA (Sentient Past-Life AI Companion)",
+        "efficiency": "99% Clean Magic Craft Efficiency"
+      },
+      "appearance": {
+        "hair": "Short tousled chestnut-brown hair falling naturally over forehead",
+        "eyes": "Bright intelligent emerald-green eyes with a warm, humble, slightly playful nonchalant smile",
+        "physique": "Energetic 10-year-old boy build with relaxed, humble posture",
+        "attire": "Neat modern-medieval tailored cream linen tunic under a light forest-green craftsman vest, rolled sleeves, brown leather utility belt with a small magnifying lens and leather notebook pouch, durable brown trousers",
+        "weapons": "None; carries a leather blueprint notebook and channels all 8 elemental mana colours gently in his palm"
+      },
+      "dna_prompt_anchor": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "01_Protagonist_Ace_Miller.jpg",
+      "flowName": "Ace Miller",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "lumina",
+      "name": "LUMINA",
+      "token": "@{LUMINA}",
+      "tier": 1,
+      "role": "AI Companion UI (Cale Dawson's Sentient AI Innate Talent)",
+      "category": "prop",
+      "age": 1,
+      "stats_baseline": {
+        "class": "Sentient AI Companion & Live Spell Scanner",
+        "database": "100% Modern Earth Craft Knowledge + Optical Magic Book Scanner",
+        "personality": "Warm, witty, supportive best-friend AI ([LUMINA: Supp Cale! Miss me?])"
+      },
+      "appearance": {
+        "interface": "Warm translucent sky-blue and soft-gold rounded floating UI window hovering in mid-air",
+        "badge": "Large cute expressive glowing golden-blue happy Emoji smiley face badge in the top-right corner",
+        "graphics": "Clean graphical mana bars and elemental icons with zero alphabet text"
+      },
+      "dna_prompt_anchor": "@{LUMINA}, warm friendly translucent sky-blue and soft-gold rounded floating magical UI window hovering in mid-air, featuring a large cute expressive glowing happy Emoji smiley face icon in the top-right corner, clean graphical mana bars, zero text, bright Korean fantasy manhwa art style, sharp clean linework, luminous glow, horizontal 16:9, widescreen",
+      "reference_plate": "02_AI_Companion_LUMINA.jpg",
+      "flowName": "LUMINA",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "garrett_miller",
+      "name": "Garrett Miller",
+      "token": "@{Garrett Miller}",
+      "tier": 1,
+      "role": "Supporting Family (MC's Father — Earth Affinity Farmer)",
+      "category": "supporting",
+      "age": 36,
+      "stats_baseline": {
+        "level": 18,
+        "class": "Earth-Affinity Homestead Farmer",
+        "affinity": "Earth Affinity (Soil Shaping & Stone Clearing)",
+        "trait": "Smart, protective, hardworking, deeply supportive father"
+      },
+      "appearance": {
+        "hair": "Short tousled brown hair with a kind rugged jawline and light stubble",
+        "eyes": "Warm amber-brown eyes with a proud, supportive smile",
+        "physique": "Broad-shouldered, sturdy muscular farmer build with strong calloused hands",
+        "attire": "Clean earth-toned cotton work shirt with rolled sleeves, sturdy brown leather suspenders and work trousers"
+      },
+      "dna_prompt_anchor": "@{Garrett Miller}, 36-year-old sturdy warm-hearted farmer father, short tousled brown hair, light stubble, warm amber-brown eyes, proud supportive smile, broad muscular shoulders, wearing clean earth-toned work shirt with rolled sleeves and brown leather suspenders, faint warm amber earth-magic glow on hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "03_Father_Garrett_Miller.jpg",
+      "flowName": "Garrett Miller",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "clara_miller",
+      "name": "Clara Miller",
+      "token": "@{Clara Miller}",
+      "tier": 1,
+      "role": "Supporting Family (MC's Mother — Water & Nature Affinity)",
+      "category": "supporting",
+      "age": 34,
+      "stats_baseline": {
+        "level": 16,
+        "class": "Water & Nature Homestead Herbalist",
+        "affinity": "Water & Nature Affinity (Crop Irrigation & Herb Cultivation)",
+        "trait": "Caring, sharp-minded, protective mother"
+      },
+      "appearance": {
+        "hair": "Long warm honey-brown hair braided loosely over one shoulder",
+        "eyes": "Bright emerald-green eyes with a loving, clever smile",
+        "physique": "Graceful, warm maternal posture",
+        "attire": "Practical yet graceful sage-green and cream medieval country dress with a clean white linen apron"
+      },
+      "dna_prompt_anchor": "@{Clara Miller}, 34-year-old gentle sharp-minded mother, long honey-brown hair braided loosely over one shoulder, bright emerald-green eyes, warm loving smile, wearing sage-green and cream medieval country dress with clean white linen apron, soft blue water and green nature magic droplets near hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "04_Mother_Clara_Miller.jpg",
+      "flowName": "Clara Miller",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "maya_miller",
+      "name": "Maya Miller",
+      "token": "@{Maya Miller}",
+      "tier": 1,
+      "role": "Supporting Family (MC's Older Sister, Age 13 — Wind Affinity)",
+      "category": "supporting",
+      "age": 13,
+      "stats_baseline": {
+        "level": 12,
+        "class": "Wind-Affinity Farm Scout & Big Sister",
+        "affinity": "Wind Affinity (Breeze Control & Seed Scattering)",
+        "trait": "Cheerful, energetic, protective older sister"
+      },
+      "appearance": {
+        "hair": "Shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon",
+        "eyes": "Bright expressive amber eyes with a lively big-sister grin",
+        "physique": "Active, agile 13-year-old girl build",
+        "attire": "Breezy sky-blue and white medieval country tunic with a light brown utility skirt and leather boots"
+      },
+      "dna_prompt_anchor": "@{Maya Miller}, 13-year-old cheerful energetic older sister, shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, bright amber eyes, lively grin, wearing breezy sky-blue and white medieval country tunic with light brown utility skirt and boots, soft mint-green wind magic breezes swirling around fingertips, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "05_Sister_Maya_Miller.jpg",
+      "flowName": "Maya Miller",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "princess_seraphina",
+      "name": "Princess Seraphina",
+      "token": "@{Princess Seraphina}",
+      "tier": 1,
+      "role": "Main Heroine / Ally (The Runaway Royal Princess, Age 11)",
+      "category": "supporting",
+      "age": 11,
+      "stats_baseline": {
+        "level": 14,
+        "class": "Imperial Princess of Solaris",
+        "affinity": "Light Affinity",
+        "trait": "Adventurous, curious, loves sneaking out of the smelly capital; amazed by the Miller farm's clean scent and baths"
+      },
+      "appearance": {
+        "hair": "Long flowing golden-blonde hair with a subtle braided crown",
+        "eyes": "Sparkling sapphire-blue eyes full of curiosity and wonder",
+        "physique": "Graceful 11-year-old royal build",
+        "attire": "Elegant royal ivory-and-sky-blue travel dress with subtle gold embroidery and a hooded travel cloak draped over shoulders"
+      },
+      "dna_prompt_anchor": "@{Princess Seraphina}, 11-year-old adventurous royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "06_Royal_Princess_Seraphina.jpg",
+      "flowName": "Princess Seraphina",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "sir_roland_vance",
+      "name": "Sir Roland Vance",
+      "token": "@{Sir Roland Vance}",
+      "tier": 2,
+      "role": "Supporting Ally (Princess Seraphina's Royal Knight Escort)",
+      "category": "supporting",
+      "age": 32,
+      "stats_baseline": {
+        "level": 45,
+        "class": "Royal Guard Captain",
+        "affinity": "Wind & Sword Aura",
+        "trait": "Hyper-vigilant, honourable knight who mistakes the Miller farm's machines for ancient archmage relics"
+      },
+      "appearance": {
+        "hair": "Short neatly combed silver-blonde hair",
+        "eyes": "Sharp blue-grey eyes with an honourable, serious expression",
+        "physique": "Tall, athletic royal knight build",
+        "attire": "Polished silver-and-blue royal plate armour over a navy tunic with a white royal cape, sheathed silver longsword at hip"
+      },
+      "dna_prompt_anchor": "@{Sir Roland Vance}, 32-year-old loyal royal knight escort, short neatly combed silver-blonde hair, sharp blue-grey eyes, honourable stern expression, wearing polished silver-and-blue royal plate armour over navy tunic with white royal cape, hand resting on sheathed silver knight longsword at hip, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "07_Guard_Sir_Roland_Vance.jpg",
+      "flowName": "Sir Roland Vance",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "emperor_aldrich",
+      "name": "Emperor Aldrich",
+      "token": "@{Emperor Aldrich}",
+      "tier": 2,
+      "role": "Imperial Monarch (Princess Seraphina's Father)",
+      "category": "supporting",
+      "age": 44,
+      "stats_baseline": {
+        "level": 60,
+        "class": "Sovereign Emperor of Solaris",
+        "affinity": "Fire & Royal Authority",
+        "trait": "Pragmatic ruler burdened by the capital's poor hygiene and resource waste"
+      },
+      "appearance": {
+        "hair": "Golden-blonde hair with distinguished silver temples and a neatly trimmed royal beard",
+        "eyes": "Sharp sapphire-blue eyes",
+        "physique": "Commanding, regal monarch build",
+        "attire": "Grand crimson-and-gold imperial ceremonial robes with a white fur mantle and golden crown"
+      },
+      "dna_prompt_anchor": "@{Emperor Aldrich}, 44-year-old regal pragmatic Emperor, golden-blonde hair with silver temples, neatly trimmed beard, sharp sapphire-blue eyes, wearing grand crimson-and-gold imperial robes with white fur mantle and golden crown, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "08_Monarch_Emperor_Aldrich.jpg",
+      "flowName": "Emperor Aldrich",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "empress_evelyn",
+      "name": "Empress Evelyn",
+      "token": "@{Empress Evelyn}",
+      "tier": 2,
+      "role": "Imperial Monarch (Princess Seraphina's Mother)",
+      "category": "supporting",
+      "age": 40,
+      "stats_baseline": {
+        "level": 50,
+        "class": "Empress of Solaris",
+        "affinity": "Light & Water Affinity",
+        "trait": "Refined, sharp-witted Empress who adores the Miller farm's clean soap and sanitation"
+      },
+      "appearance": {
+        "hair": "Flowing platinum-gold hair styled with pearl hairpins and a delicate tiara",
+        "eyes": "Intelligent sapphire-blue eyes with a poised warm expression",
+        "physique": "Elegant, regal posture",
+        "attire": "Royal pearl-white and azure-blue silk gown with gold filigree trim"
+      },
+      "dna_prompt_anchor": "@{Empress Evelyn}, 40-year-old refined graceful Empress, flowing platinum-gold hair with pearl hairpins and delicate tiara, intelligent sapphire-blue eyes, poised warm expression, wearing royal pearl-white and azure-blue silk gown with gold filigree trim, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "09_Monarch_Empress_Evelyn.jpg",
+      "flowName": "Empress Evelyn",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "grand_councilor_malakor",
+      "name": "Grand Councilor Malakor",
+      "token": "@{Grand Councilor Malakor}",
+      "tier": 2,
+      "role": "Antagonist / Rival (Empire's Traditionalist Mage Councilor)",
+      "category": "antagonist",
+      "age": 58,
+      "stats_baseline": {
+        "level": 55,
+        "class": "Head of the Imperial Mage Council",
+        "affinity": "High Fire & Earth Magic",
+        "trait": "Stubborn, proud traditionalist mage who insists everything must be done by hiring mages the old-fashioned way"
+      },
+      "appearance": {
+        "hair": "Long swept-back dark grey hair with a pointed goatee",
+        "eyes": "Narrow amber eyes looking down with stubborn old-fashioned pride",
+        "physique": "Tall, aristocratic archmage posture",
+        "attire": "Ornate deep purple-and-gold high-collared archmage robes adorned with red fire-mana crystals, holding a gold-and-wood mage staff"
+      },
+      "dna_prompt_anchor": "@{Grand Councilor Malakor}, 58-year-old proud traditionalist Imperial Mage Councilor, swept-back dark grey hair, pointed goatee, narrow amber eyes, stubborn haughty expression, wearing ornate deep purple-and-gold high-collared archmage robes with red mana crystals, holding a wooden-and-gold mage staff topped with a red crystal, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "10_Antagonist_Councilor_Malakor.jpg",
+      "flowName": "Grand Councilor Malakor",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "goddess_celestia",
+      "name": "Goddess Celestia",
+      "token": "@{Goddess Celestia}",
+      "tier": 1,
+      "role": "Divine Patron (Goddess of Nature & Purity)",
+      "category": "supporting",
+      "age": "Immortal",
+      "stats_baseline": {
+        "level": 100,
+        "class": "Goddess of Nature & Purity",
+        "affinity": "Divine Creation & All 8 Elements",
+        "trait": "Gentle, exasperated goddess tired of watching her medieval world stay dirty and lazy despite having magic"
+      },
+      "appearance": {
+        "hair": "Long flowing luminous silver-white hair with soft emerald-green tips",
+        "eyes": "Compassionate glowing golden-green eyes",
+        "physique": "Radiant ethereal divine figure",
+        "attire": "Flowing white-and-emerald divine silk robes adorned with living golden leaf motifs"
+      },
+      "dna_prompt_anchor": "@{Goddess Celestia}, gentle radiant Goddess of Nature and Purity, long flowing silver-white hair with soft emerald-green tips, glowing golden-green eyes, warm loving smile, wearing flowing white-and-emerald divine silk robes with golden leaf motifs, soft radiant light and nature butterflies, bright Korean fantasy manhwa art style, sharp clean ink linework, luminous cel shading, horizontal 16:9, widescreen",
+      "reference_plate": "11_Deity_Goddess_Celestia.jpg",
+      "flowName": "Goddess Celestia",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "old_miller_farm",
+      "name": "Old Miller Farm",
+      "token": "@{Old Miller Farm}",
+      "tier": 1,
+      "role": "Location (Miller Homestead Before Age-10 Upgrade)",
+      "category": "prop",
+      "age": 10,
+      "stats_baseline": {
+        "state": "Pre-Awakening Rustic Medieval Farm",
+        "sanitation": "Basic muddy well & hand-dug ditch",
+        "location": "Emerald Alpine Valley (4 Cities from the Empire)"
+      },
+      "appearance": {
+        "buildings": "Humble weathered wooden cottage with a thatched straw roof and crooked wooden fence",
+        "grounds": "Muddy dirt yard, basic hand-dug water ditch, wooden hand-plough, small vegetable patch",
+        "backdrop": "Sunlit emerald alpine valley with snow-kissed mountain peaks in the distance"
+      },
+      "dna_prompt_anchor": "@{Old Miller Farm}, 16:9 widescreen Korean manhwa background of the humble rustic Old Miller Farm before modernisation, set in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a weathered wooden cottage with thatched roof, muddy dirt yard, simple hand-dug water ditch, and wooden fence, zero stone aqueducts, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+      "reference_plate": "12_Location_Old_Miller_Farm.jpg",
+      "flowName": "Old Miller Farm",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "miller_sanctuary_farm",
+      "name": "Miller Sanctuary Farm",
+      "token": "@{Miller Sanctuary Farm}",
+      "tier": 1,
+      "role": "Location (Modern-Medieval Upgraded Miller Homestead)",
+      "category": "prop",
+      "age": 1,
+      "stats_baseline": {
+        "state": "Post-Awakening Modern-Medieval Sanctuary",
+        "sanitation": "99.8% Clean Running Water, Lavender Soap & White-Stone Aqueducts",
+        "location": "Emerald Alpine Valley (4 Cities from the Empire)"
+      },
+      "appearance": {
+        "buildings": "Modernised medieval homestead built from warm polished oak timber, smooth white stone masonry, and large clear glass windows",
+        "grounds": "Spotless white-stone aqueducts with crystal-clear spring water, brass water-wheel, neat terraced green crops, fragrant purple lavender rows, wooden-and-brass wind turbine",
+        "backdrop": "Sunlit emerald alpine valley with snow-kissed mountain peaks and bright azure sky"
+      },
+      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, spotless white-stone water aqueducts, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+      "reference_plate": "13_Location_Miller_Sanctuary_Farm.jpg",
+      "flowName": "Miller Sanctuary Farm",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "cale_dawson",
+      "name": "Cale Dawson",
+      "token": "@{Cale Dawson}",
+      "tier": 1,
+      "role": "Past-Life AI Architect & Systems Engineer (Earth, Age 62)",
+      "category": "protagonist",
+      "age": 62,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Earth Lead Systems Engineer & AI Architect",
+        "affinities": "None (Earth Human)",
+        "innate_talent": "Creator of LUMINA (Sentient General AI)",
+        "efficiency": "Master Systems Architecture & Clean Engineering"
+      },
+      "appearance": {
+        "hair": "Neatly combed silver-grey hair with distinguished white temples",
+        "eyes": "Kind crinkling emerald-green eyes behind elegant thin silver wireframe reading spectacles",
+        "physique": "Distinguished, calm 62-year-old gentleman programmer with relaxed, fulfilled posture",
+        "attire": "Cozy charcoal-grey wool knit cardigan over a crisp white collared button-up shirt and tailored dark grey trousers",
+        "weapons": "None; works on ergonomic keyboards and multi-monitor workstations"
+      },
+      "dna_prompt_anchor": "@{Cale Dawson}, 62-year-old distinguished male programmer, neatly combed silver-grey hair with white temples, kind crinkling emerald-green eyes behind thin silver wireframe reading glasses, gentle calm smile, wearing a cozy charcoal-grey wool knit cardigan over a crisp white collared button-up shirt and tailored dark grey trousers, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "14_Past_Life_Cale_Dawson.jpg",
+      "flowName": "Cale Dawson",
+      "episodes": [
+        "EP01",
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+      ],
+      "hasPlate": true
+    }
+  ]
+}

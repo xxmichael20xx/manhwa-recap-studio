@@ -204,3 +204,40 @@ flowchart TD
   * **EP24: The Sovereign Progenitor (Grand Finale)**  
     *The New World:* Michael establishes the **Sovereign City of Montrey-Aethel**, founding a new academy where magic and martial cultivation are taught as one united discipline. The disgraced remnants of House Montrey live as humble commoners under his protection. Michael sits upon the sovereign throne with Elder Rowan, his loyal allies, and the Primordial Codex by his side—the eternal progenitor of a new golden era.
 
+
+
+---
+
+## 🎨 Studio & Google Flow Master Directives (SSOT)
+
+<!-- STUDIO_BIBLE_DIRECTIVES_START
+{
+  "styleName": "The Crystalline Arcane Bastion (High-Magic Medieval Empire)",
+  "format": "16:9",
+  "voiceId": "en-GB-RyanNeural",
+  "genreRule": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed). The Crystalline Arcane Bastion of the Valerius Empire: an elegant, light and clean aristocratic high-magic medieval empire built of pale silver granite and luminous raw blue mana crystals. Soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, intricate flying buttresses, glowing ethereal cyan magic circles faintly hovering above cathedral domes and spires, sleek silver wyverns soaring gracefully in clear cobalt-blue skies, grand reflective polished marble terraces with multi-tiered crystal water fountains, arched stone viaducts spanning lush green hills, and rustic ancient cedar frontier workshops.",
+  "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate modern streetwear, hoodies, t-shirts, sneakers, backpacks, denim, modern haircuts, asphalt roads, streetlights, cars, skyscrapers, contemporary cityscapes, or modern tech. All characters must strictly wear period-accurate medieval fantasy attire (rough-spun linen tunics, leather doublets, aristocratic fur-lined velvet coats, high-collared archmage mantles).",
+  "crowdRule": "Natural background medieval citizens, servants, and palace guards in soft depth-of-field blur are permitted ONLY in public communal spaces (estate courtyards, grand council chambers, village markets). In private rooms (Rowan Thorne's workshop, private dorm rooms, master suites), enforce strict isolation with zero extraneous background characters.",
+  "defaultVaultDna": "dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, aristocratic high-fantasy medieval attire, textless artwork",
+  "exampleEntities": [
+    "@{Michael Montrey}",
+    "@{Michael Montrey (Wolf-Skin)}",
+    "@{Apex Archmage Michael}",
+    "@{Patriarch Valerius Montrey}",
+    "@{Head Elder Cassius}",
+    "@{Elder Rowan Thorne}",
+    "@{Carved Blackwood Staff}"
+  ],
+  "vocabulary": {
+    "diegeticScrolls": "ancient grimoires/spellbooks/scrolls",
+    "diegeticSignage": "medieval apothecary/tavern/guild signage",
+    "diegeticSteles": "ancient runic steles/monolith inscriptions",
+    "diegeticUi": "glowing holographic arcane seals/system panels"
+  },
+  "spatialEnclosures": {
+    "Montrey_Appraisal_Hall": "Grand gothic appraisal hall of House Montrey built from pale silver granite, towering stained-glass windows, polished marble floor, and glowing blue mana sconces.",
+    "Blackwood_Forest_Clearing": "Ancient mist-shrouded Blackwood frontier forest with towering dark ironwood trees, mossy roots, and dappled cold moonlight.",
+    "Rowan_Apothecary_Shop": "Warm rustic frontier apothecary workshop interior with cedar shelves lined with glass herb jars, copper alembics, and a polished oak counter."
+  }
+}
+STUDIO_BIBLE_DIRECTIVES_END -->

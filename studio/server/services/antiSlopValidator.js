@@ -12,6 +12,8 @@
  * 8. Dynamic Format Awareness (16:9 Landscape vs 9:16 Vertical Webtoon)
  */
 
+import { extractCharacterDna } from './promptDnaCompiler.js'
+
 export class AntiSlopValidator {
   /**
    * Fast script statistics & word count.
@@ -157,26 +159,68 @@ export class AntiSlopValidator {
     })
 
     // -------------------------------------------------------------
-    // Gate 3: Universal Anti-Ghost Entity & Unbound Mention Mandate
+    // -------------------------------------------------------------
+    // Gate 3: Universal Anti-Ghost Entity & Family Kinship Anchor Mandate
     // A) Every entity in character_refs / item_refs must be mirrored in prompt
     // B) Zero Unbound Mentions: Vault characters and items in prompt must have @{...} and be in refs
+    // C) Family Kinship Continuity: Scenes where narrative describes family members must explicitly bind @{Family Character} to prevent random Google Flow hallucinations
     // -------------------------------------------------------------
     const unmirroredEntityScenes = []
     const unboundEntityScenes = []
+    const unreferencedFamilyScenes = []
 
-    // Compile canonical vault entity names
+    // Compile canonical vault entity names and family members
     const vaultNames = []
+    const distinctCharacterNames = []
+    const familyVaultCharacters = []
     if (characterVault && typeof characterVault === 'object') {
       const charList = characterVault.characters || characterVault.models || (Array.isArray(characterVault) ? characterVault : [])
       for (const c of charList) {
-        if (c.name && c.name.length >= 4) vaultNames.push(c.name.trim())
+        if (c.name && c.name.length >= 3) {
+          const fullName = c.name.trim()
+          vaultNames.push(fullName)
+          const isNonPerson = /^(location|place|setting|item|weapon|artifact|prop)$/i.test(c.category || '')
+          if (!isNonPerson) {
+            const cleanName = fullName.replace(/^(Grand Duke|Duke|Lord|Lady|Prince|Princess|King|Queen|Emperor|Empress|Chief Proctor|Chief Enforcer|Senior Examiner|Head Examiner|Examiner|Proctor|Instructor|Commander|Director|Master|Captain|Sir|Goddess|Elder|Chief|Enforcer)\s+/i, '').trim()
+            const words = cleanName.split(/\s+/).filter(w => w.length >= 3)
+            if (words.length > 0 && words[0].length >= 3) {
+              const given = words[0]
+              if (!/^(the|old|new|young|chief|head|great|fallen|grand)\b/i.test(given)) {
+                distinctCharacterNames.push({ givenName: given, fullName })
+              }
+            }
+          }
+          const role = (c.role || '').toLowerCase()
+          if (/\b(family|father|mother|sister|brother|daughter|son|grandfather|grandmother|aunt|uncle|parents)\b/i.test(role) &&
+              !/\b(emperor|empress|king|queen)\b/i.test(role)) {
+            const cleanName = fullName.replace(/^(Grand Duke|Duke|Lord|Lady|Prince|Princess|King|Queen|Emperor|Empress|Chief|Senior|Head|Sir|Goddess)\s+/i, '').trim()
+            const words = cleanName.split(/\s+/).filter(w => w.length >= 3)
+            const kinshipTerms = []
+            if (/\b(father|dad)\b/i.test(role)) kinshipTerms.push('father', 'dad')
+            if (/\b(mother|mum|mom)\b/i.test(role)) kinshipTerms.push('mother', 'mum', 'mom')
+            if (/\b(sister)\b/i.test(role)) kinshipTerms.push('sister')
+            if (/\b(brother)\b/i.test(role)) kinshipTerms.push('brother')
+            if (/\b(son)\b/i.test(role)) kinshipTerms.push('son')
+            if (/\b(daughter)\b/i.test(role)) kinshipTerms.push('daughter')
+            if (/\b(grandfather|grandpa)\b/i.test(role)) kinshipTerms.push('grandfather', 'grandpa')
+            if (/\b(grandmother|grandma)\b/i.test(role)) kinshipTerms.push('grandmother', 'grandma')
+
+            familyVaultCharacters.push({
+              fullName,
+              givenName: words[0] || fullName,
+              kinshipTerms
+            })
+          }
+        }
       }
       if (characterVault.items && Array.isArray(characterVault.items)) {
         for (const it of characterVault.items) {
-          if (it.name && it.name.length >= 4) vaultNames.push(it.name.trim())
+          if (it.name && it.name.length >= 3) vaultNames.push(it.name.trim())
         }
       }
     }
+
+    const familyKeywordsRegex = /\b(father|mother|parents|sister|brother|daughter|son|grandfather|grandmother|grandpa|grandma|aunt|uncle|dad|mum|mom)\b/i
 
     matrixScenes.forEach(scene => {
       // Resolve UUIDs in charRefs/itemRefs to canonical names if needed
@@ -194,6 +238,7 @@ export class AntiSlopValidator {
 
       const allRefs = [...resolvedCharRefs, ...resolvedItemRefs].filter(Boolean)
       const promptLower = scene.prompt.toLowerCase()
+      const narrativeLower = (scene.narrativeSync || scriptScenes.get(scene.id) || '').toLowerCase()
 
       // A: All attribute refs must be mirrored in prompt
       for (const ref of allRefs) {
@@ -219,22 +264,75 @@ export class AntiSlopValidator {
           }
         }
       }
+      // Also check distinct given names in prompt outside of @{...} tags
+      for (const { givenName, fullName } of distinctCharacterNames) {
+        const gLower = givenName.toLowerCase()
+        const wordRegex = new RegExp(`(?<![@{a-zA-Z0-9_-])\\b${gLower}\\b(?!['’]s|\\s*})`, 'i')
+        if (wordRegex.test(scene.prompt)) {
+          const hasToken = promptLower.includes(`@{${fullName.toLowerCase()}}`) || promptLower.includes(`@{${gLower}}`)
+          const inRefs = allRefs.some(r => r.toLowerCase().includes(gLower) || r.toLowerCase().includes(fullName.toLowerCase()))
+          if (!hasToken || !inRefs) {
+            unboundEntityScenes.push(scene.id)
+            break
+          }
+        }
+      }
+
+      // C: Family Kinship Anchor Check:
+      // If narrative or prompt talks about family members present/interacting, scene must have explicit character reference
+      if (familyKeywordsRegex.test(narrativeLower) || familyKeywordsRegex.test(promptLower)) {
+        const genericFamilyInPrompt = /(?:his|her|their)\s+(?:[a-z]+\s+)?(?:father|mother|sister|brother|parents|daughter|son)\b(?!\s*['’]s)/i.test(scene.prompt) ||
+                                      /\b(?:mother|father|sister|brother|daughter|son|parents)\s+(?:smiling|standing|sitting|watching|embracing|holding|talking|looking|eating|working|sleeping|crying|walking|running|laughing|greeting)\b/i.test(scene.prompt)
+
+        const hasAnyFamilyBound = familyVaultCharacters.some(f => 
+          allRefs.some(r => r.toLowerCase().includes(f.givenName.toLowerCase()) || r.toLowerCase().includes(f.fullName.toLowerCase())) ||
+          promptLower.includes(`@{${f.fullName.toLowerCase()}}`) ||
+          promptLower.includes(`@{${f.givenName.toLowerCase()}}`)
+        )
+
+        if (genericFamilyInPrompt && !hasAnyFamilyBound) {
+          unreferencedFamilyScenes.push(scene.id)
+        } else if (familyVaultCharacters.length > 0) {
+          for (const f of familyVaultCharacters) {
+            const escapedGiven = f.givenName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+            const escapedFull = f.fullName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+            const nameRegex = new RegExp(`(?<![@{a-zA-Z0-9_-])\\b(?:${escapedFull}|${escapedGiven})\\b(?!\\s*['’]s|\\s*})`, 'i')
+
+            const isBound = allRefs.some(r => r.toLowerCase().includes(f.givenName.toLowerCase()) || r.toLowerCase().includes(f.fullName.toLowerCase())) ||
+                            promptLower.includes(`@{${f.fullName.toLowerCase()}}`) ||
+                            promptLower.includes(`@{${f.givenName.toLowerCase()}}`)
+
+            if (nameRegex.test(scene.prompt) && !isBound) {
+              unreferencedFamilyScenes.push(scene.id)
+              break
+            }
+          }
+        }
+      }
     })
 
-    const combinedFailingScenes = Array.from(new Set([...unmirroredEntityScenes, ...unboundEntityScenes]))
+    const combinedFailingScenes = Array.from(new Set([...unmirroredEntityScenes, ...unboundEntityScenes, ...unreferencedFamilyScenes]))
     const gate3Passed = combinedFailingScenes.length === 0
     const gate3Score = gate3Passed ? 100 : Math.max(0, Math.round(((totalScenes - combinedFailingScenes.length) / Math.max(1, totalScenes)) * 100))
     if (!gate3Passed) {
       combinedFailingScenes.forEach(t => failingScenesList.add(t))
     }
+
+    let gate3Details = `100% of referenced entities in <scene> tags are mirrored, all vault entities in prompts are cleanly bound, and family characters are anchored.`
+    if (!gate3Passed) {
+      const parts = []
+      if (unmirroredEntityScenes.length > 0) parts.push(`${unmirroredEntityScenes.length} scenes have unmirrored entities`)
+      if (unboundEntityScenes.length > 0) parts.push(`${unboundEntityScenes.length} scenes have unbound vault entities`)
+      if (unreferencedFamilyScenes.length > 0) parts.push(`${unreferencedFamilyScenes.length} scenes mention family in narrative without explicit <character_refs> or @{Name} binding (causing Google Flow to generate random characters)`)
+      gate3Details = parts.join('; ') + '.'
+    }
+
     checks.push({
       id: 'entity_mirror_mandate',
-      name: 'Gate 3: Universal In-Prompt Entity Mirror Mandate (Zero Ghost Actors & Zero Unbound Mentions)',
+      name: 'Gate 3: Universal In-Prompt Entity Mirror & Family Kinship Anchor Mandate',
       passed: gate3Passed,
       score: gate3Score,
-      details: gate3Passed
-        ? `100% of referenced entities in <scene> tags are mirrored, and all vault entities in prompts are cleanly bound.`
-        : `${combinedFailingScenes.length} scenes have unmirrored or unbound vault entities.`,
+      details: gate3Details,
       failingScenes: combinedFailingScenes
     })
 
@@ -323,20 +421,86 @@ export class AntiSlopValidator {
     })
 
     // -------------------------------------------------------------
-    // Gate 7: Continuity State-Machine Tracking
-    // Character signature attire / prop persistence
+    // -------------------------------------------------------------
+    // Gate 7: Continuity State-Machine & Physical DNA Verification
+    // Character signature attire, props, and physical traits (physique, age, facial features)
     // -------------------------------------------------------------
     const stateTrackingScenes = []
-    // Check that scenes with Lu Chen maintain his charcoal hoodie and trousers
+
+    const charList = characterVault?.characters || characterVault?.models || (Array.isArray(characterVault) ? characterVault : [])
+    const charactersDna = []
+
+    for (const c of charList) {
+      if (!c.name) continue
+      const dna = extractCharacterDna(c)
+      if (dna) {
+        charactersDna.push(dna)
+      }
+    }
+
+    // General attire regex for scenes with character references
+    const generalAttireRegex = /\b(tunic|hoodie|vest|robes?|coat|jacket|armor|trousers|pants|boots|cloak|uniform|pullover|apron|leather|linen|streetwear|charcoal|suit|attire|garb|clothes|sleeves|shirt|t-shirt|shorts|blazer|dress|sneakers)\b/i
+
     matrixScenes.forEach(scene => {
-      const hasLuChen = scene.charRefs.some(r => /lu chen/i.test(r)) || /@\{lu chen\}/i.test(scene.prompt)
-      if (hasLuChen) {
-        const hasWardrobe = /charcoal|streetwear|hoodie|pullover|trousers|sneakers/i.test(scene.prompt)
+      const promptLower = scene.prompt.toLowerCase()
+
+      // Filter out non-humanoid item/artifact refs from scene.charRefs
+      const humanoidRefs = scene.charRefs.filter(ref => {
+        const found = charList.find(c => c.name === ref || c.flowName === ref || c.id === ref)
+        if (found) {
+          const isNonHumanoid = /^(artifact|weapon|prop|item|location|environment)$/i.test(found.category) ||
+                                /\b(artifact|weapon|prop|sword|blade|dao|monolith|stele|spectrometer|console|astrolabe|interface)\b/i.test(found.role || '')
+          return !isNonHumanoid
+        }
+        return true
+      })
+
+      // If characters with defined DNA/wardrobe are present, verify both wardrobe and physical traits
+      if (charactersDna.length > 0) {
+        for (const charDna of charactersDna) {
+          const hasChar = humanoidRefs.some(r => r.toLowerCase().includes(charDna.cleanName.toLowerCase())) ||
+                          promptLower.includes(`@{${charDna.name.toLowerCase()}}`) ||
+                          promptLower.includes(`@{${charDna.cleanName.toLowerCase()}}`)
+
+          if (hasChar) {
+            // 1. Verify Wardrobe Anchor
+            const hasWardrobe = charDna.wardrobeTokens.some(t => promptLower.includes(t)) || generalAttireRegex.test(scene.prompt)
+            if (!hasWardrobe) {
+              stateTrackingScenes.push(scene.id)
+              break
+            }
+
+            // 2. Verify Physical DNA Anchor (Physique, Facial, Age)
+            const promptClean = promptLower
+              .replace(/precisely 5 slender fingers on each hand/g, '')
+              .replace(/\b(?:athletic track|athletic sports stadium|synthetic running track)\b/g, '')
+
+            const hasCanonicalTraits = charDna.canonicalTraits && promptClean.includes(charDna.canonicalTraits.toLowerCase().slice(0, 25))
+
+            if (!hasCanonicalTraits) {
+              const hasPhysique = charDna.physiqueTokens.length === 0 || charDna.physiqueTokens.some(t => promptClean.includes(t))
+              const hasFacial = charDna.facialTokens.length === 0 || charDna.facialTokens.some(t => promptClean.includes(t))
+              const hasAge = charDna.ageTokens.length === 0 || charDna.ageTokens.some(t => promptClean.includes(t))
+
+              // A scene MUST contain physical traits (must not drop physical build, age, or facial anchor)
+              const hasPhysicalDna = (hasPhysique && (hasFacial || hasAge)) || (hasFacial && hasAge)
+
+              if (!hasPhysicalDna) {
+                stateTrackingScenes.push(scene.id)
+                break
+              }
+            }
+          }
+        }
+      } else if (humanoidRefs.length > 0) {
+        // General check: character scenes should specify character attire
+        const hasWardrobe = generalAttireRegex.test(scene.prompt)
         if (!hasWardrobe) {
           stateTrackingScenes.push(scene.id)
         }
       }
     })
+
     const gate7Passed = stateTrackingScenes.length === 0
     const gate7Score = gate7Passed ? 100 : Math.max(0, Math.round(((totalScenes - stateTrackingScenes.length) / Math.max(1, totalScenes)) * 100))
     if (!gate7Passed) {
@@ -344,12 +508,12 @@ export class AntiSlopValidator {
     }
     checks.push({
       id: 'continuity_state_machine',
-      name: 'Gate 7: Character Wardrobe & Continuity State-Machine Lock',
+      name: 'Gate 7: Character Wardrobe & Physical DNA State-Machine Lock',
       passed: gate7Passed,
       score: gate7Score,
       details: gate7Passed
-        ? `Protagonist and recurring character attire/props remain 100% locked across sequential scenes.`
-        : `${stateTrackingScenes.length} scenes have character presence without locked wardrobe DNA anchor.`,
+        ? `Protagonist and recurring character attire, props, and physical DNA remain 100% locked across sequential scenes.`
+        : `${stateTrackingScenes.length} scenes have character presence without locked wardrobe DNA or physical traits anchor.`,
       failingScenes: stateTrackingScenes
     })
 

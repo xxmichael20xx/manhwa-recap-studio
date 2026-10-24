@@ -8,8 +8,12 @@ dist/
 build/
 *.local
 *.mp4
+*.mov
+*.webm
 *.zip
-video/*.mp4
+video/
+**/video/
+**/omnibus/
 
 # Environment & Secrets
 .env
@@ -42,5 +46,20 @@ images_original_backup/
 backups/
 *_BACKUP*/
 
+# Episodic Generated Scene Media (Local only, excluded from GitHub)
+**/EP*/images/
+**/EP*/audio/
+*.mp3
+audio/
+assets/audio/
 
-
+# Whitelist: Permanently Protect Character Vaults & DNA
+!**/00_Characters/**
+!**/character_vault/**
+!**/00_Characters/*.jpg
+!**/00_Characters/*.png
+!**/character_vault/*.jpg
+!**/character_vault/*.png
+!**/character_vault/characters.json
+!**/character_vault/items.json
+!**/character_vault/flow_entities.json

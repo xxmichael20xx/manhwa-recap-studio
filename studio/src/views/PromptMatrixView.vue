@@ -1467,6 +1467,7 @@ import {
   getFranchiseArtStyleDirective, 
   getFranchiseDefaultVaultDna 
 } from '../utils/franchiseStyleHelper.js'
+import { compilePromptDna } from '../utils/promptDnaCompiler.js'
 
 const route = useRoute()
 
@@ -1623,6 +1624,7 @@ const copiedDirectToken = ref(null)
 
 const loadVaultModels = async () => {
   try {
+    await loadFranchiseBibleDirectives(route.params.franchiseId)
     const res = await fetch(`/api/franchises/${route.params.franchiseId}/character-models?cb=${Date.now()}`)
     const data = await res.json()
     if (Array.isArray(data)) {
@@ -2292,11 +2294,10 @@ const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
     ? 'horizontal 16:9 widescreen aspect ratio (1920x1080)'
     : 'vertical 9:16 webtoon aspect ratio (1080x1920)'
   const artStyleAspect = is16x9 ? 'horizontal 16:9' : 'vertical 9:16'
+  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, format)
   const entityListStr = intel.detectedEntityTags && intel.detectedEntityTags.length > 0
     ? intel.detectedEntityTags.join(', ')
-    : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
-
-  const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, format)
+    : (styleDirective.exampleEntities?.length ? styleDirective.exampleEntities.join(', ') : '@{Main Protagonist}')
 
   return `[SYSTEM DIRECTIVE: GLOBAL PROJECT INVARIANTS]
 
@@ -2335,7 +2336,7 @@ const getFlowDirectiveHeader = (collectionTitle, format = '16:9', batchItems = n
   const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, format)
   const entityListStr = intel.detectedEntityTags && intel.detectedEntityTags.length > 0
     ? intel.detectedEntityTags.join(', ')
-    : '@{Michael Montrey}, @{Apex Archmage Michael}, @{Patriarch Valerius Montrey}, @{Carved Blackwood Staff}'
+    : (styleDirective.exampleEntities?.length ? styleDirective.exampleEntities.join(', ') : '@{Main Protagonist}')
 
   const batchTextRule = intel.diegeticSceneTags.length > 0
     ? `Strictly ZERO speech bubbles, dialogue balloons, thought bubbles, SFX, Hangul (한글), or comic caption boxes. In-world environmental text (${intel.diegeticTypes.join(', ')}) is permitted ONLY in [${intel.diegeticSceneTags.join(', ')}]; all other scenes in "${collectionTitle}" MUST be 100% pure textless artwork.`
@@ -2666,7 +2667,8 @@ const copyChunk = async (batch, bIdx, chunk, cIdx) => {
       character_ref: p.character_ref,
       character_refs: p.character_refs,
       item_ref: p.item_ref,
-      item_refs: p.item_refs
+      item_refs: p.item_refs,
+      characters: vaultModels.value
     })
   }).join('\n\n')
 
@@ -2733,7 +2735,8 @@ const copyBatchFullXml = async (batch, bIdx) => {
       character_ref: p.character_ref,
       character_refs: p.character_refs,
       item_ref: p.item_ref,
-      item_refs: p.item_refs
+      item_refs: p.item_refs,
+      characters: vaultModels.value
     })
   }).join('\n\n')
 
@@ -2789,7 +2792,8 @@ const copySelectedPrompts = async () => {
       character_ref: p.character_ref,
       character_refs: p.character_refs,
       item_ref: p.item_ref,
-      item_refs: p.item_refs
+      item_refs: p.item_refs,
+      characters: vaultModels.value
     })
   }).join('\n\n')
 
@@ -2836,7 +2840,8 @@ const copyMissingPrompts = async () => {
       character_ref: p.character_ref,
       character_refs: p.character_refs,
       item_ref: p.item_ref,
-      item_refs: p.item_refs
+      item_refs: p.item_refs,
+      characters: vaultModels.value
     })
   }).join('\n\n')
 
@@ -2882,7 +2887,8 @@ const copyAllMaster = async () => {
       character_ref: p.character_ref,
       character_refs: p.character_refs,
       item_ref: p.item_ref,
-      item_refs: p.item_refs
+      item_refs: p.item_refs,
+      characters: vaultModels.value
     })
   }).join('\n\n')
 
@@ -3067,7 +3073,7 @@ const loadEpisode = async () => {
     const count9x16 = (rawMarkdown.value.match(/9:16|1080x1920/gi) || []).length
     const count16x9 = (rawMarkdown.value.match(/16:9|1920x1080/gi) || []).length
     const isPrompt16x9 = count16x9 > count9x16
-    const isSeries16x9 = (data.format && data.format.includes('16:9')) || isPrompt16x9 || (route.params.franchiseId || '').toLowerCase().includes('series_02')
+    const isSeries16x9 = (data.format && data.format.includes('16:9')) || isPrompt16x9
     activeDirectiveFormat.value = isSeries16x9 ? '16:9' : '9:16'
     
     parseMarkdownPrompts(rawMarkdown.value, imageMap)
@@ -3231,7 +3237,8 @@ const copySinglePrompt = async (item, index) => {
     character_ref: typeof item === 'object' ? item.character_ref : null,
     character_refs: typeof item === 'object' ? item.character_refs : null,
     item_ref: typeof item === 'object' ? item.item_ref : null,
-    item_refs: typeof item === 'object' ? item.item_refs : null
+    item_refs: typeof item === 'object' ? item.item_refs : null,
+    characters: vaultModels.value
   })
   
   const is16x9 = activeDirectiveFormat.value === '16:9'

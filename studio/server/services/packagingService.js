@@ -61,205 +61,296 @@ static formatTimestamp(seconds) {
 
   /**
    * Get the locked canonical master series title for a franchise (strictly <= 84 chars)
-   * Leaves at least 16 chars for (Part 1 - {nth}) while staying strictly <= 100 chars
+   * Dynamically reads from 00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md (SSOT),
+   * falling back to Series_Bible.md, or clean franchise name. Zero hardcoded series titles.
    */
   static getCanonicalSeriesTitle(franchiseId) {
-    if (franchiseId.includes('Series_05')) {
-      return 'The Fourth Magius: The Last Archmage and The Discarded Babe'
+    if (!franchiseId) return 'Manhwa Recap Saga'
+
+    // 1. Primary SSOT: 00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md
+    const lockedPkgPath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'YouTube_Locked_Package.md')
+    if (fsSync.existsSync(lockedPkgPath)) {
+      try {
+        const content = fsSync.readFileSync(lockedPkgPath, 'utf-8')
+
+        // Pattern A: > **Canonical Series Title:** *Title* or Title
+        const canonMatch = content.match(/>\s*\*\*Canonical Series Title:\*\*\s*\*?([^\r\n*]+)\*?/i)
+        if (canonMatch && canonMatch[1].trim()) {
+          return canonMatch[1].trim()
+        }
+
+        // Pattern B: **Base Locked Title (XX chars):**\n```text\nTitle\n```
+        const baseMatch = content.match(/\*\*Base Locked Title[^\n]*\*\*\s*:\s*\r?\n```(?:text)?\r?\n([\s\S]*?)\r?\n```/i)
+        if (baseMatch && baseMatch[1].trim()) {
+          return baseMatch[1].trim()
+        }
+
+        // Pattern C: ## 🏷️ 1. Locked Canonical Master Title\n```text\nTitle\n```
+        const headerMatch = content.match(/##\s*[^\n]*Locked Canonical Master Title[^\n]*\r?\n(?:[\s\S]*?```(?:text)?\r?\n([\s\S]*?)\r?\n```)?/i)
+        if (headerMatch && headerMatch[1] && headerMatch[1].trim()) {
+          return headerMatch[1].trim()
+        }
+
+        // Pattern D: > **Locked Upload 1 Title...**: `(Episode 1) Title`
+        const upload1Match = content.match(/>\s*\*\*Locked Upload 1 Title[^\n]*\*\*:\s*`([^`]+)`/i)
+        if (upload1Match && upload1Match[1].trim()) {
+          return upload1Match[1].replace(/^\((?:Episode|Episodes|Part|Parts)\s+[^)]+\)\s*/i, '').trim()
+        }
+      } catch (err) {
+        console.warn(`[PackagingService] Could not parse YouTube_Locked_Package.md for ${franchiseId}:`, err.message)
+      }
     }
-    if (franchiseId.includes('Series_04')) {
-      return 'He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save'
+
+    // 2. Secondary Ground Truth: 00_Series_Bible_and_Character_DNA/Series_Bible.md
+    const biblePath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+    if (fsSync.existsSync(biblePath)) {
+      try {
+        const bibleContent = fsSync.readFileSync(biblePath, 'utf-8')
+        const titleMatch = bibleContent.match(/>\s*\*\*Official Title:\*\*\s*\*?([^\r\n*]+)\*?/i)
+        if (titleMatch && titleMatch[1].trim()) {
+          return titleMatch[1].trim()
+        }
+
+        const h1Match = bibleContent.match(/^#\s*📖?\s*(?:Franchise Series Bible:\s*)?([^\r\n]+)/im)
+        if (h1Match && h1Match[1].trim() && !h1Match[1].includes('Franchise Series Bible')) {
+          return h1Match[1].replace(/^[^:]+:\s*/, '').trim()
+        }
+      } catch (err) {
+        console.warn(`[PackagingService] Could not parse Series_Bible.md for ${franchiseId}:`, err.message)
+      }
     }
-    if (franchiseId.includes('Series_03')) {
-      return 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
-    }
-    if (franchiseId.includes('Series_02')) {
-      return 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
-    }
-    if (franchiseId.includes('Series_01')) {
-      return 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
-    }
+
+    // 3. Fallback: Cleaned name formatted from franchise directory
     const clean = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
-    return `Reborn As The Strongest Sovereign In ${clean}`
+    return clean || 'Manhwa Recap Saga'
   }
 
-
   /**
-   * Get calibrated high-CTR thumbnail concepts for a franchise and episode
+   * Universal default 3-concept thumbnail archetypes generated dynamically from franchise context.
+   * Zero hardcoded series names or concepts.
    */
-  static async getThumbnailVariants(franchiseId, episodeId) {
-    const thumbDir = this.getThumbnailsDir(franchiseId, episodeId)
-    await fs.mkdir(thumbDir, { recursive: true })
+  static getDefaultThumbnailConcepts(franchiseId, episodeId) {
+    const cleanFranchise = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+    const cleanEp = episodeId.replace(/^EP\d+_/, '').replace(/_/g, ' ')
 
-    const isSeries01 = franchiseId.includes('Series_01')
-    const isSeries03 = franchiseId.includes('Series_03')
-    const isSeries04 = franchiseId.includes('Series_04')
-    const isSeries05 = franchiseId.includes('Series_05')
-
-    // Concept definitions calibrated for maximum CTR & storytelling contrast
-    const baseVariants = isSeries05 ? [
+    return [
       {
         id: 'concept_a',
-        name: 'Concept A: The Split Transformation (Discarded Babe vs Sovereign Archmage) (Locked Master Thumbnail)',
-        subtitle: 'Split-Contrast (Left Humble Frontier Toddler / Right Celestial Sovereign with Primordial Codex)',
-        badgeText: 'DISCARDED BABE',
-        subBadgeText: 'LAST ARCHMAGE',
-        badgeColorPreset: 'gold_crimson',
-        badgePosition: 'bottom_left',
-        composition: 'Left 45% 5-year-old Michael Montrey in rough linen tunic holding blackwood staff in snowy forest / Right 55% 28-year-old Michael Montrey in midnight celestial mantle surrounded by glowing constellation runes and Primordial Codex',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 5-year-old male child protagonist Michael Montrey in rough-spun grey linen tunic with hemp belt, holding a carved blackwood walking staff, standing in snowdrifts of ancient pine forest with calm analytical cyan eyes. Right half: Handsome 28-year-old archmage sovereign Michael Montrey in high-collared midnight-blue mantle embroidered with glowing golden celestial constellations, glowing sapphire eyes with concentric arcane circles, holding the ancient glowing Primordial Codex. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, rich dramatic lighting, vibrant cel shading, 16:9 horizontal, textless artwork.`,
-        filename: '01_Thumbnail_Concept_A.jpg'
-      }
-    ] : isSeries04 ? [
-      {
-        id: 'concept_c',
-        name: 'Concept C: The Golden Stele Calamity Solo Cleave (Locked Master Thumbnail)',
-        subtitle: 'Epic Monolith / Primordial Sovereign Starlight Cleave',
-        badgeText: 'SOLO SOVEREIGN',
-        subBadgeText: 'GOLDEN STELE',
-        badgeColorPreset: 'crimson_flame',
-        badgePosition: 'bottom_left',
-        composition: 'Colossal Heaven-Earth Golden Stele floating above modern metropolitan skyline while Lu Chen unleashes a blinding vertical golden sword beam',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic modern urban cultivation panorama. Colossal ancient Heaven-Earth Golden Stele monolith floating above glass skyscrapers in modern metropolis. In foreground: Protagonist Lu Chen in casual streetwear swinging a chipped steel blade, unleashing a monumental vertical pillar of golden celestial starlight slicing the clouds apart. Modern 2025 urban cultivation manhwa webtoon art style, ultra-sharp ink linework, bright high-key lighting, vibrant clean cel shading, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_C.jpg'
-      }
-    ] : isSeries03 ? [
-      {
-        id: 'concept_a',
-        name: 'Concept A: The Sleeper Craftsman Transformation (Common Polisher vs Demigod Architect)',
-        subtitle: 'Split-Contrast (Left Humble Slum Craftsman / Right Infinite Enhancement Sovereign)',
-        badgeText: 'FALSE +1 RANK',
-        subBadgeText: 'UNCAPPED BANK',
-        badgeColorPreset: 'gold_crimson',
-        badgePosition: 'bottom_left',
-        composition: 'Left 45% Bram in simple rolled-up linen craftsman shirt holding chipped knife / Right 55% Bram surrounded by floating golden enhancement glyphs and celestial bank runes',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: 24-year-old male protagonist Bramwell Locke in simple cream linen craftsman shirt with rolled-up sleeves, holding a battered chipped iron carving knife, standing in humble timber shop shadows with a calm smile. Right half: The same protagonist standing majestic with glowing amber mana eyes, surrounded by thousands of floating golden +N enhancement runes, celestial data matrices, and a colossal shattered demigod boss in the background. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, vibrant cel shading, volumetric warm lighting, 16:9 horizontal, textless artwork.`,
-        filename: '01_Thumbnail_Concept_A.jpg'
-      },
-      {
-        id: 'concept_b',
-        name: 'Concept B: The Chalk Rapier & Noble Humiliation',
-        subtitle: 'Center Dynamic / Noble Shock (Exploding Chalk Powder & Shattered Sacred Relic)',
-        badgeText: 'CHALK RAPIER',
-        subBadgeText: 'SEMANTIC REFACTOR',
-        badgeColorPreset: 'cyan_hud',
-        badgePosition: 'bottom_left',
-        composition: 'Lord Cassian Valerius staring in horrified shock and cold sweat at his empty gold hilt as the blade explodes into white chalk powder, while Bram smiles politely',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension comic drama manhwa composition. In foreground: Arrogant deep wine-burgundy haired noble knight Lord Cassian Valerius in white-and-gold plate armor, eyes bulging in cold sweat and horrified disbelief as his ancestral golden rapier blade crumbles violently into an explosive cloud of powdery white chalk dust. In center: Bramwell Locke casually dusting his fingertips with an unbothered, polite, charming smile. Dark fantasy action manhwa art style, vibrant cel shading, high contrast, dramatic cinematic lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_B.jpg'
-      },
-      {
-        id: 'concept_c',
-        name: 'Concept C: The Floor 10 Abyssal Minotaur Cleave',
-        subtitle: 'Epic Boss Arena / Supersonic Pine Needle Shockwave',
-        badgeText: 'SOLO FLOOR 10',
-        subBadgeText: '22-MIN RECORD',
-        badgeColorPreset: 'crimson_flame',
-        badgePosition: 'bottom_left',
-        composition: 'Bram sipping tea in plain rolled-up sleeves while a supersonic pine needle shatters the colossal 5-metre demon minotaur\'s warhammer',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic subterranean boss arena manhwa composition. Colossal 5-metre demonic Abyssal Minotaur roaring in agony as its massive spiked granite warhammer is shattered into shrapnel by a single glowing hypersonic emerald-cyan pine needle projectile. In foreground: Protagonist Bramwell Locke calmly holding a steaming ceramic tea cup with rolled-up linen craftsman sleeves, looking completely unbothered. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant cel shading, volumetric combat lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_C.jpg'
-      }
-    ] : isSeries01 ? [
-      {
-        id: 'concept_a',
-        name: 'Concept A: The Split Transformation (Weak Scavenger vs Awakened Sovereign)',
-        subtitle: 'Split-Contrast (Dungeon Shadows vs Midnight Singularity Sovereign)',
+        name: 'Concept A: The Split Transformation (Underdog vs Sovereign) (Locked Master Thumbnail)',
+        subtitle: 'Split-Contrast (Left Underdog / Right Awakened Sovereign)',
         badgeText: 'FALSE F-RANK',
-        subBadgeText: 'SINGULARITY PROTOCOL',
+        subBadgeText: 'SOVEREIGN SYSTEM',
         badgeColorPreset: 'gold_crimson',
         badgePosition: 'bottom_left',
-        composition: 'Left 45% battered scavenger in bloodied rags / Right 55% awakened Sovereign with glowing cerulean mana eyes and floating geometric runes',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: Bruised and bloodied young male protagonist in ragged clothes kneeling in dark crimson dungeon shadows, clutching a cracked wooden spear with hopeless exhaustion. Right half: The same protagonist standing tall and majestic in a glowing midnight Singularity coat with glowing cerulean mana eyes, surrounded by floating geometric blue runes and a colossal defeated monster core in the background. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant cel shading, volumetric epic lighting, 16:9 horizontal, textless manhwa artwork.`,
+        composition: `Split-screen contrast showing protagonist before and after awakening in ${cleanFranchise}`,
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: Bruised humble male protagonist in worn clothing in shadows. Right half: The same protagonist standing proud and powerful with glowing mana eyes, surrounded by floating celestial power runes and defeated enemies in background. High-fidelity manhwa webtoon art style, sharp black ink linework, saturated dynamic cel shading, horizontal 16:9 full bleed, textless artwork.`,
         filename: '01_Thumbnail_Concept_A.jpg'
       },
       {
         id: 'concept_b',
-        name: 'Concept B: The Gravity Snap & Proctor Shock',
-        subtitle: 'Center Dynamic / Proctor Shock (Distortion Rings & Falling Rubble)',
-        badgeText: 'GRAVITY BREACH',
-        subBadgeText: '0.0001s SYSTEM',
-        badgeColorPreset: 'cyan_hud',
-        badgePosition: 'bottom_left',
-        composition: 'Center dynamic action: Protagonist floating calmly snapping fingers as purple gravitational distortion rings freeze boulders in mid-air',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Dynamic center composition. Protagonist Caelen Vance floating in mid-air inside a colossal volcanic magma cavern, calmly snapping his fingers as glowing purple gravitational distortion rings freeze falling boulders and students in mid-air. In bottom foreground: Lord Vane and examiner Keith Morgan staring in utter shock and disbelief. Dark fantasy action manhwa art style, vibrant cel shading, high contrast, dramatic cinematic lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_B.jpg'
-      },
-      {
-        id: 'concept_c',
-        name: 'Concept C: The Abyssal Sovereign Cleave',
-        subtitle: 'Colossal Catacomb Rift / Solo S-Rank Dominance',
-        badgeText: 'SOLO S-RANK',
-        subBadgeText: 'ABYSSAL MONARCH',
-        badgeColorPreset: 'crimson_flame',
-        badgePosition: 'bottom_left',
-        composition: 'Wide battlefield: Dimensional rift tearing open the dungeon ceiling while protagonist stands atop a fallen behemoth',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic wide battlefield manhwa composition. Protagonist standing atop a colossal slain abyssal titan with dark blue aura erupting into the sky. Sky torn open by a glowing crimson dimensional rift. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast cel shading, cinematic combat lighting, horizontal 16:9.`,
-        filename: '01_Thumbnail_Concept_C.jpg'
-      }
-    ] : [
-      {
-        id: 'concept_a',
-        name: 'Concept A: The Split Transformation (Weak F-Rank vs Awakened Sovereign)',
-        subtitle: 'Split-Contrast (Left Weak Scavenger / Right Glowing Sovereign with Mana Bow)',
-        badgeText: 'FALSE F-RANK',
-        subBadgeText: '10,000x SYSTEM',
-        badgeColorPreset: 'gold_crimson',
-        badgePosition: 'bottom_left',
-        composition: 'Split-Contrast (Left 45% dungeon shadow scavenger with notched bow / Right 55% glowing Sovereign with crystalline mana bow)',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Split-screen high contrast manhwa composition. Left half: Bruised and exhausted young archer in torn leather gear kneeling in dark dungeon cavern, clutching a cracked wooden bow. Right half: The same protagonist Caelen Vance standing tall with glowing cyan mana eyes, drawing a colossal crystalline energy bow surrounded by thousands of floating golden calculation runes. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant cel shading, volumetric dramatic lighting, 16:9 horizontal, textless artwork.`,
-        filename: '01_Thumbnail_Concept_A.jpg'
-      },
-      {
-        id: 'concept_b',
-        name: 'Concept B: The Proctor\'s Panic & Measurement Overflow',
-        subtitle: 'Center Dynamic / Proctor Shock (Shattered Measuring Sphere & Calculation Breach)',
+        name: "Concept B: The Proctor's Panic & Measurement Overflow",
+        subtitle: 'Center Dynamic / Proctor Shock (Shattered Crystals & Calculation Breach)',
         badgeText: 'SYSTEM ERROR',
-        subBadgeText: 'CALCULATION BREACH',
+        subBadgeText: 'MEASUREMENT BREACH',
         badgeColorPreset: 'cyan_hud',
         badgePosition: 'bottom_left',
-        composition: 'Examiner Keith Morgan clutching his head in cold sweat as holographic measuring crystal shatters with glowing calculation velocity runes',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension manhwa composition. In foreground: Arrogant examiner Keith Morgan staring with wide horrified eyes and cold sweat running down his face. In center: Protagonist placing hand on a massive translucent measuring sphere that is violently cracking and erupting with blinding golden calculation runes and numeric overflow errors. Dark fantasy action manhwa webtoon art style, ultra-sharp linework, high contrast vibrant lighting, horizontal 16:9.`,
+        composition: 'Arrogant examiner staring in cold sweat as holographic measuring crystal violently shatters',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. High tension manhwa composition. In foreground: Arrogant examiners in cold sweat with wide horrified eyes. In center: Protagonist placing hand on a massive measuring device that violently shatters with glowing warning runes and numeric overflow errors. Sharp ink linework, high contrast vibrant lighting, horizontal 16:9.`,
         filename: '01_Thumbnail_Concept_B.jpg'
       },
       {
         id: 'concept_c',
-        name: 'Concept C: The Red Gate Calamity Solo Cleave',
-        subtitle: 'Wide Battlefield / Dimensional Rift Cleave (10,000 Light Arrows)',
+        name: 'Concept C: The Calamity Solo Cleave',
+        subtitle: 'Wide Battlefield / Calamity Boss Cleave',
         badgeText: 'SOLO S-RANK',
-        subBadgeText: '10,000 ARROWS',
+        subBadgeText: 'PRIMORDIAL CLEAVE',
         badgeColorPreset: 'crimson_flame',
         badgePosition: 'bottom_left',
-        composition: 'Colossal crimson red gate tearing open the sky above city while Caelen releases 10,000 glowing mana arrows into the abyss',
-        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Wide panoramic manhwa battlefield. Colossal crimson Red Gate tearing open the apocalyptic storm sky. In midground: Protagonist Caelen Vance standing on a ruined monolith, releasing ten thousand glowing luminescent mana arrows raining upward into the demon swarm. Dark fantasy action manhwa webtoon art style, ultra-sharp ink linework, high contrast vibrant cel shading, volumetric combat lighting, horizontal 16:9.`,
+        composition: 'Protagonist unleashing monumental beam of energy slicing through sky and colossal calamity boss',
+        prompt: `YouTube video thumbnail art, 16:9 landscape aspect ratio. Epic wide battlefield manhwa composition. Protagonist standing on a ruined precipice, unleashing a monumental vertical pillar of celestial starlight slicing the clouds apart and bisecting a colossal boss. Sharp ink linework, high contrast cel shading, cinematic combat lighting, horizontal 16:9.`,
         filename: '01_Thumbnail_Concept_C.jpg'
       }
     ]
+  }
 
-    // Scan thumbnails directory for existing files on disk
-    const existingFiles = await fs.readdir(thumbDir).catch(() => [])
+  /**
+   * Parse custom thumbnail concepts defined in markdown (YouTube_Locked_Package.md or 03_YouTube_Package.md / 04_YouTube_Release_Launchpad.md)
+   */
+  static parseThumbnailConceptsFromMarkdown(mdContent, franchiseId, episodeId) {
+    if (!mdContent || typeof mdContent !== 'string') return []
+    const concepts = []
 
+    // Pattern 1: Structured ### Variant [A-C]: Name
+    const variantBlockRegex = /###\s*(?:Variant|Concept)\s+([A-C]):\s*([^\r\n]+)([\s\S]*?)(?=(?:###\s*(?:Variant|Concept)\s+[A-C]|##\s+|$))/gi
+    let match
+    while ((match = variantBlockRegex.exec(mdContent)) !== null) {
+      const letter = match[1].toUpperCase()
+      const title = match[2].trim()
+      const body = match[3]
+
+      const id = `concept_${letter.toLowerCase()}`
+      const promptMatch = body.match(/-\s*\*\*Prompt[^\n]*\*\*:\s*\r?\n```(?:text)?\r?\n([\s\S]*?)\r?\n```/i) ||
+                          body.match(/```text\r?\n([\s\S]*?)\r?\n```/i)
+      const compMatch = body.match(/-\s*\*\*Visual Concept[^\n]*\*\*:\s*([^\r\n]+)/i) ||
+                        body.match(/-\s*\*\*Composition[^\n]*\*\*:\s*([^\r\n]+)/i)
+      const badgeMatch = body.match(/-\s*\*\*Badge[^\n]*\*\*:\s*`?([^\r\n`]+)`?/i)
+
+      concepts.push({
+        id,
+        name: `Concept ${letter}: ${title}`,
+        subtitle: compMatch ? compMatch[1].trim() : title,
+        badgeText: badgeMatch ? badgeMatch[1].trim() : (letter === 'A' ? 'FALSE F-RANK' : letter === 'B' ? 'SYSTEM ERROR' : 'SOLO S-RANK'),
+        subBadgeText: '',
+        badgeColorPreset: letter === 'A' ? 'gold_crimson' : letter === 'B' ? 'cyan_hud' : 'crimson_flame',
+        badgePosition: 'bottom_left',
+        composition: compMatch ? compMatch[1].trim() : title,
+        prompt: promptMatch ? promptMatch[1].trim() : '',
+        filename: `01_Thumbnail_Concept_${letter}.jpg`
+      })
+    }
+
+    // Pattern 2: Bullet lists under ## Master Visual Thumbnail Concepts
+    if (concepts.length === 0) {
+      const conceptLinesRegex = /-\s*\*\*(Concept\s+[A-C]|Variant\s+[A-C])[^\*]*\*\*:\s*(?:`?([^`\r\n]+)`?\s*)?(?:[-—–]\s*)?([^\r\n]+)?/gi
+      let cMatch
+      while ((cMatch = conceptLinesRegex.exec(mdContent)) !== null) {
+        const rawLabel = cMatch[1]
+        const letterMatch = rawLabel.match(/[A-C]/i)
+        if (!letterMatch) continue
+        const letter = letterMatch[0].toUpperCase()
+        const id = `concept_${letter.toLowerCase()}`
+        const fileCandidate = (cMatch[2] || '').trim()
+        const descCandidate = (cMatch[3] || '').trim()
+
+        let filename = `01_Thumbnail_Concept_${letter}.jpg`
+        if (fileCandidate.endsWith('.jpg') || fileCandidate.endsWith('.png')) {
+          filename = path.basename(fileCandidate)
+        }
+
+        concepts.push({
+          id,
+          name: `Concept ${letter}: ${descCandidate || rawLabel}`,
+          subtitle: descCandidate || rawLabel,
+          badgeText: letter === 'A' ? 'PART 1' : letter === 'B' ? 'SYSTEM ERROR' : 'SOLO S-RANK',
+          subBadgeText: '',
+          badgeColorPreset: letter === 'A' ? 'gold_crimson' : letter === 'B' ? 'cyan_hud' : 'crimson_flame',
+          badgePosition: 'bottom_left',
+          composition: descCandidate || rawLabel,
+          prompt: '',
+          filename
+        })
+      }
+    }
+
+    return concepts
+  }
+
+  /**
+   * Get calibrated high-CTR thumbnail concepts for a franchise and episode.
+   * Dynamically ingests concepts and master thumbnails directly from Markdown SSOT
+   * and local disk image files. 100% dynamic; zero hardcoded series conditionals.
+   */
+  static async getThumbnailVariants(franchiseId, episodeId) {
+    const epDir = path.join(franchisesDir, franchiseId, episodeId)
+    const thumbDir = this.getThumbnailsDir(franchiseId, episodeId)
+    const bibleDir = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA')
+    await fs.mkdir(thumbDir, { recursive: true })
+
+    // Scan directories on disk for existing images
+    const thumbFiles = await fs.readdir(thumbDir).catch(() => [])
+    const epFiles = await fs.readdir(epDir).catch(() => [])
+    const bibleFiles = await fs.readdir(bibleDir).catch(() => [])
+
+    // Identify master thumbnail on disk if available
+    const hasMasterInEp = epFiles.includes('01_Thumbnail_Master.jpg')
+    const hasMasterInThumb = thumbFiles.includes('01_Thumbnail_Master.jpg')
+    const hasMasterInBible = bibleFiles.includes('01_Thumbnail_Master.jpg')
+    const hasLegacyMaster = thumbFiles.includes('01_Master_YouTube_Thumbnail_16x9.jpg') || epFiles.includes('01_Master_YouTube_Thumbnail_16x9.jpg')
+    const masterExistsOnDisk = hasMasterInEp || hasMasterInThumb || hasMasterInBible || hasLegacyMaster
+
+    // 1. Try ingesting custom concepts from Markdown SSOT
+    let baseVariants = []
+    const lockedPkgPath = path.join(bibleDir, 'YouTube_Locked_Package.md')
+    const epPkgPath = path.join(epDir, '03_YouTube_Package.md')
+    const launchpadPath = path.join(epDir, '04_YouTube_Release_Launchpad.md')
+
+    let parsedFromMd = []
+    if (fsSync.existsSync(lockedPkgPath)) {
+      try {
+        const content = fsSync.readFileSync(lockedPkgPath, 'utf-8')
+        parsedFromMd = this.parseThumbnailConceptsFromMarkdown(content, franchiseId, episodeId)
+      } catch (_) {}
+    }
+
+    if (parsedFromMd.length === 0 && fsSync.existsSync(epPkgPath)) {
+      try {
+        const content = fsSync.readFileSync(epPkgPath, 'utf-8')
+        parsedFromMd = this.parseThumbnailConceptsFromMarkdown(content, franchiseId, episodeId)
+      } catch (_) {}
+    }
+
+    if (parsedFromMd.length === 0 && fsSync.existsSync(launchpadPath)) {
+      try {
+        const content = fsSync.readFileSync(launchpadPath, 'utf-8')
+        parsedFromMd = this.parseThumbnailConceptsFromMarkdown(content, franchiseId, episodeId)
+      } catch (_) {}
+    }
+
+    if (parsedFromMd.length > 0) {
+      baseVariants = parsedFromMd
+    } else {
+      baseVariants = this.getDefaultThumbnailConcepts(franchiseId, episodeId)
+    }
+
+    // Ensure Concept A points to 01_Thumbnail_Master.jpg if that file exists on disk
+    if (masterExistsOnDisk && baseVariants.length > 0) {
+      const masterVariant = baseVariants[0]
+      if (!masterVariant.name.includes('(Locked Master Thumbnail)')) {
+        masterVariant.name = `${masterVariant.name} (Locked Master Thumbnail)`
+      }
+    }
+
+    // Resolve disk status, file sizes, and URLs dynamically
     const variants = await Promise.all(baseVariants.map(async (v) => {
-      const diskPath = path.join(thumbDir, v.filename)
+      let resolvedDiskPath = null
       let hasImage = false
       let fileSize = 0
 
-      if (existingFiles.includes(v.filename)) {
+      // Priority 1: Exact filename in thumbnails/
+      const pathInThumb = path.join(thumbDir, v.filename)
+      if (thumbFiles.includes(v.filename)) {
+        resolvedDiskPath = pathInThumb
+      }
+      // Priority 2: Exact filename in episode directory
+      else if (epFiles.includes(v.filename)) {
+        resolvedDiskPath = path.join(epDir, v.filename)
+      }
+      // Priority 3: Exact filename in 00_Series_Bible_and_Character_DNA/
+      else if (bibleFiles.includes(v.filename)) {
+        resolvedDiskPath = path.join(bibleDir, v.filename)
+      }
+      // Priority 4: If concept_a, check 01_Thumbnail_Master.jpg or 01_Master_YouTube_Thumbnail_16x9.jpg
+      else if (v.id === 'concept_a') {
+        if (hasMasterInEp) {
+          resolvedDiskPath = path.join(epDir, '01_Thumbnail_Master.jpg')
+          v.filename = '01_Thumbnail_Master.jpg'
+        } else if (hasMasterInThumb) {
+          resolvedDiskPath = path.join(thumbDir, '01_Thumbnail_Master.jpg')
+          v.filename = '01_Thumbnail_Master.jpg'
+        } else if (hasMasterInBible) {
+          resolvedDiskPath = path.join(bibleDir, '01_Thumbnail_Master.jpg')
+          v.filename = '01_Thumbnail_Master.jpg'
+        } else if (thumbFiles.includes('01_Master_YouTube_Thumbnail_16x9.jpg')) {
+          resolvedDiskPath = path.join(thumbDir, '01_Master_YouTube_Thumbnail_16x9.jpg')
+        }
+      }
+
+      if (resolvedDiskPath && fsSync.existsSync(resolvedDiskPath)) {
         hasImage = true
         try {
-          const st = await fs.stat(diskPath)
+          const st = await fs.stat(resolvedDiskPath)
           fileSize = st.size
         } catch (_) {}
-      } else {
-        // Check for legacy master thumbnail fallback for Concept A
-        const masterFile = '01_Master_YouTube_Thumbnail_16x9.jpg'
-        if (v.id === 'concept_a' && existingFiles.includes(masterFile)) {
-          hasImage = true
-          try {
-            const st = await fs.stat(path.join(thumbDir, masterFile))
-            fileSize = st.size
-          } catch (_) {}
-        }
       }
 
       // YouTube hard upload limit is 2 MB (2,097,152 bytes)
@@ -723,62 +814,133 @@ static formatTimestamp(seconds) {
     let pinnedComment = ''
     let isPending = true
 
-    // 1. Markdown-First Truth Resolution: Parse 03_YouTube_Package.md created by Agent
+    // 1. Markdown-First Truth Resolution: Parse from available Markdown SSOT files
+    // Priority 1: 03_YouTube_Package.md (Episode specific package)
+    // Priority 2: 04_YouTube_Release_Launchpad.md (Episode launchpad)
+    // Priority 3: 00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md (Master series locked package)
+    const epLaunchpadPath = path.join(epPath, '04_YouTube_Release_Launchpad.md')
+    const masterLockedPkgPath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'YouTube_Locked_Package.md')
+
+    let parsedContent = ''
     if (fsSync.existsSync(pkgMdPath)) {
-      try {
-        const pkgContent = await fs.readFile(pkgMdPath, 'utf-8')
-        isPending = false
+      parsedContent = await fs.readFile(pkgMdPath, 'utf-8').catch(() => '')
+    } else if (fsSync.existsSync(epLaunchpadPath)) {
+      parsedContent = await fs.readFile(epLaunchpadPath, 'utf-8').catch(() => '')
+    }
 
-        // Parse Titles
-        const rawFoundTitles = []
-        const lines = pkgContent.split(/\r?\n/)
-        for (const line of lines) {
-          const m = line.match(/^\d+\.\s+\*\*([^\*]+)\*\*(?:\s*\((\d+)\s*chars\))?/)
-          if (m) {
-            rawFoundTitles.push(m[1].trim())
-          }
-        }
+    let masterContent = ''
+    if (fsSync.existsSync(masterLockedPkgPath)) {
+      masterContent = await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
+    }
 
-        if (rawFoundTitles.length > 0) {
-          const ctrScores = ['99%', '98%', '97%', '96%', '95%', '94%', '93%', '92%', '91%', '90%']
-          titles = rawFoundTitles.slice(0, 10).map((t, idx) => ({
-            archetype: `High-CTR Archetype ${idx + 1}`,
-            title: t,
-            ctrScore: ctrScores[idx] || '92%',
-            charCount: t.length,
-            isCompliant: t.length <= 100
-          }))
-        }
+    if (parsedContent || masterContent) {
+      isPending = false
+      const primaryDoc = parsedContent || masterContent
 
-        // Parse Chapters
-        const chapterBlockMatch = pkgContent.match(/⏱️\s*(?:EPISODE CHAPTERS|CHAPTER TIMESTAMPS):\s*\r?\n([\s\S]*?)(?:\r?\n\s*━|\r?\n\s*#|\r?\n\s*```|$)/i)
-        if (chapterBlockMatch && chapterBlockMatch[1]) {
-          const rawLines = chapterBlockMatch[1].split(/\r?\n/)
-          for (const rawLine of rawLines) {
-            const lineMatch = rawLine.match(/^(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—]\s*(.+)$/)
-            if (lineMatch) {
-              chapters.push({
-                time: lineMatch[1].trim(),
-                seconds: this.parseTimestampToSeconds(lineMatch[1].trim()),
-                title: lineMatch[2].trim()
-              })
+      // Parse Titles
+      const rawFoundTitles = []
+      if (primaryDoc) {
+        const lines = primaryDoc.split(/\r?\n/)
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim()
+          if (line.startsWith('>') || line.startsWith('#') || line.startsWith('---')) continue
+
+          const numMatch = line.match(/^\d+\.\s*(.+)$/)
+          if (numMatch) {
+            let candidate = numMatch[1].trim()
+
+            // Check if candidate is an archetype label: **Archetype Name:** or **Name (88 chars):**
+            if ((candidate.endsWith(':') || candidate.endsWith(':**') || candidate.endsWith(':*')) && i + 1 < lines.length) {
+              const nextLine = lines[i + 1].trim()
+              const codeMatch = nextLine.match(/^`([^`]+)`/) || nextLine.match(/^([^`\r\n]+)$/)
+              if (codeMatch && codeMatch[1].trim().length > 15) {
+                candidate = codeMatch[1].trim()
+              }
+            }
+
+            // Clean trailing char counts first, then bold/backticks
+            candidate = candidate.replace(/\s*\(\d+\s*chars?\)\s*$/i, '').trim()
+            candidate = candidate
+              .replace(/^\*\*/, '').replace(/\*\*$/, '')
+              .replace(/^`/, '').replace(/`$/, '')
+              .trim()
+
+            if (candidate.length > 15 && !candidate.includes('Setup') && !candidate.startsWith('Archetype')) {
+              rawFoundTitles.push(candidate)
             }
           }
         }
+      }
 
-        // Parse SEO Description Box
-        const descBlockMatch = pkgContent.match(/##\s*[^\n]*Description Box[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
-        if (descBlockMatch && descBlockMatch[1]) {
-          description = descBlockMatch[1].trim()
+      // If no titles found in episode package, check master package
+      if (rawFoundTitles.length === 0 && masterContent) {
+        const mLines = masterContent.split(/\r?\n/)
+        for (const mLine of mLines) {
+          const line = mLine.trim()
+          if (line.startsWith('>')) continue
+
+          const uploadMatch = line.match(/^-\s*\*\*Upload\s+\d+[^*]*:?\*\*:?\s*`([^`]+)`/i)
+          if (uploadMatch && uploadMatch[1].trim().length > 15) {
+            let t = uploadMatch[1].trim()
+            t = t.replace(/\s*\(\d+\s*chars?\)\s*$/i, '').trim()
+            t = t.replace(/^\*\*/, '').replace(/\*\*$/, '').replace(/^`/, '').replace(/`$/, '').trim()
+            rawFoundTitles.push(t)
+          }
         }
 
-        // Parse Pinned Community Comment
-        const commentBlockMatch = pkgContent.match(/##\s*[^\n]*Pinned Community[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
-        if (commentBlockMatch && commentBlockMatch[1]) {
-          pinnedComment = commentBlockMatch[1].trim()
+        if (rawFoundTitles.length === 0) {
+          const baseMatch = masterContent.match(/\*\*Base Locked Title[^\n]*\*\*\s*:\s*\r?\n```(?:text)?\r?\n([\s\S]*?)\r?\n```/i)
+          if (baseMatch && baseMatch[1].trim()) {
+            rawFoundTitles.push('(Episode ' + epNum + ') ' + baseMatch[1].trim())
+          }
         }
-      } catch (err) {
-        console.warn('Could not parse 03_YouTube_Package.md:', err.message)
+      }
+
+      if (rawFoundTitles.length > 0) {
+        const ctrScores = ['99%', '98%', '97%', '96%', '95%', '94%', '93%', '92%', '91%', '90%']
+        titles = rawFoundTitles.slice(0, 10).map((t, idx) => ({
+          archetype: `High-CTR Archetype ${idx + 1}`,
+          title: t,
+          ctrScore: ctrScores[idx] || '92%',
+          charCount: t.length,
+          isCompliant: t.length <= 100
+        }))
+      }
+
+      // Parse Chapters
+      const chapterBlockMatch = primaryDoc.match(/⏱️\s*(?:EPISODE CHAPTERS|CHAPTER TIMESTAMPS):\s*\r?\n([\s\S]*?)(?:\r?\n\s*━|\r?\n\s*#|\r?\n\s*```|$)/i)
+      if (chapterBlockMatch && chapterBlockMatch[1]) {
+        const rawLines = chapterBlockMatch[1].split(/\r?\n/)
+        for (const rawLine of rawLines) {
+          const lineMatch = rawLine.match(/^(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—]\s*(.+)$/)
+          if (lineMatch) {
+            chapters.push({
+              time: lineMatch[1].trim(),
+              seconds: this.parseTimestampToSeconds(lineMatch[1].trim()),
+              title: lineMatch[2].trim()
+            })
+          }
+        }
+      }
+
+      // Parse SEO Description Box
+      const descBlockMatch = primaryDoc.match(/##\s*[^\n]*(?:Description Box|SEO Description|Master Description)[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i) ||
+                             masterContent.match(/##\s*[^\n]*(?:Description Box|SEO Description|Master Description)[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (descBlockMatch && descBlockMatch[1]) {
+        let rawDesc = descBlockMatch[1].trim()
+        rawDesc = rawDesc
+          .replace(/\{\{EPISODE_RANGE\}\}/g, epNum > 1 ? `1-${epNum}` : '1')
+          .replace(/\{\{EPISODE_HEADER_LINE\}\}/g, cleanEpisodeName)
+          .replace(/\{\{RUNTIME_BLOCK\}\}/g, `• Full Runtime: ${(totalDuration / 60).toFixed(1)} Minutes (${this.formatTimestamp(totalDuration)})\n• Episode Bounds: 00:00 - ${this.formatTimestamp(totalDuration)}`)
+          .replace(/\{\{TIMESTAMPS_BLOCK\}\}/g, epNum === 1 ? '' : (chapters.length > 0 ? `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapters.map(c => `${c.time} - ${c.title}`).join('\n')}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` : ''))
+        description = rawDesc
+      }
+
+      // Parse Pinned Community Comment
+      const commentBlockMatch = primaryDoc.match(/##\s*[^\n]*Pinned (?:Community|Comment|Bio)[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i) ||
+                                masterContent.match(/##\s*[^\n]*Pinned (?:Community|Comment|Bio)[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (commentBlockMatch && commentBlockMatch[1]) {
+        pinnedComment = commentBlockMatch[1].trim()
       }
     }
 
@@ -922,22 +1084,22 @@ static formatTimestamp(seconds) {
 
     if (viralHooks.length === 0) {
       viralHooks = [
-        { title: `They discarded him in the mud... 7 years later, he shattered a Calamity Wyrm with a stick 💀`, hookType: 'Underdog Revenge', ctrScore: '99%' },
-        { title: `Arrogant nobles mocked his 'zero mana' until ancient archmage arcana awakened 😭`, hookType: 'Noble Shock', ctrScore: '98%' },
-        { title: `He solo-cleaved an S-Rank Calamity Beast with an ordinary wooden quarterstaff ☕`, hookType: 'Combat Face-Slap', ctrScore: '96%' }
+        { title: `They mocked him in the beginning... until his hidden foundation awakened 💀`, hookType: 'Underdog Awakening', ctrScore: '99%' },
+        { title: `Arrogant elite drew their weapon on him... and instantly regretted it 😭`, hookType: 'Combat Shock', ctrScore: '98%' },
+        { title: `When everyone thought he was the weakest, he solo-cleaved the entire raid ☕`, hookType: 'Sovereign Cleave', ctrScore: '96%' }
       ]
     }
 
     if (!hookOverlayText) {
-      hookOverlayText = `When arrogant nobles discard a 'zero-mana infant', unaware he re-forged his mortal flesh with ancient arcana...`
+      hookOverlayText = `When arrogant adversaries underestimate a hidden sovereign, unaware of his true foundation...`
     }
 
     if (!caption) {
-      caption = `They threw him in the freezing mud at birth... 7 years later, he pulverised a Tier 4 Calamity Wyrm with a wooden stick! 💀\n\nWatch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwa #manhwarecap #webtoon #animerecap #isekai #magic #overpowered #actionmanhwa`
+      caption = `They mocked him at first... but when crisis struck, they realized who the true master was! 💀\n\nWatch the full continuous story on YouTube (Link in bio 🔗)\n\n#manhwa #manhwarecap #webtoon #animerecap #overpowered #actionmanhwa`
     }
 
     if (!pinnedComment) {
-      pinnedComment = `The full continuous story is live on our YouTube channel! Watch Episode 1 now (Link in bio 🔗) Search "${cleanFranchiseName}" on YouTube!`
+      pinnedComment = `The full continuous story is live on our YouTube channel! Watch now (Link in bio 🔗) Search "${cleanFranchiseName}" on YouTube!`
     }
 
     const hashtags = [

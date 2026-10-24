@@ -110,3 +110,7 @@ Every episode release package (`03_YouTube_Package.md`) includes the TikTok & Sh
    - Reusable Shorts captions and bio comments use continuous binge phrasing (`Watch the full continuous story on YouTube (Link in bio 🔗)`).
 3. **Zero Cross-Franchise Lore Bleed Invariant:**
    - Studio services must NEVER fall back to hardcoded tropes from peer series (e.g. never leak Series 03 "Bram / Common Tool Polisher" into Series 04).
+4. **Zero Studio Application Code Mutation Law (Absolute Studio Boundary Invariant):**
+   - The agent is **STRICTLY AND UNCONDITIONALLY FORBIDDEN** from modifying or patching Studio application code (`packagingService.js`, `fileService.js`, `antiSlopValidator.js`, `SeriesDetailView.vue`, etc.) when creating, updating, or locking series launch packages.
+   - The Studio application is strictly an ingestion, viewer, and runner engine that consumes markdown files as the Single Source of Truth (SSOT).
+   - Any updates to titles, descriptions, pinned comments, or thumbnails MUST be written directly to `00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md` and `EPXX/03_YouTube_Package.md`. The Studio dynamically ingests them.

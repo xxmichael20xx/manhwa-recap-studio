@@ -19,27 +19,29 @@ EP[XX]_[Episode_Slug]/
 
 ---
 
-## 2. Universal 4-Act Audio Script Architecture
+## 2. Multi-Episode Arc Architecture Law & Dynamic Organic Batch Scaling
 
-| Section | Runtime | Target Words | Narrative Function & Retention Milestones |
-| :--- | :--- | :--- | :--- |
-| **Act 1: Catalyst & Hook** | **0:00 – 3:30** | ~450–550 words | Severe adversity/betrayal + System Synchronisation chime (`3:00` retention marker). |
-| **Act 2: Hidden Trial** | **3:30 – 10:00** | ~900–1,100 words| Clean RPG stat allocation; physical durability proven ($0\text{ dmg}$ from mob). |
-| **Act 3: Tactical Escalation**| **10:00 – 16:30**| ~1,000–1,200 words| Choke-point combat; simultaneous swarm tactics neutralised; political friction. |
-| **Act 4: Climax & Loop Hook**| **16:30 – 20:00**| ~750–950 words | Decisive retribution; institutional blackout acknowledged; next-arc cliffhanger. |
-| **TOTAL (Per Episode)** | **~20:00** | **~3,200 Words** | **Average Spoken Speed: ~140 WPM** |
+1. **The Multi-Episode Arc Architecture Law (Zero 1-Arc = 1-Episode Confabulation):**
+   - An Arc is NEVER equal to a single episode. Every franchise Series Bible (`Series_Bible.md`) organizes seasons into multi-episode arcs (typically 3–6 episodes per arc; e.g. Season 1 = 18 episodes across 4 Arcs: Arc I: Inciting Incident & Underdog Awakening, Arc II: Institutional Infiltration & The Great Trial, Arc III: Dimensional Rupture & Syndicate War, Arc IV: Global Awakening & Sovereign Ascension).
+   - Rushing or compressing an entire Arc into 1–2 episodes is strictly prohibited. Every episodic script must declare its parent Arc and Episode sequence.
+
+2. **Organic Narrative Pacing & Dynamic Scaling ($\lceil N_{\text{scenes}} / 24 \rceil$):**
+   - Episodes across all franchises have **NO rigid batch quotas**. Strictly forbidden from forcing an episode to be arbitrarily 3 batches, 9 batches, or 13 batches.
+   - An episode's runtime and scene count are governed strictly by the organic progression of its story arc, natural micro-payoffs, and climactic cliffhangers.
+   - Whatever total scene count $N_{\text{scenes}}$ the organic story requires is partitioned into sequential 24-scene Google Flow batches (`Batch 01`, `Batch 02`, ..., `Batch K`), where the terminal batch may contain $\le 24$ scenes.
+   - Narrative phases and inventions expand across multiple batches (2 to 4+ batches / 48–96+ scenes per phase) to ensure slow-burn worldbuilding is 100% earned and never rushed.
 
 ---
 
-## 3. The Universal Prompt Matrix Formula (9:16 Native Vertical Standard)
+## 3. The Universal Prompt Matrix Formula (Dual-Format Architecture: 9:16 Vertical vs 16:9 Landscape)
 
-Every visual prompt generated must strictly follow the **9:16 Native Vertical Aspect Ratio** and this 6-part construction formula to guarantee visual consistency and peak retention:
+Every visual prompt generated must strictly follow the franchise's locked aspect ratio—**9:16 Vertical Webtoon** (`1080x1920`) or **16:9 Full-Bleed Landscape** (`1920x1080`)—and this 6-part construction formula to guarantee visual consistency and peak retention:
 
 $$\text{Prompt} = \text{[Style Anchor]} + \text{[Character Reference Seed]} + \text{[Spatial Environment]} + \text{[Action / Kinetic Pose]} + \text{[Camera Angle \& Lighting]} + \text{[Anatomical Quality Directives]}$$
 
 ### Universal Rules for Prompt Matrices:
-1. **Strict 9:16 Native Vertical Mandate:** All prompts must specify `9:16 vertical format` (`1080x1920`). Never use 16:9 or landscape boilerplate.
-2. **2.0s – 3.5s Rapid-Pacing:** Every 13–15 minute episode script is partitioned into ~250–300 micro-beats (averaging ~2.8s–3.2s per cut, hard ceiling 3.8s) for maximum YouTube retention.
+1. **Dynamic Format Fidelity (9:16 Vertical vs 16:9 Landscape):** All prompts must specify the exact franchise format (`9:16 vertical format` or `horizontal 16:9 widescreen full-bleed landscape`). Never mix conflicting aspect ratio tokens.
+2. **5.0s – 7.5s Measured Pacing Law:** Visual plate cuts are paced at 5.0s–7.5s holds (hard ceiling 8.0s) matching real Edge-TTS audio telemetry for peak retention.
 3. **Mandatory Anatomical Negative Directives:** Every prompt MUST include:
    ```text
    anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting
@@ -62,7 +64,7 @@ IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeo
 2. **Combat Cadence:**
    * Use staccato, punchy sentences during high-action combat (e.g. *"Step. Pivot. Strike."*).
 4. **The 4 High-Retention Storytelling Directives:**
-   * **15–30s Cold-Open Hook (*In Medias Res*):** Open at a peak crisis or badass moment before flashing back to *"12 Hours Earlier..."*.
+   * **Strict Linear Chronological Continuity (Zero In Medias Res / Flash-Forward Loops):** Strictly forbidden from opening episodic scripts with flash-forwards to future crises (*in medias res*, *"X Days Earlier..."*, *"12 Hours Earlier..."*). Seamless chronological 1:1 continuation across all episodes.
    * **Punchy System HUD Voiceovers:** Keep spoken holographic system notices under 12 words with crisp impact and zero academic jargon (e.g. `[SYSTEM: CALCULATION RATE 10,000x. ENEMY TRAJECTORY PREDICTED.]`).
    * **Deadpan Sarcasm & Charismatic MC Dialogue:** Inject unbothered, witty, deadpan one-liners to make the protagonist instantly memorable and likable.
    * **Ticking Clock & Looming Threat Outro Hook:** End the episode with an unresolved external crisis in the final 30–45s to maximize binge-watching.
@@ -80,7 +82,7 @@ Prior to drafting any episodic prompt matrix, every franchise must initialize it
 2. **Master Character Reference Plates (16:9 / 9:16):**
    - High-fidelity textless character concept art saved as `character_vault/01_Protagonist_Master_Plate.jpg` matching Midjourney `--cref [URL] --cw 80` standards.
 3. **Mandatory Token Injection:**
-   - 100% of visual prompt entries `[IMG_001]` to `[IMG_216]` must anchor to their corresponding Character DNA tokens (`@{Character}`) to eliminate diffusion attention splitting or visual drift.
+   - 100% of visual prompt entries `[IMG_001]` to `[IMG_XXX]` must anchor to their corresponding Character DNA tokens (`@{Character}`) to eliminate diffusion attention splitting or visual drift.
 
 ---
 

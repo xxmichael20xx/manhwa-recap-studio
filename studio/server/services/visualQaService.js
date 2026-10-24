@@ -142,7 +142,7 @@ foreach ($line in $result.Lines) {
 
       // Check 2: Prompt headers / Chapter titles at top edge
       if (normY < 0.09) {
-        if (/MANHWA|EP\.|CAELEN|VALEN|SKILL|FANTASY|CHAPTER|ACADEMY|CEREMONY|HUNTER/i.test(lineText)) {
+        if (/MANHWA|EP\.|EPISODE|ACT\s+\d|SKILL|FANTASY|CHAPTER|ACADEMY|CEREMONY|HUNTER|SCENE|PROMPT/i.test(lineText)) {
           hasPromptHeader = true
           issues.push(`Top prompt banner detected: "${lineText}"`)
           topClutterLines.push(lineText)

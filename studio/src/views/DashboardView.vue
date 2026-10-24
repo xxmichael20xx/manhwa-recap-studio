@@ -66,7 +66,7 @@
           <div class="space-y-4">
             <div class="flex items-start justify-between gap-2">
               <span class="text-xs font-mono px-2.5 py-1 rounded bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 uppercase font-bold">
-                {{ item.format || (item.id.includes('02') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}
+                {{ item.format || (item.bibleDirectives?.format?.includes('16:9') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}
               </span>
               <span class="text-xs font-mono text-slate-500 dark:text-slate-400">{{ item.episodes.length }} Episode{{ item.episodes.length > 1 ? 's' : '' }}</span>
             </div>

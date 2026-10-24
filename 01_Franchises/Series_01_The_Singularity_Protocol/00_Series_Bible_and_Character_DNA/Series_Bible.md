@@ -95,3 +95,28 @@ All entities maintain a 1-to-1 name match with Google Flow Character Collections
   - **No "Sold Soul to Devil" Clichés:** Characters never dismiss high-level combat feats as "demonic pacts" or "black magic curses".
   - **Forensic Deduction:** Examiners (e.g. Keith Morgan) deduce facts via structural compression lines, acoustic sensor telemetry, and physical law anomalies.
   - **Calculated Noble Antagonism:** Prince Valen and House Sol-Aegis act with aristocratic self-preservation, utilizing legal non-disclosure agreements, media monopolies, and guild council sanctions to protect their standing rather than cartoonish tantrums.
+
+
+---
+
+## 🎨 Studio & Google Flow Master Directives (SSOT)
+
+<!-- STUDIO_BIBLE_DIRECTIVES_START
+{
+  "styleName": "Urban Hunter / Sci-Fi Awakening",
+  "format": "9:16",
+  "voiceId": "en-GB-RyanNeural",
+  "genreRule": "Modern supernatural action hunter manhwa art style, sharp black ink linework, high contrast dramatic lighting, textless 9:16 vertical manhwa aspect ratio (1080x1920 vertical format). Modern awakened hunter agency facilities, dimensional rift containment zones, and urban dungeon gate perimeters.",
+  "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate medieval castles or flat Western cartoons.",
+  "crowdRule": "Association staff and background hunters permitted in public guild headquarters. Sealed gate containment zones remain strictly isolated.",
+  "defaultVaultDna": "modern supernatural action hunter manhwa art style, sharp black ink linework, high contrast dramatic lighting, textless artwork",
+  "exampleEntities": [],
+  "vocabulary": {
+    "diegeticScrolls": "containment logs/dossiers",
+    "diegeticSignage": "agency perimeter/hazard signage",
+    "diegeticSteles": "dimensional gate marker steles",
+    "diegeticUi": "digital agency tactical HUDs"
+  },
+  "spatialEnclosures": {}
+}
+STUDIO_BIBLE_DIRECTIVES_END -->

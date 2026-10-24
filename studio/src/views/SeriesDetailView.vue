@@ -44,7 +44,7 @@
         </span>
         <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 font-bold flex items-center space-x-1">
           <span>🔒</span>
-          <span>{{ franchise.format || ((franchise.id?.includes('02') || franchise.id?.includes('05') || (franchise.bibleContent || '').includes('16:9')) ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}</span>
+          <span>{{ franchise.format || (franchise.bibleDirectives?.format?.includes('16:9') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon') }}</span>
         </span>
       </div>
     </div>
@@ -988,13 +988,13 @@
               <span>Unified Franchise Titles &amp; Format Variants (&le; 100 Characters)</span>
             </h3>
             <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold">
-              {{ (pkgData?.titles || defaultTitles).length }} Formats Ready
+              {{ displayedTitles.length }} Formats Ready
             </span>
           </div>
 
           <div class="space-y-2.5">
             <div 
-              v-for="(item, idx) in pkgData?.titles || defaultTitles" 
+              v-for="(item, idx) in displayedTitles" 
               :key="idx"
               class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-purple-500/40 transition-all group"
             >
@@ -1470,18 +1470,39 @@ const triggerToast = (title, message) => {
   }, 4000)
 }
 
-const defaultTitles = [
-  "Mocked as an F-Rank Archer, He Siphons Boss Stats in Secret and Draws at Mach 4",
-  "Assigned to the Trash Class, His 6,500 LBS Bow Shot Shocked the High Director",
-  "When an S-Rank Red Gate Trapped 300 Students, the F-Rank Archer Soloed the Boss",
-  "They Gave Him Dungeon Refuse Duty, Unaware His System Steals S-Rank Boss Stats",
-  "The S-Rank Scion Dropped His Staff in Terror While the Mocked Archer One-Shot It",
-  "He Shattered 12 Inches of S-Rank Obsidian Armor with a Single Hypersonic Arrow",
-  "(1-5) Mocked for Rolling 'Garbage Archer', He Unlocks the Omniscient Siphon Bow",
-  "They Exiled Him as a Weak Archer, But His Void-Strung Bow Controls the Dungeon",
-  "The Guild Thought He Was Paralyzed, But He Moved at Mach 2.5 Across Falling Rocks",
-  "From Mocked Orphan to S-Rank Calamity Slayer: The Rise of the Plunderer Archer"
-]
+const displayedTitles = computed(() => {
+  if (pkgData.value?.titles && pkgData.value.titles.length > 0) {
+    return pkgData.value.titles
+  }
+  const cleanName = (franchise.value?.name || route.params.id || 'Active Series')
+    .replace(/^Series_\d+_/i, '')
+    .replace(/_/g, ' ')
+    .trim()
+  const canon = pkgData.value?.canonicalTitle || cleanName
+  return [
+    {
+      archetype: 'Locked Canonical Title (Episode 1)',
+      title: `(Episode 1) ${canon}`,
+      ctrScore: '99%',
+      charCount: `(Episode 1) ${canon}`.length,
+      isCompliant: `(Episode 1) ${canon}`.length <= 100
+    },
+    {
+      archetype: 'Underdog Awakening Hook',
+      title: `Mocked As The Weakest, He Awakens A Forbidden Power: ${canon}`,
+      ctrScore: '97%',
+      charCount: `Mocked As The Weakest, He Awakens A Forbidden Power: ${canon}`.length,
+      isCompliant: `Mocked As The Weakest, He Awakens A Forbidden Power: ${canon}`.length <= 100
+    },
+    {
+      archetype: 'Sovereign Climax Hook',
+      title: `When Everyone Left Him Behind, He Re-Forged The World: ${canon}`,
+      ctrScore: '95%',
+      charCount: `When Everyone Left Him Behind, He Re-Forged The World: ${canon}`.length,
+      isCompliant: `When Everyone Left Him Behind, He Re-Forged The World: ${canon}`.length <= 100
+    }
+  ]
+})
 
 const loadFranchise = async () => {
   try {
@@ -1535,18 +1556,14 @@ const loadPackagingData = async () => {
 
       // Extract base canonical title from basePkg (strip leading (Episode X) prefix if present)
       const rawBaseTitle = basePkg?.titles?.[0]?.title || basePkg?.canonicalTitle || ''
+      const cleanFranchiseName = (franchise.value?.name || String(route.params.id || ''))
+        .replace(/^Series_\d+_/i, '')
+        .replace(/_/g, ' ')
+        .trim()
       const canonicalTitle = rawBaseTitle.replace(/^\((?:Episode|Episodes|Part|Parts)\s+[^)]+\)\s*/i, '').trim() ||
-        (route.params.id?.includes('Series_05')
-          ? 'The Fourth Magius: The Last Archmage and The Discarded Babe'
-          : route.params.id?.includes('Series_04')
-          ? 'He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save'
-          : route.params.id?.includes('Series_03')
-          ? 'Reborn As A Smiling Architect, My Infinite +N Enchantment Broke The Demigod Tower'
-          : route.params.id?.includes('Series_02')
-          ? 'Mocked As An F-Rank Archer, He Siphons Boss Stats To Solo The S-Rank Red Gate'
-          : route.params.id?.includes('Series_01')
-          ? 'Abandoned As The Weakest Scavenger, He Awakens The Singularity Sovereign Protocol'
-          : (franchise.value?.name || 'Manhwa Recap Saga'))
+        basePkg?.canonicalTitle ||
+        cleanFranchiseName ||
+        'Manhwa Recap Saga'
 
       const prefixTag = isComplete ? '(Complete)' : `(Episode ${compactRange})`
       const lockedOmnibusTitle = `${prefixTag} ${canonicalTitle}`.trim()
@@ -1662,11 +1679,10 @@ const currentSelectedEpisodeVideoSize = computed(() => {
 })
 
 const isVerticalFormat = computed(() => {
-  const fmt = franchise.value?.format || ''
+  const fmt = franchise.value?.format || franchise.value?.bibleDirectives?.format || ''
   if (fmt.includes('9:16')) return true
   if (fmt.includes('16:9')) return false
-  const fId = (franchise.value?.id || franchise.value?.folder || route.params.id || '').toLowerCase()
-  return !(fId.includes('02') || fId.includes('05') || fId.includes('abyssal') || fId.includes('fourth_magius'))
+  return false
 })
 
 const selectedEpisodeFilter = ref('all')
@@ -2088,40 +2104,11 @@ const isLoadingClimaxData = ref(false)
 const copiedClimaxField = ref(null)
 
 const defaultClimaxHooks = computed(() => {
-  const currentId = route.params.id || ''
-  if (currentId.includes('Series_05')) {
-    return [
-      { title: "They discarded the baby in the snow until 1,000 years of Archmage memory awakened 😭💀", hookType: "Underdog Awakening", ctrScore: "99%" },
-      { title: "Arrogant Patriarch tried sealing an infant's mana... and shattered the entire testing crystal 💀", hookType: "Noble Humiliation", ctrScore: "98%" },
-      { title: "The imperial court mocked the 5-year-old until he cast a forbidden 9th-circle spell with a stick 😭⚡", hookType: "Action Shock", ctrScore: "97%" },
-      { title: "Mocked as a mana-less bastard babe, but he was the Empire's founder reincarnated 👑💀", hookType: "Founder Revelation", ctrScore: "96%" }
-    ]
-  }
-  if (currentId.includes('Series_04')) {
-    return [
-      { title: "He ran an idle cultivation game for 10 years, then Earth merged with his save file 😭💀", hookType: "Reality Convergence", ctrScore: "99%" },
-      { title: "Arrogant S-Rank Scion drew a sacred jade blade, so he snapped it with a kitchen knife 💀", hookType: "Action Shock", ctrScore: "98%" },
-      { title: "Mocked as a broke night-shift clerk until 1 billion years of Dao cultivation unlocked 😭", hookType: "Underdog Awakening", ctrScore: "97%" },
-      { title: "The state spectrometer tried measuring his power... and violently exploded with 1 billion years of Dao ⚡💀", hookType: "Measurement Overflow", ctrScore: "96%" }
-    ]
-  }
-  if (currentId.includes('Series_03')) {
-    return [
-      { title: "They mocked his F-Rank cleaning talent until he turned their $10M Holy Sword into chalk 😭💀", hookType: "Noble Humiliation", ctrScore: "99%" },
-      { title: "Arrogant Noble draws a Flaming S-Rank Rapier on a slum craftsman... and instantly regrets it 💀", hookType: "Dramatic Shock", ctrScore: "97%" },
-      { title: "Slum craftsman taps the Noble's Holy Sword with one finger: [SEMANTIC REFACTORING ACTIVATED]", hookType: "System Revelation", ctrScore: "95%" },
-      { title: "He turned an ancestral holy blade into brittle chalk with a single tap 😭☕", hookType: "Deadpan Comedy", ctrScore: "94%" }
-    ]
-  }
-  if (currentId.includes('Series_02')) {
-    return [
-      { title: "They expelled the weak archer from the raid, until his void bow shot at Mach 2.5 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
-      { title: "S-Rank Colossus wipes out the elite guild, but the mocked porter draws a 6,500lb recurve 😭🏹", hookType: "Boss Destruction", ctrScore: "97%" }
-    ]
-  }
   return [
-    { title: "They mocked him as powerless until his true hidden sovereign foundation awakened 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
-    { title: "Arrogant elite drew their sacred weapon on him... and instantly regretted it 😭", hookType: "Dramatic Shock", ctrScore: "97%" }
+    { title: "They mocked him as powerless until his true foundation awakened 💀", hookType: "Underdog Awakening", ctrScore: "99%" },
+    { title: "Arrogant elite drew their sacred weapon on him... and instantly regretted it 😭", hookType: "Dramatic Shock", ctrScore: "98%" },
+    { title: "The testing chamber measured his power... and violently shattered into pieces ⚡💀", hookType: "Measurement Overflow", ctrScore: "97%" },
+    { title: "Mocked as the weakest disciple, but he was the legendary founder reincarnated 👑💀", hookType: "Founder Revelation", ctrScore: "96%" }
   ]
 })
 

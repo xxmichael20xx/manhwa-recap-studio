@@ -10,6 +10,55 @@ const franchisesDir = path.resolve(projectRoot, '01_Franchises')
 const engineDir = path.resolve(projectRoot, '00_Engine')
 
 export class FileService {
+  static parseBibleDirectives(bibleContent = '') {
+    if (!bibleContent) return null
+    const match = String(bibleContent).match(/<!--\s*STUDIO_BIBLE_DIRECTIVES_START\s*([\s\S]*?)\s*STUDIO_BIBLE_DIRECTIVES_END\s*-->/)
+    if (!match || !match[1]) return null
+    try {
+      return JSON.parse(match[1].trim())
+    } catch (e) {
+      console.warn('Failed to parse STUDIO_BIBLE_DIRECTIVES JSON block in Series_Bible.md:', e.message)
+      return null
+    }
+  }
+
+  static async getBibleDirectives(franchiseId) {
+    try {
+      const biblePath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+      const bibleContent = await fs.readFile(biblePath, 'utf-8')
+      const directives = FileService.parseBibleDirectives(bibleContent)
+      if (directives) {
+        if (!Array.isArray(directives.exampleEntities) || directives.exampleEntities.length === 0) {
+          try {
+            const charPath = path.join(franchisesDir, franchiseId, 'character_vault', 'characters.json')
+            const charData = JSON.parse(await fs.readFile(charPath, 'utf-8'))
+            if (Array.isArray(charData.characters)) {
+              directives.exampleEntities = charData.characters
+                .map(c => c.token || `@{${c.name}}`)
+                .filter(Boolean)
+                .slice(0, 7)
+            }
+          } catch (_) {}
+        }
+        return directives
+      }
+    } catch (_) {}
+    return null
+  }
+  static async getFranchiseFormat(franchiseId) {
+    try {
+      const directives = await FileService.getBibleDirectives(franchiseId)
+      if (directives?.format) return directives.format
+
+      const charPath = path.join(franchisesDir, franchiseId, 'character_vault', 'characters.json')
+      const rawVault = JSON.parse(await fs.readFile(charPath, 'utf-8').catch(() => '{}'))
+      if (rawVault?.format) {
+        return rawVault.format.includes('16:9') ? '16:9' : '9:16'
+      }
+    } catch (_) {}
+    return '16:9'
+  }
+
   static async getFranchises() {
     try {
       const entries = await fs.readdir(franchisesDir, { withFileTypes: true })
@@ -39,7 +88,12 @@ export class FileService {
 
           // Extract video format and human-readable franchise title if available
           let franchiseDisplayName = entry.name.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
-          let videoFormat = entry.name.includes('02') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon'
+          let videoFormat = 'Format 1: 9:16 Webtoon'
+
+          const directives = FileService.parseBibleDirectives(seriesBibleContent)
+          if (directives?.format) {
+            videoFormat = directives.format.includes('16:9') ? 'Format 2: 16:9 Landscape' : 'Format 1: 9:16 Webtoon'
+          }
 
           if (seriesBibleContent) {
             const titleMatch = seriesBibleContent.match(/Official Title:\*{0,2}\s*\*?([^\r\n*]+)\*?/) || seriesBibleContent.match(/^#\s+[🏹🎬⚔️🔥⚡]?\s*Series\s+\d+:\s*([^\r\n]+)/m)
@@ -47,7 +101,7 @@ export class FileService {
               franchiseDisplayName = titleMatch[1].trim()
             }
 
-            const formatMatch = seriesBibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
+            const formatMatch = !directives?.format && seriesBibleContent.match(/(?:Video\s+)?Format(?:\s+Tier)?:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
             if (formatMatch) {
               const rawFmt = formatMatch[1].trim()
               if (rawFmt.includes('16:9')) {
@@ -165,6 +219,7 @@ export class FileService {
             format: videoFormat,
             characterAnchor,
             bibleContent: seriesBibleContent,
+            bibleDirectives: FileService.parseBibleDirectives(seriesBibleContent),
             episodes: episodes.sort((a, b) => a.id.localeCompare(b.id))
           })
         }
@@ -215,10 +270,16 @@ export class FileService {
     try {
       const biblePath = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
       const bibleContent = await fs.readFile(biblePath, 'utf-8')
-      const formatMatch = bibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
+      const directives = FileService.parseBibleDirectives(bibleContent)
+      if (directives?.format) {
+        if (directives.format.includes('16:9')) format = '16:9'
+        else if (directives.format.includes('9:16')) format = '9:16'
+      } else {
+        const formatMatch = bibleContent.match(/(?:Video\s+)?Format:\*{0,2}\s*\*?([^\r\n*]+)\*?/i)
       if (formatMatch) {
         if (formatMatch[1].includes('16:9')) format = '16:9'
         else if (formatMatch[1].includes('9:16')) format = '9:16'
+      }
       }
     } catch (_) {}
 
@@ -235,7 +296,7 @@ export class FileService {
     if (format !== '16:9' && promptMatrix) {
       const count16x9 = (promptMatrix.match(/16:9|1920x1080|horizontal\s+16:9/gi) || []).length
       const count9x16 = (promptMatrix.match(/9:16|1080x1920|vertical\s+9:16/gi) || []).length
-      if (count16x9 > count9x16 || franchiseId.toLowerCase().includes('series_02')) {
+      if (count16x9 > count9x16) {
         format = '16:9'
       }
     }

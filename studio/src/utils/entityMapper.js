@@ -1,3 +1,5 @@
+import { compilePromptDna } from './promptDnaCompiler.js'
+
 export const COMMON_STOP_WORDS = new Set([
   'high', 'grand', 'chief', 'master', 'shadow', 'stone', 'lord', 'director',
   'instructor', 'commander', 'sub', 'unit', 'boss', 'character', 'young',
@@ -73,31 +75,37 @@ export function parseEntityMappingText(rawText) {
     if (cleanName && uuid) {
       entities[cleanName] = uuid
 
-      // Register smart manhwa narrative aliases
-      const strippedKey = cleanName.replace(/^(Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim()
+      // Register smart manhwa narrative aliases dynamically
+      // 1. Strip role/type prefixes like "Character: ", "Boss: ", etc.
+      const strippedKey = cleanName.replace(/^(Boss|Character|Commander|Lord|Instructor|Director|Leader|Proctor|Examiner|Master|Captain|High-Ranking Official):\s*/i, '').trim()
       if (strippedKey && strippedKey !== cleanName) {
         entities[strippedKey] = uuid
       }
-      if (cleanName.includes('Grand Duke Vane Valerius')) {
-        entities['Grand Duke Vane'] = uuid
+
+      // 2. Strip parenthetical role or phase: "Ace Miller (Craftsman)" -> "Ace Miller"
+      const noParen = cleanName.replace(/\s*\([^)]*\)/g, '').trim()
+      if (noParen && noParen !== cleanName) {
+        entities[noParen] = uuid
       }
-      if (cleanName.includes('Sub-Kernel Automaton Proxy')) {
-        entities['Unit Vanguard-0'] = uuid
-        entities['Automaton Proxy'] = uuid
+
+      // 3. Strip hyphenated variant suffix: "Caelen Vance - Student Archer" -> "Caelen Vance"
+      if (cleanName.includes(' - ')) {
+        const baseName = cleanName.split(' - ')[0].trim()
+        if (baseName && baseName.length >= 3) {
+          entities[baseName] = uuid
+        }
       }
-      if (cleanName.includes('Shadow Assassin Jackal')) {
-        entities['Masked Assassin'] = uuid
-        entities['Jackal'] = uuid
-      }
-      if (cleanName.includes('Chief Proctor Gary')) {
-        entities['High-Ranking Official'] = uuid
-        entities['Proctor Gary'] = uuid
-      }
-      if (cleanName.includes('Master Smith Corvus')) {
-        entities['Dwarf Blacksmith'] = uuid
-      }
-      if (cleanName.includes('Obsidian Core Golem')) {
-        entities['Stone Golem'] = uuid
+
+      // 4. Strip aristocratic or military title prefixes: "Grand Duke Vane Valerius" -> "Grand Duke Vane", "Vane Valerius"
+      const titleMatch = cleanName.match(/^(Grand Duke|Duke|Lord|Lady|Prince|Princess|King|Queen|Chief Proctor|Chief|Senior Examiner|Head Examiner|Examiner|Proctor|Instructor|Commander|Director|Master|Captain)\s+([A-Za-z]+)(?:\s+([A-Za-z]+))?/i)
+      if (titleMatch) {
+        const title = titleMatch[1].trim()
+        const first = titleMatch[2].trim()
+        const last = (titleMatch[3] || '').trim()
+        entities[`${title} ${first}`] = uuid
+        if (last) {
+          entities[`${first} ${last}`] = uuid
+        }
       }
     }
   }
@@ -170,10 +178,6 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
       if (cleanKey && cleanKey.length >= 3) aliases.add(cleanKey)
       const words = cleanKey.split(/\s+/).filter(w => w.length >= 3 && !COMMON_STOP_WORDS.has(w.toLowerCase()))
       words.forEach(w => aliases.add(w))
-      if (cleanKey.toLowerCase().includes('bramwell')) aliases.add('Bram')
-      if (cleanKey.toLowerCase().includes('minotaur')) aliases.add('Minotaur')
-      if (cleanKey.toLowerCase().includes('cassian')) aliases.add('Cassian')
-      if (cleanKey.toLowerCase().includes('vance')) aliases.add('Vance')
 
       const sortedAliases = Array.from(aliases).sort((a, b) => b.length - a.length)
       for (const alias of sortedAliases) {
@@ -307,16 +311,14 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
       const tokenPattern = `@{${key}}`
       let hasToken = text.includes(tokenPattern) || text.includes(`@${uuid}`) || text.includes(key)
       if (!hasToken) {
-        const cleanKey = key.replace(/^(Boss|Character|Commander|Lord|Instructor|Director):\s*/i, '').trim()
-        const words = cleanKey.split(/\s+/).filter(w => w.length >= 3 && !COMMON_STOP_WORDS.has(w.toLowerCase()))
-        const checkNames = [cleanKey, ...words]
-        if (cleanKey.toLowerCase().includes('bramwell')) checkNames.push('Bram')
-        if (cleanKey.toLowerCase().includes('cassian')) checkNames.push('Cassian')
-        if (cleanKey.toLowerCase().includes('vance')) checkNames.push('Vance')
-        if (cleanKey.toLowerCase().includes('lu chen')) checkNames.push('Lu Chen')
+        const cleanKey = key.replace(/^(Boss|Character|Commander|Lord|Instructor|Director|Leader|Proctor|Examiner|Master|Captain):\s*/i, '').trim()
+        const baseName = cleanKey.split(/\s*[-–—(]\s*/)[0].trim()
+        const words = baseName.split(/\s+/).filter(w => w.length >= 3 && !COMMON_STOP_WORDS.has(w.toLowerCase()))
+        const checkNames = [cleanKey, baseName, ...words]
         for (const n of checkNames) {
           if (!n || COMMON_STOP_WORDS.has(n.toLowerCase())) continue
-          const re = new RegExp(`\\b${n}\\b`, 'i')
+          const escaped = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const re = new RegExp(`\\b${escaped}\\b`, 'i')
           if (re.test(text)) {
             hasToken = true
             break
@@ -324,8 +326,19 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
         }
       }
       if (hasToken) {
-        if (key === 'Caelen Vance - Student Archer' && text.includes('Caelen Vance - Phantom Marksman')) {
-          continue
+        // Universal dynamic disambiguation for hyphenated variants (e.g. "Name - Form A" vs "Name - Form B")
+        if (key.includes(' - ')) {
+          const [baseNamePart, variantPart] = key.split(' - ').map(s => s.trim())
+          const escapedBase = baseNamePart.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const variantPattern = new RegExp(`${escapedBase}\\s*-\\s*([A-Za-z0-9\\s]+)`, 'i')
+          const textMatch = text.match(variantPattern)
+          if (textMatch && textMatch[1]) {
+            const mentionedVariant = textMatch[1].trim().toLowerCase()
+            const thisVariant = variantPart.toLowerCase()
+            if (!mentionedVariant.includes(thisVariant) && !thisVariant.includes(mentionedVariant)) {
+              continue
+            }
+          }
         }
         if (!charRefs.includes(uuid)) charRefs.push(uuid)
       }
@@ -364,7 +377,10 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
   }
   openTag += `>`
 
-  const promptBody = text
+  let promptBody = text
+  if (options && (options.characters || options.models)) {
+    promptBody = compilePromptDna(promptBody, options.characters || options.models)
+  }
   const cleanBody = promptBody.replace(/^#\s*Filename:[^\n]*\n?/im, '').trim()
   const finalPrompt = transformTokens(cleanBody, entityMap, mode)
   return `${openTag}\n# Filename: ${filename}\n${finalPrompt}\n</scene>`

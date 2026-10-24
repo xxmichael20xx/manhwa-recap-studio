@@ -78,8 +78,8 @@ const toggleTheme = () => {
 }
 
 const copyMasterDna = () => {
-  const franchiseId = route.params.franchiseId || route.params.id || 'Series_05_The_Fourth_Magius'
-  const cleanName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ')
+  const franchiseId = route.params.franchiseId || route.params.id || ''
+  const cleanName = franchiseId ? franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ') : 'Active Series'
   const masterAnchor = getFranchiseDefaultVaultDna(franchiseId, 'Protagonist')
   navigator.clipboard.writeText(masterAnchor)
   alert(`✨ Copied Master Character DNA Anchor for ${cleanName} to Clipboard!`)

@@ -73,7 +73,10 @@ Whenever `/thumb` is invoked (unless the operator explicitly specifies the targe
      `🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!`
    - **Complete Series Marathon (`Complete Story Marathon`):**
      `🔔 Subscribe to the channel and check out our other full-length manhwa series and complete marathon sagas!`
-   - Once the operator selects 1 winning thumbnail concept on Episode 1 (e.g. `Concept C`), lock `packagingService.js` and `03_YouTube_Package.md` to display ONLY that single chosen thumbnail card in the Studio UI.
+   - **Zero Studio Application Code Mutation Law (Absolute Studio Boundary Invariant):**
+     * The agent is **STRICTLY AND UNCONDITIONALLY FORBIDDEN** from modifying or patching Studio application code (`packagingService.js`, `fileService.js`, `antiSlopValidator.js`, `SeriesDetailView.vue`, etc.) when creating, updating, or locking series thumbnail concepts or packaging.
+     * The Studio application is strictly an ingestion, viewer, and runner engine that consumes markdown files as the Single Source of Truth (SSOT).
+     * To lock a winning canonical thumbnail, the agent MUST declare it in `00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md` and save the master thumbnail image as `01_Thumbnail_Master.jpg` (or `01_Master_YouTube_Thumbnail_16x9.jpg`) in `{episodeId}/thumbnails/`, `{episodeId}/`, or `00_Series_Bible_and_Character_DNA/`. The Studio will dynamically detect and serve it with zero code changes.
 
 ---
 
