@@ -2,8 +2,8 @@
 
 > **Franchise:** Series 04: The Billion-Year Sovereign (Reality Convergence)  
 > **Episode:** EP03 — The Campus Lockdown and the Impostor Sovereign (Arc 1 Climax)  
-> **Upload Mode:** Accumulative Compilation (Episodes 1–3 Compiled Saga — 96m 04s / 1h 36m 04s)  
-> **Standalone Episode Runtime:** 37 Minutes, 58 Seconds (2,278.4s)  
+> **Upload Mode:** Accumulative Compilation (Episodes 1–3 Compiled Saga — 97m 11s / 1h 37m 11s)  
+> **Standalone Episode Runtime:** 39 Minutes, 05 Seconds (2,345s)  
 > **Master Title Standard:** Locked Canonical Title (`YouTube_Locked_Package.md`)  
 > **Language Standard:** UK / British English  
 
@@ -57,15 +57,15 @@ While arrogant campus scions and corporate oligarchs brag about 50,000 years of 
 🔥 Series: The Billion-Year Sovereign: Reality Convergence
 🎬 Episode: Episodes 01 - 03 Compiled Saga (Arc 1 Climax)
 ⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 96.1 Minutes (1:36:04)
-• Episode Bounds: 00:00 - 1:36:04
+• Full Runtime: 97.2 Minutes (1:37:11)
+• Episode Bounds: 00:00 - 1:37:11
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
 00:00 - Episode 01: The One-Billion-Year Awakening and The Broken Blade (21m 46s)
 21:46 - Episode 02: The Campus Appraisal and The Celestial Countdown (36m 20s)
-58:06 - Episode 03: The Campus Lockdown and the Impostor Sovereign (37m 58s)
-1:36:04 - Arc 1 Climax & Epilogue
+58:06 - Episode 03: The Campus Lockdown and the Impostor Sovereign (39m 05s)
+1:37:11 - Arc 1 Climax & Epilogue
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:

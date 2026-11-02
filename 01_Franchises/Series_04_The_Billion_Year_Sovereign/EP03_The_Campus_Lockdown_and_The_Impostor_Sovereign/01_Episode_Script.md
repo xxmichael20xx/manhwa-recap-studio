@@ -101,7 +101,7 @@
 
 [IMG_042] From across the bleachers, Lu Chen quietly observed Gu Tianyu's frantic tantrum, his calm obsidian eyes completely devoid of malice or concern.
 
-[IMG_043] "Brother Chen, look at Young Master Gu," Wang Bao whispered, leaning close. "He looks like he wants to murder someone. We should stay far away from him."
+[IMG_043] "Brother Chen, look at Young Master Gu," Wang Bao whispered, leaning close to Lu Chen. "He looks like he wants to murder someone. We should stay far away from him."
 
 [IMG_044] "He broke his own toy against my kitchen knife," Lu Chen remarked softly in a dry drawl. "Why would he be angry with anyone but his own blacksmith?"
 
@@ -507,7 +507,7 @@
 
 [IMG_229] Han Feng glared into the night sky, his scarred jaw tight: "If you value your life and your family's future, you never saw a student in a black hoodie tonight."
 
-[IMG_230] Meanwhile, twenty minutes later across the campus, the door to Dormitory Room 404 clicked softly shut.
+[IMG_230] Meanwhile, twenty minutes later across the campus, the door to Dormitory Room 402 clicked softly shut.
 
 [IMG_231] Fatty Wang Bao collapsed onto his bunk bed like a deflated balloon, his hands still trembling as he clutched a plastic cup of instant beef noodles.
 

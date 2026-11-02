@@ -44,13 +44,13 @@ $$\text{Prompt} = \text{[Style Anchor]} + \text{[Character Reference Seed]} + \t
 2. **5.0s – 7.5s Measured Pacing Law:** Visual plate cuts are paced at 5.0s–7.5s holds (hard ceiling 8.0s) matching real Edge-TTS audio telemetry for peak retention.
 3. **Mandatory Anatomical Negative Directives:** Every prompt MUST include:
    ```text
-   anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting
+   cleanly rendered hand linework, distinct individual fingers, detailed knuckles, perfectly drawn footwear, crisp pupil reflections, no character cloning, no duplicate protagonist, no foreground strangers stealing focus, natural blurred background crowd in public spaces, strictly private interior room with zero extra characters, no floating hands, no detached hands, no disembodied hands touching screens, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, no split-room perspectives, pure 100% textless artwork, no speech bubbles, no comic SFX, no photorealistic 3D CGI
    ```
 
 ### Example Standardised Prompt Entry (XML Batch Schema):
 ```xml
 <scene id="IMG_001" filename="IMG_001.jpg">
-IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeon exit establishing shot, [Foreground]: @{Ethan Drake - Outcast} walking with hunched posture, carrying a heavy rusted iron rig with dual bronze mana canisters strapped across shoulders, [Background]: elite hunters in glowing cyan power armour, dark stone tunnel, misty floor, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no floating hands, no detached hands, no ghost limbs, no morphing artifacts, no severed appendages, no duplicate limbs, no warped anatomy, dark fantasy action manhwa art style, sharp ink linework, cinematic lighting
+IMG001, @{Ethan Drake - Outcast}, 9:16 vertical format, wide subterranean dungeon exit establishing shot, [Foreground]: @{Ethan Drake - Outcast} walking with hunched posture, carrying a heavy rusted iron rig with dual bronze mana canisters strapped across shoulders, [Background]: elite hunters in glowing cyan power armour, dark stone tunnel, misty floor, cleanly rendered hand linework, distinct individual fingers, detailed knuckles, perfectly drawn footwear, crisp pupil reflections, no character cloning, no duplicate protagonist, no foreground strangers stealing focus, natural blurred background crowd in public spaces, strictly private interior room with zero extra characters, no floating hands, no detached hands, no disembodied hands touching screens, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, no split-room perspectives, pure 100% textless artwork, no speech bubbles, no comic SFX, no photorealistic 3D CGI
 </scene>
 ```
 
@@ -111,11 +111,11 @@ Every single prompt entry generated across all franchises must adhere unconditio
 10. **Decoupled Floating HUDs & Mandatory Arm Pinning (Zero-Disembodied-Hand Invariant):** Floating holographic system screens, diagnostic menus, and stat windows must float freely in open air without literal text strings `[...]`. Characters viewing the screen must have both arms physically anchored to their body (e.g. resting at sides, hand on quiver strap) with EXACTLY two arms. ZERO third hands, ZERO disembodied hands touching holographic screens, ZERO hands inside or holding the UI glass.
 11. **Single-Perspective Threshold Geometry (Zero Split-Room Distortion):** Doorways, airlocks, and entrance/exit transitions must be composed from ONE unified camera perspective inside a single space. NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
 12. **Unabridged Universal Negative Anti-Slop Quality Clause:** Include the complete, unabridged negative block on every scene node without exception:
-    `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
+    `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, cleanly rendered hand linework, distinct individual fingers, detailed knuckles, perfectly drawn footwear, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
 13. **Mandatory Character Identity Anchoring & Zero-Anonymous-Actor Invariant:**
     - Every scene depicting combat action, physical impacts, punches, arrow releases, spellcasting, stat harvesting, emotional reactions, or scene presence MUST explicitly identify the acting character using their locked Character DNA token (`@{Character Name - Archetype}`) directly within the prompt body before the spatial enclosure.
     - **Zero Anonymous Actors:** The studio prompt engine and authoring agents are strictly forbidden from writing abstract action descriptions (e.g. "a fist punching a monster", "arrows striking targets", "swords clashing") without explicitly specifying the named actor delivering or receiving the action.
-    - **1:1 Attribute-Token Synchronization:** Every `<scene>` XML node must include `character_ref="UUID"` (or `character_refs="UUID1, UUID2"`) matching 100% bit-for-bit with the canonical UUIDs defined in `flow_entities.json`.
+    - **1:1 Attribute-Token Synchronization:** Every `<scene>` XML node must include `<character_refs>@{Entity Name}</character_refs>` (or `<character_refs>@{Entity 1}, @{Entity 2}</character_refs>`) matching 100% bit-for-bit with the canonical name tokens defined in `characters.json` and `vault/entities.json`.
 
 ---
 
@@ -124,7 +124,7 @@ Every single prompt entry generated across all franchises must adhere unconditio
     - **Zero Length Penalty:** Vision models such as Nano Banana 2.1 process highly complex, structured instructions with zero token-choke issues. Never abbreviate or truncate prompts.
     - **Detail as Anti-Slop:** Doubling visual detail locks specific 2D manhwa cel-shading, prevents facial morphing, and stops anatomical chaos.
     - **Mandatory Weapon & Prop Entity Extraction:** In Google Flow, weapons and key props MUST be registered as Character Entities with standalone 9:16 master reference plates and passed under character_refs for active image-to-image conditioning.
-    - **Zero Silent UI Truncation:** Lean Mode must default to alse so 100% of negative quality clauses and detailed scene instructions are copied into Google Flow.
+    - **Zero Silent UI Truncation:** Lean Mode must default to `false` so 100% of negative quality clauses and detailed scene instructions are copied into Google Flow.
 
 ---
 
@@ -135,3 +135,19 @@ Whenever any prompt correction, visual slop defect, diffusion anomaly, or new ge
 2. **Autonomous Proactive Codification Gate:** The agent MUST proactively initiate a codification step at turn end (via `/learn` proposal or interactive prompt modal) to persist the newly discovered invariant directly into `AGENTS.md` and the master `00_Engine/` codices.
 3. **Zero-Reminder Standard:** The operator should never have to manually remind the agent to update master codices. Codification is an automated studio invariant.
 
+
+
+---
+
+## 9. V2.0 Inline Staging Headers & Deterministic Matrix Compilation
+
+### 1. Mandatory Script Staging Headers (Phase 2 Invariant):
+Every `[IMG_XXX]` tag in `01_Episode_Script.md` must include an inline HTML comment staging header (100% ignored by Edge-TTS audio synthesis):
+```markdown
+[IMG_001] <!-- ZONE: zone_id | STAGE: [establishing|solo|entrance|interaction] | ACTOR: @{Name} | CAST: [@{Name1}, ...] | PROPS: [...] | TECH_STAGE: [ep01_stage1|ep02_stage2|arc3_stage3] | PLAN_TALK: [true|false] -->
+```
+- **CAST Isolation:** Characters merely mentioned inside spoken dialogue quotes (`"..."`) MUST be excluded from `CAST` to prevent dialogue teleportation.
+- **PLAN_TALK Guard:** When characters discuss future plans or unbuilt structures (glass kilns, water-wheels), set `PLAN_TALK: true` to prevent rendering unbuilt structures.
+
+### 2. Deterministic 5-Layer Prompt Compiler (`compile-matrix.js`):
+Storyboarding agents author only Layer 4 directing beats (`<action_layer>`, `<lens>`, `<layout>`). Running `node studio/scripts/compile-matrix.js <franchiseId> <episodeId>` deterministically binds Layers 1, 2, 3, and 5 from `Series_Bible.md`, `characters.json`, `items.json`, and `zones.json`, locking Gate G28 (Vantage & Elevation) and Gate G29 (Future-Plan Blocker).

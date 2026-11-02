@@ -1,4 +1,24 @@
 {
   "rawText": "",
-  "entities": {}
+  "entities": {
+    "Qindu Collegiate Stadium": "@{Qindu Collegiate Stadium}",
+    "Dormitory Room 402": "@{Dormitory Room 402}",
+    "Crimson Hover-Sedan": "@{Crimson Hover-Sedan}",
+    "Dean of Qindu University": "@{Dean of Qindu University}",
+    "Character: Lu Chen": "@{Lu Chen}",
+    "Character: Wang Bao": "@{Wang Bao}",
+    "Character: Gu Tianyu": "@{Gu Tianyu}",
+    "Character: Jiang Qingxue": "@{Jiang Qingxue}",
+    "Character: Commander Han Feng": "@{Commander Han Feng}",
+    "Character: Ye Xingchen": "@{Ye Xingchen}",
+    "Boss: Asura Blood Sovereign": "@{Asura Blood Sovereign}",
+    "Character: Gu Tianyu's Jade Spirit Blade": "@{Gu Tianyu's Jade Spirit Blade}",
+    "Character: Tactical Spirit Spectrometer": "@{Tactical Spirit Spectrometer}",
+    "Character: Heaven-Earth Golden Stele": "@{Heaven-Earth Golden Stele}",
+    "Character: Chief Enforcer Gu Biao": "@{Chief Enforcer Gu Biao}",
+    "Character: Celestial Star Astrolabe": "@{Celestial Star Astrolabe}",
+    "Character: Heavenly Dao Simulator Interface": "@{Heavenly Dao Simulator Interface}",
+    "Character: Mo Yufeng": "@{Mo Yufeng}",
+    "Character: Dean of Qindu University": "@{Dean of Qindu University}"
+  }
 }

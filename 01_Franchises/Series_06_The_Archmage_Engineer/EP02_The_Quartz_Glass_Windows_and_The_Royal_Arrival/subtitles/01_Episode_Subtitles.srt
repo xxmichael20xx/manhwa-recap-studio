@@ -1,0 +1,7943 @@
+1
+00:00:00,100 --> 00:00:02,588
+The morning sun broke gently over the snow-crested
+
+2
+00:00:02,600 --> 00:00:04,375
+peaks of the Emerald Alpine Valley,
+
+3
+00:00:04,488 --> 00:00:06,725
+bathing the Miller Sanctuary Farm in soft,
+
+4
+00:00:06,850 --> 00:00:07,975
+luminous gold.
+
+5
+00:00:08,836 --> 00:00:10,624
+Inside the warm wooden cottage,
+
+6
+00:00:10,724 --> 00:00:12,724
+the family woke up feeling more refreshed than
+
+7
+00:00:12,736 --> 00:00:14,399
+they had in their entire lives,
+
+8
+00:00:14,561 --> 00:00:16,249
+their skin still carrying the faint,
+
+9
+00:00:16,336 --> 00:00:18,561
+sweet scent of mountain lavender from the evening's
+
+10
+00:00:18,574 --> 00:00:19,436
+hot bath.
+
+11
+00:00:20,308 --> 00:00:23,033
+Ten-year-old Ace Miller was already up before dawn,
+
+12
+00:00:23,071 --> 00:00:25,533
+sitting quietly at the sturdy timber kitchen table
+
+13
+00:00:25,546 --> 00:00:27,083
+with a hot cup of herbal tea and
+
+14
+00:00:27,096 --> 00:00:28,208
+his leather notebook.
+
+15
+00:00:29,092 --> 00:00:30,842
+Beside him in the dim morning air,
+
+16
+00:00:30,992 --> 00:00:33,955
+the friendly sky-blue panel of LUMINA hovered silently,
+
+17
+00:00:34,117 --> 00:00:37,055
+her glowing emoji face beaming with quiet contentment.
+
+18
+00:00:37,924 --> 00:00:38,637
+Good morning,
+
+19
+00:00:38,812 --> 00:00:39,312
+partner,"
+
+20
+00:00:39,499 --> 00:00:40,637
+Ace thought with a faint,
+
+21
+00:00:40,799 --> 00:00:41,674
+wry smile.
+
+22
+00:00:42,437 --> 00:00:44,487
+How is our mental battery holding up after
+
+23
+00:00:44,499 --> 00:00:46,424
+yesterday's waterworks marathon?"
+
+24
+00:00:47,308 --> 00:00:50,458
+LUMINA's interface pulsed with soft sapphire light,
+
+25
+00:00:50,583 --> 00:00:53,283
+projecting a crisp status bar showing his ten-year-old
+
+26
+00:00:53,296 --> 00:00:56,246
+mental reserves sitting comfortably at ninety-two percent.
+
+27
+00:00:57,124 --> 00:01:00,612
+Operational stamina stabilized at Safe Mode fifteen percent,"
+
+28
+00:01:00,749 --> 00:01:03,637
+LUMINA's cheerful voice echoed in his mind.
+
+29
+00:01:04,399 --> 00:01:05,812
+No strain detected,
+
+30
+00:01:05,962 --> 00:01:06,574
+Cale!
+
+31
+00:01:07,337 --> 00:01:10,237
+Our gravity aqueduct and charcoal filtration tank are
+
+32
+00:01:10,249 --> 00:01:12,074
+functioning at peak flow rate."
+
+33
+00:01:12,940 --> 00:01:13,940
+Across the room,
+
+34
+00:01:14,003 --> 00:01:15,915
+the heavy bedroom door creaked open,
+
+35
+00:01:15,978 --> 00:01:17,953
+and Garrett Miller stepped into the kitchen,
+
+36
+00:01:18,053 --> 00:01:20,628
+stretching his broad shoulders with a hearty yawn.
+
+37
+00:01:21,508 --> 00:01:22,158
+Morning,
+
+38
+00:01:22,346 --> 00:01:23,883
+son," Garrett chuckled,
+
+39
+00:01:24,071 --> 00:01:25,171
+rubbing his eyes.
+
+40
+00:01:25,933 --> 00:01:27,696
+I don't think I've slept that deeply since
+
+41
+00:01:27,708 --> 00:01:29,546
+before you and your sister were born.
+
+42
+00:01:30,308 --> 00:01:32,621
+That hot water basin feels like a miracle
+
+43
+00:01:32,633 --> 00:01:33,533
+from the gods."
+
+44
+00:01:34,396 --> 00:01:35,471
+It wasn't gods,
+
+45
+00:01:35,496 --> 00:01:36,784
+Dad," Ace grinned,
+
+46
+00:01:36,909 --> 00:01:38,246
+tapping his wooden cup.
+
+47
+00:01:39,009 --> 00:01:40,471
+It was just basic plumbing,
+
+48
+00:01:40,559 --> 00:01:42,309
+a little birch-ash soap chemistry,
+
+49
+00:01:42,434 --> 00:01:44,171
+and your brilliant stone chiselling."
+
+50
+00:01:45,052 --> 00:01:46,452
+Garrett smiled warmly,
+
+51
+00:01:46,540 --> 00:01:48,627
+pulling out a chair and sitting down beside
+
+52
+00:01:48,640 --> 00:01:51,115
+his son, looking fondly at the detailed sketches
+
+53
+00:01:51,127 --> 00:01:52,752
+filling Ace's open notebook.
+
+54
+00:01:53,620 --> 00:01:54,695
+Still, Ace...
+
+55
+00:01:54,808 --> 00:01:56,220
+as warm as that bath was,
+
+56
+00:01:56,308 --> 00:01:58,295
+I felt the autumn draft whistling through the
+
+57
+00:01:58,308 --> 00:02:01,433
+pine wallboards during the night," Garrett noted thoughtfully.
+
+58
+00:02:02,308 --> 00:02:03,608
+Ace nodded in agreement,
+
+59
+00:02:03,733 --> 00:02:05,733
+turning his leather notebook to a fresh,
+
+60
+00:02:05,871 --> 00:02:07,296
+blank parchment page.
+
+61
+00:02:08,058 --> 00:02:09,158
+I felt it too.
+
+62
+00:02:09,921 --> 00:02:12,158
+Winter in this high alpine valley drops well
+
+63
+00:02:12,171 --> 00:02:13,921
+below freezing in two months."
+
+64
+00:02:14,788 --> 00:02:16,913
+If we rely on rough-hewn pine logs and
+
+65
+00:02:16,926 --> 00:02:18,638
+mud caulking," Ace explained,
+
+66
+00:02:18,763 --> 00:02:20,426
+the cold winds will sap every bit of
+
+67
+00:02:20,438 --> 00:02:21,488
+heat from our chimney,
+
+68
+00:02:21,663 --> 00:02:23,976
+no matter how many fire-stones we feed into
+
+69
+00:02:23,988 --> 00:02:24,663
+the hearth."
+
+70
+00:02:25,540 --> 00:02:28,003
+Clara Miller walked in from the adjoining bedroom,
+
+71
+00:02:28,115 --> 00:02:30,628
+tying her clean linen apron over her sage-green
+
+72
+00:02:30,640 --> 00:02:33,603
+dress, carrying a basket of dried alpine herbs
+
+73
+00:02:33,615 --> 00:02:34,315
+and flour.
+
+74
+00:02:35,188 --> 00:02:36,326
+The boy is right,
+
+75
+00:02:36,351 --> 00:02:38,051
+Garrett," Clara smiled,
+
+76
+00:02:38,151 --> 00:02:40,738
+placing a gentle hand on her husband's shoulder.
+
+77
+00:02:41,501 --> 00:02:43,401
+Remember how we had to keep three layers
+
+78
+00:02:43,413 --> 00:02:45,351
+of wool blankets over Maya when she caught
+
+79
+00:02:45,363 --> 00:02:47,088
+a chest chill three winters ago?"
+
+80
+00:02:47,956 --> 00:02:49,706
+Garrett's expression grew solemn,
+
+81
+00:02:49,794 --> 00:02:52,019
+his calloused hands resting upon the polished oak
+
+82
+00:02:52,031 --> 00:02:54,331
+table as old memories of their hard frontier
+
+83
+00:02:54,344 --> 00:02:55,531
+beginnings surfaced.
+
+84
+00:02:56,404 --> 00:02:58,704
+We cannot let our children freeze through another
+
+85
+00:02:58,717 --> 00:03:01,054
+frontier blizzard," Garrett said firmly.
+
+86
+00:03:01,817 --> 00:03:03,779
+Not when we've come so far and built
+
+87
+00:03:03,792 --> 00:03:05,054
+something this wonderful."
+
+88
+00:03:05,932 --> 00:03:08,520
+Just then, thirteen-year-old Maya bounced out of her
+
+89
+00:03:08,532 --> 00:03:11,020
+room, her wavy chestnut hair tied loosely with
+
+90
+00:03:11,032 --> 00:03:12,820
+her favourite sky-blue ribbon,
+
+91
+00:03:12,932 --> 00:03:14,595
+sniffing the morning air hungrily.
+
+92
+00:03:15,460 --> 00:03:17,010
+Did someone say breakfast?"
+
+93
+00:03:17,773 --> 00:03:20,135
+Maya laughed, stretching her arms.
+
+94
+00:03:20,898 --> 00:03:22,998
+Because my stomach thinks it's been neglected for
+
+95
+00:03:23,010 --> 00:03:23,748
+a century!"
+
+96
+00:03:24,628 --> 00:03:26,903
+Clara chuckled and began kneading dough for fresh
+
+97
+00:03:26,916 --> 00:03:28,053
+morning skillet bread,
+
+98
+00:03:28,178 --> 00:03:29,941
+while Garrett stood up and walked over to
+
+99
+00:03:29,953 --> 00:03:32,378
+the heavy wooden artisan chest by the wall.
+
+100
+00:03:33,244 --> 00:03:34,857
+He turned the heavy brass key in the
+
+101
+00:03:34,869 --> 00:03:37,357
+lock, carefully lifting out a bundle of brittle,
+
+102
+00:03:37,457 --> 00:03:39,582
+yellowed parchment wrapped in oiled deerskin.
+
+103
+00:03:40,444 --> 00:03:43,082
+Your grandfather spent thirty years in the imperial
+
+104
+00:03:43,094 --> 00:03:45,307
+capital trying to solve this very problem,
+
+105
+00:03:45,344 --> 00:03:47,044
+Ace," Garrett said softly,
+
+106
+00:03:47,144 --> 00:03:50,294
+spreading the ancient architectural sketches across the table.
+
+107
+00:03:51,172 --> 00:03:52,997
+Ace and LUMINA leaned in together,
+
+108
+00:03:53,035 --> 00:03:55,147
+their eyes scanning the faded ink lines depicting
+
+109
+00:03:55,160 --> 00:03:58,310
+precision tongue-and-groove white limestone masonry blocks designed
+
+110
+00:03:58,322 --> 00:04:00,535
+to lock together without brittle lime mortar.
+
+111
+00:04:01,396 --> 00:04:03,896
+Ace studied his grandfather's sketches carefully,
+
+112
+00:04:03,996 --> 00:04:06,971
+his modern engineering mind instantly recognizing the brilliance
+
+113
+00:04:06,984 --> 00:04:09,521
+of the interlocking mortise-and-tenon stonework.
+
+114
+00:04:10,396 --> 00:04:11,259
+In the capital,
+
+115
+00:04:11,334 --> 00:04:13,521
+the master builders used sloppy mud mortar that
+
+116
+00:04:13,534 --> 00:04:16,559
+cracked after the first hard frost," Garrett explained,
+
+117
+00:04:16,646 --> 00:04:18,559
+pointing to his ancestor's notes.
+
+118
+00:04:19,321 --> 00:04:22,234
+Grandfather wanted walls that held themselves together purely
+
+119
+00:04:22,246 --> 00:04:23,846
+through geometry and gravity."
+
+120
+00:04:24,724 --> 00:04:26,837
+He was centuries ahead of his time," Ace
+
+121
+00:04:26,849 --> 00:04:28,337
+murmured with deep respect.
+
+122
+00:04:29,099 --> 00:04:31,299
+Mortar is always the weakest link in cold
+
+123
+00:04:31,312 --> 00:04:32,074
+climates.
+
+124
+00:04:32,837 --> 00:04:36,062
+Interlocking stone teeth distribute structural loads evenly
+
+125
+00:04:36,074 --> 00:04:37,887
+across the entire foundation."
+
+126
+00:04:38,764 --> 00:04:42,189
+LUMINA's translucent interface highlighted the load-bearing
+
+127
+00:04:42,202 --> 00:04:43,627
+vectors in glowing gold,
+
+128
+00:04:43,752 --> 00:04:46,802
+calculating the exact angles required to prevent seismic
+
+129
+00:04:46,814 --> 00:04:48,652
+shifting during mountain tremors.
+
+130
+00:04:49,516 --> 00:04:50,554
+To make this work,
+
+131
+00:04:50,641 --> 00:04:53,954
+son, we need uniform white limestone blocks," Garrett
+
+132
+00:04:53,966 --> 00:04:54,329
+said,
+
+133
+00:04:54,504 --> 00:04:55,491
+rubbing his chin.
+
+134
+00:04:56,254 --> 00:04:58,816
+And cutting hundreds of identical stones by hand
+
+135
+00:04:58,829 --> 00:05:01,129
+would take five years with iron chisels."
+
+136
+00:05:01,996 --> 00:05:03,221
+Then it's a good thing we have an
+
+137
+00:05:03,234 --> 00:05:05,446
+Earth Mage who understands the heart of stone,"
+
+138
+00:05:05,484 --> 00:05:06,259
+Ace smiled,
+
+139
+00:05:06,434 --> 00:05:08,646
+looking up at his father with complete faith.
+
+140
+00:05:09,508 --> 00:05:11,333
+Garrett blinked in mild surprise,
+
+141
+00:05:11,421 --> 00:05:12,633
+then let out a proud,
+
+142
+00:05:12,671 --> 00:05:15,046
+booming laugh that rattled the cottage teacups.
+
+143
+00:05:15,808 --> 00:05:18,121
+You think my clumsy frontier magic can cut
+
+144
+00:05:18,133 --> 00:05:19,783
+precision blocks, Ace?"
+
+145
+00:05:20,644 --> 00:05:21,744
+It's not clumsy,
+
+146
+00:05:21,807 --> 00:05:24,344
+Dad you've just been forcing raw mana instead
+
+147
+00:05:24,357 --> 00:05:27,494
+of using natural resonance frequencies," Ace explained,
+
+148
+00:05:27,619 --> 00:05:29,507
+pulling out a clean charcoal stick.
+
+149
+00:05:30,388 --> 00:05:31,476
+Ten minutes later,
+
+150
+00:05:31,626 --> 00:05:32,826
+after finishing warm,
+
+151
+00:05:32,951 --> 00:05:34,288
+honey-drizzled skillet bread,
+
+152
+00:05:34,376 --> 00:05:36,626
+Garrett and Ace walked down the sunlit meadow
+
+153
+00:05:36,638 --> 00:05:38,351
+toward the rushing mountain river.
+
+154
+00:05:39,220 --> 00:05:41,245
+Beside the rocky river bend stood a massive
+
+155
+00:05:41,258 --> 00:05:43,420
+outcrop of fine-grained white limestone,
+
+156
+00:05:43,458 --> 00:05:45,920
+exposed to centuries of crystal mountain water.
+
+157
+00:05:46,804 --> 00:05:47,954
+Here," Ace said,
+
+158
+00:05:48,079 --> 00:05:50,554
+crouching down and placing his small hand against
+
+159
+00:05:50,567 --> 00:05:52,042
+the cool, pale rock.
+
+160
+00:05:52,804 --> 00:05:53,467
+LUMINA,
+
+161
+00:05:53,617 --> 00:05:55,842
+run an acoustic harmonic scan on the limestone
+
+162
+00:05:55,854 --> 00:05:56,542
+strata."
+
+163
+00:05:57,412 --> 00:05:59,375
+A soft chime sounded in Ace's ear as
+
+164
+00:05:59,387 --> 00:06:01,812
+LUMINA projected a web of glowing blue stress
+
+165
+00:06:01,825 --> 00:06:05,100
+lines directly onto the stone's natural cleavage planes.
+
+166
+00:06:05,980 --> 00:06:08,018
+Dad, don't try to crush or smash the
+
+167
+00:06:08,030 --> 00:06:09,293
+rock with raw force,"
+
+168
+00:06:09,443 --> 00:06:10,605
+Ace guided gently,
+
+169
+00:06:10,718 --> 00:06:12,105
+guiding Garrett's large,
+
+170
+00:06:12,230 --> 00:06:14,218
+calloused palm to a natural fault line in
+
+171
+00:06:14,230 --> 00:06:14,880
+the stone.
+
+172
+00:06:15,748 --> 00:06:17,511
+Instead of pushing against the rock,
+
+173
+00:06:17,548 --> 00:06:20,623
+match its natural internal frequency," Ace whispered.
+
+174
+00:06:21,386 --> 00:06:22,236
+Send a slow,
+
+175
+00:06:22,361 --> 00:06:24,423
+rhythmic pulse of earth mana right along this
+
+176
+00:06:24,436 --> 00:06:25,636
+blue contour line."
+
+177
+00:06:26,500 --> 00:06:27,913
+Garrett closed his eyes,
+
+178
+00:06:27,938 --> 00:06:29,800
+taking a deep breath and letting the earth
+
+179
+00:06:29,813 --> 00:06:31,525
+mana in his chest hum like a low
+
+180
+00:06:31,538 --> 00:06:32,413
+bronze bell.
+
+181
+00:06:33,292 --> 00:06:35,705
+At first, nothing happened and then,
+
+182
+00:06:35,755 --> 00:06:38,092
+Garrett felt the natural microscopic grain of the
+
+183
+00:06:38,105 --> 00:06:40,392
+limestone answer his call like an old friend
+
+184
+00:06:40,405 --> 00:06:41,555
+waking from sleep.
+
+185
+00:06:42,436 --> 00:06:44,986
+A clean, musical crack echoed across the river
+
+186
+00:06:44,999 --> 00:06:46,061
+gorge as a massive,
+
+187
+00:06:46,161 --> 00:06:49,186
+perfectly rectangular slab of white limestone sheared away
+
+188
+00:06:49,199 --> 00:06:51,261
+from the cliff face without a single jagged
+
+189
+00:06:51,274 --> 00:06:51,886
+splinter.
+
+190
+00:06:52,756 --> 00:06:54,631
+Garrett opened his eyes and stared at the
+
+191
+00:06:54,644 --> 00:06:56,581
+razor-straight edge in utter disbelief,
+
+192
+00:06:56,681 --> 00:06:58,169
+his fingers trembling with awe.
+
+193
+00:06:59,044 --> 00:07:00,307
+By the ancestors..."
+
+194
+00:07:01,069 --> 00:07:03,844
+Garrett breathed, touching the glassy smooth face of
+
+195
+00:07:03,857 --> 00:07:04,532
+the stone.
+
+196
+00:07:05,294 --> 00:07:07,294
+I barely used a thimble of mana!
+
+197
+00:07:08,057 --> 00:07:10,907
+It felt as effortless as slicing soft cheese!"
+
+198
+00:07:11,788 --> 00:07:13,926
+That's the power of resonance engineering,
+
+199
+00:07:13,938 --> 00:07:15,363
+Dad," Ace chuckled.
+
+200
+00:07:16,126 --> 00:07:18,738
+When you work with nature's internal geometry instead
+
+201
+00:07:18,751 --> 00:07:19,551
+of fighting it,
+
+202
+00:07:19,676 --> 00:07:21,926
+magic becomes a precision scalpel rather than a
+
+203
+00:07:21,938 --> 00:07:22,801
+sledgehammer."
+
+204
+00:07:23,668 --> 00:07:27,006
+Together, guided by LUMINA's glowing alignment guides,
+
+205
+00:07:27,131 --> 00:07:29,331
+father and son worked in perfect harmony for
+
+206
+00:07:29,343 --> 00:07:31,393
+the next two hours along the riverbank.
+
+207
+00:07:32,260 --> 00:07:34,548
+Garrett pulsed his resonant Earth magic to cleave
+
+208
+00:07:34,560 --> 00:07:36,835
+stone, while Ace used small bursts of earth
+
+209
+00:07:36,848 --> 00:07:39,448
+mana to carve precision interlocking tongues and grooves
+
+210
+00:07:39,460 --> 00:07:41,810
+along each block's top and bottom faces.
+
+211
+00:07:42,676 --> 00:07:43,901
+Behind them on the bank,
+
+212
+00:07:43,964 --> 00:07:45,301
+neat stacks of brilliant,
+
+213
+00:07:45,364 --> 00:07:47,751
+snow-white masonry blocks began to rise,
+
+214
+00:07:47,776 --> 00:07:50,164
+each stone mathematically uniform and smooth to the
+
+215
+00:07:50,176 --> 00:07:50,764
+touch.
+
+216
+00:07:51,628 --> 00:07:52,503
+By mid-morning
+
+217
+00:07:52,653 --> 00:07:55,503
+nearly one hundred interlocking foundation blocks sat ready
+
+218
+00:07:55,516 --> 00:07:56,603
+along the riverside,
+
+219
+00:07:56,691 --> 00:07:59,353
+gleaming brightly under the azure alpine sky.
+
+220
+00:08:00,220 --> 00:08:01,920
+Now came the practical challenge:
+
+221
+00:08:02,020 --> 00:08:04,420
+moving several tons of heavy white limestone from
+
+222
+00:08:04,433 --> 00:08:06,183
+the riverbank up the grassy slope to the
+
+223
+00:08:06,195 --> 00:08:06,808
+cottage.
+
+224
+00:08:07,684 --> 00:08:08,909
+In medieval cities,
+
+225
+00:08:08,922 --> 00:08:11,572
+moving heavy stone required hiring teams of six
+
+226
+00:08:11,584 --> 00:08:13,922
+draft oxen and shouting teamsters who churned the
+
+227
+00:08:13,934 --> 00:08:15,422
+road into knee-deep mud.
+
+228
+00:08:16,300 --> 00:08:19,000
+Ace, however, had no intention of tearing up
+
+229
+00:08:19,013 --> 00:08:21,900
+their fragrant lavender meadow with heavy wagon wheels.
+
+230
+00:08:22,780 --> 00:08:23,405
+Maya!"
+
+231
+00:08:24,168 --> 00:08:26,093
+Ace called out toward the farmyard,
+
+232
+00:08:26,105 --> 00:08:27,168
+waving his arm.
+
+233
+00:08:27,930 --> 00:08:30,205
+Bring down the two wooden skids Dad built
+
+234
+00:08:30,218 --> 00:08:31,093
+last autumn!"
+
+235
+00:08:31,972 --> 00:08:33,747
+Maya came jogging down the hill,
+
+236
+00:08:33,860 --> 00:08:36,335
+dragging two sturdy oak timber sledges equipped with
+
+237
+00:08:36,347 --> 00:08:37,972
+smooth, polished runners.
+
+238
+00:08:38,836 --> 00:08:39,724
+What's the plan,
+
+239
+00:08:39,886 --> 00:08:40,686
+little brother?"
+
+240
+00:08:41,449 --> 00:08:44,061
+Maya asked, resting her hands on her hips
+
+241
+00:08:44,074 --> 00:08:46,274
+and admiring the neat rows of pristine white
+
+242
+00:08:46,286 --> 00:08:46,849
+blocks.
+
+243
+00:08:47,611 --> 00:08:49,699
+Even Dad can't pull a sledge loaded with
+
+244
+00:08:49,711 --> 00:08:51,824
+ten of these heavy boulders up that hill!"
+
+245
+00:08:52,684 --> 00:08:54,872
+He won't have to pull anything," Ace grinned,
+
+246
+00:08:54,972 --> 00:08:56,759
+pulling out a coil of strong hemp rope
+
+247
+00:08:56,772 --> 00:08:58,522
+and a set of grooved birch pulleys he
+
+248
+00:08:58,534 --> 00:09:00,159
+had carved the previous summer.
+
+249
+00:09:01,036 --> 00:09:03,149
+Ace anchored the main pulley to a deep-rooted
+
+250
+00:09:03,161 --> 00:09:04,899
+alpine pine tree at the crest of the
+
+251
+00:09:04,911 --> 00:09:05,361
+hill,
+
+252
+00:09:05,511 --> 00:09:07,699
+threading the rope down to the loaded sledge.
+
+253
+00:09:08,572 --> 00:09:10,922
+Maya, you remember how you used gentle wind
+
+254
+00:09:10,935 --> 00:09:13,185
+currents to swirl dried lavender flowers in the
+
+255
+00:09:13,197 --> 00:09:13,772
+barn?"
+
+256
+00:09:14,535 --> 00:09:15,285
+Ace asked,
+
+257
+00:09:15,435 --> 00:09:17,322
+handing her the trailing end of the rope.
+
+258
+00:09:18,196 --> 00:09:19,109
+Of course!"
+
+259
+00:09:19,871 --> 00:09:20,859
+Maya beamed.
+
+260
+00:09:21,621 --> 00:09:24,284
+Wind magic is all about direction and flow!"
+
+261
+00:09:25,156 --> 00:09:25,606
+Good,"
+
+262
+00:09:25,781 --> 00:09:26,456
+Ace said.
+
+263
+00:09:27,219 --> 00:09:28,194
+Anchor your feet,
+
+264
+00:09:28,356 --> 00:09:30,419
+channel your wind mana along this rope,
+
+265
+00:09:30,469 --> 00:09:32,556
+and create a steady backward vortex.
+
+266
+00:09:33,319 --> 00:09:35,694
+The mechanical advantage of the pulley will multiply
+
+267
+00:09:35,706 --> 00:09:37,094
+your force by four."
+
+268
+00:09:37,972 --> 00:09:39,347
+Maya took a deep breath,
+
+269
+00:09:39,447 --> 00:09:41,797
+channeled her breezy wind affinity into the rope,
+
+270
+00:09:41,910 --> 00:09:43,785
+and let out a soft exclamation as the
+
+271
+00:09:43,797 --> 00:09:46,172
+heavy wooden sledge began gliding up the grass
+
+272
+00:09:46,185 --> 00:09:48,022
+as smoothly as a swan on water.
+
+273
+00:09:48,892 --> 00:09:49,905
+Look at it go!"
+
+274
+00:09:50,667 --> 00:09:52,305
+Maya squealed with delight.
+
+275
+00:09:53,067 --> 00:09:54,955
+It feels lighter than dragging a sack of
+
+276
+00:09:54,967 --> 00:09:55,605
+flour!"
+
+277
+00:09:56,476 --> 00:09:58,801
+Garrett and Ace guided the runners from behind,
+
+278
+00:09:58,926 --> 00:10:01,639
+smiling at Maya's energetic giggles as sledge after
+
+279
+00:10:01,651 --> 00:10:03,651
+sledge arrived at the cottage perimeter.
+
+280
+00:10:04,516 --> 00:10:07,029
+By midday, all the white limestone blocks were
+
+281
+00:10:07,041 --> 00:10:09,229
+neatly staged around the eastern flank of the
+
+282
+00:10:09,241 --> 00:10:10,166
+wooden cottage.
+
+283
+00:10:11,044 --> 00:10:13,444
+Clara stepped outside with a wooden tray holding
+
+284
+00:10:13,457 --> 00:10:15,744
+cool earthen jugs of fresh spring water and
+
+285
+00:10:15,757 --> 00:10:17,007
+crisp sliced apples,
+
+286
+00:10:17,082 --> 00:10:19,119
+marveling at the tidy stack of stone.
+
+287
+00:10:19,996 --> 00:10:22,184
+Alright, team," Ace announced,
+
+288
+00:10:22,259 --> 00:10:24,459
+wiping a bead of sweat from his forehead.
+
+289
+00:10:25,221 --> 00:10:27,134
+Let's lay the first course of the eastern
+
+290
+00:10:27,146 --> 00:10:29,009
+bedroom and workshop extension."
+
+291
+00:10:29,884 --> 00:10:31,659
+Garrett knelt at the corner marker,
+
+292
+00:10:31,722 --> 00:10:34,072
+setting the first heavy white limestone block onto
+
+293
+00:10:34,084 --> 00:10:37,034
+the levelled, gravel-packed trench Ace had excavated.
+
+294
+00:10:37,900 --> 00:10:40,488
+The precision-carved bottom groove settled over the gravel
+
+295
+00:10:40,500 --> 00:10:42,538
+foundation with a deeply satisfying,
+
+296
+00:10:42,600 --> 00:10:43,475
+solid thud.
+
+297
+00:10:44,356 --> 00:10:45,856
+Next came the second stone:
+
+298
+00:10:45,956 --> 00:10:48,006
+Garrett slid the protruding tongue of the first
+
+299
+00:10:48,019 --> 00:10:50,219
+block directly into the corresponding groove of the
+
+300
+00:10:50,231 --> 00:10:50,881
+second.
+
+301
+00:10:51,748 --> 00:10:54,148
+The two stones locked together with zero gap
+
+302
+00:10:54,261 --> 00:10:56,273
+so airtight that not even a single blade
+
+303
+00:10:56,286 --> 00:10:58,473
+of meadow grass could be slipped between them.
+
+304
+00:10:59,356 --> 00:11:00,494
+Course by course,
+
+305
+00:11:00,556 --> 00:11:02,881
+the white-stone walls began to rise around the
+
+306
+00:11:02,894 --> 00:11:05,906
+eastern wing, interlocking in alternating brickwork patterns
+
+307
+00:11:05,919 --> 00:11:07,806
+that gained rigidity with every layer.
+
+308
+00:11:08,668 --> 00:11:11,868
+By mid-afternoon a spacious ten-foot-tall stone extension
+
+309
+00:11:11,881 --> 00:11:14,081
+stood proudly against the old wooden cottage,
+
+310
+00:11:14,156 --> 00:11:16,918
+its white limestone walls gleaming like polished marble
+
+311
+00:11:16,931 --> 00:11:18,043
+under the warm sun.
+
+312
+00:11:18,916 --> 00:11:20,016
+Garrett stepped back,
+
+313
+00:11:20,116 --> 00:11:22,104
+resting his hands on his hips and shaking
+
+314
+00:11:22,116 --> 00:11:23,479
+his head in sheer wonder.
+
+315
+00:11:24,241 --> 00:11:25,929
+No mortar, no cracking,
+
+316
+00:11:26,104 --> 00:11:28,016
+and solid as a mountain fortress.
+
+317
+00:11:28,779 --> 00:11:31,116
+Grandfather would be weeping tears of joy right
+
+318
+00:11:31,129 --> 00:11:31,604
+now."
+
+319
+00:11:32,476 --> 00:11:34,451
+With the solid white-stone walls of the new
+
+320
+00:11:34,464 --> 00:11:36,151
+wing standing firmly in place,
+
+321
+00:11:36,226 --> 00:11:38,876
+Ace walked through the open rectangular wall openings
+
+322
+00:11:38,889 --> 00:11:40,514
+where windows were meant to go.
+
+323
+00:11:41,380 --> 00:11:43,955
+Dad, we have three wide window frames cut
+
+324
+00:11:43,968 --> 00:11:46,293
+into these southern walls," Ace pointed out,
+
+325
+00:11:46,380 --> 00:11:48,243
+looking out over the panoramic view of the
+
+326
+00:11:48,255 --> 00:11:50,105
+valley and distant snow peaks.
+
+327
+00:11:50,980 --> 00:11:53,480
+In town, folks cover window holes with heavy
+
+328
+00:11:53,493 --> 00:11:56,993
+wooden storm shutters or oiled parchment," Garrett remarked,
+
+329
+00:11:57,118 --> 00:11:58,755
+leaning against the doorframe.
+
+330
+00:11:59,518 --> 00:12:02,455
+Rich guild masters sometimes have small iron lanterns
+
+331
+00:12:02,468 --> 00:12:04,243
+fitted with scraped animal horn."
+
+332
+00:12:05,116 --> 00:12:06,904
+Scraped animal horn is yellow,
+
+333
+00:12:06,991 --> 00:12:09,241
+cloudy, and lets in barely any light at
+
+334
+00:12:09,254 --> 00:12:10,629
+all," Maya pouted,
+
+335
+00:12:10,829 --> 00:12:12,079
+wrinkling her nose.
+
+336
+00:12:12,841 --> 00:12:14,841
+And wooden shutters make the room pitch black
+
+337
+00:12:14,854 --> 00:12:16,916
+the moment you close them against the wind!"
+
+338
+00:12:17,788 --> 00:12:19,363
+What if we could put something in these
+
+339
+00:12:19,376 --> 00:12:21,588
+frames that is completely clear as water,
+
+340
+00:12:21,688 --> 00:12:24,013
+completely solid, and keeps out every gust of
+
+341
+00:12:24,026 --> 00:12:25,226
+cold mountain wind?"
+
+342
+00:12:25,988 --> 00:12:27,913
+Ace suggested with a knowing grin.
+
+343
+00:12:28,780 --> 00:12:29,793
+Maya gasped,
+
+344
+00:12:29,943 --> 00:12:31,443
+her amber eyes widening.
+
+345
+00:12:32,205 --> 00:12:32,755
+You mean...
+
+346
+00:12:32,855 --> 00:12:33,805
+clear glass?
+
+347
+00:12:34,568 --> 00:12:36,905
+Like the legendary crystal cups kings drink from
+
+348
+00:12:36,918 --> 00:12:37,955
+in storybooks?"
+
+349
+00:12:38,836 --> 00:12:40,074
+Glass isn't magic,
+
+350
+00:12:40,124 --> 00:12:41,724
+Maya it's just sand,
+
+351
+00:12:41,824 --> 00:12:44,374
+soda flux, and heat," Ace chuckled.
+
+352
+00:12:45,136 --> 00:12:46,474
+And if I'm not mistaken,
+
+353
+00:12:46,574 --> 00:12:49,149
+our alpine river is hiding the best glassmaking
+
+354
+00:12:49,161 --> 00:12:50,424
+sand on the continent."
+
+355
+00:12:51,292 --> 00:12:52,342
+Ten minutes later,
+
+356
+00:12:52,467 --> 00:12:54,930
+Ace, Maya, and LUMINA were walking along the
+
+357
+00:12:54,942 --> 00:12:57,355
+shallow river shoals a quarter-mile upstream from the
+
+358
+00:12:57,367 --> 00:12:57,955
+farm.
+
+359
+00:12:58,828 --> 00:13:00,153
+As they rounded a wide,
+
+360
+00:13:00,253 --> 00:13:02,678
+sheltered bend where the rushing mountain water slowed
+
+361
+00:13:02,691 --> 00:13:03,678
+into a calm eddy,
+
+362
+00:13:03,791 --> 00:13:05,378
+Ace's eyes caught a brilliant,
+
+363
+00:13:05,503 --> 00:13:07,628
+diamond-like glimmer beneath the surface.
+
+364
+00:13:08,500 --> 00:13:09,013
+There!"
+
+365
+00:13:09,775 --> 00:13:10,975
+Ace pointed eagerly,
+
+366
+00:13:11,038 --> 00:13:12,963
+kicking off his leather boots and rolling up
+
+367
+00:13:12,975 --> 00:13:15,488
+his trousers to wade into the ankle-deep water.
+
+368
+00:13:16,348 --> 00:13:18,598
+He scooped up a dripping double-handful of fine
+
+369
+00:13:18,611 --> 00:13:19,986
+river sand and held it up to the
+
+370
+00:13:19,998 --> 00:13:21,623
+direct afternoon sunlight.
+
+371
+00:13:22,492 --> 00:13:24,617
+Unlike ordinary brownish river dirt,
+
+372
+00:13:24,730 --> 00:13:26,905
+these grains were completely translucent,
+
+373
+00:13:26,992 --> 00:13:29,517
+sparkling with pure white and crystal clarity.
+
+374
+00:13:30,388 --> 00:13:32,613
+LUMINA's scanner hummed quietly,
+
+375
+00:13:32,688 --> 00:13:35,201
+projecting a glowing magnifying window in front of
+
+376
+00:13:35,213 --> 00:13:37,438
+Ace's eyes that enlarged the sand grains by
+
+377
+00:13:37,451 --> 00:13:38,738
+one hundred times.
+
+378
+00:13:39,604 --> 00:13:43,104
+Chemical composition confirmed," LUMINA announced with an energetic
+
+379
+00:13:43,117 --> 00:13:43,704
+chime.
+
+380
+00:13:44,467 --> 00:13:47,879
+Silica dioxide content ninety-nine point two percent!
+
+381
+00:13:48,642 --> 00:13:50,442
+Weathered alpine quartz crystals,
+
+382
+00:13:50,554 --> 00:13:53,692
+almost entirely free of iron oxide impurities!"
+
+383
+00:13:54,556 --> 00:13:56,281
+Look, Maya," Ace said,
+
+384
+00:13:56,406 --> 00:13:58,531
+opening his hands so his sister could inspect
+
+385
+00:13:58,544 --> 00:13:59,894
+the glittering grains.
+
+386
+00:14:00,656 --> 00:14:02,206
+No reddish iron stain.
+
+387
+00:14:02,969 --> 00:14:04,306
+That means when this melts,
+
+388
+00:14:04,419 --> 00:14:06,806
+it won't turn murky green or bottle-brown it
+
+389
+00:14:06,819 --> 00:14:07,531
+will be pure,
+
+390
+00:14:07,656 --> 00:14:09,044
+crystal-clear glass."
+
+391
+00:14:09,916 --> 00:14:12,379
+Maya dipped her fingers into the sparkling sand,
+
+392
+00:14:12,454 --> 00:14:14,654
+fascinated by how smooth and cool it felt
+
+393
+00:14:14,666 --> 00:14:15,729
+against her skin.
+
+394
+00:14:16,612 --> 00:14:18,762
+How do we turn tiny sand grains into
+
+395
+00:14:18,775 --> 00:14:19,737
+a solid window,
+
+396
+00:14:19,850 --> 00:14:20,412
+Ace?"
+
+397
+00:14:21,175 --> 00:14:24,337
+Maya asked, looking at him with genuine curiosity.
+
+398
+00:14:25,204 --> 00:14:27,129
+We melt them until they turn into liquid
+
+399
+00:14:27,142 --> 00:14:29,504
+syrup, roll them flat across a smooth stone
+
+400
+00:14:29,517 --> 00:14:31,742
+table, and let them cool very slowly so
+
+401
+00:14:31,754 --> 00:14:33,979
+they don't shatter," Ace explained simply.
+
+402
+00:14:34,852 --> 00:14:35,377
+Wait...
+
+403
+00:14:35,490 --> 00:14:36,327
+melt rock?"
+
+404
+00:14:37,090 --> 00:14:37,977
+Maya blinked,
+
+405
+00:14:38,177 --> 00:14:39,240
+her jaw dropping.
+
+406
+00:14:40,002 --> 00:14:41,602
+Don't you need the blazing breath of an
+
+407
+00:14:41,615 --> 00:14:43,565
+ancient dragon to melt quartz stone?"
+
+408
+00:14:44,428 --> 00:14:46,841
+A dragon would be messy and dangerous," Ace
+
+409
+00:14:46,853 --> 00:14:47,428
+laughed.
+
+410
+00:14:48,191 --> 00:14:50,003
+All we need is clean chemistry,
+
+411
+00:14:50,116 --> 00:14:51,653
+a dual-chamber draft kiln,
+
+412
+00:14:51,778 --> 00:14:53,316
+and some birch-ash flux."
+
+413
+00:14:54,196 --> 00:14:56,834
+Together, Ace and Maya filled two large wooden
+
+414
+00:14:56,846 --> 00:14:58,559
+buckets with the pure quartz sand,
+
+415
+00:14:58,584 --> 00:15:00,446
+washing it three times in the clear river
+
+416
+00:15:00,459 --> 00:15:02,584
+current to remove any loose river silt.
+
+417
+00:15:03,460 --> 00:15:05,935
+Carrying their glittering prize back to the farmyard,
+
+418
+00:15:06,073 --> 00:15:08,248
+Ace felt a thrill of excitement coursing through
+
+419
+00:15:08,260 --> 00:15:09,185
+his veins.
+
+420
+00:15:10,060 --> 00:15:13,023
+For centuries, medieval humans had treated clear glass
+
+421
+00:15:13,035 --> 00:15:14,660
+as an impossible royal luxury,
+
+422
+00:15:14,785 --> 00:15:16,935
+hoarded only by the wealthiest archmages in the
+
+423
+00:15:16,948 --> 00:15:18,035
+highest towers.
+
+424
+00:15:18,916 --> 00:15:19,516
+Today,
+
+425
+00:15:19,679 --> 00:15:21,166
+in this humble frontier valley,
+
+426
+00:15:21,266 --> 00:15:22,704
+Ace was about to bring the light of
+
+427
+00:15:22,716 --> 00:15:25,579
+the modern world into their modest craftsman cottage.
+
+428
+00:15:26,452 --> 00:15:27,577
+Back in the farmyard,
+
+429
+00:15:27,702 --> 00:15:30,465
+Ace spread his grandfather's drafting parchment across the
+
+430
+00:15:30,477 --> 00:15:33,477
+outdoor worktable, dipping his charcoal stick in water
+
+431
+00:15:33,490 --> 00:15:35,002
+to sketch a new blueprint.
+
+432
+00:15:35,884 --> 00:15:38,547
+Pure silica melts at over seventeen hundred degrees
+
+433
+00:15:38,559 --> 00:15:39,222
+Celsius,"
+
+434
+00:15:39,372 --> 00:15:41,784
+Ace explained as Garrett and Clara gathered around
+
+435
+00:15:41,797 --> 00:15:43,734
+the table to inspect his drawing.
+
+436
+00:15:44,596 --> 00:15:47,671
+Normal campfires and blacksmith forges max out around
+
+437
+00:15:47,684 --> 00:15:50,359
+eight or nine hundred degrees," Garrett noted,
+
+438
+00:15:50,484 --> 00:15:52,121
+stroking his stubble thoughtfully.
+
+439
+00:15:52,884 --> 00:15:54,821
+How do we bridge that gap without hiring
+
+440
+00:15:54,834 --> 00:15:56,421
+three city Fire Mages?"
+
+441
+00:15:57,292 --> 00:15:58,455
+Two clever tricks,
+
+442
+00:15:58,480 --> 00:15:59,767
+Dad," Ace grinned,
+
+443
+00:15:59,917 --> 00:16:01,080
+tapping his sketch.
+
+444
+00:16:01,842 --> 00:16:04,317
+First, we mix the quartz sand with potassium
+
+445
+00:16:04,330 --> 00:16:06,955
+carbonate extracted from our white birch ash that
+
+446
+00:16:06,967 --> 00:16:08,380
+acts as a chemical flux,
+
+447
+00:16:08,492 --> 00:16:10,680
+dropping the melting point down to around twelve
+
+448
+00:16:10,692 --> 00:16:11,730
+hundred degrees."
+
+449
+00:16:12,604 --> 00:16:14,404
+And second," Ace continued,
+
+450
+00:16:14,442 --> 00:16:15,354
+drawing a tall,
+
+451
+00:16:15,467 --> 00:16:18,617
+tapered tower, we build a dual-chamber refractory kiln
+
+452
+00:16:18,629 --> 00:16:21,254
+with an insulated firebox and a twenty-foot draft
+
+453
+00:16:21,267 --> 00:16:21,742
+chimney."
+
+454
+00:16:22,612 --> 00:16:25,862
+LUMINA projected a glowing 3D airflow diagram,
+
+455
+00:16:25,950 --> 00:16:27,975
+showing how heated air rushing up the chimney
+
+456
+00:16:27,987 --> 00:16:30,262
+would draw fresh air into the firebox at
+
+457
+00:16:30,275 --> 00:16:32,037
+three times natural speed.
+
+458
+00:16:32,908 --> 00:16:34,496
+By concentrating the draft,
+
+459
+00:16:34,546 --> 00:16:37,708
+the charcoal burns white-hot reaching twelve hundred degrees
+
+460
+00:16:37,721 --> 00:16:40,821
+purely through chimney draft airflow," Ace summarized.
+
+461
+00:16:41,692 --> 00:16:43,505
+Incredible," Garrett whispered,
+
+462
+00:16:43,605 --> 00:16:45,617
+studying the chimney draft vectors.
+
+463
+00:16:46,380 --> 00:16:48,392
+The city guilds always told us you needed
+
+464
+00:16:48,405 --> 00:16:50,905
+high-tier magic circles to produce that kind of
+
+465
+00:16:50,917 --> 00:16:51,417
+heat."
+
+466
+00:16:52,300 --> 00:16:53,838
+They told you that so they could keep
+
+467
+00:16:53,850 --> 00:16:56,225
+charging fifty silver coins for five minutes of
+
+468
+00:16:56,238 --> 00:16:58,313
+furnace heat," Ace said with a dry,
+
+469
+00:16:58,375 --> 00:16:59,375
+deadpan chuckle.
+
+470
+00:17:00,244 --> 00:17:01,532
+Before we build the kiln,
+
+471
+00:17:01,569 --> 00:17:03,332
+though," Clara chimed in cleverly,
+
+472
+00:17:03,444 --> 00:17:05,894
+won't that intense heat melt ordinary river stones
+
+473
+00:17:05,907 --> 00:17:07,257
+and crack them to pieces?"
+
+474
+00:17:08,140 --> 00:17:10,740
+Spot on, Mom," Ace nodded proudly.
+
+475
+00:17:11,503 --> 00:17:14,215
+Ordinary river rocks contain trapped water and iron
+
+476
+00:17:14,228 --> 00:17:15,840
+that explode under high heat.
+
+477
+00:17:16,603 --> 00:17:19,590
+We need refractory firebricks made of alumina-rich kaolin
+
+478
+00:17:19,603 --> 00:17:21,390
+clay and ground quartz grog."
+
+479
+00:17:22,252 --> 00:17:23,927
+I know where there's a deposit of pale
+
+480
+00:17:23,940 --> 00:17:24,777
+white clay!"
+
+481
+00:17:25,540 --> 00:17:28,040
+Clara said, her emerald eyes lighting up.
+
+482
+00:17:28,802 --> 00:17:30,890
+Just past the eastern lavender terrace,
+
+483
+00:17:30,927 --> 00:17:32,977
+where the mountain spring cuts into the shale
+
+484
+00:17:32,990 --> 00:17:33,490
+bank."
+
+485
+00:17:34,372 --> 00:17:36,472
+Taking wooden spades and wheelbarrows,
+
+486
+00:17:36,510 --> 00:17:38,672
+the family walked over to the eastern bank,
+
+487
+00:17:38,810 --> 00:17:41,310
+uncovering a dense seam of creamy white refractory
+
+488
+00:17:41,322 --> 00:17:41,860
+clay.
+
+489
+00:17:42,724 --> 00:17:45,212
+Ace and Garrett excavated several large blocks of
+
+490
+00:17:45,224 --> 00:17:46,062
+the dense clay,
+
+491
+00:17:46,249 --> 00:17:48,049
+wheeling it back to the workshop yard where
+
+492
+00:17:48,062 --> 00:17:50,149
+Clara had set up mixing troughs.
+
+493
+00:17:51,028 --> 00:17:53,066
+To prevent the bricks from shrinking and warping
+
+494
+00:17:53,078 --> 00:17:54,041
+during firing,
+
+495
+00:17:54,191 --> 00:17:56,141
+Ace ground a portion of their pure quartz
+
+496
+00:17:56,153 --> 00:17:58,453
+sand into fine powder to use as refractory
+
+497
+00:17:58,466 --> 00:17:59,041
+grog.
+
+498
+00:17:59,908 --> 00:18:02,233
+Kneading the clay and grog together with water,
+
+499
+00:18:02,321 --> 00:18:04,971
+Garrett pressed the mixture into uniform wooden brick
+
+500
+00:18:04,983 --> 00:18:06,771
+moulds he had chiselled that morning.
+
+501
+00:18:07,636 --> 00:18:10,524
+Each brick was stamped with uniform interlocking bevels,
+
+502
+00:18:10,611 --> 00:18:11,974
+designed to form a snug,
+
+503
+00:18:12,086 --> 00:18:13,999
+self-supporting curved kiln dome.
+
+504
+00:18:14,860 --> 00:18:16,035
+Maya used gentle,
+
+505
+00:18:16,135 --> 00:18:18,535
+warm breezes to circulate dry air around the
+
+506
+00:18:18,548 --> 00:18:19,685
+fresh clay bricks,
+
+507
+00:18:19,798 --> 00:18:23,023
+accelerating the initial drying process without causing surface
+
+508
+00:18:23,035 --> 00:18:23,660
+cracks.
+
+509
+00:18:24,532 --> 00:18:25,695
+Within two hours,
+
+510
+00:18:25,795 --> 00:18:28,732
+over two hundred uniform refractory firebricks sat lined
+
+511
+00:18:28,745 --> 00:18:30,270
+up on wooden drying racks,
+
+512
+00:18:30,395 --> 00:18:32,432
+firm enough to handle without deforming.
+
+513
+00:18:33,316 --> 00:18:35,166
+Now for the kiln site," Ace said,
+
+514
+00:18:35,266 --> 00:18:37,429
+pointing to an excavated corner on the leeward
+
+515
+00:18:37,441 --> 00:18:39,391
+side of the stone cottage workshop.
+
+516
+00:18:40,252 --> 00:18:42,765
+Garrett cleared and levelled a square stone pad,
+
+517
+00:18:42,890 --> 00:18:45,615
+anchoring a heavy white limestone foundation block with
+
+518
+00:18:45,627 --> 00:18:47,577
+an integrated bottom draft channel.
+
+519
+00:18:48,460 --> 00:18:49,573
+Layer by layer,
+
+520
+00:18:49,623 --> 00:18:52,485
+father and son began laying the refractory firebricks
+
+521
+00:18:52,498 --> 00:18:53,748
+in a circular arch,
+
+522
+00:18:53,810 --> 00:18:56,435
+forming a sturdy lower firebox chamber with thick,
+
+523
+00:18:56,585 --> 00:18:57,935
+heat-retaining walls.
+
+524
+00:18:58,804 --> 00:19:00,104
+Above the firebox,
+
+525
+00:19:00,204 --> 00:19:02,229
+they installed a heavy slate baffle shelf with
+
+526
+00:19:02,242 --> 00:19:04,842
+precision vent holes to separate the burning charcoal
+
+527
+00:19:04,854 --> 00:19:06,429
+from the upper melting chamber.
+
+528
+00:19:07,300 --> 00:19:08,988
+As the sun began to dip behind the
+
+529
+00:19:09,000 --> 00:19:11,500
+western ridge, the curved dome of the refractory
+
+530
+00:19:11,513 --> 00:19:12,550
+kiln stood complete,
+
+531
+00:19:12,663 --> 00:19:13,663
+capped by a tall,
+
+532
+00:19:13,763 --> 00:19:16,713
+slender white-stone draft chimney rising gracefully into the
+
+533
+00:19:16,725 --> 00:19:17,825
+alpine sky.
+
+534
+00:19:18,700 --> 00:19:20,825
+The following morning dawned crisp and clear,
+
+535
+00:19:20,863 --> 00:19:22,825
+with a light frost dusting the purple lavender
+
+536
+00:19:22,838 --> 00:19:24,425
+blossoms across the terrace.
+
+537
+00:19:25,300 --> 00:19:26,550
+In the workshop yard,
+
+538
+00:19:26,613 --> 00:19:29,338
+Ace, Garrett, and Clara gathered around the freshly
+
+539
+00:19:29,350 --> 00:19:30,913
+completed refractory kiln,
+
+540
+00:19:30,975 --> 00:19:33,563
+ready for its critical pre-heating curing cycle.
+
+541
+00:19:34,444 --> 00:19:36,619
+If we blast cold bricks with maximum heat
+
+542
+00:19:36,632 --> 00:19:37,294
+right away,
+
+543
+00:19:37,457 --> 00:19:39,369
+remaining moisture in the clay will turn to
+
+544
+00:19:39,382 --> 00:19:41,607
+steam and crack the dome," Ace explained,
+
+545
+00:19:41,719 --> 00:19:44,457
+laying out small bundles of dry birch kindling.
+
+546
+00:19:45,340 --> 00:19:48,053
+Slow and steady wins the race," Garrett agreed,
+
+547
+00:19:48,153 --> 00:19:50,553
+carefully stacking seasoned oak split logs into the
+
+548
+00:19:50,565 --> 00:19:52,090
+lower firebox chamber.
+
+549
+00:19:52,972 --> 00:19:54,785
+Ace reached into the firebox,
+
+550
+00:19:54,947 --> 00:19:56,172
+focusing on the tiny,
+
+551
+00:19:56,322 --> 00:19:59,022
+unawakened fire affinity spark he had practiced in
+
+552
+00:19:59,035 --> 00:20:00,485
+secret behind the barn.
+
+553
+00:20:01,348 --> 00:20:03,648
+Channeling a gentle pulse of warm mana through
+
+554
+00:20:03,661 --> 00:20:05,273
+his fingertips, a crisp,
+
+555
+00:20:05,373 --> 00:20:07,798
+clean orange spark snapped against the dry birch
+
+556
+00:20:07,811 --> 00:20:08,586
+shavings.
+
+557
+00:20:09,460 --> 00:20:11,110
+The kindling caught immediately,
+
+558
+00:20:11,185 --> 00:20:13,510
+crackling with a cheerful yellow flame that slowly
+
+559
+00:20:13,523 --> 00:20:16,473
+began warming the thick refractory firebrick walls.
+
+560
+00:20:17,356 --> 00:20:18,431
+For the first hour,
+
+561
+00:20:18,444 --> 00:20:20,506
+they kept the chimney damper wide open,
+
+562
+00:20:20,619 --> 00:20:22,944
+allowing the gentle smoke and residual moisture to
+
+563
+00:20:22,956 --> 00:20:25,156
+vent harmlessly into the morning sky.
+
+564
+00:20:26,020 --> 00:20:27,058
+Inside the kiln,
+
+565
+00:20:27,183 --> 00:20:29,195
+the creamy white clay bricks slowly turned a
+
+566
+00:20:29,208 --> 00:20:31,895
+warm, terracotta orange as the moisture baked away
+
+567
+00:20:31,908 --> 00:20:32,608
+completely.
+
+568
+00:20:33,484 --> 00:20:36,934
+Moisture scan zero percent," LUMINA reported inside
+
+569
+00:20:36,947 --> 00:20:37,709
+Ace's mind,
+
+570
+00:20:37,859 --> 00:20:40,209
+her top-right smiley face giving a proud,
+
+571
+00:20:40,297 --> 00:20:41,422
+encouraging wink.
+
+572
+00:20:42,292 --> 00:20:44,380
+Brick integrity one hundred percent!
+
+573
+00:20:45,142 --> 00:20:46,792
+Ready for full white heat,
+
+574
+00:20:46,930 --> 00:20:47,555
+partner!"
+
+575
+00:20:48,436 --> 00:20:50,486
+Dad, seal the loading hatch and load the
+
+576
+00:20:50,499 --> 00:20:52,836
+hard oak lump charcoal," Ace instructed,
+
+577
+00:20:52,936 --> 00:20:55,149
+pulling on heavy leather craftsman gloves.
+
+578
+00:20:56,020 --> 00:20:58,558
+Garrett shoveled dense black lumps of seasoned mountain
+
+579
+00:20:58,570 --> 00:21:00,708
+oak charcoal into the upper fuel chute,
+
+580
+00:21:00,820 --> 00:21:02,420
+packing the firebox tight.
+
+581
+00:21:03,292 --> 00:21:05,180
+As soon as the airtight iron hatch was
+
+582
+00:21:05,192 --> 00:21:07,867
+latched shut, the tall white-stone chimney began to
+
+583
+00:21:07,880 --> 00:21:09,680
+work its aerodynamic magic.
+
+584
+00:21:10,540 --> 00:21:12,965
+A deep, rhythmic roar echoed from inside the
+
+585
+00:21:12,978 --> 00:21:15,140
+kiln as the chimney draft pulled outside air
+
+586
+00:21:15,153 --> 00:21:17,640
+through the bottom intake vents at tremendous speed.
+
+587
+00:21:18,508 --> 00:21:21,358
+The flames inside transformed from gentle yellow into
+
+588
+00:21:21,371 --> 00:21:23,083
+a brilliant, dazzling orange,
+
+589
+00:21:23,221 --> 00:21:24,383
+and then into a roaring,
+
+590
+00:21:24,471 --> 00:21:25,721
+blinding white heat.
+
+591
+00:21:26,596 --> 00:21:27,671
+Garrett stepped back,
+
+592
+00:21:27,784 --> 00:21:29,896
+shielding his eyes with his forearm as waves
+
+593
+00:21:29,909 --> 00:21:32,384
+of intense, clean heat radiated from the peep
+
+594
+00:21:32,396 --> 00:21:32,946
+hole.
+
+595
+00:21:33,820 --> 00:21:34,870
+By the heavens!"
+
+596
+00:21:35,633 --> 00:21:36,670
+Garrett gasped,
+
+597
+00:21:36,845 --> 00:21:38,158
+his voice filled with awe.
+
+598
+00:21:38,920 --> 00:21:41,533
+I've never seen charcoal burn with such terrifying
+
+599
+00:21:41,545 --> 00:21:42,295
+ferocity!
+
+600
+00:21:43,058 --> 00:21:44,970
+It sounds like a caged beast!"
+
+601
+00:21:45,844 --> 00:21:48,032
+That's twelve hundred and fifty degrees of pure
+
+602
+00:21:48,044 --> 00:21:50,819
+draft physics, Dad," Ace chuckled proudly,
+
+603
+00:21:50,932 --> 00:21:53,569
+peering through a small quartz inspection lens.
+
+604
+00:21:54,436 --> 00:21:56,511
+Look at the crucible chamber above the baffle
+
+605
+00:21:56,524 --> 00:21:58,599
+plate the heat is completely clean,
+
+606
+00:21:58,686 --> 00:22:00,836
+with zero soot or black smoke touching the
+
+607
+00:22:00,849 --> 00:22:01,636
+upper zone!"
+
+608
+00:22:02,500 --> 00:22:04,825
+Clara and Maya watched from a safe distance,
+
+609
+00:22:04,938 --> 00:22:06,575
+their faces lit by the warm,
+
+610
+00:22:06,638 --> 00:22:09,113
+golden glow reflecting off the kiln's smooth white
+
+611
+00:22:09,125 --> 00:22:10,400
+limestone exterior.
+
+612
+00:22:11,284 --> 00:22:14,684
+It's completely smoke-free Clara remarked in astonishment.
+
+613
+00:22:15,447 --> 00:22:17,334
+If this were a city guild furnace,
+
+614
+00:22:17,447 --> 00:22:19,397
+the entire street would be choked with black
+
+615
+00:22:19,409 --> 00:22:19,909
+soot!"
+
+616
+00:22:20,788 --> 00:22:23,001
+Because the draft burns the wood gases completely
+
+617
+00:22:23,013 --> 00:22:25,326
+inside the second chamber before they can escape
+
+618
+00:22:25,338 --> 00:22:27,026
+as smoke," Ace explained.
+
+619
+00:22:27,892 --> 00:22:30,317
+With the kiln singing its powerful white-hot song,
+
+620
+00:22:30,467 --> 00:22:32,330
+Ace turned toward the wooden table where their
+
+621
+00:22:32,342 --> 00:22:34,792
+prepared batch of washed quartz sand and birch-ash
+
+622
+00:22:34,805 --> 00:22:37,617
+flux sat waiting in deep fireclay crucibles.
+
+623
+00:22:38,500 --> 00:22:40,500
+Ace carefully weighed out the glass batch on
+
+624
+00:22:40,513 --> 00:22:42,113
+their brass workshop balance:
+
+625
+00:22:42,200 --> 00:22:44,525
+seventy percent washed alpine quartz sand,
+
+626
+00:22:44,625 --> 00:22:47,150
+twenty percent purified white birch-ash flux,
+
+627
+00:22:47,288 --> 00:22:49,850
+and ten percent powdered limestone stabilizer.
+
+628
+00:22:50,716 --> 00:22:51,891
+Without the limestone,
+
+629
+00:22:51,966 --> 00:22:54,266
+pure silica glass would dissolve in water over
+
+630
+00:22:54,279 --> 00:22:55,566
+time," Ace noted,
+
+631
+00:22:55,679 --> 00:22:58,004
+thoroughly mixing the dry ingredients in a wide
+
+632
+00:22:58,016 --> 00:22:58,916
+clay basin.
+
+633
+00:22:59,788 --> 00:23:01,126
+And without the birch ash,
+
+634
+00:23:01,201 --> 00:23:03,126
+we'd need five hundred degrees more heat to
+
+635
+00:23:03,138 --> 00:23:05,226
+liquefy the quartz," Garrett added,
+
+636
+00:23:05,401 --> 00:23:08,201
+nodding with a master craftsman's growing appreciation for
+
+637
+00:23:08,213 --> 00:23:09,038
+the science.
+
+638
+00:23:09,916 --> 00:23:12,679
+Using long-handled iron tongs that Garrett had forged
+
+639
+00:23:12,691 --> 00:23:15,379
+and tempered, they lifted the heavy fireclay crucible
+
+640
+00:23:15,391 --> 00:23:17,754
+containing the white powder into the kiln's glowing
+
+641
+00:23:17,766 --> 00:23:18,591
+upper chamber.
+
+642
+00:23:19,468 --> 00:23:22,331
+They slid the insulated firebrick inspection door shut,
+
+643
+00:23:22,456 --> 00:23:24,393
+leaving the mixture to bake in the uniform
+
+644
+00:23:24,406 --> 00:23:25,856
+twelve-hundred-degree heat.
+
+645
+00:23:26,716 --> 00:23:27,966
+Inside the crucible,
+
+646
+00:23:28,066 --> 00:23:30,204
+the quartz sand grains and birch ash began
+
+647
+00:23:30,216 --> 00:23:32,554
+their miraculous heat-fused transformation.
+
+648
+00:23:33,436 --> 00:23:35,774
+At first, the white powder sintered into a
+
+649
+00:23:35,786 --> 00:23:37,449
+crusty, porous sponge,
+
+650
+00:23:37,574 --> 00:23:40,474
+releasing tiny bubbles of carbon dioxide that sizzled
+
+651
+00:23:40,486 --> 00:23:41,486
+into the draft.
+
+652
+00:23:42,364 --> 00:23:45,427
+Then, slowly, the solid particles broke down,
+
+653
+00:23:45,539 --> 00:23:46,889
+collapsing into a thick,
+
+654
+00:23:47,014 --> 00:23:49,777
+glowing pool of luminous honey-orange liquid that swirled
+
+655
+00:23:49,789 --> 00:23:51,914
+smoothly against the crucible walls.
+
+656
+00:23:52,780 --> 00:23:54,518
+Through the quartz inspection port,
+
+657
+00:23:54,605 --> 00:23:57,030
+Ace watched the liquid clarify as LUMINA tracked
+
+658
+00:23:57,043 --> 00:23:58,455
+the viscosity reduction.
+
+659
+00:23:59,332 --> 00:24:00,707
+Viscosity optimal!
+
+660
+00:24:01,470 --> 00:24:04,407
+Liquid glass state achieved," LUMINA confirmed with an
+
+661
+00:24:04,420 --> 00:24:05,857
+enthusiastic chime.
+
+662
+00:24:06,620 --> 00:24:09,795
+Homogeneous melt with zero unreacted silica crystal
+
+663
+00:24:09,807 --> 00:24:10,495
+cores!"
+
+664
+00:24:11,356 --> 00:24:12,431
+Time to cast,
+
+665
+00:24:12,481 --> 00:24:13,056
+Dad!"
+
+666
+00:24:13,819 --> 00:24:14,744
+Ace called out,
+
+667
+00:24:14,744 --> 00:24:16,831
+his pulse quickening with anticipation.
+
+668
+00:24:17,692 --> 00:24:18,617
+Beside the kiln,
+
+669
+00:24:18,717 --> 00:24:20,530
+Ace and Garrett had prepared a heavy,
+
+670
+00:24:20,642 --> 00:24:22,842
+three-inch-thick slab of polished dark slate,
+
+671
+00:24:22,992 --> 00:24:25,130
+heated gently from below with warm embers so
+
+672
+00:24:25,142 --> 00:24:27,567
+the molten glass wouldn't suffer thermal shock.
+
+673
+00:24:28,444 --> 00:24:30,419
+Garrett tightened his grip on the long iron
+
+674
+00:24:30,432 --> 00:24:33,069
+pouring tongs, his broad shoulders tensing as he
+
+675
+00:24:33,082 --> 00:24:35,694
+lifted the glowing white-hot crucible from the furnace
+
+676
+00:24:35,707 --> 00:24:36,269
+mouth.
+
+677
+00:24:37,132 --> 00:24:38,207
+A wave of searing,
+
+678
+00:24:38,282 --> 00:24:40,020
+radiant heat filled the workshop,
+
+679
+00:24:40,095 --> 00:24:43,420
+casting dramatic golden highlights across Garrett's focused,
+
+680
+00:24:43,495 --> 00:24:44,632
+determined face.
+
+681
+00:24:45,508 --> 00:24:48,558
+Slowly, steadily, Garrett tipped the crucible over the
+
+682
+00:24:48,571 --> 00:24:50,021
+pre-heated slate table.
+
+683
+00:24:50,884 --> 00:24:53,672
+A thick, glowing stream of liquid golden sunlight
+
+684
+00:24:53,684 --> 00:24:55,122
+poured onto the dark slate,
+
+685
+00:24:55,234 --> 00:24:57,622
+spreading out like molten honey into a smooth,
+
+686
+00:24:57,747 --> 00:24:58,897
+rectangular pool.
+
+687
+00:24:59,764 --> 00:25:01,377
+Working with lightning precision,
+
+688
+00:25:01,427 --> 00:25:02,439
+Ace took a polished,
+
+689
+00:25:02,564 --> 00:25:04,952
+heavy iron roller equipped with wooden handles and
+
+690
+00:25:04,964 --> 00:25:07,264
+rolled it smoothly across the glowing sheet.
+
+691
+00:25:08,140 --> 00:25:10,240
+The liquid quartz yielded under the roller,
+
+692
+00:25:10,378 --> 00:25:12,015
+flattening into a uniform,
+
+693
+00:25:12,103 --> 00:25:15,378
+quarter-inch-thick plate that filled the rectangular iron borders.
+
+694
+00:25:16,252 --> 00:25:17,452
+As the roller passed,
+
+695
+00:25:17,515 --> 00:25:19,727
+the radiant orange glow began to fade,
+
+696
+00:25:19,852 --> 00:25:21,865
+shifting from bright amber into a faint,
+
+697
+00:25:21,927 --> 00:25:22,952
+warm cherry red,
+
+698
+00:25:23,090 --> 00:25:24,227
+and then into total,
+
+699
+00:25:24,302 --> 00:25:25,915
+breathtaking transparency.
+
+700
+00:25:26,788 --> 00:25:28,488
+Garrett and Ace held their breath,
+
+701
+00:25:28,513 --> 00:25:30,751
+watching the red heat vanish from the surface.
+
+702
+00:25:31,612 --> 00:25:33,400
+Beneath the fading heat lay a solid,
+
+703
+00:25:33,475 --> 00:25:36,537
+perfectly flat, three-foot-wide sheet of glass so
+
+704
+00:25:36,550 --> 00:25:38,687
+crystal clear that the natural grey veins of
+
+705
+00:25:38,700 --> 00:25:40,700
+the slate table beneath were visible down to
+
+706
+00:25:40,712 --> 00:25:42,425
+the finest hairline scratch.
+
+707
+00:25:43,300 --> 00:25:43,763
+Dad...
+
+708
+00:25:43,850 --> 00:25:45,288
+look at it," Ace whispered,
+
+709
+00:25:45,463 --> 00:25:47,600
+his voice trembling with genuine emotion.
+
+710
+00:25:48,484 --> 00:25:50,597
+Garrett slowly lowered his iron tongs to the
+
+711
+00:25:50,609 --> 00:25:51,484
+stone floor,
+
+712
+00:25:51,659 --> 00:25:53,847
+his eyes fixed on the transparent marvel lying
+
+713
+00:25:53,859 --> 00:25:54,597
+before them.
+
+714
+00:25:55,468 --> 00:25:57,506
+It's it's like a sheet of pure mountain
+
+715
+00:25:57,518 --> 00:26:00,131
+spring water that froze solid in mid-air Garrett
+
+716
+00:26:00,143 --> 00:26:01,406
+breathed in utter wonder.
+
+717
+00:26:02,284 --> 00:26:03,397
+Don't touch it yet,
+
+718
+00:26:03,422 --> 00:26:04,009
+Dad!"
+
+719
+00:26:04,772 --> 00:26:05,997
+Ace cautioned gently,
+
+720
+00:26:06,147 --> 00:26:07,322
+holding up a hand.
+
+721
+00:26:08,084 --> 00:26:09,897
+If it cools too quickly in this cold
+
+722
+00:26:09,909 --> 00:26:12,409
+alpine air, the outside will shrink faster than
+
+723
+00:26:12,422 --> 00:26:15,122
+the inside and shatter into a thousand pieces!"
+
+724
+00:26:15,988 --> 00:26:18,588
+Ace and Garrett immediately transferred the hot glass
+
+725
+00:26:18,601 --> 00:26:21,101
+sheet into the insulated annealing chamber beside the
+
+726
+00:26:21,113 --> 00:26:23,051
+kiln, burying it under a thick bed of
+
+727
+00:26:23,063 --> 00:26:24,488
+warm, dry wood ash.
+
+728
+00:26:25,372 --> 00:26:28,135
+Slow cooling relieves the internal structural stress of
+
+729
+00:26:28,147 --> 00:26:29,760
+the glass," Ace explained,
+
+730
+00:26:29,785 --> 00:26:33,035
+watching LUMINA's internal temperature monitor slowly count
+
+731
+00:26:33,047 --> 00:26:34,510
+down degree by degree.
+
+732
+00:26:35,380 --> 00:26:36,255
+For two long,
+
+733
+00:26:36,268 --> 00:26:38,768
+quiet hours, the family waited patiently in the
+
+734
+00:26:38,780 --> 00:26:41,230
+workshop, sipping hot mint tea while the glass
+
+735
+00:26:41,243 --> 00:26:43,118
+cooled at an exact rate of two degrees
+
+736
+00:26:43,130 --> 00:26:43,755
+per minute.
+
+737
+00:26:44,620 --> 00:26:45,333
+Finally,
+
+738
+00:26:45,483 --> 00:26:46,770
+LUMINA gave a soft,
+
+739
+00:26:46,895 --> 00:26:47,945
+double-tone chime:
+
+740
+00:26:48,045 --> 00:26:49,583
+Annealing cycle complete.
+
+741
+00:26:50,345 --> 00:26:53,208
+Internal stress index zero point zero one.
+
+742
+00:26:53,970 --> 00:26:55,920
+Safe for room-temperature handling!"
+
+743
+00:26:56,788 --> 00:26:59,063
+Ace carefully brushed aside the fine white wood
+
+744
+00:26:59,076 --> 00:27:00,476
+ash, revealing the cool,
+
+745
+00:27:00,563 --> 00:27:02,988
+polished edges of the rectangular glass pane.
+
+746
+00:27:03,868 --> 00:27:05,481
+Using clean linen towels,
+
+747
+00:27:05,506 --> 00:27:07,893
+Garrett and Ace lifted the three-foot glass plate
+
+748
+00:27:07,906 --> 00:27:09,493
+from the ash bed and wiped away the
+
+749
+00:27:09,506 --> 00:27:10,568
+remaining dust.
+
+750
+00:27:11,452 --> 00:27:13,465
+Garrett held the glass plate upright in his
+
+751
+00:27:13,477 --> 00:27:16,402
+hands, turning it toward the bright afternoon sun.
+
+752
+00:27:17,284 --> 00:27:18,884
+The effect was breathtaking.
+
+753
+00:27:19,756 --> 00:27:21,819
+The sunlight passed straight through the glass with
+
+754
+00:27:21,831 --> 00:27:25,169
+zero distortion, illuminating Garrett's astonished face without
+
+755
+00:27:25,181 --> 00:27:26,706
+casting a single shadow.
+
+756
+00:27:27,580 --> 00:27:28,230
+Maya,
+
+757
+00:27:28,443 --> 00:27:29,118
+Clara!
+
+758
+00:27:29,880 --> 00:27:30,693
+Come look!"
+
+759
+00:27:31,455 --> 00:27:32,493
+Garrett called out,
+
+760
+00:27:32,518 --> 00:27:34,318
+his voice cracking with excitement.
+
+761
+00:27:35,188 --> 00:27:37,401
+Clara and Maya rushed into the workshop,
+
+762
+00:27:37,463 --> 00:27:39,288
+stopping dead in their tracks as they stared
+
+763
+00:27:39,301 --> 00:27:40,951
+at Garrett holding what appeared to be an
+
+764
+00:27:40,963 --> 00:27:42,151
+empty wooden frame.
+
+765
+00:27:43,012 --> 00:27:43,450
+Dad...
+
+766
+00:27:43,525 --> 00:27:44,562
+what are you holding?"
+
+767
+00:27:45,325 --> 00:27:47,837
+Maya asked, blinking in confusion.
+
+768
+00:27:48,600 --> 00:27:50,475
+Did the glass melt away completely?"
+
+769
+00:27:51,340 --> 00:27:54,278
+Garrett chuckled, extending his hand and gently tapping
+
+770
+00:27:54,290 --> 00:27:56,365
+his knuckle against the center of the invisible
+
+771
+00:27:56,378 --> 00:27:56,928
+barrier.
+
+772
+00:27:57,796 --> 00:28:00,971
+A crisp, musical clink-clink echoed through the workshop,
+
+773
+00:28:01,071 --> 00:28:03,509
+sending a shiver of delight down Maya's spine.
+
+774
+00:28:04,372 --> 00:28:05,235
+It's solid!"
+
+775
+00:28:05,997 --> 00:28:08,785
+Maya squealed, running forward and pressing her face
+
+776
+00:28:08,797 --> 00:28:10,347
+right up to the cool surface,
+
+777
+00:28:10,410 --> 00:28:12,922
+staring through at her father's smiling eyes.
+
+778
+00:28:13,804 --> 00:28:15,254
+It's completely clear!
+
+779
+00:28:16,017 --> 00:28:18,442
+I can see every eyelash on Dad's face!"
+
+780
+00:28:19,204 --> 00:28:21,829
+Maya laughed, touching the smooth surface with her
+
+781
+00:28:21,842 --> 00:28:22,742
+fingertips.
+
+782
+00:28:23,620 --> 00:28:25,170
+Clara walked up slowly,
+
+783
+00:28:25,258 --> 00:28:27,270
+gently running her palm across the cool,
+
+784
+00:28:27,308 --> 00:28:29,820
+pristine glass, tears glistening in the corners of
+
+785
+00:28:29,833 --> 00:28:30,933
+her emerald eyes.
+
+786
+00:28:31,804 --> 00:28:32,667
+In the capital,
+
+787
+00:28:32,767 --> 00:28:35,504
+only the Emperor's private bedchamber had tiny cloudy
+
+788
+00:28:35,517 --> 00:28:37,854
+panes of glass imported from the elven kingdoms
+
+789
+00:28:37,867 --> 00:28:40,329
+across the western sea," Clara whispered.
+
+790
+00:28:41,212 --> 00:28:43,525
+The High Mages charged a thousand gold coins
+
+791
+00:28:43,537 --> 00:28:45,100
+for a single distorted square,
+
+792
+00:28:45,225 --> 00:28:46,637
+and people called it a miracle of the
+
+793
+00:28:46,650 --> 00:28:47,250
+gods."
+
+794
+00:28:48,124 --> 00:28:49,474
+She turned toward Ace,
+
+795
+00:28:49,537 --> 00:28:51,687
+pulling her ten-year-old son into a tight,
+
+796
+00:28:51,737 --> 00:28:54,349
+warm embrace, burying her face in his chestnut
+
+797
+00:28:54,362 --> 00:28:54,799
+hair.
+
+798
+00:28:55,660 --> 00:28:57,898
+And here, in our little mountain valley,
+
+799
+00:28:57,973 --> 00:29:00,173
+my ten-year-old boy made a sheet ten times
+
+800
+00:29:00,185 --> 00:29:03,248
+clearer using river sand and fireplace ash," Clara
+
+801
+00:29:03,260 --> 00:29:04,123
+said softly,
+
+802
+00:29:04,273 --> 00:29:06,135
+her heart overflowing with pride.
+
+803
+00:29:07,012 --> 00:29:09,162
+Garrett reached down and wrapped his great arms
+
+804
+00:29:09,175 --> 00:29:10,175
+around both of them,
+
+805
+00:29:10,287 --> 00:29:12,562
+resting his forehead against his wife's braided hair
+
+806
+00:29:12,575 --> 00:29:13,875
+with deep thankfulness.
+
+807
+00:29:14,740 --> 00:29:16,715
+Ace wrapped his arms around his mother and
+
+808
+00:29:16,728 --> 00:29:19,928
+father, smiling softly as LUMINA projected a cheerful
+
+809
+00:29:19,940 --> 00:29:22,490
+golden heart icon on her floating interface.
+
+810
+00:29:23,356 --> 00:29:25,719
+With their proof of concept thoroughly verified,
+
+811
+00:29:25,844 --> 00:29:28,044
+the workshop transformed into an efficient,
+
+812
+00:29:28,131 --> 00:29:30,006
+joyous production line for the rest of the
+
+813
+00:29:30,019 --> 00:29:30,506
+day.
+
+814
+00:29:31,372 --> 00:29:33,560
+Garrett and Ace cast and annealed five more
+
+815
+00:29:33,572 --> 00:29:35,197
+matching quartz glass panes,
+
+816
+00:29:35,297 --> 00:29:37,347
+each one as flawless and transparent as the
+
+817
+00:29:37,360 --> 00:29:37,972
+first.
+
+818
+00:29:38,836 --> 00:29:41,536
+Meanwhile, Maya used her nimble fingers to help
+
+819
+00:29:41,549 --> 00:29:43,561
+Clara sand and bevel the edges of seasoned
+
+820
+00:29:43,574 --> 00:29:45,774
+oak window frames Garrett had prepared.
+
+821
+00:29:46,636 --> 00:29:47,786
+We need a flexible,
+
+822
+00:29:47,911 --> 00:29:50,274
+watertight seal around the glass so wind doesn't
+
+823
+00:29:50,286 --> 00:29:52,736
+leak through the timber joints," Ace pointed out,
+
+824
+00:29:52,811 --> 00:29:54,424
+inspecting the oak frames.
+
+825
+00:29:55,300 --> 00:29:57,525
+Clara smiled and stepped forward with a warm
+
+826
+00:29:57,538 --> 00:29:59,650
+clay pot filled with a fragrant mixture of
+
+827
+00:29:59,663 --> 00:30:01,338
+boiled alpine linseed oil,
+
+828
+00:30:01,400 --> 00:30:03,425
+powdered chalk, and beeswax.
+
+829
+00:30:04,300 --> 00:30:06,875
+My herbalist grandmother used this putty to seal
+
+830
+00:30:06,888 --> 00:30:08,263
+glass medicine jars,
+
+831
+00:30:08,313 --> 00:30:09,513
+Ace," Clara said,
+
+832
+00:30:09,650 --> 00:30:11,175
+spreading a bead of the smooth,
+
+833
+00:30:11,263 --> 00:30:13,500
+pliable paste into the frame grooves.
+
+834
+00:30:14,380 --> 00:30:17,643
+Ace nodded in approval classic natural glazing putty,
+
+835
+00:30:17,718 --> 00:30:20,343
+perfectly pliable and completely weather-resistant
+
+836
+00:30:21,220 --> 00:30:23,583
+Together, Garrett and Ace carefully set the heavy
+
+837
+00:30:23,595 --> 00:30:25,833
+quartz glass panes into the oak frames,
+
+838
+00:30:25,933 --> 00:30:28,470
+pressing them firmly into the linseed putty bed.
+
+839
+00:30:29,332 --> 00:30:31,095
+Small brass glazing sprigs,
+
+840
+00:30:31,132 --> 00:30:33,482
+forged from recycled artisan scraps,
+
+841
+00:30:33,557 --> 00:30:35,157
+were tapped into the frame to lock the
+
+842
+00:30:35,170 --> 00:30:36,845
+glass permanently in place.
+
+843
+00:30:37,708 --> 00:30:39,146
+Carrying the first complete,
+
+844
+00:30:39,246 --> 00:30:41,783
+framed window unit to the newly constructed eastern
+
+845
+00:30:41,796 --> 00:30:44,358
+stone bedroom, Garrett hoisted it into the rough
+
+846
+00:30:44,371 --> 00:30:45,546
+limestone opening.
+
+847
+00:30:46,420 --> 00:30:48,995
+The tongue-and-groove white stone opening had been chiselled
+
+848
+00:30:49,008 --> 00:30:50,295
+to exact tolerances,
+
+849
+00:30:50,395 --> 00:30:52,458
+allowing the oak frame to slide into place
+
+850
+00:30:52,470 --> 00:30:53,220
+with a snug,
+
+851
+00:30:53,383 --> 00:30:54,270
+airtight fit.
+
+852
+00:30:55,132 --> 00:30:57,382
+Garrett drove hardwood oak pegs through the frame
+
+853
+00:30:57,395 --> 00:30:59,795
+into pre-drilled holes in the white stone wall,
+
+854
+00:30:59,957 --> 00:31:01,970
+anchoring the window for decades to come.
+
+855
+00:31:02,836 --> 00:31:04,111
+As Garrett stepped back,
+
+856
+00:31:04,211 --> 00:31:06,386
+the transformation of the room was nothing short
+
+857
+00:31:06,399 --> 00:31:07,386
+of miraculous.
+
+858
+00:31:08,260 --> 00:31:09,860
+Where there had once been a dark,
+
+859
+00:31:09,960 --> 00:31:12,923
+shadowy corner lit only by flickering tallow candles,
+
+860
+00:31:12,998 --> 00:31:15,360
+the bedroom was suddenly flooded with glorious,
+
+861
+00:31:15,498 --> 00:31:17,148
+panoramic mountain daylight.
+
+862
+00:31:18,028 --> 00:31:20,616
+Outside, the autumn wind rustled the high pine
+
+863
+00:31:20,628 --> 00:31:22,516
+branches, yet inside the room,
+
+864
+00:31:22,666 --> 00:31:24,341
+not a single breath of cold air could
+
+865
+00:31:24,353 --> 00:31:25,041
+be felt.
+
+866
+00:31:25,924 --> 00:31:27,412
+Maya walked into the room,
+
+867
+00:31:27,487 --> 00:31:29,487
+gasping as she stood before the wide,
+
+868
+00:31:29,574 --> 00:31:30,524
+crystal window,
+
+869
+00:31:30,687 --> 00:31:32,812
+looking out over the purple lavender fields and
+
+870
+00:31:32,824 --> 00:31:34,549
+the snow-capped mountain peaks.
+
+871
+00:31:35,428 --> 00:31:37,753
+It feels like standing outside on the mountain
+
+872
+00:31:37,766 --> 00:31:39,566
+meadow," Maya whispered in awe,
+
+873
+00:31:39,628 --> 00:31:42,141
+except the room is completely warm and quiet!"
+
+874
+00:31:43,012 --> 00:31:45,275
+You can watch the winter blizzards rage outside
+
+875
+00:31:45,287 --> 00:31:46,812
+while sitting in your bed with a cup
+
+876
+00:31:46,825 --> 00:31:48,612
+of hot cider," Ace smiled,
+
+877
+00:31:48,800 --> 00:31:50,762
+leaning against the warm stone sill.
+
+878
+00:31:51,628 --> 00:31:53,903
+Garrett ran his calloused hand over the smooth
+
+879
+00:31:53,916 --> 00:31:56,691
+oak casement, admiring the way the white limestone,
+
+880
+00:31:56,791 --> 00:31:59,591
+warm oak, and crystal glass complemented each other.
+
+881
+00:32:00,460 --> 00:32:02,285
+This isn't a peasant cottage anymore,
+
+882
+00:32:02,373 --> 00:32:03,798
+Ace," Garrett murmured,
+
+883
+00:32:03,948 --> 00:32:05,973
+his voice filled with quiet emotion.
+
+884
+00:32:06,735 --> 00:32:08,260
+This is a true sanctuary."
+
+885
+00:32:09,124 --> 00:32:11,974
+By dusk, all five windows were securely installed
+
+886
+00:32:11,987 --> 00:32:14,224
+across the farmhouse two in the main living
+
+887
+00:32:14,237 --> 00:32:16,124
+hall, two in the new bedrooms,
+
+888
+00:32:16,237 --> 00:32:18,499
+and one large viewing window in the kitchen.
+
+889
+00:32:19,372 --> 00:32:21,260
+As twilight fell across the valley,
+
+890
+00:32:21,372 --> 00:32:23,547
+painting the sky in deep shades of violet
+
+891
+00:32:23,560 --> 00:32:24,185
+and indigo,
+
+892
+00:32:24,347 --> 00:32:27,260
+the interior candles illuminated the cottage from within.
+
+893
+00:32:28,132 --> 00:32:29,557
+From outside in the meadow,
+
+894
+00:32:29,707 --> 00:32:31,520
+the farmhouse glowed like a warm,
+
+895
+00:32:31,620 --> 00:32:34,282
+golden lantern nestled in the dark mountain forest,
+
+896
+00:32:34,370 --> 00:32:37,295
+its crystal windows sparkling with inviting warmth.
+
+897
+00:32:38,164 --> 00:32:40,264
+Ace stood out in the twilight meadow beside
+
+898
+00:32:40,277 --> 00:32:42,614
+his father, watching the warm light spill across
+
+899
+00:32:42,627 --> 00:32:43,714
+the lavender rows,
+
+900
+00:32:43,827 --> 00:32:46,102
+knowing that the foundation of their modern sanctuary
+
+901
+00:32:46,114 --> 00:32:47,589
+was truly taking root.
+
+902
+00:32:48,460 --> 00:32:49,485
+The following morning,
+
+903
+00:32:49,598 --> 00:32:52,073
+Clara stood in the kitchen inspecting several earthen
+
+904
+00:32:52,085 --> 00:32:54,285
+crocks of fresh goat milk and freshly churned
+
+905
+00:32:54,298 --> 00:32:56,335
+butter from their neighborly mountain trader.
+
+906
+00:32:57,196 --> 00:32:59,834
+Ace, Garrett," Clara called out gently,
+
+907
+00:32:59,934 --> 00:33:02,546
+a slight crease of concern between her brows.
+
+908
+00:33:03,309 --> 00:33:05,709
+We have a wonderful problem on our hands."
+
+909
+00:33:06,580 --> 00:33:08,955
+Ace and Garrett walked into the sunlit kitchen,
+
+910
+00:33:09,093 --> 00:33:10,205
+where the scent of warm,
+
+911
+00:33:10,305 --> 00:33:12,155
+freshly baked bread filled the air.
+
+912
+00:33:13,036 --> 00:33:13,886
+What's the matter,
+
+913
+00:33:13,986 --> 00:33:14,474
+Mom?"
+
+914
+00:33:15,236 --> 00:33:17,524
+Ace asked, looking at the stone counter.
+
+915
+00:33:18,388 --> 00:33:20,688
+With our clean running water and rich lavender
+
+916
+00:33:20,701 --> 00:33:23,413
+pastures, our goats are producing twice as much
+
+917
+00:33:23,426 --> 00:33:25,601
+milk as before," Clara explained,
+
+918
+00:33:25,713 --> 00:33:27,413
+gesturing to the brimming crocks.
+
+919
+00:33:28,276 --> 00:33:30,651
+And my pressed lavender essential oils and herbal
+
+920
+00:33:30,664 --> 00:33:32,026
+salves need to stay cool,
+
+921
+00:33:32,189 --> 00:33:34,514
+or the delicate fragrances spoil in the afternoon
+
+922
+00:33:34,526 --> 00:33:35,064
+heat."
+
+923
+00:33:35,932 --> 00:33:36,657
+In the city,
+
+924
+00:33:36,757 --> 00:33:39,482
+nobles hire Ice Mages to cast freezing spells
+
+925
+00:33:39,495 --> 00:33:42,857
+into heavy iron iceboxes every morning," Garrett noted,
+
+926
+00:33:42,970 --> 00:33:44,232
+crossing his arms.
+
+927
+00:33:44,995 --> 00:33:47,345
+Or they pay fortunes to have mountain glacier
+
+928
+00:33:47,357 --> 00:33:49,545
+ice hauled down in sawdust wagons."
+
+929
+00:33:50,428 --> 00:33:51,478
+And by midsummer,
+
+930
+00:33:51,591 --> 00:33:53,703
+half the ice has melted into warm puddle
+
+931
+00:33:53,716 --> 00:33:56,403
+water, and the mages charge double fees," Ace
+
+932
+00:33:56,416 --> 00:33:57,903
+added with a knowing smirk.
+
+933
+00:33:58,780 --> 00:34:00,855
+Can't we just use an ice-mana stone?"
+
+934
+00:34:01,618 --> 00:34:04,218
+Maya suggested, peeking into the kitchen.
+
+935
+00:34:04,980 --> 00:34:07,005
+I saw blue ice crystals for sale in
+
+936
+00:34:07,018 --> 00:34:08,543
+Oakhaven's hunter guild!"
+
+937
+00:34:09,412 --> 00:34:11,837
+An ice-mana stone produces passive cold,
+
+938
+00:34:11,962 --> 00:34:13,312
+yes," Ace replied,
+
+939
+00:34:13,325 --> 00:34:14,875
+but if you put an ice stone into
+
+940
+00:34:14,887 --> 00:34:16,412
+an uninsulated wooden cupboard,
+
+941
+00:34:16,525 --> 00:34:18,375
+the cold leaks out within ten minutes,
+
+942
+00:34:18,487 --> 00:34:20,662
+and the stone burns out in three days."
+
+943
+00:34:21,532 --> 00:34:23,257
+What we need," Ace declared,
+
+944
+00:34:23,370 --> 00:34:26,182
+is a passive thermal insulation envelope a cold
+
+945
+00:34:26,195 --> 00:34:29,132
+storage larder that traps freezing temperatures inside and
+
+946
+00:34:29,145 --> 00:34:30,957
+keeps summer heat completely out."
+
+947
+00:34:31,828 --> 00:34:34,153
+LUMINA's interface pulsed softly,
+
+948
+00:34:34,278 --> 00:34:37,341
+presenting a cross-section diagram of spongy bark structures
+
+949
+00:34:37,353 --> 00:34:39,378
+that naturally trap freezing cold.
+
+950
+00:34:40,252 --> 00:34:41,815
+Material recommendation:
+
+951
+00:34:41,927 --> 00:34:44,127
+Quercus suber alpine cork bark,"
+
+952
+00:34:44,277 --> 00:34:45,527
+LUMINA reported.
+
+953
+00:34:46,290 --> 00:34:49,665
+Millions of microscopic air pockets per cubic centimeter.
+
+954
+00:34:50,427 --> 00:34:52,115
+Zero heat conductivity,
+
+955
+00:34:52,290 --> 00:34:55,565
+naturally water-resistant and completely rot-proof
+
+956
+00:34:56,428 --> 00:34:57,091
+Cork!"
+
+957
+00:34:57,853 --> 00:34:59,116
+Ace's eyes lit up.
+
+958
+00:34:59,878 --> 00:35:02,128
+Dad, do you remember those strange trees with
+
+959
+00:35:02,141 --> 00:35:04,678
+thick, spongy grey bark growing along the northern
+
+960
+00:35:04,691 --> 00:35:05,816
+limestone ridge?"
+
+961
+00:35:06,676 --> 00:35:08,914
+Garrett's face brightened with recognition.
+
+962
+00:35:09,676 --> 00:35:11,439
+The spongy oak grove near the old bear
+
+963
+00:35:11,451 --> 00:35:12,089
+cave?
+
+964
+00:35:12,851 --> 00:35:15,076
+The bark is nearly three inches thick!
+
+965
+00:35:15,839 --> 00:35:18,376
+Hunters sometimes strip small pieces to pad their
+
+966
+00:35:18,389 --> 00:35:19,426
+boot soles."
+
+967
+00:35:20,308 --> 00:35:22,971
+That spongy bark is the finest natural insulation
+
+968
+00:35:22,983 --> 00:35:25,358
+material in the world," Ace smiled.
+
+969
+00:35:26,121 --> 00:35:27,396
+And the best part is,
+
+970
+00:35:27,496 --> 00:35:29,621
+harvesting the outer bark doesn't harm the living
+
+971
+00:35:29,633 --> 00:35:30,408
+tree at all
+
+972
+00:35:30,558 --> 00:35:32,908
+it grows right back over five years!"
+
+973
+00:35:33,772 --> 00:35:35,585
+Grabbing two light hand axes,
+
+974
+00:35:35,597 --> 00:35:38,260
+wooden wedges, and burlap collection sacks,
+
+975
+00:35:38,397 --> 00:35:39,347
+Ace, Maya,
+
+976
+00:35:39,522 --> 00:35:41,847
+and Garrett set off toward the northern ridge.
+
+977
+00:35:42,724 --> 00:35:44,899
+The morning air was brisk and invigorating as
+
+978
+00:35:44,912 --> 00:35:46,937
+they climbed past the pine treeline onto the
+
+979
+00:35:46,949 --> 00:35:48,649
+sun-drenched limestone bluffs.
+
+980
+00:35:49,516 --> 00:35:51,854
+There, standing in a sheltered mountain hollow,
+
+981
+00:35:52,004 --> 00:35:53,204
+was a grove of ancient,
+
+982
+00:35:53,304 --> 00:35:54,904
+gnarled alpine cork oaks,
+
+983
+00:35:55,016 --> 00:35:56,804
+their massive trunks wrapped in thick,
+
+984
+00:35:56,891 --> 00:35:58,516
+deeply fissured grey bark.
+
+985
+00:35:59,380 --> 00:36:01,230
+Ace walked up to the largest tree,
+
+986
+00:36:01,343 --> 00:36:03,468
+gently pressing his thumb against the bark.
+
+987
+00:36:04,230 --> 00:36:05,530
+It yielded with a firm,
+
+988
+00:36:05,580 --> 00:36:08,293
+springy resistance, completely dry and warm to the
+
+989
+00:36:08,305 --> 00:36:08,893
+touch.
+
+990
+00:36:09,772 --> 00:36:11,297
+Watch closely, Maya,"
+
+991
+00:36:11,447 --> 00:36:13,647
+Ace said, scoring a vertical line down the
+
+992
+00:36:13,660 --> 00:36:15,597
+outer cork layer with a curved chisel,
+
+993
+00:36:15,697 --> 00:36:17,847
+being careful not to touch the sensitive green
+
+994
+00:36:17,860 --> 00:36:18,747
+inner cambium.
+
+995
+00:36:19,612 --> 00:36:21,850
+Garrett inserted a smooth wooden wedge into the
+
+996
+00:36:21,862 --> 00:36:23,825
+seam, giving it a gentle tap with his
+
+997
+00:36:23,837 --> 00:36:24,675
+wooden mallet.
+
+998
+00:36:25,540 --> 00:36:26,590
+With a satisfying,
+
+999
+00:36:26,715 --> 00:36:28,165
+hollow peel, a large,
+
+1000
+00:36:28,253 --> 00:36:29,603
+flexible slab of thick,
+
+1001
+00:36:29,690 --> 00:36:32,428
+spongy cork bark separated cleanly from the trunk,
+
+1002
+00:36:32,590 --> 00:36:35,403
+leaving the living tree completely intact and unharmed.
+
+1003
+00:36:36,268 --> 00:36:38,181
+Working respectfully with the grove,
+
+1004
+00:36:38,243 --> 00:36:39,806
+they harvested twenty large,
+
+1005
+00:36:39,918 --> 00:36:42,056
+uniform slabs of thick cork bark,
+
+1006
+00:36:42,168 --> 00:36:44,356
+packing them into their sacks before heading back
+
+1007
+00:36:44,368 --> 00:36:46,031
+down to the sanctuary farm.
+
+1008
+00:36:46,900 --> 00:36:47,913
+Back at the farm,
+
+1009
+00:36:47,950 --> 00:36:50,350
+Ace and Garrett selected the ideal location for
+
+1010
+00:36:50,363 --> 00:36:51,813
+their cold storage pantry:
+
+1011
+00:36:51,913 --> 00:36:53,600
+the northeast corner of the cottage,
+
+1012
+00:36:53,738 --> 00:36:54,763
+built into the cool,
+
+1013
+00:36:54,863 --> 00:36:57,050
+shaded earth beneath the stone workshop.
+
+1014
+00:36:57,916 --> 00:37:00,504
+Excavating down six feet into the damp mountain
+
+1015
+00:37:00,516 --> 00:37:03,029
+clay, Garrett used his resonant Earth Affinity to
+
+1016
+00:37:03,041 --> 00:37:04,091
+carve out a clean,
+
+1017
+00:37:04,179 --> 00:37:05,741
+square subterranean cellar.
+
+1018
+00:37:06,604 --> 00:37:08,492
+The earth stays at a steady eight degrees
+
+1019
+00:37:08,504 --> 00:37:10,642
+Celsius all year round at this depth,"
+
+1020
+00:37:10,804 --> 00:37:12,792
+Ace explained as they stepped down the stone
+
+1021
+00:37:12,804 --> 00:37:14,642
+stairs into the cool excavation.
+
+1022
+00:37:15,508 --> 00:37:17,383
+By sinking the room into the ground,
+
+1023
+00:37:17,408 --> 00:37:19,733
+we eliminate fifty percent of the ambient summer
+
+1024
+00:37:19,746 --> 00:37:22,158
+heat load before we even add insulation."
+
+1025
+00:37:23,020 --> 00:37:25,008
+Along the interior walls of the cellar,
+
+1026
+00:37:25,058 --> 00:37:27,095
+Garrett laid an inner skin of uniform white
+
+1027
+00:37:27,108 --> 00:37:29,933
+limestone blocks, leaving a three-inch cavity between the
+
+1028
+00:37:29,945 --> 00:37:31,470
+stone and the outer earth.
+
+1029
+00:37:32,332 --> 00:37:33,445
+Into this cavity,
+
+1030
+00:37:33,570 --> 00:37:36,220
+Ace and Maya packed their harvested cork slabs,
+
+1031
+00:37:36,345 --> 00:37:38,670
+fitting the edges tightly together with zero gaps
+
+1032
+00:37:38,682 --> 00:37:40,745
+to create a continuous thermal barrier.
+
+1033
+00:37:41,620 --> 00:37:44,483
+Next comes the convective airflow loop," Ace said,
+
+1034
+00:37:44,608 --> 00:37:46,733
+pointing to the ceiling and floor corners.
+
+1035
+00:37:47,596 --> 00:37:49,084
+He installed two small,
+
+1036
+00:37:49,159 --> 00:37:51,059
+smooth white-stone air shafts:
+
+1037
+00:37:51,221 --> 00:37:53,321
+one drawing cool air from the shaded north
+
+1038
+00:37:53,334 --> 00:37:54,096
+garden wall,
+
+1039
+00:37:54,259 --> 00:37:56,721
+and an exhaust vent rising above the roofline.
+
+1040
+00:37:57,604 --> 00:37:59,229
+At the highest shelf in the center of
+
+1041
+00:37:59,242 --> 00:38:01,917
+the pantry, Ace constructed a polished brass cradle
+
+1042
+00:38:01,929 --> 00:38:04,629
+designed to hold a single passive ice-mana stone.
+
+1043
+00:38:05,500 --> 00:38:08,100
+Garrett carefully retrieved a pale azure ice crystal
+
+1044
+00:38:08,113 --> 00:38:09,125
+the size of an apple,
+
+1045
+00:38:09,238 --> 00:38:10,925
+which he had traded for three jars of
+
+1046
+00:38:10,938 --> 00:38:13,400
+Clara's lavender salve from a frontier hunter.
+
+1047
+00:38:14,284 --> 00:38:16,184
+The moment the ice stone settled into the
+
+1048
+00:38:16,197 --> 00:38:18,472
+brass cradle, faint tendrils of cold,
+
+1049
+00:38:18,522 --> 00:38:21,447
+white frost mist began cascading gracefully down from
+
+1050
+00:38:21,459 --> 00:38:22,159
+the crystal.
+
+1051
+00:38:23,020 --> 00:38:25,083
+Cold air is denser than warm air,
+
+1052
+00:38:25,233 --> 00:38:26,970
+so it naturally sinks to the floor,"
+
+1053
+00:38:27,120 --> 00:38:28,083
+Ace pointed out,
+
+1054
+00:38:28,095 --> 00:38:30,533
+watching the cascading frost mist envelop the lower
+
+1055
+00:38:30,545 --> 00:38:31,245
+shelves.
+
+1056
+00:38:32,116 --> 00:38:33,429
+As the cold air settles,
+
+1057
+00:38:33,529 --> 00:38:35,504
+it pushes the slightly warmer air up through
+
+1058
+00:38:35,516 --> 00:38:36,591
+the exhaust damper,
+
+1059
+00:38:36,729 --> 00:38:37,904
+creating a natural,
+
+1060
+00:38:38,029 --> 00:38:41,329
+self-regulating convective chill without a single moving mechanical
+
+1061
+00:38:41,341 --> 00:38:41,916
+part."
+
+1062
+00:38:42,796 --> 00:38:44,746
+Maya stepped into the finished pantry,
+
+1063
+00:38:44,821 --> 00:38:46,884
+shivering with a delighted grin as her breath
+
+1064
+00:38:46,896 --> 00:38:49,109
+formed tiny white clouds in the chilled air.
+
+1065
+00:38:49,972 --> 00:38:52,035
+It's like stepping inside an ice cave at
+
+1066
+00:38:52,047 --> 00:38:53,335
+the top of the glacier!"
+
+1067
+00:38:54,097 --> 00:38:57,122
+Maya laughed, wrapping her arms around her shoulders.
+
+1068
+00:38:57,988 --> 00:39:00,676
+LUMINA projected an ambient thermometer display:
+
+1069
+00:39:00,776 --> 00:39:02,801
+the room temperature had dropped to a crisp,
+
+1070
+00:39:02,876 --> 00:39:04,688
+steady three degrees Celsius.
+
+1071
+00:39:05,572 --> 00:39:08,522
+Thermal equilibrium locked at three point two degrees,"
+
+1072
+00:39:08,635 --> 00:39:10,097
+LUMINA chimed happily.
+
+1073
+00:39:10,860 --> 00:39:13,210
+Daily mana decay on the ice stone reduced
+
+1074
+00:39:13,222 --> 00:39:16,135
+by eighty-five percent thanks to the cork insulation!"
+
+1075
+00:39:16,996 --> 00:39:19,559
+At this rate," Ace calculated with a smile,
+
+1076
+00:39:19,659 --> 00:39:21,909
+a single low-grade ice stone will last six
+
+1077
+00:39:21,921 --> 00:39:23,921
+full months instead of burning out in three
+
+1078
+00:39:23,934 --> 00:39:24,596
+days!"
+
+1079
+00:39:25,468 --> 00:39:28,131
+Garrett ran his hands over the thick cork-insulated
+
+1080
+00:39:28,143 --> 00:39:30,731
+oak door, fitted with a soft deerskin weatherstrip
+
+1081
+00:39:30,743 --> 00:39:31,931
+that sealed with a solid,
+
+1082
+00:39:32,081 --> 00:39:33,018
+airtight thud.
+
+1083
+00:39:33,892 --> 00:39:35,255
+No more spoiled milk,
+
+1084
+00:39:35,417 --> 00:39:36,655
+no more melted butter,
+
+1085
+00:39:36,792 --> 00:39:38,855
+and no more paying guild mages for daily
+
+1086
+00:39:38,867 --> 00:39:40,592
+ice spells," Garrett said,
+
+1087
+00:39:40,730 --> 00:39:42,817
+shaking his head in joyful disbelief.
+
+1088
+00:39:43,684 --> 00:39:46,234
+Clara arrived down the stone steps carrying wooden
+
+1089
+00:39:46,247 --> 00:39:48,234
+crates filled with freshly churned butter,
+
+1090
+00:39:48,247 --> 00:39:49,334
+goat milk jugs,
+
+1091
+00:39:49,472 --> 00:39:50,859
+cured alpine venison,
+
+1092
+00:39:50,984 --> 00:39:53,534
+and delicate glass vials of lavender perfume.
+
+1093
+00:39:54,412 --> 00:39:56,037
+She set them onto the smooth,
+
+1094
+00:39:56,137 --> 00:39:57,937
+frost-chilled limestone shelves,
+
+1095
+00:39:58,062 --> 00:40:00,525
+smiling as a delicate layer of cool condensation
+
+1096
+00:40:00,537 --> 00:40:02,262
+formed on the glass containers.
+
+1097
+00:40:03,124 --> 00:40:05,149
+Ace, this cold room is worth more to
+
+1098
+00:40:05,162 --> 00:40:07,287
+our family than a chest of gold coins,"
+
+1099
+00:40:07,362 --> 00:40:09,674
+Clara said, kissing the top of his head.
+
+1100
+00:40:10,540 --> 00:40:11,578
+With clean water,
+
+1101
+00:40:11,678 --> 00:40:12,790
+smoke-free heating,
+
+1102
+00:40:12,978 --> 00:40:14,428
+airtight crystal windows,
+
+1103
+00:40:14,553 --> 00:40:16,953
+and perpetual cold storage fully operational,
+
+1104
+00:40:17,078 --> 00:40:19,753
+the Miller Sanctuary Farm was now more technologically
+
+1105
+00:40:19,765 --> 00:40:22,065
+advanced than the grandest estates in the imperial
+
+1106
+00:40:22,078 --> 00:40:22,703
+capital.
+
+1107
+00:40:23,572 --> 00:40:25,872
+That evening, the warm interior of the Miller
+
+1108
+00:40:25,885 --> 00:40:28,422
+farmhouse was filled with an aroma so tantalizing
+
+1109
+00:40:28,435 --> 00:40:30,260
+that even the birds in the nearby pine
+
+1110
+00:40:30,272 --> 00:40:32,222
+trees seemed to linger near the eaves.
+
+1111
+00:40:33,100 --> 00:40:35,213
+Through the crystal-clear quartz windows,
+
+1112
+00:40:35,325 --> 00:40:36,913
+the setting sun cast long,
+
+1113
+00:40:37,088 --> 00:40:39,450
+amber rays across the polished oak floorboards,
+
+1114
+00:40:39,550 --> 00:40:42,025
+illuminating the happy faces of the Miller family.
+
+1115
+00:40:42,892 --> 00:40:44,755
+On the long dining table sat a feast
+
+1116
+00:40:44,767 --> 00:40:46,980
+of simple, perfect frontier comfort:
+
+1117
+00:40:47,067 --> 00:40:49,405
+steaming loaves of crusty sourdough bread baked in
+
+1118
+00:40:49,417 --> 00:40:50,630
+the refractory hearth,
+
+1119
+00:40:50,730 --> 00:40:52,755
+a pot of savoury alpine herb stew,
+
+1120
+00:40:52,930 --> 00:40:54,067
+and a bowl of fresh,
+
+1121
+00:40:54,155 --> 00:40:56,642
+sweet goat milk cream chilled to frosty perfection
+
+1122
+00:40:56,655 --> 00:40:57,617
+in the new larder.
+
+1123
+00:40:58,492 --> 00:40:59,592
+Maya dipped a thick,
+
+1124
+00:40:59,642 --> 00:41:01,842
+warm crust of bread into the chilled cream,
+
+1125
+00:41:01,980 --> 00:41:04,742
+letting out an exaggerated groan of culinary bliss.
+
+1126
+00:41:05,620 --> 00:41:06,008
+Oh,
+
+1127
+00:41:06,158 --> 00:41:07,145
+by the spirits!"
+
+1128
+00:41:07,908 --> 00:41:10,358
+Maya cried, her eyes rolling with joy.
+
+1129
+00:41:11,120 --> 00:41:12,933
+The cream is so thick and cold,
+
+1130
+00:41:13,045 --> 00:41:15,020
+and the bread is so warm and crunchy!
+
+1131
+00:41:15,783 --> 00:41:16,795
+This is illegal!
+
+1132
+00:41:17,558 --> 00:41:19,808
+Kings shouldn't be allowed to eat this well!"
+
+1133
+00:41:20,668 --> 00:41:22,906
+Clara laughed, pouring cups of fresh,
+
+1134
+00:41:23,006 --> 00:41:25,431
+cool mountain spring water from an earthen pitcher
+
+1135
+00:41:25,443 --> 00:41:27,156
+that beaded with cold droplets.
+
+1136
+00:41:28,036 --> 00:41:30,899
+Eat slowly, Maya," Clara scolded gently,
+
+1137
+00:41:30,986 --> 00:41:33,224
+though her own eyes crinkled with amusement.
+
+1138
+00:41:33,986 --> 00:41:35,411
+There's plenty for everyone."
+
+1139
+00:41:36,292 --> 00:41:38,417
+Garrett took a generous spoonful of stew,
+
+1140
+00:41:38,605 --> 00:41:40,480
+followed by a slice of bread spread with
+
+1141
+00:41:40,492 --> 00:41:42,030
+firm, golden butter,
+
+1142
+00:41:42,142 --> 00:41:44,542
+savoring every bite in contented silence.
+
+1143
+00:41:45,412 --> 00:41:48,275
+You know, Clara," Garrett said after swallowing,
+
+1144
+00:41:48,412 --> 00:41:49,575
+looking around the bright,
+
+1145
+00:41:49,712 --> 00:41:51,050
+sunlit dining hall.
+
+1146
+00:41:51,812 --> 00:41:52,725
+Ten years ago,
+
+1147
+00:41:52,837 --> 00:41:54,500
+when we were packed into that noisy,
+
+1148
+00:41:54,612 --> 00:41:56,512
+foul-smelling attic room in the capital,
+
+1149
+00:41:56,650 --> 00:41:58,375
+I thought our lives were over."
+
+1150
+00:41:59,236 --> 00:42:01,424
+The Mage Guild taxed every loaf of bread,
+
+1151
+00:42:01,524 --> 00:42:03,724
+the tap water smelled like rusty iron and
+
+1152
+00:42:03,736 --> 00:42:05,786
+mud, and we couldn't even see the sky
+
+1153
+00:42:05,799 --> 00:42:08,836
+through the thick chimney smoke," Garrett remembered quietly.
+
+1154
+00:42:09,700 --> 00:42:11,663
+We risked everything moving out here to the
+
+1155
+00:42:11,675 --> 00:42:13,350
+wilderness," Clara murmured,
+
+1156
+00:42:13,463 --> 00:42:15,813
+reaching across the table to squeeze her husband's
+
+1157
+00:42:15,825 --> 00:42:16,388
+hand.
+
+1158
+00:42:17,260 --> 00:42:19,223
+And now, thanks to our son and our
+
+1159
+00:42:19,235 --> 00:42:21,748
+grandfather's legacy, we have a home cleaner,
+
+1160
+00:42:21,898 --> 00:42:22,435
+warmer,
+
+1161
+00:42:22,610 --> 00:42:24,573
+and more beautiful than any duke's palace in
+
+1162
+00:42:24,585 --> 00:42:26,023
+the realm," Garrett said,
+
+1163
+00:42:26,185 --> 00:42:27,910
+raising his cup toward Ace.
+
+1164
+00:42:28,780 --> 00:42:31,105
+To the Miller family," Garrett proposed,
+
+1165
+00:42:31,255 --> 00:42:33,405
+his deep voice thick with pride and love.
+
+1166
+00:42:34,168 --> 00:42:36,405
+And to the greatest little craftsman this world
+
+1167
+00:42:36,418 --> 00:42:37,293
+has ever seen."
+
+1168
+00:42:38,164 --> 00:42:39,014
+To Ace!"
+
+1169
+00:42:39,777 --> 00:42:42,452
+Maya cheered, clinking her wooden cup against Ace's
+
+1170
+00:42:42,464 --> 00:42:44,539
+with enough enthusiasm to spill a drop of
+
+1171
+00:42:44,552 --> 00:42:45,152
+water.
+
+1172
+00:42:46,012 --> 00:42:47,225
+Ace blushed slightly,
+
+1173
+00:42:47,337 --> 00:42:49,700
+his mature Earth soul warmed by the unconditional
+
+1174
+00:42:49,712 --> 00:42:51,862
+love and unity of this wonderful family.
+
+1175
+00:42:52,732 --> 00:42:54,620
+To our family," Ace smiled,
+
+1176
+00:42:54,807 --> 00:42:55,895
+raising his cup.
+
+1177
+00:42:56,657 --> 00:42:57,645
+We build together,
+
+1178
+00:42:57,670 --> 00:42:58,732
+we thrive together."
+
+1179
+00:42:59,596 --> 00:43:00,959
+Beside Ace's shoulder,
+
+1180
+00:43:01,084 --> 00:43:04,121
+LUMINA's translucent interface hovered quietly,
+
+1181
+00:43:04,221 --> 00:43:05,421
+displaying a cheerful,
+
+1182
+00:43:05,546 --> 00:43:08,959
+blushing emoji face surrounded by floating gold sparkles.
+
+1183
+00:43:09,820 --> 00:43:12,983
+Emotional resonance levels ninety-nine point nine percent,"
+
+1184
+00:43:13,058 --> 00:43:14,983
+LUMINA whispered in Ace's mind.
+
+1185
+00:43:15,745 --> 00:43:18,020
+ime really glad we got reincarnated here with
+
+1186
+00:43:18,033 --> 00:43:18,308
+you
+
+1187
+00:43:18,458 --> 00:43:19,070
+Cale
+
+1188
+00:43:19,833 --> 00:43:21,733
+This is a thousand times better than your
+
+1189
+00:43:21,745 --> 00:43:22,883
+old computer lab
+
+1190
+00:43:23,764 --> 00:43:24,414
+Me too,
+
+1191
+00:43:24,652 --> 00:43:25,289
+Lumina,"
+
+1192
+00:43:25,452 --> 00:43:26,877
+Ace replied in his thoughts,
+
+1193
+00:43:26,989 --> 00:43:28,477
+his eyes softening as he looked at his
+
+1194
+00:43:28,489 --> 00:43:30,739
+laughing sister and smiling parents.
+
+1195
+00:43:31,502 --> 00:43:32,264
+Me too."
+
+1196
+00:43:33,148 --> 00:43:35,598
+After dinner, while Maya and Clara washed the
+
+1197
+00:43:35,611 --> 00:43:37,473
+wooden dishes in the basin of clean running
+
+1198
+00:43:37,486 --> 00:43:37,948
+water,
+
+1199
+00:43:38,136 --> 00:43:40,573
+Ace stepped out onto the wide stone porch.
+
+1200
+00:43:41,452 --> 00:43:42,502
+The night was chilly,
+
+1201
+00:43:42,552 --> 00:43:45,015
+but wrapped in his forest-green craftsman vest and
+
+1202
+00:43:45,027 --> 00:43:45,977
+warm wool tunic,
+
+1203
+00:43:46,090 --> 00:43:47,827
+Ace felt perfectly comfortable.
+
+1204
+00:43:48,700 --> 00:43:49,638
+Above the valley,
+
+1205
+00:43:49,750 --> 00:43:52,063
+a million brilliant stars glittered in the crisp,
+
+1206
+00:43:52,200 --> 00:43:53,763
+unpolluted mountain sky,
+
+1207
+00:43:53,925 --> 00:43:56,663
+framing the majestic snow peaks in silver light.
+
+1208
+00:43:57,532 --> 00:43:59,695
+A gentle night breeze rustled through the purple
+
+1209
+00:43:59,707 --> 00:44:02,607
+lavender rows, carrying their soothing fragrance into the
+
+1210
+00:44:02,620 --> 00:44:03,757
+tranquil forest.
+
+1211
+00:44:04,636 --> 00:44:05,936
+Everything was peaceful,
+
+1212
+00:44:05,999 --> 00:44:08,636
+serene, and seemingly untouchable yet high in the
+
+1213
+00:44:08,649 --> 00:44:10,074
+western mountain passes,
+
+1214
+00:44:10,186 --> 00:44:11,286
+five leagues away,
+
+1215
+00:44:11,436 --> 00:44:13,524
+fate was already riding toward the valley.
+
+1216
+00:44:14,404 --> 00:44:15,829
+Five leagues to the west,
+
+1217
+00:44:15,917 --> 00:44:17,929
+deep within the tangled shadows of the ancient
+
+1218
+00:44:17,942 --> 00:44:20,354
+pine forest, the atmosphere was a stark and
+
+1219
+00:44:20,367 --> 00:44:22,529
+brutal contrast to the warmth of the sanctuary
+
+1220
+00:44:22,542 --> 00:44:23,129
+farm.
+
+1221
+00:44:24,004 --> 00:44:26,304
+A cold, biting wind howled through the rocky
+
+1222
+00:44:26,317 --> 00:44:29,242
+ravine, whipping dry pine needles and freezing drizzle
+
+1223
+00:44:29,254 --> 00:44:31,442
+against the dark leather cloaks of two solitary
+
+1224
+00:44:31,454 --> 00:44:32,142
+riders.
+
+1225
+00:44:33,004 --> 00:44:35,192
+Leading the way was Sir Roland Vance,
+
+1226
+00:44:35,292 --> 00:44:36,867
+Captain of the Royal Escort,
+
+1227
+00:44:36,967 --> 00:44:39,979
+his silver-and-blue plate armor splattered with dried frontier
+
+1228
+00:44:39,992 --> 00:44:41,304
+mud and road grime.
+
+1229
+00:44:42,172 --> 00:44:43,960
+Roland's jaw was clenched tight,
+
+1230
+00:44:44,110 --> 00:44:46,685
+his sharp blue-grey eyes constantly scanning the dense
+
+1231
+00:44:46,697 --> 00:44:48,022
+treeline for ambushes,
+
+1232
+00:44:48,147 --> 00:44:50,172
+his calloused right hand never leaving the hilt
+
+1233
+00:44:50,185 --> 00:44:51,472
+of his sheathed longsword.
+
+1234
+00:44:52,348 --> 00:44:54,973
+Behind him rode Princess Seraphina of the Solaris
+
+1235
+00:44:54,986 --> 00:44:55,536
+Empire,
+
+1236
+00:44:55,698 --> 00:44:57,848
+hunched forward in her saddle to shield herself
+
+1237
+00:44:57,861 --> 00:44:59,011
+from the freezing wind.
+
+1238
+00:44:59,884 --> 00:45:03,084
+Her once-magnificent ivory-and-sky-blue royal travel gown
+
+1239
+00:45:03,097 --> 00:45:04,872
+was stained with weeks of trail dust,
+
+1240
+00:45:05,009 --> 00:45:07,859
+horse sweat, and soot from roadside campfires.
+
+1241
+00:45:08,740 --> 00:45:10,253
+Her long golden-blonde hair,
+
+1242
+00:45:10,378 --> 00:45:12,728
+usually styled in intricate braids with pearls and
+
+1243
+00:45:12,740 --> 00:45:14,728
+silk ribbons, hung in tangled,
+
+1244
+00:45:14,853 --> 00:45:17,290
+limp strands beneath her damp travelling hood.
+
+1245
+00:45:18,172 --> 00:45:19,947
+Most telling of all were her hands:
+
+1246
+00:45:20,060 --> 00:45:23,185
+red, chapped, and trembling with sheer physical exhaustion
+
+1247
+00:45:23,197 --> 00:45:24,635
+as she gripped the leather reins of her
+
+1248
+00:45:24,647 --> 00:45:25,747
+weary white mare.
+
+1249
+00:45:26,620 --> 00:45:28,545
+The mare stumbled slightly on a loose,
+
+1250
+00:45:28,633 --> 00:45:29,658
+slick river stone,
+
+1251
+00:45:29,695 --> 00:45:30,808
+letting out a tired,
+
+1252
+00:45:31,008 --> 00:45:33,608
+rattling snort that echoed through the dark ravine.
+
+1253
+00:45:34,468 --> 00:45:35,856
+Easy, Starlight...
+
+1254
+00:45:35,968 --> 00:45:38,693
+easy, girl," Seraphina whispered weakly,
+
+1255
+00:45:38,856 --> 00:45:40,818
+gently patting the horse's damp neck with a
+
+1256
+00:45:40,831 --> 00:45:42,668
+trembling, leather-gloved hand.
+
+1257
+00:45:43,540 --> 00:45:45,878
+Sir Roland immediately pulled his warhorse to a
+
+1258
+00:45:45,890 --> 00:45:48,090
+halt, turning in his saddle with deep,
+
+1259
+00:45:48,128 --> 00:45:51,290
+protective concern etched into his battle-hardened features.
+
+1260
+00:45:52,156 --> 00:45:55,106
+Your Highness, we must stop," Roland said firmly,
+
+1261
+00:45:55,206 --> 00:45:56,906
+his deep voice laced with worry.
+
+1262
+00:45:57,669 --> 00:45:59,569
+Your mare is running on her last ounce
+
+1263
+00:45:59,581 --> 00:46:01,256
+of stamina, and you have not eaten a
+
+1264
+00:46:01,269 --> 00:46:02,919
+proper meal in three days."
+
+1265
+00:46:03,796 --> 00:46:04,859
+We cannot stop,
+
+1266
+00:46:04,971 --> 00:46:06,784
+Roland," Seraphina insisted,
+
+1267
+00:46:06,946 --> 00:46:09,034
+lifting her chin with royal defiance,
+
+1268
+00:46:09,121 --> 00:46:11,246
+though her pale cheeks and dark eye circles
+
+1269
+00:46:11,259 --> 00:46:12,621
+betrayed her exhaustion.
+
+1270
+00:46:13,492 --> 00:46:16,380
+If Grand Councilor Malakor's shadows realize we slipped
+
+1271
+00:46:16,392 --> 00:46:18,030
+out of the southern border garrison,
+
+1272
+00:46:18,117 --> 00:46:20,630
+his enforcers will be scouring this entire mountain
+
+1273
+00:46:20,642 --> 00:46:22,467
+pass within forty-eight hours."
+
+1274
+00:46:23,332 --> 00:46:25,870
+Malakor's enforcers are looking for a royal carriage
+
+1275
+00:46:25,882 --> 00:46:27,245
+on the imperial highway,
+
+1276
+00:46:27,395 --> 00:46:29,545
+Princess," Roland countered calmly.
+
+1277
+00:46:30,307 --> 00:46:32,445
+They would never believe the Emperor's only daughter
+
+1278
+00:46:32,457 --> 00:46:35,045
+is trekking on horseback through an uncharted frontier
+
+1279
+00:46:35,057 --> 00:46:35,807
+wilderness."
+
+1280
+00:46:36,676 --> 00:46:38,351
+Seraphina let out a weary,
+
+1281
+00:46:38,439 --> 00:46:41,151
+humorless sigh, her shoulders slumping as the reality
+
+1282
+00:46:41,164 --> 00:46:43,226
+of their grueling journey weighed heavily upon her
+
+1283
+00:46:43,239 --> 00:46:44,651
+eleven-year-old shoulders.
+
+1284
+00:46:45,532 --> 00:46:47,482
+I couldn't stay in that city any longer,
+
+1285
+00:46:47,657 --> 00:46:49,457
+Roland," Seraphina murmured,
+
+1286
+00:46:49,620 --> 00:46:51,670
+looking down at her mud-caked boots.
+
+1287
+00:46:52,540 --> 00:46:54,815
+The imperial palace felt like a gilded tomb
+
+1288
+00:46:54,828 --> 00:46:56,153
+choked with coal smoke,
+
+1289
+00:46:56,228 --> 00:46:57,715
+perfume, and lies."
+
+1290
+00:46:58,588 --> 00:47:00,788
+The councilors argued for six months over how
+
+1291
+00:47:00,801 --> 00:47:02,251
+to tax the river towns,
+
+1292
+00:47:02,313 --> 00:47:03,963
+while the poor quarters of the capital were
+
+1293
+00:47:03,976 --> 00:47:06,026
+dying of foul river fever because the Mage
+
+1294
+00:47:06,038 --> 00:47:08,376
+Guild wouldn't clean the public wells without bags
+
+1295
+00:47:08,388 --> 00:47:09,076
+of gold."
+
+1296
+00:47:09,940 --> 00:47:11,590
+And when I begged Father to open the
+
+1297
+00:47:11,603 --> 00:47:14,565
+imperial reservoirs, Malakor smiled that cold,
+
+1298
+00:47:14,678 --> 00:47:16,640
+sneering smile and told me I was too
+
+1299
+00:47:16,653 --> 00:47:18,603
+young to understand the cost of mana.'"
+
+1300
+00:47:19,468 --> 00:47:21,906
+Roland's expression softened with solemn respect;
+
+1301
+00:47:22,006 --> 00:47:23,818
+few knights in the realm understood the heavy
+
+1302
+00:47:23,831 --> 00:47:26,343
+burden this tender-hearted young princess carried in her
+
+1303
+00:47:26,356 --> 00:47:26,918
+chest.
+
+1304
+00:47:27,796 --> 00:47:28,934
+Your heart is pure,
+
+1305
+00:47:29,059 --> 00:47:31,659
+Your Highness, just like Her Majesty the Empress,"
+
+1306
+00:47:31,734 --> 00:47:32,946
+Roland said gently.
+
+1307
+00:47:33,709 --> 00:47:35,521
+That is why I swore on my blade
+
+1308
+00:47:35,534 --> 00:47:37,184
+to escort you to your aunt's estate in
+
+1309
+00:47:37,196 --> 00:47:38,346
+the northern frontier."
+
+1310
+00:47:39,220 --> 00:47:41,995
+But even royalty cannot survive on pure willpower
+
+1311
+00:47:42,008 --> 00:47:42,595
+alone.
+
+1312
+00:47:43,358 --> 00:47:44,370
+We need water,
+
+1313
+00:47:44,520 --> 00:47:45,383
+dry shelter,
+
+1314
+00:47:45,533 --> 00:47:47,020
+and forage for the horses."
+
+1315
+00:47:47,884 --> 00:47:49,609
+Seraphina nodded reluctantly,
+
+1316
+00:47:49,697 --> 00:47:51,722
+shivering as a gust of damp alpine air
+
+1317
+00:47:51,734 --> 00:47:53,709
+cut through her damp travel cloak.
+
+1318
+00:47:54,580 --> 00:47:57,155
+Roland led their exhausted horses into a sheltered
+
+1319
+00:47:57,168 --> 00:47:59,543
+rock overhang beneath a towering cliff face,
+
+1320
+00:47:59,580 --> 00:48:01,580
+where the freezing drizzle couldn't reach them.
+
+1321
+00:48:02,452 --> 00:48:05,327
+Dismounting stiffly, the knight helped Seraphina down from
+
+1322
+00:48:05,340 --> 00:48:07,877
+her saddle, steadying her as her trembling legs
+
+1323
+00:48:07,890 --> 00:48:09,390
+nearly buckled beneath her.
+
+1324
+00:48:10,252 --> 00:48:12,777
+He quickly stripped the saddles and sweat-soaked blankets
+
+1325
+00:48:12,790 --> 00:48:13,665
+from the horses,
+
+1326
+00:48:13,827 --> 00:48:16,327
+rubbing down their trembling flanks with dry handfuls
+
+1327
+00:48:16,340 --> 00:48:17,402
+of pine grass.
+
+1328
+00:48:18,268 --> 00:48:20,618
+Using a small spark steel and dry birch
+
+1329
+00:48:20,631 --> 00:48:22,531
+twigs, Roland coaxed a modest,
+
+1330
+00:48:22,643 --> 00:48:25,656
+smoky campfire to life inside the rocky alcove.
+
+1331
+00:48:26,524 --> 00:48:28,587
+The smoke from the damp frontier wood swirled
+
+1332
+00:48:28,599 --> 00:48:29,849
+around the low ceiling,
+
+1333
+00:48:30,024 --> 00:48:32,837
+making Seraphina cough and rub her watering sapphire
+
+1334
+00:48:32,849 --> 00:48:33,449
+eyes.
+
+1335
+00:48:34,324 --> 00:48:36,899
+Apologies, Princess," Roland grimaced,
+
+1336
+00:48:37,012 --> 00:48:39,012
+fanning the acrid smoke away with his leather
+
+1337
+00:48:39,024 --> 00:48:39,737
+gauntlet.
+
+1338
+00:48:40,499 --> 00:48:42,774
+Green pine wood burns like an old boot."
+
+1339
+00:48:43,636 --> 00:48:44,449
+It's warm,
+
+1340
+00:48:44,649 --> 00:48:45,374
+Roland.
+
+1341
+00:48:46,136 --> 00:48:47,786
+That's all that matters right now,"
+
+1342
+00:48:47,936 --> 00:48:49,349
+Seraphina said softly,
+
+1343
+00:48:49,436 --> 00:48:51,736
+crouching near the flames and holding her trembling
+
+1344
+00:48:51,749 --> 00:48:53,111
+hands toward the heat.
+
+1345
+00:48:53,980 --> 00:48:56,355
+Roland pulled out their remaining trail rations from
+
+1346
+00:48:56,368 --> 00:48:57,693
+a battered leather saddlebag:
+
+1347
+00:48:57,805 --> 00:49:00,393
+two rock-hard slabs of dried salted beef and
+
+1348
+00:49:00,405 --> 00:49:02,255
+a stale crust of barley biscuit.
+
+1349
+00:49:03,124 --> 00:49:04,812
+He carved off a small portion of the
+
+1350
+00:49:04,824 --> 00:49:06,462
+beef with his dagger and handed it to
+
+1351
+00:49:06,474 --> 00:49:08,999
+Seraphina alongside a dented tin cup of water
+
+1352
+00:49:09,012 --> 00:49:10,474
+dipped from the nearby creek.
+
+1353
+00:49:11,356 --> 00:49:13,506
+Seraphina took a sip of the creek water,
+
+1354
+00:49:13,569 --> 00:49:15,731
+wrinkling her small nose at the cloudy,
+
+1355
+00:49:15,819 --> 00:49:18,344
+gritty taste of mud and decomposing autumn pine
+
+1356
+00:49:18,356 --> 00:49:19,081
+needles.
+
+1357
+00:49:19,948 --> 00:49:22,148
+She tried to chew the leathery salted beef,
+
+1358
+00:49:22,223 --> 00:49:24,111
+but her parched throat and raw mouth could
+
+1359
+00:49:24,123 --> 00:49:25,686
+barely swallow the tough meat.
+
+1360
+00:49:26,548 --> 00:49:28,561
+I miss the clean taste of fresh bread,"
+
+1361
+00:49:28,673 --> 00:49:30,786
+Seraphina confessed in a quiet whisper,
+
+1362
+00:49:30,898 --> 00:49:32,773
+staring into the flickering embers.
+
+1363
+00:49:33,652 --> 00:49:34,765
+And more than anything...
+
+1364
+00:49:35,527 --> 00:49:36,915
+I miss feeling clean.
+
+1365
+00:49:37,677 --> 00:49:39,677
+My skin feels like it's covered in sand
+
+1366
+00:49:39,690 --> 00:49:41,952
+and grease, and my hair smells like stale
+
+1367
+00:49:41,965 --> 00:49:43,090
+campfire smoke."
+
+1368
+00:49:43,972 --> 00:49:45,410
+In the imperial capital,
+
+1369
+00:49:45,510 --> 00:49:46,747
+bathing was a tedious,
+
+1370
+00:49:46,897 --> 00:49:47,972
+half-hearted affair:
+
+1371
+00:49:48,097 --> 00:49:50,322
+two servants had to carry heavy bronze kettles
+
+1372
+00:49:50,335 --> 00:49:52,922
+of lukewarm water up three flights of stairs,
+
+1373
+00:49:53,047 --> 00:49:54,910
+pouring it into a cold marble tub that
+
+1374
+00:49:54,922 --> 00:49:56,672
+lost its heat in five minutes.
+
+1375
+00:49:57,556 --> 00:50:00,106
+And the expensive floral oils nobles used only
+
+1376
+00:50:00,119 --> 00:50:02,669
+masked the underlying stench of stagnant river water
+
+1377
+00:50:02,681 --> 00:50:03,369
+and sweat.
+
+1378
+00:50:04,252 --> 00:50:05,615
+Out here in the frontier,
+
+1379
+00:50:05,740 --> 00:50:06,865
+water is life,
+
+1380
+00:50:06,927 --> 00:50:08,565
+Princess," Roland murmured,
+
+1381
+00:50:08,690 --> 00:50:10,540
+chewing his own piece of dry beef with
+
+1382
+00:50:10,552 --> 00:50:11,602
+stoic discipline.
+
+1383
+00:50:12,484 --> 00:50:14,959
+Most frontier villagers go six months without a
+
+1384
+00:50:14,972 --> 00:50:15,859
+proper wash.
+
+1385
+00:50:16,622 --> 00:50:17,734
+When winter comes,
+
+1386
+00:50:17,784 --> 00:50:18,847
+rivers freeze solid,
+
+1387
+00:50:18,972 --> 00:50:20,584
+and wood is too precious to waste on
+
+1388
+00:50:20,597 --> 00:50:21,859
+boiling bathwater."
+
+1389
+00:50:22,732 --> 00:50:24,757
+Seraphina looked down at her hands,
+
+1390
+00:50:24,807 --> 00:50:27,007
+where faint golden motes of Light Affinity mana
+
+1391
+00:50:27,020 --> 00:50:28,807
+swirled around her fingertips.
+
+1392
+00:50:29,668 --> 00:50:31,518
+Her rare Light magic could heal cuts and
+
+1393
+00:50:31,531 --> 00:50:32,781
+mend broken bones,
+
+1394
+00:50:32,881 --> 00:50:34,431
+yet it couldn't clean muddy water,
+
+1395
+00:50:34,568 --> 00:50:35,593
+bake fresh bread,
+
+1396
+00:50:35,718 --> 00:50:37,543
+or wash away the cold grime sticking to
+
+1397
+00:50:37,556 --> 00:50:38,268
+her skin.
+
+1398
+00:50:39,148 --> 00:50:40,861
+Magic is supposed to be a gift from
+
+1399
+00:50:40,873 --> 00:50:43,811
+Goddess Celestia to make the world beautiful," Seraphina
+
+1400
+00:50:43,823 --> 00:50:47,061
+mused aloud, her voice filled with philosophical melancholy.
+
+1401
+00:50:47,932 --> 00:50:49,670
+So why does it feel like this world
+
+1402
+00:50:49,682 --> 00:50:51,095
+has forgotten how to live?"
+
+1403
+00:50:51,964 --> 00:50:53,702
+Roland had no answer for that;
+
+1404
+00:50:53,777 --> 00:50:55,452
+like all warriors of the empire,
+
+1405
+00:50:55,577 --> 00:50:57,089
+he had been trained to swing a sword
+
+1406
+00:50:57,102 --> 00:50:58,052
+and follow orders,
+
+1407
+00:50:58,202 --> 00:51:00,514
+not question the stagnation of civilization.
+
+1408
+00:51:01,396 --> 00:51:04,459
+Sleep now, Your Highness," Roland advised gently,
+
+1409
+00:51:04,546 --> 00:51:06,559
+wrapping his heavy dry wool cloak around her
+
+1410
+00:51:06,571 --> 00:51:07,771
+trembling shoulders.
+
+1411
+00:51:08,534 --> 00:51:10,109
+I will take the first watch.
+
+1412
+00:51:10,871 --> 00:51:13,309
+Tomorrow, we cross the eastern pass."
+
+1413
+00:51:14,188 --> 00:51:16,613
+Seraphina curled up beside the rocky wall,
+
+1414
+00:51:16,726 --> 00:51:18,888
+closing her eyes as the cold mountain wind
+
+1415
+00:51:18,901 --> 00:51:21,101
+whistled through the dark pines outside.
+
+1416
+00:51:21,964 --> 00:51:23,664
+The next morning broke with clear,
+
+1417
+00:51:23,677 --> 00:51:25,589
+pale skies over the rocky ravine,
+
+1418
+00:51:25,714 --> 00:51:27,614
+though a heavy frost coated every rock and
+
+1419
+00:51:27,627 --> 00:51:28,977
+fern in white rime.
+
+1420
+00:51:29,860 --> 00:51:31,360
+Roland was already awake,
+
+1421
+00:51:31,535 --> 00:51:33,510
+checking the cinch on his saddle and inspecting
+
+1422
+00:51:33,523 --> 00:51:35,435
+the hooves of Seraphina's white mare.
+
+1423
+00:51:36,316 --> 00:51:37,054
+How is she,
+
+1424
+00:51:37,204 --> 00:51:37,904
+Roland?"
+
+1425
+00:51:38,666 --> 00:51:41,491
+Seraphina asked, stepping out from the overhang while
+
+1426
+00:51:41,504 --> 00:51:43,466
+rubbing sleep from her tired eyes.
+
+1427
+00:51:44,332 --> 00:51:46,345
+Her right foreleg is slightly swollen at the
+
+1428
+00:51:46,357 --> 00:51:49,295
+fetlock, Princess," Roland replied with a frown,
+
+1429
+00:51:49,295 --> 00:51:51,507
+gently running his hand down the mare's leg.
+
+1430
+00:51:52,372 --> 00:51:53,335
+She can walk,
+
+1431
+00:51:53,372 --> 00:51:55,372
+but we must travel at a slow walk.
+
+1432
+00:51:56,135 --> 00:51:57,697
+If we push her into a trot,
+
+1433
+00:51:57,797 --> 00:51:59,785
+she will go lame before nightfall."
+
+1434
+00:52:00,652 --> 00:52:03,052
+Seraphina knelt beside her beloved mare,
+
+1435
+00:52:03,190 --> 00:52:05,265
+channeling a tiny spark of her golden Light
+
+1436
+00:52:05,277 --> 00:52:06,952
+magic into the swollen tendon.
+
+1437
+00:52:07,828 --> 00:52:09,128
+The mare nickered softly,
+
+1438
+00:52:09,266 --> 00:52:11,091
+but Seraphina swayed with dizziness;
+
+1439
+00:52:11,166 --> 00:52:13,453
+skipping meals and freezing nights had drained her
+
+1440
+00:52:13,466 --> 00:52:15,566
+internal mana reserves to near empty.
+
+1441
+00:52:16,444 --> 00:52:17,594
+Save your strength,
+
+1442
+00:52:17,594 --> 00:52:19,419
+Your Highness," Roland urged,
+
+1443
+00:52:19,544 --> 00:52:21,744
+gently helping her back onto her feet.
+
+1444
+00:52:22,507 --> 00:52:24,382
+We will walk the horses down the trail
+
+1445
+00:52:24,394 --> 00:52:25,819
+until we find a settlement."
+
+1446
+00:52:26,692 --> 00:52:28,430
+Leading their mounts by the reins,
+
+1447
+00:52:28,555 --> 00:52:30,692
+the knight and the princess began descending the
+
+1448
+00:52:30,705 --> 00:52:31,280
+winding,
+
+1449
+00:52:31,505 --> 00:52:33,992
+rocky trail that snaked along the mountain ridge.
+
+1450
+00:52:34,876 --> 00:52:36,214
+The path was treacherous,
+
+1451
+00:52:36,301 --> 00:52:38,539
+filled with loose shale and sharp slate rocks
+
+1452
+00:52:38,551 --> 00:52:40,439
+that clattered down the steep slopes.
+
+1453
+00:52:41,308 --> 00:52:43,246
+After two grueling hours of walking,
+
+1454
+00:52:43,371 --> 00:52:45,258
+the trail entered a thick stand of fragrant
+
+1455
+00:52:45,271 --> 00:52:47,196
+mountain birch and spruce trees.
+
+1456
+00:52:48,076 --> 00:52:50,664
+Suddenly, as they rounded a massive granite boulder
+
+1457
+00:52:50,676 --> 00:52:52,514
+overlooking an open valley gorge,
+
+1458
+00:52:52,651 --> 00:52:53,989
+the morning wind shifted.
+
+1459
+00:52:54,868 --> 00:52:57,043
+A crisp, gentle breeze blew up from the
+
+1460
+00:52:57,056 --> 00:52:57,868
+valley below
+
+1461
+00:52:58,056 --> 00:52:59,968
+and carried with it an aroma so completely
+
+1462
+00:52:59,981 --> 00:53:02,081
+out of place in this wild mountain wilderness
+
+1463
+00:53:02,093 --> 00:53:04,406
+that Roland froze instantly in his tracks.
+
+1464
+00:53:05,284 --> 00:53:06,797
+His hand snapped to the hilt of his
+
+1465
+00:53:06,809 --> 00:53:09,459
+longsword, his nostrils flaring as he sniffed the
+
+1466
+00:53:09,472 --> 00:53:10,272
+mountain air.
+
+1467
+00:53:11,140 --> 00:53:11,778
+Roland...
+
+1468
+00:53:11,865 --> 00:53:12,915
+do you smell that?"
+
+1469
+00:53:13,678 --> 00:53:14,853
+Seraphina whispered,
+
+1470
+00:53:15,003 --> 00:53:17,040
+her eyes widening in utter disbelief.
+
+1471
+00:53:17,908 --> 00:53:18,971
+It wasn't the foul,
+
+1472
+00:53:19,033 --> 00:53:21,033
+acrid stench of burning pine pitch or wet
+
+1473
+00:53:21,046 --> 00:53:21,921
+horse manure.
+
+1474
+00:53:22,804 --> 00:53:24,192
+It was the unmistakable,
+
+1475
+00:53:24,304 --> 00:53:27,767
+intoxicating fragrance of blooming mountain lavender clean,
+
+1476
+00:53:27,854 --> 00:53:28,342
+sweet,
+
+1477
+00:53:28,504 --> 00:53:31,117
+and soothing, like an elven meadow in midsummer.
+
+1478
+00:53:31,996 --> 00:53:34,496
+And underneath the floral sweetness was something even
+
+1479
+00:53:34,509 --> 00:53:35,721
+more intoxicating:
+
+1480
+00:53:35,834 --> 00:53:36,959
+the rich, warm,
+
+1481
+00:53:37,084 --> 00:53:39,646
+yeasty aroma of crusty sourdough bread baking over
+
+1482
+00:53:39,659 --> 00:53:40,484
+a wood hearth.
+
+1483
+00:53:41,356 --> 00:53:41,944
+Bread..."
+
+1484
+00:53:42,706 --> 00:53:44,806
+Seraphina's stomach let out an audible,
+
+1485
+00:53:44,956 --> 00:53:47,231
+rumbling growl that made her cheeks flush crimson
+
+1486
+00:53:47,244 --> 00:53:48,256
+with embarrassment.
+
+1487
+00:53:49,132 --> 00:53:50,832
+And soap," Roland muttered,
+
+1488
+00:53:50,970 --> 00:53:52,745
+his knightly senses bewildered.
+
+1489
+00:53:53,507 --> 00:53:55,557
+Genuine, pure floral soap.
+
+1490
+00:53:56,320 --> 00:53:58,932
+In the middle of an uninhabited mountain frontier?"
+
+1491
+00:53:59,812 --> 00:54:02,112
+Could there be an imperial monastery out here?"
+
+1492
+00:54:02,875 --> 00:54:04,400
+Seraphina wondered aloud,
+
+1493
+00:54:04,450 --> 00:54:06,762
+picking up her pace eagerly along the path.
+
+1494
+00:54:07,636 --> 00:54:10,186
+No monastery is marked on imperial maps within
+
+1495
+00:54:10,199 --> 00:54:12,986
+fifty leagues of this valley," Roland said cautiously,
+
+1496
+00:54:13,074 --> 00:54:15,236
+unfastening the peace-strap on his sword.
+
+1497
+00:54:16,108 --> 00:54:17,221
+Stay behind me,
+
+1498
+00:54:17,321 --> 00:54:18,121
+Princess.
+
+1499
+00:54:18,883 --> 00:54:20,433
+It could be an illusion or a trap
+
+1500
+00:54:20,446 --> 00:54:22,046
+laid by mountain bandits."
+
+1501
+00:54:22,924 --> 00:54:24,912
+They pushed through a dense curtain of weeping
+
+1502
+00:54:24,924 --> 00:54:27,899
+birch branches, following the sweet lavender fragrance as
+
+1503
+00:54:27,912 --> 00:54:29,699
+it grew stronger with every step.
+
+1504
+00:54:30,580 --> 00:54:33,218
+As Roland parted the final thick pine branches,
+
+1505
+00:54:33,243 --> 00:54:35,205
+both knight and princess stopped dead in their
+
+1506
+00:54:35,218 --> 00:54:37,730
+tracks, their breaths catching in their throats.
+
+1507
+00:54:38,596 --> 00:54:40,234
+Before them opened a breathtaking,
+
+1508
+00:54:40,371 --> 00:54:43,371
+sun-drenched panoramic view of the Emerald Alpine Valley.
+
+1509
+00:54:44,236 --> 00:54:46,961
+Framed by majestic snow-capped peaks and endless azure
+
+1510
+00:54:46,974 --> 00:54:49,899
+skies, a magnificent homestead rested peacefully on the
+
+1511
+00:54:49,911 --> 00:54:51,586
+rolling green meadows below.
+
+1512
+00:54:52,468 --> 00:54:53,743
+By the high heavens..."
+
+1513
+00:54:54,506 --> 00:54:55,693
+Sir Roland whispered,
+
+1514
+00:54:55,806 --> 00:54:57,981
+his hand going limp against his sword hilt.
+
+1515
+00:54:58,852 --> 00:55:00,690
+He had expected to see a squalid,
+
+1516
+00:55:00,752 --> 00:55:03,127
+muddy frontier hovel with rotting thatch and pig
+
+1517
+00:55:03,140 --> 00:55:04,165
+manure ditches.
+
+1518
+00:55:05,044 --> 00:55:07,419
+Instead, standing proudly in the center of the
+
+1519
+00:55:07,432 --> 00:55:10,057
+valley was a breathtaking estate crafted from gleaming,
+
+1520
+00:55:10,182 --> 00:55:13,219
+polished white limestone and rich honey-toned oak timbers.
+
+1521
+00:55:14,092 --> 00:55:16,255
+Winding across the meadow from the high mountain
+
+1522
+00:55:16,267 --> 00:55:17,505
+spring was an elevated,
+
+1523
+00:55:17,605 --> 00:55:19,317
+spotless white-stone aqueduct,
+
+1524
+00:55:19,417 --> 00:55:22,567
+carrying crystal-clear water with zero leaks or moss.
+
+1525
+00:55:23,428 --> 00:55:26,291
+Neat, terraced rows of vibrant purple lavender stretched
+
+1526
+00:55:26,303 --> 00:55:27,478
+across the hillside,
+
+1527
+00:55:27,541 --> 00:55:29,903
+their blossoms swaying gently in the breeze.
+
+1528
+00:55:30,772 --> 00:55:32,397
+And rising from the stone roof of the
+
+1529
+00:55:32,410 --> 00:55:34,535
+cottage was a slender white chimney releasing a
+
+1530
+00:55:34,547 --> 00:55:35,072
+faint,
+
+1531
+00:55:35,272 --> 00:55:37,885
+almost invisible wisp of clean white steam.
+
+1532
+00:55:38,764 --> 00:55:39,389
+Roland...
+
+1533
+00:55:39,502 --> 00:55:41,764
+look at the walls," Seraphina gasped,
+
+1534
+00:55:41,864 --> 00:55:43,539
+pointing with a trembling finger.
+
+1535
+00:55:44,404 --> 00:55:47,004
+Reflecting the brilliant morning sun like giant mirrors
+
+1536
+00:55:47,017 --> 00:55:49,929
+were massive, crystal-clear glass windows set into the
+
+1537
+00:55:49,942 --> 00:55:51,479
+white limestone walls.
+
+1538
+00:55:52,348 --> 00:55:54,536
+The sunlight sparkled off the glass panes with
+
+1539
+00:55:54,548 --> 00:55:57,511
+dazzling brilliance, illuminating the interior of the house
+
+1540
+00:55:57,523 --> 00:55:59,786
+so clearly that Seraphina could see a polished
+
+1541
+00:55:59,798 --> 00:56:01,586
+oak table and a bowl of fresh fruit
+
+1542
+00:56:01,598 --> 00:56:02,561
+through the walls.
+
+1543
+00:56:03,436 --> 00:56:03,911
+Those...
+
+1544
+00:56:03,974 --> 00:56:05,824
+those are whole sheets of glass!"
+
+1545
+00:56:06,586 --> 00:56:07,586
+Roland stammered,
+
+1546
+00:56:07,749 --> 00:56:10,086
+his military composure shattering completely.
+
+1547
+00:56:10,948 --> 00:56:13,323
+Even the Grand Audience Hall in the Imperial
+
+1548
+00:56:13,336 --> 00:56:14,611
+Palace uses tiny,
+
+1549
+00:56:14,748 --> 00:56:17,411
+leaded bullseye panes imported from the ancient dwarven
+
+1550
+00:56:17,423 --> 00:56:18,023
+vaults!"
+
+1551
+00:56:18,892 --> 00:56:21,455
+How can a frontier farm possess windows larger
+
+1552
+00:56:21,467 --> 00:56:23,792
+and clearer than the Emperor's private sanctum?!"
+
+1553
+00:56:24,676 --> 00:56:26,501
+Could it belong to a hidden Archmage?"
+
+1554
+00:56:27,264 --> 00:56:29,139
+Seraphina asked in hushed awe.
+
+1555
+00:56:29,901 --> 00:56:32,039
+An ancient sage who retired from the world
+
+1556
+00:56:32,051 --> 00:56:33,826
+to build a personal paradise?"
+
+1557
+00:56:34,708 --> 00:56:35,946
+Roland shook his head,
+
+1558
+00:56:36,033 --> 00:56:38,008
+staring at the flawless stone joints of the
+
+1559
+00:56:38,021 --> 00:56:40,608
+aqueduct that channeled water straight into the courtyard
+
+1560
+00:56:40,621 --> 00:56:41,446
+washhouse.
+
+1561
+00:56:42,316 --> 00:56:44,666
+No archmage I have ever met builds irrigation
+
+1562
+00:56:44,679 --> 00:56:47,266
+channels and vegetable gardens with their own hands,"
+
+1563
+00:56:47,341 --> 00:56:48,154
+Roland muttered,
+
+1564
+00:56:48,316 --> 00:56:50,866
+his knightly skepticism battling his senses.
+
+1565
+00:56:51,748 --> 00:56:53,636
+Just then, the heavy oak front door of
+
+1566
+00:56:53,648 --> 00:56:54,811
+the cottage swung open,
+
+1567
+00:56:54,886 --> 00:56:56,873
+and two figures stepped out onto the sunlit
+
+1568
+00:56:56,886 --> 00:56:57,886
+stone porch.
+
+1569
+00:56:58,756 --> 00:57:00,356
+Roland immediately tensed,
+
+1570
+00:57:00,369 --> 00:57:02,669
+his hand instinctively snapping back to his sword
+
+1571
+00:57:02,681 --> 00:57:04,594
+hilt, expecting an imposing,
+
+1572
+00:57:04,769 --> 00:57:07,406
+bearded archmage cloaked in ancient mystic robes.
+
+1573
+00:57:08,284 --> 00:57:08,947
+Instead,
+
+1574
+00:57:09,097 --> 00:57:10,472
+out walked a broad-shouldered
+
+1575
+00:57:10,659 --> 00:57:12,909
+rugged man in brown cotton work trousers and
+
+1576
+00:57:12,922 --> 00:57:15,772
+leather suspenders, carrying a wooden garden rake.
+
+1577
+00:57:16,636 --> 00:57:19,111
+And beside him trotted an energetic ten-year-old boy
+
+1578
+00:57:19,124 --> 00:57:20,536
+with tousled chestnut hair,
+
+1579
+00:57:20,674 --> 00:57:22,399
+wearing a neat cream linen tunic and a
+
+1580
+00:57:22,411 --> 00:57:24,511
+light forest-green craftsman vest,
+
+1581
+00:57:24,574 --> 00:57:26,974
+whistling cheerfully as he adjusted a leather notebook
+
+1582
+00:57:26,986 --> 00:57:27,836
+on his belt.
+
+1583
+00:57:28,708 --> 00:57:30,846
+Hovering playfully over the boy's shoulder was a
+
+1584
+00:57:30,858 --> 00:57:34,221
+cheerful, translucent sky-blue floating panel with a glowing
+
+1585
+00:57:34,233 --> 00:57:36,696
+emoji smiley face that winked in the sunlight.
+
+1586
+00:57:37,564 --> 00:57:40,464
+Roland and Seraphina stood frozen behind the bushes,
+
+1587
+00:57:40,577 --> 00:57:43,514
+their minds completely unable to reconcile the magnificent
+
+1588
+00:57:43,527 --> 00:57:46,039
+palace-like estate with the cheerful father and son
+
+1589
+00:57:46,052 --> 00:57:47,777
+walking casually into the garden.
+
+1590
+00:57:48,652 --> 00:57:50,440
+Ace stopped near the lavender terrace,
+
+1591
+00:57:50,552 --> 00:57:52,402
+his sharp ears picking up the faint clatter
+
+1592
+00:57:52,415 --> 00:57:54,290
+of horse hooves against the gravel path at
+
+1593
+00:57:54,302 --> 00:57:55,302
+the forest edge.
+
+1594
+00:57:56,164 --> 00:57:57,789
+Looking up toward the tree line,
+
+1595
+00:57:57,877 --> 00:57:59,827
+Ace spotted the tired white mare and two
+
+1596
+00:57:59,839 --> 00:58:02,339
+travel-stained figures standing hesitantly on the edge of
+
+1597
+00:58:02,352 --> 00:58:03,064
+the clearing.
+
+1598
+00:58:03,940 --> 00:58:06,828
+LUMINA's interface pulsed with soft gold light,
+
+1599
+00:58:06,878 --> 00:58:09,040
+running a quick optical scan of the newcomers.
+
+1600
+00:58:09,916 --> 00:58:11,591
+Visitor analysis complete,"
+
+1601
+00:58:11,741 --> 00:58:13,804
+LUMINA reported in Ace's mind.
+
+1602
+00:58:14,566 --> 00:58:15,991
+Two human subjects,
+
+1603
+00:58:16,104 --> 00:58:17,404
+high physical exhaustion,
+
+1604
+00:58:17,541 --> 00:58:19,604
+zero hostile mana signatures.
+
+1605
+00:58:20,366 --> 00:58:22,141
+The tall male is an elite knight;
+
+1606
+00:58:22,216 --> 00:58:25,241
+the young female carries rare Light Affinity resonance!"
+
+1607
+00:58:26,116 --> 00:58:27,754
+Dad," Ace said quietly,
+
+1608
+00:58:27,916 --> 00:58:29,479
+nudging his father's elbow.
+
+1609
+00:58:30,241 --> 00:58:31,791
+Looks like we have guests who took the
+
+1610
+00:58:31,804 --> 00:58:33,366
+wrong turn out of the forest."
+
+1611
+00:58:34,228 --> 00:58:35,216
+Garrett looked up,
+
+1612
+00:58:35,316 --> 00:58:37,728
+setting his wooden rake against the stone aqueduct,
+
+1613
+00:58:37,828 --> 00:58:40,328
+his warm amber eyes softening with immediate compassion
+
+1614
+00:58:40,341 --> 00:58:41,553
+as he saw their ragged,
+
+1615
+00:58:41,616 --> 00:58:42,978
+mud-splattered cloaks.
+
+1616
+00:58:43,852 --> 00:58:44,765
+Heavens above...
+
+1617
+00:58:44,852 --> 00:58:47,152
+those poor folks look half-dead on their feet,"
+
+1618
+00:58:47,215 --> 00:58:49,915
+Garrett murmured, wiping his hands on his apron.
+
+1619
+00:58:50,788 --> 00:58:53,276
+Instead of reaching for weapons or shouting suspicious
+
+1620
+00:58:53,288 --> 00:58:56,088
+warnings, Garrett and Ace walked forward across the
+
+1621
+00:58:56,101 --> 00:58:57,313
+green meadow with open,
+
+1622
+00:58:57,413 --> 00:58:58,663
+welcoming smiles.
+
+1623
+00:58:59,524 --> 00:59:01,899
+Sir Roland stepped forward instinctively to shield the
+
+1624
+00:59:01,912 --> 00:59:04,449
+Princess, his hand resting firmly on the pommel
+
+1625
+00:59:04,462 --> 00:59:05,512
+of his sheathed sword.
+
+1626
+00:59:06,388 --> 00:59:07,001
+Halt!"
+
+1627
+00:59:07,763 --> 00:59:09,963
+Roland called out with military authority,
+
+1628
+00:59:10,038 --> 00:59:12,351
+though his voice cracked slightly with hoarseness.
+
+1629
+00:59:13,113 --> 00:59:14,651
+Identify yourselves!
+
+1630
+00:59:15,413 --> 00:59:16,801
+Whose domain is this?"
+
+1631
+00:59:17,668 --> 00:59:19,543
+Garrett paused ten paces away,
+
+1632
+00:59:19,656 --> 00:59:21,706
+raising his empty hands in a peaceful,
+
+1633
+00:59:21,856 --> 00:59:22,806
+humble gesture.
+
+1634
+00:59:23,668 --> 00:59:26,606
+Peace, friend," Garrett replied with a warm,
+
+1635
+00:59:26,781 --> 00:59:27,856
+rumbling voice.
+
+1636
+00:59:28,618 --> 00:59:30,706
+This is just the Miller family farm.
+
+1637
+00:59:31,468 --> 00:59:32,431
+I'm Garrett Miller,
+
+1638
+00:59:32,518 --> 00:59:34,006
+and this is my son Ace."
+
+1639
+00:59:34,876 --> 00:59:35,226
+A...
+
+1640
+00:59:35,314 --> 00:59:36,039
+a farm?"
+
+1641
+00:59:36,801 --> 00:59:37,764
+Roland echoed,
+
+1642
+00:59:37,914 --> 00:59:39,839
+his brow furrowing in bewilderment.
+
+1643
+00:59:40,601 --> 00:59:42,939
+You call an estate with white-stone aqueducts and
+
+1644
+00:59:42,951 --> 00:59:44,814
+crystal glass windows a farm?"
+
+1645
+00:59:45,676 --> 00:59:47,001
+Ace let out a soft,
+
+1646
+00:59:47,114 --> 00:59:49,426
+amused chuckle, looking past the tense knight to
+
+1647
+00:59:49,439 --> 00:59:52,164
+the small, exhausted girl shivering in her mud-caked
+
+1648
+00:59:52,176 --> 00:59:52,739
+cloak.
+
+1649
+00:59:53,620 --> 00:59:55,208
+Well, we grow lavender,
+
+1650
+00:59:55,395 --> 00:59:57,070
+raise goats, and make soap,
+
+1651
+00:59:57,208 --> 00:59:58,583
+so technically it's a farm,"
+
+1652
+00:59:58,733 --> 01:00:00,133
+Ace smiled in his calm,
+
+1653
+01:00:00,258 --> 01:00:01,208
+nonchalant way.
+
+1654
+01:00:02,068 --> 01:00:03,281
+Ace unhooked a clean,
+
+1655
+01:00:03,318 --> 01:00:05,543
+polished brass cup from his utility belt,
+
+1656
+01:00:05,631 --> 01:00:07,943
+stepped over to a small brass spout branching
+
+1657
+01:00:07,956 --> 01:00:09,456
+from the white-stone aqueduct,
+
+1658
+01:00:09,593 --> 01:00:10,556
+and turned the tap.
+
+1659
+01:00:11,428 --> 01:00:12,516
+A stream of pure,
+
+1660
+01:00:12,653 --> 01:00:15,166
+crystal-clear alpine water poured into the cup,
+
+1661
+01:00:15,253 --> 01:00:16,903
+chilled and sparkling in the sun.
+
+1662
+01:00:17,764 --> 01:00:19,539
+Ace walked over to Seraphina,
+
+1663
+01:00:19,639 --> 01:00:21,289
+holding out the cup with two hands and
+
+1664
+01:00:21,302 --> 01:00:23,027
+a warm, respectful nod.
+
+1665
+01:00:23,908 --> 01:00:25,483
+You look like you've been riding through the
+
+1666
+01:00:25,496 --> 01:00:27,858
+cold pass for days," Ace said gently.
+
+1667
+01:00:28,621 --> 01:00:29,471
+Drink this.
+
+1668
+01:00:30,233 --> 01:00:32,658
+It's clean, cold mountain spring water,
+
+1669
+01:00:32,833 --> 01:00:35,083
+filtered through charcoal and quartz sand."
+
+1670
+01:00:35,956 --> 01:00:38,944
+Seraphina stared at the boy's bright emerald-green eyes,
+
+1671
+01:00:39,044 --> 01:00:41,431
+completely disarmed by his utter lack of suspicion
+
+1672
+01:00:41,444 --> 01:00:42,144
+or greed.
+
+1673
+01:00:43,012 --> 01:00:44,212
+With trembling hands,
+
+1674
+01:00:44,300 --> 01:00:45,850
+she took the brass cup and brought it
+
+1675
+01:00:45,862 --> 01:00:47,075
+to her parched lips.
+
+1676
+01:00:47,956 --> 01:00:49,231
+The water was colder,
+
+1677
+01:00:49,331 --> 01:00:51,531
+crisper, and purer than anything she had ever
+
+1678
+01:00:51,544 --> 01:00:53,831
+tasted in the Imperial Palace sweet,
+
+1679
+01:00:53,944 --> 01:00:56,044
+devoid of metallic rust or pond mud,
+
+1680
+01:00:56,169 --> 01:00:58,931
+sliding down her parched throat like liquid silk.
+
+1681
+01:00:59,812 --> 01:01:01,587
+She drained the cup in three long,
+
+1682
+01:01:01,775 --> 01:01:03,737
+eager gulps, letting out a soft,
+
+1683
+01:01:03,812 --> 01:01:05,587
+shuddering sigh of pure relief.
+
+1684
+01:01:06,460 --> 01:01:09,373
+Come inside by the hearth," Garrett urged warmly,
+
+1685
+01:01:09,460 --> 01:01:11,598
+taking the reins of their tired horses.
+
+1686
+01:01:12,360 --> 01:01:14,598
+My wife Clara just pulled fresh bread from
+
+1687
+01:01:14,610 --> 01:01:16,635
+the oven, and we have warm water ready
+
+1688
+01:01:16,648 --> 01:01:17,685
+in the washhouse."
+
+1689
+01:01:18,556 --> 01:01:19,644
+Ten minutes later,
+
+1690
+01:01:19,694 --> 01:01:22,306
+the weary travelers were inside the sanctuary's stone
+
+1691
+01:01:22,319 --> 01:01:23,131
+courtyard.
+
+1692
+01:01:24,004 --> 01:01:26,329
+While Garrett led the exhausted horses into the
+
+1693
+01:01:26,342 --> 01:01:29,079
+clean, straw-bedded barn and Roland stood guard in
+
+1694
+01:01:29,092 --> 01:01:31,004
+the sunlit kitchen eating warm bread,
+
+1695
+01:01:31,042 --> 01:01:33,742
+Clara and Maya guided Seraphina into the private
+
+1696
+01:01:33,754 --> 01:01:34,942
+stone washhouse.
+
+1697
+01:01:35,812 --> 01:01:37,787
+As Clara opened the heavy oak door,
+
+1698
+01:01:37,962 --> 01:01:40,862
+Seraphina stopped in stunned disbelief on the threshold.
+
+1699
+01:01:41,740 --> 01:01:44,390
+The washhouse was lined with spotless white limestone
+
+1700
+01:01:44,403 --> 01:01:46,503
+tiles, completely free of mold,
+
+1701
+01:01:46,615 --> 01:01:48,478
+damp mud, or foul odors.
+
+1702
+01:01:49,348 --> 01:01:50,886
+In the center of the room rested a
+
+1703
+01:01:50,898 --> 01:01:53,723
+deep, smooth stone bathing basin lined with polished,
+
+1704
+01:01:53,836 --> 01:01:55,286
+glazed white firebrick.
+
+1705
+01:01:56,164 --> 01:01:58,089
+Clara turned a polished brass valve on the
+
+1706
+01:01:58,102 --> 01:02:00,527
+wall, and to Seraphina's utter astonishment,
+
+1707
+01:02:00,639 --> 01:02:03,927
+a steaming torrent of piping-hot crystal-clear water began
+
+1708
+01:02:03,939 --> 01:02:06,389
+cascading into the basin from an enclosed stone
+
+1709
+01:02:06,402 --> 01:02:06,914
+pipe.
+
+1710
+01:02:07,780 --> 01:02:08,168
+How...
+
+1711
+01:02:08,218 --> 01:02:09,693
+where is the fire mage?"
+
+1712
+01:02:10,455 --> 01:02:13,393
+Seraphina stammered, looking around the empty room.
+
+1713
+01:02:14,155 --> 01:02:15,668
+Who is heating this water?"
+
+1714
+01:02:16,540 --> 01:02:17,803
+Maya laughed cheerily,
+
+1715
+01:02:17,978 --> 01:02:19,353
+handing Seraphina a thick,
+
+1716
+01:02:19,478 --> 01:02:21,003
+fluffy white linen towel.
+
+1717
+01:02:21,868 --> 01:02:22,868
+No mages!"
+
+1718
+01:02:23,631 --> 01:02:24,931
+Maya beamed proudly.
+
+1719
+01:02:25,693 --> 01:02:28,606
+Ace built an enclosed fire-stone draft chamber behind
+
+1720
+01:02:28,618 --> 01:02:31,018
+the wall that warms the water pipes automatically
+
+1721
+01:02:31,031 --> 01:02:32,443
+whenever the hearth is lit!"
+
+1722
+01:02:33,316 --> 01:02:35,429
+Clara reached into a woven basket on a
+
+1723
+01:02:35,441 --> 01:02:37,879
+cedar shelf and handed Seraphina a smooth,
+
+1724
+01:02:37,991 --> 01:02:40,116
+rectangular bar of pale purple soap,
+
+1725
+01:02:40,166 --> 01:02:42,041
+stamped with the delicate emblem of a mountain
+
+1726
+01:02:42,054 --> 01:02:42,991
+lavender sprig.
+
+1727
+01:02:43,852 --> 01:02:44,840
+Take your time,
+
+1728
+01:02:44,915 --> 01:02:47,627
+my dear," Clara said with maternal warmth,
+
+1729
+01:02:47,740 --> 01:02:49,640
+gently unfastening the girl's heavy,
+
+1730
+01:02:49,727 --> 01:02:50,827
+mud-caked cloak.
+
+1731
+01:02:51,590 --> 01:02:53,127
+Wash away the road dust.
+
+1732
+01:02:53,890 --> 01:02:55,015
+You are safe here."
+
+1733
+01:02:55,876 --> 01:02:58,276
+Clara and Maya quietly stepped outside,
+
+1734
+01:02:58,364 --> 01:03:00,039
+pulling the thick oak door shut to grant
+
+1735
+01:03:00,051 --> 01:03:01,501
+the young royal her privacy.
+
+1736
+01:03:02,380 --> 01:03:03,480
+Alone in the warm,
+
+1737
+01:03:03,555 --> 01:03:06,618
+steam-filled sanctuary, Seraphina slowly undressed,
+
+1738
+01:03:06,730 --> 01:03:08,055
+peeling away her stiff,
+
+1739
+01:03:08,105 --> 01:03:09,980
+dirt-encrusted travel clothes.
+
+1740
+01:03:10,852 --> 01:03:12,877
+She stepped into the deep stone basin,
+
+1741
+01:03:12,977 --> 01:03:14,027
+letting out a soft,
+
+1742
+01:03:14,102 --> 01:03:16,777
+involuntary gasp as the steaming water enveloped her
+
+1743
+01:03:16,790 --> 01:03:17,665
+shivering body.
+
+1744
+01:03:18,532 --> 01:03:20,807
+The heat was absolute perfection deep,
+
+1745
+01:03:20,920 --> 01:03:21,720
+penetrating,
+
+1746
+01:03:21,882 --> 01:03:22,532
+and soothing,
+
+1747
+01:03:22,682 --> 01:03:25,020
+instantly melting away the stiffness in her aching
+
+1748
+01:03:25,032 --> 01:03:26,307
+muscles and joints.
+
+1749
+01:03:27,172 --> 01:03:29,260
+She picked up the purple lavender soap bar
+
+1750
+01:03:29,272 --> 01:03:31,085
+and rubbed it between her palms under the
+
+1751
+01:03:31,097 --> 01:03:31,885
+hot water.
+
+1752
+01:03:32,764 --> 01:03:34,014
+A rich, creamy,
+
+1753
+01:03:34,114 --> 01:03:36,027
+snow-white lather bloomed instantly,
+
+1754
+01:03:36,177 --> 01:03:38,702
+releasing a heavenly cloud of fresh mountain lavender
+
+1755
+01:03:38,714 --> 01:03:40,789
+and sweet almond oil that filled the entire
+
+1756
+01:03:40,802 --> 01:03:41,314
+room.
+
+1757
+01:03:42,196 --> 01:03:43,821
+Seraphina washed her arms,
+
+1758
+01:03:43,921 --> 01:03:45,621
+her neck, and her tangled hair,
+
+1759
+01:03:45,809 --> 01:03:47,559
+watching in awe as weeks of grime,
+
+1760
+01:03:47,634 --> 01:03:50,196
+soot, and sweat dissolved effortlessly into the lather
+
+1761
+01:03:50,209 --> 01:03:52,359
+and rinsed away in the crystal-clear water.
+
+1762
+01:03:53,236 --> 01:03:54,936
+For the first time since she had fled
+
+1763
+01:03:54,949 --> 01:03:57,574
+the capital, the crushing weight of court politics,
+
+1764
+01:03:57,686 --> 01:03:59,686
+the sneering face of Councilor Malakor,
+
+1765
+01:03:59,874 --> 01:04:01,774
+and the fear of being captured melted away
+
+1766
+01:04:01,786 --> 01:04:02,524
+completely.
+
+1767
+01:04:03,388 --> 01:04:04,501
+Sitting in the warm,
+
+1768
+01:04:04,526 --> 01:04:07,526
+fragrant water, with clean mountain sunlight streaming through
+
+1769
+01:04:07,538 --> 01:04:09,888
+a small quartz glass window above the tub,
+
+1770
+01:04:10,001 --> 01:04:12,463
+the eleven-year-old princess buried her face in her
+
+1771
+01:04:12,476 --> 01:04:14,013
+clean, soapy hands.
+
+1772
+01:04:14,884 --> 01:04:16,559
+Tears of overwhelming relief,
+
+1773
+01:04:16,584 --> 01:04:17,322
+gratitude,
+
+1774
+01:04:17,472 --> 01:04:19,347
+and healing poured down her cheeks,
+
+1775
+01:04:19,409 --> 01:04:21,209
+washing into the lavender water.
+
+1776
+01:04:22,084 --> 01:04:24,234
+She wasn't a princess running for her life;
+
+1777
+01:04:24,347 --> 01:04:25,734
+for this one magical hour,
+
+1778
+01:04:25,847 --> 01:04:27,422
+she was just a little girl who had
+
+1779
+01:04:27,434 --> 01:04:28,934
+finally found sanctuary.
+
+1780
+01:04:29,812 --> 01:04:31,700
+She closed her eyes and let the warmth
+
+1781
+01:04:31,712 --> 01:04:33,237
+soak deep into her bones,
+
+1782
+01:04:33,375 --> 01:04:35,875
+feeling her exhausted magical channels begin to hum
+
+1783
+01:04:35,887 --> 01:04:36,975
+with renewed life.
+
+1784
+01:04:37,852 --> 01:04:39,727
+When she finally stepped out of the bath
+
+1785
+01:04:39,740 --> 01:04:41,340
+and wrapped herself in the soft,
+
+1786
+01:04:41,440 --> 01:04:42,465
+dry linen towel,
+
+1787
+01:04:42,615 --> 01:04:44,465
+her skin glowed with radiant health,
+
+1788
+01:04:44,602 --> 01:04:47,002
+her golden hair fell in silk-smooth waves over
+
+1789
+01:04:47,015 --> 01:04:49,352
+her shoulders, and her sapphire eyes shone with
+
+1790
+01:04:49,365 --> 01:04:50,390
+newfound light.
+
+1791
+01:04:51,268 --> 01:04:53,656
+That evening, the Miller farmhouse was filled with
+
+1792
+01:04:53,668 --> 01:04:55,893
+the warm, golden glow of tallow lamps and
+
+1793
+01:04:55,906 --> 01:04:58,468
+the crackling comfort of the enclosed stone hearth.
+
+1794
+01:04:59,332 --> 01:05:01,607
+Princess Seraphina, dressed in a clean,
+
+1795
+01:05:01,695 --> 01:05:04,320
+simple sky-blue linen dress that Maya had gladly
+
+1796
+01:05:04,332 --> 01:05:06,420
+lent her, sat beside Sir Roland at the
+
+1797
+01:05:06,432 --> 01:05:07,870
+long oak dining table.
+
+1798
+01:05:08,740 --> 01:05:11,140
+Sir Roland, having enjoyed his own hot bath
+
+1799
+01:05:11,153 --> 01:05:12,065
+in the washhouse,
+
+1800
+01:05:12,190 --> 01:05:13,528
+looked like a renewed man,
+
+1801
+01:05:13,640 --> 01:05:16,103
+though his trained knightly gaze couldn't stop examining
+
+1802
+01:05:16,115 --> 01:05:17,465
+every detail of the room.
+
+1803
+01:05:18,340 --> 01:05:20,890
+He tapped the mortarless limestone wall beside him,
+
+1804
+01:05:21,015 --> 01:05:23,440
+marvelled at the wide quartz glass windows holding
+
+1805
+01:05:23,453 --> 01:05:24,528
+back the night wind,
+
+1806
+01:05:24,678 --> 01:05:26,265
+and took another sip of the chilled,
+
+1807
+01:05:26,365 --> 01:05:27,765
+sweet goat milk cream.
+
+1808
+01:05:28,636 --> 01:05:30,886
+Master Garrett," Roland said solemnly,
+
+1809
+01:05:30,999 --> 01:05:32,349
+setting his cup down.
+
+1810
+01:05:33,111 --> 01:05:35,436
+I have served the Imperial Crown for fifteen
+
+1811
+01:05:35,449 --> 01:05:37,836
+years, visiting the palaces of grand dukes and
+
+1812
+01:05:37,849 --> 01:05:39,511
+the sanctuaries of High Elves."
+
+1813
+01:05:40,372 --> 01:05:42,872
+Never in my life have I encountered craftsmanship
+
+1814
+01:05:42,885 --> 01:05:44,097
+of this magnitude.
+
+1815
+01:05:44,860 --> 01:05:47,185
+Your stone joints are tighter than imperial vault
+
+1816
+01:05:47,197 --> 01:05:49,585
+doors, and your water runs cleaner than palace
+
+1817
+01:05:49,597 --> 01:05:50,372
+fountains."
+
+1818
+01:05:51,244 --> 01:05:52,907
+Garrett rubbed the back of his neck with
+
+1819
+01:05:52,919 --> 01:05:54,644
+a sheepish, modest chuckle.
+
+1820
+01:05:55,407 --> 01:05:56,382
+You're too kind,
+
+1821
+01:05:56,507 --> 01:05:57,382
+Sir Roland.
+
+1822
+01:05:58,144 --> 01:06:00,057
+My grandfather drew the plans,
+
+1823
+01:06:00,132 --> 01:06:01,682
+but it was my boy Ace who figured
+
+1824
+01:06:01,694 --> 01:06:03,707
+out the science to make it actually work."
+
+1825
+01:06:04,588 --> 01:06:07,388
+Roland and Seraphina turned their eyes toward ten-year-old
+
+1826
+01:06:07,401 --> 01:06:07,876
+Ace,
+
+1827
+01:06:08,026 --> 01:06:10,076
+who was quietly buttering a piece of warm
+
+1828
+01:06:10,088 --> 01:06:12,863
+sourdough bread while reviewing his engineering notes.
+
+1829
+01:06:13,732 --> 01:06:15,382
+You are a remarkable young man,
+
+1830
+01:06:15,457 --> 01:06:16,095
+Ace Miller,"
+
+1831
+01:06:16,245 --> 01:06:17,470
+Seraphina smiled,
+
+1832
+01:06:17,620 --> 01:06:20,532
+her sapphire eyes sparkling with genuine admiration.
+
+1833
+01:06:21,412 --> 01:06:22,750
+Just then, a faint,
+
+1834
+01:06:22,812 --> 01:06:25,125
+distressed whinny echoed from the barn outside in
+
+1835
+01:06:25,137 --> 01:06:26,425
+the quiet courtyard.
+
+1836
+01:06:27,292 --> 01:06:28,867
+Roland's brow furrowed.
+
+1837
+01:06:29,630 --> 01:06:30,692
+That's Starlight.
+
+1838
+01:06:31,455 --> 01:06:33,855
+Her fetlock was badly swollen from the rocky
+
+1839
+01:06:33,867 --> 01:06:34,517
+pass."
+
+1840
+01:06:35,380 --> 01:06:37,318
+Let me take a look," Garrett offered,
+
+1841
+01:06:37,430 --> 01:06:38,943
+standing up from his chair.
+
+1842
+01:06:39,705 --> 01:06:41,630
+I have some herbal comfrey poultice in the
+
+1843
+01:06:41,643 --> 01:06:42,443
+workshop."
+
+1844
+01:06:43,324 --> 01:06:45,812
+Please, allow me," Seraphina insisted,
+
+1845
+01:06:45,974 --> 01:06:47,787
+rising gracefully from the table.
+
+1846
+01:06:48,549 --> 01:06:51,274
+Your family has shown us such boundless kindness.
+
+1847
+01:06:52,037 --> 01:06:53,537
+It is the least I can do."
+
+1848
+01:06:54,412 --> 01:06:56,912
+The family followed Seraphina and Roland out into
+
+1849
+01:06:56,925 --> 01:06:58,337
+the clean, warm barn,
+
+1850
+01:06:58,425 --> 01:07:00,525
+where the dapple-grey mare stood shifting her weight
+
+1851
+01:07:00,537 --> 01:07:02,262
+uncomfortably on three legs.
+
+1852
+01:07:03,124 --> 01:07:05,262
+Seraphina walked up to the mare's stall,
+
+1853
+01:07:05,299 --> 01:07:07,874
+gently resting her forehead against the horse's muzzle
+
+1854
+01:07:07,887 --> 01:07:09,137
+while whispering soothing,
+
+1855
+01:07:09,249 --> 01:07:10,474
+affectionate words.
+
+1856
+01:07:11,356 --> 01:07:13,169
+She knelt down in the clean straw,
+
+1857
+01:07:13,319 --> 01:07:14,756
+placing both her slender,
+
+1858
+01:07:14,806 --> 01:07:16,794
+pale hands gently around the swollen,
+
+1859
+01:07:16,881 --> 01:07:18,494
+inflamed fetlock joint.
+
+1860
+01:07:19,372 --> 01:07:20,535
+Closing her eyes,
+
+1861
+01:07:20,622 --> 01:07:21,897
+Seraphina took a deep,
+
+1862
+01:07:21,972 --> 01:07:24,535
+steady breath, centering her focus on the innate
+
+1863
+01:07:24,547 --> 01:07:26,622
+magic sleeping inside her soul.
+
+1864
+01:07:27,484 --> 01:07:30,347
+A soft, radiant golden-white light began to emanate
+
+1865
+01:07:30,359 --> 01:07:31,384
+from her palms,
+
+1866
+01:07:31,484 --> 01:07:33,434
+glowing like the warmth of a miniature morning
+
+1867
+01:07:33,447 --> 01:07:33,922
+sun.
+
+1868
+01:07:34,804 --> 01:07:36,979
+The light flowed gently into the mare's injured
+
+1869
+01:07:36,992 --> 01:07:37,504
+tendon,
+
+1870
+01:07:37,654 --> 01:07:39,567
+bathing the swollen tissue in soothing,
+
+1871
+01:07:39,667 --> 01:07:40,892
+restorative warmth.
+
+1872
+01:07:41,764 --> 01:07:43,677
+Garrett and Clara gasped softly,
+
+1873
+01:07:43,764 --> 01:07:45,102
+stepping back in reverent awe,
+
+1874
+01:07:45,339 --> 01:07:46,952
+while Maya watched with wide,
+
+1875
+01:07:47,064 --> 01:07:48,277
+mesmerized eyes.
+
+1876
+01:07:49,156 --> 01:07:51,156
+Standing right beside Seraphina,
+
+1877
+01:07:51,331 --> 01:07:54,656
+Ace watched with laser-sharp focus as LUMINA's interface
+
+1878
+01:07:54,669 --> 01:07:56,856
+sprang to life in his visual field.
+
+1879
+01:07:57,724 --> 01:08:00,399
+High-density Light Affinity signature detected!"
+
+1880
+01:08:01,162 --> 01:08:04,149
+LUMINA's alert flashed in brilliant emerald and gold
+
+1881
+01:08:04,162 --> 01:08:05,537
+letters across his vision.
+
+1882
+01:08:06,412 --> 01:08:07,037
+SYSTEM:
+
+1883
+01:08:07,150 --> 01:08:09,237
+HIGH-PURITY LIGHT AFFINITY OBSERVED.
+
+1884
+01:08:10,000 --> 01:08:11,762
+CALIBRATING HEALING SIGNATURE..."
+
+1885
+01:08:12,628 --> 01:08:13,991
+Within thirty seconds,
+
+1886
+01:08:14,116 --> 01:08:16,703
+the swelling around the mare's joint vanished completely,
+
+1887
+01:08:16,841 --> 01:08:18,391
+and the horse stomped her hoof onto the
+
+1888
+01:08:18,403 --> 01:08:19,441
+straw with a happy,
+
+1889
+01:08:19,478 --> 01:08:20,441
+vigorous snort.
+
+1890
+01:08:21,316 --> 01:08:22,516
+Seraphina stood up,
+
+1891
+01:08:22,616 --> 01:08:25,141
+wiping a bead of perspiration from her brow,
+
+1892
+01:08:25,341 --> 01:08:26,354
+offering a gentle,
+
+1893
+01:08:26,479 --> 01:08:27,491
+tired smile.
+
+1894
+01:08:28,372 --> 01:08:30,410
+As Seraphina smiled at the healed mare,
+
+1895
+01:08:30,547 --> 01:08:31,597
+Ace felt a sudden,
+
+1896
+01:08:31,697 --> 01:08:34,147
+exhilarating surge of warmth deep within the core
+
+1897
+01:08:34,160 --> 01:08:35,035
+of his chest.
+
+1898
+01:08:35,908 --> 01:08:37,871
+Inside his spiritual dantian,
+
+1899
+01:08:37,958 --> 01:08:40,446
+the dormant, unawakened seed of his Light Affinity
+
+1900
+01:08:40,458 --> 01:08:42,008
+began to glow with blinding,
+
+1901
+01:08:42,121 --> 01:08:43,433
+crystalline brilliance.
+
+1902
+01:08:44,308 --> 01:08:47,983
+LUMINA's interface pulsed with triumphant golden fireworks,
+
+1903
+01:08:48,071 --> 01:08:51,696
+projecting a celebratory notification directly into his mind:
+
+1904
+01:08:52,564 --> 01:08:54,177
+Observation gate unlocked!
+
+1905
+01:08:54,939 --> 01:08:58,064
+Light Affinity wave formula fully analyzed and calibrated
+
+1906
+01:08:58,077 --> 01:08:59,652
+for Ace Miller's meridians!"
+
+1907
+01:09:00,532 --> 01:09:02,107
+Affinity status update:
+
+1908
+01:09:02,232 --> 01:09:04,332
+Five of eight affinities active Earth,
+
+1909
+01:09:04,445 --> 01:09:06,120
+Water Nature, Wind,
+
+1910
+01:09:06,220 --> 01:09:06,707
+Fire,
+
+1911
+01:09:06,857 --> 01:09:07,595
+and Light)!
+
+1912
+01:09:08,357 --> 01:09:10,182
+Hidden Affinities remaining locked:
+
+1913
+01:09:10,320 --> 01:09:12,295
+Dark, Time, Space."
+
+1914
+01:09:13,156 --> 01:09:15,744
+Ace discretely opened his palm inside his vest
+
+1915
+01:09:15,756 --> 01:09:16,219
+pocket;
+
+1916
+01:09:16,331 --> 01:09:18,894
+a tiny, soothing mote of pure golden-white light
+
+1917
+01:09:18,906 --> 01:09:21,231
+danced effortlessly across his fingertips.
+
+1918
+01:09:22,108 --> 01:09:23,346
+He closed his hand,
+
+1919
+01:09:23,421 --> 01:09:26,096
+a quiet, confident smirk playing on his lips
+
+1920
+01:09:26,258 --> 01:09:28,758
+his magical foundation had just expanded by a
+
+1921
+01:09:28,771 --> 01:09:31,346
+massive leap, all thanks to their royal guest.
+
+1922
+01:09:32,212 --> 01:09:33,787
+Returning to the warm cottage,
+
+1923
+01:09:33,887 --> 01:09:36,550
+Seraphina and Roland retired to the newly finished
+
+1924
+01:09:36,562 --> 01:09:37,962
+eastern stone guest room,
+
+1925
+01:09:38,087 --> 01:09:41,100
+sleeping on soft mattresses behind windproof quartz glass
+
+1926
+01:09:41,112 --> 01:09:41,862
+windows.
+
+1927
+01:09:42,724 --> 01:09:44,224
+For the first time in months,
+
+1928
+01:09:44,324 --> 01:09:46,299
+Seraphina slept without nightmares,
+
+1929
+01:09:46,399 --> 01:09:48,649
+cradled by the tranquil silence of the mountain
+
+1930
+01:09:48,662 --> 01:09:49,387
+sanctuary.
+
+1931
+01:09:50,260 --> 01:09:52,873
+However, high above the Emerald Alpine Valley,
+
+1932
+01:09:52,985 --> 01:09:54,835
+as the first grey light of dawn broke
+
+1933
+01:09:54,848 --> 01:09:56,410
+over the jagged eastern peaks,
+
+1934
+01:09:56,523 --> 01:09:58,360
+the peaceful silence was broken.
+
+1935
+01:09:59,236 --> 01:10:01,874
+Gliding silently on cold thermal updrafts was a
+
+1936
+01:10:01,886 --> 01:10:04,399
+large, coal-black raven with unnatural,
+
+1937
+01:10:04,499 --> 01:10:05,936
+glowing crimson eyes.
+
+1938
+01:10:06,820 --> 01:10:09,145
+Embedded in the raven's forehead was a tiny,
+
+1939
+01:10:09,245 --> 01:10:10,720
+enchanted scrying gem,
+
+1940
+01:10:10,820 --> 01:10:12,845
+tuned to the surveillance towers of the Solaris
+
+1941
+01:10:12,858 --> 01:10:13,758
+Mage Guild.
+
+1942
+01:10:14,620 --> 01:10:16,133
+The raven tilted its wings,
+
+1943
+01:10:16,245 --> 01:10:18,558
+circling three times over the valley clearing as
+
+1944
+01:10:18,570 --> 01:10:20,420
+the morning sun hit the Miller farm.
+
+1945
+01:10:21,292 --> 01:10:22,630
+Through the scrying gem,
+
+1946
+01:10:22,705 --> 01:10:25,680
+the raven's master in Oakhaven received a crystal-clear
+
+1947
+01:10:25,792 --> 01:10:27,942
+horrifyingly vivid magical projection.
+
+1948
+01:10:28,804 --> 01:10:30,842
+Down below in the supposedly wild,
+
+1949
+01:10:30,942 --> 01:10:34,067
+barren frontier stood a magnificent white-stone compound with
+
+1950
+01:10:34,079 --> 01:10:35,729
+elevated aqueducts and massive,
+
+1951
+01:10:35,804 --> 01:10:38,554
+sparkling glass windows reflecting the dawn like pure
+
+1952
+01:10:38,567 --> 01:10:39,267
+diamonds.
+
+1953
+01:10:40,132 --> 01:10:41,320
+Four leagues to the south,
+
+1954
+01:10:41,382 --> 01:10:42,445
+inside the dusty,
+
+1955
+01:10:42,557 --> 01:10:44,770
+opulent tax guild chamber of Oakhaven,
+
+1956
+01:10:44,820 --> 01:10:47,557
+a fat, balding tax collector named Simon Vane
+
+1957
+01:10:47,570 --> 01:10:49,857
+spat his hot spiced wine across his desk
+
+1958
+01:10:49,870 --> 01:10:50,845
+in sheer shock.
+
+1959
+01:10:51,724 --> 01:10:52,999
+Beside him stood a tall,
+
+1960
+01:10:53,137 --> 01:10:55,437
+arrogant Fire Mage in red guild robes,
+
+1961
+01:10:55,549 --> 01:10:57,162
+clutching an iron-tipped staff,
+
+1962
+01:10:57,237 --> 01:10:59,599
+staring at the scrying crystal in disbelief.
+
+1963
+01:11:00,460 --> 01:11:03,110
+A peasant homestead with crystal glass windows?"
+
+1964
+01:11:03,873 --> 01:11:05,060
+Simon Vane hissed,
+
+1965
+01:11:05,210 --> 01:11:07,185
+his piggy eyes glittering with corrupt,
+
+1966
+01:11:07,323 --> 01:11:08,610
+insatiable greed.
+
+1967
+01:11:09,484 --> 01:11:11,659
+Master Vane, a single pane of that glass
+
+1968
+01:11:11,672 --> 01:11:13,509
+would fetch two hundred gold coins in the
+
+1969
+01:11:13,522 --> 01:11:15,484
+capital!" the Fire Mage sneered,
+
+1970
+01:11:15,584 --> 01:11:17,747
+flames dancing between his fingers.
+
+1971
+01:11:18,628 --> 01:11:20,303
+And they built an entire palace of it
+
+1972
+01:11:20,316 --> 01:11:22,778
+four miles from my jurisdiction without paying a
+
+1973
+01:11:22,791 --> 01:11:25,141
+single copper of imperial guild tribute!"
+
+1974
+01:11:25,903 --> 01:11:28,816
+Simon roared, slamming his heavy brass seal onto
+
+1975
+01:11:28,828 --> 01:11:30,641
+an official requisition parchment.
+
+1976
+01:11:31,516 --> 01:11:34,629
+Summon twenty armed mercenaries and our guild enforcers,"
+
+1977
+01:11:34,754 --> 01:11:36,179
+Simon ordered with a cruel,
+
+1978
+01:11:36,204 --> 01:11:37,129
+twisted grin.
+
+1979
+01:11:37,996 --> 01:11:39,034
+Tomorrow morning,
+
+1980
+01:11:39,184 --> 01:11:41,734
+we march to this Miller Sanctuary' and everything
+
+1981
+01:11:41,746 --> 01:11:43,471
+they've built belongs to the Guild!"
+
+1982
+01:11:44,332 --> 01:11:46,095
+High in the serene alpine valley,
+
+1983
+01:11:46,182 --> 01:11:47,870
+unaware of the approaching storm,
+
+1984
+01:11:47,970 --> 01:11:50,282
+ten-year-old Ace Miller stepped out onto the morning
+
+1985
+01:11:50,295 --> 01:11:52,145
+porch, ready for the next phase of his
+
+1986
+01:11:52,157 --> 01:11:53,632
+modern-medieval revolution.

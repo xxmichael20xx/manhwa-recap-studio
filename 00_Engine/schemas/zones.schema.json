@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UniversalZonesVault",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "canon",
+      "lighting",
+      "adjacent",
+      "forbidden_tokens"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9_.]+$"
+      },
+      "name": {
+        "type": "string"
+      },
+      "aliases": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "canon": {
+        "type": "string",
+        "minLength": 15
+      },
+      "lighting": {
+        "type": "string"
+      },
+      "plate": {
+        "type": "string"
+      },
+      "adjacent": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "default_state": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "states": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "forbidden_tokens": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UniversalEntityVault",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "id",
+      "kind",
+      "token",
+      "status",
+      "dna"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "character",
+          "item",
+          "vehicle",
+          "creature",
+          "monument",
+          "hud"
+        ]
+      },
+      "token": {
+        "type": "string",
+        "pattern": "^@\\{.+\\}$"
+      },
+      "aliases": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "approved",
+          "pending"
+        ]
+      },
+      "age_class": {
+        "type": "string",
+        "enum": [
+          "adult",
+          "minor",
+          "ageless",
+          "non_living"
+        ]
+      },
+      "kinship_terms": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "dna": {
+        "type": "string",
+        "minLength": 10
+      },
+      "default_outfit": {
+        "type": "string"
+      },
+      "outfits": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "default_state": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "state_lexicon": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "phrase"
+            ],
+            "properties": {
+              "phrase": {
+                "type": "string"
+              },
+              "contradicts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "lifecycle": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "equipped",
+            "sheathed",
+            "environmental",
+            "destroyed"
+          ]
+        }
+      },
+      "default_lifecycle": {
+        "type": "string",
+        "enum": [
+          "equipped",
+          "sheathed",
+          "environmental",
+          "destroyed"
+        ]
+      },
+      "narrative_triggers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "pattern",
+            "required_set"
+          ],
+          "properties": {
+            "pattern": {
+              "type": "string"
+            },
+            "required_set": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "plate": {
+        "type": "string"
+      },
+      "episodes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

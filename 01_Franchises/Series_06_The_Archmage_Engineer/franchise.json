@@ -1,0 +1,74 @@
+{
+  "id": "series_06",
+  "code": "FRAN-AME-001",
+  "title": "The Archmage Engineer: Building a Modern Sanctuary in a Medieval World",
+  "format": "16:9",
+  "aspect_token": "horizontal 16:9 (1920x1080)",
+  "forbidden_aspect_tokens": [
+    "9:16",
+    "1080x1920",
+    "vertical 9:16",
+    "1:1",
+    "4:3",
+    "21:9",
+    "square 1:1",
+    "vertical format"
+  ],
+  "voice": {
+    "id": "en-GB-RyanNeural"
+  },
+  "pacing": {
+    "max_scene_seconds": 8,
+    "tts_wpm_measured": 155,
+    "max_prompt_tokens": 450
+  },
+  "tier_distribution": {
+    "min_multi_panel_ratio": 0.65,
+    "layout_headers": {
+      "A": "Single-panel full-bleed horizontal hero plate.",
+      "B": "Dual-panel manhwa webtoon comic strip.",
+      "C": "Three-panel dynamic horizontal manhwa action strip."
+    }
+  },
+  "style": {
+    "base": "Bright high-fantasy Korean manhwa webtoon art style, sharp clean black ink linework, warm luminous daylight, vibrant cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)",
+    "lighting_modes": {
+      "day_sunlit": {
+        "text": "",
+        "time_class": "day",
+        "forbidden_tokens": [
+          "pitch black midnight",
+          "midnight darkness",
+          "starry night sky"
+        ]
+      },
+      "night_moonlit": {
+        "text": "",
+        "time_class": "night",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "clear blue sky",
+          "broad daylight",
+          "harsh midday sun"
+        ]
+      },
+      "interior_warm": {
+        "text": "",
+        "time_class": "day",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "broad daylight"
+        ]
+      }
+    },
+    "tail_positive": "cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections",
+    "tail_negative": "zero cloning, completely textless artwork, no speech bubbles, no words, no banners"
+  },
+  "new_entity_policy": "pending_stub",
+  "paths": {
+    "entities": "vault/entities.json",
+    "zones": "vault/zones.json",
+    "policy": "../../00_Engine/policy.json",
+    "ledger": "state_events.jsonl"
+  }
+}

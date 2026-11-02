@@ -1,0 +1,8 @@
+{"s":0,"e":"michael_montrey_child","set":{"location":"oakhaven_apothecary_loft","outfit":"default","posture":"calm_confident"},"reason":"EP01 terminal seed: settling into Rowan's apothecary loft"}
+{"s":0,"e":"blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Carved and wielded by Michael in EP01"}
+{"s":0,"e":"abyssal_wyrm","set":{"lifecycle":"destroyed"},"reason":"Slain by Michael with kinetic thunder in EP01; can never be equipped or resurrected"}
+{"s":0,"e":"elder_rowan","set":{"outfit":"default","location":"rowan_apothecary_shop"},"reason":"Resting in apothecary shop downstairs"}
+{"s":144,"e":"michael_montrey_child","set":{"craft_mastery":"cold_leach_extraction","alchemical_tier":"grade_1_crystal_elixir"},"reason":"Mastered ancient botany from White Dimension; refined Rowan's crude salve into Grade 1 Crystal Elixir"}
+{"s":209,"e":"michael_montrey_child","set":{"combat_arcana":"tier_1_master_thunder_strike","core_saturation":"tier_1_saturated","constitution":32},"reason":"Endured White Dimension Resonance Trial; permanently engraved Tier 1 Master Thunder-Strike"}
+{"s":260,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped","technique":"internal_ultrasonic_kinetic_transmission"},"reason":"Successfully channeled Thunder-Strike to disintegrate 6ft granite boulder internally"}
+{"s":288,"e":"michael_montrey_child","set":{"location":"oakhaven_perimeter_gate","posture":"calm_unbothered"},"reason":"Standing at Oakhaven perimeter gate facing incoming mountain troll invasion; ready for EP03"}

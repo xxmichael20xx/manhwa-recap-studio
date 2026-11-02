@@ -74,6 +74,159 @@ export class VideoService {
   }
 
 
+  // =========================================================================
+  // Studio Universal Audio/Video Specification Invariant
+  // =========================================================================
+  static STUDIO_SPECS = {
+    landscape: { width: 1920, height: 1080, fps: 24, aspect: '16:9' },
+    vertical: { width: 1080, height: 1920, fps: 24, aspect: '9:16' },
+    videoCodec: 'h264',
+    videoPreset: 'veryfast',
+    videoCrf: '20',
+    pixFmt: 'yuv420p',
+    audioCodec: 'aac',
+    audioSampleRate: 48000,
+    audioChannels: 2,
+    audioBitrate: '192k'
+  }
+
+  /**
+   * Deterministically audit any media file's video & audio streams using ffprobe.
+   */
+  static async auditStreamSpecs(filePath) {
+    return new Promise((resolve) => {
+      const p = spawn('ffprobe', [
+        '-v', 'error',
+        '-show_entries', 'stream=codec_type,codec_name,width,height,r_frame_rate,pix_fmt,sample_rate,channels',
+        '-of', 'json',
+        filePath
+      ])
+      let out = ''
+      p.stdout.on('data', d => { out += d.toString() })
+      p.on('close', () => {
+        try {
+          const data = JSON.parse(out)
+          const vStream = data.streams?.find(s => s.codec_type === 'video') || null
+          const aStream = data.streams?.find(s => s.codec_type === 'audio') || null
+
+          let fps = 24
+          if (vStream?.r_frame_rate) {
+            const [num, den] = vStream.r_frame_rate.split('/').map(Number)
+            if (den && den > 0) fps = Math.round((num / den) * 100) / 100
+          }
+
+          const width = vStream ? parseInt(vStream.width || '0', 10) : 0
+          const height = vStream ? parseInt(vStream.height || '0', 10) : 0
+          const sampleRate = aStream ? parseInt(aStream.sample_rate || '0', 10) : 0
+          const channels = aStream ? parseInt(aStream.channels || '0', 10) : 0
+          const pixFmt = vStream?.pix_fmt || 'unknown'
+          const videoCodec = vStream?.codec_name || 'unknown'
+          const audioCodec = aStream?.codec_name || 'unknown'
+
+          const isStandardLandscape = (width === 1920 && height === 1080)
+          const isStandardVertical = (width === 1080 && height === 1920)
+          const isFpsStandard = (fps === 24)
+          const isPixFmtStandard = (pixFmt === 'yuv420p')
+          const isAudioStandard = (sampleRate === 48000 && channels === 2)
+
+          resolve({
+            filePath,
+            hasVideo: !!vStream,
+            hasAudio: !!aStream,
+            width,
+            height,
+            fps,
+            pixFmt,
+            videoCodec,
+            audioCodec,
+            sampleRate,
+            channels,
+            isStandardLandscape,
+            isStandardVertical,
+            isFpsStandard,
+            isPixFmtStandard,
+            isAudioStandard,
+            audioMismatch: !isAudioStandard,
+            videoMismatch: !isFpsStandard || !isPixFmtStandard || (!isStandardLandscape && !isStandardVertical)
+          })
+        } catch {
+          resolve({
+            filePath,
+            hasVideo: false,
+            hasAudio: false,
+            audioMismatch: true,
+            videoMismatch: true
+          })
+        }
+      })
+      p.on('error', () => resolve({ filePath, hasVideo: false, hasAudio: false, audioMismatch: true, videoMismatch: true }))
+    })
+  }
+
+  /**
+   * Automatically normalises any non-standard video/audio file into the Universal Studio Standard.
+   * - Fast Audio Normalisation (2-3s): If only audio is non-48kHz or non-stereo, stream-copies video (-c:v copy).
+   * - Full Normalisation: If resolution, framerate, or pixel format differs, scales to 1080p @ 24fps yuv420p.
+   */
+  static async normalizeToStudioSpecs(inputFile, outputFile, options = {}) {
+    const { isVertical = false } = options
+    const targetW = isVertical ? 1080 : 1920
+    const targetH = isVertical ? 1920 : 1080
+
+    const spec = await this.auditStreamSpecs(inputFile)
+
+    // Fast-path: If only audio is mismatched, keep video bit-for-bit identical (-c:v copy)
+    if (spec.audioMismatch && !spec.videoMismatch) {
+      return new Promise((resolve, reject) => {
+        const proc = spawn('ffmpeg', [
+          '-y',
+          '-i', inputFile,
+          '-c:v', 'copy',
+          '-c:a', 'aac',
+          '-b:a', '192k',
+          '-ar', '48000',
+          '-ac', '2',
+          '-movflags', '+faststart',
+          outputFile
+        ], { cwd: projectRoot })
+        let err = ''
+        proc.stderr.on('data', d => { err += d.toString() })
+        proc.on('close', code => {
+          if (code === 0) resolve(outputFile)
+          else reject(new Error(`Audio normalisation failed (${code}): ${err.slice(-200)}`))
+        })
+        proc.on('error', reject)
+      })
+    }
+
+    // Full normalisation path: Scale video to target 1080p canvas, enforce 24fps yuv420p, and resample audio to 48kHz stereo
+    return new Promise((resolve, reject) => {
+      const proc = spawn('ffmpeg', [
+        '-y',
+        '-i', inputFile,
+        '-vf', `scale=${targetW}:${targetH}:force_original_aspect_ratio=decrease,pad=${targetW}:${targetH}:(ow-iw)/2:(oh-ih)/2,setsar=1`,
+        '-r', '24',
+        '-c:v', 'libx264',
+        '-preset', 'veryfast',
+        '-crf', '20',
+        '-pix_fmt', 'yuv420p',
+        '-c:a', 'aac',
+        '-b:a', '192k',
+        '-ar', '48000',
+        '-ac', '2',
+        '-movflags', '+faststart',
+        outputFile
+      ], { cwd: projectRoot })
+      let err = ''
+      proc.stderr.on('data', d => { err += d.toString() })
+      proc.on('close', code => {
+        if (code === 0) resolve(outputFile)
+        else reject(new Error(`Full stream normalisation failed (${code}): ${err.slice(-200)}`))
+      })
+      proc.on('error', reject)
+    })
+  }
+
   static getStatus(franchiseId, episodeId) {
     const key = `${franchiseId}/${episodeId}`
     return this.compilationState[key] || {
@@ -204,6 +357,7 @@ export class VideoService {
         const tag = tagMatches[i][1].toUpperCase()
         let rawBlock = tagMatches[i][2]
         let cleanText = rawBlock
+          .replace(/<!--[\s\S]*?-->/g, '') // Strip inline HTML comments & V2.0 staging headers
           .replace(/^#{1,6}\s+[^\n]+/gm, '')
           .replace(/^>\s+[^\n]+/gm, '')
           .replace(/\*\*Runtime:\*\*.*$/gm, '')
@@ -1193,8 +1347,27 @@ export class VideoService {
 
     const tempDir = path.resolve(projectRoot, '.tmp')
     await fs.mkdir(tempDir, { recursive: true })
+
+    // Universal Studio Spec Invariant: Pre-audit each batch file before concatenation
+    const tempNormBatchFiles = []
+    const filesForBatchConcat = []
+
+    for (const b of batchFiles) {
+      const spec = await this.auditStreamSpecs(b.fullPath)
+      if (spec.audioMismatch || spec.videoMismatch) {
+        const normName = `norm_batch_${b.code}_${Date.now()}.mp4`
+        const normPath = path.join(tempDir, normName)
+        tempNormBatchFiles.push(normPath)
+        console.warn(`[stitchBatches] Batch ${b.code} has non-standard specs (${spec.width}x${spec.height} @ ${spec.fps}fps, ${spec.sampleRate}Hz ${spec.channels}ch). Normalising to Studio Standard...`)
+        await this.normalizeToStudioSpecs(b.fullPath, normPath)
+        filesForBatchConcat.push(normPath)
+      } else {
+        filesForBatchConcat.push(b.fullPath)
+      }
+    }
+
     const concatListPath = path.join(tempDir, `concat_batches_${franchiseId}_${episodeId}_${Date.now()}.txt`)
-    const concatLines = batchFiles.map(b => `file '${b.fullPath.replace(/\\/g, '/')}'`)
+    const concatLines = filesForBatchConcat.map(fPath => `file '${fPath.replace(/\\/g, '/')}'`)
     await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
 
     const descriptor = this.formatBatchRangeDescriptor(batchFiles.map(b => b.code))
@@ -1230,6 +1403,9 @@ export class VideoService {
 
       proc.on('close', async code => {
         try { await fs.unlink(concatListPath) } catch (_) {}
+        for (const f of tempNormBatchFiles) {
+          try { await fs.unlink(f) } catch (_) {}
+        }
 
         if (code === 0) {
           let isFullEpisodeStitch = false
@@ -1385,12 +1561,71 @@ export class VideoService {
    * Multi-Master & Cross-Episode Lossless Omnibus Stitcher (-c copy in <5s):
    * Concat multiple Master Videos (e.g. EP01 Master + EP02 Master) into a Grand Omnibus.
    */
-  static async stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename) {
+  static async stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename, options = {}) {
     if (!Array.isArray(masterFilePaths) || masterFilePaths.length < 2) {
       throw new Error('At least 2 master video files are required to stitch an Omnibus.')
     }
 
     const franchiseDir = path.join(franchisesDir, franchiseId)
+    const { compileEpisodes = false, selectedEpisodes = [], freshCompile = false, skipExisting = true } = options || {}
+
+    // Stage 0: Optional Full Pipeline Sequential Pre-Compilation of Selected Episodes
+    if (compileEpisodes) {
+      const targetEpisodes = Array.isArray(selectedEpisodes) && selectedEpisodes.length > 0
+        ? selectedEpisodes
+        : masterFilePaths.map(p => {
+            const parts = p.replace(/\\/g, '/').split('/')
+            const epIdx = parts.findIndex(part => /^EP\d+/i.test(part))
+            return epIdx !== -1 ? parts[epIdx] : path.basename(path.dirname(path.dirname(p)))
+          }).filter(Boolean)
+
+      this.updateStatus(franchiseId, 'omnibus', {
+        status: 'compiling',
+        progress: 5,
+        stage: 'compiling_episodes',
+        message: `Sequential pre-compilation initiated for ${targetEpisodes.length} episode(s)...`,
+        log: [
+          `[Queue] Full Pipeline requested (${freshCompile ? 'Pure Fresh All (Purging cache, re-rendering all scene cuts)' : 'Smart-Skip (Verifying batch clips & re-stitching)'}).`,
+          `[Franchise] ${franchiseId}`,
+          ...targetEpisodes.map((ep, i) => `  ${i + 1}. ${ep}`)
+        ]
+      })
+
+      for (let i = 0; i < targetEpisodes.length; i++) {
+        const epId = targetEpisodes[i]
+        const percentStart = 5 + Math.round((i / targetEpisodes.length) * 45)
+        const currentLogs = this.compilationState[`${franchiseId}/omnibus`]?.log || []
+
+        this.updateStatus(franchiseId, 'omnibus', {
+          status: 'compiling',
+          progress: percentStart,
+          stage: 'compiling_episodes',
+          message: `[Episode ${i + 1}/${targetEpisodes.length}] Compiling master video for ${epId}...`,
+          log: [
+            ...currentLogs,
+            `▶ [Queue ${i + 1}/${targetEpisodes.length}] Starting batch compilation for ${epId}...`
+          ]
+        })
+
+        try {
+          await this.autoCompileAllBatches(franchiseId, epId, { skipExisting: freshCompile ? false : skipExisting, force: true, fresh: freshCompile === true })
+          const postLogs = this.compilationState[`${franchiseId}/omnibus`]?.log || []
+          this.updateStatus(franchiseId, 'omnibus', {
+            status: 'compiling',
+            progress: percentStart + Math.round(45 / targetEpisodes.length),
+            stage: 'compiling_episodes',
+            message: `[Episode ${i + 1}/${targetEpisodes.length}] Finished compiling ${epId}.`,
+            log: [
+              ...postLogs,
+              `✔ [Queue ${i + 1}/${targetEpisodes.length}] Master video ready for ${epId}.`
+            ]
+          })
+        } catch (epErr) {
+          console.error(`[Omnibus Pre-compile] Failed to compile ${epId}:`, epErr)
+          throw new Error(`Failed to compile episode ${epId}: ${epErr.message}`)
+        }
+      }
+    }
 
     // Defensively resolve each master file path across episodes
     const alternatives = [
@@ -1440,9 +1675,19 @@ export class VideoService {
 
     const tempDir = path.resolve(projectRoot, '.tmp')
     await fs.mkdir(tempDir, { recursive: true })
-    const concatListPath = path.join(tempDir, `concat_omnibus_${franchiseId}_${Date.now()}.txt`)
-    const concatLines = resolvedFiles.map(p => `file '${p.replace(/\\/g, '/')}'`)
-    await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
+
+    this.updateStatus(franchiseId, 'omnibus', {
+      status: 'compiling',
+      progress: compileEpisodes ? 50 : 5,
+      stage: 'discovery',
+      message: `Resolving master video paths for ${masterFilePaths.length} episodes...`,
+      log: [
+        ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+        `[Initialise] Starting Multi-Episode Master Movie compilation.`,
+        `[Franchise] ${franchiseId}`,
+        `[Targets] ${resolvedFiles.length} episode master files queued for compilation.`
+      ]
+    })
 
     let outName = outputFilename
     if (!outName) {
@@ -1462,29 +1707,126 @@ export class VideoService {
     }
     const omnibusOutputPath = path.join(omnibusDir, outName)
 
-    // Guard: concat demuxer with -c copy corrupts timing when audio sample rates/channels differ
-    // (e.g. a 96 kHz part stamped as 48 kHz => audio doubles in length). Probe and re-encode audio only if mismatched.
+    // Robust Stream Audit & Normalisation:
+    // Concat demuxer with -c copy requires identical audio sample rates and channels across all inputs.
+    // If any input has mismatched audio (e.g. 96 kHz vs 48 kHz), passing -c:a aac to concat demuxer chokes
+    // on stream parameter transitions, muting subsequent parts.
+    // To prevent any part from going mute, we pre-audit each master file and normalise any non-48kHz stream
+    // to standard 48 kHz stereo AAC (with video stream-copied in seconds).
     const probeAudio = (file) => new Promise((resolve) => {
       const p = spawn('ffprobe', ['-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=codec_name,sample_rate,channels', '-of', 'csv=p=0', file])
       let out = ''
       p.stdout.on('data', d => { out += d.toString() })
-      p.on('close', () => resolve(out.trim()))
-      p.on('error', () => resolve(''))
+      p.on('close', () => {
+        const parts = out.trim().split(',')
+        resolve({
+          codec: parts[0] || 'unknown',
+          sampleRate: parseInt(parts[1] || '0', 10),
+          channels: parseInt(parts[2] || '0', 10)
+        })
+      })
+      p.on('error', () => resolve({ codec: 'unknown', sampleRate: 0, channels: 0 }))
     })
-    const audioSignatures = await Promise.all(resolvedFiles.map(probeAudio))
-    const audioMismatch = new Set(audioSignatures).size > 1
-    if (audioMismatch) {
-      console.warn(`[Omnibus] Audio mismatch (${audioSignatures.join(' | ')}). Normalising audio to AAC 48 kHz stereo; video stream-copied.`)
+
+    const normaliseAudio = (inFile, outFile) => new Promise((resolve, reject) => {
+      const proc = spawn('ffmpeg', [
+        '-y',
+        '-i', inFile,
+        '-c:v', 'copy',
+        '-c:a', 'aac',
+        '-b:a', '192k',
+        '-ar', '48000',
+        '-ac', '2',
+        outFile
+      ], { cwd: projectRoot })
+      let errOut = ''
+      proc.stderr.on('data', d => { errOut += d.toString() })
+      proc.on('close', code => {
+        if (code === 0) resolve()
+        else reject(new Error(`Audio normalisation failed (code ${code}): ${errOut.slice(-200)}`))
+      })
+      proc.on('error', reject)
+    })
+
+    this.updateStatus(franchiseId, 'omnibus', {
+      status: 'compiling',
+      progress: 15,
+      stage: 'audit',
+      message: 'Auditing audio stream sample rates & channel geometry...',
+      log: [
+        ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+        `[Stream Audit] Probing audio specifications across ${resolvedFiles.length} master files...`
+      ]
+    })
+
+    const tempNormFiles = []
+    const filesForConcat = []
+
+    for (let i = 0; i < resolvedFiles.length; i++) {
+      const file = resolvedFiles[i]
+      const epLabel = path.basename(path.dirname(path.dirname(file)))
+      const audioInfo = await probeAudio(file)
+
+      const spec = await this.auditStreamSpecs(file)
+
+      if (spec.audioMismatch || spec.videoMismatch) {
+        const normName = `norm_master_ep${i + 1}_${Date.now()}.mp4`
+        const normPath = path.join(tempDir, normName)
+        tempNormFiles.push(normPath)
+
+        this.updateStatus(franchiseId, 'omnibus', {
+          status: 'compiling',
+          progress: 20 + Math.round(((i + 1) / resolvedFiles.length) * 25),
+          stage: 'normalising',
+          message: `Normalising Part ${i + 1} (${epLabel}) to Studio Standard (1080p @ 24fps yuv420p, 48kHz stereo AAC)...`,
+          log: [
+            ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+            `[Spec Normalisation] Part ${i + 1} (${epLabel}) non-standard specs detected (${spec.width}x${spec.height} @ ${spec.fps}fps, ${spec.sampleRate}Hz ${spec.channels}ch). Normalising to Studio Standard...`
+          ]
+        })
+
+        await this.normalizeToStudioSpecs(file, normPath)
+
+        this.updateStatus(franchiseId, 'omnibus', {
+          log: [
+            ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+            `[Spec Normalisation] Part ${i + 1} successfully normalised to Studio Standard.`
+          ]
+        })
+
+        filesForConcat.push(normPath)
+      } else {
+        this.updateStatus(franchiseId, 'omnibus', {
+          log: [
+            ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+            `[Stream Audit] Part ${i + 1} (${epLabel}): Verified Studio Standard (1920x1080 @ 24fps yuv420p, 48kHz stereo AAC).`
+          ]
+        })
+        filesForConcat.push(file)
+      }
     }
+
+    const concatListPath = path.join(tempDir, `concat_omnibus_${franchiseId}_${Date.now()}.txt`)
+    const concatLines = filesForConcat.map(p => `file '${p.replace(/\\/g, '/')}'`)
+    await fs.writeFile(concatListPath, concatLines.join('\n'), 'utf-8')
+
+    this.updateStatus(franchiseId, 'omnibus', {
+      status: 'compiling',
+      progress: 60,
+      stage: 'stitching',
+      message: `Losslessly concatenating ${filesForConcat.length} master episodes at >800x speed...`,
+      log: [
+        ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+        `[Lossless Concat] Executing FFmpeg concat demuxer with pure stream copy (-c copy)...`
+      ]
+    })
 
     const ffmpegArgs = [
       '-y',
       '-f', 'concat',
       '-safe', '0',
       '-i', concatListPath.replace(/\\/g, '/'),
-      ...(audioMismatch
-        ? ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2']
-        : ['-c', 'copy']),
+      '-c', 'copy',
       '-movflags', '+faststart',
       omnibusOutputPath.replace(/\\/g, '/')
     ]
@@ -1496,8 +1838,22 @@ export class VideoService {
 
       proc.on('close', async code => {
         try { await fs.unlink(concatListPath) } catch (_) {}
+        for (const f of tempNormFiles) {
+          try { await fs.unlink(f) } catch (_) {}
+        }
 
         if (code === 0) {
+          this.updateStatus(franchiseId, 'omnibus', {
+            status: 'compiling',
+            progress: 85,
+            stage: 'chapters',
+            message: 'Calculating exact cumulative chapter boundary timestamps...',
+            log: [
+              ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+              `[Chapters] Calculating cumulative frame-accurate timecodes for YouTube packaging...`
+            ]
+          })
+
           // Calculate 100% mathematically exact cumulative chapter timestamps via ffprobe
           const metadata = await VideoService.calculateOmnibusMetadataFromPaths(franchiseId, resolvedFiles, outName)
 
@@ -1512,6 +1868,23 @@ export class VideoService {
             franchiseId,
             'omnibus'
           )
+
+          this.updateStatus(franchiseId, 'omnibus', {
+            status: 'completed',
+            progress: 100,
+            stage: 'completed',
+            message: `Omnibus Master Movie compiled successfully (${metadata.totalDurationFormatted})!`,
+            filename: outName,
+            url: `/api/episodes/${franchiseId}/omnibus-stream?file=${encodeURIComponent(outName)}`,
+            metadata,
+            log: [
+              ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+              `[Complete] Stitched master movie successfully written to disk.`,
+              `[Output File] ${outName} (${metadata.totalDurationFormatted})`,
+              `[Chapters Ready] ${metadata.chapterLedger?.length || resolvedFiles.length} chapters indexed with zero audio-visual drift.`
+            ]
+          })
+
           resolve({
             success: true,
             output: omnibusOutputPath,
@@ -1523,7 +1896,18 @@ export class VideoService {
           })
         } else {
           console.error('FFmpeg omnibus stitching failed:', stderr.slice(-800))
-          reject(new Error(`FFmpeg omnibus stitch exited with code ${code}: ${stderr.slice(-200)}`))
+          const errorMsg = `FFmpeg omnibus stitch exited with code ${code}: ${stderr.slice(-200)}`
+          this.updateStatus(franchiseId, 'omnibus', {
+            status: 'failed',
+            progress: 0,
+            stage: 'error',
+            message: errorMsg,
+            log: [
+              ...(this.compilationState[`${franchiseId}/omnibus`]?.log || []),
+              `[Error] Multi-Master Omnibus Stitching failed: ${errorMsg}`
+            ]
+          })
+          reject(new Error(errorMsg))
         }
       })
     })
@@ -1727,7 +2111,22 @@ export class VideoService {
    */
   static async autoCompileAllBatches(franchiseId, episodeId, options = {}) {
     const key = `${franchiseId}/${episodeId}`
-    const { skipExisting = true, force = false } = options
+    const { skipExisting = true, force = false, fresh = false } = options
+
+    // If pure fresh compile is requested, purge the clip cache for this episode immediately
+    const clipCacheDir = path.resolve(projectRoot, '.tmp', 'clip_cache', franchiseId, episodeId)
+    const videoDir = this.getVideoDir(franchiseId, episodeId)
+    if (fresh) {
+      try {
+        await fs.rm(clipCacheDir, { recursive: true, force: true })
+        const existingVideoFiles = fsSync.existsSync(videoDir) ? await fs.readdir(videoDir) : []
+        for (const vf of existingVideoFiles) {
+          if (vf.startsWith('01_Episode_Batch_') && vf.endsWith('.mp4')) {
+            await fs.unlink(path.join(videoDir, vf)).catch(() => {})
+          }
+        }
+      } catch (_) {}
+    }
 
     if (this.compilationState[key]?.status === 'compiling' && !force) {
       throw new Error('Video compilation is already in progress for this episode.')
@@ -1738,7 +2137,6 @@ export class VideoService {
     const totalScenes = scenes.length || 216
     const totalBatches = Math.ceil(totalScenes / chunkSize)
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
-    const videoDir = this.getVideoDir(franchiseId, episodeId)
     const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
 
     this.updateStatus(franchiseId, episodeId, {
@@ -1746,7 +2144,7 @@ export class VideoService {
       progress: 2,
       message: `Starting Automated Sequential Pipeline: ${totalBatches} batches (${totalScenes} cuts)...`,
       log: [
-        `Initializing Automated Batch Queue for ${totalBatches} batches (${skipExisting ? 'Smart-Skip Up-To-Date Batches' : 'Fresh All Re-render'})...`
+        `Initializing Automated Batch Queue for ${totalBatches} batches (${skipExisting ? 'Smart-Skip Up-To-Date Batches' : (fresh ? 'Pure Fresh All (Purge Cache & Full Re-render)' : 'Fast Re-compile (Re-mux Containers, Reuse Clip Cache)')})...`
       ]
     })
 
@@ -1834,6 +2232,7 @@ export class VideoService {
         // Compile single batch sequentially with internal flag
         await this.compileEpisodeVideo(franchiseId, episodeId, {
           ...options,
+          fresh: fresh === true,
           batchIndex: b,
           isInternalSequential: true
         })

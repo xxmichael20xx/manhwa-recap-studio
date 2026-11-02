@@ -47,13 +47,13 @@ In this lush medieval magic world, humanity was blessed with elemental affinitie
 
 ---
 
-## 👥 3. Locked 14-Model Vault Roster (12 Characters + 2 Farm Locations)
+## 👥 3. Locked 22-Model Vault Roster (14 Characters, 3 Items/Mounts, 5 Locations)
 
 | # | Vault Token | Role & Age | Affinity / Function | Visual & Character DNA Summary |
 | :--- | :--- | :--- | :--- | :--- |
 | **01** | `@{Ace Miller}` | Protagonist (Age 10, past life: *Cale Dawson*) | **All 8 Affinity Seeds** (*Base 4 active after family observation; Hidden 4 Locked at 0% in EP01*) | Genius, hardworking, jolly, funny, nonchalant, humble bookworm & craftsman boy; chestnut-brown hair, bright emerald eyes, forest-green craftsman vest over cream linen tunic. |
 | **02** | `@{LUMINA}` | Sentient AI Best Friend & Co-Pilot | **10% Safe-Mode Knowledge + Live Spell Scanner** | Warm sky-blue & soft-gold translucent floating UI panel with a cute, expressive glowing **Emoji smiley face at the top-right corner**; accompanies Ace in almost every scene post-awakening. |
-| **03** | `@{Garrett Miller}` | MC's Father (Age 36, Fallen Artisan Descendant) | **Earth Affinity** | Sturdy, smart, supportive father from a fallen Artisan-Crafter house; brown hair, warm amber eyes, earth-toned work shirt and leather suspenders. |
+| **03** | `@{Garrett Miller}` | MC's Father (Age 36, Fallen Artisan Descendant) | **Earth Affinity** | Sturdy, smart, supportive father from a fallen Artisan-Crafter house; brown hair, warm amber eyes, rugged warm-brown work shirt and dark-brown leather suspenders. |
 | **04** | `@{Clara Miller}` | MC's Mother (Age 34, Fallen Artisan Descendant) | **Water / Nature Affinity** | Caring, sharp-minded mother from an herbal-artisan lineage; braided honey-brown hair, emerald eyes, sage-green country dress, holding lavender soap. |
 | **05** | `@{Maya Miller}` | MC's Older Sister (Age 13) | **Wind Affinity** | Energetic, supportive big sister who uses Wind magic on the farm; wavy chestnut hair with sky-blue ribbon, amber eyes, breezy sky-blue tunic. |
 | **06** | `@{Princess Seraphina}` | Royal Scion Princess | **Light Affinity** | Adventurous young royal princess who leaves the smelly Imperial Capital seeking clean frontier air; golden-blonde hair, sapphire eyes, ivory-and-blue travel dress. |
@@ -65,6 +65,14 @@ In this lush medieval magic world, humanity was blessed with elemental affinitie
 | **12** | `@{Old Miller Farm}` | Location (Before Upgrade) | **Rustic Pre-Awakening Homestead** | The humble, muddy, thatched-roof wooden farmhouse and dirt field in the Emerald Alpine Valley before Ace's stone-and-water foundations. |
 | **13** | `@{Miller Sanctuary Farm}` | Location (After Upgrade) | **Modern-Medieval Sanctuary** | The upgraded Emerald Alpine Valley homestead featuring polished timber-and-white-stone architecture, spotless white-stone water aqueducts, and fragrant purple lavender rows. |
 | **14** | `@{Cale Dawson}` | Past-Life AI Architect (Age 62, Earth) | **Creator of LUMINA / Master Systems Architecture** | Distinguished 62-year-old male programmer; silver-grey hair, thin silver wireframe spectacles, emerald-green eyes, cozy charcoal wool cardigan, white shirt, dark trousers. |
+| **15** | `@{Simon Vane}` | Antagonist / Frontier Tax Collector (Age 42) | **Tax Extortion & Corrupt Bureaucracy** | Fat, balding 42-year-old frontier tax collector with small beady suspicious eyes, oily stubble, sneering double chin, stained plum-purple velvet vest over rumpled mustard tunic, dirty lace cravat, carrying a brass guild seal and iron tax ledger. |
+| **16** | `@{Guild Fire Mage}` | Antagonist / Enforcer Mage (Age 30) | **Tier-2 Pyromancy & Flame Aura** | Tall, arrogant 30-year-old battle mage with slicked-back dark crimson hair, sharp hawkish features, smirking expression, high-collared crimson-and-black guild battle robe with brass clasps, holding a scorched wooden fire wand crackling with orange sparks. |
+| **17** | `@{Scrying Raven}` | Item / Surveillance Construct | **Scrying & Visual Relaying** | Large mechanical-arcane raven construct with matte-black obsidian feathers, glowing ruby-crystal optical eyes, brass articulated talons, and subtle glowing runic circuits. |
+| **18** | `@{Starlight the Mare}` | Mount / Farm Workhorse | **Transport & Farm Hauling** | Sturdy, gentle dappled-grey draught mare with an intelligent calm gaze, soft silver-white mane, sturdy muscular build, wearing clean dark-brown leather harness. |
+| **19** | `@{Old Miller Cottage Interior}` | Location | **Humble Cottage Living Space** | Cozy rustic wooden farmhouse interior with exposed timber rafters, warm stone hearth, rough-hewn oak table, and simple hand-carved chairs. |
+| **20** | `@{Emerald Valley Forest Trail}` | Location | **Winding Mountain Approach** | Lush winding dirt trail flanked by towering pine and birch trees, vibrant emerald moss, and distant alpine mountain peaks. |
+| **21** | `@{Miller Sanctuary Bath Courtyard}` | Location | **Modern-Medieval Bathhouse** | Pristine courtyard with smooth white-stone tiled floor, deep steaming thermal bath pool fed by polished brass fixtures, crystal-clear water, and purple lavender planter borders. |
+| **22** | `@{Oakhaven Tax Guild Chamber}` | Location | **Corrupt Bureaucratic Office** | Dark wood-panelled office cluttered with tax scrolls, brass scales, iron lockboxes, and a glowing green-and-amber scrying orb on a mahogany desk. |
 
 ---
 

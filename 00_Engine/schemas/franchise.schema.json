@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UniversalFranchiseConfig",
+  "type": "object",
+  "required": [
+    "id",
+    "code",
+    "title",
+    "format",
+    "aspect_token",
+    "forbidden_aspect_tokens",
+    "voice",
+    "pacing",
+    "tier_distribution",
+    "style",
+    "new_entity_policy",
+    "paths"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "code": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "9:16",
+        "16:9"
+      ]
+    },
+    "aspect_token": {
+      "type": "string"
+    },
+    "forbidden_aspect_tokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "voice": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "pacing": {
+      "type": "object",
+      "required": [
+        "max_scene_seconds",
+        "tts_wpm_measured",
+        "max_prompt_tokens"
+      ],
+      "properties": {
+        "max_scene_seconds": {
+          "type": "number",
+          "minimum": 1.0
+        },
+        "tts_wpm_measured": {
+          "type": "number",
+          "minimum": 80
+        },
+        "max_prompt_tokens": {
+          "type": "integer",
+          "minimum": 150,
+          "maximum": 600
+        }
+      }
+    },
+    "tier_distribution": {
+      "type": "object",
+      "required": [
+        "min_multi_panel_ratio",
+        "layout_headers"
+      ],
+      "properties": {
+        "min_multi_panel_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "layout_headers": {
+          "type": "object",
+          "required": [
+            "A",
+            "B",
+            "C"
+          ],
+          "properties": {
+            "A": {
+              "type": "string"
+            },
+            "B": {
+              "type": "string"
+            },
+            "C": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "required": [
+        "base",
+        "lighting_modes",
+        "tail_positive",
+        "tail_negative"
+      ],
+      "properties": {
+        "base": {
+          "type": "string",
+          "minLength": 10
+        },
+        "lighting_modes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "text",
+              "time_class",
+              "forbidden_tokens"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "time_class": {
+                "type": "string",
+                "enum": [
+                  "night",
+                  "day",
+                  "interior",
+                  "twilight",
+                  "abyssal"
+                ]
+              },
+              "forbidden_tokens": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tail_positive": {
+          "type": "string",
+          "minLength": 10
+        },
+        "tail_negative": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "new_entity_policy": {
+      "type": "string",
+      "enum": [
+        "pending_stub",
+        "strict_block"
+      ]
+    },
+    "paths": {
+      "type": "object",
+      "required": [
+        "entities",
+        "zones",
+        "policy",
+        "ledger"
+      ],
+      "properties": {
+        "entities": {
+          "type": "string"
+        },
+        "zones": {
+          "type": "string"
+        },
+        "policy": {
+          "type": "string"
+        },
+        "ledger": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

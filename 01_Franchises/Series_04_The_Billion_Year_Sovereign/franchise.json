@@ -1,0 +1,68 @@
+{
+  "id": "series_04",
+  "code": "FRAN-BYS-001",
+  "title": "The Billion-Year Sovereign: Reality Convergence",
+  "format": "9:16",
+  "aspect_token": "vertical 9:16 (1080x1920)",
+  "forbidden_aspect_tokens": [
+    "16:9",
+    "1920x1080",
+    "1:1",
+    "4:3",
+    "21:9",
+    "square 1:1",
+    "widescreen",
+    "horizontal 16:9"
+  ],
+  "voice": {
+    "id": "en-US-ChristopherNeural"
+  },
+  "pacing": {
+    "max_scene_seconds": 8,
+    "tts_wpm_measured": 155,
+    "max_prompt_tokens": 450
+  },
+  "tier_distribution": {
+    "min_multi_panel_ratio": 0.65,
+    "layout_headers": {
+      "A": "Single-panel full-bleed vertical hero plate.",
+      "B": "Dual-panel manhwa webtoon comic strip.",
+      "C": "Three-panel dynamic vertical manhwa action strip."
+    }
+  },
+  "style": {
+    "base": "Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, vibrant clean cel shading, pristine contemporary collegiate aesthetic",
+    "lighting_modes": {
+      "night_floodlit": {
+        "text": "",
+        "time_class": "night",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "clear blue sky",
+          "broad daylight",
+          "harsh midday sun",
+          "golden hour sunset",
+          "sunny afternoon"
+        ]
+      },
+      "interior_night": {
+        "text": "",
+        "time_class": "night",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "midday sun",
+          "broad daylight"
+        ]
+      }
+    },
+    "tail_positive": "cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero cloning",
+    "tail_negative": "zero cloning, completely textless artwork, no speech bubbles, no words, no banners"
+  },
+  "new_entity_policy": "pending_stub",
+  "paths": {
+    "entities": "vault/entities.json",
+    "zones": "vault/zones.json",
+    "policy": "../../00_Engine/policy.json",
+    "ledger": "state_events.jsonl"
+  }
+}

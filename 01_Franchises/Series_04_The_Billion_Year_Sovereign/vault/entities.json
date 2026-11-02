@@ -1,0 +1,1088 @@
+{
+  "lu_chen": {
+    "id": "lu_chen",
+    "kind": "character",
+    "token": "@{Lu Chen}",
+    "aliases": [
+      "Lu Chen",
+      "Xiao Yao",
+      "Primordial Sovereign Xiao Yao",
+      "Sovereign Xiao Yao",
+      "Senior Xiao Yao"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "20-year-old East Asian male university student, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression",
+    "default_outfit": "hoodie_charcoal",
+    "outfits": {
+      "hoodie_charcoal": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+      "streetwear_hoodie": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+      "casual_pullover": "clean oversized charcoal-black pullover hoodie with loose sleeves and casual utility trousers"
+    },
+    "default_state": {
+      "eyes": "normal",
+      "aura": "none",
+      "posture": "relaxed_hands_in_pockets"
+    },
+    "state_lexicon": {
+      "eyes": {
+        "normal": {
+          "phrase": "calm obsidian eyes"
+        },
+        "starlight_flecks": {
+          "phrase": "microscopic golden starlight flecks pulsing in deep obsidian eyes"
+        }
+      },
+      "aura": {
+        "none": {
+          "phrase": "zero visible spiritual aura"
+        },
+        "primordial_starlight": {
+          "phrase": "subtle shimmering primordial golden-violet starlight halo"
+        }
+      },
+      "posture": {
+        "relaxed_hands_in_pockets": {
+          "phrase": "zero visible spiritual aura, relaxed unbothered posture with hands casually in hoodie pockets"
+        },
+        "relaxed_unbothered": {
+          "phrase": "zero visible spiritual aura, relaxed unbothered posture with hands casually in hoodie pockets"
+        },
+        "casual_seated": {
+          "phrase": "seated casually with unhurried deadpan posture"
+        },
+        "standing_calm": {
+          "phrase": "standing quietly with hands in hoodie pockets"
+        }
+      }
+    },
+    "plate": "01_Protagonist_Lu_Chen.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "wang_bao": {
+    "id": "wang_bao",
+    "kind": "character",
+    "token": "@{Wang Bao}",
+    "aliases": [
+      "Wang Bao",
+      "Fatty Wang"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "20-year-old chubby East Asian male university student, round friendly face, messy spiky dark hair, expressive panicked dark eyes",
+    "default_outfit": "red_gaming_tee",
+    "outfits": {
+      "red_gaming_tee": "signature red graphic gaming t-shirt, beige cargo shorts, sneakers",
+      "collegiate_sportswear": "bright yellow-and-navy collegiate athletic tracksuit over white t-shirt, athletic sneakers"
+    },
+    "default_state": {
+      "posture": "standing_animated"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_animated": {
+          "phrase": "standing with expressive animated posture and wide eyes"
+        },
+        "seated_slurping": {
+          "phrase": "seated eagerly slurping steaming noodles with chopsticks"
+        }
+      }
+    },
+    "plate": "02_Sidekick_Wang_Bao.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "gu_tianyu": {
+    "id": "gu_tianyu",
+    "kind": "character",
+    "token": "@{Gu Tianyu}",
+    "aliases": [
+      "Gu Tianyu",
+      "Young Master Gu"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "21-year-old pale East Asian male cultivator, sharp arrogant features, disheveled dark hair, bloodshot spiteful dark eyes",
+    "default_outfit": "medical_convalescent",
+    "outfits": {
+      "medical_convalescent": "loose grey silk convalescent robe over dark trousers with medicinal arm bandages",
+      "combat_uniform": "tailored dark crimson combat blazer over charcoal shirt"
+    },
+    "default_state": {
+      "posture": "wheelchair_bound"
+    },
+    "state_lexicon": {
+      "posture": {
+        "wheelchair_bound": {
+          "phrase": "slumped in high-tech carbon-fibre motorized wheelchair with trembling hands"
+        },
+        "standing_arrogant": {
+          "phrase": "standing with haughty arrogant sneer"
+        }
+      }
+    },
+    "plate": "03_Bully_Gu_Tianyu.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "jiang_qingxue": {
+    "id": "jiang_qingxue",
+    "kind": "character",
+    "token": "@{Jiang Qingxue}",
+    "aliases": [
+      "Jiang Qingxue",
+      "Goddess Jiang"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression",
+    "default_outfit": "white_trench",
+    "outfits": {
+      "white_trench": "elegant modern white designer trench coat over pale cyan silk dress, silver belt buckle, low heels"
+    },
+    "default_state": {
+      "posture": "standing_aloof"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_aloof": {
+          "phrase": "standing with graceful cold aloof posture with frost mist condensing in palm"
+        }
+      }
+    },
+    "plate": "04_Disciple_Jiang_Qingxue.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "han_feng": {
+    "id": "han_feng",
+    "kind": "character",
+    "token": "@{Commander Han Feng}",
+    "aliases": [
+      "Commander Han Feng",
+      "Inspector Han Feng",
+      "Han Feng",
+      "Commander Han"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
+    "default_outfit": "tactical_uniform",
+    "outfits": {
+      "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
+    },
+    "default_state": {
+      "posture": "standing_stern"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_stern": {
+          "phrase": "standing with stern military posture holding a glowing tactical talisman"
+        }
+      }
+    },
+    "plate": "05_Inspector_Han_Feng.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "ye_xingchen": {
+    "id": "ye_xingchen",
+    "kind": "character",
+    "token": "@{Ye Xingchen}",
+    "aliases": [
+      "Ye Xingchen",
+      "Sword Prodigy Ye"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "22-year-old sharp-featured East Asian male cultivator, swept-back midnight blue hair, piercing silver-flecked eyes, calm disciplined expression",
+    "default_outfit": "charcoal_bespoke_suit",
+    "outfits": {
+      "charcoal_bespoke_suit": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes",
+      "star_academy_blazer": "midnight-blue academy uniform blazer with silver lapel embroidery over white collared shirt"
+    },
+    "default_state": {
+      "posture": "standing_poised"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_poised": {
+          "phrase": "standing with disciplined upright posture and focused gaze"
+        }
+      }
+    },
+    "plate": "06_Rival_Ye_Xingchen.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "asura_blood_sovereign": {
+    "id": "asura_blood_sovereign",
+    "kind": "character",
+    "token": "@{Asura Blood Sovereign}",
+    "aliases": [
+      "Asura Blood Sovereign",
+      "Blood Sovereign Asura",
+      "Asura Sovereign"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "colossal thousand-metre ancient fiend clad in cracked abyssal blood-iron plate armor, six mountainous arms, burning white solar flames crown",
+    "default_outfit": "blood_armor",
+    "outfits": {
+      "blood_armor": "cracked abyssal blood-iron plate armor bathed in burning white solar flames"
+    },
+    "default_state": {
+      "posture": "looming_colossal"
+    },
+    "state_lexicon": {
+      "posture": {
+        "looming_colossal": {
+          "phrase": "looming with terrifying world-crushing pressure and crackling abyssal lightning"
+        }
+      }
+    },
+    "plate": "07_Boss_Asura_Blood_Sovereign.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "gu_biao": {
+    "id": "gu_biao",
+    "kind": "character",
+    "token": "@{Chief Enforcer Gu Biao}",
+    "aliases": [
+      "Chief Enforcer Gu Biao",
+      "Enforcer Gu Biao",
+      "Gu Biao"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "35-year-old imposing East Asian male enforcer, towering muscular 6-foot-4 frame, broad shoulders, buzz-cut dark hair, brutal scarred jawline, dark tactical sunglasses",
+    "default_outfit": "designer_coat",
+    "outfits": {
+      "designer_coat": "open designer charcoal-black trench coat over dark silk vest and tailored trousers"
+    },
+    "default_state": {
+      "posture": "standing_intimidating"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_intimidating": {
+          "phrase": "standing with aggressive intimidating posture and silver-threaded combat knuckle rings"
+        }
+      }
+    },
+    "plate": "11_Enforcer_Gu_Biao.jpg",
+    "episodes": [
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "mo_yufeng": {
+    "id": "mo_yufeng",
+    "kind": "character",
+    "token": "@{Mo Yufeng}",
+    "aliases": [
+      "Mo Yufeng"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair",
+    "default_outfit": "cultivation_coat",
+    "outfits": {
+      "cultivation_coat": "ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck and gold-threaded sash"
+    },
+    "default_state": {
+      "eyes": "normal",
+      "veins": "none",
+      "posture": "standing_arrogant"
+    },
+    "state_lexicon": {
+      "eyes": {
+        "normal": {
+          "phrase": "haughty dark amber eyes"
+        },
+        "crimson_sclera": {
+          "phrase": "blood-crimson glowing eyes with black veins"
+        }
+      },
+      "veins": {
+        "none": {
+          "phrase": "smooth pale skin"
+        },
+        "black_neck": {
+          "phrase": "throbbing black demonic veins across neck"
+        }
+      },
+      "posture": {
+        "standing_arrogant": {
+          "phrase": "standing with boastful pompous posture"
+        },
+        "prostrate": {
+          "phrase": "pinned flat against crater floor unable to rise"
+        }
+      }
+    },
+    "plate": "14_Antagonist_Mo_Yufeng.jpg",
+    "episodes": [
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "dean_qindu": {
+    "id": "dean_qindu",
+    "kind": "character",
+    "token": "@{Dean of Qindu University}",
+    "aliases": [
+      "Dean of Qindu University",
+      "Dean Qindu",
+      "Dean Zhao",
+      "University Dean"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
+    "default_outfit": "academic_suit",
+    "outfits": {
+      "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
+    },
+    "default_state": {
+      "posture": "standing_scholarly"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_scholarly": {
+          "phrase": "standing with dignified scholarly posture and hands clasped behind back"
+        }
+      }
+    },
+    "plate": "15_Dean_Qindu_University.jpg",
+    "episodes": [
+      "EP03",
+      "EP04"
+    ]
+  },
+  "chairman_gu": {
+    "id": "chairman_gu",
+    "kind": "character",
+    "token": "@{Chairman Gu}",
+    "aliases": [
+      "Chairman Gu",
+      "Gu Zhentian",
+      "Patriarch Gu"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "52-year-old ruthless corporate patriarch, slicked-back grey-streaked dark hair, sharp calculating dark eyes, cold haughty sneer",
+    "default_outfit": "pinstripe_suit",
+    "outfits": {
+      "pinstripe_suit": "tailored bespoke obsidian pinstripe suit with silk tie and polished lapel pin"
+    },
+    "default_state": {
+      "posture": "standing"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing": {
+          "phrase": "standing with regal corporate arrogance leaning on his carved cane"
+        },
+        "kneeling": {
+          "phrase": "kneeling on the pavement in shattered panic and terror"
+        }
+      }
+    },
+    "plate": "19_Antagonist_Chairman_Gu.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "elder_gu_yan": {
+    "id": "elder_gu_yan",
+    "kind": "character",
+    "token": "@{Elder Gu Yan}",
+    "aliases": [
+      "Elder Gu Yan",
+      "Martial Elder Gu Yan",
+      "Gu Yan"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "55-year-old imposing martial elder, scarred bald skull, intense glowing fiery crimson eyes",
+    "default_outfit": "combat_changshan",
+    "outfits": {
+      "combat_changshan": "ornate crimson-embroidered combat changshan robe over muscular frame with solar fire-spirit rings orbiting forearms"
+    },
+    "default_state": {
+      "posture": "standing"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing": {
+          "phrase": "standing in aggressive combat stance surrounded by solar flames"
+        },
+        "standing_aggressive": {
+          "phrase": "standing in aggressive combat stance surrounded by solar flames"
+        },
+        "prostrate": {
+          "phrase": "slumped motionless on cracked stone ground with extinguished flames"
+        },
+        "defeated": {
+          "phrase": "slumped motionless on cracked stone ground with extinguished flames"
+        }
+      }
+    },
+    "plate": "20_Antagonist_Elder_Gu_Yan.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "grand_auctioneer_yan": {
+    "id": "grand_auctioneer_yan",
+    "kind": "character",
+    "token": "@{Grand Auctioneer Yan}",
+    "aliases": [
+      "Grand Auctioneer Yan",
+      "Auctioneer Yan",
+      "Master Yan"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "65-year-old distinguished auction master, flowing silver beard, polite polished business expression",
+    "default_outfit": "appraisal_suit",
+    "outfits": {
+      "appraisal_suit": "pristine navy-blue silk changshan robe with gold-threaded cuffs and jade buttons",
+      "auction_changshan": "pristine navy-blue silk changshan robe with gold-threaded cuffs and jade buttons"
+    },
+    "default_state": {
+      "posture": "standing"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing": {
+          "phrase": "standing upright behind circular display pedestal holding a golden spirit gavel"
+        },
+        "standing_podium": {
+          "phrase": "standing upright behind circular display pedestal holding a golden spirit gavel"
+        }
+      }
+    },
+    "plate": "21_Supporting_Grand_Auctioneer_Yan.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "spectral_blood_serpent": {
+    "id": "spectral_blood_serpent",
+    "kind": "creature",
+    "token": "@{Spectral Blood Serpent}",
+    "aliases": [
+      "Spectral Blood Serpent",
+      "Blood Serpent",
+      "Spectral Blood Serpents",
+      "Blood Serpents",
+      "Spectral Serpent"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "monstrous blood-red spectral serpents forged from condensed demonic blood qi, glowing crimson serpentine eyes, razor-sharp fangs",
+    "plate": "23_Artifact_Nine_Serpent_Formation.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "gu_tianyu_spirit_dao": {
+    "id": "gu_tianyu_spirit_dao",
+    "kind": "item",
+    "token": "@{Gu Syndicate Custom Spirit Blade}",
+    "aliases": [
+      "Gu Syndicate Custom Spirit Blade",
+      "Jade Spirit Blade",
+      "Gu Tianyu Jade Spirit Dao",
+      "Gu Tianyu Blade"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "shattered fragments of high-grade emerald jade spirit dao blade with glowing green spirit circuits",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "destroyed"
+    ],
+    "default_lifecycle": "destroyed",
+    "plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "jade_spirit_blade": {
+    "id": "jade_spirit_blade",
+    "kind": "item",
+    "token": "@{Gu Syndicate Custom Spirit Blade}",
+    "aliases": [
+      "Gu Syndicate Custom Spirit Blade",
+      "Jade Spirit Blade",
+      "Gu Tianyu Blade"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "shattered fragments of high-grade emerald jade spirit dao blade with glowing green spirit circuits",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "destroyed"
+    ],
+    "default_lifecycle": "destroyed",
+    "plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "tactical_spirit_spectrometer": {
+    "id": "tactical_spirit_spectrometer",
+    "kind": "item",
+    "token": "@{Tactical Spirit Spectrometer}",
+    "aliases": [
+      "Tactical Spirit Spectrometer",
+      "Spirit Spectrometer",
+      "Spectrometer"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "handheld tactical military spirit energy spectrometer with digital readout display",
+    "lifecycle": [
+      "equipped",
+      "fried",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "plate": "09_Prop_Tactical_Spirit_Spectrometer.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "heavenly_dao_simulator_hud": {
+    "id": "heavenly_dao_simulator_hud",
+    "kind": "item",
+    "token": "@{Heavenly Dao Simulator Interface}",
+    "aliases": [
+      "Heavenly Dao Simulator Interface",
+      "Heavenly Dao Simulator HUD",
+      "Simulator Interface",
+      "Simulator HUD"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "translucent obsidian-and-gold holographic cultivation interface floating freely in air with microscopic golden runes",
+    "lifecycle": [
+      "active",
+      "cloaked"
+    ],
+    "default_lifecycle": "active",
+    "plate": "13_Item_Heavenly_Dao_Simulator_HUD.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "heaven_earth_golden_stele": {
+    "id": "heaven_earth_golden_stele",
+    "kind": "item",
+    "token": "@{Heaven-Earth Golden Stele}",
+    "aliases": [
+      "Heaven-Earth Golden Stele",
+      "Golden Stele",
+      "Primordial Stele"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "colossal thirty-thousand-metre obsidian-and-gold primordial stele floating in high atmosphere with radiating starlight runes",
+    "lifecycle": [
+      "active"
+    ],
+    "default_lifecycle": "active",
+    "plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "celestial_star_astrolabe": {
+    "id": "celestial_star_astrolabe",
+    "kind": "item",
+    "token": "@{Celestial Star Astrolabe}",
+    "aliases": [
+      "Celestial Star Astrolabe",
+      "Star Astrolabe",
+      "Astrolabe"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "ancient celestial star astrolabe forged from meteoric platinum with concentric rotating stellar rings",
+    "lifecycle": [
+      "active"
+    ],
+    "default_lifecycle": "active",
+    "plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
+    "episodes": [
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "forged_primordial_token": {
+    "id": "forged_primordial_token",
+    "kind": "item",
+    "token": "@{Forged Primordial Token}",
+    "aliases": [
+      "Forged Primordial Token",
+      "Primordial Token",
+      "Mo Yufeng Token"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "forged glowing dragon-crested golden jade token inscribed with counterfeit sovereign runes",
+    "lifecycle": [
+      "active",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "24_Prop_Forged_Primordial_Token.jpg",
+    "episodes": [
+      "EP03",
+      "EP04"
+    ]
+  },
+  "crimson_hover_sedan": {
+    "id": "crimson_hover_sedan",
+    "kind": "item",
+    "token": "@{Crimson Hover-Sedan}",
+    "aliases": [
+      "Crimson Hover-Sedan",
+      "Hover-Sedan",
+      "Hover Sedan",
+      "Gu Family Hover Sedan"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "sleek luxury aerodynamic crimson hover-sedan with tinted obsidian polarized glass and concealed anti-gravity repulsor nacelles",
+    "lifecycle": [
+      "active",
+      "parked"
+    ],
+    "default_lifecycle": "active",
+    "plate": "16_Vehicle_Crimson_Hover_Sedan.jpg",
+    "episodes": [
+      "EP03",
+      "EP04"
+    ]
+  },
+  "blood_ignition_spirit_pill": {
+    "id": "blood_ignition_spirit_pill",
+    "kind": "item",
+    "token": "@{Blood-Ignition Spirit Pill}",
+    "aliases": [
+      "Blood-Ignition Spirit Pill",
+      "Blood Pill",
+      "Ignition Pill"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "glowing crimson alchemical spirit pill radiating crackling demonic blood-mist vapors",
+    "lifecycle": [
+      "active",
+      "consumed"
+    ],
+    "default_lifecycle": "active",
+    "plate": "25_Item_Blood_Ignition_Spirit_Pill.jpg",
+    "episodes": [
+      "EP03",
+      "EP04"
+    ]
+  },
+  "primordial_dust_cleansing_pill": {
+    "id": "primordial_dust_cleansing_pill",
+    "kind": "item",
+    "token": "@{Primordial Dust-Cleansing Qi Pill}",
+    "aliases": [
+      "Primordial Dust-Cleansing Qi Pill",
+      "Dust-Cleansing Pill",
+      "Primordial Pill"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "glowing translucent azure-and-gold primordial qi pill floating inside a crystal spirit containment vial with swirling micro-stellar nebulae",
+    "lifecycle": [
+      "active",
+      "consumed"
+    ],
+    "default_lifecycle": "active",
+    "plate": "22_Item_Primordial_Dust_Cleansing_Pill.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "nine_serpent_blood_slaughter_formation": {
+    "id": "nine_serpent_blood_slaughter_formation",
+    "kind": "item",
+    "token": "@{Nine-Serpent Slaughter Formation}",
+    "aliases": [
+      "Nine-Serpent Slaughter Formation",
+      "Nine-Serpent Blood Slaughter Formation",
+      "Nine Serpent Array",
+      "Slaughter Formation"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering crimson-ruby bone-inscribed formation banners driven into pavement, shadowy crimson-ruby spectral serpents slithering across crimson smog clouds",
+    "lifecycle": [
+      "active",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "23_Artifact_Nine_Serpent_Formation.jpg",
+    "episodes": [
+      "EP04"
+    ],
+    "name": "Nine-Serpent Slaughter Formation"
+  },
+  "nine_serpent_formation": {
+    "id": "nine_serpent_formation",
+    "kind": "item",
+    "token": "@{Nine-Serpent Blood Slaughter Formation}",
+    "aliases": [
+      "Nine-Serpent Blood Slaughter Formation",
+      "Nine Serpent Array",
+      "Blood Slaughter Formation"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering blood-red bone-inscribed formation banners driven into pavement, shadowy blood-red spectral serpents slithering across crimson smog clouds",
+    "lifecycle": [
+      "active",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "23_Artifact_Nine_Serpent_Formation.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "dormitory_room_402": {
+    "id": "dormitory_room_402",
+    "kind": "location",
+    "token": "@{Dormitory Room 402}",
+    "aliases": [
+      "dorm.402",
+      "Dormitory Room 402",
+      "Dorm Room 402"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "standard undergraduate male double dormitory room, two lofted wooden beds with study desks below, grey linoleum floor, large window with blinds",
+    "plate": "18_Location_Dormitory_Room_402.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "campus_pathway": {
+    "id": "campus_pathway",
+    "kind": "location",
+    "token": "@{Qindu University Campus Pathway}",
+    "aliases": [
+      "campus.pathway",
+      "Campus Pathway",
+      "Qindu University Campus Pathway"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during bright crisp morning daylight, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under clear high-key sky",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "celestial_auction_hall": {
+    "id": "celestial_auction_hall",
+    "kind": "location",
+    "token": "@{Jiangnan Celestial Pavilion Auction Hall}",
+    "aliases": [
+      "pavilion.auction_hall",
+      "Celestial Pavilion Auction Hall",
+      "Celestial Auction Hall"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "High-end subterranean Jiangnan Celestial Spirit Auction Grand Pavilion, opulent modern multi-tier circular auditorium with brushed gold balustrades, tiered VIP skyboxes, central velvet-covered display pedestal under concentrated warm spotlights",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "celestial_vip_suite": {
+    "id": "celestial_vip_suite",
+    "kind": "location",
+    "token": "@{Celestial Pavilion Top-Floor VIP Suite}",
+    "aliases": [
+      "pavilion.vip_suite",
+      "VIP Skybox Suite",
+      "Celestial VIP Suite"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Ultra-luxury private executive skybox suite overlooking auction floor through polarized soundproof one-way crystal glass, plush leather lounge seating, carved rosewood spirit tea bar, private spirit stone transaction console",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "gu_obsidian_boardroom": {
+    "id": "gu_obsidian_boardroom",
+    "kind": "location",
+    "token": "@{Gu Syndicate Obsidian Tower Boardroom}",
+    "aliases": [
+      "gu_syndicate.headquarters",
+      "Gu Obsidian Tower Boardroom",
+      "Obsidian Boardroom"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Gu Capital Syndicate Corporate Headquarters executive boardroom atop the 88-floor Obsidian Tower, imposing minimalist black marble conference table, panoramic glass windows overlooking Jiangnan metropolis, security monitors",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "gu_obsidian_plaza": {
+    "id": "gu_obsidian_plaza",
+    "kind": "location",
+    "token": "@{Gu Syndicate Obsidian Tower Entrance Plaza}",
+    "aliases": [
+      "gu_syndicate.courtyard_plaza",
+      "Gu Obsidian Plaza",
+      "Obsidian Plaza"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Gu Capital Syndicate ground-level grand entrance plaza, paved dark granite square framed by towering obsidian glass skyscraper columns, ornamental water features, black wrought-iron security gates under daylight",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "collegiate_formation_cordon": {
+    "id": "collegiate_formation_cordon",
+    "kind": "location",
+    "token": "@{Collegiate Defensive Formation Cordon}",
+    "aliases": [
+      "campus.formation_cordon",
+      "Collegiate Defensive Formation Cordon",
+      "Formation Cordon"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Qindu University athletic stadium perimeter fortified by shimmering azure military protective barrier, Threat Bureau armored command vehicles with rotating communication arrays, tactical defense sentries with spirit rifles",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "street_breakfast_stall": {
+    "id": "street_breakfast_stall",
+    "kind": "location",
+    "token": "@{East Campus Steaming Noodle Stall}",
+    "aliases": [
+      "street.breakfast_stall",
+      "East Campus Steaming Noodle Stall",
+      "Breakfast Stall"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Bustling street breakfast stall outside Qindu University eastern gates during crisp morning, metal folding tables, plastic stools, towering bamboo steamers billowing white fragrance clouds, busy student foot traffic",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "campus_perimeter_gate": {
+    "id": "campus_perimeter_gate",
+    "kind": "location",
+    "token": "@{North Campus Perimeter Gate Cordon}",
+    "aliases": [
+      "campus.perimeter_gate",
+      "North Campus Perimeter Gate Cordon",
+      "Perimeter Gate"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "North campus perimeter security cordon of Qindu University at night, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers with glowing communications radar, high-intensity searchlights sweeping campus perimeter fence",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "troposphere_stele": {
+    "id": "troposphere_stele",
+    "kind": "location",
+    "token": "@{High Troposphere Stele Horizon}",
+    "aliases": [
+      "troposphere.stele",
+      "High Troposphere Stele Horizon",
+      "Troposphere Stele"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "High troposphere and stratosphere perspective at night, thirty-thousand-metre colossal obsidian-and-gold Heaven-Earth Golden Stele descending through storm clouds, iridescent violet and golden primordial starlight auroras overlooking Qindu skyline",
+    "plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "starfall_penthouse": {
+    "id": "starfall_penthouse",
+    "kind": "location",
+    "token": "@{Starfall Terrace Executive Penthouse}",
+    "aliases": [
+      "starfall.penthouse",
+      "Starfall Terrace Executive Penthouse",
+      "Starfall Penthouse"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Ultra-luxury top-floor executive penthouse overlooking Qindu skyline, floor-to-ceiling panoramic glass windows, minimalist Italian white leather furnishings, private indoor spirit pool, night starlight and city neon",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "qindu_collegiate_stadium": {
+    "id": "qindu_collegiate_stadium",
+    "kind": "location",
+    "token": "@{Qindu Collegiate Stadium}",
+    "aliases": [
+      "stadium.ground",
+      "Qindu Collegiate Stadium",
+      "Collegiate Stadium"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Massive 80,000-seat collegiate sports stadium with modern white canopy architecture, central manicured green field, synthetic running track, stadium floodlights",
+    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "episodes": [
+      "EP04"
+    ]
+  },
+  "commander_han_feng": {
+    "id": "commander_han_feng",
+    "kind": "character",
+    "token": "@{Commander Han Feng}",
+    "aliases": [
+      "Commander Han Feng",
+      "Inspector Han Feng",
+      "Han Feng",
+      "Commander Han"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
+    "default_outfit": "tactical_uniform",
+    "outfits": {
+      "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
+    },
+    "default_state": {
+      "posture": "standing_stern"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_stern": {
+          "phrase": "standing with stern military posture holding a glowing tactical talisman"
+        }
+      }
+    },
+    "plate": "05_Inspector_Han_Feng.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP03",
+      "EP04"
+    ]
+  },
+  "dean_of_qindu_university": {
+    "id": "dean_of_qindu_university",
+    "kind": "character",
+    "token": "@{Dean of Qindu University}",
+    "aliases": [
+      "Dean of Qindu University",
+      "Dean Qindu",
+      "Dean Zhao",
+      "University Dean"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
+    "default_outfit": "academic_suit",
+    "outfits": {
+      "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
+    },
+    "default_state": {
+      "posture": "standing_scholarly"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_scholarly": {
+          "phrase": "standing with dignified scholarly posture and hands clasped behind back"
+        }
+      }
+    },
+    "plate": "15_Dean_Qindu_University.jpg",
+    "episodes": [
+      "EP03",
+      "EP04"
+    ]
+  }
+}

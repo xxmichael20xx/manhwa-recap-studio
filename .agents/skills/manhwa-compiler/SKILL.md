@@ -1,61 +1,22 @@
 ---
 name: manhwa-compiler
-description: Master multi-episode omnibus compiler, zero-drift ffprobe video duration checker, lossless FFmpeg stream-copy concatenator, and frame-accurate video proof extractor. Trigger with /compiler.
+description: Multi-episode omnibus compiler, Universal Studio AV Spec Lock enforcer, lossless FFmpeg stream-copy concatenator, ffprobe chapter calculator, and frame-accurate video proof extractor. Trigger with /compiler.
 ---
 
 # 🎬 Manhwa Master Omnibus Compiler & Video QA (`/compiler`)
 
-> **Master SOP for Multi-Episode Concat, Video Metadata Probing & Frame QA**  
-> **Slash Command:** `/compiler`  
-> **Workspace Root:** `quirky-chandrasekhar`
+## 1. Strict Context Verification & Proactive CLI Execution
+- **Missing Context Halt:** If target franchise, episode/omnibus scope, or operation type is unspecified, **HALT** and confirm via `ask_question`. Verify physical existence of `video/01_Episode_Master_1080p.mp4` on disk before including any episode in an omnibus cut.
+- **Proactive CLI Automation:** Use `studio/scripts/compile-and-prove.py` (or `VideoService` endpoints) to automate `ffprobe` validation, normalization, lossless concat, and frame proof extraction.
 
----
+## 2. Universal Studio Video & Audio Specification Invariant (`G22_universal_av_spec_lock`)
+100% of batch previews, episode masters, omnibus movies, and shorts MUST match `VideoService.STUDIO_SPECS`:
+- **Video:** `1920x1080` (Landscape 16:9) or `1080x1920` (Vertical 9:16), strictly **`24.0 fps`** (`-r 24`), `H.264 / AVC` (`libx264` / `h264_nvenc`), pixel format `yuv420p` (`-pix_fmt yuv420p`), `-crf 20 -preset veryfast -movflags +faststart`.
+- **Audio:** `AAC-LC` (`-c:a aac`) in `.mp4` (`libmp3lame` for standalone `.mp3`), **`48,000 Hz`** (`-ar 48000`), **Stereo** (`-ac 2`), `192 kbps` (`-b:a 192k`), normalized to `-14 LUFS` / `-1.5 dBTP` (`loudnorm=I=-14:TP=-1.5:LRA=7`).
+- **Auto-Normalization:** Any deviant input clip must be resampled via `VideoService.normalizeToStudioSpecs` prior to `-c copy` stitching.
 
-## 🎯 Mandatory Interactive Auto-Grill Pre-Flight (`ask_question`)
-
-Whenever `/compiler` is invoked, the agent MUST immediately halt and initiate an interactive `ask_question` interview:
-
-```
-[Interactive Pre-Flight Alignment Modal]
-1. Target Franchise Selection:
-   - (Recommended) Series 03: Transmigrated Game Architect (EP01, EP02, EP03 Ready)
-   - Series 01: The Singularity Protocol
-   - Series 02: The Omniscient Dungeon Sovereign
-2. Compilation / QA Operation:
-   - (Recommended) Compile Master Omnibus Movie (Parts 1 - 3 Concat + Exact ffprobe Chapters)
-   - Inspect Video Metadata (ffprobe Durations & Cumulative Chapter Offsets)
-   - Targeted Single-Batch Recompilation (POST /compile-video { batchIndex })
-   - Frame-Accurate Video Proof Extraction (ffmpeg -ss at Flagged Timestamps)
-```
-
----
-
-## 🛑 Video Compilation & Verification Protocol: Targeted vs Full Concat
-
-1. **Clarified Scope of Full Compilation Ban:** The ban on autonomous compilation strictly applies to multi-batch full-episode re-encodings (`compileEpisodeVideo` re-encoding all 300+ scenes from scratch), which tie up system resources for 15+ minutes.
-2. **Mandatory Targeted Single-Batch Recompilation:** Whenever script tags `[IMG_XXX]`, scene timings, or subtitle `.srt` cues are modified to fix a synchronization issue, the agent MUST immediately trigger targeted single-batch compilation (`POST /compile-video` with `{ batchIndex: N }`) for ONLY the affected batches. Leaving stale preview MP4 files on disk is strictly forbidden.
-3. **Mandatory Lossless Master Re-Stitching:** After compiling the affected batch previews, trigger lossless stream-copy concatenation (`POST /stitch-batches`), which executes in <5 seconds via the FFmpeg concat demuxer (`-c copy`) without re-encoding.
-4. **Mandatory Frame-Accurate Video Proof Extraction Gate:** Prior to handing back to the operator, extract and visually verify at least 2–4 frame captures from the newly compiled video at the exact flagged timestamps using FFmpeg (`ffmpeg -ss <timestamp> -i <video.mp4> -vframes 1 ...`). Both the subtitle text and the visual action MUST be proven to match bit-for-bit before declaring completion.
-
----
-
-## 🔍 Zero-Drift Video Duration & Chapter Probing (`ffprobe`)
-
-To ensure 100% mathematically exact cumulative timestamps for YouTube descriptions without human calculation drift:
-1. Probe each individual episode master MP4 via `ffprobe`:
-   ```bash
-   ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "01_Episode_Master_1080p.mp4"
-   ```
-2. Build cumulative offsets:
-   - **Part 1:** Starts at `00:00:00` (Duration: $D_1$)
-   - **Part 2:** Starts at $D_1$ formatted as `MM:SS` or `HH:MM:SS` (Duration: $D_2$)
-   - **Part 3:** Starts at $D_1 + D_2$ formatted as `HH:MM:SS`
-3. Persist metadata to `omnibus/omnibus_metadata.json` for deterministic consumption by the Studio UI and YouTube Launchpad.
-
----
-
-## 🎞️ Multi-Episode Master Movie Tiers
-
-- **Tier 2: Arc Feature / Saga:** 45–60 Minutes (~6,500–8,500 words). Merges 2–3 episodes.
-- **Tier 3: Season Movie / Cinematic Cut:** 1.5–2.5 Hours (~12,000–20,000 words). Merges 3–5 episodes.
-- **Tier 4: Grand Omnibus / Marathon:** 3.0+ Hours (~25,000+ words). Multi-season binge cut.
+## 3. Targeted Single-Batch Recompilation & Frame Proof Gate
+1. **Ban on Unprompted Full-Episode Re-Encoding:** Never trigger full 300-scene re-encodes autonomously.
+2. **Targeted Batch Compile + Lossless Stitch:** When `[IMG_XXX]` tags or `.srt` timings change, trigger `POST /compile-video` (`{ batchIndex: N }`) ONLY for modified batches, then immediately execute `POST /stitch-batches` (`-c copy`, <5s).
+3. **Zero-Drift `ffprobe` Cumulative Chapters:** Probe each master MP4 (`ffprobe -v error -show_entries format=duration ...`), compute exact cumulative `HH:MM:SS` chapter offsets, and write to `omnibus/omnibus_metadata.json`.
+4. **Mandatory Frame-Accurate Proof Extraction:** Extract 2–4 PNG frames at flagged timestamps (`ffmpeg -ss <ts> -i <video.mp4> -vframes 1 ...`) and visually verify via `view_file` that burned subtitles and artwork match 100% bit-for-bit before handoff.

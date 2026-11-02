@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StateLedgerEventLine",
+  "type": "object",
+  "required": [
+    "s",
+    "e",
+    "set"
+  ],
+  "properties": {
+    "s": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "e": {
+      "type": "string"
+    },
+    "set": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  }
+}

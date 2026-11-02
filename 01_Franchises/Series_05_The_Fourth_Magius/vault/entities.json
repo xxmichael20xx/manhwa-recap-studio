@@ -1,0 +1,479 @@
+{
+  "michael_montrey_child": {
+    "id": "michael_montrey_child",
+    "kind": "character",
+    "token": "@{Michael Montrey}",
+    "aliases": [
+      "Michael Montrey (Child)",
+      "Michael Montrey"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, Small 5-year-old boy build, but carrying himself with immaculate balance, straight posture, and quiet dignity",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, simple leather hide wraps for shoes"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/01_Protagonist_Michael_Montrey_Child.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ]
+  },
+  "michael_montrey_wolf_skin": {
+    "id": "michael_montrey_wolf_skin",
+    "kind": "character",
+    "token": "@{Michael Montrey (Wolf-Skin)}",
+    "aliases": [
+      "Michael Montrey (Wolf-Skin)",
+      "Michael Montrey (Wolf-Skin)"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, Wiry 7-year-old boy build, straight posture, immaculate balance, quiet confident stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/01b_Protagonist_Michael_Wolf_Skin_16x9.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "michael_montrey_apex": {
+    "id": "michael_montrey_apex",
+    "kind": "character",
+    "token": "@{Apex Archmage Michael}",
+    "aliases": [
+      "Apex Archmage Michael",
+      "Apex Archmage Michael"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Long windswept raven-black hair tied loosely behind shoulders, Radiant sapphire eyes pulsing with ancient concentric spell rings, Tall, lean, commanding aristocratic archmage build with battle-hardened poise",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Midnight-blue high-collared archmage mantle embroidered with glowing golden celestial constellations, dark leather combat doublet beneath"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/02_Past_Life_Michael_Apex.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "patriarch_valerius_montrey": {
+    "id": "patriarch_valerius_montrey",
+    "kind": "character",
+    "token": "@{Patriarch Valerius Montrey}",
+    "aliases": [
+      "Patriarch Valerius Montrey",
+      "Patriarch Valerius Montrey"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, manicured short beard, Cold, merciless steel-grey eyes brimming with ruthless aristocratic pride, Tall, broad-shouldered nobleman carrying an ornate wind-attuned silver cane",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Opulent sapphire-velvet coat lined with ermine fur, gilded silver frogging, high-collared silk cravat pinned with the Montrey dragon brooch"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/03_Antagonist_Patriarch_Valerius.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "elder_cassius_montrey": {
+    "id": "elder_cassius_montrey",
+    "kind": "character",
+    "token": "@{Head Elder Cassius}",
+    "aliases": [
+      "Head Elder Cassius Montrey",
+      "Head Elder Cassius"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Thin, receding snow-white hair, gaunt wrinkled face with hooked nose, Narrowed, hooded dark eyes filled with elitist contempt and zero empathy, Slightly hunched, lean frame wearing ceremonial arcane robes",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Heavy dark-navy ceremonial robes with silver lightning runes along sleeves, wearing obsidian diagnostic rings on fingers"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/04_Antagonist_Elder_Cassius.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "elder_rowan_thorne": {
+    "id": "elder_rowan_thorne",
+    "kind": "character",
+    "token": "@{Elder Rowan Thorne}",
+    "aliases": [
+      "Elder Rowan Thorne",
+      "Elder Rowan Thorne"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Rough-cut grizzled salt-and-pepper hair with a thick unkempt beard, Warm, weathered hazel eyes bearing scars of ancient frontier skirmishes, honest and observant, Sturdy, stocky barrel-chested build with heavy calloused forearms",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Durable brown leather hunter doublet over woollen tunic, canvas work trousers tucked into muddy frontier boots, leather tool belt carrying dried herb satchels"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/05_Supporting_Elder_Rowan.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ]
+  },
+  "calamity_abyssal_wyrm": {
+    "id": "calamity_abyssal_wyrm",
+    "kind": "character",
+    "token": "@{Boss: Calamity Abyssal Wyrm}",
+    "aliases": [
+      "Calamity Abyssal Wyrm",
+      "Calamity Abyssal Wyrm"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Zero hair; colossal armored serpentine dragon with jagged obsidian scales, Six glowing crimson predatory eyes arranged along its horned reptilian skull, Fifteen-metre serpentine body with segmented armored carapace, dripping noxious purple corrosive venom from its maw",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "None; primal beast"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/06_Boss_Abyssal_Wyrm.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "grand_inquisitor_malakor": {
+    "id": "grand_inquisitor_malakor",
+    "kind": "character",
+    "token": "@{Grand Inquisitor}",
+    "aliases": [
+      "Grand Inquisitor Malakor",
+      "Grand Inquisitor"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Receding severe silver hair, gaunt aristocratic face contorted with fanatical righteous fury, Blazing amber-gold eyes filled with zealous fanaticism, Tall, skeletal, imposing religious prelate stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "High-collared ivory and gold ceremonial inquisitor robes, heavy golden sunburst gorget, embroidered celestial runes on mantle"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/07_Antagonist_Grand_Inquisitor.jpg",
+    "episodes": [
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+    ]
+  },
+  "the_primordial_codex": {
+    "id": "the_primordial_codex",
+    "kind": "item",
+    "token": "@{The Primordial Codex}",
+    "aliases": [
+      "The Primordial Codex",
+      "Artifact: The Primordial Codex"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{The Primordial Codex}, master divine relic reference plate. Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/07_Artifact_Primordial_Codex.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "The Primordial Codex"
+  },
+  "carved_blackwood_staff": {
+    "id": "carved_blackwood_staff",
+    "kind": "item",
+    "token": "@{Carved Blackwood Staff}",
+    "aliases": [
+      "Carved Blackwood Staff",
+      "Blackwood Staff",
+      "Weapon: Carved Blackwood Staff"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Highly polished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for kinetic physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/08_Weapon_Blackwood_Staff.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Carved Blackwood Staff"
+  },
+  "granite_mortar_and_pestle": {
+    "id": "granite_mortar_and_pestle",
+    "kind": "item",
+    "token": "@{Granite Mortar and Pestle}",
+    "aliases": [
+      "Granite Mortar and Pestle",
+      "Stone Mortar",
+      "Item: Granite Mortar and Pestle"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "episodes": [
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Granite Mortar and Pestle",
+    "plate": "character_vault/16_Item_Granite_Mortar_and_Pestle.jpg"
+  },
+  "polished_cedar_salve_bowl": {
+    "id": "polished_cedar_salve_bowl",
+    "kind": "item",
+    "token": "@{Polished Cedar Salve Bowl}",
+    "aliases": [
+      "Polished Cedar Salve Bowl",
+      "Cedar Salve Bowl",
+      "Wooden Salve Bowl",
+      "Item: Polished Cedar Salve Bowl"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "episodes": [
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Polished Cedar Salve Bowl",
+    "plate": "character_vault/17_Item_Cedar_Salve_Bowl.jpg"
+  },
+  "rowan_combat_gear": {
+    "id": "rowan_combat_gear",
+    "kind": "item",
+    "token": "@{Rowan Buckler and Short Sword}",
+    "aliases": [
+      "Rowan Buckler and Short Sword",
+      "Buckler and Short Sword",
+      "Weapon: Rowan Buckler and Short Sword"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Rowan Buckler and Short Sword}, master combat weapon plate. Circular battered iron-banded oak buckler shield bearing combat dents and gouges, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel, displayed on rustic wood. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental"
+    ],
+    "default_lifecycle": "sheathed",
+    "default_state": {},
+    "state_lexicon": {},
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Rowan Buckler and Short Sword",
+    "plate": "character_vault/18_Weapon_Rowan_Combat_Gear.jpg"
+  },
+  "montrey_crest_amulet": {
+    "id": "montrey_crest_amulet",
+    "kind": "item",
+    "token": "@{Montrey Crest Amulet}",
+    "aliases": [
+      "Montrey Crest Amulet",
+      "Item: Montrey Crest Amulet"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/09_Item_Montrey_Crest_Amulet.jpg",
+    "episodes": [
+      "EP01"
+    ],
+    "name": "Montrey Crest Amulet"
+  },
+  "world_setting_valerius_empire": {
+    "id": "world_setting_valerius_empire",
+    "kind": "item",
+    "token": "@{The Crystalline Arcane Bastion}",
+    "aliases": [
+      "The Crystalline Arcane Bastion",
+      "Location: The Crystalline Arcane Bastion"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Location: The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/00_World_Setting_Canonical.jpg",
+    "episodes": [
+      "EP01"
+    ],
+    "name": "The Crystalline Arcane Bastion"
+  },
+  "oakhaven_apothecary_loft": {
+    "id": "oakhaven_apothecary_loft",
+    "kind": "location",
+    "token": "@{Oakhaven Apothecary Loft}",
+    "aliases": [
+      "Oakhaven Apothecary Loft",
+      "Location: Oakhaven Apothecary Loft",
+      "Oakhaven Apothecary Loft"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/10_Location_Oakhaven_Apothecary_Loft.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Oakhaven Apothecary Loft"
+  },
+  "rowan_apothecary_shop": {
+    "id": "rowan_apothecary_shop",
+    "kind": "location",
+    "token": "@{Rowan Apothecary Shop}",
+    "aliases": [
+      "Rowan Apothecary Shop",
+      "Location: Rowan Apothecary Shop",
+      "Rowan Apothecary Shop"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/11_Location_Rowan_Apothecary_Shop.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Rowan Apothecary Shop"
+  },
+  "white_dimension_library": {
+    "id": "white_dimension_library",
+    "kind": "location",
+    "token": "@{The White Dimension Library}",
+    "aliases": [
+      "The White Dimension Library",
+      "Location: The White Dimension Library",
+      "The White Dimension Library"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/12_Location_White_Dimension_Library.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "The White Dimension Library"
+  },
+  "blackwood_forest_clearing": {
+    "id": "blackwood_forest_clearing",
+    "kind": "location",
+    "token": "@{Blackwood Forest Clearing}",
+    "aliases": [
+      "Blackwood Forest Clearing",
+      "Location: Blackwood Forest Clearing",
+      "Blackwood Forest Clearing"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/13_Location_Blackwood_Forest_Clearing.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Blackwood Forest Clearing"
+  },
+  "oakhaven_perimeter_gate": {
+    "id": "oakhaven_perimeter_gate",
+    "kind": "location",
+    "token": "@{Oakhaven Perimeter Gate}",
+    "aliases": [
+      "Oakhaven Perimeter Gate",
+      "Location: Oakhaven Perimeter Gate",
+      "Oakhaven Perimeter Gate"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/14_Location_Oakhaven_Perimeter_Gate.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Oakhaven Perimeter Gate"
+  },
+  "oakhaven_apothecary_courtyard": {
+    "id": "oakhaven_apothecary_courtyard",
+    "kind": "location",
+    "token": "@{Oakhaven Apothecary Rear Courtyard}",
+    "aliases": [
+      "Oakhaven Apothecary Rear Courtyard",
+      "Location: Oakhaven Apothecary Rear Courtyard",
+      "Oakhaven Apothecary Rear Courtyard"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "plate": "character_vault/15_Location_Apothecary_Courtyard.jpg",
+    "episodes": [
+      "EP01",
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+    ],
+    "name": "Oakhaven Apothecary Rear Courtyard"
+  }
+}

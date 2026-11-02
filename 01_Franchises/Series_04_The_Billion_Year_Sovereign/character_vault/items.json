@@ -4,7 +4,7 @@
     {
       "id": "gu_tianyu_spirit_dao",
       "name": "Gu Syndicate Custom Spirit Blade",
-      "token": "@{Weapon: Custom Spirit Blade}",
+      "token": "@{Gu Syndicate Custom Spirit Blade}",
       "type": "Weapon",
       "apparent_rank": "48,000-Year Golden Core Spirit Weapon",
       "true_rank": "Mundane Alloy (Shattered on Contact with Lu Chen)",
@@ -14,12 +14,14 @@
       "episodes": [
         "EP01",
         "EP02"
-      ]
+      ],
+      "dna": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16",
+      "visual_dna": "A luminous cyan-edged modern high-frequency spirit saber inscribed with Golden Core talismans by the Gu Capital Syndicate. Shatters into powder upon striking Lu Chen's neck."
     },
     {
       "id": "tactical_spirit_spectrometer",
       "name": "Tactical Spirit Spectrometer",
-      "token": "@{Prop: Tactical Spirit Spectrometer}",
+      "token": "@{Tactical Spirit Spectrometer}",
       "type": "Prop",
       "apparent_rank": "Threat Bureau Spirit-Energy Sensor",
       "true_rank": "Military Grade Spatial Leyline Analyzer",
@@ -30,12 +32,14 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Prop: Tactical Spirit Spectrometer}, ruggedized dark olive-drab and brass rectangular handheld sensor, glowing amber vacuum-tube digital readout, circular quartz crystal lens, modern manhwa style, vertical 9:16",
+      "visual_dna": "Ruggedized dark olive-drab and brushed-brass handheld spirit spectrometer used by Inspector Han Feng to measure atmospheric qi density."
     },
     {
       "id": "heavenly_dao_simulator_hud",
       "name": "Heavenly Dao Simulator Interface",
-      "token": "@{Item: Heavenly Dao Simulator HUD}",
+      "token": "@{Heavenly Dao Simulator Interface}",
       "type": "Item",
       "apparent_rank": "Modern Floating Cultivation System HUD",
       "true_rank": "Reality Fusing Cosmic Dao Engine",
@@ -46,12 +50,14 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Item: Heavenly Dao Simulator HUD}, sleek translucent dark obsidian-glass holographic cultivation system window floating in mid-air, glowing golden celestial runes, modern minimalist gauges, starlight particles, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "visual_dna": "A sleek translucent holographic cultivation system interface floating in mid-air in front of Lu Chen. Displays real-time primordial Dao accumulation, reality-fusion countdown, and breakthrough milestones with glowing golden celestial glyphs."
     },
     {
       "id": "heaven_earth_golden_stele",
       "name": "Heaven-Earth Golden Stele",
-      "token": "@{Artifact: Heaven-Earth Stele}",
+      "token": "@{Heaven-Earth Golden Stele}",
       "type": "Artifact",
       "apparent_rank": "Global Celestial Ranking Monument",
       "true_rank": "Cosmic Heavenly Dao Authority Monolith",
@@ -62,12 +68,14 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16",
+      "visual_dna": "A monolithic golden monument descending from the clouds over Earth's capital cities, projecting the real-time global cultivation rankings of all merged cultivators."
     },
     {
       "id": "celestial_star_astrolabe",
       "name": "Celestial Star Astrolabe",
-      "token": "@{Item: Celestial Star Astrolabe}",
+      "token": "@{Celestial Star Astrolabe}",
       "type": "Prop",
       "apparent_rank": "Ancient Starlight Divination Instrument",
       "true_rank": "Primordial Starlight Leyline Tracker",
@@ -77,7 +85,9 @@
       "episodes": [
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Item: Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe with rotating gimbal rings and suspended cyan starlight core, modern manhwa style, vertical 9:16",
+      "visual_dna": "An intricate spherical brass and celestial-silver armillary astrolabe used by Jiang Qingxue to track cosmic primordial origin energy anomalies."
     },
     {
       "id": "forged_primordial_token",
@@ -88,9 +98,71 @@
       "true_rank": "Mundane Golden Jade Talisman (Shattered by Lu Chen)",
       "description": "An ornate dragon-crested golden jade medallion forged by Mo Yufeng to falsely claim status as Xiao Yao's personal disciple. Radiates fake golden core light before crumbling to dust under Lu Chen's primordial aura.",
       "dna_prompt_anchor": "@{Forged Primordial Token}, ornate dragon-crested golden jade medallion with etched fake celestial runes, faint flickering golden spirit light, modern 2025 urban cultivation manhwa style, vertical 9:16",
-      "reference_plate": "14_Antagonist_Mo_Yufeng.jpg",
+      "reference_plate": "24_Prop_Forged_Primordial_Token.jpg",
       "episodes": [
         "EP03"
+      ],
+      "dna": "@{Forged Primordial Token}, ornate dragon-crested golden jade medallion with etched fake celestial runes, faint flickering golden spirit light, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "visual_dna": "An ornate dragon-crested golden jade medallion forged by Mo Yufeng to falsely claim status as Xiao Yao's personal disciple. Radiates fake golden core light before crumbling to dust under Lu Chen's primordial aura."
+    },
+    {
+      "id": "crimson_hover_sedan",
+      "name": "Crimson Hover-Sedan",
+      "token": "@{Crimson Hover-Sedan}",
+      "tier": 2,
+      "role": "Vehicle / Transport (Mo Clan Luxury Hover-Limousine)",
+      "category": "vehicle",
+      "description": "Sleek aerodynamic luxury hover-limousine, metallic candy-apple crimson chassis, gull-wing doors, four high-pressure hydraulic landing struts, glowing cyan anti-gravity repulsor thrusters",
+      "dna_prompt_anchor": "@{Crimson Hover-Sedan}, sleek aerodynamic luxury hover-limousine, candy-apple crimson metallic finish, gull-wing doors open upward, four chrome hydraulic landing struts, cyan anti-gravity thrusters, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "reference_plate": "16_Vehicle_Crimson_Hover_Sedan.jpg",
+      "episodes": [
+        "EP03"
+      ],
+      "dna": "@{Crimson Hover-Sedan}, sleek aerodynamic luxury hover-limousine, candy-apple crimson metallic finish, gull-wing doors open upward, four chrome hydraulic landing struts, cyan anti-gravity thrusters, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "visual_dna": "Sleek aerodynamic luxury hover-limousine, metallic candy-apple crimson chassis, gull-wing doors, four high-pressure hydraulic landing struts, glowing cyan anti-gravity repulsor thrusters"
+    },
+    {
+      "id": "blood_ignition_spirit_pill",
+      "name": "Blood-Ignition Spirit Pill",
+      "token": "@{Blood-Ignition Spirit Pill}",
+      "kind": "item",
+      "category": "consumable",
+      "status": "approved",
+      "dna_prompt_anchor": "@{Blood-Ignition Spirit Pill}, pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks, modern 2025 manhwa style, vertical 9:16",
+      "dna": "@{Blood-Ignition Spirit Pill}, pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks, modern 2025 manhwa style, vertical 9:16",
+      "visual_dna": "Pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks",
+      "reference_plate": "25_Item_Blood_Ignition_Spirit_Pill.jpg"
+    },
+    {
+      "id": "primordial_dust_cleansing_pill",
+      "name": "Primordial Dust-Cleansing Qi Pill",
+      "token": "@{Primordial Dust-Cleansing Qi Pill}",
+      "type": "Item",
+      "apparent_rank": "Consumable Cultivation Pill",
+      "true_rank": "100% Zero-Toxin Primordial Essence Pill",
+      "description": "Single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes.",
+      "dna_prompt_anchor": "@{Primordial Dust-Cleansing Qi Pill}, single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes, pristine translucent texture, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "dna": "@{Primordial Dust-Cleansing Qi Pill}, single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes, pristine translucent texture, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "visual_dna": "Single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes, pristine translucent texture.",
+      "reference_plate": "22_Item_Primordial_Dust_Cleansing_Pill.jpg",
+      "episodes": [
+        "EP04"
+      ]
+    },
+    {
+      "id": "nine_serpent_blood_slaughter_formation",
+      "name": "Nine-Serpent Slaughter Formation",
+      "token": "@{Nine-Serpent Slaughter Formation}",
+      "type": "Artifact",
+      "apparent_rank": "Ancient Blood Array",
+      "true_rank": "Class-S Demonic Killing Formation",
+      "description": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering crimson-ruby bone-inscribed formation banners driven into pavement, shadowy crimson-ruby spectral serpents slithering across crimson smog clouds",
+      "dna_prompt_anchor": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering crimson-ruby bone-inscribed formation banners driven into pavement, shadowy crimson-ruby spectral serpents slithering across crimson smog clouds",
+      "dna": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering crimson-ruby bone-inscribed formation banners driven into pavement, shadowy crimson-ruby spectral serpents slithering across crimson smog clouds",
+      "visual_dna": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering crimson-ruby bone-inscribed formation banners driven into pavement, shadowy crimson-ruby spectral serpents slithering across crimson smog clouds",
+      "reference_plate": "23_Artifact_Nine_Serpent_Formation.jpg",
+      "episodes": [
+        "EP04"
       ]
     }
   ]

@@ -19,14 +19,23 @@ async function verifyUIDualTheme() {
   })
   page.on('pageerror', err => consoleErrors.push(err.message))
 
-  // 1. Visit Studio Video Studio View
-  await page.goto('http://localhost:3100/#/studio/video', { waitUntil: 'networkidle0' })
-  await new Promise(r => setTimeout(r, 1000))
+  // 1. Visit Studio Video Studio View (Stage 1 Batch Production Deck)
+  await page.goto('http://localhost:3100/video/Series_06_The_Archmage_Engineer/EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival', { waitUntil: 'networkidle0' })
+  await new Promise(r => setTimeout(r, 1500))
+  await page.evaluate(() => {
+    const headings = Array.from(document.querySelectorAll('h3'))
+    const deckHeading = headings.find(h => h.textContent.includes('Batch Production Deck'))
+    if (deckHeading) {
+      deckHeading.scrollIntoView({ behavior: 'instant', block: 'start' })
+    }
+  })
+  await new Promise(r => setTimeout(r, 400))
 
-  await fs.mkdir('dist/audit', { recursive: true })
+  const outDir = process.env.AUDIT_OUT_DIR || 'dist/audit'
+  await fs.mkdir(outDir, { recursive: true })
 
   // Capture Dark Mode
-  const darkShot = path.resolve('dist/audit/video_studio_dark.png')
+  const darkShot = path.resolve(outDir, 'video_studio_dark.png')
   await page.screenshot({ path: darkShot, fullPage: false })
   console.log(`Saved Dark Mode visual proof to ${darkShot}`)
 
@@ -37,7 +46,7 @@ async function verifyUIDualTheme() {
   await new Promise(r => setTimeout(r, 500))
 
   // Capture Light Mode
-  const lightShot = path.resolve('dist/audit/video_studio_light.png')
+  const lightShot = path.resolve(outDir, 'video_studio_light.png')
   await page.screenshot({ path: lightShot, fullPage: false })
   console.log(`Saved Light Mode visual proof to ${lightShot}`)
 

@@ -9,15 +9,18 @@
       "category": "Items",
       "apparent_rank": "Warm Floating Sky-Blue UI Panel",
       "true_rank": "Cale Dawson's Sentient AI Companion & Spell Scanner",
-      "description": "A warm, friendly sky-blue and soft-gold floating UI window with a cute glowing Emoji smiley face in the top-right corner. Stores 100% of Cale Dawson's past-life Earth knowledge and learns magic by scanning magic books and live spells.",
+      "description": "A warm, friendly sky-blue and soft-gold floating UI window with a cute glowing Emoji smiley face in the top-right corner. Stores 100% of past-life Earth engineering knowledge and learns magic by scanning magic books and live spells.",
       "dna_prompt_anchor": "@{LUMINA}, warm friendly translucent sky-blue and soft-gold rounded floating magical UI window hovering in mid-air, featuring a large cute expressive glowing happy Emoji smiley face icon in the top-right corner, clean graphical mana bars, zero text, bright Korean fantasy manhwa art style, horizontal 16:9, widescreen",
       "reference_plate": "02_AI_Companion_LUMINA.jpg",
       "flowName": "LUMINA",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{LUMINA}, warm friendly translucent sky-blue and soft-gold rounded floating magical UI window hovering in mid-air, featuring a large cute expressive glowing happy Emoji smiley face icon in the top-right corner, clean graphical mana bars, zero text, bright Korean fantasy manhwa art style, horizontal 16:9, widescreen"
     },
     {
       "id": "old_miller_farm",
@@ -33,9 +36,12 @@
       "flowName": "Old Miller Farm",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Old Miller Farm}, 16:9 widescreen Korean manhwa background of the humble rustic Old Miller Farm before modernisation, set in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a weathered wooden cottage with thatched roof, muddy dirt yard, simple hand-dug water ditch, and wooden fence, horizontal 16:9"
     },
     {
       "id": "miller_sanctuary_farm",
@@ -45,15 +51,145 @@
       "category": "Locations",
       "apparent_rank": "Clean Country Estate",
       "true_rank": "Modern-Medieval Magitech Sanctuary Oasis",
-      "description": "The upgraded Miller family farm in the Emerald Alpine Valley featuring polished oak-and-stone architecture, clear glass windows, spotless white-stone water aqueducts, fragrant purple lavender fields, a brass water-wheel, and a sleek wind turbine.",
-      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, spotless white-stone water aqueducts, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, horizontal 16:9",
+      "description": "The upgraded Miller family farm in the Emerald Alpine Valley featuring a cozy timber-and-white-stone cottage, crystal-clear glass windows (from Ep 2 Batch 9 onward), a covered white-stone water channel beside a natural packed-earth and green grass yard, and fragrant purple lavender rows.",
+      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the secluded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a cozy timber-and-white-stone cottage, covered white-stone water channel beside a natural packed-earth and green grass yard, enclosed white-stone draft chimney, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
       "reference_plate": "13_Location_Miller_Sanctuary_Farm.jpg",
       "flowName": "Miller Sanctuary Farm",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the secluded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a cozy timber-and-white-stone cottage, covered white-stone water channel beside a natural packed-earth and green grass yard, enclosed white-stone draft chimney, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+      "debut_scene": "IMG_281",
+      "stage_variants": {
+        "ep01_stage1": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring the modest timber cottage with newly built white-stone draft chimney, covered white-stone water channel, cylindrical white-stone filter tank, natural packed-earth and grass yard, and purple lavender rows, wooden window shutters, zero glass windows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, horizontal 16:9",
+        "ep02_stage2": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm timber-and-white-stone farmhouse with crystal-clear quartz glass windows, covered white-stone water channel, enclosed white-stone draft chimney, natural packed-earth and grass yard, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, horizontal 16:9",
+        "arc3_stage3": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm timber-and-white-stone farmhouse with clear glass windows, covered white-stone water channel, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, horizontal 16:9"
+      }
+    },
+    {
+      "id": "scrying_raven",
+      "name": "Scrying Raven",
+      "token": "@{Scrying Raven}",
+      "type": "Item",
+      "category": "Items",
+      "apparent_rank": "Magical Surveillance Familiar",
+      "true_rank": "Mage Guild Long-Range Scrying Construct",
+      "description": "A large coal-black enchanted surveillance raven with unnatural glowing crimson eyes and a tiny polished enchanted scrying gemstone embedded in its forehead.",
+      "dna_prompt_anchor": "@{Scrying Raven}, sleek coal-black magical surveillance raven, glowing crimson eyes, polished red gemstone on forehead, perched on stone ledge, horizontal 16:9",
+      "reference_plate": "17_Item_Scrying_Raven.jpg",
+      "flowName": "Scrying Raven",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "@{Scrying Raven}, sleek coal-black magical surveillance raven, glowing crimson eyes, polished red gemstone on forehead, perched on stone ledge, horizontal 16:9"
+    },
+    {
+      "id": "starlight_mare",
+      "name": "Starlight the Mare",
+      "token": "@{Starlight the Mare}",
+      "type": "Item",
+      "category": "Items",
+      "apparent_rank": "Royal Dapple-Grey Mare",
+      "true_rank": "Princess Seraphina's Beloved Mount",
+      "description": "Graceful dapple-grey royal mare with white-and-grey dappled coat, silver-white mane, dark eyes, royal sapphire-blue and silver saddle and blue bridle.",
+      "dna_prompt_anchor": "Graceful dapple-grey royal mare with white-grey dappled coat, silver mane, royal sapphire-blue and silver saddle and blue bridle",
+      "reference_plate": "18_Mount_Starlight_Mare.jpg",
+      "flowName": "Starlight the Mare",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "Graceful dapple-grey royal mare with white-grey dappled coat, silver mane, royal sapphire-blue and silver saddle and blue bridle"
+    },
+    {
+      "id": "old_miller_cottage_interior",
+      "name": "Old Miller Cottage Interior",
+      "kind": "location",
+      "token": "@{Old Miller Cottage Interior}",
+      "aliases": [
+        "Old Miller Cottage Interior",
+        "old_miller_cottage_interior"
+      ],
+      "status": "approved",
+      "dna": "@{Old Miller Cottage Interior}, warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small rectangular wooden-shuttered window opening, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "21_Location_Old_Miller_Cottage_Interior.jpg",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "description": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small rectangular wooden-shuttered window opening",
+      "visual_dna": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small rectangular wooden-shuttered window opening",
+      "dna_prompt_anchor": "@{Old Miller Cottage Interior}, warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small rectangular wooden-shuttered window opening, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "emerald_valley_forest_trail",
+      "name": "Emerald Valley Forest Trail",
+      "kind": "location",
+      "token": "@{Emerald Valley Forest Trail}",
+      "aliases": [
+        "Emerald Valley Forest Trail",
+        "emerald_valley_forest_trail"
+      ],
+      "status": "approved",
+      "dna": "@{Emerald Valley Forest Trail}, sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz creek bed, birch trees, and mossy boulders, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "20_Location_Emerald_Valley_Forest_Trail.jpg",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "description": "Sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz creek bed, birch trees, and mossy boulders",
+      "visual_dna": "Sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz creek bed, birch trees, and mossy boulders",
+      "dna_prompt_anchor": "@{Emerald Valley Forest Trail}, sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz creek bed, birch trees, and mossy boulders, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "miller_sanctuary_bath_courtyard",
+      "name": "Miller Sanctuary Bath Courtyard",
+      "kind": "location",
+      "token": "@{Miller Sanctuary Bath Courtyard}",
+      "aliases": [
+        "Miller Sanctuary Bath Courtyard",
+        "miller_sanctuary_bath_courtyard"
+      ],
+      "status": "approved",
+      "dna": "@{Miller Sanctuary Bath Courtyard}, modest private backyard wash area beside the timber cottage wall on natural packed earth and green grass, featuring a compact cylindrical white-stone water filter tank, a brass water tap over a hollowed white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "22_Location_Miller_Sanctuary_Bath_Courtyard.jpg",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "description": "Modest private backyard wash area beside the timber cottage wall on natural packed earth and green grass, featuring a compact cylindrical white-stone water filter tank, a brass water tap over a hollowed white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio",
+      "visual_dna": "Modest private backyard wash area beside the timber cottage wall on natural packed earth and green grass, featuring a compact cylindrical white-stone water filter tank, a brass water tap over a hollowed white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio",
+      "dna_prompt_anchor": "@{Miller Sanctuary Bath Courtyard}, modest private backyard wash area beside the timber cottage wall on natural packed earth and green grass, featuring a compact cylindrical white-stone water filter tank, a brass water tap over a hollowed white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "oakhaven_tax_chamber",
+      "name": "Oakhaven Tax Guild Chamber",
+      "kind": "location",
+      "token": "@{Oakhaven Tax Guild Chamber}",
+      "aliases": [
+        "Oakhaven Tax Guild Chamber",
+        "oakhaven_tax_chamber"
+      ],
+      "status": "approved",
+      "dna": "@{Oakhaven Tax Guild Chamber}, opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal, dark fantasy manhwa art style, sharp clean ink linework, dramatic ambient candle and crystal lighting, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "19_Location_Oakhaven_Tax_Chamber.jpg",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "description": "Opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal",
+      "visual_dna": "Opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal",
+      "dna_prompt_anchor": "@{Oakhaven Tax Guild Chamber}, opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal, dark fantasy manhwa art style, sharp clean ink linework, dramatic ambient candle and crystal lighting, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
     }
   ]
 }

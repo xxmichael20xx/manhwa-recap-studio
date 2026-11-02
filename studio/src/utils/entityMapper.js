@@ -195,8 +195,11 @@ export function transformTokens(text, entityMap = {}, mode = 'uuid') {
     let transformed = text
     for (const [uuid, key] of Object.entries(inverseMap)) {
       const regex = new RegExp(`@${uuid}(?![a-zA-Z0-9_-])`, 'g')
-      transformed = transformed.replace(regex, `@{${key}}`)
+      const cleanKey = key.replace(/^(Weapon|Item|Artifact|Prop):\s*/i, '').trim()
+      transformed = transformed.replace(regex, `@{${cleanKey}}`)
     }
+    // Universal Pure Name Normalization: Strip deprecated category prefixes in tokens
+    transformed = transformed.replace(/@\{(?:Weapon|Item|Artifact|Prop):\s*([^}]+)\}/gi, '@{$1}')
     return transformed
   }
 }
@@ -362,12 +365,14 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
 
   const uniqueChars = [...new Set(charRefs.filter(Boolean))]
   const uniqueItems = [...new Set(itemRefs.filter(Boolean))]
+  const cleanItemRefs = uniqueItems.map(r => r.replace(/^(Weapon|Item|Artifact|Prop):\s*/i, '').trim()).filter(Boolean)
+  const allFlowRefs = [...new Set([...uniqueChars, ...cleanItemRefs])]
 
   let openTag = `<scene id="${tag}" filename="${filename}"`
-  if (uniqueChars.length === 1) {
-    openTag += ` character_ref="${uniqueChars[0]}"`
-  } else if (uniqueChars.length > 1) {
-    openTag += ` character_refs="${uniqueChars.join(', ')}"`
+  if (allFlowRefs.length === 1) {
+    openTag += ` character_ref="${allFlowRefs[0]}"`
+  } else if (allFlowRefs.length > 1) {
+    openTag += ` character_refs="${allFlowRefs.join(', ')}"`
   }
 
   if (uniqueItems.length === 1) {

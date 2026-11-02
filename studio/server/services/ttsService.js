@@ -78,7 +78,33 @@ export class TtsService {
     })
   }
 
-  static async generateEpisodeAudio(franchiseId, episodeId, voice = 'en-US-ChristopherNeural', options = {}) {
+  static async getCanonicalVoice(franchiseId) {
+    try {
+      // 1. Check franchise.json (Claude v2 Data Contract)
+      const fJsonFile = path.join(franchisesDir, franchiseId, 'franchise.json')
+      if (fsSync.existsSync(fJsonFile)) {
+        const fj = JSON.parse(await fs.readFile(fJsonFile, 'utf8'))
+        if (fj.voice && fj.voice.id) return fj.voice.id
+      }
+      // 2. Check Series_Bible.md (Master Series Bible Directives)
+      const bibleFile = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+      if (fsSync.existsSync(bibleFile)) {
+        const bText = await fs.readFile(bibleFile, 'utf8')
+        const m = bText.match(/<!--\s*STUDIO_BIBLE_DIRECTIVES_START\s*([\s\S]*?)\s*STUDIO_BIBLE_DIRECTIVES_END\s*-->/)
+        if (m && m[1]) {
+          const parsed = JSON.parse(m[1].trim())
+          if (parsed.voiceId) return parsed.voiceId
+        }
+        const mDirect = bText.match(/["']?voiceId["']?\s*:\s*["']([^"']+)["']/i)
+        if (mDirect && mDirect[1]) return mDirect[1].trim()
+      }
+    } catch (_) {}
+    return 'en-GB-RyanNeural'
+  }
+
+  static async generateEpisodeAudio(franchiseId, episodeId, customVoice = null, options = {}) {
+    // Strictly resolve canonical voice from active franchise Series_Bible.md (Zero voice drift invariant)
+    const voice = await this.getCanonicalVoice(franchiseId)
     const { force = false, batchIndex = null } = options
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
@@ -595,7 +621,10 @@ export class TtsService {
         '-f', 'concat',
         '-safe', '0',
         '-i', concatListPath.replace(/\\/g, '/'),
-        '-c', 'copy',
+        '-c:a', 'libmp3lame',
+        '-b:a', '192k',
+        '-ar', '48000',
+        '-ac', '2',
         outputPath.replace(/\\/g, '/')
       ])
 

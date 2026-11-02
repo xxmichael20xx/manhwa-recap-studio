@@ -162,7 +162,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   10. **Decoupled Floating HUDs & Mandatory Arm Pinning (Zero-Disembodied-Hand Invariant):** Floating holographic system screens, diagnostic menus, and stat windows must float freely in open air without literal text strings `[...]`. Characters viewing the screen must have both arms physically anchored to their body (e.g. resting at sides, hand on quiver strap) with EXACTLY two arms. ZERO third hands, ZERO disembodied hands touching holographic screens, ZERO hands inside or holding the UI glass.
   11. **Single-Perspective Threshold Geometry (Zero Split-Room Distortion):** Doorways, airlocks, and entrance/exit transitions must be composed from ONE unified camera perspective inside a single space. NEVER render split 50/50 dual-room compositions. ZERO non-Euclidean door jambs, ZERO floating disconnected door panels, and ZERO split-dimensional geometry.
   12. **Unabridged Universal Negative Anti-Slop Quality Clause:** Every prompt entry across all batches MUST conclude with the complete, unabridged negative clause:
-      `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, anatomically correct hands, all hands physically connected to wrists and forearms, precisely 5 slender fingers on each hand, detailed knuckles, perfectly drawn boots and feet, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
+      `dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, cleanly rendered hand linework, distinct individual fingers, detailed knuckles, perfectly drawn footwear, crisp pupil reflections, no character cloning, no duplicate protagonist, no multiple copies of the same character, no twin clones, no self-interaction, no clone audience, diverse background faces, no floating hands, no detached hands, no disembodied hands touching screens, no hands holding floating holographic windows, no hands inside UI glass, no ghost limbs, no morphing artifacts, no missing fingers, no extra limbs, complete limbs, pristine anatomy, no split-room perspectives, no non-euclidean doors, no fractured doorways, no swords on archer, no heavy paladin armor on archer, no random female gender swap for Caelen, no outdoor forest in underground rooms, pure textless artwork.`
 
 ---
 
@@ -182,3 +182,15 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   1. **Zero Technical Token Penalty:** Vision engines like Nano Banana 2.1 natively parse long, structured prompts. Doubling visual detail reinforces aesthetic constraints.
   2. **Non-Contradictory Visual Focus:** Prompts describe pure visible scene geometry, camera lenses, lighting, and wardrobe without abstract meta-commentary.
   3. **Mandatory Weapon & Prop Entity Extraction:** Weapons and props are registered as Character Entities with dedicated 9:16 reference plates and mapped to `character_refs` for active image conditioning.
+
+
+---
+
+## 20. The V2.0 Inline Script Staging & Deterministic Matrix Architecture
+* **Defect:** Autoregressive token dilution in manual 5-layer prompt writing, dialogue teleportation where mentioned characters are placed physically into scenes, and premature rendering of future-plan structures.
+* **Fix (V2.0 Staging Headers & Deterministic Compilation):**
+  1. **Inline Staging Headers:** Every `[IMG_XXX]` tag in the script must be paired with `<!-- ZONE: ... | STAGE: ... | ACTOR: ... | CAST: [...] | PROPS: [...] | TECH_STAGE: ... | PLAN_TALK: ... -->`.
+  2. **Anti-Dialogue-Teleportation Rule:** Characters mentioned only inside spoken quotation marks (`"..."`) are strictly prohibited from `CAST` and `<character_refs>`.
+  3. **Gate G28 (Vantage & Elevation Lock):** Respect locked zone elevation and line-of-sight vantage rules (e.g., camera on a mountain trail cannot view valley-floor buildings).
+  4. **Gate G29 (Spoken Future-Plan Blocker):** When `PLAN_TALK: true`, scenes depicting characters talking about tomorrow's inventions must frame blueprints or raw materials—never the finished structure.
+  5. **Deterministic Matrix Compilation (`compile-matrix.js`):** Invert Phase 3 so the LLM writes only Layer 4 diegetic action (~50 tokens per cut), while code deterministically injects Layers 1, 2, 3, and 5.

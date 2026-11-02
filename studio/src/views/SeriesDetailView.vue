@@ -721,20 +721,131 @@
           </div>
         </div>
 
-        <!-- Render Controls -->
-        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <!-- Render Controls with 3-Mode Split Pipeline Dropdown -->
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div class="text-xs font-mono text-slate-500">
             Selected: <span class="text-purple-600 dark:text-purple-400 font-bold">{{ selectedEpisodes.length }}</span> episode(s)
           </div>
-          <button 
-            @click="triggerOmnibusCompile"
-            :disabled="selectedEpisodes.length === 0 || isCompilingOmnibus"
-            class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-xs font-bold font-mono flex items-center space-x-2 transition cursor-pointer shadow-lg shadow-purple-900/20"
-          >
-            <Loader2 v-if="isCompilingOmnibus" class="w-4 h-4 animate-spin" />
-            <Film v-else class="w-4 h-4" />
-            <span>{{ isCompilingOmnibus ? 'Stitching Master Movie...' : 'Stitch Master Multi-Episode Movie' }}</span>
-          </button>
+
+          <div class="relative inline-flex items-center rounded-xl shadow-lg shadow-purple-900/20">
+            <!-- Click-away backdrop -->
+            <div 
+              v-if="isCompileDropdownOpen" 
+              @click="isCompileDropdownOpen = false" 
+              class="fixed inset-0 z-40"
+            ></div>
+
+            <!-- Primary Action Button -->
+            <button 
+              @click="triggerOmnibusCompile" 
+              :disabled="selectedEpisodes.length === 0 || isCompilingOmnibus"
+              class="px-5 py-2.5 rounded-l-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white text-xs font-bold font-mono flex items-center space-x-2 transition cursor-pointer"
+            >
+              <Loader2 v-if="isCompilingOmnibus" class="w-4 h-4 animate-spin" />
+              <Zap v-else-if="activeCompileMode === 'fresh_compile'" class="w-4 h-4 text-amber-300" />
+              <Sparkles v-else-if="activeCompileMode === 'smart_compile'" class="w-4 h-4 text-purple-300" />
+              <Film v-else class="w-4 h-4" />
+              <span>
+                {{ isCompilingOmnibus 
+                    ? (activeCompileMode === 'fresh_compile' 
+                        ? 'Fresh GPU Rendering & Stitching...' 
+                        : (activeCompileMode === 'smart_compile' ? 'Verifying & Stitching...' : 'Stitching Master Movie...')) 
+                    : (activeCompileMode === 'fresh_compile' 
+                        ? 'Force Fresh Re-render & Master Stitch' 
+                        : (activeCompileMode === 'smart_compile' ? 'Verify Batches & Stitch Master' : 'Stitch Master Multi-Episode Movie')) 
+                }}
+              </span>
+            </button>
+
+            <!-- Dropdown Toggle Chevron Button -->
+            <button
+              @click="isCompileDropdownOpen = !isCompileDropdownOpen"
+              :disabled="selectedEpisodes.length === 0 || isCompilingOmnibus"
+              class="px-3 py-2.5 rounded-r-xl bg-purple-700 hover:bg-purple-800 border-l border-purple-500/40 disabled:opacity-50 text-white text-xs font-bold flex items-center justify-center transition cursor-pointer"
+              title="Select compilation pipeline mode"
+            >
+              <ChevronDown class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': isCompileDropdownOpen }" />
+            </button>
+
+            <!-- Dropdown Popover Menu (Upward) -->
+            <transition name="fade">
+              <div
+                v-if="isCompileDropdownOpen"
+                class="absolute right-0 bottom-full mb-2 w-84 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-2 z-50 space-y-1 backdrop-blur-md"
+              >
+                <div class="px-3 py-2 border-b border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">Omnibus Pipeline Mode</span>
+                  <span class="text-[10px] font-mono text-purple-600 dark:text-purple-400 font-semibold">{{ selectedEpisodes.length }} ep</span>
+                </div>
+
+                <!-- Option 1: Fast Stitch -->
+                <button
+                  type="button"
+                  @click="selectCompileMode('fast_stitch')"
+                  class="w-full text-left p-2.5 rounded-xl transition flex items-start space-x-3 cursor-pointer"
+                  :class="activeCompileMode === 'fast_stitch' ? 'bg-purple-50 dark:bg-purple-950/50 border border-purple-500/30' : 'hover:bg-slate-100 dark:hover:bg-slate-800/70 border border-transparent'"
+                >
+                  <div class="p-2 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 mt-0.5 shrink-0">
+                    <Film class="w-4 h-4" />
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-bold text-slate-900 dark:text-white">Fast Stream Stitch</span>
+                      <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20">&lt; 5s Instant</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                      Stitch existing compiled master videos losslessly without re-encoding.
+                    </p>
+                  </div>
+                  <Check v-if="activeCompileMode === 'fast_stitch'" class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-1" />
+                </button>
+
+                <!-- Option 2: Smart Compile & Stitch -->
+                <button
+                  type="button"
+                  @click="selectCompileMode('smart_compile')"
+                  class="w-full text-left p-2.5 rounded-xl transition flex items-start space-x-3 cursor-pointer"
+                  :class="activeCompileMode === 'smart_compile' ? 'bg-purple-50 dark:bg-purple-950/50 border border-purple-500/30' : 'hover:bg-slate-100 dark:hover:bg-slate-800/70 border border-transparent'"
+                >
+                  <div class="p-2 rounded-lg bg-purple-500/10 text-purple-400 mt-0.5 shrink-0">
+                    <Sparkles class="w-4 h-4" />
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-bold text-slate-900 dark:text-white">Verify Batches &amp; Stitch</span>
+                      <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 font-bold border border-purple-500/20">Smart-Skip</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                      Check batches, render any missing scenes, re-stitch masters, then concat.
+                    </p>
+                  </div>
+                  <Check v-if="activeCompileMode === 'smart_compile'" class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-1" />
+                </button>
+
+                <!-- Option 3: Force Fresh Re-render All Batches -->
+                <button
+                  type="button"
+                  @click="selectCompileMode('fresh_compile')"
+                  class="w-full text-left p-2.5 rounded-xl transition flex items-start space-x-3 cursor-pointer"
+                  :class="activeCompileMode === 'fresh_compile' ? 'bg-purple-50 dark:bg-purple-950/50 border border-purple-500/30' : 'hover:bg-slate-100 dark:hover:bg-slate-800/70 border border-transparent'"
+                >
+                  <div class="p-2 rounded-lg bg-amber-500/10 text-amber-500 mt-0.5 shrink-0">
+                    <Zap class="w-4 h-4" />
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-bold text-slate-900 dark:text-white">Force Fresh Re-render</span>
+                      <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 font-bold border border-amber-500/20">Zero Cache</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                      Purge clip cache, ignore existing batches, re-render every cut with GPU from scratch.
+                    </p>
+                  </div>
+                  <Check v-if="activeCompileMode === 'fresh_compile'" class="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-1" />
+                </button>
+              </div>
+            </transition>
+          </div>
         </div>
 
         <!-- Compiled Master Omnibus Movies List -->
@@ -1275,6 +1386,25 @@
       </div>
     </div>
 
+    <!-- Multi-Episode Master Movie Omnibus Progress Modal -->
+    <OmnibusProgressModal
+      :show="isOmnibusModalOpen"
+      :is-minimized="isOmnibusModalMinimized"
+      :status="omnibusCompileStatus"
+      :progress="omnibusProgress"
+      :stage="omnibusStage"
+      :message="omnibusMessage"
+      :logs="omnibusLogs"
+      :franchise-title="franchise?.name || route.params.id"
+      :tier="selectedTier"
+      :episode-list="selectedEpisodesList"
+      :result="omnibusResult"
+      @close="isOmnibusModalOpen = false"
+      @minimize="isOmnibusModalMinimized = true"
+      @maximize="isOmnibusModalMinimized = false"
+      @toast="triggerToast($event.title, $event.message)"
+    />
+
   </div>
 </template>
 
@@ -1295,6 +1425,7 @@ import {
   setTagModeToStorage
 } from '../utils/entityMapper.js'
 import { getFranchiseDefaultVaultDna } from '../utils/franchiseStyleHelper.js'
+import OmnibusProgressModal from '../components/OmnibusProgressModal.vue'
 
 const route = useRoute()
 const franchise = ref(null)
@@ -1321,6 +1452,36 @@ const models = ref([])
 const selectedTier = ref('tier2')
 const selectedEpisodes = ref([])
 const isCompilingOmnibus = ref(false)
+const isOmnibusModalOpen = ref(false)
+const isOmnibusModalMinimized = ref(false)
+const omnibusCompileStatus = ref('idle')
+const omnibusProgress = ref(0)
+const omnibusStage = ref('discovery')
+const omnibusMessage = ref('')
+const omnibusLogs = ref([])
+const omnibusResult = ref(null)
+let omnibusPollTimer = null
+
+// Split compilation mode: "fast_stitch" | "compile_and_stitch"
+const isCompileDropdownOpen = ref(false)
+const activeCompileMode = ref('fast_stitch')
+
+const selectCompileMode = (mode) => {
+  activeCompileMode.value = mode
+  isCompileDropdownOpen.value = false
+}
+
+const selectedEpisodesList = computed(() => {
+  return selectedEpisodes.value.map(epId => {
+    const epObj = availableEpisodes.value?.find(e => e.id === epId)
+    return {
+      id: epId,
+      title: epObj?.title || epId.replace(/^EP\d+_+/i, '').replace(/_/g, ' '),
+      durationFormatted: epObj?.telemetry?.formattedDuration || ''
+    }
+  })
+})
+
 const selectedPackageEpisode = ref('')
 const pkgData = ref(null)
 const omnibusFiles = ref([])
@@ -2046,7 +2207,65 @@ const triggerOmnibusCompile = async () => {
     triggerToast('Selection Required', 'Please select at least 2 episodes to concatenate.')
     return
   }
+
+  isCompileDropdownOpen.value = false
+  const isCompileEpisodes = activeCompileMode.value === 'smart_compile' || activeCompileMode.value === 'fresh_compile'
+  const isFreshCompile = activeCompileMode.value === 'fresh_compile'
+
+  // Open visual modal immediately
+  isOmnibusModalOpen.value = true
+  isOmnibusModalMinimized.value = false
+  omnibusCompileStatus.value = 'compiling'
+  omnibusProgress.value = 5
+  omnibusStage.value = isCompileEpisodes ? 'compiling_episodes' : 'discovery'
+  omnibusMessage.value = isFreshCompile
+    ? `Initiating pure fresh zero-cache compilation for ${selectedEpisodes.value.length} episodes...`
+    : (isCompileEpisodes
+        ? `Verifying batch previews and master compilation for ${selectedEpisodes.value.length} episodes...`
+        : `Initialising master video stream audit for ${selectedEpisodes.value.length} episodes...`)
+  omnibusLogs.value = [
+    `[Initialise] ${isFreshCompile ? 'Pure Fresh Zero-Cache Re-render' : (isCompileEpisodes ? 'Smart Batch Verification' : 'Fast Concat')} Master Movie compilation queued.`,
+    `[Franchise] ${franchise.value?.name || route.params.id}`,
+    `[Episodes] ${selectedEpisodes.value.length} parts selected for concatenation: ${selectedEpisodes.value.join(', ')}`,
+    isFreshCompile 
+      ? `[Pipeline Mode] Zero Cache Full GPU: Purging clip cache and re-rendering all scene cuts from scratch before master concat.`
+      : (isCompileEpisodes 
+          ? `[Pipeline Mode] Smart-Skip: Verifying batch preview clips and re-stitching before master concat.` 
+          : `[Pipeline Mode] Fast Stream-Copy: Stitching pre-compiled master 1080p videos losslessly in < 5s.`
+        )
+  ]
+  omnibusResult.value = null
   isCompilingOmnibus.value = true
+
+  // Start polling status
+  if (omnibusPollTimer) clearInterval(omnibusPollTimer)
+  omnibusPollTimer = setInterval(async () => {
+    try {
+      const sRes = await fetch(`/api/franchises/${route.params.id}/omnibus-status`)
+      if (sRes.ok) {
+        const st = await sRes.json()
+        if (st) {
+          if (st.status) omnibusCompileStatus.value = st.status
+          if (typeof st.progress === 'number') omnibusProgress.value = st.progress
+          if (st.stage) omnibusStage.value = st.stage
+          if (st.message) omnibusMessage.value = st.message
+          if (Array.isArray(st.log)) omnibusLogs.value = st.log
+          if (st.metadata) {
+            omnibusResult.value = {
+              metadata: st.metadata,
+              filename: st.filename,
+              url: st.url
+            }
+          }
+          if (st.status === 'completed' || st.status === 'failed') {
+            clearInterval(omnibusPollTimer)
+            omnibusPollTimer = null
+          }
+        }
+      }
+    } catch (_) {}
+  }, 800)
+
   try {
     const now = new Date()
     const pad = (n) => String(n).padStart(2, '0')
@@ -2057,22 +2276,39 @@ const triggerOmnibusCompile = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        selectedEpisodes: selectedEpisodes.value,
         masterFilePaths: selectedEpisodes.value.map(epId => `01_Franchises/${route.params.id}/${epId}/video/01_Episode_Master_1080p.mp4`),
-        outputFilename
+        outputFilename,
+        compileEpisodes: isCompileEpisodes,
+        freshCompile: isFreshCompile
       })
     })
     const data = await res.json()
     if (!res.ok || data.error) {
       throw new Error(data.error || 'Omnibus stitching failed')
     }
+    omnibusCompileStatus.value = 'completed'
+    omnibusProgress.value = 100
+    omnibusStage.value = 'completed'
+    omnibusResult.value = data
     const savedName = data.filename || (data.output ? data.output.split(/[\\/]/).pop() : 'Master Omnibus')
-    triggerToast('Multi-Episode Stitching Completed', `Saved to: ${savedName}`)
+    triggerToast(
+      isFreshCompile ? 'Fresh GPU Compilation Completed' : (isCompileEpisodes ? 'Batch Verification Completed' : 'Multi-Episode Stitching Completed'),
+      `Saved to: ${savedName}`
+    )
     await loadOmnibusFiles()
     await loadPackagingData()
   } catch (err) {
-    triggerToast('Stitching Error', err.message)
+    omnibusCompileStatus.value = 'failed'
+    omnibusStage.value = 'error'
+    omnibusMessage.value = err.message
+    triggerToast('Compilation Error', err.message)
   } finally {
     isCompilingOmnibus.value = false
+    if (omnibusPollTimer) {
+      clearInterval(omnibusPollTimer)
+      omnibusPollTimer = null
+    }
   }
 }
 

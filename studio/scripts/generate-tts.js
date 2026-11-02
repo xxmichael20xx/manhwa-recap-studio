@@ -12,6 +12,11 @@ const franchiseId = args[0] || 'Series_04_The_Billion_Year_Sovereign'
 const episodeId = args[1] || 'EP02_The_Campus_Appraisal_and_The_Celestial_Countdown'
 let defaultBibleVoice = 'en-GB-RyanNeural'
 try {
+  const fJsonFile = path.resolve(__dirname, '../../01_Franchises', franchiseId, 'franchise.json')
+  if (fs.existsSync(fJsonFile)) {
+    const fj = JSON.parse(fs.readFileSync(fJsonFile, 'utf8'))
+    if (fj.voice && fj.voice.id) defaultBibleVoice = fj.voice.id
+  }
   const bibleFile = path.resolve(__dirname, '../../01_Franchises', franchiseId, '00_Series_Bible_and_Character_DNA/Series_Bible.md')
   if (fs.existsSync(bibleFile)) {
     const bText = fs.readFileSync(bibleFile, 'utf8')

@@ -56,6 +56,19 @@
           </span>
         </button>
 
+        <!-- Google Flow Scene Synchroniser & Reverse-Lookup Button -->
+        <button 
+          @click="openFlowSyncModal"
+          class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold flex items-center space-x-2 transition-all shadow-md shadow-emerald-950/30 cursor-pointer"
+          title="Identify Scene ID and Filename from Google Flow Prompt (Ctrl+K)"
+        >
+          <Search class="w-4 h-4 text-emerald-200" />
+          <span>Sync Flow Scene</span>
+          <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-950/60 border border-emerald-400/30 text-emerald-200 font-bold">
+            Find
+          </span>
+        </button>
+
         <!-- Batch Copy Drawer Trigger Button -->
         <button 
           @click="isDrawerOpen = true"
@@ -374,11 +387,13 @@
       <div class="divide-y divide-slate-200 dark:divide-slate-800">
         <div 
           v-for="(p, index) in filteredPrompts" 
+          :id="'scene-' + p.tag.replace(/[^\w]/g, '')" 
           :key="p.tag"
           class="p-5 sm:p-6 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors flex flex-col lg:flex-row lg:items-start gap-5"
           :class="{ 
             'bg-purple-50/20 dark:bg-purple-950/10': selectedTags.has(p.tag),
-            'border-l-4 border-l-rose-500 bg-rose-500/5 dark:bg-rose-950/15': isSceneFailingAudit(p.tag)
+            'border-l-4 border-l-rose-500 bg-rose-500/5 dark:bg-rose-950/15': isSceneFailingAudit(p.tag),
+            'ring-4 ring-emerald-500 bg-emerald-50/20 dark:bg-emerald-950/20 transition-all duration-300': highlightedSceneTag === p.tag
           }"
         >
           <!-- Multi-Select Checkbox -->
@@ -1441,6 +1456,229 @@
         </div>
       </div>
     </Teleport>
+  
+    <!-- Google Flow Scene Synchroniser Modal -->
+    <Teleport to="body">
+      <div 
+        v-if="isFlowSyncModalOpen" 
+        class="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+        @click.self="closeFlowSyncModal"
+      >
+        <div class="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+          
+          <!-- Modal Header -->
+          <div class="p-6 border-b border-slate-200 dark:border-slate-800 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-slate-50 dark:from-emerald-950/30 dark:via-teal-950/20 dark:to-slate-900 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <div class="p-2.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
+                <Search class="w-6 h-6" />
+              </div>
+              <div>
+                <div class="flex items-center space-x-2">
+                  <h2 class="text-lg font-bold text-slate-900 dark:text-white">Google Flow Scene Synchroniser</h2>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    Reverse-Lookup
+                  </span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                  Paste prompt text from Google Flow (where @ tokens were stripped) to identify the exact Scene ID and target filename.
+                </p>
+              </div>
+            </div>
+            <button 
+              @click="closeFlowSyncModal"
+              class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer"
+            >
+              <X class="w-5 h-5" />
+            </button>
+          </div>
+
+          <!-- Modal Body / Input Area -->
+          <div class="p-6 space-y-4 overflow-y-auto">
+            
+            <!-- Paste Textarea -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold font-mono uppercase text-slate-600 dark:text-slate-300 flex items-center space-x-1.5">
+                  <span>Pasted Google Flow Prompt Text</span>
+                  <span class="text-[10px] text-slate-400 font-normal">({{ flowSyncInput.length }} chars)</span>
+                </label>
+                <div class="flex items-center space-x-2">
+                  <!-- Batch Filter Dropdown -->
+                  <div class="flex items-center space-x-1.5">
+                    <span class="text-xs font-mono text-slate-500">Filter Batch:</span>
+                    <select 
+                      v-model="flowSyncBatchFilter"
+                      class="px-2.5 py-1 text-xs font-mono rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer focus:ring-2 focus:ring-emerald-500"
+                    >
+                      <option :value="null">All Batches ({{ dynamicBatches.length }})</option>
+                      <option v-for="(b, bIdx) in dynamicBatches" :key="bIdx" :value="bIdx + 1">
+                        {{ b.name }} ({{ b.startTag }}–{{ b.endTag }})
+                      </option>
+                    </select>
+                  </div>
+                  
+                  <button 
+                    v-if="flowSyncInput"
+                    @click="flowSyncInput = ''"
+                    class="text-xs font-mono text-slate-400 hover:text-rose-500 transition px-2 py-1 cursor-pointer"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+
+              <textarea 
+                ref="flowSyncTextareaRef"
+                v-model="flowSyncInput"
+                rows="4"
+                placeholder="Paste the prompt text copied from Google Flow here (e.g. Dual-panel manhwa webtoon... Top block: Maya Miller inspects progress...)..."
+                class="w-full p-3.5 text-xs font-mono rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+              ></textarea>
+            </div>
+
+            <!-- Matches Section -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <span class="text-xs font-bold font-mono uppercase text-slate-700 dark:text-slate-300">
+                    Candidate Matches
+                  </span>
+                  <span 
+                    v-if="flowSyncMatches.length > 0"
+                    class="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"
+                  >
+                    {{ flowSyncMatches.length }} {{ flowSyncMatches.length === 1 ? 'Match' : 'Matches' }}
+                  </span>
+                </div>
+                <span v-if="flowSyncBatchFilter !== null" class="text-xs font-mono text-emerald-600 dark:text-emerald-400">
+                  Filtered to Batch {{ String(flowSyncBatchFilter).padStart(2, '0') }}
+                </span>
+              </div>
+
+              <!-- Empty State -->
+              <div v-if="!flowSyncInput.trim()" class="p-8 text-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl space-y-2">
+                <Sparkles class="w-8 h-8 text-slate-400 mx-auto" />
+                <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  Awaiting Prompt Input
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                  Copy any prompt or snippet from Google Flow and paste it above to see the matching Scene ID, filename, batch number, and script dialogue.
+                </p>
+              </div>
+
+              <!-- No Matches Found State -->
+              <div v-else-if="flowSyncMatches.length === 0" class="p-8 text-center border border-amber-300 dark:border-amber-900/60 bg-amber-50/50 dark:bg-amber-950/20 rounded-2xl space-y-2">
+                <AlertCircle class="w-8 h-8 text-amber-500 mx-auto" />
+                <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">
+                  No Matching Scenes Found
+                </p>
+                <p class="text-xs text-amber-700 dark:text-amber-300 max-w-md mx-auto">
+                  Try pasting a different portion of the prompt (such as the action direction line, character names, or spatial enclosure).
+                </p>
+              </div>
+
+              <!-- Match Cards List -->
+              <div v-else class="space-y-3">
+                <div 
+                  v-for="(match, mIdx) in flowSyncMatches" 
+                  :key="match.cleanTag"
+                  class="p-4 rounded-2xl border transition-all"
+                  :class="mIdx === 0 
+                    ? 'border-emerald-500/50 bg-emerald-50/40 dark:bg-emerald-950/20 ring-1 ring-emerald-500/30' 
+                    : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700'"
+                >
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    
+                    <!-- Left: Tag & Filename & Batch Position -->
+                    <div class="flex items-center space-x-3">
+                      <div class="text-center px-3 py-1.5 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-mono font-bold text-sm shadow-xs">
+                        {{ match.tag }}
+                      </div>
+                      <div>
+                        <div class="flex items-center space-x-2">
+                          <span class="text-sm font-bold text-slate-900 dark:text-white font-mono">
+                            {{ match.filename }}
+                          </span>
+                          <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider"
+                            :class="match.score >= 80 ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400' : 'bg-amber-500/15 text-amber-600 dark:text-amber-400'"
+                          >
+                            {{ match.score }}% Match
+                          </span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                          <span class="font-bold text-purple-600 dark:text-purple-400">{{ match.batchName }}</span>
+                          <span>•</span>
+                          <span class="font-semibold text-amber-600 dark:text-amber-400">Prompt #{{ match.batchPosition }}</span>
+                          <span>•</span>
+                          <span>{{ match.layout }}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Quick Copy & Jump Actions -->
+                    <div class="flex items-center space-x-2 shrink-0">
+                      <button 
+                        @click="copyFilenameDirect(match.filename)"
+                        class="px-3 py-1.5 rounded-xl text-xs font-mono font-bold transition flex items-center space-x-1.5 cursor-pointer shadow-xs"
+                        :class="copiedSceneFilename === match.filename 
+                          ? 'bg-emerald-600 text-white' 
+                          : 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100'"
+                      >
+                        <Check v-if="copiedSceneFilename === match.filename" class="w-3.5 h-3.5" />
+                        <Copy v-else class="w-3.5 h-3.5" />
+                        <span>{{ copiedSceneFilename === match.filename ? 'Filename Copied!' : `Copy ${match.filename}` }}</span>
+                      </button>
+
+                      <button 
+                        @click="jumpToSceneFromModal(match)"
+                        class="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition flex items-center space-x-1 cursor-pointer"
+                        title="Jump to this scene in the prompt table"
+                      >
+                        <span>Jump to Scene</span>
+                        <ArrowRight class="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Script Dialogue / Voiceover clause -->
+                  <div v-if="match.narrativeSync" class="mt-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-100 dark:border-slate-800/80 text-xs font-mono text-slate-700 dark:text-slate-300">
+                    <span class="text-purple-500 font-bold mr-1.5">🎙️ Script Narration:</span>
+                    <span class="italic">"{{ match.narrativeSync }}"</span>
+                  </div>
+
+                  <!-- Match Signals -->
+                  <div v-if="match.reasons && match.reasons.length > 0" class="mt-2 flex flex-wrap items-center gap-1.5">
+                    <span 
+                      v-for="(r, rIdx) in match.reasons" 
+                      :key="rIdx"
+                      class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
+                    >
+                      {{ r }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-500">
+              Tip: Press <kbd class="px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold">Esc</kbd> to close.
+            </span>
+            <button 
+              @click="closeFlowSyncModal"
+              class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </Teleport>
+
   </div>
 </template>
 
@@ -1452,7 +1690,8 @@ import {
   Mic, Zap, Layers, X, RotateCcw, ShieldCheck, 
   AlertCircle, AlertTriangle, Film, Loader2,
   Users, Download, ExternalLink, Sparkles, Tag, FileCode2, Hash,
-  ChevronDown, ChevronUp, Eye, ChevronLeft, ChevronRight, Clock, Upload
+  ChevronDown, ChevronUp, Eye, ChevronLeft, ChevronRight, Clock, Upload,
+  Search, ArrowRight, FileText
 } from 'lucide-vue-next'
 import { 
   parseEntityMappingText, 
@@ -1468,6 +1707,7 @@ import {
   getFranchiseDefaultVaultDna 
 } from '../utils/franchiseStyleHelper.js'
 import { compilePromptDna } from '../utils/promptDnaCompiler.js'
+import { findMatchingScenes } from '../utils/flowSyncMatcher.js'
 
 const route = useRoute()
 
@@ -1476,7 +1716,8 @@ const promptAuditReport = ref(null)
 const isPromptAuditAccordionOpen = ref(true)
 
 const isCopyDisabledDueToAudit = computed(() => {
-  return promptAuditReport.value && !promptAuditReport.value.isProductionReady
+  // Never hard-block clipboard copy operations for the operator
+  return false
 })
 
 const failingScenesSet = computed(() => {
@@ -1792,7 +2033,6 @@ const rawMarkdown = ref('')
 const generating = ref(false)
 const copiedIndex = ref(null)
 const batchCompilingIndex = ref(null)
-
 const compileBatchPreview = async (index) => {
   batchCompilingIndex.value = index
   try {
@@ -3262,6 +3502,80 @@ const copySinglePrompt = async (item, index) => {
   } catch (err) {
     console.error('Failed to copy single prompt:', err)
   }
+}
+
+
+// Google Flow Scene Synchroniser State & Actions
+const isFlowSyncModalOpen = ref(false)
+const flowSyncInput = ref('')
+const flowSyncBatchFilter = ref(null)
+const flowSyncTextareaRef = ref(null)
+const copiedSceneFilename = ref(null)
+const highlightedSceneTag = ref(null)
+
+const openFlowSyncModal = () => {
+  isFlowSyncModalOpen.value = true
+  if (selectedBatchFilter.value !== null) {
+    flowSyncBatchFilter.value = selectedBatchFilter.value + 1
+  }
+  nextTick(() => {
+    if (flowSyncTextareaRef.value) {
+      flowSyncTextareaRef.value.focus()
+    }
+  })
+}
+
+const closeFlowSyncModal = () => {
+  isFlowSyncModalOpen.value = false
+}
+
+const copyFilenameDirect = async (filename) => {
+  if (!filename) return
+  try {
+    await navigator.clipboard.writeText(filename)
+    copiedSceneFilename.value = filename
+    setTimeout(() => {
+      if (copiedSceneFilename.value === filename) {
+        copiedSceneFilename.value = null
+      }
+    }, 2500)
+  } catch (err) {
+    console.error('Clipboard error:', err)
+  }
+}
+
+const flowSyncMatches = computed(() => {
+  if (!flowSyncInput.value || !flowSyncInput.value.trim() || !Array.isArray(parsedPrompts.value)) {
+    return []
+  }
+  return findMatchingScenes(flowSyncInput.value, parsedPrompts.value, {
+    batchSize: 24,
+    maxResults: 12,
+    batchFilter: flowSyncBatchFilter.value
+  })
+})
+
+const jumpToSceneFromModal = (match) => {
+  if (!match) return
+  closeFlowSyncModal()
+  
+  if (selectedBatchFilter.value !== null && selectedBatchFilter.value !== match.batchIndex) {
+    selectedBatchFilter.value = match.batchIndex
+  }
+  filterMode.value = 'all'
+  highlightedSceneTag.value = match.tag
+
+  nextTick(() => {
+    const el = document.getElementById('scene-' + match.cleanTag)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+    setTimeout(() => {
+      if (highlightedSceneTag.value === match.tag) {
+        highlightedSceneTag.value = null
+      }
+    }, 4000)
+  })
 }
 
 onMounted(() => {

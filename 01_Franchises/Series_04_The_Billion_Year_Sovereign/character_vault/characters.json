@@ -31,8 +31,53 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "20-year-old East Asian male university student, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression",
+      "outfits": {
+        "hoodie_charcoal": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+        "streetwear_hoodie": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+        "casual_pullover": "clean oversized charcoal-black pullover hoodie with loose sleeves and casual utility trousers"
+      },
+      "default_outfit": "hoodie_charcoal",
+      "state_lexicon": {
+        "eyes": {
+          "normal": {
+            "phrase": "calm obsidian eyes"
+          },
+          "starlight_flecks": {
+            "phrase": "microscopic golden starlight flecks pulsing in deep obsidian eyes"
+          }
+        },
+        "aura": {
+          "none": {
+            "phrase": "zero visible spiritual aura"
+          },
+          "primordial_starlight": {
+            "phrase": "subtle shimmering primordial golden-violet starlight halo"
+          }
+        },
+        "posture": {
+          "relaxed_hands_in_pockets": {
+            "phrase": "relaxed unbothered posture with hands casually in hoodie pockets"
+          },
+          "relaxed_unbothered": {
+            "phrase": "relaxed unbothered posture with hands casually in hoodie pockets"
+          },
+          "casual_seated": {
+            "phrase": "seated casually with unhurried deadpan posture"
+          },
+          "standing_calm": {
+            "phrase": "standing quietly with hands in hoodie pockets"
+          }
+        }
+      },
+      "default_state": {
+        "eyes": "normal",
+        "aura": "none",
+        "posture": "relaxed_hands_in_pockets"
+      }
     },
     {
       "id": "wang_bao",
@@ -59,8 +104,27 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "20-year-old chubby East Asian male university student, round friendly face, messy spiky dark hair, expressive panicked dark eyes",
+      "outfits": {
+        "red_gaming_tee": "signature red graphic gaming t-shirt, beige cargo shorts, sneakers"
+      },
+      "default_outfit": "red_gaming_tee",
+      "state_lexicon": {
+        "posture": {
+          "standing_animated": {
+            "phrase": "standing with expressive animated posture and wide eyes"
+          },
+          "seated_slurping": {
+            "phrase": "seated eagerly slurping steaming noodles with chopsticks"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_animated"
+      }
     },
     {
       "id": "gu_tianyu",
@@ -88,8 +152,28 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "21-year-old pale East Asian male cultivator, sharp arrogant features, disheveled dark hair, bloodshot spiteful dark eyes",
+      "outfits": {
+        "medical_convalescent": "loose grey silk convalescent robe over dark trousers with medicinal arm bandages",
+        "combat_uniform": "tailored dark crimson combat blazer over charcoal shirt"
+      },
+      "default_outfit": "medical_convalescent",
+      "state_lexicon": {
+        "posture": {
+          "wheelchair_bound": {
+            "phrase": "slumped in high-tech carbon-fibre motorized wheelchair with trembling hands"
+          },
+          "standing_arrogant": {
+            "phrase": "standing with haughty arrogant sneer"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "wheelchair_bound"
+      }
     },
     {
       "id": "jiang_qingxue",
@@ -116,8 +200,24 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression",
+      "outfits": {
+        "white_trench": "elegant modern white designer trench coat over pale cyan silk dress, silver belt buckle, low heels"
+      },
+      "default_outfit": "white_trench",
+      "state_lexicon": {
+        "posture": {
+          "standing_aloof": {
+            "phrase": "standing with graceful cold aloof posture with frost mist condensing in palm"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_aloof"
+      }
     },
     {
       "id": "commander_han_feng",
@@ -145,7 +245,22 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
+      "outfits": {
+        "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
+      },
+      "default_outfit": "tactical_uniform",
+      "state_lexicon": {
+        "posture": {
+          "standing_stern": {
+            "phrase": "standing with stern military posture holding a glowing tactical talisman"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_stern"
+      }
     },
     {
       "id": "ye_xingchen",
@@ -172,8 +287,24 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "22-year-old sharp-featured East Asian male cultivator, swept-back midnight blue hair, piercing silver-flecked eyes, calm disciplined expression",
+      "outfits": {
+        "charcoal_bespoke_suit": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes"
+      },
+      "default_outfit": "charcoal_bespoke_suit",
+      "state_lexicon": {
+        "posture": {
+          "standing_poised": {
+            "phrase": "standing with disciplined upright posture and focused gaze"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_poised"
+      }
     },
     {
       "id": "asura_blood_sovereign",
@@ -201,7 +332,22 @@
       "flowName": "Boss: Asura Blood Sovereign",
       "episodes": [
         "EP01"
-      ]
+      ],
+      "dna": "colossal thousand-metre ancient fiend clad in cracked abyssal blood-iron plate armor, six mountainous arms, burning white solar flames crown",
+      "outfits": {
+        "blood_armor": "cracked abyssal blood-iron plate armor bathed in burning white solar flames"
+      },
+      "default_outfit": "blood_armor",
+      "state_lexicon": {
+        "posture": {
+          "looming_colossal": {
+            "phrase": "looming with terrifying world-crushing pressure and crackling abyssal lightning"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "looming_colossal"
+      }
     },
     {
       "id": "gu_tianyu_spirit_dao",
@@ -229,7 +375,8 @@
       "episodes": [
         "EP01",
         "EP02"
-      ]
+      ],
+      "dna": "@{Gu Tianyu's Jade Spirit Blade}, single-edged curved Chinese dao saber, forged silver-steel core with glowing translucent cyan jade cutting edge, white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, cyan silk tassel hanging from pommel, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16"
     },
     {
       "id": "tactical_spirit_spectrometer",
@@ -257,7 +404,8 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Tactical Spirit Spectrometer}, handheld military tactical spirit-spectrometer, ruggedized olive-drab and brushed brass housing, circular brass sensor nozzle with quartz crystal lens, glowing amber vacuum-tube digital counter, analog sweep gauge, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16"
     },
     {
       "id": "heaven_earth_golden_stele",
@@ -284,7 +432,8 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Heaven-Earth Golden Stele}, monumental 30,000-metre colossal obsidian-gold celestial monolith descending through dark stratospheric storm clouds, glowing divine golden calligraphy inscriptions along central axis, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation action manhwa art style, sharp ink linework, volumetric starlight lighting, vertical 9:16"
     },
     {
       "id": "gu_biao",
@@ -311,8 +460,24 @@
       "flowName": "Character: Chief Enforcer Gu Biao",
       "episodes": [
         "EP02",
-        "EP03"
-      ]
+        "EP03",
+        "EP04"
+      ],
+      "dna": "35-year-old imposing East Asian male enforcer, towering muscular 6-foot-4 frame, broad shoulders, buzz-cut dark hair, brutal scarred jawline, dark tactical sunglasses",
+      "outfits": {
+        "designer_coat": "open designer charcoal-black trench coat over dark silk vest and tailored trousers"
+      },
+      "default_outfit": "designer_coat",
+      "state_lexicon": {
+        "posture": {
+          "standing_intimidating": {
+            "phrase": "standing with aggressive intimidating posture and silver-threaded combat knuckle rings"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_intimidating"
+      }
     },
     {
       "id": "celestial_star_astrolabe",
@@ -339,7 +504,8 @@
       "episodes": [
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, suspended luminous cyan spirit crystal core, slender silver divination needles, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16"
     },
     {
       "id": "heavenly_dao_simulator_hud",
@@ -366,7 +532,8 @@
         "EP01",
         "EP02",
         "EP03"
-      ]
+      ],
+      "dna": "@{Heavenly Dao Simulator Interface}, sleek translucent dark obsidian-glass holographic cultivation system HUD floating in mid-air, glowing celestial gold astrolabe progression rings, minimalist cultivation stat gauges, starlight nebula motes, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16"
     },
     {
       "id": "mo_yufeng",
@@ -393,7 +560,278 @@
       "flowName": "Character: Mo Yufeng",
       "episodes": [
         "EP03"
-      ]
+      ],
+      "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair",
+      "outfits": {
+        "cultivation_coat": "ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck and gold-threaded sash"
+      },
+      "default_outfit": "cultivation_coat",
+      "state_lexicon": {
+        "eyes": {
+          "normal": {
+            "phrase": "haughty dark amber eyes"
+          },
+          "crimson_sclera": {
+            "phrase": "blood-crimson glowing eyes with black veins"
+          }
+        },
+        "veins": {
+          "none": {
+            "phrase": "smooth pale skin"
+          },
+          "black_neck": {
+            "phrase": "throbbing black demonic veins across neck"
+          }
+        },
+        "posture": {
+          "standing_arrogant": {
+            "phrase": "standing with boastful pompous posture"
+          },
+          "prostrate": {
+            "phrase": "pinned flat against crater floor unable to rise"
+          }
+        }
+      },
+      "default_state": {
+        "eyes": "normal",
+        "veins": "none",
+        "posture": "standing_arrogant"
+      }
+    },
+    {
+      "id": "dean_of_qindu_university",
+      "name": "Dean of Qindu University",
+      "token": "@{Dean of Qindu University}",
+      "tier": 2,
+      "role": "Authority / Academic Proctor (Dean of Qindu University)",
+      "category": "supporting",
+      "age": 62,
+      "stats_baseline": {
+        "cultivation_years": "50,000 Years",
+        "realm": "Nascent Soul Stage 1",
+        "role": "University Dean & Chief Academic Proctor"
+      },
+      "appearance": {
+        "hair": "Neatly groomed silver-grey hair with distinguished temple streaks",
+        "eyes": "Wise, cautious, scholarly dark brown eyes behind thin rectangular gold-rimmed glasses",
+        "physique": "Slender dignified 60-year-old academic scholar posture, short silver beard",
+        "attire": "Formal charcoal-grey collegiate academic cultivation robe with gold-embroidered campus emblem over crisp white high-collar shirt"
+      },
+      "dna_prompt_anchor": "@{Dean of Qindu University}, 62-year-old dignified East Asian male academic scholar, neatly groomed silver-grey hair, short silver beard, wise cautious eyes, thin rectangular gold-rimmed glasses, formal charcoal-grey collegiate academic cultivation robe with gold-embroidered campus emblem over white high-collar shirt, dignified elderly proctor posture, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "reference_plate": "15_Dean_Qindu_University.jpg",
+      "flowName": "Character: Dean of Qindu University",
+      "episodes": [
+        "EP03"
+      ],
+      "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
+      "outfits": {
+        "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
+      },
+      "default_outfit": "academic_suit",
+      "state_lexicon": {
+        "posture": {
+          "standing_scholarly": {
+            "phrase": "standing with dignified scholarly posture and hands clasped behind back"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_scholarly"
+      }
+    },
+    {
+      "id": "qindu_collegiate_stadium",
+      "name": "Qindu Collegiate Stadium",
+      "token": "@{Qindu Collegiate Stadium}",
+      "tier": 1,
+      "role": "Location (Qindu Athletic Stadium Arena)",
+      "category": "location",
+      "age": 1,
+      "stats_baseline": {
+        "capacity": "10,000 Collegiate Spectators",
+        "surface": "Red Synthetic Running Track & Central Turf Infield",
+        "lighting": "High-Intensity LED Stadium Floodlights"
+      },
+      "appearance": {
+        "architecture": "Modern 2025 collegiate stadium with elevated brushed-steel proctor podium",
+        "track": "Red synthetic running track surrounding central green infield",
+        "spectators": "Tiered metal bleachers under floodlit night atmosphere"
+      },
+      "dna_prompt_anchor": "@{Qindu Collegiate Stadium}, Modern 2025 Qindu University athletic stadium at night, red synthetic running track surrounding clean green athletic turf, elevated brushed-steel proctor podium with lectern, tiered metal spectator bleachers under high LED stadium floodlights, vertical 9:16",
+      "reference_plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+      "flowName": "Qindu Collegiate Stadium",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP03"
+      ],
+      "hasPlate": true,
+      "dna": "@{Qindu Collegiate Stadium}, Modern 2025 Qindu University athletic stadium at night, red synthetic running track surrounding clean green athletic turf, elevated brushed-steel proctor podium with lectern, tiered metal spectator bleachers under high LED stadium floodlights, vertical 9:16"
+    },
+    {
+      "id": "dormitory_room_402",
+      "name": "Dormitory Room 402",
+      "token": "@{Dormitory Room 402}",
+      "tier": 1,
+      "role": "Location (Male Dormitory Room 402)",
+      "category": "location",
+      "age": 1,
+      "stats_baseline": {
+        "type": "Modern Double Dormitory Room (Single Lofted Bunk Bed Setup)",
+        "appliances": "Stainless Steel Electric Kettle & Study Laptop",
+        "atmosphere": "Quiet, Clean, Minimalist Interior Night"
+      },
+      "appearance": {
+        "bed": "Single brushed-steel lofted bunk bed with neat grey bedding matching Episode 1",
+        "desk": "Minimalist study desk below with stainless steel electric kettle",
+        "interior": "Matte white walls, spotless clean tiled floor, window overlooking campus night lamps"
+      },
+      "dna_prompt_anchor": "@{Dormitory Room 402}, Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps, vertical 9:16",
+      "reference_plate": "18_Location_Dormitory_Room_402.jpg",
+      "flowName": "Dormitory Room 402",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP03"
+      ],
+      "hasPlate": true,
+      "dna": "@{Dormitory Room 402}, Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps, vertical 9:16"
+    },
+    {
+      "id": "chairman_gu",
+      "name": "Chairman Gu",
+      "token": "@{Chairman Gu}",
+      "tier": 2,
+      "role": "Antagonist Patriarch (Gu Capital Syndicate Patriarch / Gu Zhentian)",
+      "category": "antagonist",
+      "age": 52,
+      "stats_baseline": {
+        "cultivation_years": "5,000,000 Years",
+        "realm": "Domain Master Realm"
+      },
+      "appearance": {
+        "hair": "Slicked-back grey-streaked dark hair",
+        "eyes": "Sharp calculating dark eyes",
+        "physique": "Imposing aristocratic corporate figure",
+        "attire": "Tailored bespoke obsidian pinstripe suit, carved dragon-headed cane"
+      },
+      "dna_prompt_anchor": "52-year-old ruthless corporate patriarch, slicked-back grey-streaked dark hair, sharp calculating dark eyes, cold haughty sneer",
+      "reference_plate": "19_Antagonist_Chairman_Gu.jpg",
+      "flowName": "Character: Chairman Gu",
+      "episodes": [
+        "EP04"
+      ],
+      "dna": "52-year-old ruthless corporate patriarch, slicked-back grey-streaked dark hair, sharp calculating dark eyes, cold haughty sneer",
+      "outfits": {
+        "pinstripe_suit": "tailored bespoke obsidian pinstripe suit with silk tie and polished lapel pin"
+      },
+      "default_outfit": "pinstripe_suit",
+      "state_lexicon": {
+        "posture": {
+          "standing": {
+            "phrase": "standing with regal corporate arrogance leaning on his carved cane"
+          },
+          "kneeling": {
+            "phrase": "kneeling on the pavement in shattered panic and terror"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing"
+      }
+    },
+    {
+      "id": "elder_gu_yan",
+      "name": "Elder Gu Yan",
+      "token": "@{Elder Gu Yan}",
+      "tier": 2,
+      "role": "Mercenary Boss (Chief Mercenary Elder of Gu Syndicate)",
+      "category": "antagonist",
+      "age": 55,
+      "stats_baseline": {
+        "cultivation_years": "15,000,000 Years",
+        "realm": "Peak Domain Realm / Solar Heavenly Flame"
+      },
+      "appearance": {
+        "hair": "Scarred bald skull",
+        "eyes": "Intense glowing fiery crimson eyes",
+        "physique": "Muscular imposing martial elder",
+        "attire": "Ornate crimson-embroidered combat changshan robe, rotating solar fire rings around forearms"
+      },
+      "dna_prompt_anchor": "55-year-old imposing martial elder, scarred bald skull, intense glowing fiery crimson eyes",
+      "reference_plate": "20_Antagonist_Elder_Gu_Yan.jpg",
+      "flowName": "Character: Elder Gu Yan",
+      "episodes": [
+        "EP04"
+      ],
+      "dna": "55-year-old imposing martial elder, scarred bald skull, intense glowing fiery crimson eyes",
+      "outfits": {
+        "combat_changshan": "ornate crimson-embroidered combat changshan robe over muscular frame with solar fire-spirit rings orbiting forearms"
+      },
+      "default_outfit": "combat_changshan",
+      "state_lexicon": {
+        "posture": {
+          "standing": {
+            "phrase": "standing in aggressive combat stance surrounded by solar flames"
+          },
+          "standing_aggressive": {
+            "phrase": "standing in aggressive combat stance surrounded by solar flames"
+          },
+          "prostrate": {
+            "phrase": "slumped motionless on cracked stone ground with extinguished flames"
+          },
+          "defeated": {
+            "phrase": "slumped motionless on cracked stone ground with extinguished flames"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing"
+      }
+    },
+    {
+      "id": "grand_auctioneer_yan",
+      "name": "Grand Auctioneer Yan",
+      "token": "@{Grand Auctioneer Yan}",
+      "tier": 3,
+      "role": "Supporting Appraiser (Chief Appraiser of Jiangnan Celestial Pavilion)",
+      "category": "supporting",
+      "age": 65,
+      "stats_baseline": {
+        "cultivation_years": "45,000 Years",
+        "realm": "Golden Core Elder"
+      },
+      "appearance": {
+        "hair": "Neatly groomed silver goatee",
+        "eyes": "Intelligent observant eyes behind golden monocle",
+        "physique": "Distinguished scholarly gentleman",
+        "attire": "Immaculate charcoal-grey three-piece suit, white silk appraisal gloves"
+      },
+      "dna_prompt_anchor": "65-year-old distinguished auction master, flowing silver beard, polite polished business expression",
+      "reference_plate": "21_Supporting_Grand_Auctioneer_Yan.jpg",
+      "flowName": "Character: Grand Auctioneer Yan",
+      "episodes": [
+        "EP04"
+      ],
+      "dna": "65-year-old distinguished auction master, flowing silver beard, polite polished business expression",
+      "outfits": {
+        "appraisal_suit": "pristine navy-blue silk changshan robe with gold-threaded cuffs and jade buttons",
+        "auction_changshan": "pristine navy-blue silk changshan robe with gold-threaded cuffs and jade buttons"
+      },
+      "default_outfit": "appraisal_suit",
+      "state_lexicon": {
+        "posture": {
+          "standing": {
+            "phrase": "standing upright behind circular display pedestal holding a golden spirit gavel"
+          },
+          "standing_podium": {
+            "phrase": "standing upright behind circular display pedestal holding a golden spirit gavel"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing"
+      }
     }
   ]
 }

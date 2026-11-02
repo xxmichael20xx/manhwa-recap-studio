@@ -1,0 +1,429 @@
+{
+  "campus.willow_park": {
+    "id": "campus.willow_park",
+    "name": "Qindu Campus Willow Park",
+    "canon": "Modern 2025 Qindu University athletic field perimeter and quiet willow park at night, red synthetic running track beside manicured green lawns, wooden park bench beside recycling bin, contemporary glass academic faculty towers under floodlit night sky.",
+    "lighting": "night_floodlit",
+    "forbidden_tokens": [
+      "glacial ice",
+      "ice barrier",
+      "frozen tundra"
+    ],
+    "adjacent": [
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "troposphere.stele": {
+    "id": "troposphere.stele",
+    "name": "High Troposphere Golden Stele",
+    "canon": "High troposphere and stratosphere perspective at night, thirty-thousand-metre colossal obsidian-and-gold primordial stone stele descending through storm clouds, iridescent violet and golden primordial starlight auroras overlooking Qindu skyline.",
+    "lighting": "night_celestial",
+    "forbidden_tokens": [
+      "muddy ground",
+      "dirt yard"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "campus.perimeter_gate": {
+    "id": "campus.perimeter_gate",
+    "name": "North Campus Perimeter Gate Cordon",
+    "canon": "North campus perimeter security cordon of Qindu University at night, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers with glowing communications radar, high-intensity searchlights sweeping campus perimeter fence.",
+    "lighting": "night_floodlit",
+    "forbidden_tokens": [
+      "park bench",
+      "bunk bed",
+      "dorm",
+      "Room 404"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "starfall.penthouse": {
+    "id": "starfall.penthouse",
+    "name": "Starfall Tower Penthouse Executive Suite",
+    "canon": "Panoramic penthouse executive suite atop Starfall Tower at night, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking illuminated Jiangnan metropolis, glowing holographic radar terminals, regal purple cosmic starlight ambient glow.",
+    "lighting": "interior_night",
+    "forbidden_tokens": [
+      "grass",
+      "synthetic track",
+      "stadium bleachers",
+      "bunk bed"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "stadium.clean_arena": {
+    "id": "stadium.clean_arena",
+    "name": "Qindu Stadium Clean Athletic Arena",
+    "canon": "Modern 2025 Qindu University athletic stadium at night, red synthetic running track surrounding clean green athletic turf, elevated brushed-steel proctor podium with lectern, tiered metal spectator bleachers packed with students, high LED stadium floodlight towers under dark night sky.",
+    "lighting": "night_floodlit",
+    "forbidden_tokens": [
+      "frosted",
+      "ice crystals",
+      "crater",
+      "military tents",
+      "dirt park",
+      "Room 404",
+      "wooden bunk"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "stadium.frosted_arena": {
+    "id": "stadium.frosted_arena",
+    "name": "Qindu Stadium Glacial Frosted Arena",
+    "canon": "Modern 2025 Qindu University athletic stadium at night, glistening glacial cyan ice crystals and frost mist coating the central arena, crystalline glacial lotus ice barriers standing beside the proctor podium, red synthetic running track and bleachers in background under high LED stadium floodlights.",
+    "lighting": "night_floodlit",
+    "forbidden_tokens": [
+      "crater",
+      "military tents",
+      "dirt park",
+      "Room 404",
+      "wooden bunk"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "stadium.impact_crater": {
+    "id": "stadium.impact_crater",
+    "name": "Qindu Stadium 30m Impact Crater",
+    "canon": "Shattered thirty-metre circular impact crater sunken into the athletic stadium track floor at night, cracked concrete foundation and pulverized stone rubble, fine grey dust and golden starlight motes drifting in air, metal stadium bleachers and high LED floodlights in background.",
+    "lighting": "night_floodlit",
+    "forbidden_tokens": [
+      "military tents",
+      "canvas structures",
+      "dirt park",
+      "Room 404",
+      "wooden bunk",
+      "park bench"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "dorm.402": {
+    "id": "dorm.402",
+    "name": "Qindu University Dormitory Room 402",
+    "canon": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps.",
+    "lighting": "interior_night",
+    "forbidden_tokens": [
+      "Room 404",
+      "Room 403",
+      "wooden bunk beds",
+      "two bunk beds",
+      "multiple bunk beds",
+      "extra shoes",
+      "duplicate sneakers"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "campus.pathway": {
+    "id": "campus.pathway",
+    "name": "Qindu University Campus Pathway",
+    "canon": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during bright crisp morning daylight, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under clear high-key sky.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night",
+      "dark sky",
+      "floodlights",
+      "bedroom",
+      "bunk bed"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "pavilion.auction_hall": {
+    "id": "pavilion.auction_hall",
+    "name": "Jiangnan Celestial Pavilion Auction Hall",
+    "canon": "High-end subterranean Jiangnan Celestial Spirit Auction Grand Pavilion, opulent modern multi-tier circular auditorium with brushed gold balustrades, tiered VIP skyboxes, central velvet-covered display pedestal under concentrated warm spotlights.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "campus",
+      "dorm",
+      "running track",
+      "bunk bed",
+      "grass"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "pavilion.vip_suite": {
+    "id": "pavilion.vip_suite",
+    "name": "Celestial Pavilion Private VIP Suite",
+    "canon": "Private VIP suite inside Jiangnan Celestial Spirit Auction, floor-to-ceiling one-way polarized glass overlooking auction auditorium, plush leather seating, tea service table, warm ambient luxury lighting.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "campus",
+      "running track",
+      "dorm",
+      "grass"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "gu_syndicate.headquarters": {
+    "id": "gu_syndicate.headquarters",
+    "name": "Gu Syndicate Obsidian Tower Boardroom",
+    "canon": "Gu Capital Syndicate Corporate Headquarters executive boardroom atop the 88-floor Obsidian Tower, imposing minimalist black marble conference table, panoramic glass windows overlooking Jiangnan metropolis, security monitors.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "campus",
+      "grass",
+      "dorm",
+      "bunk bed"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "gu_syndicate.courtyard_plaza": {
+    "id": "gu_syndicate.courtyard_plaza",
+    "name": "Gu Syndicate Obsidian Tower Entrance Plaza",
+    "canon": "Gu Capital Syndicate ground-level grand entrance plaza, paved dark granite square framed by towering obsidian glass skyscraper columns, ornamental water features, black wrought-iron security gates under daylight.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "dorm",
+      "bunk bed",
+      "bedroom"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "campus.formation_cordon",
+      "street.breakfast_stall"
+    ]
+  },
+  "campus.formation_cordon": {
+    "id": "campus.formation_cordon",
+    "name": "Qindu Collegiate District Formation Cordon",
+    "canon": "Qindu University collegiate district perimeter under a colossal runic crimson slaughter barrier, crackling crimson runic energy dome enclosing the modern street grid, crimson-ruby mist hovering over asphalt roadways, abandoned civilian vehicles.",
+    "lighting": "night_celestial",
+    "forbidden_tokens": [
+      "bright blue sky",
+      "peaceful sunshine",
+      "dorm interior",
+      "bedroom"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "street.breakfast_stall"
+    ]
+  },
+  "street.breakfast_stall": {
+    "id": "street.breakfast_stall",
+    "name": "Collegiate District Street Breakfast Stall",
+    "canon": "Modern street corner traditional breakfast stall near university gate, stainless steel steamer baskets releasing fragrant white steam, plastic folding tables, yellow striped canopy, clean city sidewalk in morning daylight.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night floodlights",
+      "bedroom",
+      "bunk bed",
+      "penthouse"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon"
+    ]
+  }
+}

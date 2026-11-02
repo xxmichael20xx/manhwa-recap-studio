@@ -12,6 +12,7 @@ import { VideoService } from './services/videoService.js'
 import { ActivityLogService } from './services/activityLogService.js'
 import { VisualQaService } from './services/visualQaService.js'
 import { PackagingService } from './services/packagingService.js'
+import { findMatchingScenes } from '../src/utils/flowSyncMatcher.js'
 
 dotenv.config()
 
@@ -93,8 +94,15 @@ app.get('/api/franchises', async (req, res) => {
 const handleStitchMasterOmnibus = async (req, res) => {
   try {
     const { franchiseId } = req.params
-    const { masterFilePaths = [], outputFilename } = req.body || {}
-    const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename)
+    const { masterFilePaths = [], outputFilename, selectedEpisodes = [], compileEpisodes = false, freshCompile = false } = req.body || {}
+    if (req.setTimeout) req.setTimeout(1800000)
+    if (res.setTimeout) res.setTimeout(1800000)
+    const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename, {
+      selectedEpisodes,
+      compileEpisodes: compileEpisodes === true,
+      freshCompile: freshCompile === true,
+      skipExisting: freshCompile !== true
+    })
     res.json(result)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -217,6 +225,15 @@ app.get(['/api/franchises/:franchiseId/omnibus-metadata', '/api/episodes/:franch
   }
 })
 
+app.get([
+  '/api/franchises/:franchiseId/omnibus-status',
+  '/api/episodes/:franchiseId/omnibus-status',
+  '/api/episodes/:franchiseId/omnibus/video-status'
+], (req, res) => {
+  const { franchiseId } = req.params
+  res.json(VideoService.getStatus(franchiseId, 'omnibus'))
+})
+
 app.delete('/api/franchises/:franchiseId/omnibus-files', handleOmnibusDelete)
 app.delete('/api/episodes/:franchiseId/omnibus-files', handleOmnibusDelete)
 
@@ -308,11 +325,89 @@ const handlePromptMatrixAudit = async (req, res) => {
       promptMatrixText = await fs.promises.readFile(promptPath, 'utf-8')
     }
 
-    // Load character vault
-    const vaultDir = path.resolve(projectRoot, '01_Franchises', franchiseId, 'character_vault')
+    // Load character vault and franchise context
+    const franDir = path.resolve(projectRoot, '01_Franchises', franchiseId)
+    const vaultDir = path.resolve(franDir, 'character_vault')
     let characters = []
     let items = []
     let flowEntities = {}
+    let franchise = null
+    let zones = {}
+    let audioTelemetry = null
+
+    // Load franchise.json
+    const franPath = path.join(franDir, 'franchise.json')
+    if (fs.existsSync(franPath)) {
+      try {
+        franchise = JSON.parse(await fs.promises.readFile(franPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load entities from vault/entities.json
+    let entities = {}
+    const entitiesPath = path.join(franDir, franchise?.paths?.entities || 'vault/entities.json')
+    if (fs.existsSync(entitiesPath)) {
+      try {
+        entities = JSON.parse(await fs.promises.readFile(entitiesPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load policy
+    let policy = {}
+    const policyPath = path.join(franDir, franchise?.paths?.policy || 'policy.json')
+    const enginePolicyPath = path.resolve(projectRoot, '00_Engine/policy.json')
+    if (fs.existsSync(policyPath)) {
+      try {
+        policy = JSON.parse(await fs.promises.readFile(policyPath, 'utf-8'))
+      } catch (e) {}
+    } else if (fs.existsSync(enginePolicyPath)) {
+      try {
+        policy = JSON.parse(await fs.promises.readFile(enginePolicyPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load ledger state events
+    let ledgerText = ''
+    const ledgerPath = path.join(epPath, franchise?.paths?.ledger || 'state_events.jsonl')
+    if (fs.existsSync(ledgerPath)) {
+      try {
+        ledgerText = await fs.promises.readFile(ledgerPath, 'utf-8')
+      } catch (e) {}
+    }
+
+    // Load scenes.json if exists
+    let scenesJson = null
+    const scenesPath = path.join(epPath, 'scenes.json')
+    if (fs.existsSync(scenesPath)) {
+      try {
+        scenesJson = JSON.parse(await fs.promises.readFile(scenesPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load dispatch_manifest.json if exists
+    let manifest = null
+    const manifestPath = path.join(epPath, 'dispatch_manifest.json')
+    if (fs.existsSync(manifestPath)) {
+      try {
+        manifest = JSON.parse(await fs.promises.readFile(manifestPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load zones
+    const zonesPath = path.join(franDir, 'vault', 'zones.json')
+    if (fs.existsSync(zonesPath)) {
+      try {
+        zones = JSON.parse(await fs.promises.readFile(zonesPath, 'utf-8'))
+      } catch (e) {}
+    }
+
+    // Load audio telemetry
+    const telPath = path.join(epPath, 'audio', 'audio_telemetry.json')
+    if (fs.existsSync(telPath)) {
+      try {
+        audioTelemetry = JSON.parse(await fs.promises.readFile(telPath, 'utf-8'))
+      } catch (e) {}
+    }
 
     const charsPath = path.join(vaultDir, 'characters.json')
     if (fs.existsSync(charsPath)) {
@@ -339,9 +434,20 @@ const handlePromptMatrixAudit = async (req, res) => {
     }
 
     const audit = AntiSlopValidator.auditPromptMatrix(scriptText, promptMatrixText, {
+      franchise,
+      franchiseDir: franDir,
+      epPath,
+      episodeId,
+      entities,
+      policy,
+      ledgerText,
+      scenesJson,
+      manifest,
       characters,
       items,
-      flowEntities
+      flowEntities,
+      zones,
+      audioTelemetry
     })
 
     res.json({
@@ -357,6 +463,66 @@ const handlePromptMatrixAudit = async (req, res) => {
 
 app.get('/api/episodes/:franchiseId/:episodeId/prompt-matrix-audit', handlePromptMatrixAudit)
 app.post('/api/episodes/:franchiseId/:episodeId/prompt-matrix-audit', handlePromptMatrixAudit)
+
+// Google Flow Scene Synchroniser & Reverse-Lookup Endpoint
+app.post('/api/episodes/:franchiseId/:episodeId/find-scene', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { queryText, batchFilter, maxResults = 10 } = req.body || {}
+
+    if (!queryText || typeof queryText !== 'string' || !queryText.trim()) {
+      return res.status(400).json({ error: 'queryText is required' })
+    }
+
+    const epData = await FileService.getEpisode(franchiseId, episodeId)
+    if (!epData || !epData.promptMatrix) {
+      return res.status(404).json({ error: 'Prompt matrix not found for this episode' })
+    }
+
+    // Parse scenes from prompt matrix XML
+    const sceneRegex = /<scene\s+([^>]*?)>\s*([\s\S]*?)\s*<\/scene>/gi
+    const scenes = []
+    let sMatch
+
+    while ((sMatch = sceneRegex.exec(epData.promptMatrix)) !== null) {
+      const attrs = sMatch[1]
+      const inner = sMatch[2]
+
+      const idMatch = attrs.match(/id=["']?(IMG_?\d+)["']?/i) || inner.match(/<tag>([^<]+)<\/tag>/i)
+      if (!idMatch) continue
+      const cleanTag = idMatch[1].replace(/_/g, '').replace(/[[\]]/g, '')
+      const tag = `[${cleanTag.replace(/(\d+)/, '_$1')}]`
+
+      const promptMatch = inner.match(/<prompt>([\s\S]*?)<\/prompt>/i)
+      const narrativeMatch = inner.match(/<narrative_sync>([\s\S]*?)<\/narrative_sync>/i)
+      const layoutMatch = inner.match(/<layout>([^<]+)<\/layout>/i)
+
+      scenes.push({
+        tag,
+        prompt: promptMatch ? promptMatch[1].trim() : inner.trim(),
+        narrativeSync: narrativeMatch ? narrativeMatch[1].trim() : '',
+        description: layoutMatch ? layoutMatch[1].trim() : ''
+      })
+    }
+
+    const matches = findMatchingScenes(queryText, scenes, {
+      batchSize: 24,
+      maxResults,
+      batchFilter: batchFilter !== undefined ? batchFilter : null
+    })
+
+    res.json({
+      success: true,
+      franchiseId,
+      episodeId,
+      totalScenes: scenes.length,
+      matchCount: matches.length,
+      matches
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
 
 // Generate Prompt Matrix
 app.post('/api/episodes/:franchiseId/:episodeId/generate-prompts', async (req, res) => {
@@ -620,6 +786,70 @@ app.post('/api/episodes/:franchiseId/:episodeId/images/batch-upload', async (req
       success: true,
       count: uploaded.length,
       uploaded
+    })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+// Clear Generated Images for a Specific Batch or Scene List
+app.post('/api/episodes/:franchiseId/:episodeId/images/clear-batch', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const { batchNumber, startTag, endTag, scenes } = req.body || {}
+
+    const imagesDir = ImageService.getImagesDir(franchiseId, episodeId)
+    if (!fs.existsSync(imagesDir)) {
+      return res.json({ success: true, deletedCount: 0, remainingCount: 0, message: 'Images directory does not exist' })
+    }
+
+    // Determine target scene tags
+    const targetTags = new Set()
+    if (Array.isArray(scenes) && scenes.length > 0) {
+      scenes.forEach(s => targetTags.add(String(s).trim().toUpperCase()))
+    } else if (startTag && endTag) {
+      const startMatch = String(startTag).match(/IMG_(\d+)/i)
+      const endMatch = String(endTag).match(/IMG_(\d+)/i)
+      if (startMatch && endMatch) {
+        const startNum = parseInt(startMatch[1], 10)
+        const endNum = parseInt(endMatch[1], 10)
+        for (let i = startNum; i <= endNum; i++) {
+          targetTags.add(`IMG_${String(i).padStart(3, '0')}`)
+        }
+      }
+    } else if (batchNumber) {
+      const bNum = parseInt(batchNumber, 10)
+      const startNum = (bNum - 1) * 24 + 1
+      const endNum = bNum * 24
+      for (let i = startNum; i <= endNum; i++) {
+        targetTags.add(`IMG_${String(i).padStart(3, '0')}`)
+      }
+    }
+
+    if (targetTags.size === 0) {
+      return res.status(400).json({ error: 'Must provide batchNumber, startTag/endTag, or scenes array' })
+    }
+
+    const files = await fs.promises.readdir(imagesDir)
+    const deletedFiles = []
+
+    for (const file of files) {
+      const m = file.match(/^(IMG_\d+)/i)
+      if (m && targetTags.has(m[1].toUpperCase())) {
+        const fullPath = path.join(imagesDir, file)
+        await fs.promises.unlink(fullPath)
+        deletedFiles.push(file)
+      }
+    }
+
+    const remainingFiles = await fs.promises.readdir(imagesDir)
+
+    res.json({
+      success: true,
+      batchNumber: batchNumber || null,
+      deletedCount: deletedFiles.length,
+      deletedFiles,
+      remainingCount: remainingFiles.length
     })
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -952,14 +1182,72 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
           filename: plateFile,
           hasPlate: diskExists,
           url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
-          description: item.description || item.visual_dna || `${item.name} (${categoryName})`,
-          dnaAnchor: item.dna_prompt_anchor || item.token || `@{${item.name}}`,
-          fullDna: item.dna_prompt_anchor || item.visual_dna || '',
+          description: item.description || item.visual_dna || item.dna || `${item.name} (${categoryName})`,
+          dnaAnchor: item.dna_prompt_anchor || (item.dna ? (item.dna.startsWith('@{') ? item.dna : `@{${item.name}}, ${item.dna}`) : null) || item.token || `@{${item.name}}`,
+          fullDna: item.dna_prompt_anchor || item.visual_dna || item.dna || '',
           token: item.token || `@{${item.name}}`,
           generationPrompt: buildModelGenerationPrompt(item, seriesFormat, true),
             flowUuid: item.flowUuid || null,
             episodes: Array.isArray(item.episodes) ? item.episodes : []
         })
+      }
+    }
+
+    // 2B. Universal Entity Ingestion: Ingest Entities from vault/entities.json as fallback/enrichment
+    const franDir = path.resolve(projectRoot, '01_Franchises', franchiseId)
+    const vaultEntitiesPath = path.join(franDir, 'vault', 'entities.json')
+    if (fs.existsSync(vaultEntitiesPath)) {
+      try {
+        const rawEntities = JSON.parse(await fs.promises.readFile(vaultEntitiesPath, 'utf-8'))
+        for (const [key, ent] of Object.entries(rawEntities)) {
+          if (allItems.some(it => it.id === key || it.id === ent.id)) continue
+
+          const kind = (ent.kind || 'character').toLowerCase()
+          const isLocation = kind === 'location'
+          const isWeapon = kind === 'weapon'
+          const isArtifact = kind === 'artifact' || kind === 'relic'
+          const isProp = kind === 'prop' || kind === 'item'
+
+          let categoryName = 'Characters'
+          if (isLocation) categoryName = 'Locations'
+          else if (isWeapon) categoryName = 'Weapons'
+          else if (isArtifact) categoryName = 'Artifacts'
+          else if (isProp) categoryName = 'Props'
+          else {
+            categoryName = ent.category || (ent.age_class === 'minor' ? 'Protagonist' : 'Supporting')
+          }
+
+          const plateFile = ent.plate ? path.basename(ent.plate) : (ent.reference_plate || `${key}.jpg`)
+          const diskExists = fs.existsSync(path.join(vaultDir, plateFile)) || 
+                             fs.existsSync(path.join(modelsDir, plateFile)) ||
+                             fs.existsSync(path.join(charFilesDir, plateFile))
+
+          const cleanName = ent.name || ent.aliases?.[0] || key.replace(/_/g, ' ')
+          const tokenStr = ent.token || `@{${cleanName}}`
+          const dnaStr = ent.dna || ent.dna_prompt_anchor || ''
+
+          allItems.push({
+            id: ent.id || key,
+            name: cleanName,
+            flowName: ent.flowName || tokenStr.replace(/[@{}]/g, ''),
+            category: categoryName,
+            role: categoryName,
+            type: isLocation ? 'location' : (isWeapon ? 'weapon' : (isArtifact ? 'artifact' : (isProp ? 'prop' : 'character'))),
+            tier: ent.apparent_rank || ent.true_rank || (isLocation ? 'Spatial Location' : categoryName),
+            filename: plateFile,
+            hasPlate: diskExists,
+            url: `/api/franchises/${franchiseId}/character-models/${plateFile}`,
+            description: ent.description || dnaStr || `${cleanName} (${categoryName})`,
+            dnaAnchor: dnaStr ? `${tokenStr}, ${dnaStr}` : tokenStr,
+            fullDna: dnaStr,
+            token: tokenStr,
+            generationPrompt: buildModelGenerationPrompt({ ...ent, name: cleanName, dna_prompt_anchor: dnaStr, visual_dna: dnaStr }, seriesFormat, isLocation || isWeapon || isArtifact || isProp),
+            flowUuid: ent.flowUuid || null,
+            episodes: Array.isArray(ent.episodes) ? ent.episodes : []
+          })
+        }
+      } catch (e) {
+        console.warn('Failed to load vault/entities.json in character-models:', e.message)
       }
     }
 

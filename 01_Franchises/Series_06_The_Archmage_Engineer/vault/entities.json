@@ -1,0 +1,542 @@
+{
+  "ace_miller": {
+    "id": "ace_miller",
+    "kind": "character",
+    "token": "@{Ace Miller}",
+    "aliases": [
+      "Ace Miller",
+      "Ace Miller"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, relaxed youthful posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Neat cream linen tunic under a forest-green craftsman vest, rolled sleeves, leather utility belt with magnifying lens and notebook pouch, brown trousers"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/01_Protagonist_Ace_Miller.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "lumina": {
+    "id": "lumina",
+    "kind": "item",
+    "token": "@{LUMINA}",
+    "aliases": [
+      "LUMINA"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "A warm, friendly sky-blue and soft-gold floating UI window with a cute glowing Emoji smiley face in the top-right corner. Stores 100% of past-life Earth engineering knowledge and learns magic by scanning magic books and live spells.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/02_AI_Companion_LUMINA.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "garrett_miller": {
+    "id": "garrett_miller",
+    "kind": "character",
+    "token": "@{Garrett Miller}",
+    "aliases": [
+      "Garrett Miller",
+      "Garrett Miller"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Short tousled brown hair with a kind rugged jawline and light stubble, Warm amber-brown eyes with a proud, supportive smile, Broad-shouldered, sturdy muscular farmer build with strong calloused hands",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Rugged olive-green cotton work shirt with rolled sleeves, dark-brown leather apron, durable dark trousers"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/03_Father_Garrett_Miller.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "clara_miller": {
+    "id": "clara_miller",
+    "kind": "character",
+    "token": "@{Clara Miller}",
+    "aliases": [
+      "Clara Miller",
+      "Clara Miller"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Long warm honey-brown hair braided loosely over one shoulder, Bright emerald-green eyes with a loving, clever smile, Graceful, warm maternal posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Practical yet graceful sage-green and cream medieval country dress with a clean white linen apron"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/04_Mother_Clara_Miller.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "maya_miller": {
+    "id": "maya_miller",
+    "kind": "character",
+    "token": "@{Maya Miller}",
+    "aliases": [
+      "Maya Miller",
+      "Maya Miller"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, Bright expressive amber eyes with a lively big-sister grin, Active, agile youthful sister build",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/05_Sister_Maya_Miller.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "princess_seraphina": {
+    "id": "princess_seraphina",
+    "kind": "character",
+    "token": "@{Princess Seraphina}",
+    "aliases": [
+      "Princess Seraphina",
+      "Princess Seraphina"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Long flowing golden-blonde hair with a subtle braided crown, Sparkling sapphire-blue eyes full of curiosity and wonder, Graceful 11-year-old royal build",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Elegant royal ivory-and-sky-blue travel dress with gold embroidery and hooded travel cloak"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/06_Royal_Princess_Seraphina.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "sir_roland_vance": {
+    "id": "sir_roland_vance",
+    "kind": "character",
+    "token": "@{Sir Roland Vance}",
+    "aliases": [
+      "Sir Roland Vance",
+      "Sir Roland Vance"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Short neatly combed silver-blonde hair, Sharp blue-grey eyes with an honourable, serious expression, Tall, athletic royal knight build",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Polished silver-and-blue royal plate armour over a navy tunic with a white royal cape, sheathed silver longsword at hip"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/07_Guard_Sir_Roland_Vance.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "emperor_aldrich": {
+    "id": "emperor_aldrich",
+    "kind": "character",
+    "token": "@{Emperor Aldrich}",
+    "aliases": [
+      "Emperor Aldrich",
+      "Emperor Aldrich"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Golden-blonde hair with distinguished silver temples and a neatly trimmed royal beard, Sharp sapphire-blue eyes, Commanding, regal monarch build",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Grand crimson-and-gold imperial ceremonial robes with a white fur mantle and golden crown"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/08_Monarch_Emperor_Aldrich.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "empress_evelyn": {
+    "id": "empress_evelyn",
+    "kind": "character",
+    "token": "@{Empress Evelyn}",
+    "aliases": [
+      "Empress Evelyn",
+      "Empress Evelyn"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Flowing platinum-gold hair styled with pearl hairpins and a delicate tiara, Intelligent sapphire-blue eyes with a poised warm expression, Elegant, regal posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Royal pearl-white and azure-blue silk gown with gold filigree trim"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/09_Monarch_Empress_Evelyn.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "grand_councilor_malakor": {
+    "id": "grand_councilor_malakor",
+    "kind": "character",
+    "token": "@{Grand Councilor Malakor}",
+    "aliases": [
+      "Grand Councilor Malakor",
+      "Grand Councilor Malakor"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Long swept-back dark grey hair with a pointed goatee, Narrow amber eyes looking down with stubborn old-fashioned pride, Tall, aristocratic archmage posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Ornate deep purple-and-gold high-collared archmage robes adorned with red fire-mana crystals, holding a gold-and-wood mage staff"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/10_Antagonist_Councilor_Malakor.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "goddess_celestia": {
+    "id": "goddess_celestia",
+    "kind": "character",
+    "token": "@{Goddess Celestia}",
+    "aliases": [
+      "Goddess Celestia",
+      "Goddess Celestia"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Long flowing luminous silver-white hair with soft emerald-green tips, Compassionate glowing golden-green eyes, Radiant ethereal divine figure",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Flowing white-and-emerald divine silk robes adorned with living golden leaf motifs"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/11_Deity_Goddess_Celestia.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "old_miller_farm": {
+    "id": "old_miller_farm",
+    "kind": "item",
+    "token": "@{Old Miller Farm}",
+    "aliases": [
+      "Old Miller Farm"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "The rustic, muddy wooden cottage and hand-dug dirt field in the Emerald Alpine Valley before Ace's Age-10 Awakening.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/12_Location_Old_Miller_Farm.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "miller_sanctuary_farm": {
+    "id": "miller_sanctuary_farm",
+    "kind": "location",
+    "token": "@{Miller Sanctuary Farm}",
+    "aliases": [
+      "Miller Sanctuary Farm",
+      "miller_sanctuary_farm",
+      "miller_sanctuary_farm_exterior",
+      "Miller Sanctuary Farm Exterior"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the secluded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a cozy timber-and-white-stone cottage, covered white-stone water channel beside a natural packed-earth and green grass yard, enclosed white-stone draft chimney, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/13_Location_Miller_Sanctuary_Farm.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ],
+    "debut_scene": "IMG_281",
+    "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the secluded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a cozy timber-and-white-stone cottage, covered white-stone water channel beside a natural packed-earth and green grass yard, enclosed white-stone draft chimney, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+    "stage_variants": {
+      "ep01_stage1": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring the modest timber cottage with newly built white-stone draft chimney, covered white-stone water channel, cylindrical white-stone filter tank, natural packed-earth and grass yard, and purple lavender rows, wooden window shutters, zero glass windows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, horizontal 16:9",
+      "ep02_stage2": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm timber-and-white-stone farmhouse with crystal-clear quartz glass windows, covered white-stone water channel, enclosed white-stone draft chimney, natural packed-earth and grass yard, and fragrant purple lavender rows, zero paved slab frontyard, zero stone pillars or arches, zero water-wheel, zero wind turbine, horizontal 16:9",
+      "arc3_stage3": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm timber-and-white-stone farmhouse with clear glass windows, covered white-stone water channel, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, horizontal 16:9"
+    }
+  },
+  "cale_dawson": {
+    "id": "cale_dawson",
+    "kind": "character",
+    "token": "@{Cale Dawson}",
+    "aliases": [
+      "Cale Dawson",
+      "Cale Dawson"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Neatly combed silver-grey hair with distinguished white temples, Kind crinkling emerald-green eyes behind elegant thin silver wireframe reading spectacles, Distinguished, calm 62-year-old gentleman programmer with relaxed, fulfilled posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Cozy charcoal-grey wool knit cardigan over a crisp white collared button-up shirt and tailored dark grey trousers"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/14_Past_Life_Cale_Dawson.jpg",
+    "episodes": [
+      "EP01",
+      "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "simon_vane": {
+    "id": "simon_vane",
+    "kind": "character",
+    "token": "@{Simon Vane}",
+    "aliases": [
+      "Simon Vane",
+      "Master Vane",
+      "Tax Collector Vane"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Fat, balding frontier tax collector with small beady greedy eyes, a thin greasy dark mustache, double chin, wearing an opulent fur-trimmed crimson merchant vest over an embroidered gold tunic with heavy brass rings on his fingers",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Opulent fur-trimmed crimson merchant vest over an embroidered gold tunic with heavy brass rings"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/15_Antagonist_Simon_Vane.jpg",
+    "episodes": [
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival",
+      "EP03"
+    ]
+  },
+  "guild_fire_mage": {
+    "id": "guild_fire_mage",
+    "kind": "character",
+    "token": "@{Guild Fire Mage}",
+    "aliases": [
+      "Guild Fire Mage",
+      "Fire Mage",
+      "Oakhaven Fire Mage"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Tall, arrogant 30-year-old guild fire mage with slicked-back dark hair, sharp narrow eyes with an arrogant sneer, wearing high-collared red-and-gold Mage Guild robes, holding an iron-tipped fire-mana staff",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "High-collared red-and-gold Mage Guild robes, holding an iron-tipped fire-mana staff"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/16_Antagonist_Guild_Fire_Mage.jpg",
+    "episodes": [
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival",
+      "EP03"
+    ]
+  },
+  "scrying_raven": {
+    "id": "scrying_raven",
+    "kind": "item",
+    "token": "@{Scrying Raven}",
+    "aliases": [
+      "Scrying Raven",
+      "Enchanted Raven"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "A large coal-black enchanted surveillance raven with unnatural glowing crimson eyes and a tiny polished enchanted scrying gemstone embedded in its forehead",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/17_Item_Scrying_Raven.jpg",
+    "episodes": [
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "starlight_mare": {
+    "id": "starlight_mare",
+    "kind": "item",
+    "token": "@{Starlight the Mare}",
+    "aliases": [
+      "Starlight",
+      "Starlight the Mare",
+      "Seraphina's Mare"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Graceful dapple-grey royal mare with white-grey dappled coat, silver mane, royal sapphire-blue and silver saddle and blue bridle",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/18_Mount_Starlight_Mare.jpg",
+    "episodes": [
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "old_miller_cottage_interior": {
+    "id": "old_miller_cottage_interior",
+    "kind": "location",
+    "token": "@{Old Miller Cottage Interior}",
+    "aliases": [
+      "Old Miller Cottage Interior",
+      "old_miller_cottage_interior"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small rectangular wooden-shuttered window opening",
+    "plate": "character_vault/21_Location_Old_Miller_Cottage_Interior.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "emerald_valley_forest_trail": {
+    "id": "emerald_valley_forest_trail",
+    "kind": "location",
+    "token": "@{Emerald Valley Forest Trail}",
+    "aliases": [
+      "Emerald Valley Forest Trail",
+      "emerald_valley_forest_trail"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz creek bed, birch trees, and mossy boulders",
+    "plate": "character_vault/20_Location_Emerald_Valley_Forest_Trail.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "miller_sanctuary_bath_courtyard": {
+    "id": "miller_sanctuary_bath_courtyard",
+    "kind": "location",
+    "token": "@{Miller Sanctuary Bath Courtyard}",
+    "aliases": [
+      "Miller Sanctuary Bath Courtyard",
+      "miller_sanctuary_bath_courtyard"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Modest private backyard wash area beside the timber cottage wall on natural packed earth and green grass, featuring a compact cylindrical white-stone water filter tank, a brass water tap over a hollowed white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio",
+    "plate": "character_vault/22_Location_Miller_Sanctuary_Bath_Courtyard.jpg",
+    "episodes": [
+      "EP01",
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "oakhaven_tax_chamber": {
+    "id": "oakhaven_tax_chamber",
+    "kind": "location",
+    "token": "@{Oakhaven Tax Guild Chamber}",
+    "aliases": [
+      "Oakhaven Tax Guild Chamber",
+      "oakhaven_tax_chamber"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal",
+    "plate": "character_vault/19_Location_Oakhaven_Tax_Chamber.jpg",
+    "episodes": [
+      "EP02",
+      "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  }
+}

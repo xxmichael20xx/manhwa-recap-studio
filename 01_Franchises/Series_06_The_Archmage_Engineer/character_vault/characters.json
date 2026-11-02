@@ -23,18 +23,21 @@
       "appearance": {
         "hair": "Short tousled chestnut-brown hair falling naturally over forehead",
         "eyes": "Bright intelligent emerald-green eyes with a warm, humble, slightly playful nonchalant smile",
-        "physique": "Energetic 10-year-old boy build with relaxed, humble posture",
+        "physique": "Energetic 10-year-old boy build with relaxed, youthful posture",
         "attire": "Neat modern-medieval tailored cream linen tunic under a light forest-green craftsman vest, rolled sleeves, brown leather utility belt with a small magnifying lens and leather notebook pouch, durable brown trousers",
         "weapons": "None; carries a leather blueprint notebook and channels all 8 elemental mana colours gently in his palm"
       },
-      "dna_prompt_anchor": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
       "reference_plate": "01_Protagonist_Ace_Miller.jpg",
       "flowName": "Ace Miller",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
     },
     {
       "id": "lumina",
@@ -59,9 +62,12 @@
       "flowName": "LUMINA",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{LUMINA}, warm friendly translucent sky-blue and soft-gold rounded floating magical UI window hovering in mid-air, featuring a large cute expressive glowing happy Emoji smiley face icon in the top-right corner, clean graphical mana bars, zero text, bright Korean fantasy manhwa art style, sharp clean linework, luminous glow, horizontal 16:9, widescreen"
     },
     {
       "id": "garrett_miller",
@@ -81,16 +87,19 @@
         "hair": "Short tousled brown hair with a kind rugged jawline and light stubble",
         "eyes": "Warm amber-brown eyes with a proud, supportive smile",
         "physique": "Broad-shouldered, sturdy muscular farmer build with strong calloused hands",
-        "attire": "Clean earth-toned cotton work shirt with rolled sleeves, sturdy brown leather suspenders and work trousers"
+        "attire": "Rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps, durable dark trousers"
       },
-      "dna_prompt_anchor": "@{Garrett Miller}, 36-year-old sturdy warm-hearted farmer father, short tousled brown hair, light stubble, warm amber-brown eyes, proud supportive smile, broad muscular shoulders, wearing clean earth-toned work shirt with rolled sleeves and brown leather suspenders, faint warm amber earth-magic glow on hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen",
+      "dna_prompt_anchor": "@{Garrett Miller}, 36-year-old sturdy warm-hearted farmer father, short tousled brown hair, light stubble, warm amber-brown eyes, proud supportive smile, broad muscular shoulders, wearing rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps, durable dark trousers, faint warm amber earth-magic glow on hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen",
       "reference_plate": "03_Father_Garrett_Miller.jpg",
       "flowName": "Garrett Miller",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Garrett Miller}, 36-year-old sturdy warm-hearted farmer father, short tousled brown hair, light stubble, warm amber-brown eyes, proud supportive smile, broad muscular shoulders, wearing rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps, durable dark trousers, faint warm amber earth-magic glow on hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "clara_miller",
@@ -117,9 +126,12 @@
       "flowName": "Clara Miller",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Clara Miller}, 34-year-old gentle sharp-minded mother, long honey-brown hair braided loosely over one shoulder, bright emerald-green eyes, warm loving smile, wearing sage-green and cream medieval country dress with clean white linen apron, soft blue water and green nature magic droplets near hands, bright Korean fantasy manhwa art style, sharp clean ink linework, warm cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "maya_miller",
@@ -138,17 +150,20 @@
       "appearance": {
         "hair": "Shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon",
         "eyes": "Bright expressive amber eyes with a lively big-sister grin",
-        "physique": "Active, agile 13-year-old girl build",
-        "attire": "Breezy sky-blue and white medieval country tunic with a light brown utility skirt and leather boots"
+        "physique": "Active, agile youthful sister build",
+        "attire": "Breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots"
       },
-      "dna_prompt_anchor": "@{Maya Miller}, 13-year-old cheerful energetic older sister, shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, bright amber eyes, lively grin, wearing breezy sky-blue and white medieval country tunic with light brown utility skirt and boots, soft mint-green wind magic breezes swirling around fingertips, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "dna_prompt_anchor": "@{Maya Miller}, cheerful energetic youthful older sister, shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, bright amber eyes, lively grin, wearing breezy sky-blue and white medieval country tunic with practical brown traveler trousers and boots, soft mint-green wind magic breezes swirling around fingertips, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
       "reference_plate": "05_Sister_Maya_Miller.jpg",
       "flowName": "Maya Miller",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Maya Miller}, cheerful energetic youthful older sister, shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, bright amber eyes, lively grin, wearing breezy sky-blue and white medieval country tunic with practical brown traveler trousers and boots, soft mint-green wind magic breezes swirling around fingertips, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "princess_seraphina",
@@ -175,9 +190,12 @@
       "flowName": "Princess Seraphina",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Princess Seraphina}, 11-year-old adventurous royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "sir_roland_vance",
@@ -204,9 +222,12 @@
       "flowName": "Sir Roland Vance",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Sir Roland Vance}, 32-year-old loyal royal knight escort, short neatly combed silver-blonde hair, sharp blue-grey eyes, honourable stern expression, wearing polished silver-and-blue royal plate armour over navy tunic with white royal cape, hand resting on sheathed silver knight longsword at hip, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "emperor_aldrich",
@@ -233,9 +254,12 @@
       "flowName": "Emperor Aldrich",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Emperor Aldrich}, 44-year-old regal pragmatic Emperor, golden-blonde hair with silver temples, neatly trimmed beard, sharp sapphire-blue eyes, wearing grand crimson-and-gold imperial robes with white fur mantle and golden crown, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "empress_evelyn",
@@ -262,9 +286,12 @@
       "flowName": "Empress Evelyn",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Empress Evelyn}, 40-year-old refined graceful Empress, flowing platinum-gold hair with pearl hairpins and delicate tiara, intelligent sapphire-blue eyes, poised warm expression, wearing royal pearl-white and azure-blue silk gown with gold filigree trim, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "grand_councilor_malakor",
@@ -291,9 +318,12 @@
       "flowName": "Grand Councilor Malakor",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Grand Councilor Malakor}, 58-year-old proud traditionalist Imperial Mage Councilor, swept-back dark grey hair, pointed goatee, narrow amber eyes, stubborn haughty expression, wearing ornate deep purple-and-gold high-collared archmage robes with red mana crystals, holding a wooden-and-gold mage staff topped with a red crystal, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "goddess_celestia",
@@ -320,9 +350,12 @@
       "flowName": "Goddess Celestia",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Goddess Celestia}, gentle radiant Goddess of Nature and Purity, long flowing silver-white hair with soft emerald-green tips, glowing golden-green eyes, warm loving smile, wearing flowing white-and-emerald divine silk robes with golden leaf motifs, soft radiant light and nature butterflies, bright Korean fantasy manhwa art style, sharp clean ink linework, luminous cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "old_miller_farm",
@@ -347,9 +380,12 @@
       "flowName": "Old Miller Farm",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Old Miller Farm}, 16:9 widescreen Korean manhwa background of the humble rustic Old Miller Farm before modernisation, set in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a weathered wooden cottage with thatched roof, muddy dirt yard, simple hand-dug water ditch, and wooden fence, zero stone aqueducts, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9"
     },
     {
       "id": "miller_sanctuary_farm",
@@ -365,18 +401,27 @@
         "location": "Emerald Alpine Valley (4 Cities from the Empire)"
       },
       "appearance": {
-        "buildings": "Modernised medieval homestead built from warm polished oak timber, smooth white stone masonry, and large clear glass windows",
-        "grounds": "Spotless white-stone aqueducts with crystal-clear spring water, brass water-wheel, neat terraced green crops, fragrant purple lavender rows, wooden-and-brass wind turbine",
+        "buildings": "Upgraded medieval homestead built from warm oak timber and smooth white stone masonry with enclosed white-stone draft chimney and wooden window shutters",
+        "grounds": "Spotless white-stone aqueducts with crystal-clear spring water, cylindrical white-stone filter tank, cambered white-stone flagstone walkway, and fragrant purple lavender rows",
         "backdrop": "Sunlit emerald alpine valley with snow-kissed mountain peaks and bright azure sky"
       },
-      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, spotless white-stone water aqueducts, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+      "dna_prompt_anchor": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the upgraded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a neat timber-and-white-stone homestead, spotless white-stone water aqueducts, enclosed white-stone draft chimney, cambered white-stone courtyard walkway, and fragrant purple lavender rows, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
       "reference_plate": "13_Location_Miller_Sanctuary_Farm.jpg",
       "flowName": "Miller Sanctuary Farm",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the upgraded Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a neat timber-and-white-stone homestead, spotless white-stone water aqueducts, enclosed white-stone draft chimney, cambered white-stone courtyard walkway, and fragrant purple lavender rows, zero water-wheel, zero wind turbine, bright cel-shaded manhwa environment art, horizontal 16:9",
+      "debut_scene": "IMG_281",
+      "stage_variants": {
+        "ep01_stage1": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring the modest timber cottage with newly built white-stone draft chimney, covered white-stone water aqueduct channel, cylindrical white-stone filter tank, cambered white-stone flagstone courtyard, and purple lavender rows, wooden window shutters, zero glass windows, zero water-wheel, zero wind turbine, horizontal 16:9",
+        "ep02_stage2": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with crystal-clear quartz glass windows, spotless white-stone water aqueducts, enclosed white-stone draft chimney, and fragrant purple lavender rows, zero water-wheel, zero wind turbine, horizontal 16:9",
+        "arc3_stage3": "@{Miller Sanctuary Farm}, 16:9 widescreen Korean manhwa background of the modernised Miller Sanctuary Farm at flat valley-floor ground level in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, spotless white-stone water aqueducts, brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine, horizontal 16:9"
+      }
     },
     {
       "id": "cale_dawson",
@@ -405,9 +450,175 @@
       "flowName": "Cale Dawson",
       "episodes": [
         "EP01",
-        "EP01_The_Awakening_and_The_Scent_of_Sanctuary"
+        "EP01_The_Awakening_and_The_Scent_of_Sanctuary",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Cale Dawson}, 62-year-old distinguished male programmer, neatly combed silver-grey hair with white temples, kind crinkling emerald-green eyes behind thin silver wireframe reading glasses, gentle calm smile, wearing a cozy charcoal-grey wool knit cardigan over a crisp white collared button-up shirt and tailored dark grey trousers, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "simon_vane",
+      "name": "Simon Vane",
+      "token": "@{Simon Vane}",
+      "tier": 2,
+      "role": "Oakhaven Tax Collector (Antagonist)",
+      "category": "antagonist",
+      "age": 42,
+      "stats_baseline": {
+        "level": 15,
+        "class": "Corrupt Imperial Tax Collector",
+        "affinities": "Minor Earth (Greed Resonance)",
+        "influence": "Frontier Jurisdiction"
+      },
+      "appearance": {
+        "hair": "Balding with thin greasy dark strands",
+        "eyes": "Small beady greedy eyes",
+        "physique": "Fat, flabby build with double chin and arrogant posture",
+        "attire": "Opulent fur-trimmed crimson merchant vest over an embroidered gold tunic with heavy brass rings",
+        "weapons": "None; carries heavy brass guild seal and tax scrolls"
+      },
+      "dna_prompt_anchor": "@{Simon Vane}, fat balding 42-year-old frontier tax collector, small beady greedy eyes, greasy dark mustache, double chin, opulent fur-trimmed crimson merchant vest over gold tunic, brass rings, horizontal 16:9",
+      "reference_plate": "15_Antagonist_Simon_Vane.jpg",
+      "flowName": "Simon Vane",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival",
+        "EP03"
+      ],
+      "hasPlate": true,
+      "dna": "@{Simon Vane}, fat balding 42-year-old frontier tax collector, small beady greedy eyes, greasy dark mustache, double chin, opulent fur-trimmed crimson merchant vest over gold tunic, brass rings, horizontal 16:9"
+    },
+    {
+      "id": "guild_fire_mage",
+      "name": "Guild Fire Mage",
+      "token": "@{Guild Fire Mage}",
+      "tier": 2,
+      "role": "Oakhaven Mage Guild Enforcer",
+      "category": "antagonist",
+      "age": 30,
+      "stats_baseline": {
+        "level": 20,
+        "class": "Guild Fire Mage Enforcer",
+        "affinities": "Base Fire Affinity (Tier 2)",
+        "spells": "Flame Lance, Fireball"
+      },
+      "appearance": {
+        "hair": "Slicked-back dark hair",
+        "eyes": "Sharp narrow eyes with an arrogant sneer",
+        "physique": "Tall, lean battle mage build",
+        "attire": "High-collared red-and-gold Mage Guild robes with flame embroidery",
+        "weapons": "Iron-tipped fire-mana staff topped with glowing red crystal"
+      },
+      "dna_prompt_anchor": "@{Guild Fire Mage}, tall arrogant 30-year-old battle mage, slicked-back dark hair, narrow eyes, red-and-gold high-collared guild robes, clutching iron-tipped fire staff, horizontal 16:9",
+      "reference_plate": "16_Antagonist_Guild_Fire_Mage.jpg",
+      "flowName": "Guild Fire Mage",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival",
+        "EP03"
+      ],
+      "hasPlate": true,
+      "dna": "@{Guild Fire Mage}, tall arrogant 30-year-old battle mage, slicked-back dark hair, narrow eyes, red-and-gold high-collared guild robes, clutching iron-tipped fire staff, horizontal 16:9"
+    },
+    {
+      "id": "old_miller_cottage_interior",
+      "name": "Old Miller Cottage Interior",
+      "token": "@{Old Miller Cottage Interior}",
+      "tier": 1,
+      "role": "Cozy Cottage Living Space & Hearth (Episode 01–02)",
+      "category": "location",
+      "stats_baseline": {
+        "type": "Spatial Environmental Sanctuary Location",
+        "function": "Cozy Cottage Living Space & Hearth (Episode 01–02)"
+      },
+      "appearance": {
+        "setting": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small window"
+      },
+      "dna_prompt_anchor": "@{Old Miller Cottage Interior}, warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small window, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "21_Location_Old_Miller_Cottage_Interior.jpg",
+      "flowName": "Old Miller Cottage Interior",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "@{Old Miller Cottage Interior}, warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small window, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "emerald_valley_forest_trail",
+      "name": "Emerald Valley Forest Trail",
+      "token": "@{Emerald Valley Forest Trail}",
+      "tier": 1,
+      "role": "Mountain Trail & Quartz Creek (Episode 01–02)",
+      "category": "location",
+      "stats_baseline": {
+        "type": "Spatial Environmental Sanctuary Location",
+        "function": "Mountain Trail & Quartz Creek (Episode 01–02)"
+      },
+      "appearance": {
+        "setting": "Sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz sand creek, birch trees, and mossy boulders"
+      },
+      "dna_prompt_anchor": "@{Emerald Valley Forest Trail}, sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz sand creek, birch trees, and mossy boulders, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "20_Location_Emerald_Valley_Forest_Trail.jpg",
+      "flowName": "Emerald Valley Forest Trail",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "@{Emerald Valley Forest Trail}, sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz sand creek, birch trees, and mossy boulders, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "miller_sanctuary_bath_courtyard",
+      "name": "Miller Sanctuary Bath Courtyard",
+      "token": "@{Miller Sanctuary Bath Courtyard}",
+      "tier": 1,
+      "role": "Upgraded Thermal Bath & Aqueduct Courtyard (Episode 02)",
+      "category": "location",
+      "stats_baseline": {
+        "type": "Spatial Environmental Sanctuary Location",
+        "function": "Upgraded Thermal Bath & Aqueduct Courtyard (Episode 02)"
+      },
+      "appearance": {
+        "setting": "Spotless white-stone courtyard and washhouse of the upgraded sanctuary farm featuring clean running brass water taps, layered stone water filter tank, steaming porcelain-lined stone bath basin, and fragrant purple lavender soap bars"
+      },
+      "dna_prompt_anchor": "@{Miller Sanctuary Bath Courtyard}, spotless white-stone courtyard and washhouse of the upgraded sanctuary farm featuring clean running brass water taps, layered stone water filter tank, steaming porcelain-lined stone bath basin, and fragrant purple lavender soap bars, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "22_Location_Miller_Sanctuary_Bath_Courtyard.jpg",
+      "flowName": "Miller Sanctuary Bath Courtyard",
+      "episodes": [
+        "EP01",
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "@{Miller Sanctuary Bath Courtyard}, spotless white-stone courtyard and washhouse of the upgraded sanctuary farm featuring clean running brass water taps, layered stone water filter tank, steaming porcelain-lined stone bath basin, and fragrant purple lavender soap bars, bright Korean fantasy manhwa art style, sharp clean ink linework, warm luminous daylight, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "oakhaven_tax_chamber",
+      "name": "Oakhaven Tax Guild Chamber",
+      "token": "@{Oakhaven Tax Guild Chamber}",
+      "tier": 1,
+      "role": "Frontier Bureaucratic Tax Office (Episode 02)",
+      "category": "location",
+      "stats_baseline": {
+        "type": "Spatial Environmental Sanctuary Location",
+        "function": "Frontier Bureaucratic Tax Office (Episode 02)"
+      },
+      "appearance": {
+        "setting": "Opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal"
+      },
+      "dna_prompt_anchor": "@{Oakhaven Tax Guild Chamber}, opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal, dark fantasy manhwa art style, sharp clean ink linework, dramatic ambient candle and crystal lighting, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "reference_plate": "19_Location_Oakhaven_Tax_Chamber.jpg",
+      "flowName": "Oakhaven Tax Guild Chamber",
+      "episodes": [
+        "EP02",
+        "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+      ],
+      "hasPlate": true,
+      "dna": "@{Oakhaven Tax Guild Chamber}, opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal, dark fantasy manhwa art style, sharp clean ink linework, dramatic ambient candle and crystal lighting, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
     }
   ]
 }

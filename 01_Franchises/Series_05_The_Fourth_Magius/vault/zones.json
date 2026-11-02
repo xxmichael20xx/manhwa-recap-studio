@@ -1,0 +1,169 @@
+{
+  "montrey_appraisal_hall": {
+    "id": "montrey_appraisal_hall",
+    "name": "Montrey Appraisal Hall",
+    "canon": "Grand gothic appraisal hall of House Montrey built from pale silver granite, towering stained-glass windows, polished marble floor, and glowing blue mana sconces.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "muddy ground",
+      "dirt road",
+      "trees"
+    ],
+    "adjacent": [
+      "montrey_ancestral_bastion"
+    ]
+  },
+  "blackwood_forest_clearing": {
+    "id": "blackwood_forest_clearing",
+    "name": "Blackwood Forest Clearing",
+    "canon": "Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground covered in pine needles, and a solitary six-foot moss-covered granite boulder sitting in the center. Pure isolated wilderness, fifty paces beyond the apothecary rear yard.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "stained-glass windows",
+      "marble floors",
+      "street doors",
+      "town houses",
+      "shops"
+    ],
+    "cardinal_layout": {
+      "center": "six_foot_mossy_granite_boulder",
+      "north": "dense_ironwood_pines",
+      "south": "worn_dirt_path_leading_to_apothecary_courtyard"
+    },
+    "allowed_portals": [
+      "worn_forest_dirt_path"
+    ],
+    "forbidden_portals": [
+      "doors",
+      "gates",
+      "windows"
+    ],
+    "adjacent": [
+      "oakhaven_apothecary_courtyard"
+    ]
+  },
+  "oakhaven_apothecary_courtyard": {
+    "id": "oakhaven_apothecary_courtyard",
+    "name": "Oakhaven Apothecary Rear Courtyard",
+    "canon": "Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Features weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low roof eaves, a low cedar picket fence, and a narrow worn footpath leading into the nearby evergreen Blackwood tree line.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "marble floors",
+      "palace hall",
+      "deep mountain peaks"
+    ],
+    "cardinal_layout": {
+      "north": "woodpile_and_cedar_fence_leading_to_forest_path",
+      "south": "rear_timber_wall_and_overhanging_low_eaves_of_apothecary",
+      "west": "rainwater_barrel"
+    },
+    "allowed_portals": [
+      "low_rear_eaves",
+      "courtyard_gate_path"
+    ],
+    "forbidden_portals": [
+      "front street door"
+    ],
+    "adjacent": [
+      "oakhaven_apothecary_loft",
+      "rowan_apothecary_shop",
+      "blackwood_forest_clearing"
+    ]
+  },
+  "rowan_apothecary_shop": {
+    "id": "rowan_apothecary_shop",
+    "name": "Rowan Apothecary Shop",
+    "canon": "Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and iron skillet in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, and a narrow wooden ladder hatch leading to sleeping loft in South-West corner.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "broad daylight",
+      "open sky",
+      "untamed forest",
+      "astral void"
+    ],
+    "cardinal_layout": {
+      "north": "cedar_shelves_with_herb_jars",
+      "east": "front_display_window_facing_high_street",
+      "south": "heavy_oak_front_entrance_door",
+      "west": "stone_hearth_and_cooking_station",
+      "south_west": "wooden_ladder_leading_to_loft"
+    },
+    "allowed_portals": [
+      "heavy_oak_front_entrance_door",
+      "wooden_ladder_hatch"
+    ],
+    "forbidden_portals": [
+      "loft circular window"
+    ],
+    "adjacent": [
+      "oakhaven_apothecary_loft",
+      "oakhaven_apothecary_courtyard",
+      "oakhaven_perimeter_gate"
+    ]
+  },
+  "oakhaven_apothecary_loft": {
+    "id": "oakhaven_apothecary_loft",
+    "name": "Oakhaven Apothecary Loft",
+    "canon": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner. Strictly isolated attic space.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "marble throne",
+      "palace hall",
+      "entrance door",
+      "front door",
+      "oak street door",
+      "shop counter",
+      "copper alembics"
+    ],
+    "cardinal_layout": {
+      "north_west": "straw_mattress_bed_under_low_sloping_rafter",
+      "east": "circular_leaded_glass_window",
+      "south": "small_wooden_writing_desk",
+      "south_west": "wooden_floor_ladder_hatch_down_to_shop"
+    },
+    "allowed_portals": [
+      "wooden_floor_ladder_hatch",
+      "circular_leaded_glass_window"
+    ],
+    "forbidden_portals": [
+      "entrance door",
+      "front door",
+      "oak street door",
+      "hallway door"
+    ],
+    "adjacent": [
+      "rowan_apothecary_shop",
+      "oakhaven_apothecary_courtyard",
+      "white_dimension_library"
+    ]
+  },
+  "white_dimension_library": {
+    "id": "white_dimension_library",
+    "name": "The Infinite White Dimension Library",
+    "canon": "Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, absolute stillness, ethereal cyan arcane constellation rings rotating horizontally in distant white void.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "muddy road",
+      "thatched roof",
+      "dirt floor"
+    ],
+    "adjacent": [
+      "oakhaven_apothecary_loft"
+    ]
+  },
+  "oakhaven_perimeter_gate": {
+    "id": "oakhaven_perimeter_gate",
+    "name": "Oakhaven Perimeter Gate",
+    "canon": "Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, watchtowers with iron alarm bells, dirt road leading into dark Blackwood pines.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "marble throne",
+      "stained-glass windows",
+      "white astral dimension"
+    ],
+    "adjacent": [
+      "rowan_apothecary_shop",
+      "blackwood_forest_clearing"
+    ]
+  }
+}

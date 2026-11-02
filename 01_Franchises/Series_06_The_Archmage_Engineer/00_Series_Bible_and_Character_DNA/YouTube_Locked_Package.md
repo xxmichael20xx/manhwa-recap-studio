@@ -46,6 +46,4 @@ Drop your thoughts below, like the video if you loved the slow-burn worldbuildin
 
 - **Locked Canonical Master Thumbnail:** **Concept A** (`01_Thumbnail_Master.jpg`) — The Split Transformation (Muddy Old Miller Farm vs Sunlit Modern Sanctuary).
 - **Top-Left Badge Standard:** Ultra-bold `#FFD700` Yellow **`PART 1`** on dark slate `#0F172A` backing pill (`x: 60, y: 60`).
-- **Concept A (Selected Canonical Master):** `01_Thumbnail_Master.jpg`
-- **Concept B (A/B Test Variant):** `thumbnails/01_Thumbnail_Concept_B.jpg` (Imperial Councilor Panic & Measurement Overflow).
-- **Concept C (Epic Landscape Variant):** `thumbnails/01_Thumbnail_Concept_C.jpg` (The Magitech Sanctuary Spectacle).
+- **Concept A (Selected Canonical Master):** `01_Thumbnail_Master.jpg` — The Split Transformation (Muddy Old Miller Farm vs Sunlit Modern Sanctuary).

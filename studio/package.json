@@ -12,7 +12,13 @@
     "audit:matrix": "node scripts/audit-matrix.js",
     "generate:tts": "node scripts/generate-tts.js",
     "start": "node scripts/dev-runner.js",
-    "dev:all": "node scripts/dev-runner.js"
+    "dev:all": "node scripts/dev-runner.js",
+    "audit:vault": "node scripts/audit-vault.js",
+    "audit:script": "node scripts/audit-script.js",
+    "inspect:scene": "node scripts/inspect-scene.js",
+    "sanitize:matrix": "node scripts/sanitize-matrix.js",
+    "audit:policy": "node scripts/audit-policy.js",
+    "sync:scene": "node scripts/find-scene.js"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.10",

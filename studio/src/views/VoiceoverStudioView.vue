@@ -17,15 +17,10 @@
       </div>
 
       <div class="flex items-center space-x-3">
-        <select 
-          v-model="selectedVoice"
-          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-purple-500 shadow-sm"
-        >
-          <option value="en-US-ChristopherNeural">Christopher (US - Deep Narrative)</option>
-          <option value="en-GB-RyanNeural">Ryan (UK - Clear Authoritative)</option>
-          <option value="en-US-EricNeural">Eric (US - Intense Action)</option>
-          <option value="en-US-GuyNeural">Guy (US - Dramatic Male)</option>
-        </select>
+        <div class="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-300 text-xs font-mono font-bold" title="Voice is strictly locked to franchise Series_Bible.md">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>🔒 {{ selectedVoice }} (Series Bible Lock)</span>
+        </div>
 
         <button 
           @click="generateAllAudio"
@@ -105,7 +100,7 @@ import { useRoute } from 'vue-router'
 import { ArrowLeft, Volume2, Radio, Clock } from 'lucide-vue-next'
 
 const route = useRoute()
-const selectedVoice = ref('en-US-ChristopherNeural')
+const selectedVoice = ref('en-GB-RyanNeural')
 const audioList = ref([])
 const durations = ref({})
 const rendering = ref(false)

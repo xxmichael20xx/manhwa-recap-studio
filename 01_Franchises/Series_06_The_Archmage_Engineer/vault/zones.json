@@ -1,0 +1,190 @@
+{
+  "astral_sanctuary": {
+    "id": "astral_sanctuary",
+    "name": "Astral Sanctuary",
+    "canon": "Radiant celestial sanctuary of the divine realm with floating white marble platforms, luminous emerald-and-gold mana streams, and soft starlight mist.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "muddy ground",
+      "thatched roof",
+      "dirt floor"
+    ],
+    "adjacent": [
+      "old_miller_farm_exterior"
+    ],
+    "elevation": "celestial_void",
+    "vantage_rule": "Framed on floating white marble platforms surrounded by starlight mist, zero earthly terrain or buildings.",
+    "boundary_tags": "celestial divine realm, floating marble platform, zero earthly trees, zero houses",
+    "is_private_sanctuary": true
+  },
+  "old_miller_farm_exterior": {
+    "id": "old_miller_farm_exterior",
+    "name": "Old Miller Farm Exterior",
+    "canon": "Humble rustic frontier farmyard in a sunlit emerald alpine valley with weathered thatched wooden cottage, muddy dirt yard, hand-dug water ditch, and crooked wooden fence.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "polished white-stone aqueducts",
+      "lavender rows",
+      "paved courtyard"
+    ],
+    "adjacent": [
+      "old_miller_cottage_interior",
+      "emerald_valley_forest_trail",
+      "frontier_town_library"
+    ],
+    "location_token": "@{Old Miller Farm}",
+    "elevation": "valley_floor_level",
+    "vantage_rule": "Camera is at flat valley-floor ground level inside the rustic dirt farmyard, looking toward the single-story thatched wooden cottage with distant mountain ridges rising behind it. NEVER frame from a high cliff ledge looking down.",
+    "boundary_tags": "valley floor ground level, rustic thatched wooden cottage, wooden shutters only, zero glass windows, zero water-wheel, zero wind turbine",
+    "is_private_sanctuary": true
+  },
+  "old_miller_cottage_interior": {
+    "id": "old_miller_cottage_interior",
+    "name": "Old Miller Cottage Interior",
+    "canon": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small wooden-shuttered window.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "broad daylight",
+      "porcelain bath"
+    ],
+    "adjacent": [
+      "old_miller_farm_exterior",
+      "miller_sanctuary_farm_exterior",
+      "emerald_valley_forest_trail"
+    ],
+    "location_token": "@{Old Miller Cottage Interior}",
+    "elevation": "valley_floor_interior",
+    "vantage_rule": "Single-room interior camera perspective inside the modest wooden cottage with rough-hewn oak beams and stone hearth. Zero split-room doorway perspectives, zero outdoor sky.",
+    "boundary_tags": "solid enclosed wooden cottage interior, zero outdoor trees inside room",
+    "is_private_sanctuary": true,
+    "tech_stages": {
+      "ep01_stage1": "Warm modest medieval wooden cottage interior with rough-hewn oak beams, stone hearth, wooden dining table, and small wooden-shuttered window.",
+      "ep02_stage2": "Warm timber-and-stone cottage interior with rough-hewn oak beams, stone hearth, oak dining table, and wide clear quartz glass windows."
+    }
+  },
+  "frontier_town_library": {
+    "id": "frontier_town_library",
+    "name": "Frontier Town Library",
+    "canon": "Quiet, dusty medieval frontier town library interior with tall oak bookshelves, worn leather-bound basic magic spellbooks, wooden reading desk, and warm afternoon sunbeams.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "palace throne",
+      "marble columns"
+    ],
+    "adjacent": [
+      "old_miller_farm_exterior"
+    ],
+    "elevation": "town_ground_level",
+    "vantage_rule": "Interior camera inside the quiet dusty wooden town library with tall oak bookshelves and reading desks.",
+    "boundary_tags": "solid enclosed wooden library interior, tall oak bookshelves, zero outdoor sky",
+    "is_private_sanctuary": false
+  },
+  "miller_sanctuary_farm_exterior": {
+    "id": "miller_sanctuary_farm_exterior",
+    "name": "Miller Sanctuary Farm Exterior",
+    "canon": "Upgraded frontier sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring white-stone water channels, enclosed white-stone chimney, natural packed-earth and grass yard, and purple lavender rows.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "muddy ditch",
+      "crooked fence",
+      "brass water-wheel",
+      "wind turbine",
+      "cliffside mansion"
+    ],
+    "adjacent": [
+      "miller_sanctuary_bath_courtyard",
+      "emerald_valley_forest_trail",
+      "old_miller_cottage_interior",
+      "oakhaven_tax_chamber"
+    ],
+    "location_token": "@{Miller Sanctuary Farm}",
+    "elevation": "valley_floor_level",
+    "vantage_rule": "Camera is at flat valley-floor ground level inside the Miller yard, looking at the single-story homestead with distant snow-kissed alpine peaks in the background. NEVER frame from a high cliff ledge looking down at a mansion.",
+    "boundary_tags": "valley floor ground level, isolated family homestead, natural dirt and grass yard, zero paved slab frontyard, zero stone pillars or arches, zero random villagers, zero brass water-wheel, zero wind turbine",
+    "is_private_sanctuary": true,
+    "tech_stages": {
+      "ep01_stage1": "Upgraded frontier sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring the modest wooden cottage with white-stone draft chimney, white-stone water channel, cylindrical white-stone water filter tank, natural packed-earth and grass yard, and purple lavender rows, wooden shutters on windows, zero glass windows, zero water-wheel, zero wind turbine.",
+      "ep02_stage2": "Upgraded sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm oak-and-white-stone farmhouse with clear quartz glass windows, white-stone water channels, natural grass yard, and purple lavender rows.",
+      "arc3_stage3": "Secluded frontier sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, covered white-stone water channel, rotating brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine."
+    }
+  },
+  "miller_sanctuary_bath_courtyard": {
+    "id": "miller_sanctuary_bath_courtyard",
+    "name": "Miller Sanctuary Bath Courtyard",
+    "canon": "Modest private backyard washhouse area beside the cottage timber wall on natural packed earth and grass, featuring clean running brass water taps, cylindrical white-stone water filter tank, steaming white-stone wash basin, and plain unmarked purple lavender soap bars, zero stone pillars or arches, zero concrete slab patio.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "muddy river",
+      "cold ditch"
+    ],
+    "adjacent": [
+      "miller_sanctuary_farm_exterior"
+    ],
+    "location_token": "@{Miller Sanctuary Bath Courtyard}",
+    "elevation": "valley_floor_level",
+    "vantage_rule": "Ground-level enclosed white-stone washhouse and courtyard perspective beside the cottage fireplace wall.",
+    "boundary_tags": "private family washhouse sanctuary, zero random strangers, spotless white-stone masonry",
+    "is_private_sanctuary": true
+  },
+  "emerald_valley_forest_trail": {
+    "id": "emerald_valley_forest_trail",
+    "name": "Emerald Valley Forest Trail",
+    "canon": "Sun-dappled ancient forest and alpine valley trail winding beside a clear mountain spring, white quartz sand creek, birch trees, and mossy boulders.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "city streets",
+      "throne room",
+      "farmhouse",
+      "glass windows",
+      "cottage"
+    ],
+    "adjacent": [
+      "old_miller_farm_exterior",
+      "miller_sanctuary_farm_exterior",
+      "old_miller_cottage_interior",
+      "oakhaven_tax_chamber",
+      "solaris_imperial_palace"
+    ],
+    "location_token": "@{Emerald Valley Forest Trail}",
+    "elevation": "mid_mountain_ridge",
+    "vantage_rule": "Camera is on the wooded mountain trail beside the mossy white limestone spring cliff and sandy creek bed surrounded by tall white-barked birch and pine trees. The Miller farmhouse is 300 yards down the forested slope and NOT visible in the background.",
+    "boundary_tags": "natural forest trail and creek bed only, zero houses, zero cottages, zero glass windows, zero man-made buildings in background",
+    "is_private_sanctuary": true
+  },
+  "solaris_imperial_palace": {
+    "id": "solaris_imperial_palace",
+    "name": "Solaris Imperial Palace",
+    "canon": "Grand crimson-and-gold throne hall of the Imperial Palace with tall marble columns, stained-glass royal crests, and warm fire-mana braziers.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "dirt farm",
+      "muddy ditch"
+    ],
+    "adjacent": [
+      "emerald_valley_forest_trail"
+    ],
+    "elevation": "capital_palace_interior",
+    "vantage_rule": "Grand interior perspective inside the crimson-and-gold Imperial Palace throne hall.",
+    "boundary_tags": "solid enclosed imperial palace throne room, tall marble columns, zero dirt farm elements",
+    "is_private_sanctuary": false
+  },
+  "oakhaven_tax_chamber": {
+    "id": "oakhaven_tax_chamber",
+    "name": "Oakhaven Tax Guild Chamber",
+    "canon": "Opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "mountain peaks",
+      "stone aqueduct channels",
+      "lavender rows"
+    ],
+    "adjacent": [
+      "emerald_valley_forest_trail"
+    ],
+    "location_token": "@{Oakhaven Tax Guild Chamber}",
+    "elevation": "town_ground_level",
+    "vantage_rule": "Interior camera inside the wood-panelled Oakhaven tax office with mahogany desk, brass scales, and scrying orb.",
+    "boundary_tags": "solid enclosed medieval office interior, zero outdoor mountain peaks or aqueducts",
+    "is_private_sanctuary": false
+  }
+}

@@ -113,6 +113,42 @@
     - **Cultivation Base:** 85,000 Years (Peak Golden Core Realm / Half-Step Nascent Soul)
     - **DNA Prompt:** `@{Mo Yufeng}, 22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash, holding a forged glowing dragon-crested golden jade token, aura of pompous vanity and golden core spirit sparks, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16`
 
+15. **Campus Administrator: Dean of Qindu University (秦都大学校长)**
+    - **Role:** Respected collegiate leader; attempts to maintain institutional order during Threat Bureau lockdown.
+    - **Cultivation Base:** 12,000 Years (Foundation Establishment Realm)
+    - **DNA Prompt:** `@{Dean of Qindu University}, 60-year-old scholarly East Asian university dean, silver-templed hair, wire-rimmed glasses, dignified weathered features, tailored dark navy academic ceremonial suit with silver Qindu University lapel pin, posture of academic dignity, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+16. **Collegiate Location: Qindu Collegiate Stadium (秦都大学竞技场)**
+    - **Role:** Central campus sports and martial arena; site of the appraisal lockdown and 30m crater.
+    - **DNA Prompt:** `@{Qindu Collegiate Stadium}, modern 2025 Qindu University athletic stadium at night, red synthetic running track surrounding clean green athletic turf, elevated brushed-steel proctor podium with lectern, tiered metal spectator bleachers under high LED stadium floodlights, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+17. **Private Sanctuary: Dormitory Room 402 (402男生宿舍)**
+    - **Role:** Lu Chen and Wang Bao's modern collegiate dorm room; isolated haven of domestic routine.
+    - **DNA Prompt:** `@{Dormitory Room 402}, clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+18. **Antagonist Patriarch: Chairman Gu (Gu Zhentian / 顾震天)**
+    - **Role:** Patriarch of the Gu Capital Syndicate; calculating corporate oligarch seeking monopolistic hegemony.
+    - **Cultivation Base:** 5,000,000 Years (Domain Master Realm)
+    - **DNA Prompt:** `@{Chairman Gu}, 52-year-old ruthless corporate patriarch, slicked-back grey-streaked dark hair, sharp calculating dark eyes, tailored bespoke obsidian pinstripe suit, holding a carved black dragon-headed spirit cane, cold haughty sneer, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16`
+
+19. **Mercenary Antagonist: Elder Gu Yan (顾炎)**
+    - **Role:** Chief Mercenary Elder of the Gu Syndicate; summoned from secluded mountain cultivation.
+    - **Cultivation Base:** 15,000,000 Years (Peak Domain Realm / Solar Heavenly Flame)
+    - **DNA Prompt:** `@{Elder Gu Yan}, 55-year-old imposing martial elder, scarred bald skull, intense glowing fiery crimson eyes, ornate crimson-embroidered combat changshan robe over muscular frame, crackling solar fire-spirit rings orbiting forearms, aggressive domineering stance, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant clean cel shading, vertical 9:16`
+
+20. **Supporting Appraiser: Grand Auctioneer Yan (Master Yan / 严大师)**
+    - **Role:** Chief Appraiser of Jiangnan Celestial Pavilion; recognizes the 100% primordial purity of Lu Chen's pill.
+    - **Cultivation Base:** 45,000 Years (Golden Core Elder)
+    - **DNA Prompt:** `@{Grand Auctioneer Yan}, 65-year-old distinguished cultivation appraiser, neatly groomed silver goatee, golden monocle over left eye, immaculate charcoal-grey three-piece suit, pristine white silk appraisal gloves, holding a brass celestial magnifying loupe, dignified respectful posture, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+21. **Consumable Item: Primordial Dust-Cleansing Qi Pill (太初无垢洗髓丹)**
+    - **Role:** Introductory beginner pill retrieved by Lu Chen from his Heavenly Dao Simulator inventory; 100% primordial purity with zero mortal impurities, capable of restoring cracked dantians.
+    - **DNA Prompt:** `@{Primordial Dust-Cleansing Qi Pill}, single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes, pristine translucent texture, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+22. **Artifact Array: Nine-Serpent Blood Slaughter Formation (九蟒血煞大阵)**
+    - **Role:** Ancient killing array deployed by Gu Syndicate to isolate Qindu collegiate district; nine bone-carved banners projecting sky-spanning crimson runic dome with shadowy blood-red serpents.
+    - **DNA Prompt:** `@{Nine-Serpent Blood Slaughter Formation}, colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering blood-red bone-inscribed formation banners driven into pavement, shadowy blood-red spectral serpents slithering across crimson smog clouds, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
 ---
 
 ## 🎭 The Identity Engine: The Double-Blind System
@@ -145,15 +181,14 @@
 * **Episode 03 (Upcoming — Climax of Arc 1):** *The Campus Lockdown & The Impostor Sovereign*
   * Fallout on Qindu University track: Han Feng's fried spectrometer data and Jiang Qingxue's astrolabe trace confirm Rank #1 was physically on campus when the Stele chimed. A rogue prodigy claims to be 'Xiao Yao's' disciple to extort the university, leading to a decisive campus face-slap that concludes Arc 1.
 
-### 📦 Arc 2: The Global Manhunt & The Jiangnan Syndicate War (Episodes 4–7)
-* **Episode 04:** *The Disciple's Search & The Black-Market Spirit Auction*  
-  Jiang Qingxue arrives at Qindu University to find her master. Lu Chen casually pawns an introductory simulator pill to pay dorm fees, sparking a multi-billion-dollar oligarch bidding frenzy.
-* **Episode 05:** *The Gu Capital Patriarch's Wrath*  
-  Gu Tianyu's father, Chairman Gu, deploys a 15-Million-Year private mercenary elder to eliminate Dorm 402 under a regional communications blackout.
-* **Episode 06:** *The Forbidden Formation & The Silent Erasure*  
-  The Gu syndicate seals the collegiate district with an ancient slaughter formation; Lu Chen neutralises the array with a single step on his way to breakfast.
-* **Episode 07 (Arc 2 Climax):** *The Fall of the Gu Zaibatsu*  
-  Lu Chen releases 0.01% of his aura to disintegrate the syndicate's headquarters, cementing Jiangnan as the undisputed domain of an untouchable hidden entity.
+### 📦 Arc 2: The Global Manhunt & The Jiangnan Syndicate War (Episodes 4–7 / Feature Mega-Cut EP04)
+* **Episode 04 (Arc 2 Grand Omnibus Feature — 24 Batches / 576 Scenes):** *The Jiangnan Syndicate War & The Fall of the Gu Zaibatsu*  
+  * **Act I (Batches 01–04):** Morning after the campus lockdown. Lu Chen and Wang Bao need $50,000 credits for spirit-laboratory tuition. Lu Chen pulls an introductory beginner @{Primordial Dust-Cleansing Qi Pill} from his idle simulator inventory. Jiang Qingxue searches campus with her astrolabe.
+  * **Act II (Batches 05–09):** Downtown at the Jiangnan Celestial Pavilion, Master Yan discovers the pill's 100% primordial purity. A frantic bidding war between oligarchs and Jiang Qingxue reaches an astronomical 6 Billion credits.
+  * **Act III (Batches 10–13):** Chairman Gu and Gu Tianyu discover the pill restored another while their family was humiliated; Chairman Gu summons 15-Million-Year mercenary Elder Gu Yan to eliminate Dorm 402.
+  * **Act IV (Batches 14–17):** Gu Syndicate deploys the @{Nine-Serpent Blood Slaughter Formation}, sealing the collegiate district. Lu Chen steps out for morning breakfast buns; his single sneaker step shatters the central array node and disintegrates all nine blood serpents.
+  * **Act V (Batches 18–21):** Elder Gu Yan attacks with 15-Million-Year solar fire; Lu Chen's passive recoil renders zero damage, and a casual finger flick shatters Gu Yan's cultivation.
+  * **Act VI (Batches 22–24):** Lu Chen walks to the Gu Syndicate's 88-floor Obsidian Tower with his breakfast bag. Releasing 0.01% primordial aura, the skyscraper crumbles into dust without touching neighboring streets. Chairman Gu is crushed to his knees in terror, concluding Arc 2 with total catharsis.
 
 ### 📦 Arc 3: The Abyssal Rift & The 450M-Year Despot (Episodes 8–12)
 * **Episodes 08–09:** Dimensional rifts tear open over Blue Star; international armed forces fail against ancient rift horrors.
@@ -176,7 +211,7 @@
 {
   "styleName": "Modern 2025 Urban Cultivation",
   "format": "9:16",
-  "voiceId": "en-GB-RyanNeural",
+  "voiceId": "en-US-ChristopherNeural",
   "genreRule": "Modern 2025 urban cultivation manhwa webtoon art style, sharp black ink linework, bright high-key lighting, vibrant clean cel shading, cinematic contemporary lighting, textless 9:16 vertical manhwa aspect ratio (1080x1920 vertical format). Clean modern architecture, university campus pathways, lecture halls, and contemporary cityscapes.",
   "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate gloomy dark medieval fantasy, castles, photorealistic 3D CGI renders, live-action photography, oil paintings, or flat Western comic book cartoons.",
   "crowdRule": "Natural background students, pedestrians, and onlookers in soft depth-of-field blur are permitted in public campus/city settings as context requires. Never introduce foreground strangers stealing focus or clone duplicates. Private dorm rooms and confidential chambers remain strictly isolated.",
@@ -195,6 +230,22 @@
     "diegeticSteles": "cultivation leaderboard monoliths",
     "diegeticUi": "holographic system status windows"
   },
-  "spatialEnclosures": {}
+  "spatialEnclosures": {
+    "campus.willow_park": "Modern 2025 Qindu University athletic field perimeter and quiet willow park at night, red synthetic running track beside manicured green lawns, wooden park bench beside recycling bin, contemporary glass academic faculty towers under floodlit night sky.",
+    "troposphere.stele": "High troposphere and stratosphere perspective at night, thirty-thousand-metre colossal obsidian-and-gold Heaven-Earth Golden Stele descending through storm clouds, iridescent violet and golden primordial starlight auroras overlooking Qindu skyline.",
+    "campus.perimeter_gate": "North campus perimeter security cordon of Qindu University at night, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers with glowing communications radar, high-intensity searchlights sweeping campus perimeter fence.",
+    "starfall.penthouse": "Panoramic penthouse executive suite atop Starfall Tower at night, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking illuminated Jiangnan metropolis, glowing holographic radar terminals, regal purple cosmic starlight ambient glow.",
+    "stadium.clean_arena": "Modern 2025 Qindu University athletic stadium at night, red synthetic running track surrounding clean green athletic turf, elevated brushed-steel proctor podium with lectern, tiered metal spectator bleachers packed with students, high LED stadium floodlight towers under dark night sky.",
+    "stadium.frosted_arena": "Modern 2025 Qindu University athletic stadium at night, glistening glacial cyan ice crystals and frost mist coating the central arena, crystalline glacial lotus ice barriers standing beside the proctor podium, red synthetic running track and bleachers in background under high LED stadium floodlights.",
+    "stadium.impact_crater": "Shattered thirty-metre circular impact crater sunken into the athletic stadium track floor at night, cracked concrete foundation and pulverized stone rubble, fine grey dust and golden starlight motes drifting in air, metal stadium bleachers and high LED floodlights in background.",
+    "campus.pathway": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during bright crisp morning daylight, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under clear high-key sky.",
+    "pavilion.auction_hall": "High-end subterranean Jiangnan Celestial Spirit Auction Grand Pavilion, opulent modern multi-tier circular auditorium with brushed gold balustrades, tiered VIP skyboxes, central velvet-covered display pedestal under concentrated warm spotlights.",
+    "pavilion.vip_suite": "Private VIP suite inside Jiangnan Celestial Spirit Auction, floor-to-ceiling one-way polarized glass overlooking auction auditorium, plush leather seating, tea service table, warm ambient luxury lighting.",
+    "gu_syndicate.headquarters": "Gu Capital Syndicate Corporate Headquarters executive boardroom atop the 88-floor Obsidian Tower, imposing minimalist black marble conference table, panoramic glass windows overlooking Jiangnan metropolis, security monitors.",
+    "gu_syndicate.courtyard_plaza": "Gu Capital Syndicate ground-level grand entrance plaza, paved dark granite square framed by towering obsidian glass skyscraper columns, ornamental water features, black wrought-iron security gates.",
+    "campus.formation_cordon": "Qindu University collegiate district perimeter under Nine-Serpent Blood Slaughter Formation, crackling crimson runic energy dome enclosing the modern street grid, blood-red mist hovering over asphalt roadways, abandoned civilian vehicles.",
+    "street.breakfast_stall": "Modern street corner traditional breakfast stall near university gate, stainless steel steamer baskets releasing fragrant white steam, plastic folding tables, yellow striped canopy, clean city sidewalk.",
+    "dorm.402": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps."
+  }
 }
 STUDIO_BIBLE_DIRECTIVES_END -->

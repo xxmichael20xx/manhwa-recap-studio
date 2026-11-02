@@ -237,15 +237,24 @@
                 <ArrowRight class="w-3.5 h-3.5" />
               </button>
 
-              <!-- Stage 3 Done -> Close & View Cut -->
-              <button 
-                v-else-if="status === 'completed' && activeStage === 'compiler'"
-                @click="$emit('close')"
-                class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-emerald-900/20 cursor-pointer"
-              >
-                <CheckCircle2 class="w-3.5 h-3.5" />
-                <span>View Master 1080p Video</span>
-              </button>
+              <!-- Stage 3 Done -> Stay in Current Stage or Optional Jump to Stage 3 Player -->
+              <template v-else-if="status === 'completed' && activeStage === 'compiler'">
+                <button 
+                  @click="$emit('switch-stage', 'compiler'); $emit('close')"
+                  class="px-3.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 dark:bg-purple-950/50 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-500/30 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer shadow-xs"
+                  title="Switch to Stage 3 video list and player"
+                >
+                  <Film class="w-3.5 h-3.5" />
+                  <span>Open in Stage 3 Player</span>
+                </button>
+                <button 
+                  @click="$emit('close')"
+                  class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-emerald-900/20 cursor-pointer"
+                >
+                  <CheckCircle2 class="w-3.5 h-3.5" />
+                  <span>Done (Stay in Current View)</span>
+                </button>
+              </template>
 
               <!-- Close Button -->
               <button 

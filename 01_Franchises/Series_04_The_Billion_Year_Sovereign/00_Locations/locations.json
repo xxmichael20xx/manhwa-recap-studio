@@ -1,0 +1,26 @@
+{
+  "series_id": "Series_04_The_Billion_Year_Sovereign",
+  "locations": [
+    {
+      "id": "LOC_01",
+      "name": "Qindu Collegiate Stadium",
+      "token": "@{Qindu Collegiate Stadium}",
+      "description": "Massive modern collegiate outdoor athletic stadium under night LED floodlights",
+      "zones": {
+        "Zone_A_Podium": "Elevated brushed-steel and concrete proctor stage with proctor desks and microphones",
+        "Zone_B_CenterTurf": "Regulation green astroturf sports field with circular spiritual appraisal boundary",
+        "Zone_C_Track": "Oval red synthetic rubber running track surrounding the center field",
+        "Zone_D_Bleachers": "Tiered aluminum spectator bleachers packed with thousands of university students"
+      },
+      "reference_plate": "01_Location_Qindu_Collegiate_Stadium.jpg"
+    },
+    {
+      "id": "LOC_02",
+      "name": "Dormitory Room 402",
+      "token": "@{Dormitory Room 402}",
+      "description": "Clean, minimalist university dorm room",
+      "interior": "Exactly 1 double-deck steel bunk bed against the left wall, 2 clean wooden study desks on the right wall, grey tile floor, white painted walls, metallic number 402 on outer door",
+      "reference_plate": "02_Location_Dormitory_Room_402.jpg"
+    }
+  ]
+}

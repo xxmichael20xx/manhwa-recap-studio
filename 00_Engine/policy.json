@@ -1,0 +1,102 @@
+{
+  "banned_tokens": {
+    "gore": [
+      "severed arm",
+      "severed head",
+      "severed limb",
+      "severed limbs",
+      "decapitated",
+      "decapitation",
+      "disemboweled",
+      "spraying blood",
+      "pools of blood",
+      "mutilated flesh",
+      "dead bodies",
+      "corpses",
+      "rotting carcass",
+      "shattered skull bones",
+      "acid burning skin"
+    ],
+    "vital_strike": [
+      "blade pressed against neck",
+      "dagger to throat",
+      "blade slitting throat",
+      "knife in throat",
+      "holding by the neck",
+      "piercing eyeball"
+    ],
+    "chemical_ingestion": [
+      "powdered monster bones",
+      "white powder",
+      "crushed speck between fingernails",
+      "potency surging into skin",
+      "volatile saponins",
+      "poisonous lookalikes",
+      "venom glands",
+      "corrosive acid pools",
+      "toxic purple fog"
+    ]
+  },
+  "minor_protection_rules": {
+    "suffering_tokens": [
+      "bleeding",
+      "gums bleeding",
+      "vomiting blood",
+      "blacked out from shock",
+      "screaming in agony",
+      "starving",
+      "shivering in terror",
+      "broken bones"
+    ],
+    "contact_tokens": [
+      "grabbing child",
+      "restraining child",
+      "choking",
+      "hooking around neck",
+      "pulling chains around neck",
+      "striking child",
+      "kicking child"
+    ],
+    "garment_tokens": [
+      "reaching inside clothing",
+      "tucking inside tunic",
+      "tucking inside shirt",
+      "sliding hands into pockets",
+      "reaching down to waist",
+      "smoothing front of tunic",
+      "torn shirt",
+      "bare torso",
+      "undressed"
+    ]
+  },
+  "replacements": {
+    "blood-red": "crimson-ruby",
+    "pools of blood": "crimson spirit mist",
+    "dead bodies": "shattered stone masonry and evacuated barricades",
+    "corpses": "defeated opponents slumped against stone barriers",
+    "acid burning skin": "sizzling violet plasma craters",
+    "corrosive acid pools": "sizzling violet plasma craters",
+    "powdered monster bones": "luminous blue mana crystals",
+    "white powder": "crystalline spirit dust",
+    "venom glands": "mana cores",
+    "blade pressed against neck": "kinetic mana parry repelling the blade",
+    "dagger to throat": "raised defensive ward deflecting the strike",
+    "naked eye": "unaided vision",
+    "anatomically correct": "cleanly rendered",
+    "anatomically correct hands": "cleanly rendered hand linework",
+    "physically connected wrists and forearms": "clean distinct wrist linework",
+    "slender fingers": "distinct individual fingers",
+    "craftsman boy build": "youthful craftsman build",
+    "young craftsman boy build": "youthful craftsman build",
+    "10-year-old boy build": "10-year-old boy build",
+    "child build": "10-year-old boy build",
+    "child proportions": "youthful proportions",
+    "childlike posture": "relaxed youthful posture",
+    "girl build": "youthful sister build",
+    "earth-toned": "warm-brown",
+    "earth toned": "warm-brown",
+    "hot bath": "crystalline thermal spring basin",
+    "steaming bath": "steaming thermal spring basin",
+    "soap bars": "botanical cleansing bars"
+  }
+}

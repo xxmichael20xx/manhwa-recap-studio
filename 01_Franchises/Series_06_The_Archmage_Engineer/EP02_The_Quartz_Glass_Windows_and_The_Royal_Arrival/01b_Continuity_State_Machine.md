@@ -1,0 +1,29 @@
+# 🎬 Stage 3: Continuity State-Machine — Series 06 EP02 (480 Scenes / 20 Batches)
+
+> **Episode:** `EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival` — Arc I, Episode 2 of 5  
+> **Format:** `16:9 Full-Bleed Landscape`
+
+| Scenes | Enclosure / Zone | Cast | State Lock & Narrative Progression |
+| :--- | :--- | :--- | :--- |
+| `IMG_001`–`IMG_024` | `Miller_Sanctuary_Farm` (Interior / Kitchen) | Ace, LUMINA, Garrett, Clara, Maya | Morning review after the first hot bath; drafting interlocking white limestone blueprints from grandfather's artisan chest; LUMINA active at 15% Safe Mode. |
+| `IMG_025`–`IMG_048` | `Emerald_Valley_Forest_Trail` (Limestone Quarry) | Ace, LUMINA, Garrett | Riverside limestone outcrop; acoustic harmonic resonance scan; Garrett slices precision tongue-and-groove white limestone blocks with Earth magic. |
+| `IMG_049`–`IMG_072` | `Miller_Sanctuary_Farm` (East Wing Exterior) | Ace, Garrett, Maya, Clara | Pulley sledge hauled up the slope with Maya's wind vortex; assembling mortise-and-tenon white stone walls with zero mortar; 10-foot-tall stone extension complete. |
+| `IMG_073`–`IMG_096` | `Emerald_Valley_Forest_Trail` (River Bend Shoals) | Ace, Maya, LUMINA | Sourcing sand for mortar; discovering sparkling snow-white quartz river sand; LUMINA's spectral scan confirms 99.2% pure silica dioxide; collecting in buckets. |
+| `IMG_097`–`IMG_120` | `Miller_Sanctuary_Farm` (Workshop Yard & Clay Bank) | Ace, Garrett, Clara, Maya, LUMINA | Blueprints for dual-chamber draft kiln; sourcing white kaolin clay; molding and drying interlocking refractory firebricks. |
+| `IMG_121`–`IMG_144` | `Miller_Sanctuary_Farm` (Refractory Kiln Pad) | Ace, Garrett, Clara, Maya, LUMINA | Pre-heating cure with birch kindling; loading hard oak charcoal; tall draft chimney pulls white-hot 1,250°C combustion with zero black smoke. |
+| `IMG_145`–`IMG_168` | `Miller_Sanctuary_Farm` (Kiln Workshop) | Ace, Garrett, LUMINA | Batch recipe: 70% quartz sand, 20% birch-ash flux, 10% limestone stabilizer; melting into honey-orange liquid; pouring onto pre-heated slate slab and rolling flat. |
+| `IMG_169`–`IMG_192` | `Miller_Sanctuary_Farm` (Workshop Annealing Bed) | Ace, Garrett, Clara, Maya, LUMINA | Slow cooling in wood ash bed; unveiling the 3-foot crystal-clear glass pane; SHORT_EARLY `IMG_170`–`IMG_191`; family wonder and tears. |
+| `IMG_193`–`IMG_216` | `Miller_Sanctuary_Farm` (Homestead Exterior & Interior) | Ace, Garrett, Clara, Maya | Seasoned oak frames; Clara's linseed-chalk glazing putty; installing 5 widescreen glass windows; cottage flooded with panoramic mountain daylight. |
+| `IMG_217`–`IMG_240` | `Miller_Sanctuary_Farm` (Kitchen) → `Emerald_Valley_Forest_Trail` (Cork Grove) | Ace, Garrett, Clara, Maya, LUMINA | Spoilage problem for goat milk and lavender oil; exploring cork oak grove; harvesting thick bark slabs without harming trees. |
+| `IMG_241`–`IMG_264` | `Miller_Sanctuary_Farm` (Sub-Ground Cellar) | Ace, Garrett, Maya, Clara, LUMINA | Excavating 6-foot cellar; packing double-walled cork insulation; installing passive ice-mana stone in brass cradle; convective cold-air loop locked at 3.2°C. |
+| `IMG_265`–`IMG_288` | `Miller_Sanctuary_Farm` (Dining Hall & Porch) | Ace, Garrett, Clara, Maya, LUMINA | Evening feast: crusty bread, chilled lavender cream, stew; family toast; LUMINA emotional resonance 99.9%; night porch under starry sky. |
+| `IMG_289`–`IMG_312` | `Emerald_Valley_Forest_Trail` (Rocky Ravine) | Princess Seraphina, Sir Roland Vance | Freezing wind, tired warhorses; Seraphina's mud-stained ivory travel dress; Roland's vigilance, sheathed sword; escaping imperial capital politics and Malakor's greed. |
+| `IMG_313`–`IMG_336` | `Emerald_Valley_Forest_Trail` (Rock Overhang Campfire) | Princess Seraphina, Sir Roland Vance | Smoky green pine fire; hard salted beef and cloudy creek water; Seraphina longing for fresh bread and a warm bath; philosophical longing for true magic. |
+| `IMG_337`–`IMG_360` | `Emerald_Valley_Forest_Trail` (Mountain Birch Stand) | Princess Seraphina, Sir Roland Vance | Morning frost; walking lame white mare; wind shifts carrying the scent of blooming lavender soap and warm baking bread; Roland on alert. |
+| `IMG_361`–`IMG_384` | `Miller_Sanctuary_Farm` (Panorama & Clearing Edge) | Princess Seraphina, Sir Roland Vance, Ace, Garrett, LUMINA | Stunned emergence: viewing gleaming white-stone homestead, aqueducts, lavender fields, and sparkling glass windows; Ace & Garrett stepping out. |
+| `IMG_385`–`IMG_408` | `Miller_Sanctuary_Farm` (Courtyard & Porch) | Ace, Garrett, Princess Seraphina, Sir Roland Vance, LUMINA | Roland challenges; Garrett and Ace offer warm smiles; Ace offers brass cup of chilled filtered spring water; Seraphina drinks; invitation to warm hearth and bath. |
+| `IMG_409`–`IMG_432` | `Miller_Sanctuary_Farm` (White-Stone Washhouse) | Princess Seraphina, Clara, Maya | Steaming hot water from enclosed draft heater; fragrant lavender soap bar; Seraphina's emotional, healing bath; washing away weeks of grime and imperial trauma; glowing renewal. |
+| `IMG_433`–`IMG_456` | `Miller_Sanctuary_Farm` (Dining Hall & Barn) | Ace, Garrett, Clara, Maya, Seraphina, Roland, LUMINA | Warm supper; Roland marvels at technology; mare Starlight's swollen fetlock; Seraphina channels golden Light healing spark; LUMINA scans live spell (CLIMAX `IMG_450`–`IMG_456`). |
+| `IMG_457`–`IMG_480` | `Miller_Sanctuary_Farm` → `Oakhaven_Tax_Chamber` | Ace, LUMINA, Seraphina, Roland, Simon Vane, Fire Mage | Ace calibrates Light Affinity (5 of 8 active!); guests sleep safely; dawn brings imperial scrying raven overhead; Simon Vane orders 20 mercenaries to seize the farm. |
+
+> **Tech-tree lock:** Quartz flat glass windows, refractory firebrick kiln, and cork-insulated ice storage are now operational. No wheeled carts, wind turbines, or electricity appear in EP02. Carts and turbines arrive in Arcs III–IV.

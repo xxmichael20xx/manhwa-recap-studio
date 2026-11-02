@@ -211,34 +211,47 @@ static formatTimestamp(seconds) {
 
     // Pattern 2: Bullet lists under ## Master Visual Thumbnail Concepts
     if (concepts.length === 0) {
-      const conceptLinesRegex = /-\s*\*\*(Concept\s+[A-C]|Variant\s+[A-C])[^\*]*\*\*:\s*(?:`?([^`\r\n]+)`?\s*)?(?:[-—–]\s*)?([^\r\n]+)?/gi
-      let cMatch
-      while ((cMatch = conceptLinesRegex.exec(mdContent)) !== null) {
-        const rawLabel = cMatch[1]
-        const letterMatch = rawLabel.match(/[A-C]/i)
-        if (!letterMatch) continue
-        const letter = letterMatch[0].toUpperCase()
+      const lines = mdContent.split(/\r?\n/)
+      for (const line of lines) {
+        const m = line.match(/^\s*-\s*\*\*(?:Concept|Variant)\s+([A-C])([^*]*?)\*\*:?\s*(.*)$/i)
+        if (!m) continue
+        const letter = m[1].toUpperCase()
+        const labelExtra = (m[2] || '').replace(/:$/, '').trim()
+        const rest = (m[3] || '').trim()
         const id = `concept_${letter.toLowerCase()}`
-        const fileCandidate = (cMatch[2] || '').trim()
-        const descCandidate = (cMatch[3] || '').trim()
 
-        let filename = `01_Thumbnail_Concept_${letter}.jpg`
-        if (fileCandidate.endsWith('.jpg') || fileCandidate.endsWith('.png')) {
-          filename = path.basename(fileCandidate)
-        }
+        const fileMatch = rest.match(/`?([^\s`]+\.(?:jpg|jpeg|png|webp))`?/i)
+        const filename = fileMatch ? path.basename(fileMatch[1]) : (letter === 'A' ? '01_Thumbnail_Master.jpg' : `01_Thumbnail_Concept_${letter}.jpg`)
+
+        let desc = rest
+          .replace(/`?[^\s`]+\.(?:jpg|jpeg|png|webp)`?/i, '')
+          .replace(/^[\s—–-]+/, '')
+          .trim()
+        if (!desc) desc = labelExtra.replace(/^\(|\)$/g, '').trim() || `Concept ${letter}`
 
         concepts.push({
           id,
-          name: `Concept ${letter}: ${descCandidate || rawLabel}`,
-          subtitle: descCandidate || rawLabel,
+          name: `Concept ${letter}: ${desc}`,
+          subtitle: desc,
           badgeText: letter === 'A' ? 'PART 1' : letter === 'B' ? 'SYSTEM ERROR' : 'SOLO S-RANK',
           subBadgeText: '',
           badgeColorPreset: letter === 'A' ? 'gold_crimson' : letter === 'B' ? 'cyan_hud' : 'crimson_flame',
           badgePosition: 'bottom_left',
-          composition: descCandidate || rawLabel,
+          composition: desc,
           prompt: '',
           filename
         })
+      }
+    }
+
+    // If Markdown SSOT explicitly locks a Canonical Master Thumbnail (e.g. Concept A), filter to only that locked concept
+    const lockedMatch = mdContent.match(/Locked\s+Canonical\s+Master\s+Thumbnail[^:\r\n]*:\s*\*?\*?(?:Concept|Variant)\s+([A-C])/i)
+    if (lockedMatch && concepts.length > 1) {
+      const lockedLetter = lockedMatch[1].toUpperCase()
+      const lockedId = `concept_${lockedLetter.toLowerCase()}`
+      const filtered = concepts.filter(c => c.id === lockedId)
+      if (filtered.length === 1) {
+        return filtered
       }
     }
 

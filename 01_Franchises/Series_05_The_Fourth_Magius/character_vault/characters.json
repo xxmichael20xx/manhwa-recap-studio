@@ -32,7 +32,8 @@
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00001",
       "flowName": "Michael Montrey",
       "episodes": [
-        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
       "hasPlate": true
     },
@@ -192,7 +193,8 @@
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00005",
       "flowName": "Elder Rowan Thorne",
       "episodes": [
-        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
       "hasPlate": true
     },

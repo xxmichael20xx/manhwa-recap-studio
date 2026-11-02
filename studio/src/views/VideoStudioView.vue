@@ -456,6 +456,15 @@
                       <Users class="w-3.5 h-3.5 text-purple-500" />
                       <span>{{ batch.refCount }}/10 Flow Refs</span>
                     </span>
+
+                    <!-- Batch Compiled Video Ready Badge -->
+                    <span 
+                      v-if="batch.hasVideo"
+                      class="text-xs font-mono font-bold px-2.5 py-1 rounded-full flex items-center space-x-1.5 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
+                    >
+                      <Film class="w-3.5 h-3.5 text-emerald-500" />
+                      <span>✓ MP4 Rendered</span>
+                    </span>
                   </div>
 
                   <div class="flex items-center space-x-3 mt-1 text-xs font-mono text-slate-500 dark:text-slate-400">
@@ -470,11 +479,14 @@
                 <button 
                   @click="compileBatchDirect(batch.index)"
                   :disabled="compiling"
-                  class="px-3 py-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
-                  :title="`1-Click Render ${batch.name} Preview Video`"
+                  class="px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50 border"
+                  :class="batch.hasVideo
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300'
+                    : 'bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/40 border-purple-300 dark:border-purple-500/30 text-purple-700 dark:text-purple-300'"
+                  :title="`1-Click Render ${batch.name} Preview Video (stays on Stage 1)`"
                 >
-                  <Film class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                  <span>{{ `🎬 Render ${batch.name}` }}</span>
+                  <Film class="w-3.5 h-3.5" :class="batch.hasVideo ? 'text-emerald-600 dark:text-emerald-400' : 'text-purple-600 dark:text-purple-400'" />
+                  <span>{{ batch.hasVideo ? `🎬 Re-Render ${batch.name}` : `🎬 Render ${batch.name}` }}</span>
                 </button>
 
                 <!-- Fix / Copy Failed Prompts for this Batch Button -->
@@ -497,6 +509,19 @@
                 >
                   <ShieldCheck class="w-3.5 h-3.5" />
                   <span>{{ `🔍 Validate ${batch.name}` }}</span>
+                </button>
+
+                <!-- 1-Click Clear Images for this Batch -->
+                <button 
+                  v-if="batch.readyCount > 0"
+                  @click="clearBatchImagesDirect(batch)"
+                  :disabled="clearingBatchIndex === batch.index"
+                  class="px-3.5 py-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/40 border border-rose-300 dark:border-rose-500/30 text-rose-700 dark:text-rose-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
+                  :title="`Clear all ${batch.readyCount} image plates for ${batch.name}`"
+                >
+                  <Loader2 v-if="clearingBatchIndex === batch.index" class="w-3.5 h-3.5 animate-spin text-rose-600 dark:text-rose-400" />
+                  <Trash2 v-else class="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+                  <span>{{ `🗑️ Clear ${batch.name}` }}</span>
                 </button>
               </div>
             </div>
@@ -756,15 +781,10 @@
           </div>
 
           <div class="flex items-center space-x-3">
-            <select 
-              v-model="selectedVoice"
-              class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono text-slate-900 dark:text-white focus:outline-none focus:border-purple-500 shadow-sm"
-            >
-              <option value="en-US-ChristopherNeural">Christopher (US - Deep Narrative)</option>
-              <option value="en-GB-RyanNeural">Ryan (UK - Clear Authoritative)</option>
-              <option value="en-US-EricNeural">Eric (US - Intense Action)</option>
-              <option value="en-US-GuyNeural">Guy (US - Dramatic Male)</option>
-            </select>
+            <div class="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-300 text-xs font-mono font-bold" title="Voice is strictly locked to franchise Series_Bible.md">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>🔒 {{ selectedVoice }} (Series Bible Lock)</span>
+            </div>
 
             <button 
               @click="generateVoiceoverAndSubtitles"
@@ -863,8 +883,9 @@
               v-model="autoCompileStrategy"
               class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono font-bold text-purple-600 dark:text-purple-400 focus:outline-none focus:border-purple-500 shadow-sm cursor-pointer"
             >
-              <option value="skip_compiled">⚡ Skip Compiled Batches</option>
-              <option value="fresh_all">🔄 Fresh All Batches</option>
+              <option value="skip_compiled">⚡ Skip Ready (Only Missing)</option>
+              <option value="fresh_cache">⚡ Fast Re-compile (Use Clip Cache)</option>
+              <option value="fresh_literal">🔥 Pure Fresh All (Purge Cache & Re-render)</option>
             </select>
 
             <!-- Dynamic Primary Action Button -->
@@ -875,7 +896,7 @@
             >
               <Play class="w-4 h-4 fill-current" :class="{ 'animate-spin': compiling }" />
               <span v-if="compiling">Processing {{ compilationScope === 'auto' ? 'Automated Batch Queue' : (compilationScope === 'batch' ? (currentSelectedBatch?.name || 'Batch') : (compilationScope === 'stitch' ? 'Batch Stitcher' : 'Master Video')) }}...</span>
-              <span v-else-if="compilationScope === 'auto'">{{ autoCompileStrategy === 'skip_compiled' ? '⚡ Auto-Compile (Skip Ready & Stitch)' : '🔄 Auto-Compile (Fresh All 9 Batches & Stitch)' }}</span>
+              <span v-else-if="compilationScope === 'auto'">{{ autoCompileStrategy === 'skip_compiled' ? '⚡ Auto-Compile (Skip Ready)' : (autoCompileStrategy === 'fresh_cache' ? '⚡ Auto-Compile (Fast Re-mux)' : '🔥 Auto-Compile (Pure Fresh All)') }}</span>
               <span v-else-if="compilationScope === 'batch'">Compile {{ currentSelectedBatch?.name || 'Batch 01' }} Preview ({{ currentSelectedBatch?.totalCount || 24 }} Cuts)</span>
               <span v-else-if="compilationScope === 'stitch'">🔗 Stitch {{ compiledBatchesCount }} Compiled Batches into Master (Instant &lt;3s)</span>
               <span v-else>Compile Monolithic Master Video ({{ scenes.length }} Cuts)</span>
@@ -965,8 +986,9 @@
                 v-model="autoCompileStrategy"
                 class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs font-mono font-bold text-purple-600 dark:text-purple-400 focus:outline-none focus:border-purple-500 shadow-sm cursor-pointer"
               >
-                <option value="skip_compiled">⚡ Skip Compiled (Fast)</option>
-                <option value="fresh_all">🔄 Fresh All (Overwrite)</option>
+                <option value="skip_compiled">⚡ Skip Ready (Only Missing)</option>
+                <option value="fresh_cache">⚡ Fast Re-compile (Use Clip Cache)</option>
+                <option value="fresh_literal">🔥 Pure Fresh All (Purge Cache)</option>
               </select>
 
               <button 
@@ -975,7 +997,7 @@
                 class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition flex items-center space-x-1.5 shrink-0 shadow-md shadow-purple-900/20 cursor-pointer disabled:opacity-50"
               >
                 <Zap class="w-3.5 h-3.5 text-amber-300" />
-                <span>{{ autoCompileStrategy === 'skip_compiled' ? 'Start Queue (Skip Ready)' : 'Start Queue (Fresh All)' }}</span>
+                <span>{{ autoCompileStrategy === 'skip_compiled' ? 'Start Queue (Skip Ready)' : (autoCompileStrategy === 'fresh_cache' ? 'Start Queue (Fast Re-mux)' : 'Start Queue (Pure Fresh)') }}</span>
               </button>
             </div>
           </div>
@@ -2158,7 +2180,7 @@ const openProgressModal = () => {
   modalState.value.isMinimized = false
 }
 
-const selectedVoice = ref('en-US-ChristopherNeural')
+const selectedVoice = ref('en-GB-RyanNeural')
 const synthesizingAudio = ref(false)
 const masterAudioPlayer = ref(null)
 
@@ -4024,8 +4046,57 @@ const seekAudio = (seconds) => {
   }
 }
 
+// Per-Batch Image Clearing State & Handler
+const clearingBatchIndex = ref(null)
+
+const clearBatchImagesDirect = async (batch) => {
+  if (!batch || clearingBatchIndex.value !== null) return
+
+  const confirmMsg = `Are you sure you want to delete all ${batch.readyCount} image plates for ${batch.name} (Scenes ${batch.startTag}–${batch.endTag})? This action cannot be undone.`
+  if (!window.confirm(confirmMsg)) return
+
+  clearingBatchIndex.value = batch.index
+  triggerToast(`Clearing ${batch.name}`, `Deleting ${batch.readyCount} image plates for ${batch.name}...`, "info", true)
+
+  try {
+    const res = await fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images/clear-batch`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        batchNumber: batch.index + 1,
+        startTag: batch.startTag,
+        endTag: batch.endTag,
+        scenes: Array.isArray(batch.scenes) ? batch.scenes.map(s => s.tag) : []
+      })
+    })
+
+    const data = await res.json()
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || `Failed to clear images for ${batch.name}`)
+    }
+
+    // Refresh scenes and pipeline status across the view
+    await loadScenes()
+    await loadPipelineStatus()
+    await loadEpisodeData()
+
+    triggerToast(
+      "Batch Cleared",
+      `✓ Cleared ${data.deletedCount} images for ${batch.name}. (${data.remainingCount} total plates remaining)`,
+      "success",
+      false,
+      4000
+    )
+  } catch (err) {
+    console.error("Failed to clear batch images:", err)
+    triggerToast("Clear Failed", err.message, "error", false, 5000)
+  } finally {
+    clearingBatchIndex.value = null
+  }
+}
+
 const compileBatchDirect = (batchIdx) => {
-  activeStage.value = 'compiler'
+  // Preserve current activeStage ('visuals') so the user stays on the Stage 1 Batch Accordion
   compilationScope.value = 'batch'
   selectedBatchIndex.value = batchIdx
   compileVideo(batchIdx)
@@ -4133,7 +4204,9 @@ const stitchOmnibusAction = async () => {
 }
 
 const autoCompileAllBatches = async () => {
-  const isSkip = autoCompileStrategy.value === 'skip_compiled'
+  const strategy = autoCompileStrategy.value
+  const isSkip = strategy === 'skip_compiled'
+  const isPureFresh = strategy === 'fresh_literal'
   compiling.value = true
   modalState.value = {
     show: true,
@@ -4143,9 +4216,9 @@ const autoCompileAllBatches = async () => {
     progress: 5,
     message: isSkip 
       ? 'Initializing Auto-Queue (Skipping already compiled batches)...' 
-      : 'Initializing Auto-Queue (Fresh All: Recompiling 100% batches)...',
+      : (isPureFresh ? 'Initializing Auto-Queue (Pure Fresh All: Purging cache & re-rendering 100%)...' : 'Initializing Auto-Queue (Fast Re-compile: Re-muxing containers with clip cache)...'),
     logs: [
-      `Starting automated sequential compilation (${isSkip ? 'Skip Already Compiled Batches' : 'Fresh All Re-render'})...`,
+      `Starting automated sequential compilation (${isSkip ? 'Skip Ready Batches' : (isPureFresh ? 'Pure Fresh All - Purging Cache' : 'Fast Re-compile with Cache')})...`,
       'Memory will be flushed after each batch. Master video will be auto-stitched at the end.'
     ]
   }
@@ -4160,6 +4233,7 @@ const autoCompileAllBatches = async () => {
       watermarkOpacity: watermarkOpacity.value,
       watermarkPosition: watermarkPosition.value,
       skipExisting: isSkip,
+      fresh: isPureFresh,
       force: true
     }
 
@@ -4307,6 +4381,7 @@ const startPolling = (isBatch = false, bObj = null, isAutoQueue = false, isStitc
           if (matchedFile) {
             selectedVideoFile.value = matchedFile.filename
           }
+          triggerToast('Batch Render Complete', `✓ ${bObj.name} Preview (${bObj.totalCount} cuts) is compiled and ready!`, 'success')
         } else if (isStitch && data.filename) {
           selectedVideoFile.value = data.filename
         } else {
