@@ -35,6 +35,11 @@
      (b) *Compound Remnants:* Terms matching compound remnants (e.g. core, fragment, pelt, trophy) map strictly to items/props, never living character actors.
      (c) *Physical Action Staging:* Any clause describing physical visual action by a vaulted entity MUST declare that entity in `CAST` and `<character_refs>`.
 
+9. **Immutable Canonical Prop & Weapon DNA Invariant (Zero Ad-Hoc Descriptive Mutation):**
+   - All weapons, artifacts, and props registered with reference plates (`character_vault/items.json`, `vault/entities.json`) MUST use their single, immutable canonical DNA anchor in prompt layer 3 across all episodic scenes, identical to character/monster entities (e.g. `@{Mountain Stone Troll}`).
+   - **Absolute Ban on Contradictory Adjectives:** Agents, scriptwriters, and compilers are strictly prohibited from injecting divergent, ad-hoc, or speculative adjectives into prompt action layers or prop injections (e.g. adding *"smooth spiral carved head"* or *"never metallic"* against an iron-banded reference plate). The prompt text must NEVER fight or contradict the visual reference plate.
+   - **Strict Physical Staging Parity:** Props and weapons MUST only be bound to `PROPS` and `<item_refs>` when physically held, worn, or actively engaged in that scene's visual action (never inject staves during close-up knife harvesting, desk discussions, or outdoor brewing unless actively manipulated).
+
 ---
 
 ## 2. Strict Context Verification & Proactive CLI Automation Gates

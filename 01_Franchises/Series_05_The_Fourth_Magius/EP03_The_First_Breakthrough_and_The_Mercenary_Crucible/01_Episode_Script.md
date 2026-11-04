@@ -403,43 +403,43 @@
 <!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_125] They stared at the three giant stone carcasses, unable to reconcile imperial theory with the reality before them.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_126] Elder Rowan slowly lowered his short sword, his craggy chest heaving as he looked between the fallen monsters and his ward.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_127] Michael knelt down on the packed earth beside the chest of the fallen lead mountain stone troll, inspecting the beast.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}, @{Mountain Stone Troll}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}, @{Mountain Stone Troll}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_128] Michael drew his small bone hunting knife, preparing to harvest the unblemished granite core from the fallen monster.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_129] Because the kinetic destruction had been directed inward with surgical precision, the outer shell remained pristine and uncracked.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_130] The precious beast core housed within the thoracic cavity was completely intact and unburnt by foreign elemental fire.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_131] Michael made three precise cuts along the fissures of the stone hide, peeling back a flap of petrified tissue.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_132] Reaching inside the beast's chest with steady fingers, Michael withdrew a glowing amber crystal that pulsed with earthen mana.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_133] A flawless Tier 1 Earth-Beast Core—completely unblemished, carrying one hundred percent of its native alchemical potency.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_134] In the imperial capital, a core of this grade and purity would sell for hundreds of silver crowns among master alchemists.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_135] Michael wiped the viscous residue from the amber core with a clean linen cloth, placing the glowing stone into his linen pouch.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_136] Moving systematically across the courtyard, Michael harvested the remaining two amber cores from the other two fallen stone trolls.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}, @{Mountain Stone Troll}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}, @{Mountain Stone Troll}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_137] Three pristine cores were secured—the exact raw materials needed to refine high-potency marrow saturation draughts.
-<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_138] Michael stood up, sheathed his bone knife, and slung his carved blackwood staff casually across his shoulder.
 <!-- ZONE: oakhaven_perimeter_gate | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -479,7 +479,7 @@
 <!-- ZONE: rowan_apothecary_shop | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_149] Michael calmly placed his blackwood quarterstaff into the corner rack, unbuckling his canvas pouch on the polished oak service counter.
-<!-- ZONE: rowan_apothecary_shop | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: rowan_apothecary_shop | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_150] Three glowing amber crystals tumbled out onto the dark wood, illuminating the rustic workshop with warm earthen radiance.
 <!-- ZONE: rowan_apothecary_shop | STAGE: interaction | ACTOR: @{Elder Rowan Thorne} | CAST: [@{Michael Montrey (Child)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -576,7 +576,7 @@
 <!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_180] The blackwood quarterstaff absorbed daily infusions of kinetic resonance, turning as glossy and dark as polished obsidian.
-<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_181] The townsfolk of Oakhaven spoke of the quiet, mysterious boy at Rowan's apothecary in hushed, respectful tones.
 <!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -643,13 +643,13 @@
 <!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_201] He glanced down at the carved blackwood quarterstaff resting against the timber beam beside his writing desk.
-<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_202] The ancient wood had absorbed three years of auxiliary thunder polishing, its spiral head gleaming with quiet mana veins.
-<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_203] Beside the staff lay his heavy canvas herb rucksack, neatly buckled and reinforced with sturdy brass rivets.
-<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_204] Deep within his soul space, the ancient golden soul grimoire hummed with a quiet, resonant golden pulse.
 <!-- ZONE: oakhaven_apothecary_loft | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -771,16 +771,16 @@
 ## 🎬 BATCH 11 (Scenes 241 - 264): Courtyard Elixir Distillation & Ancient Alchemy
 
 [IMG_241] Back in the rear courtyard behind the apothecary, the morning sun broke through cloud cover, casting warm amber beams across the woodpiles.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_242] Elder Rowan had already laid out the heavy stone worktable beneath the low cedar roof eaves.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_243] Arranged upon the weathered timber were bundles of dried highland moon-lotus, mountain sage, and the final vial of refined marrow dust.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_244] Michael stepped up beside Rowan, rolling up his leather sleeves to prepare the alchemical tools.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_245] He picked up the heavy granite mortar and pestle, grinding the dried lotus petals with smooth, hypnotic circular motions.
 <!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Granite Mortar and Pestle}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -789,58 +789,58 @@
 <!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Polished Cedar Salve Bowl}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_247] The elderly physician remarked that Michael's control over botanical extraction surpassed most guild masters in the capital.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_248] Michael explained that herbal alchemy was simply the harmonious alignment of organic frequencies as he added the amber marrow powder.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_249] As the refined marrow dust touched the lotus extract, a soft golden mist rose from the mortar, smelling of clean mountain rain.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_250] Rowan adjusted the small copper burner beneath the mixing vessel, keeping the temperature at a gentle, steady simmer.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_251] Michael extended his right hand over the simmering liquid, infusing a trace of kinetic mana to accelerate the molecular fusion.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_252] The bubbling amber liquid clarified rapidly, turning into a gleaming, golden elixir that shimmered like liquid sunlight.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_253] Rowan murmured reverently as he decanted the golden draught into a ceramic flask using a brass funnel.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_254] The physician noted that this single flask contained more concentrated vitality than a hundred standard medicinal pills.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_255] Michael agreed that it would bridge the gap between Tier 1 Foundation and Tier 2 Kinetic Resonance, securing the cork stopper.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_256] Rowan wiped his calloused hands on his canvas apron, looking intently into Michael's calm cyan eyes.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_257] Rowan mentioned that imperial academy evaluators visited the northern provinces every three years to inspect registered scions.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_258] The evaluators from the capital were expected to arrive in Oakhaven the following spring to test the frontier youth.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_259] Michael remarked with a knowing smirk that they would expect weak apprentices waving wooden wands and chanting basic sparks.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_260] Rowan laughed warmly, his deep voice echoing in the quiet yard as he declared they would find no ordinary apprentice here.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_261] They would find the rebirth of a sovereign who would turn the imperial hierarchy upside down.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_262] Michael tucked the warm ceramic flask into his tunic pocket, feeling the steady thrum of power within.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_263] The sun reached its midday peak, illuminating the rustic courtyard with crisp, golden northern light.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_264] Michael gave Rowan a respectful nod and turned toward the back entrance of the shop, ready for the breakthrough.
-<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: oakhaven_apothecary_courtyard | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}, @{Elder Rowan Thorne}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 ---
 
@@ -1005,10 +1005,10 @@
 <!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_315] Michael picked up his carved blackwood quarterstaff, feeling the flawless resonance between his marrow and the dark timber.
-<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_316] With Tier 2 Kinetic Resonance mastered, he could now project kinetic shockwaves outward at will through the staff.
-<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_317] His physical vessel had achieved the first tier of Mana-Forged Flesh, rendering mundane attacks beneath his threshold harmless.
 <!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
@@ -1044,13 +1044,13 @@
 <!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_328] They did not know that the true sovereign of the First Magicians was sharpening his staff in the frontier shadows.
-<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_329] Michael smiled faintly, a cool, radiant smile that promised an imperial reckoning unlike anything the realm had ever witnessed.
 <!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_330] He rested his wooden training staff beside his bed and lay down on his straw mattress beneath the thick wool blankets.
-<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
+<!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: [@{Carved Blackwood Staff}]| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->
 
 [IMG_331] His breathing slowed into the deep, rhythmic tide of monotonic cultivation, his bones resting in quiet strength.
 <!-- ZONE: white_dimension_library | STAGE: interaction | ACTOR: @{Michael Montrey (Wolf-Skin)} | CAST: [@{Michael Montrey (Wolf-Skin)}]| PROPS: []| TECH_STAGE: ep03_stage1| PLAN_TALK: false -->

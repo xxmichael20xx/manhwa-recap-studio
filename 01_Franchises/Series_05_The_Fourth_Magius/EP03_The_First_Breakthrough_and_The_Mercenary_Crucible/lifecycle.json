@@ -4029,11 +4029,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "They stared at the three giant stone carcasses, unable to reconcile imperial theory with the reality before them.",
     "metaphorQuarantine": [
@@ -4059,11 +4055,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} slowly lowered his short sword, his craggy chest heaving as he looked between the fallen monsters and his ward.",
     "metaphorQuarantine": [
@@ -4092,11 +4084,7 @@
         "id": "mountain_stone_troll"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Child)} knelt down on the packed earth beside the chest of the fallen lead mountain @{Mountain Stone Troll}, inspecting the quarry.",
     "metaphorQuarantine": [
@@ -4122,11 +4110,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Child)} drew his small bone hunting knife, preparing to harvest the unblemished granite core from the fallen monster.",
     "metaphorQuarantine": [
@@ -4152,11 +4136,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Because the kinetic destruction had been directed inward with surgical precision, the outer shell remained pristine and uncracked.",
     "metaphorQuarantine": [
@@ -4182,11 +4162,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The precious the quarry housed within the thoracic cavity was completely intact and unburnt by foreign elemental fire.",
     "metaphorQuarantine": [
@@ -4212,11 +4188,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Child)} made three precise cuts along the fissures of the stone hide, peeling back a flap of petrified tissue.",
     "metaphorQuarantine": [
@@ -4242,11 +4214,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Reaching inside the quarry's chest with steady fingers, @{Michael Montrey (Child)} withdrew a glowing amber crystal that pulsed with earthen mana.",
     "metaphorQuarantine": [
@@ -4272,11 +4240,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "A flawless Tier 1 the quarry—completely unblemished, carrying one hundred percent of its native alchemical potency.",
     "metaphorQuarantine": [
@@ -4302,11 +4266,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "In the imperial capital, a core of this grade and purity would sell for hundreds of silver crowns among master alchemists.",
     "metaphorQuarantine": [
@@ -4332,11 +4292,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Child)} wiped the viscous residue from the amber core with a clean linen cloth, placing the glowing stone into his linen pouch.",
     "metaphorQuarantine": [
@@ -4365,11 +4321,7 @@
         "id": "mountain_stone_troll"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Moving systematically across the courtyard, @{Michael Montrey (Child)} harvested the remaining two amber cores from the other two fallen @{Mountain Stone Troll}.",
     "metaphorQuarantine": [
@@ -4395,11 +4347,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Three pristine cores were secured—the exact raw materials needed to refine high-potency marrow saturation draughts.",
     "metaphorQuarantine": [
@@ -4431,7 +4379,7 @@
       }
     ],
     "isolationLock": false,
-    "visualAction": "@{Michael Montrey (Child)} stood up, sheathed his bone knife, and slung his carved blackwood staff casually across his shoulder.",
+    "visualAction": "@{Michael Montrey (Child)} stood up, sheathed his bone knife, and slung @{Carved Blackwood Staff} casually across his shoulder.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -4739,9 +4687,13 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": false,
-    "visualAction": "@{Michael Montrey (Child)} calmly placed his blackwood quarterstaff into the corner rack, unbuckling his canvas pouch on the polished oak service counter.",
+    "visualAction": "@{Michael Montrey (Child)} calmly placed @{Carved Blackwood Staff} into the corner rack, unbuckling his canvas pouch on the polished oak service counter.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -5479,7 +5431,7 @@
       }
     ],
     "isolationLock": true,
-    "visualAction": "@{Michael Montrey (Wolf-Skin)} practiced his staff katas in the tranquil timber rear courtyard, his hands swinging the blackwood staff with increasing velocity.",
+    "visualAction": "@{Michael Montrey (Wolf-Skin)} practiced his staff katas in the tranquil timber rear courtyard, his hands swinging @{Carved Blackwood Staff} with increasing velocity.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -5523,9 +5475,13 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
-    "visualAction": "The blackwood quarterstaff absorbed daily infusions of kinetic resonance, turning as glossy and dark as polished obsidian.",
+    "visualAction": "@{Carved Blackwood Staff} absorbed daily infusions of kinetic resonance, turning as glossy and dark as polished obsidian.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -6009,9 +5965,13 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
-    "visualAction": "He glanced down at the carved blackwood quarterstaff resting against the timber beam beside his writing desk.",
+    "visualAction": "He glanced down at @{Carved Blackwood Staff} resting against the timber beam beside his writing desk.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -6032,9 +5992,13 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
-    "visualAction": "The ancient wood had absorbed three years of auxiliary thunder polishing, its spiral head gleaming with quiet mana veins.",
+    "visualAction": "The ancient wood had absorbed three years of auxiliary thunder polishing, its polished cylindrical tip gleaming with quiet mana veins.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -6055,7 +6019,11 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
     "visualAction": "Beside the staff lay his heavy canvas herb rucksack, neatly buckled and reinforced with sturdy brass rivets.",
     "metaphorQuarantine": [
@@ -6401,7 +6369,7 @@
       }
     ],
     "isolationLock": true,
-    "visualAction": "After finishing breakfast, @{Michael Montrey (Wolf-Skin)} took his blackwood staff and stepped through the rear courtyard gate into the forest path.",
+    "visualAction": "After finishing breakfast, @{Michael Montrey (Wolf-Skin)} took @{Carved Blackwood Staff} and stepped through the rear courtyard gate into the forest path.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -6536,7 +6504,7 @@
       }
     ],
     "isolationLock": true,
-    "visualAction": "He prepared to calibrate his skeletal transmission at age eight, raising the blackwood quarterstaff into a two-handed guard.",
+    "visualAction": "He prepared to calibrate his skeletal transmission at age eight, raising @{Carved Blackwood Staff} into a two-handed guard.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -7046,11 +7014,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Back in the rear courtyard behind the apothecary, the morning sun broke through cloud cover, casting warm amber beams across the woodpiles.",
     "metaphorQuarantine": [
@@ -7076,11 +7040,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} had already laid out the heavy stone worktable beneath the low cedar roof eaves.",
     "metaphorQuarantine": [
@@ -7106,11 +7066,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "Arranged upon the weathered timber were bundles of dried highland moon-lotus, mountain sage, and the final vial of refined marrow dust.",
     "metaphorQuarantine": [
@@ -7136,11 +7092,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} stepped up beside @{Elder Rowan Thorne}, rolling up his leather sleeves to prepare the alchemical tools.",
     "metaphorQuarantine": [
@@ -7226,11 +7178,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The elderly herbalist remarked that @{Michael Montrey (Wolf-Skin)}'s control over botanical extraction surpassed most guild masters in the capital.",
     "metaphorQuarantine": [
@@ -7256,11 +7204,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} explained that herbal alchemy was simply the harmonious alignment of organic frequencies as he added the amber marrow powder.",
     "metaphorQuarantine": [
@@ -7286,11 +7230,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "As the refined marrow dust touched the lotus extract, a soft golden mist rose from the mortar, smelling of clean mountain rain.",
     "metaphorQuarantine": [
@@ -7316,11 +7256,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} adjusted the small copper burner beneath the mixing vessel, keeping the temperature at a gentle, steady simmer.",
     "metaphorQuarantine": [
@@ -7346,11 +7282,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} extended his right hand over the simmering liquid, infusing a trace of kinetic mana to accelerate the molecular fusion.",
     "metaphorQuarantine": [
@@ -7376,11 +7308,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The bubbling amber liquid clarified rapidly, turning into a gleaming, golden elixir that shimmered like liquid sunlight.",
     "metaphorQuarantine": [
@@ -7406,11 +7334,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} murmured reverently as he decanted the golden draught into a ceramic flask using a brass funnel.",
     "metaphorQuarantine": [
@@ -7436,11 +7360,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The herbalist noted that this single flask contained more concentrated vitality than a hundred standard medicinal pills.",
     "metaphorQuarantine": [
@@ -7466,11 +7386,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} agreed that it would bridge the gap between Tier 1 Foundation and Tier 2 kinetic resonance, securing the cork stopper.",
     "metaphorQuarantine": [
@@ -7496,11 +7412,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} wiped his calloused hands on his canvas apron, looking intently into @{Michael Montrey (Wolf-Skin)}'s calm cyan eyes.",
     "metaphorQuarantine": [
@@ -7526,11 +7438,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} mentioned that imperial academy evaluators visited the northern provinces every three years to inspect registered scions.",
     "metaphorQuarantine": [
@@ -7556,11 +7464,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The evaluators from the capital were expected to arrive in Oakhaven the following spring to test the frontier youth.",
     "metaphorQuarantine": [
@@ -7586,11 +7490,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} remarked with a knowing smirk that they would expect weak apprentices waving wooden wands and chanting basic sparks.",
     "metaphorQuarantine": [
@@ -7616,11 +7516,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Elder Rowan Thorne} laughed warmly, his deep voice echoing in the quiet yard as he declared they would find no ordinary apprentice here.",
     "metaphorQuarantine": [
@@ -7646,11 +7542,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "They would find the rebirth of a master who would turn the imperial hierarchy upside down.",
     "metaphorQuarantine": [
@@ -7676,11 +7568,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} tucked the warm ceramic flask into his tunic pocket, feeling the steady thrum of power within.",
     "metaphorQuarantine": [
@@ -7706,11 +7594,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "The sun reached its midday peak, illuminating the rustic courtyard with crisp, golden northern light.",
     "metaphorQuarantine": [
@@ -7736,11 +7620,7 @@
         "id": "elder_rowan_thorne"
       }
     ],
-    "items": [
-      {
-        "id": "carved_blackwood_staff"
-      }
-    ],
+    "items": [],
     "isolationLock": false,
     "visualAction": "@{Michael Montrey (Wolf-Skin)} gave @{Elder Rowan Thorne} a respectful nod and turned toward the back entrance of the shop, ready for the breakthrough.",
     "metaphorQuarantine": [
@@ -8985,9 +8865,13 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
-    "visualAction": "@{Michael Montrey (Wolf-Skin)} picked up his carved blackwood quarterstaff, feeling the flawless resonance between his marrow and the dark timber.",
+    "visualAction": "@{Michael Montrey (Wolf-Skin)} picked up @{Carved Blackwood Staff}, feeling the flawless resonance between his marrow and the dark timber.",
     "metaphorQuarantine": [
       "snow",
       "frost",
@@ -9008,7 +8892,11 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
     "visualAction": "With Tier 2 kinetic resonance mastered, he could now project kinetic shockwaves outward at will through the staff.",
     "metaphorQuarantine": [
@@ -9284,7 +9172,11 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
     "visualAction": "They did not know that the true master of the ancient predecessors was sharpening his staff in the frontier shadows.",
     "metaphorQuarantine": [
@@ -9330,9 +9222,13 @@
         "id": "michael_montrey_wolf_skin"
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "id": "carved_blackwood_staff"
+      }
+    ],
     "isolationLock": true,
-    "visualAction": "He rested his wooden training staff beside his bed and lay down on his straw mattress beneath the thick wool blankets.",
+    "visualAction": "He rested @{Carved Blackwood Staff} beside his bed and lay down on his straw mattress beneath the thick wool blankets.",
     "metaphorQuarantine": [
       "snow",
       "frost",
