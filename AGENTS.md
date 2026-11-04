@@ -39,6 +39,10 @@
    - All weapons, artifacts, and props registered with reference plates (`character_vault/items.json`, `vault/entities.json`) MUST use their single, immutable canonical DNA anchor in prompt layer 3 across all episodic scenes, identical to character/monster entities (e.g. `@{Mountain Stone Troll}`).
    - **Absolute Ban on Contradictory Adjectives:** Agents, scriptwriters, and compilers are strictly prohibited from injecting divergent, ad-hoc, or speculative adjectives into prompt action layers or prop injections (e.g. adding *"smooth spiral carved head"* or *"never metallic"* against an iron-banded reference plate). The prompt text must NEVER fight or contradict the visual reference plate.
    - **Strict Physical Staging Parity:** Props and weapons MUST only be bound to `PROPS` and `<item_refs>` when physically held, worn, or actively engaged in that scene's visual action (never inject staves during close-up knife harvesting, desk discussions, or outdoor brewing unless actively manipulated).
+10. **The Hypothetical Analogy & Internal Monologue Decoupling Invariant:**
+   - Spoken narrative clauses describing theoretical calculations, analogies, similes, or hypothetical combat scenarios (e.g. *"A blow against heavy plate armor would turn an opponent's ribcage to powder"*, *"like a slumbering dragon"*, *"waving fragile wands"*) are STRICTLY FORBIDDEN from being copied literally into prompt action layers.
+   - The visual action layer MUST stage the active character's actual physical presence in their established spatial enclosure (e.g. Michael observing the pulverized boulder with calculating satisfaction), explicitly adding negative tokens against hypothetical constructs (e.g. `zero armor dummies, zero wooden posts`).
+
 
 ---
 

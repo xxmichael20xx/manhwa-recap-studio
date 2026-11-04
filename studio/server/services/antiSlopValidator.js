@@ -717,6 +717,14 @@ export class AntiSlopValidator {
           g09Fails.push(scene.id)
         }
       }
+      // Hypothetical combat dummy and unvaulted armor bleed guard
+      const rogueHypotheticalRegex = /\b(?:plate armor|iron armor|suit of armor|training dummy|target dummy|wooden dummy|wooden post dummy)\b/i;
+      if (rogueHypotheticalRegex.test(scene.prompt)) {
+        const isTrainingZone = scene.zone.includes('training') || scene.zone.includes('barracks') || scene.zone.includes('arena') || scene.zone.includes('armory');
+        if (!isTrainingZone) {
+          g09Fails.push(`${scene.id} (Hypothetical set-piece bleed: Action layer or prompt describes rogue armor/training dummy in non-combat zone "${scene.zone}")`);
+        }
+      }
     }
 
     recordGate(
