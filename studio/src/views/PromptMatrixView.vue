@@ -44,17 +44,6 @@
           </span>
         </button>
 
-        <!-- Character & Item Vault Drawer Trigger -->
-        <button 
-          @click="isVaultDrawerOpen = true"
-          class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-600 via-purple-600 to-indigo-600 hover:from-amber-500 hover:to-purple-500 text-white text-xs font-bold flex items-center space-x-2 transition-all shadow-md shadow-purple-950/30 cursor-pointer"
-        >
-          <Users class="w-4 h-4 text-amber-200" />
-          <span>Character & Item Vault</span>
-          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-950/60 border border-purple-400/30 text-purple-100">
-            {{ episodeScopedModels.length }} Plates
-          </span>
-        </button>
 
         <!-- Google Flow Scene Synchroniser & Reverse-Lookup Button -->
         <button 
