@@ -57,6 +57,10 @@ To guarantee 0 policy blocks on Google Flow / Imagen 3:
    - **Character DNA vs Wardrobe Decoupling:** In `vault/entities.json`, `dna` must contain ONLY facial/anatomical traits. Never duplicate robes, armor, or stances inside `dna`. Duplicating clothing across `dna`, `outfits`, and `posture` causes 3-entity scenes to breach the 1,800-character budget.
    - **Token-Insulated Action Trimming:** When trimming action descriptions to meet budget caps, NEVER use naive string slicing (`.slice(0, N)`), which cuts tokens in half (e.g. `@{Chief.`) and triggers Gate 10 unregistered entity blocks and Gate 30 word-slicer violations. Always use token-boundary-safe truncation (`trimActionSafely`) that truncates at complete words outside open `@{` delimiters.
 
+5. **Autonomous Batch Execution Protocol (The Anti-Single-Turn Halt Gate):**
+   - **Continuous Runner Mandate:** Google Flow agent handoffs MUST prepend the continuous execution command `[COMMAND: EXECUTE BATCH AUTONOMOUSLY — CONTINUOUS SEQUENCE]`.
+   - **Absolute Ban on Single-Scene Turns:** The Flow Agent is strictly prohibited from stopping after 1 scene or asking for intermediate confirmation. Every batch (24 scenes) must run to 100% completion in a single uninterrupted execution loop.
+
 ## 5. Mandatory Deterministic Pre-Flight Linter Execution
 Before presenting or exporting any prompt matrix, execute and verify all 33 deterministic gates:
 ```bash
