@@ -80,6 +80,126 @@ while ((hm = headerRegex.exec(scriptText)) !== null) {
 }
 
 const matrixOutPath = path.join(epDir, '02_Prompt_Matrix.md')
+const worldStatePath = path.join(epDir, 'world_state.json')
+const worldState = readJsonSafe(worldStatePath, false)
+
+const LIGHTING_PHRASES = {
+  bright_morning_sunlight: 'illuminated by bright morning sunlight',
+  day_sunlit: 'illuminated by bright natural daylight',
+  daylight: 'illuminated by bright natural daylight',
+  interior_warm: 'illuminated by warm ambient interior lighting',
+  interior_night: 'illuminated by soft dim interior night lighting and dark exterior windows',
+  night_floodlit: 'illuminated by high-intensity nocturnal security floodlights under dark night sky',
+  night_celestial: 'illuminated by ethereal cosmic starlight and glowing celestial auroras under deep night sky',
+  dusk: 'illuminated by dramatic crimson and amber sunset dusk lighting',
+  dawn: 'illuminated by pale cool early morning dawn light'
+}
+
+const resolveSceneLighting = (sId, clause = '', zone = {}, state = null) => {
+  const sceneNum = PromptDnaCompiler.sceneNumberFromId(sId)
+  if (state?.timeline?.timeline_shifts) {
+    for (const shift of state.timeline.timeline_shifts) {
+      const from = PromptDnaCompiler.sceneNumberFromId(shift.from_scene || shift.from || '')
+      const to = PromptDnaCompiler.sceneNumberFromId(shift.to_scene || shift.to || '')
+      if (sceneNum >= from && sceneNum <= to && shift.lighting) {
+        return shift.lighting
+      }
+    }
+  }
+
+  if (state?.timeline?.default_lighting) {
+    return state.timeline.default_lighting
+  }
+
+  const cLower = clause.toLowerCase()
+  if (/\b(?:morning\s+sunlight|early\s+morning|sunrise|dawn|breakfast|waking\s+up)\b/i.test(cLower)) {
+    return 'bright_morning_sunlight'
+  }
+  if (/\b(?:night|midnight|evening\s+sky|dark\s+night|under\s+the\s+stars)\b/i.test(cLower)) {
+    return zone.lighting && zone.lighting.startsWith('night') ? zone.lighting : 'night_floodlit'
+  }
+  if (/\b(?:sunset|dusk|twilight)\b/i.test(cLower)) {
+    return 'dusk'
+  }
+
+  return zone.lighting || 'day_sunlit'
+}
+
+const sanitizeZoneCanon = (canon = '', lightingMode = '') => {
+  let s = String(canon)
+  const isDay = ['bright_morning_sunlight', 'day_sunlit', 'daylight', 'dawn'].includes(lightingMode)
+  const isNight = ['night_floodlit', 'night_celestial', 'interior_night'].includes(lightingMode)
+
+  if (isDay) {
+    s = s
+      .replace(/\bat night\b/gi, '')
+      .replace(/\bunder dark night sky\b/gi, 'under bright morning sky')
+      .replace(/\bunder floodlit night sky\b/gi, 'under clear sky')
+      .replace(/\bwindow overlooking campus night lamps\b/gi, 'window overlooking campus grounds')
+      .replace(/\bhigh LED stadium floodlights under dark night sky\b/gi, 'high LED stadium towers under morning sky')
+      .replace(/\bsearchlights sweeping campus perimeter fence\b/gi, 'security barriers along campus perimeter fence')
+      .replace(/\s{2,}/g, ' ')
+      .trim()
+  } else if (isNight) {
+    s = s
+      .replace(/\bin morning daylight\b/gi, 'under night floodlights')
+      .replace(/\bunder daylight\b/gi, 'under night sky')
+      .replace(/\bunder bright blue sky\b/gi, 'under dark night sky')
+      .replace(/\s{2,}/g, ' ')
+      .trim()
+  }
+
+  return s
+}
+
+const resolveZoneCanon = (sId, zoneId, zone = {}, header = {}, state = null) => {
+  const sceneNum = PromptDnaCompiler.sceneNumberFromId(sId)
+  if (state?.zone_lifecycles?.[zoneId]) {
+    const lifecycles = state.zone_lifecycles[zoneId]
+    for (const cycle of lifecycles) {
+      const from = PromptDnaCompiler.sceneNumberFromId(cycle.from_scene || cycle.from || '')
+      const to = PromptDnaCompiler.sceneNumberFromId(cycle.to_scene || cycle.to || '')
+      if (sceneNum >= from && sceneNum <= to && cycle.desc) {
+        return cycle.desc
+      }
+    }
+  }
+
+  if (zone.tech_stages && zone.tech_stages[header.techStage]) {
+    return zone.tech_stages[header.techStage]
+  }
+
+  return zone.canon || ''
+}
+
+const getToneDrivenTierAndLayout = (header, clause = '') => {
+  const stage = (header?.stage || '').toLowerCase()
+  const c = (clause || '').toLowerCase()
+  const isCombat = stage === 'combat' || /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i.test(c)
+  const isEstablishing = stage === 'establishing' || (header?.cast && header.cast.length === 0) || /\b(?:panoramic|wide view|landscape|skyline|exterior of|loomed above)\b/i.test(c)
+  const isHeroPlate = /\b(?:stepped forward|revealed|unleashed|towered|eyes flared|supreme|sovereign)\b/i.test(c)
+
+  let tier = 'B'
+  if (isCombat) {
+    tier = 'C'
+  } else if (isEstablishing || isHeroPlate) {
+    tier = 'A'
+  }
+
+  const layout = tier === 'A'
+    ? 'Tier A: Single-panel full-bleed hero plate'
+    : tier === 'B'
+    ? 'Tier B: Dual-panel manhwa webtoon split strip'
+    : 'Tier C: Three-panel dynamic manhwa action strip'
+
+  const lens = tier === 'A'
+    ? '24mm wide angle, low-angle hero framing'
+    : tier === 'C'
+    ? '50mm telephoto close-up action framing'
+    : '35mm medium two-shot eye-level framing'
+
+  return { tier, layout, lens }
+}
 
 // Mode 1: Scaffold beats template from 01_Episode_Script.md
 if (isScaffold) {
@@ -87,30 +207,25 @@ if (isScaffold) {
   const sceneIds = [...scriptClauses.keys()]
   const sceneBlocks = []
 
+  const defaultActor = Object.values(entities)[0]?.token || '@{Protagonist}'
   let currentBatch = 1
   for (let i = 0; i < sceneIds.length; i++) {
     const sId = sceneIds[i]
     const clause = scriptClauses.get(sId) || ''
     const header = scriptHeaders.get(sId) || {
-      zone: Object.keys(zones)[0] || 'emerald_valley_forest_trail',
+      zone: Object.keys(zones)[0] || 'default_zone',
       stage: 'interaction',
-      actor: '@{Ace Miller}',
-      cast: ['@{Ace Miller}'],
+      actor: defaultActor,
+      cast: [defaultActor],
       props: [],
       techStage: 'ep01_stage1',
       planTalk: false
     }
 
-    const tier = i % 3 === 0 ? 'A' : i % 3 === 1 ? 'B' : 'C'
-    const layout = tier === 'A'
-      ? 'Tier A: Single-panel full-bleed hero plate'
-      : tier === 'B'
-      ? 'Tier B: Dual-panel manhwa webtoon split strip'
-      : 'Tier C: Three-panel dynamic manhwa action strip'
-
-    const lens = tier === 'A'
-      ? '24mm wide angle, low-angle hero framing'
-      : '35mm medium two-shot eye-level framing'
+    const toneConfig = getToneDrivenTierAndLayout(header, clause)
+    const tier = toneConfig.tier
+    const layout = toneConfig.layout
+    const lens = toneConfig.lens
 
     const charRefs = header.cast.map(c => `@\{${c}\}`).join(', ')
     const itemRefs = header.props.map(p => `@\{${p}\}`).join(', ')
@@ -166,11 +281,12 @@ const compiledSceneNodes = []
 for (let i = 0; i < sceneIds.length; i++) {
   const sId = sceneIds[i]
   const parsedScene = parsedMatrixScenes.find(s => s.id === sId) || {}
+  const defaultActor = Object.values(entities)[0]?.token || '@{Protagonist}'
   const header = scriptHeaders.get(sId) || {
     zone: parsedScene.zone || Object.keys(zones)[0],
     stage: 'interaction',
-    actor: '@{Ace Miller}',
-    cast: parsedScene.charRefs || ['Ace Miller'],
+    actor: defaultActor,
+    cast: parsedScene.charRefs || [defaultActor],
     props: parsedScene.itemRefs || [],
     techStage: 'ep01_stage1',
     planTalk: false
@@ -179,9 +295,18 @@ for (let i = 0; i < sceneIds.length; i++) {
   const zoneId = header.zone || parsedScene.zone || Object.keys(zones)[0]
   const zone = zones[zoneId] || Object.values(zones)[0] || {}
 
-  const tier = parsedScene.tier || (i % 3 === 0 ? 'A' : i % 3 === 1 ? 'B' : 'C')
+  const toneConfig = getToneDrivenTierAndLayout(header, scriptClauses.get(sId) || '')
+  let tier = parsedScene.tier || toneConfig.tier
+  // Safety override: if scene was tagged Tier C but stage is dialogue/interaction with zero combat, downgrade to Tier B
+  if (tier === 'C' && (header.stage === 'dialogue' || header.stage === 'interaction' || header.stage === 'establishing')) {
+    const clauseText = (scriptClauses.get(sId) || '').toLowerCase()
+    const hasCombat = /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i.test(clauseText)
+    if (!hasCombat) {
+      tier = 'B'
+    }
+  }
   const layout = parsedScene.layout || (tier === 'A' ? 'Tier A: Single-panel full-bleed hero plate' : tier === 'B' ? 'Tier B: Dual-panel split strip' : 'Tier C: Three-panel action strip')
-  const lens = (parsedScene.prompt && parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)) ? parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)[0] : '24mm wide angle, low-angle hero framing'
+  const lens = (parsedScene.prompt && parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)) ? parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)[0] : toneConfig.lens
 
   // Extract or validate Layer 4 Action (strictly preserve bespoke <action_layer> and block unedited scaffold templates)
   let actionLayer = (parsedScene.actionLayer || '').trim()
@@ -227,6 +352,12 @@ for (let i = 0; i < sceneIds.length; i++) {
       if (ent.stage_variants && ent.stage_variants[header.techStage]) {
         dna = ent.stage_variants[header.techStage]
       }
+      if (worldState?.wardrobe_locks) {
+        const lockedWardrobe = worldState.wardrobe_locks[ent.id] || worldState.wardrobe_locks[cleanName.toLowerCase()]
+        if (lockedWardrobe) {
+          dna = dna.replace(/wearing [^,.]+/i, `wearing ${lockedWardrobe}`)
+        }
+      }
       charDnaBlocks.push(`Featuring @{${cleanName}} (${dna.replace(/^@\{[^}]+\},\s*/, '')})`)
     } else {
       charDnaBlocks.push(`Featuring @{${cleanName}}`)
@@ -235,15 +366,14 @@ for (let i = 0; i < sceneIds.length; i++) {
 
   const layer2 = charDnaBlocks.length > 0 ? charDnaBlocks.join(', ') : 'Completely unpopulated environment'
 
-  // 3. Layer 3: Spatial Enclosure & Lighting
-  let zoneCanon = zone.canon || ''
-  if (zone.tech_stages && zone.tech_stages[header.techStage]) {
-    zoneCanon = zone.tech_stages[header.techStage]
-  }
-  const lighting = zone.lighting === 'interior_warm' ? 'illuminated by warm ambient hearth glow' : 'illuminated by bright morning sunlight'
+  // 3. Layer 3: Spatial Enclosure & Lighting (Dynamic Temporal Decoupling)
+  const baseZoneCanon = resolveZoneCanon(sId, zoneId, zone, header, worldState)
+  const activeLightingMode = resolveSceneLighting(sId, scriptClauses.get(sId) || '', zone, worldState)
+  const sanitizedCanon = sanitizeZoneCanon(baseZoneCanon, activeLightingMode)
+  const lightingPhrase = LIGHTING_PHRASES[activeLightingMode] || 'illuminated by bright natural daylight'
   const vantage = zone.vantage_rule || ''
   const boundary = zone.boundary_tags || ''
-  const layer3 = `Inside ${zoneCanon}, ${lighting}, ${vantage}, ${boundary}`
+  const layer3 = `Inside ${sanitizedCanon}, ${lightingPhrase}${vantage ? ', ' + vantage : ''}${boundary ? ', ' + boundary : ''}`
 
   // 4. Layer 4: Action Layer & Guards
   let layer4 = actionLayer
@@ -252,6 +382,17 @@ for (let i = 0; i < sceneIds.length; i++) {
   }
   if (activeCast.some(c => c.toLowerCase().includes('lumina'))) {
     layer4 += ' Translucent cyan holographic interface floating freely in upper-right air quadrant with zero hands touching glass.'
+  }
+
+  // Enforce locked held prop form if worldState defines it
+  if (worldState?.held_props && header.props?.length > 0) {
+    for (const pToken of header.props) {
+      const cleanProp = pToken.replace(/[@{}]/g, '').trim().toLowerCase()
+      const propLock = worldState.held_props[cleanProp]
+      if (propLock && propLock.container && !layer4.toLowerCase().includes(propLock.container.toLowerCase())) {
+        layer4 += ` Held in ${propLock.container}.`
+      }
+    }
   }
 
   // Apply policy replacements on layer 4
@@ -321,9 +462,13 @@ const auditReport = AntiSlopValidator.auditPromptMatrix(
   finalMatrixMarkdown,
   {
     franchise,
+    franchiseDir,
+    epPath: epDir,
+    episodeId,
     entities,
     zones,
     policy,
+    worldState,
     ledgerText: '',
     scenesJson: null,
     audioTelemetry,

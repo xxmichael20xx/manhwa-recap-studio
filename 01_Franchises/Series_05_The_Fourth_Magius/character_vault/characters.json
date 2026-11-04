@@ -24,8 +24,9 @@
         "hair": "Messy raven-black hair falling naturally over forehead",
         "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
         "physique": "Small 5-year-old boy build, but carrying himself with immaculate balance, straight posture, and quiet dignity",
-        "attire": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, simple leather hide wraps for shoes",
-        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, tucked small bone hunting knife"
+        "attire": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, sturdy stitched brown leather travel boots",
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, tucked small bone hunting knife",
+        "footwear": "Sturdy stitched brown leather travel boots"
       },
       "dna_prompt_anchor": "@{Michael Montrey}, 5-year-old male manhwa protagonist, messy raven-black hair, piercing glowing cyan eyes, calm intense analytical expression, wearing rough-spun grey tunic with hemp cord belt, patched charcoal trousers, quiet confident stance, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "01_Protagonist_Michael_Montrey_Child.jpg",
@@ -33,7 +34,8 @@
       "flowName": "Michael Montrey",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
-        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+        "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
       ],
       "hasPlate": true
     },
@@ -57,10 +59,10 @@
         "hair": "Messy raven-black hair falling naturally over forehead",
         "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
         "physique": "Wiry 7-year-old boy build, straight posture, immaculate balance, quiet confident stance",
-        "attire": "Tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack",
+        "attire": "Tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack",
         "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, etched with subtle cyan mana spiral veins"
       },
-      "dna_prompt_anchor": "@{Michael Montrey (Wolf-Skin)}, 7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey winter-wolf leather tunic with soft wolf-fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Michael Montrey (Wolf-Skin)}, 7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "01b_Protagonist_Michael_Wolf_Skin_16x9.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00011",
       "flowName": "Michael Montrey (Wolf-Skin)",
@@ -194,7 +196,8 @@
       "flowName": "Elder Rowan Thorne",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
-        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+        "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
       ],
       "hasPlate": true
     },
@@ -259,6 +262,39 @@
       "flowName": "Grand Inquisitor",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "mountain_stone_troll",
+      "name": "Mountain Stone Troll",
+      "token": "@{Mountain Stone Troll}",
+      "tier": 1,
+      "role": "Monster (High Crag Vanguard Behemoth)",
+      "age": 100,
+      "stats_baseline": {
+        "level": 15,
+        "class": "Tier 1 Crag Vanguard Beast",
+        "strength": 45,
+        "agility": 10,
+        "constitution": 50,
+        "perception": 12,
+        "talent": "Granite-Skin Armor & Kinetic Crushing"
+      },
+      "appearance": {
+        "hair": "None, jagged stone spikes along cranial crest",
+        "eyes": "Glowing molten-amber slit eyes",
+        "physique": "Colossal nine-foot-tall brutish mountain stone troll, massive boulder-like shoulders, thick moss-covered stony knuckles",
+        "attire": "Natural jagged granite-encrusted grey hide, waist wrapped in weathered beast furs",
+        "weapons": "Crude ironwood tree-trunk club reinforced with iron bands"
+      },
+      "dna_prompt_anchor": "@{Mountain Stone Troll}, colossal 9-foot-tall brutish stone troll, jagged granite-encrusted grey hide, glowing molten-amber slit eyes, massive boulder shoulders, wielding a crude ironwood tree-trunk club, dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "reference_plate": "05b_Monster_Mountain_Stone_Troll.jpg",
+      "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00011",
+      "flowName": "Mountain Stone Troll",
+      "episodes": [
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+        "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
       ],
       "hasPlate": true
     }

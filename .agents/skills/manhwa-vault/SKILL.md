@@ -12,7 +12,7 @@ description: Franchise Character, Family, Boss, Weapon/Prop, and Location DNA va
 ## 2. Core Vault Registration & Atomic Synthesis Laws
 1. **Unified Multi-Entity Roster Scope:** Register ALL entities appearing across $\ge 2$ scenes (or bosses $\ge 3$ scenes) in `character_vault/characters.json`, `items.json`, and `vault/entities.json`:
    - **Humanoid Cast & Family Members:** Protagonist, antagonists, examiners, and ALL named family members (parents, siblings, clan kin—anonymous family role nouns like *"his mother"* are strictly banned).
-   - **Chronological Phase / Wardrobe Variants:** Whenever a character undergoes a timeskip or canonical attire shift (e.g. `Michael Montrey (Wolf-Skin)`), register a dedicated variant entity and reference plate.
+   - **Chronological Phase / Wardrobe Variants:** Whenever a character undergoes a timeskip or canonical attire shift (e.g. `@{Protagonist Name (Attire Variant)}`), register a dedicated variant entity and reference plate.
    - **Monsters, Bosses & Constructs:** Every multi-scene beast, calamity, or automaton (`@{Calamity Abyssal Wyrm}`).
    - **Signature Weapons, Tactical Props & Monoliths:** Registered as first-class entities in both `items.json` and Google Flow's "Characters" tab using pure clean names (`@{Carved Blackwood Staff}`, `@{Jade Spirit Blade}`—category prefixes like `Weapon:` or `Item:` are strictly banned by Gate 21).
    - **Multi-Scene Locations (Gate 19):** Any room, courtyard, or wilderness zone appearing in $\ge 2$ scenes MUST be registered as a Location entity (`{N}_Location_{Name}.jpg`) and bound in `<character_refs>`.

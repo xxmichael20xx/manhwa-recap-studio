@@ -1,0 +1,29 @@
+{"s":0,"e":"michael_montrey_child","set":{"location":"oakhaven_perimeter_gate","outfit":"default","posture":"calm_confident"},"reason":"EP02 terminal seed: Michael standing at Oakhaven perimeter gate facing stone troll vanguard"}
+{"s":0,"e":"elder_rowan_thorne","set":{"location":"oakhaven_perimeter_gate","outfit":"default","posture":"defensive_braced"},"reason":"Standing defensively before gate to protect Oakhaven and Michael"}
+{"s":0,"e":"rowan_combat_gear","set":{"lifecycle":"equipped"},"reason":"Rowan wielding circular iron-banded dark oak buckler shield on left forearm and drawn steel arming short sword"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"resting"},"reason":"Michael observes gate threat calmly with staff resting"}
+{"s":0,"e":"mountain_stone_troll","set":{"lifecycle":"active"},"reason":"Three massive stone trolls approaching Oakhaven northern gate"}
+{"s":73,"e":"michael_montrey_child","set":{"combat_arcana":"internal_kinetic_shockwave","posture":"barehanded_palm_strike"},"reason":"Catches colossal stone fist barehanded and channels ultrasonic vibration"}
+{"s":96,"e":"mountain_stone_troll","set":{"lifecycle":"destroyed"},"reason":"Lead troll stone arm shattered from internal resonance; collapses dead on packed dirt road"}
+{"s":97,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael channels kinetic shockwave through staff to rout surviving trolls"}
+{"s":120,"e":"mountain_stone_troll","set":{"lifecycle":"routed"},"reason":"Remaining two stone trolls flee in terror back toward jagged mountain peaks"}
+{"s":125,"e":"rowan_combat_gear","set":{"lifecycle":"sheathed"},"reason":"Threat resolved; Rowan sheathes arming short sword and buckles oak shield onto back"}
+{"s":125,"e":"carved_blackwood_staff","set":{"lifecycle":"resting"},"reason":"Michael lowers staff tip to packed dirt as battle concludes"}
+{"s":145,"e":"michael_montrey_child","set":{"location":"rowan_apothecary_shop","posture":"calm_seated"},"reason":"Returning safely to Rowan's shop; eating stew and conversing"}
+{"s":145,"e":"elder_rowan_thorne","set":{"location":"rowan_apothecary_shop","posture":"relaxed_workbench"},"reason":"Appraising troll core at apothecary timber workbench"}
+{"s":145,"e":"rowan_combat_gear","set":{"lifecycle":"stored"},"reason":"Combat gear unbuckled and hung safely on shop weapon rack"}
+{"s":145,"e":"carved_blackwood_staff","set":{"lifecycle":"stored"},"reason":"Quarterstaff stored upright in corner rafter"}
+{"s":169,"e":"michael_montrey_child","set":{"age":"8","outfit":"wolf_skin","build":"8_year_old_boy_build","posture":"upright_dignified"},"reason":"Three-year time skip: Michael advances to age 8, wearing tailored mountain-wolf leather tunic"}
+{"s":169,"e":"michael_montrey_wolf_skin","set":{"lifecycle":"active","location":"oakhaven_apothecary_loft","outfit":"default"},"reason":"Eight-year-old sovereign entity active in apothecary loft"}
+{"s":210,"e":"elder_rowan_thorne","set":{"location":"oakhaven_apothecary_loft","posture":"cooking_hearth"},"reason":"Rowan cooking breakfast skillet over loft hearth"}
+{"s":216,"e":"elder_rowan_thorne","set":{"location":"rowan_apothecary_shop","posture":"relaxed"},"reason":"Rowan heading downstairs to attend shop counter"}
+{"s":217,"e":"michael_montrey_wolf_skin","set":{"location":"blackwood_forest_clearing"},"reason":"Stepping into pine forest clearing for morning physical calibration"}
+{"s":217,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael takes staff into forest clearing to test kinetic resonance"}
+{"s":241,"e":"michael_montrey_wolf_skin","set":{"location":"oakhaven_apothecary_courtyard"},"reason":"Returning to rear courtyard behind apothecary shop"}
+{"s":241,"e":"elder_rowan_thorne","set":{"location":"oakhaven_apothecary_courtyard"},"reason":"Observing Michael's alchemical and martial precision in courtyard"}
+{"s":265,"e":"carved_blackwood_staff","set":{"lifecycle":"resting"},"reason":"Training concluded; staff resting against cedar wall as dusk falls"}
+{"s":289,"e":"michael_montrey_wolf_skin","set":{"location":"oakhaven_apothecary_loft","posture":"relaxed_evening"},"reason":"Resting in attic loft at evening"}
+{"s":289,"e":"elder_rowan_thorne","set":{"location":"oakhaven_apothecary_loft","posture":"ladder_seated"},"reason":"Climbing attic hatch to deliver evening meal and discuss dual disciplines"}
+{"s":313,"e":"michael_montrey_wolf_skin","set":{"location":"white_dimension_library","posture":"astral_meditation"},"reason":"Entering boundless astral library for nocturnal cultivation"}
+{"s":313,"e":"elder_rowan_thorne","set":{"location":"rowan_apothecary_shop"},"reason":"Sleeping peacefully downstairs"}
+{"s":336,"e":"michael_montrey_wolf_skin","set":{"location":"white_dimension_library","posture":"supreme_resolution"},"reason":"EP03 terminal seed: Act 1 foundation sealed, preparing for imperial capital arc in EP04"}

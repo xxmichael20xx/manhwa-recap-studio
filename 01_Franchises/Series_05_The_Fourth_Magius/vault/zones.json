@@ -39,7 +39,8 @@
       "windows"
     ],
     "adjacent": [
-      "oakhaven_apothecary_courtyard"
+      "oakhaven_apothecary_courtyard",
+      "oakhaven_perimeter_gate"
     ]
   },
   "oakhaven_apothecary_courtyard": {
@@ -104,7 +105,7 @@
   "oakhaven_apothecary_loft": {
     "id": "oakhaven_apothecary_loft",
     "name": "Oakhaven Apothecary Loft",
-    "canon": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner. Strictly isolated attic space.",
+    "canon": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded translucent aperture on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner. Strictly isolated attic space.",
     "lighting": "interior_warm",
     "forbidden_tokens": [
       "marble throne",
@@ -163,7 +164,8 @@
     ],
     "adjacent": [
       "rowan_apothecary_shop",
-      "blackwood_forest_clearing"
+      "blackwood_forest_clearing",
+      "oakhaven_apothecary_courtyard"
     ]
   }
 }

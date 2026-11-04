@@ -449,7 +449,9 @@ export class AntiSlopValidator {
       }
 
       // Check bare mentions and kinship terms strictly OUTSIDE spoken dialogue quotes
-      const promptWithoutTokens = scene.prompt.replace(/@\{[^}]+\}/g, ' ')
+      let promptWithoutTokens = scene.prompt.replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
+      promptWithoutTokens = promptWithoutTokens.replace(/Spatial Enclosure:\s*[^.]+\./gi, ' ')
+      promptWithoutTokens = promptWithoutTokens.replace(/@\{[^}]+\}/g, ' ')
       const narrativeOutsideQuotes = (scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
 
       for (const ent of Object.values(entities)) {
@@ -942,6 +944,18 @@ export class AntiSlopValidator {
         continue
       }
 
+      // Cross-Episode Seasonal/Terrain Conflict Blocker (Law 11)
+      const zoneCanonLower = (zone.canon || '').toLowerCase()
+      const isTemperateOrDirt = /(?:dirt road|grass|courtyard|forest|cedar|timber|wooden)/i.test(zoneCanonLower) && !/(?:snow|winter|blizzard|frost)/i.test(zoneCanonLower)
+      if (isTemperateOrDirt) {
+        const strippedPrompt = promptLower.replace(/(?:zero|no|without|never)\s+(?:[a-z-]+\s+)?(?:snow|winter|frost|ice|slush)/gi, '')
+        const hasRogueSnow = /\b(?:snow|blizzard|frost-dusted|winter slush|ice sheet|snowdrifts?)\b/i.test(strippedPrompt)
+        if (hasRogueSnow) {
+          g12Fails.push(`${scene.id} (Seasonal terrain drift: Zone "${zone.name}" canon has no snow/winter, but prompt injects snow/frost)`)
+          continue
+        }
+      }
+
       if (
         prevZoneId &&
         prevZoneId !== zoneId &&
@@ -1175,6 +1189,7 @@ export class AntiSlopValidator {
     const g20Fails = []
     if (franchiseDir && fs) {
       const checkedEntities = new Set()
+      const locationPlatesMap = new Map()
       for (const scene of matrixScenes) {
         const declared = [...scene.charRefs, ...scene.itemRefs]
         if (scene.zone) declared.push(scene.zone)
@@ -1193,6 +1208,12 @@ export class AntiSlopValidator {
           const exists = fs.existsSync(p1) || fs.existsSync(p2) || fs.existsSync(p3)
           if (!exists) {
             g20Fails.push(`${scene.id} (Missing plate on disk: ${plateName} for entity ${ent.token || ent.id})`)
+          } else if (ent.kind === 'location') {
+            if (locationPlatesMap.has(plateName) && locationPlatesMap.get(plateName) !== ent.id) {
+              g20Fails.push(`${scene.id} (Placeholder plate cheat detected: Location "${ent.id}" reuses plate "${plateName}" already bound to "${locationPlatesMap.get(plateName)}". Each location must have a unique bespoke reference plate.)`)
+            } else {
+              locationPlatesMap.set(plateName, ent.id)
+            }
           }
         }
       }
@@ -1563,14 +1584,26 @@ export class AntiSlopValidator {
         if (!actionRaw && scene.prompt) {
           const actionMatch =
             scene.prompt.match(/Action & Staging:\s*(.*?)(?:\s*cleanly rendered|\s*100% environment)/i) ||
-            scene.prompt.match(/In @\{[^}]+\},\s*(.*?)(?:\.\s*Featuring|\.\s*Zero characters|\.\s*Spatial Enclosure)/i)
+            scene.prompt.match(/In @\{[^}]+\},\s*(.*?)(?:\.\s*Featuring|\.\s*Zero characters|\.\s*Spatial Enclosure)/i) ||
+            scene.prompt.match(/Visual action:\s*(?:In the scene,)?\s*(.*?)(?:\.\s*(?:Modern \d{4}|Cleanly rendered|100% environment|sharp black ink|Textless)|$)/i)
           if (actionMatch) actionRaw = actionMatch[1]
         }
-        if (!actionRaw) continue
 
-        let coreAction = actionRaw
-        const actionMatch = actionRaw.match(/In @\{[^}]+\},\s*(.*?)(?:\.\s*Featuring|\.\s*Zero characters|\.\s*Spatial Enclosure|$)/i) ||
-                            actionRaw.match(/Action & Staging:\s*(.*?)(?:\s*cleanly rendered|\s*100% environment)/i)
+        const cleanActionTrimmed = (actionRaw || '').trim()
+        if (
+          !actionRaw ||
+          cleanActionTrimmed.length < 15 ||
+          /^[\s.,!?-]*$/.test(cleanActionTrimmed) ||
+          /^(?:In the scene,\s*)?[.,\s]*$/i.test(cleanActionTrimmed)
+        ) {
+          g30Fails.push(`${scene.id} (Empty, missing, or stripped action layer: "${cleanActionTrimmed}")`)
+          continue
+        }
+
+        let coreAction = cleanActionTrimmed
+        const actionMatch = cleanActionTrimmed.match(/In @\{[^}]+\},\s*(.*?)(?:\.\s*Featuring|\.\s*Zero characters|\.\s*Spatial Enclosure|$)/i) ||
+                            cleanActionTrimmed.match(/Action & Staging:\s*(.*?)(?:\s*cleanly rendered|\s*100% environment)/i) ||
+                            cleanActionTrimmed.match(/Visual action:\s*(?:In the scene,)?\s*(.*?)(?:\.\s*(?:Modern \d{4}|Cleanly rendered|100% environment|sharp black ink|Textless)|$)/i)
         if (actionMatch) {
           coreAction = actionMatch[1]
         }
@@ -1637,10 +1670,10 @@ export class AntiSlopValidator {
           continue
         }
 
-        // 2. Cast parity (excluding location entity in charRefs)
+        // 2. Cast parity (excluding location and item entities in charRefs)
         const matrixNonLocRefs = scene.charRefs.filter(r => {
           const ent = entityByAliasLower.get(r.toLowerCase())
-          return !ent || ent.kind !== 'location'
+          return !ent || (ent.kind !== 'location' && ent.kind !== 'item')
         }).map(r => r.toLowerCase())
 
         const headerCastLower = header.cast.map(c => c.toLowerCase())
@@ -1662,6 +1695,150 @@ export class AntiSlopValidator {
       g31Fails,
       `100% 1:1 synchronization between 01_Episode_Script.md staging headers and 02_Prompt_Matrix.md scenes.`,
       `Desync detected between script staging header (ZONE/STAGE/CAST) and matrix scene`
+    )
+
+    // G32: Semantic Layout-Tone & Combat Immersion Gate
+    const g32Fails = []
+    const COMBAT_ACTION_VERBS = /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i
+    const DOMESTIC_FILLER_REGEX = /\b(?:eating\s+(?:noodles?|steamed\s+buns?|buns?|food)|chewing\s+on|sipping\s+(?:sweet\s+)?soy\s+milk|drinking\s+through\s+a\s+straw|tying\s+(?:his\s+)?shoelaces?|eating\s+breakfast|holding\s+a\s+steamed\s+bun)\b/i
+
+    for (const scene of matrixScenes) {
+      const header = scriptStagingHeaders.get(scene.id)
+      const pLower = scene.prompt.toLowerCase()
+      const nLower = (scene.narrativeSync || '').toLowerCase()
+      const stageLower = header ? (header.stage || '').toLowerCase() : ''
+      const isActionStrip = (scene.tier === 'C') || /Tier\s*C|Three-panel/i.test(scene.layout || '')
+
+      // 1. Block Tier C Three-Panel Action Strips during calm dialogue / interaction
+      if (isActionStrip) {
+        const hasCombatContext = COMBAT_ACTION_VERBS.test(nLower) || COMBAT_ACTION_VERBS.test(pLower) || stageLower === 'combat'
+        if (!hasCombatContext && (stageLower === 'dialogue' || stageLower === 'interaction' || stageLower === 'establishing')) {
+          g32Fails.push(`${scene.id} (Calm dialogue/interaction scene inappropriately forced into Tier C dynamic action strip layout)`)
+        }
+      }
+
+      // 2. Block domestic eating/drinking filler during combat or high-tension confrontation
+      const isTenseScene = stageLower === 'combat' || stageLower === 'confrontation' || COMBAT_ACTION_VERBS.test(nLower)
+      if (isTenseScene && DOMESTIC_FILLER_REGEX.test(pLower)) {
+        g32Fails.push(`${scene.id} (Immersion break: Mundane domestic eating/drinking filler injected into active combat or tense standoff)`)
+      }
+    }
+
+    recordGate(
+      'G32_layout_tone_immersion',
+      'G32: Semantic Layout-Tone & Combat Immersion Gate',
+      g32Fails,
+      `Layout tiers align with narrative tone and zero domestic filler in combat/standoffs.`,
+      `Tone mismatch: action layout forced on calm scene, or domestic filler injected into combat`
+    )
+
+    // G33: Destruction & Spatial Lifecycle State Gate
+    const g33Fails = []
+    const DESTRUCTION_KEYWORDS = /\b(?:turned\s+into\s+fine\s+dust|reduced\s+to\s+fine\s+dust|vaporized|cratered\s+into\s+dust|demolished\s+to\s+dust|collapsed\s+into\s+rubble|flattened\s+into\s+a\s+crater)\b/i
+    const INTACT_KEYWORDS = /\b(?:towering\s+(?:obsidian\s+)?(?:glass\s+)?(?:skyscraper|columns?)|pristine\s+glass\s+facade|unbroken\s+skyscraper\s+columns?|gleaming\s+headquarters\s+tower)\b/i
+
+    let buildingVaporized = false
+    let vaporizedSceneId = null
+
+    for (const scene of matrixScenes) {
+      const nText = (scene.narrativeSync || '')
+      if (DESTRUCTION_KEYWORDS.test(nText)) {
+        buildingVaporized = true
+        vaporizedSceneId = scene.id
+      }
+
+      if (buildingVaporized) {
+        const pLower = scene.prompt.toLowerCase()
+        if (INTACT_KEYWORDS.test(pLower)) {
+          g33Fails.push(`${scene.id} (Spatial amnesia: Building was vaporized into dust in ${vaporizedSceneId}, but prompt describes intact skyscraper architecture)`)
+        }
+      }
+    }
+
+    recordGate(
+      'G33_destruction_lifecycle_state',
+      'G33: Destruction & Spatial Lifecycle State Gate',
+      g33Fails,
+      `100% spatial lifecycle continuity: destroyed structures never render intact architecture in subsequent scenes.`,
+      `Destroyed/vaporized structure described as intact in subsequent scenes`
+    )
+
+    // G34: Episodic World State, Wardrobe Lock & Prop Container Parity Gate
+    const g34Fails = []
+    const worldStatePath = epPath ? path.join(epPath, 'world_state.json') : null
+    const worldState = (worldStatePath && fs && fs.existsSync(worldStatePath))
+      ? JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
+      : (rawVaultContext.worldState || null)
+
+    if (worldState) {
+      // 1. Audit Wardrobe Locks
+      if (worldState.wardrobe_locks) {
+        for (const scene of matrixScenes) {
+          const pLower = scene.prompt.toLowerCase()
+          for (const [charId, lockedAttire] of Object.entries(worldState.wardrobe_locks)) {
+            const ent = entityByAliasLower.get(charId.toLowerCase())
+            const charToken = ent ? ent.token.toLowerCase() : `@\{${charId.toLowerCase()}\}`
+            if (pLower.includes(charToken) || scene.charRefs.some(r => r.toLowerCase().includes(charId.toLowerCase()))) {
+              if (lockedAttire.toLowerCase().includes('trousers') && /\b(?:shorts|cargo shorts|athletic shorts)\b/i.test(pLower)) {
+                g34Fails.push(`${scene.id} (Wardrobe drift: Character "${charId}" locked to trousers in world_state.json, but prompt describes shorts)`)
+              }
+              if (lockedAttire.toLowerCase().includes('hoodie') && /\b(?:blazer|suit jacket|tuxedo|tank top)\b/i.test(pLower)) {
+                g34Fails.push(`${scene.id} (Wardrobe drift: Character "${charId}" locked to hoodie in world_state.json, but prompt describes blazer/suit/tank-top)`)
+              }
+            }
+          }
+        }
+      }
+
+      // 2. Audit Prop Container Locks
+      if (worldState.held_props) {
+        for (const scene of matrixScenes) {
+          const pLower = scene.prompt.toLowerCase()
+          for (const [propKey, propLock] of Object.entries(worldState.held_props)) {
+            const propNameClean = (propLock.canonical_name || propKey).toLowerCase()
+            const isPropMentioned = pLower.includes(propNameClean) || scene.itemRefs.some(r => r.toLowerCase().includes(propKey))
+            if (isPropMentioned && propLock.container) {
+              const containerLower = propLock.container.toLowerCase()
+              if (containerLower.includes('box') || containerLower.includes('case')) {
+                if (/\b(?:test tube|glass vial|medicine bottle|beaker|flask)\b/i.test(pLower)) {
+                  g34Fails.push(`${scene.id} (Prop container drift: "${propNameClean}" locked to "${propLock.container}" in world_state.json, but prompt describes vial/bottle/test-tube)`)
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 3. Audit Timeline Lighting Shifts
+      if (worldState.timeline?.timeline_shifts) {
+        for (const shift of worldState.timeline.timeline_shifts) {
+          const from = PromptDnaCompiler.sceneNumberFromId(shift.from_scene || shift.from || '')
+          const to = PromptDnaCompiler.sceneNumberFromId(shift.to_scene || shift.to || '')
+          const expectedLighting = shift.lighting
+          const isExpectedDay = ['bright_morning_sunlight', 'day_sunlit', 'daylight'].includes(expectedLighting)
+          const isExpectedNight = ['night_floodlit', 'night_celestial', 'interior_night'].includes(expectedLighting)
+
+          for (const scene of matrixScenes) {
+            const sNum = PromptDnaCompiler.sceneNumberFromId(scene.id)
+            if (sNum >= from && sNum <= to) {
+              const pLower = scene.prompt.toLowerCase()
+              if (isExpectedDay && /\b(?:high-intensity nocturnal security floodlights|searchlights sweeping|dark night sky)\b/i.test(pLower)) {
+                g34Fails.push(`${scene.id} (Timeline lighting desync: Scene falls in daytime segment [${shift.from_scene}-${shift.to_scene}], but prompt contains nocturnal floodlights/night sky)`)
+              } else if (isExpectedNight && /\b(?:bright morning sunlight|sunlit riverbank in morning)\b/i.test(pLower)) {
+                g34Fails.push(`${scene.id} (Timeline lighting desync: Scene falls in nocturnal segment [${shift.from_scene}-${shift.to_scene}], but prompt contains morning sunlight)`)
+              }
+            }
+          }
+        }
+      }
+    }
+
+    recordGate(
+      'G34_world_state_prop_wardrobe_lock',
+      'G34: Episodic World State, Wardrobe Lock & Prop Container Parity Gate',
+      g34Fails,
+      `100% adherence to episodic world_state.json: zero wardrobe drift, prop container morphing, or timeline lighting desyncs.`,
+      `Drift detected against world_state.json wardrobe lock, prop container schema, or timeline lighting`
     )
 
     // D-01: Cryptographic Dispatch Manifest Verification

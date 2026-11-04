@@ -15,6 +15,7 @@ Partition scenes dynamically into 24-scene batches ($\lceil N_{\text{scenes}} / 
   - **Tier A (~30%, 5–8s hold):** `Full-bleed cinematic hero plate. [Description]. [Franchise Art Style Directive], vertical 9:16.`
   - **Tier B (~50%, 6–9s hold):** `2D Korean webtoon manhwa illustration, sharp black ink linework, high contrast cel shading. Dual-panel vertical 9:16 split strip. In the upper panel, [Active speaker/action]. In the lower panel, [Tagged partner reaction/consequence].`
   - **Tier C (~20%, 7–12s hold):** `2D Korean webtoon manhwa illustration, sharp black ink linework, high contrast cel shading. Three-panel vertical 9:16 strip. In the upper panel, [Beat 1]. In the middle panel, [Beat 2]. In the lower panel, [Beat 3].` *(Never use colon labels `Top:/Middle:/Bottom:` or inject combat boilerplate into calm scenes).*
+  - **Anti-Modulo Rule:** Layout tiers must NEVER be assigned via index modulo (`i % 3`). Every layout tier must deterministically match the scene's emotional tension and narrative staging. Calm dialogue and interaction stages are strictly locked to Tier B or Tier A; Tier C dynamic action strips are reserved strictly for active physical combat beats.
 - **Format 2 (`16:9 Full-Bleed Landscape 1920x1080` — Zero Sidebars):**
   - **Archetype A (~40%):** Wide Battlegrounds (`pan_left_to_right`); **Archetype B (~25%):** In-Frame System HUDs (`hero_zoom_in`); **Archetype C (~20%):** Kinetic Horizontal Action (`pan_diagonal_sweep`); **Archetype D (~15%):** Panoramic Establishing Shots (`hero_zoom_out`).
 - **The V2.0 Beat-Sheet Workflow (75% Output Token Reduction):**
@@ -57,13 +58,16 @@ To guarantee 0 policy blocks on Google Flow / Imagen 3:
    - **Token-Insulated Action Trimming:** When trimming action descriptions to meet budget caps, NEVER use naive string slicing (`.slice(0, N)`), which cuts tokens in half (e.g. `@{Chief.`) and triggers Gate 10 unregistered entity blocks and Gate 30 word-slicer violations. Always use token-boundary-safe truncation (`trimActionSafely`) that truncates at complete words outside open `@{` delimiters.
 
 ## 5. Mandatory Deterministic Pre-Flight Linter Execution
-Before presenting or exporting any prompt matrix, execute and verify all 31 deterministic gates:
+Before presenting or exporting any prompt matrix, execute and verify all 33 deterministic gates:
 ```bash
 node studio/scripts/sanitize-matrix.js <franchiseId> <episodeId>
 node studio/scripts/audit-matrix.js <franchiseId> <episodeId>
 node studio/scripts/audit-policy.js <franchiseId> <episodeId>
 ```
-**Hard Blocker:** Score MUST be 100/100 (Exit Code 0) across all 31 gates (including G06 Policy-Safe Tail Alignment, G14 Token Budget <=450 tokens, G23 Establishing Purity, G24 Concrete Color Standard, G25 Chronological Entrance Continuity, G26 Sanctuary Secrecy, G27 Tech-Tree Lifecycle, G30 Stem Novelty, G31 1:1 Staging Header Lock, and D-01 Normalized Manifest Signature).
+**Hard Blocker:** Score MUST be 100/100 (Exit Code 0) across all 33 gates (including G06 Policy-Safe Tail Alignment, G14 Token Budget <=450 tokens, G20 Anti-Placeholder Disk Integrity, G23 Establishing Purity, G24 Concrete Color Standard, G25 Chronological Entrance Continuity, G26 Sanctuary Secrecy, G27 Tech-Tree Lifecycle, G30 Stem Novelty, G31 1:1 Staging Header Lock, G32 Semantic Layout-Tone & Immersion, G33 Destruction Lifecycle State, and D-01 Normalized Manifest Signature).
+- **Gate G32 (Semantic Layout-Tone & Immersion):** Rejects any Tier C action strip assigned to dialogue/interaction stages without combat verbs, and rejects domestic eating/drinking filler during tension.
+- **Gate G33 (Destruction Lifecycle State):** Rejects intact architectural prompts (towering skyscrapers, pristine glass) after an environmental destruction event has reduced the structure to dust or a crater.
+- **Gate G12/G34 (Terrain & Seasonal Conflict Blocker):** Rejects prompts introducing seasonal weather (snow, blizzards, frost, winter slush) into zones whose canonical definitions in `vault/zones.json` specify dirt roads, grass, or temperate climates without explicit snow.
 - **Cryptographic Dispatch Manifest Synchronization (Gate D-01):** To sign `dispatch_manifest.json`, the hashing context MUST use `AntiSlopValidator.normalizeVaultContext()` so that `entities`, `zones`, and `ledgerEvents` match the exact object references evaluated by `audit-matrix.js`.
 
 ## 6. The Chief Storyboard Supervisor & Common-Sense Continuity Audit Protocol
@@ -78,3 +82,4 @@ Auditor subagents (`continuity-auditor`, `studio-gatekeeper`) are **strictly pro
 8. **The Tech-Tree Environmental Lifecycle Law:** Items, machinery, and architecture (e.g. glass windows, cold cellars, waterwheels, windmills, complex gears) are **strictly forbidden from appearing in scene backgrounds** before their canonical invention/construction milestone in the story.
 9. **The Vantage & Elevation Perspective Law (Gate G28):** Camera framing must respect the physical elevation of the scene. Mountain ridge trails cannot depict valley floor farmhouses or cottages in the background, and valley floor zones cannot be framed from high cliff ledges.
 10. **The Spoken Future-Plan & Blueprint Law (Gate G29):** When characters discuss unbuilt future blueprints (melting sand into glass windows tomorrow, building a water-wheel next year), the visual prompt must depict characters studying sketches, notebooks, or raw minerals—never the finished structure prematurely.
+11. **The Cross-Episode Environmental & Climate Law:** Recurring locations strictly inherit the climate, terrain, and season of preceding episodes. Prompts cannot oscillate between dry dirt and snow or unilaterally alter the regional weather without an explicit multi-episode seasonal shift codified in Series_Bible.md.

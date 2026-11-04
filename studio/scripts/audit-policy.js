@@ -63,7 +63,7 @@ if (fs.existsSync(enginePolicyPath)) {
 // Load entities / characters to identify minors
 const entitiesPath = path.join(franchiseDir, 'vault/entities.json')
 const charsPath = path.join(franchiseDir, 'character_vault/characters.json')
-const minorEntities = new Set(['ace miller', 'maya miller'])
+const minorEntities = new Set()
 
 if (fs.existsSync(entitiesPath)) {
   try {

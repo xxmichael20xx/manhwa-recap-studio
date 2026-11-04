@@ -204,13 +204,35 @@ if (phantomDialogueCasts.length > 0) {
   issues.stagingHeaders.push({ type: 'phantom_dialogue_cast_leak', count: phantomDialogueCasts.length, details: phantomDialogueCasts.slice(0, 5) })
 }
 
+// 3b. Spatial boundary desync check (e.g. narrative moves to stairwell while header stays in room)
+const boundaryDesyncs = []
+const STAIR_CORRIDOR_REGEX = /\b(?:staircase|stairwell|going down stairs|climbing the stairs|dormitory hallway|dorm corridor|stepped into the hallway)\b/i
+const COUNTER_STALL_REGEX = /\b(?:appraisal counter|reception desk|appraisal desk|breakfast stall|steamer basket|noodle stall)\b/i
+
+clauses.forEach(cl => {
+  const m = cl.rawText.match(headerRegex)
+  if (m) {
+    const zId = m[1].trim().toLowerCase()
+    const cleanClause = cl.rawText.replace(/<!--[\s\S]*?-->/g, '').trim()
+    if (zId.includes('dorm') && STAIR_CORRIDOR_REGEX.test(cleanClause)) {
+      boundaryDesyncs.push({ id: cl.id, zone: zId, issue: 'Narrative describes stairwell/hallway transition but header is stuck in interior dorm' })
+    }
+    if (zId.includes('courtyard') && COUNTER_STALL_REGEX.test(cleanClause)) {
+      boundaryDesyncs.push({ id: cl.id, zone: zId, issue: 'Narrative describes indoor counter/stall but header is stuck in outdoor courtyard' })
+    }
+  }
+})
+if (boundaryDesyncs.length > 0) {
+  issues.stagingHeaders.push({ type: 'spatial_boundary_desync', count: boundaryDesyncs.length, scenes: boundaryDesyncs.slice(0, 5) })
+}
+
 // 4. Auto-Heal Headers if requested
 if (isHeal) {
   console.log(`\x1b[33m[HEAL]\x1b[0m Inferring and injecting V2.1 Staging Headers for ${clauses.length} scenes...`)
 
-  let activeZone = allZonesList[0] || 'emerald_valley_forest_trail'
+  let activeZone = allZonesList[0] || ''
   let activeCast = []
-  let activeActor = '@{Ace Miller}'
+  let activeActor = allChars[0]?.token || ''
   const epNumMatch = episodeId.match(/EP0?(\d+)/i)
   const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
   const defaultTechStage = epNum === 1 ? 'ep01_stage1' : epNum === 2 ? 'ep02_stage2' : 'arc3_stage3'
@@ -235,17 +257,6 @@ if (isHeal) {
         break
       }
     }
-    if (nLower.includes('library') && zones['frontier_town_library']) activeZone = 'frontier_town_library'
-    else if (nLower.includes('bath') && zones['miller_sanctuary_bath_courtyard']) activeZone = 'miller_sanctuary_bath_courtyard'
-    else if (nLower.includes('tax') && zones['oakhaven_tax_chamber']) activeZone = 'oakhaven_tax_chamber'
-    else if (nLower.includes('palace') && zones['solaris_imperial_palace']) activeZone = 'solaris_imperial_palace'
-    else if (nLower.includes('cottage') && zones['old_miller_cottage_interior']) activeZone = 'old_miller_cottage_interior'
-    else if (nLower.includes('trail') || nLower.includes('creek') || nLower.includes('spring')) {
-      if (zones['emerald_valley_forest_trail']) activeZone = 'emerald_valley_forest_trail'
-    } else if (nLower.includes('farm') || nLower.includes('courtyard') || nLower.includes('aqueduct')) {
-      if (zones['miller_sanctuary_farm_exterior']) activeZone = 'miller_sanctuary_farm_exterior'
-    }
-
     // Cast inference
     const detectedCast = new Set()
     for (const c of allChars) {
@@ -265,13 +276,6 @@ if (isHeal) {
           detectedCast.add(c.token || `@{${cName}}`)
         }
       }
-    }
-
-    if (/\b(?:family|four millers|parents)\b/i.test(narrativeOutsideQuotes)) {
-      detectedCast.add('@{Ace Miller}')
-      detectedCast.add('@{Garrett Miller}')
-      detectedCast.add('@{Clara Miller}')
-      detectedCast.add('@{Maya Miller}')
     }
 
     // V2.1: Clear sticky state! If cast is empty, do NOT carry over activeCast unless there's a strong pronoun continuation

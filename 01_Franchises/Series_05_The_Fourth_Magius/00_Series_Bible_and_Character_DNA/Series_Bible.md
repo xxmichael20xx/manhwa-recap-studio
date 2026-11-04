@@ -81,130 +81,113 @@ flowchart TD
 
 ---
 
-## 🗺️ Master 7-Act Narrative Architecture (The Road to the 4th Magius)
+## 🗺️ Master 6-Act Narrative Architecture (The Road to the 4th Magius)
 
-> **The Golden Rule:** No need to rush. Worldbuilding is slow, progressive, and deeply textured. Every spell tier has tactile physical weight and clear mana arithmetic. Not everyone has magic talent; those without it become knights, craftsmen, or common mercenaries. In elite noble magician bloodlines, having closed mana vessels is considered an unforgivable defect, making an infant abandonable.
+> **The Golden Rule:** High-density, progressive worldbuilding with tactile physical weight, clear mana arithmetic, and zero filler. In elite noble magician bloodlines, having closed mana vessels is considered an unforgivable defect, making an infant abandonable. Act I consolidates Michael's early survival, crafts, dungeon awakening, and frontier defence into a monumental 3-part saga, setting up his entry into the Imperial Arcane Academy in Act II.
 
 ```mermaid
 flowchart TD
-    Act1["Act I: Transmigration & The Discarded Babe (EP01–EP03)"] --> Act2["Act II: The Frontier Crucible & Dual-Forging (EP04–EP06)"]
-    Act2 --> Act3["Act III: The Imperial Arcane Academy (EP07–EP10)"]
-    Act3 --> Act4["Act IV: The Face of House Montrey & The Great Rejection (EP11–EP13)"]
-    Act4 --> Act5["Act V: The Continental Calamity & The Forbidden Tiers (EP14–EP17)"]
-    Act5 --> Act6["Act VI: The Three Hidden Pillars & The Mortal Wall (EP18–EP20)"]
-    Act6 --> Act7["Act VII: Ascension of the Fourth Magius & The Sovereign Progenitor (EP21–EP24)"]
+    Act1["Act I: Transmigration & The Frontier Crucible (EP01–EP03)"] --> Act2["Act II: The Imperial Arcane Academy (EP04–EP07)"]
+    Act2 --> Act3["Act III: The Face of House Montrey & The Great Rejection (EP08–EP10)"]
+    Act3 --> Act4["Act IV: The Continental Calamity & The Forbidden Tiers (EP11–EP14)"]
+    Act4 --> Act5["Act V: The Three Hidden Pillars & The Mortal Wall (EP15–EP17)"]
+    Act5 --> Act6["Act VI: Ascension of the Fourth Magius & The Sovereign Progenitor (EP18–EP20)"]
 ```
 
 ---
 
-### 🏛️ Act I: Transmigration & The Discarded Babe (EP01 – EP03)
-* **Core Theme:** Void Tear, Abandonment, Core Unsealing, and The White Library Foundations.
-* **Target Runtime:** ~2.0 Hours (Tier 2/3 Cut)
+### 🏛️ Act I: Transmigration & The Frontier Crucible (EP01 – EP03)
+* **Core Theme:** Void Tear, Abandonment, Core Unsealing, White Library Foundations, and Frontier Mastery.
+* **Target Runtime:** ~2.2 Hours (Tier 2/3 Feature Cut)
 * **Episodes:**
-  * **EP01: The Last Archmage & The Discarded Babe**  
+  * **EP01: The Last Archmage & The Discarded Babe** *(Complete — 48m 02s)*  
     *Past life climax:* Tier 10 Archmage Michael battles ten thousand inquisitors on Mount Calamity to protect the Primordial Codex. The Codex initiates a black hole void tear, carrying his soul across dimensions.  
     *Waking up:* Takes over the fragile body of 5-year-old orphan Michael Montrey, discarded in the freezing mud outside House Montrey's colossal gates because the brass diagnostic bell showed zero mana conductivity.  
     *Awakening:* Finds the physical Codex half-buried in the riverbank; resonance unseals his calcified vessels in agonizing liquid fire. Meets retired battle-mage Rowan Thorne and slays the Calamity Abyssal Wyrm with kinetic thunder.
-  * **EP02: The Painless Crafts & The Agony of Magic**  
+  * **EP02: The Painless Crafts & The Agony of Magic** *(Complete — 38m 10s)*  
     *Worldbuilding:* Settling into the loft above Rowan's apothecary in Oakhaven. Michael explores the White Dimension—an infinite white library left by the First Magicians.  
     *System Balance:* Auxiliary craft tomes (botany, alchemy, runic engraving) are freely accessible with zero mental strain. However, high-tier combat spells require grueling **Resonance Trials** of mental and physical pain. Michael undergoes the harrowing trial for Tier 1 Master Thunder-Strike.
-  * **EP03: The First Breakthrough & The Mercenary Crucible**  
-    *Progression:* Reaching age eight. Michael achieves Tier 2 core saturation.  
-    *Clash:* He registers as an independent mercenary scout to earn iron crowns; enters the local Iron-Rank dungeon and saves an arrogant squad of circle mages when their barriers collapse against stone-skinned trolls. Michael obliterates the troll with his bare, mana-reinforced knuckles.
+  * **EP03: The Frontier Crucible & The Beast Tide Awakening** *(In Production — ~35–45m)*  
+    *The Breakthrough & The Dungeon:* Reaching age eight. Michael achieves Tier 2/3 core saturation and masters *Mana-Forged Flesh* ($Attack - Defence \le 0 \implies 0\text{ Dmg}$). He registers with the Oakhaven mercenary guild to source beast cores; enters the Iron-Rank dungeon and rescues an arrogant squad of noble circle mages whose barriers collapse against stone-skinned trolls, crushing the beasts with mana-reinforced kinetic strikes.  
+    *The Ruin & The White Dimension Trial:* Michael explores an untamed pre-imperial ruin in the Blackwood Forest, unearthing ancient tablets revealing the First Magicians were dual-discipline battle-sages. He endures the Tier 3 White Dimension trial to master spatial blinking and kinetic shockwaves.  
+    *The Beast Tide Climax:* A Tier 5 rift beast horde erupts against Oakhaven. As the imperial garrison falters, Michael steps into the breach with his carved blackwood staff and kinetic mana, cleaving the Alpha Behemoth in two. Imperial Watch scouts witness the impossible scion. Rowan prepares Michael for his journey to the capital.
 
 ---
 
-### 🌲 Act II: The Frontier Crucible & Dual-Forging (EP04 – EP06)
-* **Core Theme:** Physical-Mana Fusion Mastery, Ancient Ruins, and Regional Recognition.
-* **Target Runtime:** ~2.5 Hours
-* **Episodes:**
-  * **EP04: The Kinetic Body & The Tier 3 White Trial**  
-    *The Doctrine:* Traditional mages in the empire are fragile glass cannons; knights have no wide-area arcana. Michael masters *Mana-Forged Flesh*, weaving dense mana into his bone marrow and skeletal lattice ($Attack - Defence \le 0 \implies 0\text{ Dmg}$).  
-    *The Trial:* He endures the Tier 3 White Dimension trial, experiencing the destruction of ancient cities to unlock spatial blinking and compressed kinetic shockwaves.
-  * **EP05: The Blackwood Ruin Expeditions**  
-    *Lore Discovery:* Michael explores an untamed pre-imperial ruin deep in the Blackwood Forest. He unearths ancient stone tablets revealing that the First Magicians were all dual-discipline battle-sages before the noble families corrupted the doctrine into stationary circle chanting.
-  * **EP06: The Beast Tide & The Imperial Watch Cordon**  
-    *Climax:* A massive Tier 5 rift beast horde attacks Oakhaven. Imperial garrison mages panic as their spell barriers shatter. Michael steps into the breach with his blackwood staff, cleaving the Alpha Behemoth in two. Imperial Watch scouts witness the impossible boy and send encrypted reports to the capital.
-
----
-
-### 🎓 Act III: The Imperial Arcane Academy (EP07 – EP10)
+### 🎓 Act II: The Imperial Arcane Academy (EP04 – EP07)
 * **Core Theme:** Institutional Arrogance, Knights vs Magicians, Strategic Sandbagging.
 * **Target Runtime:** ~3.0 Hours
 * **Episodes:**
-  * **EP07: The Road to the Capital & The Entrance Exam**  
+  * **EP04: The Road to the Capital & The Entrance Exam**  
     *Journey:* Age thirteen. Michael travels to the imperial capital of Valerius. He enrolls in the Imperial Arcane Academy entrance trials as an unaffiliated commoner orphan.  
     *Strategic Sandbagging:* Rather than exposing his god-tier abilities, Michael intentionally limits his output, scoring in the exact middle percentile to blend in while observing imperial power structures.
-  * **EP08: The Fragile Circles & The Knight Sparring**  
+  * **EP05: The Fragile Circles & The Knight Sparring**  
     *Collegiate Life:* Arrogant noble students boast about their bloodlines and expensive staves. During a joint training session between the Magic Academy and the Imperial Knight Cadets, high-born mages are easily disarmed. Michael enters the arena bare-handed, catching an enchanted steel broadsword between two fingers and shocking the veteran instructors.
-  * **EP09: The Tier 6 White Library Trial & The Glacial Domain**  
+  * **EP06: The Tier 6 White Library Trial & The Glacial Domain**  
     *The Trial:* Midnight meditation inside the White Dimension. Michael faces the brutal mental trial of the ancient *Absolute Zero Glacial Domain*, enduring frostbite of the soul to master chantless instant-freeze matrices.
-  * **EP10: The Ancient Labyrinth Tournament**  
+  * **EP07: The Ancient Labyrinth Tournament**  
     *The Crucible:* The annual Imperial Labyrinth Tournament across fifty underground dungeon floors. Noble factions conspire to eliminate the commoner anomaly. Michael navigates the traps with ease, protects his commoner teammates, and shatters the 50th-floor boss solo, setting a record unseen in two centuries.
 
 ---
 
-### 🔥 Act IV: The Face of House Montrey & The Great Rejection (EP11 – EP13)
+### 🔥 Act III: The Face of House Montrey & The Great Rejection (EP08 – EP10)
 * **Core Theme:** Biological Family Confrontation, Hypocrisy, and The Sovereign Progenitor.
 * **Target Runtime:** ~2.5 Hours
 * **Episodes:**
-  * **EP11: The Resonance Mirror & The Patriarch's Panic**  
+  * **EP08: The Resonance Mirror & The Patriarch's Panic**  
     *The Revelation:* Patriarch Valerius Montrey and Head Elder Cassius examine the Labyrinth surveillance mana signatures. The resonance wavelength is a 100% biological match to the infant they discarded thirteen years ago. The realization that the empire's greatest rising prodigy was their own "defective" son sends shockwaves through the family.
-  * **EP12: The Velvet Carriage & The False Reconciliation**  
+  * **EP09: The Velvet Carriage & The False Reconciliation**  
     *The Temptation:* House Montrey sends gilded carriages, chests of platinum crowns, and an imperial petition to officially reinstate Michael as First Heir. Patriarch Valerius invites Michael to an opulent family banquet, attempting to use paternal guilt, noble prestige, and emotional manipulation to bring Michael under his control.
-  * **EP13: The Burning of the Dragon Crest (Peak Face-Slap)**  
+  * **EP10: The Burning of the Dragon Crest (Peak Face-Slap)**  
     *The Confrontation:* In front of the assembled Montrey nobility and imperial dignitaries, Michael stands tall and unbothered. He calmly recites the exact words Valerius spoke when abandoning him: *"House Montrey does not raise parasites."*  
     *The Climax:* Michael pulls out the Montrey platinum crest amulet, crushes it into metal dust in his bare fist, and incinerates the adoption scroll with cyan lightning. He proclaims:  
     > *"You did not discard a defect. You threw away your house's only hope. I have no need for your dying name—I am the progenitor of my own sovereign lineage."*
 
 ---
 
-### ⚔️ Act V: The Continental Calamity & The Forbidden Tiers (EP14 – EP17)
+### ⚔️ Act IV: The Continental Calamity & The Forbidden Tiers (EP11 – EP14)
 * **Core Theme:** Continental Warfare, Tiers 7–10 Mastery, and the Collapse of Mortal Magic.
 * **Target Runtime:** ~3.5 Hours
 * **Episodes:**
-  * **EP14: The Great Continental Incursion**  
+  * **EP11: The Great Continental Incursion**  
     *Crisis:* Neighboring dark magocracies and abyssal cults launch a surprise assault on the empire. The Montrey family's northern defense line collapses due to rigid circle-chanting vulnerabilities. Michael is granted independent sovereign command of the frontier legion.
-  * **EP15: The Battle of the Red Plains (Tier 8 & 9 Unleashed)**  
+  * **EP12: The Battle of the Red Plains (Tier 8 & 9 Unleashed)**  
     *Warfare:* Michael leads commoner knights and battle-mages into battle. He unleashes the *Heavenly Constellation Storm Array* across twenty miles of battlefield while physically decimating enemy war golems with sound-barrier kinetic strikes.
-  * **EP16: Reclaiming Tier 10: The Apex Ceiling**  
+  * **EP13: Reclaiming Tier 10: The Apex Ceiling**  
     *Ascension:* Michael breaks through to Tier 10—the pinnacle of his past life. He unlocks the inner sanctum of the White Library, where the ancient Codex reveals the cosmic truth: the continental dimensional seals are disintegrating, and mortal Tier 12 magic is mathematically insufficient to stop the apocalypse.
-  * **EP17: The Downfall of Patriarch Valerius**  
+  * **EP14: The Downfall of Patriarch Valerius**  
     *Karma:* Desperate to regain family standing, Valerius attempts a forbidden blood ritual to force a breakthrough, causing a catastrophic mana implosion in the capital. Michael neutralizes the fallout, saving thousands of innocent citizens while leaving Valerius permanently stripped of his core—a helpless mortal dependent on the world he once looked down upon.
 
 ---
 
-### 🌌 Act VI: The Three Hidden Pillars & The Magius Threshold (EP18 – EP20)
+### 🌌 Act V: The Three Hidden Pillars & The Magius Threshold (EP15 – EP17)
 * **Core Theme:** Meeting the Living Legends, The Fatal Flaw of History, Tier 12 Mastery.
 * **Target Runtime:** ~3.0 Hours
 * **Episodes:**
-  * **EP18: The Summit of the Three Pillars**  
+  * **EP15: The Summit of the Three Pillars**  
     *Myth Becomes Reality:* Michael is invited to the celestial boundary by the **Three Living Magius**:  
     1. *Ignis of the Iron Boundary* (Northern Tectonic Guard)  
     2. *Aether of the Endless Void* (Stratospheric Meteor Sentinel)  
     3. *Terra of the Deep Roots* (Continental Planetary Regulator)  
     They reveal that Tier 13 is real, but no mortal has ascended in ten thousand years.
-  * **EP19: The Fatal Flaw: The Shattered Vessels**  
+  * **EP16: The Fatal Flaw: The Shattered Vessels**  
     *The Revelation:* The Three Magius explain why hundreds of legendary Tier 12 archmages failed and died trying to become the 4th Magius: their mortal physical bodies could not contain Tier 13 cosmic mana and exploded. Michael’s *Mana-Forged Flesh* (bone marrow density and reinforced cellular tissue) is the literal evolutionary missing link that humanity lacked.
-  * **EP20: The Final Trial of the White Dimension**  
+  * **EP17: The Final Trial of the White Dimension**  
     *The Ultimate Agony:* Michael enters the deepest, pearlescent core of the Primordial Codex. He faces the collective consciousness of all First Magicians, enduring the total cellular deconstruction and divine reconstruction of his vessel across forty-eight hours of pure soul agony.
 
 ---
 
-### 👑 Act VII: Ascension of the Fourth Magius & The Sovereign Progenitor (EP21 – EP24)
+### 👑 Act VI: Ascension of the Fourth Magius & The Sovereign Progenitor (EP18 – EP20)
 * **Core Theme:** The Primordial Abyss Convergence, Ascending to Tier 13, The Eternal Dynasty.
 * **Target Runtime:** ~3.5 Hours
 * **Episodes:**
-  * **EP21: The Rupture of the Dimensional Boundary**  
+  * **EP18: The Rupture of the Dimensional Boundary**  
     *The Cataclysm:* A world-ending Void Devourer tears through the planetary crust. The Three Ancient Magius deploy their absolute domains, but their bodies begin to burn out under the apocalyptic pressure. The empire faces total annihilation.
-  * **EP22: The Birth of the Fourth Magius**  
+  * **EP19: The Birth of the Fourth Magius**  
     *Ascension:* Michael breaks through the mortal Tier 12 ceiling! The sky turns brilliant celestial sapphire as Tier 13 Magius authority manifests around him. Combining boundless primordial cosmic arcana with invulnerable kinetic flesh, Michael charges the Void Devourer in full-bleed 16:9 widescreen spectacle.
-  * **EP23: The Great Sealing & The Bow of the Pillars**  
-    *The Triumph:* Michael delivers a continent-shattering physical-arcane strike directly into the beast's core, obliterating the entity and permanently sealing the dimensional breach. The Three Ancient Magius kneel in profound respect, acknowledging Michael as the **Fourth Magius—and the undisputed strongest among them all**.
-  * **EP24: The Sovereign Progenitor (Grand Finale)**  
+  * **EP20: The Great Sealing & The Sovereign Progenitor (Grand Finale)**  
+    *The Triumph:* Michael delivers a continent-shattering physical-arcane strike directly into the beast's core, obliterating the entity and permanently sealing the dimensional breach. The Three Ancient Magius kneel in profound respect, acknowledging Michael as the **Fourth Magius—and the undisputed strongest among them all**.  
     *The New World:* Michael establishes the **Sovereign City of Montrey-Aethel**, founding a new academy where magic and martial cultivation are taught as one united discipline. The disgraced remnants of House Montrey live as humble commoners under his protection. Michael sits upon the sovereign throne with Elder Rowan, his loyal allies, and the Primordial Codex by his side—the eternal progenitor of a new golden era.
-
-
 
 ---
 
@@ -215,7 +198,7 @@ flowchart TD
   "styleName": "The Crystalline Arcane Bastion (High-Magic Medieval Empire)",
   "format": "16:9",
   "voiceId": "en-GB-RyanNeural",
-  "genreRule": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed). The Crystalline Arcane Bastion of the Valerius Empire: an elegant, light and clean aristocratic high-magic medieval empire built of pale silver granite and luminous raw blue mana crystals. Soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, intricate flying buttresses, glowing ethereal cyan magic circles faintly hovering above cathedral domes and spires, sleek silver wyverns soaring gracefully in clear cobalt-blue skies, grand reflective polished marble terraces with multi-tiered crystal water fountains, arched stone viaducts spanning lush green hills, and rustic ancient cedar frontier workshops.",
+  "genreRule": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed). The Crystalline Arcane Bastion of the Valerius Empire: an elegant, light and clean aristocratic high-magic medieval empire built of pale silver granite and luminous raw blue mana crystals. Soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, intricate flying buttresses, glowing ethereal cyan magic circles faintly hovering above cathedral domes and spires, sleek silver wyverns soaring gracefully in clear cobalt-blue skies, grand reflective polished marble terraces with multi-tiered crystal water fountains, arched stone viaducts spanning lush green hills, and rustic ancient cedar frontier workshops.",
   "forbiddenRule": "STRICTLY FORBIDDEN STYLE DRIFT: Never generate modern streetwear, hoodies, t-shirts, sneakers, backpacks, denim, modern haircuts, asphalt roads, streetlights, cars, skyscrapers, contemporary cityscapes, or modern tech. All characters must strictly wear period-accurate medieval fantasy attire (rough-spun linen tunics, leather doublets, aristocratic fur-lined velvet coats, high-collared archmage mantles).",
   "crowdRule": "Natural background medieval citizens, servants, and palace guards in soft depth-of-field blur are permitted ONLY in public communal spaces (estate courtyards, grand council chambers, village markets). In private rooms (Rowan Thorne's workshop, private dorm rooms, master suites), enforce strict isolation with zero extraneous background characters.",
   "defaultVaultDna": "dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, aristocratic high-fantasy medieval attire, textless artwork",
@@ -226,7 +209,10 @@ flowchart TD
     "@{Patriarch Valerius Montrey}",
     "@{Head Elder Cassius}",
     "@{Elder Rowan Thorne}",
-    "@{Carved Blackwood Staff}"
+    "@{Carved Blackwood Staff}",
+    "@{Boss: Calamity Abyssal Wyrm}",
+    "@{Grand Inquisitor}",
+    "@{Mountain Stone Troll}"
   ],
   "vocabulary": {
     "diegeticScrolls": "ancient grimoires/spellbooks/scrolls",

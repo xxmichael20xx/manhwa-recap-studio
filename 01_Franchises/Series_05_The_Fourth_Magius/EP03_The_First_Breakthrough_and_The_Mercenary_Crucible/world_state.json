@@ -1,0 +1,98 @@
+{
+  "episodeId": "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-04T01:20:00.000Z",
+  "timeline": {
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_264",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_265",
+        "to_scene": "IMG_312",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_313",
+        "to_scene": "IMG_336",
+        "lighting": "night_celestial"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "michael_montrey_child": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, sturdy stitched brown leather travel boots",
+    "michael_montrey_wolf_skin": "Tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack",
+    "elder_rowan_thorne": "Durable brown leather hunter doublet over woollen tunic, canvas work trousers tucked into muddy frontier boots, leather tool belt carrying dried herb satchels"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "visual_form": "hand-carved dense blackwood quarterstaff",
+      "notes": "Equipped during gate standoff and clearing practice, stored during shop and astral meditation."
+    },
+    "rowan_buckler_and_short_sword": {
+      "canonical_name": "Rowan Buckler and Short Sword",
+      "visual_form": "circular battered iron-banded dark oak buckler shield strapped firmly to the left forearm, paired with razor-sharp steel arming short sword",
+      "notes": "Equipped during gate defence scenes 001-125, sheathed and stored from scene 126 onwards."
+    }
+  },
+  "zone_lifecycles": {
+    "oakhaven_perimeter_gate": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_144",
+        "state": "intact",
+        "desc": "Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, watchtowers with iron alarm bells, dirt road leading into dark Blackwood pines"
+      }
+    ],
+    "rowan_apothecary_shop": [
+      {
+        "from_scene": "IMG_145",
+        "to_scene": "IMG_168",
+        "state": "intact",
+        "desc": "Rustic ground-floor apothecary workshop of Rowan Thorne in Oakhaven. Sturdy rough-hewn timber walls lined with floor-to-ceiling cedar shelving holding glass jars, dried herbs, cast-iron woodstove in North corner"
+      }
+    ],
+    "oakhaven_apothecary_loft": [
+      {
+        "from_scene": "IMG_169",
+        "to_scene": "IMG_216",
+        "state": "intact",
+        "desc": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner. Strictly isolated attic space"
+      },
+      {
+        "from_scene": "IMG_273",
+        "to_scene": "IMG_312",
+        "state": "intact",
+        "desc": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner. Strictly isolated attic space"
+      }
+    ],
+    "blackwood_forest_clearing": [
+      {
+        "from_scene": "IMG_217",
+        "to_scene": "IMG_240",
+        "state": "intact",
+        "desc": "Secluded natural clearing in the Blackwood pine forest just beyond Oakhaven settlement. Towering evergreen pine trees, carpet of dry pine needles and packed dirt, ancient weathered granite boulders scattered among roots, morning sunbeams streaming through green pine canopy, dry temperate forest floor, zero snow, zero ice, zero frost"
+      }
+    ],
+    "oakhaven_apothecary_courtyard": [
+      {
+        "from_scene": "IMG_241",
+        "to_scene": "IMG_272",
+        "state": "intact",
+        "desc": "Private rear courtyard behind Rowan Thorne's apothecary shop in Oakhaven. Packed dry earth yard surrounded by sturdy timber palisade fence, wooden drying racks with hanging bundles of mountain herbs, rain barrel, stone grinding bench, rear cedar door to apothecary"
+      }
+    ],
+    "white_dimension_library": [
+      {
+        "from_scene": "IMG_313",
+        "to_scene": "IMG_336",
+        "state": "intact",
+        "desc": "Boundless astral library within the White Dimension. Infinite polished pristine white marble floor reflecting ethereal celestial constellations, millions of ancient leather-bound grimoires and glowing starlight scrolls drifting weightlessly in calm geometric spirals, serene rotating stellar rings, zero solid walls, zero horizons. Pure tranquil infinite space"
+      }
+    ]
+  }
+}

@@ -31,10 +31,10 @@
     }
   },
   "style": {
-    "base": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, luminous arcane starlight, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)",
+    "base": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)",
     "lighting_modes": {
       "day_sunlit": {
-        "text": "",
+        "text": "Bright morning daylight, clear daytime sky, warm sunlit illumination, dry packed dirt ground, zero snow, zero stars",
         "time_class": "day",
         "forbidden_tokens": [
           "pitch black midnight",
@@ -61,7 +61,7 @@
         ]
       }
     },
-    "tail_positive": "anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections",
+    "tail_positive": "cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections",
     "tail_negative": "zero cloning, completely textless artwork, no speech bubbles, no words, no banners"
   },
   "new_entity_policy": "pending_stub",
