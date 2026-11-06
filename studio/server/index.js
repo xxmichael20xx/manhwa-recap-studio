@@ -1650,6 +1650,23 @@ app.get('/api/episodes/:franchiseId/:episodeId/subtitles/:filename', (req, res) 
   }
 })
 
+// Dynamic Timeline Cuts for Instant Web Player & Verification
+app.get('/api/episodes/:franchiseId/:episodeId/timeline', async (req, res) => {
+  try {
+    const { franchiseId, episodeId } = req.params
+    const audioDir = TtsService.getAudioDir(franchiseId, episodeId)
+    const masterAudioPath = path.join(audioDir, '01_Episode_Master.mp3')
+    let totalDuration = 30.0
+    try {
+      totalDuration = await VideoService.getAudioDuration(masterAudioPath)
+    } catch (_) {}
+    const timeline = await VideoService.parseDynamicTimeline(franchiseId, episodeId, totalDuration)
+    res.json({ totalDuration, beats: timeline })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 // Overall Production Pipeline Status
 app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res) => {
   try {

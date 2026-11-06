@@ -1,0 +1,11 @@
+{"s":1,"e":"aiden_drake","set":{"lifecycle":"equipped","outfit":"battle_weathered_duster","held_weapon":"none"}}
+{"s":20,"e":"aiden_drake","set":{"lifecycle":"deceased"}}
+{"s":25,"e":"julian_vaelgard","set":{"lifecycle":"active","outfit":"default","held_weapon":"none","hip_weapon":"none","posture":"unarmed"}}
+{"s":97,"e":"julian_vaelgard","set":{"posture":"unarmed","held_weapon":"none","hip_weapon":"none"}}
+{"s":140,"e":"julian_vaelgard","set":{"held_weapon":"vaelgard_silver_training_rapier","hip_weapon":"none"}}
+{"s":146,"e":"enchanted_iron_wood_practice_dummy","set":{"lifecycle":"intact","barrier":"active_bronze_shield"}}
+{"s":149,"e":"julian_vaelgard","set":{"held_weapon":"wooden_practice_rod","hip_weapon":"vaelgard_silver_training_rapier"}}
+{"s":165,"e":"enchanted_iron_wood_practice_dummy","set":{"barrier":"dissolved"}}
+{"s":167,"e":"enchanted_iron_wood_practice_dummy","set":{"lifecycle":"cleaved","state":"cleaved_two_halves"}}
+{"s":180,"e":"julian_vaelgard","set":{"held_weapon":"none","hip_weapon":"vaelgard_silver_training_rapier"}}
+{"s":188,"e":"julian_vaelgard","set":{"held_weapon":"none","hip_weapon":"vaelgard_silver_training_rapier","posture":"hand_on_pommel"}}

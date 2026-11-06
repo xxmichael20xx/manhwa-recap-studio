@@ -38,30 +38,31 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ---
 
-### 4. Broken Physical Defence Calculations (200 CON vs. Fodder)
-* **Defect:** A $200+\text{ Constitution}$ protagonist suffers bleeding puncture wounds from a basic Level 2 beast with 20 total stats.
-* **Fix (The Absolute Physical Threshold):**
-  $$\text{Physical Penetration} = \text{Attacker Strength} - \text{Defender Constitution} \le 0 \implies 0\text{ Damage}$$
-  *Default:* Low-tier fangs and mundane iron daggers snap on contact with zero skin break.
-  *Plot-Critical Fallback:* Explain injury through **Vessel Calibration Latency** (system allocated stat numbers instantly, but biological cellular density takes minutes to reconstruct).
+### 4. Broken Physical Defence Calculations (Illustrative Benchmarks vs. Genre Scale)
+* **Defect:** A dedicated high-defence tank suffers bleeding puncture wounds from basic fodder—OR conversely, the AI drafter mistakenly gives every protagonist (including mages, scholars, and architects) 200+ Constitution, turning them into barehanded martial-arts brawlers without narrative grounding.
+* **Fix (Relative Physical Thresholds & Class-Appropriate Defence):**
+  $\text{Physical Penetration} = \text{Attacker Strength} - \text{Defender Physical/Magical Defence} \le 0 \implies 0\text{ Damage}$
+  *Clarification (Archetype Example, Not Universal Mandate):* The "$200+\text{ CON}$" figure is strictly an illustrative benchmark for Archetype A (Betrayal & Sovereign Tank). If a protagonist is an elemental mage, necromancer, or engineer, their defence originates from **protective shields, runic barriers, or evasive footwork**—never improvised bare-skinned physical invulnerability unless explicitly unlocked.
+  *Default:* Low-tier fangs and mundane iron daggers snap on contact when striking fortified armor or active mana barriers.
+  *Plot-Critical Fallback:* Explain damage through **Active Barrier Depletion, Armor Fracture, or Elemental Overload** rather than clinical medical jargon like "cellular density latency".
 
 ---
 
 ### 5. Turn-Based Mob Stupidity (Single-File Swarms)
 * **Defect:** 50 syndicate guards rush the protagonist one-by-one while the other 49 stand around shouting.
-* **Fix (Dynamic Combat Spectrum — Tactical Realism & Fodder Curb-Stomps):** The protagonist actively exploits corridors, elevation, line-of-sight obstruction, and AoE kinetic shockwaves during elite and boss encounters. However, ~30% of combat can feature reckless or slightly dim fodder mobs rushing in overconfidently to allow for breezy, satisfying curb-stomps.
+* **Fix (Dynamic Combat Spectrum — Tactical Realism & Fodder Curb-Stomps):** The protagonist actively exploits corridors, elevation, line-of-sight obstruction, and wide-area shockwaves or concussive impacts during elite and boss encounters. However, ~30% of combat can feature reckless or slightly dim fodder mobs rushing in overconfidently to allow for breezy, satisfying curb-stomps.
 
 ---
 
 ### 6. The Instant Mastery Paradox (Zero Training / Free Muscle Memory)
 * **Defect:** Touching a manual instantly gives 10,000 years of grandmaster martial mastery with zero effort.
-* **Fix (Neural Download & Kinetic Strain):** Skill manual absorption transfers raw neurological telemetry that causes violent physical muscle spasms, requiring kinetic calibration and physical adaptation.
+* **Fix (Neural Download & Physical Strain):** Skill manual absorption transfers raw martial memories that cause severe muscle spasms and physical exhaustion, requiring disciplined physical conditioning and adaptation.
 
 ---
 
 ### 7. Environmental Material Inconsistency
 * **Defect:** Punching through concrete walls in one scene, then struggling to break an ordinary wooden cellar door later.
-* **Fix (Runic & Kinetic Hardness Standards):** Mundane materials splinter under superhuman force. Barriers that withstand the protagonist *must* possess explicit anti-kinetic dampeners or mana-suppression runes.
+* **Fix (Runic & Material Hardness Standards):** Mundane materials splinter under superhuman force. Barriers that withstand high-tier strikes *must* possess explicit reinforcement runes or mana-suppression wards.
 
 ---
 
@@ -126,7 +127,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 * **Fix (Organic Spoken Storytelling & In-Universe IP Isolation):**
   1. **100% Original IP:** Strictly forbidden from using real-world trademarked game titles, commercial weapons, or external franchises. All weapons, syndicates, and artifacts use original in-universe terminology (e.g. *"Ironclad Series Heavy Handcannons"*).
   2. **Zero Raw Math in Dialogue:** Replace algebraic formulas, LaTeX tags (`$...$`), and plus/minus stat notation with immersive spoken narrative descriptions (e.g. *"destructive acoustic phase cancellation"*, *"two points into Agility and one into Constitution"*).
-  3. **Zero Developer Meta-Jargon:** Internal studio terminology (*"Studio Engine"*, *"Invariant"*, *"Benchmark"*) is strictly forbidden in narration. System HUD popups must read as authentic in-world manhwa notices (`[SYSTEM NOTICE: Target Carapace Rating Exceeds Kinetic Impact — Null Damage Deflection]`).
+  3. **Zero Developer Meta-Jargon & Zero Clinical Technobabble:** Internal studio terminology (*"Studio Engine"*, *"Invariant"*, *"Benchmark"*) and dry textbook physics/engineering jargon (*"kinetic force"*, *"vectors"*, *"telemetry"*, *"cellular lattice"*, *"calibration"*, *"phase shifts"*) are strictly forbidden in voiceover narration. System HUD popups must read as authentic in-world manhwa notices (`[SYSTEM NOTICE: Target Carapace Hardness Exceeds Impact — Zero Damage Inflicted]`). Narration must use visceral, punchy, and atmospheric sensory language (*"swallowed the blow"*, *"snapped the blade"*, *"unleashed a roaring blast"*).
   4. **Zero-Bleed Script Formatting:** Script headers and Act summaries must never contain bracketed `[IMG_...]` tags. Scene tags `[IMG_XXX]` are strictly reserved for narrative scene starters.
 
 ---
@@ -194,3 +195,13 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   3. **Gate G28 (Vantage & Elevation Lock):** Respect locked zone elevation and line-of-sight vantage rules (e.g., camera on a mountain trail cannot view valley-floor buildings).
   4. **Gate G29 (Spoken Future-Plan Blocker):** When `PLAN_TALK: true`, scenes depicting characters talking about tomorrow's inventions must frame blueprints or raw materials—never the finished structure.
   5. **Deterministic Matrix Compilation (`compile-matrix.js`):** Invert Phase 3 so the LLM writes only Layer 4 diegetic action (~50 tokens per cut), while code deterministically injects Layers 1, 2, 3, and 5.
+
+---
+
+### 21. Class-Combat Archetype Integrity (Zero Universal Monk Bleed)
+* **Defect:** Protagonists across completely different genres (mages, architects, crafters) all defaulting to identical close-quarters martial-arts combat—punching with "internal vibrations", catching multi-ton blows with bare palms, and tapping pressure points with wooden sticks while forgetting their actual class abilities.
+* **Fix (Strict Class-Identity Enforcers):**
+  1. **Mage / Magius Archetype:** $\ge 80\%$ of combat must feature active, visible, stunning elemental spellcraft (summoning stone barriers, hurling howling wind blades, conjuring searing fire lances, chantless circle projection, and wide-area elemental domain control). If melee occurs, it MUST be **Spell-Infused Striking** (e.g. fire-coated staff, lightning-charged tip, explosive impact detonation), NEVER barehanded kung-fu acupressure or marrow vibration.
+  2. **Architect / Engineer Archetype:** $\ge 80\%$ of combat must feature blueprints, terrain modification, environmental traps, automated turrets, and runic devices.
+  3. **Warrior / Hunter Archetype:** Physical blade arts, heavy armor mastery, tactical spatial footwork, and kinetic weapon weight.
+  4. **Zero Cross-Franchise Bleed:** The drafter is strictly prohibited from transplanting internal-energy martial-arts tropes into high-magic or engineering franchises.

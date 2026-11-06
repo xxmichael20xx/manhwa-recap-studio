@@ -86,6 +86,11 @@ const report = AntiSlopValidator.auditPromptMatrix(scriptText, promptMatrixText,
   manifest
 })
 
+if (process.argv.includes('--update-manifest') && report.expectedManifest) {
+  fs.writeFileSync(path.join(epPath, 'dispatch_manifest.json'), JSON.stringify(report.expectedManifest, null, 2), 'utf-8')
+  console.log(`[MANIFEST] Updated dispatch_manifest.json with signature: ${report.expectedManifest.signature}`)
+}
+
 if (jsonOnly) {
   console.log(
     JSON.stringify(

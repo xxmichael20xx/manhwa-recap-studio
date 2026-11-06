@@ -1,0 +1,81 @@
+{
+  "vaelgard_palace_exterior": {
+    "id": "vaelgard_palace_exterior",
+    "name": "Grand Ducal Palace of House Vaelgard",
+    "canon": "Grand ancestral palace of House Vaelgard with towering white marble and silver granite spires, sapphire blue roofs, expansive stone courtyards flanked by crystal-clear aqueduct fountains, manicured emerald gardens, and a colossal fifty-foot ancient obsidian statue of the Founding Sword Saint holding a greatsword pointing skyward.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide establishing shot of the grand ancestral palace of House Vaelgard, towering gothic renaissance spires crafted from pristine white marble and silver granite, crowned with sapphire blue roofs and golden trim, expansive polished stone courtyards flanked by cascading crystal-clear aqueduct fountains and manicured emerald gardens, in the distant plaza stands a colossal fifty-foot ancient obsidian statue of the legendary Founding Sword Saint holding a greatsword pointing skyward, clear cobalt blue daylight sky with warm radiant sunbeams streaming across the palatial colonnades, floating ethereal blue mana motes drifting gently over the palace dome, pristine aristocratic cleanliness, pure environment with zero characters, 100% textless artwork, sharp black ink linework, 2D action manhwa cel-shading, vibrant dramatic lighting, no speech bubbles, no text, no watermarks, no 3D CGI",
+    "plate": "vault/vaelgard_palace_exterior.jpg",
+    "elevation": "ground",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "julian_bedchamber",
+      "obsidian_sparring_arena",
+      "ancestral_vault_rotunda"
+    ],
+    "vantage_rule": "Wide eye-level or elevated colonnade terrace looking across the grand marble courtyard and central plaza.",
+    "boundary_tags": "ancestral ducal palace, white marble colonnade, sapphire roofs, fifty-foot obsidian statue"
+  },
+  "ancestral_vault_rotunda": {
+    "id": "ancestral_vault_rotunda",
+    "name": "Ancestral Vault & Grand Library Rotunda",
+    "canon": "Soaring multi-tiered circular arcane library rotunda with carved fluted marble pillars, five-story mahogany bookshelves filled with ancient grimoires, stained-glass dome window depicting a sword saint splitting an azure sky, and floating golden and turquoise mana lanterns.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, grand multi-tiered circular interior of an ancient noble arcane library rotunda, soaring vaulted ceilings supported by carved fluted marble pillars, five-story-tall dark polished mahogany bookshelves filled with thousands of leather-bound ancient grimoires and illuminated manuscripts, a majestic stained-glass dome window at the apex depicting a legendary sword saint splitting an azure sky, warm morning sunlight cascading downward in dramatic god-rays onto reflective polished white-and-gold marble floors, several glowing golden and turquoise mana lanterns floating gently in mid-air, a central polished obsidian pedestal holding an enormous ancient gilded book, peaceful scholarly majesty, pure interior room with zero characters, 100% textless artwork, sharp black ink linework, 2D high-magic manhwa cel-shading, rich cinematic lighting, no people, no speech bubbles, no text, no watermark, no 3D CGI",
+    "plate": "vault/ancestral_vault_rotunda.jpg",
+    "elevation": "interior",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "julian_bedchamber",
+      "obsidian_sparring_arena",
+      "ancestral_vault_rotunda"
+    ],
+    "vantage_rule": "Circular rotunda perspective looking toward the soaring mahogany bookshelves and central pedestal.",
+    "boundary_tags": "private library rotunda, stained glass dome, ancient grimoires, zero outside courtyards",
+    "is_private_sanctuary": true
+  },
+  "obsidian_sparring_arena": {
+    "id": "obsidian_sparring_arena",
+    "name": "Private Obsidian Sparring Arena",
+    "canon": "Vast circular private outdoor martial sparring arena paved with seamless dark obsidian flagstones etched with glowing cyan suppression runes, encircled by an arched white marble colonnade draped in flowering purple wisteria vines, with carved runic barrier monoliths and weapon racks.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, vast circular private outdoor martial sparring arena set within a private noble palace courtyard, wide eye-level cinematic shot, ground paved with seamless dark obsidian flagstones carved with faint geometric suppression runes that faintly glow pale cyan, perimeter encircled by an arched white marble colonnade draped in flowering purple wisteria vines, several tall carved runic barrier monoliths stationed around the arena ring to absorb stray spell impacts, polished weapon racks holding gleaming silver rapiers, broadswords, and carved wooden staves flanking the entrance archway, crisp bright morning atmosphere with clean cool air and gentle lens flare, zero characters on stage, pure environment background plate, 100% textless artwork, sharp ink linework, 2D action manhwa art style, crisp shadows, vivid colour saturation, no text, no speech bubbles, no watermarks, no 3D CGI",
+    "plate": "vault/obsidian_sparring_arena.jpg",
+    "elevation": "ground",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "julian_bedchamber",
+      "obsidian_sparring_arena",
+      "ancestral_vault_rotunda"
+    ],
+    "vantage_rule": "Wide eye-level perspective inside the obsidian sparring ring looking toward the wisteria colonnade and observation balcony.",
+    "boundary_tags": "obsidian flagstones, glowing cyan suppression runes, purple wisteria colonnade, barrier monoliths"
+  },
+  "celestial_altar_ruins": {
+    "id": "celestial_altar_ruins",
+    "name": "Celestial Altar of Ascension",
+    "canon": "Colossal shattered golden divine altar floating above a sea of stormy twilight clouds, with cracked celestial marble pillars, shattered golden chains, broken runic steles, and violent arcs of crimson celestial lightning tearing through dark storm clouds above.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide panoramic establishing shot of a colossal shattered golden divine altar floating above sea of stormy twilight clouds, ancient cracked celestial marble pillars radiating faint golden divine light, broken golden chains and shattered runic steles scattered across stone platform, ominous crimson celestial lightning tearing through dark storm clouds above, grand tragic apocalyptic majesty, textless 16:9 widescreen, sharp ink linework, 2D action manhwa art style, dramatic volumetric lighting, no characters, pure background plate",
+    "plate": "vault/celestial_altar_ruins.jpg",
+    "elevation": "high",
+    "lighting": "night_moonlit",
+    "adjacent": [
+      "julian_bedchamber"
+    ],
+    "vantage_rule": "High-altitude panoramic perspective on the shattered floating altar platform looking out at storm clouds and cosmic lightning.",
+    "boundary_tags": "celestial altar, floating platform, shattered golden pillars, stormy twilight clouds, zero earthly buildings"
+  },
+  "julian_bedchamber": {
+    "id": "julian_bedchamber",
+    "name": "Julian's Ducal Solar & Study",
+    "canon": "Lavish high-noble private study and solar in House Vaelgard with high arched ceilings, silver filigree cornices, sheer sapphire silk draperies, polished white marble floor, carved mahogany writing desk, and tall arched stone windows overlooking manicured palace gardens.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, interior of a lavish high-noble solar and private study in House Vaelgard, majestic arched stone windows overlooking manicured palace gardens, soft morning sunlight illuminating white marble floors and dark navy velvet drapery, carved mahogany study desk holding leather-bound parchment and an ornate silver quill, tall silver-framed mirror, peaceful aristocratic luxury, pure interior room with zero characters, 100% textless artwork, sharp black ink linework, 2D high-magic manhwa cel-shading, vibrant illumination",
+    "plate": "vault/julian_bedchamber.jpg",
+    "elevation": "interior",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "vaelgard_palace_exterior",
+      "celestial_altar_ruins"
+    ],
+    "vantage_rule": "Interior perspective from the mahogany study desk looking toward the silver-framed vanity mirror and carved oak doors.",
+    "boundary_tags": "private ducal solar, white marble floor, sapphire silk drapery, carved mahogany desk, zero outside crowds",
+    "is_private_sanctuary": true
+  }
+}

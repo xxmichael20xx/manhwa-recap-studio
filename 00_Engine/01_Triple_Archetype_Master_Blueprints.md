@@ -11,7 +11,7 @@
 | Dimension | Archetype A: The Betrayal & Sovereign | Archetype B: The Abyssal Regressor | Archetype C: The Hidden Anomaly |
 | :--- | :--- | :--- | :--- |
 | **Core Hook** | Public betrayal $\rightarrow$ Absolute durability awakening. | Apocalyptic death $\rightarrow$ 10-year timeline reset. | Mocked production class $\rightarrow$ Forbidden crafting synergy. |
-| **Power Engine** | Raw physical density ($200+\text{ CON}$) + Kinetic counter-force. | Pre-cognition of hidden first-clear dungeon rewards. | Soul-extraction or bespoke runic enhancement. |
+| **Power Engine** | Raw physical density + concussive impact absorption (Archetype A Example). | Pre-cognition of hidden first-clear dungeon rewards. | Soul-extraction or bespoke runic enhancement. |
 | **Primary Antagonist** | High-status scion / Ex-fiancée using guild bureaucracy. | Future traitor who hasn't committed their crime yet. | Corrupt guild merchants monopolising supply lines. |
 | **Climax Dynamic** | Public arena / Auction house economic humiliation. | Front-running a world-ending catastrophe secretly. | Arming rival underdogs to overthrow corrupt syndicates. |
 
@@ -23,15 +23,15 @@
 * **Act 1: The Catalyst & Humiliation (0:00–3:30):**
   - Protagonist is an unranked/F-rank porter or low-mana mule.
   - Public betrayal: Engagement token thrown, guild licence revoked, abandoned at $2\%$ vitality.
-  - The Interface synchronises: Dark obsidian UI granting $200+\text{ Base Constitution}$ and kinetic absorption.
+  - The Interface synchronises: Dark obsidian UI granting massive Constitution enhancement and impact dissipation (Illustrative Tank Awakening).
 * **Act 2: The Hidden Trial & Durability Calibration (3:30–10:00):**
   - Subterranean test: Mundane mob fangs shatter on contact ($0\text{ damage}$).
   - Clean progression: Level 1 $\rightarrow$ 10 requires $5,000\text{ EXP}$.
-  - Neural download: Gaining martial techniques causes physical calibration strain.
+  - Skill assimilation: Absorbing martial techniques causes severe physical exhaustion and muscle strain.
 * **Act 3: Choke-Point Escalation (10:00–16:30):**
   - Syndicate strike team ambushes protagonist.
   - Protagonist retreats into narrow corridors to force a 2-abreast bottleneck, disabling ranged lines of fire.
-  - Discharges stored kinetic force to dismantle heavy weapons bare-handed.
+  - Discharges stored concussive force to shatter heavy weapons bare-handed.
 * **Act 4: Decisive Climax & The Auction Hook (16:30–20:00):**
   - Slaying a Level 5 Boss in a single calculated strike; core breakthrough.
   - Liquidating the pristine core at the Black Market, exposing the antagonist's falsified raid reports.
@@ -64,7 +64,7 @@
   - Discovers the system's hidden synergy: *Item Deconstruction & Soul Forging* (able to extract combat souls into inanimate runic gear).
 * **Act 2: The Underground Forge & Weapon Calibration (3:30–10:00):**
   - Harvests cheap, discarded monster bones from slaughterhouse refuse to craft Master-Tier runic armaments with $0$ expensive ores.
-  - Equips himself with self-forged kinetic-dampening gear that rivals high-tier S-Rank artifacts.
+  - Equips himself with self-forged shock-absorbing runic armaments that rivals high-tier S-Rank artifacts.
 * **Act 3: Economic Warfare & Syndicate Collapse (10:00–16:30):**
   - Sells superior gear under an anonymous alias, collapsing the corrupt merchant guild's artificial price monopoly.
   - When the merchant guild sends assassins, his crafted soul-gear deploys autonomous defensive arrays.
@@ -79,6 +79,6 @@ Before rendering any episode script under these archetypes, verify:
 2. **[ ] Combat:** Are physical attacks mitigated strictly by Constitution formulas?
 3. **[ ] Villains:** Are antagonists acting through legal, economic, or tactical self-preservation?
 4. **[ ] Lore:** Do character names, ranks, and abilities match the Master Entity Bible?
-5. **[ ] Skill Telemetry:** Are any dark/forbidden abilities forensically validated by a supporting specialist within the same Act?
+5. **[ ] Skill Telemetry:** Are any forbidden abilities validated by a supporting specialist within the same Act?
 6. **[ ] Power Unveiling:** Does the protagonist progress from concealment to public sovereign power by Act 5 / mid-arc climax?
-7. **[ ] Institutional IQ:** Are practical exams actively surveilled with high-IQ proctor telemetry and zero oblivious evaluator tropes?
+7. **[ ] Institutional IQ:** Are practical exams actively surveilled with high-IQ proctor scrying arrays and zero oblivious evaluator tropes?

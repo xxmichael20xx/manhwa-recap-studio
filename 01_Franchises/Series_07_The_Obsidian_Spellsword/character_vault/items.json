@@ -1,0 +1,125 @@
+{
+  "franchise": "Series_07_The_Obsidian_Spellsword",
+  "items": [
+    {
+      "id": "vaelgard_silver_training_rapier",
+      "name": "Vaelgard Silver Training Rapier",
+      "token": "@{Vaelgard Silver Training Rapier}",
+      "type": "Weapon",
+      "category": "Weapons",
+      "apparent_rank": "Fine Noble Dueling Rapier",
+      "true_rank": "Master-Crafted Spell-Conductive Silver Alloy",
+      "description": "Julian's custom-balanced childhood practice blade, capable of channeling both elemental mana and sword aura with zero resistance.",
+      "dna": "@{Vaelgard Silver Training Rapier}, master noble dueling rapier. Swept basket hilt with delicate silver filigree, navy leather wrapped grip, slender silver-steel alloy blade emitting faint silver gleam, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Vaelgard Silver Training Rapier}, master noble dueling rapier. Swept basket hilt with delicate silver filigree, navy leather wrapped grip, slender silver-steel alloy blade emitting faint silver gleam, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "07_Weapon_Vaelgard_Silver_Training_Rapier.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00007",
+      "flowName": "Vaelgard Silver Training Rapier",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Julian's custom-balanced childhood practice blade, capable of channeling both elemental mana and sword aura with zero resistance."
+    },
+    {
+      "id": "principles_of_mana_weaving",
+      "name": "Principles of Mana Weaving",
+      "token": "@{Principles of Mana Weaving}",
+      "type": "Artifact",
+      "category": "Artifacts",
+      "apparent_rank": "Sacred Ancestral Scripture",
+      "true_rank": "Aiden Drake's Personal Research Diary",
+      "description": "A monumental ancient leather-bound tome holding Aiden Drake's foundational research on mana threads and spell matrices from 1,000 years ago.",
+      "dna": "@{Principles of Mana Weaving}, ancient monumental grimoire bound in weathered dark leather, obsidian-and-gold filigree corner brackets, gilded page edges, embossed crest of crossed sword and staff, resting upon black pedestal, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Principles of Mana Weaving}, ancient monumental grimoire bound in weathered dark leather, obsidian-and-gold filigree corner brackets, gilded page edges, embossed crest of crossed sword and staff, resting upon black pedestal, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "08_Artifact_Principles_of_Mana_Weaving.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00008",
+      "flowName": "Principles of Mana Weaving",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "A monumental ancient leather-bound tome holding Aiden Drake's foundational research on mana threads and spell matrices from 1,000 years ago."
+    },
+    {
+      "id": "enchanted_iron_wood_practice_dummy",
+      "name": "Enchanted Iron-Wood Practice Dummy",
+      "token": "@{Enchanted Iron-Wood Practice Dummy}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Reinforced Martial Training Mannequin",
+      "true_rank": "Bronze-Rank Defensive Runic Construct",
+      "description": "full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+      "dna": "@{Enchanted Iron-Wood Practice Dummy}, full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+      "dna_prompt_anchor": "@{Enchanted Iron-Wood Practice Dummy}, full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+      "reference_plate": "09_Prop_Enchanted_Iron_Wood_Dummy.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00009",
+      "flowName": "Enchanted Iron-Wood Practice Dummy",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier"
+    },
+    {
+      "id": "wooden_practice_rod",
+      "name": "Wooden Practice Rod",
+      "token": "@{Wooden Practice Rod}",
+      "type": "Weapon",
+      "category": "Weapons",
+      "apparent_rank": "Simple Practice Sparring Baton",
+      "true_rank": "Hardened Polished Ash Sparring Rod",
+      "description": "Smooth cylindrical straight wooden training rod crafted from pale polished ash-wood with a blunt rounded tip and simple navy cloth wrapped grip.",
+      "dna": "@{Wooden Practice Rod}, smooth cylindrical straight wooden training rod, pale polished ash-wood grain, blunt rounded tip, simple navy cloth wrapped grip, zero sharp edges, lightweight sparring baton, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Wooden Practice Rod}, smooth cylindrical straight wooden training rod, pale polished ash-wood grain, blunt rounded tip, simple navy cloth wrapped grip, zero sharp edges, lightweight sparring baton, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "12_Prop_Wooden_Practice_Rod.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00012",
+      "flowName": "Wooden Practice Rod",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Smooth cylindrical straight wooden training rod crafted from pale polished ash-wood with a blunt rounded tip and simple navy cloth wrapped grip."
+    },
+    {
+      "id": "white_marble_meditation_bench",
+      "name": "White Marble Meditation Bench",
+      "token": "@{White Marble Meditation Bench}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Ducal Garden Sanctuary Seat",
+      "true_rank": "Pristine Mana-Conductive Carved White Marble Bench",
+      "description": "An ornate wide classical white marble meditation bench with elegant carved scrollwork armrests and backrest, resting on a polished white marble garden pavilion platform beside blooming azure roses.",
+      "dna": "@{White Marble Meditation Bench}, ornate wide classical white marble meditation bench, elegant carved scrollwork armrests and backrest, resting on polished white marble garden pavilion platform beside blooming azure roses and subtle cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{White Marble Meditation Bench}, ornate wide classical white marble meditation bench, elegant carved scrollwork armrests and backrest, resting on polished white marble garden pavilion platform beside blooming azure roses and subtle cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "14_Prop_White_Marble_Meditation_Bench.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00014",
+      "flowName": "White Marble Meditation Bench",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "An ornate wide classical white marble meditation bench with elegant carved scrollwork armrests and backrest, resting on a polished white marble garden pavilion platform beside blooming azure roses."
+    },
+    {
+      "id": "founding_sword_saint_obsidian_monument",
+      "name": "Founding Sword Saint Obsidian Monument",
+      "token": "@{Founding Sword Saint Obsidian Monument}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Colossal Fifty-Foot Ducal Plaza Statue",
+      "true_rank": "Ancient Obsidian Volcanic Stone Colossus",
+      "description": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian stone depicting Aiden Drake clad in a battle-worn duster, raven hair swept by carved winds, holding a chipped greatsword pointed boldly upward toward the sky, standing upon an octagonal stone pedestal inscribed with glowing gold imperial runes.",
+      "dna": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding a chipped greatsword pointed boldly upward toward sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding a chipped greatsword pointed boldly upward toward sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "15_Prop_Founding_Sword_Saint_Obsidian_Monument.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00015",
+      "flowName": "Founding Sword Saint Obsidian Monument",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "visual_dna": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian stone depicting Aiden Drake clad in a battle-worn duster, raven hair swept by carved winds, holding a chipped greatsword pointed boldly upward toward the sky, standing upon an octagonal stone pedestal inscribed with glowing gold imperial runes."
+    }
+  ]
+}

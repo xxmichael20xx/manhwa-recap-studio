@@ -100,6 +100,11 @@ const issues = {
   atTokens: [],
   sceneTags: [],
   stagingHeaders: [],
+  bannedJargon: [],
+  unanchoredNouns: [],
+  missingProps: [],
+  synonymDrift: [],
+  pacingWarnings: [],
   batches: []
 }
 
@@ -115,7 +120,126 @@ lines.forEach((line, idx) => {
     atMatches.push({ line: idx + 1, tokens: matches, text: spokenOnly.substring(0, 100) })
   }
 })
-if (atMatches.length > 0) issues.atTokens = atMatches
+if (atMatches.length > 0) issues.atTokens = atMatches;
+
+// 1b. Check for Banned Clinical Technobabble & Physics Jargon in Spoken Narration
+const BANNED_JARGON_REGEX = /\b(kinetic\s+force|kinetic\s+momentum|kinetic\s+energy|kinetic\s+shockwave|kinetic\s+pressure|kinetic\s+fury|kinetic|telemetry|vector|vectors|thirty-gravity|cellular\s+lattice|calibration|calibrated|calibrating)\b/i;
+const jargonMatches = [];
+lines.forEach((line, idx) => {
+  const trimmed = line.trim();
+  if (trimmed.startsWith('#') || trimmed.startsWith('>') || trimmed.startsWith('<!--') || trimmed.startsWith('```')) return;
+  const spokenOnly = trimmed.replace(/<!--[\s\S]*?-->/g, '').replace(/\[IMG_\d+\]/g, '').trim();
+  const m = spokenOnly.match(BANNED_JARGON_REGEX);
+  if (m) {
+    jargonMatches.push({ line: idx + 1, matched: m[0], text: spokenOnly.substring(0, 100) });
+  }
+});
+if (jargonMatches.length > 0) issues.bannedJargon = jargonMatches;
+
+
+
+// 1c. Check for Unanchored Person Role Nouns (e.g. 'his parents', 'the archmage', 'the boy', 'the child')
+const unanchoredMatches = []
+const UNANCHORED_NOUN_REGEX = /\b(his\s+parents|her\s+parents|the\s+parents|the\s+archmage|an\s+archmage|the\s+boy|young\s+boy|a\s+child|the\s+child|his\s+son|veteran\s+swordsman|young\s+heir)\b/i
+
+lines.forEach((line, idx) => {
+  const trimmed = line.trim()
+  if (trimmed.startsWith('#') || trimmed.startsWith('>') || trimmed.startsWith('<!--') || trimmed.startsWith('```')) return
+  if (UNANCHORED_NOUN_REGEX.test(trimmed)) {
+    const match = trimmed.match(UNANCHORED_NOUN_REGEX)
+    if (match) {
+      unanchoredMatches.push({ line: idx + 1, matched: match[0], text: trimmed.slice(0, 100) })
+    }
+  }
+})
+if (unanchoredMatches.length > 0) issues.unanchoredNouns = unanchoredMatches
+
+// 1d. Check for Missing Prop Declarations in Staging Headers (Strict Semantic Prop Parity)
+const missingPropMatches = []
+const PROP_CONTRACTS = [
+  { term: /\b(dummy|iron-wood|sparring mannequin|runic target)\b/i, requiredToken: '@{Enchanted Iron-Wood Practice Dummy}' },
+  { term: /\b(wooden rod|practice stick|wooden stick|sparring baton)\b/i, requiredToken: '@{Wooden Practice Rod}' },
+  { term: /\b(silver rapier|training rapier|practice rapier)\b/i, requiredToken: '@{Vaelgard Silver Training Rapier}' }
+]
+
+lines.forEach((line, idx) => {
+  if (line.includes('<!--') && line.includes('PROPS:')) {
+    const propsMatch = line.match(/PROPS:\s*\[([^\]]*)\]/i)
+    const activePropsStr = propsMatch ? propsMatch[1] : ''
+    
+    // Check next narrative lines until next tag or empty line
+    let narrative = ''
+    for (let j = idx + 1; j < Math.min(lines.length, idx + 4); j++) {
+      if (lines[j].trim().startsWith('[IMG_')) break
+      narrative += ' ' + lines[j].trim()
+    }
+
+    PROP_CONTRACTS.forEach(contract => {
+      if (contract.term.test(narrative) && !activePropsStr.includes(contract.requiredToken)) {
+        missingPropMatches.push({
+          line: idx + 1,
+          prop: contract.requiredToken,
+          text: narrative.trim().slice(0, 80)
+        })
+      }
+    })
+  }
+})
+if (missingPropMatches.length > 0) issues.missingProps = missingPropMatches
+
+// 1e. Check for Lexical Monomorphism & Synonym Drift (The >= 2 Recurrence & Monomorphism Rule)
+const synonymDriftMatches = []
+const SYNONYM_DRIFT_RULES = [
+  {
+    canonical: 'Wooden Practice Rod',
+    bannedRegex: /\b(wooden\s+stick|wooden\s+rod|training\s+stick|practice\s+stick|sparring\s+baton|blunt\s+wooden\s+toy)\b/i,
+    allowedCanonical: /Wooden\s+Practice\s+Rod/i
+  },
+  {
+    canonical: 'Obsidian Greatsword',
+    bannedRegex: /\b(chipped\s+greatsword|black\s+greatsword|obsidian\s+sword|chipped\s+obsidian\s+sword)\b/i,
+    allowedCanonical: /Obsidian\s+Greatsword/i
+  },
+  {
+    canonical: 'Vaelgard Silver Training Rapier',
+    bannedRegex: /\b(silver\s+rapier|slender\s+rapier|practice\s+rapier)\b/i,
+    allowedCanonical: /Vaelgard\s+Silver\s+Training\s+Rapier/i
+  },
+  {
+    canonical: 'Enchanted Iron-Wood Practice Dummy',
+    bannedRegex: /\b(iron-wood\s+dummy|wooden\s+dummy|target\s+dummy|target\s+mannequin|cleaved\s+dummy|severed\s+iron-wood\s+dummy)\b/i,
+    allowedCanonical: /Enchanted\s+Iron-Wood\s+Practice\s+Dummy/i
+  },
+  {
+    canonical: 'White Marble Meditation Bench',
+    bannedRegex: /\b(marble\s+bench)\b/i,
+    allowedCanonical: /White\s+Marble\s+Meditation\s+Bench/i
+  },
+  {
+    canonical: 'Founding Sword Saint Obsidian Monument',
+    bannedRegex: /\b(obsidian\s+statue|sword\s+saint\s+statue)\b/i,
+    allowedCanonical: /Founding\s+Sword\s+Saint\s+Obsidian\s+Monument/i
+  }
+]
+
+lines.forEach((line, idx) => {
+  const trimmed = line.trim()
+  if (trimmed.startsWith('#') || trimmed.startsWith('>') || trimmed.startsWith('<!--') || trimmed.startsWith('```')) return
+  const spokenOnly = trimmed.replace(/<!--[\s\S]*?-->/g, '').replace(/\[IMG_\d+\]/g, '').trim()
+
+  SYNONYM_DRIFT_RULES.forEach(rule => {
+    if (rule.bannedRegex.test(spokenOnly) && !rule.allowedCanonical.test(spokenOnly)) {
+      const m = spokenOnly.match(rule.bannedRegex)
+      synonymDriftMatches.push({
+        line: idx + 1,
+        matched: m ? m[0] : 'synonym',
+        canonical: rule.canonical,
+        text: spokenOnly.slice(0, 100)
+      })
+    }
+  })
+})
+if (synonymDriftMatches.length > 0) issues.synonymDrift = synonymDriftMatches
 
 // 2. Check [IMG_XXX] tags
 const sceneTagMatches = [...scriptText.matchAll(/\[(IMG_\d+)\]/g)]
@@ -151,6 +275,23 @@ while ((cm = clauseSplitRegex.exec(scriptText)) !== null) {
     rawText: cm[2]
   })
 }
+
+// Check for Consecutive Static Dialogue Stagnation (> 12 consecutive interaction scenes)
+let consecutiveInteraction = 0;
+const pacingIssues = [];
+clauses.forEach((cl, idx) => {
+  const m = cl.rawText.match(/<!--[\s\S]*?STAGE:\s*([a-zA-Z_]+)[\s\S]*?-->/i);
+  const stage = m ? m[1].toLowerCase() : 'unknown';
+  if (stage === 'interaction') {
+    consecutiveInteraction++;
+    if (consecutiveInteraction === 13) {
+      pacingIssues.push({ startScene: clauses[idx - 12].id, currentScene: cl.id, count: consecutiveInteraction });
+    }
+  } else {
+    consecutiveInteraction = 0;
+  }
+});
+if (pacingIssues.length > 0) issues.pacingWarnings = pacingIssues;
 
 const missingHeaders = []
 const invalidZones = []
@@ -348,7 +489,7 @@ const expectedBatches = Math.ceil(sceneTags.length / 24)
 const wordCount = scriptText.trim().split(/\s+/).length
 const estimatedMinutes = Math.round(wordCount / 155)
 
-const totalIssues = issues.atTokens.length + issues.sceneTags.length + issues.stagingHeaders.length
+const totalIssues = issues.atTokens.length + issues.sceneTags.length + issues.stagingHeaders.length + issues.bannedJargon.length + issues.unanchoredNouns.length + issues.missingProps.length + issues.synonymDrift.length
 
 if (jsonOnly) {
   console.log(JSON.stringify({
@@ -374,6 +515,37 @@ console.log(`Scenes Found : ${sceneTags.length} line-anchored [IMG_XXX] tags`)
 console.log(`Batches      : ${batchCount} modular batches (Expected: ~${expectedBatches} at 24 scenes/batch)`)
 console.log(`Words / Est. : ${wordCount} words (~${estimatedMinutes} mins @ 155 WPM)`)
 console.log('-'.repeat(78))
+
+if (issues.unanchoredNouns.length > 0) {
+  console.log('\x1b[31m[FAIL]\x1b[0m Spoken or Staging Text Contains Unanchored Person Nouns (Must use canonical @{Entity}):');
+  issues.unanchoredNouns.slice(0, 8).forEach(u => {
+    console.log('  Line ' + u.line + ': Found "' + u.matched + '" -> ' + u.text + '...');
+  });
+}
+if (issues.missingProps.length > 0) {
+  console.log('\x1b[31m[FAIL]\x1b[0m Staging Headers Have Empty PROPS: [] While Describing Physical Props:');
+  issues.missingProps.slice(0, 8).forEach(m => {
+    console.log('  Line ' + m.line + ': Describes "' + m.prop + '" but PROPS: [] is empty -> ' + m.text + '...');
+  });
+}
+if (issues.synonymDrift.length > 0) {
+  console.log('\x1b[31m[FAIL]\x1b[0m Lexical Monomorphism Violations (Must use single canonical name from start to finish):');
+  issues.synonymDrift.slice(0, 10).forEach(s => {
+    console.log(`  Line ${s.line}: Found informal synonym "${s.matched}" -> Must use canonical "${s.canonical}" (${s.text}...)`);
+  });
+}
+if (issues.bannedJargon.length > 0) {
+  console.log('\x1b[31m[FAIL]\x1b[0m Spoken Narration Contains Banned Clinical Jargon:');
+  issues.bannedJargon.slice(0, 10).forEach(j => {
+    console.log(`  Line ${j.line}: Found "${j.matched}" -> ${j.text}...`);
+  });
+}
+if (issues.pacingWarnings.length > 0) {
+  console.log('\x1b[33m[WARN]\x1b[0m Pacing Stagnation Alert (>12 consecutive static interaction scenes):');
+  issues.pacingWarnings.forEach(w => {
+    console.log(`  Scenes ${w.startScene} to ${w.currentScene}: Excessive static dialogue with zero action/movement.`);
+  });
+}
 
 if (totalIssues === 0) {
   console.log(`\x1b[32m[PASS]\x1b[0m 100% Script Integrity Verified. Zero Defects Found.`)

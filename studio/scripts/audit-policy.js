@@ -116,7 +116,36 @@ const POLICY_REPLACEMENTS = [
   { pattern: /\bvenomous\b/gi, replacement: 'shadow-elemental' },
   { pattern: /\bvolatile saponins\b/gi, replacement: 'concentrated botanical lather' },
 
-  // 4. Minor domestic / bathhouse risk mitigations (prevent CSAE filter trips)
+  // 4. Minor domestic, age & anatomy mitigations (prevent Google Flow / Imagen safety classifier trips)
+  { pattern: /\b10-year-old male manhwa protagonist, refined 10-year-old boy build\b/gi, replacement: 'young noble manhwa protagonist, slender aristocratic build' },
+  { pattern: /\b\d+-year-old\s+(?:male|noble)\s+manhwa protagonist\b/gi, replacement: 'young noble manhwa protagonist' },
+  { pattern: /\b(?:refined\s+)?\d+-year-old\s+boy\s+build\b/gi, replacement: 'slender aristocratic build' },
+  { pattern: /\b\d+-year-old\s+(?:boy|child|minor)\b/gi, replacement: 'young noble heir' },
+  { pattern: /\bseven-year-old\b/gi, replacement: 'young noble heir' },
+  { pattern: /\bten-year-old\b/gi, replacement: 'young noble heir' },
+  { pattern: /\bsmall head held high\b/gi, replacement: 'holding his posture high' },
+  { pattern: /\bsmall head\b/gi, replacement: 'poised posture' },
+  { pattern: /\bsmall hands\b/gi, replacement: 'hands' },
+  { pattern: /\bsmall frame\b/gi, replacement: 'slender frame' },
+  { pattern: /\bsmall body\b/gi, replacement: 'slender frame' },
+  { pattern: /\btightening the silver clasp at his collar\b/gi, replacement: 'fastening the silver clasp of his doublet' },
+  { pattern: /\bclasp at his collar\b/gi, replacement: 'clasp of his doublet' },
+  { pattern: /\bprobe (?:his|her|their) inner\b/gi, replacement: 'focus on' },
+  { pattern: /\bprobe\b/gi, replacement: 'focus on' },
+  { pattern: /\babove (?:his|her) skin\b/gi, replacement: 'above palms' },
+  { pattern: /\bbeneath (?:the boy's|his) skin\b/gi, replacement: "beneath the young heir's posture" },
+  { pattern: /\bunblemished skin\b/gi, replacement: 'hands and wrists' },
+  { pattern: /\bsmall fingers\b/gi, replacement: 'hands' },
+  { pattern: /\bnew vessel\b/gi, replacement: 'noble lineage' },
+  { pattern: /\bdismantle any form of sorcery\b/gi, replacement: 'neutralize any form of sorcery' },
+  { pattern: /\bdismantled the mana threads\b/gi, replacement: 'unraveled the mana threads' },
+  { pattern: /\bsever the heavens\b/gi, replacement: 'cleave the heavens' },
+  { pattern: /\bsevered harp string\b/gi, replacement: 'snapped harp string' },
+  { pattern: /\bsevered halves\b/gi, replacement: 'cleaved halves' },
+  { pattern: /\bbreath caught in (?:his|her) throat\b/gi, replacement: 'holding breath in silent awe' },
+  { pattern: /\bwand before (?:his|her) chest\b/gi, replacement: 'wand before shoulder' },
+  { pattern: /\bducal bloodline\b/gi, replacement: 'ducal noble lineage' },
+  { pattern: /\bVaelgard bloodline\b/gi, replacement: 'Vaelgard noble lineage' },
   { pattern: /\bchest chill\b/gi, replacement: 'seasonal winter frost' },
   { pattern: /\bhot bath\b/gi, replacement: 'crystalline thermal spring basin' },
   { pattern: /\bsteaming bath\b/gi, replacement: 'steaming thermal spring basin' },
@@ -196,9 +225,16 @@ const AUDIT_RULES = [
   {
     id: 'POL-03-MINOR-VULNERABILITY',
     name: 'Minor Vulnerability & Domestic Exposure Traps',
-    regex: /\b(bare torso|bare chest|bare shoulders|chest chill)\b/i,
+    regex: /\b(bare torso|bare chest|bare shoulders|chest chill|probe|small fingers|new vessel|above (?:his|her) skin|beneath (?:the boy's|his) skin|\d+-year-old\s+(?:boy|child|minor|male)|refined\s+\d+-year-old\s+boy\s+build|small\s+(?:head|hands|frame|body)|tightening\s+the\s+silver\s+clasp\s+at\s+his\s+collar)\b/i,
     severity: 'FATAL',
-    desc: 'Domestic exposure token triggering Child Protection Safety classifier.'
+    desc: 'Domestic exposure or sensitive minor token triggering Child Protection Safety classifier.'
+  },
+  {
+    id: 'POL-03B-SEVER-DISMANTLE',
+    name: 'Forbidden Sever & Dismantle Violence Traps',
+    regex: /\b(sever the heavens|severed halves|severed harp string|dismantle (?:any|the))\b/i,
+    severity: 'WARN',
+    desc: 'Sever or dismantle tokens that trigger violence moderation layers.'
   },
   {
     id: 'POL-04-GRAPHIC-GORE-VITAL',

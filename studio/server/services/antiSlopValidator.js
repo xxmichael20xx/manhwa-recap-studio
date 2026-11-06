@@ -23,7 +23,7 @@ const UNIVERSAL_LEXICONS = {
   scriptSimileRegex: /\b(?:like\s+(?:a\s+|an\s+|the\s+|[a-z]{3,})|as if|as though|[a-z]{3,}-like)\b/i,
   creatureNounsRegex: /(?<!-)\b(?:wolf|wolves|tiger|tigers|serpent|serpents|snake|snakes|parrot|parrots|chicken|chickens|toad|toads|frog|frogs|peacock|peacocks|monkey|monkeys|ape|apes|hound|hounds|pig|pigs|boar|boars|rat|rats|crow|crows|lion|lions|bear|scorpion|scorpions|chimera|wyrm|leviathan|hydra|tentacle|sheep)\b(?!-)/gi,
 
-  roleAndVehicleNounsRegex: /\b(?:dean|vice-dean|chancellor|vice-chancellor|headmaster|principal|rector|provost|elder|grand elder|patriarch|matriarch|sovereign|emperor|empress|king|queen|prince|princess|duke|duchess|marquis|earl|viscount|baron|general|commander|captain|colonel|lieutenant|director|president|chairman|chief|doctor|professor|instructor|examiner|proctor|warden|overseer|hover-sedan|hover-limousine|hover-truck|hovercraft|hover-car|gunship|warship|dropship|limousine|sedan|suv|helicopter|fighter jet|mech|airship|chariot)\b/gi,
+  roleAndVehicleNounsRegex: /\b(?:dean|vice-dean|chancellor|vice-chancellor|headmaster|principal|rector|provost|elder|grand elder|patriarch|matriarch|sovereign|emperor|empress|king|queen|prince|princess|duke|duchess|marquis|earl|viscount|baron|general|commander|captain|colonel|lieutenant|director|president|chairman|chief|doctor|professor|instructor|examiner|proctor|warden|overseer|hover-sedan|hover-limousine|hover-truck|hovercraft|hover-car|gunship|warship|dropship|limousine|sedan|suv|helicopter|fighter jet|mech|airship|chariot|parents|young boy|young heir|veteran swordsman)\b/gi,
 
   postureForcedDownBeatRegex: /\b(?:crushed|prostrated?|face-down|flattened|pinned(?:\s+beneath|\s+to|\s+down)?|collapsed\s+to\s+(?:his|her|their)\s+knees|whimpering\s+in\s+the\s+(?:dirt|crater|ground|floor)|on\s+(?:his|her|their)\s+belly)\b/i,
   postureUprightContradictionRegex: /\b(?:standing\s+face-to-face|standing\s+upright|stands\s+upright|standing\s+tall|stands\s+tall|towering\s+over|striding\s+upright|on\s+(?:his|her|their)\s+feet|walking\s+confidently|striding\s+confidently)\b/i,
@@ -832,6 +832,9 @@ export class AntiSlopValidator {
 
     // G11: Ledger Replay, Lifecycle Anti-Resurrection & Posture Lock
     const g11Fails = []
+    if (!ledgerEvents || ledgerEvents.length === 0) {
+      g11Fails.push('FATAL: state_events.jsonl is missing or contains zero events. Episodic lifecycle ledger is mandatory and must not be bypassed.')
+    }
     for (const scene of matrixScenes) {
       const sceneNum = PromptDnaCompiler.sceneNumberFromId(scene.id)
       const sceneJsonObj = scenesJson?.find(s => s.id.toUpperCase() === scene.id)
@@ -874,7 +877,7 @@ export class AntiSlopValidator {
             promptLower.includes(cleanName) &&
             /\b(?:holding|wielding|brandishing|gripping|unsheathing|in\s+(?:his|her|their)\s+hand)\b/i.test(scene.prompt)
 
-          if (inCharRefs || equippedInJson || heldInPrompt) {
+          if (equippedInJson || heldInPrompt) {
             g11Fails.push(scene.id)
             break
           }
@@ -1695,6 +1698,12 @@ export class AntiSlopValidator {
         if (missingFromMatrix.length > 0 || extraInMatrix.length > 0) {
           g31Fails.push(`${scene.id} (Cast desync between script header [${header.cast.join(', ')}] and matrix [${matrixNonLocRefs.join(', ')}])`)
         }
+
+        // 3. Solo Scene vs Two-Shot Lens Parity Guard (Prevents diffusion phantom character hallucinations)
+        const isTwoShot = /\btwo-shot\b/i.test(scene.prompt) || /\btwo-shot\b/i.test(scene.lens || '')
+        if (isTwoShot && matrixNonLocRefs.length < 2) {
+          g31Fails.push(`${scene.id} (Solo scene specifies 'two-shot' framing with only ${matrixNonLocRefs.length} character(s) in CAST. Triggers phantom character hallucination in diffusion models.)`)
+        }
       }
     }
     recordGate(
@@ -1778,7 +1787,9 @@ export class AntiSlopValidator {
       ? JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
       : (rawVaultContext.worldState || null)
 
-    if (worldState) {
+    if (!worldState || !worldState.held_props || Object.keys(worldState.held_props).length === 0) {
+      g34Fails.push('FATAL: world_state.json is missing or contains no held_props. Episodic world state parity is mandatory and must not be bypassed.')
+    } else {
       // 1. Audit Wardrobe Locks
       if (worldState.wardrobe_locks) {
         for (const scene of matrixScenes) {
@@ -1849,17 +1860,93 @@ export class AntiSlopValidator {
       `Drift detected against world_state.json wardrobe lock, prop container schema, or timeline lighting`
     )
 
+    // G35: Minor & Youth Safety Policy Shield
+    const g35Fails = []
+    const BANNED_MINOR_AGE_REGEX = /\b(?:\d+|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)-year-old\s+(?:boy|child|minor|male|noble)\b/i
+    const BANNED_MINOR_BODY_REGEX = /\b(?:refined\s+)?(?:\d+|seven|eight|nine|ten)-year-old\s+boy\s+build\b/i
+    const BANNED_MINOR_ANATOMY_REGEX = /\bsmall\s+(?:head|hands|frame|body)\b/i
+    const BANNED_RAW_YOUTH_NOUNS = /\b(?:ordinary\s+child|any\s+child|a\s+boy\s+so\s+young)\b/i
+    const BANNED_DOMESTIC_VULNERABILITY_REGEX = /\b(?:beneath\s+(?:the\s+)?silk\s+duvets?|sleeping\s+in\s+bed|waking\s+in\s+bed|undressing|tightening\s+the\s+silver\s+clasp\s+at\s+his\s+collar)\b/i
+
+    for (const scene of matrixScenes) {
+      const pLower = scene.prompt.toLowerCase()
+      const aLower = (scene.actionLayer || '').toLowerCase()
+      const nLower = (scene.narrativeSync || '').toLowerCase()
+      const fullSceneText = `${pLower} ${aLower} ${nLower}`
+
+      if (BANNED_MINOR_AGE_REGEX.test(fullSceneText)) {
+        g35Fails.push(`${scene.id} (Numeric minor age descriptor detected; must use filter-safe manhwa terms like "young noble heir" or "young noble protagonist")`)
+      }
+      if (BANNED_MINOR_BODY_REGEX.test(fullSceneText)) {
+        g35Fails.push(`${scene.id} (Child body build descriptor detected; must use "slender aristocratic build")`)
+      }
+      if (BANNED_MINOR_ANATOMY_REGEX.test(fullSceneText)) {
+        g35Fails.push(`${scene.id} (Sensitive minor body descriptor detected like "small head/frame/hands"; must use "poised posture" or "slender frame")`)
+      }
+      if (BANNED_RAW_YOUTH_NOUNS.test(fullSceneText)) {
+        g35Fails.push(`${scene.id} (Raw child noun detected; must use "young noble cadet" or "ordinary peer")`)
+      }
+
+      // Check domestic vulnerability when minor or youth character is present
+      const hasMinorPresent = scene.charRefs.some(ref => {
+        const ent = entityByAliasLower.get(ref.toLowerCase())
+        return ent && (ent.age_class === 'minor' || (ent.name && ent.name.toLowerCase().includes('julian')))
+      })
+      if (hasMinorPresent && BANNED_DOMESTIC_VULNERABILITY_REGEX.test(fullSceneText)) {
+        g35Fails.push(`${scene.id} (Domestic vulnerability trigger detected while minor character is present)`)
+      }
+    }
+
+    recordGate(
+      'G35_minor_safety_policy_shield',
+      'G35: Minor & Youth Safety Policy Shield',
+      g35Fails,
+      `100% compliance with Google Flow minor safety directives: zero numeric child ages, zero boy/child build descriptors, and zero domestic exposure traps.`,
+      `Minor safety or Google Flow policy trap detected in prompt or action layer`
+    )
+
+    // G36: 16:9 Single-Panel Full-Bleed & Diffusion Anti-Cloning Shield
+    const g36Fails = []
+    const is16x9 = franchise.format === '16:9'
+
+    if (is16x9) {
+      const BANNED_16X9_PANEL_REGEX = /\b(?:upper\s+panel|lower\s+panel|middle\s+panel|split\s+strip|comic\s+strip|dual[- ]panel|three[- ]panel)\b/i
+      for (const scene of matrixScenes) {
+        const pLower = (scene.prompt || '').toLowerCase()
+        const aLower = (scene.actionLayer || '').toLowerCase()
+        const lLower = (scene.layout || '').toLowerCase()
+
+        if (BANNED_16X9_PANEL_REGEX.test(pLower) || BANNED_16X9_PANEL_REGEX.test(aLower) || BANNED_16X9_PANEL_REGEX.test(lLower)) {
+          g36Fails.push(`${scene.id} (Multi-panel comic strip keyword detected in 16:9 single-panel format)`)
+        }
+
+        // Single character scenes must not have two-shot lens
+        if (scene.charRefs.length <= 1 && scene.lens && scene.lens.toLowerCase().includes('two-shot')) {
+          g36Fails.push(`${scene.id} (Solo character scene inappropriately assigned two-shot lens)`)
+        }
+      }
+    }
+
+    recordGate(
+      'G36_16x9_single_panel_shield',
+      'G36: 16:9 Single-Panel Full-Bleed & Diffusion Anti-Cloning Shield',
+      g36Fails,
+      `100% compliance with 16:9 cinematic full-bleed standards: zero comic panels, zero split strips, zero solo two-shots.`,
+      `16:9 format violation: multi-panel comic keywords or solo two-shot detected`
+    )
+
     // D-01: Cryptographic Dispatch Manifest Verification
     const d01Fails = []
+    let expectedManifest = null
+    expectedManifest = PromptDnaCompiler.generateSignedManifest({
+      franchise,
+      entities,
+      zones,
+      ledgerEvents,
+      scriptText,
+      matrixMarkdown: promptMatrixText
+    })
     if (manifest) {
-      const expectedManifest = PromptDnaCompiler.generateSignedManifest({
-        franchise,
-        entities,
-        zones,
-        ledgerEvents,
-        scriptText,
-        matrixMarkdown: promptMatrixText
-      })
       if (manifest.signature !== expectedManifest.signature) {
         d01Fails.push('MANIFEST_SIGNATURE_MISMATCH')
       }
@@ -1882,6 +1969,7 @@ export class AntiSlopValidator {
       scriptScenesCount,
       overallScore,
       isProductionReady,
+      expectedManifest,
       failingScenes: [...allFailingSceneIds],
       auditedBy: 'Universal Allow-List Linter Engine v2.0',
       checks

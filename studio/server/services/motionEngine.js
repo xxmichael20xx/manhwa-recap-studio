@@ -141,7 +141,7 @@ export class MotionEngine {
     const baseCenterY = (!isTallStrip && isVertical) ? 20 : 0
 
     // Landscape calculations
-    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.15
+    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.18
     const landW = imgW * landScale
     const landH = imgH * landScale
     const maxLandScrollX = Math.max(0, landW - 1920)
@@ -230,19 +230,19 @@ export class MotionEngine {
           } else if (motionType === 'vertical_diagonal_left_to_right') {
             // 2. Constant Diagonal Glide Down-Right
             curY = -(progress * maxScrollY)
-            curX = (baseCenterX - 20) + (progress * 40)
+            curX = (baseCenterX - 24) + (progress * 48)
           } else if (motionType === 'vertical_diagonal_right_to_left') {
             // 3. Constant Diagonal Glide Down-Left
             curY = -(progress * maxScrollY)
-            curX = (baseCenterX + 20) - (progress * 40)
+            curX = (baseCenterX + 24) - (progress * 48)
           } else if (motionType === 'vertical_zoom_in') {
             // 4. Constant Glide with Subtle Push-In
             curY = -(progress * maxScrollY)
-            curZoom = 1.0 + 0.035 * progress
+            curZoom = 1.0 + 0.042 * progress
           } else if (motionType === 'vertical_zoom_out') {
             // 5. Constant Glide with Subtle Pull-Out
             curY = -(progress * maxScrollY)
-            curZoom = 1.035 - 0.035 * progress
+            curZoom = 1.042 - 0.042 * progress
           } else {
             // 6. Standard Top to Bottom Constant Linear Glide
             curY = -(progress * maxScrollY)
@@ -250,13 +250,13 @@ export class MotionEngine {
         } else {
           // Single vertical panel
           if (motionType === 'vertical_snap_up') {
-            curZoom = 1.0 + 0.035 * progress
+            curZoom = 1.0 + 0.042 * progress
           } else if (motionType === 'vertical_zoom_out') {
-            curZoom = 1.035 - 0.035 * progress
+            curZoom = 1.042 - 0.042 * progress
           } else if (motionType === 'vertical_diagonal_left_to_right') {
-            curX = (baseCenterX - 20) + (progress * 40)
+            curX = (baseCenterX - 24) + (progress * 48)
           } else if (motionType === 'vertical_diagonal_right_to_left') {
-            curX = (baseCenterX + 20) - (progress * 40)
+            curX = (baseCenterX + 24) - (progress * 48)
           }
         }
 
@@ -287,10 +287,10 @@ export class MotionEngine {
           curY = -(maxLandScrollY * (1.0 - progress))
         } else if (motionType === 'hero_zoom_in') {
           // 4. Constant Hero Push-In
-          curZoom = 1.0 + 0.05 * progress
+          curZoom = 1.0 + 0.06 * progress
         } else if (motionType === 'hero_zoom_out') {
           // 5. Constant Hero Pull-Out
-          curZoom = 1.05 - 0.05 * progress
+          curZoom = 1.06 - 0.06 * progress
         } else if (motionType === 'pan_diagonal_sweep') {
           // 6. Constant Diagonal Sweep
           curX = -(maxLandScrollX * (1.0 - progress))

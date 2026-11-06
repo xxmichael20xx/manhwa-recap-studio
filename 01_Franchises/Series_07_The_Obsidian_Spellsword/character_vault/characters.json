@@ -1,0 +1,242 @@
+{
+  "franchise": "Series_07_The_Obsidian_Spellsword",
+  "characters": [
+    {
+      "id": "julian_vaelgard",
+      "name": "Julian Vaelgard",
+      "token": "@{Julian Vaelgard}",
+      "tier": 1,
+      "role": "Protagonist (Reincarnated Sword Saint)",
+      "age": 15,
+      "stats_baseline": {
+        "level": 1,
+        "class": "Dual Sovereign (Swordsmanship: Bronze -> Obsidian | Magic: 1-Star -> 6-Star)",
+        "talent": "The God-Severing Eye & Mana Thread Dissipation"
+      },
+      "appearance": {
+        "hair": "Sleek raven-black hair parted neatly with refined noble grace",
+        "eyes": "Piercing sharp silver eyes that gleam with ancient intellect and calm composure",
+        "physique": "Lean athletic 15-year-old high-noble swordsman build with immaculate martial posture and balance",
+        "attire": "tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
+        "weapons": "Custom-balanced Vaelgard silver practice rapier",
+        "footwear": "Polished black leather dueling boots"
+      },
+      "dna": "15-year-old young noble swordsman, lean athletic martial build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
+      "dna_prompt_anchor": "@{Julian Vaelgard - Reincarnated Sword Saint}",
+      "reference_plate": "01_Protagonist_Julian_Vaelgard.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00001",
+      "flowName": "Julian Vaelgard",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots"
+      },
+      "default_outfit": "default",
+      "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the 15-year-old body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye."
+    },
+    {
+      "id": "duke_gerald_vaelgard",
+      "name": "Duke Gerald Vaelgard",
+      "token": "@{Duke Gerald Vaelgard}",
+      "tier": 2,
+      "role": "Patriarch of House Vaelgard (Father)",
+      "age": 40,
+      "appearance": {
+        "hair": "Short raven-black hair with distinguished silver temples",
+        "eyes": "Piercing amber eyes radiating iron authority and martial discipline",
+        "physique": "Tall, broad-shouldered muscular nobleman with commanding patriarchal presence",
+        "attire": "thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip",
+        "weapons": "Diamond-Rank runic greatsword sheathed at hip",
+        "footwear": "Reinforced steel-capped sabatons"
+      },
+      "dna": "40-year-old imposing nobleman, short raven hair with distinguished silver temples, dark beard, amber eyes, commanding aristocratic father, wearing thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip",
+      "dna_prompt_anchor": "@{Duke Gerald Vaelgard - Diamond Swordmaster}",
+      "reference_plate": "02_Patriarch_Duke_Gerald_Vaelgard.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00002",
+      "flowName": "Duke Gerald Vaelgard",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "duchess_eleanor_vaelgard",
+      "name": "Duchess Eleanor Vaelgard",
+      "token": "@{Duchess Eleanor Vaelgard}",
+      "tier": 2,
+      "role": "Duchess of House Vaelgard & 5-Star Court Archmage (Mother)",
+      "age": 36,
+      "appearance": {
+        "hair": "Cascading sapphire-tinted midnight hair styled in a graceful braided updo",
+        "eyes": "Warm azure eyes filled with deep magical wisdom and maternal affection",
+        "physique": "Graceful, regal noblewoman with dignified aristocratic posture",
+        "attire": "High-collared cerulean silk robe embroidered with glowing silver constellation runes, delicate sapphire mana pendant",
+        "weapons": "Slender platinum spell-catalyst wand tucked into silk sleeve sash",
+        "footwear": "Embroidered velvet slippers"
+      },
+      "dna": "36-year-old elegant noblewoman, long cascading sapphire-tinted midnight hair styled in graceful braided updo, warm azure eyes, refined aristocratic features, gentle maternal smile, wearing exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes, delicate sapphire mana pendant",
+      "dna_prompt_anchor": "@{Duchess Eleanor Vaelgard - 5-Star Court Archmage}",
+      "reference_plate": "03_Duchess_Eleanor_Vaelgard.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00003",
+      "flowName": "Duchess Eleanor Vaelgard",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes, delicate sapphire mana pendant"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "archmage_lyra",
+      "name": "Archmage Lyra",
+      "token": "@{Archmage Lyra}",
+      "tier": 2,
+      "role": "First Disciple of Aiden Drake (The Frozen Star)",
+      "age": 24,
+      "appearance": {
+        "hair": "Waist-length crystalline platinum-ice hair that softly glows with ethereal light",
+        "eyes": "Piercing glacial-cyan eyes that convey centuries of aloof wisdom and devotion",
+        "physique": "Ageless ethereal beauty, slender and poised like an immortal ice sculpture",
+        "attire": "Flowing frost-white and silver layered archmage robe with a frosted fur mantle and celestial astral sash",
+        "weapons": "Ancient glacial crystal staff emitting faint chilling mist",
+        "footwear": "Silken frost-patterned boots"
+      },
+      "dna": "26-year-old elite ice archmage, cascading frost-silver hair, cool crystalline azure eyes, calm composed intellectual expression, wearing ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe",
+      "dna_prompt_anchor": "@{Archmage Lyra - The Frozen Star}",
+      "reference_plate": "04_Archmage_Lyra_The_Frozen_Star.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00004",
+      "flowName": "Archmage Lyra",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "master_swordsman_kael",
+      "name": "Master Swordsman Kael",
+      "token": "@{Master Swordsman Kael}",
+      "tier": 3,
+      "role": "Vaelgard Chief Martial Instructor",
+      "age": 50,
+      "appearance": {
+        "hair": "Grey-streaked brown hair tied in a practical warrior tail",
+        "eyes": "Keen weathered grey eyes assessing every subtle shift in footwork",
+        "physique": "Tough, battle-hardened veteran build with scarred forearm",
+        "attire": "Fitted brown leather sparring doublet, reinforced steel vambraces, dark linen breeches",
+        "weapons": "Twin-hilted steel arming sword and wooden training bokken",
+        "footwear": "Sturdy buckled training boots"
+      },
+      "dna": "34-year-old veteran sword instructor, sharp angular features, steel-grey hair tied back in a short warrior tail, scarred left forearm, calm exacting gaze, wearing fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons, dueling bracers, and a polished silver scabbard at his hip",
+      "dna_prompt_anchor": "@{Master Swordsman Kael - Vaelgard Chief Instructor}",
+      "reference_plate": "05_Instructor_Master_Swordsman_Kael.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00005",
+      "flowName": "Master Swordsman Kael",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons, dueling bracers, and a polished silver scabbard at his hip"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "high_inquisitor_malakor",
+      "name": "High Inquisitor Malakor",
+      "token": "@{High Inquisitor Malakor}",
+      "tier": 2,
+      "role": "Emissary of the Church of the Radiant Dawn (Antagonist)",
+      "age": 45,
+      "appearance": {
+        "hair": "Slicked-back golden-blonde hair parted with severe precision",
+        "eyes": "Cold predatory golden eyes filled with religious zeal and contempt for commoners",
+        "physique": "Tall, gaunt aristocratic build carrying an air of sanctimonious authority",
+        "attire": "Lavish white-and-gold liturgical inquisitor robes with sun-burst brass iconography and solar cross mantle",
+        "weapons": "Golden baptismal scrying chalice and concealed radiant light dagger",
+        "footwear": "Polished ivory leather ecclesiastical shoes"
+      },
+      "dna": "45-year-old stern inquisitor with gaunt severe facial structure, slicked back iron-grey hair, piercing fanatical pale gold eyes, sinister pious smirk, wearing immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash",
+      "dna_prompt_anchor": "@{High Inquisitor Malakor - Church of the Radiant Dawn}",
+      "reference_plate": "06_Antagonist_High_Inquisitor_Malakor.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00006",
+      "flowName": "High Inquisitor Malakor",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "aiden_drake_past_life",
+      "name": "Aiden Drake",
+      "token": "@{Aiden Drake}",
+      "tier": 1,
+      "role": "The First Sword Saint (Past Life)",
+      "age": 28,
+      "appearance": {
+        "hair": "Raven-black hair whipped by wind",
+        "eyes": "Fierce silver eyes burning with defiance",
+        "physique": "Tall, powerful athletic swordmaster build",
+        "attire": "Shredded midnight-black combat duster, silver-trimmed combat tunic",
+        "weapons": "Chipped Obsidian Greatsword",
+        "footwear": "Weathered black leather traveling boots"
+      },
+      "dna": "28-year-old battle-weathered peerless swordsman, raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, tragic defiant sneer, wearing shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots",
+      "dna_prompt_anchor": "@{Aiden Drake - The First Sword Saint}",
+      "reference_plate": "00_Prologue_Aiden_Drake.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00000",
+      "flowName": "Aiden Drake",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots"
+      },
+      "default_outfit": "default"
+    },
+    {
+      "id": "obsidian_greatsword",
+      "name": "Obsidian Greatsword",
+      "token": "@{Obsidian Greatsword}",
+      "tier": 1,
+      "role": "Sovereign Soul Blade (The Obsidian Spellsword)",
+      "age": 1000,
+      "appearance": {
+        "physique": "Colossal two-handed greatsword forged from pitch-black volcanic glass stone",
+        "blade": "Broad double-edged blade with battle-notched edges, glowing violet void runes in central fuller, purple mana flame aura",
+        "guard": "Blackened steel winged gothic crossguard with central faceted glowing violet gem",
+        "hilt": "Black leather-wrapped two-handed grip with pointed faceted steel pommel"
+      },
+      "dna": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
+      "dna_prompt_anchor": "@{Obsidian Greatsword - Sovereign Void Blade}",
+      "reference_plate": "13_Weapon_Obsidian_Greatsword.jpg",
+      "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00013",
+      "flowName": "Obsidian Greatsword",
+      "episodes": [
+        "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
+      },
+      "default_outfit": "default",
+      "description": "The legendary soul-bound weapon of Aiden Drake, the First Sword Saint. Forged from primordial obsidian volcanic glass capable of severing mana threads, magic domains, and divine law. Following Aiden's fall at the Celestial Altar 1,000 years ago, the blade was recovered and enshrined in the deepest ancestral treasury vault of House Vaelgard, slumbering in dormant stasis until its true master Julian reclaims it."
+    }
+  ]
+}

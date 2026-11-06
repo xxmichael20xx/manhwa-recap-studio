@@ -1,0 +1,60 @@
+{
+  "episodeId": "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-05T06:03:20.108Z",
+  "timeline": {
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_025",
+        "lighting": "night_celestial"
+      },
+      {
+        "from_scene": "IMG_026",
+        "to_scene": "IMG_192",
+        "lighting": "bright_morning_sunlight"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "aiden_drake": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic",
+    "julian_vaelgard": "tailored midnight-navy silk doublet with silver filigree embroidery",
+    "duke_gerald_vaelgard": "thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip",
+    "duchess_eleanor_vaelgard": "exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes",
+    "master_swordsman_kael": "fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": "carved protective case",
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "principles_of_mana_weaving": {
+      "canonical_name": "Principles of Mana Weaving",
+      "container": "clean sheath or pedestal",
+      "visual_form": "A monumental ancient leather-bound tome holding Aiden Drake's foundational research on mana threads and spell matrices from 1,000 years ago.",
+      "notes": "Locked across all episode scenes: Principles of Mana Weaving."
+    },
+    "enchanted_iron_wood_practice_dummy": {
+      "canonical_name": "Enchanted Iron-Wood Practice Dummy",
+      "container": "clean sheath or pedestal",
+      "visual_form": "Full-bodied humanoid automaton golem warrior sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+      "notes": "Locked across all episode scenes: Enchanted Iron-Wood Practice Dummy."
+    },
+    "wooden_practice_rod": {
+      "canonical_name": "Wooden Practice Rod",
+      "container": "clean sheath or pedestal",
+      "visual_form": "Smooth cylindrical straight wooden training rod crafted from pale polished ash-wood with a blunt rounded tip and simple navy cloth wrapped grip.",
+      "notes": "Locked across all episode scenes: Wooden Practice Rod."
+    },
+    "obsidian_greatsword": {
+      "canonical_name": "Obsidian Greatsword",
+      "container": "stone dais or ground",
+      "visual_form": "Colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
+      "notes": "Locked across prologue scenes IMG_003 through IMG_021. Sole weapon of Aiden Drake."
+    }
+  },
+  "zone_lifecycles": {}
+}

@@ -58,6 +58,7 @@ const readJsonSafe = (filePath, required = true) => {
 const franchise = readJsonSafe(path.join(franchiseDir, 'franchise.json'))
 const entities = readJsonSafe(path.join(franchiseDir, franchise.paths?.entities || 'vault/entities.json'))
 const zones = readJsonSafe(path.join(franchiseDir, franchise.paths?.zones || 'vault/zones.json'))
+const items = readJsonSafe(path.join(franchiseDir, 'character_vault/items.json'), false)?.items || []
 
 const scriptText = fs.readFileSync(scriptPath, 'utf-8')
 const scriptClauses = PromptDnaCompiler.parseScriptClauses(scriptText)
@@ -100,7 +101,7 @@ for (let i = 0; i < sceneIds.length; i++) {
   let detected = null
   if (/\b(?:morning\s+sunlight|early\s+morning|sunrise|dawn|breakfast|waking\s+up)\b/i.test(cLower)) {
     detected = 'bright_morning_sunlight'
-  } else if (/\b(?:night|midnight|evening\s+sky|dark\s+night|under\s+the\s+stars)\b/i.test(cLower)) {
+  } else if (/(?<!-)\b(?:night|midnight(?!\s*-(?:navy|blue))|evening\s+sky|dark\s+night|under\s+the\s+stars)\b/i.test(cLower)) {
     detected = 'night_floodlit'
   } else if (/\b(?:sunset|dusk|twilight)\b/i.test(cLower)) {
     detected = 'dusk'
@@ -143,6 +144,21 @@ for (const charName of activeCharacters) {
 
 // 3. Build held props schemas
 const heldProps = {}
+// Always include registered items from character_vault/items.json active for this episode
+if (Array.isArray(items)) {
+  for (const it of items) {
+    const itName = it.name || it.token?.replace(/[@{}]/g, '') || ''
+    if (itName && (activeProps.has(itName) || (it.episodes && it.episodes.includes(episodeId)))) {
+      const clean = it.id || itName.toLowerCase().replace(/[^a-z0-9_]/g, '_')
+      heldProps[clean] = {
+        canonical_name: itName,
+        container: it.container || 'clean sheath or pedestal',
+        visual_form: it.visual_dna || it.description || it.dna || 'canonical prop artifact',
+        notes: `Locked across all episode scenes: ${itName}.`
+      }
+    }
+  }
+}
 for (const propName of activeProps) {
   const clean = propName.toLowerCase().replace(/[^a-z0-9_]/g, '_')
   const ent = Object.values(entities).find(e =>

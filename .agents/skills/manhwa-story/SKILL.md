@@ -1,6 +1,6 @@
 ---
 name: manhwa-story
-description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Series Bible grounding, 8 Core Pillars, 5 Lore Logic Gates, 5 Slow-Burn Worldbuilding Laws, 1:1 clause-to-plate tagging, IP/prose sanitization, and Edge-TTS ffprobe telemetry. Trigger with /story.
+description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Series Bible grounding, 8 Core Pillars, 5 Lore Logic Gates, Dynamic Pulse Pacing, IP/prose sanitization, and Edge-TTS ffprobe telemetry. Trigger with /story.
 ---
 
 # 📜 Manhwa Scriptwriting & Lore Integrity Engine (`/story`)
@@ -10,15 +10,18 @@ description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Seri
 - **1:1 Multi-Episode Arc Anchor:** Every script MUST fulfill its designated multi-episode Arc beat (3–6 episodes per arc) in `Series_Bible.md` and adopt the franchise's `STUDIO_BIBLE_DIRECTIVES` tone, vocabulary, and `voiceId`.
 - **Mandatory Preceding Episode Climate & Terrain Audit:** Before drafting script prose, verify the climate, season, and terrain canon of recurring locations across preceding episodes (`EP_N-1`). Never invent seasonal shifts (snow, blizzards, autumn leaves) onto temperate/established zones without explicit authorization in `Series_Bible.md`.
 
-## 2. The 8 Core Pillars & 5 Slow-Burn Worldbuilding Laws
+## 2. The 8 Core Pillars & Dynamic Pulse Pacing Laws
 1. **Clean RPG Arithmetic:** Predictable progression intervals (Lvl 1->10 = 5,000 EXP; stats 10->200+). Zero bloated 100M EXP numbers.
-2. **Physical Durability Threshold ($Attack - Defence \le 0 \implies 0\text{ Dmg}$):** High Constitution ($150+$) deflects mundane blades; use Vessel Calibration Latency only when plot requires injury.
-3. **70/30 Dynamic Combat Spectrum:** 70% high-tactical realism (choke-points, elevation) for bosses; 30% breezy fodder curb-stomps.
-4. **Tiered Antagonist Hierarchy:** Calculating high-level oligarchs vs. arrogant low-tier bullies/examiners for underdog face-slap catharsis.
-5. **Institutional Realism & Context-Aware Crowds:** Ground media blackouts and treaties; weave peer whispers in public spaces while keeping private sanctuaries isolated.
-6. **Slow-Burn Multi-Batch Expansion (Zero `1 Batch = 1 Plot Point` Rushing):** Never rush worldbuilding, crafting, or family confessions in 1 batch. Expand major phases across **2–4+ batches (48–96+ scenes)** and simmer major institutional mysteries across **$\ge 5$ batches (120+ scenes)**.
-7. **Strategic Sandbagging & Concealment:** Allow tactical power throttling; confirm grand unveiling timing with the operator.
-8. **5 Slow-Burn Realism Laws:** (a) Multi-batch craft step-by-step realism; (b) Sentient companion/spirit co-pilot where established by `Series_Bible.md` (zero real-world IP mentions); (c) Child Vessel Awakening Fever (Safe Mode 10% throttle + Live-Observation Affinity Gate); (d) Credible Artisan Family Lineage + honest past-life confession; (e) Strict Tech-Tree Chronology (water filtration/soap/masonry in Arc I before gears/electricity in Arcs III–IV).
+2. **Class-Appropriate Defence & Archetype Independence:** High Constitution deflects mundane blades only for dedicated tank/sovereign archetypes (e.g. Archetype A); mages, scholars, and architects defend via active barriers, wards, or evasion. Never force 200+ CON onto non-tank classes.
+3. **Class-Combat Archetype Integrity (Zero Monk Bleed):** Mages/Magius must fight with ≥ 80% active elemental spellcraft (stone pillars, wind cutters, fire lances, chantless circles). Melee is strictly spell-infused, never barehanded acupressure or internal marrow vibrations.
+4. **70/30 Dynamic Combat Spectrum:** 70% high-tactical realism (choke-points, elevation) for bosses; 30% breezy fodder curb-stomps.
+5. **Tiered Antagonist Hierarchy:** Calculating high-level oligarchs vs. arrogant low-tier bullies/examiners for underdog face-slap catharsis.
+6. **Dynamic Pulse Pacing Standard (Anti-Stagnation Law):**
+   - **Target Tripartite Ratio:** 40% High-Stakes Action / 35% Forward-Moving Dialogue / 20% Active In-Transit World-Building / 5% Climax Delivery.
+   - **The 8-to-10 Scene Ceiling:** Strictly ban consecutive static dialogue or exposition exceeding 10 panels without an action beat or scene change.
+   - **3-Phase Action Engine:** Major fights must feature Probe -> Escalation -> Decisive Spellcraft Strike (18–26 scenes total). Cap spectator reaction echo at 1–2 sharp panels.
+7. **Institutional Realism & Context-Aware Crowds:** Ground media blackouts and treaties; weave peer whispers in public spaces while keeping private sanctuaries isolated.
+8. **5 Slow-Burn Realism Laws:** (a) Active in-transit craft step-by-step realism; (b) Sentient companion/spirit co-pilot where established by `Series_Bible.md` (zero real-world IP mentions); (c) Child Vessel Awakening Fever (Safe Mode 10% throttle + Live-Observation Affinity Gate); (d) Credible Artisan Family Lineage + honest past-life confession; (e) Strict Tech-Tree Chronology (water filtration/soap/masonry in Arc I before gears/electricity in Arcs III–IV).
 
 ## 3. The 5 Lead Lore Auditor Logic Gates (Anti-Brain-Dead Invariant)
 1. **Zero 1,000-Year Brain-Dead Civilizations:** Ancient mages never fail basic physics; ground mundane-object victories strictly in the protagonist's unique numerical enhancement engine.
@@ -30,7 +33,7 @@ description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Seri
 ## 4. Spoken-Prose Sanitization, 1:1 Tagging & Edge-TTS Synthesis
 1. **Zero-Bleed Spoken Prose Laws:**
    - **Zero `@` Tokens in Script:** Never write `@` or `@{...}` in `01_Episode_Script.md` or `<narrative_sync>` (TTS reads `@` as *"at"*). Use canonical names (including explicitly named family members—never *"his mother"*).
-   - **Zero Trademarks, LaTeX/Math Operators, Meta-Jargon, or Fourth-Wall Breaks:** Ban real-world brands (*"Solo Leveling"*, *"Glock"*), raw math (`<=`, `+3`, `$...$`), engine terms (*"Invariant"*, *"Batch"*), broadcast breaks (*"Episode 1"*, *"Next week"*), and game-engine percentages (*"50% development"*).
+   - **Zero Trademarks, LaTeX/Math Operators, Meta-Jargon, or Clinical Technobabble:** Ban real-world brands (*"Solo Leveling"*, *"Glock"*), raw math (`<=`, `+3`, `$...$`), engine terms (*"Invariant"*, *"Batch"*), broadcast breaks (*"Episode 1"*, *"Next week"*), and dry textbook physics/engineering jargon (*"kinetic force"*, *"vectors"*, *"telemetry"*, *"cellular lattice"*, *"calibration"*). Spoken voiceovers must use visceral, punchy, natural sensory language.
    - **Prompt-Safe Lexicon & Continuous Weapon Tracking:** Use high-fantasy terms (`thermal spring basin`, `botanical cleansing bar`, `mana crystal dust`) over policy-triggering domestic terms (`hot bath`, `soap`, `white powder`). Explicitly track drawn/sheathed/shattered weapon states and fixed debris coordinates across consecutive sentences.
    - **Punchy HUDs (<12 words), Deadpan Comebacks, Ticking-Clock Cliffhangers (final 30–45s), & Viral Shorts Tags (`<!-- CLIMAX_START/END -->`, `<!-- SHORT_EARLY_START/END -->`).**
 2. **Strict 1:1 Clause-to-Plate Tagging (`[IMG_XXX]`) & V2.0 Inline Staging Headers:**

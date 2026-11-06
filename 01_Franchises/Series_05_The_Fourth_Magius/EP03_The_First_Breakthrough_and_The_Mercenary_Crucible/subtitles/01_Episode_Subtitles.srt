@@ -207,3917 +207,3921 @@ would be entirely unnecessary,
 his tone as steady as ancient mountain granite.
 
 53
-00:01:59,140 --> 00:02:01,065
+00:01:59,140 --> 00:02:01,053
 Rowan blinked in stunned bewilderment,
 
 54
-00:02:01,165 --> 00:02:02,415
+00:02:01,153 --> 00:02:02,415
 but before he could argue,
 
 55
-00:02:02,590 --> 00:02:04,840
-a violent tremor shook the frozen earth beneath
+00:02:02,578 --> 00:02:04,678
+a violent tremor shook the packed dirt beneath
 
 56
-00:02:04,853 --> 00:02:05,715
+00:02:04,690 --> 00:02:05,565
 their boots.
 
 57
-00:02:06,580 --> 00:02:09,855
+00:02:06,436 --> 00:02:09,711
 Heavy, rhythmic footsteps reverberated through the packed soil,
 
 58
-00:02:09,955 --> 00:02:11,880
+00:02:09,811 --> 00:02:11,736
 shaking loose dust and pine needles from the
 
 59
-00:02:11,893 --> 00:02:13,318
+00:02:11,749 --> 00:02:13,174
 palisade timber eaves.
 
 60
-00:02:14,188 --> 00:02:15,138
+00:02:14,044 --> 00:02:14,994
 From the dense,
 
 61
-00:02:15,213 --> 00:02:17,863
+00:02:15,069 --> 00:02:17,719
 mist-shrouded shadow of the evergreen Blackwood pines,
 
 62
-00:02:17,988 --> 00:02:20,763
+00:02:17,844 --> 00:02:20,619
 three colossal silhouettes broke through the morning fog.
 
 63
-00:02:21,628 --> 00:02:23,478
+00:02:21,484 --> 00:02:23,334
 Standing nearly ten feet tall,
 
 64
-00:02:23,628 --> 00:02:25,666
+00:02:23,484 --> 00:02:25,522
 their massive bodies were armored in thick,
 
 65
-00:02:25,803 --> 00:02:27,791
+00:02:25,659 --> 00:02:27,647
 jagged plates of living grey granite.
 
 66
-00:02:28,660 --> 00:02:30,935
+00:02:28,516 --> 00:02:30,791
 Mountain stone trolls had descended from the high
 
 67
-00:02:30,948 --> 00:02:33,323
+00:02:30,804 --> 00:02:33,179
 northern crags, driven into the valley by high
 
 68
-00:02:33,335 --> 00:02:34,598
+00:02:33,191 --> 00:02:34,454
 mountain crag famine.
 
 69
-00:02:35,476 --> 00:02:37,939
+00:02:35,332 --> 00:02:37,820
 The lead troll dragged a colossal ironwood tree-trunk
 
 70
-00:02:37,951 --> 00:02:40,176
+00:02:37,832 --> 00:02:40,032
 club studded with jagged river rocks across the
 
 71
-00:02:40,189 --> 00:02:41,439
-frozen dirt road.
+00:02:40,045 --> 00:02:41,470
+hard-packed dirt road.
 
 72
-00:02:42,316 --> 00:02:44,554
+00:02:42,340 --> 00:02:44,578
 Its molten-amber slit eyes locked onto the wooden
 
 73
-00:02:44,566 --> 00:02:46,166
+00:02:44,590 --> 00:02:46,190
 gates, emitting a guttural,
 
 74
-00:02:46,316 --> 00:02:48,404
+00:02:46,340 --> 00:02:48,428
 earth-shaking roar that rattled the teeth of every
 
 75
-00:02:48,416 --> 00:02:49,091
+00:02:48,440 --> 00:02:49,115
 defender.
 
 76
-00:02:49,972 --> 00:02:52,897
+00:02:49,996 --> 00:02:52,921
 Michael's small fingers gently tightened around his carved
 
 77
-00:02:52,910 --> 00:02:55,772
+00:02:52,934 --> 00:02:55,796
 blackwood staff as internal kinetic mana surged within
 
 78
-00:02:55,785 --> 00:02:56,660
+00:02:55,809 --> 00:02:56,684
 his palms.
 
 79
-00:02:57,532 --> 00:02:59,570
+00:02:57,556 --> 00:02:59,569
 The lead stone troll surged forward into a
 
 80
-00:02:59,582 --> 00:03:02,320
-lurching sprint, the frozen earth shuddering beneath its
+00:02:59,581 --> 00:03:02,194
+lurching sprint, the packed earth shuddering beneath its
 
 81
-00:03:02,332 --> 00:03:03,232
+00:03:02,206 --> 00:03:03,106
 immense tonnage.
 
 82
-00:03:04,108 --> 00:03:06,483
+00:03:03,988 --> 00:03:06,363
 Town sentries on the watchtower loosed a frantic
 
 83
-00:03:06,496 --> 00:03:09,058
+00:03:06,376 --> 00:03:08,938
 volley of black-fletched iron arrows toward the charging
 
 84
-00:03:09,071 --> 00:03:09,833
+00:03:08,951 --> 00:03:09,713
 behemoth.
 
 85
-00:03:10,708 --> 00:03:12,971
+00:03:10,588 --> 00:03:12,851
 The arrows struck the troll's chest and boulder-like
 
 86
-00:03:12,983 --> 00:03:15,983
+00:03:12,863 --> 00:03:15,863
 shoulders, shattering into harmless wooden splinters against the
 
 87
-00:03:15,996 --> 00:03:17,183
+00:03:15,876 --> 00:03:17,063
 granite carapace.
 
 88
-00:03:18,052 --> 00:03:19,740
+00:03:17,932 --> 00:03:19,620
 The monster did not slow down,
 
 89
-00:03:19,840 --> 00:03:22,077
+00:03:19,720 --> 00:03:21,957
 tearing across the dirt clearing straight toward the
 
 90
-00:03:22,090 --> 00:03:23,802
+00:03:21,970 --> 00:03:23,682
 settlement's reinforced gates.
 
 91
-00:03:24,676 --> 00:03:26,964
+00:03:24,556 --> 00:03:26,844
 The noble apprentice shouted at his companions to
 
 92
-00:03:26,976 --> 00:03:27,876
+00:03:26,856 --> 00:03:27,756
 form the circle,
 
 93
-00:03:27,976 --> 00:03:30,339
+00:03:27,856 --> 00:03:30,219
 raising his silver wand into the freezing morning
 
 94
-00:03:30,351 --> 00:03:30,901
+00:03:30,231 --> 00:03:30,781
 wind.
 
 95
-00:03:31,780 --> 00:03:34,080
+00:03:31,660 --> 00:03:33,960
 The three noble apprentices linked hands,
 
 96
-00:03:34,180 --> 00:03:36,580
+00:03:34,060 --> 00:03:36,460
 projecting their collective external mana to weave an
 
 97
-00:03:36,593 --> 00:03:38,718
+00:03:36,473 --> 00:03:38,598
 azure defensive shield across the gate.
 
 98
-00:03:39,580 --> 00:03:42,243
+00:03:39,460 --> 00:03:42,123
 Concentric arcane rings rotated horizontally,
 
 99
-00:03:42,405 --> 00:03:44,593
+00:03:42,285 --> 00:03:44,473
 forming the Second Circle Azure Aegis into a
 
 100
-00:03:44,605 --> 00:03:45,980
+00:03:44,485 --> 00:03:45,860
 shimmering dome of light.
 
 101
-00:03:46,852 --> 00:03:49,702
+00:03:46,732 --> 00:03:49,582
 The noble apprentice boasted that imperial circle magic
 
 102
-00:03:49,715 --> 00:03:52,077
+00:03:49,595 --> 00:03:51,957
 was invincible against crude beast flesh.
 
 103
-00:03:52,948 --> 00:03:55,448
+00:03:52,828 --> 00:03:55,328
 Michael observed the luminous barrier with a practiced
 
 104
-00:03:55,461 --> 00:03:58,523
+00:03:55,341 --> 00:03:58,403
 glance, instantly calculating its brittle resonance and lack
 
 105
-00:03:58,536 --> 00:03:59,923
+00:03:58,416 --> 00:03:59,803
 of kinetic dispersion.
 
 106
-00:04:00,796 --> 00:04:03,946
+00:04:00,676 --> 00:04:03,826
 External mana shields without internal shock dispersal
 
 107
-00:04:03,959 --> 00:04:05,921
+00:04:03,839 --> 00:04:05,801
 were as fragile as thin glass against a
 
 108
-00:04:05,934 --> 00:04:07,021
+00:04:05,814 --> 00:04:06,901
 blunt siege hammer.
 
 109
-00:04:07,900 --> 00:04:09,938
+00:04:07,780 --> 00:04:09,818
 The lead troll reached the gate perimeter,
 
 110
-00:04:10,025 --> 00:04:12,038
+00:04:09,905 --> 00:04:11,918
 rearing back on its massive hind legs like
 
 111
-00:04:12,050 --> 00:04:13,938
+00:04:11,930 --> 00:04:13,818
 an avalanche given physical form.
 
 112
-00:04:14,812 --> 00:04:16,925
+00:04:14,692 --> 00:04:16,805
 It raised the colossal ironwood club with both
 
 113
-00:04:16,937 --> 00:04:19,100
+00:04:16,817 --> 00:04:18,980
 mossy fists and brought it crashing down onto
 
 114
-00:04:19,112 --> 00:04:20,562
+00:04:18,992 --> 00:04:20,442
 the crown of the azure dome.
 
 115
-00:04:21,436 --> 00:04:23,886
+00:04:21,316 --> 00:04:23,766
 An ear-splitting crack echoed across the settlement as
 
 116
-00:04:23,899 --> 00:04:26,249
+00:04:23,779 --> 00:04:26,129
 four tons of pure bludgeoning force collided with
 
 117
-00:04:26,261 --> 00:04:27,286
+00:04:26,141 --> 00:04:27,166
 the energy barrier.
 
 118
-00:04:28,156 --> 00:04:30,856
+00:04:28,036 --> 00:04:30,736
 Fractures spiderwebbed across the azure barrier in less
 
 119
-00:04:30,869 --> 00:04:31,631
+00:04:30,749 --> 00:04:31,511
 than a second,
 
 120
-00:04:31,756 --> 00:04:34,456
+00:04:31,636 --> 00:04:34,336
 the glowing runes screaming under impossible pressure.
 
 121
-00:04:35,332 --> 00:04:37,732
+00:04:35,212 --> 00:04:37,612
 The Second Circle Aegis shattered completely under the
 
 122
-00:04:37,745 --> 00:04:39,020
+00:04:37,625 --> 00:04:38,900
 troll's ironwood club,
 
 123
-00:04:39,082 --> 00:04:41,732
+00:04:38,962 --> 00:04:41,612
 bursting into harmless mana sparks across the dirt
 
 124
-00:04:41,745 --> 00:04:42,295
+00:04:41,625 --> 00:04:42,175
 road.
 
 125
-00:04:43,156 --> 00:04:45,556
+00:04:43,036 --> 00:04:45,436
 The violent backlash of collapsing mana tossed the
 
 126
-00:04:45,569 --> 00:04:48,331
+00:04:45,449 --> 00:04:48,211
 noble apprentices backward into the dirt courtyard as
 
 127
-00:04:48,344 --> 00:04:50,231
+00:04:48,224 --> 00:04:50,111
 the lead troll loomed over the breach.
 
 128
-00:04:51,100 --> 00:04:53,200
+00:04:50,980 --> 00:04:53,080
 From beside the inner palisade walk,
 
 129
-00:04:53,275 --> 00:04:55,863
+00:04:53,155 --> 00:04:55,743
 Rowan and Michael observed the panicked noble apprentice
 
 130
-00:04:55,875 --> 00:04:58,038
+00:04:55,755 --> 00:04:57,918
 scramble backward into the dirt courtyard,
 
 131
-00:04:58,163 --> 00:04:59,200
+00:04:58,043 --> 00:04:59,080
 his wand snapped.
 
 132
-00:05:00,076 --> 00:05:02,764
+00:04:59,956 --> 00:05:02,644
 Beside Michael, Rowan watched with grim resolve as
 
 133
-00:05:02,776 --> 00:05:05,789
+00:05:02,656 --> 00:05:05,669
 the two subordinate apprentices crawled frantically back toward
 
 134
-00:05:05,801 --> 00:05:06,926
+00:05:05,681 --> 00:05:06,806
 the town alleyways.
 
 135
-00:05:07,804 --> 00:05:09,842
+00:05:07,684 --> 00:05:09,722
 The lead mountain stone troll stepped over the
 
 136
-00:05:09,854 --> 00:05:11,879
+00:05:09,734 --> 00:05:11,759
 threshold of the outer palisade breach,
 
 137
-00:05:11,979 --> 00:05:14,317
+00:05:11,859 --> 00:05:14,197
 snorting steam into the freezing morning air.
 
 138
-00:05:15,196 --> 00:05:17,034
+00:05:15,076 --> 00:05:16,914
 The lead troll snorted a cloud of hot
 
 139
-00:05:17,046 --> 00:05:19,334
+00:05:16,926 --> 00:05:19,214
 steam, stepping over the threshold of the outer
 
 140
-00:05:19,346 --> 00:05:21,384
+00:05:19,226 --> 00:05:21,264
 palisade breach with lumbering malice.
 
 141
-00:05:22,252 --> 00:05:24,540
+00:05:22,132 --> 00:05:24,420
 Behind it, the second and third stone trolls
 
 142
-00:05:24,552 --> 00:05:27,190
+00:05:24,432 --> 00:05:27,070
 advanced, their glowing amber eyes fixed hungrily on
 
 143
-00:05:27,202 --> 00:05:28,490
+00:05:27,082 --> 00:05:28,370
 the helpless defenders.
 
 144
-00:05:29,356 --> 00:05:32,106
+00:05:29,236 --> 00:05:31,986
 Garrison sentries along the upper walkway abandoned their
 
 145
-00:05:32,119 --> 00:05:35,244
+00:05:31,999 --> 00:05:35,124
 posts, leaving only Rowan and five-year-old Michael before
 
 146
-00:05:35,256 --> 00:05:35,944
+00:05:35,136 --> 00:05:35,824
 the breach.
 
 147
-00:05:36,820 --> 00:05:38,820
+00:05:36,700 --> 00:05:38,700
 Rowan stepped in front of the fallen noble
 
 148
-00:05:38,833 --> 00:05:39,570
+00:05:38,713 --> 00:05:39,450
 apprentices,
 
 149
-00:05:39,720 --> 00:05:41,583
+00:05:39,600 --> 00:05:41,463
 raising his iron buckler with trembling,
 
 150
-00:05:41,658 --> 00:05:42,995
+00:05:41,538 --> 00:05:42,875
 determined resolution.
 
 151
-00:05:43,876 --> 00:05:46,226
+00:05:43,756 --> 00:05:46,106
 The veteran healer commanded the young apprentices to
 
 152
-00:05:46,239 --> 00:05:47,114
+00:05:46,119 --> 00:05:46,981
 get behind him,
 
 153
-00:05:47,201 --> 00:05:49,426
-bracing his boots into the frozen loam for
+00:05:47,056 --> 00:05:49,131
+bracing his boots into the packed loam for
 
 154
-00:05:49,439 --> 00:05:51,014
+00:05:49,144 --> 00:05:50,719
 a desperate final stand.
 
 155
-00:05:51,892 --> 00:05:54,030
+00:05:51,580 --> 00:05:53,718
 The lead troll raised its tree-trunk club,
 
 156
-00:05:54,080 --> 00:05:56,242
+00:05:53,768 --> 00:05:55,930
 preparing to smash the elderly physician and the
 
 157
-00:05:56,255 --> 00:05:58,080
+00:05:55,943 --> 00:05:57,768
 noble apprentices into paste.
 
 158
-00:05:58,948 --> 00:06:00,911
+00:05:58,636 --> 00:06:00,599
 Before the crushing blow could descend,
 
 159
-00:06:01,023 --> 00:06:04,273
+00:06:00,711 --> 00:06:03,961
 a small, composed silhouette slipped smoothly past Rowan's
 
 160
-00:06:04,286 --> 00:06:04,886
+00:06:03,974 --> 00:06:04,574
 flank.
 
 161
-00:06:05,764 --> 00:06:08,627
+00:06:05,452 --> 00:06:08,315
 Five-year-old Michael Montrey stepped calmly into the open
 
 162
-00:06:08,639 --> 00:06:11,139
+00:06:08,327 --> 00:06:10,827
 kill-zone between the trembling defenders and the three
 
 163
-00:06:11,152 --> 00:06:12,002
+00:06:10,840 --> 00:06:11,690
 behemoths.
 
 164
-00:06:12,868 --> 00:06:14,993
+00:06:12,556 --> 00:06:14,681
 His grey linen tunic fluttered gently in the
 
 165
-00:06:15,006 --> 00:06:16,318
+00:06:14,694 --> 00:06:16,006
 freezing morning breeze,
 
 166
-00:06:16,381 --> 00:06:18,906
+00:06:16,069 --> 00:06:18,594
 his small hands holding the blackwood quarterstaff with
 
 167
-00:06:18,918 --> 00:06:19,981
+00:06:18,606 --> 00:06:19,669
 effortless poise.
 
 168
-00:06:20,860 --> 00:06:22,573
+00:06:20,548 --> 00:06:22,261
 Rowan shouted in sheer panic,
 
 169
-00:06:22,635 --> 00:06:24,798
+00:06:22,323 --> 00:06:24,486
 lunging forward with outstretched arms to pull the
 
 170
-00:06:24,810 --> 00:06:26,735
+00:06:24,498 --> 00:06:26,423
 young boy back behind his shield.
 
 171
-00:06:27,604 --> 00:06:29,417
+00:06:27,292 --> 00:06:29,105
 From the dirt courtyard behind,
 
 172
-00:06:29,517 --> 00:06:31,729
+00:06:29,205 --> 00:06:31,417
 the fallen noble apprentice shrieked in terror as
 
 173
-00:06:31,742 --> 00:06:33,904
+00:06:31,430 --> 00:06:33,592
 he watched the small child advance toward the
 
 174
-00:06:33,917 --> 00:06:34,617
+00:06:33,605 --> 00:06:34,305
 monsters.
 
 175
-00:06:35,500 --> 00:06:36,863
+00:06:35,188 --> 00:06:36,551
 Michael did not look back;
 
 176
-00:06:37,013 --> 00:06:39,188
+00:06:36,701 --> 00:06:38,876
 he simply extended his left hand backward in
 
 177
-00:06:39,200 --> 00:06:41,213
+00:06:38,888 --> 00:06:40,901
 a calm gesture that pinned Rowan in place
 
 178
-00:06:41,225 --> 00:06:42,500
+00:06:40,913 --> 00:06:42,188
 with quiet authority.
 
 179
-00:06:43,372 --> 00:06:45,735
+00:06:43,060 --> 00:06:45,423
 His piercing cyan eyes remained locked onto the
 
 180
-00:06:45,747 --> 00:06:46,935
+00:06:45,435 --> 00:06:46,623
 colossal lead troll,
 
 181
-00:06:47,085 --> 00:06:48,160
+00:06:46,773 --> 00:06:47,848
 measuring its mass,
 
 182
-00:06:48,222 --> 00:06:49,297
+00:06:47,910 --> 00:06:48,985
 skeletal density,
 
 183
-00:06:49,522 --> 00:06:51,272
+00:06:49,210 --> 00:06:50,960
 and kinetic center of gravity.
 
 184
-00:06:52,156 --> 00:06:53,219
+00:06:51,844 --> 00:06:52,907
 Nine feet tall,
 
 185
-00:06:53,294 --> 00:06:55,119
+00:06:52,982 --> 00:06:54,807
 weighing approximately four tons,
 
 186
-00:06:55,219 --> 00:06:57,481
+00:06:54,907 --> 00:06:57,169
 with a granite carapace measuring three inches of
 
 187
-00:06:57,494 --> 00:06:58,906
+00:06:57,182 --> 00:06:58,594
 solid petrified stone.
 
 188
-00:06:59,788 --> 00:07:01,551
+00:06:59,476 --> 00:07:01,239
 To ordinary imperial mages,
 
 189
-00:07:01,701 --> 00:07:04,801
+00:07:01,389 --> 00:07:04,489
 this was an impenetrable walking mountain requiring high-tier
 
 190
-00:07:04,813 --> 00:07:06,113
+00:07:04,501 --> 00:07:05,801
 artillery bombardment.
 
 191
-00:07:06,988 --> 00:07:08,176
+00:07:06,676 --> 00:07:07,864
 To the Fourth Magius,
 
 192
-00:07:08,251 --> 00:07:11,326
+00:07:07,939 --> 00:07:11,014
 physical surface armor was completely and utterly irrelevant.
 
 193
-00:07:12,196 --> 00:07:14,171
+00:07:11,884 --> 00:07:13,859
 The lead mountain stone troll paused,
 
 194
-00:07:14,259 --> 00:07:16,546
+00:07:13,947 --> 00:07:16,234
 glaring down with amber eyes at the five-year-old
 
 195
-00:07:16,559 --> 00:07:17,971
+00:07:16,247 --> 00:07:17,659
 boy blocking its path.
 
 196
-00:07:18,844 --> 00:07:20,832
+00:07:18,532 --> 00:07:20,520
 To the colossal nine-foot stone beast,
 
 197
-00:07:20,919 --> 00:07:23,407
+00:07:20,607 --> 00:07:23,095
 the small black-haired child standing before it seemed
 
 198
-00:07:23,419 --> 00:07:25,207
+00:07:23,107 --> 00:07:24,895
 no more than a fragile insect.
 
 199
-00:07:26,068 --> 00:07:28,181
+00:07:25,756 --> 00:07:27,894
 The monster let out a deep guttural roar,
 
 200
-00:07:28,343 --> 00:07:30,506
+00:07:28,069 --> 00:07:30,244
 raising its massive stone fist high to smash
 
 201
-00:07:30,518 --> 00:07:32,643
-Michael flat into the frozen ground.
+00:07:30,256 --> 00:07:32,494
+Michael flat into the hard dirt ground.
 
 202
-00:07:33,508 --> 00:07:35,446
+00:07:33,364 --> 00:07:35,302
 The sentry on the gate walkway turned his
 
 203
-00:07:35,458 --> 00:07:38,008
+00:07:35,314 --> 00:07:37,864
 head away, unable to watch the impending slaughter
 
 204
-00:07:38,021 --> 00:07:39,333
+00:07:37,877 --> 00:07:39,189
 of an innocent child.
 
 205
-00:07:40,204 --> 00:07:41,542
+00:07:40,060 --> 00:07:41,398
 Michael did not flinch,
 
 206
-00:07:41,579 --> 00:07:42,367
+00:07:41,435 --> 00:07:42,223
 did not blink,
 
 207
-00:07:42,504 --> 00:07:44,292
+00:07:42,360 --> 00:07:44,148
 and did not take a single step backward
 
 208
-00:07:44,304 --> 00:07:45,304
+00:07:44,160 --> 00:07:45,160
 on the packed dirt.
 
 209
-00:07:46,180 --> 00:07:47,755
+00:07:46,036 --> 00:07:47,611
 Inside his mortal vessel,
 
 210
-00:07:47,868 --> 00:07:49,955
+00:07:47,724 --> 00:07:49,811
 azure mana circulated in flawless,
 
 211
-00:07:50,018 --> 00:07:53,268
+00:07:49,874 --> 00:07:53,124
 monotonic harmony through his cardiovascular conduits.
 
 212
-00:07:54,148 --> 00:07:56,323
+00:07:54,004 --> 00:07:56,179
 Every drop of liquid energy flowed toward his
 
 213
-00:07:56,336 --> 00:07:59,561
+00:07:56,192 --> 00:07:59,417
 right palm, vibrating at the precise resonant frequency
 
 214
-00:07:59,573 --> 00:08:00,861
+00:07:59,429 --> 00:08:00,717
 of crystalline stone.
 
 215
-00:08:01,732 --> 00:08:04,020
+00:08:01,588 --> 00:08:03,876
 His small feet adjusted by three inches,
 
 216
-00:08:04,120 --> 00:08:06,495
+00:08:03,976 --> 00:08:06,351
 anchoring firmly against the packed earth to establish
 
 217
-00:08:06,507 --> 00:08:08,482
+00:08:06,363 --> 00:08:08,338
 an absolute kinetic foundation.
 
 218
-00:08:09,364 --> 00:08:11,739
+00:08:09,220 --> 00:08:11,595
 The troll's colossal fist descended like a falling
 
 219
-00:08:11,752 --> 00:08:14,264
+00:08:11,608 --> 00:08:14,120
 boulder through the cold morning air directly toward
 
 220
-00:08:14,277 --> 00:08:15,464
+00:08:14,133 --> 00:08:15,320
 five-year-old Michael.
 
 221
-00:08:16,348 --> 00:08:18,986
+00:08:16,204 --> 00:08:18,842
 The sharp morning wind whipped Michael's raven-black hair
 
 222
-00:08:18,998 --> 00:08:20,173
+00:08:18,854 --> 00:08:20,029
 across his forehead,
 
 223
-00:08:20,311 --> 00:08:21,711
+00:08:20,167 --> 00:08:21,567
 his cyan eyes calm,
 
 224
-00:08:21,761 --> 00:08:23,111
+00:08:21,617 --> 00:08:22,967
 focused, and steady.
 
 225
-00:08:23,980 --> 00:08:25,468
+00:08:23,836 --> 00:08:25,324
 He lifted his right palm,
 
 226
-00:08:25,580 --> 00:08:26,555
+00:08:25,436 --> 00:08:26,411
 open and unarmed,
 
 227
-00:08:26,593 --> 00:08:29,493
+00:08:26,449 --> 00:08:29,349
 directly toward the descending mountain of jagged stone.
 
 228
-00:08:30,364 --> 00:08:32,627
+00:08:30,220 --> 00:08:32,483
 There were no glowing exterior circles,
 
 229
-00:08:32,702 --> 00:08:34,439
+00:08:32,558 --> 00:08:34,295
 no chanting of ancient verses,
 
 230
-00:08:34,564 --> 00:08:36,727
+00:08:34,420 --> 00:08:36,583
 and no theatrical displays of light.
 
 231
-00:08:37,588 --> 00:08:40,801
+00:08:37,444 --> 00:08:40,657
 Pure, undiluted kinetic transmission manifested the
 
 232
-00:08:40,813 --> 00:08:43,263
+00:08:40,669 --> 00:08:43,119
 forgotten master art of the First Magicians.
 
 233
-00:08:44,140 --> 00:08:47,053
+00:08:43,996 --> 00:08:46,909
 The colossal stone fist slammed directly into five-year-old
 
 234
-00:08:47,065 --> 00:08:49,803
+00:08:46,921 --> 00:08:49,659
 Michael's tiny open palm with tremendous momentum.
 
 235
-00:08:50,668 --> 00:08:52,668
+00:08:50,524 --> 00:08:52,524
 The settlement watchmen braced for the crunch of
 
 236
-00:08:52,681 --> 00:08:55,181
+00:08:52,537 --> 00:08:55,037
 bone, but Michael's small open palm arrested the
 
 237
-00:08:55,193 --> 00:08:56,943
+00:08:55,049 --> 00:08:56,799
 massive stone fist completely.
 
 238
-00:08:57,820 --> 00:09:00,433
+00:08:57,676 --> 00:09:00,289
 A sharp, ringing sonic chime vibrated through the
 
 239
-00:09:00,445 --> 00:09:03,458
+00:09:00,301 --> 00:09:03,314
 gate courtyard as the shockwave dissipated harmlessly into
 
 240
-00:09:03,470 --> 00:09:04,220
+00:09:03,326 --> 00:09:04,076
 the cold air.
 
 241
-00:09:05,092 --> 00:09:07,917
+00:09:04,948 --> 00:09:07,773
 The troll's four-ton downward momentum halted instantly,
 
 242
-00:09:08,055 --> 00:09:10,655
+00:09:07,911 --> 00:09:10,511
 arrested dead in mid-air by a child's five-year-old
 
 243
-00:09:10,667 --> 00:09:11,155
+00:09:10,523 --> 00:09:11,011
 arm.
 
 244
-00:09:12,028 --> 00:09:14,328
+00:09:11,884 --> 00:09:14,184
 The dirt road beneath Michael's boots did not
 
 245
-00:09:14,341 --> 00:09:17,103
+00:09:14,197 --> 00:09:16,959
 even crater, every ounce of downward kinetic force
 
 246
-00:09:17,116 --> 00:09:18,716
+00:09:16,972 --> 00:09:18,572
 neutralized by his palm.
 
 247
-00:09:19,588 --> 00:09:22,126
+00:09:19,444 --> 00:09:21,982
 The lead troll's amber eyes widened in profound,
 
 248
-00:09:22,238 --> 00:09:24,963
+00:09:22,094 --> 00:09:24,819
 animalistic bewilderment as its blow stopped cold.
 
 249
-00:09:25,828 --> 00:09:27,666
+00:09:25,684 --> 00:09:27,522
 It tried to push downward with all its
 
 250
-00:09:27,678 --> 00:09:30,228
+00:09:27,534 --> 00:09:30,084
 massive weight, but Michael's small arm remained as
 
 251
-00:09:30,241 --> 00:09:31,828
+00:09:30,097 --> 00:09:31,684
 immovable as an ancient pillar.
 
 252
-00:09:32,692 --> 00:09:35,192
+00:09:32,548 --> 00:09:35,048
 Michael calmly confirmed that the kinetic vector was
 
 253
-00:09:35,205 --> 00:09:35,755
+00:09:35,061 --> 00:09:35,611
 captured,
 
 254
-00:09:35,917 --> 00:09:38,017
+00:09:35,773 --> 00:09:37,873
 his breath puffing into the freezing air.
 
 255
-00:09:38,884 --> 00:09:40,522
+00:09:38,740 --> 00:09:40,378
 With a slight twist of his wrist,
 
 256
-00:09:40,597 --> 00:09:42,797
+00:09:40,453 --> 00:09:42,653
 Michael slid his palm along the troll's stony
 
 257
-00:09:42,809 --> 00:09:45,147
+00:09:42,665 --> 00:09:45,003
 forearm and stepped into its chest guard.
 
 258
-00:09:46,012 --> 00:09:48,575
+00:09:45,868 --> 00:09:48,431
 His small open palm planted firmly against the
 
 259
-00:09:48,587 --> 00:09:50,912
+00:09:48,443 --> 00:09:50,768
 center of the behemoth's granite breastplate.
 
 260
-00:09:51,796 --> 00:09:54,671
+00:09:51,652 --> 00:09:54,527
 He calibrated the internal kinetic frequency to match
 
 261
-00:09:54,684 --> 00:09:56,784
+00:09:54,540 --> 00:09:56,640
 the resonance of petrified stone marrow.
 
 262
-00:09:57,652 --> 00:10:00,840
+00:09:57,508 --> 00:10:00,696
 A deep, subterranean hum surged through Michael's arm,
 
 263
-00:10:00,902 --> 00:10:04,127
+00:10:00,758 --> 00:10:03,983
 transmitting high-frequency kinetic vibrations directly through
 
 264
-00:10:04,140 --> 00:10:05,177
+00:10:03,996 --> 00:10:05,033
 the stone shell.
 
 265
-00:10:06,052 --> 00:10:07,015
+00:10:05,908 --> 00:10:06,871
 To the onlookers,
 
 266
-00:10:07,102 --> 00:10:09,140
+00:10:06,958 --> 00:10:08,996
 nothing appeared to happen on the outside;
 
 267
-00:10:09,227 --> 00:10:11,915
+00:10:09,083 --> 00:10:11,771
 the troll's granite chest remained completely smooth and
 
 268
-00:10:11,927 --> 00:10:12,765
+00:10:11,783 --> 00:10:12,621
 undamaged.
 
 269
-00:10:13,636 --> 00:10:15,324
+00:10:13,492 --> 00:10:15,180
 Deep within the beast's ribcage,
 
 270
-00:10:15,411 --> 00:10:18,124
+00:10:15,267 --> 00:10:17,980
 the destructive sonic wave detonated with surgical,
 
 271
-00:10:18,236 --> 00:10:19,374
+00:10:18,092 --> 00:10:19,230
 clinical precision.
 
 272
-00:10:20,236 --> 00:10:21,874
+00:10:20,092 --> 00:10:21,730
 The troll's petrified lungs,
 
 273
-00:10:22,061 --> 00:10:24,874
+00:10:21,917 --> 00:10:24,730
 heart, and vital marrow were instantly liquefied into
 
 274
-00:10:24,886 --> 00:10:26,286
+00:10:24,742 --> 00:10:26,142
 frothing organic soup.
 
 275
-00:10:27,148 --> 00:10:29,173
+00:10:27,004 --> 00:10:29,029
 The lead troll froze completely rigid,
 
 276
-00:10:29,248 --> 00:10:31,323
+00:10:29,104 --> 00:10:31,179
 its amber eyes losing their glow and glazing
 
 277
-00:10:31,336 --> 00:10:32,286
+00:10:31,192 --> 00:10:32,142
 over into dull,
 
 278
-00:10:32,386 --> 00:10:33,223
+00:10:32,242 --> 00:10:33,079
 empty stone.
 
 279
-00:10:34,084 --> 00:10:35,884
+00:10:33,940 --> 00:10:35,740
 A faint plume of white steam hissed out
 
 280
-00:10:35,897 --> 00:10:38,272
+00:10:35,753 --> 00:10:38,128
 between its stone tusks as its internal organs
 
 281
-00:10:38,284 --> 00:10:39,522
+00:10:38,140 --> 00:10:39,378
 completely gave out.
 
 282
-00:10:40,396 --> 00:10:42,334
+00:10:40,252 --> 00:10:42,190
 Michael took a casual step backward on the
 
 283
-00:10:42,346 --> 00:10:45,084
+00:10:42,202 --> 00:10:44,940
 packed earth, flicking dust from his linen sleeve.
 
 284
-00:10:45,964 --> 00:10:48,202
+00:10:45,820 --> 00:10:48,058
 The colossal nine-foot troll swayed once,
 
 285
-00:10:48,302 --> 00:10:50,227
+00:10:48,158 --> 00:10:50,083
 groaned with the sound of grinding rock,
 
 286
-00:10:50,339 --> 00:10:52,264
+00:10:50,195 --> 00:10:52,120
 and toppled forward onto its face.
 
 287
-00:10:53,140 --> 00:10:55,278
-The frozen ground shook as the massive carcass
+00:10:52,996 --> 00:10:55,009
+The solid ground shook as the massive carcass
 
 288
-00:10:55,290 --> 00:10:56,215
+00:10:55,021 --> 00:10:55,959
 struck the dirt,
 
 289
-00:10:56,240 --> 00:10:58,103
+00:10:56,046 --> 00:10:57,909
 completely lifeless and unmoving.
 
 290
-00:10:58,972 --> 00:11:01,372
+00:10:58,780 --> 00:11:01,180
 Not a single crack marred its external granite
 
 291
-00:11:01,385 --> 00:11:03,935
+00:11:01,193 --> 00:11:03,743
 armor, yet the beast was completely and indisputably
 
 292
-00:11:03,947 --> 00:11:04,422
+00:11:03,755 --> 00:11:04,230
 dead.
 
 293
-00:11:05,284 --> 00:11:08,409
+00:11:05,092 --> 00:11:08,217
 Absolute, suffocating silence fell over the Oakhaven
 
 294
-00:11:08,422 --> 00:11:10,947
+00:11:08,230 --> 00:11:10,755
 perimeter gate as defenders stared in disbelief.
 
 295
-00:11:11,812 --> 00:11:13,325
+00:11:11,620 --> 00:11:13,133
 Rowan's jaw hung slack,
 
 296
-00:11:13,437 --> 00:11:15,675
+00:11:13,245 --> 00:11:15,483
 his buckler slipping downward in his numbed hand
 
 297
-00:11:15,687 --> 00:11:17,487
+00:11:15,495 --> 00:11:17,295
 as he stared at the fallen monster.
 
 298
-00:11:18,364 --> 00:11:20,427
+00:11:18,172 --> 00:11:20,235
 The young noble apprentice sat frozen in the
 
 299
-00:11:20,439 --> 00:11:20,814
+00:11:20,247 --> 00:11:20,622
 mud,
 
 300
-00:11:20,964 --> 00:11:23,064
+00:11:20,772 --> 00:11:22,872
 his mouth opening and closing like a landed
 
 301
-00:11:23,077 --> 00:11:23,652
+00:11:22,885 --> 00:11:23,460
 fish.
 
 302
-00:11:24,532 --> 00:11:26,557
+00:11:24,340 --> 00:11:26,365
 The two remaining stone trolls stared at their
 
 303
-00:11:26,570 --> 00:11:29,482
+00:11:26,378 --> 00:11:29,290
 fallen leader, their brutish minds struggling to process
 
 304
-00:11:29,495 --> 00:11:30,432
+00:11:29,303 --> 00:11:30,240
 the sudden death.
 
 305
-00:11:31,300 --> 00:11:33,863
+00:11:31,108 --> 00:11:33,671
 Blind primal rage overtook the two remaining stone
 
 306
-00:11:33,875 --> 00:11:36,550
+00:11:33,683 --> 00:11:36,358
 trolls as both roared and charged toward five-year-old
 
 307
-00:11:36,563 --> 00:11:38,163
+00:11:36,371 --> 00:11:37,971
 Michael across the courtyard.
 
 308
-00:11:39,028 --> 00:11:41,416
+00:11:38,836 --> 00:11:41,224
 The left troll swung its jagged tree-trunk club
 
 309
-00:11:41,428 --> 00:11:43,291
+00:11:41,236 --> 00:11:43,099
 horizontally across the dirt road,
 
 310
-00:11:43,416 --> 00:11:45,328
+00:11:43,224 --> 00:11:45,136
 aiming to sweep Michael off his feet.
 
 311
-00:11:46,204 --> 00:11:48,667
+00:11:46,012 --> 00:11:48,475
 The right troll lunged forward with petrified claws
 
 312
-00:11:48,679 --> 00:11:51,654
+00:11:48,487 --> 00:11:51,462
 extended, attempting to seize five-year-old Michael with raw
 
 313
-00:11:51,667 --> 00:11:52,654
+00:11:51,475 --> 00:11:52,462
 brute strength.
 
 314
-00:11:53,524 --> 00:11:55,462
+00:11:53,332 --> 00:11:55,270
 Michael remained perfectly poised,
 
 315
-00:11:55,549 --> 00:11:57,987
+00:11:55,357 --> 00:11:57,795
 shifting his carved blackwood staff from his shoulder
 
 316
-00:11:57,999 --> 00:12:00,437
+00:11:57,807 --> 00:12:00,245
 into a balanced two-handed ready stance.
 
 317
-00:12:01,300 --> 00:12:03,850
+00:12:01,108 --> 00:12:03,658
 The dark blackwood quarterstaff hummed as Michael fed
 
 318
-00:12:03,863 --> 00:12:06,163
+00:12:03,671 --> 00:12:05,971
 a fraction of his resonant kinetic mana into
 
 319
-00:12:06,175 --> 00:12:07,400
+00:12:05,983 --> 00:12:07,208
 its carved veins.
 
 320
-00:12:08,284 --> 00:12:10,709
+00:12:08,092 --> 00:12:10,517
 Michael ducked beneath the sweeping tree-trunk club with
 
 321
-00:12:10,722 --> 00:12:13,634
+00:12:10,530 --> 00:12:13,442
 millimeter precision, closing the distance against the left
 
 322
-00:12:13,647 --> 00:12:14,159
+00:12:13,455 --> 00:12:13,967
 troll.
 
 323
-00:12:15,028 --> 00:12:17,091
+00:12:14,836 --> 00:12:16,899
 Pivoting smoothly on his leather boots,
 
 324
-00:12:17,166 --> 00:12:19,078
+00:12:16,974 --> 00:12:18,886
 Michael swung the butt of the blackwood staff
 
 325
-00:12:19,091 --> 00:12:20,728
+00:12:18,899 --> 00:12:20,536
 into the attacking monster's knee.
 
 326
-00:12:21,604 --> 00:12:23,754
+00:12:21,412 --> 00:12:23,562
 The staff tapped the left troll's patella tendon
 
 327
-00:12:23,767 --> 00:12:25,742
+00:12:23,575 --> 00:12:25,550
 with no more apparent effort than tapping an
 
 328
-00:12:25,754 --> 00:12:26,404
+00:12:25,562 --> 00:12:26,212
 eggshell.
 
 329
-00:12:27,268 --> 00:12:29,456
+00:12:27,076 --> 00:12:29,264
 The kinetic energy delivered was equivalent to a
 
 330
-00:12:29,468 --> 00:12:31,856
+00:12:29,276 --> 00:12:31,664
 runaway iron mine cart hitting a solid granite
 
 331
-00:12:31,868 --> 00:12:32,343
+00:12:31,676 --> 00:12:32,151
 wall.
 
 332
-00:12:33,220 --> 00:12:35,308
+00:12:33,028 --> 00:12:35,116
 The troll's massive left leg snapped inward at
 
 333
-00:12:35,320 --> 00:12:38,470
+00:12:35,128 --> 00:12:38,278
 the joint, its heavy stone kneecap pulverized internally.
 
 334
-00:12:39,340 --> 00:12:40,978
+00:12:39,148 --> 00:12:40,786
 The beast collapsed to its knee with a
 
 335
-00:12:40,990 --> 00:12:44,503
+00:12:40,798 --> 00:12:44,311
 pained howl, its balance instantly and irrevocably dismantled.
 
 336
-00:12:45,364 --> 00:12:46,527
+00:12:45,172 --> 00:12:46,335
 Before it could recover,
 
 337
-00:12:46,627 --> 00:12:48,389
+00:12:46,435 --> 00:12:48,197
 Michael fluidly spun the staff,
 
 338
-00:12:48,427 --> 00:12:50,502
+00:12:48,235 --> 00:12:50,310
 driving the tapered tip into the soft nerve
 
 339
-00:12:50,514 --> 00:12:52,177
+00:12:50,322 --> 00:12:51,985
 cluster beneath its jawline.
 
 340
-00:12:53,044 --> 00:12:55,444
+00:12:52,852 --> 00:12:55,252
 A quiet pulse of kinetic energy shot straight
 
 341
-00:12:55,457 --> 00:12:56,619
+00:12:55,265 --> 00:12:56,427
 into its brainstem,
 
 342
-00:12:56,744 --> 00:12:59,182
+00:12:56,552 --> 00:12:58,990
 severing the monster's nervous system in an instant.
 
 343
-00:13:00,052 --> 00:13:02,777
+00:12:59,860 --> 00:13:02,585
 The second troll slumped sideways into the snowbank,
 
 344
-00:13:02,840 --> 00:13:04,502
+00:13:02,648 --> 00:13:04,310
 dead before its head hit the loam.
 
 345
-00:13:05,380 --> 00:13:07,555
+00:13:05,188 --> 00:13:07,363
 The third troll swung its claws wildly in
 
 346
-00:13:07,568 --> 00:13:10,655
+00:13:07,376 --> 00:13:10,463
 panic, missing entirely as Michael glided backward across
 
 347
-00:13:10,668 --> 00:13:11,918
+00:13:10,476 --> 00:13:11,726
 the dirt courtyard.
 
 348
-00:13:12,796 --> 00:13:15,046
+00:13:12,604 --> 00:13:14,854
 Michael stood firmly planted on the packed dirt
 
 349
-00:13:15,059 --> 00:13:15,946
+00:13:14,867 --> 00:13:15,754
 with his staff,
 
 350
-00:13:16,046 --> 00:13:18,771
+00:13:15,854 --> 00:13:18,579
 calmly noting that panicked flailing without alignment was
 
 351
-00:13:18,784 --> 00:13:19,471
+00:13:18,592 --> 00:13:19,279
 useless.
 
 352
-00:13:20,332 --> 00:13:22,620
+00:13:20,140 --> 00:13:22,428
 He parried the third beast's stony forearm with
 
 353
-00:13:22,632 --> 00:13:24,007
+00:13:22,440 --> 00:13:23,815
 the blackwood quarterstaff,
 
 354
-00:13:24,132 --> 00:13:26,320
+00:13:23,940 --> 00:13:26,128
 absorbing the kinetic shock effortlessly.
 
 355
-00:13:27,196 --> 00:13:29,609
+00:13:27,004 --> 00:13:29,417
 Michael vaulted lightly into the cold air above
 
 356
-00:13:29,621 --> 00:13:32,321
+00:13:29,429 --> 00:13:32,129
 the beast, his small five-year-old body executing a
 
 357
-00:13:32,334 --> 00:13:34,059
+00:13:32,142 --> 00:13:33,867
 clean horizontal rotation.
 
 358
-00:13:34,924 --> 00:13:36,362
+00:13:34,732 --> 00:13:36,170
 At the apex of his leap,
 
 359
-00:13:36,474 --> 00:13:38,274
+00:13:36,282 --> 00:13:38,082
 he drove the spiral head of the blackwood
 
 360
-00:13:38,287 --> 00:13:40,299
+00:13:38,095 --> 00:13:40,107
 staff directly into the base of the troll's
 
 361
-00:13:40,312 --> 00:13:40,849
+00:13:40,120 --> 00:13:40,657
 skull.
 
 362
-00:13:41,716 --> 00:13:44,704
+00:13:41,524 --> 00:13:44,512
 A concentrated shockwave rippled across the monster's neck,
 
 363
-00:13:44,891 --> 00:13:48,029
+00:13:44,699 --> 00:13:47,837
 sending internal fractures tearing through its cranial core.
 
 364
-00:13:48,892 --> 00:13:50,755
+00:13:48,700 --> 00:13:50,563
 The third troll collapsed instantly,
 
 365
-00:13:50,842 --> 00:13:53,130
+00:13:50,650 --> 00:13:52,938
 crashing down alongside its dead brethren with a
 
 366
-00:13:53,142 --> 00:13:54,692
+00:13:52,950 --> 00:13:54,500
 heavy, final thud.
 
 367
-00:13:55,564 --> 00:13:58,014
+00:13:55,372 --> 00:13:57,822
 Three colossal mountain stone trolls lay dead in
 
 368
-00:13:58,027 --> 00:14:00,452
+00:13:57,835 --> 00:14:00,260
 the courtyard within forty seconds of entering.
 
 369
-00:14:01,324 --> 00:14:03,524
+00:14:01,132 --> 00:14:03,332
 Michael landed lightly on his boots upon the
 
 370
-00:14:03,537 --> 00:14:05,999
+00:14:03,345 --> 00:14:05,807
 packed earth, his breathing slow and steady,
 
 371
-00:14:06,099 --> 00:14:07,824
+00:14:05,907 --> 00:14:07,632
 without a single speck of dust on his
 
 372
-00:14:07,837 --> 00:14:08,424
+00:14:07,645 --> 00:14:08,232
 tunic.
 
 373
-00:14:09,292 --> 00:14:11,405
+00:14:09,100 --> 00:14:11,213
 The cold frontier wind was the only sound
 
 374
-00:14:11,417 --> 00:14:13,767
+00:14:11,225 --> 00:14:13,575
 whistling through the open palisade gates across the
 
 375
-00:14:13,780 --> 00:14:14,792
+00:14:13,588 --> 00:14:14,600
 silent clearing.
 
 376
-00:14:15,676 --> 00:14:17,164
+00:14:15,484 --> 00:14:16,972
 Dozens of town sentries,
 
 377
-00:14:17,264 --> 00:14:19,576
+00:14:17,072 --> 00:14:19,384
 trackers, and gate lookouts stood frozen on the
 
 378
-00:14:19,589 --> 00:14:22,076
+00:14:19,397 --> 00:14:21,884
 walls, their crossbows lowered and forgotten.
 
 379
-00:14:22,948 --> 00:14:24,986
+00:14:22,756 --> 00:14:24,794
 From across the snowy gate courtyard,
 
 380
-00:14:25,023 --> 00:14:27,686
+00:14:24,831 --> 00:14:27,494
 master Rowan and young Michael observed the trembling
 
 381
-00:14:27,698 --> 00:14:29,423
+00:14:27,506 --> 00:14:29,231
 noble apprentice huddled in the mud.
 
 382
-00:14:30,292 --> 00:14:32,842
+00:14:30,100 --> 00:14:32,650
 Beside Michael, Rowan watched in silence as the
 
 383
-00:14:32,855 --> 00:14:35,530
+00:14:32,663 --> 00:14:35,338
 subordinate apprentices stammered in hushed disbelief at the
 
 384
-00:14:35,542 --> 00:14:36,392
+00:14:35,350 --> 00:14:36,200
 clean victory.
 
 385
-00:14:37,276 --> 00:14:39,789
+00:14:37,084 --> 00:14:39,597
 They stared at the three giant stone carcasses,
 
 386
-00:14:39,876 --> 00:14:42,714
+00:14:39,684 --> 00:14:42,522
 unable to reconcile imperial theory with the reality
 
 387
-00:14:42,726 --> 00:14:43,514
+00:14:42,534 --> 00:14:43,322
 before them.
 
 388
-00:14:44,380 --> 00:14:46,780
+00:14:44,188 --> 00:14:46,588
 Elder Rowan slowly lowered his short sword,
 
 389
-00:14:46,893 --> 00:14:48,905
+00:14:46,701 --> 00:14:48,713
 his craggy chest heaving as he looked between
 
 390
-00:14:48,918 --> 00:14:50,705
+00:14:48,726 --> 00:14:50,513
 the fallen monsters and his ward.
 
 391
-00:14:51,580 --> 00:14:53,705
+00:14:51,388 --> 00:14:53,513
 Michael knelt down on the packed earth beside
 
 392
-00:14:53,718 --> 00:14:55,655
+00:14:53,526 --> 00:14:55,463
 the chest of the fallen lead mountain stone
 
 393
-00:14:55,668 --> 00:14:57,330
+00:14:55,476 --> 00:14:57,138
 troll, inspecting the beast.
 
 394
-00:14:58,204 --> 00:15:00,604
+00:14:58,012 --> 00:15:00,412
 Michael drew his small bone hunting knife,
 
 395
-00:15:00,679 --> 00:15:02,967
+00:15:00,487 --> 00:15:02,775
 preparing to harvest the unblemished granite core from
 
 396
-00:15:02,979 --> 00:15:04,054
+00:15:02,787 --> 00:15:03,862
 the fallen monster.
 
 397
-00:15:04,924 --> 00:15:07,462
+00:15:04,732 --> 00:15:07,270
 Because the kinetic destruction had been directed inward
 
 398
-00:15:07,474 --> 00:15:08,724
+00:15:07,282 --> 00:15:08,532
 with surgical precision,
 
 399
-00:15:08,849 --> 00:15:11,312
+00:15:08,657 --> 00:15:11,120
 the outer shell remained pristine and uncracked.
 
 400
-00:15:12,172 --> 00:15:14,435
+00:15:11,980 --> 00:15:14,243
 The precious beast core housed within the thoracic
 
 401
-00:15:14,447 --> 00:15:17,185
+00:15:14,255 --> 00:15:16,993
 cavity was completely intact and unburnt by foreign
 
 402
-00:15:17,197 --> 00:15:18,235
+00:15:17,005 --> 00:15:18,043
 elemental fire.
 
 403
-00:15:19,108 --> 00:15:21,508
+00:15:18,916 --> 00:15:21,316
 Michael made three precise cuts along the fissures
 
 404
-00:15:21,521 --> 00:15:22,533
+00:15:21,329 --> 00:15:22,341
 of the stone hide,
 
 405
-00:15:22,596 --> 00:15:24,771
+00:15:22,404 --> 00:15:24,579
 peeling back a flap of petrified tissue.
 
 406
-00:15:25,636 --> 00:15:28,349
+00:15:25,444 --> 00:15:28,157
 Reaching inside the beast's chest with steady fingers,
 
 407
-00:15:28,461 --> 00:15:30,886
+00:15:28,269 --> 00:15:30,694
 Michael withdrew a glowing amber crystal that pulsed
 
 408
-00:15:30,899 --> 00:15:31,949
+00:15:30,707 --> 00:15:31,757
 with earthen mana.
 
 409
-00:15:32,812 --> 00:15:36,262
+00:15:32,620 --> 00:15:36,070
 A flawless Tier 1 Earth-Beast Core completely unblemished,
 
 410
-00:15:36,362 --> 00:15:38,962
+00:15:36,170 --> 00:15:38,770
 carrying one hundred percent of its native alchemical
 
 411
-00:15:38,975 --> 00:15:39,687
+00:15:38,783 --> 00:15:39,495
 potency.
 
 412
-00:15:40,564 --> 00:15:41,952
+00:15:40,372 --> 00:15:41,760
 In the imperial capital,
 
 413
-00:15:42,089 --> 00:15:43,802
+00:15:41,897 --> 00:15:43,610
 a core of this grade and purity would
 
 414
-00:15:43,814 --> 00:15:46,189
+00:15:43,622 --> 00:15:45,997
 sell for hundreds of silver crowns among master
 
 415
-00:15:46,202 --> 00:15:47,064
+00:15:46,010 --> 00:15:46,872
 alchemists.
 
 416
-00:15:47,932 --> 00:15:50,157
+00:15:47,740 --> 00:15:49,965
 Michael wiped the viscous residue from the amber
 
 417
-00:15:50,170 --> 00:15:51,782
+00:15:49,978 --> 00:15:51,590
 core with a clean linen cloth,
 
 418
-00:15:51,882 --> 00:15:54,482
+00:15:51,690 --> 00:15:54,290
 placing the glowing stone into his linen pouch.
 
 419
-00:15:55,348 --> 00:15:57,661
+00:15:55,156 --> 00:15:57,469
 Moving systematically across the courtyard,
 
 420
-00:15:57,711 --> 00:16:00,198
+00:15:57,519 --> 00:16:00,006
 Michael harvested the remaining two amber cores from
 
 421
-00:16:00,211 --> 00:16:02,173
+00:16:00,019 --> 00:16:01,981
 the other two fallen stone trolls.
 
 422
-00:16:03,052 --> 00:16:05,727
+00:16:02,860 --> 00:16:05,535
 Three pristine cores were secured the exact raw
 
 423
-00:16:05,740 --> 00:16:09,765
+00:16:05,548 --> 00:16:09,573
 materials needed to refine high-potency marrow saturation draughts.
 
 424
-00:16:10,636 --> 00:16:11,586
+00:16:10,444 --> 00:16:11,394
 Michael stood up,
 
 425
-00:16:11,661 --> 00:16:12,861
+00:16:11,469 --> 00:16:12,669
 sheathed his bone knife,
 
 426
-00:16:12,961 --> 00:16:15,511
+00:16:12,769 --> 00:16:15,319
 and slung his carved blackwood staff casually across
 
 427
-00:16:15,524 --> 00:16:16,286
+00:16:15,332 --> 00:16:16,094
 his shoulder.
 
 428
-00:16:17,164 --> 00:16:19,102
+00:16:16,972 --> 00:16:18,910
 He turned and walked back toward the open
 
 429
-00:16:19,114 --> 00:16:21,902
+00:16:18,922 --> 00:16:21,710
 timber gate, his small boots tapping rhythmically along
 
 430
-00:16:21,914 --> 00:16:23,114
+00:16:21,722 --> 00:16:22,922
 the packed dirt road.
 
 431
-00:16:23,980 --> 00:16:25,393
+00:16:23,788 --> 00:16:25,201
 As he approached the portal,
 
 432
-00:16:25,443 --> 00:16:27,768
+00:16:25,251 --> 00:16:27,576
 the garrison sentries parted automatically,
 
 433
-00:16:27,843 --> 00:16:30,555
+00:16:27,651 --> 00:16:30,363
 stepping back against the walls with profound reverence.
 
 434
-00:16:31,420 --> 00:16:33,695
+00:16:31,228 --> 00:16:33,503
 The young noble scrambled backward into the dirt
 
 435
-00:16:33,708 --> 00:16:35,670
+00:16:33,516 --> 00:16:35,478
 courtyard as Michael walked past,
 
 436
-00:16:35,795 --> 00:16:38,183
+00:16:35,603 --> 00:16:37,991
 averting his eyes in humiliating cowardice.
 
 437
-00:16:39,052 --> 00:16:41,340
+00:16:38,860 --> 00:16:41,148
 Michael did not even spare the trembling noble
 
 438
-00:16:41,352 --> 00:16:42,852
+00:16:41,160 --> 00:16:42,660
 apprentice a single glance,
 
 439
-00:16:42,940 --> 00:16:45,577
+00:16:42,748 --> 00:16:45,385
 regarding him as no more significant than roadside
 
 440
-00:16:45,590 --> 00:16:46,140
+00:16:45,398 --> 00:16:45,948
 gravel.
 
 441
-00:16:47,020 --> 00:16:48,720
+00:16:46,828 --> 00:16:48,528
 He stopped beside Elder Rowan,
 
 442
-00:16:48,795 --> 00:16:50,795
+00:16:48,603 --> 00:16:50,603
 looking up at the stunned physician with calm,
 
 443
-00:16:50,920 --> 00:16:52,508
+00:16:50,728 --> 00:16:52,316
 affectionate cyan eyes.
 
 444
-00:16:53,380 --> 00:16:55,668
+00:16:53,188 --> 00:16:55,476
 He quietly informed Rowan that the northern gate
 
 445
-00:16:55,680 --> 00:16:56,918
+00:16:55,488 --> 00:16:56,726
 threat was neutralized,
 
 446
-00:16:57,055 --> 00:16:58,793
+00:16:56,863 --> 00:16:58,601
 asking if they might return to the shop
 
 447
-00:16:58,805 --> 00:16:59,655
+00:16:58,613 --> 00:16:59,463
 for breakfast.
 
 448
-00:17:00,532 --> 00:17:02,545
+00:17:00,340 --> 00:17:02,353
 The heavy oak street door of Rowan Thorne's
 
 449
-00:17:02,557 --> 00:17:04,357
+00:17:02,365 --> 00:17:04,165
 apothecary shop closed with a solid,
 
 450
-00:17:04,507 --> 00:17:07,732
+00:17:04,315 --> 00:17:07,540
 reassuring thud, bolted firmly against the town chatter.
 
 451
-00:17:08,596 --> 00:17:11,609
+00:17:08,404 --> 00:17:11,417
 Inside, the warm rustic workshop on High Street was
 
 452
-00:17:11,621 --> 00:17:13,971
+00:17:11,429 --> 00:17:13,779
 filled with the familiar comforting scent of cedar,
 
 453
-00:17:13,996 --> 00:17:16,596
+00:17:13,804 --> 00:17:16,404
 dried sage, and crackling pine embers.
 
 454
-00:17:17,476 --> 00:17:19,976
+00:17:17,284 --> 00:17:19,784
 Elder Rowan leaned against the bolted timber door,
 
 455
-00:17:20,101 --> 00:17:22,526
+00:17:19,909 --> 00:17:22,334
 exhaling a shuddering breath that sounded like twenty
 
 456
-00:17:22,539 --> 00:17:24,164
+00:17:22,347 --> 00:17:23,972
 years leaving his chest.
 
 457
-00:17:25,036 --> 00:17:26,774
+00:17:24,844 --> 00:17:26,582
 He wiped a layer of cold sweat from
 
 458
-00:17:26,786 --> 00:17:28,474
+00:17:26,594 --> 00:17:28,282
 his forehead with his wool sleeve,
 
 459
-00:17:28,524 --> 00:17:31,511
+00:17:28,332 --> 00:17:31,319
 staring at five-year-old Michael in bewildered silence.
 
 460
-00:17:32,380 --> 00:17:35,143
+00:17:32,188 --> 00:17:34,951
 Michael calmly placed his blackwood quarterstaff into the
 
 461
-00:17:35,155 --> 00:17:37,605
+00:17:34,963 --> 00:17:37,413
 corner rack, unbuckling his canvas pouch on the
 
 462
-00:17:37,618 --> 00:17:39,218
+00:17:37,426 --> 00:17:39,026
 polished oak service counter.
 
 463
-00:17:40,084 --> 00:17:42,497
+00:17:39,892 --> 00:17:42,305
 Three glowing amber crystals tumbled out onto the
 
 464
-00:17:42,509 --> 00:17:45,484
+00:17:42,317 --> 00:17:45,292
 dark wood, illuminating the rustic workshop with warm
 
 465
-00:17:45,497 --> 00:17:46,584
+00:17:45,305 --> 00:17:46,392
 earthen radiance.
 
 466
-00:17:47,452 --> 00:17:49,052
+00:17:47,260 --> 00:17:48,860
 Rowan walked over slowly,
 
 467
-00:17:49,115 --> 00:17:51,490
+00:17:48,923 --> 00:17:51,298
 his calloused healer fingers trembling slightly as he
 
 468
-00:17:51,502 --> 00:17:53,315
+00:17:51,310 --> 00:17:53,123
 picked up the largest amber core.
 
 469
-00:17:54,196 --> 00:17:55,671
+00:17:54,004 --> 00:17:55,479
 He held it up to the warm amber
 
 470
-00:17:55,684 --> 00:17:58,671
+00:17:55,492 --> 00:17:58,479
 lantern light, inspecting the internal mana matrix with
 
 471
-00:17:58,684 --> 00:18:00,946
+00:17:58,492 --> 00:18:00,754
 decades of veteran herbalist experience.
 
 472
-00:18:01,828 --> 00:18:03,666
+00:18:01,636 --> 00:18:03,474
 The physician gasped in disbelief,
 
 473
-00:18:03,753 --> 00:18:06,841
+00:18:03,561 --> 00:18:06,649
 marveling that the crystalline matrix possessed zero internal
 
 474
-00:18:06,853 --> 00:18:07,628
+00:18:06,661 --> 00:18:07,436
 fractures.
 
 475
-00:18:08,500 --> 00:18:10,763
+00:18:08,308 --> 00:18:10,571
 There was not a single speck of carbonization
 
 476
-00:18:10,775 --> 00:18:11,888
+00:18:10,583 --> 00:18:11,696
 from fire arrows,
 
 477
-00:18:11,988 --> 00:18:13,888
+00:18:11,796 --> 00:18:13,696
 and zero trace of mana leakage from the
 
 478
-00:18:13,900 --> 00:18:14,900
+00:18:13,708 --> 00:18:14,708
 core facets.
 
 479
-00:18:15,772 --> 00:18:18,322
+00:18:15,580 --> 00:18:18,130
 Rowan confessed that in fifty years of practicing
 
 480
-00:18:18,335 --> 00:18:19,635
+00:18:18,143 --> 00:18:19,443
 medicine on the frontier,
 
 481
-00:18:19,772 --> 00:18:21,822
+00:18:19,580 --> 00:18:21,630
 he had never seen cores harvested in such
 
 482
-00:18:21,835 --> 00:18:22,535
+00:18:21,643 --> 00:18:22,343
 perfection.
 
 483
-00:18:23,404 --> 00:18:26,029
+00:18:23,212 --> 00:18:25,837
 Michael explained that mundane hunters butchered the hides
 
 484
-00:18:26,042 --> 00:18:26,992
+00:18:25,850 --> 00:18:26,800
 with iron wedges,
 
 485
-00:18:27,092 --> 00:18:29,104
+00:18:26,900 --> 00:18:28,912
 shattering the delicate crystal structure.
 
 486
-00:18:29,980 --> 00:18:32,168
+00:18:29,788 --> 00:18:31,976
 When kinetic energy was tuned to resonate with
 
 487
-00:18:32,180 --> 00:18:35,243
+00:18:31,988 --> 00:18:35,051
 internal fluids, the surrounding crystal lattice remained
 
 488
-00:18:35,255 --> 00:18:36,643
+00:18:35,063 --> 00:18:36,451
 completely undisturbed.
 
 489
-00:18:37,516 --> 00:18:39,741
+00:18:37,324 --> 00:18:39,549
 Rowan looked down at the five-year-old boy,
 
 490
-00:18:39,904 --> 00:18:41,666
+00:18:39,712 --> 00:18:41,474
 shaking his head with a mixture of awe
 
 491
-00:18:41,679 --> 00:18:43,241
+00:18:41,487 --> 00:18:43,049
 and fatherly protectiveness.
 
 492
-00:18:44,116 --> 00:18:46,229
+00:18:43,924 --> 00:18:46,037
 Rowan noted that Michael had not chanted or
 
 493
-00:18:46,241 --> 00:18:49,591
+00:18:46,049 --> 00:18:49,399
 invoked an external circle formula during the confrontation.
 
 494
-00:18:50,452 --> 00:18:53,552
+00:18:50,260 --> 00:18:53,360
 Michael replied that imperial mages believed external spell
 
 495
-00:18:53,565 --> 00:18:55,677
+00:18:53,373 --> 00:18:55,485
 rings were the only legitimate path to power
 
 496
-00:18:55,690 --> 00:18:56,402
+00:18:55,498 --> 00:18:56,210
 in the realm.
 
 497
-00:18:57,268 --> 00:19:00,031
+00:18:57,076 --> 00:18:59,839
 They built fragile glass towers of external mana,
 
 498
-00:19:00,181 --> 00:19:02,718
+00:18:59,989 --> 00:19:02,526
 leaving their physical vessels as vulnerable as thin
 
 499
-00:19:02,731 --> 00:19:03,456
+00:19:02,539 --> 00:19:03,264
 parchment.
 
 500
-00:19:04,324 --> 00:19:06,649
+00:19:04,132 --> 00:19:06,457
 The First Magicians understood that the physical body
 
 501
-00:19:06,662 --> 00:19:09,499
+00:19:06,470 --> 00:19:09,307
 was the ultimate vessel an indestructible fortress when
 
 502
-00:19:09,512 --> 00:19:11,124
+00:19:09,320 --> 00:19:10,932
 forged with internal mana.
 
 503
-00:19:12,004 --> 00:19:13,967
+00:19:11,812 --> 00:19:13,775
 Rowan listened in rapt fascination,
 
 504
-00:19:14,092 --> 00:19:15,629
+00:19:13,900 --> 00:19:15,437
 running his thumb over the warm,
 
 505
-00:19:15,767 --> 00:19:17,767
+00:19:15,575 --> 00:19:17,575
 humming amber surface of the troll core.
 
 506
-00:19:18,628 --> 00:19:20,928
+00:19:18,436 --> 00:19:20,736
 Rowan realized that with these three cores and
 
 507
-00:19:20,941 --> 00:19:22,716
+00:19:20,749 --> 00:19:22,524
 their store of highland moon-lotus
 
 508
-00:19:22,866 --> 00:19:24,903
+00:19:22,674 --> 00:19:24,711
 they could distill something extraordinary.
 
 509
-00:19:25,780 --> 00:19:27,743
+00:19:25,588 --> 00:19:27,551
 Michael affirmed that they would create a Marrow
 
 510
-00:19:27,755 --> 00:19:30,505
+00:19:27,563 --> 00:19:30,313
 Saturation Elixir to saturate his skeletal frame with
 
 511
-00:19:30,518 --> 00:19:31,705
+00:19:30,326 --> 00:19:31,513
 dense earthen mana.
 
 512
-00:19:32,572 --> 00:19:35,385
+00:19:32,380 --> 00:19:35,193
 An alchemical catalyst would bond liquid energy directly
 
 513
-00:19:35,397 --> 00:19:37,885
+00:19:35,205 --> 00:19:37,693
 into his bone fibers through the coming arduous
 
 514
-00:19:37,897 --> 00:19:38,522
+00:19:37,705 --> 00:19:38,330
 months.
 
 515
-00:19:39,388 --> 00:19:40,776
+00:19:39,196 --> 00:19:40,584
 Rowan smiled warmly,
 
 516
-00:19:40,888 --> 00:19:43,463
+00:19:40,696 --> 00:19:43,271
 reaching across the oak counter to affectionately ruffle
 
 517
-00:19:43,476 --> 00:19:45,038
+00:19:43,284 --> 00:19:44,846
 Michael's messy black hair.
 
 518
-00:19:45,916 --> 00:19:48,504
+00:19:45,724 --> 00:19:48,312
 The veteran healer declared that while imperial scholars
 
 519
-00:19:48,516 --> 00:19:49,979
+00:19:48,324 --> 00:19:49,787
 played with fragile wands,
 
 520
-00:19:50,116 --> 00:19:52,254
+00:19:49,924 --> 00:19:52,062
 they would build a true sovereign in secrecy.
 
 521
-00:19:53,116 --> 00:19:55,454
+00:19:52,924 --> 00:19:55,262
 The calm frontier seasons rolled across the valley
 
 522
-00:19:55,466 --> 00:19:58,204
+00:19:55,274 --> 00:19:58,012
 of Oakhaven, amber sunlight washing across the cedar
 
 523
-00:19:58,216 --> 00:19:59,904
+00:19:58,024 --> 00:19:59,712
 roofs and towering pines.
 
 524
-00:20:00,772 --> 00:20:01,935
+00:20:00,580 --> 00:20:01,743
 Month after month,
 
 525
-00:20:01,985 --> 00:20:04,310
+00:20:01,793 --> 00:20:04,118
 while townsfolk huddled around stone hearths,
 
 526
-00:20:04,435 --> 00:20:07,460
+00:20:04,243 --> 00:20:07,268
 the rustic apothecary workshop remained alive with alchemical
 
 527
-00:20:07,472 --> 00:20:08,110
+00:20:07,280 --> 00:20:07,918
 craft.
 
 528
-00:20:08,980 --> 00:20:11,443
+00:20:08,788 --> 00:20:11,251
 Elder Rowan worked diligently beside the heavy oak
 
 529
-00:20:11,455 --> 00:20:13,705
+00:20:11,263 --> 00:20:13,513
 table, grinding the troll core fragments with the
 
 530
-00:20:13,718 --> 00:20:15,468
+00:20:13,526 --> 00:20:15,276
 granite mortar and cedar bowl.
 
 531
-00:20:16,348 --> 00:20:19,211
+00:20:16,156 --> 00:20:19,019
 Golden drops of concentrated earthen elixir were carefully
 
 532
-00:20:19,223 --> 00:20:21,986
+00:20:19,031 --> 00:20:21,794
 distilled into sealed stoneware flasks and carried up
 
 533
-00:20:21,998 --> 00:20:22,986
+00:20:21,806 --> 00:20:22,794
 the attic ladder.
 
 534
-00:20:23,860 --> 00:20:25,948
+00:20:23,668 --> 00:20:25,756
 In the secluded wooden loft beneath the cedar
 
 535
-00:20:25,960 --> 00:20:29,385
+00:20:25,768 --> 00:20:29,193
 rafters, Michael consumed the distilled draughts in disciplined,
 
 536
-00:20:29,473 --> 00:20:30,560
+00:20:29,281 --> 00:20:30,368
 daily cycles.
 
 537
-00:20:31,444 --> 00:20:33,894
+00:20:31,252 --> 00:20:33,702
 Each draught ignited like liquid fire within his
 
 538
-00:20:33,907 --> 00:20:36,257
+00:20:33,715 --> 00:20:36,065
 digestive conduits, but Michael did not let a
 
 539
-00:20:36,269 --> 00:20:38,582
+00:20:36,077 --> 00:20:38,390
 single droplet dissipate as wasted heat.
 
 540
-00:20:39,460 --> 00:20:41,135
+00:20:39,268 --> 00:20:40,943
 Through ancient meditative breathing,
 
 541
-00:20:41,298 --> 00:20:44,173
+00:20:41,106 --> 00:20:43,981
 he directed the concentrated earthen mana directly into
 
 542
-00:20:44,185 --> 00:20:45,460
+00:20:43,993 --> 00:20:45,268
 his skeletal lattice.
 
 543
-00:20:46,324 --> 00:20:48,724
+00:20:46,132 --> 00:20:48,532
 The liquid energy seeped into his bone marrow,
 
 544
-00:20:48,862 --> 00:20:51,674
+00:20:48,670 --> 00:20:51,482
 fusing with calcium fibers and forging an impenetrable
 
 545
-00:20:51,687 --> 00:20:52,987
+00:20:51,495 --> 00:20:52,795
 internal framework.
 
 546
-00:20:53,860 --> 00:20:56,323
+00:20:53,668 --> 00:20:56,131
 His sixth year arrived as quiet rain washed
 
 547
-00:20:56,335 --> 00:20:58,660
+00:20:56,143 --> 00:20:58,468
 over the Blackwood canopy while his bones hardened
 
 548
-00:20:58,673 --> 00:21:00,235
+00:20:58,481 --> 00:21:00,043
 in uninterrupted silence.
 
 549
-00:21:01,108 --> 00:21:03,546
+00:21:00,916 --> 00:21:03,354
 Michael practiced his staff katas in the tranquil
 
 550
-00:21:03,558 --> 00:21:04,846
+00:21:03,366 --> 00:21:04,654
 timber rear courtyard,
 
 551
-00:21:04,971 --> 00:21:07,358
+00:21:04,779 --> 00:21:07,166
 his hands swinging the blackwood staff with increasing
 
 552
-00:21:07,371 --> 00:21:08,033
+00:21:07,179 --> 00:21:07,841
 velocity.
 
 553
-00:21:08,908 --> 00:21:11,208
+00:21:08,716 --> 00:21:11,016
 A second year passed as Michael reached seven
 
 554
-00:21:11,221 --> 00:21:12,121
+00:21:11,029 --> 00:21:11,929
 years of age,
 
 555
-00:21:12,258 --> 00:21:14,546
+00:21:12,066 --> 00:21:14,354
 his wiry mortal frame stretching with lean,
 
 556
-00:21:14,583 --> 00:21:15,496
+00:21:14,391 --> 00:21:15,304
 corded muscle.
 
 557
-00:21:16,372 --> 00:21:19,497
+00:21:16,180 --> 00:21:19,305
 The blackwood quarterstaff absorbed daily infusions of kinetic
 
 558
-00:21:19,510 --> 00:21:22,160
+00:21:19,318 --> 00:21:21,968
 resonance, turning as glossy and dark as polished
 
 559
-00:21:22,172 --> 00:21:22,847
+00:21:21,980 --> 00:21:22,655
 obsidian.
 
 560
-00:21:23,716 --> 00:21:26,154
+00:21:23,524 --> 00:21:25,962
 The townsfolk of Oakhaven spoke of the quiet,
 
 561
-00:21:26,191 --> 00:21:28,854
+00:21:25,999 --> 00:21:28,662
 mysterious boy at Rowan's apothecary in hushed,
 
 562
-00:21:28,979 --> 00:21:30,266
+00:21:28,787 --> 00:21:30,074
 respectful tones.
 
 563
-00:21:31,132 --> 00:21:33,395
+00:21:30,940 --> 00:21:33,203
 The young noble apprentice of House Vance never
 
 564
-00:21:33,407 --> 00:21:34,807
+00:21:33,215 --> 00:21:34,615
 returned to the northern gate,
 
 565
-00:21:34,945 --> 00:21:37,057
+00:21:34,753 --> 00:21:36,865
 his pride shattered and his wand disgraced.
 
 566
-00:21:37,924 --> 00:21:40,287
+00:21:37,732 --> 00:21:40,095
 A third year arrived with golden morning sun
 
 567
-00:21:40,299 --> 00:21:42,562
+00:21:40,107 --> 00:21:42,370
 warming the evergreen pines as Michael entered his
 
 568
-00:21:42,574 --> 00:21:43,762
+00:21:42,382 --> 00:21:43,570
 eighth year of life.
 
 569
-00:21:44,644 --> 00:21:46,432
+00:21:44,452 --> 00:21:46,240
 To commemorate his growing strength,
 
 570
-00:21:46,494 --> 00:21:49,582
+00:21:46,302 --> 00:21:49,390
 Rowan tailored a durable charcoal-grey tunic from mountain-wolf
 
 571
-00:21:49,594 --> 00:21:52,294
+00:21:49,402 --> 00:21:52,102
 leather, trimming the collar with reinforced stitching.
 
 572
-00:21:53,164 --> 00:21:55,289
+00:21:52,972 --> 00:21:55,097
 Michael donned the tailored wolf-skin tunic,
 
 573
-00:21:55,327 --> 00:21:57,652
+00:21:55,135 --> 00:21:57,460
 lacing his supple travel boots and strapping his
 
 574
-00:21:57,664 --> 00:22:00,339
+00:21:57,472 --> 00:22:00,147
 canvas foraging rucksack across his shoulders.
 
 575
-00:22:01,204 --> 00:22:02,729
+00:22:01,012 --> 00:22:02,537
 Now eight years of age,
 
 576
-00:22:02,842 --> 00:22:03,979
+00:22:02,650 --> 00:22:03,787
 he possessed the straight,
 
 577
-00:22:04,079 --> 00:22:05,679
+00:22:03,887 --> 00:22:05,487
 immaculate balance and quiet,
 
 578
-00:22:05,804 --> 00:22:07,942
+00:22:05,612 --> 00:22:07,750
 commanding dignity of an ancient master.
 
 579
-00:22:08,812 --> 00:22:11,362
+00:22:08,620 --> 00:22:11,170
 His messy raven-black hair fell loosely over his
 
 580
-00:22:11,375 --> 00:22:11,950
+00:22:11,183 --> 00:22:11,758
 brow,
 
 581
-00:22:12,125 --> 00:22:14,725
+00:22:11,933 --> 00:22:14,533
 framing piercing cyan eyes that held centuries of
 
 582
-00:22:14,737 --> 00:22:15,987
+00:22:14,545 --> 00:22:15,795
 unyielding resolve.
 
 583
-00:22:16,852 --> 00:22:17,890
+00:22:16,660 --> 00:22:17,698
 Beneath his skin,
 
 584
-00:22:17,915 --> 00:22:20,165
+00:22:17,723 --> 00:22:19,973
 his skeletal structure had absorbed every drop of
 
 585
-00:22:20,177 --> 00:22:22,952
+00:22:19,985 --> 00:22:22,760
 refined mana from the three harvested troll cores.
 
 586
-00:22:23,836 --> 00:22:25,974
+00:22:23,644 --> 00:22:25,782
 His bone density had crossed the threshold of
 
 587
-00:22:25,986 --> 00:22:27,036
+00:22:25,794 --> 00:22:26,844
 mortal biology,
 
 588
-00:22:27,199 --> 00:22:30,186
+00:22:27,007 --> 00:22:29,994
 matching the structural resilience of tempered dwarven steel.
 
 589
-00:22:31,060 --> 00:22:32,273
+00:22:30,868 --> 00:22:32,081
 External bludgeoning,
 
 590
-00:22:32,435 --> 00:22:35,348
+00:22:32,243 --> 00:22:35,156
 mundane blades, and kinetic pressure could no longer
 
 591
-00:22:35,360 --> 00:22:37,673
+00:22:35,168 --> 00:22:37,481
 fracture his physical skeletal framework.
 
 592
-00:22:38,548 --> 00:22:41,361
+00:22:38,356 --> 00:22:41,169
 The painful vulnerability of his discarded infant years
 
 593
-00:22:41,373 --> 00:22:43,361
+00:22:41,181 --> 00:22:43,169
 had been completely burned away in the furnace
 
 594
-00:22:43,373 --> 00:22:44,523
+00:22:43,181 --> 00:22:44,331
 of quiet discipline.
 
 595
-00:22:45,388 --> 00:22:48,188
+00:22:45,196 --> 00:22:47,996
 Three years of relentless physical conditioning had carved
 
 596
-00:22:48,201 --> 00:22:50,738
+00:22:48,009 --> 00:22:50,546
 an indestructible warrior from a discarded babe.
 
 597
-00:22:51,604 --> 00:22:54,342
+00:22:51,412 --> 00:22:54,150
 Pale morning sunlight filtered through the circular leaded
 
 598
-00:22:54,354 --> 00:22:56,904
+00:22:54,162 --> 00:22:56,712
 translucent aperture of Rowan's attic loft.
 
 599
-00:22:57,772 --> 00:23:00,672
+00:22:57,580 --> 00:23:00,480
 Eight-year-old Michael Montrey sat cross-legged upon his straw
 
 600
-00:23:00,685 --> 00:23:03,010
+00:23:00,493 --> 00:23:02,818
 mattress in absolute meditative stillness.
 
 601
-00:23:03,892 --> 00:23:06,905
+00:23:03,700 --> 00:23:06,713
 Ribbons of concentrated azure mana circulated through his
 
 602
-00:23:06,917 --> 00:23:09,030
+00:23:06,725 --> 00:23:08,838
 cardiovascular framework in steady,
 
 603
-00:23:09,130 --> 00:23:10,167
+00:23:08,938 --> 00:23:09,975
 rhythmic orbits.
 
 604
-00:23:11,044 --> 00:23:12,532
+00:23:10,852 --> 00:23:12,340
 He clenched his right fist,
 
 605
-00:23:12,632 --> 00:23:14,944
+00:23:12,440 --> 00:23:14,752
 feeling the bone density beneath his knuckles hum
 
 606
-00:23:14,957 --> 00:23:16,669
+00:23:14,765 --> 00:23:16,477
 with compressed kinetic force.
 
 607
-00:23:17,548 --> 00:23:20,298
+00:23:17,356 --> 00:23:20,106
 A faint sonic vibration rippled around his fingers,
 
 608
-00:23:20,423 --> 00:23:23,273
+00:23:20,231 --> 00:23:23,081
 pulling the ambient air into a localized vacuum.
 
 609
-00:23:24,148 --> 00:23:25,336
+00:23:23,956 --> 00:23:25,144
 To the outer empire,
 
 610
-00:23:25,436 --> 00:23:27,998
+00:23:25,244 --> 00:23:27,806
 an eight-year-old child was barely capable of lighting
 
 611
-00:23:28,011 --> 00:23:29,911
+00:23:27,819 --> 00:23:29,719
 a tallow candle with wand-chanting
 
 612
-00:23:30,772 --> 00:23:32,760
+00:23:30,580 --> 00:23:32,568
 Yet within this young frame lay the mechanical
 
 613
-00:23:32,772 --> 00:23:34,835
+00:23:32,580 --> 00:23:34,643
 precision of an apex battle master who had
 
 614
-00:23:34,847 --> 00:23:37,260
+00:23:34,655 --> 00:23:37,068
 reached Tier 10 in his prior incarnation.
 
 615
-00:23:38,140 --> 00:23:39,540
+00:23:37,948 --> 00:23:39,348
 Michael exhaled a slow,
 
 616
-00:23:39,653 --> 00:23:42,428
+00:23:39,461 --> 00:23:42,236
 focused breath, watching his mana swirl into miniature
 
 617
-00:23:42,440 --> 00:23:44,515
+00:23:42,248 --> 00:23:44,323
 cyan runes before dissipating.
 
 618
-00:23:45,388 --> 00:23:47,863
+00:23:45,196 --> 00:23:47,671
 He glanced down at the carved blackwood quarterstaff
 
 619
-00:23:47,876 --> 00:23:50,313
+00:23:47,684 --> 00:23:50,121
 resting against the timber beam beside his writing
 
 620
-00:23:50,326 --> 00:23:50,863
+00:23:50,134 --> 00:23:50,671
 desk.
 
 621
-00:23:51,724 --> 00:23:53,724
+00:23:51,532 --> 00:23:53,532
 The ancient wood had absorbed three years of
 
 622
-00:23:53,737 --> 00:23:55,237
+00:23:53,545 --> 00:23:55,045
 auxiliary thunder polishing,
 
 623
-00:23:55,387 --> 00:23:58,062
+00:23:55,195 --> 00:23:57,870
 its spiral head gleaming with quiet mana veins.
 
 624
-00:23:58,924 --> 00:24:01,187
+00:23:58,732 --> 00:24:00,995
 Beside the staff lay his heavy canvas herb
 
 625
-00:24:01,199 --> 00:24:04,462
+00:24:01,007 --> 00:24:04,270
 rucksack, neatly buckled and reinforced with sturdy brass
 
 626
-00:24:04,474 --> 00:24:05,062
+00:24:04,282 --> 00:24:04,870
 rivets.
 
 627
-00:24:05,932 --> 00:24:07,470
+00:24:05,740 --> 00:24:07,278
 Deep within his soul space,
 
 628
-00:24:07,507 --> 00:24:09,782
-the Primordial Codex hummed with a quiet,
+00:24:07,315 --> 00:24:09,453
+the ancient golden soul grimoire hummed with a
 
 629
-00:24:09,907 --> 00:24:11,270
-resonant golden pulse.
+00:24:09,465 --> 00:24:11,515
+quiet, resonant golden pulse.
 
 630
-00:24:12,148 --> 00:24:13,348
+00:24:12,388 --> 00:24:13,588
 Page by page,
 
 631
-00:24:13,461 --> 00:24:15,948
+00:24:13,701 --> 00:24:16,188
 the ancient tome was unfurling the forgotten formulas
 
 632
-00:24:15,961 --> 00:24:17,923
+00:24:16,201 --> 00:24:18,163
 of the dual-discipline battle-sages
 
 633
-00:24:18,796 --> 00:24:20,646
+00:24:19,036 --> 00:24:20,886
 Michael swung his legs over the edge of
 
 634
-00:24:20,659 --> 00:24:22,934
+00:24:20,899 --> 00:24:23,174
 the mattress, his supple leather boots touching the
 
 635
-00:24:22,946 --> 00:24:25,271
+00:24:23,186 --> 00:24:25,511
 rough wooden floorboards without a sound.
 
 636
-00:24:26,140 --> 00:24:28,128
+00:24:26,380 --> 00:24:28,368
 He stood upright with effortless balance,
 
 637
-00:24:28,203 --> 00:24:30,315
+00:24:28,443 --> 00:24:30,555
 stretching his arms as his joints settled with
 
 638
-00:24:30,328 --> 00:24:31,865
+00:24:30,568 --> 00:24:32,105
 crisp, solid clicks.
 
 639
-00:24:32,740 --> 00:24:34,390
+00:24:32,980 --> 00:24:34,630
 Moving to the corner ladder hatch,
 
 640
-00:24:34,515 --> 00:24:37,428
+00:24:34,755 --> 00:24:37,668
 he descended gracefully into the warm workshop below.
 
 641
-00:24:38,308 --> 00:24:41,058
+00:24:38,548 --> 00:24:41,298
 The rich, savory aroma of fried cured pork
 
 642
-00:24:41,071 --> 00:24:44,096
+00:24:41,311 --> 00:24:44,336
 and toasted barley flatbreads filled the apothecary interior.
 
 643
-00:24:44,956 --> 00:24:47,344
+00:24:45,196 --> 00:24:47,584
 Elder Rowan stood over the cast-iron skillet at
 
 644
-00:24:47,356 --> 00:24:48,269
+00:24:47,596 --> 00:24:48,509
 the stone hearth,
 
 645
-00:24:48,369 --> 00:24:50,081
+00:24:48,609 --> 00:24:50,321
 tossing thick cuts of meat with a wooden
 
 646
-00:24:50,094 --> 00:24:50,744
+00:24:50,334 --> 00:24:50,984
 spatula.
 
 647
-00:24:51,604 --> 00:24:54,254
+00:24:51,844 --> 00:24:54,494
 Rowan fondly noted that Michael was up exceptionally
 
 648
-00:24:54,267 --> 00:24:55,904
+00:24:54,507 --> 00:24:56,144
 early for an eight-year-old child,
 
 649
-00:24:56,004 --> 00:24:57,729
+00:24:56,244 --> 00:24:57,969
 plating two hot cuts of meat.
 
 650
-00:24:58,612 --> 00:25:01,775
+00:24:58,852 --> 00:25:02,015
 Michael calmly answered that metabolic recovery required only
 
 651
-00:25:01,787 --> 00:25:05,062
+00:25:02,027 --> 00:25:05,302
 four hours when internal mana circulation was continuous.
 
 652
-00:25:05,932 --> 00:25:07,432
+00:25:06,172 --> 00:25:07,672
 He took his seat at the heavy oak
 
 653
-00:25:07,445 --> 00:25:09,720
+00:25:07,685 --> 00:25:09,960
 service counter, accepting the plate and a mug
 
 654
-00:25:09,732 --> 00:25:11,982
+00:25:09,972 --> 00:25:12,222
 of warm herb tea with quiet gratitude.
 
 655
-00:25:12,844 --> 00:25:15,094
+00:25:13,084 --> 00:25:15,334
 Rowan leaned his forearms against the counter,
 
 656
-00:25:15,182 --> 00:25:17,657
+00:25:15,422 --> 00:25:17,897
 studying the boy's calm demeanor with deep paternal
 
 657
-00:25:17,669 --> 00:25:18,632
+00:25:17,909 --> 00:25:18,872
 satisfaction.
 
 658
-00:25:19,492 --> 00:25:22,155
+00:25:19,732 --> 00:25:22,395
 Rowan mentioned that the town lookouts reported completely
 
 659
-00:25:22,167 --> 00:25:23,442
+00:25:22,407 --> 00:25:23,682
 clear ridges at dawn,
 
 660
-00:25:23,480 --> 00:25:25,980
+00:25:23,720 --> 00:25:26,220
 with zero troll activity along the frontier.
 
 661
-00:25:26,860 --> 00:25:29,098
+00:25:27,100 --> 00:25:29,338
 The valley had remained peaceful since that morning
 
 662
-00:25:29,110 --> 00:25:30,098
+00:25:29,350 --> 00:25:30,338
 three years ago,
 
 663
-00:25:30,285 --> 00:25:32,398
+00:25:30,525 --> 00:25:32,638
 though garrison sentries still spoke of the gate's
 
 664
-00:25:32,410 --> 00:25:33,460
+00:25:32,650 --> 00:25:33,700
 mystery defender.
 
 665
-00:25:34,324 --> 00:25:35,749
+00:25:34,564 --> 00:25:35,989
 After finishing breakfast,
 
 666
-00:25:35,824 --> 00:25:38,049
+00:25:36,064 --> 00:25:38,289
 Michael took his blackwood staff and stepped through
 
 667
-00:25:38,062 --> 00:25:40,649
+00:25:38,302 --> 00:25:40,889
 the rear courtyard gate into the forest path.
 
 668
-00:25:41,524 --> 00:25:43,849
+00:25:41,764 --> 00:25:44,089
 Fifty paces beyond the cedar picket fence lay
 
 669
-00:25:43,862 --> 00:25:45,849
+00:25:44,102 --> 00:25:46,089
 the secluded Blackwood Forest clearing,
 
 670
-00:25:45,949 --> 00:25:47,662
+00:25:46,189 --> 00:25:47,902
 shrouded in damp morning mist.
 
 671
-00:25:48,532 --> 00:25:51,395
+00:25:48,772 --> 00:25:51,635
 Towering ironwood pines reached toward the grey sky,
 
 672
-00:25:51,545 --> 00:25:53,782
+00:25:51,785 --> 00:25:54,022
 their needles muffling all sound from the distant
 
 673
-00:25:53,795 --> 00:25:54,970
+00:25:54,035 --> 00:25:55,210
 settlement thoroughfare.
 
 674
-00:25:55,852 --> 00:25:57,640
+00:25:56,092 --> 00:25:57,880
 In the center of the soft loam clearing
 
 675
-00:25:57,652 --> 00:25:59,740
+00:25:57,892 --> 00:25:59,980
 sat the solitary six-foot granite boulder,
 
 676
-00:25:59,877 --> 00:26:01,402
+00:26:00,117 --> 00:26:01,642
 covered in thick green moss.
 
 677
-00:26:02,284 --> 00:26:04,297
+00:26:02,524 --> 00:26:04,537
 Michael stepped before the colossal stone,
 
 678
-00:26:04,309 --> 00:26:06,409
+00:26:04,549 --> 00:26:06,649
 his boots settling firmly into the carpet of
 
 679
-00:26:06,422 --> 00:26:07,709
+00:26:06,662 --> 00:26:07,949
 damp pine needles.
 
 680
-00:26:08,572 --> 00:26:11,035
+00:26:08,812 --> 00:26:11,275
 He prepared to calibrate his skeletal transmission at
 
 681
-00:26:11,047 --> 00:26:13,685
+00:26:11,287 --> 00:26:13,925
 age eight, raising the blackwood quarterstaff into a
 
 682
-00:26:13,697 --> 00:26:14,885
+00:26:13,937 --> 00:26:15,125
 two-handed guard.
 
 683
-00:26:15,748 --> 00:26:16,986
+00:26:15,988 --> 00:26:17,226
 He breathed in deeply,
 
 684
-00:26:17,036 --> 00:26:19,473
+00:26:17,276 --> 00:26:19,713
 drawing mana from his marrow through his forearms
 
 685
-00:26:19,486 --> 00:26:21,111
+00:26:19,726 --> 00:26:21,351
 and into the dense grain of the dark
 
 686
-00:26:21,123 --> 00:26:21,623
+00:26:21,363 --> 00:26:21,863
 timber.
 
 687
-00:26:22,492 --> 00:26:24,592
+00:26:22,732 --> 00:26:24,832
 The staff did not flare with dramatic blue
 
 688
-00:26:24,605 --> 00:26:25,130
+00:26:24,845 --> 00:26:25,370
 fire;
 
 689
-00:26:25,280 --> 00:26:26,505
+00:26:25,520 --> 00:26:26,745
 instead, a faint,
 
 690
-00:26:26,517 --> 00:26:29,292
+00:26:26,757 --> 00:26:29,532
 low-frequency hum resonated through the polished wood.
 
 691
-00:26:30,172 --> 00:26:31,685
+00:26:30,412 --> 00:26:31,925
 Michael executed a clean,
 
 692
-00:26:31,685 --> 00:26:33,060
+00:26:31,925 --> 00:26:33,300
 vertical downward strike,
 
 693
-00:26:33,172 --> 00:26:34,972
+00:26:33,412 --> 00:26:35,212
 bringing the tip of the staff down against
 
 694
-00:26:34,985 --> 00:26:36,110
+00:26:35,225 --> 00:26:36,350
 the crown of the boulder.
 
 695
-00:26:36,988 --> 00:26:38,838
+00:26:37,228 --> 00:26:39,078
 The strike landed with a sharp clack,
 
 696
-00:26:38,963 --> 00:26:41,251
+00:26:39,203 --> 00:26:41,491
 sounding no louder than a dry branch snapping
 
 697
-00:26:41,263 --> 00:26:42,713
+00:26:41,503 --> 00:26:42,953
 beneath a traveler's boot.
 
 698
-00:26:43,588 --> 00:26:46,076
+00:26:43,828 --> 00:26:46,316
 The external green moss covering the granite remained
 
 699
-00:26:46,088 --> 00:26:47,351
+00:26:46,328 --> 00:26:47,591
 completely unscorched,
 
 700
-00:26:47,501 --> 00:26:49,101
+00:26:47,741 --> 00:26:49,341
 undisturbed, and green.
 
 701
-00:26:49,972 --> 00:26:51,035
+00:26:50,212 --> 00:26:51,275
 Inside the stone,
 
 702
-00:26:51,072 --> 00:26:54,272
+00:26:51,312 --> 00:26:54,512
 high-frequency kinetic vibrations rippled through the crystalline
 
 703
-00:26:54,285 --> 00:26:56,022
+00:26:54,525 --> 00:26:56,262
 mineral lattice at immense speed.
 
 704
-00:26:56,884 --> 00:26:59,172
+00:26:57,124 --> 00:26:59,412
 Michael lowered his staff and took two casual
 
 705
-00:26:59,184 --> 00:27:01,397
+00:26:59,424 --> 00:27:01,637
 steps backward, watching the stone with cool,
 
 706
-00:27:01,559 --> 00:27:02,897
+00:27:01,799 --> 00:27:03,137
 analytical composure.
 
 707
-00:27:03,772 --> 00:27:06,035
+00:27:04,012 --> 00:27:06,275
 Three seconds of absolute silence passed in the
 
 708
-00:27:06,047 --> 00:27:08,635
+00:27:06,287 --> 00:27:08,875
 foggy clearing without a single exterior tremor.
 
 709
-00:27:09,508 --> 00:27:10,333
+00:27:09,748 --> 00:27:10,573
 With a soft,
 
 710
-00:27:10,446 --> 00:27:12,096
+00:27:10,686 --> 00:27:12,336
 breathy sigh of collapsing dust,
 
 711
-00:27:12,208 --> 00:27:15,333
+00:27:12,448 --> 00:27:15,573
 the entire six-foot boulder slumped inward upon itself.
 
 712
-00:27:16,204 --> 00:27:17,979
+00:27:16,444 --> 00:27:18,219
 It disintegrated into a neat,
 
 713
-00:27:18,142 --> 00:27:20,217
+00:27:18,382 --> 00:27:20,457
 uniform mound of fine grey sand,
 
 714
-00:27:20,329 --> 00:27:22,642
+00:27:20,569 --> 00:27:22,882
 completely pulverized from the inside out.
 
 715
-00:27:23,524 --> 00:27:25,412
+00:27:23,764 --> 00:27:25,652
 The green moss that had coated the surface
 
 716
-00:27:25,424 --> 00:27:27,549
+00:27:25,664 --> 00:27:27,789
 drifted down and settled gently on top of
 
 717
-00:27:27,562 --> 00:27:28,437
+00:27:27,802 --> 00:27:28,677
 the sand pile,
 
 718
-00:27:28,537 --> 00:27:29,699
+00:27:28,777 --> 00:27:29,939
 entirely intact.
 
 719
-00:27:30,580 --> 00:27:32,143
+00:27:30,820 --> 00:27:32,383
 Zero explosive sound,
 
 720
-00:27:32,243 --> 00:27:33,968
+00:27:32,483 --> 00:27:34,208
 zero flying rock shrapnel,
 
 721
-00:27:34,080 --> 00:27:35,993
+00:27:34,320 --> 00:27:36,233
 and zero wasted mana pure,
 
 722
-00:27:36,143 --> 00:27:37,880
+00:27:36,383 --> 00:27:38,120
 surgical kinetic perfection.
 
 723
-00:27:38,764 --> 00:27:41,539
+00:27:39,004 --> 00:27:41,779
 Michael noted with cool satisfaction that his skeletal
 
 724
-00:27:41,552 --> 00:27:44,452
+00:27:41,792 --> 00:27:44,692
 transmission efficiency had reached ninety-eight percent.
 
 725
-00:27:45,316 --> 00:27:47,916
+00:27:45,556 --> 00:27:48,156
 A direct blow against heavy imperial plate armor
 
 726
-00:27:47,929 --> 00:27:50,279
+00:27:48,169 --> 00:27:50,519
 would turn an opponent's ribcage to powder without
 
 727
-00:27:50,291 --> 00:27:51,616
+00:27:50,531 --> 00:27:51,856
 denting the outer steel.
 
 728
-00:27:52,492 --> 00:27:54,355
+00:27:52,732 --> 00:27:54,595
 He wiped a trace of fine stone dust
 
 729
-00:27:54,367 --> 00:27:55,630
+00:27:54,607 --> 00:27:55,870
 from the tip of his staff,
 
 730
-00:27:55,692 --> 00:27:57,767
+00:27:55,932 --> 00:27:58,007
 resting the base against his supple boot.
 
 731
-00:27:58,636 --> 00:28:01,161
+00:27:58,876 --> 00:28:01,401
 The physical foundation of Act One was complete;
 
 732
-00:28:01,336 --> 00:28:03,336
+00:28:01,576 --> 00:28:03,576
 his bones were now prepared to withstand the
 
 733
-00:28:03,349 --> 00:28:05,474
+00:28:03,589 --> 00:28:05,714
 pressure of Tier 2 mana expansion.
 
 734
-00:28:06,340 --> 00:28:08,665
+00:28:06,580 --> 00:28:08,905
 He turned back toward the narrow forest trail,
 
 735
-00:28:08,790 --> 00:28:11,103
+00:28:09,030 --> 00:28:11,343
 his light footsteps leaving faint impressions in the
 
 736
-00:28:11,115 --> 00:28:11,915
+00:28:11,355 --> 00:28:12,155
 damp loam.
 
 737
-00:28:12,796 --> 00:28:14,609
+00:28:13,036 --> 00:28:14,849
 It was time to return to the apothecary
 
 738
-00:28:14,621 --> 00:28:17,409
+00:28:14,861 --> 00:28:17,649
 courtyard and distill the final breakthrough draught.
 
 739
-00:28:18,292 --> 00:28:20,730
+00:28:18,532 --> 00:28:20,970
 Back in the rear courtyard behind the apothecary,
 
 740
-00:28:20,855 --> 00:28:22,980
+00:28:21,095 --> 00:28:23,220
 the morning sun broke through cloud cover,
 
 741
-00:28:23,092 --> 00:28:25,842
+00:28:23,332 --> 00:28:26,082
 casting warm amber beams across the woodpiles.
 
 742
-00:28:26,716 --> 00:28:28,704
+00:28:26,956 --> 00:28:28,944
 Elder Rowan had already laid out the heavy
 
 743
-00:28:28,716 --> 00:28:31,629
+00:28:28,956 --> 00:28:31,869
 stone worktable beneath the low cedar roof eaves.
 
 744
-00:28:32,500 --> 00:28:34,563
+00:28:32,740 --> 00:28:34,803
 Arranged upon the weathered timber were bundles of
 
 745
-00:28:34,575 --> 00:28:37,175
+00:28:34,815 --> 00:28:37,415
 dried highland moon-lotus mountain sage,
 
 746
-00:28:37,325 --> 00:28:39,838
+00:28:37,565 --> 00:28:40,078
 and the final vial of refined marrow dust.
 
 747
-00:28:40,708 --> 00:28:42,533
+00:28:40,948 --> 00:28:42,773
 Michael stepped up beside Rowan,
 
 748
-00:28:42,596 --> 00:28:44,508
+00:28:42,836 --> 00:28:44,748
 rolling up his leather sleeves to prepare the
 
 749
-00:28:44,521 --> 00:28:45,771
+00:28:44,761 --> 00:28:46,011
 alchemical tools.
 
 750
-00:28:46,636 --> 00:28:48,499
+00:28:46,876 --> 00:28:48,739
 He picked up the heavy granite mortar and
 
 751
-00:28:48,511 --> 00:28:51,561
+00:28:48,751 --> 00:28:51,801
 pestle, grinding the dried lotus petals with smooth,
 
 752
-00:28:51,649 --> 00:28:53,349
+00:28:51,889 --> 00:28:53,589
 hypnotic circular motions.
 
 753
-00:28:54,220 --> 00:28:56,895
+00:28:54,460 --> 00:28:57,135
 Rowan poured measured drops of distilled mountain spring
 
 754
-00:28:56,908 --> 00:28:58,933
+00:28:57,148 --> 00:28:59,173
 water into the polished cedar salve bowl,
 
 755
-00:28:58,995 --> 00:29:01,158
+00:28:59,235 --> 00:29:01,398
 watching Michael's technique with admiration.
 
 756
-00:29:02,020 --> 00:29:04,658
+00:29:02,260 --> 00:29:04,898
 The elderly physician remarked that Michael's control over
 
 757
-00:29:04,670 --> 00:29:07,395
+00:29:04,910 --> 00:29:07,635
 botanical extraction surpassed most guild masters in the
 
 758
-00:29:07,408 --> 00:29:08,033
+00:29:07,648 --> 00:29:08,273
 capital.
 
 759
-00:29:08,908 --> 00:29:11,246
+00:29:09,148 --> 00:29:11,486
 Michael explained that herbal alchemy was simply the
 
 760
-00:29:11,258 --> 00:29:14,108
+00:29:11,498 --> 00:29:14,348
 harmonious alignment of organic frequencies as he added
 
 761
-00:29:14,121 --> 00:29:15,458
+00:29:14,361 --> 00:29:15,698
 the amber marrow powder.
 
 762
-00:29:16,324 --> 00:29:18,449
+00:29:16,564 --> 00:29:18,689
 As the refined marrow dust touched the lotus
 
 763
-00:29:18,462 --> 00:29:20,712
+00:29:18,702 --> 00:29:20,952
 extract, a soft golden mist rose from the
 
 764
-00:29:20,724 --> 00:29:23,112
+00:29:20,964 --> 00:29:23,352
 mortar, smelling of clean mountain rain.
 
 765
-00:29:23,980 --> 00:29:26,418
+00:29:24,220 --> 00:29:26,658
 Rowan adjusted the small copper burner beneath the
 
 766
-00:29:26,430 --> 00:29:29,243
+00:29:26,670 --> 00:29:29,483
 mixing vessel, keeping the temperature at a gentle,
 
 767
-00:29:29,268 --> 00:29:30,068
+00:29:29,508 --> 00:29:30,308
 steady simmer.
 
 768
-00:29:30,940 --> 00:29:33,365
+00:29:31,180 --> 00:29:33,605
 Michael extended his right hand over the simmering
 
 769
-00:29:33,378 --> 00:29:35,928
+00:29:33,618 --> 00:29:36,168
 liquid, infusing a trace of kinetic mana to
 
 770
-00:29:35,940 --> 00:29:37,740
+00:29:36,180 --> 00:29:37,980
 accelerate the molecular fusion.
 
 771
-00:29:38,620 --> 00:29:41,070
+00:29:38,860 --> 00:29:41,310
 The bubbling amber liquid clarified rapidly,
 
 772
-00:29:41,170 --> 00:29:42,395
+00:29:41,410 --> 00:29:42,635
 turning into a gleaming,
 
 773
-00:29:42,545 --> 00:29:45,133
+00:29:42,785 --> 00:29:45,373
 golden elixir that shimmered like liquid sunlight.
 
 774
-00:29:46,012 --> 00:29:48,487
+00:29:46,252 --> 00:29:48,727
 Rowan murmured reverently as he decanted the golden
 
 775
-00:29:48,500 --> 00:29:50,812
+00:29:48,740 --> 00:29:51,052
 draught into a ceramic flask using a brass
 
 776
-00:29:50,825 --> 00:29:51,300
+00:29:51,065 --> 00:29:51,540
 funnel.
 
 777
-00:29:52,180 --> 00:29:54,680
+00:29:52,420 --> 00:29:54,920
 The physician noted that this single flask contained
 
 778
-00:29:54,693 --> 00:29:57,705
+00:29:54,933 --> 00:29:57,945
 more concentrated vitality than a hundred standard medicinal
 
 779
-00:29:57,718 --> 00:29:58,330
+00:29:57,958 --> 00:29:58,570
 pills.
 
 780
-00:29:59,212 --> 00:30:01,037
+00:29:59,452 --> 00:30:01,277
 Michael agreed that it would bridge the gap
 
 781
-00:30:01,050 --> 00:30:03,825
+00:30:01,290 --> 00:30:04,065
 between Tier 1 Foundation and Tier 2 Kinetic
 
 782
-00:30:03,837 --> 00:30:05,937
+00:30:04,077 --> 00:30:06,177
 Resonance, securing the cork stopper.
 
 783
-00:30:06,820 --> 00:30:09,070
+00:30:07,060 --> 00:30:09,310
 Rowan wiped his calloused hands on his canvas
 
 784
-00:30:09,083 --> 00:30:12,483
+00:30:09,323 --> 00:30:12,723
 apron, looking intently into Michael's calm cyan eyes.
 
 785
-00:30:13,348 --> 00:30:16,398
+00:30:13,588 --> 00:30:16,638
 Rowan mentioned that imperial academy evaluators visited the
 
 786
-00:30:16,411 --> 00:30:19,273
+00:30:16,651 --> 00:30:19,513
 northern provinces every three years to inspect registered
 
 787
-00:30:19,286 --> 00:30:20,048
+00:30:19,526 --> 00:30:20,288
 scions.
 
 788
-00:30:20,932 --> 00:30:23,270
+00:30:21,172 --> 00:30:23,510
 The evaluators from the capital were expected to
 
 789
-00:30:23,282 --> 00:30:25,570
+00:30:23,522 --> 00:30:25,810
 arrive in Oakhaven the following spring to test
 
 790
-00:30:25,582 --> 00:30:26,795
+00:30:25,822 --> 00:30:27,035
 the frontier youth.
 
 791
-00:30:27,676 --> 00:30:29,751
+00:30:27,916 --> 00:30:29,991
 Michael remarked with a knowing smirk that they
 
 792
-00:30:29,764 --> 00:30:32,314
+00:30:30,004 --> 00:30:32,554
 would expect weak apprentices waving wooden wands and
 
 793
-00:30:32,326 --> 00:30:33,889
+00:30:32,566 --> 00:30:34,129
 chanting basic sparks.
 
 794
-00:30:34,756 --> 00:30:36,044
+00:30:34,996 --> 00:30:36,284
 Rowan laughed warmly,
 
 795
-00:30:36,131 --> 00:30:38,169
+00:30:36,371 --> 00:30:38,409
 his deep voice echoing in the quiet yard
 
 796
-00:30:38,181 --> 00:30:40,181
+00:30:38,421 --> 00:30:40,421
 as he declared they would find no ordinary
 
 797
-00:30:40,194 --> 00:30:41,094
+00:30:40,434 --> 00:30:41,334
 apprentice here.
 
 798
-00:30:41,956 --> 00:30:43,756
+00:30:42,196 --> 00:30:43,996
 They would find the rebirth of a sovereign
 
 799
-00:30:43,769 --> 00:30:46,644
+00:30:44,009 --> 00:30:46,884
 who would turn the imperial hierarchy upside down.
 
 800
-00:30:47,524 --> 00:30:49,949
+00:30:47,764 --> 00:30:50,189
 Michael tucked the warm ceramic flask into his
 
 801
-00:30:49,962 --> 00:30:52,287
+00:30:50,202 --> 00:30:52,527
 tunic pocket, feeling the steady thrum of power
 
 802
-00:30:52,299 --> 00:30:52,849
+00:30:52,539 --> 00:30:53,089
 within.
 
 803
-00:30:53,716 --> 00:30:55,504
+00:30:53,956 --> 00:30:55,744
 The sun reached its midday peak,
 
 804
-00:30:55,616 --> 00:30:57,979
+00:30:55,856 --> 00:30:58,219
 illuminating the rustic courtyard with crisp,
 
 805
-00:30:58,066 --> 00:30:59,416
+00:30:58,306 --> 00:30:59,656
 golden northern light.
 
 806
-00:31:00,292 --> 00:31:02,717
+00:31:00,532 --> 00:31:02,957
 Michael gave Rowan a respectful nod and turned
 
 807
-00:31:02,730 --> 00:31:04,492
+00:31:02,970 --> 00:31:04,732
 toward the back entrance of the shop,
 
 808
-00:31:04,605 --> 00:31:05,755
+00:31:04,845 --> 00:31:05,995
 ready for the breakthrough.
 
 809
-00:31:06,628 --> 00:31:08,428
+00:31:06,868 --> 00:31:08,668
 Dusk descended over Oakhaven,
 
 810
-00:31:08,528 --> 00:31:10,691
+00:31:08,768 --> 00:31:10,931
 painting the western sky in deep ribbons of
 
 811
-00:31:10,703 --> 00:31:13,066
+00:31:10,943 --> 00:31:13,306
 crimson, violet, and burnished amber.
 
 812
-00:31:13,948 --> 00:31:15,748
+00:31:14,188 --> 00:31:15,988
 Up in the quiet seclusion of the attic
 
 813
-00:31:15,761 --> 00:31:18,911
+00:31:16,001 --> 00:31:19,151
 loft, long evening shadows stretched across the rough-hewn
 
 814
-00:31:18,923 --> 00:31:19,986
+00:31:19,163 --> 00:31:20,226
 cedar rafters.
 
 815
-00:31:20,860 --> 00:31:23,560
+00:31:21,100 --> 00:31:23,800
 Michael sat cross-legged upon his straw mattress,
 
 816
-00:31:23,648 --> 00:31:25,785
+00:31:23,888 --> 00:31:26,025
 facing the East wall where the circular leaded
 
 817
-00:31:25,798 --> 00:31:27,448
+00:31:26,038 --> 00:31:27,688
 aperture captured twilight.
 
 818
-00:31:28,324 --> 00:31:30,099
+00:31:28,564 --> 00:31:30,339
 He uncorked the ceramic flask,
 
 819
-00:31:30,187 --> 00:31:32,399
+00:31:30,427 --> 00:31:32,639
 the rich botanical aroma of the golden marrow
 
 820
-00:31:32,412 --> 00:31:34,199
+00:31:32,652 --> 00:31:34,439
 elixir filling the attic chamber.
 
 821
-00:31:35,068 --> 00:31:38,068
+00:31:35,308 --> 00:31:38,308
 Without hesitation, Michael lifted the flask and swallowed
 
 822
-00:31:38,081 --> 00:31:40,043
+00:31:38,321 --> 00:31:40,283
 the golden draught in three smooth,
 
 823
-00:31:40,056 --> 00:31:41,143
+00:31:40,296 --> 00:31:41,383
 deliberate gulps.
 
 824
-00:31:42,004 --> 00:31:44,154
+00:31:42,244 --> 00:31:44,394
 The elixir reached his stomach like a molten
 
 825
-00:31:44,167 --> 00:31:46,529
+00:31:44,407 --> 00:31:46,769
 star, exploding into waves of pure,
 
 826
-00:31:46,679 --> 00:31:48,467
+00:31:46,919 --> 00:31:48,707
 concentrated earthen vitality.
 
 827
-00:31:49,348 --> 00:31:50,623
+00:31:49,588 --> 00:31:50,863
 To an ordinary mortal,
 
 828
-00:31:50,711 --> 00:31:53,136
+00:31:50,951 --> 00:31:53,401
 such an intense influx of unrefined energy would
 
 829
-00:31:53,148 --> 00:31:55,736
-have ruptured meridians and shattered blood vessels.
+00:31:53,413 --> 00:31:56,238
+have ruptured meridians and shattered vital pathways.
 
 830
-00:31:56,596 --> 00:31:59,646
+00:31:57,100 --> 00:32:00,150
 Michael's cardiovascular conduits had been forged through three
 
 831
-00:31:59,659 --> 00:32:01,534
+00:32:00,163 --> 00:32:02,038
 years of monotonic conditioning.
 
 832
-00:32:02,404 --> 00:32:03,604
+00:32:02,908 --> 00:32:04,108
 He closed his eyes,
 
 833
-00:32:03,604 --> 00:32:06,704
-inhaling slowly as he activated the Primordial Codex's
+00:32:04,133 --> 00:32:06,733
+inhaling slowly as he activated the ancient soul
 
 834
-00:32:06,717 --> 00:32:08,567
-second tier circulation loop.
+00:32:06,746 --> 00:32:09,133
+grimoire's second tier circulation loop.
 
 835
-00:32:09,436 --> 00:32:12,061
+00:32:10,012 --> 00:32:12,675
 Golden and cyan ribbons of mana intertwined,
 
 836
-00:32:12,186 --> 00:32:14,699
-rushing along his spinal column like twin serpents
+00:32:12,787 --> 00:32:15,200
+rushing along his spinal column like twin currents
 
 837
-00:32:14,711 --> 00:32:15,899
-of living starlight.
+00:32:15,212 --> 00:32:16,712
+of pure kinetic force.
 
 838
-00:32:16,780 --> 00:32:18,593
+00:32:17,596 --> 00:32:19,409
 The energy penetrated his ribs,
 
 839
-00:32:18,693 --> 00:32:20,368
+00:32:19,509 --> 00:32:21,184
 his vertebrae, his femur,
 
 840
-00:32:20,430 --> 00:32:21,243
+00:32:21,246 --> 00:32:22,059
 and his skull,
 
 841
-00:32:21,330 --> 00:32:23,630
+00:32:22,146 --> 00:32:24,446
 flooding the deep hollows of his bone marrow.
 
 842
-00:32:24,508 --> 00:32:27,533
+00:32:25,324 --> 00:32:28,349
 A soft, radiant cyan luminescence shone outward through
 
 843
-00:32:27,546 --> 00:32:30,483
+00:32:28,362 --> 00:32:31,299
 his skin, illuminating the dark loft in ethereal
 
 844
-00:32:30,496 --> 00:32:31,183
+00:32:31,312 --> 00:32:31,999
 brilliance.
 
 845
-00:32:32,044 --> 00:32:33,569
+00:32:32,860 --> 00:32:34,385
 His bone density tightened,
 
 846
-00:32:33,644 --> 00:32:36,007
+00:32:34,460 --> 00:32:36,823
 compacting into a crystalline lattice that hummed with
 
 847
-00:32:36,019 --> 00:32:37,582
+00:32:36,835 --> 00:32:38,398
 immense kinetic potential.
 
 848
-00:32:38,452 --> 00:32:39,765
+00:32:39,268 --> 00:32:40,581
 There was zero pain,
 
 849
-00:32:39,815 --> 00:32:41,265
+00:32:40,631 --> 00:32:42,081
 zero meridian rupture,
 
 850
-00:32:41,352 --> 00:32:44,352
+00:32:42,168 --> 00:32:45,168
 and zero internal backlash only the pure expansion
 
 851
-00:32:44,365 --> 00:32:45,502
+00:32:45,181 --> 00:32:46,318
 of supreme power.
 
 852
-00:32:46,372 --> 00:32:47,722
+00:32:47,188 --> 00:32:48,538
 High above his crown,
 
 853
-00:32:47,722 --> 00:32:50,810
+00:32:48,538 --> 00:32:51,626
 faint concentric arcane seals rotated horizontally in the
 
 854
-00:32:50,822 --> 00:32:51,185
+00:32:51,638 --> 00:32:52,001
 air,
 
 855
-00:32:51,335 --> 00:32:53,522
+00:32:52,151 --> 00:32:54,338
 spinning in silent mathematical harmony.
 
 856
-00:32:54,388 --> 00:32:56,888
+00:32:55,204 --> 00:32:57,704
 The Tier 2 Kinetic Resonance Stage was officially
 
 857
-00:32:56,901 --> 00:32:58,751
+00:32:57,717 --> 00:32:59,567
 unlocked within his mortal frame.
 
 858
-00:32:59,620 --> 00:33:02,570
+00:33:00,436 --> 00:33:03,386
 His physical frame was no longer merely fortified;
 
 859
-00:33:02,670 --> 00:33:05,058
+00:33:03,486 --> 00:33:05,874
 it was now capable of releasing outward kinetic
 
 860
-00:33:05,070 --> 00:33:06,733
+00:33:05,886 --> 00:33:07,549
 shockwaves with every strike.
 
 861
-00:33:07,612 --> 00:33:08,775
+00:33:08,428 --> 00:33:09,591
 He opened his eyes;
 
 862
-00:33:08,862 --> 00:33:10,112
+00:33:09,678 --> 00:33:10,928
 in the twilight gloom,
 
 863
-00:33:10,137 --> 00:33:12,112
+00:33:10,953 --> 00:33:12,928
 his irises blazed with intense,
 
 864
-00:33:12,212 --> 00:33:13,875
+00:33:13,028 --> 00:33:14,691
 incandescent cyan flame.
 
 865
-00:33:14,740 --> 00:33:16,065
+00:33:15,556 --> 00:33:16,881
 Michael exhaled a long,
 
 866
-00:33:16,140 --> 00:33:18,790
+00:33:16,956 --> 00:33:19,606
 steady breath, the swirling mana runes around him
 
 867
-00:33:18,803 --> 00:33:20,678
+00:33:19,619 --> 00:33:21,494
 dissolving back into his pores.
 
 868
-00:33:21,556 --> 00:33:23,019
+00:33:22,372 --> 00:33:23,835
 He unclenched his fists;
 
 869
-00:33:23,119 --> 00:33:25,494
+00:33:23,935 --> 00:33:26,310
 a silent ripple of shockwave energy displaced the
 
 870
-00:33:25,506 --> 00:33:25,844
+00:33:26,322 --> 00:33:26,660
 air,
 
 871
-00:33:26,044 --> 00:33:28,019
+00:33:26,860 --> 00:33:28,835
 fluttering the wool blankets around him.
 
 872
-00:33:28,900 --> 00:33:30,413
+00:33:29,716 --> 00:33:31,229
 Standing up from the mattress,
 
 873
-00:33:30,525 --> 00:33:32,225
+00:33:31,341 --> 00:33:33,041
 his body felt impossibly light,
 
 874
-00:33:32,413 --> 00:33:34,763
+00:33:33,229 --> 00:33:35,579
 yet anchored to the earth with absolute authority.
 
 875
-00:33:35,644 --> 00:33:37,894
+00:33:36,460 --> 00:33:38,710
 He had completed the mortal foundation at eight
 
 876
-00:33:37,907 --> 00:33:38,744
+00:33:38,723 --> 00:33:39,560
 years of age,
 
 877
-00:33:38,819 --> 00:33:40,719
+00:33:39,635 --> 00:33:41,535
 years ahead of even the most pampered royal
 
 878
-00:33:40,732 --> 00:33:41,444
+00:33:41,548 --> 00:33:42,260
 scions.
 
 879
-00:33:42,316 --> 00:33:44,254
+00:33:43,132 --> 00:33:45,070
 The first great phase of his rebirth was
 
 880
-00:33:44,266 --> 00:33:44,966
+00:33:45,082 --> 00:33:45,782
 accomplished;
 
 881
-00:33:45,066 --> 00:33:47,279
+00:33:45,882 --> 00:33:48,095
 the discarded scion of House Montrey was no
 
 882
-00:33:47,291 --> 00:33:47,791
+00:33:48,107 --> 00:33:48,607
 more.
 
 883
-00:33:48,652 --> 00:33:50,315
+00:33:49,468 --> 00:33:51,131
 He walked to the circular aperture,
 
 884
-00:33:50,452 --> 00:33:52,240
+00:33:51,268 --> 00:33:53,056
 looking out over the moonlit pines of the
 
 885
-00:33:52,252 --> 00:33:53,440
+00:33:53,068 --> 00:33:54,256
 frontier with calm,
 
 886
-00:33:53,477 --> 00:33:54,490
+00:33:54,293 --> 00:33:55,306
 sovereign pride.
 
 887
-00:33:55,372 --> 00:33:57,272
+00:33:56,188 --> 00:33:58,088
 The wooden floor hatch in the corner creaked
 
 888
-00:33:57,285 --> 00:33:59,747
+00:33:58,101 --> 00:34:00,563
 softly as Elder Rowan climbed the attic ladder,
 
 889
-00:33:59,872 --> 00:34:01,535
+00:34:00,688 --> 00:34:02,351
 carrying a warm oil lantern.
 
 890
-00:34:02,404 --> 00:34:04,304
+00:34:03,220 --> 00:34:05,120
 Stepping onto the attic floorboards,
 
 891
-00:34:04,417 --> 00:34:06,717
+00:34:05,233 --> 00:34:07,533
 the elderly physician stopped dead in his tracks,
 
 892
-00:34:06,829 --> 00:34:08,792
+00:34:07,645 --> 00:34:09,608
 his hazel eyes widening in shock.
 
 893
-00:34:09,652 --> 00:34:12,015
+00:34:10,468 --> 00:34:12,831
 The ambient air inside the loft was dense
 
 894
-00:34:12,027 --> 00:34:12,577
+00:34:12,843 --> 00:34:13,393
 and heavy,
 
 895
-00:34:12,727 --> 00:34:15,027
+00:34:13,543 --> 00:34:15,843
 humming with an invisible gravity that made Rowan's
 
 896
-00:34:15,040 --> 00:34:15,852
+00:34:15,856 --> 00:34:16,668
 breath hitch.
 
 897
-00:34:16,732 --> 00:34:19,257
+00:34:17,548 --> 00:34:20,073
 Eight-year-old Michael stood before the circular window,
 
 898
-00:34:19,382 --> 00:34:22,120
+00:34:20,198 --> 00:34:22,936
 his silhouette outlined against the pale blue moonlight.
 
 899
-00:34:22,996 --> 00:34:24,834
+00:34:23,812 --> 00:34:25,650
 Though the boy was small and slender,
 
 900
-00:34:24,859 --> 00:34:27,271
+00:34:25,675 --> 00:34:28,087
 the aura radiating from his relaxed frame felt
 
 901
-00:34:27,284 --> 00:34:29,534
+00:34:28,100 --> 00:34:30,350
 like standing before a slumbering dragon.
 
 902
-00:34:30,412 --> 00:34:32,475
+00:34:31,228 --> 00:34:33,291
 Rowan whispered the boy's name softly,
 
 903
-00:34:32,562 --> 00:34:34,437
+00:34:33,378 --> 00:34:35,253
 his voice trembling with reverent awe.
 
 904
-00:34:35,308 --> 00:34:36,571
+00:34:36,124 --> 00:34:37,387
 Michael turned around,
 
 905
-00:34:36,646 --> 00:34:38,696
+00:34:37,462 --> 00:34:39,512
 the cyan glow in his eyes softening back
 
 906
-00:34:38,708 --> 00:34:40,033
+00:34:39,524 --> 00:34:40,849
 into their natural calm,
 
 907
-00:34:40,083 --> 00:34:40,996
+00:34:40,899 --> 00:34:41,812
 ancient depth.
 
 908
-00:34:41,860 --> 00:34:44,473
+00:34:42,676 --> 00:34:45,289
 He quietly confirmed that the breakthrough had completed
 
 909
-00:34:44,485 --> 00:34:47,223
+00:34:45,301 --> 00:34:48,039
 successfully, nodding with gentle reassurance.
 
 910
-00:34:48,100 --> 00:34:49,663
+00:34:48,916 --> 00:34:50,479
 Rowan walked over slowly,
 
 911
-00:34:49,800 --> 00:34:52,075
+00:34:50,616 --> 00:34:52,891
 holding up the lantern to inspect Michael's clear
 
 912
-00:34:52,088 --> 00:34:53,488
+00:34:52,904 --> 00:34:54,304
 face and steady hands.
 
 913
-00:34:54,364 --> 00:34:56,464
+00:34:55,180 --> 00:34:57,280
 He reached out and pressed two fingers against
 
 914
-00:34:56,477 --> 00:34:57,727
+00:34:57,293 --> 00:34:58,543
 Michael's wrist pulse,
 
 915
-00:34:57,852 --> 00:35:00,089
+00:34:58,668 --> 00:35:00,905
 checking his internal mana circulation.
 
 916
-00:35:00,964 --> 00:35:02,464
+00:35:01,780 --> 00:35:03,280
 The boy's pulse was rhythmic,
 
 917
-00:35:02,514 --> 00:35:02,977
+00:35:03,330 --> 00:35:03,793
 slow,
 
 918
-00:35:03,164 --> 00:35:04,314
+00:35:03,980 --> 00:35:05,130
 and impossibly deep,
 
 919
-00:35:04,452 --> 00:35:06,464
+00:35:05,268 --> 00:35:07,280
 like the heartbeat of an ancient mountain.
 
 920
-00:35:07,348 --> 00:35:09,098
+00:35:08,164 --> 00:35:09,914
 There were no meridian scars,
 
 921
-00:35:09,111 --> 00:35:10,373
+00:35:09,927 --> 00:35:11,189
 no core instability,
 
 922
-00:35:10,561 --> 00:35:13,236
+00:35:11,377 --> 00:35:14,052
 and no alchemical poisoning only flawless,
 
 923
-00:35:13,323 --> 00:35:14,486
+00:35:14,139 --> 00:35:15,302
 pristine balance.
 
 924
-00:35:15,364 --> 00:35:17,764
+00:35:16,180 --> 00:35:18,580
 Rowan whispered that achieving Tier 2 at eight
 
 925
-00:35:17,777 --> 00:35:19,964
+00:35:18,593 --> 00:35:20,780
 years of age without an imperial tutor was
 
 926
-00:35:19,977 --> 00:35:21,489
+00:35:20,793 --> 00:35:22,305
 an unprecedented miracle.
 
 927
-00:35:22,372 --> 00:35:24,447
+00:35:23,188 --> 00:35:25,263
 His craggy face broke into a mixture of
 
 928
-00:35:24,460 --> 00:35:26,647
+00:35:25,276 --> 00:35:27,463
 disbelief and triumphant tears as he looked at
 
 929
-00:35:26,660 --> 00:35:27,460
+00:35:27,476 --> 00:35:28,276
 the child.
 
 930
-00:35:28,324 --> 00:35:30,199
+00:35:29,140 --> 00:35:31,015
 The Montrey clan had discarded him in the
 
 931
-00:35:30,212 --> 00:35:32,549
+00:35:31,028 --> 00:35:33,365
 wilderness, believing he was a crippled shame to
 
 932
-00:35:32,562 --> 00:35:33,437
+00:35:33,378 --> 00:35:34,253
 their bloodline.
 
 933
-00:35:34,300 --> 00:35:36,800
+00:35:35,116 --> 00:35:37,616
 Rowan declared that if Patriarch Valerius could see
 
 934
-00:35:36,813 --> 00:35:37,400
+00:35:37,629 --> 00:35:38,216
 him now,
 
 935
-00:35:37,563 --> 00:35:39,075
+00:35:38,379 --> 00:35:39,891
 the nobleman would kneel in the mud in
 
 936
-00:35:39,088 --> 00:35:39,638
+00:35:39,904 --> 00:35:40,454
 shame.
 
 937
-00:35:40,516 --> 00:35:42,754
+00:35:41,332 --> 00:35:43,570
 Michael answered quietly that he did not seek
 
 938
-00:35:42,766 --> 00:35:44,329
+00:35:43,582 --> 00:35:45,145
 their forgiveness or validation,
 
 939
-00:35:44,441 --> 00:35:46,391
+00:35:45,257 --> 00:35:47,207
 his tone devoid of petty vengeance.
 
 940
-00:35:47,260 --> 00:35:49,548
+00:35:48,076 --> 00:35:50,364
 The Montrey clan was merely a blind family
 
 941
-00:35:49,560 --> 00:35:52,273
+00:35:50,376 --> 00:35:53,089
 clinging to obsolete traditions in a crumbling empire.
 
 942
-00:35:53,140 --> 00:35:55,215
+00:35:53,956 --> 00:35:56,031
 When he returned to the imperial capital,
 
 943
-00:35:55,340 --> 00:35:57,053
+00:35:56,156 --> 00:35:57,869
 it would be to claim his rightful place
 
 944
-00:35:57,065 --> 00:35:58,328
+00:35:57,881 --> 00:35:59,144
 as the Fourth Magius.
 
 945
-00:35:59,188 --> 00:36:00,438
+00:36:00,004 --> 00:36:01,254
 Rowan looked at the boy,
 
 946
-00:36:00,538 --> 00:36:02,851
+00:36:01,354 --> 00:36:03,667
 recognizing the timeless soul of a conqueror dwelling
 
 947
-00:36:02,863 --> 00:36:04,338
+00:36:03,679 --> 00:36:05,154
 within the young mortal vessel.
 
 948
-00:36:05,212 --> 00:36:07,900
+00:36:06,028 --> 00:36:08,716
 He placed both hands firmly on Michael's shoulders,
 
 949
-00:36:08,025 --> 00:36:09,600
+00:36:08,841 --> 00:36:10,416
 bowing his head in sincere,
 
 950
-00:36:09,600 --> 00:36:10,887
+00:36:10,416 --> 00:36:11,703
 unbreakable loyalty.
 
 951
-00:36:11,764 --> 00:36:13,727
+00:36:12,580 --> 00:36:14,543
 The physician pledged that as long as breath
 
 952
-00:36:13,739 --> 00:36:14,952
+00:36:14,555 --> 00:36:15,768
 remained in his chest,
 
 953
-00:36:15,089 --> 00:36:17,527
+00:36:15,905 --> 00:36:18,343
 the apothecary was entirely at his disposal.
 
 954
-00:36:18,388 --> 00:36:21,201
+00:36:19,204 --> 00:36:22,017
 Michael placed a gentle hand over Rowan's knuckles,
 
 955
-00:36:21,338 --> 00:36:24,026
+00:36:22,154 --> 00:36:24,842
 his expression warm with genuine family affection.
 
 956
-00:36:24,892 --> 00:36:26,542
+00:36:25,708 --> 00:36:27,358
 He reminded Rowan that he was not a
 
 957
-00:36:26,555 --> 00:36:29,017
+00:36:27,371 --> 00:36:29,833
 servant, but the grandfather who gave him life
 
 958
-00:36:29,030 --> 00:36:30,655
+00:36:29,846 --> 00:36:31,471
 when the empire abandoned him.
 
 959
-00:36:31,516 --> 00:36:33,716
+00:36:32,332 --> 00:36:34,532
 Night settled fully over the frontier valley of
 
 960
-00:36:33,729 --> 00:36:36,641
+00:36:34,545 --> 00:36:37,457
 Oakhaven, the starry celestial vault wheeling above the
 
 961
-00:36:36,654 --> 00:36:37,641
+00:36:37,470 --> 00:36:38,457
 silent town.
 
 962
-00:36:38,524 --> 00:36:40,024
+00:36:39,340 --> 00:36:40,840
 In the peaceful attic loft,
 
 963
-00:36:40,162 --> 00:36:42,137
+00:36:40,978 --> 00:36:42,953
 Rowan had returned downstairs to rest,
 
 964
-00:36:42,274 --> 00:36:44,187
+00:36:43,090 --> 00:36:45,003
 leaving Michael alone with the starlight.
 
 965
-00:36:45,052 --> 00:36:47,740
+00:36:45,868 --> 00:36:48,556
 Michael picked up his carved blackwood quarterstaff,
 
 966
-00:36:47,865 --> 00:36:50,190
+00:36:48,681 --> 00:36:51,006
 feeling the flawless resonance between his marrow and
 
 967
-00:36:50,202 --> 00:36:51,152
+00:36:51,018 --> 00:36:51,968
 the dark timber.
 
 968
-00:36:52,036 --> 00:36:54,199
+00:36:52,852 --> 00:36:55,015
 With Tier 2 Kinetic Resonance mastered,
 
 969
-00:36:54,324 --> 00:36:56,736
+00:36:55,140 --> 00:36:57,552
 he could now project kinetic shockwaves outward at
 
 970
-00:36:56,749 --> 00:36:57,899
+00:36:57,565 --> 00:36:58,715
 will through the staff.
 
 971
-00:36:58,780 --> 00:37:01,055
+00:36:59,596 --> 00:37:01,871
 His physical vessel had achieved the first tier
 
 972
-00:37:01,068 --> 00:37:02,355
+00:37:01,884 --> 00:37:03,171
 of Mana-Forged Flesh,
 
 973
-00:37:02,455 --> 00:37:05,493
+00:37:03,271 --> 00:37:06,309
 rendering mundane attacks beneath his threshold harmless.
 
 974
-00:37:06,364 --> 00:37:08,727
+00:37:07,180 --> 00:37:09,543
 The stage for Act One The Discarded Scion
 
 975
-00:37:08,739 --> 00:37:11,177
+00:37:09,555 --> 00:37:11,993
 and The Painless Crafts was officially sealed and
 
 976
-00:37:11,189 --> 00:37:12,964
+00:37:12,005 --> 00:37:13,780
 conquered in absolute secrecy.
 
 977
-00:37:13,828 --> 00:37:15,003
+00:37:14,644 --> 00:37:15,819
 Ahead lay Act Two:
 
 978
-00:37:15,178 --> 00:37:18,478
+00:37:15,994 --> 00:37:19,294
 The Frontier Expeditions and The Iron-Rank Mercenary Trials.
 
 979
-00:37:19,348 --> 00:37:21,573
+00:37:20,164 --> 00:37:22,389
 He would venture into the untamed deep ridges
 
 980
-00:37:21,586 --> 00:37:22,748
+00:37:22,402 --> 00:37:23,564
 of the Blackwood Forest,
 
 981
-00:37:22,861 --> 00:37:25,861
+00:37:23,677 --> 00:37:26,677
 unearthing pre-imperial ruins and ancient beast lairs.
 
 982
-00:37:26,740 --> 00:37:28,715
+00:37:27,556 --> 00:37:29,481
 He would gather rare celestial ores,
 
 983
-00:37:28,778 --> 00:37:29,978
+00:37:29,569 --> 00:37:30,794
 ancient mana cores,
 
 984
-00:37:30,078 --> 00:37:32,290
-and unlock the deeper chambers of the Primordial
+00:37:30,869 --> 00:37:32,844
+and unlock the deeper chambers of the ancient
 
 985
-00:37:32,303 --> 00:37:33,065
-Codex.
+00:37:32,856 --> 00:37:33,819
+soul grimoire.
 
 986
-00:37:33,940 --> 00:37:36,990
+00:37:34,684 --> 00:37:37,734
 When the imperial evaluation convoy arrived in Oakhaven
 
 987
-00:37:37,003 --> 00:37:37,690
+00:37:37,747 --> 00:37:38,434
 in the spring,
 
 988
-00:37:37,878 --> 00:37:40,178
+00:37:38,622 --> 00:37:40,922
 they would find an eight-year-old titan disguised as
 
 989
-00:37:40,190 --> 00:37:41,053
+00:37:40,934 --> 00:37:41,797
 an apprentice.
 
 990
-00:37:41,932 --> 00:37:44,382
+00:37:42,676 --> 00:37:45,126
 Michael looked out through the circular leaded aperture
 
 991
-00:37:44,395 --> 00:37:46,645
+00:37:45,139 --> 00:37:47,389
 toward the distant northern mountain peaks.
 
 992
-00:37:47,524 --> 00:37:48,974
+00:37:48,268 --> 00:37:49,718
 Far beyond the horizon,
 
 993
-00:37:49,074 --> 00:37:51,787
+00:37:49,818 --> 00:37:52,531
 the glowing crystalline spires of the imperial capital
 
 994
-00:37:51,799 --> 00:37:53,812
+00:37:52,543 --> 00:37:54,556
 pierced the night clouds proud,
 
 995
-00:37:53,912 --> 00:37:55,287
+00:37:54,656 --> 00:37:56,031
 arrogant, and blind.
 
 996
-00:37:56,164 --> 00:37:58,839
-Patriarch Valerius, Head Elder Cassius,
+00:37:56,908 --> 00:37:58,433
+The imperial patriarch,
 
 997
-00:37:58,939 --> 00:38:01,189
-and Grand Inquisitor Malakor were preparing for their
+00:37:58,458 --> 00:37:59,758
+the corrupt clan elders,
 
 998
-00:38:01,202 --> 00:38:03,152
-grand imperial celebrations.
+00:37:59,871 --> 00:38:01,883
+and the grand inquisitors were preparing for their
 
 999
-00:38:04,012 --> 00:38:06,137
-They believed their discarded infant had perished in
+00:38:01,896 --> 00:38:03,308
+grand celebrations.
 
 1000
-00:38:06,150 --> 00:38:07,562
-the wilderness eight years ago,
+00:38:04,180 --> 00:38:06,305
+They believed their discarded infant had perished in
 
 1001
-00:38:07,800 --> 00:38:09,975
-a forgotten footnote in house records.
+00:38:06,318 --> 00:38:07,730
+the wilderness eight years ago,
 
 1002
-00:38:10,852 --> 00:38:12,790
-They did not know that the apex archmage
+00:38:07,968 --> 00:38:10,143
+a forgotten footnote in house records.
 
 1003
-00:38:12,802 --> 00:38:15,127
-they had betrayed had returned with an indestructible
+00:38:11,020 --> 00:38:12,958
+They did not know that the apex archmage
 
 1004
-00:38:15,140 --> 00:38:16,002
-physical body.
+00:38:12,970 --> 00:38:15,295
+they had betrayed had returned with an indestructible
 
 1005
-00:38:16,876 --> 00:38:18,501
-They did not know that the true sovereign
+00:38:15,308 --> 00:38:16,170
+physical body.
 
 1006
-00:38:18,514 --> 00:38:20,714
-of the First Magicians was sharpening his staff
+00:38:17,044 --> 00:38:18,669
+They did not know that the true sovereign
 
 1007
-00:38:20,726 --> 00:38:22,226
-in the frontier shadows.
+00:38:18,682 --> 00:38:20,882
+of the First Magicians was sharpening his staff
 
 1008
-00:38:23,092 --> 00:38:24,480
-Michael smiled faintly,
+00:38:20,894 --> 00:38:22,394
+in the frontier shadows.
 
 1009
-00:38:24,580 --> 00:38:27,092
-a cool, radiant smile that promised an imperial
+00:38:23,260 --> 00:38:24,648
+Michael smiled faintly,
 
 1010
-00:38:27,105 --> 00:38:29,780
-reckoning unlike anything the realm had ever witnessed.
+00:38:24,748 --> 00:38:27,260
+a cool, radiant smile that promised an imperial
 
 1011
-00:38:30,652 --> 00:38:32,890
-He laid his blackwood staff beside his bed
+00:38:27,273 --> 00:38:29,948
+reckoning unlike anything the realm had ever witnessed.
 
 1012
-00:38:32,902 --> 00:38:34,977
-and lay down on his straw mattress beneath
+00:38:30,820 --> 00:38:33,195
+He rested his wooden training staff beside his
 
 1013
-00:38:34,990 --> 00:38:36,302
-the thick wool blankets.
+00:38:33,208 --> 00:38:35,195
+bed and lay down on his straw mattress
 
 1014
-00:38:37,180 --> 00:38:38,993
-His breathing slowed into the deep,
+00:38:35,208 --> 00:38:36,920
+beneath the thick wool blankets.
 
 1015
-00:38:39,118 --> 00:38:41,393
-rhythmic tide of monotonic cultivation,
+00:38:37,804 --> 00:38:39,617
+His breathing slowed into the deep,
 
 1016
-00:38:41,480 --> 00:38:43,605
-his bones resting in quiet strength.
+00:38:39,742 --> 00:38:42,017
+rhythmic tide of monotonic cultivation,
 
 1017
-00:38:44,476 --> 00:38:47,151
-Outside, the northern wind whispered through the dark
+00:38:42,104 --> 00:38:44,229
+his bones resting in quiet strength.
 
 1018
-00:38:47,164 --> 00:38:49,989
-ironwood pines, carrying the quiet promise of coming
+00:38:45,100 --> 00:38:47,775
+Outside, the northern wind whispered through the dark
 
 1019
-00:38:50,001 --> 00:38:50,776
-storms.
+00:38:47,788 --> 00:38:50,613
+ironwood pines, carrying the quiet promise of coming
 
 1020
-00:38:51,652 --> 00:38:53,515
-The frontier had nurtured the dragon;
+00:38:50,625 --> 00:38:51,400
+storms.
 
 1021
-00:38:53,590 --> 00:38:55,965
-soon, the empire would feel its wings.
+00:38:52,276 --> 00:38:54,139
+The frontier had nurtured the dragon;
 
 1022
-00:38:56,836 --> 00:38:57,536
-Act One:
+00:38:54,214 --> 00:38:56,589
+soon, the empire would feel its wings.
 
 1023
-00:38:57,649 --> 00:39:00,586
-The Discarded Scion and The Painless Crafts Concluded
+00:38:57,460 --> 00:38:58,160
+Act One:
 
 1024
-00:39:00,599 --> 00:39:02,036
-in Absolute Triumph.
+00:38:58,273 --> 00:39:01,210
+The Discarded Scion and The Painless Crafts Concluded
 
 1025
-00:39:02,908 --> 00:39:04,321
-All foundations locked,
+00:39:01,223 --> 00:39:02,660
+in Absolute Triumph.
 
 1026
-00:39:04,358 --> 00:39:05,946
-all linework verified,
+00:39:03,532 --> 00:39:04,945
+All foundations locked,
 
 1027
-00:39:06,021 --> 00:39:09,183
-and all internal paths forged in unbreakable starlight.
+00:39:04,982 --> 00:39:06,570
+all linework verified,
 
 1028
-00:39:10,060 --> 00:39:12,310
-Michael closed his calm cyan eyes,
+00:39:06,645 --> 00:39:09,807
+and all internal paths forged in unbreakable starlight.
 
 1029
-00:39:12,398 --> 00:39:13,760
-resting in the quiet dark,
+00:39:10,684 --> 00:39:12,934
+Michael closed his calm cyan eyes,
 
 1030
-00:39:13,898 --> 00:39:15,385
-ready for the dawn of the next great
+00:39:13,022 --> 00:39:14,384
+resting in the quiet dark,
 
 1031
-00:39:15,398 --> 00:39:16,035
+00:39:14,522 --> 00:39:16,009
+ready for the dawn of the next great
+
+1032
+00:39:16,022 --> 00:39:16,659
 trial.

@@ -1,0 +1,507 @@
+{
+  "julian_vaelgard": {
+    "id": "julian_vaelgard",
+    "name": "Julian Vaelgard",
+    "kind": "character",
+    "token": "@{Julian Vaelgard}",
+    "aliases": [
+      "Julian Vaelgard",
+      "Julian",
+      "Young Master Julian",
+      "Aiden",
+      "Aiden Drake",
+      "The Sword Saint"
+    ],
+    "tier": 1,
+    "status": "approved",
+    "age_class": "adolescent",
+    "dna": "15-year-old young noble swordsman, lean athletic martial build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
+    "dna_prompt_anchor": "@{Julian Vaelgard - Reincarnated Sword Saint}",
+    "visual_dna": "Fifteen-year-old young noble swordsman with sleek raven-black hair parted neatly, piercing sharp silver eyes that gleam with ancient intellect, pale refined complexion, dressed in a tailored midnight-navy silk combat doublet with silver filigree embroidery, white cravat, dark tailored trousers, polished black leather dueling boots, holding a lightweight silver-hilted practice rapier with effortless poise, charismatic calm expression, sharp ink linework, 2D action manhwa cel-shading",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the 15-year-old body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye.",
+    "plate": "character_vault/01_Protagonist_Julian_Vaelgard.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "duke_gerald_vaelgard": {
+    "id": "duke_gerald_vaelgard",
+    "name": "Duke Gerald Vaelgard",
+    "kind": "character",
+    "token": "@{Duke Gerald Vaelgard}",
+    "aliases": [
+      "Duke Gerald Vaelgard",
+      "Duke Gerald",
+      "Gerald",
+      "Father",
+      "The Iron Duke"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "40-year-old imposing nobleman, short raven hair with distinguished silver temples, dark beard, amber eyes, commanding aristocratic father, wearing thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip",
+    "dna_prompt_anchor": "@{Duke Gerald Vaelgard - Diamond Swordmaster}",
+    "visual_dna": "Imposing forty-year-old nobleman with broad shoulders, rugged handsome features, short raven hair with distinguished silver temples, piercing amber eyes, a neatly trimmed dark beard, wearing thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip, commanding patriarchal presence, sharp ink linework",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "thick silver-grey wolf fur collar draped across broad shoulders, ornate silver-and-steel plate pauldrons over a deep navy velvet tunic with Vaelgard twin-crest mantle, sheathed Diamond-Rank greatsword resting at his hip"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Patriarch of House Vaelgard and Diamond-Rank Swordmaster commanding the Imperial Vanguard. Stern, disciplined, but deeply proud and fiercely protective of his children.",
+    "plate": "character_vault/02_Patriarch_Duke_Gerald_Vaelgard.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "duchess_eleanor_vaelgard": {
+    "id": "duchess_eleanor_vaelgard",
+    "name": "Duchess Eleanor Vaelgard",
+    "kind": "character",
+    "token": "@{Duchess Eleanor Vaelgard}",
+    "aliases": [
+      "Duchess Eleanor Vaelgard",
+      "Duchess Eleanor",
+      "Eleanor",
+      "Mother"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "36-year-old elegant noblewoman, long cascading sapphire-tinted midnight hair styled in graceful braided updo, warm azure eyes, refined aristocratic features, gentle maternal smile, wearing exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes, delicate sapphire mana pendant",
+    "dna_prompt_anchor": "@{Duchess Eleanor Vaelgard - 5-Star Court Archmage}",
+    "visual_dna": "Elegant thirty-six-year-old noblewoman with long flowing sapphire-tinted midnight hair styled in a graceful braided updo, warm azure eyes, refined aristocratic features, dressed in an exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes, wearing a delicate sapphire mana pendant, gentle maternal smile, sharp ink linework",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes, delicate sapphire mana pendant"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "5-Star Imperial Court Archmage and Duchess of House Vaelgard. A genius of elemental spellcraft who manages the duchy's vast magical libraries and treasury.",
+    "plate": "character_vault/03_Duchess_Eleanor_Vaelgard.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "archmage_lyra": {
+    "id": "archmage_lyra",
+    "name": "Archmage Lyra",
+    "kind": "character",
+    "token": "@{Archmage Lyra}",
+    "aliases": [
+      "Archmage Lyra",
+      "Lyra",
+      "The Frozen Star",
+      "Grand Matriarch Lyra"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "26-year-old elite ice archmage, cascading frost-silver hair, cool crystalline azure eyes, calm composed intellectual expression, wearing ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe",
+    "dna_prompt_anchor": "@{Archmage Lyra - The Frozen Star}",
+    "visual_dna": "Ageless ethereal archmage with cascading waist-length platinum-ice hair that faintly glows, piercing glacial-cyan eyes, serene and aloof porcelain countenance, dressed in a flowing frost-white and silver layered archmage robe with a frosted fur mantle, holding a slender crystal staff that emanates subtle cold mist, sharp ink linework",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Youngest and most devoted disciple of Aiden Drake from 1,000 years ago. Achieved 6-Star magic and placed herself in Chronos-Ice Stasis to await her master's prophesied reincarnation, guarding the sacred truth against the Church.",
+    "plate": "character_vault/04_Archmage_Lyra_The_Frozen_Star.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "master_swordsman_kael": {
+    "id": "master_swordsman_kael",
+    "name": "Master Swordsman Kael",
+    "kind": "character",
+    "token": "@{Master Swordsman Kael}",
+    "aliases": [
+      "Master Swordsman Kael",
+      "Instructor Kael",
+      "Kael"
+    ],
+    "tier": 3,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "34-year-old veteran sword instructor, sharp angular features, steel-grey hair tied back in a short warrior tail, scarred left forearm, calm exacting gaze, wearing fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons, dueling bracers, and a polished silver scabbard at his hip",
+    "dna_prompt_anchor": "@{Master Swordsman Kael - Vaelgard Chief Instructor}",
+    "visual_dna": "Weathered fifty-year-old veteran swordsman with grey-streaked brown hair tied in a short warrior tail, scarred cheek, keen grey eyes, wearing a fitted brown leather sparring doublet, reinforced vambraces, holding a twin-hilted steel arming sword, sharp ink linework",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons, dueling bracers, and a polished silver scabbard at his hip"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Gold-Rank Swordmaster and chief combat instructor for House Vaelgard's scions.",
+    "plate": "character_vault/05_Instructor_Master_Swordsman_Kael.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "high_inquisitor_malakor": {
+    "id": "high_inquisitor_malakor",
+    "name": "High Inquisitor Malakor",
+    "kind": "character",
+    "token": "@{High Inquisitor Malakor}",
+    "aliases": [
+      "High Inquisitor Malakor",
+      "Inquisitor Malakor",
+      "Malakor"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "45-year-old stern inquisitor with gaunt severe facial structure, slicked back iron-grey hair, piercing fanatical pale gold eyes, sinister pious smirk, wearing immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash",
+    "dna_prompt_anchor": "@{High Inquisitor Malakor - Church of the Radiant Dawn}",
+    "visual_dna": "Gaunt forty-five-year-old imperial prelate with slicked-back golden-blonde hair, cold predatory golden eyes, sharp aristocratic nose, dressed in lavish white-and-gold liturgical inquisitor robes with sun-burst brass iconography and a heavy solar pendant, holding a golden baptismal scrying chalice, sanctimonious sneer, sharp ink linework",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Emissary from the Church of the Radiant Dawn, serving the same celestial pantheon that poisoned Aiden Drake 1,000 years ago.",
+    "plate": "character_vault/06_Antagonist_High_Inquisitor_Malakor.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "vaelgard_silver_training_rapier": {
+    "id": "vaelgard_silver_training_rapier",
+    "name": "Vaelgard Silver Training Rapier",
+    "kind": "item",
+    "token": "@{Vaelgard Silver Training Rapier}",
+    "aliases": [
+      "Vaelgard Silver Training Rapier",
+      "Silver Rapier",
+      "Julian's Training Sword"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Vaelgard Silver Training Rapier}, master noble dueling rapier. Swept basket hilt with delicate silver filigree, navy leather wrapped grip, slender silver-steel alloy blade emitting faint silver gleam, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Vaelgard Silver Training Rapier - Master Crafted}",
+    "visual_dna": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Julian's custom-balanced childhood practice blade, capable of channeling both elemental mana and sword aura with zero resistance.",
+    "plate": "character_vault/07_Weapon_Vaelgard_Silver_Training_Rapier.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "principles_of_mana_weaving": {
+    "id": "principles_of_mana_weaving",
+    "name": "Principles of Mana Weaving",
+    "kind": "item",
+    "token": "@{Principles of Mana Weaving}",
+    "aliases": [
+      "Principles of Mana Weaving",
+      "Aiden's Diary",
+      "The Ancient Grimoire"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Principles of Mana Weaving}, ancient monumental grimoire bound in weathered dark leather, obsidian-and-gold filigree corner brackets, gilded page edges, embossed crest of crossed sword and staff, resting upon black pedestal, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Principles of Mana Weaving - 1000-Year Ancient Grimoire}",
+    "visual_dna": "Massive ancient leather-bound grimoire encased in weathered obsidian-and-gold filigree corner brackets, gilded page edges, a central embossed crest of a crossed sword and staff, resting upon a polished black pedestal, textless artwork",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "A monumental ancient leather-bound tome holding Aiden Drake's foundational research on mana threads and spell matrices from 1,000 years ago.",
+    "plate": "character_vault/08_Artifact_Principles_of_Mana_Weaving.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "aiden_drake": {
+    "id": "aiden_drake",
+    "name": "Aiden Drake",
+    "kind": "character",
+    "token": "@{Aiden Drake}",
+    "aliases": [
+      "Aiden Drake",
+      "Aiden",
+      "The First Sword Saint",
+      "Sword God Aiden",
+      "Founding Sword Saint"
+    ],
+    "tier": 1,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "28-year-old battle-weathered peerless swordsman, raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, tragic defiant sneer, wearing shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots",
+    "dna_prompt_anchor": "@{Aiden Drake - The First Sword Saint}",
+    "visual_dna": "Tall, battle-weathered twenty-eight-year-old peerless swordsman with raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, wearing a shredded midnight-black swordmaster duster over silver-trimmed tunic, bleeding from chest from insidious poison, holding an ancient chipped Obsidian Greatsword, tragic defiant sneer against the heavens, sharp ink linework, horizontal 16:9 widescreen",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "The First Sword Saint 1,000 years ago who stood at the gates of Godhood before being assassinated by celestial poison.",
+    "plate": "character_vault/00_Prologue_Aiden_Drake.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "celestial_altar_ruins": {
+    "id": "celestial_altar_ruins",
+    "name": "Celestial Altar of Ascension",
+    "kind": "location",
+    "token": "@{Celestial Altar of Ascension}",
+    "aliases": [
+      "Celestial Altar Ruins",
+      "Celestial Altar of Ascension",
+      "celestial_altar_ruins",
+      "Celestial Altar"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Celestial Altar Ruins}, colossal shattered golden divine altar floating above a sea of stormy twilight clouds, cracked celestial marble pillars, shattered golden chains, broken runic steles, violent crimson celestial lightning, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Celestial Altar Ruins - Divine Ascension Sanctum}",
+    "visual_dna": "Colossal shattered golden divine altar floating above a sea of stormy twilight clouds, with cracked celestial marble pillars, shattered golden chains, broken runic steles, and violent arcs of crimson celestial lightning tearing through dark storm clouds above.",
+    "plate": "character_vault/10_Location_Celestial_Altar_Ruins.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "julian_bedchamber": {
+    "id": "julian_bedchamber",
+    "name": "Julian's Ducal Solar & Study",
+    "kind": "location",
+    "token": "@{Julian's Ducal Solar & Study}",
+    "aliases": [
+      "Julian's Ducal Solar & Study",
+      "Julian's Ducal Solar",
+      "Julian Solar",
+      "Julian's Ducal Bedchamber",
+      "Julian Bedchamber",
+      "julian_bedchamber",
+      "Ducal Bedchamber",
+      "Ducal Solar"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Julian's Ducal Solar & Study}, lavish high-noble private study and solar, high arched ceilings, silver filigree cornices, sheer sapphire silk draperies, polished white marble floor, carved mahogany writing desk, ornate silver-framed mirror, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Julian's Ducal Solar - Ducal Private Sanctuary}",
+    "visual_dna": "Lavish high-noble private study and solar in House Vaelgard with high arched ceilings, silver filigree cornices, sheer sapphire silk draperies, polished white marble floor, and a carved mahogany writing desk.",
+    "plate": "character_vault/11_Location_Julian_Bedchamber.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "vaelgard_palace_exterior": {
+    "id": "vaelgard_palace_exterior",
+    "name": "Grand Ducal Palace of House Vaelgard",
+    "kind": "location",
+    "token": "@{Grand Ducal Palace of House Vaelgard}",
+    "aliases": [
+      "Grand Ducal Palace of House Vaelgard",
+      "Vaelgard Palace Exterior",
+      "vaelgard_palace_exterior",
+      "House Vaelgard Palace"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Grand Ducal Palace of House Vaelgard}, grand ancestral palace with towering white marble and silver granite spires, sapphire blue roofs, expansive stone courtyards flanked by aqueduct fountains, manicured emerald gardens, fifty-foot obsidian statue of the Founding Sword Saint, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Grand Ducal Palace of House Vaelgard - Sovereign Ducal Seat}",
+    "visual_dna": "Grand ancestral palace of House Vaelgard with towering white marble and silver granite spires, sapphire blue roofs, expansive stone courtyards flanked by crystal-clear aqueduct fountains, manicured emerald gardens, and a colossal fifty-foot ancient obsidian statue of the Founding Sword Saint holding a greatsword pointing skyward.",
+    "plate": "character_vault/00_World_Setting_Canonical.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "obsidian_sparring_arena": {
+    "id": "obsidian_sparring_arena",
+    "name": "Private Obsidian Sparring Arena",
+    "kind": "location",
+    "token": "@{Private Obsidian Sparring Arena}",
+    "aliases": [
+      "Private Obsidian Sparring Arena",
+      "Obsidian Sparring Arena",
+      "obsidian_sparring_arena",
+      "Sparring Arena"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Private Obsidian Sparring Arena}, vast circular private outdoor martial arena paved with dark obsidian flagstones etched with glowing cyan suppression runes, arched white marble colonnade draped in purple wisteria vines, runic barrier monoliths, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Private Obsidian Sparring Arena - Runic Martial Grounds}",
+    "visual_dna": "Vast circular private outdoor martial sparring arena paved with seamless dark obsidian flagstones etched with glowing cyan suppression runes, encircled by an arched white marble colonnade draped in flowering purple wisteria vines, with carved runic barrier monoliths and weapon racks.",
+    "plate": "character_vault/02_Obsidian_Sparring_Arena.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "ancestral_vault_rotunda": {
+    "id": "ancestral_vault_rotunda",
+    "name": "Ancestral Vault & Grand Library Rotunda",
+    "kind": "location",
+    "token": "@{Ancestral Vault & Grand Library Rotunda}",
+    "aliases": [
+      "Ancestral Vault & Grand Library Rotunda",
+      "Ancestral Vault Rotunda",
+      "ancestral_vault_rotunda",
+      "Grand Library Rotunda"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Ancestral Vault & Grand Library Rotunda}, soaring multi-tiered circular arcane library rotunda, fluted marble pillars, five-story mahogany bookshelves, stained-glass dome window depicting sword saint, floating golden and turquoise mana lanterns, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Ancestral Vault & Grand Library Rotunda - Sacred Clan Archive}",
+    "visual_dna": "Soaring multi-tiered circular arcane library rotunda with carved fluted marble pillars, five-story mahogany bookshelves filled with ancient grimoires, stained-glass dome window depicting a sword saint splitting an azure sky, and floating golden and turquoise mana lanterns.",
+    "plate": "character_vault/01_Ancestral_Vault_Library.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "aiden_drake_past_life": {
+    "id": "aiden_drake_past_life",
+    "name": "Aiden Drake",
+    "kind": "character",
+    "token": "@{Aiden Drake}",
+    "aliases": [
+      "Aiden Drake",
+      "Aiden",
+      "The First Sword Saint",
+      "Sword God Aiden",
+      "Founding Sword Saint"
+    ],
+    "tier": 1,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "28-year-old battle-weathered peerless swordsman, raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, tragic defiant sneer, wearing shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots",
+    "dna_prompt_anchor": "@{Aiden Drake - The First Sword Saint}",
+    "visual_dna": "Tall, battle-weathered twenty-eight-year-old peerless swordsman with raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, wearing a shredded midnight-black swordmaster duster over silver-trimmed tunic, bleeding from chest from insidious poison, holding an ancient chipped Obsidian Greatsword, tragic defiant sneer against the heavens, sharp ink linework, horizontal 16:9 widescreen",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "The First Sword Saint 1,000 years ago who stood at the gates of Godhood before being assassinated by celestial poison.",
+    "plate": "character_vault/00_Prologue_Aiden_Drake.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "enchanted_iron_wood_practice_dummy": {
+    "id": "enchanted_iron_wood_practice_dummy",
+    "name": "Enchanted Iron-Wood Practice Dummy",
+    "token": "@{Enchanted Iron-Wood Practice Dummy}",
+    "kind": "item",
+    "category": "Props",
+    "description": "full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+    "visual_dna": "full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+    "dna": "@{Enchanted Iron-Wood Practice Dummy}, full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+    "dna_prompt_anchor": "@{Enchanted Iron-Wood Practice Dummy}, full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+    "reference_plate": "09_Prop_Enchanted_Iron_Wood_Dummy.jpg",
+    "aliases": [
+      "iron-wood dummy",
+      "enchanted dummy",
+      "practice dummy",
+      "target dummy"
+    ]
+  },
+  "wooden_practice_rod": {
+    "id": "wooden_practice_rod",
+    "name": "Wooden Practice Rod",
+    "token": "@{Wooden Practice Rod}",
+    "kind": "item",
+    "category": "Weapons",
+    "description": "Smooth cylindrical straight wooden training rod crafted from pale polished ash-wood with a blunt rounded tip and simple navy cloth wrapped grip.",
+    "visual_dna": "Smooth cylindrical straight wooden training rod crafted from pale polished ash-wood with a blunt rounded tip and simple navy cloth wrapped grip.",
+    "dna": "@{Wooden Practice Rod}, smooth cylindrical straight wooden training rod, pale polished ash-wood grain, blunt rounded tip, simple navy cloth wrapped grip, zero sharp edges, lightweight sparring baton, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Wooden Practice Rod}, smooth cylindrical straight wooden training rod, pale polished ash-wood grain, blunt rounded tip, simple navy cloth wrapped grip, zero sharp edges, lightweight sparring baton, textless artwork, horizontal 16:9 widescreen",
+    "reference_plate": "12_Prop_Wooden_Practice_Rod.jpg",
+    "aliases": [
+      "wooden rod",
+      "practice rod",
+      "training rod",
+      "wooden practice rod"
+    ]
+  },
+  "obsidian_greatsword": {
+    "id": "obsidian_greatsword",
+    "name": "Obsidian Greatsword",
+    "kind": "character",
+    "token": "@{Obsidian Greatsword}",
+    "aliases": [
+      "Obsidian Greatsword",
+      "The Obsidian Greatsword",
+      "The Obsidian Spellsword",
+      "obsidian greatsword",
+      "obsidian blade",
+      "black greatsword",
+      "chipped obsidian greatsword",
+      "ancient obsidian greatsword"
+    ],
+    "tier": 1,
+    "status": "approved",
+    "age_class": "ancient",
+    "dna": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
+    "dna_prompt_anchor": "@{Obsidian Greatsword - Sovereign Void Blade}",
+    "visual_dna": "Colossal two-handed obsidian greatsword sculpted from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel, 2D action manhwa art style, sharp ink linework, horizontal 16:9 widescreen",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "The legendary soul-bound weapon of Aiden Drake, the First Sword Saint. Forged from primordial obsidian volcanic glass capable of severing mana threads, magic domains, and divine law. Following Aiden's fall at the Celestial Altar 1,000 years ago, the blade was recovered and enshrined in the deepest ancestral treasury vault of House Vaelgard, slumbering in dormant stasis until its true master Julian reclaims it.",
+    "plate": "character_vault/13_Weapon_Obsidian_Greatsword.jpg",
+    "episodes": [
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+    ]
+  },
+  "white_marble_meditation_bench": {
+    "id": "white_marble_meditation_bench",
+    "name": "White Marble Meditation Bench",
+    "token": "@{White Marble Meditation Bench}",
+    "kind": "item",
+    "category": "Props",
+    "description": "An ornate wide classical white marble meditation bench with elegant carved scrollwork armrests and backrest, resting on a polished white marble garden pavilion platform beside blooming azure roses.",
+    "visual_dna": "An ornate wide classical white marble meditation bench with elegant carved scrollwork armrests and backrest, resting on a polished white marble garden pavilion platform beside blooming azure roses.",
+    "dna": "@{White Marble Meditation Bench}, ornate wide classical white marble meditation bench, elegant carved scrollwork armrests and backrest, resting on polished white marble garden pavilion platform beside blooming azure roses and subtle cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{White Marble Meditation Bench}, ornate wide classical white marble meditation bench, elegant carved scrollwork armrests and backrest, resting on polished white marble garden pavilion platform beside blooming azure roses and subtle cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+    "reference_plate": "14_Prop_White_Marble_Meditation_Bench.jpg",
+    "aliases": [
+      "White Marble Meditation Bench",
+      "Marble Meditation Bench"
+    ]
+  },
+  "founding_sword_saint_obsidian_monument": {
+    "id": "founding_sword_saint_obsidian_monument",
+    "name": "Founding Sword Saint Obsidian Monument",
+    "token": "@{Founding Sword Saint Obsidian Monument}",
+    "kind": "item",
+    "category": "Props",
+    "description": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting Aiden Drake clad in a battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
+    "visual_dna": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting Aiden Drake clad in a battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
+    "dna": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+    "reference_plate": "15_Prop_Founding_Sword_Saint_Obsidian_Monument.jpg",
+    "aliases": [
+      "Founding Sword Saint Obsidian Monument",
+      "Founding Sword Saint Monument"
+    ]
+  }
+}

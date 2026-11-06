@@ -2585,20 +2585,20 @@ const getFlowDirectiveHeader = (collectionTitle, format = '16:9', batchItems = n
     ? `Keep ${intel.protagonistLabel}'s human anatomy 100% separate from ${intel.bossOrConstructList.join(', ')} (never fuse boss wings, claws, or mechanical puppet hands onto ${intel.protagonistLabel}).`
     : `Strictly one instance of ${intel.protagonistLabel} per scene; never clone the protagonist or merge features across characters.`
 
-  return `[COMMAND: EXECUTE BATCH AUTONOMOUSLY — CONTINUOUS SEQUENCE]
-MANDATE: Generate ALL scenes in "${collectionTitle}" continuously from first to last without pausing or stopping after each scene. DO NOT ask for confirmation. Run the complete sequence to 100% completion before returning your final summary.
+  return `[COMMAND: GENERATE ALL SCENES SIMULTANEOUSLY IN PARALLEL]
+MANDATE: Generate ALL scenes in "${collectionTitle}" SIMULTANEOUSLY in parallel in a single turn. Do NOT generate them sequentially one after another. Strictly forbidden from outputting intermediate status text (such as "I am currently generating scene IMG_XXX...").
 
 [SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
 
 STRICT OPERATIONAL DIRECTIVES FOR COLLECTION "${collectionTitle}":
-1. AUTONOMOUS CONTINUOUS BATCH GENERATION: Generate 100% of the scenes in this batch in a single uninterrupted execution loop. Strictly forbidden from yielding the turn or asking for confirmation between individual scene plates.
+1. SIMULTANEOUS PARALLEL BATCH GENERATION: Generate 100% of the scenes in this batch SIMULTANEOUSLY in parallel in a single turn. Strictly forbidden from generating sequentially one after another or outputting per-scene progress announcements (e.g. "I am currently generating scene IMG_XXX...").
 2. MANDATORY COLLECTION ISOLATION: Create and isolate 100% of generated scenes in this batch inside "${collectionTitle}". Never mix with prior batches.
 3. MANDATORY IMMEDIATE FILE NAMING: Automatically rename every generated asset to match the exact filename="..." attribute of its <scene> node (e.g. IMG_001.jpg) immediately after generation without waiting for a "sync" command.
 4. SMART TEXT CONTROL (SCENE-LOCKED):
    - ${batchTextRule}
    - Never render structural prompt words ("Top block", "Middle", "Bottom", "Environment") as visible caption boxes.
 5. ANATOMY & ANTI-MORPHING ISOLATION:
-   - Flawless human anatomy for character scenes: exactly two arms, two legs, and five slender fingers per hand connected naturally to wrists and shoulders. For unpopulated environment scenes, enforce zero humans, zero people, zero figures in the sky, and zero floating bystanders.
+   - Flawless human anatomy for character scenes: cleanly rendered hands with distinct individual fingers, clean wrist linework, natural shoulder posture. For unpopulated environment scenes, enforce zero humans, zero people, zero figures in the sky, and zero floating bystanders.
    - ${batchAntiMorphRule}
 6. CONTEXT-AWARE CROWD & EXTRAS STAGING:
    - ${styleDirective.crowdRule}

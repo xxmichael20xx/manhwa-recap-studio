@@ -29,7 +29,11 @@ EP[XX]_[Episode_Slug]/
    - Episodes across all franchises have **NO rigid batch quotas**. Strictly forbidden from forcing an episode to be arbitrarily 3 batches, 9 batches, or 13 batches.
    - An episode's runtime and scene count are governed strictly by the organic progression of its story arc, natural micro-payoffs, and climactic cliffhangers.
    - Whatever total scene count $N_{\text{scenes}}$ the organic story requires is partitioned into sequential 24-scene Google Flow batches (`Batch 01`, `Batch 02`, ..., `Batch K`), where the terminal batch may contain $\le 24$ scenes.
-   - Narrative phases and inventions expand across multiple batches (2 to 4+ batches / 48–96+ scenes per phase) to ensure slow-burn worldbuilding is 100% earned and never rushed.
+   - **The Dynamic Pulse Pacing Standard (Anti-Stagnation Law):**
+     * **Golden Ratio Target:** 40% High-Stakes Action & Physical Stakes / 35% Purposeful Forward Dialogue / 20% Active In-Transit Worldbuilding / 5% Cliffhanger Climax.
+     * **The 8-to-10 Scene Ceiling:** Strictly forbidden from allowing consecutive dialogue or static exposition to exceed 8–10 consecutive scenes without a physical action, scene transition, or fresh environmental conflict.
+     * **Multi-Stage Detailed Action (18–26 scenes per major fight):** Action sequences must follow a 3-Phase progression (Phase 1: Tactical Probe & Hazard Identification -> Phase 2: Counter & Escalation -> Phase 3: Decisive Lethal Strike) to ensure fights are deep, tactical, and visually stunning without bloating the overarching story.
+     * **Reaction Echo Cap:** Spectator and bystander shock is strictly capped at 1 to 2 sharp panels before moving immediately to consequences and next objectives.
 
 ---
 

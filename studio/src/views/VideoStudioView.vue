@@ -475,6 +475,16 @@
 
               <!-- Quick Batch Action Buttons -->
               <div class="flex flex-wrap items-center gap-2" @click.stop>
+                <!-- 0s Latency Instant Canvas Preview Player -->
+                <button 
+                  @click="openInstantPlayer(batch)"
+                  class="px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer border bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 shadow-xs"
+                  :title="`Instant 0s Canvas Preview for ${batch.name} (+20% motion speed & synced subtitles)`"
+                >
+                  <Play class="w-3.5 h-3.5 fill-current text-indigo-600 dark:text-indigo-400" />
+                  <span>Instant Preview</span>
+                </button>
+
                 <!-- 1-Click Render Batch Preview Video Button -->
                 <button 
                   @click="compileBatchDirect(batch.index)"
@@ -1440,6 +1450,17 @@
       @switch-stage="handleSwitchStage"
     />
 
+    <!-- INSTANT 0S BATCH CANVAS PREVIEW PLAYER -->
+    <BatchCanvasPlayer
+      :is-open="instantPlayerState.isOpen"
+      :franchise-id="$route.params.franchiseId"
+      :episode-id="$route.params.episodeId"
+      :batch-index="instantPlayerState.batchIndex"
+      :batch-name="instantPlayerState.batchName"
+      :scenes="scenes"
+      @close="instantPlayerState.isOpen = false"
+    />
+
     <!-- SCENE VISUAL ALIGNMENT & QUALITY AUDIT MODAL -->
     <div v-if="showAlignmentModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
@@ -1987,6 +2008,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import StageProgressModal from '../components/StageProgressModal.vue'
+import BatchCanvasPlayer from '../components/BatchCanvasPlayer.vue'
 import { 
   ArrowLeft, 
   Image, 
@@ -2053,6 +2075,21 @@ const scenes = ref([])
 const cacheBuster = ref(Date.now())
 const generatingStoryboards = ref(false)
 const storyboardFeedback = ref('')
+
+// Instant Batch Canvas Player State (0s Preview)
+const instantPlayerState = ref({
+  isOpen: false,
+  batchIndex: 0,
+  batchName: 'Batch A'
+})
+
+const openInstantPlayer = (batch) => {
+  instantPlayerState.value = {
+    isOpen: true,
+    batchIndex: batch.index,
+    batchName: batch.name || `Batch ${getBatchCode(batch.index)}`
+  }
+}
 
 // Google Flow Entity ID Mapping State
 const franchise = ref(null)
@@ -2553,7 +2590,10 @@ const getFlowDirectiveHeader = (collectionTitle) => {
     : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
   const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, is16x9 ? '16:9' : '9:16')
 
-  return `[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
+  return `[COMMAND: GENERATE ALL SCENES SIMULTANEOUSLY IN PARALLEL]
+MANDATE: Generate ALL scenes in "${collectionTitle}" SIMULTANEOUSLY in parallel in a single turn. Do NOT generate them sequentially one after another. Strictly forbidden from outputting intermediate status text (such as "I am currently generating scene IMG_XXX...").
+
+[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
 
 📁 MANDATORY COLLECTION GROUPING & SESSION ISOLATION INSTRUCTION:
 1. TARGET COLLECTION: Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
@@ -2571,7 +2611,7 @@ const getFlowDirectiveHeader = (collectionTitle) => {
    - Never draw or overlay any words, glyphs, or letters onto the artwork under any circumstances.
 4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
 5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
-6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO severed appendages, and ZERO duplicate floating arms holding props.
+6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO detached appendages, and ZERO duplicate floating arms holding props.
 7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
 8. CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule}
 9. ART STYLE (${styleDirective.styleName}): ${styleDirective.genreRule} ${styleDirective.forbiddenRule}

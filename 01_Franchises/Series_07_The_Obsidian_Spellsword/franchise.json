@@ -1,0 +1,63 @@
+{
+  "id": "series_07",
+  "code": "FRAN-OBS-001",
+  "title": "The Obsidian Spellsword: Reborn to Sever the Gods",
+  "format": "16:9",
+  "aspect_token": "horizontal 16:9 (1920x1080)",
+  "forbidden_aspect_tokens": [
+    "9:16",
+    "1080x1920",
+    "vertical 9:16",
+    "1:1",
+    "4:3",
+    "21:9",
+    "square 1:1",
+    "vertical format"
+  ],
+  "voice": {
+    "id": "en-GB-RyanNeural"
+  },
+  "pacing": {
+    "max_scene_seconds": 8,
+    "tts_wpm_measured": 155,
+    "max_prompt_tokens": 700
+  },
+  "tier_distribution": {
+    "min_multi_panel_ratio": 0.0,
+    "layout_headers": {
+      "A": "Single-panel full-bleed horizontal hero plate.",
+      "B": "Single-panel full-bleed horizontal cinematic composition.",
+      "C": "Single-panel full-bleed horizontal dynamic action plate."
+    }
+  },
+  "style": {
+    "base": "High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, textless 16:9 horizontal widescreen landscape aspect ratio (1920x1080 horizontal full bleed)",
+    "lighting_modes": {
+      "day_sunlit": {
+        "text": "",
+        "time_class": "day",
+        "forbidden_tokens": [
+          "pitch black midnight",
+          "midnight darkness",
+          "starry night sky"
+        ]
+      },
+      "night_moonlit": {
+        "text": "",
+        "time_class": "night",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "clear blue sky",
+          "blazing noon sun"
+        ]
+      }
+    },
+    "tail_positive": "",
+    "tail_negative": ""
+  },
+  "new_entity_policy": "pending_stub",
+  "paths": {
+    "entities": "vault/entities.json",
+    "zones": "vault/zones.json"
+  }
+}

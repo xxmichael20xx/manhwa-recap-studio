@@ -761,7 +761,7 @@ export class VideoService {
 
     // 3. Render Ken Burns clips in managed concurrency (4 parallel native Skia worker threads)
     const clipFiles = []
-    const concurrency = 4
+    const concurrency = 2
     let completedClips = 0
 
     for (let i = 0; i < targetBeats.length; i += concurrency) {
@@ -816,7 +816,7 @@ export class VideoService {
         }
 
         // Check Smart Clip Cache for GPU engine
-        const cacheKey = `${beat.tag}_f${beat.frames}_m${kenBurns ? globalBeatIdx : 0}.mp4`
+        const cacheKey = `${beat.tag}_f${beat.frames}_m${kenBurns ? globalBeatIdx : 0}_sp20.mp4`
         const cachedClipPath = path.join(clipCacheDir, cacheKey)
         let isCachedValid = false
 
@@ -938,7 +938,7 @@ export class VideoService {
         const reClipPath = path.join(tempClipsDir, `clip_${String(beatIndex).padStart(3, '0')}.mp4`)
         console.warn(`[Auto-Heal] Re-rendering corrupt/missing clip ${beatIndex + 1}/${targetBeats.length} (${beat.tag})...`)
         await VideoService.renderFullBleedKenBurnsClip(imagePath, isVertical, beat.frames, kenBurns ? globalBeatIdx : 0, reClipPath)
-        const healCacheKey = `${beat.tag}_f${beat.frames}_m${kenBurns ? globalBeatIdx : 0}.mp4`
+        const healCacheKey = `${beat.tag}_f${beat.frames}_m${kenBurns ? globalBeatIdx : 0}_sp20.mp4`
         await fs.copyFile(reClipPath, path.join(clipCacheDir, healCacheKey)).catch(() => {})
         validatedClipFiles.push(reClipPath)
       } else {
@@ -1156,7 +1156,7 @@ export class VideoService {
     }
 
     // Step 6 Muxing: Use high-speed multi-threaded libx264 to produce compliant, lossless-stitchable NAL units
-    const muxVideoEncoderArgs = ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p']
+    const muxVideoEncoderArgs = ['-c:v', 'libx264', '-preset', isBatchCompile ? 'ultrafast' : 'veryfast', '-crf', isBatchCompile ? '22' : '20', '-pix_fmt', 'yuv420p']
 
     ffmpegArgs.push(
       '-filter_complex', filterComplex,

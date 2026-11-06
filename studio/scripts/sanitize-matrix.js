@@ -20,6 +20,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { PromptDnaCompiler } from '../server/services/promptDnaCompiler.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -53,6 +54,7 @@ let scriptClauses = new Map()
 let scriptTechStages = new Map()
 if (fs.existsSync(scriptPath)) {
   const scriptText = fs.readFileSync(scriptPath, 'utf-8')
+  scriptClauses = PromptDnaCompiler.parseScriptClauses(scriptText)
   const clauseRegex = /\[(IMG_\d+)\]\s*([^\n\r]+)/g
   let m
   while ((m = clauseRegex.exec(scriptText)) !== null) {
@@ -62,8 +64,6 @@ if (fs.existsSync(scriptPath)) {
     if (tsMatch) {
       scriptTechStages.set(id, tsMatch[1].trim())
     }
-    const cleanClause = rawLine.replace(/<!--[\s\S]*?-->/g, '').replace(/\s+/g, ' ').trim()
-    scriptClauses.set(id, cleanClause)
   }
 }
 

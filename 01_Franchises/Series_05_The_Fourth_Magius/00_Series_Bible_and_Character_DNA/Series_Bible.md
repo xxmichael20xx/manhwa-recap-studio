@@ -51,17 +51,22 @@ In public imperial history, Tier 12 is universally regarded as the absolute pinn
 
 ---
 
-## ⚔️ The Dual-Discipline Combat Doctrine: Mana-Forged Flesh
+## ⚔️ The Dual-Discipline Combat Doctrine: Arcane Spellcraft & Fortified Vessel
 
-Standard magicians in this world suffer from a fatal physiological limitation: their bodies are fragile vessels. They rely entirely on external barrier spells. If a high-tier knight or stealth assassin closes the distance before a barrier is formed, even a Tier 7 Archmage can be slain by a common steel dagger. Conversely, knights possess dense physical bodies but lack the wide-area destructive output of high arcana.
+Michael is first and foremost a **Magius (Supreme Spellcaster)**. His true terrifying power lies in his command over high-tier circle magic, chantless spell matrices, and elemental domain manipulation.
 
-### Michael's Breakthrough: Vessel Mana-Forging
-Having reached Tier 10 in his previous world before exhausting his lifeforce against thousands of hunters, Michael possesses complete anatomical mastery of mana flow. Instead of storing mana merely inside an isolated abdominal core, Michael circulates liquid mana directly through:
-1. **Skeletal Density:** Infusing mana into bone marrow, creating an unbreakable internal framework that easily withstands multi-ton kinetic impacts (Pillar 2: $Attack - Defence \le 0 \implies 0\text{ Dmg}$).
-2. **Muscular Compression:** Contracting mana-saturated muscle fibers, delivering explosive, sound-barrier-breaking physical strikes without chanting.
-3. **Cardiovascular Acceleration:** Circulating mana through the bloodstream, eliminating magical fatigue and allowing instantaneous spell transitions during close-quarters brawls.
+### 1. Michael's Primary Combat Arsenal: High-Tier Elemental Arcana (≥ 80% of Combat)
+Unlike lesser mages who require external staves and slow vocal incantations, Michael constructs multi-ringed geometric spell circles instantly:
+1. **Earth Arcana ("Tectonic Grasp / Earthen Spikes"):** Erupting stone pillars from beneath enemy feet, altering ground density, and crushing monsters with subterranean stone clamps.
+2. **Wind Arcana ("Vacuum Gale Blades / Wind Shear"):** Slicing through heavy armor and timber clubs with shrieking, crescent blades of razor-compressed air.
+3. **Fire & Lightning Arcana ("Ignis Lance / Arc Discharge"):** Scorching enemy carapaces with superheated flame bursts or paralyzing nerve networks with high-voltage lightning arcs.
+4. **Chantless Multi-Cast:** Simultaneously projecting defensive barrier discs whilst launching offensive elemental bombardment.
 
----
+### 2. The Fortified Vessel: Defensive Baseline (Eliminating Glass-Cannon Weakness)
+Standard mages in this world possess fragile mortal bodies and die instantly if an assassin slips past their barrier. Having reached Tier 10 in his prior life, Michael circulates liquid mana through his skeletal frame and marrow:
+* **The Defensive Invariant:** His fortified body is strictly a **defensive fail-safe** so he does not get crushed by surprise attacks or blunt debris.
+* **Point-Blank Spell Detonations:** It allows Michael to detonate explosive fire or shockwave spells at point-blank range without injuring himself.
+* **Spell-Infused Staff Melee:** When Michael wields his carved blackwood quarterstaff, he does NOT fight like a barehanded kung-fu monk or acupuncturist. Every strike is **Spell-Infused**—the staff tip crackles with roaring flames, azure wind blades, or lightning arcs, releasing explosive magical bursts upon impact.
 
 ## 📖 The Divine Artifact: The Primordial Codex & The White Library
 
@@ -119,8 +124,12 @@ flowchart TD
 * **Target Runtime:** ~3.0 Hours
 * **Episodes:**
   * **EP04: The Road to the Capital & The Entrance Exam**  
+    > ⚡ **CRITICAL PRODUCTION DIRECTIVE (Spellcraft Foundation & Travel Calibration):**  
+    > When drafting EP04, the opening act (first 24–36 scenes) MUST be staged on the road / wilderness transit to the capital. Michael is actively practicing, testing, and calibrating **true 2nd & 3rd Circle Elemental Spellcraft** (Fireball / Ignis Lance, Stone Wall / Earthen Spikes, Wind Cutter / Vacuum Gale Blades, and Lightning Arc) against wilderness obstacles, ravine boulders, and rogue bandit skirmishes.  
+    > - *Narrative Fix:* Seamlessly cements Michael's identity as a true **Magius (Spellcaster)** before setting foot in the Academy, overcoming the earlier close-combat troll fight.  
+    > - *Dynamic Pacing:* Paces the journey dynamically with active travel training and sharp banter—ZERO static interior room stagnation.  
     *Journey:* Age thirteen. Michael travels to the imperial capital of Valerius. He enrolls in the Imperial Arcane Academy entrance trials as an unaffiliated commoner orphan.  
-    *Strategic Sandbagging:* Rather than exposing his god-tier abilities, Michael intentionally limits his output, scoring in the exact middle percentile to blend in while observing imperial power structures.
+    *Strategic Sandbagging:* Rather than exposing his god-tier abilities, Michael intentionally limits his output, scoring in the exact middle percentile to blend in while observing imperial power structures, using refined chantless elemental spell circles rather than brute force.
   * **EP05: The Fragile Circles & The Knight Sparring**  
     *Collegiate Life:* Arrogant noble students boast about their bloodlines and expensive staves. During a joint training session between the Magic Academy and the Imperial Knight Cadets, high-born mages are easily disarmed. Michael enters the arena bare-handed, catching an enchanted steel broadsword between two fingers and shocking the veteran instructors.
   * **EP06: The Tier 6 White Library Trial & The Glacial Domain**  
