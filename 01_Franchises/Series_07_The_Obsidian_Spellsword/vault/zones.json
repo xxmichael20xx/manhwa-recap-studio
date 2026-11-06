@@ -26,7 +26,7 @@
     "adjacent": [
       "julian_bedchamber",
       "obsidian_sparring_arena",
-      "ancestral_vault_rotunda"
+      "vaelgard_palace_exterior"
     ],
     "vantage_rule": "Circular rotunda perspective looking toward the soaring mahogany bookshelves and central pedestal.",
     "boundary_tags": "private library rotunda, stained glass dome, ancient grimoires, zero outside courtyards",
@@ -42,8 +42,8 @@
     "lighting": "day_sunlit",
     "adjacent": [
       "julian_bedchamber",
-      "obsidian_sparring_arena",
-      "ancestral_vault_rotunda"
+      "ancestral_vault_rotunda",
+      "vaelgard_palace_exterior"
     ],
     "vantage_rule": "Wide eye-level perspective inside the obsidian sparring ring looking toward the wisteria colonnade and observation balcony.",
     "boundary_tags": "obsidian flagstones, glowing cyan suppression runes, purple wisteria colonnade, barrier monoliths"
@@ -72,6 +72,8 @@
     "lighting": "day_sunlit",
     "adjacent": [
       "vaelgard_palace_exterior",
+      "obsidian_sparring_arena",
+      "ancestral_vault_rotunda",
       "celestial_altar_ruins"
     ],
     "vantage_rule": "Interior perspective from the mahogany study desk looking toward the silver-framed vanity mirror and carved oak doors.",

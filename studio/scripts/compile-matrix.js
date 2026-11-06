@@ -340,59 +340,61 @@ function flattenToSinglePanel(act) {
 
 function sanitizeActionLayer(act, sId) {
   let res = act
-  if (sId === 'IMG_061') {
-    return 'In the center foreground, @{Julian Vaelgard} turning respectfully to greet @{Duke Gerald Vaelgard} and @{Duchess Eleanor Vaelgard} as they walk onto the colonnade terrace together.'
-  }
-  if (sId === 'IMG_132') {
-    return 'In the center foreground, @{Master Swordsman Kael} shaking his head to dispel his bewilderment and rubbing his scarred chin, convincing himself that such peerless martial instinct was inherited from the Vaelgard noble bloodline.'
-  }
-  if (sId === 'IMG_176') {
-    return 'In the center foreground, @{Duchess Eleanor Vaelgard} standing before the dissolved bronze barrier in stunned realization, understanding that the mana threads had been unraveled with surgical, impossible perfection.'
-  }
-  if (sId === 'IMG_075') {
-    return 'In the center foreground, @{Julian Vaelgard} settling cross-legged onto the wide white marble bench, resting his palms lightly on his knees as he prepares to focus on his spiritual core.'
-  }
-  if (sId === 'IMG_076') {
-    return 'In the center foreground, @{Julian Vaelgard} seated in tranquil meditation on the garden stone seat with closed eyes, surrounded by the palace colonnade as he reflects on his centuries of blade mastery.'
-  }
-  if (sId === 'IMG_077') {
-    return 'In the center foreground, @{Julian Vaelgard} maintaining his meditative posture upon the polished bench, surrounded by gentle azure light motes as harmonious sapphire energy flows through his radiant meridians.'
-  }
-  if (sId === 'IMG_078') {
-    return 'In the center foreground, @{Julian Vaelgard} resting calmly atop the marble seating, a radiant spark of sapphire light igniting within his chest as arcane vitality radiates outward through his aura.'
-  }
-  if (sId === 'IMG_079') {
-    return 'In the center foreground, @{Julian Vaelgard} sitting poised upon the courtyard bench, spiritual perception revealing a magnificent primordial mana root glowing with brilliant azure crystalline light within his core.'
-  }
-  if (sId === 'IMG_080') {
-    return 'In the center foreground, @{Julian Vaelgard} positioned quietly on the white bench, his silver eyes snapping open in profound astonishment glowing with faint sapphire light as he senses the supreme arcane inheritance of his noble body.'
-  }
-  if (sId === 'IMG_081') {
-    return 'In the center foreground, @{Julian Vaelgard} drawing in a slow breath while seated on the marble bench, ambient azure mana currents flowing effortlessly from the garden into his lungs and core with zero resistance.'
-  }
-  if (sId === 'IMG_082') {
-    return 'In the center foreground, @{Julian Vaelgard} opening his palms from his seated position on the bench, miniature shimmering azure mana motes swirling like glowing fireflies in gentle orbit above his hands.'
-  }
-  if (sId === 'IMG_083') {
-    return 'In the center foreground, @{Julian Vaelgard} standing by the marble colonnade balustrade, letting out a quiet dry laugh of utter wonder at the universe\'s irony as a single miniature azure mana swirl floats above his palm.'
-  }
-  if (sId === 'IMG_084') {
-    return 'In the center foreground, @{Julian Vaelgard} standing at the balustrade, a sharp arcane resonance awakening within his silver pupils as supreme mana-sight activates in response to the celestial mana flow.'
-  }
-  if (sId === 'IMG_145') {
-    return 'In the center foreground, @{Master Swordsman Kael} presenting the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem standing upright on its octagonal stone dais, whilst @{Julian Vaelgard} watches with calm interest holding @{Vaelgard Silver Training Rapier}.'
-  }
-  if (sId === 'IMG_148') {
-    return 'A glowing translucent spherical dome of bronze defensive mana erupts outward from the octagonal stone pedestal, completely enclosing the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem in a crackling protective shield.'
-  }
-  if (sId === 'IMG_167') {
-    return 'With a thunderous resounding crack echoing across the arena, the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem splits cleanly in two halves down its vertical axis.'
-  }
-  if (sId === 'IMG_168') {
-    return 'The two cleaved halves of the enchanted iron-wood humanoid golem tumble outward onto the dark obsidian flagstones, raising a pale cloud of sawdust into the air.'
-  }
-  if (sId === 'IMG_172') {
-    return 'In the center foreground, @{Julian Vaelgard} standing composed holding @{Wooden Practice Rod}, while in the background the bundle of practice bokken slips from @{Master Swordsman Kael}\'s numb arm, tumbling onto the obsidian stones as Kael stares in complete shock.'
+  if (episodeId.includes('EP01')) {
+    if (sId === 'IMG_061') {
+      return 'In the center foreground, @{Julian Vaelgard} turning respectfully to greet @{Duke Gerald Vaelgard} and @{Duchess Eleanor Vaelgard} as they walk onto the colonnade terrace together.'
+    }
+    if (sId === 'IMG_132') {
+      return 'In the center foreground, @{Master Swordsman Kael} shaking his head to dispel his bewilderment and rubbing his scarred chin, convincing himself that such peerless martial instinct was inherited from the Vaelgard noble bloodline.'
+    }
+    if (sId === 'IMG_176') {
+      return 'In the center foreground, @{Duchess Eleanor Vaelgard} standing before the dissolved bronze barrier in stunned realization, understanding that the mana threads had been unraveled with surgical, impossible perfection.'
+    }
+    if (sId === 'IMG_075') {
+      return 'In the center foreground, @{Julian Vaelgard} settling cross-legged onto the wide white marble bench, resting his palms lightly on his knees as he prepares to focus on his spiritual core.'
+    }
+    if (sId === 'IMG_076') {
+      return 'In the center foreground, @{Julian Vaelgard} seated in tranquil meditation on the garden stone seat with closed eyes, surrounded by the palace colonnade as he reflects on his centuries of blade mastery.'
+    }
+    if (sId === 'IMG_077') {
+      return 'In the center foreground, @{Julian Vaelgard} maintaining his meditative posture upon the polished bench, surrounded by gentle azure light motes as harmonious sapphire energy flows through his radiant meridians.'
+    }
+    if (sId === 'IMG_078') {
+      return 'In the center foreground, @{Julian Vaelgard} resting calmly atop the marble seating, a radiant spark of sapphire light igniting within his chest as arcane vitality radiates outward through his aura.'
+    }
+    if (sId === 'IMG_079') {
+      return 'In the center foreground, @{Julian Vaelgard} sitting poised upon the courtyard bench, spiritual perception revealing a magnificent primordial mana root glowing with brilliant azure crystalline light within his core.'
+    }
+    if (sId === 'IMG_080') {
+      return 'In the center foreground, @{Julian Vaelgard} positioned quietly on the white bench, his silver eyes snapping open in profound astonishment glowing with faint sapphire light as he senses the supreme arcane inheritance of his noble body.'
+    }
+    if (sId === 'IMG_081') {
+      return 'In the center foreground, @{Julian Vaelgard} drawing in a slow breath while seated on the marble bench, ambient azure mana currents flowing effortlessly from the garden into his lungs and core with zero resistance.'
+    }
+    if (sId === 'IMG_082') {
+      return 'In the center foreground, @{Julian Vaelgard} opening his palms from his seated position on the bench, miniature shimmering azure mana motes swirling like glowing fireflies in gentle orbit above his hands.'
+    }
+    if (sId === 'IMG_083') {
+      return 'In the center foreground, @{Julian Vaelgard} standing by the marble colonnade balustrade, letting out a quiet dry laugh of utter wonder at the universe\'s irony as a single miniature azure mana swirl floats above his palm.'
+    }
+    if (sId === 'IMG_084') {
+      return 'In the center foreground, @{Julian Vaelgard} standing at the balustrade, a sharp arcane resonance awakening within his silver pupils as supreme mana-sight activates in response to the celestial mana flow.'
+    }
+    if (sId === 'IMG_145') {
+      return 'In the center foreground, @{Master Swordsman Kael} presenting the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem standing upright on its octagonal stone dais, whilst @{Julian Vaelgard} watches with calm interest holding @{Vaelgard Silver Training Rapier}.'
+    }
+    if (sId === 'IMG_148') {
+      return 'A glowing translucent spherical dome of bronze defensive mana erupts outward from the octagonal stone pedestal, completely enclosing the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem in a crackling protective shield.'
+    }
+    if (sId === 'IMG_167') {
+      return 'With a thunderous resounding crack echoing across the arena, the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem splits cleanly in two halves down its vertical axis.'
+    }
+    if (sId === 'IMG_168') {
+      return 'The two cleaved halves of the enchanted iron-wood humanoid golem tumble outward onto the dark obsidian flagstones, raising a pale cloud of sawdust into the air.'
+    }
+    if (sId === 'IMG_172') {
+      return 'In the center foreground, @{Julian Vaelgard} standing composed holding @{Wooden Practice Rod}, while in the background the bundle of practice bokken slips from @{Master Swordsman Kael}\'s numb arm, tumbling onto the obsidian stones as Kael stares in complete shock.'
+    }
   }
   res = res.replace(/\bwheeling out a heavy practice dummy\b/gi, 'presenting the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem')
   res = res.replace(/\bthe heavy iron-wood practice dummy\b/gi, 'the full-bodied humanoid @{Enchanted Iron-Wood Practice Dummy} automaton golem')

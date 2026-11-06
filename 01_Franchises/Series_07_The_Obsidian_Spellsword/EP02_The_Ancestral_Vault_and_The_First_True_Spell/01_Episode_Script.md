@@ -204,7 +204,7 @@ Duchess Eleanor observed Julian's intense concentration and gently cautioned him
 Julian replied with calm aristocratic poise, remarking that the author's meaning was remarkably practical and direct. The founder had not written in cipher; he had simply utilized a warrior's shorthand to bypass the bloated, theatrical terminology favoured by imperial academies.
 
 [IMG_063] <!-- ZONE: ancestral_vault_rotunda | STAGE: solo | ACTOR: @{Julian Vaelgard} | CAST: [@{Julian Vaelgard}]| PROPS: [@{Principles of Mana Weaving}]| TECH_STAGE: ep02_stage1| PLAN_TALK: false -->
-Julian turned to the core chapter of the Principles of Mana Weaving, where detailed diagrams illustrated the harmonic interaction between atmospheric mana threads and physical blade motion. Every diagram was an exact blueprint for merging steel and magic.
+Julian turned to the core chapter of the Principles of Mana Weaving, where detailed diagrams illustrated the harmonic interaction between atmospheric mana threads and physical blade motion. Every diagram was an exact master design for merging steel and magic.
 
 [IMG_064] <!-- ZONE: ancestral_vault_rotunda | STAGE: solo | ACTOR: @{Julian Vaelgard} | CAST: [@{Julian Vaelgard}]| PROPS: [@{Principles of Mana Weaving}]| TECH_STAGE: ep02_stage1| PLAN_TALK: false -->
 The text clearly explained that mana was not an uncontrollable elemental storm, but a tapestry of living, vibrating strings permeating all matter. Casting a spell was merely the physical act of catching those strings and weaving them into a stable harmonic loop.
