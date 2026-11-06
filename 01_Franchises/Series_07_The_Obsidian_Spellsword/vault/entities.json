@@ -27,7 +27,8 @@
     "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the 15-year-old body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye.",
     "plate": "character_vault/01_Protagonist_Julian_Vaelgard.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "duke_gerald_vaelgard": {
@@ -57,7 +58,8 @@
     "description": "Patriarch of House Vaelgard and Diamond-Rank Swordmaster commanding the Imperial Vanguard. Stern, disciplined, but deeply proud and fiercely protective of his children.",
     "plate": "character_vault/02_Patriarch_Duke_Gerald_Vaelgard.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "duchess_eleanor_vaelgard": {
@@ -86,7 +88,8 @@
     "description": "5-Star Imperial Court Archmage and Duchess of House Vaelgard. A genius of elemental spellcraft who manages the duchy's vast magical libraries and treasury.",
     "plate": "character_vault/03_Duchess_Eleanor_Vaelgard.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "archmage_lyra": {
@@ -115,7 +118,8 @@
     "description": "Youngest and most devoted disciple of Aiden Drake from 1,000 years ago. Achieved 6-Star magic and placed herself in Chronos-Ice Stasis to await her master's prophesied reincarnation, guarding the sacred truth against the Church.",
     "plate": "character_vault/04_Archmage_Lyra_The_Frozen_Star.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "master_swordsman_kael": {
@@ -143,7 +147,8 @@
     "description": "Gold-Rank Swordmaster and chief combat instructor for House Vaelgard's scions.",
     "plate": "character_vault/05_Instructor_Master_Swordsman_Kael.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "high_inquisitor_malakor": {
@@ -171,7 +176,8 @@
     "description": "Emissary from the Church of the Radiant Dawn, serving the same celestial pantheon that poisoned Aiden Drake 1,000 years ago.",
     "plate": "character_vault/06_Antagonist_High_Inquisitor_Malakor.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "vaelgard_silver_training_rapier": {
@@ -201,7 +207,8 @@
     "description": "Julian's custom-balanced childhood practice blade, capable of channeling both elemental mana and sword aura with zero resistance.",
     "plate": "character_vault/07_Weapon_Vaelgard_Silver_Training_Rapier.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "principles_of_mana_weaving": {
@@ -231,7 +238,8 @@
     "description": "A monumental ancient leather-bound tome holding Aiden Drake's foundational research on mana threads and spell matrices from 1,000 years ago.",
     "plate": "character_vault/08_Artifact_Principles_of_Mana_Weaving.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "aiden_drake": {
@@ -261,7 +269,8 @@
     "description": "The First Sword Saint 1,000 years ago who stood at the gates of Godhood before being assassinated by celestial poison.",
     "plate": "character_vault/00_Prologue_Aiden_Drake.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "celestial_altar_ruins": {
@@ -282,7 +291,8 @@
     "visual_dna": "Colossal shattered golden divine altar floating above a sea of stormy twilight clouds, with cracked celestial marble pillars, shattered golden chains, broken runic steles, and violent arcs of crimson celestial lightning tearing through dark storm clouds above.",
     "plate": "character_vault/10_Location_Celestial_Altar_Ruins.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "julian_bedchamber": {
@@ -307,7 +317,8 @@
     "visual_dna": "Lavish high-noble private study and solar in House Vaelgard with high arched ceilings, silver filigree cornices, sheer sapphire silk draperies, polished white marble floor, and a carved mahogany writing desk.",
     "plate": "character_vault/11_Location_Julian_Bedchamber.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "vaelgard_palace_exterior": {
@@ -328,7 +339,8 @@
     "visual_dna": "Grand ancestral palace of House Vaelgard with towering white marble and silver granite spires, sapphire blue roofs, expansive stone courtyards flanked by crystal-clear aqueduct fountains, manicured emerald gardens, and a colossal fifty-foot ancient obsidian statue of the Founding Sword Saint holding a greatsword pointing skyward.",
     "plate": "character_vault/00_World_Setting_Canonical.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "obsidian_sparring_arena": {
@@ -349,7 +361,8 @@
     "visual_dna": "Vast circular private outdoor martial sparring arena paved with seamless dark obsidian flagstones etched with glowing cyan suppression runes, encircled by an arched white marble colonnade draped in flowering purple wisteria vines, with carved runic barrier monoliths and weapon racks.",
     "plate": "character_vault/02_Obsidian_Sparring_Arena.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "ancestral_vault_rotunda": {
@@ -370,7 +383,8 @@
     "visual_dna": "Soaring multi-tiered circular arcane library rotunda with carved fluted marble pillars, five-story mahogany bookshelves filled with ancient grimoires, stained-glass dome window depicting a sword saint splitting an azure sky, and floating golden and turquoise mana lanterns.",
     "plate": "character_vault/01_Ancestral_Vault_Library.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "aiden_drake_past_life": {
@@ -400,7 +414,8 @@
     "description": "The First Sword Saint 1,000 years ago who stood at the gates of Godhood before being assassinated by celestial poison.",
     "plate": "character_vault/00_Prologue_Aiden_Drake.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "enchanted_iron_wood_practice_dummy": {
@@ -419,6 +434,9 @@
       "enchanted dummy",
       "practice dummy",
       "target dummy"
+    ],
+    "episodes": [
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "wooden_practice_rod": {
@@ -437,6 +455,9 @@
       "practice rod",
       "training rod",
       "wooden practice rod"
+    ],
+    "episodes": [
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "obsidian_greatsword": {
@@ -469,7 +490,8 @@
     "description": "The legendary soul-bound weapon of Aiden Drake, the First Sword Saint. Forged from primordial obsidian volcanic glass capable of severing mana threads, magic domains, and divine law. Following Aiden's fall at the Celestial Altar 1,000 years ago, the blade was recovered and enshrined in the deepest ancestral treasury vault of House Vaelgard, slumbering in dormant stasis until its true master Julian reclaims it.",
     "plate": "character_vault/13_Weapon_Obsidian_Greatsword.jpg",
     "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth"
+      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "white_marble_meditation_bench": {
@@ -486,6 +508,9 @@
     "aliases": [
       "White Marble Meditation Bench",
       "Marble Meditation Bench"
+    ],
+    "episodes": [
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
   "founding_sword_saint_obsidian_monument": {
@@ -502,6 +527,9 @@
     "aliases": [
       "Founding Sword Saint Obsidian Monument",
       "Founding Sword Saint Monument"
+    ],
+    "episodes": [
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   }
 }
