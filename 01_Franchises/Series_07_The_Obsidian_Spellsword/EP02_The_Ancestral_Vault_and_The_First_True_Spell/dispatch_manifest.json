@@ -3,9 +3,9 @@
   "entitiesHash": "ef47d5c0d42f1d0cc8896d82174bb2f3",
   "zonesHash": "74b2079af759ce660d505b4bf645ae81",
   "ledgerHash": "31df2d7ba051ba282c78f64360786960",
-  "scriptHash": "ec9bc8c1dc613585b5989a24372edc0d",
-  "matrixHash": "5d30340f7bc8a954dff30b390f1598bb",
+  "scriptHash": "b767f53d9c33f41aa367afa444e5ea07",
+  "matrixHash": "0ce9a8413fe0c64e63bf6b3ce8586916",
   "compilerVersion": "2.0.0-universal",
-  "signature": "ff1fea200a0410de3eaf8f320ac35be55fef4b6bd3460c04ca4da3fdf030332c",
-  "issuedAt": "2026-11-06T04:33:44.353Z"
+  "signature": "5292cce0c1a7de55814cfe2d3171aa2adf6b91717ee0e783bc3624b68997f50f",
+  "issuedAt": "2026-11-06T07:53:59.686Z"
 }

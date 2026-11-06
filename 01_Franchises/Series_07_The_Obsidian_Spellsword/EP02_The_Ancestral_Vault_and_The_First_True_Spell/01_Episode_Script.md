@@ -247,7 +247,7 @@ Julian closed his silver eyes and inhaled deeply, turning his spiritual percepti
 In his past life as Aiden Drake, his meridians had been as dense and unyielding as granite—flawless for channeling devastating physical blade intent, but completely impervious to the subtle flow of atmospheric mana threads.
 
 [IMG_076] <!-- ZONE: ancestral_vault_rotunda | STAGE: solo | ACTOR: @{Julian Vaelgard} | CAST: [@{Julian Vaelgard}]| PROPS: []| TECH_STAGE: ep02_stage1| PLAN_TALK: false -->
-Now, as his spiritual sight pierced the depths of his chest, Julian's soul trembled with awe. Resting beneath his sternum was an unblemished, crystalline magic core, pulsing with a pristine, translucent azure glow like a newborn star.
+Now, as his spiritual sight perceived his inner core, Julian's soul marvelled with awe. Resting within his spiritual sea was an unblemished, crystalline magic core, pulsing with a pristine, translucent azure luminescence like a celestial star.
 
 [IMG_077] <!-- ZONE: ancestral_vault_rotunda | STAGE: solo | ACTOR: @{Julian Vaelgard} | CAST: [@{Julian Vaelgard}]| PROPS: []| TECH_STAGE: ep02_stage1| PLAN_TALK: false -->
 Surrounding that brilliant core were twelve pristine sword channels, woven from ancient bloodline marrow. Julian possessed the rarest constitution in the mortal continent: a true Dual Sovereign Vessel capable of conducting both Diamond-Rank sword aura and high-circle elemental magic.

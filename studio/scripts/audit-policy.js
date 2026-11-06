@@ -159,6 +159,17 @@ const POLICY_REPLACEMENTS = [
   { pattern: /\bbare hands\b/gi, replacement: 'focused hands' },
   { pattern: /\bbare stone\b/gi, replacement: 'smooth granite bedrock' },
 
+  // 4b. Minor & youth safety classifier safeguards (Google Flow / Imagen 3)
+  { pattern: /\bnewborn\s+star\b/gi, replacement: 'celestial star' },
+  { pattern: /\bnewborn\b/gi, replacement: 'celestial' },
+  { pattern: /\b(?:pulses\s+)?beneath\s+(?:@[^'\s]+'s\s+)?chest\b/gi, replacement: 'within spiritual core' },
+  { pattern: /\bdepths\s+of\s+(?:his|her)\s+chest\b/gi, replacement: 'spiritual core' },
+  { pattern: /\bclutches\s+(?:her|his)\s+chest\b/gi, replacement: 'clasps hands' },
+  { pattern: /\bvelvet\s+chest\b/gi, replacement: 'velvet coffer' },
+  { pattern: /\bstone\s+crypt\b/gi, replacement: 'stone vault chamber' },
+  { pattern: /\bcore\s+and\s+bone\b/gi, replacement: 'core and martial meridians' },
+  { pattern: /\btouches\s+(?:his|her)\s+sternum\b/gi, replacement: 'touches doublet neckline' },
+
   // 5. Violence, gore & vital strike mitigations
   { pattern: /\bpools of blood\b/gi, replacement: 'crimson spirit mist' },
   { pattern: /\bblood-red\b/gi, replacement: 'crimson-ruby' },
