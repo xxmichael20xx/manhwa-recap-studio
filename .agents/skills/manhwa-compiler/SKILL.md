@@ -18,5 +18,5 @@ description: Multi-episode omnibus compiler, Universal Studio AV Spec Lock enfor
 ## 3. Targeted Single-Batch Recompilation & Frame Proof Gate
 1. **Ban on Unprompted Full-Episode Re-Encoding:** Never trigger full 300-scene re-encodes autonomously.
 2. **Targeted Batch Compile + Lossless Stitch:** When `[IMG_XXX]` tags or `.srt` timings change, trigger `POST /compile-video` (`{ batchIndex: N }`) ONLY for modified batches, then immediately execute `POST /stitch-batches` (`-c copy`, <5s).
-3. **Zero-Drift `ffprobe` Cumulative Chapters:** Probe each master MP4 (`ffprobe -v error -show_entries format=duration ...`), compute exact cumulative `HH:MM:SS` chapter offsets, and write to `omnibus/omnibus_metadata.json`.
+3. **Zero-Drift `ffprobe` Cumulative Chapters & Launch Ingestion:** Probe each master MP4 (`ffprobe -v error -show_entries format=duration ...`), compute exact cumulative `HH:MM:SS` chapter offsets, and write to `omnibus/omnibus_metadata.json` for deterministic consumption by `lock-launch.js`.
 4. **Mandatory Frame-Accurate Proof Extraction:** Extract 2–4 PNG frames at flagged timestamps (`ffmpeg -ss <ts> -i <video.mp4> -vframes 1 ...`) and visually verify via `view_file` that burned subtitles and artwork match 100% bit-for-bit before handoff.

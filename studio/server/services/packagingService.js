@@ -264,10 +264,14 @@ static formatTimestamp(seconds) {
    * and local disk image files. 100% dynamic; zero hardcoded series conditionals.
    */
   static async getThumbnailVariants(franchiseId, episodeId) {
+    const franchisePath = path.join(franchisesDir, franchiseId)
+    if (!fsSync.existsSync(franchisePath)) return []
     const epDir = path.join(franchisesDir, franchiseId, episodeId)
     const thumbDir = this.getThumbnailsDir(franchiseId, episodeId)
     const bibleDir = path.join(franchisesDir, franchiseId, '00_Series_Bible_and_Character_DNA')
-    await fs.mkdir(thumbDir, { recursive: true })
+    if (fsSync.existsSync(epDir)) {
+      await fs.mkdir(thumbDir, { recursive: true }).catch(() => {})
+    }
 
     // Scan directories on disk for existing images
     const thumbFiles = await fs.readdir(thumbDir).catch(() => [])
@@ -786,10 +790,20 @@ static formatTimestamp(seconds) {
    * Markdown-First Truth Package Generator (Cognitive Agent Output Parser)
    */
   static async generatePackage(franchiseId, episodeId) {
-    const epPath = path.join(franchisesDir, franchiseId, episodeId)
+    const franchisePath = path.join(franchisesDir, franchiseId)
+    if (!fsSync.existsSync(franchisePath)) {
+      throw new Error(`Franchise directory not found: ${franchiseId}`)
+    }
+    let resolvedEpisodeId = episodeId
+    if (!fsSync.existsSync(path.join(franchisePath, resolvedEpisodeId)) && fsSync.existsSync(franchisePath)) {
+      const entries = fsSync.readdirSync(franchisePath, { withFileTypes: true })
+      const match = entries.find(d => d.isDirectory() && (d.name.toLowerCase() === resolvedEpisodeId.toLowerCase() || d.name.toLowerCase().startsWith(resolvedEpisodeId.toLowerCase() + '_')))
+      if (match) resolvedEpisodeId = match.name
+    }
+    const epPath = path.join(franchisesDir, franchiseId, resolvedEpisodeId)
     const scriptPath = path.join(epPath, '01_Episode_Script.md')
     const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')
-    const masterAudioPath = TtsService.getAudioFilePath(franchiseId, episodeId, '01_Episode_Master.mp3')
+    const masterAudioPath = TtsService.getAudioFilePath(franchiseId, resolvedEpisodeId, '01_Episode_Master.mp3')
 
     let script = ''
     try { script = await fs.readFile(scriptPath, 'utf-8') } catch (e) {}
@@ -819,7 +833,10 @@ static formatTimestamp(seconds) {
     const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
     const epNumMatch = episodeId.match(/EP0*(\d+)/i)
     const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
-    const partTag = `Episode ${epNum}`
+    const seriesNumMatch = franchiseId.match(/Series_0*(\d+)/i)
+    const isActPartModel = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : false
+    const partNum = Math.ceil(epNum / 3)
+    const partTag = isActPartModel ? `Part ${partNum}` : `Episode ${epNum}`
 
     let titles = []
     let chapters = []
@@ -904,20 +921,26 @@ static formatTimestamp(seconds) {
         if (rawFoundTitles.length === 0) {
           const baseMatch = masterContent.match(/\*\*Base Locked Title[^\n]*\*\*\s*:\s*\r?\n```(?:text)?\r?\n([\s\S]*?)\r?\n```/i)
           if (baseMatch && baseMatch[1].trim()) {
-            rawFoundTitles.push('(Episode ' + epNum + ') ' + baseMatch[1].trim())
+            const prefix = isActPartModel ? '(Part ' + partNum + ')' : '(Episode ' + epNum + ')'; rawFoundTitles.push(prefix + ' ' + baseMatch[1].trim())
           }
         }
       }
 
       if (rawFoundTitles.length > 0) {
         const ctrScores = ['99%', '98%', '97%', '96%', '95%', '94%', '93%', '92%', '91%', '90%']
-        titles = rawFoundTitles.slice(0, 10).map((t, idx) => ({
-          archetype: `High-CTR Archetype ${idx + 1}`,
-          title: t,
-          ctrScore: ctrScores[idx] || '92%',
-          charCount: t.length,
-          isCompliant: t.length <= 100
-        }))
+        titles = rawFoundTitles.slice(0, 10).map((t, idx) => {
+          let adjustedTitle = t
+          if (isActPartModel) {
+            adjustedTitle = adjustedTitle.replace(/^\((?:Episode|Episodes)\s+\d+(?:-\d+)?\)/i, `(Part ${partNum})`)
+          }
+          return {
+            archetype: `High-CTR Archetype ${idx + 1}`,
+            title: adjustedTitle,
+            ctrScore: ctrScores[idx] || '92%',
+            charCount: adjustedTitle.length,
+            isCompliant: adjustedTitle.length <= 100
+          }
+        })
       }
 
       // Parse Chapters
@@ -958,7 +981,7 @@ static formatTimestamp(seconds) {
     }
 
     // 2. Safe Dynamic Fallbacks if Markdown is pending (Single Locked Canonical Title Standard)
-    const rangeTag = epNum > 1 ? `Episode 1-${epNum}` : 'Episode 1'
+    const rangeTag = isActPartModel ? `Part ${partNum}` : (epNum > 1 ? `Episode 1-${epNum}` : 'Episode 1')
     if (titles.length === 0) {
       const lockedTitle = `(${rangeTag}) ${canonicalTitle}`
       titles = [
@@ -977,10 +1000,12 @@ static formatTimestamp(seconds) {
     }
 
     if (!pinnedComment) {
-      pinnedComment = `🔥 Episode 1 of ${cleanFranchiseName} is live! Drop a comment below with your favourite scene, and subscribe for Episode 2! ⚔️`
+      pinnedComment = isActPartModel
+        ? `🔥 Part ${partNum} of ${cleanFranchiseName} is live! Drop a comment below with your favourite scene, and subscribe for Part ${partNum + 1}! ⚔️`
+        : `🔥 Episode 1 of ${cleanFranchiseName} is live! Drop a comment below with your favourite scene, and subscribe for Episode 2! ⚔️`
     }
 
-    const thumbnailVariants = await this.getThumbnailVariants(franchiseId, episodeId)
+    const thumbnailVariants = await this.getThumbnailVariants(franchiseId, resolvedEpisodeId)
     const masterThumbnail = thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0]
 
     return {
@@ -992,6 +1017,7 @@ static formatTimestamp(seconds) {
       episodeName: cleanEpisodeName,
       canonicalTitle,
       partTag,
+      partBadgeText: isActPartModel ? `PART ${partNum}` : (epNum > 1 ? `1 - ${epNum}` : 'EP 1'),
       totalDuration,
       formattedDuration: this.formatTimestamp(totalDuration),
       titles,
@@ -1009,6 +1035,77 @@ static formatTimestamp(seconds) {
   /**
    * Markdown-First Truth TikTok & Shorts Package Generator
    */
+  
+  /**
+   * Synchronises verified compilation metadata directly into YouTube packages and Master Bible
+   * Called automatically upon omnibus master compilation.
+   */
+  static async syncOmnibusMetadataToPackages(franchiseId, metadata) {
+    if (!franchiseId || !metadata) return
+
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const bibleDir = path.join(franchiseDir, "00_Series_Bible_and_Character_DNA")
+    const masterLockedPkgPath = path.join(bibleDir, "YouTube_Locked_Package.md")
+    const omnibusDir = path.join(franchiseDir, "omnibus")
+    const omnibusLaunchPath = path.join(omnibusDir, "YouTube_Act1_Launch_Package.md")
+
+    const durFormatted = metadata.totalDurationFormatted || "1h 57m 17s"
+    const finalTs = metadata.finalTimestampFormatted || "1:57:16"
+    const totalSec = metadata.totalDurationSeconds || 7036
+    const totalMinsDecimal = (totalSec / 60).toFixed(1)
+
+    // Build Chapter Timestamps block
+    let chapterLines = []
+    if (Array.isArray(metadata.chapters) && metadata.chapters.length > 0) {
+      chapterLines = metadata.chapters.map((c, idx) => 
+        `${c.startTimestampFormatted} - Episode ${String(c.partNumber || (idx + 1)).padStart(2, "0")}: ${c.episodeTitle} (${c.durationFormatted})`
+      )
+      chapterLines.push(`${finalTs} - Series Finale & Epilogue`)
+    } else if (metadata.youtubeChapterString) {
+      chapterLines = metadata.youtubeChapterString.split(/\r?\n/)
+    }
+
+    const timestampBlock = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines.join("\n")}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+
+    const updateFileDesc = async (filePath) => {
+      if (!fsSync.existsSync(filePath)) return
+      let c = await fs.readFile(filePath, "utf-8").catch(() => "")
+      if (!c) return
+
+      // Update runtime & episode bounds
+      c = c.replace(/•\s*Full Runtime:[^\n]+/i, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
+      c = c.replace(/•\s*Episode Bounds:[^\n]+/i, `• Episode Bounds: 00:00 - ${finalTs}`)
+      c = c.replace(/⏱️ FULL (?:EPISODE|COMPILATION) RUNTIME[^:]*:[^\n]+/i, `⏱️ FULL COMPILATION RUNTIME & TIMELINE:`)
+
+      // If chapter block exists, update it. If not, insert after Episode Bounds
+      if (chapterLines.length > 0) {
+        const chapterRegex = /━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r?\n⏱️ CHAPTER TIMESTAMPS:[\s\S]*?━━━━━━━━━━━━━━━━━━━━━━━━━━━━/i
+        if (chapterRegex.test(c)) {
+          c = c.replace(chapterRegex, timestampBlock)
+        } else if (c.includes("Episode Bounds:")) {
+          c = c.replace(/(•\s*Episode Bounds:[^\n]+)/i, `$1\n\n${timestampBlock}`)
+        }
+      }
+
+      await fs.writeFile(filePath, c, "utf-8").catch(() => {})
+    }
+
+    // 1. Update Master Bible SSOT
+    await updateFileDesc(masterLockedPkgPath)
+
+    // 2. Update Omnibus Launchpad
+    await updateFileDesc(omnibusLaunchPath)
+
+    // 3. Update all episodic packages in franchise
+    const entries = await fs.readdir(franchiseDir, { withFileTypes: true }).catch(() => [])
+    for (const d of entries) {
+      if (d.isDirectory() && /^EP\d+/i.test(d.name)) {
+        const epPkg = path.join(franchiseDir, d.name, "03_YouTube_Package.md")
+        await updateFileDesc(epPkg)
+      }
+    }
+  }
+
   static async generateTikTokPackage(franchiseId, episodeId) {
     const epPath = path.join(franchisesDir, franchiseId, episodeId)
     const pkgMdPath = path.join(epPath, '03_YouTube_Package.md')

@@ -169,6 +169,9 @@ export class PromptDnaCompiler {
       throw new Error(`Invalid zone passed to compileZoneEnclosure`)
     }
     const parts = [zone.canon.trim().replace(/\.$/, '')]
+    if (zone.window_vantage && typeof zone.window_vantage === 'string' && zone.window_vantage.trim().length > 0) {
+      parts.push(zone.window_vantage.trim().replace(/\.$/, ''))
+    }
     if (zone.states && typeof zone.states === 'object') {
       for (const [dim, valMap] of Object.entries(zone.states)) {
         const activeVal = replayedZoneState[dim]

@@ -924,15 +924,15 @@
                 @change="loadPackagingData"
                 class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
               >
-                <optgroup label="Compiled Master Releases">
+                <optgroup :label="isActPartModel ? 'Compiled Act Features (YouTube SSOT)' : 'Compiled Master Releases'">
                   <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
-                    🎬 Master Omnibus Movie (Parts 1 - {{ compiledEpisodes.length }} Compiled)
+                    {{ isActPartModel ? '⚡ Act 1 Feature (Part 1 Complete)' : `🎬 Master Omnibus Movie (Parts 1 - ${compiledEpisodes.length} Compiled)` }}
                   </option>
                   <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
                     🏆 Complete Story Marathon (Full Series Complete)
                   </option>
                 </optgroup>
-                <optgroup label="Individual Episode Releases">
+                <optgroup :label="isActPartModel ? 'Internal Episodic Segments' : 'Individual Episode Releases'">
                   <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
                     {{ ep.name }}
                   </option>
@@ -1486,12 +1486,29 @@ const selectedPackageEpisode = ref('')
 const pkgData = ref(null)
 const omnibusFiles = ref([])
 
+const isActPartModel = computed(() => {
+  const seriesId = String(route.params.id || franchise.value?.id || franchise.value?.folder || '')
+  const seriesNumMatch = seriesId.match(/Series_0*(\d+)/i)
+  return seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : false
+})
+
 // Dynamic Thumbnail Badge Engine (Client-Side Canvas Compositing)
-const activeThumbnailBadge = ref('1 - 2')
+const activeThumbnailBadge = ref('PART 1')
 const activeDropdownCard = ref(null)
 const isDownloadingThumb = ref(false)
 
 const dynamicBadgeOptions = computed(() => {
+  if (isActPartModel.value) {
+    return [
+      { id: 'part_1', label: '⚡ Part 1 (Act 1 Feature)', badgeText: 'PART 1' },
+      { id: 'part_2', label: '⚡ Part 2 (Act 2 Feature)', badgeText: 'PART 2' },
+      { id: 'part_3', label: '⚡ Part 3 (Act 3 Feature)', badgeText: 'PART 3' },
+      { id: 'part_4', label: '⚡ Part 4 (Act 4 Feature)', badgeText: 'PART 4' },
+      { id: 'complete', label: '🏆 Complete (Full Story Marathon)', badgeText: 'COMPLETE' },
+      { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' }
+    ]
+  }
+
   const options = [
     { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' },
     { id: 'complete', label: '🏆 Complete (Full Story Marathon)', badgeText: 'COMPLETE' },
@@ -1642,11 +1659,11 @@ const displayedTitles = computed(() => {
   const canon = pkgData.value?.canonicalTitle || cleanName
   return [
     {
-      archetype: 'Locked Canonical Title (Episode 1)',
-      title: `(Episode 1) ${canon}`,
+      archetype: isActPartModel.value ? 'Locked Act 1 Feature Title (Part 1)' : 'Locked Canonical Title (Episode 1)',
+      title: `${isActPartModel.value ? '(Part 1)' : '(Episode 1)'} ${canon}`,
       ctrScore: '99%',
-      charCount: `(Episode 1) ${canon}`.length,
-      isCompliant: `(Episode 1) ${canon}`.length <= 100
+      charCount: `${isActPartModel.value ? '(Part 1)' : '(Episode 1)'} ${canon}`.length,
+      isCompliant: `${isActPartModel.value ? '(Part 1)' : '(Episode 1)'} ${canon}`.length <= 100
     },
     {
       archetype: 'Underdog Awakening Hook',
@@ -1671,7 +1688,14 @@ const loadFranchise = async () => {
     const list = await res.json()
     franchise.value = list.find(f => f.id === route.params.id)
     if (availableEpisodes.value.length) {
-      selectedPackageEpisode.value = availableEpisodes.value[0].id
+      // For Series 07+ (Option 1 Act/Part Model), default release target to the compiled Act 1 feature
+      if (isActPartModel.value && compiledEpisodes.value.length >= 2) {
+        selectedPackageEpisode.value = 'omnibus_master'
+        activeThumbnailBadge.value = 'PART 1'
+      } else {
+        selectedPackageEpisode.value = availableEpisodes.value[0].id
+        activeThumbnailBadge.value = isActPartModel.value ? 'PART 1' : ''
+      }
       // Pre-select only verified compiled episodes for multi-episode stitching
       selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       loadPackagingData()
@@ -1703,13 +1727,13 @@ const loadPackagingData = async () => {
       omnibusMetadata.value = meta
 
       // Load base episode 1 packaging to inherit visual thumbnail concepts
-      const firstEp = availableEpisodes.value[0]?.id || 'EP01'
+      const firstEp = availableEpisodes.value[0]?.id || (franchise.value?.episodes?.[0]?.id) || 'EP01'
       const basePkgRes = await fetch(`/api/episodes/${route.params.id}/${firstEp}/youtube-package`)
       const basePkg = await basePkgRes.json()
 
       // Dynamically enhance package for Master Omnibus / Complete Story Marathon using Locked Episode 1 Package Truth
       const partCount = meta?.partCount || (compiledEpisodes.value.length >= 2 ? compiledEpisodes.value.length : 2)
-      const partBadge = isComplete ? 'COMPLETE' : (meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1'))
+      const partBadge = isComplete ? 'COMPLETE' : (isActPartModel.value ? 'PART 1' : (meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1')))
       const compactRange = `1-${partCount}`
       const totalSec = meta?.totalDurationSeconds || basePkg?.totalDuration || 3486
       const totalMinsDecimal = (totalSec / 60).toFixed(1)
@@ -1721,17 +1745,14 @@ const loadPackagingData = async () => {
         .replace(/^Series_\d+_/i, '')
         .replace(/_/g, ' ')
         .trim()
-      const canonicalTitle = rawBaseTitle.replace(/^\((?:Episode|Episodes|Part|Parts)\s+[^)]+\)\s*/i, '').trim() ||
-        basePkg?.canonicalTitle ||
-        cleanFranchiseName ||
-        'Manhwa Recap Saga'
+      const canonicalTitle = (basePkg?.canonicalTitle || rawBaseTitle.replace(/^\((?:Episode|Episodes|Part|Parts|Complete)\s*[^)]*\)\s*/i, '') || cleanFranchiseName || 'Manhwa Recap Saga').trim()
 
-      const prefixTag = isComplete ? '(Complete)' : `(Episode ${compactRange})`
+      const prefixTag = isComplete ? '(Complete)' : (isActPartModel.value ? '(Part 1)' : `(Episode ${compactRange})`)
       const lockedOmnibusTitle = `${prefixTag} ${canonicalTitle}`.trim()
 
       const titles = [
         {
-          archetype: isComplete ? 'Locked Complete Series Title' : `Locked Canonical Title (Episode ${compactRange})`,
+          archetype: isComplete ? 'Locked Complete Series Title' : (isActPartModel.value ? 'Locked Act 1 Title (Part 1)' : `Locked Canonical Title (Episode ${compactRange})`),
           ctrScore: '99%',
           title: lockedOmnibusTitle,
           charCount: lockedOmnibusTitle.length,
@@ -1752,10 +1773,16 @@ const loadPackagingData = async () => {
       // Mutate ONLY the dynamic slots in Episode 1's locked description
       let omnibusDescription = basePkg?.description || ''
       if (omnibusDescription) {
+        const releaseHeader = isComplete 
+          ? `🎬 Compilation: Complete Series Marathon (Episodes 01 - ${String(partCount).padStart(2, '0')})`
+          : (isActPartModel.value 
+              ? `🎬 Release: Part 1 — Act 1 Feature (Covers Episodes 01 - ${String(partCount).padStart(2, '0')})`
+              : `🎬 Episode: Episodes 01 - ${String(partCount).padStart(2, '0')} Compiled Saga`)
+
         omnibusDescription = omnibusDescription
-          .replace(/🎬 Episode:[^\n]+/, isComplete ? `🎬 Compilation: Complete Series Marathon (Episodes 01 - ${String(partCount).padStart(2, '0')})` : `🎬 Episode: Episodes 01 - ${String(partCount).padStart(2, '0')} Compiled Saga`)
-          .replace(/• Full Runtime:[^\n]+/, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
-          .replace(/• Episode Bounds:[^\n]+/, `• Episode Bounds: 00:00 - ${finalTs}\n${timestampBlock.trim()}`)
+          .replace(/🎬 (?:Episode|Release):[^\n]+/i, releaseHeader)
+          .replace(/•\s*Full Runtime:[^\n]+/i, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
+          .replace(/•\s*Episode Bounds:[^\n]+/i, `• Episode Bounds: 00:00 - ${finalTs}\n${timestampBlock.trim()}`)
           .replace(/🔔 Subscribe[^\n]+/, isComplete ? "🔔 Subscribe to the channel and check out our other full-length manhwa series and complete marathon sagas!" : "🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!")
       }
 
@@ -1779,7 +1806,7 @@ const loadPackagingData = async () => {
     const res = await fetch(`/api/episodes/${route.params.id}/${selectedPackageEpisode.value}/youtube-package`)
     pkgData.value = await res.json()
     omnibusMetadata.value = null
-    activeThumbnailBadge.value = '' // Default to Clean for single episode release
+    activeThumbnailBadge.value = isActPartModel.value ? 'PART 1' : '' // Default to PART 1 for Series 07+, Clean for legacy
   } catch (err) {
     console.error(err)
   }

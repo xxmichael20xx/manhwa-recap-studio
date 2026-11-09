@@ -344,6 +344,38 @@ export class AntiSlopValidator {
       }
     }
 
+    const entityKeywordsMap = new Map()
+    const universalEntityStopwords = new Set([
+      ...UNIVERSAL_LEXICONS.commonCapitalizedStopwords,
+      'the', 'and', 'with', 'from', 'over', 'into', 'under', 'high', 'deep', 'cold', 'dark', 'light',
+      'black', 'white', 'gold', 'golden', 'silver', 'blue', 'iron', 'stone', 'wood', 'great', 'small',
+      'little', 'first', 'second', 'third', 'young', 'ancient', 'elder', 'lord', 'lady', 'grand',
+      'blade', 'sword', 'staff', 'wand', 'ring', 'book', 'robe', 'cloak', 'coat', 'boots', 'hands',
+      'head', 'eyes', 'face', 'hair', 'room', 'hall', 'gate', 'door', 'wall', 'path', 'road', 'rank',
+      'tier', 'class', 'level', 'power', 'magic', 'shadow', 'flame', 'frost', 'storm', 'blood', 'heart',
+      'soul', 'mind', 'world', 'state', 'saint', 'pure', 'true', 'zero', 'hero', 'plate', 'strip',
+      'practice', 'training', 'marble', 'bench', 'dummy', 'enchanted', 'principles', 'weaving',
+      'forest', 'valley', 'mountain', 'river', 'lake', 'garden', 'trail', 'street', 'field', 'meadow',
+      'hills', 'trees', 'ocean', 'sea', 'sky', 'plain', 'desert', 'ruins', 'cottage', 'farm', 'house',
+      'palace', 'castle', 'tower', 'dungeon', 'arena', 'chamber', 'solar', 'study', 'vault', 'rotunda',
+      'courtyard', 'bridge', 'temple', 'shrine', 'altar', 'stairs', 'plaza', 'terrace', 'corridor',
+      'ceiling', 'floor', 'ground', 'window', 'arch', 'pillar', 'column', 'statue', 'monument'
+    ].map(w => w.toLowerCase()))
+
+    for (const ent of Object.values(entities)) {
+      if (ent.status === 'pending' || ent.kind === 'location' || ent.kind === 'zone') continue
+      const rawTokens = [ent.id, ent.token?.replace(/^@\{|\}$/g, ''), ...(ent.aliases || [])]
+      for (const raw of rawTokens) {
+        if (!raw) continue
+        const words = raw.toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length >= 4 && !universalEntityStopwords.has(w) && !/^\d+$/.test(w))
+        for (const w of words) {
+          if (!entityKeywordsMap.has(w)) entityKeywordsMap.set(w, new Set())
+          entityKeywordsMap.get(w).add(ent.id.toLowerCase())
+          if (ent.token) entityKeywordsMap.get(w).add(ent.token.toLowerCase().replace(/[@{}]/g, ''))
+        }
+      }
+    }
+
     // G01: Scene Parity, Order, Contiguity
     const g01Fails = []
     const scriptIdList = [...scriptClauses.keys()]
@@ -774,13 +806,27 @@ export class AntiSlopValidator {
       // Strip architectural/furniture terms and approved entities before scanning
       let sanitizedForRoles = freeText.replace(/\b(?:proctor\s+(?:podium|stage|desk|platform|table|booth|hall)|faculty\s+proctor|academic\s+proctor|threat\s+bureau|special\s+threat\s+bureau)\b/gi, ' ');
       
-      // If the authorized entity's name or token or role contains a role word, permit it
-      const declaredTokensLower = declaredRefs.map(r => r.toLowerCase()).join(' ');
-      if (declaredTokensLower.includes('commander')) sanitizedForRoles = sanitizedForRoles.replace(/\b(?:commander|lieutenant|captain)\b/gi, ' ');
-      if (declaredTokensLower.includes('dean')) sanitizedForRoles = sanitizedForRoles.replace(/\b(?:dean|dean's)\b/gi, ' ');
-      if (declaredTokensLower.includes('hover') || declaredTokensLower.includes('sedan')) sanitizedForRoles = sanitizedForRoles.replace(/\b(?:hover-sedan|hover-limousine|hovercraft|hover-car|sedan|limousine)\b/gi, ' ');
-      if (declaredTokensLower.includes('lu chen') || declaredTokensLower.includes('ye xingchen') || declaredTokensLower.includes('sovereign')) sanitizedForRoles = sanitizedForRoles.replace(/\b(?:sovereign)\b/gi, ' ');
-      if (declaredTokensLower.includes('gu biao') || declaredTokensLower.includes('dean') || declaredTokensLower.includes('proctor')) sanitizedForRoles = sanitizedForRoles.replace(/\b(?:proctor|proctors|examiner|examiners)\b/gi, ' ');
+      // Dynamically permit role words belonging to authorized entities in this scene
+      const stagingHeader = scriptStagingHeaders.get(scene.id)
+      const authorizedRefs = new Set([
+        ...declaredRefs.map(r => r.toLowerCase()),
+        ...(stagingHeader?.cast || []).map(r => r.toLowerCase().replace(/[@{}]/g, '')),
+        ...(stagingHeader?.props || []).map(r => r.toLowerCase().replace(/[@{}]/g, ''))
+      ])
+
+      for (const ent of Object.values(entities)) {
+        const isAuthorized = authorizedRefs.has(ent.id.toLowerCase()) ||
+          authorizedRefs.has(ent.token?.toLowerCase().replace(/[@{}]/g, '')) ||
+          (ent.aliases || []).some(al => authorizedRefs.has(al.toLowerCase()))
+        if (isAuthorized) {
+          const words = [ent.id, ent.name, ent.role, ...(ent.aliases || [])].filter(Boolean).join(' ').toLowerCase().split(/[^a-z0-9]+/)
+          for (const w of words) {
+            if (w.length >= 4) {
+              sanitizedForRoles = sanitizedForRoles.replace(new RegExp(`\\b${w}\\b`, 'gi'), ' ')
+            }
+          }
+        }
+      }
 
       // Also allow background university faculty/proctors in campus/stadium zones if it is crowd flavor
       if (scene.zone && (scene.zone.includes('stadium') || scene.zone.includes('campus') || scene.zone.includes('academy'))) {
@@ -791,6 +837,29 @@ export class AntiSlopValidator {
       if (roleOrVehicleMatches.length > 0) {
         g10Fails.push(scene.id)
         continue
+      }
+
+      // Dynamic Vault Entity Keyword Guard:
+      // If an identifying word of ANY vaulted entity appears in the sanitized text,
+      // verify that at least one matching entity is authorized in this scene.
+      for (const [kw, targets] of entityKeywordsMap.entries()) {
+        if (new RegExp(`\\b${kw}\\b`, 'i').test(sanitizedForRoles)) {
+          // If the keyword belongs to current zone's name or canon, permit it
+          const isPartOfZone = Boolean(scene.zone && (
+            zones[scene.zone]?.name?.toLowerCase().includes(kw) ||
+            zones[scene.zone]?.canon?.toLowerCase().includes(kw) ||
+            scene.zone.toLowerCase().includes(kw)
+          ))
+          if (isPartOfZone) continue
+
+          const isAuthorized = [...targets].some(t =>
+            [...authorizedRefs].some(auth => auth === t || auth.includes(t) || t.includes(auth))
+          )
+          if (!isAuthorized) {
+            g10Fails.push(`${scene.id} (Unreferenced entity keyword "${kw}" in prompt/action layer without declaring matching entity in CAST/character_refs)`)
+            break
+          }
+        }
       }
 
       const capSpans = [
@@ -1862,7 +1931,7 @@ export class AntiSlopValidator {
 
     // G35: Minor & Youth Safety Policy Shield
     const g35Fails = []
-    const BANNED_MINOR_AGE_REGEX = /\b(?:\d+|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)-year-old\s+(?:boy|child|minor|male|noble)\b/i
+    const BANNED_MINOR_AGE_REGEX = /\b(?:1[0-7]|[1-9]|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)-year-old\b/i
     const BANNED_MINOR_BODY_REGEX = /\b(?:refined\s+)?(?:\d+|seven|eight|nine|ten)-year-old\s+boy\s+build\b/i
     const BANNED_MINOR_ANATOMY_REGEX = /\bsmall\s+(?:head|hands|frame|body)\b/i
     const BANNED_RAW_YOUTH_NOUNS = /\b(?:ordinary\s+child|any\s+child|a\s+boy\s+so\s+young)\b/i
@@ -1933,6 +2002,98 @@ export class AntiSlopValidator {
       g36Fails,
       `100% compliance with 16:9 cinematic full-bleed standards: zero comic panels, zero split strips, zero solo two-shots.`,
       `16:9 format violation: multi-panel comic keywords or solo two-shot detected`
+    )
+
+    // G37: Inanimate Prop & Relic Still-Life Purity Shield
+    const g37Fails = []
+    const BANNED_PROP_FRAMING_REGEX = /\b(?:single-character|two-shot)\b/i
+    const BANNED_PROP_ANATOMY_REGEX = /\b(?:distinct\s+individual\s+fingers|crisp\s+pupil\s+reflections|pupil\s+reflections|complete\s+limbs|hand\s+linework|exactly\s+one\s+single\s+protagonist|no\s+duplicate\s+protagonist)\b/i
+    const REQUIRED_PROP_NEGATIVE_REGEX = /\b(?:completely\s+unpopulated|zero\s+humans|zero\s+characters|zero\s+people|zero\s+warriors)\b/i
+
+    for (const scene of matrixScenes) {
+      const header = scriptStagingHeaders.get(scene.id)
+      const stageLower = header ? (header.stage || '').toLowerCase() : ''
+      const isHeaderProp = stageLower === 'prop' || (header && header.cast.length === 0 && header.props.length > 0)
+
+      let hasLivingCharacter = false
+      if (header && header.cast && header.cast.length > 0) {
+        hasLivingCharacter = true
+      } else if (scene.charRefs && scene.charRefs.length > 0) {
+        for (const ref of scene.charRefs) {
+          const cleanRef = ref.replace(/[@{}]/g, '').trim().toLowerCase()
+          if (zones && (zones[cleanRef] || Object.values(zones).some(z => (z.name || '').toLowerCase() === cleanRef))) {
+            continue
+          }
+          const ent = entityByAliasLower.get(cleanRef) || entityByTokenName.get(cleanRef)
+          if (ent) {
+            if (ent.kind === 'character' && ent.isAnimate !== false) {
+              hasLivingCharacter = true
+              break
+            }
+          }
+        }
+      }
+
+      const hasProps = (header && header.props && header.props.length > 0) || (scene.itemRefs && scene.itemRefs.length > 0)
+      const isUnpopulatedPropScene = isHeaderProp || (!hasLivingCharacter && hasProps)
+
+      if (isUnpopulatedPropScene) {
+        const lensLower = (scene.lens || '').toLowerCase()
+        const promptLower = (scene.prompt || '').toLowerCase()
+
+        if (BANNED_PROP_FRAMING_REGEX.test(lensLower)) {
+          g37Fails.push(`${scene.id} (Unpopulated prop scene assigned humanoid lens framing: "${scene.lens}")`)
+        }
+
+        if (BANNED_PROP_ANATOMY_REGEX.test(promptLower)) {
+          g37Fails.push(`${scene.id} (Unpopulated prop scene contains humanoid anatomy tokens: fingers/pupils/limbs/protagonist)`)
+        }
+
+        if (!REQUIRED_PROP_NEGATIVE_REGEX.test(promptLower)) {
+          g37Fails.push(`${scene.id} (Unpopulated prop scene missing unpopulated negative tokens: "completely unpopulated, zero humans, zero characters, zero warriors")`)
+        }
+      }
+    }
+
+    recordGate(
+      'G37_prop_still_life_purity_shield',
+      'G37: Inanimate Prop & Relic Still-Life Purity Shield',
+      g37Fails,
+      `100% compliance with Inanimate Prop Purity Law: zero humanoid anatomy, zero humanoid framing, unpopulated negative tokens present.`,
+      `Inanimate prop still-life purity violation: humanoid anatomy/framing or missing unpopulated negative shield detected`
+    )
+
+    // G38: Ground Elevation & Posture Parity Guard (Anti-Furniture Hallucination Law)
+    const g38Fails = []
+    const groundedKeywordsRegex = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed backward|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i
+    const eyeLevelTwoShotRegex = /\b(?:eye-level\s+two-shot|two-shot\s+eye-level|two-shot\s+[^\n,.]*eye-level|eye-level\s+[^\n,.]*two-shot)\b/i
+    const rogueSeatingRegex = /\b(?:armchair|sofa|couch|seated comfortably in a chair|sitting in an armchair|seated at a table)\b/i
+
+    for (const scene of matrixScenes) {
+      const scriptClause = scriptClauses.get(scene.id) || scene.narrativeSync || ''
+      const actionText = `${scene.actionLayer || ''} ${scriptClause}`
+      
+      const isGrounded = groundedKeywordsRegex.test(actionText)
+      if (isGrounded) {
+        // 1. Framing check: eye-level two-shot is strictly forbidden when an actor is grounded
+        if (eyeLevelTwoShotRegex.test(scene.lens || scene.prompt)) {
+          g38Fails.push(`${scene.id} (Ground posture violation: actor is grounded/kneeling on floor but lens specifies eye-level two-shot framing)`)
+          continue
+        }
+        // 2. Seating hallucination check: prompt must not inject chairs or armchairs for grounded interactions
+        if (rogueSeatingRegex.test(scene.prompt) && !/\bseated\b/i.test(scriptClause)) {
+          g38Fails.push(`${scene.id} (Posture elevation defect: grounded interaction prompt contains armchair/sofa seating tokens)`)
+          continue
+        }
+      }
+    }
+
+    recordGate(
+      'G38_ground_elevation_parity',
+      'G38: Ground Elevation & Posture Parity Guard',
+      g38Fails,
+      `100% elevation disparity & ground posture compliance across all character interactions.`,
+      `Eye-level two-shot assigned to grounded/kneeling actor or rogue seating detected`
     )
 
     // D-01: Cryptographic Dispatch Manifest Verification

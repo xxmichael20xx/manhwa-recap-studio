@@ -1,0 +1,42 @@
+{
+  "episodeId": "EP05_The_Planetary_Rift_Outbreak_and_The_Sky_Shield_Breach",
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "generatedAt": "2026-11-07T16:04:16.582Z",
+  "timeline": {
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "lu_chen": "clean signature standard attire",
+    "wang_bao": "clean signature standard attire",
+    "han_feng": "clean signature standard attire",
+    "jiang_qingxue": "clean signature standard attire"
+  },
+  "held_props": {
+    "tactical_spirit_spectrometer": {
+      "canonical_name": "Tactical Spirit Spectrometer",
+      "container": "carved protective case",
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "heavenly_dao_simulator_hud": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": "clean sheath or pedestal",
+      "visual_form": "A sleek translucent holographic cultivation system interface floating in mid-air in front of Lu Chen. Displays real-time primordial Dao accumulation, reality-fusion countdown, and breakthrough milestones with glowing golden celestial glyphs.",
+      "notes": "Locked across all episode scenes: Heavenly Dao Simulator Interface."
+    },
+    "celestial_star_astrolabe": {
+      "canonical_name": "Celestial Star Astrolabe",
+      "container": "carved protective case",
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "heavenly_dao_simulator_interface": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": "carved protective case",
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "zone_lifecycles": {}
+}

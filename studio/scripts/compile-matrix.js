@@ -177,6 +177,7 @@ const resolveZoneCanon = (sId, zoneId, zone = {}, header = {}, state = null) => 
 const getToneDrivenTierAndLayout = (header, clause = '', castCount = 1) => {
   const stage = (header?.stage || '').toLowerCase()
   const c = (clause || '').toLowerCase()
+  const isProp = stage === 'prop' || (castCount === 0 && (header?.props && header.props.length > 0))
   const isCombat = stage === 'combat' || /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i.test(c)
   const isEstablishing = stage === 'establishing' || castCount === 0 || (header?.cast && header.cast.length === 0) || /\b(?:panoramic|wide view|landscape|skyline|exterior of|loomed above)\b/i.test(c)
   const isHeroPlate = /\b(?:stepped forward|revealed|unleashed|towered|eyes flared|supreme|sovereign)\b/i.test(c)
@@ -201,15 +202,19 @@ const getToneDrivenTierAndLayout = (header, clause = '', castCount = 1) => {
         ? 'Tier B: Dual-panel manhwa webtoon split strip'
         : 'Tier C: Three-panel dynamic manhwa action strip')
 
+  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(c)
+
   let lens = '35mm medium single-character eye-level framing'
-  if (castCount === 0) {
+  if (isProp) {
+    lens = '50mm close-up macro product still-life framing'
+  } else if (castCount === 0) {
     lens = '24mm wide angle establishing framing'
   } else if (tier === 'A') {
     lens = '24mm wide angle, low-angle hero framing'
   } else if (tier === 'C') {
     lens = '50mm telephoto close-up action framing'
   } else if (castCount >= 2) {
-    lens = '35mm medium two-shot eye-level framing'
+    lens = isActorGrounded ? '35mm high-angle perspective looking down' : '35mm medium two-shot eye-level framing'
   }
 
   return { tier, layout, lens }
@@ -290,7 +295,7 @@ console.log('-'.repeat(78))
 const SAFE_TAIL_CHARACTER = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, no duplicate protagonist, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
 const SAFE_TAIL_LANDSCAPE = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures.'
 
-const SAFE_TAIL_PROP_FOCUSED = '100% focus on focal props and training enclosure, textless 16:9 widescreen landscape, zero humans, zero characters, crisp clean ink linework, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures.'
+const SAFE_TAIL_PROP_FOCUSED = '100% prop artifact showcase illustration, solitary weapon still life, unheld blade resting on stone dais, completely unpopulated, zero humans, zero people, zero warriors, zero knights, zero armor, zero characters, zero hands touching the weapon, zero figures in the sky, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
 const UNARMED_JULIAN_TAIL = 'unarmed noble attire, clean waist belt, zero weapons at hip, empty hands, zero swords, zero scabbards'
 
 
@@ -524,6 +529,14 @@ for (let i = 0; i < sceneIds.length; i++) {
     lens = tier === 'C' ? '50mm telephoto close-up action framing' : '35mm medium two-shot eye-level framing'
   }
 
+  const actionText = `${parsedScene.actionLayer || ''} ${scriptClauses.get(sId) || ''}`
+  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(actionText)
+  if (isActorGrounded && activeCast.length >= 2) {
+    if (lens.toLowerCase().includes('two-shot') || lens.toLowerCase().includes('eye-level')) {
+      lens = '35mm high-angle perspective looking down'
+    }
+  }
+
   // Extract or validate Layer 4 Action (strictly preserve bespoke <action_layer> and block unedited scaffold templates)
   let actionLayer = (parsedScene.actionLayer || '').trim()
   if (!actionLayer && parsedScene.prompt) {
@@ -590,11 +603,15 @@ for (let i = 0; i < sceneIds.length; i++) {
         (e.id && e.id.toLowerCase() === cleanProp.toLowerCase().replace(/[^a-z0-9]/g, '_'))
       ) || legacyItems.find(it => (it.name && it.name.toLowerCase() === cleanProp.toLowerCase()) || it.id === cleanProp.toLowerCase().replace(/[^a-z0-9]/g, '_'))
 
-      const isStationary = cleanProp.toLowerCase().includes('dummy') ||
+      const isStationary = activeCast.length === 0 ||
+        (header.stage && header.stage.toLowerCase() === 'prop') ||
+        cleanProp.toLowerCase().includes('dummy') ||
         cleanProp.toLowerCase().includes('target') ||
         cleanProp.toLowerCase().includes('pedestal') ||
         cleanProp.toLowerCase().includes('monolith') ||
-        (propEnt && propEnt.type === 'Prop')
+        cleanProp.toLowerCase().includes('bench') ||
+        cleanProp.toLowerCase().includes('monument') ||
+        (propEnt && (propEnt.type === 'Prop' || propEnt.kind === 'item' || propEnt.isAnimate === false))
 
       if (isStationary) {
         stationaryProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt })
@@ -609,16 +626,16 @@ for (let i = 0; i < sceneIds.length; i++) {
     layer2 = charDnaBlocks.join(', ')
     if (stationaryProps.length > 0) {
       for (const sp of stationaryProps) {
-        const rawDna = sp.ent?.dna || sp.ent?.description || 'Full-bodied humanoid automaton golem warrior sculpted from dark petrified iron-wood, complete with two carved wooden arms, two armored wooden legs with sabatons, segmented wooden chestplate with glowing cyan runes, and a faceless knight helmet head'
+        const rawDna = sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`
         const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
         layer2 += `, Featuring ${sp.token} (${cleanPropDna})`
       }
     }
   } else if (stationaryProps.length > 0) {
     const propBlocks = stationaryProps.map(sp => {
-      const rawDna = sp.ent?.dna || sp.ent?.description || 'Full-bodied humanoid automaton golem warrior sculpted from dark petrified iron-wood, complete with two carved wooden arms, two armored wooden legs with sabatons, segmented wooden chestplate with glowing cyan runes, and a faceless knight helmet head'
+      const rawDna = sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`
       const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
-      return `Featuring ${sp.token} (${cleanPropDna}) stationed in the center of the arena`
+      return `Featuring ${sp.token} (${cleanPropDna})`
     })
     layer2 = propBlocks.join(', ')
   } else {
@@ -632,8 +649,9 @@ for (let i = 0; i < sceneIds.length; i++) {
   const lightingPhrase = LIGHTING_PHRASES[activeLightingMode] || 'illuminated by bright natural daylight'
   const vantage = zone.vantage_rule || ''
   const boundary = zone.boundary_tags || ''
+  const windowVantage = zone.window_vantage || ''
   const zoneTokenName = zone.name || zoneId.replace(/_/g, ' ')
-  const layer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${vantage ? ', ' + vantage : ''}${boundary ? ', ' + boundary : ''}`
+  const layer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${vantage ? ', ' + vantage : ''}${windowVantage ? ', ' + windowVantage : ''}${boundary ? ', ' + boundary : ''}`
 
   // 4. Layer 4: Action Layer & Guards
   let layer4 = actionLayer
@@ -696,7 +714,7 @@ for (let i = 0; i < sceneIds.length; i++) {
   // 5. Layer 5: Dynamic Safe Tail
   let layer5 = SAFE_TAIL_CHARACTER
   if (activeCast.length === 0) {
-    if (stationaryProps.length > 0) {
+    if (stationaryProps.length > 0 || (header.props && header.props.length > 0) || (header.stage && header.stage.toLowerCase() === 'prop')) {
       layer5 = SAFE_TAIL_PROP_FOCUSED
     } else {
       layer5 = SAFE_TAIL_LANDSCAPE
@@ -706,6 +724,9 @@ for (let i = 0; i < sceneIds.length; i++) {
       layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, exactly one single protagonist, zero split panels, zero comic borders, solitary single character framing, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
     } else {
       layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, zero split panels, zero comic borders, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
+    }
+    if (isActorGrounded) {
+      layer5 = layer5.replace('no photorealistic 3D CGI.', 'no photorealistic 3D CGI, zero elevated seating, zero chairs, zero armchairs, zero sofas, grounded directly on floor, one actor kneeling directly on the floor at the feet of the standing protagonist.')
     }
   }
 

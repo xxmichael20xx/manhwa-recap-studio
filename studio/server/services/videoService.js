@@ -1860,6 +1860,14 @@ export class VideoService {
           const metaPath = path.join(omnibusDir, `${path.basename(outName, '.mp4')}_metadata.json`)
           await fs.writeFile(metaPath, JSON.stringify(metadata, null, 2), 'utf-8').catch(() => {})
 
+          // Automatically sync compiled duration and chapter timestamps to YouTube packages
+          try {
+            const { PackagingService } = await import('./packagingService.js')
+            await PackagingService.syncOmnibusMetadataToPackages(franchiseId, metadata)
+          } catch (syncErr) {
+            console.error('[VideoService] Auto-sync to YouTube packages failed:', syncErr.message)
+          }
+
           ActivityLogService.success(
             'video',
             'Omnibus Video Stitched',

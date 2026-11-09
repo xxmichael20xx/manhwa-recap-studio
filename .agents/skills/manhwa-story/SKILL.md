@@ -22,6 +22,12 @@ description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Seri
    - **3-Phase Action Engine:** Major fights must feature Probe -> Escalation -> Decisive Spellcraft Strike (18–26 scenes total). Cap spectator reaction echo at 1–2 sharp panels.
 7. **Institutional Realism & Context-Aware Crowds:** Ground media blackouts and treaties; weave peer whispers in public spaces while keeping private sanctuaries isolated.
 8. **5 Slow-Burn Realism Laws:** (a) Active in-transit craft step-by-step realism; (b) Sentient companion/spirit co-pilot where established by `Series_Bible.md` (zero real-world IP mentions); (c) Child Vessel Awakening Fever (Safe Mode 10% throttle + Live-Observation Affinity Gate); (d) Credible Artisan Family Lineage + honest past-life confession; (e) Strict Tech-Tree Chronology (water filtration/soap/masonry in Arc I before gears/electricity in Arcs III–IV).
+9. **The Combat Enclosure & Action Immersion Law (Zero Mid-Battle Errands & Prop Flickering Invariant):**
+   - **Zero Mid-Combat Errand Breaks:** Once an active confrontation, standoff, or combat engagement commences, the spatial staging is strictly locked to that battle enclosure. Scriptwriters across ALL series are **STRICTLY PROHIBITED** from cutting away to the protagonist or actors buying snacks, shopping at stalls, ordering food, eating noodles, or engaging in casual consumer transactions mid-battle.
+   - **Authentic Nonchalance vs. Cartoonish Filler:** An overpowered protagonist's composure MUST be conveyed through stillness, unhurried posture, deadpan minimal expressions, and effortless passive defenses (e.g. attacks vaporising or shattering on passive barriers/recoil)—NEVER through immersion-breaking domestic chores or comedy filler inserted into combat sequences.
+   - **Strict Prop Lifecycle Parity & Zero Flickering:** Any physical item held or manipulated (bags, food items, pills, weapons, talismans) MUST maintain continuous, monotonic state across sequential plates. Items are strictly forbidden from magically appearing, disappearing, changing containers (e.g. alternating between vial, bottle, and loose pearl), or flickering in and out of an actor's hands between consecutive cuts. If an item is carried into a scene, it must be introduced before the confrontation begins and remain held or stowed consistently throughout.
+   - **Entourage & Mob Visual Uniformity:** Squads, mercenary escorts, and enemy thralls MUST maintain locked visual DNA throughout an encounter; they are strictly prohibited from morphing between uniform classes (e.g. turning from high-tech tactical soldiers with jetpacks into random street thugs or unvaulted strangers).
+   - **Destruction State Persistence:** Any physical destruction to a zone (e.g. a skyscraper collapsed into fine dust, a cratered plaza, a shattered barrier) MUST remain visually persistent and coherent across all subsequent scenes within that enclosure, with zero alternating between conflicting damage states.
 
 ## 3. The 5 Lead Lore Auditor Logic Gates (Anti-Brain-Dead Invariant)
 1. **Zero 1,000-Year Brain-Dead Civilizations:** Ancient mages never fail basic physics; ground mundane-object victories strictly in the protagonist's unique numerical enhancement engine.
@@ -47,16 +53,19 @@ description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Seri
        - `STAGE: interaction`: 2 or more characters in `CAST`.
        - `STAGE: entrance`: Character physically arriving/stepping into the zone for the first time in this scene.
      - **CAST Isolation Law:** Characters merely mentioned inside spoken dialogue quotes (`"..."`) MUST be excluded from `CAST` to prevent dialogue teleportation.
+     - **Protagonist Visual Anchor Law:** During spectator reactions immediately following a major feat, stage the protagonist in `CAST` and `<action_layer>` (e.g. composed in the foreground) rather than cutting away to isolated strings of solo spectator cuts where the protagonist vanishes.
      - **PLAN_TALK Guard:** Set `PLAN_TALK: true` when characters discuss future unbuilt blueprints or inventions.
 3. **Mandatory Deterministic CLI Audit & Edge-TTS Synthesis:**
    - Execute `node studio/scripts/audit-script.js <franchiseId> <episodeId> --heal-headers` (Exit Code 0).
-   - Immediately execute `node studio/scripts/generate-tts.js <franchiseId> <episodeId> <voice>` to synthesize scene MP3s, `.srt` cues, and `audio_telemetry.json`, deriving exact scene/batch counts ($\lceil N_{\text{scenes}} / 24 \rceil$) from measured `ffprobe` audio duration.
+   - Audio TTS synthesis is decoupled from drafting: execute `node studio/scripts/generate-tts.js <franchiseId> <episodeId> <voice>` or synthesize audio on-demand within the Studio UI when ready for compilation.
 
 ## 5. The Spatial Enclosure & Viewer Common Sense Gate (Pre-Flight)
 - **Physical Enclosure Audit:** Before script drafting begins, parse every narrative scene for its physical boundary (`reception counter` vs `auction main stage` vs `street breakfast stall`).
 - **Zero Unvaulted Recurring Locations:** Any location appearing across >= 2 scenes MUST be vaulted in `vault/zones.json` with an atomic reference card. Never lump separate rooms or stalls into a generic parent zone.
 - **Linear Spatial Continuity:** Characters cannot magically teleport across rooms between cuts (e.g., handing an item to a front reception clerk cannot switch to standing on the main auction stage in the next panel without an explicit walking transition scene).
 - **Cross-Episode Seasonal & Terrain Continuity:** Recurring locations must inherit the weather and ground terrain established in prior episodes. Prohibit conflicting environmental descriptors (e.g. introducing snow onto a known dirt road) in both spoken narration and staging tags.
+- **Signature Landmark Motif & Window Vantage Staging:** In franchises with central architectural or geographic landmarks (e.g. the 50-foot Obsidian Greatsword monument), interior scenes must regularly anchor dialogue and introspection against that landmark via window vantages or balcony establishing cuts every 10–15 scenes.
+- **Ground Elevation & Posture Continuity:** When an antagonist or supporting character collapses or begs on the floor, subsequent beats must preserve ground contact until an explicit rising action is narrated. Never script abrupt transitions to chairs or elevated seating.
 
 ## 6. The Immersion & Anti-Domestic Filler Shield
 - **Absolute Ban on Combat/Standoff Domestic Actions:** Strictly forbid characters from eating noodles, chewing buns, sipping drinks through straws, or tying shoelaces during confrontations, negotiations, or battles.
@@ -72,3 +81,6 @@ description: Senior Manhwa Lore Auditor & Lead Script Doctor. Enforces 100% Seri
    - **Spoken Mention (Dialogue):** Words spoken inside quotation marks (`"..."`) represent dialogue exposition and do NOT place an entity in `CAST`.
    - **Compound Remnant Mention:** Handling harvested remnants, trophies, or materials maps strictly to items/props, NOT the living character.
    - **Physical Action:** When an entity is physically present, acting, or reacting in the visual field, the drafter MUST explicitly declare them in `CAST: [...]`.
+4. **The Universal Entity Recurrence & Lexical Monomorphism Law (Anti-Synonym Drift):**
+   - **>= 2 Recurrence Rule:** Any physical weapon, held tool, signature garment (boots, gloves, mantle, pendant, ring), architectural dais/podium/bench, or relic mentioned or manipulated >= 2 times in an episode MUST be registered in the vault as an official entity.
+   - **Lexical Monomorphism:** Once an entity is named, that single canonical noun phrase MUST be used monotonically across spoken audio narrative (`01_Episode_Script.md`) and staging headers (`CAST`, `PROPS`). Casual descriptive mutation or synonym drift (e.g. alternating between "wooden practice rod", "wooden stick", and "wooden rod", or "silver training rapier" vs "silver blade") is STRICTLY PROHIBITED.

@@ -507,34 +507,54 @@ const drawFrame = () => {
     let curY = baseCenterY
     let curZoom = 1.0
 
-    // Calibrated +20% Motion Speed Curves
+    // Calibrated Dual-Axis Pan + Dynamic Zoom Curves
     if (isTallStrip) {
       if (motionType === 'vertical_glide_up') {
         curY = -((1.0 - progress) * maxScrollY)
+        curZoom = 1.10 - 0.08 * progress
       } else if (motionType === 'vertical_diagonal_left_to_right') {
         curY = -(progress * maxScrollY)
-        curX = (baseCenterX - 24) + (progress * 48) // +20% speed
+        curX = (baseCenterX - 36) + (progress * 72)
+        curZoom = 1.02 + 0.08 * progress
       } else if (motionType === 'vertical_diagonal_right_to_left') {
         curY = -(progress * maxScrollY)
-        curX = (baseCenterX + 24) - (progress * 48) // +20% speed
+        curX = (baseCenterX + 36) - (progress * 72)
+        curZoom = 1.02 + 0.08 * progress
       } else if (motionType === 'vertical_zoom_in') {
         curY = -(progress * maxScrollY)
-        curZoom = 1.0 + 0.042 * progress // +20% speed
+        curZoom = 1.00 + 0.14 * progress
       } else if (motionType === 'vertical_zoom_out') {
         curY = -(progress * maxScrollY)
-        curZoom = 1.042 - 0.042 * progress // +20% speed
+        curZoom = 1.14 - 0.10 * progress
       } else {
         curY = -(progress * maxScrollY)
+        curZoom = 1.02 + 0.08 * progress
       }
     } else {
-      if (motionType === 'vertical_snap_up') {
-        curZoom = 1.0 + 0.042 * progress
+      // Single vertical panel (All 6 presets actively handled with fluid dual-axis motion)
+      if (motionType === 'vertical_glide_down') {
+        curY = baseCenterY - (progress * 60)
+        curZoom = 1.02 + 0.12 * progress
+      } else if (motionType === 'vertical_glide_up') {
+        curY = baseCenterY + ((1.0 - progress) * 60)
+        curZoom = 1.14 - 0.10 * progress
+      } else if (motionType === 'vertical_zoom_in' || motionType === 'vertical_snap_up') {
+        curZoom = 1.00 + 0.18 * progress
+        curY = baseCenterY - (progress * 40)
       } else if (motionType === 'vertical_zoom_out') {
-        curZoom = 1.042 - 0.042 * progress
+        curZoom = 1.18 - 0.14 * progress
+        curY = baseCenterY + (progress * 30)
       } else if (motionType === 'vertical_diagonal_left_to_right') {
-        curX = (baseCenterX - 24) + (progress * 48)
+        curX = (baseCenterX - 40) + (progress * 80)
+        curY = baseCenterY - (progress * 50)
+        curZoom = 1.02 + 0.12 * progress
       } else if (motionType === 'vertical_diagonal_right_to_left') {
-        curX = (baseCenterX + 24) - (progress * 48)
+        curX = (baseCenterX + 40) - (progress * 80)
+        curY = baseCenterY - (progress * 50)
+        curZoom = 1.02 + 0.12 * progress
+      } else {
+        curY = baseCenterY - (progress * 50)
+        curZoom = 1.02 + 0.10 * progress
       }
     }
 
@@ -546,10 +566,10 @@ const drawFrame = () => {
 
     ctx.drawImage(sCanvas, curX - pad, curY - pad)
   } else if (img) {
-    // Landscape Artwork (+20% Travel Room with 1.18 Overscan)
+    // Landscape Artwork (28% Over-scan buffer for authentic 2.5D travel room)
     const imgW = img.width
     const imgH = img.height
-    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.18
+    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.28
     const landW = imgW * landScale
     const landH = imgH * landScale
     const maxLandScrollX = Math.max(0, landW - 1920)
@@ -562,22 +582,44 @@ const drawFrame = () => {
     let curZoom = 1.0
 
     if (motionType === 'pan_left_to_right') {
+      // 0. Sweep Left to Right with Continuous Push-In
       curX = -(maxLandScrollX * (1.0 - progress))
+      curY = landCenterY + (progress - 0.5) * 36
+      curZoom = 1.02 + 0.12 * progress
     } else if (motionType === 'pan_right_to_left') {
+      // 1. Sweep Right to Left with Continuous Push-In
       curX = -(maxLandScrollX * progress)
+      curY = landCenterY - (progress - 0.5) * 36
+      curZoom = 1.02 + 0.12 * progress
     } else if (motionType === 'pan_top_to_bottom') {
+      // 2. Ascending/Descending Crane Pan with Lateral Pan & Push-In
+      curX = landCenterX + (progress - 0.5) * 60
       curY = -(maxLandScrollY * progress)
+      curZoom = 1.03 + 0.12 * progress
     } else if (motionType === 'pan_bottom_to_top') {
+      // 3. Bottom to Top Reveal Crane with Lateral Pan & Push-In
+      curX = landCenterX - (progress - 0.5) * 60
       curY = -(maxLandScrollY * (1.0 - progress))
+      curZoom = 1.03 + 0.12 * progress
     } else if (motionType === 'hero_zoom_in') {
-      curZoom = 1.0 + 0.06 * progress // +20% speed
+      // 4. Dramatic Hero Push-In + Upward Drift toward Head/Torso
+      curX = landCenterX + (progress - 0.5) * 40
+      curY = landCenterY - (progress * (maxLandScrollY * 0.45))
+      curZoom = 1.00 + 0.18 * progress
     } else if (motionType === 'hero_zoom_out') {
-      curZoom = 1.06 - 0.06 * progress // +20% speed
+      // 5. Cinematic Reveal Pull-Out from Detail to Vista + Lateral Drift
+      curX = landCenterX - (progress - 0.5) * 48
+      curY = landCenterY + (progress - 0.5) * 36
+      curZoom = 1.18 - 0.14 * progress
     } else if (motionType === 'pan_diagonal_sweep') {
+      // 6. Action Diagonal Cleave (Full Dual-Axis Travel + Steady Zoom)
       curX = -(maxLandScrollX * (1.0 - progress))
-      curY = -(maxLandScrollY * progress)
+      curY = -(maxLandScrollY * (1.0 - progress))
+      curZoom = 1.04 + 0.14 * progress
     } else {
       curX = -(maxLandScrollX * (1.0 - progress))
+      curY = landCenterY
+      curZoom = 1.02 + 0.12 * progress
     }
 
     if (curZoom !== 1.0) {

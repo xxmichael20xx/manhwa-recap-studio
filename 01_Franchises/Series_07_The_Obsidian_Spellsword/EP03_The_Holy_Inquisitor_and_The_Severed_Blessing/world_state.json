@@ -1,0 +1,111 @@
+{
+  "episodeId": "EP03_The_Holy_Inquisitor_and_The_Severed_Blessing",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-07T01:59:35.293Z",
+  "timeline": {
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_080",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_081",
+        "to_scene": "IMG_082",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_083",
+        "to_scene": "IMG_096",
+        "lighting": "night_floodlit"
+      },
+      {
+        "from_scene": "IMG_097",
+        "to_scene": "IMG_103",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_104",
+        "to_scene": "IMG_120",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_121",
+        "to_scene": "IMG_121",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_122",
+        "to_scene": "IMG_168",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_169",
+        "to_scene": "IMG_170",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_171",
+        "to_scene": "IMG_178",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_179",
+        "to_scene": "IMG_182",
+        "lighting": "night_floodlit"
+      },
+      {
+        "from_scene": "IMG_183",
+        "to_scene": "IMG_188",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_189",
+        "to_scene": "IMG_192",
+        "lighting": "night_floodlit"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "julian_vaelgard": "tailored midnight-navy silk doublet with silver filigree embroidery",
+    "master_swordsman_kael": "fitted midnight-blue combat tunic reinforced with hardened dark leather pauldrons",
+    "duke_gerald_vaelgard": "thick silver-grey wolf fur collar draped across broad shoulders",
+    "duchess_eleanor_vaelgard": "exquisite high-collared cerulean silk robe embroidered with glowing silver constellation runes",
+    "high_inquisitor_malakor": "immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions",
+    "aiden_drake": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": "carved protective case",
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "enchanted_iron_wood_practice_dummy": {
+      "canonical_name": "Enchanted Iron-Wood Practice Dummy",
+      "container": "carved protective case",
+      "visual_form": "full-bodied humanoid automaton golem sculpted from dark petrified iron-wood, two carved arms with clenched fists, two armored legs with sabatons, segmented wooden chestplate with glowing cyan runes, faceless knight helmet head, polished bronze joints, standing upright on octagonal stone dais inside glowing bronze spherical mana barrier",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "white_marble_meditation_bench": {
+      "canonical_name": "White Marble Meditation Bench",
+      "container": "carved protective case",
+      "visual_form": "An ornate wide classical white marble meditation bench with elegant carved scrollwork armrests and backrest, resting on a polished white marble garden pavilion platform beside blooming azure roses.",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "founding_sword_saint_obsidian_monument": {
+      "canonical_name": "Founding Sword Saint Obsidian Monument",
+      "container": "carved protective case",
+      "visual_form": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting Aiden Drake clad in a battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "obsidian_greatsword": {
+      "canonical_name": "Obsidian Greatsword",
+      "container": "carved protective case",
+      "visual_form": "Colossal two-handed obsidian greatsword sculpted from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel, 2D action manhwa art style, sharp ink linework, horizontal 16:9 widescreen",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "zone_lifecycles": {}
+}

@@ -3286,8 +3286,8 @@ const handlePromptPlateDrop = async (event, tag) => {
 const loadEpisode = async () => {
   try {
     const [epRes, imgRes, auditRes] = await Promise.all([
-      fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}`),
-      fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images`),
+      fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}?cb=${Date.now()}`),
+      fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/images?cb=${Date.now()}`),
       fetch(`/api/episodes/${route.params.franchiseId}/${route.params.episodeId}/prompt-matrix-audit?cb=${Date.now()}`).catch(err => {
         console.warn('Failed to fetch prompt matrix audit:', err)
         return null

@@ -20,10 +20,10 @@
   "pacing": {
     "max_scene_seconds": 8,
     "tts_wpm_measured": 155,
-    "max_prompt_tokens": 700
+    "max_prompt_tokens": 800
   },
   "tier_distribution": {
-    "min_multi_panel_ratio": 0.0,
+    "min_multi_panel_ratio": 0,
     "layout_headers": {
       "A": "Single-panel full-bleed horizontal hero plate.",
       "B": "Single-panel full-bleed horizontal cinematic composition.",

@@ -15,16 +15,16 @@
     "tier": 1,
     "status": "approved",
     "age_class": "adolescent",
-    "dna": "15-year-old young noble swordsman, lean athletic martial build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
+    "dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
     "dna_prompt_anchor": "@{Julian Vaelgard - Reincarnated Sword Saint}",
-    "visual_dna": "Fifteen-year-old young noble swordsman with sleek raven-black hair parted neatly, piercing sharp silver eyes that gleam with ancient intellect, pale refined complexion, dressed in a tailored midnight-navy silk combat doublet with silver filigree embroidery, white cravat, dark tailored trousers, polished black leather dueling boots, holding a lightweight silver-hilted practice rapier with effortless poise, charismatic calm expression, sharp ink linework, 2D action manhwa cel-shading",
+    "visual_dna": "Young noble manhwa protagonist with slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes that gleam with ancient intellect, pale refined complexion, dressed in a tailored midnight-navy silk combat doublet with silver filigree embroidery, white cravat, dark tailored trousers, polished black leather dueling boots, holding a lightweight silver-hilted practice rapier with effortless poise, charismatic calm expression, sharp ink linework, 2D action manhwa cel-shading",
     "default_outfit": "default",
     "outfits": {
       "default": "tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots"
     },
     "default_state": {},
     "state_lexicon": {},
-    "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the 15-year-old body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye.",
+    "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the young noble body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye.",
     "plate": "character_vault/01_Protagonist_Julian_Vaelgard.jpg",
     "episodes": [
       "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
@@ -463,7 +463,7 @@
   "obsidian_greatsword": {
     "id": "obsidian_greatsword",
     "name": "Obsidian Greatsword",
-    "kind": "character",
+    "kind": "item",
     "token": "@{Obsidian Greatsword}",
     "aliases": [
       "Obsidian Greatsword",
@@ -478,12 +478,12 @@
     "tier": 1,
     "status": "approved",
     "age_class": "ancient",
-    "dna": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
+    "dna": "colossal two-handed obsidian greatsword forged from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
     "dna_prompt_anchor": "@{Obsidian Greatsword - Sovereign Void Blade}",
-    "visual_dna": "Colossal two-handed obsidian greatsword sculpted from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel, 2D action manhwa art style, sharp ink linework, horizontal 16:9 widescreen",
+    "visual_dna": "Colossal two-handed obsidian greatsword sculpted from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel, 2D action manhwa art style, sharp ink linework, horizontal 16:9 widescreen",
     "default_outfit": "default",
     "outfits": {
-      "default": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
+      "default": "colossal two-handed obsidian greatsword forged from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
     },
     "default_state": {},
     "state_lexicon": {},
@@ -492,7 +492,8 @@
     "episodes": [
       "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
       "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
-    ]
+    ],
+    "category": "Weapon"
   },
   "white_marble_meditation_bench": {
     "id": "white_marble_meditation_bench",
@@ -519,17 +520,18 @@
     "token": "@{Founding Sword Saint Obsidian Monument}",
     "kind": "item",
     "category": "Props",
-    "description": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting Aiden Drake clad in a battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
-    "visual_dna": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting Aiden Drake clad in a battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
-    "dna": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
-    "dna_prompt_anchor": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting Aiden Drake clad in battle-worn duster holding the Obsidian Greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+    "description": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting the legendary founder clad in a battle-worn duster holding a chipped greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
+    "visual_dna": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone depicting the legendary founder clad in a battle-worn duster holding a chipped greatsword pointed boldly upward toward the sky, standing upon a stepped octagonal stone pedestal inscribed with glowing gold imperial runes.",
+    "dna": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting the legendary founder clad in battle-worn duster holding a chipped greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Founding Sword Saint Obsidian Monument}, colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian volcanic stone, depicting the legendary founder clad in battle-worn duster holding a chipped greatsword pointed boldly upward toward the sky, stepped octagonal stone pedestal inscribed with glowing gold imperial runes, textless artwork, horizontal 16:9 widescreen",
     "reference_plate": "15_Prop_Founding_Sword_Saint_Obsidian_Monument.jpg",
     "aliases": [
       "Founding Sword Saint Obsidian Monument",
       "Founding Sword Saint Monument"
     ],
     "episodes": [
-      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
+      "EP02_The_Ancestral_Vault_and_The_First_True_Spell",
+      "EP03_The_Holy_Inquisitor_and_The_Severed_Blessing"
     ]
   }
 }

@@ -93,6 +93,27 @@ allChars.forEach(c => {
   }
 })
 
+// Build inanimate item set to enforce Rule 15 (Inanimate Prop Still-Life Purity)
+const inanimateItemNames = new Set()
+if (Object.keys(entities).length > 0) {
+  for (const ent of Object.values(entities)) {
+    if (ent.kind === 'item' || ent.isAnimate === false || ent.type === 'Prop' || ent.category === 'Weapon') {
+      const name = ent.name || ent.token?.replace(/^@\{|\}$/g, '') || ''
+      if (name) inanimateItemNames.add(name.toLowerCase())
+      if (ent.token) inanimateItemNames.add(ent.token.replace(/^@\{|\}$/g, '').toLowerCase())
+      if (ent.aliases) ent.aliases.forEach(a => inanimateItemNames.add(a.toLowerCase()))
+    }
+  }
+}
+if (Array.isArray(legacyItems)) {
+  for (const it of legacyItems) {
+    const name = it.name || it.token?.replace(/^@\{|\}$/g, '') || ''
+    if (name) inanimateItemNames.add(name.toLowerCase())
+    if (it.token) inanimateItemNames.add(it.token.replace(/^@\{|\}$/g, '').toLowerCase())
+    if (it.aliases) it.aliases.forEach(a => inanimateItemNames.add(a.toLowerCase()))
+  }
+}
+
 let scriptText = fs.readFileSync(scriptPath, 'utf-8')
 let lines = scriptText.split('\n')
 
@@ -296,6 +317,7 @@ if (pacingIssues.length > 0) issues.pacingWarnings = pacingIssues;
 const missingHeaders = []
 const invalidZones = []
 const phantomDialogueCasts = []
+const inanimateCasts = []
 
 clauses.forEach((cl, idx) => {
   const m = cl.rawText.match(headerRegex)
@@ -311,6 +333,17 @@ clauses.forEach((cl, idx) => {
     const cleanClause = cl.rawText.replace(/<!--[\s\S]*?-->/g, '').trim()
     const outsideQuotes = cleanClause.replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
     const insideQuotesOnly = (cleanClause.match(/"[^"]*"|“[^”]*”/g) || []).join(' ')
+
+    // Rule 15: Check for Inanimate Items declared in CAST
+    for (const member of castList) {
+      if (inanimateItemNames.has(member.toLowerCase())) {
+        inanimateCasts.push({
+          id: cl.id,
+          item: member,
+          message: `Inanimate prop/item "@{${member}}" declared in CAST. Move to PROPS: [@{${member}}] and set STAGE: prop (or STAGE: establishing) with CAST: [].`
+        })
+      }
+    }
 
     for (const member of castList) {
       const firstName = member.split(' ')[0]
@@ -343,6 +376,9 @@ if (invalidZones.length > 0) {
 }
 if (phantomDialogueCasts.length > 0) {
   issues.stagingHeaders.push({ type: 'phantom_dialogue_cast_leak', count: phantomDialogueCasts.length, details: phantomDialogueCasts.slice(0, 5) })
+}
+if (inanimateCasts.length > 0) {
+  issues.stagingHeaders.push({ type: 'inanimate_item_in_cast', count: inanimateCasts.length, details: inanimateCasts })
 }
 
 // 3b. Spatial boundary desync check (e.g. narrative moves to stairwell while header stays in room)
@@ -565,7 +601,14 @@ if (totalIssues === 0) {
   }
   if (issues.stagingHeaders.length > 0) {
     console.log(`\n  \x1b[31mMissing or Invalid Staging Headers:\x1b[0m`)
-    issues.stagingHeaders.forEach(sh => console.log(`    - ${sh.type}: ${sh.count} scenes (Run with --heal-headers to auto-fix)`))
+    issues.stagingHeaders.forEach(sh => {
+      if (sh.type === 'inanimate_item_in_cast') {
+        console.log(`    - Inanimate Prop/Item declared in CAST: ${sh.count} scene(s):`)
+        sh.details.forEach(d => console.log(`      * [${d.id}] ${d.message}`))
+      } else {
+        console.log(`    - ${sh.type}: ${sh.count} scenes (Run with --heal-headers to auto-fix)`)
+      }
+    })
   }
 }
 console.log('='.repeat(78))

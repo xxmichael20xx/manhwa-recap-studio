@@ -61,7 +61,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "wang_bao": {
@@ -98,7 +99,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "gu_tianyu": {
@@ -168,7 +170,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "han_feng": {
@@ -203,7 +206,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "ye_xingchen": {
@@ -596,7 +600,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "heavenly_dao_simulator_hud": {
@@ -622,7 +627,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "heaven_earth_golden_stele": {
@@ -669,7 +675,8 @@
     "episodes": [
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP05"
     ]
   },
   "forged_primordial_token": {
@@ -817,7 +824,8 @@
     "aliases": [
       "dorm.402",
       "Dormitory Room 402",
-      "Dorm Room 402"
+      "Dorm Room 402",
+      "Qindu University Dormitory Room 402"
     ],
     "status": "approved",
     "age_class": "non_living",
@@ -827,8 +835,10 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
-    ]
+      "EP04",
+      "EP05"
+    ],
+    "name": "Dormitory Room 402"
   },
   "campus_pathway": {
     "id": "campus_pathway",
@@ -842,7 +852,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during bright crisp morning daylight, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under clear high-key sky",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "26_Location_Campus_Pathway.jpg",
     "episodes": [
       "EP04"
     ]
@@ -859,7 +869,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "High-end subterranean Jiangnan Celestial Spirit Auction Grand Pavilion, opulent modern multi-tier circular auditorium with brushed gold balustrades, tiered VIP skyboxes, central velvet-covered display pedestal under concentrated warm spotlights",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "27_Location_Celestial_Auction_Hall.jpg",
     "episodes": [
       "EP04"
     ]
@@ -876,7 +886,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Ultra-luxury private executive skybox suite overlooking auction floor through polarized soundproof one-way crystal glass, plush leather lounge seating, carved rosewood spirit tea bar, private spirit stone transaction console",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "28_Location_Celestial_VIP_Suite.jpg",
     "episodes": [
       "EP04"
     ]
@@ -893,7 +903,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Gu Capital Syndicate Corporate Headquarters executive boardroom atop the 88-floor Obsidian Tower, imposing minimalist black marble conference table, panoramic glass windows overlooking Jiangnan metropolis, security monitors",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "29_Location_Gu_Obsidian_Boardroom.jpg",
     "episodes": [
       "EP04"
     ]
@@ -910,7 +920,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Gu Capital Syndicate ground-level grand entrance plaza, paved dark granite square framed by towering obsidian glass skyscraper columns, ornamental water features, black wrought-iron security gates under daylight",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "30_Location_Gu_Obsidian_Plaza.jpg",
     "episodes": [
       "EP04"
     ]
@@ -922,15 +932,18 @@
     "aliases": [
       "campus.formation_cordon",
       "Collegiate Defensive Formation Cordon",
-      "Formation Cordon"
+      "Formation Cordon",
+      "Qindu Collegiate District Formation Cordon"
     ],
     "status": "approved",
     "age_class": "non_living",
     "dna": "Qindu University athletic stadium perimeter fortified by shimmering azure military protective barrier, Threat Bureau armored command vehicles with rotating communication arrays, tactical defense sentries with spirit rifles",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "31_Location_Collegiate_Formation_Cordon.jpg",
     "episodes": [
-      "EP04"
-    ]
+      "EP04",
+      "EP05"
+    ],
+    "name": "Collegiate Defensive Formation Cordon"
   },
   "street_breakfast_stall": {
     "id": "street_breakfast_stall",
@@ -944,7 +957,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Bustling street breakfast stall outside Qindu University eastern gates during crisp morning, metal folding tables, plastic stools, towering bamboo steamers billowing white fragrance clouds, busy student foot traffic",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "32_Location_Street_Breakfast_Stall.jpg",
     "episodes": [
       "EP04"
     ]
@@ -961,10 +974,12 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "North campus perimeter security cordon of Qindu University at night, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers with glowing communications radar, high-intensity searchlights sweeping campus perimeter fence",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "33_Location_Campus_Perimeter_Gate.jpg",
     "episodes": [
-      "EP04"
-    ]
+      "EP04",
+      "EP05"
+    ],
+    "name": "North Campus Perimeter Gate Cordon"
   },
   "troposphere_stele": {
     "id": "troposphere_stele",
@@ -973,15 +988,18 @@
     "aliases": [
       "troposphere.stele",
       "High Troposphere Stele Horizon",
-      "Troposphere Stele"
+      "Troposphere Stele",
+      "High Troposphere Golden Stele"
     ],
     "status": "approved",
     "age_class": "non_living",
     "dna": "High troposphere and stratosphere perspective at night, thirty-thousand-metre colossal obsidian-and-gold Heaven-Earth Golden Stele descending through storm clouds, iridescent violet and golden primordial starlight auroras overlooking Qindu skyline",
     "plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
     "episodes": [
-      "EP04"
-    ]
+      "EP04",
+      "EP05"
+    ],
+    "name": "High Troposphere Stele Horizon"
   },
   "starfall_penthouse": {
     "id": "starfall_penthouse",
@@ -995,7 +1013,7 @@
     "status": "approved",
     "age_class": "non_living",
     "dna": "Ultra-luxury top-floor executive penthouse overlooking Qindu skyline, floor-to-ceiling panoramic glass windows, minimalist Italian white leather furnishings, private indoor spirit pool, night starlight and city neon",
-    "plate": "17_Location_Qindu_Collegiate_Stadium.jpg",
+    "plate": "34_Location_Starfall_Penthouse.jpg",
     "episodes": [
       "EP04"
     ]

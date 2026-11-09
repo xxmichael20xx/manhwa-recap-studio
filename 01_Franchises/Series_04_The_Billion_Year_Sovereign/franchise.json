@@ -53,6 +53,18 @@
           "midday sun",
           "broad daylight"
         ]
+      },
+      "night_celestial": {
+        "text": "",
+        "time_class": "night",
+        "forbidden_tokens": [
+          "bright blue sky",
+          "clear blue sky",
+          "broad daylight",
+          "harsh midday sun",
+          "golden hour sunset",
+          "sunny afternoon"
+        ]
       }
     },
     "tail_positive": "cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero cloning",

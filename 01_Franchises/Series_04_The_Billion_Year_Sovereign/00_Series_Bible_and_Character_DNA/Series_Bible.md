@@ -190,16 +190,22 @@
   * **Act V (Batches 18–21):** Elder Gu Yan attacks with 15-Million-Year solar fire; Lu Chen's passive recoil renders zero damage, and a casual finger flick shatters Gu Yan's cultivation.
   * **Act VI (Batches 22–24):** Lu Chen walks to the Gu Syndicate's 88-floor Obsidian Tower with his breakfast bag. Releasing 0.01% primordial aura, the skyscraper crumbles into dust without touching neighboring streets. Chairman Gu is crushed to his knees in terror, concluding Arc 2 with total catharsis.
 
-### 📦 Arc 3: The Abyssal Rift & The 450M-Year Despot (Episodes 8–12)
-* **Episodes 08–09:** Dimensional rifts tear open over Blue Star; international armed forces fail against ancient rift horrors.
-* **Episodes 10–11:** Class-SSS Dimensional Rift ruptures over Jiangnan. The **Asura Blood Sovereign (`450,000,000 Years`)** emerges, swatting away national defense divisions.
-* **Episode 12 (Arc 3 Climax — The Grocery Bag Exorcism):**  
-  Lu Chen, walking home with instant noodles, finds his sidewalk blocked. Annoyed by the disturbance, he releases 0.0001% aura, forcing the 450M-year boss to its knees in primal terror before disintegrating. A military drone captures a blurry silhouette of his hoodie, creating the viral global legend of the **"Hooded Sovereign."**
+### 📦 Arc 3: The Abyssal Rift & The 450M-Year Despot (Episodes 05–09)
+* **Episode 05 (6–7 Batches / ~150 Scenes):** *The Planetary Rift Outbreak & The Sky-Shield Breach*
+  * Planetary leylines destabilise following the Gu Zaibatsu's fall. High-altitude spatial fractures appear worldwide. Low/mid-tier rift horrors swarm regional districts. Threat Bureau activates the Qindu defensive barrier. Lu Chen observes from Dorm 402, cross-referencing spatial frequencies with his simulator's ancient calamity logs.
+* **Episode 06 (6–7 Batches / ~150 Scenes):** *The Abyssal Incursion & The Guild Collapse*
+  * Class-SS rifts rupture over central transit hubs. Nether Behemoths (500k–5M years) crush corporate mercenary guilds. Weapons shatter against spatial miasma. Han Feng leads a desperate holding action; Jiang Qingxue deploys her Glacial Lotus domain to freeze the vanguard.
+* **Episode 07 (7–8 Batches / ~180 Scenes):** *The Class-SSS Rupture & Descent of the Asura Demon Sovereign*
+  * Troposphere tears wide in a swirling storm of blood-red lightning. The **Asura Blood Sovereign (`450,000,000 Years`)** arrives: 8-foot demonic frame, six muscular arms, flaming hair, four burning eyes. Its passive blood miasma suffocates the metropolis; threat spectrometers explode instantly.
+* **Episode 08 (7–8 Batches / ~180 Scenes):** *The 450M-Year Despot & The Fall of Armed Divisions*
+  * Worldwide satellites broadcast live as supersonic missiles, tactical hover-tanks, and apex guild masters attack in unison. The Asura Emperor doesn't flinch—his passive domain vaporises incoming fire and swats elite cultivators like insects. Global panic erupts as the Defense Council prepares to sacrifice Jiangnan with forbidden spirit warheads.
+* **Episode 09 (8–10 Batches / ~210 Scenes — Arc 3 Grand Climax):** *The Grocery Bag Exorcism & The Legend of the Hooded Sovereign*
+  * Lu Chen walks home from the convenience store holding a plastic grocery bag with two packs of instant noodles and iced tea. His sidewalk is blocked by the rampaging demon emperor. Annoyed that his dinner is getting cold, Lu Chen releases **0.0001% aura**. The Asura Sovereign drops to its belly, shaking in biological terror before disintegrating into starlight ash. A surviving drone captures the blurry silhouette of his oversized charcoal hoodie, launching the global legend of the **"Hooded Sovereign."**
 
-### 📦 Arc 4: The Great Syndicate Conclave & The Grand Unveiling (Episodes 13–18)
-* **Episodes 13–15:** Global coalition led by Rank 2 **Ye Xingchen (`Lord Starfall`, `480,000,000 Years`)** blockades Jiangnan to locate and subjugate 'Xiao Yao'.
-* **Episodes 16–17:** Ye Xingchen surrounds Qindu University with his *Heavenly Constellation Domain*, holding campus students hostage to force 'Xiao Yao' out.
-* **Episode 18 (Season 1 Climax — The Grand Face-Slap):**  
+### 📦 Arc 4: The Great Syndicate Conclave & The Grand Unveiling (Episodes 10–15 / Season 1 Finale)
+* **Episodes 10–12:** Global coalition led by Rank 2 **Ye Xingchen (`Lord Starfall`, `480,000,000 Years`)** blockades Jiangnan to locate and subjugate 'Xiao Yao'.
+* **Episodes 13–14:** Ye Xingchen surrounds Qindu University with his *Heavenly Constellation Domain*, holding campus students hostage to force 'Xiao Yao' out.
+* **Episode 15 (Season 1 Climax — The Grand Face-Slap):**  
   Lu Chen steps into the sky. Ye Xingchen mocks the "mortal student," but Lu Chen speaks one word: **"Kneel."** The 1-Billion-Year aura unlocks, shattering the constellation domain and pinning Ye Xingchen and hundreds of elite guild oligarchs flat to the ground as live global television broadcasts zoom in on Lu Chen's face.
 
 

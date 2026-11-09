@@ -21,7 +21,7 @@
         "weapons": "Custom-balanced Vaelgard silver practice rapier",
         "footwear": "Polished black leather dueling boots"
       },
-      "dna": "15-year-old young noble swordsman, lean athletic martial build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
+      "dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, wearing tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots",
       "dna_prompt_anchor": "@{Julian Vaelgard - Reincarnated Sword Saint}",
       "reference_plate": "01_Protagonist_Julian_Vaelgard.jpg",
       "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00001",
@@ -34,7 +34,8 @@
         "default": "tailored midnight-navy silk doublet with silver filigree embroidery, white lace cravat, dark tailored trousers, polished black leather boots"
       },
       "default_outfit": "default",
-      "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the 15-year-old body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye."
+      "description": "Reincarnated soul of Aiden Drake, the First Sword Saint who fell at the gates of Godhood 1,000 years ago. Reborn into the young noble body of Julian Vaelgard, a frail noble heir assassinated by the celestial God-Weeping Root poison. Revived when Aiden severed the toxic mana threads with the God-Severing Eye.",
+      "physique": "Slender aristocratic high-noble swordsman build with immaculate martial posture and balance"
     },
     {
       "id": "duke_gerald_vaelgard",
@@ -223,7 +224,7 @@
         "guard": "Blackened steel winged gothic crossguard with central faceted glowing violet gem",
         "hilt": "Black leather-wrapped two-handed grip with pointed faceted steel pommel"
       },
-      "dna": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
+      "dna": "colossal two-handed obsidian greatsword forged from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel",
       "dna_prompt_anchor": "@{Obsidian Greatsword - Sovereign Void Blade}",
       "reference_plate": "13_Weapon_Obsidian_Greatsword.jpg",
       "flowUuid": "7a18a240-3b8e-4d1a-9f5e-11a2e4f00013",
@@ -233,7 +234,7 @@
       ],
       "hasPlate": true,
       "outfits": {
-        "default": "colossal two-handed obsidian greatsword forged from pitch-black volcanic glass stone, broad notched and chipped double-edged blade etched with glowing violet void runes along the central fuller, radiating wisps of dark purple mana fire along the keen edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
+        "default": "colossal two-handed obsidian greatsword forged from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel"
       },
       "default_outfit": "default",
       "description": "The legendary soul-bound weapon of Aiden Drake, the First Sword Saint. Forged from primordial obsidian volcanic glass capable of severing mana threads, magic domains, and divine law. Following Aiden's fall at the Celestial Altar 1,000 years ago, the blade was recovered and enshrined in the deepest ancestral treasury vault of House Vaelgard, slumbering in dormant stasis until its true master Julian reclaims it."

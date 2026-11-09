@@ -141,7 +141,7 @@ export class MotionEngine {
     const baseCenterY = (!isTallStrip && isVertical) ? 20 : 0
 
     // Landscape calculations
-    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.18
+    const landScale = Math.max(1920 / imgW, 1080 / imgH) * 1.28
     const landW = imgW * landScale
     const landH = imgH * landScale
     const maxLandScrollX = Math.max(0, landW - 1920)
@@ -227,36 +227,55 @@ export class MotionEngine {
           if (motionType === 'vertical_glide_up') {
             // 1. Bottom to Top Constant Glide
             curY = -((1.0 - progress) * maxScrollY)
+            curZoom = 1.10 - 0.08 * progress
           } else if (motionType === 'vertical_diagonal_left_to_right') {
             // 2. Constant Diagonal Glide Down-Right
             curY = -(progress * maxScrollY)
-            curX = (baseCenterX - 24) + (progress * 48)
+            curX = (baseCenterX - 36) + (progress * 72)
+            curZoom = 1.02 + 0.08 * progress
           } else if (motionType === 'vertical_diagonal_right_to_left') {
             // 3. Constant Diagonal Glide Down-Left
             curY = -(progress * maxScrollY)
-            curX = (baseCenterX + 24) - (progress * 48)
+            curX = (baseCenterX + 36) - (progress * 72)
+            curZoom = 1.02 + 0.08 * progress
           } else if (motionType === 'vertical_zoom_in') {
-            // 4. Constant Glide with Subtle Push-In
+            // 4. Constant Glide with Dynamic Push-In
             curY = -(progress * maxScrollY)
-            curZoom = 1.0 + 0.042 * progress
+            curZoom = 1.00 + 0.14 * progress
           } else if (motionType === 'vertical_zoom_out') {
-            // 5. Constant Glide with Subtle Pull-Out
+            // 5. Constant Glide with Dynamic Pull-Out
             curY = -(progress * maxScrollY)
-            curZoom = 1.042 - 0.042 * progress
+            curZoom = 1.14 - 0.10 * progress
           } else {
             // 6. Standard Top to Bottom Constant Linear Glide
             curY = -(progress * maxScrollY)
+            curZoom = 1.02 + 0.08 * progress
           }
         } else {
-          // Single vertical panel
-          if (motionType === 'vertical_snap_up') {
-            curZoom = 1.0 + 0.042 * progress
+          // Single vertical panel (All 6 presets actively handled with fluid dual-axis motion)
+          if (motionType === 'vertical_glide_down') {
+            curY = baseCenterY - (progress * 60)
+            curZoom = 1.02 + 0.12 * progress
+          } else if (motionType === 'vertical_glide_up') {
+            curY = baseCenterY + ((1.0 - progress) * 60)
+            curZoom = 1.14 - 0.10 * progress
+          } else if (motionType === 'vertical_zoom_in' || motionType === 'vertical_snap_up') {
+            curZoom = 1.00 + 0.18 * progress
+            curY = baseCenterY - (progress * 40)
           } else if (motionType === 'vertical_zoom_out') {
-            curZoom = 1.042 - 0.042 * progress
+            curZoom = 1.18 - 0.14 * progress
+            curY = baseCenterY + (progress * 30)
           } else if (motionType === 'vertical_diagonal_left_to_right') {
-            curX = (baseCenterX - 24) + (progress * 48)
+            curX = (baseCenterX - 40) + (progress * 80)
+            curY = baseCenterY - (progress * 50)
+            curZoom = 1.02 + 0.12 * progress
           } else if (motionType === 'vertical_diagonal_right_to_left') {
-            curX = (baseCenterX + 24) - (progress * 48)
+            curX = (baseCenterX + 40) - (progress * 80)
+            curY = baseCenterY - (progress * 50)
+            curZoom = 1.02 + 0.12 * progress
+          } else {
+            curY = baseCenterY - (progress * 50)
+            curZoom = 1.02 + 0.10 * progress
           }
         }
 
@@ -268,35 +287,50 @@ export class MotionEngine {
 
         ctx.drawImage(spriteCanvas, curX - pad, curY - pad)
       } else {
-        // Landscape Artwork Omni-Directional Modes (Constant Linear Speed)
+        // Landscape Artwork Cinematic Omni-Directional Modes (Coupled Dual-Axis Pan + Dynamic Zoom)
         let curX = landCenterX
         let curY = landCenterY
         let curZoom = 1.0
 
         if (motionType === 'pan_left_to_right') {
-          // 0. Constant Left to Right
+          // 0. Sweep Left to Right with Continuous Push-In
           curX = -(maxLandScrollX * (1.0 - progress))
+          curY = landCenterY + (progress - 0.5) * 36
+          curZoom = 1.02 + 0.12 * progress
         } else if (motionType === 'pan_right_to_left') {
-          // 1. Constant Right to Left
+          // 1. Sweep Right to Left with Continuous Push-In
           curX = -(maxLandScrollX * progress)
+          curY = landCenterY - (progress - 0.5) * 36
+          curZoom = 1.02 + 0.12 * progress
         } else if (motionType === 'pan_top_to_bottom') {
-          // 2. Constant Top to Bottom
+          // 2. Ascending/Descending Crane Pan with Lateral Pan & Push-In
+          curX = landCenterX + (progress - 0.5) * 60
           curY = -(maxLandScrollY * progress)
+          curZoom = 1.03 + 0.12 * progress
         } else if (motionType === 'pan_bottom_to_top') {
-          // 3. Constant Bottom to Top
+          // 3. Bottom to Top Reveal Crane with Lateral Pan & Push-In
+          curX = landCenterX - (progress - 0.5) * 60
           curY = -(maxLandScrollY * (1.0 - progress))
+          curZoom = 1.03 + 0.12 * progress
         } else if (motionType === 'hero_zoom_in') {
-          // 4. Constant Hero Push-In
-          curZoom = 1.0 + 0.06 * progress
+          // 4. Dramatic Hero Push-In + Upward Drift toward Head/Torso
+          curX = landCenterX + (progress - 0.5) * 40
+          curY = landCenterY - (progress * (maxLandScrollY * 0.45))
+          curZoom = 1.00 + 0.18 * progress
         } else if (motionType === 'hero_zoom_out') {
-          // 5. Constant Hero Pull-Out
-          curZoom = 1.06 - 0.06 * progress
+          // 5. Cinematic Reveal Pull-Out from Detail to Vista + Lateral Drift
+          curX = landCenterX - (progress - 0.5) * 48
+          curY = landCenterY + (progress - 0.5) * 36
+          curZoom = 1.18 - 0.14 * progress
         } else if (motionType === 'pan_diagonal_sweep') {
-          // 6. Constant Diagonal Sweep
+          // 6. Action Diagonal Cleave (Full Dual-Axis Travel + Steady Zoom)
           curX = -(maxLandScrollX * (1.0 - progress))
-          curY = -(maxLandScrollY * progress)
+          curY = -(maxLandScrollY * (1.0 - progress))
+          curZoom = 1.04 + 0.14 * progress
         } else {
           curX = -(maxLandScrollX * (1.0 - progress))
+          curY = landCenterY
+          curZoom = 1.02 + 0.12 * progress
         }
 
         if (curZoom !== 1.0) {

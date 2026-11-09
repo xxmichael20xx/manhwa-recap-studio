@@ -9,16 +9,28 @@ description: YouTube & TikTok/Shorts release packaging hub. Enforces YouTube_Loc
 - **Missing Context Halt:** Confirm target franchise and upload number (`Episode 1` standalone vs. `Episode 1-N` compilation) via `ask_question` if unspecified. Verify compiled master MP4s exist on disk before naming any episode in a compilation.
 - **Zero Code Mutation Law:** Never edit `packagingService.js`, `fileService.js`, or Vue files when updating launch packages. Write strictly to `00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md` and `EPXX/03_YouTube_Package.md`.
 
-## 2. Two-Mode Locked Title & Description State Machine (`YouTube_Locked_Package.md`)
+## 1.1 Atomic Operator Selection Lock Gate
+- **Deterministic Selection Lock:** Immediately after the operator selects a Title and Thumbnail via `ask_question`, the agent MUST run:
+  `node studio/scripts/lock-launch.js <franchiseId> --title "<Selected Title>" --thumb "<Image File>" --concept "<A|B|C>"`
+- **Live Ingestion Gate:** The agent MUST verify `lock-launch.js` exits with Code 0. This ensures the Master Series Bible (`00_Series_Bible_and_Character_DNA/YouTube_Locked_Package.md`), episodic packages, and disk thumbnail files are atomically synchronised and verified against the live Studio API.
+
+## 2. Release Cadence Architecture Governance
+1. **Series 07+ Standard (Discrete Act / Part Model — Option 1):**
+   - **Upload Cadence:** Each upload compiles a complete Act ($\ge 60$ mins). Standalone sub-50-minute uploads are strictly prohibited.
+     - Act 1: Title prefix `(Part 1)` | Badge `PART 1`
+     - Act 2: Title prefix `(Part 2)` | Badge `PART 2`
+     - Act 3: Title prefix `(Part 3)` | Badge `PART 3`
+     - Full Marathon: Title prefix `(Complete)` | Badge `COMPLETE`
+   - **Description Invariant:** Must explicitly state the episodic span where it ends (e.g. `🎬 Release: Part 1 — Act 1 Feature (Covers Episodes 01 - 03)`).
+2. **Series 01–06 Standard (Legacy Accumulative Stacking — Option 2):**
+   - Strictly preserve the original accumulative model: `(Episode 1)` -> `(Episode 1-2)` -> `(Episode 1-N)` with badge `1 - N` and plain episode timestamps.
+
+## 3. Two-Mode Locked Title & Description State Machine (`YouTube_Locked_Package.md`)
 1. **MODE A — First Run (`YouTube_Locked_Package.md` Does Not Exist / EP01):**
-   - Present strictly **3 High-CTR Title Options** formatted as `(Episode 1) {Base Title}` (base title $\le 84$ chars so `(Episode 1-12)` stays $\le 100$ chars) via `ask_question`.
-   - Upon selection, lock the winning title, the Episode 1 SEO description (**with ZERO chapter timestamps**, only `Full Runtime` & `Episode Bounds`), evergreen subscribe CTA, and 3 thumbnail concepts into `YouTube_Locked_Package.md` and `EP01/03_YouTube_Package.md`.
-2. **MODE B — Subsequent Accumulative Runs (`YouTube_Locked_Package.md` Exists / EP02+):**
-   - **Zero Regeneration Law:** Never propose new titles or rewrite the synopsis, community question, or hashtags. Run `studio/scripts/update-launchpad.js` to update ONLY the 3 dynamic slots:
-     - **Slot 1 (`{{EPISODE_RANGE}}`):** Update prefix `(Episode 1)` -> `(Episode 1-2)` -> `(Episode 1-N)` (strictly $\le 100$ chars total).
-     - **Slot 2 (`{{RUNTIME_BLOCK}}`):** Exact `ffprobe` duration from `omnibus_metadata.json`.
-     - **Slot 3 (`{{TIMESTAMPS_BLOCK}}`):** Insert `⏱️ CHAPTER TIMESTAMPS:` with **strictly 1 plain line per compiled episode** (`00:00 - Episode 01: Title (21m 46s)`, `21:46 - Episode 02: Title (36m 20s)`, `58:05 - Series Finale & Epilogue`). Strictly NO acts, NO batch numbers, NO sub-chapters.
-   - Diff output against `YouTube_Locked_Package.md` to confirm zero drift outside the 3 dynamic slots.
+   - Present strictly **3 High-CTR Title Options** formatted with canonical prefix (`(Part 1)` for Series 07+; `(Episode 1)` for Series 01-06; base title $\le 84$ chars) via `ask_question`.
+   - Upon selection, lock the winning title, SEO description, evergreen subscribe CTA, and thumbnail concept into `YouTube_Locked_Package.md` and `EP01/03_YouTube_Package.md`.
+2. **MODE B — Subsequent Runs (`YouTube_Locked_Package.md` Exists / EP02+):**
+   - **Zero Regeneration Law:** Never propose new titles or rewrite the synopsis, community question, or hashtags. Update ONLY the dynamic slots (Part/Episode prefix, runtime block from `omnibus_metadata.json`, and chapter bounds).
 
 ## 3. TikTok & YouTube Shorts Multi-Shorts Kit (`03_YouTube_Package.md`)
 Include in Section 6 of `03_YouTube_Package.md`:
