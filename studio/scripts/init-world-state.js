@@ -79,7 +79,9 @@ while ((hm = headerRegex.exec(scriptText)) !== null) {
   scriptHeaders.set(hm[1].toUpperCase(), {
     zone,
     stage: hm[3].trim(),
-    actor: hm[4].trim()
+    actor: hm[4].trim(),
+    cast,
+    props
   })
 
   if (zone) activeZones.add(zone)
@@ -202,6 +204,52 @@ for (let i = 0; i < sceneIds.length; i++) {
   }
 }
 
+// 5. Build prop_continuity_windows from contiguous scene spans (>= 2 scenes)
+const propContinuityWindows = []
+const propRuns = new Map() // propName -> { startScene, lastScene, count, holderId }
+for (let i = 0; i < sceneIds.length; i++) {
+  const sId = sceneIds[i]
+  const h = scriptHeaders.get(sId)
+  const sceneProps = new Set(h?.props || [])
+  const rawHolder = (h?.actor && h.actor !== 'NONE' ? h.actor : h?.cast?.[0] || '').replace(/^@\{?|\}?$/g, '').trim()
+  const holderEnt = Object.values(entities).find(e =>
+    (e.name && e.name.toLowerCase() === rawHolder.toLowerCase()) ||
+    (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === rawHolder.toLowerCase())
+  )
+  const holderId = holderEnt?.id || rawHolder.toLowerCase().replace(/[^a-z0-9_]/g, '_')
+
+  for (const [pName, run] of [...propRuns.entries()]) {
+    if (sceneProps.has(pName)) {
+      run.lastScene = sId
+      run.count++
+      sceneProps.delete(pName)
+    } else {
+      if (run.count >= 2) {
+        propContinuityWindows.push({
+          from_scene: run.startScene,
+          to_scene: run.lastScene,
+          holder_id: run.holderId,
+          prop_token: `@{${pName}}`
+        })
+      }
+      propRuns.delete(pName)
+    }
+  }
+  for (const newProp of sceneProps) {
+    propRuns.set(newProp, { startScene: sId, lastScene: sId, count: 1, holderId })
+  }
+}
+for (const [pName, run] of propRuns.entries()) {
+  if (run.count >= 2) {
+    propContinuityWindows.push({
+      from_scene: run.startScene,
+      to_scene: run.lastScene,
+      holder_id: run.holderId,
+      prop_token: `@{${pName}}`
+    })
+  }
+}
+
 const worldStateData = {
   episodeId,
   franchiseId,
@@ -213,6 +261,7 @@ const worldStateData = {
   },
   wardrobe_locks: wardrobeLocks,
   held_props: heldProps,
+  prop_continuity_windows: propContinuityWindows,
   zone_invariants: {},
   zone_lifecycles: zoneLifecycles
 }

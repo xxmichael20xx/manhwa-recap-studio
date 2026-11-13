@@ -322,7 +322,8 @@ function auditScenes(content) {
     const promptText = promptMatch[1]
 
     for (const rule of AUDIT_RULES) {
-      const match = promptText.match(rule.regex)
+      const promptWithoutEntityTokens = promptText.replace(/@\{[^}]+\}/g, ' ')
+      const match = promptWithoutEntityTokens.match(rule.regex)
       if (match) {
         defects.push({
           sceneId,
@@ -330,7 +331,7 @@ function auditScenes(content) {
           ruleName: rule.name,
           severity: rule.severity,
           matchedWord: match[0],
-          promptSnippet: promptText.substring(Math.max(0, match.index - 40), Math.min(promptText.length, match.index + 60))
+          promptSnippet: promptWithoutEntityTokens.substring(Math.max(0, match.index - 40), Math.min(promptWithoutEntityTokens.length, match.index + 60))
         })
       }
     }
@@ -353,14 +354,23 @@ if (isFix && initialDefects.length > 0) {
     if (!promptMatch) continue
 
     let pText = promptMatch[1]
-    // Protect Spatial Enclosure from being mutated so Gate 12 stays locked
+    // Protect Spatial Enclosure and canonical @{...} entity tokens from being mutated so Gate 03 & Gate 12 stay locked
     const encMatch = pText.match(/(Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]+\))/i)
     const encPart = encMatch ? encMatch[1] : ''
     let bodyPart = encMatch ? pText.replace(encMatch[1], '___ENCLOSURE_PLACEHOLDER___') : pText
 
+    const tokenMap = []
+    bodyPart = bodyPart.replace(/@\{[^}]+\}/g, tok => {
+      const idx = tokenMap.length
+      tokenMap.push(tok)
+      return `___ENTITY_TOKEN_${idx}___`
+    })
+
     for (const rep of POLICY_REPLACEMENTS) {
       bodyPart = bodyPart.replace(rep.pattern, rep.replacement)
     }
+
+    bodyPart = bodyPart.replace(/___ENTITY_TOKEN_(\d+)___/g, (_, idx) => tokenMap[Number(idx)])
 
     if (encMatch) {
       bodyPart = bodyPart.replace('___ENCLOSURE_PLACEHOLDER___', encPart)

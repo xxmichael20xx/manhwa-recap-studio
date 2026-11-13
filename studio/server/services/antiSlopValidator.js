@@ -747,6 +747,11 @@ export class AntiSlopValidator {
             g07Fails.push(`${scene.id} (Prop contradiction: platinum phrasing conflicts with brass ${ent.token})`)
             break
           }
+          if (/\bstraight\s+cylindrical\b/.test(entDnaLower) &&
+              /\b(?:crooked|spiral\s+carved\s+head|gnarled\s+root|wizard\s+orb)\b/i.test(scene.actionLayer || '')) {
+            g07Fails.push(`${scene.id} (Prop contradiction: crooked/spiral/gnarled phrasing in <action_layer> conflicts with straight cylindrical ${ent.token})`)
+            break
+          }
           continue
         }
 

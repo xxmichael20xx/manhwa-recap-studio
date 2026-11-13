@@ -525,18 +525,62 @@ if (strictWorldState) {
 
 // 4. Auto-Heal Headers if requested
 if (isHeal) {
-  console.log(`\x1b[33m[HEAL]\x1b[0m Inferring and injecting V2.1 Staging Headers for ${clauses.length} scenes...`)
+  console.log(`\x1b[33m[HEAL]\x1b[0m Inferring and injecting V2.1 Staging Headers (with Sticky Prop Carry-Forward) for ${clauses.length} scenes...`)
 
   let activeZone = allZonesList[0] || ''
   let activeCast = []
-  let activeActor = allChars[0]?.token || ''
   const epNumMatch = episodeId.match(/EP0?(\d+)/i)
   const epNum = epNumMatch ? parseInt(epNumMatch[1], 10) : 1
   const defaultTechStage = epNum === 1 ? 'ep01_stage1' : epNum === 2 ? 'ep02_stage2' : 'arc3_stage3'
 
+  // Build canonical vaulted items list for sticky prop lifecycle tracking
+  const allItems = []
+  const seenItemTokens = new Set()
+  if (Object.keys(entities).length > 0) {
+    for (const ent of Object.values(entities)) {
+      if (ent.kind === 'item' || ent.isAnimate === false) {
+        const iName = ent.name || ent.token?.replace(/^@\{|\}$/g, '') || ''
+        const iToken = ent.token || (iName ? `@{${iName}}` : '')
+        if (iToken && !seenItemTokens.has(iToken.toLowerCase())) {
+          seenItemTokens.add(iToken.toLowerCase())
+          allItems.push({
+            name: iName,
+            token: iToken,
+            aliases: Array.isArray(ent.aliases) ? ent.aliases : [],
+            isStationary: ent.placement === 'stationary' || /\b(?:dummy|target|pedestal|monolith|bench|monument|stele|hud|interface|formation|altar|pillar)\b/i.test(iName)
+          })
+        }
+      }
+    }
+  }
+  if (Array.isArray(legacyItems)) {
+    for (const it of legacyItems) {
+      const iName = it.name || it.token?.replace(/^@\{|\}$/g, '') || ''
+      const iToken = it.token || (iName ? `@{${iName}}` : '')
+      if (iToken && !seenItemTokens.has(iToken.toLowerCase())) {
+        seenItemTokens.add(iToken.toLowerCase())
+        allItems.push({
+          name: iName,
+          token: iToken,
+          aliases: Array.isArray(it.aliases) ? it.aliases : [],
+          isStationary: it.placement === 'stationary' || /\b(?:dummy|target|pedestal|monolith|bench|monument|stele|hud|interface|formation|altar|pillar)\b/i.test(iName)
+        })
+      }
+    }
+  }
+
+  // Sticky prop state: propToken -> { holder: actorToken }
+  const carriedHandheldProps = new Map()
+  const PROP_RELEASE_VERB_REGEX = /\b(?:set\s+down|put\s+down|placed\s+(?:it\s+)?on|dropped|stowed|sheathed|returned\s+to\s+(?:its\s+|his\s+|her\s+)?scabbard|shattered|splintered\s+into|pulverized|discarded|handed\s+over|tucked\s+away|left\s+behind)\b/i
+
   let healedScript = scriptText
 
   for (const cl of clauses) {
+    const existingHeaderMatch = cl.rawText.match(headerRegex)
+    const existingPropsList = existingHeaderMatch
+      ? existingHeaderMatch[5].split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean).map(p => `@{${p}}`)
+      : []
+
     const narrativeClean = cl.rawText
       .replace(/<!--[\s\S]*?-->/g, '')
       .replace(/```[\s\S]*?```/g, '')
@@ -544,16 +588,21 @@ if (isHeal) {
 
     const narrativeOutsideQuotes = narrativeClean.replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
 
-    // Zone inference
+    // Zone inference (preserve existing valid header zone if present, else infer)
     const nLower = narrativeClean.toLowerCase()
-    for (const zKey of allZonesList) {
-      const zObj = zones[zKey] || {}
-      const zName = (zObj.name || '').toLowerCase()
-      if (nLower.includes(zKey.replace(/_/g, ' ')) || (zName && nLower.includes(zName))) {
-        activeZone = zKey
-        break
+    if (existingHeaderMatch && zones[existingHeaderMatch[1].trim()]) {
+      activeZone = existingHeaderMatch[1].trim()
+    } else {
+      for (const zKey of allZonesList) {
+        const zObj = zones[zKey] || {}
+        const zName = (zObj.name || '').toLowerCase()
+        if (nLower.includes(zKey.replace(/_/g, ' ')) || (zName && nLower.includes(zName))) {
+          activeZone = zKey
+          break
+        }
       }
     }
+
     // Cast inference
     const detectedCast = new Set()
     for (const c of allChars) {
@@ -610,16 +659,52 @@ if (isHeal) {
       }
     }
 
+    // Sticky Prop Lifecycle Inference
+    const scenePropsSet = new Set(existingPropsList)
+    for (const item of allItems) {
+      const terms = [item.name, ...(item.aliases || [])].filter(Boolean)
+      const mentioned = terms.some(t => {
+        const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        return new RegExp(`\\b${escaped}\\b`, 'i').test(narrativeOutsideQuotes)
+      })
+      if (mentioned) {
+        scenePropsSet.add(item.token)
+        if (!item.isStationary && finalCast.length > 0) {
+          if (PROP_RELEASE_VERB_REGEX.test(narrativeOutsideQuotes)) {
+            carriedHandheldProps.delete(item.token)
+          } else {
+            carriedHandheldProps.set(item.token, { holder: actor !== 'NONE' ? actor : finalCast[0] })
+          }
+        }
+      } else if (PROP_RELEASE_VERB_REGEX.test(narrativeOutsideQuotes) && carriedHandheldProps.has(item.token)) {
+        // Check if a generic release phrase released the active carried prop
+        if (/\b(?:it|the\s+(?:bag|pouch|weapon|blade|sword|staff|rod|rapier|bat|mug|cup|vial|box))\b/i.test(narrativeOutsideQuotes)) {
+          carriedHandheldProps.delete(item.token)
+        }
+      }
+    }
+
+    // Carry forward any active handheld props whose holder is present in finalCast
+    if (finalCast.length > 0) {
+      for (const [pToken, meta] of carriedHandheldProps.entries()) {
+        if (finalCast.includes(meta.holder)) {
+          scenePropsSet.add(pToken)
+        }
+      }
+    }
+
+    const finalProps = [...scenePropsSet]
+
     // Stage inference
     let stage = 'interaction'
-    if (finalCast.length === 0) stage = 'establishing'
+    if (finalCast.length === 0) stage = finalProps.length > 0 ? 'prop' : 'establishing'
     else if (finalCast.length === 1) stage = 'solo'
     else if (/\b(?:stepped into|walked in|burst through|entered)\b/i.test(narrativeOutsideQuotes)) stage = 'entrance'
 
     // Plan talk
     const planTalk = /(?:tomorrow we|later it's going to give|next month we|future plans|blueprint|give our house real glass windows)/i.test(nLower)
 
-    const headerStr = `<!-- ZONE: ${activeZone} | STAGE: ${stage} | ACTOR: ${actor} | CAST: [${finalCast.join(', ')}] | PROPS: [] | TECH_STAGE: ${defaultTechStage} | PLAN_TALK: ${planTalk} -->`
+    const headerStr = `<!-- ZONE: ${activeZone} | STAGE: ${stage} | ACTOR: ${actor} | CAST: [${finalCast.join(', ')}]| PROPS: [${finalProps.join(', ')}]| TECH_STAGE: ${defaultTechStage}| PLAN_TALK: ${planTalk} -->`
 
     // Inject into script text safely without duplication
     const targetTag = `[${cl.id}]`
@@ -633,7 +718,7 @@ if (isHeal) {
   }
 
   fs.writeFileSync(scriptPath, healedScript, 'utf-8')
-  console.log(`\x1b[32m[HEALED]\x1b[0m Successfully updated ${scriptPath} with V2.0 Staging Headers!`)
+  console.log(`\x1b[32m[HEALED]\x1b[0m Successfully updated ${scriptPath} with V2.1 Staging Headers & Sticky Prop Carry-Forward!`)
   scriptText = healedScript
   // Re-run issues
   issues.stagingHeaders = []

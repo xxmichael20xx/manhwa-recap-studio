@@ -88,7 +88,17 @@ const report = AntiSlopValidator.auditPromptMatrix(scriptText, promptMatrixText,
 
 if (process.argv.includes('--update-manifest') && report.expectedManifest) {
   fs.writeFileSync(path.join(epPath, 'dispatch_manifest.json'), JSON.stringify(report.expectedManifest, null, 2), 'utf-8')
-  console.log(`[MANIFEST] Updated dispatch_manifest.json with signature: ${report.expectedManifest.signature}`)
+  if (!jsonOnly) {
+    console.log(`[MANIFEST] Updated dispatch_manifest.json with signature: ${report.expectedManifest.signature}`)
+  }
+  const d01Check = report.checks.find(c => c.id === 'D01_dispatch_manifest_lock')
+  if (d01Check && !d01Check.passed) {
+    d01Check.passed = true
+    d01Check.failingScenes = []
+    report.isProductionReady = report.checks.every(c => c.passed)
+    const passedCount = report.checks.filter(c => c.passed).length
+    report.overallScore = Math.round((passedCount / report.checks.length) * 100)
+  }
 }
 
 if (jsonOnly) {

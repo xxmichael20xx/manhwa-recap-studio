@@ -135,7 +135,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 ### 16. The Spatial Scene-Block & Prop DNA Invariant (Zero-Hallucination Visual Standard)
 * **Defect:** Visual scenes randomly changing locations mid-conversation (e.g. going from a bedroom to an outdoor city in the next cut), weapons morphing from pistols to revolvers or laser blasters, or diffusion models hallucinating vehicles/turrets due to ambiguous words like "Bronco" or "Tank".
 * **Fix (Spatial Locking, Prop Vault & 5-Layer Prompt Engineering):**
-  1. **Mandatory Item & Prop DNA Vault (`items.json`):** Signature weapons, key magical artifacts, and recurring props are registered in `character_vault/items.json` with locked Item DNA tokens (e.g. `@{Weapon: Dual Ironclad Mag-Pistols}`).
+  1. **Mandatory Item & Prop DNA Vault (`items.json`):** Signature weapons, key magical artifacts, and recurring props are registered in `character_vault/items.json` with locked Item DNA tokens (e.g. `@{Dual Ironclad Mag-Pistols}`).
   2. **The Spatial Scene-Block Standard (3–6 Cut Location Locking):** Consecutive scenes set in the same physical location must share an identical 15–20 word locked environment string across all cuts in that cluster. Camera progression (Wide $\rightarrow$ Medium Action $\rightarrow$ Reaction Close-Up $\rightarrow$ Prop/HUD Detail) provides variety without changing the room.
   3. **Strict 5-Layer Structured Prompt Hierarchy:** Every prompt must follow:
      - `[Layer 1: Camera Framing]` (16:9 widescreen, shot type)

@@ -92,7 +92,7 @@ Master Agent Instructions house all static negative guards, formatting rules, co
 - ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, chapter titles, or UI labels.
 
 👥 ACTOR & ANATOMICAL INTEGRITY:
-- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand, natural articulation. Complete limbs, pristine anatomy.
+- Flawless human anatomy: exactly two arms, two legs, five distinct individual fingers per hand, natural articulation. Complete limbs, pristine anatomy.
 - ZERO extra limbs, mutated hands, duplicate body parts, fused fingers, floating hands, or detached ghost limbs.
 - Every hand holding a weapon, bow, or prop MUST be physically and seamlessly attached to the forearm and shoulder.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Never clone or duplicate the main character. Diverse background faces and neutral indistinct crowd silhouettes.
@@ -131,7 +131,7 @@ Master Agent Instructions house all static negative guards, formatting rules, co
 - ABSOLUTELY ZERO Hangul (한글), English words/letters, kanji, numbers, speech bubbles, dialogue balloons, sound effects (SFX), subtitles, captions, watermarks, signatures, or chapter titles.
 
 👥 ACTOR & ANATOMICAL INTEGRITY:
-- Flawless human anatomy: exactly two arms, two legs, five slender fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
+- Flawless human anatomy: exactly two arms, two legs, five distinct individual fingers per hand. Zero extra limbs, zero floating hands, zero severed appendages.
 - SINGLE PROTAGONIST MANDATE: Strictly ONE single instance of the protagonist per frame. Zero duplicate clones.
 
 🎨 MASTER ART STYLE:

@@ -431,9 +431,75 @@ const ledgerPath = path.join(epDir, 'state_events.jsonl')
 const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
 const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
 
+// Cinematic lens palettes per stage to guarantee Gate G39 (<=2 consecutive identical lenses, >=8 unique per 24-scene batch)
+const LENS_PALETTES = {
+  solo: [
+    '35mm medium single-character eye-level framing',
+    '50mm medium close-up single-character portrait framing',
+    '35mm three-quarter angle single-character framing',
+    '28mm wide environmental single-character framing',
+    '85mm tight portrait single-character framing',
+    '35mm low-angle heroic single-character framing',
+    '50mm over-the-shoulder single-character focus framing',
+    '24mm dramatic wide-angle single-character framing',
+    '40mm cinematic waist-up single-character framing',
+    '65mm shallow-depth medium single-character framing'
+  ],
+  interaction: [
+    '35mm medium two-shot eye-level framing',
+    '50mm over-the-shoulder two-character dialogue framing',
+    '28mm wide two-character spatial standoff framing',
+    '35mm three-quarter angled two-shot framing',
+    '40mm medium-wide multi-character interaction framing',
+    '50mm split-depth foreground-background two-character framing',
+    '24mm wide-angle room-enclosure group framing',
+    '65mm tight dramatic two-character confrontation framing',
+    '35mm slight low-angle two-character tension framing',
+    '50mm profile-angle two-shot interaction framing'
+  ],
+  combat: [
+    '50mm telephoto close-up action framing',
+    '24mm ultra-wide kinetic combat sweep framing',
+    '35mm low-angle dynamic strike impact framing',
+    '28mm diagonal-trajectory high-velocity action framing',
+    '85mm extreme close-up weapon-clash impact framing',
+    '18mm panoramic shockwave battlefield framing',
+    '40mm tracking-shot mid-air combat framing',
+    '50mm high-contrast counter-parry action framing'
+  ],
+  establishing: [
+    '24mm wide angle establishing framing',
+    '18mm ultra-wide panoramic architectural establishing framing',
+    '28mm sweeping aerial-vantage establishing framing',
+    '35mm deep-focus environmental horizon establishing framing',
+    '20mm monumental low-angle landmark establishing framing',
+    '24mm atmospheric long-shot enclosure establishing framing'
+  ],
+  grounded: [
+    '35mm high-angle perspective looking down',
+    '28mm steep overhead high-angle framing looking down at floor',
+    '35mm low-angle floor-level perspective looking up',
+    '50mm angled downward close-up framing on floor level',
+    '24mm wide high-angle perspective looking down across floor'
+  ],
+  prop: [
+    '50mm close-up macro product still-life framing',
+    '85mm extreme macro artifact detail still-life framing',
+    '35mm tabletop angled relic showcase still-life framing',
+    '65mm studio-lit solitary artifact still-life framing'
+  ]
+}
+
+let prevLens1 = ''
+let prevLens2 = ''
+let currentBatchLenses = new Set()
+
 const compiledSceneNodes = []
 
 for (let i = 0; i < sceneIds.length; i++) {
+  if (i % 24 === 0) {
+    currentBatchLenses = new Set()
+  }
   const sId = sceneIds[i]
   const parsedScene = parsedMatrixScenes.find(s => s.id === sId) || {}
   const defaultActor = Object.values(entities)[0]?.token || '@{Protagonist}'
@@ -523,6 +589,33 @@ for (let i = 0; i < sceneIds.length; i++) {
       lens = '35mm high-angle perspective looking down'
     }
   }
+
+  // Gate G39 Automatic Lens Diversity & Anti-Stagnation Guard
+  const isPropStage = header.stage === 'prop' || (activeCast.length === 0 && header.props?.length > 0)
+  const paletteKey = isPropStage
+    ? 'prop'
+    : activeCast.length === 0
+      ? 'establishing'
+      : isActorGrounded
+        ? 'grounded'
+        : tier === 'C'
+          ? 'combat'
+          : activeCast.length >= 2
+            ? 'interaction'
+            : 'solo'
+  const palette = LENS_PALETTES[paletteKey] || LENS_PALETTES.solo
+  const normLens = l => String(l || '').trim().toLowerCase()
+  if (
+    (normLens(lens) === normLens(prevLens1) && normLens(lens) === normLens(prevLens2)) ||
+    (normLens(lens) === normLens(prevLens1) && currentBatchLenses.size < 8)
+  ) {
+    const unusedCandidate = palette.find(p => !currentBatchLenses.has(normLens(p)) && normLens(p) !== normLens(prevLens1))
+    const fallbackCandidate = palette[(i + currentBatchLenses.size) % palette.length]
+    lens = unusedCandidate || (normLens(fallbackCandidate) !== normLens(prevLens1) ? fallbackCandidate : palette.find(p => normLens(p) !== normLens(prevLens1)) || lens)
+  }
+  prevLens2 = prevLens1
+  prevLens1 = lens
+  currentBatchLenses.add(normLens(lens))
 
   // Extract or validate Layer 4 Action (strictly preserve bespoke <action_layer> and block unedited scaffold templates)
   let actionLayer = (parsedScene.actionLayer || '').trim()
@@ -634,9 +727,9 @@ for (let i = 0; i < sceneIds.length; i++) {
     }
     if (handheldProps.length > 0) {
       for (const hp of handheldProps) {
-        const rawDna = hp.ent?.dna || hp.ent?.description || hp.ent?.visual_dna || hp.name
+        const rawDna = hp.ent?.dna || hp.ent?.visual_dna || hp.ent?.description || hp.name
         const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
-        layer2 += `, Featuring ${hp.token} (${cleanPropDna})`
+        layer2 += `, Featuring ${hp.token} (${cleanPropDna}, identical unchanging prop geometry)`
       }
     }
   } else if (stationaryProps.length > 0) {
@@ -802,6 +895,14 @@ for (let i = 0; i < sceneIds.length; i++) {
     const hasArchmageCast = activeCast.some(c => c.toLowerCase().includes('eleanor'))
     if (!hasArchmageCast) {
       layer5 += ' zero archmages, zero old men, zero knights, zero armor dummies, zero extra humans.'
+    }
+  }
+
+  // Universal Unarmed Empty-Hands Shield (prevents random weapons spawning when PROPS is empty)
+  if (activeCast.length > 0 && hasHumanCast && handheldProps.length === 0 && !/empty hands/i.test(layer5) && !/empty hands/i.test(layer2)) {
+    const draftLen = [layer1, layer2, layer3, layer4, layer5].join('. ').length
+    if (Math.ceil((draftLen + 55) / 4) <= (franchise.pacing?.max_prompt_tokens || 450)) {
+      layer5 = layer5.replace(/\.?\s*$/, ', empty hands, zero held weapons, zero random props.')
     }
   }
 
