@@ -363,10 +363,30 @@ export function buildSceneXmlNode(tag, filename, promptText, entityMap = {}, mod
     }
   }
 
-  const uniqueChars = [...new Set(charRefs.filter(Boolean))]
-  const uniqueItems = [...new Set(itemRefs.filter(Boolean))]
-  const cleanItemRefs = uniqueItems.map(r => r.replace(/^(Weapon|Item|Artifact|Prop):\s*/i, '').trim()).filter(Boolean)
-  const allFlowRefs = [...new Set([...uniqueChars, ...cleanItemRefs])]
+  const normalizeRefName = val => String(val || '')
+    .replace(/@\{([^}]+)\}/g, '$1')
+    .replace(/[@{}]/g, '')
+    .replace(/^(?:Weapon|Item|Artifact|Prop|Character|Boss|Hero|Ally|Supporting|Antagonist|Location|Vehicle):\s*/i, '')
+    .trim()
+
+  const dedupeCaseInsensitive = list => {
+    const out = []
+    const seen = new Set()
+    for (const raw of list) {
+      const cleaned = normalizeRefName(raw)
+      if (!cleaned) continue
+      const key = cleaned.toLowerCase()
+      if (!seen.has(key)) {
+        seen.add(key)
+        out.push(cleaned)
+      }
+    }
+    return out
+  }
+
+  const uniqueChars = dedupeCaseInsensitive(charRefs)
+  const uniqueItems = dedupeCaseInsensitive(itemRefs)
+  const allFlowRefs = dedupeCaseInsensitive([...uniqueChars, ...uniqueItems])
 
   let openTag = `<scene id="${tag}" filename="${filename}"`
   if (allFlowRefs.length === 1) {

@@ -1,0 +1,30 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"oakhaven_perimeter_gate","outfit":"default","posture":"calm_confident"},"reason":"Departure from Oakhaven perimeter gate"}
+{"s":0,"e":"elder_rowan_thorne","set":{"location":"oakhaven_perimeter_gate","outfit":"default","posture":"supportive_mentor"},"reason":"Elder Rowan sees Michael off at perimeter gate"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael carries his carved blackwood staff"}
+{"s":0,"e":"rowan_recommendation_letter","set":{"lifecycle":"equipped"},"reason":"Rowan hands Michael the sealed recommendation letter"}
+{"s":9,"e":"michael_montrey_academy","set":{"location":"valerius_imperial_highway"},"reason":"Michael travels along the Valerius Imperial Highway"}
+{"s":26,"e":"michael_montrey_academy","set":{"location":"highway_pine_ravine"},"reason":"Michael enters the rocky highway pine ravine"}
+{"s":29,"e":"bandit_leader_douglas","set":{"lifecycle":"active","location":"highway_pine_ravine","outfit":"default"},"reason":"Douglas ambushes traveler on highway ravine"}
+{"s":29,"e":"bandit_leader_greatsword","set":{"lifecycle":"equipped"},"reason":"Douglas wields his notched iron greatsword"}
+{"s":30,"e":"highway_bandit_raiders","set":{"lifecycle":"active","location":"highway_pine_ravine","outfit":"default"},"reason":"Raiders flank Douglas in ravine ambush"}
+{"s":44,"e":"bandit_leader_douglas","set":{"posture":"collapsed_ground"},"reason":"Douglas sent sprawling across the dirt by localized air burst"}
+{"s":46,"e":"bandit_leader_douglas","set":{"lifecycle":"routed"},"reason":"Douglas and raiders flee in terror into pine woods"}
+{"s":46,"e":"highway_bandit_raiders","set":{"lifecycle":"routed"},"reason":"Raiders flee into brush"}
+{"s":48,"e":"michael_montrey_academy","set":{"location":"valerius_imperial_highway"},"reason":"Michael resumes journey along imperial highway"}
+{"s":55,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael arrives at Imperial Arcane Academy Courtyard"}
+{"s":62,"e":"lord_cedric_vance","set":{"lifecycle":"active","location":"academy_courtyard","outfit":"default"},"reason":"Cedric Vance arrives in courtyard"}
+{"s":62,"e":"gilded_sapphire_wand","set":{"lifecycle":"equipped"},"reason":"Cedric twirls his gilded sapphire wand"}
+{"s":73,"e":"michael_montrey_academy","set":{"location":"academy_resonance_hall"},"reason":"Candidates enter Academy Resonance Testing Hall"}
+{"s":73,"e":"proctor_alistair","set":{"lifecycle":"active","location":"academy_resonance_hall","outfit":"default"},"reason":"Proctor Alistair presides at evaluation tribunal"}
+{"s":73,"e":"arcane_resonance_crystal_pillar","set":{"lifecycle":"environmental"},"reason":"Crystal pillar hovering in testing hall"}
+{"s":73,"e":"imperial_applicant_ledger","set":{"lifecycle":"environmental"},"reason":"Registry ledger open on tribunal desk"}
+{"s":123,"e":"michael_montrey_academy","set":{"location":"academy_tactical_proving_grounds"},"reason":"Move to Academy Tactical Proving Grounds"}
+{"s":123,"e":"proctor_alistair","set":{"location":"academy_tactical_proving_grounds"},"reason":"Alistair presides at observation platform"}
+{"s":123,"e":"lord_cedric_vance","set":{"location":"academy_tactical_proving_grounds"},"reason":"Cedric enters proving arena"}
+{"s":164,"e":"gilded_sapphire_wand","set":{"lifecycle":"disarmed"},"reason":"Cedric wand knocked spinning thirty feet through the air into dirt"}
+{"s":167,"e":"lord_cedric_vance","set":{"posture":"collapsed_ground"},"reason":"Cedric collapses sprawling on arena flagstones"}
+{"s":172,"e":"lord_cedric_vance","set":{"lifecycle":"routed"},"reason":"Cedric retreats from arena in humiliation"}
+{"s":177,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael and Alistair walk onto courtyard terrace"}
+{"s":177,"e":"proctor_alistair","set":{"location":"academy_courtyard"},"reason":"Alistair reviews Rowan letter on courtyard balustrade"}
+{"s":182,"e":"imperial_applicant_ledger","set":{"lifecycle":"stamped"},"reason":"Alistair signs Michael formal acceptance into academy registry"}
+{"s":184,"e":"proctor_alistair","set":{"lifecycle":"departed"},"reason":"Alistair departs along colonnade as twilight settles"}

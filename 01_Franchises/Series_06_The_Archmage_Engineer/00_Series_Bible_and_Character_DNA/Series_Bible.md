@@ -1,5 +1,9 @@
 # 🎬Master Series Bible — Series 06: The Archmage Engineer
 
+> **[PRE-EPISODE REMEDIATION REQUIRED — DO NOT SKIP BEFORE CREATING `EP03`]**  
+> A vault and matrix audit (`2026-11-11`) detected **`17` vault defects** (`8` lossy DNA truncations in `vault/entities.json` including `Garrett Miller`, `Clara Miller`, `Maya Miller`, `Princess Seraphina`, `Sir Roland Vance`, `Empress Evelyn`, `Goddess Celestia`, and `Old Miller Farm`, plus `9` entities missing from `character_vault/flow_entities.json`), under-sized `max_prompt_tokens: 450` in `franchise.json`, and missing V2.0 `world_state.json` / `<action_layer>` / `16:9` gates across `EP01–EP02`.  
+> **MANDATORY FIRST STEP:** Read and complete [`PRE_NEXT_EPISODE_FIX_NOTES.md`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/01_Franchises/Series_06_The_Archmage_Engineer/00_Series_Bible_and_Character_DNA/PRE_NEXT_EPISODE_FIX_NOTES.md) and achieve Exit Code `0` on `node studio/scripts/audit-vault.js Series_06_The_Archmage_Engineer` before starting `EP03`.
+
 > **Series ID:** `Series_06_The_Archmage_Engineer`  
 > **Canonical Title:** *The Archmage Engineer: Building a Modern Sanctuary in a Medieval World*  
 > **Video Format Tier:** **Format 2: 16:9 Full-Bleed Landscape** (100% edge-to-edge widescreen)  

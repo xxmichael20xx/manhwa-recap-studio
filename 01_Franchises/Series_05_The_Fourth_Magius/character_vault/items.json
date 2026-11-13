@@ -10,15 +10,18 @@
       "apparent_rank": "Weathered Antique Tome",
       "true_rank": "Divine Relic of the First Magicians (Tier 13 Magius Key)",
       "description": "An ancient leather-bound grimoire sealed with golden celestial constellation clasps. Holds the gateway to the infinite White Library and ancient master spell heritages.",
-      "dna_prompt_anchor": "@{The Primordial Codex}, master divine relic reference plate. Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{The Primordial Codex}, master divine relic reference plate. Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "07_Artifact_Primordial_Codex.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00007",
       "flowName": "The Primordial Codex",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
-        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{The Primordial Codex}, master divine relic reference plate. Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "An ancient leather-bound grimoire sealed with golden celestial constellation clasps. Holds the gateway to the infinite White Library and ancient master spell heritages."
     },
     {
       "id": "carved_blackwood_staff",
@@ -29,16 +32,21 @@
       "apparent_rank": "Common Hardwood Walking Stick",
       "true_rank": "Mana-Reinforced Kinetic Focus (+450 Impact Resistance)",
       "description": "A dense, smooth blackwood staff whittled by young Michael from lightning-struck ironwood. Balanced to channel rapid kinetic bursts and blunt physical strikes.",
-      "dna_prompt_anchor": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Highly polished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for kinetic physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Dark burnished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for heavy physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "08_Weapon_Blackwood_Staff.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00008",
       "flowName": "Carved Blackwood Staff",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
-        "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
+        "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP07_The_Ancient_Labyrinth_Tournament"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Dark burnished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for heavy physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "A dense, smooth blackwood staff whittled by young Michael from lightning-struck ironwood. Balanced to channel rapid kinetic bursts and blunt physical strikes."
     },
     {
       "id": "montrey_crest_amulet",
@@ -49,14 +57,16 @@
       "apparent_rank": "Aristocratic Heritage Medallion",
       "true_rank": "Noble Identification Seal (Wind-Lightning Lineage)",
       "description": "A heavy platinum amulet bearing the coiled dragon and lightning sigil of House Montrey, dropped into the mud when the infant was discarded.",
-      "dna_prompt_anchor": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "09_Item_Montrey_Crest_Amulet.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
       "flowName": "Montrey Crest Amulet",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "A heavy platinum amulet bearing the coiled dragon and lightning sigil of House Montrey, dropped into the mud when the infant was discarded."
     },
     {
       "id": "granite_mortar_and_pestle",
@@ -67,14 +77,16 @@
       "apparent_rank": "Heavy Mineral Grinding Tool",
       "true_rank": "Frontier Alchemical Crushing Implements",
       "description": "A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle. Cold, solid mineral surface. Never porcelain, never glass, never metal.",
-      "dna_prompt_anchor": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "16_Item_Granite_Mortar_and_Pestle.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00018",
       "flowName": "Granite Mortar and Pestle",
       "episodes": [
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle. Cold, solid mineral surface. Never porcelain, never glass, never metal."
     },
     {
       "id": "polished_cedar_salve_bowl",
@@ -85,14 +97,16 @@
       "apparent_rank": "Carved Wood Storage Bowl",
       "true_rank": "Rowan Thorne's Apothecary Extraction Vessel",
       "description": "A shallow, hand-carved dark cedar timber bowl, polished smooth with natural wax. Deep warm wood grain containing luminous emerald-green medicinal gel. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles.",
-      "dna_prompt_anchor": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "17_Item_Cedar_Salve_Bowl.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00019",
       "flowName": "Polished Cedar Salve Bowl",
       "episodes": [
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "A shallow, hand-carved dark cedar timber bowl, polished smooth with natural wax. Deep warm wood grain containing luminous emerald-green medicinal gel. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles."
     },
     {
       "id": "rowan_combat_gear",
@@ -103,7 +117,7 @@
       "apparent_rank": "Frontier Veteran Combat Gear",
       "true_rank": "Retired Battle-Mage Armaments",
       "description": "A circular battered iron-banded oak buckler shield strapped securely to Rowan's left forearm across all combat panels, and a practical steel arming short sword with worn leather-wrapped hilt sheathed at his hip or wielded in his right hand.",
-      "dna_prompt_anchor": "@{Rowan Buckler and Short Sword}, circular battered iron-banded oak buckler shield strapped firmly to the left forearm in every panel, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Rowan Buckler and Short Sword}, circular battered iron-banded oak buckler shield strapped firmly to the left forearm in every panel, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "18_Weapon_Rowan_Combat_Gear.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00020",
       "flowName": "Rowan Buckler and Short Sword",
@@ -111,7 +125,9 @@
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Rowan Buckler and Short Sword}, circular battered iron-banded oak buckler shield strapped firmly to the left forearm in every panel, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "A circular battered iron-banded oak buckler shield strapped securely to Rowan's left forearm across all combat panels, and a practical steel arming short sword with worn leather-wrapped hilt sheathed at his hip or wielded in his right hand."
     },
     {
       "id": "world_setting_valerius_empire",
@@ -122,14 +138,16 @@
       "apparent_rank": "Imperial Capital & Great House Ancestral Realm",
       "true_rank": "The High-Magic Transmigration Realm",
       "description": "The soaring crystalline capital and ancestral territory of the Valerius Empire where Michael transmigrated into House Montrey. Features pale silver granite cathedral spires with glowing blue mana crystals, hovering arcane circles, silver wyverns, and reflective marble terraces.",
-      "dna_prompt_anchor": "@{The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "00_World_Setting_Canonical.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00000",
       "flowName": "The Crystalline Arcane Bastion",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "The soaring crystalline capital and ancestral territory of the Valerius Empire where Michael transmigrated into House Montrey. Features pale silver granite cathedral spires with glowing blue mana crystals, hovering arcane circles, silver wyverns, and reflective marble terraces."
     },
     {
       "id": "oakhaven_apothecary_loft",
@@ -140,7 +158,7 @@
       "apparent_rank": "Apothecary Attic Living Quarters",
       "true_rank": "Michael's Private Training & Sleeping Loft",
       "description": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner.",
-      "dna_prompt_anchor": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "10_Location_Oakhaven_Apothecary_Loft.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00012",
       "flowName": "Oakhaven Apothecary Loft",
@@ -148,7 +166,9 @@
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded glass window on East wall overlooking distant green pine canopy and town roofs, simple straw mattress bed neatly made in North-West corner with thick wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner."
     },
     {
       "id": "rowan_apothecary_shop",
@@ -159,7 +179,7 @@
       "apparent_rank": "Frontier Herbalist Workshop & Front Store",
       "true_rank": "Rowan Thorne's Frontier Workshop & Sanctuary",
       "description": "Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and iron skillet in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, and a narrow wooden ladder hatch leading to sleeping loft in South-West corner.",
-      "dna_prompt_anchor": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "11_Location_Rowan_Apothecary_Shop.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00013",
       "flowName": "Rowan Apothecary Shop",
@@ -167,7 +187,9 @@
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and iron skillet in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, and a narrow wooden ladder hatch leading to sleeping loft in South-West corner."
     },
     {
       "id": "white_dimension_library",
@@ -178,15 +200,18 @@
       "apparent_rank": "Primordial Astral Heritage Sanctuary",
       "true_rank": "Astral Dimension of the First Magicians",
       "description": "Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, absolute stillness, ethereal cyan arcane constellation rings rotating horizontally in distant white void.",
-      "dna_prompt_anchor": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "12_Location_White_Dimension_Library.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00014",
       "flowName": "The White Dimension Library",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
-        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+        "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, absolute stillness, ethereal cyan arcane constellation rings rotating horizontally in distant white void."
     },
     {
       "id": "blackwood_forest_clearing",
@@ -197,7 +222,7 @@
       "apparent_rank": "Frontier Pine Wilderness Clearing",
       "true_rank": "Michael's Secluded Training Boulder Grounds",
       "description": "Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground covered in pine needles, and a solitary six-foot moss-covered granite boulder sitting in the center. Pure isolated wilderness, fifty paces beyond the apothecary rear yard.",
-      "dna_prompt_anchor": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "13_Location_Blackwood_Forest_Clearing.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00015",
       "flowName": "Blackwood Forest Clearing",
@@ -205,7 +230,9 @@
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground covered in pine needles, and a solitary six-foot moss-covered granite boulder sitting in the center. Pure isolated wilderness, fifty paces beyond the apothecary rear yard."
     },
     {
       "id": "oakhaven_perimeter_gate",
@@ -216,7 +243,7 @@
       "apparent_rank": "Frontier Palisade Settlement Fortification",
       "true_rank": "Settlement Border Watch & Defense Boundary",
       "description": "Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, watchtowers with iron alarm bells, dirt road leading into dark Blackwood pines.",
-      "dna_prompt_anchor": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "14_Location_Oakhaven_Perimeter_Gate.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00016",
       "flowName": "Oakhaven Perimeter Gate",
@@ -225,7 +252,8 @@
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
       ],
       "hasPlate": true,
-      "visual_dna": "Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, watchtowers with iron alarm bells, dirt road leading into dark Blackwood pines."
+      "visual_dna": "Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, watchtowers with iron alarm bells, dirt road leading into dark Blackwood pines.",
+      "dna": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition"
     },
     {
       "id": "oakhaven_apothecary_courtyard",
@@ -236,13 +264,359 @@
       "apparent_rank": "Frontier Apothecary Backyard",
       "true_rank": "Rowan Thorne's Storage & Firewood Yard",
       "description": "Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Features weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low roof eaves, a low cedar picket fence, and a narrow worn footpath leading into the nearby evergreen Blackwood tree line.",
-      "dna_prompt_anchor": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+      "dna_prompt_anchor": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
       "reference_plate": "15_Location_Apothecary_Courtyard.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00017",
       "flowName": "Oakhaven Apothecary Rear Courtyard",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+      ],
+      "hasPlate": true,
+      "dna": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "visual_dna": "Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Features weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low roof eaves, a low cedar picket fence, and a narrow worn footpath leading into the nearby evergreen Blackwood tree line."
+    },
+    {
+      "id": "rowan_recommendation_letter",
+      "name": "Rowan Recommendation Letter",
+      "token": "@{Rowan Recommendation Letter}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Frontier Recommendation Scroll",
+      "true_rank": "Retired Battle-Mage Recommendation",
+      "description": "Thick rolled heavy vellum parchment document tied with a rich crimson silk ribbon and sealed with a prominent dark-red wax medallion bearing an embossed arcane anvil and hammer sigil.",
+      "visual_dna": "Thick rolled heavy vellum parchment document tied with a rich crimson silk ribbon, sealed with a dark-red wax medallion bearing an embossed arcane anvil and hammer sigil, aged deckled parchment edge.",
+      "dna": "Thick rolled heavy vellum parchment document tied with a rich crimson silk ribbon, sealed with a dark-red wax medallion bearing an embossed arcane anvil and hammer sigil, aged deckled parchment edge.",
+      "dna_prompt_anchor": "@{Rowan Recommendation Letter}, Thick rolled heavy vellum parchment document tied with a rich crimson silk ribbon, sealed with a dark-red wax medallion bearing an embossed arcane anvil and hammer sigil, aged deckled parchment edge.",
+      "reference_plate": "24_Prop_Recommendation_Letter.jpg",
+      "flowName": "Rowan Recommendation Letter",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "arcane_resonance_crystal_pillar",
+      "name": "Arcane Resonance Crystal Pillar",
+      "token": "@{Arcane Resonance Crystal Pillar}",
+      "type": "Artifact",
+      "category": "Artifacts",
+      "apparent_rank": "Imperial Diagnostic Mana Monolith",
+      "true_rank": "Tier 6 Arcane Calibration Monolith",
+      "description": "Colossal ten-foot translucent octagonal mana crystal monolith hovering vertically above an intricately carved silver-granite pedestal, pulsing with ethereal cyan and azure luminescence with rotating brass calibration rings.",
+      "visual_dna": "Colossal ten-foot translucent octagonal mana crystal monolith hovering vertically above an intricately carved silver-granite pedestal, fine internal geometric fracture veins pulsing with soft ethereal cyan and azure luminescence, inlaid with concentric polished brass calibration rings rotating slowly around its midsection.",
+      "dna": "@{Arcane Resonance Crystal Pillar}, master arcane monolith reference plate. Colossal ten-foot translucent octagonal mana crystal monolith hovering vertically above an intricately carved silver-granite pedestal, fine internal geometric fracture veins pulsing with soft ethereal cyan and azure luminescence, inlaid with concentric polished brass calibration rings rotating slowly around its midsection, clean cathedral hall reflections. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Arcane Resonance Crystal Pillar}, master arcane monolith reference plate. Colossal ten-foot translucent octagonal mana crystal monolith hovering vertically above an intricately carved silver-granite pedestal, fine internal geometric fracture veins pulsing with soft ethereal cyan and azure luminescence, inlaid with concentric polished brass calibration rings rotating slowly around its midsection, clean cathedral hall reflections. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "25_Prop_Resonance_Crystal_Pillar.jpg",
+      "flowName": "Arcane Resonance Crystal Pillar",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "gilded_sapphire_wand",
+      "name": "Gilded Sapphire Wand",
+      "token": "@{Gilded Sapphire Wand}",
+      "type": "Weapon",
+      "category": "Weapons",
+      "apparent_rank": "Noble High-Magic Focus",
+      "true_rank": "House Vance Heirloom Focus Wand",
+      "description": "Slender fourteen-inch polished ivory wand wrapped in delicate spiraling gold filigree vine motifs, crowned with a flawless octagonal-cut star-sapphire mana crystal tip crackling with azure sparks.",
+      "visual_dna": "Slender fourteen-inch polished ivory wand wrapped in delicate spiraling gold filigree vine motifs, crowned with a large flawless octagonal-cut star-sapphire mana crystal tip crackling with azure sparks, gold pommel cap.",
+      "dna": "@{Gilded Sapphire Wand}, master weapon reference plate. Slender fourteen-inch polished ivory wand resting horizontally on velvet lining, wrapped in delicate spiraling gold filigree vine motifs, crowned with a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks, gold pommel cap. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Gilded Sapphire Wand}, master weapon reference plate. Slender fourteen-inch polished ivory wand resting horizontally on velvet lining, wrapped in delicate spiraling gold filigree vine motifs, crowned with a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks, gold pommel cap. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "26_Weapon_Gilded_Sapphire_Wand.jpg",
+      "flowName": "Gilded Sapphire Wand",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "bandit_leader_greatsword",
+      "name": "Bandit Leader Greatsword",
+      "token": "@{Bandit Leader Greatsword}",
+      "type": "Weapon",
+      "category": "Weapons",
+      "apparent_rank": "Notched Iron Greatsword",
+      "true_rank": "Heavy Highwayman Cleaver",
+      "description": "Massive four-foot broad brutal iron executioner greatsword with deep combat notches, heavy rectangular steel crossguard, and weathered dark-brown leather cord-wrapped hilt.",
+      "visual_dna": "Massive four-foot broad brutal iron executioner greatsword, wide square-tipped blade showing deep combat notches and scratches, heavy rectangular steel crossguard, long two-handed hilt bound in weathered dark-brown leather cord wrapping, cold metallic steel sheen.",
+      "dna": "@{Bandit Leader Greatsword}, master weapon reference plate. Massive four-foot broad brutal iron executioner greatsword resting horizontally on stone gravel, wide square-tipped blade showing deep combat notches and scratches, heavy rectangular steel crossguard, long two-handed hilt bound in weathered dark-brown leather cord wrapping, cold metallic steel sheen. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Bandit Leader Greatsword}, master weapon reference plate. Massive four-foot broad brutal iron executioner greatsword resting horizontally on stone gravel, wide square-tipped blade showing deep combat notches and scratches, heavy rectangular steel crossguard, long two-handed hilt bound in weathered dark-brown leather cord wrapping, cold metallic steel sheen. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "27_Weapon_Bandit_Greatsword.jpg",
+      "flowName": "Bandit Leader Greatsword",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "imperial_applicant_ledger",
+      "name": "Imperial Applicant Ledger",
+      "token": "@{Imperial Applicant Ledger}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Official Academy Registry Tome",
+      "true_rank": "Imperial Arcane Registry Book",
+      "description": "Thick heavy folio registry ledger bound in dark-blue dyed calfskin leather with ornate silver metal corner protectors, embossed silver eagle crest, and crisp vellum pages.",
+      "visual_dna": "Thick folio registry ledger bound in dark-blue calfskin leather, ornate silver corner protectors, embossed silver eagle crest on cover, open vellum pages with black ink and silver quill pen.",
+      "dna": "Thick folio registry ledger bound in dark-blue calfskin leather, ornate silver corner protectors, embossed silver eagle crest on cover, open vellum pages with black ink and silver quill pen.",
+      "dna_prompt_anchor": "@{Imperial Applicant Ledger}, Thick folio registry ledger bound in dark-blue calfskin leather, ornate silver corner protectors, embossed silver eagle crest on cover, open vellum pages with black ink and silver quill pen.",
+      "reference_plate": "28_Prop_Applicant_Ledger.jpg",
+      "flowName": "Imperial Applicant Ledger",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "valerius_imperial_highway",
+      "name": "Valerius Imperial Highway",
+      "token": "@{Valerius Imperial Highway}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Temperate Imperial Caravan Road",
+      "true_rank": "Valerius Wilderness Transit Highway",
+      "description": "Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders under clear daylight sunbeams, with zero snow.",
+      "visual_dna": "Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders, roadside chiseled stone milestones, clear daylight sunbeams cutting through green pine canopies, distant mountain peaks on northern horizon, zero snow.",
+      "dna": "@{Valerius Imperial Highway}, master wilderness road environment plate. Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders, chiseled stone milestone markers, clear daylight sunbeams cutting through green pine canopies, distant northern mountain peaks, temperate climate with zero snow. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Valerius Imperial Highway}, master wilderness road environment plate. Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders, chiseled stone milestone markers, clear daylight sunbeams cutting through green pine canopies, distant northern mountain peaks, temperate climate with zero snow. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "29_Location_Valerius_Imperial_Highway.jpg",
+      "flowName": "Valerius Imperial Highway",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "highway_pine_ravine",
+      "name": "Highway Pine Ravine",
+      "token": "@{Highway Pine Ravine}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Wilderness Ravine Defile",
+      "true_rank": "Ambush & Spell Calibration Gorge",
+      "description": "Rugged rocky ravine passage flanking the highway, framed by steep jagged granite cliff faces, towering dark pine trees, massive mossy boulders, and coarse gravel loam underfoot with zero snow.",
+      "visual_dna": "Rugged rocky ravine passage flanking the highway, steep jagged granite cliff faces, towering dark pine trees, massive mossy boulders, broken stone terrain and coarse gravel loam underfoot, zero snow.",
+      "dna": "@{Highway Pine Ravine}, master wilderness gorge environment plate. Rugged rocky ravine passage flanking the highway, surrounded by steep jagged granite cliff faces, towering dark pine trees, massive mossy boulders, broken stone terrain and coarse gravel loam underfoot, dappled daylight sunbeams, zero snow. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Highway Pine Ravine}, master wilderness gorge environment plate. Rugged rocky ravine passage flanking the highway, surrounded by steep jagged granite cliff faces, towering dark pine trees, massive mossy boulders, broken stone terrain and coarse gravel loam underfoot, dappled daylight sunbeams, zero snow. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "30_Location_Highway_Pine_Ravine.jpg",
+      "flowName": "Highway Pine Ravine",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "academy_courtyard",
+      "name": "Imperial Arcane Academy Courtyard",
+      "token": "@{Imperial Arcane Academy Courtyard}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Academy Entrance Plaza",
+      "true_rank": "Imperial Arcane Academy Courtyard",
+      "description": "Expansive grand entrance courtyard of the Imperial Arcane Academy paved with reflective pale silver granite and white marble, flanked by gothic colonnades, crystal mana fountains, and hovering cyan magic circles.",
+      "visual_dna": "Expansive grand entrance courtyard of the Imperial Arcane Academy paved with reflective pale silver granite and polished white marble, multi-tiered gothic colonnades, crystal mana fountains emitting azure luminescence, colossal arched portals, hovering cyan magic circles above spires.",
+      "dna": "@{Imperial Arcane Academy Courtyard}, master architectural plaza reference plate. Expansive grand entrance courtyard of the Imperial Arcane Academy in Valerius, paved with pristine reflective pale silver granite and polished white marble, flanked by multi-tiered gothic colonnades, crystal mana fountains emitting faint azure luminescence, colossal arched entrance portals, hovering ethereal cyan magic circles faintly visible above cathedral spires. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Imperial Arcane Academy Courtyard}, master architectural plaza reference plate. Expansive grand entrance courtyard of the Imperial Arcane Academy in Valerius, paved with pristine reflective pale silver granite and polished white marble, flanked by multi-tiered gothic colonnades, crystal mana fountains emitting faint azure luminescence, colossal arched entrance portals, hovering ethereal cyan magic circles faintly visible above cathedral spires. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "31_Location_Academy_Courtyard.jpg",
+      "flowName": "Imperial Arcane Academy Courtyard",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true,
+      "generation_prompt": "Master architectural plaza reference plate. Expansive grand entrance courtyard of an aristocratic high-magic academy, paved with pristine reflective pale silver granite and polished white marble, flanked by multi-tiered gothic colonnades, ornate crystal mana fountains emitting faint azure luminescence, colossal arched cathedral entrance portals, glowing ethereal cyan magic circles faintly rotating above distant soaring sapphire-tipped gothic spires under clear cobalt daylight sky. Pure 100% architectural environment illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, 100% completely textless artwork, zero words, zero letters, zero banners, zero watermarks."
+    },
+    {
+      "id": "academy_resonance_hall",
+      "name": "Academy Resonance Testing Hall",
+      "token": "@{Academy Resonance Testing Hall}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Imperial Testing Chamber",
+      "true_rank": "Academy Resonance Testing Hall",
+      "description": "Monumental gothic testing chamber of pale silver granite and luminous mana sconces, vaulted ribbed ceilings, dark-blue slate floors inlaid with silver calculation rings, and tall stained-glass arched windows overlooking Valerius spires.",
+      "visual_dna": "Monumental gothic testing chamber built from pale silver granite and luminous mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floors inlaid with concentric silver calculation rings, towering stained-glass arched windows overlooking soaring sapphire cathedral spires.",
+      "dna": "@{Academy Resonance Testing Hall}, master interior hall reference plate. Vast monumental gothic testing chamber built from pale silver granite and luminous mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floors inlaid with concentric silver calculation rings, towering stained-glass arched windows on North wall overlooking pale silver cathedral spires and hovering cyan mana circles of the Crystalline Bastion, empty central granite dais. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Academy Resonance Testing Hall}, master interior hall reference plate. Vast monumental gothic testing chamber built from pale silver granite and luminous mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floors inlaid with concentric silver calculation rings, towering stained-glass arched windows on North wall overlooking pale silver cathedral spires and hovering cyan mana circles of the Crystalline Bastion, empty central granite dais. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "32_Location_Academy_Resonance_Hall.jpg",
+      "flowName": "Academy Resonance Testing Hall",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true,
+      "generation_prompt": "Master interior hall reference plate. Vast monumental gothic testing hall built from pale silver granite and glowing blue mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floor inlaid with concentric silver geometric calculation rings, towering stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and glowing cyan mana circles, empty central circular granite dais. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, 100% completely textless artwork, zero words, zero letters, zero banners, zero watermarks."
+    },
+    {
+      "id": "academy_tactical_proving_grounds",
+      "name": "Academy Tactical Proving Grounds",
+      "token": "@{Academy Tactical Proving Grounds}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Academy Dueling Arena",
+      "true_rank": "Academy Tactical Proving Grounds",
+      "description": "Colossal open-air circular combat proving arena paved with interlocking silver-granite flagstones engraved with geometric ward lines, enclosed by thirty-foot ancient runic barrier monoliths and stepped spectator tiers.",
+      "visual_dna": "Colossal open-air circular combat proving arena paved with interlocking reinforced silver-granite flagstones engraved with geometric ward lines, thirty-foot ancient runic barrier monoliths projecting faint blue containment barrier lines, stepped stone spectator tiers.",
+      "dna": "@{Academy Tactical Proving Grounds}, master arena environment plate. Colossal open-air circular combat proving arena within the Imperial Arcane Academy, paved with interlocking reinforced silver-granite flagstones engraved with geometric ward lines, enclosed by thirty-foot ancient runic barrier monoliths projecting faint blue containment lines, surrounded by stepped stone spectator tiers under clear sky. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Academy Tactical Proving Grounds}, master arena environment plate. Colossal open-air circular combat proving arena within the Imperial Arcane Academy, paved with interlocking reinforced silver-granite flagstones engraved with geometric ward lines, enclosed by thirty-foot ancient runic barrier monoliths projecting faint blue containment lines, surrounded by stepped stone spectator tiers under clear sky. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "reference_plate": "33_Location_Academy_Proving_Grounds.jpg",
+      "flowName": "Academy Tactical Proving Grounds",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true,
+      "generation_prompt": "Master arena environment plate. Colossal open-air circular combat proving arena within an aristocratic magic academy, paved with interlocking reinforced pale silver-granite flagstones engraved with concentric geometric ward lines, enclosed by towering thirty-foot ancient runic barrier monoliths pulsing with faint blue containment glow, surrounded by stepped stone spectator tiers beneath clear cobalt daytime sky. Pure 100% architectural arena illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, 100% completely textless artwork, zero words, zero letters, zero banners, zero watermarks."
+    },
+    {
+      "id": "enchanted_steel_broadsword",
+      "name": "Enchanted Steel Broadsword",
+      "token": "@{Enchanted Steel Broadsword}",
+      "type": "Weapon",
+      "category": "Weapons",
+      "apparent_rank": "Imperial Cadet Broadsword",
+      "true_rank": "Enchanted Steel Vanguard Blade",
+      "description": "Heavy three-foot double-edged enchanted steel broadsword wielded by Knight Vanguard Gareth. Burnished mirror-finish steel blade etched with fine azure kinetic reinforcement veins along the fuller, straight crossguard, steel pommel.",
+      "visual_dna": "Heavy three-foot double-edged enchanted steel broadsword resting horizontally on stone pedestal, wide razor-sharp mirror-polished steel blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel.",
+      "dna": "@{Enchanted Steel Broadsword}, master weapon reference plate. Heavy three-foot double-edged enchanted steel broadsword resting horizontally on stone pedestal. Wide razor-sharp mirror-polished steel blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Enchanted Steel Broadsword}, master weapon reference plate. Heavy three-foot double-edged enchanted steel broadsword resting horizontally on stone pedestal. Wide razor-sharp mirror-polished steel blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master weapon reference plate. Heavy three-foot double-edged enchanted steel broadsword resting horizontally on stone pedestal. Wide razor-sharp mirror-polished steel blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel. Completely unpopulated still life, zero humans, zero people, zero warriors, zero knights, zero armor, zero characters, zero hands touching the weapon. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, 100% prop artifact showcase illustration, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "37_Weapon_Enchanted_Steel_Broadsword.jpg",
+      "flowName": "Enchanted Steel Broadsword",
+      "episodes": [
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "academy_lecture_amphitheatre",
+      "name": "Academy Lecture Amphitheatre",
+      "token": "@{Academy Lecture Amphitheatre}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Academy Lecture Hall",
+      "true_rank": "Imperial Arcane Lecture Amphitheatre",
+      "description": "Monumental stepped circular lecture amphitheatre of pale silver granite and polished cedar student desks in the Imperial Arcane Academy. Vaulted ceiling with brass chandelier sconces and tall arched leaded stained-glass windows overlooking the pale silver cathedral spires and hovering cyan mana circles of the imperial capital.",
+      "visual_dna": "Monumental stepped circular lecture amphitheatre built of pale silver granite and polished cedar student desks, vaulted ceiling with brass chandelier sconces, central raised lectern dais, tall arched leaded stained-glass windows along North wall overlooking soaring cathedral spires and hovering cyan mana circles.",
+      "dna": "@{Academy Lecture Amphitheatre}, master architectural interior reference plate. Monumental stepped circular lecture amphitheatre of pale silver granite and polished cedar student desks in the Imperial Arcane Academy. Vaulted ribbed ceiling with hanging brass chandelier sconces, raised instructor lectern dais at center, tall arched leaded stained-glass windows along the North wall providing a clear elevated window vantage over the soaring cathedral spires and hovering cyan mana circles of the imperial capital. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Academy Lecture Amphitheatre}, master architectural interior reference plate. Monumental stepped circular lecture amphitheatre of pale silver granite and polished cedar student desks in the Imperial Arcane Academy. Vaulted ribbed ceiling with hanging brass chandelier sconces, raised instructor lectern dais at center, tall arched leaded stained-glass windows along the North wall providing a clear elevated window vantage over the soaring cathedral spires and hovering cyan mana circles of the imperial capital. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master architectural interior reference plate. Monumental stepped circular lecture amphitheatre of pale silver granite and polished cedar student desks in the Imperial Arcane Academy. Vaulted ribbed ceiling with hanging brass chandelier sconces, raised instructor lectern dais at center, tall arched leaded stained-glass windows along the North wall providing a clear elevated window vantage over the soaring cathedral spires and hovering cyan mana circles of the imperial capital. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "38_Location_Academy_Lecture_Amphitheatre.jpg",
+      "flowName": "Academy Lecture Amphitheatre",
+      "episodes": [
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "academy_private_dormitory",
+      "name": "Academy Private Dormitory Chamber",
+      "token": "@{Academy Private Dormitory Chamber}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Student Dormitory Room",
+      "true_rank": "Michael Montrey Private Quarters & Meditation Study",
+      "description": "Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, simple wooden study desk with stacked grimoires, polished dark timber floor, single narrow bed with wool blankets, and a tall gothic lancet stone window looking out over nocturnal academy cathedral spires and moonlight.",
+      "visual_dna": "Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall overlooking nocturnal academy cathedral spires beneath cool moonlight.",
+      "dna": "@{Academy Private Dormitory Chamber}, master interior room reference plate. Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with neatly folded dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall providing an elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Academy Private Dormitory Chamber}, master interior room reference plate. Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with neatly folded dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall providing an elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master interior room reference plate. Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with neatly folded dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall providing an elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "39_Location_Academy_Private_Dormitory.jpg",
+      "flowName": "Academy Private Dormitory Chamber",
+      "episodes": [
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "frozen_astral_crucible",
+      "name": "Frozen Astral Crucible",
+      "token": "@{Frozen Astral Crucible}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Astral Domain Crucible",
+      "true_rank": "Tier 6 Absolute Zero Trial Dimension",
+      "description": "Sub-astral trial realm deep within the White Dimension. Monumental frozen crucible of infinite translucent glacial ice sheets, colossal jagged frost crystal pillars radiating piercing azure chill, howling ethereal astral blizzard mists, hovering glowing frost runes, absolute stillness and freezing majesty.",
+      "visual_dna": "Boundless floor of mirror-like translucent glacial ice reflecting distant star-mists, colossal towering jagged frost crystal pillars radiating piercing azure luminescence, swirling ethereal pale-cyan blizzard mist clouds, ancient geometric frost rune arrays floating in the freezing air, absolute stillness.",
+      "dna": "@{Frozen Astral Crucible}, master astral environment reference plate. Monumental frozen trial crucible deep within the astral dimension. Boundless floor of mirror-like translucent glacial ice reflecting distant star-mists, colossal towering jagged frost crystal pillars radiating piercing azure luminescence, swirling ethereal pale-cyan blizzard mist clouds, ancient geometric frost rune arrays floating in the freezing air, absolute stillness and freezing majesty. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Frozen Astral Crucible}, master astral environment reference plate. Monumental frozen trial crucible deep within the astral dimension. Boundless floor of mirror-like translucent glacial ice reflecting distant star-mists, colossal towering jagged frost crystal pillars radiating piercing azure luminescence, swirling ethereal pale-cyan blizzard mist clouds, ancient geometric frost rune arrays floating in the freezing air, absolute stillness and freezing majesty. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master astral environment reference plate. Monumental frozen trial crucible deep within the astral dimension. Boundless floor of mirror-like translucent glacial ice reflecting distant star-mists, colossal towering jagged frost crystal pillars radiating piercing azure luminescence, swirling ethereal pale-cyan blizzard mist clouds, ancient geometric frost rune arrays floating in the freezing air, absolute stillness and freezing majesty. Pure 100% environmental landscape illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "40_Location_Frozen_Astral_Crucible.jpg",
+      "flowName": "Frozen Astral Crucible",
+      "episodes": [
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "grand_ranking_stele",
+      "name": "Grand Ranking Stele",
+      "token": "@{Grand Ranking Stele}",
+      "type": "Artifact",
+      "category": "Artifacts",
+      "apparent_rank": "Tournament Leaderboard Obelisk",
+      "true_rank": "Ancient Imperial Labyrinth Resonance Monolith",
+      "description": "Colossal thirty-foot floating black granite and cyan crystal obelisk in the Academy Courtyard / Tribunal Plaza. Displays tournament clear tiers through glowing geometric rune bars and ascending light bands. 100% textless artwork, zero readable text, zero letters, zero numbers, zero names.",
+      "visual_dna": "Colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza. Polished obsidian facets displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, rotating concentric brass calibration rings around its base, crisp clean reflections. Pure 100% textless abstract artwork, zero readable text, zero numbers, zero letters, zero names, zero words.",
+      "dna": "@{Grand Ranking Stele}, master arcane artifact reference plate. Colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza. Polished obsidian facets displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, rotating concentric brass calibration rings around its base, crisp clean reflections. Pure 100% textless abstract artwork, zero readable text, zero numbers, zero letters, zero names, zero words. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Grand Ranking Stele}, master arcane artifact reference plate. Colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza. Polished obsidian facets displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, rotating concentric brass calibration rings around its base, crisp clean reflections. Pure 100% textless abstract artwork, zero readable text, zero numbers, zero letters, zero names, zero words. Completely unpopulated still life, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master arcane artifact reference plate. Colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza. Polished obsidian facets displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, rotating concentric brass calibration rings around its base, crisp clean reflections. Pure 100% textless abstract artwork, zero readable text, zero numbers, zero letters, zero names, zero words. Completely unpopulated still life, zero humans, zero people, zero warriors, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, 100% prop artifact showcase illustration, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "46_Prop_Labyrinth_Ranking_Monolith.jpg",
+      "flowName": "Grand Ranking Stele",
+      "episodes": [
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "ancient_labyrinth_corridor",
+      "name": "Ancient Labyrinth Stone Corridor",
+      "token": "@{Ancient Labyrinth Stone Corridor}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Subterranean Labyrinth Corridor",
+      "true_rank": "Imperial Arcane Labyrinth Transit Hall",
+      "description": "Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors. Subterranean cavern with zero exterior windows.",
+      "visual_dna": "High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean glow and deep side shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors, zero exterior windows.",
+      "dna": "@{Ancient Labyrinth Stone Corridor}, master subterranean environment reference plate. Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean glow and deep side shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors in the background. Subterranean cavern with zero exterior windows. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Ancient Labyrinth Stone Corridor}, master subterranean environment reference plate. Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean glow and deep side shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors in the background. Subterranean cavern with zero exterior windows. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master subterranean environment reference plate. Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean glow and deep side shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors in the background. Subterranean cavern with zero exterior windows. Pure 100% architectural environment illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "47_Location_Ancient_Labyrinth_Corridor.jpg",
+      "flowName": "Ancient Labyrinth Stone Corridor",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "labyrinth_50th_floor_sanctum",
+      "name": "Labyrinth 50th Floor Sanctum",
+      "token": "@{Labyrinth 50th Floor Sanctum}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Floor 50 Sovereign Boss Chamber",
+      "true_rank": "Labyrinth Primordial Boss Arena",
+      "description": "Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows.",
+      "visual_dna": "Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist, zero exterior windows.",
+      "dna": "@{Labyrinth 50th Floor Sanctum}, master subterranean arena environment plate. Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Labyrinth 50th Floor Sanctum}, master subterranean arena environment plate. Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master subterranean arena environment plate. Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows. Pure 100% architectural environment illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "48_Location_Labyrinth_50th_Floor_Sanctum.jpg",
+      "flowName": "Labyrinth 50th Floor Sanctum",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
       ],
       "hasPlate": true
     }

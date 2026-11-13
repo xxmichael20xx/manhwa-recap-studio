@@ -17,12 +17,16 @@ export function extractCharacterDna(character) {
 
   const category = (character.category || '').toLowerCase()
   const role = (character.role || '').toLowerCase()
-  const isNonHumanoid = /^(artifact|weapon|prop|item|location|environment)$/i.test(category) ||
-                        /\b(artifact|weapon|prop|sword|blade|dao|monolith|stele|spectrometer|console|astrolabe|interface)\b/i.test(role)
-  if (isNonHumanoid) return null
+  const kind = (character.kind || character.type || '').toLowerCase()
+  const isLocation = /^(location|environment)$/i.test(category) || /^(location|environment)$/i.test(kind)
+  if (isLocation) return null
+
+  const isPropOrItem = /^(artifact|weapon|prop|item|vehicle)$/i.test(category) ||
+                       /^(artifact|weapon|prop|item|vehicle)$/i.test(kind) ||
+                       /\b(artifact|weapon|prop|sword|blade|dao|monolith|stele|spectrometer|console|astrolabe|interface)\b/i.test(role)
 
   const cleanName = name
-    .replace(/^(Grand Duke|Duke|Lord|Lady|Prince|Princess|King|Queen|Chief Proctor|Chief|Senior Examiner|Head Examiner|Examiner|Proctor|Instructor|Commander|Director|Master|Captain|Sir|Goddess|Elder)\s+/i, '')
+    .replace(/^(?:Character|Boss|Hero|Ally|Supporting|Antagonist|Weapon|Item|Prop|Artifact|Grand Duke|Duke|Lord|Lady|Prince|Princess|King|Queen|Chief Proctor|Chief|Senior Examiner|Head Examiner|Examiner|Proctor|Instructor|Commander|Director|Master|Captain|Sir|Goddess|Elder)(?::|\s)\s*/i, '')
     .replace(/\s*\([^)]*\)/, '')
     .trim()
 
@@ -113,7 +117,12 @@ export function extractCharacterDna(character) {
 
   // 5. Canonical Traits String for Automatic Expansion
   let canonicalTraits = ''
-  if (dnaAnchor) {
+  if (isPropOrItem) {
+    canonicalTraits = (character.dna || character.visual_dna || character.dna_prompt_anchor || character.description || '')
+      .replace(/^@\{[^}]+\},\s*/i, '')
+      .replace(/,?\s*(?:modern 2025|dark fantasy|bright high-fantasy|vertical 9:16|horizontal 16:9).*$/i, '')
+      .trim()
+  } else if (dnaAnchor) {
     const anchorMatch = dnaAnchor.match(/^@\{[^}]+\},\s*(.*?)(?:,\s*(?:clean oversized|wearing|red graphic|dark olive-drab|modern white|tailored designer|tailored charcoal|rough-spun|standard dark|neat modern|modern 2025|dark fantasy|bright high-fantasy|$))/i)
     if (anchorMatch && anchorMatch[1]) {
       canonicalTraits = anchorMatch[1].trim().replace(/,\s*$/, '')
@@ -129,31 +138,54 @@ export function extractCharacterDna(character) {
     canonicalTraits = parts.filter(Boolean).join(', ')
   }
 
+  const traitKeywords = canonicalTraits
+    .toLowerCase()
+    .split(/,|;/)
+    .map(s => s.trim())
+    .filter(s => s.length >= 6)
+
   return {
     id: character.id || name.toLowerCase().replace(/[^a-z0-9]/g, '_'),
     name,
     cleanName,
     token: character.token || `@{${name}}`,
+    isPropOrItem,
     age: ageStr,
     physiqueTokens,
     facialTokens,
     ageTokens,
     wardrobeTokens,
+    traitKeywords,
     canonicalTraits,
     dnaAnchor
   }
 }
 
 /**
- * Checks whether a prompt text explicitly contains the character's physical DNA.
+ * Checks whether a prompt text explicitly contains the entity's physical DNA.
  */
 export function isPhysicalDnaPresent(promptText, charDna) {
   if (!promptText || !charDna) return false
   const lower = promptText.toLowerCase()
+  const esc = s => String(s || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-  // If prompt already contains the character's canonical traits phrase
+  // Guard against double-injection on already compiled Layer 2 entity blocks
+  for (const label of [charDna.name, charDna.cleanName].filter(Boolean)) {
+    const alreadyCompiledChar = new RegExp(`@\\{${esc(label)}\\},\\s*[^.]{20,}`, 'i')
+    const alreadyCompiledProp = new RegExp(`Featuring\\s+@\\{${esc(label)}\\}\\s*\\([^)]{15,}\\)`, 'i')
+    if (alreadyCompiledChar.test(promptText) || alreadyCompiledProp.test(promptText)) {
+      return true
+    }
+  }
+
+  // If prompt already contains the character/item's canonical traits prefix
   if (charDna.canonicalTraits && lower.includes(charDna.canonicalTraits.toLowerCase().slice(0, 25))) {
     return true
+  }
+
+  if (charDna.isPropOrItem && Array.isArray(charDna.traitKeywords) && charDna.traitKeywords.length > 0) {
+    const matched = charDna.traitKeywords.filter(kw => lower.includes(kw)).length
+    return matched >= Math.min(2, charDna.traitKeywords.length)
   }
 
   // Strip boilerplate anatomy text and environment collision words
@@ -165,13 +197,18 @@ export function isPhysicalDnaPresent(promptText, charDna) {
   const hasPhysique = charDna.physiqueTokens.length === 0 || charDna.physiqueTokens.some(t => cleanedPrompt.includes(t))
   const hasFacial = charDna.facialTokens.length === 0 || charDna.facialTokens.some(t => cleanedPrompt.includes(t))
 
+  if (Array.isArray(charDna.traitKeywords) && charDna.traitKeywords.length >= 2) {
+    const dynamicHits = charDna.traitKeywords.filter(kw => cleanedPrompt.includes(kw)).length
+    if (dynamicHits >= 2) return true
+  }
+
   // Physical DNA is present if at least 2 categories match or physique + anchor matches
   return (hasPhysique && (hasFacial || hasAge)) || (hasFacial && hasAge)
 }
 
 /**
- * Automatically compiles bare macros @{Character Name} in prompt text into
- * fully enriched physical DNA guidance.
+ * Automatically compiles bare macros @{Entity Name} in prompt text into
+ * fully enriched physical DNA guidance without double-injecting compiled blocks.
  */
 export function compilePromptDna(promptText, characters = []) {
   if (!promptText || typeof promptText !== 'string') return promptText
@@ -189,7 +226,7 @@ export function compilePromptDna(promptText, characters = []) {
     const dna = extractCharacterDna(c)
     if (!dna || !dna.canonicalTraits) continue
 
-    const nameVariants = [dna.name, dna.cleanName].filter(Boolean)
+    const nameVariants = [...new Set([dna.name, dna.cleanName].filter(Boolean))]
     for (const n of nameVariants) {
       const macro = `@{${n}}`
       if (!compiledText.includes(macro)) continue
@@ -200,9 +237,10 @@ export function compilePromptDna(promptText, characters = []) {
       }
 
       // Macro is bare without physical traits: expand it
-      const macroRegex = new RegExp(`@\\{${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\}(?!,\\s*${dna.canonicalTraits.slice(0, 15).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'g')
-      compiledText = compiledText.replace(macroRegex, (match) => {
-        return `${match}, ${dna.canonicalTraits}`
+      const escName = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      const macroRegex = new RegExp(`@\\{${escName}\\}(?!,\\s*${dna.canonicalTraits.slice(0, 15).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})(?!\\s*\\()`, 'g')
+      compiledText = compiledText.replace(macroRegex, match => {
+        return dna.isPropOrItem ? `${match} (${dna.canonicalTraits})` : `${match}, ${dna.canonicalTraits}`
       })
     }
   }

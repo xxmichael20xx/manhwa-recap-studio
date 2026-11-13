@@ -1,0 +1,123 @@
+{
+  "episodeId": "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-12T03:30:00.000Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "interior_warm",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_024",
+        "lighting": "night_moonlit"
+      },
+      {
+        "from_scene": "IMG_025",
+        "to_scene": "IMG_048",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_049",
+        "to_scene": "IMG_120",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_121",
+        "to_scene": "IMG_144",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_145",
+        "to_scene": "IMG_160",
+        "lighting": "dawn"
+      },
+      {
+        "from_scene": "IMG_161",
+        "to_scene": "IMG_168",
+        "lighting": "bright_morning_sunlight"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, burnished dark leather travel boots, dark travel cloak with discreet silver buckle clasp",
+    "proctor_alistair": "dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, gleaming silver insignia brooch pinned at neckline, durable black leather scholar boots"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "sleek dense hand-whittled blackwood quarterstaff with glowing spiral mana veins and iron-shod base",
+      "notes": "Locked across all episode scenes."
+    },
+    "the_primordial_codex": {
+      "canonical_name": "The Primordial Codex",
+      "container": null,
+      "visual_form": "thick ancient dark leather grimoire embossed with glowing golden celestial constellation glyphs and ornate brass lock clasps",
+      "notes": "Locked across all episode scenes."
+    },
+    "grand_ranking_stele": {
+      "canonical_name": "Grand Ranking Stele",
+      "container": null,
+      "visual_form": "colossal thirty-foot floating black granite obelisk inscribed with glowing geometric azure mana rune bars",
+      "notes": "Stationary monolith in Imperial Arcane Academy Courtyard."
+    }
+  },
+  "zone_invariants": {
+    "frozen_astral_crucible": {
+      "sealed_interior": false
+    },
+    "white_dimension_library": {
+      "sealed_interior": false
+    }
+  },
+  "zone_lifecycles": {},
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:skyscraper|asphalt|streetlights?|hover-car|hover-sedan|neon\\s+sign|laptop|smartphone|tarmac)\\b",
+      "message": "Modern urban architecture/tech forbidden in high-fantasy medieval Valerius setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\b(?:heavy\\s+snowfall|blizzard\\s+drifts|snow-covered\\s+road|winter\\s+slush)\\b",
+      "exclude_zones": [
+        "frozen_astral_crucible"
+      ],
+      "message": "Unilateral snow/blizzard weather forbidden on temperate Valerius highway and academy grounds"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\bcarved\\s+blackwood\\s+staff\\b",
+      "requiredToken": "@{Carved Blackwood Staff}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bthe\\s+primordial\\s+codex\\b",
+      "requiredToken": "@{The Primordial Codex}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bgrand\\s+ranking\\s+stele\\b",
+      "requiredToken": "@{Grand Ranking Stele}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Carved Blackwood Staff",
+      "bannedPattern": "\\b(?:peasant\\s+stick|walking\\s+stick|wooden\\s+stick|wooden\\s+staff)\\b",
+      "allowedPattern": "Carved\\s+Blackwood\\s+Staff"
+    },
+    {
+      "canonical": "The Primordial Codex",
+      "bannedPattern": "\\b(?:leather\\s+book|ancient\\s+grimoire|leather\\s+grimoire)\\b",
+      "allowedPattern": "The\\s+Primordial\\s+Codex"
+    },
+    {
+      "canonical": "Grand Ranking Stele",
+      "bannedPattern": "\\b(?:ranking\\s+monolith|tournament\\s+monolith|black\\s+monolith|floating\\s+monolith)\\b",
+      "allowedPattern": "Grand\\s+Ranking\\s+Stele"
+    }
+  ]
+}

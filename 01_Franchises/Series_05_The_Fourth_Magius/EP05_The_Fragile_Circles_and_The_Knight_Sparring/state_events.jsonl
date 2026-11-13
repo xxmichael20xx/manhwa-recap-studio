@@ -1,0 +1,35 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"academy_lecture_amphitheatre","outfit":"default","posture":"calm_analytical"},"reason":"Michael observing lecture in amphitheatre"}
+{"s":0,"e":"proctor_alistair","set":{"location":"academy_lecture_amphitheatre","outfit":"default","posture":"lecturing"},"reason":"Alistair conducting morning theory lecture"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael carries his carved blackwood staff"}
+{"s":0,"e":"imperial_applicant_ledger","set":{"lifecycle":"environmental"},"reason":"Ledger open on instructor lectern"}
+{"s":4,"e":"lord_cedric_vance","set":{"lifecycle":"active","location":"academy_lecture_amphitheatre","outfit":"default"},"reason":"Cedric seated in front row"}
+{"s":4,"e":"gilded_sapphire_wand","set":{"lifecycle":"equipped"},"reason":"Cedric twirls his gilded sapphire wand"}
+{"s":5,"e":"lady_evelyn_ashford","set":{"lifecycle":"active","location":"academy_lecture_amphitheatre","outfit":"default"},"reason":"Evelyn Ashford seated in noble tier"}
+{"s":24,"e":"michael_montrey_academy","set":{"location":"academy_lecture_amphitheatre"},"reason":"Applicants filing out of amphitheatre"}
+{"s":32,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael enters grand academy courtyard"}
+{"s":32,"e":"lord_cedric_vance","set":{"location":"academy_courtyard"},"reason":"Cedric arrives on courtyard colonnade"}
+{"s":32,"e":"lady_evelyn_ashford","set":{"location":"academy_courtyard"},"reason":"Evelyn arrives on courtyard colonnade"}
+{"s":32,"e":"proctor_alistair","set":{"location":"academy_courtyard"},"reason":"Alistair greets guests in courtyard"}
+{"s":33,"e":"commander_marcus_kael","set":{"lifecycle":"active","location":"academy_courtyard","outfit":"default"},"reason":"Commander Marcus Kael leads martial delegation"}
+{"s":35,"e":"gareth_ironcrest","set":{"lifecycle":"active","location":"academy_courtyard","outfit":"default"},"reason":"Gareth Ironcrest marches into courtyard"}
+{"s":35,"e":"enchanted_steel_broadsword","set":{"lifecycle":"equipped"},"reason":"Gareth carries his enchanted steel broadsword"}
+{"s":54,"e":"michael_montrey_academy","set":{"location":"academy_tactical_proving_grounds"},"reason":"Procession enters tactical proving grounds"}
+{"s":54,"e":"commander_marcus_kael","set":{"location":"academy_tactical_proving_grounds"},"reason":"Commander Marcus Kael takes observation platform"}
+{"s":54,"e":"proctor_alistair","set":{"location":"academy_tactical_proving_grounds"},"reason":"Alistair activates perimeter wards"}
+{"s":54,"e":"gareth_ironcrest","set":{"location":"academy_tactical_proving_grounds"},"reason":"Gareth steps onto arena combat floor"}
+{"s":54,"e":"lord_cedric_vance","set":{"location":"academy_tactical_proving_grounds"},"reason":"Cedric prepares for opening duel"}
+{"s":54,"e":"lady_evelyn_ashford","set":{"location":"academy_tactical_proving_grounds"},"reason":"Evelyn observes from spectator stands"}
+{"s":78,"e":"lord_cedric_vance","set":{"posture":"collapsed_ground"},"reason":"Cedric slammed onto arena flagstones"}
+{"s":78,"e":"gilded_sapphire_wand","set":{"lifecycle":"disarmed"},"reason":"Cedric wand knocked away across stone floor"}
+{"s":81,"e":"lord_cedric_vance","set":{"lifecycle":"routed"},"reason":"Cedric hauled off arena in humiliation"}
+{"s":82,"e":"lady_evelyn_ashford","set":{"location":"academy_tactical_proving_grounds"},"reason":"Evelyn enters dueling circle"}
+{"s":90,"e":"lady_evelyn_ashford","set":{"lifecycle":"yielded"},"reason":"Evelyn yields under blade threat"}
+{"s":104,"e":"carved_blackwood_staff","set":{"lifecycle":"stowed"},"reason":"Michael places staff upright on stone weapon rack"}
+{"s":106,"e":"michael_montrey_academy","set":{"posture":"bare_handed_duel"},"reason":"Michael steps into arena circle completely empty-handed"}
+{"s":132,"e":"michael_montrey_academy","set":{"posture":"two_finger_catch"},"reason":"Michael catches enchanted broadsword between two fingers"}
+{"s":146,"e":"gareth_ironcrest","set":{"posture":"collapsed_ground"},"reason":"Gareth knocked backward onto flagstones by wrist flick"}
+{"s":148,"e":"enchanted_steel_broadsword","set":{"lifecycle":"disarmed"},"reason":"Broadsword slips from Gareth grasp onto stones"}
+{"s":149,"e":"gareth_ironcrest","set":{"lifecycle":"yielded"},"reason":"Gareth concedes defeat prostrate on floor"}
+{"s":158,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael retrieves staff from stone weapon rack"}
+{"s":160,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael returns to academy courtyard at dusk"}
+{"s":160,"e":"lord_cedric_vance","set":{"location":"academy_courtyard"},"reason":"Cedric watches from colonnade shadows in fury"}

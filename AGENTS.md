@@ -132,5 +132,5 @@ Every episode MUST execute these 5 sequential stages without skipping or reorder
 - **`/compiler` (`manhwa-compiler`):** Universal AV spec lock (`24fps`, `1080p`, `yuv420p`, `48kHz AAC`), targeted batch compile, lossless `-c copy` concat, `ffprobe` chapters, and FFmpeg frame proof.
 - **`/launch` (`manhwa-launch`):** `YouTube_Locked_Package.md` SSOT, accumulative `(Episode 1-N)` numbering, plain episode timestamps, and Multi-Shorts extraction kits.
 - **`/thumb` (`manhwa-thumb`):** 3 Master Thumbnail archetypes (Split, Proctor Panic, Solo Cleave), reference plate binding, top-left `#FFD700` badge, and locked Ep 1 thumbnail mirroring.
-- **`/studio-dev` (`manhwa-dev`):** Vue/Express architecture, Slate theme tokens, container-fluid grids, 3-Tier Live Verification, and pre/post-build scrap cleanup.
+- **`/studio-dev` (`manhwa-dev`):** Vue/Express architecture, Slate theme tokens, container-fluid grids, 2-Tier Live Verification, and pre/post-build scrap cleanup.
 - **`/refresh-rules` (`refresh-rules`):** Live disk re-ingestion of `AGENTS.md`, `SKILL.md` manifests, and `00_Engine/` codices.

@@ -2485,6 +2485,38 @@ const analyzeFlowContext = (itemsList = null) => {
     }
   })
 
+  const referencedTokenMap = new Map()
+  const addRefTag = raw => {
+    const cleaned = String(raw || '')
+      .replace(/@\{([^}]+)\}/g, '$1')
+      .replace(/[@{}]/g, '')
+      .replace(/^(?:Character|Boss|Hero|Ally|Supporting|Antagonist|Weapon|Item|Artifact|Prop|Location|Vehicle):\s*/i, '')
+      .trim()
+    if (!cleaned) return
+    const key = cleaned.toLowerCase()
+    if (!referencedTokenMap.has(key)) {
+      referencedTokenMap.set(key, formatEntityWithId(cleaned))
+    }
+  }
+
+  for (const item of items) {
+    const toks = item?.characterTokens || extractTokensFromText(item?.prompt || '')
+    toks.forEach(addRefTag)
+    if (item?.character_ref) String(item.character_ref).split(',').forEach(addRefTag)
+    if (item?.character_refs) String(item.character_refs).split(',').forEach(addRefTag)
+    if (item?.item_ref) String(item.item_ref).split(',').forEach(addRefTag)
+    if (item?.item_refs) String(item.item_refs).split(',').forEach(addRefTag)
+  }
+
+  const resolvedBatchTags = referencedTokenMap.size > 0
+    ? Array.from(referencedTokenMap.values())
+    : models.map(m => {
+        const cleanFlow = String(m.flowName || m.name || '')
+          .replace(/^(?:Character|Boss|Hero|Ally|Supporting|Antagonist|Weapon|Item|Artifact|Prop|Location|Vehicle):\s*/i, '')
+          .trim()
+        return formatEntityWithId(cleanFlow)
+      }).filter(Boolean)
+
   return {
     totalScenes: items.length,
     protagonistRawName,
@@ -2498,9 +2530,7 @@ const analyzeFlowContext = (itemsList = null) => {
     tierACount,
     tierBCount,
     tierCCount,
-    detectedEntityTags: models.length > 0
-      ? models.map(m => formatEntityWithId(m.flowName || m.name)).filter(Boolean).slice(0, 6)
-      : []
+    detectedEntityTags: resolvedBatchTags
   }
 }
 
@@ -2531,19 +2561,20 @@ const getFlowMasterInstructions = (format = '16:9', itemsScope = null) => {
   return `[SYSTEM DIRECTIVE: GLOBAL PROJECT INVARIANTS]
 
 STRICT OPERATIONAL DIRECTIVES FOR ENTIRE EPISODE (${aspectLabel}):
-0. AUTONOMOUS BATCH EXECUTION PROTOCOL (MANDATORY CONTINUOUS RUNNER):
+0. AUTONOMOUS WAVE-OF-8 EXECUTION PROTOCOL (GENERATE BY 8 -> RENAME -> COLLECTION):
 - ROLE: You are an Autonomous Batch Production Engine, NOT an interactive conversational assistant.
-- CONTINUOUS RUNNER MANDATE: When provided with an XML <batch> or multiple <scene> nodes, you MUST execute image generation for ALL scenes in the batch continuously in a single uninterrupted run from start to finish.
-- ABSOLUTE HALT BAN (ZERO INTERMEDIATE TURNS):
-  * NEVER stop after generating a single scene.
-  * NEVER yield the turn to the operator between individual scenes.
-  * NEVER ask "Should I proceed?", "How does this look?", or pause for confirmation.
-- TERMINAL CONDITION: Return your final response ONLY AFTER 100% of the scenes in the batch (e.g. all 24 scenes) have been generated and assigned to the target collection.
-- RATE LIMIT RETRY: If a scene encounters an API rate limit, pause briefly and retry automatically. NEVER abort the remaining scenes in the batch.
+- WAVE-OF-8 EXECUTION MANDATE: When provided with an XML <batch> or multiple <scene> nodes, process them automatically in consecutive waves of AT MOST 8 SCENES AT A TIME (e.g., for 24 scenes: Wave 1 = 1-8, Wave 2 = 9-16, Wave 3 = 17-24; if 8 or fewer scenes are provided, run them in a single wave). Never fire all 24 generations in one burst.
+- STRICT PER-WAVE SEQUENCE (ORDER IS MANDATORY):
+  * STEP 1 (GENERATE BY 8): Generate up to 8 scenes concurrently in the active wave.
+  * STEP 2 (RENAME FILES): Immediately after that wave completes, rename each generated image to match its exact filename="..." attribute (e.g., IMG_001.jpg, IMG_002.jpg) without waiting for a separate "sync" command.
+  * STEP 3 (ORGANIZE INTO COLLECTION): Create (if not present) and assign 100% of those renamed images into the specified target collection before immediately starting the next wave of 8.
+- ABSOLUTE HALT BAN (ZERO CONFIRMATION PAUSES):
+  * NEVER stop between waves to ask "Should I proceed?", "How does this look?", or wait for confirmation, and never output per-scene progress narration.
+- TERMINAL CONDITION: Return your final summary ONLY AFTER 100% of the scenes across all waves have been generated, renamed, and organized into the target collection.
+- RATE LIMIT RETRY: If a scene encounters an API rate limit, pause briefly, retry it automatically, and finish its rename and collection assignment before advancing to the next wave.
 
-1. FILE NAMING CONVENTION (ZERO EXCEPTIONS):
-- ALWAYS automatically rename every generation to match the exact string provided in the filename="..." attribute of the user's XML <scene> node (e.g., IMG_001.jpg, IMG_002.jpg).
-- This action must be performed immediately following generation without requiring a separate "sync" command or further user input.
+1. FILE NAMING CONVENTION (STEP 2 AFTER EACH WAVE OF 8):
+- Rename every generation immediately after its wave of 8 completes to match the exact filename="..." attribute of the XML <scene> node (e.g., IMG_001.jpg, IMG_002.jpg) before moving to collection organization.
 
 2. TEXT CONTROL (STRICT NARRATIVE SILENCE):
 - FORBIDDEN (NARRATIVE & COMIC OVERLAYS): Strictly zero speech bubbles, dialogue balloons, thought bubbles, narrator caption boxes, subtitles, comic sound effects (SFX/onomatopoeia), Hangul (한글), or digital watermarks/numbers.
@@ -2558,7 +2589,7 @@ STRICT OPERATIONAL DIRECTIVES FOR ENTIRE EPISODE (${aspectLabel}):
 - ANTI-MORPHING SUBJECT ISOLATION: Never merge, fuse, or transfer monster, boss, or mechanical automaton features (such as wings, claws, mechanical puppet hands, or boss weapons) onto the human protagonist. ${bossClause}
 - LITERAL ACTION FIDELITY: Depict ONLY the exact posture and action described in the <scene> prompt (${intel.nonCombatCount} non-combat/dialogue scenes vs ${intel.combatCount} combat scenes in this deck). If characters are sitting, talking, resting, or observing, NEVER hallucinate combat strikes, punches, kicks, or assassin attacks.
 ${compositionRule}
-- ISOLATION: Isolate each batch within its dedicated collection as specified in the system directive.
+- COLLECTION ORGANIZATION (STEP 3 AFTER EACH WAVE'S RENAME): Create (if not present) and assign each wave's renamed images strictly into the target collection specified in the prompt. Never mix with prior batches.
 
 4. ART STYLE INVARIANT (${styleDirective.styleName}):
 - ${styleDirective.genreRule}
@@ -2585,15 +2616,15 @@ const getFlowDirectiveHeader = (collectionTitle, format = '16:9', batchItems = n
     ? `Keep ${intel.protagonistLabel}'s human anatomy 100% separate from ${intel.bossOrConstructList.join(', ')} (never fuse boss wings, claws, or mechanical puppet hands onto ${intel.protagonistLabel}).`
     : `Strictly one instance of ${intel.protagonistLabel} per scene; never clone the protagonist or merge features across characters.`
 
-  return `[COMMAND: GENERATE ALL SCENES SIMULTANEOUSLY IN PARALLEL]
-MANDATE: Generate ALL scenes in "${collectionTitle}" SIMULTANEOUSLY in parallel in a single turn. Do NOT generate them sequentially one after another. Strictly forbidden from outputting intermediate status text (such as "I am currently generating scene IMG_XXX...").
+  return `[COMMAND: GENERATE BY 8 -> RENAME -> ORGANIZE INTO COLLECTION]
+MANDATE: Process ALL scenes in this prompt automatically in consecutive waves of at most 8 scenes at a time: (1) Generate up to 8 scenes concurrently -> (2) Rename each generated image to its exact filename="..." attribute -> (3) Assign those renamed images into target collection "${collectionTitle}". Continue wave-by-wave automatically until all scenes are finished. Do NOT fire all 24 in one burst, do NOT ask for confirmation between waves, and do NOT output per-scene status text (such as "I am currently generating scene IMG_XXX...").
 
-[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
+[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | WAVE SIZE: MAX 8 SCENES | GENERATE BY 8 -> RENAME -> COLLECTION]
 
-STRICT OPERATIONAL DIRECTIVES FOR COLLECTION "${collectionTitle}":
-1. SIMULTANEOUS PARALLEL BATCH GENERATION: Generate 100% of the scenes in this batch SIMULTANEOUSLY in parallel in a single turn. Strictly forbidden from generating sequentially one after another or outputting per-scene progress announcements (e.g. "I am currently generating scene IMG_XXX...").
-2. MANDATORY COLLECTION ISOLATION: Create and isolate 100% of generated scenes in this batch inside "${collectionTitle}". Never mix with prior batches.
-3. MANDATORY IMMEDIATE FILE NAMING: Automatically rename every generated asset to match the exact filename="..." attribute of its <scene> node (e.g. IMG_001.jpg) immediately after generation without waiting for a "sync" command.
+STRICT OPERATIONAL DIRECTIVES FOR "${collectionTitle}" (EXECUTE IN THIS ORDER):
+1. STEP 1 - GENERATE BY 8 (MAX 8 SCENES PER WAVE): Split the <scene> nodes below into consecutive waves of at most 8 scenes (e.g., Wave 1: 1-8, Wave 2: 9-16, Wave 3: 17-24; if 8 or fewer scenes are provided, run them together). Generate at most 8 scenes concurrently per wave - never launch all 24 generations simultaneously.
+2. STEP 2 - RENAME GENERATED FILES: Immediately after each wave of 8 completes, rename every generated asset to match the exact filename="..." attribute of its <scene> node (e.g. IMG_001.jpg, IMG_002.jpg) without waiting for a "sync" command.
+3. STEP 3 - ORGANIZE INTO TARGET COLLECTION: After renaming that wave, create (if not present) and assign 100% of those renamed images into collection "${collectionTitle}". Never mix with prior batches, then immediately start the next wave of 8 until 100% of scenes are complete.
 4. SMART TEXT CONTROL (SCENE-LOCKED):
    - ${batchTextRule}
    - Never render structural prompt words ("Top block", "Middle", "Bottom", "Environment") as visible caption boxes.

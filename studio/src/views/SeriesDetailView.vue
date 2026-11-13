@@ -1899,11 +1899,27 @@ const getEpisodeModelCount = (epId) => {
 
 const filteredModels = computed(() => {
   const base = episodeScopedModels.value
+  const cat = (m) => (m.category || '').toLowerCase()
+  const typ = (m) => (m.type || '').toLowerCase()
   if (vaultFilter.value === 'all') return base
-  if (vaultFilter.value === 'protagonist') return base.filter(m => m.category === 'Protagonist')
-  if (vaultFilter.value === 'antagonist') return base.filter(m => m.category === 'Antagonist')
-  if (vaultFilter.value === 'item') return base.filter(m => m.type === 'item' || m.type === 'weapon' || m.type === 'artifact' || m.type === 'prop' || m.category === 'Item' || m.category === 'Weapons' || m.category === 'Artifacts' || m.category === 'Props')
-  if (vaultFilter.value === 'locations') return base.filter(m => m.type === 'location' || m.category === 'Locations' || m.category === 'World Setting')
+  if (vaultFilter.value === 'protagonist') {
+    return base.filter(m => cat(m) === 'protagonist')
+  }
+  if (vaultFilter.value === 'antagonist') {
+    return base.filter(m => ['antagonist', 'boss', 'minion'].includes(cat(m)))
+  }
+  if (vaultFilter.value === 'item') {
+    return base.filter(m =>
+      ['item', 'weapon', 'weapons', 'artifact', 'artifacts', 'prop', 'props', 'vehicle'].includes(typ(m)) ||
+      ['item', 'weapon', 'weapons', 'artifact', 'artifacts', 'prop', 'props', 'vehicle'].includes(cat(m))
+    )
+  }
+  if (vaultFilter.value === 'locations') {
+    return base.filter(m =>
+      typ(m) === 'location' ||
+      ['location', 'locations', 'world setting'].includes(cat(m))
+    )
+  }
   return base
 })
 

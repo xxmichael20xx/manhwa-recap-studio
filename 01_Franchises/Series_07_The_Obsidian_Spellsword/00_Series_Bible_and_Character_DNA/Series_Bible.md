@@ -1,5 +1,9 @@
 # 🎬 Series Bible: The Obsidian Spellsword
 
+> **[PRE-EPISODE REMEDIATION REQUIRED — DO NOT SKIP BEFORE CREATING `EP04`]**  
+> A vault and matrix audit (`2026-11-11`) detected that `character_vault/flow_entities.json` is missing on disk (`20` entities unmapped), `00_Prologue_Aiden_Drake.jpg` is duplicated across `[aiden_drake, aiden_drake_past_life]` (`audit-vault.js` Exit Code `1`), and `EP01–EP03` exhibit un-tokenized `<action_layer>` mentions, braced `<item_refs>`, `G07`/`G10`/`G31`/`G35`/`G38`/`G39` defects.  
+> **MANDATORY FIRST STEP:** Read and complete [`PRE_NEXT_EPISODE_FIX_NOTES.md`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/01_Franchises/Series_07_The_Obsidian_Spellsword/00_Series_Bible_and_Character_DNA/PRE_NEXT_EPISODE_FIX_NOTES.md) and achieve Exit Code `0` on `node studio/scripts/audit-vault.js Series_07_The_Obsidian_Spellsword` before starting `EP04`.
+
 > **Series ID:** `Series_07_The_Obsidian_Spellsword`  
 > **Canonical Title:** *The Obsidian Spellsword: Reborn to Sever the Gods*  
 > **Format:** 16:9 Full-Bleed Landscape (Widescreen Cinematic Composition)  

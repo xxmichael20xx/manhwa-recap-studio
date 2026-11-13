@@ -1023,6 +1023,75 @@ function buildModelGenerationPrompt(item, format = '16:9 Full-Bleed Landscape', 
   return `${ratioPrefix} ${item.name}, ${desc}. Dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, ${ratioSuffix}`
 }
 
+/**
+ * Resolve reference plate existence and earliest disk timestamp across candidate vault directories.
+ * @param {string} plateFile Plate filename to locate
+ * @param {string[]} searchDirs Ordered directory paths to check
+ * @returns {{ hasPlate: boolean, createdAtMs: number }}
+ */
+function resolveVaultPlateMeta(plateFile, searchDirs = []) {
+  if (!plateFile) return { hasPlate: false, createdAtMs: 0 }
+  for (const dir of searchDirs) {
+    if (!dir) continue
+    const candidate = path.join(dir, plateFile)
+    if (fs.existsSync(candidate)) {
+      try {
+        const st = fs.statSync(candidate)
+        const birth = Number.isFinite(st.birthtimeMs) ? st.birthtimeMs : st.mtimeMs
+        const mod = Number.isFinite(st.mtimeMs) ? st.mtimeMs : birth
+        return { hasPlate: true, createdAtMs: Math.min(birth, mod) || 0 }
+      } catch (_) {
+        return { hasPlate: true, createdAtMs: 0 }
+      }
+    }
+  }
+  return { hasPlate: false, createdAtMs: 0 }
+}
+
+/**
+ * Parse the leading sequence index from a vault plate filename (e.g. "01b_..." -> { hasNum: true, num: 1, suffix: "b" }).
+ * @param {string} filename Vault reference plate filename
+ * @returns {{ hasNum: boolean, num: number, suffix: string }}
+ */
+function extractPlateSequence(filename = '') {
+  const match = String(filename || '').match(/^0*(\d+)([a-z])?(?:_|-|\.)/i)
+  if (!match) return { hasNum: false, num: Number.MAX_SAFE_INTEGER, suffix: '' }
+  return {
+    hasNum: true,
+    num: parseInt(match[1], 10),
+    suffix: (match[2] || '').toLowerCase()
+  }
+}
+
+/**
+ * Sort vault models strictly oldest-first -> newest-below by sequential plate prefix,
+ * falling back to earliest plate disk timestamp (for unnumbered assets) and original ingestion order.
+ * Strips internal sorting fields before returning API payloads.
+ * @param {Array<object>} items Deduplicated vault model items
+ * @param {string[]} searchDirs Candidate directories used to resolve missing timestamps
+ * @returns {Array<object>}
+ */
+function sortVaultModelsOldestFirst(items, searchDirs = []) {
+  return items
+    .map((item, idx) => {
+      const seq = extractPlateSequence(item.filename || item.id)
+      const createdAtMs = item._createdAtMs || resolveVaultPlateMeta(item.filename, searchDirs).createdAtMs
+      return { item, idx, seq, createdAtMs }
+    })
+    .sort((a, b) => {
+      if (a.seq.num !== b.seq.num) return a.seq.num - b.seq.num
+      if (a.seq.suffix !== b.seq.suffix) return a.seq.suffix.localeCompare(b.seq.suffix)
+      if (!a.seq.hasNum && !b.seq.hasNum && a.createdAtMs > 0 && b.createdAtMs > 0 && a.createdAtMs !== b.createdAtMs) {
+        return a.createdAtMs - b.createdAtMs
+      }
+      return a.idx - b.idx
+    })
+    .map(({ item }) => {
+      const { _createdAtMs, ...clean } = item
+      return clean
+    })
+}
+
 app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
   try {
     const { franchiseId } = req.params
@@ -1284,7 +1353,7 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
             episodes: []
           }
         })
-        return res.json(images)
+        return res.json(sortVaultModelsOldestFirst(images, [activeDir]))
       }
     }
 
@@ -1316,7 +1385,7 @@ app.get('/api/franchises/:franchiseId/character-models', async (req, res) => {
       deduplicated.push(item)
     }
 
-    res.json(deduplicated)
+    res.json(sortVaultModelsOldestFirst(deduplicated, [vaultDir, modelsDir, charFilesDir]))
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

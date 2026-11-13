@@ -1,0 +1,278 @@
+{
+  "episodeId": "EP07_The_Class_SSS_Rupture_and_the_Asura_Descent",
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "generatedAt": "2026-11-11T02:00:00.000Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "overcast_crimson_morning",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "lighting": "overcast_crimson_morning"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "lu_chen": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+    "wang_bao": "plain matte crimson cotton crew-neck t-shirt with zero text or graphics, beige cargo shorts, casual athletic sneakers",
+    "han_feng": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots",
+    "jiang_qingxue": "elegant modern white designer trench coat over pale cyan silk dress, silver belt buckle, low heels",
+    "marshal_lei_gang": "dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots",
+    "ye_xingchen": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes",
+    "asura_blood_sovereign": "spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning"
+  },
+  "held_props": {
+    "tactical_spirit_spectrometer": {
+      "canonical_name": "Tactical Spirit Spectrometer",
+      "container": null,
+      "visual_form": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas",
+      "notes": "Handheld bare instrument when scanning; zero protective case."
+    },
+    "celestial_star_astrolabe": {
+      "canonical_name": "Celestial Star Astrolabe",
+      "container": null,
+      "visual_form": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core",
+      "notes": "Floating or cradled bare between fingers; zero protective case."
+    },
+    "heavenly_dao_simulator_hud": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes",
+      "notes": "Textless glowing celestial geometry only."
+    },
+    "heavenly_dao_simulator_interface": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes",
+      "notes": "Textless glowing celestial geometry only."
+    },
+    "dark_charcoal_tea_mug": {
+      "canonical_name": "Dark Charcoal Ceramic Tea Mug",
+      "container": null,
+      "visual_form": "matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea",
+      "notes": "Canonical matte dark slate-charcoal mug with zero logos."
+    },
+    "bureau_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "notes": "Tactical longsword held by Commander Han Feng after drawing."
+    },
+    "bureau_recon_drone": {
+      "canonical_name": "Bureau Recon Drone",
+      "container": null,
+      "visual_form": "compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens",
+      "notes": "Recon drone hovering over transit plaza."
+    }
+  },
+  "zone_lifecycles": {
+    "troposphere.stele": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "High troposphere and stratosphere perspective during overcast morning, thirty-thousand-metre colossal obsidian-and-gold primordial stone stele descending through storm clouds, iridescent violet and golden primordial starlight auroras"
+      }
+    ],
+    "campus.perimeter_gate": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "North perimeter cordon of Qindu University during overcast morning, tungsten barricades, steel gatehouse overpass walkway, Threat Bureau command carriers, steel perimeter fence under overcast crimson sky"
+      }
+    ],
+    "bureau.command_room": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Modern 2025 subterranean Defense Council tactical war room, dark charcoal steel acoustic panels, curved obsidian console desk with blank glowing cyan geometric holographic rings, cool white LED ceiling lighting"
+      }
+    ],
+    "starfall.penthouse": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Panoramic penthouse executive suite atop Starfall Tower during overcast morning, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking overcast Jiangnan metropolis, glowing holographic radar terminals"
+      }
+    ],
+    "dorm.402": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Modern Qindu University male dorm Room 402 during overcast morning, single brushed-steel lofted bunk bed, wooden study desk with kettle, white walls, tiled floor, closed unbroken glass window"
+      }
+    ],
+    "jiangnan.transit_plaza": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_109",
+        "desc": "Wide 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath curving elevated steel overpass and glass pedestrian skybridge framed by flat-topped glass skyscrapers under overcast crimson storm clouds"
+      },
+      {
+        "from_scene": "IMG_110",
+        "to_scene": "IMG_168",
+        "desc": "Wide 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath shattered elevated steel overpass ruins and concrete rubble framed by flat-topped glass skyscrapers under overcast crimson storm clouds"
+      }
+    ]
+  },
+  "zone_invariants": {
+    "dorm.402": {
+      "sealed_interior": true,
+      "sealed_from_creatures": [
+        "void_vanguard_beast",
+        "nether_behemoth",
+        "asura_blood_sovereign"
+      ],
+      "banned_narrative_patterns": [
+        "\\bbroken\\s+window\\b",
+        "\\bshattered\\s+window\\b",
+        "\\bsmashed\\s+glass\\b",
+        "\\bwindow\\s+(?:shattered|exploded|burst)\\b",
+        "\\bempty\\s+sky\\s+above\\s+Lu\\s+Chen'?s\\s+(?:pristine\\s+)?desk\\b",
+        "\\bcollapsed\\s+onto\\s+(?:his\\s+)?mattress\\b"
+      ],
+      "banned_feature_patterns": [
+        "\\bbroken\\s+window\\b",
+        "\\bshattered\\s+window\\b",
+        "\\bsmashed\\s+glass\\b",
+        "\\bmattress\\b",
+        "\\bbunk\\s+beds\\b"
+      ]
+    }
+  },
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:stone\\s+battlement|battlements?|crenelated|parapets?|castle\\s+walls?|drawbridge|fortress\\s+keep)\\b",
+      "message": "Medieval architecture banned in modern 2025 urban setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\bdark\\s+night\\s+sky\\b|\\bfloodlit\\s+night\\b|\\bnocturnal\\s+searchlights\\b|\\bbright\\s+blue\\s+sky\\b|\\bclear\\s+blue\\s+sky\\b",
+      "exclude_zones": [],
+      "message": "Inconsistent lighting banned in overcast crimson morning timeline"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\btactical\\s+spirit\\s+spectrometer\\b|\\bspectrometer\\b",
+      "requiredToken": "@{Tactical Spirit Spectrometer}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bcelestial\\s+star\\s+astrolabe\\b|\\bastrolabe\\b",
+      "requiredToken": "@{Celestial Star Astrolabe}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bheavenly\\s+dao\\s+simulator\\b|\\bsimulator\\s+(?:hud|interface)\\b",
+      "requiredToken": "@{Heavenly Dao Simulator Interface}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bdark\\s+charcoal\\s+(?:ceramic\\s+)?tea\\s+mug\\b|\\bceramic\\s+tea\\s+mug\\b",
+      "requiredToken": "@{Dark Charcoal Ceramic Tea Mug}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bbureau\\s+(?:tactical\\s+)?alloy\\s+longsword\\b|\\balloy\\s+longsword\\b",
+      "requiredToken": "@{Bureau Tactical Alloy Longsword}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bbureau\\s+recon\\s+drone\\b|\\brecon\\s+drone\\b",
+      "requiredToken": "@{Bureau Recon Drone}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Dark Charcoal Ceramic Tea Mug",
+      "bannedPattern": "\\b(?:ceramic\\s+tea\\s+mug|dark\\s+tea\\s+mug|jasmine\\s+tea\\s+cup|porcelain\\s+mug)\\b",
+      "allowedPattern": "Dark\\s+Charcoal\\s+Ceramic\\s+Tea\\s+Mug"
+    },
+    {
+      "canonical": "Bureau Tactical Alloy Longsword",
+      "bannedPattern": "\\b(?:alloy\\s+longsword|steel\\s+longsword|longsword|service\\s+blade|tactical\\s+sword)\\b",
+      "allowedPattern": "Bureau\\s+Tactical\\s+Alloy\\s+Longsword"
+    },
+    {
+      "canonical": "Tactical Spirit Spectrometer",
+      "bannedPattern": "\\b(?:appraisal\\s+device|scanning\\s+device|smoking\\s+device|shattered\\s+device|ruined\\s+spectrometer|digital\\s+indicator|digital\\s+sensor|scorched\\s+circuitry|handheld\\s+spectrometer|tactical\\s+spectrometer|spirit\\s+spectrometer|mana\\s+scanner)\\b",
+      "allowedPattern": "Tactical\\s+Spirit\\s+Spectrometer"
+    },
+    {
+      "canonical": "Celestial Star Astrolabe",
+      "bannedPattern": "\\b(?:star\\s+astrolabe|silver\\s+astrolabe|platinum\\s+star\\s+astrolabe|meteoric\\s+platinum|ancient\\s+astrolabe)\\b",
+      "allowedPattern": "Celestial\\s+Star\\s+Astrolabe"
+    },
+    {
+      "canonical": "Heavenly Dao Simulator Interface",
+      "bannedPattern": "\\b(?:simulator\\s+hud|simulator\\s+window|dao\\s+interface)\\b",
+      "allowedPattern": "Heavenly\\s+Dao\\s+Simulator\\s+Interface"
+    },
+    {
+      "canonical": "Bureau Recon Drone",
+      "bannedPattern": "\\b(?:recon\\s+drone|tactical\\s+drone|camera\\s+drone|black\\s+drone)\\b",
+      "allowedPattern": "Bureau\\s+Recon\\s+Drone"
+    }
+  ],
+  "prop_continuity_windows": [
+    {
+      "holder_id": "han_feng",
+      "prop_id": "tactical_spirit_spectrometer",
+      "prop_token": "@{Tactical Spirit Spectrometer}",
+      "from_scene": "IMG_034",
+      "to_scene": "IMG_037"
+    },
+    {
+      "holder_id": "han_feng",
+      "prop_id": "tactical_spirit_spectrometer",
+      "prop_token": "@{Tactical Spirit Spectrometer}",
+      "from_scene": "IMG_040",
+      "to_scene": "IMG_041"
+    },
+    {
+      "holder_id": "han_feng",
+      "prop_id": "tactical_spirit_spectrometer",
+      "prop_token": "@{Tactical Spirit Spectrometer}",
+      "from_scene": "IMG_075",
+      "to_scene": "IMG_079"
+    },
+    {
+      "holder_id": "han_feng",
+      "prop_id": "bureau_alloy_longsword",
+      "prop_token": "@{Bureau Tactical Alloy Longsword}",
+      "from_scene": "IMG_082",
+      "to_scene": "IMG_087"
+    },
+    {
+      "holder_id": "jiang_qingxue",
+      "prop_id": "celestial_star_astrolabe",
+      "prop_token": "@{Celestial Star Astrolabe}",
+      "from_scene": "IMG_088",
+      "to_scene": "IMG_092"
+    },
+    {
+      "holder_id": "lu_chen",
+      "prop_id": "dark_charcoal_tea_mug",
+      "prop_token": "@{Dark Charcoal Ceramic Tea Mug}",
+      "from_scene": "IMG_001",
+      "to_scene": "IMG_004"
+    },
+    {
+      "holder_id": "lu_chen",
+      "prop_id": "dark_charcoal_tea_mug",
+      "prop_token": "@{Dark Charcoal Ceramic Tea Mug}",
+      "from_scene": "IMG_137",
+      "to_scene": "IMG_142"
+    },
+    {
+      "holder_id": "lu_chen",
+      "prop_id": "dark_charcoal_tea_mug",
+      "prop_token": "@{Dark Charcoal Ceramic Tea Mug}",
+      "from_scene": "IMG_164",
+      "to_scene": "IMG_165"
+    }
+  ]
+}

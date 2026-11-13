@@ -8,8 +8,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const args = process.argv.slice(2)
-const franchiseId = args[0] || 'Series_04_The_Billion_Year_Sovereign'
-const episodeId = args[1] || 'EP02_The_Campus_Appraisal_and_The_Celestial_Countdown'
+const positionalArgs = args.filter(a => !a.startsWith('--'))
+const franchiseId = positionalArgs[0] || 'Series_04_The_Billion_Year_Sovereign'
+const episodeId = positionalArgs[1] || 'EP02_The_Campus_Appraisal_and_The_Celestial_Countdown'
 let defaultBibleVoice = 'en-GB-RyanNeural'
 try {
   const fJsonFile = path.resolve(__dirname, '../../01_Franchises', franchiseId, 'franchise.json')
@@ -27,7 +28,7 @@ try {
     }
   }
 } catch (_) {}
-const voice = args[2] || defaultBibleVoice
+const voice = positionalArgs[2] || defaultBibleVoice
 const force = args.includes('--force')
 
 console.log('='.repeat(78))
@@ -41,12 +42,29 @@ console.log('-'.repeat(78))
 
 try {
   const result = await TtsService.generateEpisodeAudio(franchiseId, episodeId, voice, { force })
+  const epDir = path.resolve(__dirname, '../../01_Franchises', franchiseId, episodeId)
+  const sceneDurations = {}
+  for (const f of result.files || []) {
+    const sKey = `IMG_${String(f.scene).padStart(3, '0')}`
+    sceneDurations[sKey] = Number(((f.durationMs || 0) / 1000).toFixed(3))
+  }
+  const telemetryPath = path.join(epDir, 'audio_telemetry.json')
+  fs.writeFileSync(telemetryPath, JSON.stringify({
+    franchiseId,
+    episodeId,
+    voiceId: result.voice || voice,
+    totalDurationSeconds: Number(((result.totalDurationMs || 0) / 1000).toFixed(3)),
+    generatedCount: result.generatedCount,
+    measuredAt: new Date().toISOString(),
+    sceneDurations
+  }, null, 2), 'utf-8')
   console.log('\n' + '='.repeat(78))
   console.log(`[SUCCESS] Episode Voiceover Synthesis Complete!`)
   console.log(`Scenes Synthesized : ${result.generatedCount}`)
   console.log(`Total Duration     : ${(result.totalDurationMs / 1000).toFixed(1)}s (${Math.floor(result.totalDurationMs / 60000)}m ${Math.round((result.totalDurationMs % 60000) / 1000)}s)`)
   console.log(`Subtitle Cues      : ${result.subtitleCount}`)
   console.log(`Master Audio Track : ${result.masterAudioFile}`)
+  console.log(`Telemetry JSON     : ${telemetryPath}`)
   console.log('='.repeat(78))
   process.exit(0)
 } catch (err) {

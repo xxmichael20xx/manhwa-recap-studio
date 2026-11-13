@@ -1,0 +1,33 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","posture":"standing_calm"},"reason":"EP09 seed: Lu Chen in charcoal hoodie"}
+{"s":0,"e":"wang_bao","set":{"outfit":"red_plain_tee","posture":"standing_animated"},"reason":"EP09 seed: Wang Bao in plain red crew-neck tee"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP09 seed: Marshal Lei Gang commanding subterranean war room"}
+{"s":0,"e":"grandmaster_shen","set":{"outfit":"martial_duster","posture":"reeling_shocked"},"reason":"EP09 seed: Grandmaster Shen recovering against concrete rubble"}
+{"s":0,"e":"asura_blood_sovereign","set":{"outfit":"blood_armor","posture":"looming_colossal"},"reason":"EP09 seed: Asura Blood Sovereign towering victorious in transit plaza"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP09 seed: Han Feng at perimeter gate"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP09 seed: Jiang Qingxue at perimeter gate"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"standing_poised"},"reason":"EP09 seed: Ye Xingchen in penthouse suite"}
+{"s":0,"e":"convenience_grocery_bag","set":{"lifecycle":"equipped"},"reason":"Convenience Store Grocery Bag held by Lu Chen"}
+{"s":0,"e":"aegis_hover_tank","set":{"lifecycle":"damaged"},"reason":"Aegis hover-tanks damaged in plaza wreckage"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Bureau Recon Drone actively transmitting aerial surveillance"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Tactical longsword carried by Commander Han Feng"}
+{"s":0,"e":"celestial_star_astrolabe","set":{"lifecycle":"active"},"reason":"Brushed-brass and celestial-silver astrolabe active in Jiang Qingxue hands"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Heavenly Dao Simulator Interface active"}
+{"s":0,"e":"heaven_earth_golden_stele","set":{"lifecycle":"active"},"reason":"Colossal golden stele in troposphere"}
+{"s":10,"e":"lu_chen","set":{"posture":"carrying_grocery_bag"},"reason":"Lu Chen exits convenience store holding grocery bag"}
+{"s":28,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang notices lone pedestrian on surveillance feed"}
+{"s":41,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen halts ten paces before colossal sovereign"}
+{"s":48,"e":"asura_blood_sovereign","set":{"posture":"arms_raised_roaring"},"reason":"Asura Blood Sovereign raises four arms roaring"}
+{"s":56,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen commands Move releasing 0.0001% aura"}
+{"s":67,"e":"asura_blood_sovereign","set":{"posture":"cowering_prostrated"},"reason":"Asura Blood Sovereign buckles and collapses flat on asphalt"}
+{"s":97,"e":"asura_blood_sovereign","set":{"posture":"dissolving_ash"},"reason":"Asura Blood Sovereign dissolves rapidly into starlight ash"}
+{"s":106,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Lu Chen steps through empty space walking back"}
+{"s":110,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang executes emergency abort"}
+{"s":117,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen stands upright in sunlit ruins"}
+{"s":124,"e":"lu_chen","set":{"posture":"carrying_grocery_bag"},"reason":"Lu Chen walks along sunlit sidewalk carrying grocery bag"}
+{"s":136,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng lowers longsword observing clear sky"}
+{"s":137,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue holds astrolabe observing celestial emergence"}
+{"s":169,"e":"lu_chen","set":{"posture":"carrying_grocery_bag"},"reason":"Lu Chen unlocks Room 402 carrying grocery bag"}
+{"s":175,"e":"convenience_grocery_bag","set":{"lifecycle":"set_down"},"reason":"Lu Chen places grocery bag on wooden desk"}
+{"s":175,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen stands calmly at study desk after placing down bag"}
+{"s":180,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen sits comfortably at wooden desk sipping iced tea"}
+{"s":187,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen observes radar footage in penthouse"}

@@ -1,0 +1,48 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","posture":"standing_calm"},"reason":"EP08 initial seed: Lu Chen standing calmly in Room 402"}
+{"s":0,"e":"wang_bao","set":{"outfit":"red_plain_tee","posture":"standing_animated"},"reason":"EP08 initial seed: Wang Bao in plain red tee"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP08 initial seed: Marshal Lei Gang commanding war room"}
+{"s":0,"e":"grandmaster_shen","set":{"outfit":"martial_duster","posture":"martial_aura_stance"},"reason":"EP08 initial seed: Grandmaster Shen in martial duster"}
+{"s":0,"e":"asura_blood_sovereign","set":{"outfit":"blood_armor","posture":"looming_colossal"},"reason":"EP08 initial seed: 450M-year Asura Blood Sovereign looming in ruins"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP08 initial seed: Han Feng at perimeter gate"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP08 initial seed: Jiang Qingxue at perimeter gate"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"standing_poised"},"reason":"EP08 initial seed: Ye Xingchen in penthouse suite"}
+{"s":0,"e":"aegis_hover_tank","set":{"lifecycle":"active"},"reason":"Aegis hover-tanks active for deployment"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Recon drone ready for aerial stream"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Tactical alloy longsword held by Han Feng"}
+{"s":0,"e":"celestial_star_astrolabe","set":{"lifecycle":"active"},"reason":"Star astrolabe active in Jiang Qingxue hands"}
+{"s":5,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Lu Chen steps out into hallway and promenade"}
+{"s":13,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang gestures toward holographic maps"}
+{"s":17,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang oversees deployment"}
+{"s":20,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign stands atop shattered overpass"}
+{"s":31,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Asura Sovereign strides through plasma smoke"}
+{"s":34,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang watches feed in shock"}
+{"s":40,"e":"asura_blood_sovereign","set":{"posture":"arms_raised_roaring"},"reason":"Asura Sovereign roars throwing all four arms wide"}
+{"s":42,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Asura Sovereign lunges across highway"}
+{"s":49,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign lifts two hover-tanks"}
+{"s":53,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang orders supersonic missile barrage"}
+{"s":59,"e":"han_feng","set":{"posture":"combat_guard"},"reason":"Han Feng braces with longsword against shockwaves"}
+{"s":61,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue channels frost mist through astrolabe"}
+{"s":63,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen observes distant fireball from window"}
+{"s":67,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign stands tall in cratered ruins"}
+{"s":72,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang stares at wasteland in dread"}
+{"s":73,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang activates martial guild line"}
+{"s":79,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen descends through overcast air"}
+{"s":82,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen lands in balanced martial stance"}
+{"s":91,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen lunges forward in airborne strike"}
+{"s":94,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Asura Sovereign swings lower arms in counter"}
+{"s":97,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen executes nine palm strikes"}
+{"s":105,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang watches duel with rising hope"}
+{"s":109,"e":"asura_blood_sovereign","set":{"posture":"arms_raised_roaring"},"reason":"Asura Sovereign flares demonic aura"}
+{"s":115,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen unleashes golden dragon strike"}
+{"s":120,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen lands breathing heavily"}
+{"s":121,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign stands completely firm"}
+{"s":127,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Asura Sovereign accelerates in crimson flash"}
+{"s":130,"e":"grandmaster_shen","set":{"posture":"reeling_shocked"},"reason":"Grandmaster Shen crashed onto asphalt reeling in pain"}
+{"s":135,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Han Feng watches feed in grim horror"}
+{"s":137,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers astrolabe in despair"}
+{"s":139,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen turns away in dark realization"}
+{"s":141,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang surrounded by crimson emergency lights"}
+{"s":147,"e":"asura_blood_sovereign","set":{"posture":"arms_raised_roaring"},"reason":"Asura Sovereign roars in total victory atop rubble"}
+{"s":153,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang reaches decision"}
+{"s":158,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang turns brass launch key"}
+{"s":165,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang presses execution button"}

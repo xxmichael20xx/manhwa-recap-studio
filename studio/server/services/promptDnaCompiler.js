@@ -185,6 +185,37 @@ export class PromptDnaCompiler {
     return { enclosureText, zoneHash }
   }
 
+  static sanitizeZoneCanon(canon = '', lightingMode = '') {
+    let out = String(canon || '').trim().replace(/\.$/, '')
+    const isDaytime = ['bright_morning_sunlight', 'overcast_crimson_morning', 'day_sunlit', 'daylight', 'dawn', 'dusk'].includes(lightingMode)
+    if (!isDaytime) return out
+
+    out = out.replace(/\s*\bat night\b/gi, '')
+    if (lightingMode === 'overcast_crimson_morning') {
+      out = out
+        .replace(/under\s+(?:dark\s+)?night\s+sky/gi, 'under overcast crimson storm sky')
+        .replace(/during\s+bright\s+crisp\s+morning\s+daylight/gi, 'during gloomy overcast morning hours')
+        .replace(/under\s+clear\s+high-key\s+sky/gi, 'under overcast crimson storm sky')
+        .replace(/high-intensity\s+searchlights\s+sweeping\s+campus\s+perimeter\s+fence/gi, 'reinforced steel campus perimeter fence')
+        .replace(/window\s+overlooking\s+campus\s+night\s+lamps/gi, 'closed unbroken glass window overlooking overcast stormy campus buildings')
+        .replace(/\bfloodlit\s+night\s+sky\b/gi, 'overcast crimson storm sky')
+        .replace(/\bnight\s+lamps\b/gi, 'overcast stormy campus buildings')
+    } else {
+      out = out
+        .replace(/under\s+(?:dark\s+)?night\s+sky/gi, 'under bright sunlit morning sky')
+        .replace(/high-intensity\s+searchlights\s+sweeping\s+campus\s+perimeter\s+fence/gi, 'reinforced steel campus perimeter fence')
+        .replace(/window\s+overlooking\s+campus\s+night\s+lamps/gi, 'closed unbroken glass window overlooking sunlit campus buildings')
+        .replace(/\bfloodlit\s+night\s+sky\b/gi, 'bright sunlit morning sky')
+        .replace(/\bnight\s+lamps\b/gi, 'sunlit campus buildings')
+    }
+
+    return out
+      .replace(/\s*,\s*,+/g, ',')
+      .replace(/\s{2,}/g, ' ')
+      .replace(/,\s*$/, '')
+      .trim()
+  }
+
   static applyPolicyReplacements(text = '', policy = null) {
     let out = String(text)
     if (policy && policy.replacements && typeof policy.replacements === 'object') {

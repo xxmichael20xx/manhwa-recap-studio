@@ -1,0 +1,146 @@
+{
+  "episodeId": "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-12T01:50:00.000Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "day_sunlit",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_008",
+        "lighting": "dawn"
+      },
+      {
+        "from_scene": "IMG_009",
+        "to_scene": "IMG_072",
+        "lighting": "day_sunlit"
+      },
+      {
+        "from_scene": "IMG_073",
+        "to_scene": "IMG_120",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_121",
+        "to_scene": "IMG_176",
+        "lighting": "day_sunlit"
+      },
+      {
+        "from_scene": "IMG_177",
+        "to_scene": "IMG_192",
+        "lighting": "dusk"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, burnished dark leather travel boots, dark travel cloak with discreet silver buckle clasp",
+    "elder_rowan_thorne": "durable brown leather hunter doublet over woollen tunic, canvas work trousers tucked into muddy frontier boots, leather tool belt carrying dried herb satchels",
+    "bandit_leader_douglas": "reinforced dark leather brigandine vest over coarse grey woollen tunic, studded iron bracers on forearms, rugged dirt-stained charcoal trousers, heavy buckled dark leather highwayman boots",
+    "highway_bandit_raiders": "mismatched rugged dark leather doublets, ragged wool tunics, dirt-stained brown trousers, scuffed worn leather boots",
+    "lord_cedric_vance": "opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots",
+    "proctor_alistair": "dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, gleaming silver insignia brooch pinned at neckline, durable black leather scholar boots"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "sleek dense hand-whittled blackwood quarterstaff with glowing spiral mana veins and iron-shod base",
+      "notes": "Locked across all episode scenes."
+    },
+    "rowan_recommendation_letter": {
+      "canonical_name": "Rowan Recommendation Letter",
+      "container": null,
+      "visual_form": "thick rolled heavy vellum parchment document tied with crimson silk ribbon and dark-red wax anvil seal",
+      "notes": "Locked across all episode scenes."
+    },
+    "arcane_resonance_crystal_pillar": {
+      "canonical_name": "Arcane Resonance Crystal Pillar",
+      "container": null,
+      "visual_form": "colossal ten-foot translucent octagonal mana crystal monolith hovering above a silver-granite pedestal with brass diagnostic rings",
+      "notes": "Stationary monolith in Academy Resonance Testing Hall."
+    },
+    "gilded_sapphire_wand": {
+      "canonical_name": "Gilded Sapphire Wand",
+      "container": null,
+      "visual_form": "slender fourteen-inch ivory wand wrapped in spiraling gold filigree and capped with a faceted star-sapphire crystal tip",
+      "notes": "Locked across all episode scenes."
+    },
+    "bandit_leader_greatsword": {
+      "canonical_name": "Bandit Leader Greatsword",
+      "container": null,
+      "visual_form": "massive four-foot broad notched iron executioner greatsword with heavy steel crossguard and brown leather hilt",
+      "notes": "Locked across all episode scenes."
+    },
+    "imperial_applicant_ledger": {
+      "canonical_name": "Imperial Applicant Ledger",
+      "container": null,
+      "visual_form": "thick dark-blue leather registry folio embossed with silver eagle crest and open cream vellum pages",
+      "notes": "Locked across all episode scenes."
+    }
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {},
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:skyscraper|asphalt|streetlights?|hover-car|hover-sedan|neon\\s+sign|laptop|smartphone|tarmac)\\b",
+      "message": "Modern urban architecture/tech forbidden in high-fantasy medieval Valerius setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\b(?:heavy\\s+snowfall|blizzard\\s+drifts|snow-covered\\s+road|winter\\s+slush)\\b",
+      "exclude_zones": [],
+      "message": "Unilateral snow/blizzard weather forbidden on temperate Valerius highway and academy grounds"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\bcarved\\s+blackwood\\s+staff\\b",
+      "requiredToken": "@{Carved Blackwood Staff}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\browan\\s+recommendation\\s+letter\\b",
+      "requiredToken": "@{Rowan Recommendation Letter}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\barcane\\s+resonance\\s+crystal\\s+pillar\\b",
+      "requiredToken": "@{Arcane Resonance Crystal Pillar}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bgilded\\s+sapphire\\s+wand\\b",
+      "requiredToken": "@{Gilded Sapphire Wand}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bbandit\\s+leader\\s+greatsword\\b",
+      "requiredToken": "@{Bandit Leader Greatsword}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bimperial\\s+applicant\\s+ledger\\b",
+      "requiredToken": "@{Imperial Applicant Ledger}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Carved Blackwood Staff",
+      "bannedPattern": "\\b(?:peasant\\s+stick|walking\\s+stick|wooden\\s+stick|wooden\\s+staff)\\b",
+      "allowedPattern": "Carved\\s+Blackwood\\s+Staff"
+    },
+    {
+      "canonical": "Gilded Sapphire Wand",
+      "bannedPattern": "\\b(?:ivory\\s+wand|sapphire\\s+wand|golden\\s+wand)\\b",
+      "allowedPattern": "Gilded\\s+Sapphire\\s+Wand"
+    },
+    {
+      "canonical": "Bandit Leader Greatsword",
+      "bannedPattern": "\\b(?:iron\\s+greatsword|executioner\\s+sword|heavy\\s+greatsword)\\b",
+      "allowedPattern": "Bandit\\s+Leader\\s+Greatsword"
+    }
+  ]
+}

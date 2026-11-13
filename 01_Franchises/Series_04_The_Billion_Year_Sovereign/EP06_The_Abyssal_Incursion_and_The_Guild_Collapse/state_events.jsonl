@@ -1,0 +1,37 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","posture":"casual_seated_desk"},"reason":"EP06 initial seed; Lu Chen seated calmly at wooden desk wearing charcoal hoodie"}
+{"s":0,"e":"jade_spirit_blade","set":{"lifecycle":"destroyed"},"reason":"Shattered into dust in EP01; can never be equipped again"}
+{"s":0,"e":"wang_bao","set":{"outfit":"red_plain_tee","posture":"standing_animated"},"reason":"EP06 initial seed; Wang Bao wearing plain matte crimson t-shirt"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP06 initial seed; Commander Han Feng in tactical uniform without distracting talisman"}
+{"s":0,"e":"commander_han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP06 mirror seed for commander_han_feng alias lookup"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP06 initial seed; Jiang Qingxue in pristine white designer trench coat"}
+{"s":0,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"equipped"},"reason":"Bureau sensor active before Han Feng draws it"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Translucent obsidian HUD active before Lu Chen"}
+{"s":0,"e":"celestial_star_astrolabe","set":{"lifecycle":"active"},"reason":"Divination instrument carried by Jiang Qingxue"}
+{"s":0,"e":"aluminium_baseball_bat","set":{"lifecycle":"equipped"},"reason":"Brushed aluminium baseball bat held by Wang Bao during panic"}
+{"s":0,"e":"dark_charcoal_tea_mug","set":{"lifecycle":"equipped"},"reason":"Matte dark slate-charcoal ceramic mug filled with steaming jasmine tea"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Gunmetal tactical longsword initially sheathed at Han Feng waist"}
+{"s":0,"e":"nether_behemoth","set":{"outfit":"default","posture":"standing"},"reason":"Colossal smooth-skulled Class-SS abyssal titan"}
+{"s":0,"e":"void_vanguard_beast","set":{"outfit":"default","posture":"standing"},"reason":"Predatory winged obsidian-chitin void scout"}
+{"s":14,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen lifts Dark Charcoal Ceramic Tea Mug for calm morning sips"}
+{"s":19,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen sets down mug and sits casually at study desk"}
+{"s":76,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Han Feng raises Tactical Spirit Spectrometer to scan approaching anomaly"}
+{"s":76,"e":"commander_han_feng","set":{"posture":"scanning_device"},"reason":"Mirror scanning_device transition for commander_han_feng"}
+{"s":80,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"fried"},"reason":"Spectrometer emits thin smoke and cracks under Class-SS pressure"}
+{"s":83,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Han Feng lowers damaged spectrometer and issues perimeter orders"}
+{"s":83,"e":"commander_han_feng","set":{"posture":"standing_command"},"reason":"Mirror standing_command transition for commander_han_feng"}
+{"s":87,"e":"han_feng","set":{"posture":"combat_guard"},"reason":"Han Feng draws Bureau Tactical Alloy Longsword into defensive stance"}
+{"s":87,"e":"commander_han_feng","set":{"posture":"combat_guard"},"reason":"Mirror combat_guard transition for commander_han_feng"}
+{"s":87,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Han Feng draws longsword cleanly from matte dark tactical scabbard"}
+{"s":101,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue channels Glacial Lotus Domain through Celestial Star Astrolabe"}
+{"s":112,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers her hand calmly as cyan frost domain settles"}
+{"s":113,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Han Feng lowers longsword tip in awe beside Jiang Qingxue"}
+{"s":113,"e":"commander_han_feng","set":{"posture":"standing_command"},"reason":"Mirror standing_command transition at IMG_113"}
+{"s":122,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen traces rim of Dark Charcoal Ceramic Tea Mug in Dormitory Room 402"}
+{"s":123,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen sits relaxed at his desk beside agitated Wang Bao"}
+{"s":123,"e":"wang_bao","set":{"posture":"gripping_stance"},"reason":"Wang Bao braces tensely clutching Aluminium Baseball Bat"}
+{"s":138,"e":"wang_bao","set":{"posture":"cowering_floor"},"reason":"Wang Bao drops cowering low on tiled floor clutching Aluminium Baseball Bat"}
+{"s":143,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen touches rim of Dark Charcoal Ceramic Tea Mug undisturbed"}
+{"s":144,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen remains seated calmly while addressing terrified Wang Bao"}
+{"s":145,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen extends a single slender index finger for effortless sovereign flick"}
+{"s":151,"e":"wang_bao","set":{"posture":"standing_animated"},"reason":"Wang Bao rises in shock staring out the closed unbroken glass window"}
+{"s":156,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen lifts Dark Charcoal Ceramic Tea Mug for final calm sip"}

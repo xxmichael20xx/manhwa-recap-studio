@@ -60,6 +60,17 @@ const legacyChars = readJsonSafe(path.join(franchiseDir, 'character_vault/charac
                     readJsonSafe(path.join(franchiseDir, 'character_vault/characters.json')) || []
 const legacyItems = readJsonSafe(path.join(franchiseDir, 'character_vault/items.json'))?.items ||
                     readJsonSafe(path.join(franchiseDir, 'character_vault/items.json')) || []
+const worldState = readJsonSafe(path.join(epPath, 'world_state.json')) || null
+const strictWorldState = Boolean(
+  worldState && (
+    worldState.timeline?.enforced ||
+    (worldState.zone_lifecycles && Object.keys(worldState.zone_lifecycles).length > 0) ||
+    worldState.zone_invariants ||
+    (Array.isArray(worldState.prop_contracts) && worldState.prop_contracts.length > 0) ||
+    (Array.isArray(worldState.architecture_bans) && worldState.architecture_bans.length > 0) ||
+    (Array.isArray(worldState.continuity_bans) && worldState.continuity_bans.length > 0)
+  )
+)
 
 const allZonesList = Object.keys(zones)
 const zoneById = new Map()
@@ -93,10 +104,17 @@ allChars.forEach(c => {
   }
 })
 
-// Build inanimate item set to enforce Rule 15 (Inanimate Prop Still-Life Purity)
+// Build inanimate item and creature sets to enforce Rule 15 & Creature Identity Rules
 const inanimateItemNames = new Set()
+const creatureNames = new Set()
 if (Object.keys(entities).length > 0) {
   for (const ent of Object.values(entities)) {
+    if (ent.kind === 'creature') {
+      const cname = ent.name || ent.token?.replace(/^@\{|\}$/g, '') || ''
+      if (cname) creatureNames.add(cname.toLowerCase())
+      if (ent.id) creatureNames.add(ent.id.toLowerCase())
+      if (ent.aliases) ent.aliases.forEach(a => creatureNames.add(a.toLowerCase()))
+    }
     if (ent.kind === 'item' || ent.isAnimate === false || ent.type === 'Prop' || ent.category === 'Weapon') {
       const name = ent.name || ent.token?.replace(/^@\{|\}$/g, '') || ''
       if (name) inanimateItemNames.add(name.toLowerCase())
@@ -125,6 +143,7 @@ const issues = {
   unanchoredNouns: [],
   missingProps: [],
   synonymDrift: [],
+  continuityLeaks: [],
   pacingWarnings: [],
   batches: []
 }
@@ -177,26 +196,42 @@ if (unanchoredMatches.length > 0) issues.unanchoredNouns = unanchoredMatches
 
 // 1d. Check for Missing Prop Declarations in Staging Headers (Strict Semantic Prop Parity)
 const missingPropMatches = []
-const PROP_CONTRACTS = [
+const LEGACY_PROP_CONTRACTS = [
   { term: /\b(dummy|iron-wood|sparring mannequin|runic target)\b/i, requiredToken: '@{Enchanted Iron-Wood Practice Dummy}' },
   { term: /\b(wooden rod|practice stick|wooden stick|sparring baton)\b/i, requiredToken: '@{Wooden Practice Rod}' },
   { term: /\b(silver rapier|training rapier|practice rapier)\b/i, requiredToken: '@{Vaelgard Silver Training Rapier}' }
 ]
+const activePropContracts = (Array.isArray(worldState?.prop_contracts) && worldState.prop_contracts.length > 0)
+  ? worldState.prop_contracts.map(c => ({
+      term: new RegExp(c.pattern, 'i'),
+      requiredToken: c.requiredToken,
+      outsideQuotesOnly: c.outsideQuotesOnly !== false
+    }))
+  : LEGACY_PROP_CONTRACTS
 
 lines.forEach((line, idx) => {
   if (line.includes('<!--') && line.includes('PROPS:')) {
     const propsMatch = line.match(/PROPS:\s*\[([^\]]*)\]/i)
     const activePropsStr = propsMatch ? propsMatch[1] : ''
+    const activePropsLower = activePropsStr.toLowerCase()
     
     // Check next narrative lines until next tag or empty line
     let narrative = ''
     for (let j = idx + 1; j < Math.min(lines.length, idx + 4); j++) {
       if (lines[j].trim().startsWith('[IMG_')) break
-      narrative += ' ' + lines[j].trim()
+      const cleanLine = lines[j].replace(/<!--[\s\S]*?-->/g, '').trim()
+      if (cleanLine) narrative += ' ' + cleanLine
     }
+    // Note: in V2 scripts, the narration is on the line BEFORE the staging comment, or same line
+    if (!narrative.trim() && idx > 0) {
+      narrative = lines[idx - 1].replace(/<!--[\s\S]*?-->/g, '').trim()
+    }
+    const narrativeOutsideQuotes = narrative.replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
 
-    PROP_CONTRACTS.forEach(contract => {
-      if (contract.term.test(narrative) && !activePropsStr.includes(contract.requiredToken)) {
+    activePropContracts.forEach(contract => {
+      const scanText = contract.outsideQuotesOnly ? narrativeOutsideQuotes : narrative
+      const reqClean = contract.requiredToken.replace(/[@{}]/g, '').toLowerCase()
+      if (contract.term.test(scanText) && !activePropsStr.includes(contract.requiredToken) && !activePropsLower.includes(reqClean)) {
         missingPropMatches.push({
           line: idx + 1,
           prop: contract.requiredToken,
@@ -210,7 +245,7 @@ if (missingPropMatches.length > 0) issues.missingProps = missingPropMatches
 
 // 1e. Check for Lexical Monomorphism & Synonym Drift (The >= 2 Recurrence & Monomorphism Rule)
 const synonymDriftMatches = []
-const SYNONYM_DRIFT_RULES = [
+const LEGACY_SYNONYM_DRIFT_RULES = [
   {
     canonical: 'Wooden Practice Rod',
     bannedRegex: /\b(wooden\s+stick|wooden\s+rod|training\s+stick|practice\s+stick|sparring\s+baton|blunt\s+wooden\s+toy)\b/i,
@@ -242,13 +277,20 @@ const SYNONYM_DRIFT_RULES = [
     allowedCanonical: /Founding\s+Sword\s+Saint\s+Obsidian\s+Monument/i
   }
 ]
+const activeSynonymDriftRules = (Array.isArray(worldState?.synonym_drift_rules) && worldState.synonym_drift_rules.length > 0)
+  ? worldState.synonym_drift_rules.map(r => ({
+      canonical: r.canonical,
+      bannedRegex: new RegExp(r.bannedPattern, 'i'),
+      allowedCanonical: new RegExp(r.allowedPattern, 'i')
+    }))
+  : LEGACY_SYNONYM_DRIFT_RULES
 
 lines.forEach((line, idx) => {
   const trimmed = line.trim()
   if (trimmed.startsWith('#') || trimmed.startsWith('>') || trimmed.startsWith('<!--') || trimmed.startsWith('```')) return
   const spokenOnly = trimmed.replace(/<!--[\s\S]*?-->/g, '').replace(/\[IMG_\d+\]/g, '').trim()
 
-  SYNONYM_DRIFT_RULES.forEach(rule => {
+  activeSynonymDriftRules.forEach(rule => {
     if (rule.bannedRegex.test(spokenOnly) && !rule.allowedCanonical.test(spokenOnly)) {
       const m = spokenOnly.match(rule.bannedRegex)
       synonymDriftMatches.push({
@@ -403,6 +445,84 @@ if (boundaryDesyncs.length > 0) {
   issues.stagingHeaders.push({ type: 'spatial_boundary_desync', count: boundaryDesyncs.length, scenes: boundaryDesyncs.slice(0, 5) })
 }
 
+// 3c. Strict World-State Script Continuity, Architecture & Creature Proxy Guard (Data-Driven)
+if (strictWorldState) {
+  const archBans = Array.isArray(worldState.architecture_bans) ? worldState.architecture_bans : []
+  const contBans = Array.isArray(worldState.continuity_bans) ? worldState.continuity_bans : []
+  const zoneInvariants = worldState.zone_invariants || {}
+  const PROXY_CREATURE_REGEX = /\b(?:dark\s+aerial\s+predators?|approaching\s+monsters?|winged\s+abominations?|shadowy\s+silhouettes?|shadow\s+figures?|dark\s+humanoid\s+figures?)\b/i
+  const ESTABLISHING_COMBATANTS_REGEX = /\b(?:mercenary\s+squads?\s+(?:hurried|rushed|deployed|fired|abandoned|dropped|retreated)|uniformed\s+guards?\s+(?:loaded|fired|shouted)|mercenary\s+captains?|squads?\s+hurried|guild\s+fighters?\s+fled|active\s+soldiers?)\b/i
+
+  clauses.forEach(cl => {
+    const m = cl.rawText.match(headerRegex)
+    if (!m) return
+    const zId = m[1].trim()
+    const stageLower = m[2].trim().toLowerCase()
+    const castList = m[4].split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean)
+    const cleanClause = cl.rawText.replace(/<!--[\s\S]*?-->/g, '').trim()
+    const outsideQuotes = cleanClause.replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
+
+    for (const ban of archBans) {
+      const pat = typeof ban === 'string' ? ban : ban.pattern
+      const msg = (typeof ban === 'object' && ban.message) ? ban.message : `Architecture ban matched "${pat}"`
+      if (pat && new RegExp(pat, 'i').test(cleanClause)) {
+        issues.continuityLeaks.push({ id: cl.id, zone: zId, message: `${msg}: "${cleanClause.slice(0, 90)}..."` })
+      }
+    }
+
+    for (const cBan of contBans) {
+      const pat = typeof cBan === 'string' ? cBan : cBan.pattern
+      const excl = (typeof cBan === 'object' && Array.isArray(cBan.exclude_zones)) ? cBan.exclude_zones : []
+      if (excl.includes(zId)) continue
+      const msg = (typeof cBan === 'object' && cBan.message) ? cBan.message : `Continuity ban matched "${pat}"`
+      if (pat && new RegExp(pat, 'i').test(outsideQuotes)) {
+        issues.continuityLeaks.push({ id: cl.id, zone: zId, message: `${msg}: "${cleanClause.slice(0, 90)}..."` })
+      }
+    }
+
+    if (PROXY_CREATURE_REGEX.test(outsideQuotes)) {
+      const mProxy = outsideQuotes.match(PROXY_CREATURE_REGEX)
+      issues.continuityLeaks.push({
+        id: cl.id,
+        zone: zId,
+        message: `Unanchored creature/shadow proxy phrase "${mProxy[0]}" outside quotes; must name canonical creature entity.`
+      })
+    }
+
+    if (stageLower === 'establishing' && ESTABLISHING_COMBATANTS_REGEX.test(outsideQuotes)) {
+      issues.continuityLeaks.push({
+        id: cl.id,
+        zone: zId,
+        message: `STAGE: establishing scene describes active human combatants/squads ("${cleanClause.slice(0, 80)}..."). Establishing shots must depict empty/evacuated environments.`
+      })
+    }
+
+    const zInv = zoneInvariants[zId]
+    if (zInv && zInv.sealed_interior) {
+      const hasCreatureInCast = castList.some(c => creatureNames.has(c.toLowerCase()))
+      const hasHumanInCast = castList.some(c => !creatureNames.has(c.toLowerCase()))
+      if (hasCreatureInCast && !hasHumanInCast) {
+        issues.continuityLeaks.push({
+          id: cl.id,
+          zone: zId,
+          message: `Sealed interior zone "${zId}" staged with creature-only CAST [${castList.join(', ')}] and zero human interior observers. Move exterior creature shots to an exterior zone.`
+        })
+      }
+      if (Array.isArray(zInv.banned_narrative_patterns)) {
+        for (const bp of zInv.banned_narrative_patterns) {
+          if (new RegExp(bp, 'i').test(outsideQuotes)) {
+            issues.continuityLeaks.push({
+              id: cl.id,
+              zone: zId,
+              message: `Sealed interior breach/invariant violation matching /${bp}/i in "${cleanClause.slice(0, 85)}..."`
+            })
+          }
+        }
+      }
+    }
+  })
+}
+
 // 4. Auto-Heal Headers if requested
 if (isHeal) {
   console.log(`\x1b[33m[HEAL]\x1b[0m Inferring and injecting V2.1 Staging Headers for ${clauses.length} scenes...`)
@@ -525,7 +645,7 @@ const expectedBatches = Math.ceil(sceneTags.length / 24)
 const wordCount = scriptText.trim().split(/\s+/).length
 const estimatedMinutes = Math.round(wordCount / 155)
 
-const totalIssues = issues.atTokens.length + issues.sceneTags.length + issues.stagingHeaders.length + issues.bannedJargon.length + issues.unanchoredNouns.length + issues.missingProps.length + issues.synonymDrift.length
+const totalIssues = issues.atTokens.length + issues.sceneTags.length + issues.stagingHeaders.length + issues.bannedJargon.length + issues.unanchoredNouns.length + issues.missingProps.length + issues.synonymDrift.length + issues.continuityLeaks.length
 
 if (jsonOnly) {
   console.log(JSON.stringify({
@@ -569,6 +689,15 @@ if (issues.synonymDrift.length > 0) {
   issues.synonymDrift.slice(0, 10).forEach(s => {
     console.log(`  Line ${s.line}: Found informal synonym "${s.matched}" -> Must use canonical "${s.canonical}" (${s.text}...)`);
   });
+}
+if (issues.continuityLeaks.length > 0) {
+  console.log('\x1b[31m[FAIL]\x1b[0m World-State Continuity, Architecture & Barrier Isolation Violations:');
+  issues.continuityLeaks.slice(0, 12).forEach(c => {
+    console.log(`  [${c.id} | ${c.zone}] ${c.message}`);
+  });
+  if (issues.continuityLeaks.length > 12) {
+    console.log(`  ... and ${issues.continuityLeaks.length - 12} more.`);
+  }
 }
 if (issues.bannedJargon.length > 0) {
   console.log('\x1b[31m[FAIL]\x1b[0m Spoken Narration Contains Banned Clinical Jargon:');

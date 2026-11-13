@@ -8,15 +8,17 @@
       "type": "Weapon",
       "apparent_rank": "48,000-Year Golden Core Spirit Weapon",
       "true_rank": "Mundane Alloy (Shattered on Contact with Lu Chen)",
-      "description": "A luminous cyan-edged modern high-frequency spirit saber inscribed with Golden Core talismans by the Gu Capital Syndicate. Shatters into powder upon striking Lu Chen's neck.",
-      "dna_prompt_anchor": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16",
+      "description": "Single-edged curved silver-steel dao blade with glowing cyan spirit runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped in emerald cord, and flowing cyan silk tassel.",
+      "dna_prompt_anchor": "@{Gu Syndicate Custom Spirit Blade}, single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
       "reference_plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03",
+        "EP04"
       ],
-      "dna": "@{Weapon: Custom Spirit Blade}, modern high-tech cyan spirit saber with jade runic engravings along blade edge, glowing spirit qi aura, dark fantasy modern manhwa style, vertical 9:16",
-      "visual_dna": "A luminous cyan-edged modern high-frequency spirit saber inscribed with Golden Core talismans by the Gu Capital Syndicate. Shatters into powder upon striking Lu Chen's neck."
+      "dna": "single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel",
+      "visual_dna": "Single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel."
     },
     {
       "id": "tactical_spirit_spectrometer",
@@ -25,16 +27,22 @@
       "type": "Prop",
       "apparent_rank": "Threat Bureau Spirit-Energy Sensor",
       "true_rank": "Military Grade Spatial Leyline Analyzer",
-      "description": "Ruggedized dark olive-drab and brushed-brass handheld spirit spectrometer used by Inspector Han Feng to measure atmospheric qi density.",
-      "dna_prompt_anchor": "@{Prop: Tactical Spirit Spectrometer}, ruggedized dark olive-drab and brass rectangular handheld sensor, glowing amber vacuum-tube digital readout, circular quartz crystal lens, modern manhwa style, vertical 9:16",
+      "description": "Retro-military olive-drab and brushed-brass rectangular handheld box with heavy black rubber corner bumpers, top circular brushed-brass sensor nozzle emitting warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, and two olive knurled rotary knobs; zero digital LCD screens, zero antennas.",
+      "dna_prompt_anchor": "@{Tactical Spirit Spectrometer}, retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
       "reference_plate": "09_Prop_Tactical_Spirit_Spectrometer.jpg",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Prop: Tactical Spirit Spectrometer}, ruggedized dark olive-drab and brass rectangular handheld sensor, glowing amber vacuum-tube digital readout, circular quartz crystal lens, modern manhwa style, vertical 9:16",
-      "visual_dna": "Ruggedized dark olive-drab and brushed-brass handheld spirit spectrometer used by Inspector Han Feng to measure atmospheric qi density."
+      "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas",
+      "visual_dna": "Retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas."
     },
     {
       "id": "heavenly_dao_simulator_hud",
@@ -43,16 +51,22 @@
       "type": "Item",
       "apparent_rank": "Modern Floating Cultivation System HUD",
       "true_rank": "Reality Fusing Cosmic Dao Engine",
-      "description": "A sleek translucent holographic cultivation system interface floating in mid-air in front of Lu Chen. Displays real-time primordial Dao accumulation, reality-fusion countdown, and breakthrough milestones with glowing golden celestial glyphs.",
-      "dna_prompt_anchor": "@{Item: Heavenly Dao Simulator HUD}, sleek translucent dark obsidian-glass holographic cultivation system window floating in mid-air, glowing golden celestial runes, modern minimalist gauges, starlight particles, modern 2025 urban cultivation manhwa style, vertical 9:16",
+      "description": "Translucent obsidian-and-gold holographic cultivation system window floating in mid-air with celestial gold concentric compass rings, minimalist dark panes, and glowing golden geometric runes and gauges.",
+      "dna_prompt_anchor": "@{Heavenly Dao Simulator Interface}, translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
       "reference_plate": "13_Item_Heavenly_Dao_Simulator_HUD.jpg",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Item: Heavenly Dao Simulator HUD}, sleek translucent dark obsidian-glass holographic cultivation system window floating in mid-air, glowing golden celestial runes, modern minimalist gauges, starlight particles, modern 2025 urban cultivation manhwa style, vertical 9:16",
-      "visual_dna": "A sleek translucent holographic cultivation system interface floating in mid-air in front of Lu Chen. Displays real-time primordial Dao accumulation, reality-fusion countdown, and breakthrough milestones with glowing golden celestial glyphs."
+      "dna": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes",
+      "visual_dna": "Translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes."
     },
     {
       "id": "heaven_earth_golden_stele",
@@ -61,16 +75,19 @@
       "type": "Artifact",
       "apparent_rank": "Global Celestial Ranking Monument",
       "true_rank": "Cosmic Heavenly Dao Authority Monolith",
-      "description": "A monolithic golden monument descending from the clouds over Earth's capital cities, projecting the real-time global cultivation rankings of all merged cultivators.",
-      "dna_prompt_anchor": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16",
+      "description": "Colossal thirty-thousand-metre obsidian-and-gold rectangular primordial stone monolith descending vertically in high atmosphere, etched with glowing divine golden calligraphy and star-charts, encircled by iridescent violet and golden starlight halos.",
+      "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
       "reference_plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Artifact: Heaven-Earth Stele}, monumental ancient golden stone stele hovering in overcast metropolitan sky above skyscrapers, radiant divine golden calligraphy inscriptions, dramatic lighting, vertical 9:16",
-      "visual_dna": "A monolithic golden monument descending from the clouds over Earth's capital cities, projecting the real-time global cultivation rankings of all merged cultivators."
+      "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos",
+      "visual_dna": "Monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos."
     },
     {
       "id": "celestial_star_astrolabe",
@@ -79,15 +96,21 @@
       "type": "Prop",
       "apparent_rank": "Ancient Starlight Divination Instrument",
       "true_rank": "Primordial Starlight Leyline Tracker",
-      "description": "An intricate spherical brass and celestial-silver armillary astrolabe used by Jiang Qingxue to track cosmic primordial origin energy anomalies.",
-      "dna_prompt_anchor": "@{Item: Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe with rotating gimbal rings and suspended cyan starlight core, modern manhwa style, vertical 9:16",
+      "description": "Intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe with concentric rotating gimbal rings etched with glowing cyan constellations, silver pointer needles, and suspended faceted glowing cyan starlight crystal core.",
+      "dna_prompt_anchor": "@{Celestial Star Astrolabe}, intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
       "reference_plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
       "episodes": [
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Item: Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe with rotating gimbal rings and suspended cyan starlight core, modern manhwa style, vertical 9:16",
-      "visual_dna": "An intricate spherical brass and celestial-silver armillary astrolabe used by Jiang Qingxue to track cosmic primordial origin energy anomalies."
+      "dna": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core",
+      "visual_dna": "Intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core."
     },
     {
       "id": "forged_primordial_token",
@@ -163,6 +186,109 @@
       "reference_plate": "23_Artifact_Nine_Serpent_Formation.jpg",
       "episodes": [
         "EP04"
+      ]
+    },
+    {
+      "id": "aluminium_baseball_bat",
+      "name": "Aluminium Baseball Bat",
+      "token": "@{Aluminium Baseball Bat}",
+      "type": "Prop",
+      "apparent_rank": "Everyday Dormitory Sporting Prop",
+      "true_rank": "Standard Brushed Aluminium Bat Clutched by Wang Bao",
+      "description": "Cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob.",
+      "dna_prompt_anchor": "@{Aluminium Baseball Bat}, cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob",
+      "visual_dna": "Cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob",
+      "reference_plate": "37_Prop_Aluminium_Baseball_Bat.jpg",
+      "episodes": [
+        "EP06"
+      ]
+    },
+    {
+      "id": "dark_charcoal_tea_mug",
+      "name": "Dark Charcoal Ceramic Tea Mug",
+      "token": "@{Dark Charcoal Ceramic Tea Mug}",
+      "type": "Prop",
+      "apparent_rank": "Everyday Dormitory Drinkware",
+      "true_rank": "Lu Chen's Signature Jasmine Tea Mug",
+      "description": "Matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea.",
+      "dna_prompt_anchor": "@{Dark Charcoal Ceramic Tea Mug}, matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea",
+      "visual_dna": "Matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea",
+      "reference_plate": "38_Prop_Dark_Charcoal_Tea_Mug.jpg",
+      "episodes": [
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
+      ]
+    },
+    {
+      "id": "bureau_alloy_longsword",
+      "name": "Bureau Tactical Alloy Longsword",
+      "token": "@{Bureau Tactical Alloy Longsword}",
+      "type": "Weapon",
+      "apparent_rank": "Threat Bureau Service Longsword",
+      "true_rank": "Commander Han Feng's Brushed Gunmetal Tactical Blade",
+      "description": "Straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard.",
+      "dna_prompt_anchor": "@{Bureau Tactical Alloy Longsword}, straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "visual_dna": "Straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "reference_plate": "39_Weapon_Bureau_Alloy_Longsword.jpg",
+      "episodes": [
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
+      ]
+    },
+    {
+      "id": "aegis_hover_tank",
+      "name": "Aegis Tactical Hover-Tank",
+      "token": "@{Aegis Tactical Hover-Tank}",
+      "type": "Vehicle",
+      "apparent_rank": "Arc 3 Physical Hardware / Prop",
+      "true_rank": "Unmanned futuristic Defense Council matte dark-titanium anti-gravity hover-tank armed with twin cyan electromagnetic railguns.",
+      "description": "Unmanned futuristic Defense Council matte dark-titanium anti-gravity hover-tank armed with twin cyan electromagnetic railguns.",
+      "dna_prompt_anchor": "@{Aegis Tactical Hover-Tank}, sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters, angular turret with twin glowing cyan railgun barrels, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters, angular turret with twin glowing cyan railgun barrels",
+      "visual_dna": "Unmanned futuristic Defense Council matte dark-titanium anti-gravity hover-tank armed with twin cyan electromagnetic railguns.",
+      "reference_plate": "42_Vehicle_Aegis_Hover_Tank.jpg",
+      "episodes": [
+        "EP08"
+      ]
+    },
+    {
+      "id": "bureau_recon_drone",
+      "name": "Bureau Recon Drone",
+      "token": "@{Bureau Recon Drone}",
+      "type": "Prop",
+      "apparent_rank": "Arc 3 Physical Hardware / Prop",
+      "true_rank": "Threat Bureau matte stealth-black quad-rotor camera drone equipped with long-range cyan optical sensor.",
+      "description": "Threat Bureau matte stealth-black quad-rotor camera drone equipped with long-range cyan optical sensor.",
+      "dna_prompt_anchor": "@{Bureau Recon Drone}, compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens",
+      "visual_dna": "Threat Bureau matte stealth-black quad-rotor camera drone equipped with long-range cyan optical sensor.",
+      "reference_plate": "43_Prop_Bureau_Recon_Drone.jpg",
+      "episodes": [
+        "EP08",
+        "EP09"
+      ]
+    },
+    {
+      "id": "convenience_grocery_bag",
+      "name": "Convenience Store Grocery Bag",
+      "token": "@{Convenience Store Grocery Bag}",
+      "type": "Prop",
+      "apparent_rank": "Arc 3 Physical Hardware / Prop",
+      "true_rank": "Milky-white translucent plastic convenience-store carrier bag holding two textless instant-noodle packs and a bottle of golden iced tea.",
+      "description": "Milky-white translucent plastic convenience-store carrier bag holding two textless instant-noodle packs and a bottle of golden iced tea.",
+      "dna_prompt_anchor": "@{Convenience Store Grocery Bag}, semi-translucent milky-white plastic grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "semi-translucent milky-white plastic grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea",
+      "visual_dna": "Milky-white translucent plastic convenience-store carrier bag holding two textless instant-noodle packs and a bottle of golden iced tea.",
+      "reference_plate": "44_Prop_Convenience_Grocery_Bag.jpg",
+      "episodes": [
+        "EP09"
       ]
     }
   ]

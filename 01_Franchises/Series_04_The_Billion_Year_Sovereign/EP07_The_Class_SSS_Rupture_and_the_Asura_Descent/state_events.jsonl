@@ -1,0 +1,48 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","posture":"casual_seated_desk"},"reason":"EP07 initial seed: Lu Chen seated calmly at wooden desk"}
+{"s":0,"e":"gu_tianyu_spirit_dao","set":{"lifecycle":"destroyed"},"reason":"Shattered into dust in EP01"}
+{"s":0,"e":"wang_bao","set":{"outfit":"red_plain_tee","posture":"standing_animated"},"reason":"EP07 initial seed: Wang Bao in plain crimson t-shirt"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP07 initial seed: Commander Han Feng in tactical uniform"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP07 initial seed: Jiang Qingxue in white trench coat"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP07 initial seed: Marshal Lei Gang in formal military trench coat"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"standing_poised"},"reason":"EP07 initial seed: Ye Xingchen in bespoke suit"}
+{"s":0,"e":"asura_blood_sovereign","set":{"outfit":"blood_armor","posture":"looming_colossal"},"reason":"EP07 initial seed: 8-foot 450M-year Asura Blood Sovereign"}
+{"s":0,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"equipped"},"reason":"Handheld spectrometer ready at standby"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Translucent obsidian HUD active before Lu Chen"}
+{"s":0,"e":"celestial_star_astrolabe","set":{"lifecycle":"active"},"reason":"Brushed-brass and celestial-silver star astrolabe carried by Jiang Qingxue"}
+{"s":0,"e":"dark_charcoal_tea_mug","set":{"lifecycle":"equipped"},"reason":"Dark slate ceramic tea mug held by Lu Chen"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Tactical alloy longsword sheathed at Han Feng waist"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Tactical recon drone operational"}
+{"s":1,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen lifts Dark Charcoal Ceramic Tea Mug for calm sips"}
+{"s":4,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen sets down mug on desk"}
+{"s":25,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang points at glowing tactical map rings"}
+{"s":31,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang issues defense alert directives"}
+{"s":34,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Commander Han Feng holds Tactical Spirit Spectrometer scanning sky"}
+{"s":38,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Han Feng lowers spectrometer checking perimeter"}
+{"s":40,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Han Feng raises spectrometer higher"}
+{"s":57,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Blood Sovereign steps onto transit plaza asphalt"}
+{"s":67,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Asura Blood Sovereign strides menacingly across road"}
+{"s":69,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign pauses beneath elevated overpass"}
+{"s":75,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Han Feng lifts spectrometer as needle pins"}
+{"s":78,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"fried"},"reason":"Spectrometer explodes in white sparks and grey smoke"}
+{"s":80,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Han Feng rises holding alloy longsword in commanding defense"}
+{"s":82,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Han Feng draws Bureau Tactical Alloy Longsword"}
+{"s":88,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue channels frost mist through Celestial Star Astrolabe"}
+{"s":92,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers astrolabe standing composed"}
+{"s":93,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen watches burning skyline from penthouse"}
+{"s":95,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen steps back in cold disbelief"}
+{"s":97,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Asura Sovereign looms beneath overpass"}
+{"s":100,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang points at drone holo feed"}
+{"s":104,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Sovereign raises lower arms to strike overpass"}
+{"s":112,"e":"asura_blood_sovereign","set":{"posture":"striding_forward"},"reason":"Sovereign strides through overpass dust cloud"}
+{"s":113,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Sovereign stands atop shattered overpass rubble"}
+{"s":115,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang watches feed in grim dread"}
+{"s":123,"e":"wang_bao","set":{"posture":"cowering_floor"},"reason":"Wang Bao collapses and cowers against clean tiled floor"}
+{"s":137,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen pours warm tea and sips from Dark Charcoal Ceramic Tea Mug"}
+{"s":139,"e":"wang_bao","set":{"posture":"standing_animated"},"reason":"Wang Bao climbs back up to his feet"}
+{"s":145,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Sovereign gathers crimson miasma atop rubble"}
+{"s":148,"e":"asura_blood_sovereign","set":{"posture":"arms_raised_roaring"},"reason":"Asura Blood Sovereign throws all four arms wide and roars"}
+{"s":156,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang orders tank division and Grandmaster Shen"}
+{"s":161,"e":"asura_blood_sovereign","set":{"posture":"looming_colossal"},"reason":"Sovereign lowers arms awaiting challengers"}
+{"s":164,"e":"lu_chen","set":{"posture":"holding_mug"},"reason":"Lu Chen cradles Dark Charcoal Ceramic Tea Mug"}
+{"s":165,"e":"lu_chen","set":{"posture":"casual_seated_desk"},"reason":"Lu Chen sets down mug onto desk"}
+{"s":166,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen rises and strolls to window"}

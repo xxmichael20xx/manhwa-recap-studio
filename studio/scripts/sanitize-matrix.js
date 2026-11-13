@@ -49,6 +49,7 @@ if (!fs.existsSync(promptPath)) {
 const scriptPath = path.join(epPath, '01_Episode_Script.md')
 const franchiseDir = path.resolve(projectRoot, '01_Franchises', franchiseId)
 const zonesPath = path.join(franchiseDir, 'vault/zones.json')
+const worldStatePath = path.join(epPath, 'world_state.json')
 
 let scriptClauses = new Map()
 let scriptTechStages = new Map()
@@ -71,6 +72,13 @@ let zonesData = {}
 if (fs.existsSync(zonesPath)) {
   try {
     zonesData = JSON.parse(fs.readFileSync(zonesPath, 'utf-8'))
+  } catch (_) {}
+}
+
+let worldStateData = null
+if (fs.existsSync(worldStatePath)) {
+  try {
+    worldStateData = JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
   } catch (_) {}
 }
 
@@ -138,16 +146,33 @@ for (const sceneXml of sceneBlocks) {
 
   // 4. Synchronise Spatial Enclosure with canonical zone definition (Gate 12 & G27 Tech-Stage aware)
   if (zoneId && zonesData[zoneId]?.canon) {
-    const validCanons = [
+    const lifecycleCanons = (worldStateData?.zone_lifecycles?.[zoneId] || []).map(c => String(c.desc || '').trim().replace(/\.$/, '')).filter(Boolean)
+    const rawCanons = [
       zonesData[zoneId].canon.trim().replace(/\.$/, ''),
-      ...Object.values(zonesData[zoneId]?.tech_stages || {}).map(s => s.trim().replace(/\.$/, ''))
+      ...Object.values(zonesData[zoneId]?.tech_stages || {}).map(s => s.trim().replace(/\.$/, '')),
+      ...lifecycleCanons
     ]
+    const validCanons = [...rawCanons]
+    for (const rc of rawCanons) {
+      for (const lm of ['overcast_crimson_morning', 'bright_morning_sunlight', 'day_sunlit', 'daylight', 'dawn', 'dusk']) {
+        validCanons.push(PromptDnaCompiler.sanitizeZoneCanon(rc, lm))
+      }
+    }
     const enclosureRegex = /(Spatial Enclosure:\s*@\{[^}]+\}\s*\()([^)]+)(\))/i
     const curEnclosureMatch = updatedScene.match(enclosureRegex)
     if (curEnclosureMatch) {
       const curText = curEnclosureMatch[2].trim().replace(/\.$/, '')
       if (!validCanons.includes(curText)) {
-        updatedScene = updatedScene.replace(curEnclosureMatch[0], `${curEnclosureMatch[1]}${zonesData[zoneId].canon.trim().replace(/\.$/, '')}${curEnclosureMatch[3]}`)
+        const sNum = sceneId ? PromptDnaCompiler.sceneNumberFromId(sceneId) : 0
+        let fallbackCanon = zonesData[zoneId].canon.trim().replace(/\.$/, '')
+        const shiftLighting = (worldStateData?.timeline?.timeline_shifts || []).find(sh =>
+          sNum >= PromptDnaCompiler.sceneNumberFromId(sh.from_scene || sh.from || '') &&
+          sNum <= PromptDnaCompiler.sceneNumberFromId(sh.to_scene || sh.to || '')
+        )?.lighting || worldStateData?.timeline?.default_lighting
+        if (shiftLighting) {
+          fallbackCanon = PromptDnaCompiler.sanitizeZoneCanon(fallbackCanon, shiftLighting)
+        }
+        updatedScene = updatedScene.replace(curEnclosureMatch[0], `${curEnclosureMatch[1]}${fallbackCanon}${curEnclosureMatch[3]}`)
         fixCounts.zoneCanon++
       }
     }

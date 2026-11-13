@@ -23,12 +23,12 @@
       "appearance": {
         "hair": "Messy raven-black hair falling naturally over forehead",
         "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
-        "physique": "Small 5-year-old boy build, but carrying himself with immaculate balance, straight posture, and quiet dignity",
+        "physique": "Young noble manhwa protagonist, slender aristocratic build, carrying himself with immaculate balance, straight posture, and quiet dignity",
         "attire": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, sturdy stitched brown leather travel boots",
-        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, tucked small bone hunting knife",
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy spell-infused strikes, tucked small bone hunting knife",
         "footwear": "Sturdy stitched brown leather travel boots"
       },
-      "dna_prompt_anchor": "@{Michael Montrey}, 5-year-old male manhwa protagonist, messy raven-black hair, piercing glowing cyan eyes, calm intense analytical expression, wearing rough-spun grey tunic with hemp cord belt, patched charcoal trousers, quiet confident stance, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Michael Montrey}, young noble manhwa protagonist, slender aristocratic build, messy raven-black hair, piercing glowing cyan eyes, calm intense analytical expression, wearing rough-spun grey tunic with hemp cord belt, patched charcoal trousers, quiet confident stance, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "01_Protagonist_Michael_Montrey_Child.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00001",
       "flowName": "Michael Montrey",
@@ -37,7 +37,8 @@
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
         "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Michael Montrey}, young noble manhwa protagonist, slender aristocratic build, messy raven-black hair, piercing glowing cyan eyes, calm intense analytical expression, wearing rough-spun grey tunic with hemp cord belt, patched charcoal trousers, quiet confident stance, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "michael_montrey_wolf_skin",
@@ -58,18 +59,19 @@
       "appearance": {
         "hair": "Messy raven-black hair falling naturally over forehead",
         "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
-        "physique": "Wiry 7-year-old boy build, straight posture, immaculate balance, quiet confident stance",
+        "physique": "Young noble manhwa protagonist, slender aristocratic build, straight posture, immaculate balance, quiet confident stance",
         "attire": "Tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack",
-        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy kinetic bludgeoning, etched with subtle cyan mana spiral veins"
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for heavy spell-infused strikes, etched with subtle cyan mana spiral veins"
       },
-      "dna_prompt_anchor": "@{Michael Montrey (Wolf-Skin)}, 7-year-old male manhwa protagonist, lean wiry build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Michael Montrey (Wolf-Skin)}, young noble manhwa protagonist, slender aristocratic build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "01b_Protagonist_Michael_Wolf_Skin_16x9.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00011",
       "flowName": "Michael Montrey (Wolf-Skin)",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Michael Montrey (Wolf-Skin)}, young noble manhwa protagonist, slender aristocratic build, messy raven-black fringe falling naturally over forehead, intense piercing cyan eyes radiating ancient wisdom, calm analytical expression, tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, quiet confident stance, dark fantasy action manhwa webtoon art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "michael_montrey_apex",
@@ -101,7 +103,8 @@
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Michael Montrey (Apex Archmage)}, handsome 28-year-old male archmage sovereign, flowing dark raven hair, radiant glowing sapphire eyes with arcane circles, commanding stern expression, high-collared midnight-blue mantle with glowing golden runes, holding a celestial divine grimoire, dark fantasy action manhwa art style, sharp ink linework, high contrast cel shading, epic magical aura, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "patriarch_valerius_montrey",
@@ -133,7 +136,8 @@
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp cold grey eyes, cruel proud expression, wearing sapphire-velvet fur-lined coat with ornate silver dragon embroidery, holding a platinum cane, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "elder_cassius_montrey",
@@ -165,7 +169,8 @@
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Head Elder Cassius}, 62-year-old gaunt ruthless noble elder, thin white hair, hooked nose, sneering contemptuous face, dark navy ceremonial robes with silver runes, holding an antique diagnostic brass bell, dark fantasy manhwa art style, sharp ink linework, stark cold shadows, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "elder_rowan_thorne",
@@ -199,12 +204,13 @@
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
         "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Elder Rowan Thorne}, 55-year-old burly frontier veteran mentor, rugged salt-and-pepper beard, weathered kind hazel eyes, warm encouraging smile, brown leather doublet, rolled sleeves, calloused hands, carrying an iron-shod walking staff, dark fantasy manhwa art style, sharp ink linework, warm earthy lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "calamity_abyssal_wyrm",
       "name": "Calamity Abyssal Wyrm",
-      "token": "@{Boss: Calamity Abyssal Wyrm}",
+      "token": "@{Calamity Abyssal Wyrm}",
       "tier": 1,
       "role": "Boss / Colossal Entity (Ancient Blackwood Calamity)",
       "age": 400,
@@ -224,14 +230,15 @@
         "attire": "None; primal beast",
         "weapons": "Needle-sharp obsidian fangs, barbed tail club capable of shattering castle ramparts"
       },
-      "dna_prompt_anchor": "@{Boss: Calamity Abyssal Wyrm}, colossal 15-metre serpentine dragon beast, jagged obsidian armor scales, six glowing crimson eyes, venomous purple corrosive fumes erupting from maw, massive horned skull, dark fantasy action manhwa art style, sharp ink linework, cinematic dark volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Calamity Abyssal Wyrm}, colossal 15-metre serpentine dragon beast, jagged obsidian armor scales, six glowing crimson eyes, venomous purple corrosive fumes erupting from maw, massive horned skull, dark fantasy action manhwa art style, sharp ink linework, cinematic dark volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "06_Boss_Abyssal_Wyrm.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00006",
       "flowName": "Calamity Abyssal Wyrm",
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Calamity Abyssal Wyrm}, colossal 15-metre serpentine dragon beast, jagged obsidian armor scales, six glowing crimson eyes, venomous purple corrosive fumes erupting from maw, massive horned skull, dark fantasy action manhwa art style, sharp ink linework, cinematic dark volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "grand_inquisitor_malakor",
@@ -263,7 +270,8 @@
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe"
       ],
-      "hasPlate": true
+      "hasPlate": true,
+      "dna": "@{Grand Inquisitor}, austere 60-year-old imperial inquisitor prelate, receding silver hair, gaunt severe face, sharp manic eyes, high-collared ivory-and-gold ceremonial robes, gold sunburst gorget, holding a soaring platinum staff topped with a faceted glowing diamond crystal, dark fantasy action manhwa art style, sharp ink linework, cinematic volumetric lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "mountain_stone_troll",
@@ -295,6 +303,461 @@
       "episodes": [
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
         "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
+      ],
+      "hasPlate": true,
+      "dna": "@{Mountain Stone Troll}, colossal 9-foot-tall brutish stone troll, jagged granite-encrusted grey hide, glowing molten-amber slit eyes, massive boulder shoulders, wielding a crude ironwood tree-trunk club, dark fantasy action manhwa art style, sharp ink linework, cinematic dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "michael_montrey_academy",
+      "name": "Michael Montrey (Academy)",
+      "token": "@{Michael Montrey (Academy)}",
+      "tier": 2,
+      "role": "Protagonist (Academy Applicant Phase, Age 13)",
+      "age": 13,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 15,
+        "class": "Dual-Vessel Sovereign (Apparent: Commoner Applicant)",
+        "strength": 65,
+        "agility": 70,
+        "constitution": 95,
+        "perception": 120,
+        "talent": "Vessel Mana-Forging & Primordial Arcana"
+      },
+      "appearance": {
+        "hair": "Messy raven-black hair falling naturally over forehead",
+        "eyes": "Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve",
+        "physique": "Young noble manhwa protagonist, slender aristocratic build, straight posture, immaculate balance, quiet confident stance",
+        "attire": "Crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, polished dark leather travel boots, dark travel cloak with discreet silver buckle clasp",
+        "weapons": "Carved dense blackwood walking quarterstaff balanced for spell-infused elemental channeling",
+        "footwear": "Polished dark leather travel boots"
+      },
+      "dna": "Young noble manhwa protagonist, slender aristocratic build, messy raven-black hair falling naturally over forehead, intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, straight posture, immaculate balance, quiet confident stance, crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, polished dark leather travel boots, dark travel cloak with discreet silver buckle clasp",
+      "dna_prompt_anchor": "@{Michael Montrey (Academy)}, young noble manhwa protagonist, slender aristocratic build, messy raven-black hair falling naturally over forehead, intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, straight posture, immaculate balance, quiet confident stance, wearing crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, polished dark leather travel boots, dark travel cloak with discreet silver buckle clasp, dark fantasy action manhwa art style, sharp black ink linework, clean elegant lighting, vibrant high-contrast cel shading, horizontal 16:9 full bleed widescreen composition, textless artwork, zero cloning.",
+      "reference_plate": "19_Protagonist_Michael_Academy.jpg",
+      "flowName": "Michael Montrey (Academy)",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "lord_cedric_vance",
+      "name": "Lord Cedric Vance",
+      "token": "@{Lord Cedric Vance}",
+      "tier": 3,
+      "role": "Antagonist (Noble Applicant, Heir to House Vance)",
+      "age": 15,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 12,
+        "class": "Tier 3 Flame-Wind Adept (High Noble Bloodline)",
+        "strength": 22,
+        "agility": 30,
+        "constitution": 32,
+        "perception": 48,
+        "talent": "3rd Circle Chanted Elemental Matrices"
+      },
+      "appearance": {
+        "hair": "Sleek styled golden-blond hair parted neatly to the side",
+        "eyes": "Narrow haughty amber eyes brimming with aristocratic entitlement and disdain",
+        "physique": "Young noble manhwa antagonist, slender aristocratic build, arrogant chin, sneering smirk, proud upright posture",
+        "attire": "Opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots",
+        "weapons": "Slender fourteen-inch ivory focus wand bound in ornate gold filigree and capped with a faceted star-sapphire gem",
+        "footwear": "Polished black leather riding boots"
+      },
+      "dna": "Young noble manhwa antagonist, slender aristocratic build, sleek styled golden-blond hair parted neatly to the side, narrow haughty amber eyes brimming with aristocratic entitlement and disdain, arrogant chin, sneering smirk, proud upright posture, opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots",
+      "dna_prompt_anchor": "@{Lord Cedric Vance}, young noble manhwa antagonist, slender aristocratic build, sleek styled golden-blond hair parted neatly to the side, narrow haughty amber eyes brimming with aristocratic entitlement and disdain, arrogant chin, sneering smirk, proud upright posture, wearing opulent sapphire-and-gold doublet embroidered with falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots, dark fantasy action manhwa art style, sharp black ink linework, clean elegant lighting, vibrant high-contrast cel shading, horizontal 16:9 full bleed widescreen composition, textless artwork, zero cloning.",
+      "reference_plate": "20_Antagonist_Cedric_Vance.jpg",
+      "flowName": "Lord Cedric Vance",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "proctor_alistair",
+      "name": "Proctor Alistair",
+      "token": "@{Proctor Alistair}",
+      "tier": 7,
+      "role": "Supporting (Chief Proctor of Imperial Arcane Academy, Veteran Battle-Mage)",
+      "age": 45,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 60,
+        "class": "Tier 7 Grand Battle-Mage (Imperial Examination Magistrate)",
+        "strength": 45,
+        "agility": 55,
+        "constitution": 70,
+        "perception": 140,
+        "talent": "Analytical Mana Diagnostics & Spatial Containment"
+      },
+      "appearance": {
+        "hair": "Short neatly trimmed steel-grey hair with receding temples",
+        "eyes": "Sharp hawkish grey eyes behind thin silver-rimmed diagnostic spectacles",
+        "physique": "Tall, lean veteran imperial battle-mage build, disciplined straight military posture, sharp observant demeanor",
+        "attire": "Dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, polished silver insignia brooch of the Imperial Arcane Academy pinned at neckline, durable black leather scholar boots",
+        "weapons": "Heavy silver-banded diagnostic wand and thick imperial applicant ledger",
+        "footwear": "Durable black leather scholar boots"
+      },
+      "dna": "Short neatly trimmed steel-grey hair with receding temples, sharp hawkish grey eyes behind thin silver-rimmed diagnostic spectacles, calm observant analytical expression, tall lean veteran imperial battle-mage build, disciplined straight military posture, dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, polished silver insignia brooch pinned at neckline, durable black leather scholar boots",
+      "dna_prompt_anchor": "@{Proctor Alistair}, short neatly trimmed steel-grey hair with receding temples, sharp hawkish grey eyes behind thin silver-rimmed diagnostic spectacles, calm observant analytical expression, tall lean veteran imperial battle-mage build, disciplined straight military posture, wearing dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, silver academy brooch at neckline, durable black leather scholar boots, dark fantasy action manhwa art style, sharp black ink linework, clean elegant lighting, vibrant high-contrast cel shading, horizontal 16:9 full bleed widescreen composition, textless artwork, zero cloning.",
+      "reference_plate": "21_Supporting_Proctor_Alistair.jpg",
+      "flowName": "Proctor Alistair",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "bandit_leader_douglas",
+      "name": "Bandit Leader Douglas",
+      "token": "@{Bandit Leader Douglas}",
+      "tier": 2,
+      "role": "Antagonist (Highway Brigand Chief)",
+      "age": 38,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 14,
+        "class": "Tier 2 Iron-Body Marauder",
+        "strength": 58,
+        "agility": 35,
+        "constitution": 52,
+        "perception": 30,
+        "talent": "Brutal Cleaving Strikes & Heavy Armor"
+      },
+      "appearance": {
+        "hair": "Shaggy unkempt dark-brown hair",
+        "eyes": "Cruel predatory dark eyes",
+        "physique": "Burly broad-shouldered muscular highwayman build, jagged scar running across left jaw, intimidating battle-hardened stance",
+        "attire": "Reinforced dark leather brigandine vest over coarse grey woollen tunic, studded iron bracers on forearms, rugged dirt-stained charcoal trousers, heavy buckled dark leather highwayman boots",
+        "weapons": "Massive four-foot broad heavy iron executioner greatsword with notched edges",
+        "footwear": "Heavy buckled dark leather highwayman boots"
+      },
+      "dna": "Shaggy unkempt dark-brown hair, jagged scar running across left jaw, rugged weathered face, cruel predatory dark eyes, burly broad-shouldered muscular highwayman build, intimidating battle-hardened stance, reinforced dark leather brigandine vest over coarse grey woollen tunic, studded iron bracers on forearms, rugged dirt-stained charcoal trousers, heavy buckled dark leather highwayman boots",
+      "dna_prompt_anchor": "@{Bandit Leader Douglas}, shaggy unkempt dark-brown hair, jagged scar running across left jaw, rugged weathered face, cruel predatory dark eyes, burly broad-shouldered muscular highwayman build, intimidating battle-hardened stance, wearing reinforced dark leather brigandine vest over coarse grey woollen tunic, studded iron bracers on forearms, rugged dirt-stained charcoal trousers, heavy buckled dark leather highwayman boots, dark fantasy action manhwa art style, sharp black ink linework, clean elegant lighting, vibrant high-contrast cel shading, horizontal 16:9 full bleed widescreen composition, textless artwork, zero cloning.",
+      "reference_plate": "22_Enemy_Bandit_Leader_Douglas.jpg",
+      "flowName": "Bandit Leader Douglas",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "highway_bandit_raiders",
+      "name": "Highway Bandit Raiders",
+      "token": "@{Highway Bandit Raiders}",
+      "tier": 1,
+      "role": "Enemy Mob (Highway Ambushers)",
+      "age": 28,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 6,
+        "class": "Common Highway Brigands",
+        "strength": 28,
+        "agility": 26,
+        "constitution": 28,
+        "perception": 20,
+        "talent": "Coordinated Ambush & Rough Melee"
+      },
+      "appearance": {
+        "hair": "Rough unkempt dark greasy hair, unwashed unshaven faces",
+        "eyes": "Desperate opportunistic dark eyes",
+        "physique": "Wiry athletic brigand builds with aggressive posture",
+        "attire": "Mismatched rugged dark leather doublets, ragged wool tunics, dirt-stained brown trousers, scuffed worn leather boots",
+        "weapons": "Notched iron arming swords, rusted short spears, crude iron-banded cudgels",
+        "footwear": "Scuffed worn leather boots"
+      },
+      "dna": "Rough highwaymen with ragged unkempt dark hair and coarse unwashed faces, menacing opportunistic expressions, wiry athletic brigand builds, mismatched rugged dark leather doublets, ragged wool tunics, dirt-stained brown trousers, scuffed worn leather boots, wielding notched iron arming swords and crude wooden spears",
+      "dna_prompt_anchor": "@{Highway Bandit Raiders}, rough highwaymen with ragged unkempt dark hair and coarse unwashed faces, menacing opportunistic expressions, wiry athletic brigand builds, wearing mismatched rugged dark leather doublets, ragged wool tunics, dirt-stained brown trousers, scuffed worn leather boots, wielding notched iron arming swords and crude wooden spears, dark fantasy action manhwa art style, sharp black ink linework, clean elegant lighting, vibrant high-contrast cel shading, horizontal 16:9 full bleed widescreen composition, textless artwork, zero cloning.",
+      "reference_plate": "23_Mob_Highway_Bandits.jpg",
+      "flowName": "Highway Bandit Raiders",
+      "episodes": [
+        "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "gareth_ironcrest",
+      "name": "Gareth Ironcrest",
+      "token": "@{Gareth Ironcrest}",
+      "tier": 2,
+      "role": "Antagonist (Imperial Knight Cadet Champion, Vanguard Swordsman)",
+      "age": 16,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 16,
+        "class": "Tier 2 Steel-Aura Knight Cadet",
+        "strength": 55,
+        "agility": 48,
+        "constitution": 52,
+        "perception": 38,
+        "talent": "Enchanted Steel Cleave & Aura Vanguard Rush"
+      },
+      "appearance": {
+        "hair": "Short cropped dark-auburn hair",
+        "eyes": "Sharp arrogant golden-amber eyes",
+        "physique": "Young noble manhwa antagonist, athletic armored knight cadet build, sneering confident battle smirk, disciplined aggressive combat stance",
+        "attire": "Polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons",
+        "weapons": "Heavy three-foot double-edged enchanted steel broadsword etched with pale cyan kinetic channels",
+        "footwear": "Reinforced steel-plated leather sabatons"
+      },
+      "dna": "Young noble manhwa antagonist, athletic armored knight cadet build, short cropped dark-auburn hair, sharp arrogant golden-amber eyes, sneering confident battle smirk, disciplined aggressive combat stance, polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons",
+      "dna_prompt_anchor": "@{Gareth Ironcrest}, young noble manhwa antagonist, athletic armored knight cadet build, short cropped dark-auburn hair, sharp arrogant golden-amber eyes, sneering confident battle smirk, disciplined aggressive combat stance, wearing polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Young noble manhwa antagonist, athletic armored knight cadet champion, short cropped dark-auburn hair, sharp arrogant golden-amber eyes, sneering confident battle smirk, disciplined aggressive combat stance, wearing polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "34_Antagonist_Knight_Vanguard_Gareth.jpg",
+      "flowName": "Gareth Ironcrest",
+      "episodes": [
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "commander_marcus_kael",
+      "name": "Commander Marcus Kael",
+      "token": "@{Commander Marcus Kael}",
+      "tier": 5,
+      "role": "Supporting (Imperial Knight Instructor & Veteran Vanguard Commander)",
+      "age": 42,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 45,
+        "class": "Tier 5 Imperial Vanguard Grandmaster",
+        "strength": 78,
+        "agility": 58,
+        "constitution": 82,
+        "perception": 65,
+        "talent": "Imperial Vanguard Stance & Heavy Kinetic Fortification"
+      },
+      "appearance": {
+        "hair": "Short grizzled dark-grey hair",
+        "eyes": "Stern observant hazel eyes",
+        "physique": "Veteran imperial knight instructor, broad-shouldered muscular martial build, weathered jaw with a jagged combat scar across left cheekbone, disciplined commanding posture",
+        "attire": "heavy battle-tested charcoal-steel knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves",
+        "weapons": "Massive ceremonial steel-and-iron broadsword strapped vertically across back, heavy steel gauntlets",
+        "footwear": "Reinforced charcoal-steel combat sabatons"
+      },
+      "dna": "Veteran imperial knight instructor, broad-shouldered muscular martial build, short grizzled dark-grey hair, weathered jaw with a jagged combat scar across left cheekbone, stern observant hazel eyes, disciplined commanding posture, heavy battle-tested charcoal-steel knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves",
+      "dna_prompt_anchor": "@{Commander Marcus Kael}, veteran imperial knight instructor, broad-shouldered muscular martial build, short grizzled dark-grey hair, weathered jaw with a jagged combat scar across left cheekbone, stern observant hazel eyes, disciplined commanding posture, wearing heavy battle-tested charcoal-steel knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Veteran imperial knight instructor, broad-shouldered muscular martial build, short grizzled dark-grey hair, weathered jaw with a jagged combat scar across left cheekbone, stern observant hazel eyes, disciplined commanding posture, wearing heavy battle-tested charcoal-steel knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "35_Supporting_Commander_Marcus_Kael.jpg",
+      "flowName": "Commander Marcus Kael",
+      "episodes": [
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "lady_evelyn_ashford",
+      "name": "Lady Evelyn Ashford",
+      "token": "@{Lady Evelyn Ashford}",
+      "tier": 3,
+      "role": "Antagonist (High Noble Fire-Circle Prodigy, Heiress of House Ashford)",
+      "age": 15,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 14,
+        "class": "Tier 3 Crimson Flame Adept",
+        "strength": 18,
+        "agility": 28,
+        "constitution": 26,
+        "perception": 45,
+        "talent": "3rd Circle Pyrotechnic Chant Matrices"
+      },
+      "appearance": {
+        "hair": "Fiery crimson-red hair styled in elaborate cascading side curls",
+        "eyes": "Narrow arrogant amber-red eyes filled with elitist disdain",
+        "physique": "Young noble manhwa antagonist, slender aristocratic build, sneering haughty expression, proud upright posture",
+        "attire": "Opulent crimson-and-gold academy robes with flared sleeves embroidered with the Ashford flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers",
+        "weapons": "Slender ruby-topped cedar focus wand with engraved golden flame filigree",
+        "footwear": "Dark leather scholar slippers"
+      },
+      "dna": "Young noble manhwa antagonist, slender aristocratic build, fiery crimson-red hair styled in elaborate cascading side curls, narrow arrogant amber-red eyes filled with elitist disdain, sneering haughty expression, proud upright posture, opulent crimson-and-gold academy robes with flared sleeves embroidered with flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers",
+      "dna_prompt_anchor": "@{Lady Evelyn Ashford}, young noble manhwa antagonist, slender aristocratic build, fiery crimson-red hair styled in elaborate cascading side curls, narrow arrogant amber-red eyes filled with elitist disdain, sneering haughty expression, proud upright posture, wearing opulent crimson-and-gold academy robes with flared sleeves embroidered with flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Young noble manhwa antagonist, slender aristocratic build, fiery crimson-red hair styled in elaborate cascading side curls, narrow arrogant amber-red eyes filled with elitist disdain, sneering haughty expression, proud upright posture, wearing opulent crimson-and-gold academy robes with flared sleeves embroidered with flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "36_Antagonist_Lady_Evelyn_Ashford.jpg",
+      "flowName": "Lady Evelyn Ashford",
+      "episodes": [
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "permafrost_trial_colossus",
+      "name": "Permafrost Trial Colossus",
+      "token": "@{Permafrost Trial Colossus}",
+      "tier": 6,
+      "role": "Boss (Tier 6 Glacial Domain Trial Sentinel Guardian)",
+      "age": 1000,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 60,
+        "class": "Tier 6 Absolute Zero Glacial Sentinel",
+        "strength": 85,
+        "agility": 30,
+        "constitution": 95,
+        "perception": 70,
+        "talent": "Permafrost Armor & Absolute Zero Frost Aura"
+      },
+      "appearance": {
+        "hair": "None, towering crystalline ice spires crowning head",
+        "eyes": "Single blinding radiant sapphire-blue central eye slit",
+        "physique": "Colossal twelve-foot crystalline ice sentinel colossus construct, non-humanoid faceted glacial armor plates of dense translucent permafrost, broad boulder-like crystalline shoulders",
+        "attire": "Natural faceted crystalline permafrost ice armor plating with jagged sub-zero crystal spires",
+        "weapons": "Massive frost-chiseled crystalline fists radiating sub-zero mist"
+      },
+      "dna": "Colossal twelve-foot crystalline ice sentinel colossus construct, non-humanoid faceted glacial armor plates of dense translucent permafrost, glowing blinding sapphire-blue central eye slit within a jagged crown-like ice helm, colossal broad crystal boulder shoulders sprouting razor-sharp permafrost spires, massive frost-chiseled crystalline fists radiating sub-zero mist, glowing cyan frost rune fracture veins pulsing across core, towering non-humanoid crystalline frost beast silhouette",
+      "dna_prompt_anchor": "@{Permafrost Trial Colossus}, colossal 12-foot crystalline ice sentinel colossus construct, non-humanoid faceted glacial armor plates of dense translucent permafrost, glowing blinding sapphire-blue central eye slit within a jagged crown-like ice helm, colossal broad crystal boulder shoulders sprouting razor-sharp permafrost spires, massive frost-chiseled crystalline fists radiating sub-zero mist, glowing cyan frost rune fracture veins pulsing across core, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely non-humanoid crystalline frost beast construct, textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Colossal 12-foot crystalline ice sentinel colossus construct, non-humanoid faceted glacial armor plates of dense translucent permafrost, glowing blinding sapphire-blue central eye slit within a jagged crown-like ice helm, colossal broad crystal boulder shoulders sprouting razor-sharp permafrost spires, massive frost-chiseled crystalline fists radiating sub-zero mist, glowing cyan frost rune fracture veins pulsing across core. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "41_Boss_Glacial_Sovereign_Construct.jpg",
+      "flowName": "Permafrost Trial Colossus",
+      "episodes": [
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "elena_ashvale",
+      "name": "Elena Ashvale",
+      "token": "@{Elena Ashvale}",
+      "tier": 2,
+      "role": "Supporting Ally (Commoner Scholarship Apprentice Mage, Team Tactician)",
+      "age": 14,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 13,
+        "class": "Tier 2 Verdant Wind Scholar",
+        "strength": 16,
+        "agility": 32,
+        "constitution": 24,
+        "perception": 55,
+        "talent": "Tactical Wind Currents & Barrier Calculations"
+      },
+      "appearance": {
+        "hair": "Warm auburn hair neatly gathered in a practical side braid",
+        "eyes": "Earnest bright emerald-green eyes",
+        "physique": "Young commoner apprentice mage, slender youthful build, intelligent focused expression, humble disciplined posture",
+        "attire": "Practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots",
+        "weapons": "Slender polished yew wand bound with copper wire",
+        "footwear": "Sturdy brown leather walking boots"
+      },
+      "dna": "Young commoner apprentice mage, slender youthful build, warm auburn hair neatly gathered in a practical side braid, earnest bright emerald-green eyes, intelligent focused expression, humble disciplined posture, practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots, holding a slender polished yew wand",
+      "dna_prompt_anchor": "@{Elena Ashvale}, young commoner apprentice mage, slender youthful build, warm auburn hair neatly gathered in a practical side braid, earnest bright emerald-green eyes, intelligent focused expression, humble disciplined posture, wearing practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots, holding a slender polished yew wand, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Young commoner apprentice mage, slender youthful build, warm auburn hair neatly gathered in a practical side braid, earnest bright emerald-green eyes, intelligent focused expression, humble disciplined posture, wearing practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots, holding a slender polished yew wand. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "42_Ally_Elena_Ashvale.jpg",
+      "flowName": "Elena Ashvale",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "doran_keller",
+      "name": "Doran Keller",
+      "token": "@{Doran Keller}",
+      "tier": 2,
+      "role": "Supporting Ally (Commoner Vanguard Shield-Bearer, Labyrinth Team Defender)",
+      "age": 15,
+      "age_class": "minor",
+      "stats_baseline": {
+        "level": 14,
+        "class": "Tier 2 Iron Vanguard Defender",
+        "strength": 52,
+        "agility": 30,
+        "constitution": 58,
+        "perception": 32,
+        "talent": "Heavy Shield Fortress & Intercept Cleave"
+      },
+      "appearance": {
+        "hair": "Short cropped sandy-brown hair",
+        "eyes": "Honest determined hazel eyes",
+        "physique": "Young commoner vanguard warrior, broad-shouldered sturdy cadet build, square jaw, resolute protective stance",
+        "attire": "Reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots",
+        "weapons": "Rectangular steel-reinforced oak tower shield on left arm, short steel thrusting spear",
+        "footwear": "Heavy iron-capped leather combat boots"
+      },
+      "dna": "Young commoner vanguard warrior, broad-shouldered sturdy cadet build, short cropped sandy-brown hair, honest determined hazel eyes, square jaw, resolute protective stance, reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots, carrying a rectangular steel-reinforced tower shield on left arm",
+      "dna_prompt_anchor": "@{Doran Keller}, young commoner vanguard warrior, broad-shouldered sturdy cadet build, short cropped sandy-brown hair, honest determined hazel eyes, square jaw, resolute protective stance, wearing reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots, carrying a rectangular steel-reinforced tower shield on left arm, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Young commoner vanguard warrior, broad-shouldered sturdy cadet build, short cropped sandy-brown hair, honest determined hazel eyes, square jaw, resolute protective stance, wearing reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots, carrying a rectangular steel-reinforced tower shield on left arm. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "43_Ally_Doran_Keller.jpg",
+      "flowName": "Doran Keller",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "obsidian_titan_colossus",
+      "name": "Obsidian Titan Colossus",
+      "token": "@{Obsidian Titan Colossus}",
+      "tier": 5,
+      "role": "Boss (Floor 50 Sovereign Labyrinth Boss, Ancient Runic Titan)",
+      "age": 2000,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 75,
+        "class": "Tier 7 Subterranean Obsidian Titan Boss",
+        "strength": 95,
+        "agility": 35,
+        "constitution": 98,
+        "perception": 65,
+        "talent": "Obsidian Armor & Magma-Arcane Tremor Shockwaves"
+      },
+      "appearance": {
+        "hair": "None, horned obsidian crown ridge",
+        "eyes": "Three glowing molten-crimson predatory eye slits",
+        "physique": "Colossal fifty-foot ancient four-armed titan golem boss of Floor 50, monolithic non-humanoid physique of jagged polished black obsidian slabs and mossy ancient granite boulders, four massive stone arms with crushing obsidian fists",
+        "attire": "Natural jagged polished black obsidian slabs and mossy ancient granite boulders with magma-red and azure runic fracture veins",
+        "weapons": "Four massive crushing obsidian fists and monolithic stone club appendages"
+      },
+      "dna": "Colossal fifty-foot ancient four-armed titan golem boss of Floor 50, monolithic non-humanoid physique of jagged polished black obsidian slabs and mossy ancient granite boulders, four massive stone arms with crushing obsidian fists, horned crest with three glowing molten-crimson eye slits, glowing concentric runic fractures pulsing with magma-red and azure arcane energy across chest, towering non-humanoid obsidian titan beast silhouette",
+      "dna_prompt_anchor": "@{Obsidian Titan Colossus}, colossal 50-foot ancient four-armed titan golem boss, monolithic non-humanoid physique of jagged polished black obsidian slabs and ancient granite boulders, four massive stone arms with crushing obsidian fists, horned crest with three glowing molten-crimson eye slits, glowing concentric runic fractures pulsing with magma-red and azure arcane energy across chest, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely non-humanoid obsidian titan beast construct, textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Colossal 50-foot ancient four-armed titan golem boss, monolithic non-humanoid physique of jagged polished black obsidian slabs and ancient granite boulders, four massive stone arms with crushing obsidian fists, horned crest with three glowing molten-crimson eye slits, glowing concentric runic fractures pulsing with magma-red and azure arcane energy across chest. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "44_Boss_Obsidian_Runic_Colossus.jpg",
+      "flowName": "Obsidian Titan Colossus",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "labyrinth_gargoyle_sentinel",
+      "name": "Labyrinth Gargoyle Sentinel",
+      "token": "@{Labyrinth Gargoyle Sentinel}",
+      "tier": 2,
+      "role": "Enemy Mob (Ancient Labyrinth Ambush Predators)",
+      "age": 300,
+      "age_class": "adult",
+      "stats_baseline": {
+        "level": 25,
+        "class": "Tier 3 Basalt Gargoyle Marauder",
+        "strength": 48,
+        "agility": 55,
+        "constitution": 50,
+        "perception": 45,
+        "talent": "Subterranean Ambush & Basalt Acid Claws"
+      },
+      "appearance": {
+        "hair": "None, jagged basalt ridges along skull",
+        "eyes": "Glowing ruby-red slit eyes",
+        "physique": "Ferocious eight-foot winged stone gargoyle beast, jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, hunched predatory silhouette",
+        "attire": "Natural jagged dark basalt hide with leathery stone-textured bat wings and hooked talons",
+        "weapons": "Needle-sharp stone fangs and razor-sharp hooked basalt claws"
+      },
+      "dna": "Ferocious eight-foot winged stone gargoyle beasts, jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, hunched predatory beast silhouette, glowing ruby-red slit eyes, snarling demonic maw filled with needle-sharp stone fangs, razor-sharp basalt claws clinging to rock",
+      "dna_prompt_anchor": "@{Labyrinth Gargoyle Sentinel}, ferocious 8-foot winged stone gargoyle beast, jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, hunched predatory beast silhouette, glowing ruby-red slit eyes, snarling demonic maw filled with needle-sharp stone fangs, razor-sharp basalt claws, dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Ferocious 8-foot winged stone gargoyle beast, jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, hunched predatory beast silhouette, glowing ruby-red slit eyes, snarling demonic maw filled with needle-sharp stone fangs, razor-sharp basalt claws clinging to rock. Dark fantasy action manhwa art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, cinematic dramatic lighting, horizontal 16:9, edge-to-edge full bleed landscape, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "45_Enemy_Labyrinth_Gargoyle_Sentinel.jpg",
+      "flowName": "Labyrinth Gargoyle Sentinel",
+      "episodes": [
+        "EP07_The_Ancient_Labyrinth_Tournament"
       ],
       "hasPlate": true
     }

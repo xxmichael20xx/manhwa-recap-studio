@@ -53,6 +53,24 @@
         },
         "standing_calm": {
           "phrase": "standing quietly with hands in hoodie pockets"
+        },
+        "casual_seated_desk": {
+          "phrase": "seated calmly at wooden desk"
+        },
+        "holding_mug": {
+          "phrase": "seated calmly holding tea mug"
+        },
+        "finger_flick_calm": {
+          "phrase": "resting one forearm calmly while extending a single relaxed index finger"
+        },
+        "walking_relaxed": {
+          "phrase": "walking calmly at an unhurried stroll with relaxed posture"
+        },
+        "carrying_grocery_bag": {
+          "phrase": "strolling casually down sidewalk holding plastic grocery bag in right hand and left hand in hoodie pocket"
+        },
+        "releasing_micro_aura": {
+          "phrase": "standing completely still mid-stride gazing coldly forward while releasing faint golden aura"
         }
       }
     },
@@ -62,7 +80,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "wang_bao": {
@@ -79,6 +101,7 @@
     "default_outfit": "red_gaming_tee",
     "outfits": {
       "red_gaming_tee": "signature red graphic gaming t-shirt, beige cargo shorts, sneakers",
+      "red_plain_tee": "plain matte crimson cotton crew-neck t-shirt with zero text or graphics, beige cargo shorts, casual athletic sneakers",
       "collegiate_sportswear": "bright yellow-and-navy collegiate athletic tracksuit over white t-shirt, athletic sneakers"
     },
     "default_state": {
@@ -87,10 +110,19 @@
     "state_lexicon": {
       "posture": {
         "standing_animated": {
-          "phrase": "standing with expressive animated posture and wide eyes"
+          "phrase": "standing animated with wide eyes"
+        },
+        "gripping_stance": {
+          "phrase": "braced tensely with wide panicked eyes"
+        },
+        "cowering_floor": {
+          "phrase": "cowering on tiled floor with knees drawn tight"
         },
         "seated_slurping": {
           "phrase": "seated eagerly slurping steaming noodles with chopsticks"
+        },
+        "standing_stunned": {
+          "phrase": "standing frozen with dropped jaw and wide terrified eyes"
         }
       }
     },
@@ -100,7 +132,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "gu_tianyu": {
@@ -113,7 +149,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "21-year-old pale East Asian male cultivator, sharp arrogant features, disheveled dark hair, bloodshot spiteful dark eyes",
+    "dna": "21-year-old arrogant athletic East Asian male cultivator, sharp slicked-back dark brown hair, sharp arrogant features, haughty dark eyes, green jade pendant necklace",
     "default_outfit": "medical_convalescent",
     "outfits": {
       "medical_convalescent": "loose grey silk convalescent robe over dark trousers with medicinal arm bandages",
@@ -161,7 +197,13 @@
     "state_lexicon": {
       "posture": {
         "standing_aloof": {
-          "phrase": "standing with graceful cold aloof posture with frost mist condensing in palm"
+          "phrase": "standing aloof with frost mist in palm"
+        },
+        "lotus_channelling": {
+          "phrase": "posing gracefully while channelling shimmering cyan frost mist"
+        },
+        "observing_sky": {
+          "phrase": "standing composed on overpass railing gazing upward at dark crimson rift clouds"
         }
       }
     },
@@ -171,7 +213,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "han_feng": {
@@ -198,6 +244,30 @@
       "posture": {
         "standing_stern": {
           "phrase": "standing with stern military posture holding a glowing tactical talisman"
+        },
+        "standing_command": {
+          "phrase": "standing with stern military posture and gauntleted hand raised",
+          "contradicts": [
+            "glowing tactical talisman"
+          ]
+        },
+        "scanning_device": {
+          "phrase": "holding handheld sensor instrument steady while squinting at dial",
+          "contradicts": [
+            "glowing tactical talisman"
+          ]
+        },
+        "combat_guard": {
+          "phrase": "braced in firm forward defensive guard posture",
+          "contradicts": [
+            "glowing tactical talisman"
+          ]
+        },
+        "reporting_urgent": {
+          "phrase": "standing tensely beside armored barricade bracing earpiece to report urgent tactical update",
+          "contradicts": [
+            "glowing tactical talisman"
+          ]
         }
       }
     },
@@ -207,7 +277,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "ye_xingchen": {
@@ -220,7 +294,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "22-year-old sharp-featured East Asian male cultivator, swept-back midnight blue hair, piercing silver-flecked eyes, calm disciplined expression",
+    "dna": "28-year-old imposing aristocratic East Asian male cultivator, long waist-length jet-black hair with silver streaks swept back, regal golden eyes full of cold disdain, imperial dominating aura, swirling purple cosmic starlight halo floating behind shoulders",
     "default_outfit": "charcoal_bespoke_suit",
     "outfits": {
       "charcoal_bespoke_suit": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes",
@@ -233,6 +307,12 @@
       "posture": {
         "standing_poised": {
           "phrase": "standing with disciplined upright posture and focused gaze"
+        },
+        "observing_monitor": {
+          "phrase": "standing tensely beside floor-to-ceiling glass window gazing across distant burning skyline"
+        },
+        "stunned_recoil": {
+          "phrase": "stepping back stiffly in cold disbelief with widened golden eyes"
         }
       }
     },
@@ -241,7 +321,10 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "asura_blood_sovereign": {
@@ -255,10 +338,10 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "colossal thousand-metre ancient fiend clad in cracked abyssal blood-iron plate armor, six mountainous arms, burning white solar flames crown",
+    "dna": "8-foot muscular demonic humanoid, four arms with upper bone-spiked dark-obsidian rune gauntlets and lower bare scarred crimson-grey muscle, wild fiery orange-red flame hair, two glowing red eyes, forehead diamond mark, fanged grimace, bare scarred chest",
     "default_outfit": "blood_armor",
     "outfits": {
-      "blood_armor": "cracked abyssal blood-iron plate armor bathed in burning white solar flames"
+      "blood_armor": "spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning"
     },
     "default_state": {
       "posture": "looming_colossal"
@@ -266,7 +349,19 @@
     "state_lexicon": {
       "posture": {
         "looming_colossal": {
-          "phrase": "looming with terrifying world-crushing pressure and crackling abyssal lightning"
+          "phrase": "looming with world-crushing abyssal pressure and crackling crimson lightning"
+        },
+        "arms_raised_roaring": {
+          "phrase": "throwing all four muscular arms outward in a thunderous abyssal roar"
+        },
+        "striding_forward": {
+          "phrase": "striding menacingly across cracked asphalt with glowing rune gauntlets raised"
+        },
+        "cowering_prostrated": {
+          "phrase": "collapsed flat face-down on its belly against shattered asphalt shaking in primal terror"
+        },
+        "dissolving_ash": {
+          "phrase": "kneeling on cracked asphalt dissolving rapidly into shimmering golden starlight ash"
         }
       }
     },
@@ -275,8 +370,14 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
-    ]
+      "EP04",
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
+    ],
+    "dna_prompt_anchor": "8-foot muscular demonic humanoid, four arms with upper bone-spiked dark-obsidian rune gauntlets and lower bare scarred crimson-grey muscle, wild fiery orange-red flame hair, two glowing red eyes, forehead diamond mark, fanged grimace, bare scarred chest"
   },
   "gu_biao": {
     "id": "gu_biao",
@@ -320,7 +421,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair",
+    "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, golden amber eyes, pompous posture",
     "default_outfit": "cultivation_coat",
     "outfits": {
       "cultivation_coat": "ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck and gold-threaded sash"
@@ -359,39 +460,6 @@
     "plate": "14_Antagonist_Mo_Yufeng.jpg",
     "episodes": [
       "EP02",
-      "EP03",
-      "EP04"
-    ]
-  },
-  "dean_qindu": {
-    "id": "dean_qindu",
-    "kind": "character",
-    "token": "@{Dean of Qindu University}",
-    "aliases": [
-      "Dean of Qindu University",
-      "Dean Qindu",
-      "Dean Zhao",
-      "University Dean"
-    ],
-    "status": "approved",
-    "age_class": "adult",
-    "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
-    "default_outfit": "academic_suit",
-    "outfits": {
-      "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
-    },
-    "default_state": {
-      "posture": "standing_scholarly"
-    },
-    "state_lexicon": {
-      "posture": {
-        "standing_scholarly": {
-          "phrase": "standing with dignified scholarly posture and hands clasped behind back"
-        }
-      }
-    },
-    "plate": "15_Dean_Qindu_University.jpg",
-    "episodes": [
       "EP03",
       "EP04"
     ]
@@ -536,39 +604,13 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "shattered fragments of high-grade emerald jade spirit dao blade with glowing green spirit circuits",
+    "dna": "single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel",
     "lifecycle": [
       "equipped",
       "sheathed",
       "destroyed"
     ],
-    "default_lifecycle": "destroyed",
-    "plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
-    "episodes": [
-      "EP01",
-      "EP02",
-      "EP03",
-      "EP04"
-    ]
-  },
-  "jade_spirit_blade": {
-    "id": "jade_spirit_blade",
-    "kind": "item",
-    "token": "@{Gu Syndicate Custom Spirit Blade}",
-    "aliases": [
-      "Gu Syndicate Custom Spirit Blade",
-      "Jade Spirit Blade",
-      "Gu Tianyu Blade"
-    ],
-    "status": "approved",
-    "age_class": "non_living",
-    "dna": "shattered fragments of high-grade emerald jade spirit dao blade with glowing green spirit circuits",
-    "lifecycle": [
-      "equipped",
-      "sheathed",
-      "destroyed"
-    ],
-    "default_lifecycle": "destroyed",
+    "default_lifecycle": "equipped",
     "plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
     "episodes": [
       "EP01",
@@ -580,6 +622,7 @@
   "tactical_spirit_spectrometer": {
     "id": "tactical_spirit_spectrometer",
     "kind": "item",
+    "placement": "handheld",
     "token": "@{Tactical Spirit Spectrometer}",
     "aliases": [
       "Tactical Spirit Spectrometer",
@@ -588,7 +631,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "handheld tactical military spirit energy spectrometer with digital readout display",
+    "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas",
     "lifecycle": [
       "equipped",
       "fried",
@@ -601,12 +644,17 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "heavenly_dao_simulator_hud": {
     "id": "heavenly_dao_simulator_hud",
     "kind": "item",
+    "placement": "stationary",
     "token": "@{Heavenly Dao Simulator Interface}",
     "aliases": [
       "Heavenly Dao Simulator Interface",
@@ -616,7 +664,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "translucent obsidian-and-gold holographic cultivation interface floating freely in air with microscopic golden runes",
+    "dna": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes",
     "lifecycle": [
       "active",
       "cloaked"
@@ -628,7 +676,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "heaven_earth_golden_stele": {
@@ -642,7 +694,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "colossal thirty-thousand-metre obsidian-and-gold primordial stele floating in high atmosphere with radiating starlight runes",
+    "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos",
     "lifecycle": [
       "active"
     ],
@@ -658,6 +710,7 @@
   "celestial_star_astrolabe": {
     "id": "celestial_star_astrolabe",
     "kind": "item",
+    "placement": "handheld",
     "token": "@{Celestial Star Astrolabe}",
     "aliases": [
       "Celestial Star Astrolabe",
@@ -666,7 +719,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "ancient celestial star astrolabe forged from meteoric platinum with concentric rotating stellar rings",
+    "dna": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core",
     "lifecycle": [
       "active"
     ],
@@ -676,7 +729,11 @@
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "forged_primordial_token": {
@@ -760,7 +817,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "glowing translucent azure-and-gold primordial qi pill floating inside a crystal spirit containment vial with swirling micro-stellar nebulae",
+    "dna": "single luminous iridescent celestial pearl pill resting in a minimalist white porcelain saucer, radiating nine faint concentric rings of golden-white spiritual mist and delicate starlight motes, pristine translucent texture",
     "lifecycle": [
       "active",
       "consumed"
@@ -795,28 +852,6 @@
     ],
     "name": "Nine-Serpent Slaughter Formation"
   },
-  "nine_serpent_formation": {
-    "id": "nine_serpent_formation",
-    "kind": "item",
-    "token": "@{Nine-Serpent Blood Slaughter Formation}",
-    "aliases": [
-      "Nine-Serpent Blood Slaughter Formation",
-      "Nine Serpent Array",
-      "Blood Slaughter Formation"
-    ],
-    "status": "approved",
-    "age_class": "non_living",
-    "dna": "colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering blood-red bone-inscribed formation banners driven into pavement, shadowy blood-red spectral serpents slithering across crimson smog clouds",
-    "lifecycle": [
-      "active",
-      "shattered"
-    ],
-    "default_lifecycle": "active",
-    "plate": "23_Artifact_Nine_Serpent_Formation.jpg",
-    "episodes": [
-      "EP04"
-    ]
-  },
   "dormitory_room_402": {
     "id": "dormitory_room_402",
     "kind": "location",
@@ -829,14 +864,18 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "standard undergraduate male double dormitory room, two lofted wooden beds with study desks below, grey linoleum floor, large window with blinds",
+    "dna": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, two wooden study desks on right with study laptops and office chairs, matte white walls, spotless clean white tiled floor, window overlooking sunny campus trees",
     "plate": "18_Location_Dormitory_Room_402.jpg",
     "episodes": [
       "EP01",
       "EP02",
       "EP03",
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ],
     "name": "Dormitory Room 402"
   },
@@ -854,7 +893,11 @@
     "dna": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during bright crisp morning daylight, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under clear high-key sky",
     "plate": "26_Location_Campus_Pathway.jpg",
     "episodes": [
-      "EP04"
+      "EP04",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "celestial_auction_hall": {
@@ -941,7 +984,11 @@
     "plate": "31_Location_Collegiate_Formation_Cordon.jpg",
     "episodes": [
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ],
     "name": "Collegiate Defensive Formation Cordon"
   },
@@ -977,7 +1024,11 @@
     "plate": "33_Location_Campus_Perimeter_Gate.jpg",
     "episodes": [
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ],
     "name": "North Campus Perimeter Gate Cordon"
   },
@@ -997,7 +1048,11 @@
     "plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
     "episodes": [
       "EP04",
-      "EP05"
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
     ],
     "name": "High Troposphere Stele Horizon"
   },
@@ -1015,7 +1070,10 @@
     "dna": "Ultra-luxury top-floor executive penthouse overlooking Qindu skyline, floor-to-ceiling panoramic glass windows, minimalist Italian white leather furnishings, private indoor spirit pool, night starlight and city neon",
     "plate": "34_Location_Starfall_Penthouse.jpg",
     "episodes": [
-      "EP04"
+      "EP04",
+      "EP07",
+      "EP08",
+      "EP09"
     ]
   },
   "qindu_collegiate_stadium": {
@@ -1035,41 +1093,6 @@
       "EP04"
     ]
   },
-  "commander_han_feng": {
-    "id": "commander_han_feng",
-    "kind": "character",
-    "token": "@{Commander Han Feng}",
-    "aliases": [
-      "Commander Han Feng",
-      "Inspector Han Feng",
-      "Han Feng",
-      "Commander Han"
-    ],
-    "status": "approved",
-    "age_class": "adult",
-    "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
-    "default_outfit": "tactical_uniform",
-    "outfits": {
-      "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
-    },
-    "default_state": {
-      "posture": "standing_stern"
-    },
-    "state_lexicon": {
-      "posture": {
-        "standing_stern": {
-          "phrase": "standing with stern military posture holding a glowing tactical talisman"
-        }
-      }
-    },
-    "plate": "05_Inspector_Han_Feng.jpg",
-    "episodes": [
-      "EP01",
-      "EP02",
-      "EP03",
-      "EP04"
-    ]
-  },
   "dean_of_qindu_university": {
     "id": "dean_of_qindu_university",
     "kind": "character",
@@ -1082,10 +1105,10 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
+    "dna": "62-year-old dignified East Asian male academic scholar, neatly groomed silver-grey hair, short silver beard, wise cautious dark brown eyes, thin rectangular gold-rimmed glasses",
     "default_outfit": "academic_suit",
     "outfits": {
-      "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
+      "academic_suit": "formal charcoal-grey collegiate academic cultivation robe with gold-embroidered torch crest over white high-collar shirt and silk tie"
     },
     "default_state": {
       "posture": "standing_scholarly"
@@ -1101,6 +1124,376 @@
     "episodes": [
       "EP03",
       "EP04"
+    ]
+  },
+  "nether_behemoth": {
+    "id": "nether_behemoth",
+    "name": "Nether Behemoth",
+    "kind": "creature",
+    "token": "@{Nether Behemoth}",
+    "aliases": [
+      "Nether Behemoth",
+      "Nether Behemoths",
+      "Abyssal Nether Behemoth",
+      "Abyssal Nether Behemoths",
+      "Class-SS Nether Behemoth",
+      "Class-SS Nether Behemoths"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Colossal 15-metre quadrupedal abyssal titan beast, dense volcanic obsidian chitin armour plates, pulsing violet nether fire veins along flanks, three pairs of burning crimson eye clusters, double-hinged jaw lined with serrated obsidian fangs, heavy spiked tail, dripping acidic purple spatial miasma",
+    "dna_prompt_anchor": "Colossal 15-metre quadrupedal abyssal titan beast, dense volcanic obsidian chitin armour plates, pulsing violet nether fire veins along flanks, three pairs of burning crimson eye clusters, double-hinged jaw lined with serrated obsidian fangs, heavy spiked tail, dripping acidic purple spatial miasma",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "dense volcanic obsidian chitin armour plates with pulsing violet nether veins"
+    },
+    "default_state": {
+      "posture": "standing"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing": {
+          "phrase": "towering quadrupedal abyssal stance"
+        }
+      }
+    },
+    "plate": "35_Creature_Nether_Behemoth.jpg",
+    "episodes": [
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "void_vanguard_beast": {
+    "id": "void_vanguard_beast",
+    "name": "Void Vanguard Beast",
+    "kind": "creature",
+    "token": "@{Void Vanguard Beast}",
+    "aliases": [
+      "Void Vanguard Beast",
+      "Void Vanguard Beasts",
+      "Void Beast",
+      "Void Beasts",
+      "Void Vanguard",
+      "Void Vanguards"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "3-metre sinewy predatory abyssal void beast, sleek obsidian chitin carapace, leathery bat-like wings, four glowing crimson eyes, sharp sickle mandibles dripping emerald spatial acid, razor talons",
+    "dna_prompt_anchor": "3-metre sinewy predatory abyssal void beast, sleek obsidian chitin carapace, leathery bat-like wings, four glowing crimson eyes, sharp sickle mandibles dripping emerald spatial acid, razor talons",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "sleek obsidian chitin carapace"
+    },
+    "default_state": {
+      "posture": "standing"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing": {
+          "phrase": "predatory stalking stance"
+        }
+      }
+    },
+    "plate": "36_Creature_Void_Vanguard_Beast.jpg",
+    "episodes": [
+      "EP05",
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "aluminium_baseball_bat": {
+    "id": "aluminium_baseball_bat",
+    "name": "Aluminium Baseball Bat",
+    "kind": "item",
+    "placement": "handheld",
+    "token": "@{Aluminium Baseball Bat}",
+    "aliases": [
+      "Aluminium Baseball Bat",
+      "Aluminum Baseball Bat"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob",
+    "dna_prompt_anchor": "cylindrical brushed silver-grey aluminium baseball bat, matte black ribbed grip handle, rounded aluminium pommel knob",
+    "lifecycle": [
+      "equipped"
+    ],
+    "default_lifecycle": "equipped",
+    "plate": "37_Prop_Aluminium_Baseball_Bat.jpg",
+    "episodes": [
+      "EP06"
+    ]
+  },
+  "dark_charcoal_tea_mug": {
+    "id": "dark_charcoal_tea_mug",
+    "name": "Dark Charcoal Ceramic Tea Mug",
+    "kind": "item",
+    "placement": "handheld",
+    "token": "@{Dark Charcoal Ceramic Tea Mug}",
+    "aliases": [
+      "Dark Charcoal Ceramic Tea Mug",
+      "Dark Charcoal Tea Mug"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea",
+    "dna_prompt_anchor": "matte dark slate-charcoal ceramic tea mug with curved C-shaped right handle and steaming amber tea",
+    "lifecycle": [
+      "equipped"
+    ],
+    "default_lifecycle": "equipped",
+    "plate": "38_Prop_Dark_Charcoal_Tea_Mug.jpg",
+    "episodes": [
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "bureau_alloy_longsword": {
+    "id": "bureau_alloy_longsword",
+    "name": "Bureau Tactical Alloy Longsword",
+    "kind": "item",
+    "placement": "handheld",
+    "token": "@{Bureau Tactical Alloy Longsword}",
+    "aliases": [
+      "Bureau Tactical Alloy Longsword",
+      "Bureau Alloy Longsword"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+    "dna_prompt_anchor": "straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+    "lifecycle": [
+      "equipped",
+      "sheathed"
+    ],
+    "default_lifecycle": "equipped",
+    "plate": "39_Weapon_Bureau_Alloy_Longsword.jpg",
+    "episodes": [
+      "EP06",
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "marshal_lei_gang": {
+    "id": "marshal_lei_gang",
+    "name": "Marshal Lei Gang",
+    "kind": "character",
+    "token": "@{Marshal Lei Gang}",
+    "aliases": [
+      "Marshal Lei Gang",
+      "Marshal Lei",
+      "Lei Gang"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes",
+    "dna_prompt_anchor": "48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes",
+    "default_outfit": "marshal_coat",
+    "outfits": {
+      "marshal_coat": "dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots"
+    },
+    "default_state": {
+      "posture": "standing_command"
+    },
+    "state_lexicon": {
+      "posture": {
+        "standing_command": {
+          "phrase": "standing upright in commanding authority issuing strategic military orders"
+        },
+        "pointing_hologram": {
+          "phrase": "leaning toward curved tactical console gesturing urgently at glowing map rings"
+        },
+        "tense_observation": {
+          "phrase": "standing rigidly silent with fists clenched in shock"
+        }
+      }
+    },
+    "plate": "40_Ally_Marshal_Lei_Gang.jpg",
+    "episodes": [
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "grandmaster_shen": {
+    "id": "grandmaster_shen",
+    "name": "Grandmaster Shen",
+    "kind": "character",
+    "token": "@{Grandmaster Shen}",
+    "aliases": [
+      "Grandmaster Shen",
+      "Master Shen",
+      "Shen"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze",
+    "dna_prompt_anchor": "45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze",
+    "default_outfit": "martial_duster",
+    "outfits": {
+      "martial_duster": "tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots"
+    },
+    "default_state": {
+      "posture": "martial_aura_stance"
+    },
+    "state_lexicon": {
+      "posture": {
+        "martial_aura_stance": {
+          "phrase": "balanced empty-handed martial stance with faint golden wind aura around shoulders"
+        },
+        "airborne_assault": {
+          "phrase": "lunging forward through swirling wind spirit aura with bare fists raised"
+        },
+        "reeling_shocked": {
+          "phrase": "staggering backward across cracked asphalt clutching bruised ribs in awe"
+        }
+      }
+    },
+    "plate": "41_Hero_Grandmaster_Shen.jpg",
+    "episodes": [
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "aegis_hover_tank": {
+    "id": "aegis_hover_tank",
+    "name": "Aegis Tactical Hover-Tank",
+    "kind": "item",
+    "placement": "stationary",
+    "token": "@{Aegis Tactical Hover-Tank}",
+    "aliases": [
+      "Aegis Tactical Hover-Tank",
+      "Aegis Hover-Tank",
+      "Hover-Tank"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters, angular turret with twin glowing cyan railgun barrels",
+    "dna_prompt_anchor": "sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters, angular turret with twin glowing cyan railgun barrels",
+    "lifecycle": [
+      "active",
+      "damaged"
+    ],
+    "default_lifecycle": "active",
+    "plate": "42_Vehicle_Aegis_Hover_Tank.jpg",
+    "episodes": [
+      "EP08"
+    ]
+  },
+  "bureau_recon_drone": {
+    "id": "bureau_recon_drone",
+    "name": "Bureau Recon Drone",
+    "kind": "item",
+    "placement": "stationary",
+    "token": "@{Bureau Recon Drone}",
+    "aliases": [
+      "Bureau Recon Drone",
+      "Recon Drone"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens",
+    "dna_prompt_anchor": "compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens",
+    "lifecycle": [
+      "active",
+      "damaged"
+    ],
+    "default_lifecycle": "active",
+    "plate": "43_Prop_Bureau_Recon_Drone.jpg",
+    "episodes": [
+      "EP08",
+      "EP09"
+    ]
+  },
+  "convenience_grocery_bag": {
+    "id": "convenience_grocery_bag",
+    "name": "Convenience Store Grocery Bag",
+    "kind": "item",
+    "placement": "handheld",
+    "token": "@{Convenience Store Grocery Bag}",
+    "aliases": [
+      "Convenience Store Grocery Bag",
+      "Grocery Bag",
+      "Plastic Grocery Bag"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "semi-translucent milky-white plastic grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea",
+    "dna_prompt_anchor": "semi-translucent milky-white plastic grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea",
+    "lifecycle": [
+      "equipped",
+      "set_down"
+    ],
+    "default_lifecycle": "equipped",
+    "plate": "44_Prop_Convenience_Grocery_Bag.jpg",
+    "episodes": [
+      "EP09"
+    ]
+  },
+  "jiangnan_transit_plaza": {
+    "id": "jiangnan_transit_plaza",
+    "name": "Jiangnan Central Transit Plaza",
+    "kind": "location",
+    "token": "@{Jiangnan Central Transit Plaza}",
+    "aliases": [
+      "jiangnan.transit_plaza",
+      "Jiangnan Central Transit Plaza",
+      "Transit Plaza"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Wide modern 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under gloomy crimson overcast storm clouds",
+    "plate": "45_Location_Jiangnan_Transit_Plaza.jpg",
+    "episodes": [
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "bureau_command_room": {
+    "id": "bureau_command_room",
+    "name": "Defense Council War Room",
+    "kind": "location",
+    "token": "@{Defense Council War Room}",
+    "aliases": [
+      "bureau.command_room",
+      "Defense Council War Room",
+      "War Room"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Modern 2025 subterranean Defense Council tactical war room, matte dark charcoal steel acoustic wall panels, curved tiered obsidian glass console desk with blank glowing cyan geometric holographic rings above, cool white LED strip ceiling lighting",
+    "plate": "46_Location_Bureau_Command_Room.jpg",
+    "episodes": [
+      "EP07",
+      "EP08",
+      "EP09"
+    ]
+  },
+  "street_convenience_store": {
+    "id": "street_convenience_store",
+    "name": "Corner Convenience Store Front",
+    "kind": "location",
+    "token": "@{Corner Convenience Store Front}",
+    "aliases": [
+      "street.convenience_store",
+      "Corner Convenience Store Front",
+      "Convenience Store Front"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Modern 2025 corner convenience store exterior beside neat paved sidewalk, recessed sliding glass entrance radiating warm golden indoor light, metal bicycle rack beside roadside greenery, blank glowing cyan fascia awning with zero readable signage",
+    "plate": "47_Location_Convenience_Store.jpg",
+    "episodes": [
+      "EP09"
     ]
   }
 }

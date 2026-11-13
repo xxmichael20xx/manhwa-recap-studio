@@ -3,6 +3,34 @@
   "series_title": "The Billion-Year Sovereign: Reality Convergence",
   "format": "Format 1: 9:16 Webtoon",
   "archetype": "Modern Urban Xianxia / Cultivation Manhua (1-Billion-Year Solitary Sovereign)",
+  "legacyFlowNameAllowlist": [
+    "lu_chen",
+    "wang_bao",
+    "gu_tianyu",
+    "jiang_qingxue",
+    "han_feng",
+    "ye_xingchen",
+    "asura_blood_sovereign",
+    "gu_tianyu_spirit_dao",
+    "tactical_spirit_spectrometer",
+    "heaven_earth_golden_stele",
+    "gu_biao",
+    "celestial_star_astrolabe",
+    "heavenly_dao_simulator_hud",
+    "mo_yufeng",
+    "dean_of_qindu_university",
+    "chairman_gu",
+    "elder_gu_yan",
+    "grand_auctioneer_yan",
+    "nether_behemoth",
+    "void_vanguard_beast"
+  ],
+  "legacyPlateShareAllowlist": [
+    "spectral_blood_serpent",
+    "nine_serpent_blood_slaughter_formation",
+    "heaven_earth_golden_stele",
+    "troposphere_stele"
+  ],
   "characters": [
     {
       "id": "lu_chen",
@@ -32,7 +60,12 @@
         "EP01",
         "EP02",
         "EP03",
-        "EP04"
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
       "dna": "20-year-old East Asian male university student, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression",
       "outfits": {
@@ -60,16 +93,34 @@
         },
         "posture": {
           "relaxed_hands_in_pockets": {
-            "phrase": "relaxed unbothered posture with hands casually in hoodie pockets"
+            "phrase": "zero visible spiritual aura, relaxed unbothered posture with hands casually in hoodie pockets"
           },
           "relaxed_unbothered": {
-            "phrase": "relaxed unbothered posture with hands casually in hoodie pockets"
+            "phrase": "zero visible spiritual aura, relaxed unbothered posture with hands casually in hoodie pockets"
           },
           "casual_seated": {
             "phrase": "seated casually with unhurried deadpan posture"
           },
           "standing_calm": {
             "phrase": "standing quietly with hands in hoodie pockets"
+          },
+          "casual_seated_desk": {
+            "phrase": "seated calmly at wooden desk"
+          },
+          "holding_mug": {
+            "phrase": "seated calmly holding tea mug"
+          },
+          "finger_flick_calm": {
+            "phrase": "resting one forearm calmly while extending a single relaxed index finger"
+          },
+          "walking_relaxed": {
+            "phrase": "walking calmly at an unhurried stroll with relaxed posture"
+          },
+          "carrying_grocery_bag": {
+            "phrase": "strolling casually down sidewalk holding plastic grocery bag in right hand and left hand in hoodie pocket"
+          },
+          "releasing_micro_aura": {
+            "phrase": "standing completely still mid-stride gazing coldly forward while releasing faint golden aura"
           }
         }
       },
@@ -105,20 +156,35 @@
         "EP01",
         "EP02",
         "EP03",
-        "EP04"
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
       "dna": "20-year-old chubby East Asian male university student, round friendly face, messy spiky dark hair, expressive panicked dark eyes",
       "outfits": {
-        "red_gaming_tee": "signature red graphic gaming t-shirt, beige cargo shorts, sneakers"
+        "red_gaming_tee": "signature red graphic gaming t-shirt, beige cargo shorts, sneakers",
+        "red_plain_tee": "plain matte crimson cotton crew-neck t-shirt with zero text or graphics, beige cargo shorts, casual athletic sneakers"
       },
       "default_outfit": "red_gaming_tee",
       "state_lexicon": {
         "posture": {
           "standing_animated": {
-            "phrase": "standing with expressive animated posture and wide eyes"
+            "phrase": "standing animated with wide eyes"
+          },
+          "gripping_stance": {
+            "phrase": "braced tensely with wide panicked eyes"
+          },
+          "cowering_floor": {
+            "phrase": "cowering on tiled floor with knees drawn tight"
           },
           "seated_slurping": {
             "phrase": "seated eagerly slurping steaming noodles with chopsticks"
+          },
+          "standing_stunned": {
+            "phrase": "standing frozen with dropped jaw and wide terrified eyes"
           }
         }
       },
@@ -146,7 +212,7 @@
         "physique": "Athletic, tall, aristocratic posture",
         "attire": "Tailored designer navy blazer over crisp white collar shirt, glowing cyan spirit qi at fingertips"
       },
-      "dna_prompt_anchor": "@{Gu Tianyu}, 21-year-old arrogant athletic male student, sharp slicked-back dark brown hair, haughty sneering expression, tailored designer navy blazer over white collar shirt, glowing cyan spirit qi swirling around fingertips, holding a luminous jade-inscribed spirit blade, posture of extreme hubris, modern cultivation manhwa style, sharp linework, high contrast, vertical 9:16",
+      "dna_prompt_anchor": "@{Gu Tianyu}, 21-year-old arrogant athletic male student, sharp slicked-back dark brown hair, haughty sneering dark eyes, green jade pendant necklace, tailored designer navy blazer over open white collar shirt, black trousers, glowing cyan spirit qi swirling around fingertips, modern cultivation manhwa style, sharp linework, high contrast, vertical 9:16",
       "reference_plate": "03_Bully_Gu_Tianyu.jpg",
       "flowName": "Character: Gu Tianyu",
       "episodes": [
@@ -155,7 +221,7 @@
         "EP03",
         "EP04"
       ],
-      "dna": "21-year-old pale East Asian male cultivator, sharp arrogant features, disheveled dark hair, bloodshot spiteful dark eyes",
+      "dna": "21-year-old arrogant athletic East Asian male cultivator, sharp slicked-back dark brown hair, sharp arrogant features, haughty dark eyes, green jade pendant necklace",
       "outfits": {
         "medical_convalescent": "loose grey silk convalescent robe over dark trousers with medicinal arm bandages",
         "combat_uniform": "tailored dark crimson combat blazer over charcoal shirt"
@@ -201,7 +267,12 @@
         "EP01",
         "EP02",
         "EP03",
-        "EP04"
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
       "dna": "21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression",
       "outfits": {
@@ -211,7 +282,13 @@
       "state_lexicon": {
         "posture": {
           "standing_aloof": {
-            "phrase": "standing with graceful cold aloof posture with frost mist condensing in palm"
+            "phrase": "standing aloof with frost mist in palm"
+          },
+          "lotus_channelling": {
+            "phrase": "posing gracefully while channelling shimmering cyan frost mist"
+          },
+          "observing_sky": {
+            "phrase": "standing composed on overpass railing gazing upward at dark crimson rift clouds"
           }
         }
       },
@@ -220,7 +297,7 @@
       }
     },
     {
-      "id": "commander_han_feng",
+      "id": "han_feng",
       "name": "Commander Han Feng",
       "token": "@{Commander Han Feng}",
       "tier": 2,
@@ -244,7 +321,13 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
       "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
       "outfits": {
@@ -255,6 +338,30 @@
         "posture": {
           "standing_stern": {
             "phrase": "standing with stern military posture holding a glowing tactical talisman"
+          },
+          "standing_command": {
+            "phrase": "standing with stern military posture and gauntleted hand raised",
+            "contradicts": [
+              "glowing tactical talisman"
+            ]
+          },
+          "scanning_device": {
+            "phrase": "holding handheld sensor instrument steady while squinting at dial",
+            "contradicts": [
+              "glowing tactical talisman"
+            ]
+          },
+          "combat_guard": {
+            "phrase": "braced in firm forward defensive guard posture",
+            "contradicts": [
+              "glowing tactical talisman"
+            ]
+          },
+          "reporting_urgent": {
+            "phrase": "standing tensely beside armored barricade bracing earpiece to report urgent tactical update",
+            "contradicts": [
+              "glowing tactical talisman"
+            ]
           }
         }
       },
@@ -276,21 +383,24 @@
         "in_game_handle": "Lord Starfall"
       },
       "appearance": {
-        "hair": "Long silver-streaked dark hair combed back",
+        "hair": "Long waist-length jet-black hair with silver streaks swept back",
         "eyes": "Regal golden eyes full of cold imperial disdain",
         "physique": "Imposing, aristocratic, commanding posture",
         "attire": "Tailored charcoal bespoke three-piece suit adorned with celestial star-charts, swirling purple cosmic starlight halo floating behind shoulders"
       },
-      "dna_prompt_anchor": "@{Ye Xingchen}, 28-year-old imposing aristocratic man, long silver-streaked dark hair, regal golden eyes full of cold disdain, tailored charcoal bespoke three-piece suit adorned with celestial star-charts, swirling purple cosmic starlight halo floating behind shoulders, imperial dominating aura, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Ye Xingchen}, 28-year-old imposing aristocratic East Asian male cultivator, long waist-length jet-black hair with silver streaks swept back, regal golden eyes full of cold disdain, imperial dominating aura, swirling purple cosmic starlight halo floating behind shoulders, tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "06_Rival_Ye_Xingchen.jpg",
       "flowName": "Character: Ye Xingchen",
       "episodes": [
         "EP01",
         "EP02",
         "EP03",
-        "EP04"
+        "EP04",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "22-year-old sharp-featured East Asian male cultivator, swept-back midnight blue hair, piercing silver-flecked eyes, calm disciplined expression",
+      "dna": "28-year-old imposing aristocratic East Asian male cultivator, long waist-length jet-black hair with silver streaks swept back, regal golden eyes full of cold disdain, imperial dominating aura, swirling purple cosmic starlight halo floating behind shoulders",
       "outfits": {
         "charcoal_bespoke_suit": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes"
       },
@@ -299,6 +409,12 @@
         "posture": {
           "standing_poised": {
             "phrase": "standing with disciplined upright posture and focused gaze"
+          },
+          "observing_monitor": {
+            "phrase": "standing tensely beside floor-to-ceiling glass window gazing across distant burning skyline"
+          },
+          "stunned_recoil": {
+            "phrase": "stepping back stiffly in cold disbelief with widened golden eyes"
           }
         }
       },
@@ -319,29 +435,46 @@
         "realm": "Asura Blood Emperor Realm (Class-SSS Dimensional Rift Despot)",
         "in_game_handle": "Asura Blood Sovereign",
         "weapons": "Six Demonic Blood-Forged Halberds & Cleavers",
-        "physique": "Six-Armed Asura War Body (Impervious Blood-Chitin Armor)"
+        "physique": "Four-Armed Asura War Body (Upper Rune Gauntlets, Lower Bare Crimson Muscle)"
       },
       "appearance": {
-        "hair": "Wild long crimson flame-like hair billowing upward",
-        "eyes": "Four burning demonic crimson eyes with glowing yellow pupils and dark sclera",
-        "physique": "Imposing eight-foot-tall demonic muscular frame, six muscular arms physically attached to broad shoulders",
-        "attire": "Barbed obsidian and blood-iron armor with glowing demonic runes, jagged bone shoulder pauldrons, swirling dark crimson blood-mist and black lightning"
+        "hair": "Wild fiery orange-red flame hair billowing upward",
+        "eyes": "Two glowing crimson eyes with diamond forehead mark",
+        "physique": "8-foot muscular demonic humanoid with four muscular arms and bare scarred chest",
+        "attire": "spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning"
       },
-      "dna_prompt_anchor": "@{Asura Blood Sovereign}, 8-foot-tall demonic humanoid sovereign, six muscular obsidian-crimson armored arms each physically connected to shoulders, wild long crimson flame hair billowing outward, four burning red demonic eyes, ornate barbed dark crimson demon-iron armor with glowing ancient runes, jagged bone spikes on shoulders, suffocating dark blood-red mist and black lightning aura, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
+      "dna_prompt_anchor": "@{Asura Blood Sovereign}, 8-foot muscular demonic humanoid, four arms with upper bone-spiked dark-obsidian rune gauntlets and lower bare scarred crimson-grey muscle, wild fiery orange-red flame hair, two glowing red eyes, forehead diamond mark, fanged grimace, bare scarred chest, spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning, modern 2025 action manhwa art style, sharp ink linework, vertical 9:16",
       "reference_plate": "07_Boss_Asura_Blood_Sovereign.jpg",
       "flowName": "Boss: Asura Blood Sovereign",
       "episodes": [
-        "EP01"
+        "EP01",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "colossal thousand-metre ancient fiend clad in cracked abyssal blood-iron plate armor, six mountainous arms, burning white solar flames crown",
+      "dna": "8-foot muscular demonic humanoid, four arms with upper bone-spiked dark-obsidian rune gauntlets and lower bare scarred crimson-grey muscle, wild fiery orange-red flame hair, two glowing red eyes, forehead diamond mark, fanged grimace, bare scarred chest",
       "outfits": {
-        "blood_armor": "cracked abyssal blood-iron plate armor bathed in burning white solar flames"
+        "blood_armor": "spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning"
       },
       "default_outfit": "blood_armor",
       "state_lexicon": {
         "posture": {
           "looming_colossal": {
-            "phrase": "looming with terrifying world-crushing pressure and crackling abyssal lightning"
+            "phrase": "looming with world-crushing abyssal pressure and crackling crimson lightning"
+          },
+          "arms_raised_roaring": {
+            "phrase": "throwing all four muscular arms outward in a thunderous abyssal roar"
+          },
+          "striding_forward": {
+            "phrase": "striding menacingly across cracked asphalt with glowing rune gauntlets raised"
+          },
+          "cowering_prostrated": {
+            "phrase": "collapsed flat face-down on its belly against shattered asphalt shaking in primal terror"
+          },
+          "dissolving_ash": {
+            "phrase": "kneeling on cracked asphalt dissolving rapidly into shimmering golden starlight ash"
           }
         }
       },
@@ -351,8 +484,8 @@
     },
     {
       "id": "gu_tianyu_spirit_dao",
-      "name": "Gu Tianyu's Jade Spirit Blade",
-      "token": "@{Gu Tianyu's Jade Spirit Blade}",
+      "name": "Gu Syndicate Custom Spirit Blade",
+      "token": "@{Gu Syndicate Custom Spirit Blade}",
       "tier": 2,
       "role": "Weapon (48,000-Year Golden Core Spirit Dao)",
       "category": "weapon",
@@ -361,22 +494,24 @@
         "cultivation_years": "48,000 Years",
         "realm": "Golden Core Spirit Weapon",
         "wielder": "Gu Tianyu",
-        "composition": "Forged silver-steel blade with translucent cyan jade cutting edge and etched wind runes"
+        "composition": "Forged silver-steel curved dao blade with glowing cyan jade runic cutting edge and sculpted white dragon crossguard"
       },
       "appearance": {
-        "blade": "Single-edged curved silver-steel dao blade with translucent cyan jade cutting edge",
-        "guard": "Sculpted white nephrite jade crossguard",
-        "hilt": "Emerald-green silk cord-wrapped hilt with flowing cyan silk tassel hanging from pommel",
-        "aura": "Subtle crackling cyan wind-spirit sparks, strictly silver-steel and cyan jade, zero solid gold metal"
+        "blade": "Single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge",
+        "guard": "Sculpted white dragon cloud crossguard",
+        "hilt": "Black ribbed grip wrapped in emerald-green cord with flowing cyan silk tassel hanging from silver ring pommel",
+        "aura": "Subtle crackling cyan spirit lightning, strictly silver-steel and cyan jade, zero solid gold metal"
       },
-      "dna_prompt_anchor": "@{Gu Tianyu's Jade Spirit Blade}, single-edged curved Chinese dao saber, forged silver-steel core with glowing translucent cyan jade cutting edge, white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, cyan silk tassel hanging from pommel, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
+      "dna_prompt_anchor": "@{Gu Syndicate Custom Spirit Blade}, single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16",
       "reference_plate": "08_Weapon_Gu_Tianyu_Jade_Dao.jpg",
       "flowName": "Character: Gu Tianyu's Jade Spirit Blade",
       "episodes": [
         "EP01",
-        "EP02"
+        "EP02",
+        "EP03",
+        "EP04"
       ],
-      "dna": "@{Gu Tianyu's Jade Spirit Blade}, single-edged curved Chinese dao saber, forged silver-steel core with glowing translucent cyan jade cutting edge, white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, cyan silk tassel hanging from pommel, modern 2025 urban cultivation action manhwa art style, sharp ink linework, high contrast cel shading, cinematic dramatic lighting, vertical 9:16"
+      "dna": "single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel"
     },
     {
       "id": "tactical_spirit_spectrometer",
@@ -392,20 +527,26 @@
         "threshold": "Overheats and fractures past Category 9 kinetic mana"
       },
       "appearance": {
-        "casing": "Ruggedized dark olive-drab and brushed-brass rectangular housing with black rubberized protective bumpers",
-        "nozzle": "Top circular brass sensor nozzle with collimating quartz crystal lens",
-        "interface": "Analog sweep needle gauge, glowing amber vacuum-tube digital readout, side illuminated toggle switches",
+        "casing": "Retro-military olive-drab and brushed-brass rectangular handheld box with heavy black rubber corner bumpers and bottom wrist lanyard",
+        "nozzle": "Top circular brushed-brass sensor nozzle emitting warm amber glow",
+        "interface": "Rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens",
         "status": "Emits dense white electrical smoke when overloaded"
       },
-      "dna_prompt_anchor": "@{Tactical Spirit Spectrometer}, handheld military tactical spirit-spectrometer, ruggedized olive-drab and brushed brass housing, circular brass sensor nozzle with quartz crystal lens, glowing amber vacuum-tube digital counter, analog sweep gauge, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Tactical Spirit Spectrometer}, retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16",
       "reference_plate": "09_Prop_Tactical_Spirit_Spectrometer.jpg",
       "flowName": "Character: Tactical Spirit Spectrometer",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Tactical Spirit Spectrometer}, handheld military tactical spirit-spectrometer, ruggedized olive-drab and brushed brass housing, circular brass sensor nozzle with quartz crystal lens, glowing amber vacuum-tube digital counter, analog sweep gauge, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16"
+      "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas"
     },
     {
       "id": "heaven_earth_golden_stele",
@@ -425,15 +566,18 @@
         "inscriptions": "Deeply etched divine golden ancient calligraphy and celestial star-maps",
         "aura": "Iridescent violet and golden primordial starlight halos swirling gracefully around base and apex"
       },
-      "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental 30,000-metre colossal obsidian-gold celestial monolith descending through dark stratospheric storm clouds, glowing divine golden calligraphy inscriptions along central axis, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation action manhwa art style, sharp ink linework, volumetric starlight lighting, vertical 9:16",
+      "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental 30,000-metre colossal obsidian-and-gold rectangular primordial stone monolith floating in high atmosphere, etched with glowing divine golden calligraphy and star-charts, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation action manhwa art style, sharp ink linework, volumetric starlight lighting, vertical 9:16",
       "reference_plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
       "flowName": "Character: Heaven-Earth Golden Stele",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Heaven-Earth Golden Stele}, monumental 30,000-metre colossal obsidian-gold celestial monolith descending through dark stratospheric storm clouds, glowing divine golden calligraphy inscriptions along central axis, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation action manhwa art style, sharp ink linework, volumetric starlight lighting, vertical 9:16"
+      "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos"
     },
     {
       "id": "gu_biao",
@@ -498,14 +642,20 @@
         "core": "Luminous faceted cyan spirit crystal core suspended at center",
         "needles": "Fine slender silver divination needles aligned with cosmic coordinates"
       },
-      "dna_prompt_anchor": "@{Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, suspended luminous cyan spirit crystal core, slender silver divination needles, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Celestial Star Astrolabe}, intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
       "reference_plate": "12_Prop_Celestial_Star_Astrolabe.jpg",
       "flowName": "Character: Celestial Star Astrolabe",
       "episodes": [
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Celestial Star Astrolabe}, intricate handheld spherical brass-and-celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, suspended luminous cyan spirit crystal core, slender silver divination needles, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16"
+      "dna": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core"
     },
     {
       "id": "heavenly_dao_simulator_hud",
@@ -518,22 +668,28 @@
       "stats_baseline": {
         "realm": "Primordial Sovereign Origin Engine",
         "wielder": "Lu Chen",
-        "composition": "Translucent tempered obsidian-glass holographic HUD floating in mid-air with golden celestial astrolabe rings"
+        "composition": "Translucent tempered obsidian-glass holographic HUD floating in mid-air with golden celestial concentric compass rings"
       },
       "appearance": {
         "interface": "Translucent dark obsidian-glass holographic HUD window floating vertically at eye level with glowing celestial gold borders and cyan circuit traces",
         "log": "Minimalist header 'HEAVENLY DAO SIMULATION ENGINE', glowing golden numbers '1,000,000,000' and 'REALM: PRIMORDIAL SOVEREIGN'",
         "projection": "Golden primordial Dao nebula rings, delicate celestial constellation spirit-qi gauges, and iridescent code motes drifting in ambient air"
       },
-      "dna_prompt_anchor": "@{Heavenly Dao Simulator Interface}, sleek translucent dark obsidian-glass holographic cultivation system HUD floating in mid-air, glowing celestial gold astrolabe progression rings, minimalist cultivation stat gauges, starlight nebula motes, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Heavenly Dao Simulator Interface}, translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16",
       "reference_plate": "13_Item_Heavenly_Dao_Simulator_HUD.jpg",
       "flowName": "Character: Heavenly Dao Simulator Interface",
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09"
       ],
-      "dna": "@{Heavenly Dao Simulator Interface}, sleek translucent dark obsidian-glass holographic cultivation system HUD floating in mid-air, glowing celestial gold astrolabe progression rings, minimalist cultivation stat gauges, starlight nebula motes, modern 2025 urban cultivation manhwa art style, sharp ink linework, vibrant cel shading, vertical 9:16"
+      "dna": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes"
     },
     {
       "id": "mo_yufeng",
@@ -555,13 +711,15 @@
         "physique": "Athletic, tall, pompous boastful posture",
         "attire": "Ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash"
       },
-      "dna_prompt_anchor": "@{Mo Yufeng}, 22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash, holding a forged glowing dragon-crested golden jade token, aura of pompous vanity and golden core spirit sparks, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
+      "dna_prompt_anchor": "@{Mo Yufeng}, 22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, golden amber eyes, ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck, gold-threaded sash, black trousers and dress shoes, modern 2025 urban cultivation manhwa art style, sharp ink linework, bright high-key lighting, vibrant clean cel shading, vertical 9:16",
       "reference_plate": "14_Antagonist_Mo_Yufeng.jpg",
       "flowName": "Character: Mo Yufeng",
       "episodes": [
-        "EP03"
+        "EP02",
+        "EP03",
+        "EP04"
       ],
-      "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair",
+      "dna": "22-year-old arrogant East Asian male cultivator, sharp swept-back crimson-tinted dark hair, haughty sneering expression, pompous posture",
       "outfits": {
         "cultivation_coat": "ornate gold-embroidered crimson and white modern cultivation coat over black combat turtleneck and gold-threaded sash"
       },
@@ -621,11 +779,12 @@
       "reference_plate": "15_Dean_Qindu_University.jpg",
       "flowName": "Character: Dean of Qindu University",
       "episodes": [
-        "EP03"
+        "EP03",
+        "EP04"
       ],
-      "dna": "60-year-old scholarly East Asian elder, neat silver-streaked hair, refined rimless rectangular spectacles, calm wise dark eyes",
+      "dna": "62-year-old dignified East Asian male academic scholar, neatly groomed silver-grey hair, short silver beard, wise cautious dark brown eyes, thin rectangular gold-rimmed glasses",
       "outfits": {
-        "academic_suit": "refined charcoal-grey three-piece academic suit with silk tie and silver collegiate lapel pin"
+        "academic_suit": "formal charcoal-grey collegiate academic cultivation robe with gold-embroidered torch crest over white high-collar shirt and silk tie"
       },
       "default_outfit": "academic_suit",
       "state_lexicon": {
@@ -832,6 +991,171 @@
       "default_state": {
         "posture": "standing"
       }
+    },
+    {
+      "id": "nether_behemoth",
+      "name": "Nether Behemoth",
+      "token": "@{Nether Behemoth}",
+      "tier": 1,
+      "role": "Class-SS Void Titan Beast (Nether Incursion Vanguard)",
+      "category": "boss",
+      "age": "500,000 to 5,000,000 Years",
+      "stats_baseline": {
+        "cultivation_years": "5,000,000 Years",
+        "realm": "Class-SS Abyssal Calamity"
+      },
+      "appearance": {
+        "physique": "Colossal 15-metre quadrupedal abyssal titan beast, volcanic obsidian chitin armour plates",
+        "eyes": "Three pairs of burning crimson eye clusters",
+        "features": "Pulsing violet nether fire veins, double-hinged jaw, spiked tail, purple spatial miasma"
+      },
+      "dna_prompt_anchor": "Colossal 15-metre quadrupedal abyssal titan beast, dense volcanic obsidian chitin armour plates, pulsing violet nether fire veins along flanks, three pairs of burning crimson eye clusters, double-hinged jaw lined with serrated obsidian fangs, heavy spiked tail, dripping acidic purple spatial miasma",
+      "reference_plate": "35_Creature_Nether_Behemoth.jpg",
+      "flowName": "Character: Nether Behemoth",
+      "episodes": [
+        "EP06"
+      ],
+      "dna": "Colossal 15-metre quadrupedal abyssal titan beast, dense volcanic obsidian chitin armour plates, pulsing violet nether fire veins along flanks, three pairs of burning crimson eye clusters, double-hinged jaw lined with serrated obsidian fangs, heavy spiked tail, dripping acidic purple spatial miasma",
+      "outfits": {
+        "default": "dense volcanic obsidian chitin armour plates with pulsing violet nether veins"
+      },
+      "default_outfit": "default",
+      "state_lexicon": {
+        "posture": {
+          "standing": {
+            "phrase": "towering quadrupedal abyssal stance"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing"
+      }
+    },
+    {
+      "id": "void_vanguard_beast",
+      "name": "Void Vanguard Beast",
+      "token": "@{Void Vanguard Beast}",
+      "tier": 2,
+      "role": "Class-S Void Scout Beast (Planetary Rift Vanguard)",
+      "category": "minion",
+      "age": "100,000 Years",
+      "stats_baseline": {
+        "cultivation_years": "100,000 Years",
+        "realm": "Class-S Void Predator"
+      },
+      "appearance": {
+        "physique": "3-metre sinewy predatory abyssal void beast with bat wings and razor talons",
+        "eyes": "Four glowing crimson eyes",
+        "features": "Sleek obsidian chitin carapace, sickle mandibles dripping emerald spatial acid"
+      },
+      "dna_prompt_anchor": "3-metre sinewy predatory abyssal void beast, sleek obsidian chitin carapace, leathery bat-like wings, four glowing crimson eyes, sharp sickle mandibles dripping emerald spatial acid, razor talons",
+      "reference_plate": "36_Creature_Void_Vanguard_Beast.jpg",
+      "flowName": "Character: Void Vanguard Beast",
+      "episodes": [
+        "EP05",
+        "EP06"
+      ],
+      "dna": "3-metre sinewy predatory abyssal void beast, sleek obsidian chitin carapace, leathery bat-like wings, four glowing crimson eyes, sharp sickle mandibles dripping emerald spatial acid, razor talons",
+      "outfits": {
+        "default": "sleek obsidian chitin carapace"
+      },
+      "default_outfit": "default",
+      "state_lexicon": {
+        "posture": {
+          "standing": {
+            "phrase": "predatory stalking stance"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing"
+      }
+    },
+    {
+      "id": "marshal_lei_gang",
+      "name": "Marshal Lei Gang",
+      "token": "@{Marshal Lei Gang}",
+      "tier": 2,
+      "role": "Supreme Military Commander (National Defense Council)",
+      "category": "ally",
+      "age": 48,
+      "appearance": {
+        "dna": "48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes",
+        "attire": "dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots"
+      },
+      "dna_prompt_anchor": "@{Marshal Lei Gang}, 48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes, dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes",
+      "visual_dna": "48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes, dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots",
+      "reference_plate": "40_Ally_Marshal_Lei_Gang.jpg",
+      "flowName": "Marshal Lei Gang",
+      "outfits": {
+        "marshal_coat": "dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots"
+      },
+      "default_outfit": "marshal_coat",
+      "state_lexicon": {
+        "posture": {
+          "standing_command": {
+            "phrase": "standing upright in commanding authority issuing strategic military orders"
+          },
+          "pointing_hologram": {
+            "phrase": "leaning toward curved tactical console gesturing urgently at glowing map rings"
+          },
+          "tense_observation": {
+            "phrase": "standing rigidly silent with fists clenched in shock"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "standing_command"
+      },
+      "episodes": [
+        "EP07",
+        "EP08",
+        "EP09"
+      ]
+    },
+    {
+      "id": "grandmaster_shen",
+      "name": "Grandmaster Shen",
+      "token": "@{Grandmaster Shen}",
+      "tier": 2,
+      "role": "Apex Corporate Martial Guildmaster",
+      "category": "ally",
+      "age": 45,
+      "appearance": {
+        "dna": "45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze",
+        "attire": "tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots"
+      },
+      "dna_prompt_anchor": "@{Grandmaster Shen}, 45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze, tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "dna": "45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze",
+      "visual_dna": "45-year-old regal East Asian martial grandmaster, long silver-white hair tied in low ponytail, piercing amber eyes, determined stern gaze, tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots",
+      "reference_plate": "41_Hero_Grandmaster_Shen.jpg",
+      "flowName": "Grandmaster Shen",
+      "outfits": {
+        "martial_duster": "tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots"
+      },
+      "default_outfit": "martial_duster",
+      "state_lexicon": {
+        "posture": {
+          "martial_aura_stance": {
+            "phrase": "balanced empty-handed martial stance with faint golden wind aura around shoulders"
+          },
+          "airborne_assault": {
+            "phrase": "lunging forward through swirling wind spirit aura with bare fists raised"
+          },
+          "reeling_shocked": {
+            "phrase": "staggering backward across cracked asphalt clutching bruised ribs in awe"
+          }
+        }
+      },
+      "default_state": {
+        "posture": "martial_aura_stance"
+      },
+      "episodes": [
+        "EP07",
+        "EP08",
+        "EP09"
+      ]
     }
   ]
 }

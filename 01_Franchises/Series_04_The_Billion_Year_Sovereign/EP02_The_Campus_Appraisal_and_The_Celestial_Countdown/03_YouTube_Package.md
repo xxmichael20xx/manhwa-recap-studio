@@ -23,15 +23,22 @@ While arrogant campus scions and corporate oligarchs brag about 50,000 years of 
 
 🔥 Series: The Billion-Year Sovereign: Reality Convergence
 🎬 Episode: Episodes 01 - 02 Compiled Saga
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 58.1 Minutes (58:06)
-• Episode Bounds: 00:00 - 58:06
+⏱️ FULL COMPILATION RUNTIME & TIMELINE:
+• Full Runtime: 270.5 Minutes (4:30:29)
+• Episode Bounds: 00:00 - 4:30:29
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
-00:00 - Episode 01: The One-Billion-Year Awakening and The Broken Blade (21m 46s)
+00:00 - Episode 01: The One Billion Year Awakening and The Broken Blade (21m 46s)
 21:46 - Episode 02: The Campus Appraisal and The Celestial Countdown (36m 20s)
-58:05 - Series Finale & Epilogue
+58:05 - Episode 03: The Campus Lockdown and The Impostor Sovereign (39m 06s)
+1:37:11 - Episode 04: The Jiangnan Syndicate War and The Fall of The Gu Zaibatsu (1h 14m 40s)
+2:51:51 - Episode 05: The Planetary Rift Outbreak and The Sky Shield Breach (21m 44s)
+3:13:34 - Episode 06: The Abyssal Incursion and The Guild Collapse (18m 17s)
+3:31:52 - Episode 07: The Class SSS Rupture and the Asura Descent (19m 50s)
+3:51:42 - Episode 08: The 450M Year Despot and the Fall of Armed Divisions (18m 10s)
+4:09:52 - Episode 09: The Grocery Bag Exorcism and the Legend of the Hooded Sovereign (20m 37s)
+4:30:29 - Series Finale & Epilogue
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:

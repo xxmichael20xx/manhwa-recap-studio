@@ -152,7 +152,7 @@ if (Array.isArray(items)) {
       const clean = it.id || itName.toLowerCase().replace(/[^a-z0-9_]/g, '_')
       heldProps[clean] = {
         canonical_name: itName,
-        container: it.container || 'clean sheath or pedestal',
+        container: it.container !== undefined ? it.container : null,
         visual_form: it.visual_dna || it.description || it.dna || 'canonical prop artifact',
         notes: `Locked across all episode scenes: ${itName}.`
       }
@@ -168,7 +168,7 @@ for (const propName of activeProps) {
 
   heldProps[clean] = {
     canonical_name: propName,
-    container: 'carved protective case',
+    container: ent?.container !== undefined ? ent.container : null,
     visual_form: ent?.visual_dna || ent?.description || 'canonical prop artifact',
     notes: 'Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted.'
   }
@@ -207,11 +207,13 @@ const worldStateData = {
   franchiseId,
   generatedAt: new Date().toISOString(),
   timeline: {
+    enforced: true,
     default_lighting: timelineShifts[0]?.lighting || 'bright_morning_sunlight',
     timeline_shifts: timelineShifts.length > 1 ? timelineShifts : []
   },
   wardrobe_locks: wardrobeLocks,
   held_props: heldProps,
+  zone_invariants: {},
   zone_lifecycles: zoneLifecycles
 }
 

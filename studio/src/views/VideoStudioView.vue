@@ -2590,17 +2590,15 @@ const getFlowDirectiveHeader = (collectionTitle) => {
     : '9:16 vertical manhwa aspect ratio (1080x1920 vertical format)'
   const styleDirective = getFranchiseArtStyleDirective(route.params.franchiseId, is16x9 ? '16:9' : '9:16')
 
-  return `[COMMAND: GENERATE ALL SCENES SIMULTANEOUSLY IN PARALLEL]
-MANDATE: Generate ALL scenes in "${collectionTitle}" SIMULTANEOUSLY in parallel in a single turn. Do NOT generate them sequentially one after another. Strictly forbidden from outputting intermediate status text (such as "I am currently generating scene IMG_XXX...").
+  return `[COMMAND: GENERATE BY 8 -> RENAME -> ORGANIZE INTO COLLECTION]
+MANDATE: Process ALL scenes in this prompt automatically in consecutive waves of at most 8 scenes at a time: (1) Generate up to 8 scenes concurrently -> (2) Rename each generated asset to its exact filename="..." attribute -> (3) Organize those renamed images into target collection "${collectionTitle}". Automatically continue wave-by-wave until 100% of scenes are complete. Never fire 24 generations in a single burst, never ask for confirmation between waves, and never output per-scene progress text (such as "I am currently generating scene IMG_XXX...").
 
-[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | CREATE IF NOT PRESENT | DO NOT ASSIGN TO PRIOR BATCHES]
+[SYSTEM DIRECTIVE: TARGET COLLECTION "${collectionTitle}" | WAVE SIZE: MAX 8 SCENES | GENERATE BY 8 -> RENAME -> COLLECTION]
 
-📁 MANDATORY COLLECTION GROUPING & SESSION ISOLATION INSTRUCTION:
-1. TARGET COLLECTION: Before or immediately upon generating the images below, YOU MUST CREATE A DEDICATED COLLECTION NAMED:
-   "${collectionTitle}"
-   and automatically assign, group, and organize 100% of all generated scene images into this Collection in Google Flow.
-2. ZERO CROSS-BATCH CONTAMINATION: DO NOT assign, route, or link any of these generated images to prior collections or earlier batch threads (such as previous batches or older chat runs). Every image generated from this prompt must belong strictly and exclusively to "${collectionTitle}".
-3. HARD BATCH BOUNDARY: Treat this generation batch as a completely isolated container.
+📁 MANDATORY PER-WAVE WORKFLOW (STRICTLY IN THIS ORDER):
+1. STEP 1 - GENERATE BY 8 (MAX 8 SCENES PER WAVE): Split the <scene> nodes below into consecutive waves of at most 8 scenes (e.g., Wave 1: 1-8, Wave 2: 9-16, Wave 3: 17-24; if 8 or fewer scenes are provided, run them together). Generate at most 8 scenes concurrently per wave - never launch all 24 scenes at once.
+2. STEP 2 - RENAME IMMEDIATELY: Right after each wave of 8 finishes generating, rename every generated asset to match its exact <scene filename="..."> attribute (e.g. IMG_001.jpg, IMG_002.jpg) without randomized filenames or waiting for a separate "sync" command.
+3. STEP 3 - ORGANIZE INTO TARGET COLLECTION: After renaming the assets from that wave, create (if not present) and assign 100% of those renamed images to collection "${collectionTitle}". Never mix with prior batches or older collections, then immediately advance to the next wave of 8 until all scenes are finished.
 
 🎨 GENERATION & COMPOSITION INVARIANTS:
 1. STANDALONE SCENES: Generate EXACTLY ONE separate, standalone full-frame ${aspectInstruction} manhwa image for each <scene> container below.
@@ -2609,14 +2607,13 @@ MANDATE: Generate ALL scenes in "${collectionTitle}" SIMULTANEOUSLY in parallel 
    - Every generated image MUST be 100% pure, textless illustration artwork.
    - ABSOLUTELY ZERO Korean characters / Hangul (한글), ZERO English words/letters, ZERO Japanese kanji/hiragana, ZERO numbers, ZERO speech bubbles, ZERO dialogue balloons, ZERO comic sound effects (SFX/onomatopoeia), ZERO subtitles, ZERO captions, ZERO watermarks, ZERO signatures, ZERO chapter titles, ZERO artist logos, ZERO burned-in filenames, and ZERO UI text.
    - Never draw or overlay any words, glyphs, or letters onto the artwork under any circumstances.
-4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error, you MUST automatically retry that specific <scene> until all requested scenes in this prompt are successfully generated. Do not stop early or omit any scenes.
+4. MANDATORY FULL COMPLETION & AUTO-RETRY PROTOCOL: If any individual image generation fails, times out, or returns a policy/tool error within a wave, automatically retry that specific <scene> and finish its rename + collection assignment before starting the next wave.
 5. MANDATORY ANATOMICAL DIRECTIVE: Flawless human anatomy only. Exactly two arms, two legs, five fingers per hand, natural joint articulation. ZERO extra limbs, ZERO mutated hands, ZERO duplicate body parts, ZERO fused fingers, and ZERO extra feet.
 6. MANDATORY LIMB CONNECTIVITY & ANTI-GHOST HANDS: Every hand holding an object, weapon, bow, or prop MUST be physically and seamlessly attached to the character's wrist, forearm, and shoulder. ZERO floating hands, ZERO detached or ghost hands hovering in mid-air, ZERO detached appendages, and ZERO duplicate floating arms holding props.
-7. MANDATORY FILE NAMING CONVENTION: Name each generated image file strictly matching its scene tag as specified in the filename attribute (e.g. IMG_001.jpg, IMG_002.jpg). Never use randomized or hash filenames.
-8. CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule}
-9. ART STYLE (${styleDirective.styleName}): ${styleDirective.genreRule} ${styleDirective.forbiddenRule}
-10. CHARACTER ENTITY REFERENCE MAPPING:
-    - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${styleDirective.exampleEntities?.length ? styleDirective.exampleEntities.join(', ') : '@{Main Protagonist}'}).`
+7. CONTEXT-AWARE CROWD & EXTRAS STAGING: ${styleDirective.crowdRule}
+8. ART STYLE (${styleDirective.styleName}): ${styleDirective.genreRule} ${styleDirective.forbiddenRule}
+9. CHARACTER ENTITY REFERENCE MAPPING:
+   - Always map @{Character Name} tags to their corresponding character entity references in this project (e.g. ${styleDirective.exampleEntities?.length ? styleDirective.exampleEntities.join(', ') : '@{Main Protagonist}'}).`
 }
 
 // Failed & Cluttered Prompts Drawer State

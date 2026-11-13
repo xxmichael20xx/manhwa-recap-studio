@@ -1,0 +1,219 @@
+{
+  "episodeId": "EP08_The_450M_Year_Despot_and_the_Fall_of_Armed_Divisions",
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "generatedAt": "2026-11-10T19:03:31.830Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "overcast_crimson_morning",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "lighting": "overcast_crimson_morning"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "lu_chen": "clean oversized charcoal-black streetwear pullover hoodie with loose sleeves covering wrists, dark casual utility trousers, minimalist white sneakers",
+    "wang_bao": "plain matte crimson cotton crew-neck t-shirt with zero text or graphics, beige cargo shorts, casual athletic sneakers",
+    "han_feng": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots",
+    "jiang_qingxue": "elegant modern white designer trench coat over pale cyan silk dress, silver belt buckle, low heels",
+    "marshal_lei_gang": "dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather belt, slate trousers, shiny black leather boots",
+    "grandmaster_shen": "tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots",
+    "ye_xingchen": "tailored charcoal bespoke three-piece suit adorned with celestial star-charts, dark leather dress shoes",
+    "asura_blood_sovereign": "spiked dark obsidian-iron shoulder pauldrons with glowing crimson runes, demon-skull belt buckle, spiked dark-iron greaves, three-clawed boots, dark crimson lightning"
+  },
+  "held_props": {
+    "aegis_hover_tank": {
+      "canonical_name": "Aegis Tactical Hover-Tank",
+      "container": null,
+      "visual_form": "sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters, angular turret with twin glowing cyan railgun barrels",
+      "notes": "Tactical unmanned hover-tank."
+    },
+    "bureau_recon_drone": {
+      "canonical_name": "Bureau Recon Drone",
+      "container": null,
+      "visual_form": "compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre rotor arms and glowing cyan front circular optical lens",
+      "notes": "Tactical reconnaissance drone."
+    },
+    "bureau_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "notes": "Tactical longsword carried by Commander Han Feng."
+    },
+    "celestial_star_astrolabe": {
+      "canonical_name": "Celestial Star Astrolabe",
+      "container": null,
+      "visual_form": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core",
+      "notes": "Brushed-brass and celestial-silver starlight divination astrolabe carried by Jiang Qingxue."
+    }
+  },
+  "zone_lifecycles": {
+    "jiangnan.transit_plaza": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_064",
+        "desc": "Wide 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath shattered elevated steel overpass ruins and concrete rubble framed by flat-topped glass skyscrapers under overcast crimson storm clouds"
+      },
+      {
+        "from_scene": "IMG_065",
+        "to_scene": "IMG_168",
+        "desc": "Wide modern 2025 Jiangnan Central Transit Plaza intersection, multi-metre craters and asphalt fissures beneath ruined overpass slabs and buckled hover-tanks under overcast crimson storm clouds"
+      }
+    ],
+    "dorm.402": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Modern Qindu University male dorm Room 402 during overcast morning, single brushed-steel lofted bunk bed, wooden study desk with kettle, white walls, tiled floor, closed unbroken glass window"
+      }
+    ],
+    "campus.pathway": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Modern 2025 Qindu University campus shaded avenue and collegiate promenade during gloomy overcast morning hours, contemporary glass academic faculty buildings, manicured green trees, clean stone pavers under overcast crimson storm sky"
+      }
+    ],
+    "bureau.command_room": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Modern 2025 subterranean Defense Council tactical war room, dark charcoal steel acoustic panels, curved obsidian console desk with blank glowing cyan geometric holographic rings, cool white LED ceiling lighting"
+      }
+    ],
+    "campus.perimeter_gate": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "North perimeter cordon of Qindu University during overcast morning, tungsten barricades, steel gatehouse overpass walkway, Threat Bureau command carriers, steel perimeter fence under overcast crimson sky"
+      }
+    ],
+    "starfall.penthouse": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "Panoramic penthouse executive suite atop Starfall Tower during overcast morning, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking overcast Jiangnan metropolis, glowing holographic radar terminals"
+      }
+    ],
+    "troposphere.stele": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_168",
+        "desc": "High troposphere and stratosphere perspective during overcast morning, thirty-thousand-metre colossal obsidian-and-gold primordial stone stele descending through storm clouds, iridescent violet and golden primordial starlight auroras"
+      }
+    ]
+  },
+  "zone_invariants": {
+    "dorm.402": {
+      "sealed_interior": true,
+      "sealed_from_creatures": [
+        "void_vanguard_beast",
+        "nether_behemoth",
+        "asura_blood_sovereign"
+      ],
+      "banned_narrative_patterns": [
+        "\\bbroken\\s+window\\b",
+        "\\bshattered\\s+window\\b",
+        "\\bsmashed\\s+glass\\b",
+        "\\bwindow\\s+(?:shattered|exploded|burst)\\b",
+        "\\bcollapsed\\s+onto\\s+(?:his\\s+)?mattress\\b"
+      ],
+      "banned_feature_patterns": [
+        "\\bbroken\\s+window\\b",
+        "\\bshattered\\s+window\\b",
+        "\\bsmashed\\s+glass\\b",
+        "\\bmattress\\b",
+        "\\bbunk\\s+beds\\b"
+      ]
+    }
+  },
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:stone\\s+battlement|battlements?|crenelated|parapets?|castle\\s+walls?|drawbridge|fortress\\s+keep)\\b",
+      "message": "Medieval architecture banned in modern 2025 urban setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\bdark\\s+night\\s+sky\\b|\\bfloodlit\\s+night\\b|\\bnocturnal\\s+searchlights\\b|\\bbright\\s+blue\\s+sky\\b|\\bclear\\s+blue\\s+sky\\b",
+      "exclude_zones": [],
+      "message": "Inconsistent lighting banned in overcast crimson morning timeline"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\baegis\\s+(?:tactical\\s+)?hover-tank\\b|\\bhover-tank\\b",
+      "requiredToken": "@{Aegis Tactical Hover-Tank}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bbureau\\s+recon\\s+drone\\b|\\brecon\\s+drone\\b",
+      "requiredToken": "@{Bureau Recon Drone}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bbureau\\s+(?:tactical\\s+)?alloy\\s+longsword\\b|\\balloy\\s+longsword\\b",
+      "requiredToken": "@{Bureau Tactical Alloy Longsword}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bcelestial\\s+star\\s+astrolabe\\b|\\bastrolabe\\b",
+      "requiredToken": "@{Celestial Star Astrolabe}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Aegis Tactical Hover-Tank",
+      "bannedPattern": "\\b(?:hover tank|armored tank|plasma tank|tactical tank)\\b",
+      "allowedPattern": "Aegis\\s+Tactical\\s+Hover-Tank"
+    },
+    {
+      "canonical": "Bureau Recon Drone",
+      "bannedPattern": "\\b(?:recon drone|tactical drone|camera drone|black drone)\\b",
+      "allowedPattern": "Bureau\\s+Recon\\s+Drone"
+    },
+    {
+      "canonical": "Bureau Tactical Alloy Longsword",
+      "bannedPattern": "\\b(?:alloy longsword|steel longsword|service blade|tactical sword)\\b",
+      "allowedPattern": "Bureau\\s+Tactical\\s+Alloy\\s+Longsword"
+    },
+    {
+      "canonical": "Celestial Star Astrolabe",
+      "bannedPattern": "\\b(?:star astrolabe|silver astrolabe|ancient astrolabe)\\b",
+      "allowedPattern": "Celestial\\s+Star\\s+Astrolabe"
+    }
+  ],
+  "prop_continuity_windows": [
+    {
+      "holder_id": "commander_han_feng",
+      "prop_id": "bureau_alloy_longsword",
+      "prop_token": "@{Bureau Tactical Alloy Longsword}",
+      "from_scene": "IMG_059",
+      "to_scene": "IMG_060"
+    },
+    {
+      "holder_id": "jiang_qingxue",
+      "prop_id": "celestial_star_astrolabe",
+      "prop_token": "@{Celestial Star Astrolabe}",
+      "from_scene": "IMG_061",
+      "to_scene": "IMG_062"
+    },
+    {
+      "holder_id": "commander_han_feng",
+      "prop_id": "bureau_alloy_longsword",
+      "prop_token": "@{Bureau Tactical Alloy Longsword}",
+      "from_scene": "IMG_135",
+      "to_scene": "IMG_136"
+    },
+    {
+      "holder_id": "jiang_qingxue",
+      "prop_id": "celestial_star_astrolabe",
+      "prop_token": "@{Celestial Star Astrolabe}",
+      "from_scene": "IMG_137",
+      "to_scene": "IMG_138"
+    }
+  ]
+}

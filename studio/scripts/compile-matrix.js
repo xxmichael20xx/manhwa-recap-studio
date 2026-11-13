@@ -50,6 +50,7 @@ const entities = readJsonSafe(path.join(franchiseDir, franchise.paths?.entities 
 const zones = readJsonSafe(path.join(franchiseDir, franchise.paths?.zones || 'vault/zones.json'))
 const legacyChars = readJsonSafe(path.join(franchiseDir, 'character_vault/characters.json'), false)?.characters || []
 const legacyItems = readJsonSafe(path.join(franchiseDir, 'character_vault/items.json'), false)?.items || []
+const legacyLocations = readJsonSafe(path.join(franchiseDir, '00_Locations/locations.json'), false)?.locations || []
 const policy =
   readJsonSafe(path.join(franchiseDir, franchise.paths?.policy || 'policy.json'), false) ||
   readJsonSafe(path.resolve(projectRoot, '00_Engine/policy.json'), false)
@@ -62,8 +63,8 @@ if (!fs.existsSync(scriptPath)) {
 const scriptText = fs.readFileSync(scriptPath, 'utf-8')
 const scriptClauses = PromptDnaCompiler.parseScriptClauses(scriptText)
 
-// Parse V2.0 Staging Headers
-const headerRegex = /\[(IMG_\d+)\][^\n]*\n?\s*<!--\s*ZONE:\s*([^|]+)\|\s*STAGE:\s*([^|]+)\|\s*ACTOR:\s*([^|]+)\|\s*CAST:\s*\[([^\]]*)\]\|\s*PROPS:\s*\[([^\]]*)\](?:\|\s*TECH_STAGE:\s*([^|]+))?(?:\|\s*PLAN_TALK:\s*([^>]+))?\s*-->/gi
+// Parse V2.0 Staging Headers (tolerate optional whitespace around pipe delimiters)
+const headerRegex = /\[(IMG_\d+)\][^\n]*\n?\s*<!--\s*ZONE:\s*([^|]+?)\s*\|\s*STAGE:\s*([^|]+?)\s*\|\s*ACTOR:\s*([^|]+?)\s*\|\s*CAST:\s*\[([^\]]*)\]\s*\|\s*PROPS:\s*\[([^\]]*)\](?:\s*\|\s*TECH_STAGE:\s*([^|]+?))?(?:\s*\|\s*PLAN_TALK:\s*([^>]+?))?\s*-->/gi
 const scriptHeaders = new Map()
 let hm
 while ((hm = headerRegex.exec(scriptText)) !== null) {
@@ -87,6 +88,7 @@ const worldState = readJsonSafe(worldStatePath, false)
 
 const LIGHTING_PHRASES = {
   bright_morning_sunlight: 'illuminated by bright morning sunlight',
+  overcast_crimson_morning: 'illuminated by overcast stormy crimson morning daylight',
   day_sunlit: 'illuminated by bright natural daylight',
   daylight: 'illuminated by bright natural daylight',
   interior_warm: 'illuminated by warm ambient interior lighting',
@@ -128,30 +130,7 @@ const resolveSceneLighting = (sId, clause = '', zone = {}, state = null) => {
 }
 
 const sanitizeZoneCanon = (canon = '', lightingMode = '') => {
-  let s = String(canon)
-  const isDay = ['bright_morning_sunlight', 'day_sunlit', 'daylight', 'dawn'].includes(lightingMode)
-  const isNight = ['night_floodlit', 'night_celestial', 'interior_night'].includes(lightingMode)
-
-  if (isDay) {
-    s = s
-      .replace(/\bat night\b/gi, '')
-      .replace(/\bunder dark night sky\b/gi, 'under bright morning sky')
-      .replace(/\bunder floodlit night sky\b/gi, 'under clear sky')
-      .replace(/\bwindow overlooking campus night lamps\b/gi, 'window overlooking campus grounds')
-      .replace(/\bhigh LED stadium floodlights under dark night sky\b/gi, 'high LED stadium towers under morning sky')
-      .replace(/\bsearchlights sweeping campus perimeter fence\b/gi, 'security barriers along campus perimeter fence')
-      .replace(/\s{2,}/g, ' ')
-      .trim()
-  } else if (isNight) {
-    s = s
-      .replace(/\bin morning daylight\b/gi, 'under night floodlights')
-      .replace(/\bunder daylight\b/gi, 'under night sky')
-      .replace(/\bunder bright blue sky\b/gi, 'under dark night sky')
-      .replace(/\s{2,}/g, ' ')
-      .trim()
-  }
-
-  return s
+  return PromptDnaCompiler.sanitizeZoneCanon(canon, lightingMode)
 }
 
 const resolveZoneCanon = (sId, zoneId, zone = {}, header = {}, state = null) => {
@@ -178,12 +157,12 @@ const getToneDrivenTierAndLayout = (header, clause = '', castCount = 1) => {
   const stage = (header?.stage || '').toLowerCase()
   const c = (clause || '').toLowerCase()
   const isProp = stage === 'prop' || (castCount === 0 && (header?.props && header.props.length > 0))
-  const isCombat = stage === 'combat' || /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i.test(c)
+  const isCombat = stage === 'combat' || /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing|spews|spewing|slams|slamming|tears|tearing|dissolves|dissolving|freezes|freezing|flicks|flicking|shears|shearing|sweeps|sweeping|dives|diving)\b/i.test(c)
   const isEstablishing = stage === 'establishing' || castCount === 0 || (header?.cast && header.cast.length === 0) || /\b(?:panoramic|wide view|landscape|skyline|exterior of|loomed above)\b/i.test(c)
   const isHeroPlate = /\b(?:stepped forward|revealed|unleashed|towered|eyes flared|supreme|sovereign)\b/i.test(c)
 
   let tier = 'B'
-  if (isCombat) {
+  if (isCombat && stage !== 'establishing') {
     tier = 'C'
   } else if (isEstablishing || isHeroPlate) {
     tier = 'A'
@@ -202,7 +181,7 @@ const getToneDrivenTierAndLayout = (header, clause = '', castCount = 1) => {
         ? 'Tier B: Dual-panel manhwa webtoon split strip'
         : 'Tier C: Three-panel dynamic manhwa action strip')
 
-  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(c)
+  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|pavement|tiled floor|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(c)
 
   let lens = '35mm medium single-character eye-level framing'
   if (isProp) {
@@ -295,7 +274,7 @@ console.log('-'.repeat(78))
 const SAFE_TAIL_CHARACTER = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, no duplicate protagonist, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
 const SAFE_TAIL_LANDSCAPE = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures.'
 
-const SAFE_TAIL_PROP_FOCUSED = '100% prop artifact showcase illustration, solitary weapon still life, unheld blade resting on stone dais, completely unpopulated, zero humans, zero people, zero warriors, zero knights, zero armor, zero characters, zero hands touching the weapon, zero figures in the sky, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
+const SAFE_TAIL_PROP_FOCUSED = '100% prop showcase illustration, solitary still life, completely unpopulated, zero humans, zero people, zero warriors, zero knights, zero armor, zero characters, zero hands touching the prop, zero figures in the sky, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
 const UNARMED_JULIAN_TAIL = 'unarmed noble attire, clean waist belt, zero weapons at hip, empty hands, zero swords, zero scabbards'
 
 
@@ -448,6 +427,10 @@ function sanitizeActionLayer(act, sId) {
   return res
 }
 
+const ledgerPath = path.join(epDir, 'state_events.jsonl')
+const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
+const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
+
 const compiledSceneNodes = []
 
 for (let i = 0; i < sceneIds.length; i++) {
@@ -471,7 +454,11 @@ for (let i = 0; i < sceneIds.length; i++) {
     ? []
     : (header.cast && header.cast.length > 0 ? header.cast : (parsedScene.charRefs || []).filter(r => {
         const cleanR = r.replace(/[@{}]/g, '').trim().toLowerCase()
-        const ent = Object.values(entities).find(e => (e.name || '').toLowerCase() === cleanR || e.id.toLowerCase() === cleanR)
+        const ent = Object.values(entities).find(e =>
+          (e.name || '').toLowerCase() === cleanR ||
+          (e.token || '').replace(/^@\{|\}$/g, '').trim().toLowerCase() === cleanR ||
+          e.id.toLowerCase() === cleanR
+        )
         return !ent || (ent.kind !== 'location' && ent.kind !== 'item')
       }))
 
@@ -491,7 +478,7 @@ for (let i = 0; i < sceneIds.length; i++) {
   // Safety override: if scene was tagged Tier C but stage is dialogue/interaction with zero combat, downgrade to Tier B
   if (tier === 'C' && (header.stage === 'dialogue' || header.stage === 'interaction' || header.stage === 'establishing')) {
     const clauseText = (scriptClauses.get(sId) || '').toLowerCase()
-    const hasCombat = /\b(?:slash|punched|punches|punching|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i.test(clauseText)
+    const hasCombat = /\b(?:slash|punched|punches|punching|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing|spews|spewing|slams|slamming|tears|tearing|dissolves|dissolving|freezes|freezing|flicks|flicking|shears|shearing|sweeps|sweeping|dives|diving)\b/i.test(clauseText)
     if (!hasCombat || sId === 'IMG_063') {
       tier = 'B'
     }
@@ -508,8 +495,8 @@ for (let i = 0; i < sceneIds.length; i++) {
   } else {
     layout = layout || (tier === 'A' ? 'Tier A: Single-panel full-bleed hero plate' : tier === 'B' ? 'Tier B: Dual-panel split strip' : 'Tier C: Three-panel action strip')
   }
-  let lens = toneConfig.lens
-  if (parsedScene.prompt && parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)) {
+  let lens = parsedScene.lens || toneConfig.lens
+  if (parsedScene.prompt && !parsedScene.lens && parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)) {
     const matchedLens = parsedScene.prompt.match(/\b\d+mm\b[^\n,.]*/i)[0]
     if (!matchedLens.toLowerCase().includes('two-shot') || activeCast.length >= 2) {
       lens = matchedLens
@@ -519,20 +506,20 @@ for (let i = 0; i < sceneIds.length; i++) {
     layout = franchise.format === '16:9'
       ? 'Tier B: Single-panel full-bleed horizontal cinematic plate'
       : 'Tier B: Dual-panel manhwa webtoon split strip'
-    lens = activeCast.length >= 2 ? '35mm medium two-shot eye-level framing' : '35mm medium single-character eye-level framing'
+    if (!parsedScene.lens) {
+      lens = activeCast.length >= 2 ? '35mm medium two-shot eye-level framing' : '35mm medium single-character eye-level framing'
+    }
   }
   if (activeCast.length <= 1 && lens.toLowerCase().includes('two-shot')) {
     lens = activeCast.length === 0
       ? '24mm wide angle establishing framing'
       : (tier === 'A' ? '24mm wide angle, low-angle hero framing' : (tier === 'C' ? '50mm telephoto close-up action framing' : '35mm medium single-character eye-level framing'))
-  } else if (activeCast.length >= 2 && !lens.toLowerCase().includes('two-shot') && !lens.toLowerCase().includes('action') && !lens.toLowerCase().includes('wide angle')) {
-    lens = tier === 'C' ? '50mm telephoto close-up action framing' : '35mm medium two-shot eye-level framing'
   }
 
   const actionText = `${parsedScene.actionLayer || ''} ${scriptClauses.get(sId) || ''}`
-  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(actionText)
-  if (isActorGrounded && activeCast.length >= 2) {
-    if (lens.toLowerCase().includes('two-shot') || lens.toLowerCase().includes('eye-level')) {
+  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|pavement|tiled floor|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(actionText)
+  if (isActorGrounded) {
+    if (/\b(?:two-shot|eye-level)\b/i.test(lens)) {
       lens = '35mm high-angle perspective looking down'
     }
   }
@@ -559,6 +546,9 @@ for (let i = 0; i < sceneIds.length; i++) {
 
   // 2. Layer 2: Characters & Props
   const charDnaBlocks = []
+  const castEntities = []
+  const sceneDnaHashes = {}
+  const { entityStates } = PromptDnaCompiler.replayLedgerState(entities, zones, parsedLedgerEvents, sceneNum)
 
   for (const cToken of activeCast) {
     const cleanName = cToken.replace(/[@{}]/g, '').trim()
@@ -569,24 +559,25 @@ for (let i = 0; i < sceneIds.length; i++) {
     )
 
     if (ent) {
-      let dna = ent.dna || ent.dna_prompt_anchor || ent.token
-      if (ent.stage_variants && ent.stage_variants[header.techStage]) {
-        dna = ent.stage_variants[header.techStage]
-      }
-      if (worldState?.wardrobe_locks) {
-        const lockedWardrobe = worldState.wardrobe_locks[ent.id] || worldState.wardrobe_locks[cleanName.toLowerCase()]
-        if (lockedWardrobe && !dna.includes(lockedWardrobe)) {
-          dna = dna.replace(/wearing [^,.]+/i, `wearing ${lockedWardrobe}`)
+      castEntities.push(ent)
+      if (ent.kind === 'character' || ent.kind === 'creature') {
+        const comp = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id] || {})
+        sceneDnaHashes[ent.id] = comp.dnaHash
+        let block = comp.compiledBlock
+        // Julian unarmed enforcement (scenes 001 - 139)
+        if (cleanName.toLowerCase().includes('julian') && sceneNum < 140) {
+          if (!block.toLowerCase().includes('unarmed noble attire')) {
+            block += `, ${UNARMED_JULIAN_TAIL}`
+          }
         }
+        charDnaBlocks.push(block)
+      } else {
+        let dna = ent.dna || ent.dna_prompt_anchor || ent.token
+        sceneDnaHashes[ent.id] = PromptDnaCompiler.sha256(`${ent.token}, ${dna}`, 12)
+        charDnaBlocks.push(`Featuring @{${cleanName}} (${dna.replace(/^@\{[^}]+\},\s*/, '')})`)
       }
-      // Julian unarmed enforcement (scenes 001 - 139)
-      if (cleanName.toLowerCase().includes('julian') && sceneNum < 140) {
-        if (!dna.toLowerCase().includes('unarmed noble attire')) {
-          dna += `, ${UNARMED_JULIAN_TAIL}`
-        }
-      }
-      charDnaBlocks.push(`Featuring @{${cleanName}} (${dna.replace(/^@\{[^}]+\},\s*/, '')})`)
     } else {
+      castEntities.push(null)
       charDnaBlocks.push(`Featuring @{${cleanName}}`)
     }
   }
@@ -597,25 +588,35 @@ for (let i = 0; i < sceneIds.length; i++) {
   if (header.props?.length > 0) {
     for (const pToken of header.props) {
       const cleanProp = pToken.replace(/[@{}]/g, '').trim()
+      const cleanPropLower = cleanProp.toLowerCase()
+      const cleanPropSlug = cleanPropLower.replace(/[^a-z0-9]+/g, '_')
       const propEnt = Object.values(entities).find(e =>
-        (e.name && e.name.toLowerCase() === cleanProp.toLowerCase()) ||
-        (e.token && e.token.toLowerCase().includes(cleanProp.toLowerCase())) ||
-        (e.id && e.id.toLowerCase() === cleanProp.toLowerCase().replace(/[^a-z0-9]/g, '_'))
-      ) || legacyItems.find(it => (it.name && it.name.toLowerCase() === cleanProp.toLowerCase()) || it.id === cleanProp.toLowerCase().replace(/[^a-z0-9]/g, '_'))
+        (e.name && e.name.toLowerCase() === cleanPropLower) ||
+        (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === cleanPropLower) ||
+        (e.aliases || []).some(a => a.toLowerCase() === cleanPropLower) ||
+        (e.id && e.id.toLowerCase() === cleanPropSlug)
+      ) || Object.values(entities).find(e =>
+        (e.token && e.token.toLowerCase().includes(cleanPropLower))
+      ) || legacyItems.find(it =>
+        (it.name && it.name.toLowerCase() === cleanPropLower) ||
+        (it.aliases || []).some(a => a.toLowerCase() === cleanPropLower) ||
+        it.id === cleanPropSlug
+      )
 
       const isStationary = activeCast.length === 0 ||
         (header.stage && header.stage.toLowerCase() === 'prop') ||
-        cleanProp.toLowerCase().includes('dummy') ||
-        cleanProp.toLowerCase().includes('target') ||
-        cleanProp.toLowerCase().includes('pedestal') ||
-        cleanProp.toLowerCase().includes('monolith') ||
-        cleanProp.toLowerCase().includes('bench') ||
-        cleanProp.toLowerCase().includes('monument') ||
-        (propEnt && (propEnt.type === 'Prop' || propEnt.kind === 'item' || propEnt.isAnimate === false))
+        (propEnt?.placement === 'stationary') ||
+        /\b(?:dummy|target|pedestal|monolith|bench|monument|stele|hud|interface|formation|sedan)\b/i.test(cleanProp)
 
       if (isStationary) {
+        if (propEnt?.id && propEnt?.dna) {
+          sceneDnaHashes[propEnt.id] = PromptDnaCompiler.sha256(`${propEnt.token}, ${propEnt.dna}`, 12)
+        }
         stationaryProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt })
       } else {
+        if (propEnt?.id && propEnt?.dna) {
+          sceneDnaHashes[propEnt.id] = PromptDnaCompiler.sha256(`${propEnt.token}, ${propEnt.dna}`, 12)
+        }
         handheldProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt })
       }
     }
@@ -629,6 +630,13 @@ for (let i = 0; i < sceneIds.length; i++) {
         const rawDna = sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`
         const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
         layer2 += `, Featuring ${sp.token} (${cleanPropDna})`
+      }
+    }
+    if (handheldProps.length > 0) {
+      for (const hp of handheldProps) {
+        const rawDna = hp.ent?.dna || hp.ent?.description || hp.ent?.visual_dna || hp.name
+        const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
+        layer2 += `, Featuring ${hp.token} (${cleanPropDna})`
       }
     }
   } else if (stationaryProps.length > 0) {
@@ -650,7 +658,8 @@ for (let i = 0; i < sceneIds.length; i++) {
   const vantage = zone.vantage_rule || ''
   const boundary = zone.boundary_tags || ''
   const windowVantage = zone.window_vantage || ''
-  const zoneTokenName = zone.name || zoneId.replace(/_/g, ' ')
+  const locEnt = Object.values(entities).find(e => e.kind === 'location' && (e.id === zoneId || (e.aliases || []).some(a => a.toLowerCase() === zoneId.toLowerCase())))
+  const zoneTokenName = locEnt ? locEnt.token.replace(/^@\{|\}$/g, '') : (zone.name || zoneId.replace(/_/g, ' '))
   const layer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${vantage ? ', ' + vantage : ''}${windowVantage ? ', ' + windowVantage : ''}${boundary ? ', ' + boundary : ''}`
 
   // 4. Layer 4: Action Layer & Guards
@@ -662,12 +671,33 @@ for (let i = 0; i < sceneIds.length; i++) {
     layer4 += ' Translucent cyan holographic interface floating freely in upper-right air quadrant with zero hands touching glass.'
   }
 
+  // Architectural Metaphor & Landmark Horn Insulation Guard (Anti-Landmark Mutation Law)
+  const isArchitecturalZone = zoneId && (
+    zoneId.includes('stele') || zoneId.includes('tower') || zoneId.includes('boardroom') ||
+    zoneId.includes('plaza') || zoneId.includes('stadium') || zoneId.includes('gate') ||
+    zoneId.includes('dorm') || zoneId.includes('penthouse') || zoneId.includes('suite')
+  );
+  if (isArchitecturalZone && /\b(?:horn|horns|demon|fangs)\b/i.test(layer4)) {
+    if (!layer4.toLowerCase().includes('zero horns')) {
+      layer4 += ' Zero horns on buildings, zero organic horns, pure monolithic architectural structure, zero demon features on architecture.'
+    }
+  }
+
   // Enforce locked held prop form if worldState defines it
   if (worldState?.held_props && header.props?.length > 0) {
     for (const pToken of header.props) {
-      const cleanProp = pToken.replace(/[@{}]/g, '').trim().toLowerCase()
-      const propLock = worldState.held_props[cleanProp]
-      if (propLock && propLock.container && !layer4.toLowerCase().includes(propLock.container.toLowerCase())) {
+      const cleanProp = pToken.replace(/[@{}]/g, '').trim()
+      const cleanLower = cleanProp.toLowerCase()
+      const cleanSlug = cleanLower.replace(/[^a-z0-9]+/g, '_')
+      const matchedPropEnt = Object.values(entities).find(e =>
+        (e.name && e.name.toLowerCase() === cleanLower) ||
+        (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === cleanLower) ||
+        (e.aliases || []).some(a => a.toLowerCase() === cleanLower) ||
+        (e.id && e.id.toLowerCase() === cleanSlug)
+      )
+      const propLock = worldState.held_props[cleanSlug] || (matchedPropEnt && worldState.held_props[matchedPropEnt.id]) || worldState.held_props[cleanLower]
+      const ignoredContainers = new Set(['none', 'null', 'handheld', 'active', 'free', 'uncontained'])
+      if (propLock && propLock.container && !ignoredContainers.has(String(propLock.container).toLowerCase()) && !layer4.toLowerCase().includes(String(propLock.container).toLowerCase())) {
         layer4 += ` Held in ${propLock.container}.`
       }
     }
@@ -676,7 +706,7 @@ for (let i = 0; i < sceneIds.length; i++) {
   // Stationary props positioning in Layer 4
   if (stationaryProps.length > 0) {
     for (const sp of stationaryProps) {
-      if (!layer4.includes(sp.token)) {
+      if (!layer4.includes(sp.token) && !(activeCast.length > 0 && /\b(?:hud|interface|stele|formation)\b/i.test(sp.name))) {
         layer4 += ` Centered upon ${sp.token}.`
       }
     }
@@ -712,12 +742,48 @@ for (let i = 0; i < sceneIds.length; i++) {
   }
 
   // 5. Layer 5: Dynamic Safe Tail
+  const hasHumanCast = castEntities.some(e => !e || e.kind === 'character')
+  const hasCreatureOnly = castEntities.length > 0 && castEntities.every(e => e && e.kind === 'creature')
+  const tailPos = (franchise.style?.tail_positive || '').trim()
+  const tailNeg = (franchise.style?.tail_negative || '').trim()
+
   let layer5 = SAFE_TAIL_CHARACTER
   if (activeCast.length === 0) {
     if (stationaryProps.length > 0 || (header.props && header.props.length > 0) || (header.stage && header.stage.toLowerCase() === 'prop')) {
-      layer5 = SAFE_TAIL_PROP_FOCUSED
+      layer5 = SAFE_TAIL_PROP_FOCUSED + (tailNeg ? `, ${tailNeg}` : '')
     } else {
-      layer5 = SAFE_TAIL_LANDSCAPE
+      layer5 = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero soldiers, zero guards, zero mercenaries, zero pedestrians, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures' + (tailNeg ? `, ${tailNeg}` : '.')
+    }
+  } else if (hasCreatureOnly) {
+    const creatureNegParts = [
+      'cleanly rendered obsidian chitin and wing linework',
+      'crisp inhuman beast eyes',
+      'completely non-human chitin creatures',
+      'zero humans',
+      'zero human silhouettes',
+      'zero shadow figures',
+      'zero people',
+      'zero soldiers',
+      'zero warriors',
+      'zero knights',
+      'zero feathered birds'
+    ]
+    if (castEntities.some(e => e && (e.id === 'nether_behemoth' || /nether\s+behemoth/i.test(e.name || e.token || '')))) {
+      creatureNegParts.push('zero horns on beast head, zero horns on buildings, smooth armoured obsidian skull')
+    }
+    if (tailNeg) {
+      creatureNegParts.push(tailNeg)
+    } else {
+      creatureNegParts.push('pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.')
+    }
+    layer5 = creatureNegParts.join(', ')
+  } else if (tailPos && tailNeg) {
+    layer5 = `${tailPos}, ${tailNeg}`
+    if (castEntities.some(e => e && (e.id === 'nether_behemoth' || /nether\s+behemoth/i.test(e.name || e.token || '')))) {
+      layer5 += ', zero horns on beast head, zero horns on buildings, smooth armoured obsidian skull'
+    }
+    if (isActorGrounded) {
+      layer5 += ', zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor'
     }
   } else if (franchise.format === '16:9') {
     if (activeCast.length === 1) {
@@ -726,7 +792,7 @@ for (let i = 0; i < sceneIds.length; i++) {
       layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, zero split panels, zero comic borders, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
     }
     if (isActorGrounded) {
-      layer5 = layer5.replace('no photorealistic 3D CGI.', 'no photorealistic 3D CGI, zero elevated seating, zero chairs, zero armchairs, zero sofas, grounded directly on floor, one actor kneeling directly on the floor at the feet of the standing protagonist.')
+      layer5 = layer5.replace('no photorealistic 3D CGI.', 'no photorealistic 3D CGI, zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor, one actor kneeling directly on the floor at the feet of the standing protagonist.')
     }
   }
 
@@ -738,8 +804,9 @@ for (let i = 0; i < sceneIds.length; i++) {
       layer5 += ' zero archmages, zero old men, zero knights, zero armor dummies, zero extra humans.'
     }
   }
-  
-  const fullPrompt = `${layer1}. ${layer2}. ${layer3}. ${layer4}. ${layer5}`
+
+  const stripTrailingDot = s => String(s || '').trim().replace(/\.+$/, '')
+  const fullPrompt = `${[layer1, layer2, layer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
 
   const cleanNarrativeClause = scriptClauses.get(sId) || parsedScene.narrativeSync || ''
   const cleanCast = activeCast.map(c => c.replace(/[@{}]/g, '').trim())
@@ -747,9 +814,12 @@ for (let i = 0; i < sceneIds.length; i++) {
   const promptTokens = [...fullPrompt.matchAll(/@\{([^}]+)\}/g)].map(m => m[1].trim())
   const allSceneRefs = [...new Set([...cleanCast, zoneTokenName, ...cleanProps, ...promptTokens])].filter(Boolean)
   const charRefsStr = allSceneRefs.join(', ')
-  const itemRefsStr = cleanProps.map(p => `@{${p}}`).join(', ')
+  const itemRefsStr = [...new Set(cleanProps)].join(', ')
+  const dnaHashesAttr = Object.keys(sceneDnaHashes).length > 0
+    ? ` dna_hashes="${Object.entries(sceneDnaHashes).map(([k, v]) => `${k}:${v}`).join(',')}"`
+    : ''
 
-  compiledSceneNodes.push(`<scene id="${sId}" zone="${zoneId}" tier="${tier}" transition="adjacent">
+  compiledSceneNodes.push(`<scene id="${sId}" zone="${zoneId}" tier="${tier}" transition="adjacent"${dnaHashesAttr}>
   <character_refs>${charRefsStr}</character_refs>
   <item_refs>${itemRefsStr}</item_refs>
   <lens>${lens}</lens>
@@ -781,12 +851,9 @@ const normVault = AntiSlopValidator.normalizeVaultContext({
   entities,
   zones,
   characters: legacyChars,
-  items: legacyItems
+  items: legacyItems,
+  locations: legacyLocations
 })
-
-const ledgerPath = path.join(epDir, 'state_events.jsonl')
-const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
-const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
 
 const manifest = PromptDnaCompiler.generateSignedManifest({
   franchise: normVault.franchise,
@@ -817,6 +884,7 @@ const auditReport = AntiSlopValidator.auditPromptMatrix(
     policy,
     characters: legacyChars,
     items: legacyItems,
+    locations: legacyLocations,
     worldState,
     ledgerText: fs.existsSync(path.join(epDir, 'state_events.jsonl')) ? fs.readFileSync(path.join(epDir, 'state_events.jsonl'), 'utf-8') : '',
     scenesJson: null,

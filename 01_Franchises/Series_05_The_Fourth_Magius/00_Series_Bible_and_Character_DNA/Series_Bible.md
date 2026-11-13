@@ -1,5 +1,9 @@
 # 🎬 Series Bible: The Fourth Magius
 
+> **[PRE-EPISODE REMEDIATION REQUIRED — DO NOT SKIP BEFORE CREATING `EP04`]**  
+> A vault and matrix audit (`2026-11-11`) detected `Mountain Stone Troll` missing from `character_vault/flow_entities.json`, legacy fake UUID / `Boss:`/`Weapon:`/`Location:` prefixes in `flow_entities.json` and `vault/entities.json`, plus `EP01–EP03` V2.0 compliance gaps (`G10`, `G11` `wolf_skin`, `G31` solo `two-shot`, `G35`, `G36`, `G39`, un-tokenized `<action_layer>`).  
+> **MANDATORY FIRST STEP:** Read and complete [`PRE_NEXT_EPISODE_FIX_NOTES.md`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/01_Franchises/Series_05_The_Fourth_Magius/00_Series_Bible_and_Character_DNA/PRE_NEXT_EPISODE_FIX_NOTES.md) and achieve Exit Code `0` on `node studio/scripts/audit-vault.js Series_05_The_Fourth_Magius` before starting `EP04`.
+
 > **Series ID:** `Series_05_The_Fourth_Magius`  
 > **Canonical Title:** *The Fourth Magius: Rebirth of the Discarded Scion*  
 > **Format:** 16:9 Full-Bleed Landscape (Widescreen Cinematic Composition)  
@@ -112,7 +116,7 @@ flowchart TD
   * **EP02: The Painless Crafts & The Agony of Magic** *(Complete — 38m 10s)*  
     *Worldbuilding:* Settling into the loft above Rowan's apothecary in Oakhaven. Michael explores the White Dimension—an infinite white library left by the First Magicians.  
     *System Balance:* Auxiliary craft tomes (botany, alchemy, runic engraving) are freely accessible with zero mental strain. However, high-tier combat spells require grueling **Resonance Trials** of mental and physical pain. Michael undergoes the harrowing trial for Tier 1 Master Thunder-Strike.
-  * **EP03: The Frontier Crucible & The Beast Tide Awakening** *(In Production — ~35–45m)*  
+  * **EP03: The First Breakthrough & The Mercenary Crucible** *(Complete — 39m 18s)*  
     *The Breakthrough & The Dungeon:* Reaching age eight. Michael achieves Tier 2/3 core saturation and masters *Mana-Forged Flesh* ($Attack - Defence \le 0 \implies 0\text{ Dmg}$). He registers with the Oakhaven mercenary guild to source beast cores; enters the Iron-Rank dungeon and rescues an arrogant squad of noble circle mages whose barriers collapse against stone-skinned trolls, crushing the beasts with mana-reinforced kinetic strikes.  
     *The Ruin & The White Dimension Trial:* Michael explores an untamed pre-imperial ruin in the Blackwood Forest, unearthing ancient tablets revealing the First Magicians were dual-discipline battle-sages. He endures the Tier 3 White Dimension trial to master spatial blinking and kinetic shockwaves.  
     *The Beast Tide Climax:* A Tier 5 rift beast horde erupts against Oakhaven. As the imperial garrison falters, Michael steps into the breach with his carved blackwood staff and kinetic mana, cleaving the Alpha Behemoth in two. Imperial Watch scouts witness the impossible scion. Rowan prepares Michael for his journey to the capital.
@@ -136,6 +140,48 @@ flowchart TD
     *The Trial:* Midnight meditation inside the White Dimension. Michael faces the brutal mental trial of the ancient *Absolute Zero Glacial Domain*, enduring frostbite of the soul to master chantless instant-freeze matrices.
   * **EP07: The Ancient Labyrinth Tournament**  
     *The Crucible:* The annual Imperial Labyrinth Tournament across fifty underground dungeon floors. Noble factions conspire to eliminate the commoner anomaly. Michael navigates the traps with ease, protects his commoner teammates, and shatters the 50th-floor boss solo, setting a record unseen in two centuries.
+
+#### 🎓 Act II Vault Tokens (`EP04` – `EP07`)
+#### 🎓 Act II Expansion Vault Tokens (EP05 – EP07)
+* **Characters & Allies:**
+  * `@{Gareth Ironcrest}` — Arrogant enchanted-steel vanguard champion challenger. Short cropped dark-auburn hair, sharp amber eyes, polished steel breastplate over navy arming doublet.
+  * `@{Commander Marcus Kael}` — Veteran Imperial Knight Instructor. Short grizzled grey hair, facial scar, charcoal-steel plate armor with midnight-blue surcoat.
+  * `@{Lady Evelyn Ashford}` — High-born fire-circle prodigy from House Ashford. Slender aristocratic build, fiery crimson curls, arrogant amber eyes, opulent crimson-and-gold academy robes.
+  * `@{Elena Ashvale}` — Earnest commoner scholarship apprentice mage. Slender youthful build, auburn side braid, bright emerald eyes, navy-and-grey apprentice robes, yew wand.
+  * `@{Doran Keller}` — Stalwart commoner vanguard shield-bearer. Broad-shouldered cadet build, sandy-brown hair, steel-plated leather cuirass, tower shield.
+* **Creatures & Bosses:**
+  * `@{Permafrost Trial Colossus}` — Colossal twelve-foot crystalline ice sentinel guardian of Tier 6 Glacial Trial. Translucent permafrost armor plates, sapphire eye slit, frost spires.
+  * `@{Obsidian Titan Colossus}` — Colossal fifty-foot ancient four-armed titan golem boss of Floor 50. Monolithic obsidian slabs, three molten-red eye slits, magma-red and azure runic fracture veins.
+  * `@{Labyrinth Gargoyle Sentinel}` — Ferocious eight-foot winged stone gargoyle ambush predator. Dark basalt hide, bat wings with hooked talons, ruby slit eyes.
+* **Weapons, Relics & Artifacts:**
+  * `@{Enchanted Steel Broadsword}` — Heavy three-foot mirror-finish steel blade etched with cyan kinetic channels, caught bare-handed by Michael between two fingers.
+  * `@{Grand Ranking Stele}` — Colossal thirty-foot floating black granite and cyan crystal obelisk displaying tournament progress with 100% textless abstract glowing rune bars.
+* **Locations:**
+  * `@{Academy Lecture Amphitheatre}` — Stepped circular lecture amphitheatre with tall stained-glass windows overlooking the cathedral spires of the Bastion.
+  * `@{Academy Private Dormitory Chamber}` — Quiet private stone study chamber with lancet stone window overlooking nocturnal spires under moonlight.
+  * `@{Frozen Astral Crucible}` — Sub-astral absolute zero trial realm within the White Dimension with mirror-ice floor and soaring frost pillars.
+  * `@{Ancient Labyrinth Stone Corridor}` — Subterranean cyclopean dungeon passage lit by pale-cyan crystal wall braziers with zero exterior windows.
+  * `@{Labyrinth 50th Floor Sanctum}` — Monumental domed cavern boss arena surrounded by shattered obsidian pillars and circular runic boss seal.
+
+#### 🎓 Act II Core Vault Tokens (`EP04`)
+* **Characters:**
+  * `@{Michael Montrey (Academy)}` — Protagonist (Academy Applicant phase, age thirteen in metadata). Slender aristocratic build, navy-blue applicant tunic with silver-stitched lapels and high structured collar, calm piercing cyan eyes.
+  * `@{Lord Cedric Vance}` — Arrogant high-born applicant, heir to House Vance. Golden-blond hair, haughty amber eyes, wearing sapphire-and-gold doublet with ruffled silk cravat.
+  * `@{Proctor Alistair}` — Chief Proctor of the Imperial Arcane Academy. Steel-grey hair, silver-rimmed diagnostic spectacles, navy proctor robes with silver embroidered hemlines.
+  * `@{Bandit Leader Douglas}` — Highway brigand chief. Burly broad-shouldered marauder, scarred jaw, wielding a heavy executioner greatsword.
+  * `@{Highway Bandit Raiders}` — Opportunistic highway marauders armed with notched iron swords and crude spears.
+* **Weapons & Relics:**
+  * `@{Rowan Recommendation Letter}` — Sealed vellum recommendation scroll bearing Rowan Thorne's arcane anvil wax mark.
+  * `@{Arcane Resonance Crystal Pillar}` — Floating ten-foot octagonal mana crystal pillar measuring innate mana density and tier ratings.
+  * `@{Gilded Sapphire Wand}` — Slender ivory focus wand wrapped in gold filigree and capped with a star-sapphire gem.
+  * `@{Bandit Leader Greatsword}` — Brutal four-foot notched iron executioner blade used by Bandit Leader Douglas.
+  * `@{Imperial Applicant Ledger}` — Official dark-blue leather academy registry book recording applicant scores and enrollment seals.
+* **Locations:**
+  * `@{Valerius Imperial Highway}` — Broad temperate cobblestone road winding through pine ravines and granite boulders.
+  * `@{Highway Pine Ravine}` — Rugged gorge passage flanking the highway, optimal for spell calibration and ambush skirmishes.
+  * `@{Imperial Arcane Academy Courtyard}` — Grand silver-granite terrace with crystal mana fountains and gothic colonnades.
+  * `@{Academy Resonance Testing Hall}` — Monumental gothic hall housing the crystal pillar with stained-glass rose windows overlooking the Bastion.
+  * `@{Academy Tactical Proving Grounds}` — Warded circular open-air stone arena with ancient barrier monoliths.
 
 ---
 
@@ -219,9 +265,34 @@ flowchart TD
     "@{Head Elder Cassius}",
     "@{Elder Rowan Thorne}",
     "@{Carved Blackwood Staff}",
-    "@{Boss: Calamity Abyssal Wyrm}",
+    "@{Calamity Abyssal Wyrm}",
     "@{Grand Inquisitor}",
-    "@{Mountain Stone Troll}"
+    "@{Mountain Stone Troll}",
+    "@{Michael Montrey (Academy)}",
+    "@{Lord Cedric Vance}",
+    "@{Proctor Alistair}",
+    "@{Bandit Leader Douglas}",
+    "@{Highway Bandit Raiders}",
+    "@{Rowan Recommendation Letter}",
+    "@{Arcane Resonance Crystal Pillar}",
+    "@{Gilded Sapphire Wand}",
+    "@{Bandit Leader Greatsword}",
+    "@{Imperial Applicant Ledger}",
+    "@{Gareth Ironcrest}",
+    "@{Commander Marcus Kael}",
+    "@{Lady Evelyn Ashford}",
+    "@{Permafrost Trial Colossus}",
+    "@{Elena Ashvale}",
+    "@{Doran Keller}",
+    "@{Obsidian Titan Colossus}",
+    "@{Labyrinth Gargoyle Sentinel}",
+    "@{Enchanted Steel Broadsword}",
+    "@{Grand Ranking Stele}",
+    "@{Academy Lecture Amphitheatre}",
+    "@{Academy Private Dormitory Chamber}",
+    "@{Frozen Astral Crucible}",
+    "@{Ancient Labyrinth Stone Corridor}",
+    "@{Labyrinth 50th Floor Sanctum}"
   ],
   "vocabulary": {
     "diegeticScrolls": "ancient grimoires/spellbooks/scrolls",

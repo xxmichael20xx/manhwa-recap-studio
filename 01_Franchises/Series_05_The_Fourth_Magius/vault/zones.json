@@ -149,7 +149,9 @@
       "dirt floor"
     ],
     "adjacent": [
-      "oakhaven_apothecary_loft"
+      "oakhaven_apothecary_loft",
+      "academy_private_dormitory",
+      "frozen_astral_crucible"
     ]
   },
   "oakhaven_perimeter_gate": {
@@ -165,7 +167,279 @@
     "adjacent": [
       "rowan_apothecary_shop",
       "blackwood_forest_clearing",
-      "oakhaven_apothecary_courtyard"
+      "oakhaven_apothecary_courtyard",
+      "valerius_imperial_highway"
+    ]
+  },
+  "valerius_imperial_highway": {
+    "id": "valerius_imperial_highway",
+    "name": "Valerius Imperial Highway",
+    "canon": "Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders. Roadside milestone markers made of chiseled stone, clear daylight sunbeams cutting through green pine canopies, distant mountain ranges on the northern horizon. Temperate forest climate with zero snow.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "snow",
+      "ice",
+      "blizzard",
+      "autumn leaves",
+      "marble throne",
+      "palace hall",
+      "stained-glass windows",
+      "street lamps",
+      "asphalt"
+    ],
+    "cardinal_layout": {
+      "center": "broad_cobblestone_highway_and_granite_boulders",
+      "north": "distant_northern_mountain_peaks",
+      "south": "winding_road_back_to_oakhaven",
+      "east": "rocky_pine_ravine_and_boulder_cliffs",
+      "west": "dense_ironwood_pine_forest"
+    },
+    "allowed_portals": [
+      "imperial_highway_road",
+      "rocky_ravine_trail"
+    ],
+    "forbidden_portals": [
+      "doors",
+      "gates",
+      "windows"
+    ],
+    "adjacent": [
+      "oakhaven_perimeter_gate",
+      "highway_pine_ravine",
+      "academy_courtyard"
+    ]
+  },
+  "highway_pine_ravine": {
+    "id": "highway_pine_ravine",
+    "name": "Highway Pine Ravine",
+    "canon": "Rugged rocky ravine passage flanking the Valerius Imperial Highway, surrounded by steep jagged granite cliff faces, towering dark pine trees, and massive mossy boulders suitable for ambushes and spellcraft testing. Broken stone terrain and coarse gravel loam underfoot with zero snow.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "snow",
+      "ice",
+      "blizzard",
+      "marble floors",
+      "stained-glass windows",
+      "town houses",
+      "palace hall"
+    ],
+    "cardinal_layout": {
+      "center": "rocky_gorge_floor_and_shattered_boulders",
+      "north": "narrow_rocky_defile_leading_to_capital_highway",
+      "south": "broad_highway_approach",
+      "east": "steep_granite_cliff_face",
+      "west": "overhanging_pine_ledge"
+    },
+    "allowed_portals": [
+      "ravine_pass",
+      "boulder_choke_point"
+    ],
+    "forbidden_portals": [
+      "doors",
+      "windows",
+      "gates"
+    ],
+    "adjacent": [
+      "valerius_imperial_highway"
+    ]
+  },
+  "academy_courtyard": {
+    "id": "academy_courtyard",
+    "name": "Imperial Arcane Academy Courtyard",
+    "canon": "Expansive grand entrance courtyard of the Imperial Arcane Academy in Valerius, paved with pristine reflective pale silver granite and gleaming white marble. Flanked by multi-tiered gothic colonnades, crystal mana fountains emitting faint azure luminescence, and colossal arched entrance portals leading to the testing halls, with hovering ethereal cyan magic circles faintly visible above cathedral spires.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "mud",
+      "dirt road",
+      "shabby wooden huts",
+      "dense forest",
+      "straw mattress",
+      "snow"
+    ],
+    "cardinal_layout": {
+      "center": "circular_marble_terrace_and_crystal_mana_fountain",
+      "north": "monumental_arched_entrance_to_resonance_hall",
+      "south": "grand_wrought_iron_academy_outer_gates",
+      "east": "flanking_gothic_colonnade_and_applicant_benches",
+      "west": "broad_stone_staircase_to_proving_grounds"
+    },
+    "allowed_portals": [
+      "academy_outer_gates",
+      "resonance_hall_arched_doors",
+      "proving_grounds_staircase"
+    ],
+    "forbidden_portals": [
+      "shop front door",
+      "apothecary ladder"
+    ],
+    "adjacent": [
+      "valerius_imperial_highway",
+      "academy_resonance_hall",
+      "academy_tactical_proving_grounds",
+      "academy_lecture_amphitheatre",
+      "academy_private_dormitory",
+      "ancient_labyrinth_corridor"
+    ]
+  },
+  "academy_resonance_hall": {
+    "id": "academy_resonance_hall",
+    "name": "Academy Resonance Testing Hall",
+    "canon": "Vast, monumental gothic testing chamber within the Imperial Arcane Academy built from pale silver granite and luminous mana sconces. High-vaulted ribbed ceilings, burnished dark-blue slate floors inlaid with concentric silver calculation rings, and towering stained-glass arched windows on the North wall providing an elevated panoramic window vantage over the soaring cathedral spires and hovering mana circles of the imperial capital. In the center stands the floating Arcane Resonance Crystal Pillar.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "mud",
+      "dirt road",
+      "forest trees",
+      "thatched roof",
+      "straw bed",
+      "snow"
+    ],
+    "window_vantage": "Panoramic view overlooking the pale silver cathedral spires, azure crystal pinnacles, and hovering cyan mana circles of the imperial capital.",
+    "cardinal_layout": {
+      "center": "floating_arcane_resonance_crystal_pillar_and_granite_dais",
+      "north": "tall_stained_glass_arched_windows_overlooking_bastion",
+      "south": "heavy_carved_oak_entrance_doors_from_courtyard",
+      "east": "proctor_evaluation_tribunal_and_registration_tables",
+      "west": "applicant_waiting_gallery_and_silver_balustrade"
+    },
+    "allowed_portals": [
+      "hall_entrance_doors",
+      "proving_grounds_corridor"
+    ],
+    "forbidden_portals": [
+      "open forest path",
+      "stable doors"
+    ],
+    "adjacent": [
+      "academy_courtyard",
+      "academy_tactical_proving_grounds"
+    ]
+  },
+  "academy_tactical_proving_grounds": {
+    "id": "academy_tactical_proving_grounds",
+    "name": "Academy Tactical Proving Grounds",
+    "canon": "Colossal open-air circular combat proving arena within the Imperial Arcane Academy, paved with interlocking reinforced silver-granite flagstones engraved with geometric ward lines. Enclosed by massive thirty-foot ancient runic barrier stones that project faint blue containment barriers during spell duels, surrounded by stepped stone spectator tiers, with clear sky above.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "muddy ruts",
+      "straw bed",
+      "woodpiles",
+      "apothecary shop",
+      "snow",
+      "indoor bedroom"
+    ],
+    "cardinal_layout": {
+      "center": "warded_circular_dueling_floor_and_ward_ring",
+      "north": "stepped_proctor_observation_platform",
+      "south": "arched_combatant_tunnel_leading_from_hall",
+      "east": "stepped_stone_spectator_stands",
+      "west": "peripheral_ancient_runic_barrier_monoliths"
+    },
+    "allowed_portals": [
+      "combatant_tunnel",
+      "spectator_staircases"
+    ],
+    "forbidden_portals": [
+      "bedroom door",
+      "window hatch"
+    ],
+    "adjacent": [
+      "academy_resonance_hall",
+      "academy_courtyard"
+    ]
+  },
+  "academy_lecture_amphitheatre": {
+    "id": "academy_lecture_amphitheatre",
+    "name": "Academy Lecture Amphitheatre",
+    "canon": "Monumental stepped circular lecture amphitheatre within the Imperial Arcane Academy built of pale silver granite and polished cedar student desks, vaulted ceiling with hanging brass chandelier sconces, and tall arched leaded stained-glass windows overlooking the pale silver cathedral spires and hovering cyan mana circles of the imperial capital.",
+    "lighting": "interior_warm",
+    "window_vantage": "Panoramic window view overlooking the pale silver cathedral spires, azure spire pinnacles, and hovering cyan mana circles of the imperial capital.",
+    "forbidden_tokens": [
+      "snow",
+      "ice",
+      "blizzard",
+      "mud",
+      "dirt road",
+      "forest trees",
+      "bedroom"
+    ],
+    "adjacent": [
+      "academy_courtyard"
+    ]
+  },
+  "academy_private_dormitory": {
+    "id": "academy_private_dormitory",
+    "name": "Academy Private Dormitory Chamber",
+    "canon": "Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked grimoires along East wall, simple wooden bed frame with dark-blue wool blanket in North-West corner, dark timber floorboards, and a tall gothic lancet stone window on South wall looking out over nocturnal academy cathedral spires and moonlight.",
+    "lighting": "night_moonlit",
+    "window_vantage": "Elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight.",
+    "forbidden_tokens": [
+      "snow",
+      "ice",
+      "blizzard",
+      "mud",
+      "dirt road",
+      "forest trees",
+      "palace throne room"
+    ],
+    "adjacent": [
+      "academy_courtyard",
+      "white_dimension_library"
+    ]
+  },
+  "frozen_astral_crucible": {
+    "id": "frozen_astral_crucible",
+    "name": "Frozen Astral Crucible",
+    "canon": "Sub-astral trial realm deep within the White Dimension. Monumental frozen crucible of infinite translucent glacial ice sheets, colossal jagged frost crystal pillars radiating piercing azure chill, howling ethereal astral blizzard mists, hovering glowing frost runes, absolute stillness and freezing majesty.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "muddy ground",
+      "dirt road",
+      "trees",
+      "town houses",
+      "beds",
+      "tables",
+      "warm fireplace"
+    ],
+    "adjacent": [
+      "white_dimension_library"
+    ]
+  },
+  "ancient_labyrinth_corridor": {
+    "id": "ancient_labyrinth_corridor",
+    "name": "Ancient Labyrinth Stone Corridor",
+    "canon": "Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors. Subterranean cavern with zero exterior windows.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "snow",
+      "blizzard",
+      "sunlight",
+      "sky",
+      "windows",
+      "clouds",
+      "bedroom"
+    ],
+    "adjacent": [
+      "academy_courtyard",
+      "labyrinth_50th_floor_sanctum"
+    ]
+  },
+  "labyrinth_50th_floor_sanctum": {
+    "id": "labyrinth_50th_floor_sanctum",
+    "name": "Labyrinth 50th Floor Sanctum",
+    "canon": "Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows.",
+    "lighting": "interior_warm",
+    "forbidden_tokens": [
+      "snow",
+      "blizzard",
+      "sunlight",
+      "sky",
+      "windows",
+      "clouds",
+      "bedroom"
+    ],
+    "adjacent": [
+      "ancient_labyrinth_corridor"
     ]
   }
 }

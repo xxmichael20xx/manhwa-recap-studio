@@ -1,0 +1,119 @@
+{
+  "episodeId": "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-12T03:25:00.299Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "day_sunlit",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_032",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_033",
+        "to_scene": "IMG_056",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_057",
+        "to_scene": "IMG_160",
+        "lighting": "day_sunlit"
+      },
+      {
+        "from_scene": "IMG_161",
+        "to_scene": "IMG_168",
+        "lighting": "dusk"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, burnished dark leather travel boots, dark travel cloak with discreet silver buckle clasp",
+    "lord_cedric_vance": "opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots",
+    "lady_evelyn_ashford": "opulent crimson-and-gold academy robes with flared sleeves embroidered with flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers",
+    "proctor_alistair": "dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, gleaming silver insignia brooch pinned at neckline, durable black leather scholar boots",
+    "gareth_ironcrest": "polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons",
+    "commander_marcus_kael": "Heavy battle-tested charcoal-steel heavy knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "sleek dense hand-whittled blackwood quarterstaff with glowing spiral mana veins and iron-shod base",
+      "notes": "Rested on stone weapon rack during arena sparring match."
+    },
+    "gilded_sapphire_wand": {
+      "canonical_name": "Gilded Sapphire Wand",
+      "container": null,
+      "visual_form": "slender fourteen-inch ivory wand wrapped in spiraling gold filigree and capped with a faceted star-sapphire crystal tip",
+      "notes": "Locked across all episode scenes."
+    },
+    "imperial_applicant_ledger": {
+      "canonical_name": "Imperial Applicant Ledger",
+      "container": null,
+      "visual_form": "thick dark-blue leather registry folio embossed with silver eagle crest and open cream vellum pages",
+      "notes": "Held on instructor lectern in lecture amphitheatre."
+    },
+    "enchanted_steel_broadsword": {
+      "canonical_name": "Enchanted Steel Broadsword",
+      "container": null,
+      "visual_form": "heavy three-foot double-edged enchanted steel broadsword with wide mirror-polished blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel",
+      "notes": "Wielded by Gareth Ironcrest during martial exhibition and sparring."
+    }
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {},
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:skyscraper|asphalt|streetlights?|hover-car|hover-sedan|neon\\s+sign|laptop|smartphone|tarmac)\\b",
+      "message": "Modern urban architecture/tech forbidden in high-fantasy medieval Valerius setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\b(?:heavy\\s+snowfall|blizzard\\s+drifts|snow-covered\\s+road|winter\\s+slush|snow)\\b",
+      "exclude_zones": [],
+      "message": "Unilateral snow/blizzard weather forbidden on temperate Valerius academy grounds"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\bcarved\\s+blackwood\\s+staff\\b",
+      "requiredToken": "@{Carved Blackwood Staff}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bgilded\\s+sapphire\\s+wand\\b",
+      "requiredToken": "@{Gilded Sapphire Wand}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\benchanted\\s+steel\\s+broadsword\\b",
+      "requiredToken": "@{Enchanted Steel Broadsword}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bimperial\\s+applicant\\s+ledger\\b",
+      "requiredToken": "@{Imperial Applicant Ledger}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Carved Blackwood Staff",
+      "bannedPattern": "\\b(?:peasant\\s+stick|walking\\s+stick|wooden\\s+stick|wooden\\s+staff)\\b",
+      "allowedPattern": "Carved\\s+Blackwood\\s+Staff"
+    },
+    {
+      "canonical": "Gilded Sapphire Wand",
+      "bannedPattern": "\\b(?:ivory\\s+wand|sapphire\\s+wand|golden\\s+wand)\\b",
+      "allowedPattern": "Gilded\\s+Sapphire\\s+Wand"
+    },
+    {
+      "canonical": "Enchanted Steel Broadsword",
+      "bannedPattern": "\\b(?:iron\\s+sword|training\\s+blade|dueling\\s+sword)\\b",
+      "allowedPattern": "Enchanted\\s+Steel\\s+Broadsword"
+    }
+  ]
+}

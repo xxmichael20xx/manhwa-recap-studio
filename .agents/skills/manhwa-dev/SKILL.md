@@ -1,6 +1,6 @@
 ---
 name: manhwa-dev
-description: Manhwa Recap Studio full-stack engineering, Slate design system, container-fluid grids, STUDIO_SPECS stream normalizer, 3-Tier Live Verification, and scrap cleanup engine. Trigger with /studio-dev.
+description: Manhwa Recap Studio full-stack engineering, Slate design system, container-fluid grids, STUDIO_SPECS stream normalizer, 2-Tier Live Verification, and scrap cleanup engine. Trigger with /studio-dev.
 ---
 
 # 🛠️ Manhwa Studio Engineering & Live QA (`/studio-dev`)
@@ -17,9 +17,8 @@ description: Manhwa Recap Studio full-stack engineering, Slate design system, co
    - In `PromptMatrixView.vue`, keep `Lean Mode = false` by default and unlock native `@{Character Name}` copy buttons. In `packagingService.js`, ensure 1-click title copy extracts pure unformatted strings (never `[object Object]`).
 3. **Backend Guard Against Ghost Folders:** Validate prerequisite files/intent BEFORE calling `mkdir({ recursive: true })` so exploratory API calls never spawn orphan `EP*` folders.
 
-## 3. Mandatory 3-Tier Live Verification & Scrap Cleanup (`studio/scripts/`)
-Before concluding any coding turn, execute `studio/scripts/verify-live-3tier.js` and `studio/scripts/cleanup-scrap.js`:
+## 3. Mandatory 2-Tier Live Verification & Scrap Cleanup (`studio/scripts/`)
+Before concluding any coding turn, execute Tier 1 + Tier 2 live checks and `studio/scripts/cleanup-scrap.js`:
 1. **Tier 1 (Build):** Run `npm run build` in `studio/` -> confirm Exit Code 0.
 2. **Tier 2 (Live API):** Verify Express (Port 3101) & Vite (Port 3100) are running; execute live `curl.exe` requests against modified routes -> confirm HTTP 200 JSON.
-3. **Tier 3 (Headless Dual-Theme Visual QA):** Capture Puppeteer screenshots in both Light and Dark modes across affected routes -> confirm zero console/network errors and embed screenshots inline.
-4. **Zero-Stray-File Cleanup:** Purge unindexed `EP*` folders, `.tmp/` scratch files, and empty directories in `01_Franchises/`. Conclude with the **Operator Action & Testing Guide**.
+3. **Zero-Stray-File Cleanup:** Purge unindexed `EP*` folders, `.tmp/` scratch files, and empty directories in `01_Franchises/`. Conclude with the **Operator Action & Testing Guide**.

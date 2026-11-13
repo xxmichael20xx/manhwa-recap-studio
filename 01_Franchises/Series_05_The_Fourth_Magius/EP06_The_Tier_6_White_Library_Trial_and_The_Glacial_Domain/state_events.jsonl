@@ -1,0 +1,17 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"academy_private_dormitory","outfit":"default","posture":"calm_confident"},"reason":"Midnight meditation in private dorm chamber"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"resting"},"reason":"Carved Blackwood Staff rests against bed frame"}
+{"s":0,"e":"the_primordial_codex","set":{"lifecycle":"sealed"},"reason":"The Primordial Codex rests on study desk"}
+{"s":24,"e":"michael_montrey_academy","set":{"location":"white_dimension_library"},"reason":"Michael enters the White Dimension Library"}
+{"s":24,"e":"the_primordial_codex","set":{"lifecycle":"equipped"},"reason":"The Primordial Codex floats in astral archives"}
+{"s":48,"e":"michael_montrey_academy","set":{"location":"frozen_astral_crucible"},"reason":"Michael steps through crystal archway into Frozen Astral Crucible"}
+{"s":48,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael manifests Carved Blackwood Staff"}
+{"s":58,"e":"permafrost_trial_colossus","set":{"lifecycle":"active","location":"frozen_astral_crucible"},"reason":"Permafrost Trial Colossus awakens from crystal obelisk"}
+{"s":118,"e":"permafrost_trial_colossus","set":{"lifecycle":"shattered"},"reason":"Permafrost Trial Colossus freezes solid and shatters into pure essence"}
+{"s":120,"e":"michael_montrey_academy","set":{"location":"white_dimension_library"},"reason":"Crucible dissolves back into White Dimension Library"}
+{"s":120,"e":"the_primordial_codex","set":{"lifecycle":"equipped"},"reason":"The Primordial Codex reveals 50 Floors of Valerius"}
+{"s":144,"e":"michael_montrey_academy","set":{"location":"academy_private_dormitory"},"reason":"Michael awakens in dormitory at dawn"}
+{"s":144,"e":"the_primordial_codex","set":{"lifecycle":"sealed"},"reason":"The Primordial Codex rests sealed on desk"}
+{"s":150,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael lifts Carved Blackwood Staff"}
+{"s":160,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael arrives at Academy Courtyard"}
+{"s":160,"e":"grand_ranking_stele","set":{"lifecycle":"environmental"},"reason":"Grand Ranking Stele floats in courtyard"}
+{"s":164,"e":"proctor_alistair","set":{"lifecycle":"active","location":"academy_courtyard","outfit":"default"},"reason":"Proctor Alistair addresses assembled applicants"}

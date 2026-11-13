@@ -9,7 +9,7 @@
     ],
     "status": "approved",
     "age_class": "minor",
-    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, Small 5-year-old boy build, but carrying himself with immaculate balance, straight posture, and quiet dignity",
+    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, young noble manhwa protagonist, slender aristocratic build, carrying himself with immaculate balance, straight posture, and quiet dignity",
     "default_outfit": "default",
     "outfits": {
       "default": "Rough-spun grey linen tunic tied with a hemp cord belt, durable patched charcoal trousers, sturdy stitched brown leather travel boots"
@@ -33,7 +33,7 @@
     ],
     "status": "approved",
     "age_class": "minor",
-    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, Wiry 7-year-old boy build, straight posture, immaculate balance, quiet confident stance",
+    "dna": "Messy raven-black hair falling naturally over forehead, Intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, young noble manhwa protagonist, slender aristocratic build, straight posture, immaculate balance, quiet confident stance",
     "default_outfit": "default",
     "outfits": {
       "default": "Tailored charcoal-grey mountain-wolf leather tunic with soft fur collar trim, durable leather trousers, supple travel boots, strapped heavy canvas herb rucksack"
@@ -140,10 +140,9 @@
   },
   "calamity_abyssal_wyrm": {
     "id": "calamity_abyssal_wyrm",
-    "kind": "character",
-    "token": "@{Boss: Calamity Abyssal Wyrm}",
+    "kind": "creature",
+    "token": "@{Calamity Abyssal Wyrm}",
     "aliases": [
-      "Calamity Abyssal Wyrm",
       "Calamity Abyssal Wyrm"
     ],
     "status": "approved",
@@ -187,12 +186,11 @@
     "kind": "item",
     "token": "@{The Primordial Codex}",
     "aliases": [
-      "The Primordial Codex",
-      "Artifact: The Primordial Codex"
+      "The Primordial Codex"
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{The Primordial Codex}, master divine relic reference plate. Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "Thick monumental ancient grimoire bound in weathered dragon leather, glowing golden celestial constellation glyphs etched on front cover, heavy aged brass corner clasps and runic lock mechanism, radiant ethereal cyan and gold arcane aura gently hovering around edges. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -206,7 +204,8 @@
     "episodes": [
       "EP01",
       "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
-      "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
+      "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
     ],
     "name": "The Primordial Codex"
   },
@@ -221,7 +220,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Highly polished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for kinetic physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally, dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for physical impact.",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -235,7 +234,10 @@
     "episodes": [
       "EP01",
       "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
-      "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
+      "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP07_The_Ancient_Labyrinth_Tournament"
     ],
     "name": "Carved Blackwood Staff"
   },
@@ -250,7 +252,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Granite Mortar and Pestle}, close-up master prop reference card. A heavy, thick-walled speckled dark-grey granite stone grinding mortar and matching rounded stone pestle resting on rough-hewn cedar workbench planks. Cold solid mineral surface, mottled charcoal and white granite mineral specks, rough-chiseled stone exterior rim, smooth hollowed concave grinding basin with crushed glowing emerald medicinal herb residue, atmospheric pre-dawn workshop lighting, deep dramatic side shadows. Strictly zero porcelain, zero glass, zero metal. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "environmental"
@@ -277,7 +279,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Polished Cedar Salve Bowl}, master prop reference card. A shallow, hand-carved dark cedar timber bowl resting on a rustic workbench, polished smooth with natural beeswax. Rich deep warm reddish-brown wood grain, smooth rounded lip, filled with viscous luminous emerald-green medicinal herbal gel radiating a faint arcane sheen, soft warm amber lantern light reflections. Strictly zero glass, zero crystal, zero clay pottery, zero vials, zero bottles. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "environmental"
@@ -303,7 +305,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Rowan Buckler and Short Sword}, circular battered iron-banded dark oak buckler shield strapped firmly to the left forearm across all panels, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Rowan Buckler and Short Sword}, circular battered iron-banded dark oak buckler shield strapped firmly to the left forearm across all panels, paired with a practical razor-sharp steel arming short sword with worn dark leather-wrapped hilt and heavy steel pommel. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -330,7 +332,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -351,12 +353,11 @@
     "kind": "item",
     "token": "@{The Crystalline Arcane Bastion}",
     "aliases": [
-      "The Crystalline Arcane Bastion",
-      "Location: The Crystalline Arcane Bastion"
+      "The Crystalline Arcane Bastion"
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Location: The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{The Crystalline Arcane Bastion}, concept landscape illustration. Soaring imperial capital of the Valerius Empire built of pale silver granite and luminous raw blue mana crystals, soaring gothic cathedral spires with glowing star-sapphire crystal tips, stained-glass rose windows, glowing ethereal cyan magic circles hovering faintly above spires, silver wyverns soaring in cobalt skies, grand reflective marble terraces. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -383,7 +384,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded translucent aperture on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Oakhaven Apothecary Loft}, master spatial environment reference plate. Cozy wooden attic bedroom loft directly above Rowan Thorne's apothecary shop in Oakhaven. Sloping rough-hewn cedar rafters, small circular leaded translucent aperture on East wall overlooking distant pine canopy, simple straw mattress bed neatly made in North-West corner with thick grey wool blankets, small timber writing desk along South wall, wooden floor ladder hatch in South-West corner, warm amber lantern glow, deep dust motes floating in sunbeam. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/10_Location_Oakhaven_Apothecary_Loft.jpg",
     "episodes": [
       "EP01",
@@ -402,7 +403,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Rowan Apothecary Shop}, master spatial environment reference plate. Warm rustic frontier apothecary workshop interior on Oakhaven High Street. Cedar shelves lined with corked glass herb jars along North wall, stone hearth and crackling embers in Far-Left corner, polished heavy oak service counter at Center-Right, heavy oak front door bolted with iron bars on South wall, narrow wooden ladder hatch leading to sleeping loft in South-West corner, hanging bundles of dried lavender and sage from ceiling beams. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/11_Location_Rowan_Apothecary_Shop.jpg",
     "episodes": [
       "EP01",
@@ -421,11 +422,12 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/12_Location_White_Dimension_Library.jpg",
     "episodes": [
       "EP01",
-      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic"
+      "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
     ],
     "name": "The White Dimension Library"
   },
@@ -440,7 +442,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Blackwood Forest Clearing}, master wilderness environment plate. Ancient secluded mist-shrouded Blackwood frontier pine forest clearing with towering dark ironwood trees, soft dark loam ground carpeted in pine needles, solitary six-foot moss-covered granite boulder sitting in the center, volumetric morning sunbeams cutting through dense mist. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/13_Location_Blackwood_Forest_Clearing.jpg",
     "episodes": [
       "EP01",
@@ -459,7 +461,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Oakhaven Perimeter Gate}, master settlement defense plate. Frontier wooden palisade gates of Oakhaven settlement reinforced with heavy iron bands, timber watchtowers with hanging iron alarm bells, muddy cart-rutted dirt road leading directly into the ominous evergreen Blackwood pines, overcast sky. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/14_Location_Oakhaven_Perimeter_Gate.jpg",
     "episodes": [
       "EP01",
@@ -478,7 +480,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, anatomically correct hands, precisely 5 slender fingers on each hand, physically connected wrists and forearms, crisp pupil reflections, zero cloning, completely textless artwork, no speech bubbles, no words, no banners.",
+    "dna": "@{Oakhaven Apothecary Rear Courtyard}, master spatial environment plate. Rustic rear courtyard directly behind Rowan Thorne's apothecary shop in Oakhaven. Weathered cedar woodpiles stacked against the timber wall, soft dirt loam ground below low cedar roof eaves, low cedar picket fence, narrow worn footpath winding into the nearby evergreen Blackwood tree line. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
     "plate": "character_vault/15_Location_Apothecary_Courtyard.jpg",
     "episodes": [
       "EP01",
@@ -514,5 +516,702 @@
       "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible"
     ],
     "name": "Mountain Stone Troll"
+  },
+  "michael_montrey_academy": {
+    "id": "michael_montrey_academy",
+    "kind": "character",
+    "token": "@{Michael Montrey (Academy)}",
+    "aliases": [
+      "Michael Montrey (Academy)",
+      "Applicant Michael"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young noble manhwa protagonist, slender aristocratic build, messy raven-black hair falling naturally over forehead, intense piercing cyan eyes radiating deep ancient wisdom and calm resolve, straight posture, immaculate balance, quiet confident stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, burnished dark leather travel boots, dark travel cloak with discreet silver buckle clasp"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/19_Protagonist_Michael_Academy.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Michael Montrey (Academy)"
+  },
+  "lord_cedric_vance": {
+    "id": "lord_cedric_vance",
+    "kind": "character",
+    "token": "@{Lord Cedric Vance}",
+    "aliases": [
+      "Lord Cedric Vance",
+      "Cedric Vance",
+      "Cedric"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young noble manhwa antagonist, slender aristocratic build, sleek styled golden-blond hair parted neatly to the side, narrow haughty amber eyes brimming with aristocratic entitlement and disdain, arrogant chin, sneering smirk, proud upright posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/20_Antagonist_Cedric_Vance.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Lord Cedric Vance"
+  },
+  "proctor_alistair": {
+    "id": "proctor_alistair",
+    "kind": "character",
+    "token": "@{Proctor Alistair}",
+    "aliases": [
+      "Proctor Alistair",
+      "Chief Proctor Alistair",
+      "Alistair"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Short neatly trimmed steel-grey hair with receding temples, sharp hawkish grey eyes behind thin silver-rimmed diagnostic spectacles, calm observant analytical expression, tall lean veteran imperial battle-mage build, disciplined straight military posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, gleaming silver insignia brooch pinned at neckline, durable black leather scholar boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/21_Supporting_Proctor_Alistair.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Proctor Alistair"
+  },
+  "bandit_leader_douglas": {
+    "id": "bandit_leader_douglas",
+    "kind": "character",
+    "token": "@{Bandit Leader Douglas}",
+    "aliases": [
+      "Bandit Leader Douglas",
+      "Douglas"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Shaggy unkempt dark-brown hair, jagged scar running across left jaw, rugged weathered face, cruel predatory dark eyes, burly broad-shouldered muscular highwayman build, intimidating battle-hardened stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Reinforced dark leather brigandine vest over coarse grey woollen tunic, studded iron bracers on forearms, rugged dirt-stained charcoal trousers, heavy buckled dark leather highwayman boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/22_Enemy_Bandit_Leader_Douglas.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Bandit Leader Douglas"
+  },
+  "highway_bandit_raiders": {
+    "id": "highway_bandit_raiders",
+    "kind": "character",
+    "token": "@{Highway Bandit Raiders}",
+    "aliases": [
+      "Highway Bandit Raiders",
+      "Bandit Raiders",
+      "Highway Bandits"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Rough highwaymen with ragged unkempt dark hair and coarse unwashed faces, menacing opportunistic expressions, wiry athletic brigand builds, wielding notched iron arming swords and crude wooden spears",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Mismatched rugged dark leather doublets, ragged wool tunics, dirt-stained brown trousers, scuffed worn leather boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/23_Mob_Highway_Bandits.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Highway Bandit Raiders"
+  },
+  "rowan_recommendation_letter": {
+    "id": "rowan_recommendation_letter",
+    "kind": "item",
+    "isAnimate": false,
+    "token": "@{Rowan Recommendation Letter}",
+    "aliases": [
+      "Rowan Recommendation Letter",
+      "Recommendation Letter"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Thick rolled heavy vellum parchment document tied with a rich crimson silk ribbon, sealed with a dark-red wax medallion bearing an embossed arcane anvil and hammer sigil, aged deckled parchment edge.",
+    "lifecycle": [
+      "equipped",
+      "environmental"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/24_Prop_Recommendation_Letter.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Rowan Recommendation Letter"
+  },
+  "arcane_resonance_crystal_pillar": {
+    "id": "arcane_resonance_crystal_pillar",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Arcane Resonance Crystal Pillar}",
+    "aliases": [
+      "Arcane Resonance Crystal Pillar",
+      "Resonance Crystal Pillar",
+      "Resonance Pillar"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Colossal ten-foot translucent octagonal mana crystal monolith hovering vertically above an intricately carved silver-granite pedestal, fine internal geometric fracture veins pulsing with soft ethereal cyan and azure luminescence, inlaid with concentric burnished brass diagnostic rings rotating slowly around its midsection",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/25_Prop_Resonance_Crystal_Pillar.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Arcane Resonance Crystal Pillar"
+  },
+  "gilded_sapphire_wand": {
+    "id": "gilded_sapphire_wand",
+    "kind": "item",
+    "isAnimate": false,
+    "token": "@{Gilded Sapphire Wand}",
+    "aliases": [
+      "Gilded Sapphire Wand",
+      "Sapphire Wand"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Slender fourteen-inch burnished ivory wand resting horizontally on velvet lining, wrapped in delicate spiraling gold filigree vine motifs, crowned with a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks, gold pommel cap.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/26_Weapon_Gilded_Sapphire_Wand.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Gilded Sapphire Wand"
+  },
+  "bandit_leader_greatsword": {
+    "id": "bandit_leader_greatsword",
+    "kind": "item",
+    "isAnimate": false,
+    "token": "@{Bandit Leader Greatsword}",
+    "aliases": [
+      "Bandit Leader Greatsword",
+      "Executioner Greatsword"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Massive four-foot broad brutal iron executioner greatsword resting horizontally on stone gravel, wide square-tipped blade showing deep combat notches and scratches, heavy rectangular steel crossguard, long two-handed hilt bound in weathered dark-brown leather cord wrapping, cold metallic steel sheen.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/27_Weapon_Bandit_Greatsword.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Bandit Leader Greatsword"
+  },
+  "imperial_applicant_ledger": {
+    "id": "imperial_applicant_ledger",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Imperial Applicant Ledger}",
+    "aliases": [
+      "Imperial Applicant Ledger",
+      "Applicant Ledger"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Thick folio registry ledger bound in dark-blue calfskin leather, ornate silver corner protectors, embossed silver eagle crest on cover, open vellum pages with black ink and silver quill pen.",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/28_Prop_Applicant_Ledger.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Imperial Applicant Ledger"
+  },
+  "valerius_imperial_highway": {
+    "id": "valerius_imperial_highway",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Valerius Imperial Highway}",
+    "aliases": [
+      "Valerius Imperial Highway",
+      "valerius_imperial_highway"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Valerius Imperial Highway}, master wilderness road environment plate. Expansive temperate cobblestone and packed dirt imperial highway winding through rolling pine ravines and weathered grey granite boulders, chiseled stone milestone markers, clear daylight sunbeams cutting through green pine canopies, distant northern mountain peaks, temperate climate with zero snow.",
+    "plate": "character_vault/29_Location_Valerius_Imperial_Highway.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Valerius Imperial Highway"
+  },
+  "highway_pine_ravine": {
+    "id": "highway_pine_ravine",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Highway Pine Ravine}",
+    "aliases": [
+      "Highway Pine Ravine",
+      "highway_pine_ravine"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Highway Pine Ravine}, master wilderness gorge environment plate. Rugged rocky ravine passage flanking the highway, steep jagged granite cliff faces, towering dark pine trees, massive mossy boulders, broken stone terrain and coarse gravel loam underfoot, dappled daylight sunbeams, zero snow.",
+    "plate": "character_vault/30_Location_Highway_Pine_Ravine.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam"
+    ],
+    "name": "Highway Pine Ravine"
+  },
+  "academy_courtyard": {
+    "id": "academy_courtyard",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Imperial Arcane Academy Courtyard}",
+    "aliases": [
+      "Imperial Arcane Academy Courtyard",
+      "academy_courtyard"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Imperial Arcane Academy Courtyard}, master architectural plaza reference plate. Expansive grand entrance courtyard of the Imperial Arcane Academy in Valerius, paved with pristine reflective pale silver granite and polished white marble, flanked by multi-tiered gothic colonnades, crystal mana fountains emitting faint azure luminescence, colossal arched entrance portals, hovering ethereal cyan magic circles faintly visible above cathedral spires.",
+    "plate": "character_vault/31_Location_Academy_Courtyard.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Imperial Arcane Academy Courtyard"
+  },
+  "academy_resonance_hall": {
+    "id": "academy_resonance_hall",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Academy Resonance Testing Hall}",
+    "aliases": [
+      "Academy Resonance Testing Hall",
+      "academy_resonance_hall"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Resonance Testing Hall}, master interior hall reference plate. Vast monumental gothic testing chamber built from pale silver granite and luminous mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floors inlaid with concentric silver calculation rings, towering stained-glass arched windows on North wall overlooking pale silver cathedral spires and hovering cyan mana circles of the Crystalline Bastion.",
+    "plate": "character_vault/32_Location_Academy_Resonance_Hall.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Academy Resonance Testing Hall"
+  },
+  "academy_tactical_proving_grounds": {
+    "id": "academy_tactical_proving_grounds",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Academy Tactical Proving Grounds}",
+    "aliases": [
+      "Academy Tactical Proving Grounds",
+      "academy_tactical_proving_grounds"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Tactical Proving Grounds}, master arena environment plate. Colossal open-air circular combat proving arena within the Imperial Arcane Academy, paved with interlocking reinforced silver-granite flagstones engraved with geometric ward lines, enclosed by thirty-foot ancient runic barrier monoliths projecting faint blue containment lines, surrounded by stepped stone spectator tiers under clear sky.",
+    "plate": "character_vault/33_Location_Academy_Proving_Grounds.jpg",
+    "episodes": [
+      "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Academy Tactical Proving Grounds"
+  },
+  "commander_marcus_kael": {
+    "id": "commander_marcus_kael",
+    "kind": "character",
+    "token": "@{Commander Marcus Kael}",
+    "aliases": [
+      "Commander Marcus Kael",
+      "Commander Kael",
+      "Marcus Kael"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Veteran imperial knight instructor, broad-shouldered muscular martial build, short grizzled dark-grey hair, weathered jaw with a jagged combat scar across left cheekbone, stern observant hazel eyes, disciplined commanding posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Heavy battle-tested charcoal-steel heavy knightly breastplate and pauldrons with midnight-blue velvet surcoat pinned with imperial sword-and-shield medallion, dark leather heavy gauntlets, reinforced greaves"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/35_Supporting_Commander_Marcus_Kael.jpg",
+    "episodes": [
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Commander Marcus Kael"
+  },
+  "lady_evelyn_ashford": {
+    "id": "lady_evelyn_ashford",
+    "kind": "character",
+    "token": "@{Lady Evelyn Ashford}",
+    "aliases": [
+      "Lady Evelyn Ashford",
+      "Evelyn Ashford",
+      "Lady Evelyn"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young noble manhwa antagonist, slender aristocratic build, fiery crimson-red hair styled in elaborate cascading side curls, narrow arrogant amber-red eyes filled with elitist disdain, sneering haughty expression, proud upright posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Opulent crimson-and-gold academy robes with flared sleeves embroidered with flaming phoenix crest, high structured silk collar, gold gem-inlaid belt, dark leather scholar slippers"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/36_Antagonist_Lady_Evelyn_Ashford.jpg",
+    "episodes": [
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Lady Evelyn Ashford"
+  },
+  "elena_ashvale": {
+    "id": "elena_ashvale",
+    "kind": "character",
+    "token": "@{Elena Ashvale}",
+    "aliases": [
+      "Elena Ashvale",
+      "Elena"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young commoner apprentice mage, slender youthful build, warm auburn hair neatly gathered in a practical side braid, earnest bright emerald-green eyes, intelligent focused expression, humble disciplined posture",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots, holding a slender polished yew wand"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/42_Ally_Elena_Ashvale.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Elena Ashvale"
+  },
+  "doran_keller": {
+    "id": "doran_keller",
+    "kind": "character",
+    "token": "@{Doran Keller}",
+    "aliases": [
+      "Doran Keller",
+      "Doran"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young commoner vanguard warrior, broad-shouldered sturdy cadet build, short cropped sandy-brown hair, honest determined hazel eyes, square jaw, resolute protective stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots, carrying a rectangular steel-reinforced tower shield on left arm"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/43_Ally_Doran_Keller.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Doran Keller"
+  },
+  "labyrinth_gargoyle_sentinel": {
+    "id": "labyrinth_gargoyle_sentinel",
+    "kind": "creature",
+    "isAnimate": true,
+    "token": "@{Labyrinth Gargoyle Sentinel}",
+    "aliases": [
+      "Labyrinth Gargoyle Sentinel",
+      "Labyrinth Gargoyles",
+      "Gargoyle Sentinel",
+      "Gargoyles"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Ferocious eight-foot winged stone gargoyle beasts, jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, hunched predatory beast silhouette, glowing ruby-red slit eyes, snarling demonic maw filled with needle-sharp stone fangs, razor-sharp basalt claws clinging to rock",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Natural jagged dark basalt hide with leathery stone-textured bat wings and hooked talons"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/45_Enemy_Labyrinth_Gargoyle_Sentinel.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Labyrinth Gargoyle Sentinel"
+  },
+  "enchanted_steel_broadsword": {
+    "id": "enchanted_steel_broadsword",
+    "kind": "item",
+    "isAnimate": false,
+    "token": "@{Enchanted Steel Broadsword}",
+    "aliases": [
+      "Enchanted Steel Broadsword",
+      "Gareth Broadsword",
+      "Enchanted Broadsword"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Heavy three-foot double-edged enchanted steel broadsword resting horizontally on stone pedestal. Wide razor-sharp mirror-polished steel blade etched with glowing pale-cyan kinetic reinforcement channel grooves along the central fuller, straight polished steel crossguard, dark-blue leather cord-wrapped hilt, heavy faceted steel pommel. Completely unpopulated still life, zero people.",
+    "lifecycle": [
+      "equipped",
+      "sheathed",
+      "environmental",
+      "destroyed"
+    ],
+    "default_lifecycle": "equipped",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/37_Weapon_Enchanted_Steel_Broadsword.jpg",
+    "episodes": [
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Enchanted Steel Broadsword"
+  },
+  "academy_lecture_amphitheatre": {
+    "id": "academy_lecture_amphitheatre",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Academy Lecture Amphitheatre}",
+    "aliases": [
+      "Academy Lecture Amphitheatre",
+      "academy_lecture_amphitheatre",
+      "Lecture Amphitheatre"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Lecture Amphitheatre}, master architectural interior reference plate. Monumental stepped circular lecture amphitheatre of pale silver granite and polished cedar student desks in the Imperial Arcane Academy. Vaulted ribbed ceiling with hanging brass chandelier sconces, raised instructor lectern dais at center, tall arched leaded stained-glass windows along the North wall providing a clear elevated window vantage over the soaring cathedral spires and hovering cyan mana circles of the imperial capital.",
+    "plate": "character_vault/38_Location_Academy_Lecture_Amphitheatre.jpg",
+    "episodes": [
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Academy Lecture Amphitheatre"
+  },
+  "academy_private_dormitory": {
+    "id": "academy_private_dormitory",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Academy Private Dormitory Chamber}",
+    "aliases": [
+      "Academy Private Dormitory Chamber",
+      "academy_private_dormitory",
+      "Private Dormitory Chamber",
+      "Dormitory Study"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Private Dormitory Chamber}, master interior room reference plate. Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with neatly folded dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall providing an elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight.",
+    "plate": "character_vault/39_Location_Academy_Private_Dormitory.jpg",
+    "episodes": [
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+    ],
+    "name": "Academy Private Dormitory Chamber"
+  },
+  "frozen_astral_crucible": {
+    "id": "frozen_astral_crucible",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Frozen Astral Crucible}",
+    "aliases": [
+      "Frozen Astral Crucible",
+      "frozen_astral_crucible",
+      "Glacial Crucible",
+      "Glacial Domain Sanctuary"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Frozen Astral Crucible}, master astral environment reference plate. Monumental frozen trial crucible deep within the astral dimension. Boundless floor of mirror-like translucent glacial ice reflecting distant star-mists, colossal towering jagged frost crystal pillars radiating piercing azure luminescence, swirling ethereal pale-cyan blizzard mist clouds, ancient geometric frost rune arrays floating in the freezing air, absolute stillness and freezing majesty.",
+    "plate": "character_vault/40_Location_Frozen_Astral_Crucible.jpg",
+    "episodes": [
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+    ],
+    "name": "Frozen Astral Crucible"
+  },
+  "ancient_labyrinth_corridor": {
+    "id": "ancient_labyrinth_corridor",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Ancient Labyrinth Stone Corridor}",
+    "aliases": [
+      "Ancient Labyrinth Stone Corridor",
+      "ancient_labyrinth_corridor",
+      "Labyrinth Stone Corridor"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Ancient Labyrinth Stone Corridor}, master subterranean environment reference plate. Monumental subterranean dungeon corridor of ancient moss-covered cyclopean stone blocks deep beneath the imperial bedrock. High vaulted stone arches supported by massive square pillars, pale-cyan luminescent crystal wall braziers casting cold subterranean glow and deep side shadows, damp stone flagstone floor with ancient geometric groove lines, branching dark corridors in the background. Subterranean cavern with zero exterior windows.",
+    "plate": "character_vault/47_Location_Ancient_Labyrinth_Corridor.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Ancient Labyrinth Stone Corridor"
+  },
+  "labyrinth_50th_floor_sanctum": {
+    "id": "labyrinth_50th_floor_sanctum",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Labyrinth 50th Floor Sanctum}",
+    "aliases": [
+      "Labyrinth 50th Floor Sanctum",
+      "labyrinth_50th_floor_sanctum",
+      "50th Floor Sanctum",
+      "Labyrinth Boss Sanctum"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Labyrinth 50th Floor Sanctum}, master subterranean arena environment plate. Monumental domed subterranean boss arena cavern of Floor 50 deep beneath the bedrock. Vast circular chamber surrounded by towering shattered obsidian pillars and ancient crumbled stone arches, cracked dark basalt floor inlaid with a colossal glowing azure and crimson circular runic boss seal, soaring stalactite-studded domed cavern ceiling with veins of glowing raw mana crystals, ethereal subterranean atmospheric mist. Subterranean cavern with zero exterior windows.",
+    "plate": "character_vault/48_Location_Labyrinth_50th_Floor_Sanctum.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Labyrinth 50th Floor Sanctum"
+  },
+  "gareth_ironcrest": {
+    "id": "gareth_ironcrest",
+    "kind": "character",
+    "token": "@{Gareth Ironcrest}",
+    "aliases": [
+      "Gareth Ironcrest",
+      "Gareth"
+    ],
+    "status": "approved",
+    "age_class": "minor",
+    "dna": "Young noble manhwa antagonist, athletic armored knight cadet build, short cropped dark-auburn hair, sharp arrogant golden-amber eyes, sneering confident battle smirk, disciplined aggressive combat stance",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Polished steel breastplate engraved with silver imperial crest, heavy chainmail hauberk, navy-blue arming doublet, dark trousers, reinforced steel-plated greaves and leather sabatons"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/34_Antagonist_Knight_Vanguard_Gareth.jpg",
+    "episodes": [
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+    ],
+    "name": "Gareth Ironcrest"
+  },
+  "permafrost_trial_colossus": {
+    "id": "permafrost_trial_colossus",
+    "kind": "creature",
+    "isAnimate": true,
+    "token": "@{Permafrost Trial Colossus}",
+    "aliases": [
+      "Permafrost Trial Colossus",
+      "Permafrost Colossus"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Colossal twelve-foot crystalline ice sentinel colossus construct, non-humanoid faceted glacial armor plates of dense translucent permafrost, glowing blinding sapphire-blue central eye slit within a jagged crown-like ice helm, colossal broad crystal boulder shoulders sprouting razor-sharp permafrost spires, massive frost-chiseled crystalline fists radiating sub-zero mist, glowing cyan frost rune fracture veins pulsing across core, non-humanoid crystalline frost beast construct",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Natural faceted crystalline permafrost ice armor plating with jagged sub-zero crystal spires"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/41_Boss_Glacial_Sovereign_Construct.jpg",
+    "episodes": [
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+    ],
+    "name": "Permafrost Trial Colossus"
+  },
+  "obsidian_titan_colossus": {
+    "id": "obsidian_titan_colossus",
+    "kind": "creature",
+    "isAnimate": true,
+    "token": "@{Obsidian Titan Colossus}",
+    "aliases": [
+      "Obsidian Titan Colossus",
+      "Obsidian Colossus"
+    ],
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "Colossal fifty-foot ancient four-armed titan golem boss of Floor 50, monolithic non-humanoid physique of jagged polished black obsidian slabs and mossy ancient granite boulders, four massive stone arms with crushing obsidian fists, horned crest with three glowing molten-crimson eye slits, glowing concentric runic fractures pulsing with magma-red and azure arcane energy across chest, non-humanoid obsidian titan beast construct",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "Natural jagged polished black obsidian slabs and mossy ancient granite boulders with magma-red and azure runic fracture veins"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/44_Boss_Obsidian_Runic_Colossus.jpg",
+    "episodes": [
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Obsidian Titan Colossus"
+  },
+  "grand_ranking_stele": {
+    "id": "grand_ranking_stele",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Grand Ranking Stele}",
+    "aliases": [
+      "Grand Ranking Stele",
+      "Ranking Stele"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza. Polished obsidian facets displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, rotating concentric brass calibration rings around its base, crisp clean reflections. Pure 100% textless abstract artwork, zero readable text, zero numbers, zero letters, zero names, zero words.",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/46_Prop_Labyrinth_Ranking_Monolith.jpg",
+    "episodes": [
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP07_The_Ancient_Labyrinth_Tournament"
+    ],
+    "name": "Grand Ranking Stele"
   }
 }

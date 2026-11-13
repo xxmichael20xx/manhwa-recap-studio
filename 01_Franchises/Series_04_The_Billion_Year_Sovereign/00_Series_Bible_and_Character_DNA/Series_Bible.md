@@ -81,15 +81,15 @@
    - **Role:** Class-SSS Dimensional Rift Despot, 450M-year ancient blood demon sovereign.
    - **In-Game Handle:** *Asura Blood Sovereign*
    - **Cultivation Base:** 450,000,000 Years (Asura Blood Emperor Realm)
-   - **DNA Prompt:** `@{Asura Blood Sovereign}, 8-foot-tall demonic humanoid sovereign, six muscular obsidian-crimson armored arms each physically connected to shoulders, wild long crimson flame hair billowing outward, four burning red demonic eyes, ornate barbed dark crimson demon-iron armor with glowing ancient runes, jagged bone spikes on shoulders, suffocating dark blood-red mist and black lightning aura, modern 2025 action manhwa art style, sharp ink linework, cinematic dramatic lighting, vertical 9:16`
+   - **DNA Prompt:** `@{Asura Blood Sovereign}, 8-foot-tall muscular demonic humanoid sovereign, four muscular arms (upper pair clad in bone-spiked obsidian-iron gauntlets with glowing red runes, lower pair bare scarred crimson-grey muscle), wild fiery orange-red flame hair, two glowing crimson eyes and red diamond forehead mark, dark fanged face, bare scarred torso, spiked dark-iron pauldrons, crimson demon-skull waist buckle, three-clawed spiked greaves, dark crimson lightning aura, modern 2025 action manhwa art style, sharp ink linework, cinematic dramatic lighting, vertical 9:16`
 
-8. **Weapon: Gu Tianyu's Jade Spirit Blade (顾天宇的碧玉灵刃)**
+8. **Weapon: Gu Syndicate Custom Spirit Blade (顾天宇的碧玉灵刃)**
    - **Role:** Gu Syndicate Custom Spirit Saber; 48,000-year Golden Core weapon shattered upon Lu Chen's skin.
-   - **DNA Prompt:** `@{Gu Tianyu's Jade Spirit Blade}, ornate Chinese spirit dao saber, curved forged silver-steel blade with razor-sharp translucent luminous cyan jade cutting edge faintly glowing with cyan wind-spirit runes, ornate sculpted white nephrite jade crossguard, emerald-green silk cord-wrapped hilt, flowing cyan silk tassel, vertical 3/4 angle, modern 2025 urban cultivation manhwa art style, vertical 9:16`
+   - **DNA Prompt:** `@{Gu Syndicate Custom Spirit Blade}, single-edged curved silver-steel dao blade with glowing translucent cyan jade runic cutting edge, sculpted white dragon crossguard, black ribbed hilt wrapped with emerald cord, flowing cyan silk tassel hanging from silver ring pommel, modern 2025 urban cultivation manhwa art style, vertical 9:16`
 
 9. **Prop: Tactical Spirit Spectrometer (战术灵能分光仪)**
    - **Role:** National Threat Bureau handheld spiritual energy detector; overloaded by Lu Chen's primordial aura.
-   - **DNA Prompt:** `@{Tactical Spirit Spectrometer}, handheld military-grade tactical spirit-energy spectrometer, ruggedized dark olive-drab and brushed-brass rectangular casing with reinforced black rubber bumpers, circular brass sensor nozzle with glowing quartz crystal lens, analog sweep gauge needle alongside glowing amber vacuum-tube digital counter readout, modern 2025 urban cultivation manhwa style, vertical 9:16`
+   - **DNA Prompt:** `@{Tactical Spirit Spectrometer}, retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas, modern 2025 urban cultivation manhwa style, vertical 9:16`
 
 10. **Monumental Artifact: Heaven-Earth Golden Stele (天地金榜)**
     - **Role:** Global celestial ranking monument; counts down and projects the Top 10 Supreme Cultivators across troposphere.
@@ -148,6 +148,29 @@
 22. **Artifact Array: Nine-Serpent Blood Slaughter Formation (九蟒血煞大阵)**
     - **Role:** Ancient killing array deployed by Gu Syndicate to isolate Qindu collegiate district; nine bone-carved banners projecting sky-spanning crimson runic dome with shadowy blood-red serpents.
     - **DNA Prompt:** `@{Nine-Serpent Blood Slaughter Formation}, colossal sky-spanning crimson runic energy dome enclosing city streets, nine towering blood-red bone-inscribed formation banners driven into pavement, shadowy blood-red spectral serpents slithering across crimson smog clouds, modern 2025 urban cultivation manhwa style, vertical 9:16`
+
+23. **Boss / Incursion Beast: Nether Behemoth (冥府巨兽)**
+    - **Role:** Colossal Class-SS void titan emerging from planetary tears; devastating urban infrastructure with spatial shockwaves and volcanic nether fire.
+    - **Cultivation Base:** 5,000,000 Years (Class-SS Abyssal Calamity)
+    - **DNA Prompt:** `@{Nether Behemoth}, Colossal 15-metre quadrupedal abyssal titan beast, dense volcanic obsidian chitin armour plates, pulsing violet nether fire veins along flanks, three pairs of burning crimson eye clusters, double-hinged jaw lined with serrated obsidian fangs, heavy spiked tail, dripping acidic purple spatial miasma, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16`
+
+24. **Swarm Creature: Void Vanguard Beast (虚空先锋兽)**
+    - **Role:** Class-S aerial shock scouts emerging through stratospheric rifts; hunting human cultivators in packs.
+    - **Cultivation Base:** 100,000 Years (Class-S Void Predator)
+    - **DNA Prompt:** `@{Void Vanguard Beast}, 3-metre sinewy predatory abyssal void beast, sleek obsidian chitin carapace, leathery bat-like wings, four glowing crimson eyes, sharp sickle mandibles dripping emerald spatial acid, razor talons, modern 2025 urban cultivation manhwa art style, sharp ink linework, high contrast cel shading, vertical 9:16`
+
+25. **Defense Council Commander: Marshal Lei Gang (雷刚元帅)**
+    - **Role:** Supreme Military Commander of the National Defense Council; coordinates heavy hover-tank, missile, and forbidden spirit-warhead deployments during Arc 3.
+    - **DNA Prompt:** `@{Marshal Lei Gang}, 48-year-old stern East Asian military commander, short silver-streaked black hair, sharp chiseled jawline, commanding slate-blue eyes, dark charcoal-navy formal military trench coat with gold tasseled epaulettes, double-breasted brass buttons, gold-laurel high collar, brown leather waist belt, slate dress trousers, black leather boots, vertical 9:16`
+
+26. **Apex Martial Guildmaster: Grandmaster Shen (沈宗师)**
+    - **Role:** Regal 45-year-old corporate apex martial guildmaster leading the elite cultivator assault against the Asura Blood Sovereign.
+    - **DNA Prompt:** `@{Grandmaster Shen}, 45-year-old regal East Asian apex martial grandmaster, long silver-white hair neatly tied in low ponytail, piercing amber eyes, midnight-navy tailored martial duster coat with gold trim lapels and cuffs over black turtleneck, black tactical trousers, dark laced combat boots, vertical 9:16`
+
+27. **Tactical Hardware: Aegis Tactical Hover-Tank, Bureau Recon Drone & Convenience Store Grocery Bag**
+    - `@{Aegis Tactical Hover-Tank}`: sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters with twin linear railgun barrels.
+    - `@{Bureau Recon Drone}`: compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre arms and single glowing cyan optical lens.
+    - `@{Convenience Store Grocery Bag}`: semi-translucent milky-white plastic carrier grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea.
 
 ---
 
@@ -251,7 +274,10 @@
     "gu_syndicate.courtyard_plaza": "Gu Capital Syndicate ground-level grand entrance plaza, paved dark granite square framed by towering obsidian glass skyscraper columns, ornamental water features, black wrought-iron security gates.",
     "campus.formation_cordon": "Qindu University collegiate district perimeter under Nine-Serpent Blood Slaughter Formation, crackling crimson runic energy dome enclosing the modern street grid, blood-red mist hovering over asphalt roadways, abandoned civilian vehicles.",
     "street.breakfast_stall": "Modern street corner traditional breakfast stall near university gate, stainless steel steamer baskets releasing fragrant white steam, plastic folding tables, yellow striped canopy, clean city sidewalk.",
-    "dorm.402": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps."
+    "dorm.402": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps.",
+    "jiangnan.transit_plaza": "Wide modern 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under gloomy crimson overcast storm clouds.",
+    "bureau.command_room": "Modern 2025 subterranean Defense Council tactical war room, matte dark charcoal steel acoustic wall panels, curved tiered obsidian glass console desk with blank glowing cyan geometric holographic rings above, cool white LED strip ceiling lighting.",
+    "street.convenience_store": "Modern 2025 corner convenience store exterior beside neat paved sidewalk, recessed sliding glass entrance radiating warm golden indoor light, metal bicycle rack beside roadside greenery, blank glowing cyan fascia awning with zero readable signage."
   }
 }
 STUDIO_BIBLE_DIRECTIVES_END -->

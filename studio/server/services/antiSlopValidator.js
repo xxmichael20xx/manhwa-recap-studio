@@ -21,7 +21,7 @@ const UNIVERSAL_LEXICONS = {
   anatomyDefectRegex: /\b(?:all limbs connected|six fingers|extra arms|extra legs|extra fingers|deformed hands|mutated hands|fused fingers|missing limbs|floating limbs|disconnected limbs|malformed hands)\b/i,
 
   scriptSimileRegex: /\b(?:like\s+(?:a\s+|an\s+|the\s+|[a-z]{3,})|as if|as though|[a-z]{3,}-like)\b/i,
-  creatureNounsRegex: /(?<!-)\b(?:wolf|wolves|tiger|tigers|serpent|serpents|snake|snakes|parrot|parrots|chicken|chickens|toad|toads|frog|frogs|peacock|peacocks|monkey|monkeys|ape|apes|hound|hounds|pig|pigs|boar|boars|rat|rats|crow|crows|lion|lions|bear|scorpion|scorpions|chimera|wyrm|leviathan|hydra|tentacle|sheep)\b(?!-)/gi,
+  creatureNounsRegex: /(?<!-)\b(?:wolf|wolves|tiger|tigers|serpent|serpents|snake|snakes|parrot|parrots|chicken|chickens|toad|toads|frog|frogs|peacock|peacocks|monkey|monkeys|ape|apes|hound|hounds|pig|pigs|boar|boars|rat|rats|crow|crows|lion|lions|bear|scorpion|scorpions|chimera|wyrm|leviathan|hydra|tentacle|sheep|monster|monsters|beast|beasts|abomination|abominations|fiend|fiends|thrall|thralls)\b(?!-)/gi,
 
   roleAndVehicleNounsRegex: /\b(?:dean|vice-dean|chancellor|vice-chancellor|headmaster|principal|rector|provost|elder|grand elder|patriarch|matriarch|sovereign|emperor|empress|king|queen|prince|princess|duke|duchess|marquis|earl|viscount|baron|general|commander|captain|colonel|lieutenant|director|president|chairman|chief|doctor|professor|instructor|examiner|proctor|warden|overseer|hover-sedan|hover-limousine|hover-truck|hovercraft|hover-car|gunship|warship|dropship|limousine|sedan|suv|helicopter|fighter jet|mech|airship|chariot|parents|young boy|young heir|veteran swordsman)\b/gi,
 
@@ -173,6 +173,7 @@ export class AntiSlopValidator {
         itemRefs: itemRefStr
           ? itemRefStr.split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean)
           : [],
+        lens: getTag('lens') || '',
         narrativeSync: getTag('narrative_sync') || '',
         prompt: getTag('prompt') || '',
         hasExplicitPromptTag: /<prompt>[\s\S]*?<\/prompt>/i.test(body)
@@ -314,6 +315,21 @@ export class AntiSlopValidator {
     const totalScenes = matrixScenes.length
     const scriptScenesCount = scriptClauses.size
 
+    const worldStatePath = epPath ? path.join(epPath, 'world_state.json') : null
+    const worldState = (worldStatePath && fs && fs.existsSync(worldStatePath))
+      ? JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
+      : (rawVaultContext.worldState || null)
+    const strictWorldState = Boolean(
+      worldState && (
+        worldState.timeline?.enforced ||
+        (worldState.zone_lifecycles && Object.keys(worldState.zone_lifecycles).length > 0) ||
+        worldState.zone_invariants ||
+        (Array.isArray(worldState.prop_contracts) && worldState.prop_contracts.length > 0) ||
+        (Array.isArray(worldState.architecture_bans) && worldState.architecture_bans.length > 0) ||
+        (Array.isArray(worldState.continuity_bans) && worldState.continuity_bans.length > 0)
+      )
+    )
+
     const checks = []
     const allFailingSceneIds = new Set()
     const recordGate = (id, name, failingArr, passMsg, failMsg) => {
@@ -354,6 +370,8 @@ export class AntiSlopValidator {
       'head', 'eyes', 'face', 'hair', 'room', 'hall', 'gate', 'door', 'wall', 'path', 'road', 'rank',
       'tier', 'class', 'level', 'power', 'magic', 'shadow', 'flame', 'frost', 'storm', 'blood', 'heart',
       'soul', 'mind', 'world', 'state', 'saint', 'pure', 'true', 'zero', 'hero', 'plate', 'strip',
+      'crimson', 'formation', 'sedan', 'hover', 'asura', 'dust', 'martial', 'array', 'abyssal', 'rift', 'shield', 'barrier', 'clan', 'guild', 'pill', 'beast', 'predator', 'titan', 'master', 'tactical',
+      'charcoal', 'ceramic', 'alloy', 'aluminium', 'aluminum', 'steel', 'wooden', 'glass', 'metal', 'plastic', 'brushed', 'oversized', 'pullover', 'command',
       'practice', 'training', 'marble', 'bench', 'dummy', 'enchanted', 'principles', 'weaving',
       'forest', 'valley', 'mountain', 'river', 'lake', 'garden', 'trail', 'street', 'field', 'meadow',
       'hills', 'trees', 'ocean', 'sea', 'sky', 'plain', 'desert', 'ruins', 'cottage', 'farm', 'house',
@@ -512,6 +530,22 @@ export class AntiSlopValidator {
           }
         }
       }
+
+      // Guard against Drafter shortcutting <action_layer> by stripping @{...} from entity names
+      if (strictWorldState && scene.actionLayer) {
+        const alStripped = scene.actionLayer.replace(/@\{[^}]+\}/g, ' ')
+        for (const ref of declaredRefs) {
+          const ent = entityByAliasLower.get(ref.toLowerCase())
+          if (!ent || ent.kind === 'location') continue
+          const tokName = ent.token.replace(/^@\{|\}$/g, '').trim()
+          if (tokName.length < 5) continue
+          const escapedTok = tokName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          if (new RegExp(`\\b${escapedTok}\\b`).test(alStripped)) {
+            g03Fails.push(`${scene.id} (Action layer uses un-tokenized "${tokName}" instead of ${ent.token})`)
+            break
+          }
+        }
+      }
     }
 
     recordGate(
@@ -519,7 +553,7 @@ export class AntiSlopValidator {
       'G03: Universal Entity Token Binding & Kinship Anchor Lock',
       g03Fails,
       `All @{Entity} tokens and refs are bidirectionally bound to entities.json.`,
-      `Unbound entity mentions, missing @{...} tokens, or unanchored kinship references`
+      `Unbound entity mentions, missing @{...} tokens, un-tokenized <action_layer> names, or unanchored kinship references`
     )
 
     // G04: Text Leakage, Spoken Quotes & Text-Bearing Props
@@ -550,6 +584,17 @@ export class AntiSlopValidator {
     const g05Fails = []
     const styleBase = franchise.style?.base || ''
     const lightingModes = franchise.style?.lighting_modes || {}
+    const resolveTimelineLightingForScene = (sceneId, zoneObj) => {
+      const sNum = PromptDnaCompiler.sceneNumberFromId(sceneId)
+      if (worldState?.timeline?.timeline_shifts) {
+        for (const shift of worldState.timeline.timeline_shifts) {
+          const from = PromptDnaCompiler.sceneNumberFromId(shift.from_scene || shift.from || '')
+          const to = PromptDnaCompiler.sceneNumberFromId(shift.to_scene || shift.to || '')
+          if (sNum >= from && sNum <= to && shift.lighting) return shift.lighting
+        }
+      }
+      return worldState?.timeline?.default_lighting || zoneObj?.lighting || 'day_sunlit'
+    }
 
     const hasNightZones = Object.values(zones).some(z => {
       const m = lightingModes[z.lighting]
@@ -557,6 +602,7 @@ export class AntiSlopValidator {
       return timeClass === 'night' || timeClass === 'abyssal'
     })
     if (
+      !(strictWorldState && worldState?.timeline?.enforced) &&
       hasNightZones &&
       /\b(?:bright high-key(?: daylight)?|broad daylight|midday sun|clear blue sky)\b/i.test(styleBase)
     ) {
@@ -565,6 +611,36 @@ export class AntiSlopValidator {
 
     for (const scene of matrixScenes) {
       const zone = scene.zone ? zones[scene.zone] : null
+      if (strictWorldState && worldState?.timeline?.enforced) {
+        const activeLighting = resolveTimelineLightingForScene(scene.id, zone)
+        const promptNoNeg = scene.prompt
+          .replace(/(?:zero|no|without|never)\s+(?:[a-z-]+\s+){0,2}(?:bright\s+blue\s+sky|clear\s+blue\s+sky|blue\s+sky|morning\s+sun|sunlight|night\s+sky|dark\s+sky)/gi, '')
+        if (activeLighting === 'overcast_crimson_morning') {
+          if (!/\b(?:overcast|stormy\s+crimson\s+morning)\b/i.test(scene.prompt)) {
+            g05Fails.push(`${scene.id} (Missing overcast crimson morning lighting phrase)`)
+            continue
+          }
+          if (/(?:bright\s+blue\s+sky|clear\s+blue\s+sky|broad\s+daylight|midday\s+sun|bright\s+crisp\s+morning\s+daylight|bright\s+morning\s+sunlight|bright\s+sunlit\s+morning\s+sky|sunlit\s+campus\s+buildings|clear\s+high-key\s+sky)/i.test(promptNoNeg)) {
+            g05Fails.push(`${scene.id} (Sunny daylight bleed during overcast_crimson_morning timeline)`)
+            continue
+          }
+          if (/\b(?:dark\s+night\s+sky|night\s+lamps|floodlit\s+night\s+sky|high-intensity\s+nocturnal|at\s+night)\b/i.test(promptNoNeg)) {
+            g05Fails.push(`${scene.id} (Nocturnal bleed during overcast_crimson_morning timeline)`)
+            continue
+          }
+        } else if (['bright_morning_sunlight', 'day_sunlit', 'daylight'].includes(activeLighting)) {
+          if (!/\b(?:bright\s+morning\s+sunlight|bright\s+natural\s+daylight|sunlit)\b/i.test(scene.prompt)) {
+            g05Fails.push(`${scene.id} (Missing bright morning/daylight lighting phrase)`)
+            continue
+          }
+          if (/\b(?:dark\s+night\s+sky|night\s+lamps|floodlit\s+night\s+sky|high-intensity\s+nocturnal|at\s+night)\b/i.test(promptNoNeg)) {
+            g05Fails.push(`${scene.id} (Nocturnal bleed during daytime timeline)`)
+            continue
+          }
+        }
+        continue
+      }
+
       const modeObj = zone ? lightingModes[zone.lighting] : null
       const timeClass =
         Boolean(modeObj && typeof modeObj === 'object' && modeObj.time_class)
@@ -613,7 +689,11 @@ export class AntiSlopValidator {
         g06Fails.push(scene.id)
         continue
       }
-      if (tailPos && !scene.prompt.includes(tailPos)) {
+      const hasLivingHuman = !strictWorldState || scene.charRefs.some(ref => {
+        const ent = entityByAliasLower.get(ref.toLowerCase())
+        return ent && ent.kind === 'character' && ent.isAnimate !== false
+      })
+      if (hasLivingHuman && tailPos && !scene.prompt.includes(tailPos)) {
         g06Fails.push(scene.id)
         continue
       }
@@ -630,20 +710,46 @@ export class AntiSlopValidator {
       `Banned anatomy defect phrase or altered positive/negative tail`
     )
 
-    // G07: Deterministic Appearance & DNA Hash Lock
+    // G07: Deterministic Appearance, Prop & Creature DNA Hash Lock
     const g07Fails = []
+    const isV2CompiledMatrix = /Compiled By:\s*Deterministic PromptDnaCompiler v2\.0/i.test(promptMatrixText)
     for (const scene of matrixScenes) {
       const sceneNum = PromptDnaCompiler.sceneNumberFromId(scene.id)
       const { entityStates } = PromptDnaCompiler.replayLedgerState(entities, zones, ledgerEvents, sceneNum)
       const declaredRefs = [...scene.charRefs, ...scene.itemRefs]
+      const actAndNarr = `${scene.actionLayer || ''} ${(scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')}`
 
       for (const ref of declaredRefs) {
-        const ent = entityByAliasLower.get(ref.toLowerCase())
+        const cleanRef = ref.replace(/^@\{|\}$/g, '').trim()
+        const ent = entityByAliasLower.get(cleanRef.toLowerCase()) || entityByAliasLower.get(ref.toLowerCase())
         if (!ent) {
           g07Fails.push(scene.id)
           break
         }
-        if (ent.kind !== 'character') continue
+        if (ent.kind === 'location') continue
+
+        if (ent.kind === 'item') {
+          if (isV2CompiledMatrix) {
+            const cleanItemDna = (ent.dna || '').replace(/^@\{[^}]+\},\s*/i, '').trim()
+            if (cleanItemDna.length >= 12 && !scene.prompt.toLowerCase().includes(cleanItemDna.toLowerCase())) {
+              g07Fails.push(`${scene.id} (Missing/drifted item DNA for ${ent.token})`)
+              break
+            }
+          }
+          const entDnaLower = (ent.dna || '').toLowerCase()
+          if ((/\b(?:analogue|analog|vacuum-tube)\b/.test(entDnaLower) || /zero\s+digital/.test(entDnaLower)) &&
+              /\b(?:digital\s+(?:indicator|sensor|display|readout|screen)|lcd|touchscreen|scorched\s+circuitry)\b/i.test(actAndNarr)) {
+            g07Fails.push(`${scene.id} (Prop contradiction: digital/LCD phrasing conflicts with analogue ${ent.token})`)
+            break
+          }
+          if (/\bbrass\b/.test(entDnaLower) && !/\bplatinum\b/.test(entDnaLower) &&
+              /\b(?:meteoric\s+platinum|spherical\s+platinum|platinum\s+and\s+celestial)\b/i.test(actAndNarr)) {
+            g07Fails.push(`${scene.id} (Prop contradiction: platinum phrasing conflicts with brass ${ent.token})`)
+            break
+          }
+          continue
+        }
+
         const expectedCompiled = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id])
         const hasExactDna = scene.prompt.includes(ent.dna)
         const hasValidHash =
@@ -661,15 +767,25 @@ export class AntiSlopValidator {
             break
           }
         }
+        const entDnaLower = (ent.dna || '').toLowerCase()
+        if ((/\bjet-black\b/.test(entDnaLower) || /\bsilver-streaked\s+dark\s+hair\b/.test(entDnaLower)) &&
+            /\bmidnight[\s-]blue\s+hair\b/i.test(actAndNarr)) {
+          g07Fails.push(`${scene.id} (Trait contradiction: midnight-blue hair conflicts with ${ent.token} DNA)`)
+          break
+        }
+        if (/\bgolden\s+eyes\b/.test(entDnaLower) && /\bsilver-flecked\s+eyes\b/i.test(actAndNarr)) {
+          g07Fails.push(`${scene.id} (Trait contradiction: silver-flecked eyes conflicts with ${ent.token} DNA)`)
+          break
+        }
       }
     }
 
     recordGate(
       'G07_appearance_hash',
-      'G07: Character DNA, Registered Outfit & Ledger State Hash Lock',
+      'G07: Character, Item & Creature DNA, Registered Outfit & Ledger State Hash Lock',
       g07Fails,
-      `100% of character DNA blocks, outfits, and state hashes match vault expectations.`,
-      `Missing canonical DNA, unregistered outfit substitution, or hash mismatch`
+      `100% of character, item & creature DNA blocks, outfits, and state hashes match vault expectations.`,
+      `Missing canonical DNA, drifted prop/hair/eye attribute, unregistered outfit substitution, or hash mismatch`
     )
 
     // G08: Franchise Format & Aspect Ratio Fidelity
@@ -755,6 +871,23 @@ export class AntiSlopValidator {
         const isTrainingZone = scene.zone.includes('training') || scene.zone.includes('barracks') || scene.zone.includes('arena') || scene.zone.includes('armory');
         if (!isTrainingZone) {
           g09Fails.push(`${scene.id} (Hypothetical set-piece bleed: Action layer or prompt describes rogue armor/training dummy in non-combat zone "${scene.zone}")`);
+        }
+      }
+
+      // Architectural Metaphor & Landmark Organ Bleed Guard (Anti-Landmark Mutation Law)
+      const isArchitecturalZone = scene.zone && (
+        scene.zone.includes('stele') || scene.zone.includes('tower') || scene.zone.includes('boardroom') ||
+        scene.zone.includes('plaza') || scene.zone.includes('stadium') || scene.zone.includes('gate') ||
+        scene.zone.includes('dorm') || scene.zone.includes('suite') || scene.zone.includes('hall') ||
+        scene.zone.includes('penthouse') || scene.zone.includes('pathway')
+      );
+      if (isArchitecturalZone) {
+        const architecturalMetaphorRegex = /\b(?:planar\s+horn|primordial\s+horn|demon(?:ic)?\s+horn|horns?|demon(?:ic)?\s+face|monstrous\s+claws?)\b/i;
+        if (architecturalMetaphorRegex.test(scene.actionLayer || '') || architecturalMetaphorRegex.test(scene.prompt || '')) {
+          const hasProtection = /\b(?:zero\s+(?:organic\s+)?horns|zero\s+horns\s+on\s+buildings|pure\s+monolithic|pure\s+architectural|sound\s+wave|sonic\s+shockwave)\b/i.test(scene.prompt);
+          if (!hasProtection) {
+            g09Fails.push(`${scene.id} (Architectural Metaphor Bleed: prompt mentions horn/demon anatomy in architectural zone "${scene.zone}" without negative architectural protection tokens)`);
+          }
         }
       }
     }
@@ -980,6 +1113,26 @@ export class AntiSlopValidator {
       }
     }
 
+    if (strictWorldState && ledgerEvents && ledgerEvents.length > 0) {
+      for (const evt of ledgerEvents) {
+        if (!evt.e || evt.e.startsWith('zone:') || !evt.set) continue
+        const ent = entities[evt.e] || entityByAliasLower.get(evt.e.toLowerCase())
+        if (!ent) {
+          g11Fails.push(`IMG_${String(evt.s).padStart(3, '0')} (Unknown entity "${evt.e}" in state_events.jsonl)`)
+          continue
+        }
+        if (evt.set.outfit && (!ent.outfits || !ent.outfits[evt.set.outfit])) {
+          g11Fails.push(`IMG_${String(evt.s).padStart(3, '0')} (Invalid outfit key "${evt.set.outfit}" for "${evt.e}" in state_events.jsonl)`)
+        }
+        for (const [dim, val] of Object.entries(evt.set)) {
+          if (dim === 'outfit' || dim === 'lifecycle') continue
+          if (ent.state_lexicon?.[dim] && !ent.state_lexicon[dim][val]) {
+            g11Fails.push(`IMG_${String(evt.s).padStart(3, '0')} (Invalid state_lexicon key "${dim}=${val}" for "${evt.e}" in state_events.jsonl)`)
+          }
+        }
+      }
+    }
+
     recordGate(
       'G11_ledger_and_continuity',
       'G11: Event-Sourced Ledger Replay, Item Lifecycle & Posture Continuity',
@@ -1001,10 +1154,17 @@ export class AntiSlopValidator {
         continue
       }
 
-      const validCanons = [
-        zone.canon.trim().replace(/\.$/, ''),
-        ...Object.values(zone.tech_stages || {}).map(s => s.trim().replace(/\.$/, ''))
-      ]
+      const rawCanons = [
+        zone.canon,
+        ...Object.values(zone.tech_stages || {}),
+        ...((worldState?.zone_lifecycles?.[zoneId] || []).map(z => z.desc).filter(Boolean))
+      ].filter(Boolean)
+      const validCanons = [...new Set(rawCanons.flatMap(c => [
+        c.trim().replace(/\.$/, ''),
+        PromptDnaCompiler.sanitizeZoneCanon(c, 'overcast_crimson_morning'),
+        PromptDnaCompiler.sanitizeZoneCanon(c, 'bright_morning_sunlight'),
+        PromptDnaCompiler.sanitizeZoneCanon(c, 'day_sunlit')
+      ]))].filter(c => c && c.length >= 10)
       const hasCanon = validCanons.some(c => scene.prompt.includes(c))
       if (!hasCanon) {
         g12Fails.push(scene.id)
@@ -1013,11 +1173,12 @@ export class AntiSlopValidator {
 
       const promptLower = scene.prompt.toLowerCase()
       const hitForbidden = (zone.forbidden_tokens || []).some(ft => {
-        const lower = ft.toLowerCase()
-        if (!promptLower.includes(lower)) return false
-        // Strip negated occurrences (e.g. "zero wind turbine", "no windmills")
-        const stripped = promptLower.replace(new RegExp('(?:zero|no|without|never)\\s+(?:[a-z-]+\\s+)?' + lower, 'gi'), '')
-        return stripped.includes(lower)
+        const lower = ft.toLowerCase().trim()
+        if (!lower) return false
+        const escaped = lower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        // Strip negated occurrences and require whole-word match so e.g. "night" never matches "zero knights".
+        const stripped = promptLower.replace(new RegExp(`(?:zero|no|without|never)\\s+(?:[a-z-]+\\s+)?\\b${escaped}\\b`, 'gi'), ' ')
+        return new RegExp(`\\b${escaped}\\b`, 'i').test(stripped)
       })
       if (hitForbidden) {
         g12Fails.push(scene.id)
@@ -1313,8 +1474,8 @@ export class AntiSlopValidator {
     if (!isLockedLegacy) {
       for (const scene of matrixScenes) {
         // 1. Check for deprecated category prefixes in tokens
-        if (/@\{(?:Weapon|Item|Artifact|Prop):\s*[^}]+\}/i.test(scene.prompt)) {
-          g21Fails.push(`${scene.id} (Deprecated category prefix in token: e.g. @{Weapon:...})`)
+        if (/@\{(?:Character|Boss|Hero|Ally|Supporting|Antagonist|Weapon|Item|Artifact|Prop|Location|Vehicle):\s*[^}]+\}/i.test(scene.prompt)) {
+          g21Fails.push(`${scene.id} (Deprecated category prefix in token: e.g. @{Character:...} or @{Weapon:...})`)
           continue
         }
 
@@ -1435,6 +1596,14 @@ export class AntiSlopValidator {
         if (pLower.includes('featuring @{')) {
           g23Fails.push(`${scene.id} (Establishing shot contains "Featuring @{...}" character declaration)`)
         }
+        if (strictWorldState) {
+          const cleanEst = pLower
+            .replace(/spatial enclosure:\s*[^.]+\./gi, ' ')
+            .replace(/(?:zero|no|without|abandoned(?:\s+by)?|evacuated(?:\s+by)?)\s+(?:[a-z-]+\s+){0,2}(?:soldiers?|guards?|mercenaries?|captains?|squads?|troops?|officers?|fighters?|pedestrians?|civilians?|humans?|people|characters?)/gi, ' ')
+          if (/\b(?:soldiers?|guards?|mercenaries?|captains?|squads?|troops?|officers?|fighters?|pedestrians?|civilians?)\b/i.test(cleanEst)) {
+            g23Fails.push(`${scene.id} (Establishing scene contains un-negated human combatants/crowds triggering phantom figures)`)
+          }
+        }
       }
     }
     recordGate(
@@ -1544,39 +1713,47 @@ export class AntiSlopValidator {
 
     // G27: Tech-Tree & Environmental Lifecycle Gate
     const g27Fails = []
-    for (let i = 0; i < matrixScenes.length; i++) {
-      const scene = matrixScenes[i]
-      const sceneNum = i + 1
-      const pLower = scene.prompt.toLowerCase()
+    const techContext = `${franchise?.id || ''} ${franchise?.title || ''} ${franchiseDir || ''} ${episodeId || ''}`.toLowerCase()
+    const isModernUrbanTech = /\bmodern\s+20\d\d|\burban\b/i.test(franchise?.style?.base || '')
+    const runCraftsmanTechTree =
+      worldState?.tech_tree?.enforce === true ||
+      (worldState?.tech_tree?.enforce !== false && !isModernUrbanTech && /(?:archmage_engineer|quartz_glass|series_06)/i.test(techContext))
 
-      // 1. Windmills and waterwheels are UNINVENTED across all of Episode 2
-      if (sceneNum <= 480) {
-        const machineryRegex = /(?<!\b(?:zero|no|without)\s+)\b(?:windmill|windmills|water\s*wheel|water\s*wheels|complex\s+gears)\b/i
-        if (machineryRegex.test(pLower) && !/(?:no|zero)\s+(?:windmills|water\s*wheels|gears)/i.test(pLower)) {
-          g27Fails.push(`${scene.id} (Uninvented machinery appears in background: windmills/water wheels/gears)`)
-        }
-      }
+    if (runCraftsmanTechTree) {
+      for (let i = 0; i < matrixScenes.length; i++) {
+        const scene = matrixScenes[i]
+        const sceneNum = i + 1
+        const pLower = scene.prompt.toLowerCase()
 
-      // 2. Glass lifecycle:
-      // - Before scene 145 (crucible melting), NO positive mention of glass panes, quartz glass, or clear glass anywhere
-      if (sceneNum < 145) {
-        const cleanedGlass = pLower.replace(/\b(?:no|zero|without)\s+(?:clear\s+|quartz\s+|finished\s+)?glass(?:\s+windows?|\s+panes?|\s+sheets?)?/gi, '')
-        if (/\b(?:glass\s+windows?|glass\s+panes?|quartz\s+glass|clear\s+glass|molten\s+glass)\b/i.test(cleanedGlass)) {
-          g27Fails.push(`${scene.id} (Premature glass/window appears in prompt at scene ${sceneNum} before glass melting begins at scene 145)`)
+        // 1. Windmills and waterwheels are UNINVENTED across all of Episode 2
+        if (sceneNum <= 480) {
+          const machineryRegex = /(?<!\b(?:zero|no|without)\s+)\b(?:windmill|windmills|water\s*wheel|water\s*wheels|complex\s+gears)\b/i
+          if (machineryRegex.test(pLower) && !/(?:no|zero)\s+(?:windmills|water\s*wheels|gears)/i.test(pLower)) {
+            g27Fails.push(`${scene.id} (Uninvented machinery appears in background: windmills/water wheels/gears)`)
+          }
         }
-      }
-      // - Between scenes 145 and 192 (melting & annealing), NO finished glass windows mounted in walls
-      if (sceneNum >= 145 && sceneNum < 193) {
-        const cleanedWin = pLower.replace(/\b(?:no|zero|without)\s+(?:clear\s+|quartz\s+|finished\s+)?glass\s+windows?/gi, '')
-        if (/\b(?:glass\s+windows?|crystal-clear\s+quartz\s+glass\s+windows?)\b/i.test(cleanedWin)) {
-          g27Fails.push(`${scene.id} (Finished glass windows appear in prompt at scene ${sceneNum} before window mounting begins at scene 193)`)
-        }
-      }
 
-      // 3. Cold storage cellar: Unbuilt before scene 241
-      if (sceneNum < 241) {
-        if (/(?<!\b(?:no|zero)\s+)\bcold\s+storage\s+cellar\b/i.test(pLower)) {
-          g27Fails.push(`${scene.id} (Cold storage cellar appears before excavation at scene 241)`)
+        // 2. Glass lifecycle:
+        // - Before scene 145 (crucible melting), NO positive mention of glass panes, quartz glass, or clear glass anywhere
+        if (sceneNum < 145) {
+          const cleanedGlass = pLower.replace(/\b(?:no|zero|without)\s+(?:clear\s+|quartz\s+|finished\s+)?glass(?:\s+windows?|\s+panes?|\s+sheets?)?/gi, '')
+          if (/\b(?:glass\s+windows?|glass\s+panes?|quartz\s+glass|clear\s+glass|molten\s+glass)\b/i.test(cleanedGlass)) {
+            g27Fails.push(`${scene.id} (Premature glass/window appears in prompt at scene ${sceneNum} before glass melting begins at scene 145)`)
+          }
+        }
+        // - Between scenes 145 and 192 (melting & annealing), NO finished glass windows mounted in walls
+        if (sceneNum >= 145 && sceneNum < 193) {
+          const cleanedWin = pLower.replace(/\b(?:no|zero|without)\s+(?:clear\s+|quartz\s+|finished\s+)?glass\s+windows?/gi, '')
+          if (/\b(?:glass\s+windows?|crystal-clear\s+quartz\s+glass\s+windows?)\b/i.test(cleanedWin)) {
+            g27Fails.push(`${scene.id} (Finished glass windows appear in prompt at scene ${sceneNum} before window mounting begins at scene 193)`)
+          }
+        }
+
+        // 3. Cold storage cellar: Unbuilt before scene 241
+        if (sceneNum < 241) {
+          if (/(?<!\b(?:no|zero)\s+)\bcold\s+storage\s+cellar\b/i.test(pLower)) {
+            g27Fails.push(`${scene.id} (Cold storage cellar appears before excavation at scene 241)`)
+          }
         }
       }
     }
@@ -1785,7 +1962,7 @@ export class AntiSlopValidator {
 
     // G32: Semantic Layout-Tone & Combat Immersion Gate
     const g32Fails = []
-    const COMBAT_ACTION_VERBS = /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing)\b/i
+    const COMBAT_ACTION_VERBS = /\b(?:slash|punched|punches|punching|strikes|striking|shatters|shattering|blasts|blasting|erupts|erupting|explodes|exploding|smashes|smashing|cleaves|cleaving|dodges|dodging|counters|countering|swings|swinging|crushes|crushing|battles|battling|ignites|igniting|vaporizes|vaporizing|spews|spewing|slams|slamming|tears|tearing|dissolves|dissolving|freezes|freezing|flicks|flicking|shears|shearing|sweeps|sweeping|dives|diving)\b/i
     const DOMESTIC_FILLER_REGEX = /\b(?:eating\s+(?:noodles?|steamed\s+buns?|buns?|food)|chewing\s+on|sipping\s+(?:sweet\s+)?soy\s+milk|drinking\s+through\s+a\s+straw|tying\s+(?:his\s+)?shoelaces?|eating\s+breakfast|holding\s+a\s+steamed\s+bun)\b/i
 
     for (const scene of matrixScenes) {
@@ -1851,10 +2028,6 @@ export class AntiSlopValidator {
 
     // G34: Episodic World State, Wardrobe Lock & Prop Container Parity Gate
     const g34Fails = []
-    const worldStatePath = epPath ? path.join(epPath, 'world_state.json') : null
-    const worldState = (worldStatePath && fs && fs.existsSync(worldStatePath))
-      ? JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
-      : (rawVaultContext.worldState || null)
 
     if (!worldState || !worldState.held_props || Object.keys(worldState.held_props).length === 0) {
       g34Fails.push('FATAL: world_state.json is missing or contains no held_props. Episodic world state parity is mandatory and must not be bypassed.')
@@ -1867,10 +2040,20 @@ export class AntiSlopValidator {
             const ent = entityByAliasLower.get(charId.toLowerCase())
             const charToken = ent ? ent.token.toLowerCase() : `@\{${charId.toLowerCase()}\}`
             if (pLower.includes(charToken) || scene.charRefs.some(r => r.toLowerCase().includes(charId.toLowerCase()))) {
-              if (lockedAttire.toLowerCase().includes('trousers') && /\b(?:shorts|cargo shorts|athletic shorts)\b/i.test(pLower)) {
+              // Exclude other declared actors' canonical DNA/outfits so multi-character scenes do not cross-trigger.
+              let scopedPrompt = pLower
+              for (const otherRef of scene.charRefs) {
+                const otherEnt = entityByAliasLower.get(otherRef.toLowerCase())
+                if (!otherEnt || (ent && otherEnt.id === ent.id) || otherRef.toLowerCase() === charId.toLowerCase()) continue
+                if (otherEnt.dna) scopedPrompt = scopedPrompt.replaceAll(otherEnt.dna.toLowerCase(), ' ')
+                for (const outStr of Object.values(otherEnt.outfits || {})) {
+                  if (outStr) scopedPrompt = scopedPrompt.replaceAll(outStr.toLowerCase(), ' ')
+                }
+              }
+              if (lockedAttire.toLowerCase().includes('trousers') && /\b(?:shorts|cargo shorts|athletic shorts)\b/i.test(scopedPrompt)) {
                 g34Fails.push(`${scene.id} (Wardrobe drift: Character "${charId}" locked to trousers in world_state.json, but prompt describes shorts)`)
               }
-              if (lockedAttire.toLowerCase().includes('hoodie') && /\b(?:blazer|suit jacket|tuxedo|tank top)\b/i.test(pLower)) {
+              if (lockedAttire.toLowerCase().includes('hoodie') && /\b(?:blazer|suit jacket|tuxedo|tank top)\b/i.test(scopedPrompt)) {
                 g34Fails.push(`${scene.id} (Wardrobe drift: Character "${charId}" locked to hoodie in world_state.json, but prompt describes blazer/suit/tank-top)`)
               }
             }
@@ -1903,7 +2086,7 @@ export class AntiSlopValidator {
           const from = PromptDnaCompiler.sceneNumberFromId(shift.from_scene || shift.from || '')
           const to = PromptDnaCompiler.sceneNumberFromId(shift.to_scene || shift.to || '')
           const expectedLighting = shift.lighting
-          const isExpectedDay = ['bright_morning_sunlight', 'day_sunlit', 'daylight'].includes(expectedLighting)
+          const isExpectedDay = ['bright_morning_sunlight', 'overcast_crimson_morning', 'day_sunlit', 'daylight'].includes(expectedLighting)
           const isExpectedNight = ['night_floodlit', 'night_celestial', 'interior_night'].includes(expectedLighting)
 
           for (const scene of matrixScenes) {
@@ -2065,7 +2248,7 @@ export class AntiSlopValidator {
 
     // G38: Ground Elevation & Posture Parity Guard (Anti-Furniture Hallucination Law)
     const g38Fails = []
-    const groundedKeywordsRegex = /\b(?:on the (?:floor|ground|marble|dirt|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed backward|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i
+    const groundedKeywordsRegex = /\b(?:on the (?:floor|ground|marble|dirt|pavement|tiled floor|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed backward|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i
     const eyeLevelTwoShotRegex = /\b(?:eye-level\s+two-shot|two-shot\s+eye-level|two-shot\s+[^\n,.]*eye-level|eye-level\s+[^\n,.]*two-shot)\b/i
     const rogueSeatingRegex = /\b(?:armchair|sofa|couch|seated comfortably in a chair|sitting in an armchair|seated at a table)\b/i
 
@@ -2094,6 +2277,334 @@ export class AntiSlopValidator {
       g38Fails,
       `100% elevation disparity & ground posture compliance across all character interactions.`,
       `Eye-level two-shot assigned to grounded/kneeling actor or rogue seating detected`
+    )
+
+    // G39: Cinematic Lens Diversity & Anti-Stagnation Guard
+    const g39Fails = []
+    let lastLens = null
+    let consecutiveLensCount = 0
+
+    // 1. Check consecutive identical lenses (max allowed: 2)
+    for (const scene of matrixScenes) {
+      const currentLens = (scene.lens || '').trim().toLowerCase()
+      if (currentLens && currentLens === lastLens) {
+        consecutiveLensCount++
+        if (consecutiveLensCount >= 3) {
+          g39Fails.push(`${scene.id} (Lens stagnation: identical lens "${scene.lens}" repeats >= 3 consecutive scenes; max allowed is 2)`)
+        }
+      } else {
+        lastLens = currentLens
+        consecutiveLensCount = 1
+      }
+    }
+
+    // 2. Check per-batch lens variety (minimum 8 unique lenses per 24-scene batch)
+    const BATCH_SIZE = 24
+    for (let i = 0; i < matrixScenes.length; i += BATCH_SIZE) {
+      const batchScenes = matrixScenes.slice(i, i + BATCH_SIZE)
+      const batchNum = Math.floor(i / BATCH_SIZE) + 1
+      const uniqueLenses = new Set(batchScenes.map(s => (s.lens || '').trim().toLowerCase()).filter(Boolean))
+      if (batchScenes.length >= 12 && uniqueLenses.size < 8) {
+        g39Fails.push(`Batch ${batchNum} (Lens diversity failure: only ${uniqueLenses.size} unique lenses across ${batchScenes.length} scenes; minimum required is 8)`)
+      }
+    }
+
+    recordGate(
+      'G39_lens_diversity_anti_stagnation',
+      'G39: Cinematic Lens Diversity & Anti-Stagnation Guard',
+      g39Fails,
+      `100% cinematic lens diversity: zero stagnant framing loops (<=2 consecutive identical lenses, >=8 unique lenses per batch).`,
+      `Stagnant lens repetition (>=3 consecutive identical lenses) or low batch diversity (<8 unique lenses) detected`
+    )
+
+    // G40: Creature Identity, Morphology & Anti-Shadow-Proxy Gate
+    const g40Fails = []
+    if (strictWorldState) {
+      const CREATURE_PROXY_REGEX = /\b(?:shadowy\s+silhouettes?|shadow\s+figures?|dark\s+aerial\s+predators?|approaching\s+monsters?|winged\s+abominations?|dark\s+humanoid\s+figures?|human\s+silhouettes?|shadowy\s+humanoid)\b/i
+      const GENERIC_BEAST_REGEX = /\b(?:four\s+(?:diving\s+)?(?:void\s+)?beasts?|approaching\s+monsters?|aerial\s+predators?|horned\s+beasts?)\b/i
+      const HUMANOID_TAIL_REGEX = /\b(?:distinct\s+individual\s+fingers|cleanly\s+rendered\s+hand\s+linework|crisp\s+pupil\s+reflections|exactly\s+one\s+single\s+protagonist|no\s+duplicate\s+protagonist)\b/i
+      const creatureInvariants = worldState?.creature_invariants || {}
+
+      for (const scene of matrixScenes) {
+        const refEntities = scene.charRefs
+          .map(r => entityByAliasLower.get(r.toLowerCase()) || entityByTokenName.get(r.toLowerCase()))
+          .filter(Boolean)
+        const hasCreature = refEntities.some(e => e.kind === 'creature')
+        const hasHuman = refEntities.some(e => e.kind === 'character' && e.isAnimate !== false)
+        const isCreatureOnly = hasCreature && !hasHuman
+        const pLower = (scene.prompt || '').toLowerCase()
+
+        const promptNoEnclosureOrNeg = scene.prompt
+          .replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
+          .replace(/(?:zero|no|without|completely\s+non-human)\s+(?:[a-z-]+\s+){0,3}(?:shadowy\s+silhouettes?|shadow\s+figures?|dark\s+aerial\s+predators?|approaching\s+monsters?|winged\s+abominations?|dark\s+humanoid\s+figures?|human\s+silhouettes?|shadowy\s+humanoid|humans?)/gi, ' ')
+
+        if (CREATURE_PROXY_REGEX.test(promptNoEnclosureOrNeg)) {
+          g40Fails.push(`${scene.id} (Proxy/shadow phrase detected in prompt instead of canonical creature reference)`)
+          continue
+        }
+
+        const narrOutsideQuotes = (scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
+        const actPlusNarr = `${narrOutsideQuotes} ${scene.actionLayer || ''}`
+        if (!hasCreature && GENERIC_BEAST_REGEX.test(actPlusNarr)) {
+          g40Fails.push(`${scene.id} (Generic creature phrase in narration/action without declaring canonical creature in CAST/character_refs)`)
+          continue
+        }
+
+        const isDissolutionBeat = /\b(?:dissolved|evaporated|erased\s+from\s+existence|disintegrated)\b/i.test(narrOutsideQuotes) &&
+          /\b(?:void|beast|beasts|vanguard|creature|predator|monst)\b/i.test(narrOutsideQuotes)
+        if (isDissolutionBeat && !hasCreature) {
+          g40Fails.push(`${scene.id} (Creature dissolution beat omits canonical creature entity, causing human/shadow hallucination)`)
+          continue
+        }
+
+        if (isCreatureOnly) {
+          if (HUMANOID_TAIL_REGEX.test(pLower)) {
+            g40Fails.push(`${scene.id} (Creature-only scene polluted with human hand/pupil/protagonist tail)`)
+            continue
+          }
+          if (!/zero\s+humans/i.test(pLower) || !/zero\s+shadow\s+figures/i.test(pLower)) {
+            g40Fails.push(`${scene.id} (Creature-only scene missing anti-human/anti-shadow negative safety tail)`)
+            continue
+          }
+        }
+
+        for (const [cId, cInv] of Object.entries(creatureInvariants)) {
+          const isRefPresent = refEntities.some(e => e.id === cId)
+          if (!isRefPresent) continue
+          for (const trait of cInv.forbidden_traits || []) {
+            const escapedT = trait.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+            const cleanedForTrait = pLower.replace(new RegExp(`(?:zero|no|without)\\s+(?:[a-z-]+\\s+){0,2}${escapedT}`, 'gi'), ' ')
+            if (new RegExp(`\\b${escapedT}\\b`, 'i').test(cleanedForTrait)) {
+              g40Fails.push(`${scene.id} (Creature morphology violation on "${cId}": forbidden trait "${trait}" present)`)
+              break
+            }
+          }
+          for (const reqNeg of cInv.required_negatives || []) {
+            if (!pLower.includes(reqNeg.toLowerCase())) {
+              g40Fails.push(`${scene.id} (Creature morphology violation on "${cId}": missing required negative "${reqNeg}")`)
+              break
+            }
+          }
+        }
+      }
+    }
+    recordGate(
+      'G40_creature_identity_anti_proxy',
+      'G40: Creature Identity, Morphology & Anti-Shadow-Proxy Gate',
+      g40Fails,
+      `100% canonical creature grounding, morphology locks (zero rogue horns), and zero human/shadow proxies.`,
+      `Creature proxy/shadow figure phrase, morphology drift, or humanoid tail leak on creature beat`
+    )
+
+    // G41: Architectural Barrier & Exterior/Interior Isolation Gate
+    const g41Fails = []
+    if (strictWorldState) {
+      const zoneInvariants = worldState?.zone_invariants || {}
+      for (const scene of matrixScenes) {
+        const zoneInv = scene.zone ? zoneInvariants[scene.zone] : null
+        if (!zoneInv) continue
+        const refEntities = scene.charRefs
+          .map(r => entityByAliasLower.get(r.toLowerCase()) || entityByTokenName.get(r.toLowerCase()))
+          .filter(Boolean)
+        const hasCreature = refEntities.some(e => e.kind === 'creature')
+        const hasHuman = refEntities.some(e => e.kind === 'character' && e.isAnimate !== false)
+        const pLower = (scene.prompt || '').toLowerCase()
+
+        if (zoneInv.sealed_interior) {
+          if (hasCreature && !hasHuman) {
+            g41Fails.push(`${scene.id} (Sealed interior zone "${scene.zone}" staged with creature-only CAST and zero interior humans)`)
+            continue
+          }
+          if (hasCreature && hasHuman) {
+            if (!/\b(?:closed\s+unbroken\s+glass|unbroken\s+glass|closed\s+glass\s+window|outside\s+beyond)\b/i.test(pLower)) {
+              g41Fails.push(`${scene.id} (Interior+creature scene missing closed unbroken window glass boundary separation)`)
+              continue
+            }
+            const breachRegex = /(?<!zero\s+|no\s+|without\s+)\b(?:inside\s+the\s+room|inside\s+dormitory|broken\s+window|shattered\s+window|smashed\s+glass|bursts?\s+through\s+(?:the\s+)?window|flying\s+inside|head\s+protruding\s+through)\b/i
+            if (breachRegex.test(pLower)) {
+              g41Fails.push(`${scene.id} (Interior barrier breach: unbroken interior zone mentions broken window or creature inside room)`)
+              continue
+            }
+          }
+          for (const pat of zoneInv.banned_feature_patterns || []) {
+            const pCleaned = pLower.replace(/(?:zero|no|without|single)\s+(?:[a-z-]+\s+)?(?:bunk\s+beds?|broken\s+window|shattered\s+window)/gi, ' ')
+            if (new RegExp(pat, 'i').test(pCleaned)) {
+              g41Fails.push(`${scene.id} (Zone invariant "${scene.zone}" violated by /${pat}/i)`)
+              break
+            }
+          }
+        }
+      }
+    }
+    recordGate(
+      'G41_barrier_and_enclosure_isolation',
+      'G41: Architectural Barrier & Exterior/Interior Isolation Gate',
+      g41Fails,
+      `100% spatial barrier separation and sealed interior integrity across all scenes.`,
+      `Exterior creature bled inside sealed interior zone or window barrier state flickered`
+    )
+
+    // G42: Architectural Era, Weather & Action-Layer Environment Lock
+    const g42Fails = []
+    if (strictWorldState) {
+      const archBans = Array.isArray(worldState?.architecture_bans) ? worldState.architecture_bans : []
+      const contBans = Array.isArray(worldState?.continuity_bans) ? worldState.continuity_bans : []
+      const DEFAULT_MEDIEVAL_ARCH_REGEX = /\b(?:battlements?|crenelated|parapets?|castle\s+walls?|drawbridge|fortress\s+keep|stone\s+battlement)\b/i
+
+      for (const scene of matrixScenes) {
+        const combinedText = `${scene.prompt || ''} ${scene.narrativeSync || ''} ${scene.actionLayer || ''}`
+        const cleanedCombined = combinedText
+          .replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
+          .replace(/(?:zero|no|without)\s+(?:[a-z-]+\s+){0,2}(?:battlements?|castles?|parapets?|medieval\s+stone)/gi, ' ')
+
+        if (DEFAULT_MEDIEVAL_ARCH_REGEX.test(cleanedCombined)) {
+          g42Fails.push(`${scene.id} (Medieval architecture token forbidden in modern setting)`)
+          continue
+        }
+
+        let banHit = false
+        for (const ban of archBans) {
+          const pat = typeof ban === 'string' ? ban : ban.pattern
+          if (pat && new RegExp(pat, 'i').test(cleanedCombined)) {
+            g42Fails.push(`${scene.id} (Architecture ban matched /${pat}/i)`)
+            banHit = true
+            break
+          }
+        }
+        if (banHit) continue
+
+        for (const cBan of contBans) {
+          const pat = typeof cBan === 'string' ? cBan : cBan.pattern
+          const excl = (typeof cBan === 'object' && Array.isArray(cBan.exclude_zones)) ? cBan.exclude_zones : []
+          if (scene.zone && excl.includes(scene.zone)) continue
+          const narrOut = (scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
+          if (pat && (new RegExp(pat, 'i').test(cleanedCombined) || new RegExp(pat, 'i').test(narrOut))) {
+            g42Fails.push(`${scene.id} (Continuity ban matched /${pat}/i)`)
+            banHit = true
+            break
+          }
+        }
+        if (banHit) continue
+
+        const activeLighting = resolveTimelineLightingForScene(scene.id, zones[scene.zone])
+        const actLower = (scene.actionLayer || '').toLowerCase()
+        if (activeLighting === 'overcast_crimson_morning' && /\b(?:bright\s+blue\s+sky|clear\s+blue\s+sky|bright\s+morning\s+sunshine|sunny\s+afternoon)\b/i.test(actLower)) {
+          g42Fails.push(`${scene.id} (Weather bleed inside <action_layer>: sunny blue sky contradicts overcast crimson morning)`)
+        } else if (['bright_morning_sunlight', 'day_sunlit', 'daylight'].includes(activeLighting) && /\b(?:dark\s+night\s+sky|midnight|pitch\s+black\s+sky)\b/i.test(actLower)) {
+          g42Fails.push(`${scene.id} (Weather bleed inside <action_layer>: night sky contradicts bright morning sunlight)`)
+        }
+      }
+    }
+    recordGate(
+      'G42_architecture_and_weather_lock',
+      'G42: Architectural Era, Weather & Action-Layer Environment Lock',
+      g42Fails,
+      `100% architectural era fidelity and weather consistency across prompts and action layers.`,
+      `Medieval fortification artifact, continuity ban, or weather drift in action_layer detected`
+    )
+
+    // G43: UI/Apparel Text Trigger Guard & Handheld Prop Continuity Parity
+    const g43Fails = []
+    if (strictWorldState) {
+      const ALL_CAPS_ALERT_REGEX = /\b(?!HUD\b|LED\b|VIP\b|IMG\b|DNA\b|XML\b)[A-Z]{3,}(?:[-\s]+(?!HUD\b|LED\b|VIP\b|IMG\b|DNA\b|XML\b)[A-Z]{3,})+\b/
+      const READOUT_TRIGGER_REGEX = /\b(?:WARNING\.|SYSTEM\s+ALERT:|READOUT:|THREAT\s+LEVEL\s+[A-Z]+|CULTIVATION\s+MAGNITUDE|CLASS-SS\s+ANOMALY|HOURS\s+REMAIN)\b/
+      const GRAPHIC_APPAREL_REGEX = /(?<!zero\s+|no\s+)\b(?:graphic\s+gaming\s+t-shirt|shirt\s+with\s+text|printed\s+logo|worded\s+badge|lettered\s+shirt)\b/i
+      const propContracts = Array.isArray(worldState?.prop_contracts) ? worldState.prop_contracts : []
+      const propWindows = Array.isArray(worldState?.prop_continuity_windows) ? worldState.prop_continuity_windows : []
+      const heldPropsMap = worldState?.held_props || {}
+      const wardrobeLocks = worldState?.wardrobe_locks || {}
+
+      for (const scene of matrixScenes) {
+        const sNum = PromptDnaCompiler.sceneNumberFromId(scene.id)
+        const actLayer = scene.actionLayer || ''
+        let promptCore = scene.prompt || ''
+        if (tailNeg) promptCore = promptCore.replace(tailNeg, ' ')
+        promptCore = promptCore
+          .replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
+          .replace(/@\{[^}]+\}/g, ' ')
+
+        if (READOUT_TRIGGER_REGEX.test(actLayer) || READOUT_TRIGGER_REGEX.test(promptCore) || ALL_CAPS_ALERT_REGEX.test(actLayer) || ALL_CAPS_ALERT_REGEX.test(promptCore)) {
+          g43Fails.push(`${scene.id} (ALL-CAPS alert or HUD readout text trigger leaked into <action_layer> or <prompt>)`)
+          continue
+        }
+
+        const pLower = (scene.prompt || '').toLowerCase()
+        const wardrobeTextLockActive = Object.values(wardrobeLocks).some(v =>
+          (typeof v === 'string' && /zero text|no text|plain/i.test(v)) ||
+          (typeof v === 'object' && v.no_text_apparel)
+        )
+        if (wardrobeTextLockActive && GRAPHIC_APPAREL_REGEX.test(pLower)) {
+          g43Fails.push(`${scene.id} (Graphic/text apparel token detected despite plain wardrobe lock)`)
+          continue
+        }
+
+        const narrOut = (scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
+        if (scene.itemRefs.length === 0 && Object.values(entities).some(e => e.kind === 'item')) {
+          const unanchoredBrokenDeviceRe = /\b(?:shattered|broken|smoking|ruined|cracked|melted)\s+(?:device|scanner|instrument|sensor)\b/i
+          if (unanchoredBrokenDeviceRe.test(narrOut) || unanchoredBrokenDeviceRe.test(actLayer)) {
+            g43Fails.push(`${scene.id} (Unanchored broken/generic device phrase in narrative/action with empty <item_refs> — binds phantom smartphones/props unless @{Prop} is declared)`)
+            continue
+          }
+        }
+        let propFailed = false
+        for (const contract of propContracts) {
+          const reqClean = (contract.requiredToken || '').replace(/[@{}]/g, '').toLowerCase()
+          if (contract.pattern && new RegExp(contract.pattern, 'i').test(narrOut)) {
+            const hasInItems = scene.itemRefs.some(r => r.replace(/[@{}]/g, '').toLowerCase() === reqClean)
+            if (!hasInItems) {
+              g43Fails.push(`${scene.id} (Prop parity miss: narrative mentions "${contract.requiredToken}" without declaring it in <item_refs>)`)
+              propFailed = true
+              break
+            }
+          }
+        }
+        if (propFailed) continue
+
+        for (const win of propWindows) {
+          const fromN = PromptDnaCompiler.sceneNumberFromId(win.from_scene || '')
+          const toN = PromptDnaCompiler.sceneNumberFromId(win.to_scene || '')
+          if (sNum >= fromN && sNum <= toN) {
+            const hasHolder = !win.holder_id || scene.charRefs.some(r => {
+              const e = entityByAliasLower.get(r.toLowerCase())
+              return (e && e.id === win.holder_id) || r.toLowerCase().includes(win.holder_id.replace(/_/g, ' '))
+            })
+            if (hasHolder) {
+              const targetProp = (win.prop_token || win.prop_id || '').replace(/[@{}]/g, '').toLowerCase()
+              const hasProp = scene.itemRefs.some(r => r.replace(/[@{}]/g, '').toLowerCase() === targetProp)
+              if (!hasProp) {
+                g43Fails.push(`${scene.id} (Prop flicker: "${win.prop_token}" must remain held by "${win.holder_id}" across ${win.from_scene}..${win.to_scene})`)
+                propFailed = true
+                break
+              }
+            }
+          }
+        }
+        if (propFailed) continue
+
+        if (pLower.includes('carved protective case')) {
+          const anyNullContainerProp = scene.itemRefs.some(r => {
+            const ent = entityByAliasLower.get(r.toLowerCase())
+            const lock = (ent && heldPropsMap[ent.id]) || heldPropsMap[r.toLowerCase().replace(/[^a-z0-9]+/g, '_')]
+            return lock && (lock.container === null || lock.container === 'none')
+          })
+          if (anyNullContainerProp) {
+            g43Fails.push(`${scene.id} (Container leak: "carved protective case" injected onto handheld item with container: null)`)
+            continue
+          }
+        }
+
+        const holdsWeaponOrScanner = scene.itemRefs.some(r => /longsword|spectrometer/i.test(r))
+        if (holdsWeaponOrScanner && pLower.includes('glowing tactical talisman')) {
+          g43Fails.push(`${scene.id} (Talisman contradiction: "glowing tactical talisman" leaked while actor holds longsword/spectrometer)`)
+        }
+      }
+    }
+    recordGate(
+      'G43_text_trigger_and_prop_parity',
+      'G43: UI/Apparel Text Trigger Guard & Handheld Prop Continuity Parity',
+      g43Fails,
+      `100% textless UI/apparel prompt hygiene and continuous handheld prop parity.`,
+      `ALL-CAPS/text-bearing apparel trigger, missing prop ref, prop flicker, or container leak detected`
     )
 
     // D-01: Cryptographic Dispatch Manifest Verification

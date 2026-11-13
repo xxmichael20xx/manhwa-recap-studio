@@ -1,0 +1,126 @@
+{
+  "episodeId": "EP07_The_Ancient_Labyrinth_Tournament",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-12T03:30:00.000Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_024",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_025",
+        "to_scene": "IMG_072",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_073",
+        "to_scene": "IMG_088",
+        "lighting": "day_sunlit"
+      },
+      {
+        "from_scene": "IMG_089",
+        "to_scene": "IMG_120",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_121",
+        "to_scene": "IMG_176",
+        "lighting": "interior_warm"
+      },
+      {
+        "from_scene": "IMG_177",
+        "to_scene": "IMG_192",
+        "lighting": "dusk"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "crisp navy-blue academy applicant tunic with silver-stitched lapels and high structured collar, charcoal tailored trousers, burnished dark leather travel boots",
+    "lord_cedric_vance": "opulent sapphire-and-gold academy applicant doublet embroidered with the Vance falcon crest, crisp white ruffled silk cravat, tailored cream trousers, polished black riding boots",
+    "proctor_alistair": "dark navy-blue high-collared imperial proctor robes with silver embroidered hemlines and runic cuff bands, gleaming silver insignia brooch pinned at neckline, durable black leather scholar boots",
+    "elena_ashvale": "practical navy-and-grey apprentice scholar tunic with bronze buckle clasps, dark woollen trousers, sturdy brown leather walking boots, holding a slender polished yew wand",
+    "doran_keller": "reinforced steel-plated dark leather cuirass over durable brown arming doublet, studded bracers, rugged dark-grey trousers, heavy iron-capped leather combat boots, carrying a rectangular steel-reinforced tower shield on left arm",
+    "labyrinth_gargoyle_sentinel": "jagged dark basalt hide encrusted with ancient moss, wide leathery stone-textured bat wings with sharp hooked talons, glowing ruby-red slit eyes, snarling demonic maw",
+    "obsidian_titan_colossus": "colossal monolithic non-humanoid physique of jagged polished black obsidian slabs and ancient granite boulders, four massive stone arms with crushing obsidian fists, horned crest with three glowing molten-crimson eye slits, glowing concentric runic fractures"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "sleek dense hand-whittled blackwood quarterstaff with glowing spiral mana veins and iron-shod base",
+      "notes": "Locked across all episode scenes."
+    },
+    "gilded_sapphire_wand": {
+      "canonical_name": "Gilded Sapphire Wand",
+      "container": null,
+      "visual_form": "slender fourteen-inch ivory wand wrapped in spiraling gold filigree and capped with a faceted star-sapphire crystal tip",
+      "notes": "Locked across all episode scenes. Cracks and flickers out cleanly in Batch 05."
+    },
+    "tournament_ranking_stele": {
+      "canonical_name": "Tournament Ranking Stele",
+      "container": null,
+      "visual_form": "colossal thirty-foot floating black granite and cyan mana crystal obelisk hovering vertically above a warded silver-granite dais in the academy plaza, displaying ascending tiers of glowing abstract geometric rune bars and luminescent cyan light gauges, pure textless artwork",
+      "notes": "Environmental tournament leaderboard obelisk in academy courtyard."
+    }
+  },
+  "zone_invariants": {
+    "ancient_labyrinth_corridor": {
+      "sealed_interior": false
+    },
+    "labyrinth_50th_floor_sanctum": {
+      "sealed_interior": false
+    }
+  },
+  "zone_lifecycles": {},
+  "architecture_bans": [
+    {
+      "pattern": "\\b(?:skyscraper|asphalt|streetlights?|hover-car|hover-sedan|neon\\s+sign|laptop|smartphone|tarmac)\\b",
+      "message": "Modern urban architecture/tech forbidden in high-fantasy medieval Valerius setting"
+    }
+  ],
+  "continuity_bans": [
+    {
+      "pattern": "\\b(?:heavy\\s+snowfall|blizzard\\s+drifts|snow-covered\\s+road|winter\\s+slush)\\b",
+      "exclude_zones": [],
+      "message": "Unilateral snow/blizzard weather forbidden on temperate Valerius grounds"
+    }
+  ],
+  "prop_contracts": [
+    {
+      "pattern": "\\bcarved\\s+blackwood\\s+staff\\b",
+      "requiredToken": "@{Carved Blackwood Staff}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\bgilded\\s+sapphire\\s+wand\\b",
+      "requiredToken": "@{Gilded Sapphire Wand}",
+      "outsideQuotesOnly": true
+    },
+    {
+      "pattern": "\\btournament\\s+ranking\\s+stele\\b",
+      "requiredToken": "@{Tournament Ranking Stele}",
+      "outsideQuotesOnly": true
+    }
+  ],
+  "synonym_drift_rules": [
+    {
+      "canonical": "Carved Blackwood Staff",
+      "bannedPattern": "\\b(?:peasant\\s+stick|walking\\s+stick|wooden\\s+stick|wooden\\s+staff)\\b",
+      "allowedPattern": "Carved\\s+Blackwood\\s+Staff"
+    },
+    {
+      "canonical": "Gilded Sapphire Wand",
+      "bannedPattern": "\\b(?:ivory\\s+wand|sapphire\\s+wand|golden\\s+wand)\\b",
+      "allowedPattern": "Gilded\\s+Sapphire\\s+Wand"
+    },
+    {
+      "canonical": "Tournament Ranking Stele",
+      "bannedPattern": "\\b(?:ranking\\s+monolith|tournament\\s+monolith|ranking\\s+stone|mana\\s+pillar)\\b",
+      "allowedPattern": "Tournament\\s+Ranking\\s+Stele"
+    }
+  ]
+}

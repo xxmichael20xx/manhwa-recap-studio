@@ -217,3 +217,15 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   4. **Entourage & Mob Visual Uniformity:** Squads, mercenary escorts, and enemy thralls MUST maintain locked visual DNA throughout an encounter; they are strictly prohibited from morphing between uniform classes (e.g. turning from high-tech tactical soldiers with jetpacks into random street thugs or unvaulted strangers).
   5. **Destruction State Persistence:** Any physical destruction to a zone (e.g. a skyscraper collapsed into fine dust, a cratered plaza, a shattered barrier) MUST remain visually persistent and coherent across all subsequent scenes within that enclosure, with zero alternating between conflicting damage states.
 
+---
+
+### 23. The Mob Entity Vaulting & Architectural Metaphor Shield (Zero Creature Morphing & Zero Landmark Mutation Law)
+* **Defect:** 
+  1. Recurring mob swarms or enemies (e.g. void beasts, trolls, goblin vanguards) appearing across an episode without being registered as vaulted entities, leading the diffusion model to generate random, conflicting monster classes across consecutive plates.
+  2. Spoken auditory metaphors (e.g. *"colossal primordial horn echoed"*, *"dragon's roar"*) leaking into prompt layers for buildings, towers, or monuments, causing the diffusion model to hallucinate literal organic horns, fangs, or demon eyes onto modern architectural landmarks (e.g. the Obsidian Tower sprouting horns).
+* **Fix (Mandatory Mob Vaulting & Architectural Metaphor Insulation):**
+  1. **Mandatory Mob Entity Vaulting ($\ge 2$ Scenes):** Any monster, enemy swarm, thrall, or creature class appearing in $\ge 2$ scenes MUST be registered in `vault/entities.json` with `"kind": "creature"` (or `"character"`), full 4-field DNA schema, and a dedicated textless reference plate. Spoken scripts, staging headers (`CAST`), and prompt matrices MUST bind the exact canonical token (`@{Void Vanguard Beast}`). Generic unanchored labels (*"monsters"*, *"abominations"*) are strictly prohibited.
+  2. **The Architectural Metaphor Shield:** Auditory metaphors and apocalyptic prophecies containing anatomical or biological words (*"horn"*, *"fangs"*, *"claws"*, *"demon face"*) are STRICTLY FORBIDDEN from being copied literally into prompt action layers for architectural, urban, or landmark scenes.
+  3. **Acoustic Translation & Negative Landmark Tokens:** Auditory horns must be translated into pure sonic phenomena (`deep acoustic shockwave rippling through clouds, atmospheric sonic resonance`). Prompts staging towers, steles, or buildings during demonic/beast alerts MUST inject explicit negative protection: `zero horns on buildings, zero organic horns, pure monolithic architecture, zero demon anatomy on buildings`.
+
+

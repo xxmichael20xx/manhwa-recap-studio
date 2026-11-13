@@ -1,0 +1,33 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"academy_courtyard","outfit":"default","posture":"calm_confident"},"reason":"Assembly at academy courtyard for tournament"}
+{"s":0,"e":"lord_cedric_vance","set":{"location":"academy_courtyard","outfit":"default","posture":"arrogant_proud"},"reason":"Cedric boasts among noble peers"}
+{"s":0,"e":"proctor_alistair","set":{"location":"academy_courtyard","outfit":"default","posture":"authoritative_proctor"},"reason":"Alistair presides at tournament opening"}
+{"s":0,"e":"elena_ashvale","set":{"location":"academy_courtyard","outfit":"default","posture":"anxious_determined"},"reason":"Elena seeks tournament squad"}
+{"s":0,"e":"doran_keller","set":{"location":"academy_courtyard","outfit":"default","posture":"protective_frontline"},"reason":"Doran defends commoner applicants"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael holds his carved blackwood staff"}
+{"s":0,"e":"gilded_sapphire_wand","set":{"lifecycle":"equipped"},"reason":"Cedric twirls his gilded sapphire wand"}
+{"s":0,"e":"grand_ranking_stele","set":{"lifecycle":"environmental"},"reason":"Tournament stele hovers in courtyard plaza"}
+{"s":24,"e":"michael_montrey_academy","set":{"location":"ancient_labyrinth_corridor"},"reason":"Descent into ancient labyrinth stone corridor"}
+{"s":24,"e":"elena_ashvale","set":{"location":"ancient_labyrinth_corridor"},"reason":"Elena enters labyrinth with Michael"}
+{"s":24,"e":"doran_keller","set":{"location":"ancient_labyrinth_corridor"},"reason":"Doran enters labyrinth with Michael"}
+{"s":32,"e":"labyrinth_gargoyle_sentinel","set":{"lifecycle":"active","location":"ancient_labyrinth_corridor"},"reason":"Gargoyles dive from vaulted ceiling on Floor 10"}
+{"s":42,"e":"labyrinth_gargoyle_sentinel","set":{"lifecycle":"defeated"},"reason":"Gargoyles shattered into stone fragments"}
+{"s":50,"e":"lord_cedric_vance","set":{"location":"ancient_labyrinth_corridor"},"reason":"Cedric squad trails on parallel gallery"}
+{"s":72,"e":"proctor_alistair","set":{"location":"academy_courtyard"},"reason":"Courtyard cutaway observing ranking stele"}
+{"s":72,"e":"grand_ranking_stele","set":{"lifecycle":"active"},"reason":"Stele flares azure light bars ascending rapidly"}
+{"s":88,"e":"michael_montrey_academy","set":{"location":"ancient_labyrinth_corridor"},"reason":"Deep descent to Floor 45"}
+{"s":88,"e":"elena_ashvale","set":{"location":"ancient_labyrinth_corridor"},"reason":"Advancing through adamantine corridor"}
+{"s":88,"e":"doran_keller","set":{"location":"ancient_labyrinth_corridor"},"reason":"Frontline defense on Floor 45"}
+{"s":96,"e":"lord_cedric_vance","set":{"location":"ancient_labyrinth_corridor","posture":"collapsed_ground"},"reason":"Cedric squad trapped on Floor 49 flagstones"}
+{"s":96,"e":"gilded_sapphire_wand","set":{"lifecycle":"damaged"},"reason":"Cedric wand cracked and drained of mana"}
+{"s":115,"e":"lord_cedric_vance","set":{"lifecycle":"evacuated"},"reason":"Cedric squad teleported to surface by rescue runes"}
+{"s":120,"e":"michael_montrey_academy","set":{"location":"labyrinth_50th_floor_sanctum"},"reason":"Entry to Floor 50 boss sanctum"}
+{"s":120,"e":"elena_ashvale","set":{"location":"labyrinth_50th_floor_sanctum"},"reason":"Elena guards rear threshold behind glacial ward"}
+{"s":120,"e":"doran_keller","set":{"location":"labyrinth_50th_floor_sanctum"},"reason":"Doran plants shield at perimeter threshold"}
+{"s":133,"e":"obsidian_titan_colossus","set":{"lifecycle":"active","location":"labyrinth_50th_floor_sanctum"},"reason":"Floor 50 boss rises from magma fractures"}
+{"s":164,"e":"obsidian_titan_colossus","set":{"lifecycle":"defeated"},"reason":"Colossus shattered into glowing mana motes"}
+{"s":176,"e":"grand_ranking_stele","set":{"lifecycle":"triumphant"},"reason":"Stele erupts with golden light crowning Floor 50"}
+{"s":176,"e":"proctor_alistair","set":{"location":"academy_courtyard"},"reason":"Alistair witnesses 200-year record in courtyard"}
+{"s":176,"e":"lord_cedric_vance","set":{"location":"academy_courtyard","posture":"humiliated_spectator"},"reason":"Cedric watches golden light in bitter awe"}
+{"s":184,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael emerges triumphant onto courtyard terrace"}
+{"s":184,"e":"elena_ashvale","set":{"location":"academy_courtyard"},"reason":"Elena emerges victorious beside Michael"}
+{"s":184,"e":"doran_keller","set":{"location":"academy_courtyard"},"reason":"Doran emerges victorious beside Michael"}
