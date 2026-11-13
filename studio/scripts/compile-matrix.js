@@ -430,6 +430,13 @@ function sanitizeActionLayer(act, sId) {
 const ledgerPath = path.join(epDir, 'state_events.jsonl')
 const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
 const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
+const activeTimelineOverrides = worldState?.timeline_overrides || PromptDnaCompiler.extractTimelineOverrides({
+  scriptClauses,
+  scriptHeaders,
+  entities,
+  zones,
+  ledgerEvents: parsedLedgerEvents
+})
 
 // Cinematic lens palettes per stage to guarantee Gate G39 (<=2 consecutive identical lenses, >=8 unique per 24-scene batch)
 const LENS_PALETTES = {
@@ -582,8 +589,21 @@ for (let i = 0; i < sceneIds.length; i++) {
       : (tier === 'A' ? '24mm wide angle, low-angle hero framing' : (tier === 'C' ? '50mm telephoto close-up action framing' : '35mm medium single-character eye-level framing'))
   }
 
+  const sceneNum = PromptDnaCompiler.sceneNumberFromId(sId)
   const actionText = `${parsedScene.actionLayer || ''} ${scriptClauses.get(sId) || ''}`
-  const isActorGrounded = /\b(?:on the (?:floor|ground|marble|dirt|pavement|tiled floor|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(actionText)
+  const hasPostureLockGrounded = activeCast.some(cToken => {
+    const cleanName = cToken.replace(/[@{}]/g, '').trim().toLowerCase()
+    const ent = Object.values(entities).find(e =>
+      (e.token && e.token.toLowerCase().includes(cleanName)) ||
+      (e.name && e.name.toLowerCase() === cleanName) ||
+      (e.id && e.id.toLowerCase() === cleanName)
+    )
+    const idLower = (ent?.id || cleanName.replace(/[^a-z0-9]+/g, '_')).toLowerCase()
+    return (activeTimelineOverrides?.posture_locks || []).some(
+      pos => pos.entity_id?.toLowerCase() === idLower && pos.force_grounded_camera && sceneNum >= pos.from_scene && sceneNum <= pos.to_scene
+    )
+  })
+  const isActorGrounded = hasPostureLockGrounded || /\b(?:on the (?:floor|ground|marble|dirt|pavement|tiled floor|tiles?|stones?)|hands and knees|on all fours|kneeling|collapsed|cowering on the|scrambling on the|prostrate|pinned to the floor)\b/i.test(actionText)
   if (isActorGrounded) {
     if (/\b(?:two-shot|eye-level)\b/i.test(lens)) {
       lens = '35mm high-angle perspective looking down'
@@ -632,7 +652,6 @@ for (let i = 0; i < sceneIds.length; i++) {
   const baseStyle = franchise.style?.base || 'Bright high-fantasy Korean manhwa webtoon art style, sharp clean black ink linework, vibrant cel shading'
   const aspectToken = franchise.aspect_token || 'horizontal 16:9'
   const layer1 = `${baseStyle}, ${aspectToken}, ${lens}`
-  const sceneNum = PromptDnaCompiler.sceneNumberFromId(sId)
 
   // 1. Sanitize action layer from parsedScene or script
   actionLayer = sanitizeActionLayer(actionLayer || (scriptClauses.get(sId) || ''), sId)
@@ -656,7 +675,7 @@ for (let i = 0; i < sceneIds.length; i++) {
       if (ent.kind === 'character' || ent.kind === 'creature') {
         const comp = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id] || {})
         sceneDnaHashes[ent.id] = comp.dnaHash
-        let block = comp.compiledBlock
+        let block = PromptDnaCompiler.applyEntityTimelineOverride(comp.compiledBlock, ent.id, sceneNum, activeTimelineOverrides).block
         // Julian unarmed enforcement (scenes 001 - 139)
         if (cleanName.toLowerCase().includes('julian') && sceneNum < 140) {
           if (!block.toLowerCase().includes('unarmed noble attire')) {
@@ -666,8 +685,9 @@ for (let i = 0; i < sceneIds.length; i++) {
         charDnaBlocks.push(block)
       } else {
         let dna = ent.dna || ent.dna_prompt_anchor || ent.token
+        const overriddenProp = PromptDnaCompiler.applyPropTimelineOverride(dna.replace(/^@\{[^}]+\},\s*/, ''), ent.id, sceneNum, activeTimelineOverrides)
         sceneDnaHashes[ent.id] = PromptDnaCompiler.sha256(`${ent.token}, ${dna}`, 12)
-        charDnaBlocks.push(`Featuring @{${cleanName}} (${dna.replace(/^@\{[^}]+\},\s*/, '')})`)
+        charDnaBlocks.push(`Featuring @{${cleanName}} (${overriddenProp.dna})`)
       }
     } else {
       castEntities.push(null)
@@ -678,6 +698,7 @@ for (let i = 0; i < sceneIds.length; i++) {
   // Check if scene has stationary or handheld props
   const stationaryProps = []
   const handheldProps = []
+  const sheathedLayer4Appends = []
   if (header.props?.length > 0) {
     for (const pToken of header.props) {
       const cleanProp = pToken.replace(/[@{}]/g, '').trim()
@@ -696,21 +717,29 @@ for (let i = 0; i < sceneIds.length; i++) {
         it.id === cleanPropSlug
       )
 
+      const propIdKey = propEnt?.id || cleanPropSlug
+      const rawPropDna = (propEnt?.dna || propEnt?.visual_dna || propEnt?.description || cleanProp).replace(/^@\{[^}]+\},\s*/, '')
+      const propOverride = PromptDnaCompiler.applyPropTimelineOverride(rawPropDna, propIdKey, sceneNum, activeTimelineOverrides)
+      if (propOverride.layer4Append) {
+        sheathedLayer4Appends.push({ token: `@{${cleanProp}}`, append: propOverride.layer4Append })
+      }
+
       const isStationary = activeCast.length === 0 ||
         (header.stage && header.stage.toLowerCase() === 'prop') ||
         (propEnt?.placement === 'stationary') ||
+        propOverride.forbidHolding ||
         /\b(?:dummy|target|pedestal|monolith|bench|monument|stele|hud|interface|formation|sedan)\b/i.test(cleanProp)
 
       if (isStationary) {
         if (propEnt?.id && propEnt?.dna) {
           sceneDnaHashes[propEnt.id] = PromptDnaCompiler.sha256(`${propEnt.token}, ${propEnt.dna}`, 12)
         }
-        stationaryProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt })
+        stationaryProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt, overriddenDna: propOverride.dna, isDamaged: propOverride.isDamaged, forbidHolding: propOverride.forbidHolding })
       } else {
         if (propEnt?.id && propEnt?.dna) {
           sceneDnaHashes[propEnt.id] = PromptDnaCompiler.sha256(`${propEnt.token}, ${propEnt.dna}`, 12)
         }
-        handheldProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt })
+        handheldProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt, overriddenDna: propOverride.dna })
       }
     }
   }
@@ -720,22 +749,19 @@ for (let i = 0; i < sceneIds.length; i++) {
     layer2 = charDnaBlocks.join(', ')
     if (stationaryProps.length > 0) {
       for (const sp of stationaryProps) {
-        const rawDna = sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`
-        const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
+        const cleanPropDna = sp.overriddenDna || (sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`).replace(/^@\{[^}]+\},\s*/, '')
         layer2 += `, Featuring ${sp.token} (${cleanPropDna})`
       }
     }
     if (handheldProps.length > 0) {
       for (const hp of handheldProps) {
-        const rawDna = hp.ent?.dna || hp.ent?.visual_dna || hp.ent?.description || hp.name
-        const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
+        const cleanPropDna = hp.overriddenDna || (hp.ent?.dna || hp.ent?.visual_dna || hp.ent?.description || hp.name).replace(/^@\{[^}]+\},\s*/, '')
         layer2 += `, Featuring ${hp.token} (${cleanPropDna}, identical unchanging prop geometry)`
       }
     }
   } else if (stationaryProps.length > 0) {
     const propBlocks = stationaryProps.map(sp => {
-      const rawDna = sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`
-      const cleanPropDna = rawDna.replace(/^@\{[^}]+\},\s*/, '')
+      const cleanPropDna = sp.overriddenDna || (sp.ent?.dna || sp.ent?.description || sp.ent?.visual_dna || `Unheld ${sp.name}`).replace(/^@\{[^}]+\},\s*/, '')
       return `Featuring ${sp.token} (${cleanPropDna})`
     })
     layer2 = propBlocks.join(', ')
@@ -743,10 +769,17 @@ for (let i = 0; i < sceneIds.length; i++) {
     layer2 = 'Completely unpopulated environment'
   }
 
-  // 3. Layer 3: Spatial Enclosure & Lighting (Dynamic Temporal Decoupling)
+  // 3. Layer 3: Spatial Enclosure & Lighting (Dynamic Temporal Decoupling + Zone Surface Overrides)
   const baseZoneCanon = resolveZoneCanon(sId, zoneId, zone, header, worldState)
   const activeLightingMode = resolveSceneLighting(sId, scriptClauses.get(sId) || '', zone, worldState)
-  const sanitizedCanon = sanitizeZoneCanon(baseZoneCanon, activeLightingMode)
+  let sanitizedCanon = sanitizeZoneCanon(baseZoneCanon, activeLightingMode)
+  for (const zSurf of activeTimelineOverrides?.zone_surfaces || []) {
+    if (zSurf.zone_id && zoneId.toLowerCase().includes(zSurf.zone_id.toLowerCase()) && sceneNum >= zSurf.from_scene && sceneNum <= zSurf.to_scene) {
+      if (zSurf.dna_append && !sanitizedCanon.toLowerCase().includes(zSurf.dna_append.toLowerCase())) {
+        sanitizedCanon = `${sanitizedCanon}, ${zSurf.dna_append}`
+      }
+    }
+  }
   const lightingPhrase = LIGHTING_PHRASES[activeLightingMode] || 'illuminated by bright natural daylight'
   const vantage = zone.vantage_rule || ''
   const boundary = zone.boundary_tags || ''
@@ -799,12 +832,21 @@ for (let i = 0; i < sceneIds.length; i++) {
     }
   }
 
-  // Stationary props positioning in Layer 4
+  // Stationary / Broken / Sheathed props positioning in Layer 4
   if (stationaryProps.length > 0) {
     for (const sp of stationaryProps) {
       if (!layer4.includes(sp.token) && !(activeCast.length > 0 && /\b(?:hud|interface|stele|formation)\b/i.test(sp.name))) {
-        layer4 += ` Centered upon ${sp.token}.`
+        if (sp.isDamaged) {
+          layer4 += ` ${sp.token} lying broken and inert on the ground.`
+        } else if (!sp.forbidHolding) {
+          layer4 += ` Centered upon ${sp.token}.`
+        }
       }
+    }
+  }
+  for (const sh of sheathedLayer4Appends) {
+    if (!layer4.includes(sh.token)) {
+      layer4 += ` ${sh.token} ${sh.append}.`
     }
   }
 

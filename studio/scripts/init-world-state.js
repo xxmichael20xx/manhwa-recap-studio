@@ -250,6 +250,18 @@ for (const [pName, run] of propRuns.entries()) {
   }
 }
 
+// 6. Extract 6-Pillar Chronological State-Persistence Windows (timeline_overrides)
+const ledgerPath = path.join(epDir, 'state_events.jsonl')
+const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
+const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
+const timelineOverrides = PromptDnaCompiler.extractTimelineOverrides({
+  scriptClauses,
+  scriptHeaders,
+  entities,
+  zones,
+  ledgerEvents: parsedLedgerEvents
+})
+
 const worldStateData = {
   episodeId,
   franchiseId,
@@ -262,6 +274,7 @@ const worldStateData = {
   wardrobe_locks: wardrobeLocks,
   held_props: heldProps,
   prop_continuity_windows: propContinuityWindows,
+  timeline_overrides: timelineOverrides,
   zone_invariants: {},
   zone_lifecycles: zoneLifecycles
 }
@@ -279,8 +292,10 @@ fs.writeFileSync(worldStatePath, JSON.stringify(worldStateData, null, 2), 'utf-8
 if (jsonOnly) {
   console.log(JSON.stringify(worldStateData))
 } else {
+  const totalOverrides = Object.values(timelineOverrides).reduce((acc, arr) => acc + (arr?.length || 0), 0)
   console.log(`\x1b[32m[SUCCESS]\x1b[0m Generated immutable episodic state lock: ${worldStatePath}`)
-  console.log(`  - Wardrobe Locks : ${Object.keys(wardrobeLocks).length} characters`)
-  console.log(`  - Held Props     : ${Object.keys(heldProps).length} props`)
-  console.log(`  - Timeline Shifts: ${timelineShifts.length} segments`)
+  console.log(`  - Wardrobe Locks     : ${Object.keys(wardrobeLocks).length} characters`)
+  console.log(`  - Held Props         : ${Object.keys(heldProps).length} props`)
+  console.log(`  - Timeline Shifts    : ${timelineShifts.length} segments`)
+  console.log(`  - 6-Pillar Overrides : ${totalOverrides} state windows`)
 }

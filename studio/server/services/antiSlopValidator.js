@@ -316,9 +316,9 @@ export class AntiSlopValidator {
     const scriptScenesCount = scriptClauses.size
 
     const worldStatePath = epPath ? path.join(epPath, 'world_state.json') : null
-    const worldState = (worldStatePath && fs && fs.existsSync(worldStatePath))
+    const worldState = rawVaultContext.worldState || ((worldStatePath && fs && fs.existsSync(worldStatePath))
       ? JSON.parse(fs.readFileSync(worldStatePath, 'utf-8'))
-      : (rawVaultContext.worldState || null)
+      : null)
     const strictWorldState = Boolean(
       worldState && (
         worldState.timeline?.enforced ||
@@ -738,7 +738,11 @@ export class AntiSlopValidator {
         if (ent.kind === 'item') {
           if (isV2CompiledMatrix) {
             const cleanItemDna = (ent.dna || '').replace(/^@\{[^}]+\},\s*/i, '').trim()
-            if (cleanItemDna.length >= 12 && !scene.prompt.toLowerCase().includes(cleanItemDna.toLowerCase())) {
+            const overriddenItemDna = worldState?.timeline_overrides
+              ? PromptDnaCompiler.applyPropTimelineOverride(cleanItemDna, ent.id, sceneNum, worldState.timeline_overrides).dna
+              : cleanItemDna
+            const pLow = scene.prompt.toLowerCase()
+            if (cleanItemDna.length >= 12 && !pLow.includes(cleanItemDna.toLowerCase()) && !pLow.includes(overriddenItemDna.toLowerCase())) {
               g07Fails.push(`${scene.id} (Missing/drifted item DNA for ${ent.token})`)
               break
             }
@@ -763,7 +767,10 @@ export class AntiSlopValidator {
         }
 
         const expectedCompiled = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id])
-        const hasExactDna = scene.prompt.includes(ent.dna)
+        const overriddenEntityDna = worldState?.timeline_overrides
+          ? PromptDnaCompiler.applyEntityTimelineOverride(ent.dna, ent.id, sceneNum, worldState.timeline_overrides).block
+          : ent.dna
+        const hasExactDna = scene.prompt.includes(ent.dna) || scene.prompt.includes(overriddenEntityDna)
         const hasValidHash =
           !scene.dnaHashes?.[ent.id] || scene.dnaHashes[ent.id] === expectedCompiled.dnaHash
         if (!hasExactDna || !hasValidHash) {
@@ -771,9 +778,13 @@ export class AntiSlopValidator {
           break
         }
         if (ent.kind === 'character' && ent.outfits && Object.keys(ent.outfits).length > 0) {
-          const anyRegisteredOutfitPresent = Object.values(ent.outfits).some(outfitStr =>
-            scene.prompt.toLowerCase().includes(outfitStr.toLowerCase())
-          )
+          const anyRegisteredOutfitPresent = Object.values(ent.outfits).some(outfitStr => {
+            const overriddenOut = worldState?.timeline_overrides
+              ? PromptDnaCompiler.applyEntityTimelineOverride(outfitStr, ent.id, sceneNum, worldState.timeline_overrides).block
+              : outfitStr
+            return scene.prompt.toLowerCase().includes(outfitStr.toLowerCase()) ||
+                   scene.prompt.toLowerCase().includes(overriddenOut.toLowerCase())
+          })
           if (!anyRegisteredOutfitPresent) {
             g07Fails.push(scene.id)
             break
@@ -931,13 +942,26 @@ export class AntiSlopValidator {
       let freeText = scene.prompt
       freeText = freeText.replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
       freeText = freeText.replace(/Spatial Enclosure:\s*[^.]+\./gi, ' ')
+      const sNumForG10 = PromptDnaCompiler.sceneNumberFromId(scene.id)
       for (const ref of declaredRefs) {
         const ent = entityByAliasLower.get(ref.toLowerCase())
         if (ent) {
           freeText = freeText.replaceAll(ent.token, ' ')
-          if (ent.dna) freeText = freeText.replaceAll(ent.dna, ' ')
+          if (ent.dna) {
+            freeText = freeText.replaceAll(ent.dna, ' ')
+            if (worldState?.timeline_overrides) {
+              const ovDna = PromptDnaCompiler.applyEntityTimelineOverride(ent.dna, ent.id, sNumForG10, worldState.timeline_overrides).block
+              const ovPropDna = PromptDnaCompiler.applyPropTimelineOverride(ent.dna.replace(/^@\{[^}]+\},\s*/, ''), ent.id, sNumForG10, worldState.timeline_overrides).dna
+              if (ovDna) freeText = freeText.replaceAll(ovDna, ' ')
+              if (ovPropDna) freeText = freeText.replaceAll(ovPropDna, ' ')
+            }
+          }
           for (const outStr of Object.values(ent.outfits || {})) {
             freeText = freeText.replaceAll(outStr, ' ')
+            if (worldState?.timeline_overrides) {
+              const ovOut = PromptDnaCompiler.applyEntityTimelineOverride(outStr, ent.id, sNumForG10, worldState.timeline_overrides).block
+              if (ovOut) freeText = freeText.replaceAll(ovOut, ' ')
+            }
           }
         }
       }
@@ -1127,6 +1151,64 @@ export class AntiSlopValidator {
         UNIVERSAL_LEXICONS.postureUprightContradictionRegex.test(scene.prompt)
       ) {
         g11Fails.push(scene.id)
+      }
+
+      // 6-Pillar Chronological State-Persistence Enforcement (when world_state.json defines timeline_overrides)
+      if (worldState?.timeline_overrides) {
+        const tl = worldState.timeline_overrides
+        const declaredEntIds = new Set(
+          [...scene.charRefs, ...scene.itemRefs]
+            .map(r => entityByAliasLower.get(r.toLowerCase())?.id?.toLowerCase())
+            .filter(Boolean)
+        )
+
+        // Pillar 1: Character Conditions (Injuries, Torn Clothes, Bandages/Slings, Transformations)
+        for (const cond of tl.character_conditions || []) {
+          if (declaredEntIds.has(cond.entity_id?.toLowerCase()) && sceneNum >= cond.from_scene && sceneNum <= cond.to_scene) {
+            if (cond.dna_append && !promptLower.includes(cond.dna_append.toLowerCase())) {
+              g11Fails.push(`${scene.id} (Pillar 1 State Amnesia: "${cond.entity_id}" is in "${cond.state}" window [${cond.from_scene}-${cond.to_scene}], missing "${cond.dna_append}")`)
+              break
+            }
+          }
+        }
+
+        // Pillar 2: Posture Locks (Grounded / Collapsed / Kneeling Persistence)
+        for (const pos of tl.posture_locks || []) {
+          if (declaredEntIds.has(pos.entity_id?.toLowerCase()) && sceneNum >= pos.from_scene && sceneNum <= pos.to_scene) {
+            if (pos.dna_append && !promptLower.includes(pos.dna_append.toLowerCase())) {
+              g11Fails.push(`${scene.id} (Pillar 2 Posture Amnesia: "${pos.entity_id}" is locked to "${pos.state}" [${pos.from_scene}-${pos.to_scene}], missing "${pos.dna_append}")`)
+              break
+            }
+          }
+        }
+
+        // Pillar 3: Creature Anatomy Overrides (Dismemberment, 4-arm -> 3-arm, Cleaved Halves)
+        for (const anat of tl.creature_anatomy || []) {
+          if (declaredEntIds.has(anat.entity_id?.toLowerCase()) && sceneNum >= anat.from_scene && sceneNum <= anat.to_scene) {
+            const hasForbidden = (anat.forbidden_terms || []).some(ft => promptLower.includes(ft.toLowerCase()))
+            if (hasForbidden || (anat.dna_append && !promptLower.includes(anat.dna_append.toLowerCase()))) {
+              g11Fails.push(`${scene.id} (Pillar 3 Anatomy Regrowth: "${anat.entity_id}" is in "${anat.state}" [${anat.from_scene}-${anat.to_scene}], pre-damage anatomy or missing override detected)`)
+              break
+            }
+          }
+        }
+
+        // Pillar 4: Prop State Lifecycle (Damaged/Destroyed/Sheathed/Stowed/Disarmed)
+        for (const pSt of tl.prop_states || []) {
+          if (declaredEntIds.has(pSt.entity_id?.toLowerCase()) && sceneNum >= pSt.from_scene && sceneNum <= pSt.to_scene) {
+            const ent = entities[pSt.entity_id] || entityByAliasLower.get(pSt.entity_id?.toLowerCase())
+            const tokLower = ent?.token?.toLowerCase() || `@{${pSt.entity_id?.toLowerCase()}}`
+            if (pSt.forbid_holding && promptLower.includes(`holding ${tokLower}`)) {
+              g11Fails.push(`${scene.id} (Pillar 4 Prop Lifecycle Violation: "${pSt.entity_id}" is "${pSt.state}" [${pSt.from_scene}-${pSt.to_scene}] and cannot be held)`)
+              break
+            }
+            const hasForbiddenPropTerm = (pSt.forbidden_terms || []).some(ft => promptLower.includes(ft.toLowerCase()))
+            if (hasForbiddenPropTerm) {
+              g11Fails.push(`${scene.id} (Pillar 4 Damaged Prop Reversion: "${pSt.entity_id}" retains pristine/glowing adjectives after "${pSt.state}" at scene ${pSt.from_scene})`)
+              break
+            }
+          }
+        }
       }
     }
 
