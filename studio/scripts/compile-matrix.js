@@ -756,6 +756,9 @@ for (let i = 0; i < sceneIds.length; i++) {
   const layer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${vantage ? ', ' + vantage : ''}${windowVantage ? ', ' + windowVantage : ''}${boundary ? ', ' + boundary : ''}`
 
   // 4. Layer 4: Action Layer & Guards
+  if (zoneId && zoneTokenName) {
+    actionLayer = actionLayer.replace(new RegExp(`@\\{${zoneId}\\}`, 'gi'), `@{${zoneTokenName}}`)
+  }
   let layer4 = actionLayer
   if (header.planTalk) {
     layer4 += ' Characters are reviewing hand-drawn blueprints and raw mineral samples, zero finished future building.'
@@ -907,7 +910,63 @@ for (let i = 0; i < sceneIds.length; i++) {
   }
 
   const stripTrailingDot = s => String(s || '').trim().replace(/\.+$/, '')
-  const fullPrompt = `${[layer1, layer2, layer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+  const trimActionSafely = (str, maxLen) => {
+    const clean = String(str || '').trim()
+    if (clean.length <= maxLen) return clean
+    const preservedTokens = [...clean.matchAll(/@\{[^}]+\}/g)].map(m => m[0])
+    let cut = clean.slice(0, maxLen)
+    const openIdx = cut.lastIndexOf('@{')
+    const closeIdx = cut.lastIndexOf('}')
+    if (openIdx > closeIdx) {
+      cut = cut.slice(0, openIdx)
+    }
+    const lastSpace = cut.lastIndexOf(' ')
+    if (lastSpace > 30) {
+      cut = cut.slice(0, lastSpace)
+    }
+    cut = cut.replace(/[,;:\s]+$/, '')
+    for (const tok of preservedTokens) {
+      if (!cut.includes(tok)) {
+        cut += ` with ${tok}`
+      }
+    }
+    return cut + '.'
+  }
+  const maxPromptTokens = franchise.pacing?.max_prompt_tokens || 450
+  const maxPromptChars = maxPromptTokens * 4
+  let fullPrompt = `${[layer1, layer2, layer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+
+  // Automatic Gate G14 Token Budget Guard: if 3+ entities + stationary props push prompt over 450 tokens,
+  // trim secondary clauses in Layer 3 (windowVantage / vantage / boundary) first, then compact unarmed tail, then Layer 4.
+  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
+    const compactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${boundary ? ', ' + boundary : ''}`
+    fullPrompt = `${[layer1, layer2, compactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+  }
+  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
+    const ultraCompactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}`
+    const compactLayer2 = layer2.includes(UNARMED_JULIAN_TAIL)
+      ? layer2.replace(`, ${UNARMED_JULIAN_TAIL}`, ', unarmed noble attire, empty hands')
+      : layer2
+    fullPrompt = `${[layer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+  }
+  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
+    const ultraCompactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}`
+    const compactLayer2 = layer2.includes(UNARMED_JULIAN_TAIL)
+      ? layer2.replace(`, ${UNARMED_JULIAN_TAIL}`, ', unarmed noble attire, empty hands')
+      : layer2
+    const preservedTokens = [...layer4.matchAll(/@\{[^}]+\}/g)].map(m => m[0])
+    const minTokenAction = preservedTokens.length > 0
+      ? `In wide perspective, ${preservedTokens.join(' and ')} confront one another.`
+      : layer4
+    const overhead = [layer1, compactLayer2, ultraCompactLayer3, layer5].map(stripTrailingDot).filter(Boolean).join('. ').length + 6
+    const allowedLayer4Chars = maxPromptChars - overhead - 8
+    layer4 = allowedLayer4Chars >= minTokenAction.length ? trimActionSafely(layer4, allowedLayer4Chars) : minTokenAction
+    fullPrompt = `${[layer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+    if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
+      const compactLayer1 = `${aspectToken}, ${lens}`
+      fullPrompt = `${[compactLayer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
+    }
+  }
 
   const cleanNarrativeClause = scriptClauses.get(sId) || parsedScene.narrativeSync || ''
   const cleanCast = activeCast.map(c => c.replace(/[@{}]/g, '').trim())

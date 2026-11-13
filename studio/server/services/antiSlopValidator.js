@@ -368,8 +368,9 @@ export class AntiSlopValidator {
       'little', 'first', 'second', 'third', 'young', 'ancient', 'elder', 'lord', 'lady', 'grand',
       'blade', 'sword', 'staff', 'wand', 'ring', 'book', 'robe', 'cloak', 'coat', 'boots', 'hands',
       'head', 'eyes', 'face', 'hair', 'room', 'hall', 'gate', 'door', 'wall', 'path', 'road', 'rank',
-      'tier', 'class', 'level', 'power', 'magic', 'shadow', 'flame', 'frost', 'storm', 'blood', 'heart',
-      'soul', 'mind', 'world', 'state', 'saint', 'pure', 'true', 'zero', 'hero', 'plate', 'strip',
+      'tier', 'class', 'level', 'power', 'magic', 'mana', 'shadow', 'flame', 'frost', 'storm', 'blood', 'heart',
+      'soul', 'mind', 'world', 'state', 'saint', 'pure', 'true', 'zero', 'hero', 'plate', 'strip', 'past', 'chipped', 'inquisitor',
+      'swordsman', 'meditation', 'life', 'greatsword', 'frozen', 'star', 'divine', 'blessing', 'radiant', 'dawn', 'church', 'prelate', 'archmage', 'duke', 'duchess', 'marshal', 'commander', 'grandmaster',
       'crimson', 'formation', 'sedan', 'hover', 'asura', 'dust', 'martial', 'array', 'abyssal', 'rift', 'shield', 'barrier', 'clan', 'guild', 'pill', 'beast', 'predator', 'titan', 'master', 'tactical',
       'charcoal', 'ceramic', 'alloy', 'aluminium', 'aluminum', 'steel', 'wooden', 'glass', 'metal', 'plastic', 'brushed', 'oversized', 'pullover', 'command',
       'practice', 'training', 'marble', 'bench', 'dummy', 'enchanted', 'principles', 'weaving',
@@ -501,6 +502,12 @@ export class AntiSlopValidator {
       // Check bare mentions and kinship terms strictly OUTSIDE spoken dialogue quotes
       let promptWithoutTokens = scene.prompt.replace(/Spatial Enclosure:\s*@\{[^}]+\}\s*\([^)]*\)\.?/gi, ' ')
       promptWithoutTokens = promptWithoutTokens.replace(/Spatial Enclosure:\s*[^.]+\./gi, ' ')
+      if (scene.zone && zones[scene.zone]) {
+        const z = zones[scene.zone]
+        for (const zField of [z.canon, z.vantage_rule, z.window_vantage, z.boundary_tags]) {
+          if (zField) promptWithoutTokens = promptWithoutTokens.replaceAll(zField, ' ')
+        }
+      }
       promptWithoutTokens = promptWithoutTokens.replace(/@\{[^}]+\}/g, ' ')
       const narrativeOutsideQuotes = (scene.narrativeSync || '').replace(/"[^"]*"/g, ' ').replace(/“[^”]*”/g, ' ')
 
@@ -934,8 +941,11 @@ export class AntiSlopValidator {
           }
         }
       }
-      if (scene.zone && zones[scene.zone]?.canon) {
-        freeText = freeText.replaceAll(zones[scene.zone].canon, ' ')
+      if (scene.zone && zones[scene.zone]) {
+        const z = zones[scene.zone]
+        for (const zField of [z.canon, z.vantage_rule, z.window_vantage, z.boundary_tags]) {
+          if (zField) freeText = freeText.replaceAll(zField, ' ')
+        }
       }
       if (franchise.style?.base) freeText = freeText.replaceAll(franchise.style.base, ' ')
       if (franchise.style?.tail_positive) freeText = freeText.replaceAll(franchise.style.tail_positive, ' ')
@@ -982,10 +992,12 @@ export class AntiSlopValidator {
       // verify that at least one matching entity is authorized in this scene.
       for (const [kw, targets] of entityKeywordsMap.entries()) {
         if (new RegExp(`\\b${kw}\\b`, 'i').test(sanitizedForRoles)) {
-          // If the keyword belongs to current zone's name or canon, permit it
+          // If the keyword belongs to current zone's name, canon, or window_vantage, permit it
           const isPartOfZone = Boolean(scene.zone && (
             zones[scene.zone]?.name?.toLowerCase().includes(kw) ||
             zones[scene.zone]?.canon?.toLowerCase().includes(kw) ||
+            zones[scene.zone]?.window_vantage?.toLowerCase().includes(kw) ||
+            zones[scene.zone]?.vantage_rule?.toLowerCase().includes(kw) ||
             scene.zone.toLowerCase().includes(kw)
           ))
           if (isPartOfZone) continue

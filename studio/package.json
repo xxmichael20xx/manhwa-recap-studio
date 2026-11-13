@@ -18,7 +18,9 @@
     "inspect:scene": "node scripts/inspect-scene.js",
     "sanitize:matrix": "node scripts/sanitize-matrix.js",
     "audit:policy": "node scripts/audit-policy.js",
-    "sync:scene": "node scripts/find-scene.js"
+    "sync:scene": "node scripts/find-scene.js",
+    "pipeline:ep": "node scripts/run-ep-pipeline.js",
+    "digest:ep": "node scripts/generate-audit-digest.js"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.10",
