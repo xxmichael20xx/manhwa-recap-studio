@@ -271,8 +271,8 @@ console.log(`Scenes    : ${sceneIds.length}`)
 console.log('-'.repeat(78))
 
 // Safe anatomy tails
-const SAFE_TAIL_CHARACTER = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, no duplicate protagonist, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
-const SAFE_TAIL_LANDSCAPE = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures.'
+const SAFE_TAIL_CHARACTER = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
+const SAFE_TAIL_LANDSCAPE = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures, no photorealistic 3D CGI.'
 
 const SAFE_TAIL_PROP_FOCUSED = '100% prop showcase illustration, solitary still life, completely unpopulated, zero humans, zero people, zero warriors, zero knights, zero armor, zero characters, zero hands touching the prop, zero figures in the sky, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
 const UNARMED_JULIAN_TAIL = 'unarmed noble attire, clean waist belt, zero weapons at hip, empty hands, zero swords, zero scabbards'
@@ -409,7 +409,7 @@ function sanitizeActionLayer(act, sId) {
   res = res.replace(/\bhis son\b/gi, '@{Julian Vaelgard}')
   res = res.replace(/\bbeyond any ordinary child\b/gi, 'beyond any ordinary peer')
   res = res.replace(/\bordinary child\b/gi, 'ordinary peer')
-  res = res.replace(/\bin a boy so young\b/gi, 'in an initiate so young')
+  res = res.replace(/\bin a boy so young\b/gi, 'in @{Julian Vaelgard}')
   res = res.replace(/\bthe archmage's\b/gi, "@{Duchess Eleanor Vaelgard}'s")
   res = res.replace(/\bthe archmage\b/gi, '@{Duchess Eleanor Vaelgard}')
   res = res.replace(/\bhis small head held high\b/gi, 'holding his posture high')
@@ -583,7 +583,7 @@ for (let i = 0; i < sceneIds.length; i++) {
       lens = activeCast.length >= 2 ? '35mm medium two-shot eye-level framing' : '35mm medium single-character eye-level framing'
     }
   }
-  if (activeCast.length <= 1 && lens.toLowerCase().includes('two-shot')) {
+  if (activeCast.length <= 1 && (lens.toLowerCase().includes('two-shot') || lens.toLowerCase().includes('two-character') || lens.toLowerCase().includes('over-the-shoulder'))) {
     lens = activeCast.length === 0
       ? '24mm wide angle establishing framing'
       : (tier === 'A' ? '24mm wide angle, low-angle hero framing' : (tier === 'C' ? '50mm telephoto close-up action framing' : '35mm medium single-character eye-level framing'))
@@ -656,46 +656,12 @@ for (let i = 0; i < sceneIds.length; i++) {
   // 1. Sanitize action layer from parsedScene or script
   actionLayer = sanitizeActionLayer(actionLayer || (scriptClauses.get(sId) || ''), sId)
 
-  // 2. Layer 2: Characters & Props
+  // 2. Layer 2: Characters & Props (Resolve stationary/handheld props BEFORE building character DNA so wielder holds weapon directly)
   const charDnaBlocks = []
   const castEntities = []
   const sceneDnaHashes = {}
   const { entityStates } = PromptDnaCompiler.replayLedgerState(entities, zones, parsedLedgerEvents, sceneNum)
 
-  for (const cToken of activeCast) {
-    const cleanName = cToken.replace(/[@{}]/g, '').trim()
-    const ent = Object.values(entities).find(e =>
-      (e.token && e.token.toLowerCase().includes(cleanName.toLowerCase())) ||
-      (e.name && e.name.toLowerCase() === cleanName.toLowerCase()) ||
-      (e.id && e.id.toLowerCase() === cleanName.toLowerCase())
-    )
-
-    if (ent) {
-      castEntities.push(ent)
-      if (ent.kind === 'character' || ent.kind === 'creature') {
-        const comp = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id] || {})
-        sceneDnaHashes[ent.id] = comp.dnaHash
-        let block = PromptDnaCompiler.applyEntityTimelineOverride(comp.compiledBlock, ent.id, sceneNum, activeTimelineOverrides).block
-        // Julian unarmed enforcement (scenes 001 - 139)
-        if (cleanName.toLowerCase().includes('julian') && sceneNum < 140) {
-          if (!block.toLowerCase().includes('unarmed noble attire')) {
-            block += `, ${UNARMED_JULIAN_TAIL}`
-          }
-        }
-        charDnaBlocks.push(block)
-      } else {
-        let dna = ent.dna || ent.dna_prompt_anchor || ent.token
-        const overriddenProp = PromptDnaCompiler.applyPropTimelineOverride(dna.replace(/^@\{[^}]+\},\s*/, ''), ent.id, sceneNum, activeTimelineOverrides)
-        sceneDnaHashes[ent.id] = PromptDnaCompiler.sha256(`${ent.token}, ${dna}`, 12)
-        charDnaBlocks.push(`Featuring @{${cleanName}} (${overriddenProp.dna})`)
-      }
-    } else {
-      castEntities.push(null)
-      charDnaBlocks.push(`Featuring @{${cleanName}}`)
-    }
-  }
-
-  // Check if scene has stationary or handheld props
   const stationaryProps = []
   const handheldProps = []
   const sheathedLayer4Appends = []
@@ -741,6 +707,68 @@ for (let i = 0; i < sceneIds.length; i++) {
         }
         handheldProps.push({ token: `@{${cleanProp}}`, name: cleanProp, ent: propEnt, overriddenDna: propOverride.dna })
       }
+    }
+  }
+
+  const heldWeaponTokens = handheldProps
+    .filter(hp => /\b(?:rapier|sword|greatsword|blade|staff|wand|dagger|spear|bow|axe)\b/i.test(hp.name))
+    .map(hp => hp.token)
+
+  for (const cToken of activeCast) {
+    const cleanName = cToken.replace(/[@{}]/g, '').trim()
+    const ent = Object.values(entities).find(e =>
+      (e.token && e.token.toLowerCase().includes(cleanName.toLowerCase())) ||
+      (e.name && e.name.toLowerCase() === cleanName.toLowerCase()) ||
+      (e.id && e.id.toLowerCase() === cleanName.toLowerCase())
+    )
+
+    if (ent) {
+      castEntities.push(ent)
+      if (ent.kind === 'character' || ent.kind === 'creature') {
+        const comp = PromptDnaCompiler.compileEntityBlock(ent, entityStates[ent.id] || {})
+        sceneDnaHashes[ent.id] = comp.dnaHash
+        let block = PromptDnaCompiler.applyEntityTimelineOverride(comp.compiledBlock, ent.id, sceneNum, activeTimelineOverrides).block
+        const entHeld = entityStates[ent.id]?.held_weapon
+        const activePropWindows = (worldState?.prop_continuity_windows || []).filter(w => {
+          const fromN = PromptDnaCompiler.sceneNumberFromId(w.from_scene || '')
+          const toN = PromptDnaCompiler.sceneNumberFromId(w.to_scene || '')
+          return sceneNum >= fromN && sceneNum <= toN
+        })
+        const isDesignatedHolder = activePropWindows.some(w => w.holder_id === ent.id) || (entHeld && entHeld !== 'none')
+        const sceneHasWeaponProp = (header.props || []).some(p => /\b(?:rapier|sword|greatsword|blade|staff|wand|dagger|spear|bow|axe)\b/i.test(p))
+
+        // Legacy EP01 unarmed check, plus universal entity-bound unarmed or wielder-grip lock
+        if (cleanName.toLowerCase().includes('julian') && ((episodeId.toUpperCase().startsWith('EP01') && sceneNum < 140) || (!sceneHasWeaponProp && (!entHeld || entHeld === 'none')))) {
+          if (!block.toLowerCase().includes('unarmed noble attire')) {
+            block += `, ${UNARMED_JULIAN_TAIL}`
+          }
+        } else if (ent.kind === 'character' && sceneHasWeaponProp && isDesignatedHolder && heldWeaponTokens.length > 0) {
+          if (!/\bgripping\b|\bholding\b/i.test(block)) {
+            block += `, tightly gripping ${heldWeaponTokens.join(' and ')} firmly in right hand`
+          }
+        } else if (ent.kind === 'character' && sceneHasWeaponProp && !isDesignatedHolder && (!entHeld || entHeld === 'none')) {
+          if (!block.toLowerCase().includes('zero swords')) {
+            block += ', unarmed with empty bare hands, zero swords, zero held weapons'
+          }
+        } else if (ent.kind === 'character' && !sceneHasWeaponProp && (!entHeld || entHeld === 'none')) {
+          if (!block.toLowerCase().includes('empty hands')) {
+            block += ', empty hands with zero held weapons'
+          }
+        }
+        // Prevent glove attribute bleeding across multi-character scenes
+        if (ent.kind === 'character' && activeCast.length >= 2 && !/\bgloves?\b/i.test(block)) {
+          block += /\bungloved\b/i.test(block) ? ', zero gloves' : ', bare ungloved hands, zero gloves'
+        }
+        charDnaBlocks.push(block)
+      } else {
+        let dna = ent.dna || ent.dna_prompt_anchor || ent.token
+        const overriddenProp = PromptDnaCompiler.applyPropTimelineOverride(dna.replace(/^@\{[^}]+\},\s*/, ''), ent.id, sceneNum, activeTimelineOverrides)
+        sceneDnaHashes[ent.id] = PromptDnaCompiler.sha256(`${ent.token}, ${dna}`, 12)
+        charDnaBlocks.push(`Featuring @{${cleanName}} (${overriddenProp.dna})`)
+      }
+    } else {
+      castEntities.push(null)
+      charDnaBlocks.push(`Featuring @{${cleanName}}`)
     }
   }
 
@@ -793,8 +821,8 @@ for (let i = 0; i < sceneIds.length; i++) {
     actionLayer = actionLayer.replace(new RegExp(`@\\{${zoneId}\\}`, 'gi'), `@{${zoneTokenName}}`)
   }
   let layer4 = actionLayer
-  if (header.planTalk) {
-    layer4 += ' Characters are reviewing hand-drawn blueprints and raw mineral samples, zero finished future building.'
+  if (header.planTalk && activeCast.length > 0) {
+    layer4 += ` ${activeCast.join(' and ')} reviewing hand-drawn blueprints and raw mineral samples, zero finished future building.`
   }
   if (activeCast.some(c => c.toLowerCase().includes('lumina'))) {
     layer4 += ' Translucent cyan holographic interface floating freely in upper-right air quadrant with zero hands touching glass.'
@@ -855,7 +883,7 @@ for (let i = 0; i < sceneIds.length; i++) {
     const hasRod = handheldProps.some(hp => hp.name.toLowerCase().includes('rod') || hp.name.toLowerCase().includes('stick'))
     const hasRapier = handheldProps.some(hp => hp.name.toLowerCase().includes('rapier'))
 
-    if (hasRod && hasRapier && sceneNum >= 149) {
+    if (episodeId.toUpperCase().startsWith('EP01') && hasRod && hasRapier && sceneNum >= 149) {
       if (!layer4.includes('@{Wooden Practice Rod}')) {
         layer4 += ' Holding @{Wooden Practice Rod} lightly in hand.'
       }
@@ -885,12 +913,29 @@ for (let i = 0; i < sceneIds.length; i++) {
   const tailPos = (franchise.style?.tail_positive || '').trim()
   const tailNeg = (franchise.style?.tail_negative || '').trim()
 
+  const groundedTokens = activeCast.filter(cToken => {
+    const cleanName = cToken.replace(/[@{}]/g, '').trim().toLowerCase()
+    const ent = Object.values(entities).find(e =>
+      (e.token && e.token.toLowerCase().includes(cleanName)) ||
+      (e.name && e.name.toLowerCase() === cleanName) ||
+      (e.id && e.id.toLowerCase() === cleanName)
+    )
+    const idLower = (ent?.id || cleanName.replace(/[^a-z0-9]+/g, '_')).toLowerCase()
+    return (activeTimelineOverrides?.posture_locks || []).some(
+      pos => pos.entity_id?.toLowerCase() === idLower && pos.force_grounded_camera && sceneNum >= pos.from_scene && sceneNum <= pos.to_scene
+    )
+  })
+  const groundedCastSpec = groundedTokens.length > 0
+    ? `${groundedTokens.join(', ')} kneeling directly on floor`
+    : 'grounded posture strictly on stone floor'
+  const groundedTail = `zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor, ${groundedCastSpec}.`
+
   let layer5 = SAFE_TAIL_CHARACTER
   if (activeCast.length === 0) {
     if (stationaryProps.length > 0 || (header.props && header.props.length > 0) || (header.stage && header.stage.toLowerCase() === 'prop')) {
       layer5 = SAFE_TAIL_PROP_FOCUSED + (tailNeg ? `, ${tailNeg}` : '')
     } else {
-      layer5 = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero soldiers, zero guards, zero mercenaries, zero pedestrians, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures' + (tailNeg ? `, ${tailNeg}` : '.')
+      layer5 = '100% environment landscape illustration, completely unpopulated, zero humans, zero people, zero characters, zero pedestrians, zero figures in the sky, pristine landscape, pure 100% textless artwork, no speech bubbles, no comic SFX, no watermarks, no signatures, no photorealistic 3D CGI' + (tailNeg ? `, ${tailNeg}` : '.')
     }
   } else if (hasCreatureOnly) {
     const creatureNegParts = [
@@ -921,94 +966,31 @@ for (let i = 0; i < sceneIds.length; i++) {
       layer5 += ', zero horns on beast head, zero horns on buildings, smooth armoured obsidian skull'
     }
     if (isActorGrounded) {
-      layer5 += ', zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor'
+      layer5 += `, ${groundedTail}`
     }
   } else if (franchise.format === '16:9') {
     if (activeCast.length === 1) {
-      layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, exactly one single protagonist, zero split panels, zero comic borders, solitary single character framing, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
+      layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, solitary single-character focus, zero split panels, zero comic borders, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
     } else {
       layer5 = 'cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero character cloning, zero split panels, zero comic borders, complete limbs, pure 100% textless artwork, no speech bubbles, no comic sound effects, no watermarks, no photorealistic 3D CGI.'
     }
     if (isActorGrounded) {
-      layer5 = layer5.replace('no photorealistic 3D CGI.', 'no photorealistic 3D CGI, zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor, one actor kneeling directly on the floor at the feet of the standing protagonist.')
+      layer5 = layer5.replace('no photorealistic 3D CGI.', `no photorealistic 3D CGI, ${groundedTail}`)
     }
   }
 
   // Figurative lore negative shield
   const clauseText = (scriptClauses.get(sId) || '').toLowerCase()
   if (clauseText.includes('archmage') || clauseText.includes('archmages') || sId === 'IMG_080') {
-    const hasArchmageCast = activeCast.some(c => c.toLowerCase().includes('eleanor'))
+    const hasArchmageCast = activeCast.some(c => /eleanor|vance|lyra|archmage/i.test(c))
     if (!hasArchmageCast) {
-      layer5 += ' zero archmages, zero old men, zero knights, zero armor dummies, zero extra humans.'
+      layer5 += ' Solitary cast framing only, zero armor dummies.'
     }
   }
 
-  // Universal Unarmed Empty-Hands Shield (prevents random weapons spawning when PROPS is empty)
-  if (activeCast.length > 0 && hasHumanCast && handheldProps.length === 0 && !/empty hands/i.test(layer5) && !/empty hands/i.test(layer2)) {
-    const draftLen = [layer1, layer2, layer3, layer4, layer5].join('. ').length
-    if (Math.ceil((draftLen + 55) / 4) <= (franchise.pacing?.max_prompt_tokens || 450)) {
-      layer5 = layer5.replace(/\.?\s*$/, ', empty hands, zero held weapons, zero random props.')
-    }
-  }
-
+  // Complete uncompressed prompt assembly (Wave-of-8 generation has zero artificial token cap stripping)
   const stripTrailingDot = s => String(s || '').trim().replace(/\.+$/, '')
-  const trimActionSafely = (str, maxLen) => {
-    const clean = String(str || '').trim()
-    if (clean.length <= maxLen) return clean
-    const preservedTokens = [...clean.matchAll(/@\{[^}]+\}/g)].map(m => m[0])
-    let cut = clean.slice(0, maxLen)
-    const openIdx = cut.lastIndexOf('@{')
-    const closeIdx = cut.lastIndexOf('}')
-    if (openIdx > closeIdx) {
-      cut = cut.slice(0, openIdx)
-    }
-    const lastSpace = cut.lastIndexOf(' ')
-    if (lastSpace > 30) {
-      cut = cut.slice(0, lastSpace)
-    }
-    cut = cut.replace(/[,;:\s]+$/, '')
-    for (const tok of preservedTokens) {
-      if (!cut.includes(tok)) {
-        cut += ` with ${tok}`
-      }
-    }
-    return cut + '.'
-  }
-  const maxPromptTokens = franchise.pacing?.max_prompt_tokens || 450
-  const maxPromptChars = maxPromptTokens * 4
   let fullPrompt = `${[layer1, layer2, layer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
-
-  // Automatic Gate G14 Token Budget Guard: if 3+ entities + stationary props push prompt over 450 tokens,
-  // trim secondary clauses in Layer 3 (windowVantage / vantage / boundary) first, then compact unarmed tail, then Layer 4.
-  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
-    const compactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}${boundary ? ', ' + boundary : ''}`
-    fullPrompt = `${[layer1, layer2, compactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
-  }
-  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
-    const ultraCompactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}`
-    const compactLayer2 = layer2.includes(UNARMED_JULIAN_TAIL)
-      ? layer2.replace(`, ${UNARMED_JULIAN_TAIL}`, ', unarmed noble attire, empty hands')
-      : layer2
-    fullPrompt = `${[layer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
-  }
-  if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
-    const ultraCompactLayer3 = `Spatial Enclosure: @{${zoneTokenName}} (${sanitizedCanon}). ${lightingPhrase}`
-    const compactLayer2 = layer2.includes(UNARMED_JULIAN_TAIL)
-      ? layer2.replace(`, ${UNARMED_JULIAN_TAIL}`, ', unarmed noble attire, empty hands')
-      : layer2
-    const preservedTokens = [...layer4.matchAll(/@\{[^}]+\}/g)].map(m => m[0])
-    const minTokenAction = preservedTokens.length > 0
-      ? `In wide perspective, ${preservedTokens.join(' and ')} confront one another.`
-      : layer4
-    const overhead = [layer1, compactLayer2, ultraCompactLayer3, layer5].map(stripTrailingDot).filter(Boolean).join('. ').length + 6
-    const allowedLayer4Chars = maxPromptChars - overhead - 8
-    layer4 = allowedLayer4Chars >= minTokenAction.length ? trimActionSafely(layer4, allowedLayer4Chars) : minTokenAction
-    fullPrompt = `${[layer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
-    if (Math.ceil(fullPrompt.length / 4) > maxPromptTokens) {
-      const compactLayer1 = `${aspectToken}, ${lens}`
-      fullPrompt = `${[compactLayer1, compactLayer2, ultraCompactLayer3, layer4].map(stripTrailingDot).filter(Boolean).join('. ')}. ${String(layer5 || '').trim()}`
-    }
-  }
 
   const cleanNarrativeClause = scriptClauses.get(sId) || parsedScene.narrativeSync || ''
   const cleanCast = activeCast.map(c => c.replace(/[@{}]/g, '').trim())

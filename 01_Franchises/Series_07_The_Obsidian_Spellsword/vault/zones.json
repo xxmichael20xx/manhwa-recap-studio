@@ -80,5 +80,35 @@
     "window_vantage": "tall arched stone windows in the background overlooking the manicured palace gardens and the colossal fifty-foot obsidian statue of the Founding Sword Saint in the central plaza",
     "boundary_tags": "private ducal solar, white marble floor, sapphire silk drapery, carved mahogany desk, zero outside crowds",
     "is_private_sanctuary": true
+  },
+  "imperial_academy_courtyard": {
+    "id": "imperial_academy_courtyard",
+    "name": "Imperial Academy Grand Courtyard",
+    "canon": "Soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide establishing shot of the Imperial Academy Grand Courtyard, soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes, completely unpopulated, zero humans, 100% textless artwork, sharp black ink linework, 2D action manhwa cel-shading",
+    "plate": "vault/imperial_academy_courtyard.jpg",
+    "elevation": "ground",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "academy_dueling_amphitheater"
+    ],
+    "vantage_rule": "Wide ground-level perspective looking down the polished marble promenade through the twin obsidian-and-gold triumphal archways toward the soaring academy spires.",
+    "window_vantage": "towering ivory-and-sapphire academy spires and floating sky-islands visible across the clear cobalt daylight sky",
+    "boundary_tags": "polished marble courtyard, twin obsidian-and-gold triumphal archways, manicured lawns, ivory-and-sapphire academy spires"
+  },
+  "academy_dueling_amphitheater": {
+    "id": "academy_dueling_amphitheater",
+    "name": "Academy Dueling Amphitheater",
+    "canon": "Sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades, stepped semicircular spectator seating, tall fluted marble pillars, and elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide establishing shot of the Academy Dueling Amphitheater, sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky, completely unpopulated, zero humans, 100% textless artwork, sharp black ink linework, 2D action manhwa cel-shading",
+    "plate": "vault/academy_dueling_amphitheater.jpg",
+    "elevation": "ground",
+    "lighting": "day_sunlit",
+    "adjacent": [
+      "imperial_academy_courtyard"
+    ],
+    "vantage_rule": "Arena-floor or stepped marble colonnade perspective framing the glowing azure octagram boundary circle and elevated sapphire-and-gold viewing pavilions.",
+    "window_vantage": "open-air marble colosseum tiers opening directly onto the bright cobalt daylight sky above the academy spires",
+    "boundary_tags": "sunken white-marble amphitheater, glowing azure octagram rune circle, marble balustrades, sapphire-and-gold viewing pavilions"
   }
 }

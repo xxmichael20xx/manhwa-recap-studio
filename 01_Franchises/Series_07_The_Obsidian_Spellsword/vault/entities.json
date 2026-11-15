@@ -387,37 +387,6 @@
       "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ]
   },
-  "aiden_drake_past_life": {
-    "id": "aiden_drake_past_life",
-    "name": "Aiden Drake",
-    "kind": "character",
-    "token": "@{Aiden Drake}",
-    "aliases": [
-      "Aiden Drake",
-      "Aiden",
-      "The First Sword Saint",
-      "Sword God Aiden",
-      "Founding Sword Saint"
-    ],
-    "tier": 1,
-    "status": "approved",
-    "age_class": "adult",
-    "dna": "28-year-old battle-weathered peerless swordsman, raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, tragic defiant sneer, wearing shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots",
-    "dna_prompt_anchor": "@{Aiden Drake - The First Sword Saint}",
-    "visual_dna": "Tall, battle-weathered twenty-eight-year-old peerless swordsman with raven hair whipped by storm winds, fierce silver eyes, sharp aristocratic jawline, wearing a shredded midnight-black swordmaster duster over silver-trimmed tunic, bleeding from chest from insidious poison, holding an ancient chipped Obsidian Greatsword, tragic defiant sneer against the heavens, sharp ink linework, horizontal 16:9 widescreen",
-    "default_outfit": "default",
-    "outfits": {
-      "default": "shredded midnight-black swordmaster duster over silver-trimmed warrior tunic, dark battle-worn trousers, heavy combat boots"
-    },
-    "default_state": {},
-    "state_lexicon": {},
-    "description": "The First Sword Saint 1,000 years ago who stood at the gates of Godhood before being assassinated by celestial poison.",
-    "plate": "character_vault/00_Prologue_Aiden_Drake.jpg",
-    "episodes": [
-      "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
-      "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
-    ]
-  },
   "enchanted_iron_wood_practice_dummy": {
     "id": "enchanted_iron_wood_practice_dummy",
     "name": "Enchanted Iron-Wood Practice Dummy",
@@ -532,6 +501,140 @@
     "episodes": [
       "EP02_The_Ancestral_Vault_and_The_First_True_Spell",
       "EP03_The_Holy_Inquisitor_and_The_Severed_Blessing"
+    ]
+  },
+  "julian_vaelgard_academy": {
+    "id": "julian_vaelgard_academy",
+    "name": "Julian Vaelgard (Academy Uniform)",
+    "kind": "character",
+    "token": "@{Julian Vaelgard (Academy Uniform)}",
+    "flowName": "Julian Vaelgard (Academy Uniform)",
+    "aliases": [
+      "Julian Vaelgard (Academy Uniform)",
+      "Academy Julian"
+    ],
+    "tier": 1,
+    "status": "approved",
+    "age": 15,
+    "age_class": "minor",
+    "dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture",
+    "dna_prompt_anchor": "@{Julian Vaelgard (Academy Uniform)} - Imperial Academy First-Year",
+    "visual_dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Julian Vaelgard clad in the tailored midnight-navy and gold Imperial Academy cadet uniform upon entering the Twin-Pinnacle Imperial Academy in Act II.",
+    "plate": "character_vault/01_Protagonist_Julian_Vaelgard_Academy.jpg",
+    "episodes": [
+      "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+    ]
+  },
+  "dean_alistair_vance": {
+    "id": "dean_alistair_vance",
+    "name": "Dean Alistair Vance",
+    "kind": "character",
+    "token": "@{Dean Alistair Vance}",
+    "flowName": "Dean Alistair Vance",
+    "aliases": [
+      "Dean Alistair Vance",
+      "Dean Vance",
+      "Alistair Vance",
+      "Dean Alistair"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age": 58,
+    "age_class": "adult",
+    "dna": "58-year-old dignified archmage dean, neatly swept-back silver-white hair, trimmed silver-white beard and moustache, piercing sharp golden-amber eyes, weathered commanding aristocratic face, stern intellectual poise",
+    "dna_prompt_anchor": "@{Dean Alistair Vance} - 5-Star Archmage Dean",
+    "visual_dna": "58-year-old dignified archmage dean, neatly swept-back silver-white hair, trimmed silver-white beard and moustache, piercing sharp golden-amber eyes, weathered commanding aristocratic face, stern intellectual poise, crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, bare ungloved hands, dark charcoal trousers, tall dark brown leather boots",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, bare ungloved hands, dark charcoal trousers, tall dark brown leather boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "5-Star Archmage and Dean of the Twin-Pinnacle Imperial Academy. Strictly enforces Imperial Neutrality and live merit-based duels over noble politics.",
+    "plate": "character_vault/07_NPC_Dean_Alistair_Vance.jpg",
+    "episodes": [
+      "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+    ]
+  },
+  "lord_cassian_thorne": {
+    "id": "lord_cassian_thorne",
+    "name": "Lord Cassian Thorne",
+    "kind": "character",
+    "token": "@{Lord Cassian Thorne}",
+    "flowName": "Lord Cassian Thorne",
+    "aliases": [
+      "Lord Cassian Thorne",
+      "Cassian Thorne",
+      "Cassian"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age": 16,
+    "age_class": "minor",
+    "dna": "young noble manhwa rival, athletic aristocratic build, bright light golden-blonde hair parted cleanly to the side, pale refined complexion, haughty noble bearing, sharp emerald-green eyes with arrogant smirk",
+    "dna_prompt_anchor": "@{Lord Cassian Thorne} - Church-Aligned Academy Rival",
+    "visual_dna": "young noble manhwa rival, athletic aristocratic build, bright light golden-blonde hair parted cleanly to the side, pale refined complexion, haughty noble bearing, sharp emerald-green eyes with arrogant smirk, crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, bare ungloved hands, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, bare ungloved hands, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Church-aligned Gold-Rank and 3-Star noble prodigy at the Twin-Pinnacle Imperial Academy who publicly provokes House Vaelgard.",
+    "plate": "character_vault/08_Antagonist_Lord_Cassian_Thorne.jpg",
+    "episodes": [
+      "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+    ]
+  },
+  "imperial_academy_courtyard": {
+    "id": "imperial_academy_courtyard",
+    "name": "Imperial Academy Grand Courtyard",
+    "kind": "location",
+    "token": "@{Imperial Academy Grand Courtyard}",
+    "flowName": "Imperial Academy Grand Courtyard",
+    "aliases": [
+      "Imperial Academy Grand Courtyard",
+      "imperial_academy_courtyard",
+      "Grand Courtyard"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Imperial Academy Grand Courtyard}, soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Imperial Academy Grand Courtyard - Twin-Pinnacle Entrance Plaza}",
+    "visual_dna": "soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes",
+    "description": "The monumental main entrance plaza of the Twin-Pinnacle Imperial Academy framed by twin obsidian-and-gold triumphal gate archways.",
+    "plate": "character_vault/16_Location_Imperial_Academy_Grand_Courtyard.jpg",
+    "episodes": [
+      "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+    ]
+  },
+  "academy_dueling_amphitheater": {
+    "id": "academy_dueling_amphitheater",
+    "name": "Academy Dueling Amphitheater",
+    "kind": "location",
+    "token": "@{Academy Dueling Amphitheater}",
+    "flowName": "Academy Dueling Amphitheater",
+    "aliases": [
+      "Academy Dueling Amphitheater",
+      "academy_dueling_amphitheater",
+      "Dueling Amphitheater"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Dueling Amphitheater}, sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Academy Dueling Amphitheater - Twin-Pinnacle Arena}",
+    "visual_dna": "sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky",
+    "description": "The sunken circular white-marble dueling amphitheater where Dual-Threshold Academy trials and live rank challenges are adjudicated.",
+    "plate": "character_vault/17_Location_Academy_Dueling_Amphitheater.jpg",
+    "episodes": [
+      "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
     ]
   }
 }

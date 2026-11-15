@@ -1,0 +1,11 @@
+{
+  "franchiseHash": "df7779d6a68a4df19b0c0b735d0b423d",
+  "entitiesHash": "df82d8a93bd33ee39562946f2bc56b18",
+  "zonesHash": "3fe17191401ae8b1e8ecd3215c3d53c3",
+  "ledgerHash": "770e4f1f51ea640237ea3146addd5b87",
+  "scriptHash": "951f314036051145be085cfd4dfcd51a",
+  "matrixHash": "0be39ddbfa237af4430cba83e05a6fd4",
+  "compilerVersion": "2.0.0-universal",
+  "signature": "c93888463cd04cab6d6a384148f1017ca2136871dc8230e228d65b1296d9b60d",
+  "issuedAt": "2026-11-14T06:06:22.429Z"
+}

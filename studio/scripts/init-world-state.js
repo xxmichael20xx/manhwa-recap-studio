@@ -204,19 +204,25 @@ for (let i = 0; i < sceneIds.length; i++) {
   }
 }
 
+const ledgerPath = path.join(epDir, 'state_events.jsonl')
+const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
+const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
+
 // 5. Build prop_continuity_windows from contiguous scene spans (>= 2 scenes)
 const propContinuityWindows = []
 const propRuns = new Map() // propName -> { startScene, lastScene, count, holderId }
 for (let i = 0; i < sceneIds.length; i++) {
   const sId = sceneIds[i]
   const h = scriptHeaders.get(sId)
+  const sceneNum = PromptDnaCompiler.sceneNumberFromId(sId)
+  const { entityStates } = PromptDnaCompiler.replayLedgerState(entities, zones, parsedLedgerEvents, sceneNum)
   const sceneProps = new Set(h?.props || [])
   const rawHolder = (h?.actor && h.actor !== 'NONE' ? h.actor : h?.cast?.[0] || '').replace(/^@\{?|\}?$/g, '').trim()
   const holderEnt = Object.values(entities).find(e =>
     (e.name && e.name.toLowerCase() === rawHolder.toLowerCase()) ||
     (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === rawHolder.toLowerCase())
   )
-  const holderId = holderEnt?.id || rawHolder.toLowerCase().replace(/[^a-z0-9_]/g, '_')
+  const fallbackHolderId = holderEnt?.id || rawHolder.toLowerCase().replace(/[^a-z0-9_]/g, '_')
 
   for (const [pName, run] of [...propRuns.entries()]) {
     if (sceneProps.has(pName)) {
@@ -236,7 +242,9 @@ for (let i = 0; i < sceneIds.length; i++) {
     }
   }
   for (const newProp of sceneProps) {
-    propRuns.set(newProp, { startScene: sId, lastScene: sId, count: 1, holderId })
+    const newPropSlug = newProp.toLowerCase().replace(/[^a-z0-9]+/g, '_')
+    const ledgerHolder = Object.entries(entityStates).find(([, st]) => st.held_weapon && st.held_weapon === newPropSlug)?.[0]
+    propRuns.set(newProp, { startScene: sId, lastScene: sId, count: 1, holderId: ledgerHolder || fallbackHolderId })
   }
 }
 for (const [pName, run] of propRuns.entries()) {
@@ -251,9 +259,6 @@ for (const [pName, run] of propRuns.entries()) {
 }
 
 // 6. Extract 6-Pillar Chronological State-Persistence Windows (timeline_overrides)
-const ledgerPath = path.join(epDir, 'state_events.jsonl')
-const ledgerText = fs.existsSync(ledgerPath) ? fs.readFileSync(ledgerPath, 'utf-8') : ''
-const parsedLedgerEvents = PromptDnaCompiler.parseLedgerEvents(ledgerText)
 const timelineOverrides = PromptDnaCompiler.extractTimelineOverrides({
   scriptClauses,
   scriptHeaders,
@@ -261,6 +266,47 @@ const timelineOverrides = PromptDnaCompiler.extractTimelineOverrides({
   zones,
   ledgerEvents: parsedLedgerEvents
 })
+
+// Augment sleeve/cuff/attire slash & tatter persistence from state_events.jsonl + script clauses
+const maxSceneNum = sceneIds.length > 0 ? PromptDnaCompiler.sceneNumberFromId(sceneIds[sceneIds.length - 1]) : 999
+for (const evt of parsedLedgerEvents) {
+  if (evt.set?.attire_damage) {
+    const sNum = Math.max(1, Number(evt.s) || 1)
+    const dmg = String(evt.set.attire_damage)
+    const already = timelineOverrides.character_conditions.some(c => c.entity_id === evt.e && c.state === dmg)
+    if (!already) {
+      timelineOverrides.character_conditions.push({
+        entity_id: evt.e,
+        from_scene: sNum,
+        to_scene: maxSceneNum,
+        state: dmg,
+        dna_append: dmg.includes('cuff')
+          ? 'torn tattered crimson right sleeve cuff slashed open at the wrist, frayed fabric hanging from forearm'
+          : 'scorched tattered academy coat with torn sleeve cuff and scuffed fabric',
+        strip_patterns: ['silver-trimmed cuffs', 'pristine', 'flawless']
+      })
+    }
+  }
+}
+const CUFF_DAMAGE_RX = /\b(?:slit|sliced|severed|torn|tattered|shredded|ripped)\b.{0,40}\b(?:cuff|sleeve|hem)\b|\b(?:cuff|sleeve)\b.{0,30}\b(?:slit|sliced|severed|torn|tattered|shredded|ripped)\b/i
+for (const sId of sceneIds) {
+  const clause = scriptClauses.get(sId) || ''
+  if (!CUFF_DAMAGE_RX.test(clause)) continue
+  const sNum = PromptDnaCompiler.sceneNumberFromId(sId)
+  const header = scriptHeaders.get(sId) || {}
+  const cast = (header.cast || []).map(c => Object.values(entities).find(e => e.name?.toLowerCase() === c.toLowerCase() || e.id?.toLowerCase() === c.toLowerCase())).filter(Boolean)
+  const victim = cast.find(e => clause.toLowerCase().includes((e.name || '').split(/\s+/).slice(-1)[0].toLowerCase()) && !clause.toLowerCase().startsWith((e.name || '').toLowerCase())) || cast.find(e => e.id !== 'julian_vaelgard_academy' && e.kind === 'character')
+  if (victim && !timelineOverrides.character_conditions.some(c => c.entity_id === victim.id && sNum >= c.from_scene && sNum <= c.to_scene)) {
+    timelineOverrides.character_conditions.push({
+      entity_id: victim.id,
+      from_scene: sNum,
+      to_scene: maxSceneNum,
+      state: 'tattered_cuff',
+      dna_append: 'torn tattered right sleeve cuff slashed open at the wrist, frayed fabric hanging from forearm',
+      strip_patterns: ['silver-trimmed cuffs', 'pristine', 'flawless']
+    })
+  }
+}
 
 const worldStateData = {
   episodeId,

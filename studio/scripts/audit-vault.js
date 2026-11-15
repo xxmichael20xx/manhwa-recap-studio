@@ -91,6 +91,17 @@ for (const ent of entityList) {
   if (isChar && (!outfits || outfits.trim().length === 0)) {
     issues.entities.push({ id: ent.id, name: ent.name || ent.id, issue: 'Character has no outfits defined' })
   }
+  if (isChar && outfits) {
+    const vTxt = String(ent.visual_dna || ent.dna_prompt_anchor || dna).toLowerCase()
+    const oTxt = outfits.toLowerCase()
+    const vGlove = /\bgloves?\b|\bgloved\b/.test(vTxt) && !/\bungloved\b/.test(vTxt)
+    const vBare = /\bungloved\b|\bbare hands\b/.test(vTxt)
+    const oGlove = /\bgloves?\b|\bgloved\b/.test(oTxt) && !/\bungloved\b/.test(oTxt)
+    const oBare = /\bungloved\b|\bbare hands\b/.test(oTxt)
+    if ((vGlove && oBare) || (vBare && oGlove)) {
+      issues.crossVaultDrift.push({ id: ent.id, name: ent.name || ent.id, issue: 'Hand/glove contradiction between visual_dna and outfits' })
+    }
+  }
 }
 
 // 2. Audit character_vault/characters.json

@@ -1,0 +1,176 @@
+{
+  "episodeId": "EP05_The_Imperial_Sun_Crest_and_The_Crates_of_Sanctuary",
+  "franchiseId": "Series_06_The_Archmage_Engineer",
+  "generatedAt": "2026-11-14T06:01:11.460Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "ace_miller": "clean signature standard attire",
+    "clara_miller": "practical yet graceful sage-green and cream medieval country dress with a clean white linen apron",
+    "frontier_runner": "mud-splattered tan linen courier tunic",
+    "garrett_miller": "rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps",
+    "sir_roland_vance": "polished silver-and-blue royal plate armour over a navy tunic with a white royal cape",
+    "princess_seraphina": "elegant royal ivory-and-sky-blue travel dress with subtle gold embroidery and hooded travel cloak",
+    "maya_miller": "breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots",
+    "simon_vane": "an opulent fur-trimmed crimson merchant vest over an embroidered gold tunic with heavy brass rings on his fingers",
+    "baron_vane": "ornate black-and-crimson steel breastplate over a dark burgundy velvet doublet",
+    "baron_vane_soldiers": "clean signature standard attire",
+    "guild_fire_mage": "high-collared red-and-gold Mage Guild robes",
+    "emperor_aldrich": "clean signature standard attire",
+    "empress_evelyn": "royal pearl-white and azure-blue silk gown with gold filigree trim",
+    "grand_councilor_malakor": "clean signature standard attire"
+  },
+  "held_props": {
+    "lumina": {
+      "canonical_name": "LUMINA",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "starlight_mare": {
+      "canonical_name": "Starlight the Mare",
+      "container": null,
+      "visual_form": "Graceful dapple-grey royal mare with white-and-grey dappled coat, silver-white mane, dark eyes, royal sapphire-blue and silver saddle and blue bridle.",
+      "notes": "Locked across all episode scenes: Starlight the Mare."
+    },
+    "imperial_sun_crest": {
+      "canonical_name": "Imperial Sun Crest",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "starlight_the_mare": {
+      "canonical_name": "Starlight the Mare",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_002",
+      "to_scene": "IMG_003",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_027",
+      "to_scene": "IMG_033",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_040",
+      "to_scene": "IMG_042",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_046",
+      "to_scene": "IMG_047",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_067",
+      "to_scene": "IMG_069",
+      "holder_id": "princess_seraphina",
+      "prop_token": "@{Imperial Sun Crest}"
+    },
+    {
+      "from_scene": "IMG_076",
+      "to_scene": "IMG_081",
+      "holder_id": "princess_seraphina",
+      "prop_token": "@{Imperial Sun Crest}"
+    },
+    {
+      "from_scene": "IMG_084",
+      "to_scene": "IMG_085",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_086",
+      "to_scene": "IMG_091",
+      "holder_id": "princess_seraphina",
+      "prop_token": "@{Imperial Sun Crest}"
+    },
+    {
+      "from_scene": "IMG_096",
+      "to_scene": "IMG_098",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_104",
+      "to_scene": "IMG_105",
+      "holder_id": "sir_roland_vance",
+      "prop_token": "@{Starlight the Mare}"
+    },
+    {
+      "from_scene": "IMG_109",
+      "to_scene": "IMG_110",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_112",
+      "to_scene": "IMG_114",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_116",
+      "to_scene": "IMG_118",
+      "holder_id": "princess_seraphina",
+      "prop_token": "@{Starlight the Mare}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {
+    "miller_sanctuary_farm_exterior": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_144",
+        "stage_id": "ep02_stage2",
+        "environment_override": "Upgraded high-comfort medieval timber-and-stone valley homestead with clear quartz glass windows, white-stone water channels, neat purple alpine lavender rows, and a backyard stone bathhouse.",
+        "allowed_terms": [
+          "glass",
+          "quartz",
+          "channels",
+          "lavender",
+          "bathhouse"
+        ],
+        "banned_terms": []
+      }
+    ],
+    "old_miller_cottage_interior": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_144",
+        "stage_id": "ep02_stage2",
+        "environment_override": "Upgraded cozy sunlit medieval timber-and-stone cottage interior with clear flat quartz glass windows, warm stone hearth, and clean oak dining table.",
+        "allowed_terms": [
+          "glass",
+          "quartz",
+          "clear"
+        ],
+        "banned_terms": []
+      }
+    ]
+  },
+  "tech_tree": {
+    "enforce": false
+  }
+}

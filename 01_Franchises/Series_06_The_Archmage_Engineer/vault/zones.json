@@ -94,18 +94,17 @@
     "adjacent": [
       "miller_sanctuary_bath_courtyard",
       "emerald_valley_forest_trail",
-      "old_miller_cottage_interior",
-      "oakhaven_tax_chamber"
+      "old_miller_cottage_interior"
     ],
     "location_token": "@{Miller Sanctuary Farm}",
     "elevation": "valley_floor_level",
-    "vantage_rule": "Camera is at flat valley-floor ground level inside the Miller yard, looking at the single-story homestead with distant snow-kissed alpine peaks in the background. NEVER frame from a high cliff ledge looking down at a mansion.",
-    "boundary_tags": "valley floor ground level, isolated family homestead, natural dirt and grass yard, zero paved slab frontyard, zero stone pillars or arches, zero random villagers, zero brass water-wheel, zero wind turbine",
+    "vantage_rule": "Camera is at flat valley-floor ground level inside the Miller yard, looking at the single-story homestead with distant green alpine peaks in the background.",
+    "boundary_tags": "valley floor ground level, isolated family homestead, natural dirt and grass yard, zero paved slab frontyard, zero stone pillars or arches, zero villagers",
     "is_private_sanctuary": true,
     "tech_stages": {
       "ep01_stage1": "Upgraded frontier sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring the modest wooden cottage with white-stone draft chimney, white-stone water channel, cylindrical white-stone water filter tank, natural packed-earth and grass yard, and purple lavender rows, wooden shutters on windows, zero glass windows, zero water-wheel, zero wind turbine.",
       "ep02_stage2": "Upgraded sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm oak-and-white-stone farmhouse with clear quartz glass windows, white-stone water channels, natural grass yard, and purple lavender rows.",
-      "arc3_stage3": "Secluded frontier sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm polished oak-and-white-stone farmhouse with clear glass windows, covered white-stone water channel, rotating brass water-wheel, purple lavender rows, and sleek wooden-and-brass wind turbine."
+      "arc3_stage3": "Upgraded sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm oak-and-white-stone farmhouse with clear quartz glass windows, white-stone water channels, natural grass yard, and purple lavender rows."
     }
   },
   "miller_sanctuary_bath_courtyard": {
@@ -142,12 +141,11 @@
       "old_miller_farm_exterior",
       "miller_sanctuary_farm_exterior",
       "old_miller_cottage_interior",
-      "oakhaven_tax_chamber",
       "solaris_imperial_palace"
     ],
     "location_token": "@{Emerald Valley Forest Trail}",
     "elevation": "mid_mountain_ridge",
-    "vantage_rule": "Camera is on the wooded mountain trail beside the mossy white limestone spring cliff and sandy creek bed surrounded by tall white-barked birch and pine trees. The Miller farmhouse is 300 yards down the forested slope and NOT visible in the background.",
+    "vantage_rule": "Camera is on the wooded mountain trail beside the mossy white limestone spring cliff and sandy creek bed surrounded by tall white-barked birch and pine trees.",
     "boundary_tags": "natural forest trail and creek bed only, zero houses, zero cottages, zero glass windows, zero man-made buildings in background",
     "is_private_sanctuary": true
   },
@@ -163,6 +161,7 @@
     "adjacent": [
       "emerald_valley_forest_trail"
     ],
+    "location_token": "@{Solaris Imperial Palace}",
     "elevation": "capital_palace_interior",
     "vantage_rule": "Grand interior perspective inside the crimson-and-gold Imperial Palace throne hall.",
     "boundary_tags": "solid enclosed imperial palace throne room, tall marble columns, zero dirt farm elements",
@@ -178,9 +177,7 @@
       "stone aqueduct channels",
       "lavender rows"
     ],
-    "adjacent": [
-      "emerald_valley_forest_trail"
-    ],
+    "adjacent": [],
     "location_token": "@{Oakhaven Tax Guild Chamber}",
     "elevation": "town_ground_level",
     "vantage_rule": "Interior camera inside the wood-panelled Oakhaven tax office with mahogany desk, brass scales, and scrying orb.",

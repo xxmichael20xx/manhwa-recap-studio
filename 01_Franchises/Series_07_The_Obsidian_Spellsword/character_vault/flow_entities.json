@@ -1,0 +1,29 @@
+{
+  "rawText": "Active Google Flow Native @{Entity Name} Entities for Series 07: The Obsidian Spellsword (24 Models Locked):\n\n01. @{Julian Vaelgard}\n02. @{Duke Gerald Vaelgard}\n03. @{Duchess Eleanor Vaelgard}\n04. @{Archmage Lyra}\n05. @{Master Swordsman Kael}\n06. @{High Inquisitor Malakor}\n07. @{Aiden Drake}\n08. @{Vaelgard Silver Training Rapier}\n09. @{Principles of Mana Weaving}\n10. @{Obsidian Greatsword}\n11. @{Celestial Altar of Ascension}\n12. @{Julian's Ducal Solar & Study}\n13. @{Grand Ducal Palace of House Vaelgard}\n14. @{Private Obsidian Sparring Arena}\n15. @{Ancestral Vault & Grand Library Rotunda}\n16. @{Enchanted Iron-Wood Practice Dummy}\n17. @{Wooden Practice Rod}\n18. @{White Marble Meditation Bench}\n19. @{Founding Sword Saint Obsidian Monument}\n20. @{Julian Vaelgard (Academy Uniform)}\n21. @{Dean Alistair Vance}\n22. @{Lord Cassian Thorne}\n23. @{Imperial Academy Grand Courtyard}\n24. @{Academy Dueling Amphitheater}",
+  "entities": {
+    "Julian Vaelgard": "@{Julian Vaelgard}",
+    "Duke Gerald Vaelgard": "@{Duke Gerald Vaelgard}",
+    "Duchess Eleanor Vaelgard": "@{Duchess Eleanor Vaelgard}",
+    "Archmage Lyra": "@{Archmage Lyra}",
+    "Master Swordsman Kael": "@{Master Swordsman Kael}",
+    "High Inquisitor Malakor": "@{High Inquisitor Malakor}",
+    "Aiden Drake": "@{Aiden Drake}",
+    "Vaelgard Silver Training Rapier": "@{Vaelgard Silver Training Rapier}",
+    "Principles of Mana Weaving": "@{Principles of Mana Weaving}",
+    "Obsidian Greatsword": "@{Obsidian Greatsword}",
+    "Celestial Altar of Ascension": "@{Celestial Altar of Ascension}",
+    "Julian's Ducal Solar & Study": "@{Julian's Ducal Solar & Study}",
+    "Grand Ducal Palace of House Vaelgard": "@{Grand Ducal Palace of House Vaelgard}",
+    "Private Obsidian Sparring Arena": "@{Private Obsidian Sparring Arena}",
+    "Ancestral Vault & Grand Library Rotunda": "@{Ancestral Vault & Grand Library Rotunda}",
+    "Enchanted Iron-Wood Practice Dummy": "@{Enchanted Iron-Wood Practice Dummy}",
+    "Wooden Practice Rod": "@{Wooden Practice Rod}",
+    "White Marble Meditation Bench": "@{White Marble Meditation Bench}",
+    "Founding Sword Saint Obsidian Monument": "@{Founding Sword Saint Obsidian Monument}",
+    "Julian Vaelgard (Academy Uniform)": "@{Julian Vaelgard (Academy Uniform)}",
+    "Dean Alistair Vance": "@{Dean Alistair Vance}",
+    "Lord Cassian Thorne": "@{Lord Cassian Thorne}",
+    "Imperial Academy Grand Courtyard": "@{Imperial Academy Grand Courtyard}",
+    "Academy Dueling Amphitheater": "@{Academy Dueling Amphitheater}"
+  }
+}

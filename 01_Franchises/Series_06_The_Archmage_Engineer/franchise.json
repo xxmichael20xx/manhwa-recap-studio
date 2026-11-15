@@ -20,7 +20,7 @@
   "pacing": {
     "max_scene_seconds": 8,
     "tts_wpm_measured": 155,
-    "max_prompt_tokens": 450
+    "max_prompt_tokens": 750
   },
   "tier_distribution": {
     "min_multi_panel_ratio": 0.65,

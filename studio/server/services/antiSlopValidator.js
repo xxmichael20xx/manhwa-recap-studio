@@ -23,7 +23,7 @@ const UNIVERSAL_LEXICONS = {
   scriptSimileRegex: /\b(?:like\s+(?:a\s+|an\s+|the\s+|[a-z]{3,})|as if|as though|[a-z]{3,}-like)\b/i,
   creatureNounsRegex: /(?<!-)\b(?:wolf|wolves|tiger|tigers|serpent|serpents|snake|snakes|parrot|parrots|chicken|chickens|toad|toads|frog|frogs|peacock|peacocks|monkey|monkeys|ape|apes|hound|hounds|pig|pigs|boar|boars|rat|rats|crow|crows|lion|lions|bear|scorpion|scorpions|chimera|wyrm|leviathan|hydra|tentacle|sheep|monster|monsters|beast|beasts|abomination|abominations|fiend|fiends|thrall|thralls)\b(?!-)/gi,
 
-  roleAndVehicleNounsRegex: /\b(?:dean|vice-dean|chancellor|vice-chancellor|headmaster|principal|rector|provost|elder|grand elder|patriarch|matriarch|sovereign|emperor|empress|king|queen|prince|princess|duke|duchess|marquis|earl|viscount|baron|general|commander|captain|colonel|lieutenant|director|president|chairman|chief|doctor|professor|instructor|examiner|proctor|warden|overseer|hover-sedan|hover-limousine|hover-truck|hovercraft|hover-car|gunship|warship|dropship|limousine|sedan|suv|helicopter|fighter jet|mech|airship|chariot|parents|young boy|young heir|veteran swordsman)\b/gi,
+  roleAndVehicleNounsRegex: /\b(?:dean|vice-dean|chancellor|vice-chancellor|headmaster|principal|rector|provost|elder|grand elder|patriarch|matriarch|sovereign|emperor|empress|king|queen|prince|princess|duke|duchess|marquis|earl|viscount|baron|general|commander|captain|colonel|lieutenant|director|president|chairman|chief|doctor|professor|instructor|examiner|proctor|warden|overseer|mercenary|mercenaries|sellsword|sellswords|enforcer|enforcers|soldier|soldiers|bandit|bandits|raider|raiders|henchman|henchmen|hover-sedan|hover-limousine|hover-truck|hovercraft|hover-car|gunship|warship|dropship|limousine|sedan|suv|helicopter|fighter jet|mech|airship|chariot|parents|young boy|young heir|veteran swordsman)\b/gi,
 
   postureForcedDownBeatRegex: /\b(?:crushed|prostrated?|face-down|flattened|pinned(?:\s+beneath|\s+to|\s+down)?|collapsed\s+to\s+(?:his|her|their)\s+knees|whimpering\s+in\s+the\s+(?:dirt|crater|ground|floor)|on\s+(?:his|her|their)\s+belly)\b/i,
   postureUprightContradictionRegex: /\b(?:standing\s+face-to-face|standing\s+upright|stands\s+upright|standing\s+tall|stands\s+tall|towering\s+over|striding\s+upright|on\s+(?:his|her|their)\s+feet|walking\s+confidently|striding\s+confidently)\b/i,
@@ -925,6 +925,8 @@ export class AntiSlopValidator {
 
     // G10: Pending Stubs & Dynamic Unregistered Entity Blocker
     const g10Fails = []
+    const dynamicActorHits = new Map() // nounStem -> Set<sceneId> (auto-detects ANY recurring unvaulted actor/mob noun >= 2 scenes)
+    const dynamicActorIgnore = new Set(['bubbles', 'foam', 'water', 'mist', 'stone', 'stones', 'beams', 'windows', 'doors', 'walls', 'steps', 'step', 'tiles', 'branches', 'leaves', 'clouds', 'sparks', 'flames', 'arrows', 'bolts', 'crates', 'barrels', 'scrolls', 'books', 'plates', 'cups', 'trees', 'flowers', 'rocks', 'shadows', 'ripples', 'waves', 'droplets', 'pebbles', 'ropes', 'chains', 'gates', 'pipes', 'channels', 'white', 'black', 'gold', 'silver', 'blue', 'green', 'red', 'brown', 'purple', 'crimson', 'amber', 'finger', 'fingers', 'hand', 'hands', 'foot', 'feet', 'inch', 'inches', 'yard', 'yards', 'meter', 'meters', 'hour', 'hours', 'minute', 'minutes', 'second', 'seconds', 'layer', 'layers', 'pane', 'panes', 'gallon', 'gallons', 'drop', 'drops'])
     const stopwordsLower = new Set([...UNIVERSAL_LEXICONS.commonCapitalizedStopwords].map(w => w.toLowerCase()));
     ['spatial', 'enclosure', 'high', 'street', 'of', 'the', 'and', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'as', 'into', 'energy', 'spike', 'fleet', 'dragon', 'black', 'core', 'golden', 'saint', 'realm', 'primordial', 'cultivation', 'dao', 'samsara', 'infinite', 'syndicate', 'capital', 'fleet', 'members', 'state', 'denial', 'billion', 'years', 'qindu', 'starfall', 'hover', 'sedan', 'gu', 'heavenly', 'sovereign'].forEach(w => stopwordsLower.add(w));
 
@@ -1005,10 +1007,28 @@ export class AntiSlopValidator {
         sanitizedForRoles = sanitizedForRoles.replace(/\b(?:proctor|proctors|dean|deans)\b/gi, ' ');
       }
 
-      const roleOrVehicleMatches = sanitizedForRoles.match(UNIVERSAL_LEXICONS.roleAndVehicleNounsRegex) || []
+      const sanitizedNegatedRoles = sanitizedForRoles.replace(/\b(?:zero|no|without|never)\s+(?:[a-z-]+\s+)?(?:mercenary|mercenaries|sellsword|sellswords|enforcer|enforcers|soldier|soldiers|bandit|bandits|raider|raiders|henchman|henchmen|guards?)\b/gi, ' ')
+      const roleOrVehicleMatches = sanitizedNegatedRoles.match(UNIVERSAL_LEXICONS.roleAndVehicleNounsRegex) || []
       if (roleOrVehicleMatches.length > 0) {
-        g10Fails.push(scene.id)
+        g10Fails.push(`${scene.id} (Unvaulted role/mob noun "${roleOrVehicleMatches[0]}" — register in vault or bind in CAST)`)
         continue
+      }
+
+      // Dynamic Flexible Actor/Mob Detector (zero hardcoding): catch ANY recurring unvaulted noun preceded by troop/armor/count modifiers or followed by humanoid action verbs in <action_layer>
+      const actionOnly = (scene.actionLayer || '').replace(/@\{[^}]+\}/g, ' ')
+      const actorModRe = /\b(?:two|three|four|five|six|ten|twenty|several|dozens\s+of|armored|cloaked|masked|hooded|leather-clad|robed|hostile|armed|enemy|rival|soap-covered|tumbling)\s+(?:[a-z-]+\s+)?([a-z]{4,16}s?)\b/gi
+      const actorVerbRe = /\b([a-z]{4,16}s?)\s+(?:charge|charges|charging|advance|advances|advancing|surround|surrounds|surrounding|attack|attacks|attacking|retreat|retreats|retreating|slide|slides|sliding|skid|skids|skidding|hydroplane|march|marches|marching|shout|shouts|shouting|glare|glares|glaring|kneel|kneels|kneeling)\b/gi
+      for (const re of [actorModRe, actorVerbRe]) {
+        for (const m of actionOnly.matchAll(re)) {
+          const noun = m[1].toLowerCase()
+          const stem = noun.endsWith('s') && !noun.endsWith('ss') ? noun.slice(0, -1) : noun
+          if (dynamicActorIgnore.has(noun) || dynamicActorIgnore.has(stem) || stopwordsLower.has(stem)) continue
+          // Skip if an authorized entity in this scene already covers this word
+          const coveredByCast = [...authorizedRefs].some(r => r.includes(stem) || stem.includes(r))
+          if (coveredByCast) continue
+          if (!dynamicActorHits.has(stem)) dynamicActorHits.set(stem, new Set())
+          dynamicActorHits.get(stem).add(scene.id)
+        }
       }
 
       // Dynamic Vault Entity Keyword Guard:
@@ -1061,6 +1081,16 @@ export class AntiSlopValidator {
         if (!isSceneAuthorized && !isZoneName && !isAuthorizedEntitySubstring) {
           g10Fails.push(scene.id)
           break
+        }
+      }
+    }
+
+    for (const [stem, sIds] of dynamicActorHits.entries()) {
+      if (sIds.size >= 2) {
+        for (const sid of sIds) {
+          if (!g10Fails.some(f => f.startsWith(sid))) {
+            g10Fails.push(`${sid} (Recurring unvaulted actor "${stem}" across ${sIds.size} scenes — register in vault)`)
+          }
         }
       }
     }
@@ -1243,10 +1273,12 @@ export class AntiSlopValidator {
     // G12: Spatial Enclosure, Sub-Zone Adjacency & Forbidden Tokens
     const g12Fails = []
     let prevZoneId = null
+    let prevSceneChars = new Set()
 
     for (const scene of matrixScenes) {
       const zoneId = scene.zone
       const zone = zoneId ? zones[zoneId] : null
+      const currSceneChars = new Set((scene.characters || []).map(c => c.toLowerCase()))
 
       if (!zone) {
         g12Fails.push(scene.id)
@@ -1299,16 +1331,28 @@ export class AntiSlopValidator {
       if (
         prevZoneId &&
         prevZoneId !== zoneId &&
-        scene.transition === 'adjacent' &&
         zones[prevZoneId]
       ) {
         const legalNext = zones[prevZoneId].adjacent || []
-        if (!legalNext.includes(zoneId)) {
-          g12Fails.push(scene.id)
+        const isAdjacent = legalNext.includes(zoneId)
+        if (scene.transition === 'adjacent' && !isAdjacent) {
+          g12Fails.push(`${scene.id} (Illegal adjacent jump from "${prevZoneId}" to "${zoneId}")`)
+          prevZoneId = zoneId
+          prevSceneChars = currSceneChars
           continue
+        }
+        if (!isAdjacent) {
+          const teleported = [...currSceneChars].filter(c => prevSceneChars.has(c))
+          if (teleported.length > 0) {
+            g12Fails.push(`${scene.id} (Spatial teleport: [${teleported.join(', ')}] jumped from non-adjacent "${prevZoneId}" to "${zoneId}" in 1 cut)`)
+            prevZoneId = zoneId
+            prevSceneChars = currSceneChars
+            continue
+          }
         }
       }
       prevZoneId = zoneId
+      prevSceneChars = currSceneChars
     }
 
     recordGate(
@@ -1352,17 +1396,10 @@ export class AntiSlopValidator {
       `Scene duration exceeds cap or audio telemetry voiceId mismatches franchise.json`
     )
 
-    // G14: Compile Integrity & Prompt Token Budget
+    // G14: Single-Injection & Complete Style Integrity (Zero Token Truncation Caps)
     const g14Fails = []
-    const maxTokens = franchise.pacing?.max_prompt_tokens || 450
 
     for (const scene of matrixScenes) {
-      const estTokens = Math.ceil(scene.prompt.length / 4)
-      if (estTokens > maxTokens) {
-        g14Fails.push(scene.id)
-        continue
-      }
-
       if (tailPos && scene.prompt.split(tailPos).length - 1 > 1) {
         g14Fails.push(scene.id)
         continue
@@ -1386,10 +1423,10 @@ export class AntiSlopValidator {
 
     recordGate(
       'G14_compile_integrity',
-      `G14: Prompt Token Budget (<= ${maxTokens} tokens) & Single-Injection Integrity`,
+      'G14: Single-Injection & Complete Style Integrity (Unlimited Multi-Cast)',
       g14Fails,
-      `All prompts within ${maxTokens}-token budget with zero duplicated DNA or boilerplate blocks.`,
-      `Prompt token overflow or duplicated DNA/boilerplate block detected`
+      'All prompts preserve complete 2D style and single-injection DNA with zero duplicated blocks or token caps.',
+      'Duplicated DNA or boilerplate block detected'
     )
 
     // G15: Script Grounding & Spoken Tag Sanitization

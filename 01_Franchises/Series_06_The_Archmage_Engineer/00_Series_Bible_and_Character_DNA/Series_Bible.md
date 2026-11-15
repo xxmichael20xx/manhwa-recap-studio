@@ -97,9 +97,9 @@ In this lush medieval magic world, humanity was blessed with elemental affinitie
 - **Episode 03 (`EP03_The_Slippery_Stone_Trap_and_The_Mercenary_Mage`):**
   - Oakhaven's greedy tax collector and his hired Fire Mage demand double harvest tribute and try to seize the family's new quartz glass windows; Ace, `@{LUMINA}`, and his family use gravity water sluices, soap-slicked stone channels, and wind-pipes to send them sliding down the mountain without exposing Ace's secret.
 - **Episode 04 (`EP04_The_Frontier_Baron_Siege_and_High_Pressure_Aqueducts`):**
-  - Scanning `@{Sir Roland Vance}`'s Wind-Aura sword techniques to unlock compressed wind-water pressure nozzles and light-mirror arrays, defending the valley against Frontier Baron Vane's twenty soldiers with zero bloodshed.
+  - Escalated siege: `@{Baron Vane}` arrives with `@{Baron Vane Soldiers}` and guild mages, shattering part of the outer white-stone aqueduct. Forced into real combat, `@{Ace Miller}` scans `@{Sir Roland Vance}`'s Wind-Aura sword techniques to unleash Light-mirror blinding arrays and compressed wind-water lances alongside Roland—routing the Baron's forces just as a fever-stricken `@{Frontier Runner}` collapses at the valley gate with news of the Black River Sickness spreading in Oakhaven.
 - **Episode 05 (`EP05_The_Imperial_Sun_Crest_and_The_Crates_of_Sanctuary` — Arc I Finale):**
-  - Seraphina reveals the Imperial Sun Crest to strip Baron Vane of his title, brings crates of Miller lavender soap and charcoal water filters back to `@{Empress Evelyn}` and `@{Emperor Aldrich}`, and sparks `@{Grand Councilor Malakor}`'s investigation.
+  - `@{Princess Seraphina}` reveals the `@{Imperial Sun Crest}` to strip `@{Baron Vane}` of his frontier title, dispatches emergency crates of Miller lavender soap and charcoal water filters to Oakhaven and back to `@{Empress Evelyn}` and `@{Emperor Aldrich}` in the Solaris Imperial Palace, and sparks `@{Grand Councilor Malakor}`'s investigation—launching Arc II's Empire-wide crisis.
 
 ### Arc II: The Royal Soap Craze & The Frontier Sickness (Episodes 6–10)
 - **Episodes 06–10:** Introducing clean water boiling stones, clay sewer drainage, and wash-houses to cure the frontier river sickness while outsmarting `@{Grand Councilor Malakor}`'s guild inspectors.

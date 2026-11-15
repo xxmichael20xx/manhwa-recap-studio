@@ -1,5 +1,5 @@
 {
-  "rawText": "Active Google Flow Native @{Character Name} Entities for Series 06: The Archmage Engineer (13 Models Locked):\n\n01. @{Ace Miller} (Protagonist, Age 10)\n02. @{LUMINA} (Sentient AI Companion UI Panel)\n03. @{Garrett Miller} (Father — Earth Affinity)\n04. @{Clara Miller} (Mother — Water/Nature Affinity)\n05. @{Maya Miller} (Older Sister — Wind Affinity)\n06. @{Princess Seraphina} (Runaway Royal Princess)\n07. @{Sir Roland Vance} (Royal Knight Escort)\n08. @{Emperor Aldrich} (Emperor of Solaris)\n09. @{Empress Evelyn} (Empress of Solaris)\n10. @{Grand Councilor Malakor} (Imperial Mage Councilor)\n11. @{Goddess Celestia} (Goddess of Nature & Purity)\n12. @{Old Miller Farm} (Location — Farm Before Upgrade)\n13. @{Miller Sanctuary Farm} (Location — Farm After Upgrade)",
+  "rawText": "Active Google Flow Native @{Character Name} Entities for Series 06: The Archmage Engineer (26 Models Locked):\n\n01. @{Ace Miller}\n02. @{LUMINA}\n03. @{Garrett Miller}\n04. @{Clara Miller}\n05. @{Maya Miller}\n06. @{Princess Seraphina}\n07. @{Sir Roland Vance}\n08. @{Emperor Aldrich}\n09. @{Empress Evelyn}\n10. @{Grand Councilor Malakor}\n11. @{Goddess Celestia}\n12. @{Old Miller Farm}\n13. @{Miller Sanctuary Farm}\n14. @{Cale Dawson}\n15. @{Simon Vane}\n16. @{Guild Fire Mage}\n17. @{Scrying Raven}\n18. @{Starlight the Mare}\n19. @{Oakhaven Tax Guild Chamber}\n20. @{Emerald Valley Forest Trail}\n21. @{Old Miller Cottage Interior}\n22. @{Miller Sanctuary Bath Courtyard}\n23. @{Baron Vane}\n24. @{Baron Vane Soldiers}\n25. @{Frontier Runner}\n26. @{Imperial Sun Crest}",
   "entities": {
     "Ace Miller": "@{Ace Miller}",
     "LUMINA": "@{LUMINA}",
@@ -13,6 +13,20 @@
     "Grand Councilor Malakor": "@{Grand Councilor Malakor}",
     "Goddess Celestia": "@{Goddess Celestia}",
     "Old Miller Farm": "@{Old Miller Farm}",
-    "Miller Sanctuary Farm": "@{Miller Sanctuary Farm}"
+    "Miller Sanctuary Farm": "@{Miller Sanctuary Farm}",
+    "Cale Dawson": "@{Cale Dawson}",
+    "Simon Vane": "@{Simon Vane}",
+    "Guild Fire Mage": "@{Guild Fire Mage}",
+    "Scrying Raven": "@{Scrying Raven}",
+    "Starlight the Mare": "@{Starlight the Mare}",
+    "Oakhaven Tax Guild Chamber": "@{Oakhaven Tax Guild Chamber}",
+    "Emerald Valley Forest Trail": "@{Emerald Valley Forest Trail}",
+    "Old Miller Cottage Interior": "@{Old Miller Cottage Interior}",
+    "Miller Sanctuary Bath Courtyard": "@{Miller Sanctuary Bath Courtyard}",
+    "Baron Vane": "@{Baron Vane}",
+    "Baron Vane Soldiers": "@{Baron Vane Soldiers}",
+    "Frontier Runner": "@{Frontier Runner}",
+    "Imperial Sun Crest": "@{Imperial Sun Crest}",
+    "Solaris Imperial Palace": "@{Solaris Imperial Palace}"
   }
 }

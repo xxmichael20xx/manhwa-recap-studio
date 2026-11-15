@@ -9,7 +9,7 @@
     ],
     "status": "approved",
     "age_class": "minor",
-    "dna": "10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, relaxed youthful posture",
+    "dna": "young noble manhwa protagonist, slender aristocratic build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, relaxed youthful posture",
     "default_outfit": "default",
     "outfits": {
       "default": "Neat cream linen tunic under a forest-green craftsman vest, rolled sleeves, leather utility belt with magnifying lens and notebook pouch, brown trousers"
@@ -27,6 +27,7 @@
   "lumina": {
     "id": "lumina",
     "kind": "item",
+    "placement": "stationary",
     "token": "@{LUMINA}",
     "aliases": [
       "LUMINA"
@@ -61,7 +62,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Short tousled brown hair with a kind rugged jawline and light stubble, Warm amber-brown eyes with a proud, supportive smile, Broad-shouldered, sturdy muscular farmer build with strong calloused hands",
+    "dna": "36-year-old sturdy warm-hearted farmer father from a fallen artisan-crafter house, short tousled brown hair with a kind rugged jawline and light stubble, warm amber-brown eyes with a proud supportive smile, broad-shouldered sturdy muscular farmer build with strong calloused hands, wearing rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps, durable dark trousers, faint warm amber earth-magic glow on hands",
     "default_outfit": "default",
     "outfits": {
       "default": "Rugged olive-green cotton work shirt with rolled sleeves, dark-brown leather apron, durable dark trousers"
@@ -86,7 +87,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Long warm honey-brown hair braided loosely over one shoulder, Bright emerald-green eyes with a loving, clever smile, Graceful, warm maternal posture",
+    "dna": "34-year-old gentle sharp-minded mother from an herbal-artisan lineage, long warm honey-brown hair braided loosely over one shoulder, bright emerald-green eyes with a loving clever smile, graceful warm maternal posture, wearing practical yet graceful sage-green and cream medieval country dress with a clean white linen apron, soft blue water and green nature magic droplets near hands",
     "default_outfit": "default",
     "outfits": {
       "default": "Practical yet graceful sage-green and cream medieval country dress with a clean white linen apron"
@@ -111,7 +112,7 @@
     ],
     "status": "approved",
     "age_class": "minor",
-    "dna": "Shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, Bright expressive amber eyes with a lively big-sister grin, Active, agile youthful sister build",
+    "dna": "Cheerful energetic youthful older sister, shoulder-length wavy chestnut-brown hair tied with a sky-blue ribbon, bright expressive amber eyes with a lively big-sister grin, active agile youthful sister build, wearing breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots, soft mint-green wind magic breezes swirling around fingertips",
     "default_outfit": "default",
     "outfits": {
       "default": "Breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots"
@@ -136,7 +137,7 @@
     ],
     "status": "approved",
     "age_class": "minor",
-    "dna": "Long flowing golden-blonde hair with a subtle braided crown, Sparkling sapphire-blue eyes full of curiosity and wonder, Graceful 11-year-old royal build",
+    "dna": "Adventurous young royal princess, long flowing golden-blonde hair with a subtle braided crown, sparkling sapphire-blue eyes full of curiosity and wonder, slender aristocratic royal posture, wearing elegant royal ivory-and-sky-blue travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles",
     "default_outfit": "default",
     "outfits": {
       "default": "Elegant royal ivory-and-sky-blue travel dress with gold embroidery and hooded travel cloak"
@@ -161,7 +162,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Short neatly combed silver-blonde hair, Sharp blue-grey eyes with an honourable, serious expression, Tall, athletic royal knight build",
+    "dna": "32-year-old loyal protective royal knight escort, short neatly combed silver-blonde hair, sharp blue-grey eyes with an honourable serious expression, tall athletic royal knight build, wearing polished silver-and-blue royal plate armour over a navy tunic with a white royal cape, hand resting on sheathed silver knight longsword at hip",
     "default_outfit": "default",
     "outfits": {
       "default": "Polished silver-and-blue royal plate armour over a navy tunic with a white royal cape, sheathed silver longsword at hip"
@@ -211,7 +212,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Flowing platinum-gold hair styled with pearl hairpins and a delicate tiara, Intelligent sapphire-blue eyes with a poised warm expression, Elegant, regal posture",
+    "dna": "40-year-old refined graceful sharp-witted Empress, flowing platinum-gold hair styled with pearl hairpins and a delicate tiara, intelligent sapphire-blue eyes with a poised warm expression, elegant regal posture, wearing royal pearl-white and azure-blue silk gown with gold filigree trim",
     "default_outfit": "default",
     "outfits": {
       "default": "Royal pearl-white and azure-blue silk gown with gold filigree trim"
@@ -261,7 +262,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Long flowing luminous silver-white hair with soft emerald-green tips, Compassionate glowing golden-green eyes, Radiant ethereal divine figure",
+    "dna": "Gentle radiant Goddess of Nature and Purity, long flowing luminous silver-white hair with soft emerald-green tips, compassionate glowing golden-green eyes with a warm loving smile, radiant ethereal divine figure, wearing flowing white-and-emerald divine silk robes adorned with living golden leaf motifs, soft radiant light and nature butterflies",
     "default_outfit": "default",
     "outfits": {
       "default": "Flowing white-and-emerald divine silk robes adorned with living golden leaf motifs"
@@ -285,7 +286,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "The rustic, muddy wooden cottage and hand-dug dirt field in the Emerald Alpine Valley before Ace's Age-10 Awakening.",
+    "dna": "Humble rustic Old Miller Farm before modernisation, set in a sunlit emerald alpine valley with distant snow-kissed peaks, featuring a weathered wooden cottage with thatched roof, muddy dirt yard, simple hand-dug water ditch, and crooked wooden fence, zero stone aqueducts, zero wind turbine",
     "lifecycle": [
       "equipped",
       "sheathed",
@@ -392,6 +393,7 @@
   },
   "guild_fire_mage": {
     "id": "guild_fire_mage",
+    "name": "Fire-Mage",
     "kind": "character",
     "token": "@{Guild Fire Mage}",
     "aliases": [
@@ -418,6 +420,7 @@
   "scrying_raven": {
     "id": "scrying_raven",
     "kind": "item",
+    "placement": "stationary",
     "token": "@{Scrying Raven}",
     "aliases": [
       "Scrying Raven",
@@ -444,6 +447,7 @@
   "starlight_mare": {
     "id": "starlight_mare",
     "kind": "item",
+    "placement": "stationary",
     "token": "@{Starlight the Mare}",
     "aliases": [
       "Starlight",
@@ -537,6 +541,115 @@
     "episodes": [
       "EP02",
       "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
+    ]
+  },
+  "baron_vane": {
+    "id": "baron_vane",
+    "name": "Baron Vane",
+    "token": "@{Baron Vane}",
+    "kind": "character",
+    "isAnimate": true,
+    "status": "approved",
+    "role": "Antagonist — Frontier Baron & Commander",
+    "age": 45,
+    "aliases": [
+      "Baron Vane",
+      "Frontier Baron Vane"
+    ],
+    "episodes": [
+      "EP04",
+      "EP05"
+    ],
+    "dna": "45-year-old arrogant medieval frontier baron and military commander, sharp angular jawline, swept-back dark iron-grey hair, cold sneering amber eyes, muscular tall build, wearing ornate black-and-crimson steel breastplate over a dark burgundy velvet doublet, fur-trimmed charcoal shoulder cape, steel gauntlets, heavy gold-pommeled broadsword sheathed at hip",
+    "outfits": {
+      "default": "Ornate black-and-crimson steel breastplate over dark burgundy velvet doublet, fur-trimmed charcoal shoulder cape, steel gauntlets, sheathed broadsword at hip"
+    },
+    "reference_plate": "23_Antagonist_Baron_Vane.jpg"
+  },
+  "baron_vane_soldiers": {
+    "id": "baron_vane_soldiers",
+    "name": "Baron Vane Soldiers",
+    "token": "@{Baron Vane Soldiers}",
+    "kind": "character",
+    "isAnimate": true,
+    "status": "approved",
+    "role": "Antagonist Squad — Frontier Garrison Soldiers",
+    "aliases": [
+      "Baron Vane Soldiers",
+      "garrison soldiers",
+      "soldiers",
+      "halberdiers",
+      "soldier"
+    ],
+    "episodes": [
+      "EP04",
+      "EP05"
+    ],
+    "dna": "Disciplined medieval frontier garrison soldiers in matching uniforms, polished steel open-face sallet helmets, dark slate-grey steel breastplates over burgundy quilted gambesons, dark leather belts, matching steel greaves, carrying standard iron-tipped halberds",
+    "outfits": {
+      "default": "Polished steel open-face sallet helmets, dark slate-grey steel breastplates over burgundy quilted gambesons, dark leather belts, matching steel greaves"
+    },
+    "reference_plate": "24_Mob_Baron_Vane_Soldiers.jpg"
+  },
+  "frontier_runner": {
+    "id": "frontier_runner",
+    "name": "Frontier Runner",
+    "token": "@{Frontier Runner}",
+    "kind": "character",
+    "isAnimate": true,
+    "status": "approved",
+    "role": "Messenger — Sick Oakhaven Courier",
+    "age": 24,
+    "aliases": [
+      "Frontier Runner",
+      "sick courier",
+      "courier",
+      "runner"
+    ],
+    "episodes": [
+      "EP04",
+      "EP05"
+    ],
+    "dna": "24-year-old exhausted medieval town courier, messy sweat-damp dark-brown hair, pale fever-flushed face with dark under-eye shadows, lean wiry build, wearing mud-splattered tan linen courier tunic, worn brown leather satchel strap across chest, scuffed leather boots",
+    "outfits": {
+      "default": "Mud-splattered tan linen courier tunic, worn brown leather satchel strap across chest, scuffed leather boots"
+    },
+    "reference_plate": "25_Messenger_Frontier_Runner.jpg"
+  },
+  "imperial_sun_crest": {
+    "id": "imperial_sun_crest",
+    "name": "Imperial Sun Crest",
+    "token": "@{Imperial Sun Crest}",
+    "kind": "item",
+    "isAnimate": false,
+    "status": "approved",
+    "role": "Royal Artifact — Imperial Authority Medallion",
+    "aliases": [
+      "Imperial Sun Crest",
+      "Sun Crest",
+      "imperial medallion"
+    ],
+    "episodes": [
+      "EP05"
+    ],
+    "dna": "Ornate circular royal medallion forged from polished solid gold and inlaid with a radiant crimson ruby sunburst emblem at its center, suspended from a braided crimson-and-gold silk cord",
+    "reference_plate": "26_Item_Imperial_Sun_Crest.jpg"
+  },
+  "solaris_imperial_palace": {
+    "id": "solaris_imperial_palace",
+    "kind": "location",
+    "token": "@{Solaris Imperial Palace}",
+    "aliases": [
+      "Solaris Imperial Palace",
+      "solaris_imperial_palace"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Grand crimson-and-gold throne hall of the Imperial Palace with tall marble columns, stained-glass royal crests, and warm fire-mana braziers",
+    "plate": "character_vault/00_World_Setting_Canonical.jpg",
+    "episodes": [
+      "EP01",
+      "EP05"
     ]
   }
 }

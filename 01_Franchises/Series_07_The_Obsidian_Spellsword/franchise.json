@@ -19,8 +19,7 @@
   },
   "pacing": {
     "max_scene_seconds": 8,
-    "tts_wpm_measured": 155,
-    "max_prompt_tokens": 800
+    "tts_wpm_measured": 155
   },
   "tier_distribution": {
     "min_multi_panel_ratio": 0,

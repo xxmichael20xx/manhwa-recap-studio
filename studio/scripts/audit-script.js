@@ -356,6 +356,61 @@ clauses.forEach((cl, idx) => {
 });
 if (pacingIssues.length > 0) issues.pacingWarnings = pacingIssues;
 
+// Check Batch 01 (IMG_001..IMG_024) for excessive consecutive solo exposition loops (>= 6 solo scenes)
+let b1SoloRun = 0
+let b1SoloStart = null
+for (let idx = 0; idx < clauses.length; idx++) {
+  const cl = clauses[idx]
+  const sNum = parseInt(cl.id.replace(/\D/g, ''), 10)
+  if (sNum > 24) break
+  const m = cl.rawText.match(/<!--[\s\S]*?STAGE:\s*([a-zA-Z_]+)[\s\S]*?-->/i)
+  const st = m ? m[1].toLowerCase() : 'unknown'
+  if (st === 'solo') {
+    if (b1SoloRun === 0) b1SoloStart = cl.id
+    b1SoloRun++
+    if (b1SoloRun === 6) {
+      issues.continuityLeaks.push({
+        id: cl.id,
+        zone: 'Batch 01',
+        message: `Slow Batch 01 solo exposition loop (${b1SoloStart}..${cl.id}, >=6 consecutive solo scenes without interaction or establishing beat).`
+      })
+    }
+  } else {
+    b1SoloRun = 0
+  }
+}
+
+// Replay state_events.jsonl held_weapon timeline (prevents phantom carried weapons post-dissolve/sheathe)
+const ledgerPath = path.join(epPath, 'state_events.jsonl')
+const ledgerHeldTimeline = []
+if (fs.existsSync(ledgerPath)) {
+  const lines = fs.readFileSync(ledgerPath, 'utf-8').split(/\r?\n/).filter(Boolean)
+  for (const line of lines) {
+    try {
+      const ev = JSON.parse(line)
+      if (ev && typeof ev.s === 'number' && ev.e && ev.set && Object.prototype.hasOwnProperty.call(ev.set, 'held_weapon')) {
+        ledgerHeldTimeline.push({ s: ev.s, entityId: ev.e, weapon: ev.set.held_weapon })
+      }
+    } catch (_) {}
+  }
+}
+const getActiveLedgerWeapons = sceneNum => {
+  if (ledgerHeldTimeline.length === 0) return null
+  const active = new Map()
+  const hadWeaponBefore = new Set()
+  for (const ev of ledgerHeldTimeline) {
+    if (ev.s <= sceneNum) {
+      if (ev.weapon && ev.weapon !== 'none') {
+        active.set(ev.entityId, ev.weapon)
+        hadWeaponBefore.add(ev.weapon)
+      } else {
+        active.delete(ev.entityId)
+      }
+    }
+  }
+  return { activeValues: new Set(active.values()), hadWeaponBefore }
+}
+
 const missingHeaders = []
 const invalidZones = []
 const phantomDialogueCasts = []
@@ -520,6 +575,23 @@ if (strictWorldState) {
         }
       }
     }
+
+    // Check PROPS vs state_events.jsonl held_weapon (block dissolved/sheathed weapon resurrection)
+    const sceneNum = parseInt(cl.id.replace(/\D/g, ''), 10)
+    const ledgerSnapshot = getActiveLedgerWeapons(sceneNum)
+    if (ledgerSnapshot && ledgerSnapshot.hadWeaponBefore.size > 0) {
+      const propsList = m[5].split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean)
+      for (const pName of propsList) {
+        const pSlug = pName.toLowerCase().replace(/[^a-z0-9]+/g, '_')
+        if (ledgerSnapshot.hadWeaponBefore.has(pSlug) && !ledgerSnapshot.activeValues.has(pSlug)) {
+          issues.continuityLeaks.push({
+            id: cl.id,
+            zone: zId,
+            message: `Weapon prop "@{${pName}}" listed in PROPS after state_events.jsonl set held_weapon="none". Remove from PROPS: [].`
+          })
+        }
+      }
+    }
   })
 }
 
@@ -571,12 +643,22 @@ if (isHeal) {
 
   // Sticky prop state: propToken -> { holder: actorToken }
   const carriedHandheldProps = new Map()
-  const PROP_RELEASE_VERB_REGEX = /\b(?:set\s+down|put\s+down|placed\s+(?:it\s+)?on|dropped|stowed|sheathed|returned\s+to\s+(?:its\s+|his\s+|her\s+)?scabbard|shattered|splintered\s+into|pulverized|discarded|handed\s+over|tucked\s+away|left\s+behind)\b/i
+  const PROP_RELEASE_VERB_REGEX = /\b(?:set\s+down|put\s+down|placed\s+(?:it\s+)?on|dropped|stowed|sheathed|dissolved|vanished|dismissed|dispelled|returned\s+to\s+(?:its\s+|his\s+|her\s+)?scabbard|shattered|splintered\s+into|pulverized|discarded|handed\s+over|tucked\s+away|left\s+behind)\b/i
+
+  const epChars = allChars.filter(c => {
+    if (!Array.isArray(c.episodes) || c.episodes.length === 0) return true
+    return c.episodes.some(ep => episodeId.toUpperCase().startsWith(String(ep).toUpperCase()))
+  })
 
   let healedScript = scriptText
 
   for (const cl of clauses) {
     const existingHeaderMatch = cl.rawText.match(headerRegex)
+    const sceneNum = parseInt(cl.id.replace(/\D/g, ''), 10)
+    const ledgerSnapshot = getActiveLedgerWeapons(sceneNum)
+    const existingCastList = existingHeaderMatch
+      ? existingHeaderMatch[4].split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean).map(c => `@{${c}}`)
+      : []
     const existingPropsList = existingHeaderMatch
       ? existingHeaderMatch[5].split(',').map(s => s.trim().replace(/^@\{?|\}?$/g, '')).filter(Boolean).map(p => `@{${p}}`)
       : []
@@ -603,29 +685,29 @@ if (isHeal) {
       }
     }
 
-    // Cast inference
+    // Cast inference: preserve explicit valid header CAST if already authored, else infer from episode-scoped entities
     const detectedCast = new Set()
-    for (const c of allChars) {
+    for (const c of epChars) {
       const cName = c.name || c.token?.replace(/^@\{|\}$/g, '')
       if (!cName) continue
-      const reg = new RegExp(`\\b${cName}\\b`, 'i')
+      const reg = new RegExp(`\\b${cName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
       if (reg.test(narrativeOutsideQuotes)) {
         detectedCast.add(c.token || `@{${cName}}`)
       }
       for (const al of c.aliases || []) {
-        if (new RegExp(`\\b${al}\\b`, 'i').test(narrativeOutsideQuotes)) {
+        if (new RegExp(`\\b${String(al).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(narrativeOutsideQuotes)) {
           detectedCast.add(c.token || `@{${cName}}`)
         }
       }
       for (const kt of c.kinship_terms || []) {
-        if (new RegExp(`\\b(?:his|her|their|my)\\s+${kt}\\b`, 'i').test(narrativeOutsideQuotes)) {
+        if (new RegExp(`\\b(?:his|her|their|my)\\s+${String(kt).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(narrativeOutsideQuotes)) {
           detectedCast.add(c.token || `@{${cName}}`)
         }
       }
     }
 
-    // V2.1: Clear sticky state! If cast is empty, do NOT carry over activeCast unless there's a strong pronoun continuation
-    let finalCast = [...detectedCast]
+    // V2.1: Preserve existing authored CAST if present; only synthesize when missing
+    let finalCast = existingCastList.length > 0 ? [...existingCastList] : [...detectedCast]
     if (finalCast.length === 0) {
       if (/\b(?:he|she|they|his|her|their|him|them)\b/i.test(narrativeOutsideQuotes) && activeCast.length > 0) {
         finalCast = [...activeCast]
@@ -693,7 +775,11 @@ if (isHeal) {
       }
     }
 
-    const finalProps = [...scenePropsSet]
+    const finalProps = [...scenePropsSet].filter(pTok => {
+      if (!ledgerSnapshot || ledgerSnapshot.hadWeaponBefore.size === 0) return true
+      const pSlug = pTok.replace(/^@\{?|\}?$/g, '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '_')
+      return !(ledgerSnapshot.hadWeaponBefore.has(pSlug) && !ledgerSnapshot.activeValues.has(pSlug))
+    })
 
     // Stage inference
     let stage = 'interaction'
@@ -703,8 +789,9 @@ if (isHeal) {
 
     // Plan talk
     const planTalk = /(?:tomorrow we|later it's going to give|next month we|future plans|blueprint|give our house real glass windows)/i.test(nLower)
+    const techStageToUse = (existingHeaderMatch && existingHeaderMatch[6]) ? existingHeaderMatch[6].trim() : defaultTechStage
 
-    const headerStr = `<!-- ZONE: ${activeZone} | STAGE: ${stage} | ACTOR: ${actor} | CAST: [${finalCast.join(', ')}]| PROPS: [${finalProps.join(', ')}]| TECH_STAGE: ${defaultTechStage}| PLAN_TALK: ${planTalk} -->`
+    const headerStr = `<!-- ZONE: ${activeZone} | STAGE: ${stage} | ACTOR: ${actor} | CAST: [${finalCast.join(', ')}]| PROPS: [${finalProps.join(', ')}]| TECH_STAGE: ${techStageToUse}| PLAN_TALK: ${planTalk} -->`
 
     // Inject into script text safely without duplication
     const targetTag = `[${cl.id}]`

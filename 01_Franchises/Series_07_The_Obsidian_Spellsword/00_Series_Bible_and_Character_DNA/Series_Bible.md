@@ -1,8 +1,8 @@
 # 🎬 Series Bible: The Obsidian Spellsword
 
-> **[PRE-EPISODE REMEDIATION REQUIRED — DO NOT SKIP BEFORE CREATING `EP04`]**  
-> A vault and matrix audit (`2026-11-11`) detected that `character_vault/flow_entities.json` is missing on disk (`20` entities unmapped), `00_Prologue_Aiden_Drake.jpg` is duplicated across `[aiden_drake, aiden_drake_past_life]` (`audit-vault.js` Exit Code `1`), and `EP01–EP03` exhibit un-tokenized `<action_layer>` mentions, braced `<item_refs>`, `G07`/`G10`/`G31`/`G35`/`G38`/`G39` defects.  
-> **MANDATORY FIRST STEP:** Read and complete [`PRE_NEXT_EPISODE_FIX_NOTES.md`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/01_Franchises/Series_07_The_Obsidian_Spellsword/00_Series_Bible_and_Character_DNA/PRE_NEXT_EPISODE_FIX_NOTES.md) and achieve Exit Code `0` on `node studio/scripts/audit-vault.js Series_07_The_Obsidian_Spellsword` before starting `EP04`.
+> **[PRE-EPISODE VAULT GATES RESOLVED — `EP04`+ READY FOR V2.0 PIPELINE]**  
+> `character_vault/flow_entities.json` is now populated (`19` pure-name vaulted entities) and the duplicate `aiden_drake` / `aiden_drake_past_life` binding on `00_Prologue_Aiden_Drake.jpg` has been consolidated into canonical `aiden_drake` (`audit-vault.js` Exit Code `0`).  
+> *Note:* Historical `EP01–EP03` prompt-matrix defects documented in [`PRE_NEXT_EPISODE_FIX_NOTES.md`](file:///C:/Users/MIchaelangelo/Documents/My%20Brand/02_Ventures%20&%20Digital%20Products/Manhwa%20Recap%20Studio/01_Franchises/Series_07_The_Obsidian_Spellsword/00_Series_Bible_and_Character_DNA/PRE_NEXT_EPISODE_FIX_NOTES.md) (`<action_layer>` tokenization, braced `<item_refs>`, `G07`/`G10`/`G31`/`G35`/`G38`/`G39`) remain optional if not recompiling Act I, but **must not** carry into `EP04`+ (enforce strict V2.0 pipeline + 100/100 across all 43 gates).
 
 > **Series ID:** `Series_07_The_Obsidian_Spellsword`  
 > **Canonical Title:** *The Obsidian Spellsword: Reborn to Sever the Gods*  
@@ -89,6 +89,33 @@ flowchart TD
   *The Intrigue:* Inquisitor Malakor arrives from the Church of the Radiant Dawn to inspect the ducal heirs.  
   *The Conflict:* Malakor attempts to place a covert "Divine Geas" on Julian under the guise of a baptismal blessing. Julian's silver eyes narrow; he snips the divine thread, causing the sacred chalice to shatter in Malakor's hands and igniting a silent war with the Church.
 
+### Act II: The Twin-Pinnacle Imperial Academy (EP04 – EP07)
+* **Minimalist Vault Scope (Zero New Props, Zero Dummies):**
+  * *Locations (2):* `Imperial Academy Grand Courtyard` (`imperial_academy_courtyard`), `Academy Dueling Amphitheater` (`academy_dueling_amphitheater`).
+  * *Characters (3):* `@{Julian Vaelgard (Academy Uniform)}`, `@{Dean Alistair Vance}` (5-Star Archmage & Academy Dean), `@{Lord Cassian Thorne}` (Church-aligned Gold-Rank / 3-Star noble rival).
+  * *Weapons:* Strictly `@{Vaelgard Silver Training Rapier}` (zero new persistent props).
+* **EP04: The Twin-Pinnacle Gates & The Unbroken Stance**  
+  *Arrival & Provocation:* Julian enters the Twin-Pinnacle Imperial Academy; Church-aligned rival Lord Cassian Thorne publicly mocks House Vaelgard in the Grand Courtyard.  
+  *Live Entrance Trial:* Dean Alistair Vance orders an immediate live Dual-Threshold Duel in the Amphitheater. Armed only with his silver rapier, Julian snips Cassian's 3-Star *Crimson Lance* mid-flight and defeats him in three clean exchanges.
+* **EP05: The Midnight Sabotage & The Frozen Star's Gaze**  
+  *Conspiracy:* Humiliated, Cassian's Church handlers covertly taint the Academy's formation wards to trigger a lethal mana backlash during the First-Year Assessment.  
+  *Intervention:* Julian's God-Severing Eye detects and severs the corrupted divine threads in real time, saving the cadets and catching a fleeting glimpse of Archmage Lyra watching from the upper spire.
+* **EP06: The Crowned Duel & The Thread-Eater Awakening**  
+  *Escalation:* In the Academy Ranking Finals, Cassian forces 4-Star dual-element output using illicit Church enhancement.  
+  *Climax:* Julian's eye evolves to **Gold Null (Thread-Eater)**, absorbing Cassian's severed 4-Star matrix into his own core to unleash a chantless *Obsidian Gale* and claim Rank 1.
+* **EP07: The Heresy Summons & The Frozen Spire**  
+  *Fallout:* Church envoys arrive at the Academy gates to arrest Julian for void heresy after witnessing Thread-Eater.  
+  *Act II Finale:* Dean Vance invokes Imperial Neutrality to block the Church and reveals Aiden Drake's hidden seal beneath the Frozen Spire, while Archmage Lyra steps from the shadows to kneel before her reborn master.
+
+---
+
+## ⚖️ Act II+ Pacing & Prop Minimization Law (`EP04`+)
+
+To eliminate Act I visual consistency drift and static training filler, **all episodes from `EP04` onward** MUST enforce these three hard production constraints:
+1. **Zero Practice Dummies & Zero Sparring-Arena Loops:** Strictly **ban** training dummies (`@{Enchanted Iron-Wood Practice Dummy}` or any practice targets/mannequins) and repetitive `@{Private Obsidian Sparring Arena}` recap/warm-up loops. Replace dummy demonstrations with **live duels, academy trials, and active political/combat confrontations**.
+2. **Prop & Weapon Minimization:** Restrict physical props and weapons strictly to essential signature items (`@{Obsidian Greatsword}`, `@{Vaelgard Silver Training Rapier}`, and `@{Principles of Mana Weaving}` when plot-active). **Avoid** minor props (`@{Wooden Practice Rod}`, `@{White Marble Meditation Bench}`, chalices, or miscellaneous scrolls) unless plot-critical across `>= 2` scenes, preventing generative reference drift and prop-flicker defects.
+3. **Dynamic Narrative Pacing (`~45–50` Words/Scene):** Target `~45–50` words per scene (`~25–30` minutes runtime per episode) driven by crisp dramatic escalation, tactical sword-and-spell choreography, and live stakes rather than solitary practice demos.
+
 ---
 
 ## 🎨 Studio & Google Flow Master Directives (SSOT)
@@ -123,7 +150,9 @@ flowchart TD
   "spatialEnclosures": {
     "vaelgard_palace_exterior": "Grand ancestral palace of House Vaelgard built from pristine white marble and silver granite, sapphire roofs, cascading water aqueducts, and a colossal obsidian sword saint statue.",
     "ancestral_vault_rotunda": "Soaring multi-tiered circular arcane library rotunda with five-story mahogany bookshelves, stained-glass dome window, and floating golden mana lanterns.",
-    "obsidian_sparring_arena": "Vast circular outdoor sparring colosseum paved with dark obsidian flagstones carved with glowing cyan runes, surrounded by white marble colonnades and purple wisteria vines."
+    "obsidian_sparring_arena": "Vast circular outdoor sparring colosseum paved with dark obsidian flagstones carved with glowing cyan runes, surrounded by white marble colonnades and purple wisteria vines.",
+    "imperial_academy_courtyard": "Soaring ivory-and-sapphire gothic academy plaza with twin obsidian-and-gold sword-and-magic triumphal archways, manicured emerald lawns, and clear cobalt daylight sky.",
+    "academy_dueling_amphitheater": "Sunken tiered white-marble dueling colosseum inscribed with glowing azure boundary runes, flanked by elevated noble viewing galleries under an open daylight sky."
   }
 }
 STUDIO_BIBLE_DIRECTIVES_END -->

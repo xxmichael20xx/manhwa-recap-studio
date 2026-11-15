@@ -24,8 +24,18 @@ When genius AI programmer Cale Dawson passes away of old age on Earth, the Godde
 Reborn as ten-year-old bookworm Ace Miller into a fallen family of Master Artisans four cities away from the Empire, Ace awakens his past-life memories alongside LUMINA ([LUMINA: Supp Cale! Miss me?]). Overcoming his three-day Awakening Fever, Ace and LUMINA unlock his Base Affinities through live family observation, honestly confess his memories to his loving parents Garrett and Clara, and unlock their grandfather's long-lost artisan blueprints. Step by step, the Miller family builds clean charcoal-filtered spring water, a gravity stone aqueduct, birch-ash alpine lavender soap, and an enclosed smoke-free heated bathhouse!
 
 ⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 1 Hour 42.8 Minutes (1:42:50)
-• Episode Bounds: 00:00 - 1:42:50
+• Full Runtime: 237.4 Minutes (3:57:22)
+• Episode Bounds: 00:00 - 3:57:22
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CHAPTER TIMESTAMPS:
+00:00 - Episode 01: The Awakening and The Scent of Sanctuary (1h 43m 00s)
+1:43:00 - Episode 02: The Quartz Glass Windows and The Royal Arrival (1h 11m 55s)
+2:54:55 - Episode 03: The Slippery Stone Trap and The Mercenary Mage (20m 26s)
+3:15:21 - Episode 04: The Frontier Baron Siege and High Pressure Aqueducts (20m 56s)
+3:36:17 - Episode 05: The Imperial Sun Crest and The Crates of Sanctuary (21m 05s)
+3:57:22 - Series Finale & Epilogue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:
 Which upgrade would you build first if you woke up on a medieval farm with LUMINA—clean gravity-fed tap water, fragrant lavender soap, or the smoke-free heated stone bathhouse? Let us know in the comments!

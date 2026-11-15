@@ -1,0 +1,118 @@
+{
+  "episodeId": "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-15T07:14:33.004Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "julian_vaelgard_academy": "clean signature standard attire",
+    "lord_cassian_thorne": "clean signature standard attire",
+    "dean_alistair_vance": "clean signature standard attire"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": null,
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "imperial_academy_courtyard": {
+      "canonical_name": "Imperial Academy Grand Courtyard",
+      "container": null,
+      "visual_form": "Soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes.",
+      "notes": "Locked across all episode scenes: Imperial Academy Grand Courtyard."
+    },
+    "academy_dueling_amphitheater": {
+      "canonical_name": "Academy Dueling Amphitheater",
+      "container": null,
+      "visual_form": "Sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky.",
+      "notes": "Locked across all episode scenes: Academy Dueling Amphitheater."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_074",
+      "to_scene": "IMG_078",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_083",
+      "to_scene": "IMG_090",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_100",
+      "to_scene": "IMG_101",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_104",
+      "to_scene": "IMG_107",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_111",
+      "to_scene": "IMG_122",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_124",
+      "to_scene": "IMG_126",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_129",
+      "to_scene": "IMG_144",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [
+      {
+        "entity_id": "lord_cassian_thorne",
+        "from_scene": 87,
+        "to_scene": 192,
+        "state": "tattered_cuff",
+        "dna_append": "torn tattered crimson right sleeve cuff slashed open at the wrist, frayed fabric hanging from forearm",
+        "strip_patterns": [
+          "silver-trimmed cuffs",
+          "pristine",
+          "flawless"
+        ]
+      }
+    ],
+    "posture_locks": [
+      {
+        "entity_id": "lord_cassian_thorne",
+        "from_scene": 138,
+        "to_scene": 151,
+        "state": "kneeling",
+        "dna_append": "kneeling directly on the ground floor",
+        "strip_patterns": [
+          "proud upright posture with raised chin",
+          "proud upright posture",
+          "standing tall",
+          "standing command",
+          "upright posture"
+        ],
+        "force_grounded_camera": true
+      }
+    ],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

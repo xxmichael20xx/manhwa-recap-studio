@@ -33,9 +33,21 @@ While arrogant nobles rely on stationary circle-chanting, Michael pioneers Mana-
 
 🔥 Series: The Fourth Magius: Rebirth of the Discarded Scion
 🎬 Episode: Episode 01: The Last Archmage and The Discarded Babe
-⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 48.0 Minutes (48:02)
-• Episode Bounds: 00:00 - 48:02
+⏱️ FULL COMPILATION RUNTIME & TIMELINE:
+• Full Runtime: 215.9 Minutes (3:35:54)
+• Episode Bounds: 00:00 - 3:35:54
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏱️ CHAPTER TIMESTAMPS:
+00:00 - Episode 01: The Last Archmage and The Discarded Babe (48m 02s)
+48:02 - Episode 02: The Painless Crafts and The Agony of Magic (38m 10s)
+1:26:12 - Episode 03: The First Breakthrough and The Mercenary Crucible (39m 18s)
+2:05:30 - Episode 04: The Road to the Capital and The Entrance Exam (24m 01s)
+2:29:31 - Episode 05: The Fragile Circles and The Knight Sparring (21m 45s)
+2:51:16 - Episode 06: The Tier 6 White Library Trial and The Glacial Domain (19m 34s)
+3:10:50 - Episode 07: The Ancient Labyrinth Tournament (25m 05s)
+3:35:54 - Series Finale & Epilogue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:
 If you were reborn with "zero mana conductivity" but retained all your past-life Tier 10 Archmage knowledge, would you rebuild your vessel in secret in the frontier like Michael, or take immediate revenge on the Montrey clan? Let me know in the comments below! 👇

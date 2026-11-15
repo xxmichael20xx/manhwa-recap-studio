@@ -1,0 +1,124 @@
+{
+  "episodeId": "EP03_The_Slippery_Stone_Trap_and_The_Mercenary_Mage",
+  "franchiseId": "Series_06_The_Archmage_Engineer",
+  "generatedAt": "2026-11-14T03:37:07.058Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "clara_miller": "practical yet graceful sage-green and cream medieval country dress with a clean white linen apron",
+    "ace_miller": "clean signature standard attire",
+    "maya_miller": "breezy sky-blue and white medieval country tunic with practical brown traveler trousers and leather boots",
+    "garrett_miller": "rugged olive-green cotton work shirt with rolled sleeves under a dark-brown leather craftsman apron with shoulder straps",
+    "princess_seraphina": "elegant royal ivory-and-sky-blue travel dress with subtle gold embroidery and hooded travel cloak",
+    "sir_roland_vance": "polished silver-and-blue royal plate armour over a navy tunic with a white royal cape",
+    "simon_vane": "an opulent fur-trimmed crimson merchant vest over an embroidered gold tunic with heavy brass rings on his fingers",
+    "guild_fire_mage": "high-collared red-and-gold Mage Guild robes"
+  },
+  "held_props": {
+    "lumina": {
+      "canonical_name": "LUMINA",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "scrying_raven": {
+      "canonical_name": "Scrying Raven",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_004",
+      "to_scene": "IMG_005",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_012",
+      "to_scene": "IMG_013",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_017",
+      "to_scene": "IMG_018",
+      "holder_id": "sir_roland_vance",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_034",
+      "to_scene": "IMG_036",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_040",
+      "to_scene": "IMG_041",
+      "holder_id": "clara_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_044",
+      "to_scene": "IMG_045",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_047",
+      "to_scene": "IMG_048",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_070",
+      "to_scene": "IMG_072",
+      "holder_id": "ace_miller",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_131",
+      "to_scene": "IMG_135",
+      "holder_id": "sir_roland_vance",
+      "prop_token": "@{LUMINA}"
+    },
+    {
+      "from_scene": "IMG_142",
+      "to_scene": "IMG_143",
+      "holder_id": "simon_vane",
+      "prop_token": "@{Scrying Raven}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "tech_tree": {
+    "enforce": false
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {
+    "miller_sanctuary_farm_exterior": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_144",
+        "desc": "Upgraded sanctuary farm at flat valley-floor ground level in a sunlit emerald alpine valley featuring a warm oak-and-white-stone farmhouse with clear quartz glass windows, white-stone water channels, natural grass yard, and purple lavender rows."
+      }
+    ],
+    "old_miller_cottage_interior": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_144",
+        "desc": "Warm timber-and-stone cottage interior with rough-hewn oak beams, stone hearth, oak dining table, and wide clear quartz glass windows."
+      }
+    ]
+  }
+}

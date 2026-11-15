@@ -23,11 +23,11 @@
       "appearance": {
         "hair": "Short tousled chestnut-brown hair falling naturally over forehead",
         "eyes": "Bright intelligent emerald-green eyes with a warm, humble, slightly playful nonchalant smile",
-        "physique": "Energetic 10-year-old boy build with relaxed, youthful posture",
+        "physique": "Slender aristocratic build with relaxed, youthful posture",
         "attire": "Neat modern-medieval tailored cream linen tunic under a light forest-green craftsman vest, rolled sleeves, brown leather utility belt with a small magnifying lens and leather notebook pouch, durable brown trousers",
         "weapons": "None; carries a leather blueprint notebook and channels all 8 elemental mana colours gently in his palm"
       },
-      "dna_prompt_anchor": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Ace Miller}, young noble manhwa protagonist, slender aristocratic build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape",
       "reference_plate": "01_Protagonist_Ace_Miller.jpg",
       "flowName": "Ace Miller",
       "episodes": [
@@ -37,7 +37,7 @@
         "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
       "hasPlate": true,
-      "dna": "@{Ace Miller}, 10-year-old male manhwa protagonist, energetic 10-year-old boy build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+      "dna": "@{Ace Miller}, young noble manhwa protagonist, slender aristocratic build, short tousled chestnut-brown hair falling naturally over forehead, bright intelligent emerald-green eyes, warm humble playful smile, wearing neat cream linen tunic under a light forest-green craftsman vest with rolled sleeves, leather utility belt with notebook pouch, brown trousers, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant luminous cel shading, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
     },
     {
       "id": "lumina",
@@ -182,10 +182,10 @@
       "appearance": {
         "hair": "Long flowing golden-blonde hair with a subtle braided crown",
         "eyes": "Sparkling sapphire-blue eyes full of curiosity and wonder",
-        "physique": "Graceful 11-year-old royal build",
+        "physique": "Graceful royal build",
         "attire": "Elegant royal ivory-and-sky-blue travel dress with subtle gold embroidery and a hooded travel cloak draped over shoulders"
       },
-      "dna_prompt_anchor": "@{Princess Seraphina}, 11-year-old adventurous royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
+      "dna_prompt_anchor": "@{Princess Seraphina}, adventurous young royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen",
       "reference_plate": "06_Royal_Princess_Seraphina.jpg",
       "flowName": "Princess Seraphina",
       "episodes": [
@@ -195,7 +195,7 @@
         "EP02_The_Quartz_Glass_Windows_and_The_Royal_Arrival"
       ],
       "hasPlate": true,
-      "dna": "@{Princess Seraphina}, 11-year-old adventurous royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
+      "dna": "@{Princess Seraphina}, adventurous young royal princess, long flowing golden-blonde hair with subtle braided crown, sparkling sapphire-blue eyes full of wonder, wearing elegant ivory-and-sky-blue royal travel dress with subtle gold embroidery and hooded travel cloak, soft golden light magic sparkles, bright Korean fantasy manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9, widescreen"
     },
     {
       "id": "sir_roland_vance",
@@ -619,6 +619,42 @@
       ],
       "hasPlate": true,
       "dna": "@{Oakhaven Tax Guild Chamber}, opulent dusty medieval tax guild office in Oakhaven with dark mahogany desks, gold-weighing brass scales, rolls of tax parchment, iron strongboxes, and a glowing magical scrying crystal, dark fantasy manhwa art style, sharp clean ink linework, dramatic ambient candle and crystal lighting, horizontal 16:9, widescreen, edge-to-edge full bleed landscape"
+    },
+    {
+      "id": "baron_vane",
+      "name": "Baron Vane",
+      "flowName": "Baron Vane",
+      "token": "@{Baron Vane}",
+      "reference_plate": "23_Antagonist_Baron_Vane.jpg",
+      "dna": "@{Baron Vane}, 45-year-old arrogant medieval frontier baron and military commander, sharp angular jawline, swept-back dark iron-grey hair, cold sneering amber eyes, muscular tall build, wearing ornate black-and-crimson steel breastplate over a dark burgundy velvet doublet, fur-trimmed charcoal shoulder cape, steel gauntlets, heavy gold-pommeled broadsword sheathed at hip, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9",
+      "episodes": [
+        "EP04",
+        "EP05"
+      ]
+    },
+    {
+      "id": "baron_vane_soldiers",
+      "name": "Baron Vane Soldiers",
+      "flowName": "Baron Vane Soldiers",
+      "token": "@{Baron Vane Soldiers}",
+      "reference_plate": "24_Mob_Baron_Vane_Soldiers.jpg",
+      "dna": "@{Baron Vane Soldiers}, disciplined medieval frontier garrison soldiers in matching uniforms, polished steel open-face sallet helmets, dark slate-grey steel breastplates over burgundy quilted gambesons, dark leather belts, matching steel greaves, carrying standard iron-tipped halberds, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9",
+      "episodes": [
+        "EP04",
+        "EP05"
+      ]
+    },
+    {
+      "id": "frontier_runner",
+      "name": "Frontier Runner",
+      "flowName": "Frontier Runner",
+      "token": "@{Frontier Runner}",
+      "reference_plate": "25_Messenger_Frontier_Runner.jpg",
+      "dna": "@{Frontier Runner}, 24-year-old exhausted medieval town courier, messy sweat-damp dark-brown hair, pale fever-flushed face with dark under-eye shadows, lean wiry build, wearing mud-splattered tan linen courier tunic, worn brown leather satchel strap across chest, scuffed leather boots, bright high-fantasy Korean manhwa art style, sharp clean ink linework, vibrant cel shading, horizontal 16:9",
+      "episodes": [
+        "EP04",
+        "EP05"
+      ]
     }
   ]
 }

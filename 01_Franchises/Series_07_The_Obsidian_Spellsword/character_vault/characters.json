@@ -238,6 +238,99 @@
       },
       "default_outfit": "default",
       "description": "The legendary soul-bound weapon of Aiden Drake, the First Sword Saint. Forged from primordial obsidian volcanic glass capable of severing mana threads, magic domains, and divine law. Following Aiden's fall at the Celestial Altar 1,000 years ago, the blade was recovered and enshrined in the deepest ancestral treasury vault of House Vaelgard, slumbering in dormant stasis until its true master Julian reclaims it."
+    },
+    {
+      "id": "julian_vaelgard_academy",
+      "name": "Julian Vaelgard (Academy Uniform)",
+      "token": "@{Julian Vaelgard (Academy Uniform)}",
+      "tier": 1,
+      "role": "Protagonist (Imperial Academy First-Year)",
+      "age": 15,
+      "age_class": "minor",
+      "appearance": {
+        "hair": "Sleek raven-black hair parted neatly with refined noble grace",
+        "eyes": "Piercing sharp silver eyes gleaming with ancient intellect",
+        "physique": "Young noble manhwa protagonist, slender aristocratic build with relaxed youthful posture",
+        "attire": "tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots",
+        "weapons": "Vaelgard Silver Training Rapier when drawn in duel",
+        "footwear": "Tall polished black knee-high riding boots"
+      },
+      "dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture",
+      "dna_prompt_anchor": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots",
+      "visual_dna": "young noble manhwa protagonist, slender aristocratic build, sleek raven-black hair parted neatly, piercing sharp silver eyes gleaming with ancient intellect, pale refined complexion, calm aristocratic expression, relaxed youthful posture, tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots",
+      "reference_plate": "01_Protagonist_Julian_Vaelgard_Academy.jpg",
+      "flowName": "Julian Vaelgard (Academy Uniform)",
+      "episodes": [
+        "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "tailored midnight-navy double-breasted Imperial Academy coat with high stand-up collar trimmed in gold embroidery, golden shoulder epaulettes, silver winged-crest emblem on left chest, white shirt collar and navy cravat, double row of brass-gold buttons, gold filigree trim along cuffs and coat hem, crisp white gloves, fitted dark navy trousers, tall polished black knee-high riding boots"
+      },
+      "default_outfit": "default",
+      "description": "Julian Vaelgard clad in the tailored midnight-navy and gold Imperial Academy cadet uniform upon entering the Twin-Pinnacle Imperial Academy in Act II."
+    },
+    {
+      "id": "dean_alistair_vance",
+      "name": "Dean Alistair Vance",
+      "token": "@{Dean Alistair Vance}",
+      "tier": 2,
+      "role": "Dean of the Twin-Pinnacle Imperial Academy & 5-Star Archmage",
+      "age": 58,
+      "age_class": "adult",
+      "appearance": {
+        "hair": "Neatly swept-back silver-white hair with trimmed silver-white beard and moustache",
+        "eyes": "Piercing sharp golden-amber eyes",
+        "physique": "Tall, commanding weathered aristocratic archmage build with stern intellectual poise",
+        "attire": "crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, dark charcoal trousers, tall dark brown leather boots",
+        "weapons": "None (5-Star Archmage spellcaster)",
+        "footwear": "Tall dark brown leather boots"
+      },
+      "dna": "58-year-old dignified archmage dean, neatly swept-back silver-white hair, trimmed silver-white beard and moustache, piercing sharp golden-amber eyes, weathered commanding aristocratic face, stern intellectual poise",
+      "dna_prompt_anchor": "58-year-old dignified archmage dean, neatly swept-back silver-white hair, trimmed silver-white beard and moustache, piercing sharp golden-amber eyes, weathered commanding aristocratic face, stern intellectual poise, crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, dark charcoal trousers, tall dark brown leather boots",
+      "visual_dna": "58-year-old dignified archmage dean, neatly swept-back silver-white hair, trimmed silver-white beard and moustache, piercing sharp golden-amber eyes, weathered commanding aristocratic face, stern intellectual poise, crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, dark charcoal trousers, tall dark brown leather boots",
+      "reference_plate": "07_NPC_Dean_Alistair_Vance.jpg",
+      "flowName": "Dean Alistair Vance",
+      "episodes": [
+        "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "crimson-and-gold open-front Imperial Academy archmage mantle with tall rigid gold-embroidered stand-up collar, broad layered shoulder capelet with golden scrollwork, faceted sapphire chest brooch set in gold, black embroidered inner waistcoat with double-buckled dark leather waist belts, bare ungloved hands, dark charcoal trousers, tall dark brown leather boots"
+      },
+      "default_outfit": "default",
+      "description": "5-Star Archmage and Dean of the Twin-Pinnacle Imperial Academy. Strictly enforces Imperial Neutrality and live merit-based duels over noble politics."
+    },
+    {
+      "id": "lord_cassian_thorne",
+      "name": "Lord Cassian Thorne",
+      "token": "@{Lord Cassian Thorne}",
+      "tier": 2,
+      "role": "Church-Aligned Academy Rival (Gold-Rank / 3-Star)",
+      "age": 16,
+      "age_class": "minor",
+      "appearance": {
+        "hair": "Styled golden-blonde hair parted neatly to the side",
+        "eyes": "Sharp emerald-green eyes with an arrogant smirk",
+        "physique": "Young noble manhwa rival, athletic aristocratic build with haughty noble bearing",
+        "attire": "crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps",
+        "weapons": "3-Star Crimson Lance spellcraft & dueling aura",
+        "footwear": "Tall polished black leather riding boots with silver ankle straps"
+      },
+      "dna": "young noble manhwa rival, athletic aristocratic build, bright light golden-blonde hair parted cleanly to the side, pale refined complexion, haughty noble bearing, sharp emerald-green eyes with arrogant smirk",
+      "dna_prompt_anchor": "young noble manhwa rival, athletic aristocratic build, bright light golden-blonde hair parted cleanly to the side, pale refined complexion, haughty noble bearing, sharp emerald-green eyes with arrogant smirk, crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, bare ungloved hands, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps",
+      "visual_dna": "young noble manhwa rival, athletic aristocratic build, bright light golden-blonde hair parted cleanly to the side, pale refined complexion, haughty noble bearing, sharp emerald-green eyes with arrogant smirk, crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, bare ungloved hands, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps",
+      "reference_plate": "08_Antagonist_Lord_Cassian_Thorne.jpg",
+      "flowName": "Lord Cassian Thorne",
+      "episodes": [
+        "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+      ],
+      "hasPlate": true,
+      "outfits": {
+        "default": "crimson double-breasted noble academy tunic coat with silver filigree embroidery along lapels and hem, high dark-trimmed collar, ornate white ruffled silk cravat, braided golden aiguillette shoulder cord on right shoulder, gold shoulder epaulettes, silver-trimmed cuffs, bare ungloved hands, fitted dark charcoal trousers, tall polished black leather riding boots with silver ankle straps"
+      },
+      "default_outfit": "default",
+      "description": "Church-aligned Gold-Rank and 3-Star noble prodigy at the Twin-Pinnacle Imperial Academy who publicly provokes House Vaelgard."
     }
   ]
 }

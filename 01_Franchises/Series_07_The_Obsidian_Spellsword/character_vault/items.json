@@ -120,6 +120,44 @@
       ],
       "hasPlate": true,
       "visual_dna": "A colossal fifty-foot monumental colossus statue sculpted entirely from pitch-black obsidian stone depicting Aiden Drake clad in a battle-worn duster, raven hair swept by carved winds, holding a chipped greatsword pointed boldly upward toward the sky, standing upon an octagonal stone pedestal inscribed with glowing gold imperial runes."
+    },
+    {
+      "id": "imperial_academy_courtyard",
+      "name": "Imperial Academy Grand Courtyard",
+      "token": "@{Imperial Academy Grand Courtyard}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Twin-Pinnacle Imperial Academy Plaza",
+      "true_rank": "Arcane-Warded Grand Entrance Courtyard",
+      "description": "Soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes.",
+      "dna": "@{Imperial Academy Grand Courtyard}, soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Imperial Academy Grand Courtyard}, soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "16_Location_Imperial_Academy_Grand_Courtyard.jpg",
+      "flowName": "Imperial Academy Grand Courtyard",
+      "episodes": [
+        "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Soaring ivory-and-sapphire gothic academy plaza paved with reflective polished white-and-grey marble flagstones, twin colossal obsidian-and-gold sword-and-magic triumphal archways etched with glowing golden arcane runes and silver longsword reliefs, manicured emerald lawns with blossoming pink-and-lavender trees, towering distant white-and-sapphire academy spires and floating sky-islands under a clear cobalt-blue daylight sky with drifting cyan mana motes."
+    },
+    {
+      "id": "academy_dueling_amphitheater",
+      "name": "Academy Dueling Amphitheater",
+      "token": "@{Academy Dueling Amphitheater}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Sunken White-Marble Academy Colosseum",
+      "true_rank": "Runic Dual-Threshold Dueling Ring",
+      "description": "Sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky.",
+      "dna": "@{Academy Dueling Amphitheater}, sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Academy Dueling Amphitheater}, sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "17_Location_Academy_Dueling_Amphitheater.jpg",
+      "flowName": "Academy Dueling Amphitheater",
+      "episodes": [
+        "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky."
     }
   ]
 }
