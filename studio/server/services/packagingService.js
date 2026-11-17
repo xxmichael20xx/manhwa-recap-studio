@@ -1037,72 +1037,527 @@ static formatTimestamp(seconds) {
    */
   
   /**
+   * Convert Roman numeral or digit token ("II", "2") to integer.
+   */
+  static parseRomanOrInt(token = '') {
+    const clean = String(token).trim().toUpperCase()
+    if (/^\d+$/.test(clean)) return parseInt(clean, 10)
+    const map = { I: 1, V: 5, X: 10, L: 50 }
+    let total = 0
+    for (let i = 0; i < clean.length; i++) {
+      const cur = map[clean[i]] || 0
+      const nxt = map[clean[i + 1]] || 0
+      total += cur < nxt ? -cur : cur
+    }
+    return total || 1
+  }
+
+  /**
+   * Parse canonical Act structure dynamically from Series_Bible.md + existing EP folders.
+   */
+  static async parseSeriesActs(franchiseId) {
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const biblePath = path.join(franchiseDir, '00_Series_Bible_and_Character_DNA', 'Series_Bible.md')
+    const entries = await fs.readdir(franchiseDir, { withFileTypes: true }).catch(() => [])
+    const epDirs = entries
+      .filter(d => d.isDirectory() && /^EP\d+/i.test(d.name))
+      .map(d => d.name)
+      .filter(epId => {
+        const hasScript = fsSync.existsSync(path.join(franchiseDir, epId, '01_Episode_Script.md'))
+        const hasMatrix = fsSync.existsSync(path.join(franchiseDir, epId, '02_Prompt_Matrix.md'))
+        return hasScript || hasMatrix
+      })
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+
+    const epNumMap = new Map()
+    for (const epId of epDirs) {
+      const m = epId.match(/^EP0*(\d+)/i)
+      if (m) {
+        const num = parseInt(m[1], 10)
+        if (!epNumMap.has(num)) epNumMap.set(num, epId)
+      }
+    }
+
+    const parsedActs = []
+    if (fsSync.existsSync(biblePath)) {
+      const bibleText = await fs.readFile(biblePath, 'utf-8').catch(() => '')
+      const actRe = /^#{2,4}\s*Act\s+([IVXLCDM]+|\d+)\s*[:–—-]\s*([^(\r\n]+?)\s*\(EP0*(\d+)\s*[–—-]\s*EP0*(\d+)\)/gim
+      let m
+      while ((m = actRe.exec(bibleText)) !== null) {
+        const actNumber = this.parseRomanOrInt(m[1])
+        const title = m[2].trim()
+        const startEp = parseInt(m[3], 10)
+        const endEp = parseInt(m[4], 10)
+        if (!parsedActs.some(a => a.actNumber === actNumber)) {
+          const episodeIds = []
+          for (let n = startEp; n <= endEp; n++) {
+            if (epNumMap.has(n)) episodeIds.push(epNumMap.get(n))
+          }
+          parsedActs.push({
+            actNumber,
+            title,
+            startEp,
+            endEp,
+            rangeLabel: `EP${String(startEp).padStart(2, '0')}–EP${String(endEp).padStart(2, '0')}`,
+            episodeIds
+          })
+        }
+      }
+    }
+
+    if (parsedActs.length === 0 && epDirs.length > 0) {
+      for (let i = 0; i < epDirs.length; i += 3) {
+        const chunk = epDirs.slice(i, i + 3)
+        const actNumber = Math.floor(i / 3) + 1
+        const startEp = parseInt((chunk[0].match(/^EP0*(\d+)/i) || [0, i + 1])[1], 10)
+        const endEp = parseInt((chunk[chunk.length - 1].match(/^EP0*(\d+)/i) || [0, i + chunk.length])[1], 10)
+        parsedActs.push({
+          actNumber,
+          title: `Act ${actNumber}`,
+          startEp,
+          endEp,
+          rangeLabel: `EP${String(startEp).padStart(2, '0')}–EP${String(endEp).padStart(2, '0')}`,
+          episodeIds: chunk
+        })
+      }
+    }
+
+    // Attach compiled Act metadata status if present on disk
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    for (const act of parsedActs) {
+      const actMetaPath = path.join(omnibusDir, `act_${act.actNumber}_metadata.json`)
+      let meta = null
+      if (fsSync.existsSync(actMetaPath)) {
+        try { meta = JSON.parse(await fs.readFile(actMetaPath, 'utf-8')) } catch (_) {}
+      }
+      act.hasCompiledAct = !!(meta && meta.filename && fsSync.existsSync(path.join(omnibusDir, meta.filename)))
+      act.compiledFilename = meta?.filename || null
+      act.totalDurationFormatted = meta?.totalDurationFormatted || null
+    }
+
+    return parsedActs.sort((a, b) => a.actNumber - b.actNumber)
+  }
+
+  /**
+   * Resolve Act number & range for a set of episode IDs or numbers.
+   */
+  static async detectActForEpisodes(franchiseId, episodeIds = [], explicitActNum = null) {
+    const acts = await this.parseSeriesActs(franchiseId)
+    const nums = episodeIds
+      .map(id => {
+        const m = String(id).match(/EP0*(\d+)/i)
+        return m ? parseInt(m[1], 10) : null
+      })
+      .filter(n => n !== null)
+      .sort((a, b) => a - b)
+
+    const startEp = nums[0] || 1
+    const endEp = nums[nums.length - 1] || startEp
+
+    if (explicitActNum) {
+      const match = acts.find(a => a.actNumber === Number(explicitActNum))
+      if (match) return { ...match, startEp: nums[0] || match.startEp, endEp: nums[nums.length - 1] || match.endEp }
+    }
+
+    // Exact or primary overlap match against Bible Acts
+    const overlap = acts.find(a => startEp >= a.startEp && endEp <= a.endEp)
+    if (overlap) return { ...overlap, startEp, endEp }
+
+    const firstStartMatch = acts.find(a => a.startEp === startEp)
+    if (firstStartMatch && nums.length <= (firstStartMatch.endEp - firstStartMatch.startEp + 1)) {
+      return { ...firstStartMatch, startEp, endEp }
+    }
+
+    const inferredAct = Math.max(1, Math.ceil(startEp / 3))
+    return {
+      actNumber: inferredAct,
+      title: `Act ${inferredAct}`,
+      startEp,
+      endEp,
+      rangeLabel: `EP${String(startEp).padStart(2, '0')}–EP${String(endEp).padStart(2, '0')}`,
+      episodeIds
+    }
+  }
+
+  /**
    * Synchronises verified compilation metadata directly into YouTube packages and Master Bible
-   * Called automatically upon omnibus master compilation.
+   * Called automatically upon omnibus/Act master compilation (Studio UI & fast-compile CLI).
    */
   static async syncOmnibusMetadataToPackages(franchiseId, metadata) {
     if (!franchiseId || !metadata) return
 
     const franchiseDir = path.join(franchisesDir, franchiseId)
-    const bibleDir = path.join(franchiseDir, "00_Series_Bible_and_Character_DNA")
-    const masterLockedPkgPath = path.join(bibleDir, "YouTube_Locked_Package.md")
-    const omnibusDir = path.join(franchiseDir, "omnibus")
-    const omnibusLaunchPath = path.join(omnibusDir, "YouTube_Act1_Launch_Package.md")
+    const bibleDir = path.join(franchiseDir, '00_Series_Bible_and_Character_DNA')
+    const masterLockedPkgPath = path.join(bibleDir, 'YouTube_Locked_Package.md')
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    await fs.mkdir(omnibusDir, { recursive: true })
 
-    const durFormatted = metadata.totalDurationFormatted || "1h 57m 17s"
-    const finalTs = metadata.finalTimestampFormatted || "1:57:16"
-    const totalSec = metadata.totalDurationSeconds || 7036
+    const seriesNumMatch = franchiseId.match(/Series_0*(\d+)/i)
+    const isActPartModel = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : true
+
+    const chapterEpIds = Array.isArray(metadata.chapters)
+      ? metadata.chapters.map(c => c.episodeId).filter(Boolean)
+      : []
+    const actInfo = await this.detectActForEpisodes(franchiseId, chapterEpIds, metadata.actNumber)
+    const actNumber = actInfo.actNumber || 1
+    const startEp = actInfo.startEp || 1
+    const endEp = actInfo.endEp || Math.max(startEp, chapterEpIds.length)
+    const pad2 = n => String(n).padStart(2, '0')
+
+    const durFormatted = metadata.totalDurationFormatted || '1h 00m 00s'
+    const finalTs = metadata.finalTimestampFormatted || '1:00:00'
+    const totalSec = metadata.totalDurationSeconds || 3600
     const totalMinsDecimal = (totalSec / 60).toFixed(1)
 
-    // Build Chapter Timestamps block
+    // Build 00:00-based Chapter Timestamps block for the compiled Act/Omnibus
     let chapterLines = []
     if (Array.isArray(metadata.chapters) && metadata.chapters.length > 0) {
-      chapterLines = metadata.chapters.map((c, idx) => 
-        `${c.startTimestampFormatted} - Episode ${String(c.partNumber || (idx + 1)).padStart(2, "0")}: ${c.episodeTitle} (${c.durationFormatted})`
-      )
-      chapterLines.push(`${finalTs} - Series Finale & Epilogue`)
+      chapterLines = metadata.chapters.map((c, idx) => {
+        const epMatch = String(c.episodeId || '').match(/EP0*(\d+)/i)
+        const epNum = epMatch ? parseInt(epMatch[1], 10) : (startEp + idx)
+        return `${c.startTimestampFormatted} - Episode ${pad2(epNum)}: ${c.episodeTitle} (${c.durationFormatted})`
+      })
+      chapterLines.push(`${finalTs} - Act ${actNumber} Climax & Cliffhanger`)
     } else if (metadata.youtubeChapterString) {
       chapterLines = metadata.youtubeChapterString.split(/\r?\n/)
     }
 
-    const timestampBlock = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines.join("\n")}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+    const timestampBlock = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines.join('\n')}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
 
-    const updateFileDesc = async (filePath) => {
-      if (!fsSync.existsSync(filePath)) return
-      let c = await fs.readFile(filePath, "utf-8").catch(() => "")
-      if (!c) return
+    // Generate/Update YouTube_Act{N}_Launch_Package.md (titles, description, timestamps, pinned comment, thumbnail)
+    const actLaunchPath = path.join(omnibusDir, `YouTube_Act${actNumber}_Launch_Package.md`)
+    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
+    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ').trim()
+    const prefixTag = isActPartModel ? `(Part ${actNumber})` : `(Episode ${startEp}-${endEp})`
+    const rawActTitle = `${prefixTag} ${canonicalTitle}`.trim()
+    const lockedActTitle = rawActTitle.length <= 100 ? rawActTitle : `${rawActTitle.slice(0, 97).trim()}...`
 
-      // Update runtime & episode bounds
-      c = c.replace(/•\s*Full Runtime:[^\n]+/i, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
-      c = c.replace(/•\s*Episode Bounds:[^\n]+/i, `• Episode Bounds: 00:00 - ${finalTs}`)
-      c = c.replace(/⏱️ FULL (?:EPISODE|COMPILATION) RUNTIME[^:]*:[^\n]+/i, `⏱️ FULL COMPILATION RUNTIME & TIMELINE:`)
-
-      // If chapter block exists, update it. If not, insert after Episode Bounds
-      if (chapterLines.length > 0) {
-        const chapterRegex = /━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r?\n⏱️ CHAPTER TIMESTAMPS:[\s\S]*?━━━━━━━━━━━━━━━━━━━━━━━━━━━━/i
-        if (chapterRegex.test(c)) {
-          c = c.replace(chapterRegex, timestampBlock)
-        } else if (c.includes("Episode Bounds:")) {
-          c = c.replace(/(•\s*Episode Bounds:[^\n]+)/i, `$1\n\n${timestampBlock}`)
-        }
+    // Pull synopsis & locked title options from YouTube_Locked_Package.md or first episode in Act
+    let baseSynopsis = ''
+    let existingMasterTitles = []
+    if (fsSync.existsSync(masterLockedPkgPath)) {
+      const mText = await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
+      const synMatch = mText.match(/##\s*[^\n]*Description[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (synMatch?.[1]) {
+        const lines = synMatch[1].trim().split(/\r?\n/).filter(l => l.trim() && !/^(?:\(|🔥|🎬|⏱️|•|━|💬|🔔|#)/.test(l.trim()))
+        baseSynopsis = lines.slice(0, 3).join('\n\n')
       }
-
-      await fs.writeFile(filePath, c, "utf-8").catch(() => {})
+      const uploadMatches = [...mText.matchAll(/`([^`\r\n]{16,120})`/g)].map(x => x[1].trim())
+      existingMasterTitles = uploadMatches.filter(t => !/^[A-Z0-9_]+\.(?:mp4|jpg|md)$/.test(t))
     }
 
-    // 1. Update Master Bible SSOT
-    await updateFileDesc(masterLockedPkgPath)
-
-    // 2. Update Omnibus Launchpad
-    await updateFileDesc(omnibusLaunchPath)
-
-    // 3. Update all episodic packages in franchise
-    const entries = await fs.readdir(franchiseDir, { withFileTypes: true }).catch(() => [])
-    for (const d of entries) {
-      if (d.isDirectory() && /^EP\d+/i.test(d.name)) {
-        const epPkg = path.join(franchiseDir, d.name, "03_YouTube_Package.md")
-        await updateFileDesc(epPkg)
+    const firstEpId = chapterEpIds[0] || `EP${pad2(startEp)}`
+    const firstEpPkgPath = path.join(franchiseDir, firstEpId, '03_YouTube_Package.md')
+    let epSynopsis = ''
+    let epQuestion = ''
+    const actTitles = [lockedActTitle]
+    if (fsSync.existsSync(firstEpPkgPath)) {
+      const epText = await fs.readFile(firstEpPkgPath, 'utf-8').catch(() => '')
+      const qMatch = epText.match(/💬\s*COMMUNITY QUESTION:\s*\r?\n([^\r\n]+)/i)
+      if (qMatch?.[1]) epQuestion = qMatch[1].trim()
+      const descMatch = epText.match(/##\s*[^\n]*(?:Description|SEO)[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (descMatch?.[1]) {
+        const lines = descMatch[1].trim().split(/\r?\n/).filter(l => l.trim() && !/^(?:\(|🔥|🎬|⏱️|•|━|💬|🔔|#)/.test(l.trim()))
+        epSynopsis = lines.slice(0, 2).join('\n\n')
       }
+      const titleMatches = [...epText.matchAll(/^\d+\.\s+(?:\*\*|`)?([^\r\n`*]{16,110})(?:\*\*|`)?/gm)]
+      for (const tm of titleMatches) {
+        let candidate = tm[1].replace(/\s*\(\d+\s*chars?\)\s*$/i, '').trim()
+        candidate = candidate.replace(/^\((?:Episode|Episodes|Part|Parts)\s*[^)]*\)\s*/i, '')
+        const prefixed = `${prefixTag} ${candidate}`.trim()
+        if (prefixed.length <= 100 && !actTitles.includes(prefixed)) {
+          actTitles.push(prefixed)
+        }
+        if (actTitles.length >= 5) break
+      }
+    }
+
+    for (const mt of existingMasterTitles) {
+      if (actTitles.length >= 5) break
+      const stripped = mt.replace(/^\((?:Episode|Episodes|Part|Parts)\s*[^)]*\)\s*/i, '').trim()
+      const prefixed = `${prefixTag} ${stripped}`.trim()
+      if (prefixed.length <= 100 && !actTitles.includes(prefixed)) actTitles.push(prefixed)
+    }
+
+    const synopsisBlock = epSynopsis || baseSynopsis || `Following ${actInfo.title}, every hidden card comes onto the board as ancient powers awaken.`
+    const releaseLine = isActPartModel
+      ? `🎬 Release: Part ${actNumber} — ${actInfo.title} (Covers Episodes ${pad2(startEp)} - ${pad2(endEp)})`
+      : `🎬 Release: Episodes ${pad2(startEp)} - ${pad2(endEp)} Compiled Saga`
+    const communityLine = epQuestion || `Which moment in Act ${actNumber} (${actInfo.title}) hit hardest? Drop your timestamp below! 👇`
+    const subscribeLine = `🔔 Subscribe and hit the bell so you don't miss Part ${actNumber + 1} (Act ${actNumber + 1})!`
+
+    // Auto-composite Act Thumbnail with PART N badge (if base image is present)
+    const actThumbDir = path.join(omnibusDir, 'thumbnails')
+    await fs.mkdir(actThumbDir, { recursive: true })
+    const actThumbFilename = `01_Thumbnail_Act${actNumber}.jpg`
+    const actThumbPath = path.join(actThumbDir, actThumbFilename)
+    const badgeLabel = isActPartModel ? `PART ${actNumber}` : `${startEp} - ${endEp}`
+    const subBadgeLabel = `EP ${pad2(startEp)} - ${pad2(endEp)}`
+
+    const findTextlessInDir = (dir) => {
+      if (!fsSync.existsSync(dir)) return null
+      const files = fsSync.readdirSync(dir)
+      const hit = files.find(f => /01_thumbnail_(?:concept_a|master)_textless\.jpe?g$/i.test(f)) ||
+        files.find(f => /01_thumbnail_concept_a_raw\.jpe?g$/i.test(f))
+      return hit ? path.join(dir, hit) : null
+    }
+    const allEpDirs = fsSync.readdirSync(franchiseDir, { withFileTypes: true })
+      .filter(d => d.isDirectory() && /^EP\d+/i.test(d.name))
+      .map(d => d.name)
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    const epTextlessHits = allEpDirs.map(d => findTextlessInDir(path.join(franchiseDir, d, 'thumbnails'))).filter(Boolean)
+    const thumbCandidates = [
+      path.join(actThumbDir, `01_Thumbnail_Act${actNumber}_Textless.jpg`),
+      findTextlessInDir(actThumbDir),
+      findTextlessInDir(path.join(franchiseDir, firstEpId, 'thumbnails')),
+      ...epTextlessHits,
+      path.join(franchiseDir, firstEpId, 'thumbnails', '01_Thumbnail_Concept_A.jpg'),
+      path.join(omnibusDir, '01_Thumbnail_Master.jpg')
+    ].filter(Boolean)
+    const baseThumbPath = thumbCandidates.find(p => fsSync.existsSync(p))
+    if (baseThumbPath && !fsSync.existsSync(actThumbPath)) {
+      try {
+        const baseBuf = await sharp(baseThumbPath).resize(1920, 1080, { fit: 'cover', position: 'center' }).toBuffer()
+        const svg = this.generateBadgeSvg({
+          badgeText: badgeLabel,
+          subBadgeText: subBadgeLabel,
+          badgeColorPreset: 'gold_crimson',
+          badgePosition: 'top_left',
+          width: 1920,
+          height: 1080
+        })
+        let outBuf = await sharp(baseBuf).composite([{ input: Buffer.from(svg), top: 0, left: 0 }]).jpeg({ quality: 90, mozjpeg: true, progressive: true }).toBuffer()
+        if (outBuf.length > 1.95 * 1024 * 1024) {
+          outBuf = await sharp(baseBuf).composite([{ input: Buffer.from(svg), top: 0, left: 0 }]).jpeg({ quality: 82, mozjpeg: true, progressive: true }).toBuffer()
+        }
+        await fs.writeFile(actThumbPath, outBuf)
+      } catch (thumbErr) {
+        console.warn('[PackagingService] Act thumbnail badge composite skipped:', thumbErr.message)
+      }
+    }
+
+    const descriptionBody = [
+      lockedActTitle,
+      '',
+      synopsisBlock,
+      '',
+      `🔥 Series: ${canonicalTitle}`,
+      releaseLine,
+      '⏱️ FULL COMPILATION RUNTIME & TIMELINE:',
+      `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`,
+      `• Episode Bounds: 00:00 - ${finalTs}`,
+      '',
+      timestampBlock,
+      '',
+      '💬 COMMUNITY QUESTION:',
+      communityLine,
+      '',
+      subscribeLine,
+      '',
+      '#manhwarecap #webtoon #animerecap #manhwa #actionmanhwa'
+    ].join('\n')
+
+    const pinnedCommentBody = `🔥 Part ${actNumber} (${actInfo.title} — Episodes ${pad2(startEp)}–${pad2(endEp)}) is live! Drop your favourite scene timestamp below and subscribe for Part ${actNumber + 1}! ⚔️`
+    const epBulletList = (metadata.chapters || []).map((c, idx) => `\`EP${pad2(startEp + idx)}\` (${c.durationFormatted})`).join(', ')
+    const actMd = [
+      `# 🚀 YouTube & Shorts Release Launchpad — ${franchiseId.replace(/_/g, ' ')} (Act ${actNumber}: Episodes ${startEp}–${endEp})`,
+      '',
+      `> **Franchise:** ${canonicalTitle}  `,
+      `> **Release Tier:** Act ${actNumber} Feature (${actInfo.title})  `,
+      `> **Episodes Included:** ${epBulletList || `EP${pad2(startEp)}–EP${pad2(endEp)}`}  `,
+      `> **Verified Master Runtime:** \`${durFormatted}\` (\`${totalSec.toFixed(2)}s\`)  `,
+      `> **Master File:** \`${metadata.filename || ''}\`  `,
+      `> **Thumbnail:** \`omnibus/thumbnails/${actThumbFilename}\` (Badge: \`${badgeLabel}\`)  `,
+      '',
+      '---',
+      '',
+      '## 🏷️ 1. Master Title Kit (<= 100 Characters)',
+      '',
+      `### Primary Locked Master Title (${lockedActTitle.length} chars):`,
+      '```text',
+      lockedActTitle,
+      '```',
+      '',
+      ...actTitles.map((t, idx) => `${idx + 1}. ${t}`),
+      '',
+      '---',
+      '',
+      '## 🖼️ 2. Master Visual Thumbnail',
+      '',
+      `- **Locked Act Thumbnail:** \`omnibus/thumbnails/${actThumbFilename}\``,
+      `- **Badge:** \`${badgeLabel}\` / \`${subBadgeLabel}\``,
+      `- **Filename:** \`${actThumbFilename}\``,
+      '',
+      '---',
+      '',
+      '## 📋 3. YouTube Master Description Box (Copy-Paste Ready)',
+      '',
+      '```text',
+      descriptionBody,
+      '```',
+      '',
+      '---',
+      '',
+      '## 💬 4. Pinned Community Comment',
+      '',
+      '```text',
+      pinnedCommentBody,
+      '```',
+      ''
+    ].join('\n')
+
+    await fs.writeFile(actLaunchPath, actMd, 'utf-8').catch(() => {})
+
+    // Save per-Act metadata JSON cleanly
+    const enrichedMeta = {
+      ...metadata,
+      actNumber,
+      actTitle: actInfo.title,
+      startEp,
+      endEp,
+      partBadgeText: badgeLabel,
+      launchPackageFile: path.basename(actLaunchPath),
+      thumbnailFile: actThumbFilename
+    }
+    await fs.writeFile(path.join(omnibusDir, `act_${actNumber}_metadata.json`), JSON.stringify(enrichedMeta, null, 2), 'utf-8').catch(() => {})
+    await fs.writeFile(path.join(omnibusDir, 'omnibus_metadata.json'), JSON.stringify(enrichedMeta, null, 2), 'utf-8').catch(() => {})
+
+    // Keep Master Bible SSOT timestamps synced
+    if (fsSync.existsSync(masterLockedPkgPath)) {
+      let c = await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
+      if (c) {
+        c = c.replace(/•\s*Full Runtime:[^\n]+/i, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
+        c = c.replace(/•\s*Episode Bounds:[^\n]+/i, `• Episode Bounds: 00:00 - ${finalTs}`)
+        const chapterRegex = /━━━━━━━━━━━━━━━━━━━━━━━━━━━━\r?\n⏱️ CHAPTER TIMESTAMPS:[\s\S]*?━━━━━━━━━━━━━━━━━━━━━━━━━━━━/i
+        if (chapterRegex.test(c)) c = c.replace(chapterRegex, timestampBlock)
+        await fs.writeFile(masterLockedPkgPath, c, 'utf-8').catch(() => {})
+      }
+    }
+  }
+
+  /**
+   * Load full YouTube Launchpad package for a specific Act (Act 1, Act 2, ...).
+   */
+  static async getActPackage(franchiseId, actNumber = 1) {
+    const actNum = parseInt(actNumber, 10) || 1
+    const acts = await this.parseSeriesActs(franchiseId)
+    const actInfo = acts.find(a => a.actNumber === actNum) || {
+      actNumber: actNum,
+      title: `Act ${actNum}`,
+      startEp: (actNum - 1) * 3 + 1,
+      endEp: actNum * 3,
+      episodeIds: []
+    }
+
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    const actPkgPath = path.join(omnibusDir, `YouTube_Act${actNum}_Launch_Package.md`)
+    const actMetaPath = path.join(omnibusDir, `act_${actNum}_metadata.json`)
+    const actThumbFilename = `01_Thumbnail_Act${actNum}.jpg`
+    const actThumbPath = path.join(omnibusDir, 'thumbnails', actThumbFilename)
+
+    let actMetadata = null
+    if (fsSync.existsSync(actMetaPath)) {
+      try { actMetadata = JSON.parse(await fs.readFile(actMetaPath, 'utf-8')) } catch (_) {}
+    } else if (actNum === 1) {
+      actMetadata = await VideoService.getOmnibusMetadata(franchiseId).catch(() => null)
+    }
+
+    // If package markdown missing yet, synthesize preview dynamically from Act's first episode + metadata
+    if (!fsSync.existsSync(actPkgPath) && actMetadata) {
+      await this.syncOmnibusMetadataToPackages(franchiseId, { ...actMetadata, actNumber: actNum })
+    }
+
+    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
+    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ').trim()
+    const pad2 = n => String(n).padStart(2, '0')
+    const seriesNumMatch = franchiseId.match(/Series_0*(\d+)/i)
+    const isActPartModel = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : true
+    const partBadgeText = isActPartModel ? `PART ${actNum}` : `${actInfo.startEp} - ${actInfo.endEp}`
+
+    let titles = []
+    let description = ''
+    let pinnedComment = ''
+    let chapters = []
+    let isPending = !fsSync.existsSync(actPkgPath)
+
+    if (fsSync.existsSync(actPkgPath)) {
+      const md = await fs.readFile(actPkgPath, 'utf-8')
+      const ctrScores = ['99%', '98%', '97%', '96%', '95%']
+      const titleLines = [...md.matchAll(/^\d+\.\s+(.+)$/gm)].map(m => m[1].trim()).filter(Boolean)
+      titles = titleLines.slice(0, 5).map((t, i) => ({
+        archetype: i === 0 ? `Locked Act ${actNum} Title` : `High-CTR Variant ${i + 1}`,
+        title: t,
+        ctrScore: ctrScores[i] || '94%',
+        charCount: t.length,
+        isCompliant: t.length <= 100
+      }))
+      const descM = md.match(/##\s*[^\n]*Description Box[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (descM?.[1]) description = descM[1].trim()
+      const commM = md.match(/##\s*[^\n]*Pinned Community Comment[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (commM?.[1]) pinnedComment = commM[1].trim()
+      const chapM = md.match(/⏱️\s*CHAPTER TIMESTAMPS:\s*\r?\n([\s\S]*?)(?:\r?\n\s*━|$)/i)
+      if (chapM?.[1]) {
+        for (const line of chapM[1].split(/\r?\n/)) {
+          const lm = line.match(/^(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—]\s*(.+)$/)
+          if (lm) chapters.push({ time: lm[1].trim(), seconds: this.parseTimestampToSeconds(lm[1].trim()), title: lm[2].trim() })
+        }
+      }
+    }
+
+    if (titles.length === 0) {
+      const t = `(Part ${actNum}) ${canonicalTitle}`.slice(0, 100)
+      titles = [{ archetype: `Act ${actNum} Default Title`, title: t, ctrScore: '99%', charCount: t.length, isCompliant: t.length <= 100 }]
+    }
+    if (!description) {
+      description = `🔥 Series: ${canonicalTitle}\n🎬 Release: Part ${actNum} — ${actInfo.title} (Covers Episodes ${pad2(actInfo.startEp)} - ${pad2(actInfo.endEp)})\n\n⏳ Compile Act ${actNum} in the Master Compiler to auto-populate exact timestamps and runtime.`
+    }
+    if (!pinnedComment) {
+      pinnedComment = `🔥 Part ${actNum} (${actInfo.title}) of ${cleanFranchiseName} is live! Drop a comment below and subscribe for Part ${actNum + 1}! ⚔️`
+    }
+
+    const firstEpId = actInfo.episodeIds?.[0] || `EP${pad2(actInfo.startEp)}`
+    const fallbackVariants = await this.getThumbnailVariants(franchiseId, firstEpId).catch(() => [])
+    const hasActThumb = fsSync.existsSync(actThumbPath)
+    const actThumbSize = hasActThumb ? fsSync.statSync(actThumbPath).size : 0
+    const thumbnailVariants = hasActThumb
+      ? [
+          {
+            ...(fallbackVariants[0] || {}),
+            id: 'concept_a',
+            name: fallbackVariants[0]?.name || `Act ${actNum} Master Thumbnail (${partBadgeText})`,
+            filename: actThumbFilename,
+            hasImage: true,
+            hasBakedBadge: true,
+            url: `/api/franchises/${franchiseId}/omnibus/thumbnails/${actThumbFilename}?t=${Date.now()}`,
+            fileSize: actThumbSize,
+            fileSizeFormatted: this.formatFileSize(actThumbSize),
+            isYouTubeCompliant: actThumbSize < 2 * 1024 * 1024
+          },
+          ...fallbackVariants.slice(1)
+        ]
+      : fallbackVariants
+
+    return {
+      success: true,
+      isPending,
+      isActPackage: true,
+      actNumber: actNum,
+      actTitle: actInfo.title,
+      startEp: actInfo.startEp,
+      endEp: actInfo.endEp,
+      compiledFilename: actMetadata?.filename || actInfo.compiledFilename || null,
+      partBadgeText,
+      totalDuration: actMetadata?.totalDurationSeconds || 0,
+      formattedDuration: actMetadata?.totalDurationFormatted || 'Pending Compile',
+      titles,
+      chapters,
+      chapterText: chapters.map(c => `${c.time} - ${c.title}`).join('\n'),
+      description,
+      pinnedComment,
+      thumbnailVariants,
+      masterThumbnail: thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0] || null,
+      actMetadata
     }
   }
 

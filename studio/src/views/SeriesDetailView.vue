@@ -618,104 +618,90 @@
           </p>
         </div>
 
-        <!-- Format Tier Selection -->
-        <div class="space-y-3">
-          <label class="text-xs font-mono uppercase text-slate-400 font-bold">Select Compilation Format Tier</label>
-          <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
-            <div 
-              @click="selectedTier = 'tier2'"
-              class="p-4 rounded-xl border cursor-pointer transition-all space-y-1.5"
-              :class="selectedTier === 'tier2' 
-                ? 'bg-purple-50 dark:bg-purple-950/40 border-purple-500 text-purple-900 dark:text-purple-200' 
-                : 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300'"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold font-mono uppercase">Tier 2: Arc Feature / Saga</span>
-                <Check v-if="selectedTier === 'tier2'" class="w-4 h-4 text-purple-600" />
-              </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">Typical Runtime: 45–60 Minutes (~6,500–8,500 words). Merges 2–3 episodes.</p>
-            </div>
-
-            <div 
-              @click="selectedTier = 'tier3'"
-              class="p-4 rounded-xl border cursor-pointer transition-all space-y-1.5"
-              :class="selectedTier === 'tier3' 
-                ? 'bg-purple-50 dark:bg-purple-950/40 border-purple-500 text-purple-900 dark:text-purple-200' 
-                : 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300'"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold font-mono uppercase">Tier 3: Season Movie</span>
-                <Check v-if="selectedTier === 'tier3'" class="w-4 h-4 text-purple-600" />
-              </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">Typical Runtime: 1.5–2.5 Hours (~12,000–20,000 words). Merges 3–5 episodes.</p>
-            </div>
-
-            <div 
-              @click="selectedTier = 'tier4'"
-              class="p-4 rounded-xl border cursor-pointer transition-all space-y-1.5"
-              :class="selectedTier === 'tier4' 
-                ? 'bg-purple-50 dark:bg-purple-950/40 border-purple-500 text-purple-900 dark:text-purple-200' 
-                : 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300'"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold font-mono uppercase">Tier 4: Grand Omnibus</span>
-                <Check v-if="selectedTier === 'tier4'" class="w-4 h-4 text-purple-600" />
-              </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">Typical Runtime: 3.0+ Hours (~25,000+ words). Multi-season binge cut.</p>
-            </div>
+        <!-- Act-Grouped Episode Selection Ledger (Prevents Cross-Act Contamination) -->
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <label class="text-xs font-mono uppercase text-slate-400 font-bold">Select Act / Episodes to Concatenate</label>
+            <code v-if="detectedSelectedAct" class="text-[11px] font-mono bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-lg select-all">
+              CLI: node studio/scripts/fast-compile.mjs {{ route.params.id }} --act {{ detectedSelectedAct.actNumber }}
+            </code>
           </div>
-        </div>
 
-        <!-- Episode Selection Ledger -->
-        <div class="space-y-3">
-          <label class="text-xs font-mono uppercase text-slate-400 font-bold">Select Episodes to Concatenate</label>
-          <div class="space-y-2">
-            <div 
-              v-for="ep in availableEpisodes" 
-              :key="ep.id"
-              class="p-4 rounded-xl border flex items-center justify-between transition-all"
-              :class="ep.hasCompiledVideo 
-                ? 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800' 
-                : 'bg-slate-50/50 dark:bg-slate-950/30 border-dashed border-slate-200 dark:border-slate-800 opacity-60'"
-            >
-              <div class="flex items-center space-x-3">
-                <input 
-                  type="checkbox" 
-                  :id="ep.id" 
-                  v-model="selectedEpisodes" 
-                  :value="ep.id"
-                  :disabled="!ep.hasCompiledVideo"
-                  class="w-4 h-4 rounded text-purple-600 focus:ring-purple-500 cursor-pointer disabled:cursor-not-allowed disabled:opacity-40"
-                />
-                <label :for="ep.id" :class="ep.hasCompiledVideo ? 'cursor-pointer' : 'cursor-not-allowed'">
-                  <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-                    <span>{{ ep.name }}</span>
-                    <span v-if="!ep.hasCompiledVideo" class="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 font-bold">
-                      No Master Video
-                    </span>
-                  </div>
-                  <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400">{{ ep.id }}</div>
-                </label>
-              </div>
-
+          <div
+            v-for="act in groupedActs"
+            :key="act.actNumber"
+            class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-950/40 space-y-3"
+          >
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-200/80 dark:border-slate-800/80">
               <div class="flex items-center space-x-2">
-                <span v-if="ep.hasCompiledVideo" class="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-bold flex items-center space-x-1">
-                  <Check class="w-3.5 h-3.5" />
-                  <span>Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  Act {{ act.actNumber }} ({{ act.rangeLabel }})
                 </span>
-                <a 
-                  v-if="ep.hasCompiledVideo"
-                  :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
-                  :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
-                  class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 text-xs font-mono text-purple-600 dark:text-purple-400 flex items-center space-x-1 transition shadow-xs cursor-pointer hover:scale-[1.02]"
-                  :title="`Download ${ep.name} Master MP4`"
+                <span class="text-xs font-bold text-slate-900 dark:text-white">{{ act.title }}</span>
+                <span
+                  v-if="act.hasCompiledAct"
+                  class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
                 >
-                  <Download class="w-3 h-3" />
-                  <span>Download</span>
-                </a>
-                <span v-else class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-bold flex items-center space-x-1">
-                  <span>⏳ Compilation Pending</span>
+                  ✓ Compiled ({{ act.totalDurationFormatted || 'Ready' }})
                 </span>
+              </div>
+              <button
+                type="button"
+                @click="selectActEpisodes(act)"
+                class="px-3 py-1 rounded-lg bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-600 dark:text-purple-400 border border-purple-500/20 text-[11px] font-mono font-bold transition cursor-pointer"
+              >
+                Select Act {{ act.actNumber }} Only
+              </button>
+            </div>
+
+            <div class="space-y-2">
+              <div 
+                v-for="ep in act.episodes" 
+                :key="ep.id"
+                class="p-3.5 rounded-xl border flex items-center justify-between transition-all"
+                :class="ep.hasCompiledVideo 
+                  ? 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800' 
+                  : 'bg-slate-50/50 dark:bg-slate-950/30 border-dashed border-slate-200 dark:border-slate-800 opacity-60'"
+              >
+                <div class="flex items-center space-x-3">
+                  <input 
+                    type="checkbox" 
+                    :id="ep.id" 
+                    v-model="selectedEpisodes" 
+                    :value="ep.id"
+                    :disabled="!ep.hasCompiledVideo"
+                    class="w-4 h-4 rounded text-purple-600 focus:ring-purple-500 cursor-pointer disabled:cursor-not-allowed disabled:opacity-40"
+                  />
+                  <label :for="ep.id" :class="ep.hasCompiledVideo ? 'cursor-pointer' : 'cursor-not-allowed'">
+                    <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                      <span>{{ ep.name }}</span>
+                      <span v-if="!ep.hasCompiledVideo" class="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 font-bold">
+                        No Master Video
+                      </span>
+                    </div>
+                    <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400">{{ ep.id }}</div>
+                  </label>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                  <span v-if="ep.hasCompiledVideo" class="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-bold flex items-center space-x-1">
+                    <Check class="w-3.5 h-3.5" />
+                    <span>Master Video Ready ({{ ep.videoSizeFormatted || '1080p' }})</span>
+                  </span>
+                  <a 
+                    v-if="ep.hasCompiledVideo"
+                    :href="`/api/episodes/${franchise.folder || $route.params.id}/${ep.id}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`"
+                    :download="`${franchise.folder}_${ep.id}_Master_1080p.mp4`"
+                    class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-purple-500 text-xs font-mono text-purple-600 dark:text-purple-400 flex items-center space-x-1 transition shadow-xs cursor-pointer hover:scale-[1.02]"
+                    :title="`Download ${ep.name} Master MP4`"
+                  >
+                    <Download class="w-3 h-3" />
+                    <span>Download</span>
+                  </a>
+                  <span v-else class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 font-bold flex items-center space-x-1">
+                    <span>⏳ Compilation Pending</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -925,8 +911,12 @@
                 class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
               >
                 <optgroup :label="isActPartModel ? 'Compiled Act Features (YouTube SSOT)' : 'Compiled Master Releases'">
-                  <option value="omnibus_master" :disabled="compiledEpisodes.length < 2">
-                    {{ isActPartModel ? '⚡ Act 1 Feature (Part 1 Complete)' : `🎬 Master Omnibus Movie (Parts 1 - ${compiledEpisodes.length} Compiled)` }}
+                  <option
+                    v-for="act in groupedActs"
+                    :key="`act_${act.actNumber}`"
+                    :value="`act_${act.actNumber}`"
+                  >
+                    {{ isActPartModel ? `⚡ Act ${act.actNumber} (Part ${act.actNumber}): ${act.rangeLabel} ${act.hasCompiledAct ? '✓' : '⏳'}` : `🎬 Act ${act.actNumber} (${act.rangeLabel}) ${act.hasCompiledAct ? '✓' : '⏳'}` }}
                   </option>
                   <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
                     🏆 Complete Story Marathon (Full Series Complete)
@@ -1006,7 +996,7 @@
 
                 <!-- Dynamic High-CTR Yellow Badge Live Preview Overlay (Top-Left) -->
                 <div 
-                  v-if="activeThumbnailBadge" 
+                  v-if="activeThumbnailBadge && !variant.hasBakedBadge" 
                   class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-yellow-400 text-slate-950 font-black text-xs font-mono tracking-wider shadow-xl border border-yellow-200 shadow-yellow-500/40 flex items-center space-x-1 z-10 select-none pointer-events-none"
                 >
                   <span>⚡ {{ activeThumbnailBadge }}</span>
@@ -1688,16 +1678,23 @@ const loadFranchise = async () => {
     const list = await res.json()
     franchise.value = list.find(f => f.id === route.params.id)
     if (availableEpisodes.value.length) {
-      // For Series 07+ (Option 1 Act/Part Model), default release target to the compiled Act 1 feature
-      if (isActPartModel.value && compiledEpisodes.value.length >= 2) {
-        selectedPackageEpisode.value = 'omnibus_master'
+      const actsList = groupedActs.value
+      const latestCompiledAct = [...actsList].reverse().find(a => a.hasCompiledAct)
+      const latestReadyAct = [...actsList].reverse().find(a => a.episodes.some(e => e.hasCompiledVideo))
+      const defaultAct = latestCompiledAct || latestReadyAct || actsList[0]
+      if (defaultAct && isActPartModel.value) {
+        selectedPackageEpisode.value = `act_${defaultAct.actNumber}`
+        activeThumbnailBadge.value = `PART ${defaultAct.actNumber}`
+        selectedEpisodes.value = defaultAct.episodes.filter(e => e.hasCompiledVideo).map(e => e.id)
+      } else if (isActPartModel.value && compiledEpisodes.value.length >= 2) {
+        selectedPackageEpisode.value = 'act_1'
         activeThumbnailBadge.value = 'PART 1'
+        selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       } else {
         selectedPackageEpisode.value = availableEpisodes.value[0].id
         activeThumbnailBadge.value = isActPartModel.value ? 'PART 1' : ''
+        selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       }
-      // Pre-select only verified compiled episodes for multi-episode stitching
-      selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       loadPackagingData()
       loadOmnibusFiles()
     }
@@ -1719,6 +1716,19 @@ const omnibusMetadata = ref(null)
 
 const loadPackagingData = async () => {
   if (!selectedPackageEpisode.value) return
+  if (selectedPackageEpisode.value.startsWith('act_')) {
+    const actNum = parseInt(selectedPackageEpisode.value.replace('act_', ''), 10) || 1
+    try {
+      const res = await fetch(`/api/franchises/${route.params.id}/act-package/${actNum}`)
+      const actPkg = await res.json()
+      omnibusMetadata.value = actPkg.actMetadata || null
+      activeThumbnailBadge.value = actPkg.partBadgeText || `PART ${actNum}`
+      pkgData.value = actPkg
+    } catch (e) {
+      console.error('Failed to load Act package data:', e)
+    }
+    return
+  }
   if (selectedPackageEpisode.value === 'omnibus_master' || selectedPackageEpisode.value === 'omnibus_complete') {
     const isComplete = selectedPackageEpisode.value === 'omnibus_complete'
     try {
@@ -1842,14 +1852,52 @@ const episode1 = computed(() => {
   return availableEpisodes.value.find(ep => /EP0*1/i.test(ep.id)) || availableEpisodes.value[0] || null
 })
 
+const groupedActs = computed(() => {
+  const epMap = new Map(availableEpisodes.value.map(e => [e.id, e]))
+  const rawActs = franchise.value?.acts || []
+  if (rawActs.length > 0) {
+    return rawActs.map(a => ({
+      ...a,
+      episodes: (a.episodeIds || []).map(id => epMap.get(id)).filter(Boolean)
+    })).filter(a => a.episodes.length > 0)
+  }
+  if (availableEpisodes.value.length === 0) return []
+  const chunks = []
+  for (let i = 0; i < availableEpisodes.value.length; i += 3) {
+    const eps = availableEpisodes.value.slice(i, i + 3)
+    const num = Math.floor(i / 3) + 1
+    chunks.push({
+      actNumber: num,
+      title: `Act ${num}`,
+      rangeLabel: `EP${String(i + 1).padStart(2, '0')}–EP${String(i + eps.length).padStart(2, '0')}`,
+      episodes: eps,
+      hasCompiledAct: false
+    })
+  }
+  return chunks
+})
+
+const detectedSelectedAct = computed(() => {
+  if (!selectedEpisodes.value.length) return null
+  const selSet = new Set(selectedEpisodes.value)
+  return groupedActs.value.find(a => a.episodes.some(e => selSet.has(e.id))) || null
+})
+
+const selectActEpisodes = (act) => {
+  selectedEpisodes.value = act.episodes.filter(e => e.hasCompiledVideo).map(e => e.id)
+}
+
 const currentSelectedEpisode = computed(() => {
-  if (!selectedPackageEpisode.value || selectedPackageEpisode.value.startsWith('omnibus')) return null
+  if (!selectedPackageEpisode.value || selectedPackageEpisode.value.startsWith('omnibus') || selectedPackageEpisode.value.startsWith('act_')) return null
   return availableEpisodes.value.find(e => e.id === selectedPackageEpisode.value) || null
 })
 
 const currentSelectedEpisodeVideoDownloadUrl = computed(() => {
+  const fId = franchise.value?.folder || route.params.id
+  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.compiledFilename) {
+    return `/api/franchises/${fId}/omnibus-stream?file=${encodeURIComponent(pkgData.value.compiledFilename)}&download=1`
+  }
   if (currentSelectedEpisode.value?.hasCompiledVideo) {
-    const fId = franchise.value?.folder || route.params.id
     const eId = currentSelectedEpisode.value.id
     return `/api/episodes/${fId}/${eId}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`
   }
@@ -1857,12 +1905,18 @@ const currentSelectedEpisodeVideoDownloadUrl = computed(() => {
 })
 
 const currentSelectedEpisodeVideoFilename = computed(() => {
-  if (!currentSelectedEpisode.value) return 'Episode_Master_1080p.mp4'
   const fId = franchise.value?.folder || route.params.id
+  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.compiledFilename) {
+    return pkgData.value.compiledFilename
+  }
+  if (!currentSelectedEpisode.value) return 'Episode_Master_1080p.mp4'
   return `${fId}_${currentSelectedEpisode.value.id}_Master_1080p.mp4`
 })
 
 const currentSelectedEpisodeVideoSize = computed(() => {
+  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.formattedDuration) {
+    return pkgData.value.formattedDuration
+  }
   return currentSelectedEpisode.value?.videoSizeFormatted || '1080p'
 })
 
@@ -2313,7 +2367,9 @@ const triggerOmnibusCompile = async () => {
     const now = new Date()
     const pad = (n) => String(n).padStart(2, '0')
     const ts = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`
-    const outputFilename = `${route.params.id}_${selectedTier.value}_Master_${ts}_1080p.mp4`
+    const actNum = detectedSelectedAct.value?.actNumber || null
+    const actTag = actNum ? `Act${actNum}` : 'Omnibus'
+    const outputFilename = `${route.params.id}_${actTag}_Master_${ts}_1080p.mp4`
 
     const res = await fetch(`/api/franchises/${route.params.id}/stitch-master-omnibus`, {
       method: 'POST',
@@ -2323,7 +2379,8 @@ const triggerOmnibusCompile = async () => {
         masterFilePaths: selectedEpisodes.value.map(epId => `01_Franchises/${route.params.id}/${epId}/video/01_Episode_Master_1080p.mp4`),
         outputFilename,
         compileEpisodes: isCompileEpisodes,
-        freshCompile: isFreshCompile
+        freshCompile: isFreshCompile,
+        actNumber: actNum
       })
     })
     const data = await res.json()
@@ -2339,6 +2396,10 @@ const triggerOmnibusCompile = async () => {
       isFreshCompile ? 'Fresh GPU Compilation Completed' : (isCompileEpisodes ? 'Batch Verification Completed' : 'Multi-Episode Stitching Completed'),
       `Saved to: ${savedName}`
     )
+    if (actNum) {
+      selectedPackageEpisode.value = `act_${actNum}`
+    }
+    await loadFranchise()
     await loadOmnibusFiles()
     await loadPackagingData()
   } catch (err) {

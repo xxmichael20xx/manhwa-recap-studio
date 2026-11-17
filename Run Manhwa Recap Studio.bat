@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title Manhwa Recap Studio — Local Development Runner
+title Manhwa Recap Studio - Local Development Runner
 cd /d "%~dp0studio"
 
 echo ===================================================

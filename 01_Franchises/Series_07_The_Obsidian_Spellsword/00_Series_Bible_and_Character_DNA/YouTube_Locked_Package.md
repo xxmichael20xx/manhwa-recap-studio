@@ -48,15 +48,16 @@ Surrounded by a wealthy ducal family that cherishes his talent, Julian sets out 
 🔥 Series: Reborn 1,000 Years Later Into My Own Family, I Mastered Sword & Magic
 🎬 Release: Part 1 — Act 1 Feature (Covers Episodes 01 - 03)
 ⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 117.3 Minutes (1:57:16)
-• Episode Bounds: 00:00 - 1:57:16
+• Full Runtime: 98.6 Minutes (1:38:38)
+• Episode Bounds: 00:00 - 1:38:38
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
-00:00 - Episode 01: The Poisoned God and The 1000 Year Rebirth (41m 16s)
-41:16 - Episode 02: The Ancestral Vault and The First True Spell (47m 21s)
-1:28:36 - Episode 03: The Holy Inquisitor and The Severed Blessing (28m 40s)
-1:57:16 - Series Finale & Epilogue
+00:00 - Episode 04: The Twin Pinnacle Gates and The Unbroken Stance (25m 06s)
+25:05 - Episode 05: The Midnight Sabotage and The Frozen Stars Gaze (26m 28s)
+51:33 - Episode 06: The Crowned Duel and The Thread Eater Awakening (26m 40s)
+1:18:13 - Episode 07: The Heresy Summons and The Frozen Spire (20m 26s)
+1:38:38 - Act 2 Climax & Cliffhanger
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:

@@ -243,66 +243,10 @@ lines.forEach((line, idx) => {
 })
 if (missingPropMatches.length > 0) issues.missingProps = missingPropMatches
 
-// 1e. Check for Lexical Monomorphism & Synonym Drift (The >= 2 Recurrence & Monomorphism Rule)
+// 1e. Visual Prompt Monomorphism is enforced in 02_Prompt_Matrix.md / audit-matrix.js.
+// Spoken narration in 01_Episode_Script.md must sound like natural human storytelling
+// (e.g., "his rapier", "the obsidian sword", "the envoy") without reading raw asset titles aloud.
 const synonymDriftMatches = []
-const LEGACY_SYNONYM_DRIFT_RULES = [
-  {
-    canonical: 'Wooden Practice Rod',
-    bannedRegex: /\b(wooden\s+stick|wooden\s+rod|training\s+stick|practice\s+stick|sparring\s+baton|blunt\s+wooden\s+toy)\b/i,
-    allowedCanonical: /Wooden\s+Practice\s+Rod/i
-  },
-  {
-    canonical: 'Obsidian Greatsword',
-    bannedRegex: /\b(chipped\s+greatsword|black\s+greatsword|obsidian\s+sword|chipped\s+obsidian\s+sword)\b/i,
-    allowedCanonical: /Obsidian\s+Greatsword/i
-  },
-  {
-    canonical: 'Vaelgard Silver Training Rapier',
-    bannedRegex: /\b(silver\s+rapier|slender\s+rapier|practice\s+rapier)\b/i,
-    allowedCanonical: /Vaelgard\s+Silver\s+Training\s+Rapier/i
-  },
-  {
-    canonical: 'Enchanted Iron-Wood Practice Dummy',
-    bannedRegex: /\b(iron-wood\s+dummy|wooden\s+dummy|target\s+dummy|target\s+mannequin|cleaved\s+dummy|severed\s+iron-wood\s+dummy)\b/i,
-    allowedCanonical: /Enchanted\s+Iron-Wood\s+Practice\s+Dummy/i
-  },
-  {
-    canonical: 'White Marble Meditation Bench',
-    bannedRegex: /\b(marble\s+bench)\b/i,
-    allowedCanonical: /White\s+Marble\s+Meditation\s+Bench/i
-  },
-  {
-    canonical: 'Founding Sword Saint Obsidian Monument',
-    bannedRegex: /\b(obsidian\s+statue|sword\s+saint\s+statue)\b/i,
-    allowedCanonical: /Founding\s+Sword\s+Saint\s+Obsidian\s+Monument/i
-  }
-]
-const activeSynonymDriftRules = (Array.isArray(worldState?.synonym_drift_rules) && worldState.synonym_drift_rules.length > 0)
-  ? worldState.synonym_drift_rules.map(r => ({
-      canonical: r.canonical,
-      bannedRegex: new RegExp(r.bannedPattern, 'i'),
-      allowedCanonical: new RegExp(r.allowedPattern, 'i')
-    }))
-  : LEGACY_SYNONYM_DRIFT_RULES
-
-lines.forEach((line, idx) => {
-  const trimmed = line.trim()
-  if (trimmed.startsWith('#') || trimmed.startsWith('>') || trimmed.startsWith('<!--') || trimmed.startsWith('```')) return
-  const spokenOnly = trimmed.replace(/<!--[\s\S]*?-->/g, '').replace(/\[IMG_\d+\]/g, '').trim()
-
-  activeSynonymDriftRules.forEach(rule => {
-    if (rule.bannedRegex.test(spokenOnly) && !rule.allowedCanonical.test(spokenOnly)) {
-      const m = spokenOnly.match(rule.bannedRegex)
-      synonymDriftMatches.push({
-        line: idx + 1,
-        matched: m ? m[0] : 'synonym',
-        canonical: rule.canonical,
-        text: spokenOnly.slice(0, 100)
-      })
-    }
-  })
-})
-if (synonymDriftMatches.length > 0) issues.synonymDrift = synonymDriftMatches
 
 // 2. Check [IMG_XXX] tags
 const sceneTagMatches = [...scriptText.matchAll(/\[(IMG_\d+)\]/g)]
@@ -339,22 +283,94 @@ while ((cm = clauseSplitRegex.exec(scriptText)) !== null) {
   })
 }
 
-// Check for Consecutive Static Dialogue Stagnation (> 12 consecutive interaction scenes)
-let consecutiveInteraction = 0;
-const pacingIssues = [];
-clauses.forEach((cl, idx) => {
-  const m = cl.rawText.match(/<!--[\s\S]*?STAGE:\s*([a-zA-Z_]+)[\s\S]*?-->/i);
-  const stage = m ? m[1].toLowerCase() : 'unknown';
-  if (stage === 'interaction') {
-    consecutiveInteraction++;
+// Check for Consecutive Static Dialogue Stagnation & Sliding-Window Zone+Cast Circular Loops
+let consecutiveInteraction = 0
+const pacingIssues = []
+const parsedMetaClauses = clauses.map((cl) => {
+  const stageM = cl.rawText.match(/<!--[\s\S]*?STAGE:\s*([a-zA-Z_]+)[\s\S]*?-->/i)
+  const zoneM = cl.rawText.match(/<!--[\s\S]*?ZONE:\s*([a-zA-Z0-9_]+)[\s\S]*?-->/i)
+  const castM = cl.rawText.match(/<!--[\s\S]*?CAST:\s*\[([^\]]*)\][\s\S]*?-->/i)
+  const castTokens = castM
+    ? castM[1].split(',').map(s => s.trim().toLowerCase()).filter(Boolean).sort()
+    : []
+  return {
+    id: cl.id,
+    stage: stageM ? stageM[1].toLowerCase() : 'unknown',
+    zone: zoneM ? zoneM[1].toLowerCase() : 'unknown',
+    castKey: castTokens.join('|')
+  }
+})
+
+parsedMetaClauses.forEach((mc, idx) => {
+  if (mc.stage === 'interaction') {
+    consecutiveInteraction++
     if (consecutiveInteraction === 13) {
-      pacingIssues.push({ startScene: clauses[idx - 12].id, currentScene: cl.id, count: consecutiveInteraction });
+      pacingIssues.push({ startScene: clauses[idx - 12].id, currentScene: mc.id, count: consecutiveInteraction })
     }
   } else {
-    consecutiveInteraction = 0;
+    consecutiveInteraction = 0
   }
-});
-if (pacingIssues.length > 0) issues.pacingWarnings = pacingIssues;
+})
+if (pacingIssues.length > 0) {
+  issues.pacingWarnings = pacingIssues
+  pacingIssues.forEach(w => {
+    issues.continuityLeaks.push({
+      id: w.currentScene,
+      zone: 'Pacing',
+      message: `Excessive consecutive static interaction scenes (${w.startScene}..${w.currentScene}, ${w.count} straight beats).`
+    })
+  })
+}
+
+// Sliding-window Zone+Cast Stagnation Gate (catches circular dialogue even with solo/establishing intercuts)
+for (let i = 0; i <= parsedMetaClauses.length - 12; i++) {
+  const win = parsedMetaClauses.slice(i, i + 12)
+  const zoneCounts = new Map()
+  const nonEmptyCastSets = win.filter(w => w.castKey)
+  for (const w of win) {
+    zoneCounts.set(w.zone, (zoneCounts.get(w.zone) || 0) + 1)
+  }
+  const [topZone, topZoneCount] = [...zoneCounts.entries()].sort((a, b) => b[1] - a[1])[0] || ['unknown', 0]
+  const noCombatInWin = win.every(w => w.stage !== 'combat')
+  if (topZone !== 'unknown' && topZoneCount === 12 && noCombatInWin && nonEmptyCastSets.length >= 10) {
+    const distinctCasts = new Set(nonEmptyCastSets.map(w => w.castKey))
+    const hasInteraction = win.filter(w => w.stage === 'interaction').length >= 7
+    if (hasInteraction && distinctCasts.size <= 3) {
+      issues.continuityLeaks.push({
+        id: win[11].id,
+        zone: topZone,
+        message: `Circular Zone+Cast Stagnation (${win[0].id}..${win[11].id}): 12 non-combat scenes locked in "${topZone}" with repetitive cast framing.`
+      })
+      i += 11
+    }
+  }
+}
+
+// Ending Momentum Gate (Final 24 scenes must not trap >= 8 consecutive non-combat dialogue scenes in one zone)
+if (parsedMetaClauses.length >= 24) {
+  const finalBatch = parsedMetaClauses.slice(-24)
+  let tailStaticRun = 0
+  let tailZone = null
+  let tailStartId = null
+  for (const fc of finalBatch) {
+    if (fc.stage !== 'combat' && fc.zone !== 'unknown' && (fc.zone === tailZone || tailZone === null)) {
+      if (tailStaticRun === 0) tailStartId = fc.id
+      tailZone = fc.zone
+      tailStaticRun++
+      if (tailStaticRun === 10 && finalBatch.slice(-10).filter(x => x.stage === 'interaction').length >= 6) {
+        issues.continuityLeaks.push({
+          id: fc.id,
+          zone: tailZone,
+          message: `Ending Circular Dialogue Loop (${tailStartId}..${fc.id}): >=10 non-combat scenes trapped in "${tailZone}" with zero spatial transition.`
+        })
+        break
+      }
+    } else {
+      tailStaticRun = 0
+      tailZone = null
+    }
+  }
+}
 
 // Check Batch 01 (IMG_001..IMG_024) for excessive consecutive solo exposition loops (>= 6 solo scenes)
 let b1SoloRun = 0

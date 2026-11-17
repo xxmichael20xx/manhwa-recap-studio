@@ -111,17 +111,6 @@
         </button>
 
         <button 
-          @click="activeStage = 'audio'"
-          class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
-          :class="activeStage === 'audio' 
-            ? 'bg-purple-600 text-white shadow-md shadow-purple-900/20' 
-            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
-        >
-          <Volume2 class="w-4 h-4" />
-          <span>Stage 2: Voiceover & Subtitle Sync</span>
-        </button>
-
-        <button 
           @click="activeStage = 'compiler'"
           class="px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition cursor-pointer"
           :class="activeStage === 'compiler' 
@@ -129,7 +118,7 @@
             : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'"
         >
           <Film class="w-4 h-4" />
-          <span>Stage 3: FFmpeg Compilation & Master Cut</span>
+          <span>Stage 2: Compiled Master Cut</span>
           <span v-if="pipeline.hasVideo" class="w-2 h-2 rounded-full bg-emerald-400"></span>
         </button>
       </div>
@@ -158,15 +147,6 @@
           </div>
 
           <div class="flex flex-wrap items-center gap-3">
-            <button 
-              @click="runVisualAlignmentValidation()"
-              :disabled="isValidatingAlignment"
-              class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center space-x-2 transition shadow-md shadow-indigo-950/20 disabled:opacity-50 cursor-pointer"
-            >
-              <ShieldCheck class="w-4 h-4" :class="{ 'animate-pulse': isValidatingAlignment }" />
-              <span>{{ isValidatingAlignment ? 'Auditing Alignment...' : '🛡️ Validate Scene Alignment' }}</span>
-            </button>
-
             <button 
               @click="synthesizeAllBatches"
               :disabled="isSynthesizingAll || generatingStoryboards"
@@ -510,17 +490,6 @@
                   <span>{{ `⚡ Fix ${batch.name} (${batch.failedCount})` }}</span>
                 </button>
 
-                <!-- 1-Click Validate Alignment for this Batch -->
-                <button 
-                  @click="runVisualAlignmentValidation(batch.index)"
-                  :disabled="isValidatingAlignment"
-                  class="px-3.5 py-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border border-indigo-300 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer disabled:opacity-50"
-                  :title="`Validate scene alignment strictly for ${batch.name}`"
-                >
-                  <ShieldCheck class="w-3.5 h-3.5" />
-                  <span>{{ `🔍 Validate ${batch.name}` }}</span>
-                </button>
-
                 <!-- 1-Click Clear Images for this Batch -->
                 <button 
                   v-if="batch.readyCount > 0"
@@ -776,8 +745,8 @@
       </div>
     </div>
 
-    <!-- STAGE 2: Voiceover & Subtitle Sync -->
-    <div v-if="activeStage === 'audio'" class="space-y-6">
+    <!-- STAGE 2 (BACKEND AUTO-TRIGGERED): Voiceover & Subtitle Sync Hidden Visually -->
+    <div v-if="false && activeStage === 'audio'" class="space-y-6">
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
@@ -872,9 +841,25 @@
       </div>
     </div>
 
-    <!-- STAGE 3: FFmpeg Compilation & Master Cut -->
+    <!-- STAGE 2: Compiled Master Cut (Compilation controls hidden; handled via Fast-Compile CLI) -->
     <div v-if="activeStage === 'compiler'" class="space-y-6">
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+              <Film class="w-4 h-4 text-purple-600 dark:text-purple-400" />
+              <span>Compiled Master Cut</span>
+            </h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Review, play, or download your compiled 1080p batches &amp; Master Cut. Run <code class="text-purple-500 font-mono">Fast Compile.bat</code> for 6-worker compilation.
+            </p>
+          </div>
+          <code class="text-[11px] font-mono bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-emerald-700 dark:text-emerald-300 px-3 py-1.5 rounded-xl select-all">
+            {{ cliCompileCommand }}
+          </code>
+        </div>
+
+        <template v-if="false">
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
           <div>
             <h2 class="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
@@ -1347,6 +1332,7 @@
             <div class="bg-purple-600 h-2 rounded-full transition-all duration-300" :style="`width: ${videoStatus.progress || 10}%`"></div>
           </div>
         </div>
+        </template>
 
         <!-- Video Player & Render Switcher -->
         <div v-if="videoFiles.length > 0 || pipeline.hasVideo" class="space-y-4">
@@ -1442,6 +1428,7 @@
       :progress="modalState.progress"
       :message="modalState.message"
       :logs="modalState.logs"
+      :cli-command="modalState.cliCommand"
       :pipeline="pipeline"
       @close="modalState.show = false"
       @minimize="modalState.isMinimized = !modalState.isMinimized"
@@ -2179,6 +2166,8 @@ const loadFlowEntities = async () => {
 }
 
 
+const cliCompileCommand = computed(() => `node studio/scripts/fast-compile.mjs ${route.params.franchiseId} ${route.params.episodeId}`)
+
 const modalState = ref({
   show: false,
   isMinimized: false,
@@ -2186,7 +2175,8 @@ const modalState = ref({
   status: 'idle',
   progress: 0,
   message: '',
-  logs: []
+  logs: [],
+  cliCommand: ''
 })
 let imagePollTimer = null
 let ttsPollTimer = null
@@ -2197,14 +2187,16 @@ const openProgressModal = () => {
       modalState.value.activeStage = 'compiler'
       modalState.value.status = 'completed'
       modalState.value.progress = 100
-      modalState.value.message = 'Master 1080p Video compilation completed successfully!'
-      modalState.value.logs = ['All 3 stages complete: Visuals, Audio & Master Cut ready.']
+      modalState.value.message = 'Compiled Master Cut ready!'
+      modalState.value.logs = ['Stage 1 Visuals & Audio synced, Stage 2 Master Cut ready.']
+      modalState.value.cliCommand = cliCompileCommand.value
     } else if (pipeline.value.hasMasterAudio) {
-      modalState.value.activeStage = 'audio'
+      modalState.value.activeStage = 'visuals'
       modalState.value.status = 'completed'
       modalState.value.progress = 100
-      modalState.value.message = 'Voiceover & subtitles ready.'
-      modalState.value.logs = ['Voiceover audio and subtitles synchronized.']
+      modalState.value.message = 'Visuals & Voiceover synced! Proceed with Fast-Compile CLI.'
+      modalState.value.logs = ['Voiceover audio and subtitles synchronized. Ready for Fast-Compile CLI.']
+      modalState.value.cliCommand = cliCompileCommand.value
     } else if (pipeline.value.imagesReady > 0) {
       modalState.value.activeStage = 'visuals'
       modalState.value.status = 'completed'
@@ -3045,7 +3037,8 @@ const synthesizeSingleBatch = async (batchIndex) => {
     status: 'running',
     progress: 10,
     message: `Synthesizing ${totalInBatch} storyboard panels for Batch ${batchCode}...`,
-    logs: [`Initializing Puppeteer 1080p render pipeline for Batch ${batchCode}...`]
+    logs: [`Initializing 1080p render pipeline for Batch ${batchCode}...`],
+    cliCommand: ''
   }
 
   clearInterval(imagePollTimer)
@@ -3074,13 +3067,21 @@ const synthesizeSingleBatch = async (batchIndex) => {
     const data = await res.json()
     clearInterval(imagePollTimer)
     if (data.success) {
-      modalState.value.status = 'completed'
-      modalState.value.progress = 100
-      modalState.value.message = `Successfully synthesized all ${data.count} panels for Batch ${letter}!`
-      modalState.value.logs = [...modalState.value.logs, `Completed: ${data.count} panels rendered for Batch ${letter}.`]
+      modalState.value.logs = [...modalState.value.logs, `Completed: ${data.count} panels rendered for Batch ${batchCode}. Checking Voiceover & Subtitles...`]
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
+
+      if (pipeline.value.audioNeedsSync) {
+        modalState.value.logs = [...modalState.value.logs, 'Narrative changes or missing audio detected — auto-triggering Voiceover & Subtitle Sync...']
+        await generateVoiceoverAndSubtitles({ appendLogs: true })
+      } else {
+        modalState.value.status = 'completed'
+        modalState.value.progress = 100
+        modalState.value.message = `Batch ${batchCode} synced & Voiceover/Subtitles already up to date! Proceed with CLI tool.`
+        modalState.value.logs = [...modalState.value.logs, '✓ Narrative unchanged — audio & SRT already synced. Ready for Fast-Compile CLI.']
+        modalState.value.cliCommand = cliCompileCommand.value
+      }
     } else {
       modalState.value.status = 'failed'
       modalState.value.message = data.error || 'Synthesis failed'
@@ -3103,7 +3104,8 @@ const synthesizeAllBatches = async () => {
     status: 'running',
     progress: 5,
     message: `1-Click Synthesizing all ${scenes.value.length} storyboard panels...`,
-    logs: ['Initializing Puppeteer 1080p render pipeline for all batches...']
+    logs: ['Initializing 1080p render pipeline for all batches...'],
+    cliCommand: ''
   }
 
   clearInterval(imagePollTimer)
@@ -3132,13 +3134,21 @@ const synthesizeAllBatches = async () => {
     const data = await res.json()
     clearInterval(imagePollTimer)
     if (data.success) {
-      modalState.value.status = 'completed'
-      modalState.value.progress = 100
-      modalState.value.message = `Successfully synthesized all ${data.count} panels across all batches!`
-      modalState.value.logs = [...modalState.value.logs, `Completed: All ${data.count} panels rendered in 1080p.`]
+      modalState.value.logs = [...modalState.value.logs, `Completed: All ${data.count} panels rendered in 1080p. Checking Voiceover & Subtitles...`]
       cacheBuster.value = Date.now()
       await loadScenes()
       await loadPipelineStatus()
+
+      if (pipeline.value.audioNeedsSync) {
+        modalState.value.logs = [...modalState.value.logs, 'Narrative changes or missing audio detected — auto-triggering Voiceover & Subtitle Sync...']
+        await generateVoiceoverAndSubtitles({ appendLogs: true })
+      } else {
+        modalState.value.status = 'completed'
+        modalState.value.progress = 100
+        modalState.value.message = `All ${data.count} panels synced & Voiceover/Subtitles already up to date! Proceed with CLI tool.`
+        modalState.value.logs = [...modalState.value.logs, '✓ Narrative unchanged — audio & SRT already synced. Ready for Fast-Compile CLI.']
+        modalState.value.cliCommand = cliCompileCommand.value
+      }
     } else {
       modalState.value.status = 'failed'
       modalState.value.message = data.error || 'Failed to synthesize all panels.'
@@ -3607,6 +3617,7 @@ const pipeline = ref({
   audioReady: 0,
   hasMasterAudio: false,
   hasSubtitles: false,
+  audioNeedsSync: false,
   hasVideo: false,
   videoSize: 0
 })
@@ -3992,16 +4003,19 @@ const uploadBase64 = async (tag, base64Data) => {
   }
 }
 
-const generateVoiceoverAndSubtitles = async () => {
+const generateVoiceoverAndSubtitles = async (opts = {}) => {
+  const { appendLogs = false } = opts
   synthesizingAudio.value = true
+  const prevLogs = appendLogs ? (modalState.value.logs || []) : []
   modalState.value = {
     show: true,
     isMinimized: false,
     activeStage: 'audio',
     status: 'running',
     progress: 5,
-    message: `Connecting to Edge-TTS neural engine (${selectedVoice.value})...`,
-    logs: [`Initializing Edge-TTS neural engine with voice ${selectedVoice.value}...`]
+    message: `Auto-syncing Edge-TTS voiceover & subtitles (${selectedVoice.value})...`,
+    logs: [...prevLogs, `Initializing Edge-TTS neural engine with voice ${selectedVoice.value}...`],
+    cliCommand: ''
   }
 
   clearInterval(ttsPollTimer)
@@ -4032,8 +4046,9 @@ const generateVoiceoverAndSubtitles = async () => {
     if (data.success) {
       modalState.value.status = 'completed'
       modalState.value.progress = 100
-      modalState.value.message = `Master audio & ${data.subtitleCount || 255} subtitle cues synchronized!`
-      modalState.value.logs = [...modalState.value.logs, `Success: Generated ${data.generatedCount} scenes & ${data.subtitleCount} cues.`]
+      modalState.value.message = `Voiceover & ${data.subtitleCount || 255} subtitle cues synced! Proceed with Fast-Compile CLI.`
+      modalState.value.logs = [...modalState.value.logs, `✓ Generated ${data.generatedCount} scenes & ${data.subtitleCount} cues. Ready for Fast-Compile CLI.`]
+      modalState.value.cliCommand = cliCompileCommand.value
       await loadSubtitles()
       await loadPipelineStatus()
     } else {

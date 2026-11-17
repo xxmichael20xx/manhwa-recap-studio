@@ -1608,7 +1608,37 @@ export class VideoService {
         })
 
         try {
-          await this.autoCompileAllBatches(franchiseId, epId, { skipExisting: freshCompile ? false : skipExisting, force: true, fresh: freshCompile === true })
+          const fastCompileScript = path.resolve(__dirname, '../../scripts/fast-compile.mjs')
+          const fcArgs = [
+            fastCompileScript,
+            franchiseId,
+            epId,
+            ...(freshCompile ? ['--fresh'] : ['--skip-existing'])
+          ]
+          await new Promise((resolveFast, rejectFast) => {
+            const fcProc = spawn('node', fcArgs, { cwd: projectRoot })
+            let fcErr = ''
+            fcProc.stdout.on('data', chunk => {
+              const lines = chunk.toString().split(/\r?\n/).map(l => l.trim()).filter(Boolean)
+              if (lines.length > 0) {
+                const lastLine = lines[lines.length - 1]
+                const prevLogs = this.compilationState[`${franchiseId}/omnibus`]?.log || []
+                this.updateStatus(franchiseId, 'omnibus', {
+                  status: 'compiling',
+                  progress: percentStart + Math.round(25 / targetEpisodes.length),
+                  stage: 'compiling_episodes',
+                  message: `[Episode ${i + 1}/${targetEpisodes.length}] ${lastLine}`,
+                  log: [...prevLogs.slice(-30), `⚡ ${lastLine}`]
+                })
+              }
+            })
+            fcProc.stderr.on('data', chunk => { fcErr += chunk.toString() })
+            fcProc.on('close', code => {
+              if (code === 0) resolveFast()
+              else rejectFast(new Error(`fast-compile exited ${code}: ${fcErr.slice(-300)}`))
+            })
+            fcProc.on('error', rejectFast)
+          })
           const postLogs = this.compilationState[`${franchiseId}/omnibus`]?.log || []
           this.updateStatus(franchiseId, 'omnibus', {
             status: 'compiling',
@@ -1856,6 +1886,9 @@ export class VideoService {
 
           // Calculate 100% mathematically exact cumulative chapter timestamps via ffprobe
           const metadata = await VideoService.calculateOmnibusMetadataFromPaths(franchiseId, resolvedFiles, outName)
+          if (options.actNumber) {
+            metadata.actNumber = Number(options.actNumber)
+          }
 
           const metaPath = path.join(omnibusDir, `${path.basename(outName, '.mp4')}_metadata.json`)
           await fs.writeFile(metaPath, JSON.stringify(metadata, null, 2), 'utf-8').catch(() => {})

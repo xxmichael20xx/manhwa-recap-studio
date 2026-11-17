@@ -96,11 +96,12 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 
 ---
 
-### 12. The Eternal "Weakness Faking" & Indefinite Concealment Trap
-* **Defect:** Protagonist achieves god-tier power but remains disguised as a bullied, submissive F-rank porter for 50+ chapters with zero progression.
-* **Fix (Operator-Prompted Concealment & Strategic Sandbagging):**
-  - The MC is permitted to selectively conceal, sandbag, or throttle their abilities based on tactical need (e.g. baiting corrupt scouts, passing exams with the bare minimum).
-  - The AI agent will proactively ask the operator during pre-flight alignment when the MC's grand unveiling should occur.
+### 12. The Hidden-Power & "Nonchalant" MC Trap
+* **Defect:** Protagonist hides god-tier abilities behind fake F-rank helplessness or acts unrealistically stoic/deadpan ("nonchalant", hands-in-pockets) in lethal crises.
+* **Fix (Open Power, Smart Tactical Reactivity & Immediate Failure Lore):**
+  - **No Hidden Powers:** The MC deploys his actual talents and skills openly without pretending to be weak.
+  - **Ban Nonchalant Archetype:** Strictly ban stoic, deadpan, emotionless, or unbothered protagonist tropes; the MC must be smart, tactical, observant, and emotionally grounded in real stakes.
+  - **Immediate Talent-Failure Backstory:** Whenever an appraisal orb, guild test, or academy system rejects or misreads the MC's talent/skill, the story MUST immediately explain the exact mechanical or institutional cause of that failure.
 
 ---
 
@@ -212,7 +213,7 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
 * **Defect:** A tense, high-stakes confrontation or battle begins, but the drafter over-indexes on an overpowered protagonist's "nonchalance" by cutting away to the MC buying snacks at a street booth, slurping noodles mid-fight, or handling random groceries while enemies are attacking. Meanwhile, props constantly flicker into existence and vanish across consecutive plates, mercenaries morph from military soldiers into street thugs, and destruction states oscillate between fine dust and jagged bomb craters.
 * **Fix (Strict Spatial Enclosure & Continuous Combat Immersion across All Franchises):**
   1. **Zero Mid-Combat Errand Breaks:** Once an active confrontation, standoff, or combat engagement commences, the spatial staging is strictly locked to that battle enclosure. Scriptwriters and prompt directors across ALL series are **STRICTLY PROHIBITED** from cutting away to the protagonist or actors buying snacks, shopping at stalls, ordering food, eating noodles, or engaging in casual consumer transactions mid-battle.
-  2. **Authentic Nonchalance vs. Cartoonish Filler:** An overpowered protagonist's composure MUST be conveyed through stillness, unhurried posture, deadpan minimal expressions, and effortless passive defenses (e.g. attacks vaporising or shattering on passive barriers/recoil)—NEVER through immersion-breaking domestic chores or comedy filler inserted into combat sequences.
+  2. **Tactical Composure vs. Cartoonish Filler:** A smart protagonist's control MUST be conveyed through sharp spatial awareness, decisive counterplay, and clean defensive timing—NEVER through "nonchalant" deadpan detachment or immersion-breaking domestic chores inserted into combat sequences.
   3. **Strict Prop Lifecycle Parity & Zero Flickering:** Any physical item held or manipulated (bags, food items, pills, weapons, talismans) MUST maintain continuous, monotonic state across sequential plates. Items are strictly forbidden from magically appearing, disappearing, changing containers (e.g. alternating between vial, bottle, and loose pearl), or flickering in and out of an actor's hands between consecutive cuts. If an item is carried into a scene, it must be introduced before the confrontation begins and remain held or stowed consistently throughout.
   4. **Entourage & Mob Visual Uniformity:** Squads, mercenary escorts, and enemy thralls MUST maintain locked visual DNA throughout an encounter; they are strictly prohibited from morphing between uniform classes (e.g. turning from high-tech tactical soldiers with jetpacks into random street thugs or unvaulted strangers).
   5. **Destruction State Persistence:** Any physical destruction to a zone (e.g. a skyscraper collapsed into fine dust, a cratered plaza, a shattered barrier) MUST remain visually persistent and coherent across all subsequent scenes within that enclosure, with zero alternating between conflicting damage states.
@@ -228,4 +229,10 @@ The goal of this Codex is to eliminate all forms of **"narrative slop"**—plot 
   2. **The Architectural Metaphor Shield:** Auditory metaphors and apocalyptic prophecies containing anatomical or biological words (*"horn"*, *"fangs"*, *"claws"*, *"demon face"*) are STRICTLY FORBIDDEN from being copied literally into prompt action layers for architectural, urban, or landmark scenes.
   3. **Acoustic Translation & Negative Landmark Tokens:** Auditory horns must be translated into pure sonic phenomena (`deep acoustic shockwave rippling through clouds, atmospheric sonic resonance`). Prompts staging towers, steles, or buildings during demonic/beast alerts MUST inject explicit negative protection: `zero horns on buildings, zero organic horns, pure monolithic architecture, zero demon anatomy on buildings`.
 
+---
 
+### 24. Solo Grinding Bias & Immediate Causal Worldbuilding Invariant
+* **Defect:** Protagonists constantly join random carry-parties during routine leveling, or governments/guilds suddenly deploy secret barriers/weapons with zero explanation of where they came from.
+* **Fix (Solo Progression & Zero Causal Skips):**
+  1. **Solo Grinding Focus:** The MC hunts, grinds, and levels up solo by default; rare temporary alliances are allowed only when plot-mandatory and logically justified.
+  2. **Zero Causal / Plot Skips:** Whenever a government, academy, or faction deploys a special weapon, barrier, treaty, or countermeasure during an attack, the narrative MUST explain *how* and *why* they possess it at that moment (or immediately afterward).

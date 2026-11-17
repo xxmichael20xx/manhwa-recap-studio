@@ -56,7 +56,7 @@
               <div>
                 <div class="flex items-center space-x-2">
                   <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold border border-purple-500/20">
-                    STAGE {{ currentStageNumber }} OF 3
+                    STAGE {{ currentStageNumber }} OF 2
                   </span>
                   <span v-if="status === 'running'" class="flex items-center space-x-1 text-[11px] font-mono text-amber-500">
                     <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
@@ -95,49 +95,34 @@
             </div>
           </div>
 
-          <!-- 3-Stage Progress Step Ribbon -->
+          <!-- 2-Stage Progress Step Ribbon -->
           <div class="px-6 py-3 bg-slate-100/60 dark:bg-slate-950/70 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
-            <!-- Stage 1: Visuals -->
+            <!-- Stage 1: Visuals & Auto-Audio -->
             <div 
               class="flex items-center space-x-2 transition cursor-pointer"
               :class="stageClass(1)"
               @click="$emit('switch-stage', 'visuals')"
             >
               <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold border" :class="stepBadgeClass(1)">
-                <CheckCircle2 v-if="pipeline.imagesReady === pipeline.totalScenes && pipeline.totalScenes > 0" class="w-3.5 h-3.5" />
+                <CheckCircle2 v-if="pipeline.imagesReady === pipeline.totalScenes && pipeline.totalScenes > 0 && pipeline.hasMasterAudio" class="w-3.5 h-3.5" />
                 <span v-else>1</span>
               </span>
-              <span class="font-semibold hidden sm:inline">Visuals</span>
+              <span class="font-semibold hidden sm:inline">Visuals &amp; Auto-Audio</span>
             </div>
 
-            <div class="h-0.5 w-6 sm:w-12 bg-slate-300 dark:bg-slate-800" :class="{ 'bg-emerald-500': pipeline.imagesReady === pipeline.totalScenes && pipeline.totalScenes > 0 }"></div>
+            <div class="h-0.5 flex-1 mx-4 bg-slate-300 dark:bg-slate-800" :class="{ 'bg-emerald-500': pipeline.imagesReady === pipeline.totalScenes && pipeline.totalScenes > 0 && pipeline.hasMasterAudio }"></div>
 
-            <!-- Stage 2: Audio & Subtitles -->
+            <!-- Stage 2: Compiled Master Cut -->
             <div 
               class="flex items-center space-x-2 transition cursor-pointer"
               :class="stageClass(2)"
-              @click="$emit('switch-stage', 'audio')"
-            >
-              <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold border" :class="stepBadgeClass(2)">
-                <CheckCircle2 v-if="pipeline.hasMasterAudio && pipeline.hasSubtitles" class="w-3.5 h-3.5" />
-                <span v-else>2</span>
-              </span>
-              <span class="font-semibold hidden sm:inline">Voice & Subs</span>
-            </div>
-
-            <div class="h-0.5 w-6 sm:w-12 bg-slate-300 dark:bg-slate-800" :class="{ 'bg-emerald-500': pipeline.hasMasterAudio && pipeline.hasSubtitles }"></div>
-
-            <!-- Stage 3: Master Cut -->
-            <div 
-              class="flex items-center space-x-2 transition cursor-pointer"
-              :class="stageClass(3)"
               @click="$emit('switch-stage', 'compiler')"
             >
-              <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold border" :class="stepBadgeClass(3)">
+              <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold border" :class="stepBadgeClass(2)">
                 <CheckCircle2 v-if="pipeline.hasVideo" class="w-3.5 h-3.5" />
-                <span v-else>3</span>
+                <span v-else>2</span>
               </span>
-              <span class="font-semibold hidden sm:inline">1080p Master</span>
+              <span class="font-semibold hidden sm:inline">Compiled Master Cut</span>
             </div>
           </div>
 
@@ -199,6 +184,22 @@
                 </div>
               </div>
             </div>
+
+            <!-- CLI Fast-Compile Ready Banner -->
+            <div v-if="status === 'completed' && cliCommand" class="w-full p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-bold text-emerald-700 dark:text-emerald-300 font-mono">
+                  ⚡ Visuals &amp; Audio Synced — Proceed with Fast-Compile CLI (Fast Compile.bat):
+                </span>
+                <button
+                  @click="copyCli"
+                  class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-mono font-bold transition cursor-pointer shrink-0"
+                >
+                  {{ copiedCli ? '✓ Copied' : 'Copy Command' }}
+                </button>
+              </div>
+              <code class="block text-[11px] font-mono bg-slate-950 text-emerald-300 px-3 py-2 rounded-lg overflow-x-auto select-all">{{ cliCommand }}</code>
+            </div>
           </div>
 
           <!-- Modal Footer Actions -->
@@ -217,42 +218,32 @@
                 Minimize
               </button>
 
-              <!-- Stage 1 Done -> Proceed to Stage 2 -->
-              <button 
-                v-if="status === 'completed' && activeStage === 'visuals'"
-                @click="$emit('proceed-next', 'audio')"
-                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
-              >
-                <span>Proceed to Stage 2: Voiceover Sync</span>
-                <ArrowRight class="w-3.5 h-3.5" />
-              </button>
+              <!-- Stage 1 Done -> Open Stage 2 Compiled Master Cut -->
+              <template v-if="status === 'completed' && (activeStage === 'visuals' || activeStage === 'audio')">
+                <button 
+                  @click="$emit('switch-stage', 'compiler'); $emit('close')"
+                  class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
+                >
+                  <Film class="w-3.5 h-3.5" />
+                  <span>Open Stage 2: Compiled Master Cut</span>
+                </button>
+              </template>
 
-              <!-- Stage 2 Done -> Proceed to Stage 3 -->
-              <button 
-                v-else-if="status === 'completed' && activeStage === 'audio'"
-                @click="$emit('proceed-next', 'compiler')"
-                class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-purple-900/20 cursor-pointer"
-              >
-                <span>Proceed to Stage 3: FFmpeg Compilation</span>
-                <ArrowRight class="w-3.5 h-3.5" />
-              </button>
-
-              <!-- Stage 3 Done -> Stay in Current Stage or Optional Jump to Stage 3 Player -->
+              <!-- Stage 2 Done -> Stay or Open Player -->
               <template v-else-if="status === 'completed' && activeStage === 'compiler'">
                 <button 
                   @click="$emit('switch-stage', 'compiler'); $emit('close')"
                   class="px-3.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 dark:bg-purple-950/50 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-500/30 text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer shadow-xs"
-                  title="Switch to Stage 3 video list and player"
                 >
                   <Film class="w-3.5 h-3.5" />
-                  <span>Open in Stage 3 Player</span>
+                  <span>Open Stage 2 Player</span>
                 </button>
                 <button 
                   @click="$emit('close')"
                   class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center space-x-1.5 transition shadow-md shadow-emerald-900/20 cursor-pointer"
                 >
                   <CheckCircle2 class="w-3.5 h-3.5" />
-                  <span>Done (Stay in Current View)</span>
+                  <span>Done</span>
                 </button>
               </template>
 
@@ -297,6 +288,7 @@ const props = defineProps({
   progress: { type: Number, default: 0 },
   message: { type: String, default: '' },
   logs: { type: Array, default: () => [] },
+  cliCommand: { type: String, default: '' },
   pipeline: {
     type: Object,
     default: () => ({
@@ -313,6 +305,15 @@ const props = defineProps({
 defineEmits(['close', 'minimize', 'maximize', 'proceed-next', 'switch-stage'])
 
 const logContainer = ref(null)
+const copiedCli = ref(false)
+const copyCli = async () => {
+  if (!props.cliCommand) return
+  try {
+    await navigator.clipboard.writeText(props.cliCommand)
+    copiedCli.value = true
+    setTimeout(() => { copiedCli.value = false }, 2000)
+  } catch (_) {}
+}
 
 watch(() => props.logs, async () => {
   await nextTick()
@@ -322,15 +323,14 @@ watch(() => props.logs, async () => {
 }, { deep: true })
 
 const currentStageNumber = computed(() => {
-  if (props.activeStage === 'visuals') return 1
-  if (props.activeStage === 'audio') return 2
-  return 3
+  if (props.activeStage === 'visuals' || props.activeStage === 'audio') return 1
+  return 2
 })
 
 const currentStageTitle = computed(() => {
   if (props.activeStage === 'visuals') return 'Visual Assets & Storyboard Generation'
-  if (props.activeStage === 'audio') return 'Neural Voiceover & Subtitle Synchronization'
-  return 'FFmpeg 1080p Master Cut Compilation'
+  if (props.activeStage === 'audio') return 'Auto-Syncing Voiceover & Subtitles'
+  return 'Compiled Master Cut'
 })
 
 const currentStageIcon = computed(() => {
@@ -350,13 +350,10 @@ const stepBadgeClass = (stageNum) => {
   if (stageNum === currentStageNumber.value) {
     return 'bg-purple-600 text-white border-purple-500'
   }
-  if (stageNum === 1 && props.pipeline.imagesReady === props.pipeline.totalScenes && props.pipeline.totalScenes > 0) {
+  if (stageNum === 1 && props.pipeline.imagesReady === props.pipeline.totalScenes && props.pipeline.totalScenes > 0 && props.pipeline.hasMasterAudio) {
     return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30'
   }
-  if (stageNum === 2 && props.pipeline.hasMasterAudio && props.pipeline.hasSubtitles) {
-    return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30'
-  }
-  if (stageNum === 3 && props.pipeline.hasVideo) {
+  if (stageNum === 2 && props.pipeline.hasVideo) {
     return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30'
   }
   return 'bg-slate-200 dark:bg-slate-800 text-slate-500 border-slate-300 dark:border-slate-700'

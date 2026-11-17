@@ -1,0 +1,169 @@
+{
+  "episodeId": "EP07_The_Heresy_Summons_and_The_Frozen_Spire",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-16T18:20:48.658Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_096",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_097",
+        "to_scene": "IMG_192",
+        "lighting": "night_celestial"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "high_inquisitor_malakor": "white-and-gold ecclesiastical inquisitor vestments with high rigid gold collar",
+    "church_saboteur_envoy": "dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat",
+    "julian_vaelgard_academy": "clean signature standard attire",
+    "dean_alistair_vance": "clean signature standard attire",
+    "archmage_lyra": "silver snowflake drop earrings"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": null,
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "frozen_spire_sanctum": {
+      "canonical_name": "Frozen Spire Sanctum",
+      "container": null,
+      "visual_form": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes.",
+      "notes": "Locked across all episode scenes: Frozen Spire Sanctum."
+    },
+    "obsidian_greatsword": {
+      "canonical_name": "Obsidian Greatsword",
+      "container": null,
+      "visual_form": "Colossal two-handed obsidian greatsword sculpted from deep dark obsidian volcanic glass stone, broad battle-notched double-edged blade etched with glowing violet arcane runes along the central fuller, radiating gentle wisps of violet mana luminescence along the blade edge, blackened winged gothic steel crossguard with central faceted violet gem, black leather wrapped two-handed hilt, pointed faceted steel pommel, 2D action manhwa art style, sharp ink linework, horizontal 16:9 widescreen",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_062",
+      "to_scene": "IMG_072",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_128",
+      "to_scene": "IMG_131",
+      "holder_id": "",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_135",
+      "to_scene": "IMG_136",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_138",
+      "to_scene": "IMG_141",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_143",
+      "to_scene": "IMG_147",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_149",
+      "to_scene": "IMG_155",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_158",
+      "to_scene": "IMG_161",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_163",
+      "to_scene": "IMG_165",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_167",
+      "to_scene": "IMG_168",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_175",
+      "to_scene": "IMG_177",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_179",
+      "to_scene": "IMG_180",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_182",
+      "to_scene": "IMG_183",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_185",
+      "to_scene": "IMG_192",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [
+      {
+        "entity_id": "dean_alistair_vance",
+        "from_scene": 172,
+        "to_scene": 192,
+        "state": "kneeling",
+        "dna_append": "kneeling directly on the ground floor",
+        "strip_patterns": [
+          "proud upright posture with raised chin",
+          "proud upright posture",
+          "standing tall",
+          "standing command",
+          "upright posture"
+        ],
+        "force_grounded_camera": true
+      },
+      {
+        "entity_id": "archmage_lyra",
+        "from_scene": 177,
+        "to_scene": 192,
+        "state": "kneeling",
+        "dna_append": "kneeling directly on the ground floor",
+        "strip_patterns": [
+          "proud upright posture with raised chin",
+          "proud upright posture",
+          "standing tall",
+          "standing command",
+          "upright posture"
+        ],
+        "force_grounded_camera": true
+      }
+    ],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

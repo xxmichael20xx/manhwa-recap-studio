@@ -95,6 +95,11 @@ const c02Fails = []
 const c03Fails = []
 const c04Fails = []
 const c05Fails = []
+const c06Fails = []
+const c07Fails = []
+const c08Fails = []
+let prevCalmWeaponElev = null
+let prevCalmZone = null
 
 const ledgerEvents = ledgerText
   .split(/\r?\n/)
@@ -188,7 +193,7 @@ for (const m of sceneBlocks) {
           c03Fails.push(`${sId} (${ent.id} missing unarmed lock)`)
         }
       } else {
-        if (blockMatch && !/\bgripping\b|\bholding\b/i.test(blockMatch[1])) {
+        if (blockMatch && !/\bgripping\b|\bholding\b|\bwielding\b|\bresting\b/i.test(blockMatch[1])) {
           c03Fails.push(`${sId} (${ent.id} missing wielder hand-grip lock)`)
         }
       }
@@ -199,6 +204,46 @@ for (const m of sceneBlocks) {
   if (!/manhwa webtoon art style/i.test(promptText) || !/no photorealistic 3d cgi/i.test(promptText)) {
     c05Fails.push(`${sId} (missing ${!/manhwa webtoon art style/i.test(promptText) ? '2D manhwa style' : 'no photorealistic 3D CGI'})`)
   }
+
+  // C06: Common-Sense Weapon Grip & Scale Parity (Prevent 1-handed grip on two-handed/heavy props)
+  const twoHandedItemRe = /\b(?:two-handed|two handed|greatsword|greatblade|greataxe|halberd|polearm|scythe|longbow|colossal|massive)\b/i
+  const hasTwoHandedProp = itemRefs.some(ref => {
+    const ent = Object.values(entities).find(e => e.name?.toLowerCase() === ref.toLowerCase())
+    const blob = `${ref} ${ent?.grip_style || ''} ${ent?.dna || ''} ${ent?.visual_dna || ''}`
+    return twoHandedItemRe.test(blob)
+  })
+  if (hasTwoHandedProp && /\b(?:firmly in right hand|one-handed|single-handed)\b/i.test(`${rawAct} ${promptText}`)) {
+    c06Fails.push(`${sId} (two-handed/heavy prop paired with one-handed "in right hand" grip)`)
+  }
+
+  // C07: Zero Negative-Action Bleed in <action_layer> (Prevents image models drawing negated poses)
+  const negBleedMatch = rawAct.match(/\b(?:without\s+(?:raising|drawing|swinging|lifting|attacking|holding|striking|moving)|instead\s+of\s+(?:raising|drawing|swinging|attacking)|never\s+(?:raising|drawing)|not\s+(?:raising|drawing|swinging))\b/i)
+  if (negBleedMatch) {
+    c07Fails.push(`${sId} (negative-action bleed "${negBleedMatch[0]}" in action_layer)`)
+  }
+
+  // C08: Dialogue Posture Continuity & Anti-Ping-Pong Guard
+  const narrMatch = m[0].match(/<narrative_sync>([\s\S]*?)<\/narrative_sync>/i)
+  const narrText = narrMatch ? narrMatch[1].trim() : ''
+  const zoneMatch = m[0].match(/zone="([^"]+)"/i)
+  const sceneZone = zoneMatch ? zoneMatch[1].toLowerCase() : ''
+  const isCalmNarrative = /\b(?:didn't raise|held (?:his|her) ground|whispered|answered|said quietly|stayed bowed|kneeling|spoke softly|looked down)\b/i.test(narrText)
+  const hasUnsolicitedCombatAction = /\b(?:cleaving horizontally|lunging forward|slashing wildly|charging ahead|swinging down)\b/i.test(rawAct)
+  if (isCalmNarrative && hasUnsolicitedCombatAction) {
+    c08Fails.push(`${sId} (unsolicited combat swing in action_layer during calm dialogue)`)
+  }
+  if (isCalmNarrative && itemRefs.length > 0 && sceneZone === prevCalmZone) {
+    const elev = /\b(?:lifting|raising|raised|pointing upward)\b/i.test(rawAct)
+      ? 'high'
+      : (/\b(?:resting|lowered|downward|at (?:his|her) side)\b/i.test(rawAct) ? 'low' : null)
+    if (elev && prevCalmWeaponElev && elev !== prevCalmWeaponElev) {
+      c08Fails.push(`${sId} (weapon posture flip ${prevCalmWeaponElev} -> ${elev} during consecutive dialogue)`)
+    }
+    prevCalmWeaponElev = elev
+  } else {
+    prevCalmWeaponElev = null
+  }
+  prevCalmZone = sceneZone
 }
 
 report.checks.push(
@@ -236,11 +281,32 @@ report.checks.push(
     passed: c05Fails.length === 0,
     failingScenes: c05Fails,
     details: c05Fails.length === 0 ? '100% of scenes preserve full Layer 1 2D style and anti-3D CGI locks.' : `Stripped 2D style / anti-3D lock (${c05Fails.join(', ')})`
+  },
+  {
+    id: 'C06_weapon_grip_scale_parity',
+    name: 'C06: Common-Sense Weapon Scale & Hand-Grip Parity',
+    passed: c06Fails.length === 0,
+    failingScenes: c06Fails,
+    details: c06Fails.length === 0 ? 'All two-handed and heavy weapons preserve two-handed or resting grip wording.' : `Grip/scale mismatch (${c06Fails.join(', ')})`
+  },
+  {
+    id: 'C07_no_negative_action_bleed',
+    name: 'C07: Zero Negative-Verb Narrative Bleed in <action_layer>',
+    passed: c07Fails.length === 0,
+    failingScenes: c07Fails,
+    details: c07Fails.length === 0 ? 'All action layers describe positive physical poses without negated action verbs.' : `Negative-verb bleed (${c07Fails.join(', ')})`
+  },
+  {
+    id: 'C08_dialogue_posture_continuity',
+    name: 'C08: Dialogue Posture Continuity & Anti-Ping-Pong Guard',
+    passed: c08Fails.length === 0,
+    failingScenes: c08Fails,
+    details: c08Fails.length === 0 ? 'Dialogue scenes maintain consistent weapon posture without action-to-standing flips.' : `Posture drift/mismatch (${c08Fails.join(', ')})`
   }
 )
 report.isProductionReady = report.checks.every(c => c.passed)
 report.overallScore = Math.round((report.checks.filter(c => c.passed).length / report.checks.length) * 100)
-for (const s of [...c01Fails, ...c02Fails, ...c03Fails, ...c04Fails, ...c05Fails].map(x => x.split(' ')[0])) {
+for (const s of [...c01Fails, ...c02Fails, ...c03Fails, ...c04Fails, ...c05Fails, ...c06Fails, ...c07Fails, ...c08Fails].map(x => x.split(' ')[0])) {
   if (!report.failingScenes.includes(s)) report.failingScenes.push(s)
 }
 

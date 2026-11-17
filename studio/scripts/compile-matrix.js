@@ -710,9 +710,32 @@ for (let i = 0; i < sceneIds.length; i++) {
     }
   }
 
-  const heldWeaponTokens = handheldProps
-    .filter(hp => /\b(?:rapier|sword|greatsword|blade|staff|wand|dagger|spear|bow|axe)\b/i.test(hp.name))
-    .map(hp => hp.token)
+  const heldWeaponProps = handheldProps
+    .filter(hp => /\b(?:rapier|sword|greatsword|greatblade|greataxe|blade|staff|wand|dagger|spear|bow|longbow|axe|halberd|polearm|scythe|lance|hammer)\b/i.test(hp.name))
+  const heldWeaponTokens = heldWeaponProps.map(hp => hp.token)
+
+  /**
+   * Common-sense weapon grip phrasing based on prop scale/DNA and scene posture.
+   */
+  const buildWeaponGripClause = (weaponProps, actText = '') => {
+    const tokens = weaponProps.map(hp => hp.token).join(' and ')
+    const isResting = /\b(?:resting|planted|sheathed|at (?:his|her) side|tip (?:against|on)|lowered)\b/i.test(actText)
+    if (isResting) {
+      return `resting ${tokens} steadily at side`
+    }
+    const isTwoHanded = weaponProps.some(hp => {
+      const dnaBlob = `${hp.name} ${hp.ent?.grip_style || ''} ${hp.ent?.dna || ''} ${hp.ent?.visual_dna || ''}`
+      return /\b(?:two-handed|two handed|greatsword|greatblade|greataxe|halberd|polearm|scythe|longbow|colossal|massive)\b/i.test(dnaBlob)
+    })
+    if (isTwoHanded) {
+      return `wielding ${tokens} steadily with both hands`
+    }
+    const isDual = weaponProps.length >= 2 || weaponProps.some(hp => /\b(?:twin|dual|pair)\b/i.test(`${hp.name} ${hp.ent?.dna || ''}`))
+    if (isDual) {
+      return `wielding ${tokens} in both hands`
+    }
+    return `holding ${tokens} steadily in right hand`
+  }
 
   for (const cToken of activeCast) {
     const cleanName = cToken.replace(/[@{}]/g, '').trim()
@@ -742,9 +765,9 @@ for (let i = 0; i < sceneIds.length; i++) {
           if (!block.toLowerCase().includes('unarmed noble attire')) {
             block += `, ${UNARMED_JULIAN_TAIL}`
           }
-        } else if (ent.kind === 'character' && sceneHasWeaponProp && isDesignatedHolder && heldWeaponTokens.length > 0) {
-          if (!/\bgripping\b|\bholding\b/i.test(block)) {
-            block += `, tightly gripping ${heldWeaponTokens.join(' and ')} firmly in right hand`
+        } else if (ent.kind === 'character' && sceneHasWeaponProp && isDesignatedHolder && heldWeaponProps.length > 0) {
+          if (!/\bgripping\b|\bholding\b|\bwielding\b|\bresting\b/i.test(block)) {
+            block += `, ${buildWeaponGripClause(heldWeaponProps, actionText)}`
           }
         } else if (ent.kind === 'character' && sceneHasWeaponProp && !isDesignatedHolder && (!entHeld || entHeld === 'none')) {
           if (!block.toLowerCase().includes('zero swords')) {

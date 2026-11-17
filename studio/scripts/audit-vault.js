@@ -101,6 +101,35 @@ for (const ent of entityList) {
     if ((vGlove && oBare) || (vBare && oGlove)) {
       issues.crossVaultDrift.push({ id: ent.id, name: ent.name || ent.id, issue: 'Hand/glove contradiction between visual_dna and outfits' })
     }
+
+    // Prevent legacy held weapons baked inside active EP04+ character DNA (weapons belong in item entities & PROPS: [])
+    const hasPostLegacyEp = Array.isArray(ent.episodes) && ent.episodes.length > 0
+      ? ent.episodes.some(ep => !LEGACY_TOKEN_EP_RE.test(String(ep)))
+      : true
+    if (hasPostLegacyEp) {
+      const bakedWeaponMatch = vTxt.match(/\b(?:holding|wielding|gripping|carrying)\s+(?:a|an|the)?\s*[^,.;]*\b(?:sword|rapier|greatsword|greatblade|blade|dagger|staff|wand|bow|spear|halberd|axe)\b/i)
+      if (bakedWeaponMatch) {
+        issues.crossVaultDrift.push({
+          id: ent.id,
+          name: ent.name || ent.id,
+          issue: `Character visual_dna hardcodes held weapon ("${bakedWeaponMatch[0]}") — remove from character DNA and bind via item PROPS`
+        })
+      }
+    }
+  }
+
+  // Common-sense weapon scale consistency inside item entities
+  if (!isChar && ent.kind === 'item') {
+    const itemTxt = `${ent.name || ''} ${ent.dna || ''} ${ent.visual_dna || ''}`.toLowerCase()
+    const isHeavy = /\b(?:two-handed|two handed|greatsword|greatblade|greataxe|halberd|polearm|colossal|massive)\b/.test(itemTxt)
+    const hasOneHand = /\b(?:one-handed|one handed|single-handed|lightweight|in right hand)\b/.test(itemTxt)
+    if (isHeavy && hasOneHand) {
+      issues.crossVaultDrift.push({
+        id: ent.id,
+        name: ent.name || ent.id,
+        issue: 'Weapon DNA mixes two-handed/colossal scale with one-handed/lightweight wording'
+      })
+    }
   }
 }
 
