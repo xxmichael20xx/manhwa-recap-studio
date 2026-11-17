@@ -158,6 +158,63 @@
       ],
       "hasPlate": true,
       "visual_dna": "Sunken circular tiered white-marble dueling colosseum floored with light stone tiles inscribed with a glowing azure geometric octagram boundary rune circle, encircled by carved white marble balustrades and arched recessed alcoves, stepped semicircular spectator seating, tall fluted marble pillars, elevated covered noble viewing pavilions draped in sapphire-and-gold banners under a bright cobalt daylight sky."
+    },
+    {
+      "id": "academy_assessment_ward_grounds",
+      "name": "Academy Assessment Ward Grounds",
+      "token": "@{Academy Assessment Ward Grounds}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Night-Warded Academy Assessment Terrace",
+      "true_rank": "Runic Formation Conduit & Upper Observation Spire Approach",
+      "description": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, white marble balustrades, arched colonnades, and a moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire.",
+      "dna": "@{Academy Assessment Ward Grounds}, elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks etched with luminous azure ley-line conduits, arched stone colonnades, moonlit bridge toward towering ivory-and-sapphire gothic observation spire, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Academy Assessment Ward Grounds}, elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks etched with luminous azure ley-line conduits, arched stone colonnades, moonlit bridge toward towering ivory-and-sapphire gothic observation spire, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "19_Location_Academy_Assessment_Ward_Grounds.jpg",
+      "flowName": "Academy Assessment Ward Grounds",
+      "episodes": [
+        "EP05_The_Midnight_Sabotage_and_The_Frozen_Stars_Gaze"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, arched stone colonnades, moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire."
+    },
+    {
+      "id": "radiant_crimson_core_vial",
+      "name": "Radiant Crimson Core Vial",
+      "token": "@{Radiant Crimson Core Vial}",
+      "type": "Artifact",
+      "category": "Artifacts",
+      "apparent_rank": "Forbidden Ecclesiastical Alchemical Catalyst",
+      "true_rank": "Illicit 4-Star Overdrive Solar-Flame Catalyst",
+      "description": "A contraband Church of the Radiant Dawn relic vial filled with volatile scarlet-and-amber plasma mist that forcibly overclocks a 3-Star mage core into unstable 4-Star dual-element output.",
+      "dna": "@{Radiant Crimson Core Vial}, slender faceted hexagonal crystal relic vial with tapered pointed finial base, encased in an ornate tarnished gold-and-obsidian solar filigree cage with circular sunburst collar medallion and mid-body filigree band, topped with a spiked gold-and-obsidian crown stopper inlaid with faceted crimson rubies, swirling luminous scarlet-and-amber flame mist and tiny red embers glowing inside, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Radiant Crimson Core Vial}, slender faceted hexagonal crystal relic vial with tapered pointed finial base, encased in an ornate tarnished gold-and-obsidian solar filigree cage with circular sunburst collar medallion and mid-body filigree band, topped with a spiked gold-and-obsidian crown stopper inlaid with faceted crimson rubies, swirling luminous scarlet-and-amber flame mist and tiny red embers glowing inside, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "20_Item_Radiant_Crimson_Core_Vial.jpg",
+      "flowName": "Radiant Crimson Core Vial",
+      "episodes": [
+        "EP06_The_Crowned_Duel_and_The_Thread_Eater_Awakening"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Slender faceted hexagonal crystal relic vial with tapered finial base encased in tarnished gold-and-obsidian sunburst filigree cage and spiked crimson-ruby crown stopper, swirling luminous scarlet-and-amber flame plasma mist inside."
+    },
+    {
+      "id": "frozen_spire_sanctum",
+      "name": "Frozen Spire Sanctum",
+      "token": "@{Frozen Spire Sanctum}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Sealed Subterranean Academy Vault",
+      "true_rank": "Hidden Sanctum of Aiden Drake & The Frozen Star",
+      "description": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes.",
+      "dna": "@{Frozen Spire Sanctum}, colossal subterranean dark basalt and gothic arched vault chamber encased in towering blue-white glacial ice pillars, glowing cyan crystal clusters in arched gallery niches, drifting frost mist, central stepped octagonal obsidian dais inscribed with pale-cyan seal runes, textless artwork, horizontal 16:9 widescreen",
+      "dna_prompt_anchor": "@{Frozen Spire Sanctum}, colossal subterranean dark basalt and gothic arched vault chamber encased in towering blue-white glacial ice pillars, glowing cyan crystal clusters in arched gallery niches, drifting frost mist, central stepped octagonal obsidian dais inscribed with pale-cyan seal runes, textless artwork, horizontal 16:9 widescreen",
+      "reference_plate": "21_Location_Frozen_Spire_Sanctum.jpg",
+      "flowName": "Frozen Spire Sanctum",
+      "episodes": [
+        "EP07_The_Heresy_Summons_and_The_Frozen_Spire"
+      ],
+      "hasPlate": true,
+      "visual_dna": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes."
     }
   ]
 }

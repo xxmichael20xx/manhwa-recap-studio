@@ -1,0 +1,160 @@
+{
+  "episodeId": "EP06_The_Crowned_Duel_and_The_Thread_Eater_Awakening",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-16T05:06:13.988Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "night_celestial",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_024",
+        "lighting": "night_celestial"
+      },
+      {
+        "from_scene": "IMG_025",
+        "to_scene": "IMG_192",
+        "lighting": "bright_morning_sunlight"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "lord_cassian_thorne": "clean signature standard attire",
+    "church_saboteur_envoy": "dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat",
+    "julian_vaelgard_academy": "clean signature standard attire",
+    "dean_alistair_vance": "clean signature standard attire",
+    "archmage_lyra": "silver snowflake drop earrings"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": null,
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "radiant_crimson_core_vial": {
+      "canonical_name": "Radiant Crimson Core Vial",
+      "container": null,
+      "visual_form": "Slender faceted hexagonal crystal relic vial with tapered finial base encased in tarnished gold-and-obsidian sunburst filigree cage and spiked crimson-ruby crown stopper, swirling luminous scarlet-and-amber flame plasma mist inside.",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_010",
+      "to_scene": "IMG_014",
+      "holder_id": "church_saboteur_envoy",
+      "prop_token": "@{Radiant Crimson Core Vial}"
+    },
+    {
+      "from_scene": "IMG_016",
+      "to_scene": "IMG_019",
+      "holder_id": "church_saboteur_envoy",
+      "prop_token": "@{Radiant Crimson Core Vial}"
+    },
+    {
+      "from_scene": "IMG_073",
+      "to_scene": "IMG_081",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_086",
+      "to_scene": "IMG_089",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_091",
+      "to_scene": "IMG_092",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_095",
+      "to_scene": "IMG_100",
+      "holder_id": "lord_cassian_thorne",
+      "prop_token": "@{Radiant Crimson Core Vial}"
+    },
+    {
+      "from_scene": "IMG_102",
+      "to_scene": "IMG_112",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_118",
+      "to_scene": "IMG_128",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_132",
+      "to_scene": "IMG_135",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_137",
+      "to_scene": "IMG_141",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_143",
+      "to_scene": "IMG_149",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_151",
+      "to_scene": "IMG_152",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_155",
+      "to_scene": "IMG_159",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_163",
+      "to_scene": "IMG_166",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    },
+    {
+      "from_scene": "IMG_168",
+      "to_scene": "IMG_169",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [
+      {
+        "entity_id": "lord_cassian_thorne",
+        "from_scene": 161,
+        "to_scene": 192,
+        "state": "kneeling",
+        "dna_append": "kneeling directly on the ground floor",
+        "strip_patterns": [
+          "proud upright posture with raised chin",
+          "proud upright posture",
+          "standing tall",
+          "standing command",
+          "upright posture"
+        ],
+        "force_grounded_camera": true
+      }
+    ],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { spawn } from 'child_process'
 import { ActivityLogService } from './activityLogService.js'
+import { PromptDnaCompiler } from './promptDnaCompiler.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -45,6 +46,22 @@ export class TtsService {
     this.statusState[key] = {
       ...(this.statusState[key] || { status: 'idle', progress: 0, log: [] }),
       ...patch
+    }
+  }
+
+  /**
+   * Compute SHA-256 hash of pure spoken narration (ignoring staging comments/headers).
+   */
+  static async computeNarrativeHash(franchiseId, episodeId) {
+    const scriptPath = path.join(franchisesDir, franchiseId, episodeId, '01_Episode_Script.md')
+    if (!fsSync.existsSync(scriptPath)) return null
+    try {
+      const scriptText = await fs.readFile(scriptPath, 'utf-8')
+      const clauses = PromptDnaCompiler.parseScriptClauses(scriptText)
+      const normalized = Array.from(clauses.entries()).map(([k, v]) => `${k}:${v}`).join('\n')
+      return PromptDnaCompiler.sha256(normalized, 24)
+    } catch (_) {
+      return null
     }
   }
 
@@ -577,12 +594,14 @@ export class TtsService {
     const secs = totalSeconds % 60
     const formattedDuration = `${mins}m ${secs}s`
     const telemetryPath = path.join(audioDir, 'audio_telemetry.json')
+    const narrativeHash = await this.computeNarrativeHash(franchiseId, episodeId)
     try {
       await fs.writeFile(telemetryPath, JSON.stringify({
         totalSeconds,
         formattedDuration,
         trackCount: results.length,
         voice,
+        narrativeHash,
         measuredAt: new Date().toISOString()
       }, null, 2), 'utf-8')
     } catch (e) {}

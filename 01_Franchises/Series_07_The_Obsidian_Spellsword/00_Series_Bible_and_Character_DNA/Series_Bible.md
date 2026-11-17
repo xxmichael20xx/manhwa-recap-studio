@@ -91,9 +91,9 @@ flowchart TD
 
 ### Act II: The Twin-Pinnacle Imperial Academy (EP04 – EP07)
 * **Minimalist Vault Scope (Zero New Props, Zero Dummies):**
-  * *Locations (2):* `Imperial Academy Grand Courtyard` (`imperial_academy_courtyard`), `Academy Dueling Amphitheater` (`academy_dueling_amphitheater`).
-  * *Characters (3):* `@{Julian Vaelgard (Academy Uniform)}`, `@{Dean Alistair Vance}` (5-Star Archmage & Academy Dean), `@{Lord Cassian Thorne}` (Church-aligned Gold-Rank / 3-Star noble rival).
-  * *Weapons:* Strictly `@{Vaelgard Silver Training Rapier}` (zero new persistent props).
+  * *Locations (4):* `Imperial Academy Grand Courtyard` (`imperial_academy_courtyard`), `Academy Dueling Amphitheater` (`academy_dueling_amphitheater`), `Academy Assessment Ward Grounds` (`academy_assessment_ward_grounds`, night-moonlit ward terrace & upper spire added `EP05`+), `Frozen Spire Sanctum` (`frozen_spire_sanctum`, subterranean hidden seal chamber beneath the Frozen Spire added `EP07`).
+  * *Characters (5):* `@{Julian Vaelgard (Academy Uniform)}`, `@{Dean Alistair Vance}` (5-Star Archmage & Academy Dean), `@{Lord Cassian Thorne}` (Church-aligned Gold-Rank / 3-Star noble rival; defeated & concluded in `EP06`), `@{Archmage Lyra}` (6-Star Frozen Star watching from the upper spire), and `@{Church Saboteur Envoy}` (covert Church handler tainting assessment wards in `EP05`+).
+  * *Weapons / Relics:* `@{Vaelgard Silver Training Rapier}`, `@{Obsidian Greatsword}` (`EP07` Frozen Spire seal reveal), and illicit `@{Radiant Crimson Core Vial}` (`EP06`). Zero practice dummies.
 * **EP04: The Twin-Pinnacle Gates & The Unbroken Stance**  
   *Arrival & Provocation:* Julian enters the Twin-Pinnacle Imperial Academy; Church-aligned rival Lord Cassian Thorne publicly mocks House Vaelgard in the Grand Courtyard.  
   *Live Entrance Trial:* Dean Alistair Vance orders an immediate live Dual-Threshold Duel in the Amphitheater. Armed only with his silver rapier, Julian snips Cassian's 3-Star *Crimson Lance* mid-flight and defeats him in three clean exchanges.

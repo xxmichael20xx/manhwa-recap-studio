@@ -110,5 +110,38 @@
     "vantage_rule": "Arena-floor or stepped marble colonnade perspective framing the glowing azure octagram boundary circle and elevated sapphire-and-gold viewing pavilions.",
     "window_vantage": "open-air marble colosseum tiers opening directly onto the bright cobalt daylight sky above the academy spires",
     "boundary_tags": "sunken white-marble amphitheater, glowing azure octagram rune circle, marble balustrades, sapphire-and-gold viewing pavilions"
+  },
+  "academy_assessment_ward_grounds": {
+    "id": "academy_assessment_ward_grounds",
+    "name": "Academy Assessment Ward Grounds",
+    "canon": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, white marble balustrades, arched colonnades, and a moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide establishing shot of the Academy Assessment Ward Grounds at midnight, elevated white-and-obsidian marble ritual terrace under a deep midnight-indigo starry sky and pale silver crescent moon, circular polished pavement inscribed with a glowing cyan concentric magic formation ritual circle flanked by four carved white marble runic obelisks etched with luminous azure ley-line conduits, arched stone colonnades and marble balustrades overlooking lower misty academy rooftops, a moonlit stone bridge stretching toward a towering ivory-and-sapphire gothic observation spire, completely unpopulated, zero humans, 100% textless artwork, sharp black ink linework, 2D action manhwa cel-shading",
+    "plate": "vault/academy_assessment_ward_grounds.jpg",
+    "elevation": "high",
+    "lighting": "night_moonlit",
+    "adjacent": [
+      "imperial_academy_courtyard",
+      "academy_dueling_amphitheater"
+    ],
+    "vantage_rule": "Elevated marble ward terrace perspective looking across the glowing cyan formation circle and four runic obelisks toward the distant moonlit gothic observation spire.",
+    "window_vantage": "towering ivory-and-sapphire gothic observation spire rising across the moonlit bridge beneath a starry midnight sky and crescent moon",
+    "boundary_tags": "night-ward ritual terrace, glowing cyan formation circle, four runic obelisks, ivory-sapphire observation spire, crescent moon"
+  },
+  "frozen_spire_sanctum": {
+    "id": "frozen_spire_sanctum",
+    "name": "Frozen Spire Sanctum",
+    "canon": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes.",
+    "environment_prompt": "horizontal 16:9 widescreen full-bleed landscape, wide establishing shot inside the Frozen Spire Sanctum, colossal subterranean basalt and gothic arched vault encased in towering jagged blue-white glacial ice columns, glowing pale-cyan mana crystal clusters nested inside upper gallery arches and ice ledges, drifting floor frost mist, stepped octagonal dark stone seal dais at center glowing with faint pale-cyan runic rings, completely unpopulated, zero humans, zero characters, 100% textless artwork, sharp black ink linework, 2D action manhwa cel-shading, no 3D CGI",
+    "plate": "vault/frozen_spire_sanctum.jpg",
+    "elevation": "interior",
+    "lighting": "night_moonlit",
+    "adjacent": [
+      "imperial_academy_courtyard",
+      "academy_assessment_ward_grounds"
+    ],
+    "vantage_rule": "Subterranean vaulted gallery perspective framing the stepped octagonal cyan-rune seal dais flanked by colossal glacial ice pillars.",
+    "window_vantage": "soaring gothic ice-encased stone vaults and luminescent cyan crystal clusters receding into deep subterranean mist",
+    "boundary_tags": "subterranean frozen spire chamber, octagonal cyan-rune seal dais, jagged glacial ice columns, glowing cyan crystals, gothic basalt arches, zero daylight windows",
+    "is_private_sanctuary": true
   }
 }

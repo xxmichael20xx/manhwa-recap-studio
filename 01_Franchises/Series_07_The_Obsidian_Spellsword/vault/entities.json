@@ -106,12 +106,12 @@
     "tier": 2,
     "status": "approved",
     "age_class": "adult",
-    "dna": "26-year-old elite ice archmage, cascading frost-silver hair, cool crystalline azure eyes, calm composed intellectual expression, wearing ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe",
+    "dna": "26-year-old elite ice archmage, cascading waist-length crystalline platinum-ice silver hair, piercing glowing glacial-cyan eyes, serene composed porcelain countenance, wearing silver snowflake drop earrings, high silver-embroidered mandarin collar with frosted sapphire gem clasp, flowing frosted pale-blue capelet with jagged snowflake filigree hems over split frost-white high-collared archmage gown and tall silver-embroidered white leather heeled boots, bare ungloved hands summoning swirling cold frost mist and hovering blue ice shards, zero staff",
     "dna_prompt_anchor": "@{Archmage Lyra - The Frozen Star}",
-    "visual_dna": "Ageless ethereal archmage with cascading waist-length platinum-ice hair that faintly glows, piercing glacial-cyan eyes, serene and aloof porcelain countenance, dressed in a flowing frost-white and silver layered archmage robe with a frosted fur mantle, holding a slender crystal staff that emanates subtle cold mist, sharp ink linework",
+    "visual_dna": "26-year-old elite ice archmage, cascading waist-length crystalline platinum-ice silver hair, piercing glowing glacial-cyan eyes, serene composed porcelain countenance, wearing silver snowflake drop earrings, high silver-embroidered mandarin collar with frosted sapphire gem clasp, flowing frosted pale-blue capelet with jagged snowflake filigree hems over split frost-white high-collared archmage gown and tall silver-embroidered white leather heeled boots, bare ungloved hands summoning swirling cold frost mist and hovering blue ice shards, zero staff",
     "default_outfit": "default",
     "outfits": {
-      "default": "ornate frost-blue and white embroidered archmage mantle with silver snowflake clasps, flowing silk under-robe"
+      "default": "silver snowflake drop earrings, high silver-embroidered mandarin collar with frosted sapphire gem clasp, flowing frosted pale-blue capelet with snowflake filigree hems over split frost-white archmage gown, tall silver-embroidered white leather boots, bare ungloved hands"
     },
     "default_state": {},
     "state_lexicon": {},
@@ -164,12 +164,12 @@
     "tier": 2,
     "status": "approved",
     "age_class": "adult",
-    "dna": "45-year-old stern inquisitor with gaunt severe facial structure, slicked back iron-grey hair, piercing fanatical pale gold eyes, sinister pious smirk, wearing immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash",
+    "dna": "45-year-old stern imperial inquisitor with gaunt severe facial structure, slicked-back iron-grey hair, piercing fanatical pale gold eyes, sinister pious smirk, wearing white-and-gold ecclesiastical inquisitor vestments with high rigid gold collar, wide white mantle with deep crimson inner lining, three golden sunburst chest and shoulder medallions, golden sunburst waist clasp over gold-embroidered front tabard, fitted white filigree gloves with ornate gold ring-bands, tall dark black leather boots",
     "dna_prompt_anchor": "@{High Inquisitor Malakor - Church of the Radiant Dawn}",
-    "visual_dna": "Gaunt forty-five-year-old imperial prelate with slicked-back golden-blonde hair, cold predatory golden eyes, sharp aristocratic nose, dressed in lavish white-and-gold liturgical inquisitor robes with sun-burst brass iconography and a heavy solar pendant, holding a golden baptismal scrying chalice, sanctimonious sneer, sharp ink linework",
+    "visual_dna": "45-year-old stern imperial inquisitor with gaunt severe facial structure, slicked-back iron-grey hair, piercing fanatical pale gold eyes, sinister pious smirk, wearing white-and-gold ecclesiastical inquisitor vestments with high rigid gold collar, wide white mantle with deep crimson inner lining, three golden sunburst chest and shoulder medallions, golden sunburst waist clasp over gold-embroidered front tabard, fitted white filigree gloves with ornate gold ring-bands, tall dark black leather boots",
     "default_outfit": "default",
     "outfits": {
-      "default": "immaculate gold-and-white ecclesiastical inquisitor robes with radiant sun-burst medallions, high rigid collar, golden prayer sash"
+      "default": "white-and-gold ecclesiastical inquisitor vestments with high rigid gold collar, wide white mantle with deep crimson inner lining, three golden sunburst medallions, gold-embroidered front tabard, fitted white filigree gloves with ornate gold rings, tall black leather boots"
     },
     "default_state": {},
     "state_lexicon": {},
@@ -462,7 +462,8 @@
       "EP01_The_Poisoned_God_and_The_1000_Year_Rebirth",
       "EP02_The_Ancestral_Vault_and_The_First_True_Spell"
     ],
-    "category": "Weapon"
+    "category": "Weapon",
+    "isAnimate": false
   },
   "white_marble_meditation_bench": {
     "id": "white_marble_meditation_bench",
@@ -635,6 +636,100 @@
     "plate": "character_vault/17_Location_Academy_Dueling_Amphitheater.jpg",
     "episodes": [
       "EP04_The_Twin_Pinnacle_Gates_and_The_Unbroken_Stance"
+    ]
+  },
+  "church_saboteur_envoy": {
+    "id": "church_saboteur_envoy",
+    "name": "Church Saboteur Envoy",
+    "kind": "character",
+    "token": "@{Church Saboteur Envoy}",
+    "aliases": [
+      "Church Saboteur Envoy",
+      "the saboteur",
+      "the Church handler",
+      "the envoy"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "age_class": "adult",
+    "dna": "tall gaunt adult covert church saboteur, pale gaunt angular face with widow peak hairline, short sleekly swept-back obsidian-black hair, cold piercing pale amber eyes with thin mocking smirk, wearing dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat, fingerless black leather forearm gauntlets with bare fingertips exposed, fitted dark charcoal trousers, tall black leather buckled riding boots, empty bare fingertips",
+    "dna_prompt_anchor": "tall gaunt adult covert church saboteur, pale gaunt angular face with widow peak hairline, short sleekly swept-back obsidian-black hair, cold piercing pale amber eyes with thin mocking smirk, wearing dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat, fingerless black leather forearm gauntlets with bare fingertips exposed, fitted dark charcoal trousers, tall black leather buckled riding boots, empty bare fingertips",
+    "visual_dna": "tall gaunt adult covert church saboteur, pale gaunt angular face with widow peak hairline, short sleekly swept-back obsidian-black hair, cold piercing pale amber eyes with thin mocking smirk, wearing dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat, fingerless black leather forearm gauntlets with bare fingertips exposed, fitted dark charcoal trousers, tall black leather buckled riding boots, empty bare fingertips",
+    "default_outfit": "default",
+    "outfits": {
+      "default": "dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat, dark charcoal high-collared buttoned inner tunic, fingerless black leather forearm gauntlets with bare fingertips exposed, fitted dark charcoal trousers, tall black leather buckled riding boots"
+    },
+    "default_state": {},
+    "state_lexicon": {},
+    "description": "Covert Church of the Radiant Dawn inquisitorial saboteur dispatched to taint the Imperial Academy assessment formation wards before the First-Year Assessment.",
+    "plate": "character_vault/18_Antagonist_Church_Saboteur_Envoy.jpg",
+    "episodes": [
+      "EP05_The_Midnight_Sabotage_and_The_Frozen_Stars_Gaze"
+    ]
+  },
+  "academy_assessment_ward_grounds": {
+    "id": "academy_assessment_ward_grounds",
+    "name": "Academy Assessment Ward Grounds",
+    "kind": "location",
+    "token": "@{Academy Assessment Ward Grounds}",
+    "aliases": [
+      "Academy Assessment Ward Grounds",
+      "the ward terrace",
+      "the assessment ward terrace"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "dna": "@{Academy Assessment Ward Grounds}, elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks etched with luminous azure ley-line conduits, arched stone colonnades, moonlit bridge toward towering ivory-and-sapphire gothic observation spire, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Academy Assessment Ward Grounds}, elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks etched with luminous azure ley-line conduits, arched stone colonnades, moonlit bridge toward towering ivory-and-sapphire gothic observation spire, textless artwork, horizontal 16:9 widescreen",
+    "visual_dna": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, arched stone colonnades, moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire.",
+    "description": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, white marble balustrades, arched colonnades, and a moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire.",
+    "plate": "character_vault/19_Location_Academy_Assessment_Ward_Grounds.jpg",
+    "episodes": [
+      "EP05_The_Midnight_Sabotage_and_The_Frozen_Stars_Gaze"
+    ]
+  },
+  "radiant_crimson_core_vial": {
+    "id": "radiant_crimson_core_vial",
+    "name": "Radiant Crimson Core Vial",
+    "kind": "item",
+    "isAnimate": false,
+    "token": "@{Radiant Crimson Core Vial}",
+    "aliases": [
+      "Radiant Crimson Core Vial",
+      "crimson vial",
+      "crimson core vial",
+      "the Church relic vial"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "dna": "@{Radiant Crimson Core Vial}, slender faceted hexagonal crystal relic vial with tapered pointed finial base, encased in an ornate tarnished gold-and-obsidian solar filigree cage with circular sunburst collar medallion and mid-body filigree band, topped with a spiked gold-and-obsidian crown stopper inlaid with faceted crimson rubies, swirling luminous scarlet-and-amber flame mist and tiny red embers glowing inside, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Radiant Crimson Core Vial}, slender faceted hexagonal crystal relic vial with tapered pointed finial base, encased in an ornate tarnished gold-and-obsidian solar filigree cage with circular sunburst collar medallion and mid-body filigree band, topped with a spiked gold-and-obsidian crown stopper inlaid with faceted crimson rubies, swirling luminous scarlet-and-amber flame mist and tiny red embers glowing inside, textless artwork, horizontal 16:9 widescreen",
+    "visual_dna": "Slender faceted hexagonal crystal relic vial with tapered finial base encased in tarnished gold-and-obsidian sunburst filigree cage and spiked crimson-ruby crown stopper, swirling luminous scarlet-and-amber flame plasma mist inside.",
+    "description": "A contraband Church of the Radiant Dawn relic vial filled with volatile scarlet-and-amber plasma mist that forcibly overclocks a 3-Star mage core into unstable 4-Star dual-element output.",
+    "plate": "character_vault/20_Item_Radiant_Crimson_Core_Vial.jpg",
+    "episodes": [
+      "EP06_The_Crowned_Duel_and_The_Thread_Eater_Awakening"
+    ]
+  },
+  "frozen_spire_sanctum": {
+    "id": "frozen_spire_sanctum",
+    "name": "Frozen Spire Sanctum",
+    "kind": "location",
+    "token": "@{Frozen Spire Sanctum}",
+    "aliases": [
+      "Frozen Spire Sanctum",
+      "the Frozen Spire vault",
+      "the subterranean seal chamber"
+    ],
+    "tier": 2,
+    "status": "approved",
+    "dna": "@{Frozen Spire Sanctum}, colossal subterranean dark basalt and gothic arched vault chamber encased in towering blue-white glacial ice pillars, glowing cyan crystal clusters in arched gallery niches, drifting frost mist, central stepped octagonal obsidian dais inscribed with pale-cyan seal runes, textless artwork, horizontal 16:9 widescreen",
+    "dna_prompt_anchor": "@{Frozen Spire Sanctum}, colossal subterranean dark basalt and gothic arched vault chamber encased in towering blue-white glacial ice pillars, glowing cyan crystal clusters in arched gallery niches, drifting frost mist, central stepped octagonal obsidian dais inscribed with pale-cyan seal runes, textless artwork, horizontal 16:9 widescreen",
+    "visual_dna": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes.",
+    "description": "Colossal subterranean vault chamber beneath the Frozen Spire carved from dark basalt and ancient gothic stone arches encased in towering blue-white glacial ice columns, glowing pale-cyan mana crystal clusters in arched gallery niches, drifting frost mist over dark flagstones, and a stepped octagonal dark stone dais etched with faint glowing cyan seal runes.",
+    "plate": "character_vault/21_Location_Frozen_Spire_Sanctum.jpg",
+    "episodes": [
+      "EP07_The_Heresy_Summons_and_The_Frozen_Spire"
     ]
   }
 }

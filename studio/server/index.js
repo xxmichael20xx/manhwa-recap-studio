@@ -84,28 +84,36 @@ app.get('/api/brand', (req, res) => {
 app.get('/api/franchises', async (req, res) => {
   try {
     const franchises = await FileService.getFranchises()
+    await Promise.all(franchises.map(async (f) => {
+      try { f.acts = await PackagingService.parseSeriesActs(f.id) } catch (_) { f.acts = [] }
+    }))
     res.json(franchises)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
 })
 
+
+
 // =========================================================================
 // Master Cross-Episode Omnibus Lossless Stitcher & Delivery
 // (Mounted prior to /api/episodes/:franchiseId/:episodeId to prevent route capture)
+
+
 // =========================================================================
 
 const handleStitchMasterOmnibus = async (req, res) => {
   try {
     const { franchiseId } = req.params
-    const { masterFilePaths = [], outputFilename, selectedEpisodes = [], compileEpisodes = false, freshCompile = false } = req.body || {}
+    const { masterFilePaths = [], outputFilename, selectedEpisodes = [], compileEpisodes = false, freshCompile = false, actNumber = null } = req.body || {}
     if (req.setTimeout) req.setTimeout(1800000)
     if (res.setTimeout) res.setTimeout(1800000)
     const result = await VideoService.stitchMasterOmnibus(franchiseId, masterFilePaths, outputFilename, {
       selectedEpisodes,
       compileEpisodes: compileEpisodes === true,
       freshCompile: freshCompile === true,
-      skipExisting: freshCompile !== true
+      skipExisting: freshCompile !== true,
+      actNumber
     })
     res.json(result)
   } catch (err) {
@@ -215,6 +223,16 @@ app.post('/api/episodes/:franchiseId/stitch-master-omnibus', handleStitchMasterO
 
 app.get('/api/franchises/:franchiseId/omnibus-stream', handleOmnibusStream)
 app.get('/api/episodes/:franchiseId/omnibus-stream', handleOmnibusStream)
+
+app.get('/api/franchises/:franchiseId/act-package/:actNumber', async (req, res) => {
+  try {
+    const { franchiseId, actNumber } = req.params
+    const pkg = await PackagingService.getActPackage(franchiseId, actNumber)
+    res.json(pkg)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
 
 app.get('/api/franchises/:franchiseId/omnibus-files', handleOmnibusFiles)
 app.get('/api/episodes/:franchiseId/omnibus-files', handleOmnibusFiles)
@@ -1702,6 +1720,8 @@ app.get('/api/episodes/:franchiseId/:episodeId/subtitles', async (req, res) => {
   try {
     const { franchiseId, episodeId } = req.params
     const subtitles = await TtsService.getSubtitles(franchiseId, episodeId)
+
+
     res.json(subtitles)
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -1758,6 +1778,30 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
 
     const subtitles = await TtsService.getSubtitles(franchiseId, episodeId)
 
+
+
+    let audioNeedsSync = !hasMasterAudio || !subtitles.hasSubtitles
+    if (!audioNeedsSync) {
+      try {
+        const currentHash = await TtsService.computeNarrativeHash(franchiseId, episodeId)
+        const telemetryFile = path.join(audioDir, 'audio_telemetry.json')
+        let savedHash = null
+        if (fs.existsSync(telemetryFile)) {
+          const tJson = JSON.parse(fs.readFileSync(telemetryFile, 'utf-8'))
+          savedHash = tJson?.narrativeHash || null
+        }
+        if (currentHash && savedHash) {
+          audioNeedsSync = currentHash !== savedHash
+        } else {
+          const scriptPath = path.resolve(projectRoot, '01_Franchises', franchiseId, episodeId, '01_Episode_Script.md')
+          const masterAudioPath = path.join(audioDir, '01_Episode_Master.mp3')
+          if (fs.existsSync(scriptPath) && fs.existsSync(masterAudioPath)) {
+            audioNeedsSync = fs.statSync(scriptPath).mtimeMs > fs.statSync(masterAudioPath).mtimeMs
+          }
+        }
+      } catch (_) {}
+    }
+
     const masterVideoPath = VideoService.getMasterVideoPath(franchiseId, episodeId)
     const hasVideo = fs.existsSync(masterVideoPath)
     let videoSize = 0
@@ -1805,6 +1849,7 @@ app.get('/api/episodes/:franchiseId/:episodeId/pipeline-status', async (req, res
       audioReady,
       hasMasterAudio,
       hasSubtitles: subtitles.hasSubtitles,
+      audioNeedsSync,
       hasVideo,
       videoSize,
       imageState,
@@ -2133,6 +2178,7 @@ app.get([
     candidatePaths.push(path.join(franchisePath, episodeId, safeFilename))
   }
   candidatePaths.push(path.join(franchisePath, '00_Series_Bible_and_Character_DNA', safeFilename))
+  candidatePaths.push(path.join(franchisePath, 'omnibus', 'thumbnails', safeFilename))
   candidatePaths.push(path.join(franchisePath, 'omnibus', safeFilename))
   candidatePaths.push(path.join(franchisePath, 'thumbnails', safeFilename))
 
@@ -2164,6 +2210,6 @@ app.get('/api/engine', async (req, res) => {
   }
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Manhwa Recap Studio Backend API listening on http://localhost:${PORT}`)
 })

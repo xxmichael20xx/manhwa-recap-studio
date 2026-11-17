@@ -1,0 +1,60 @@
+{
+  "episodeId": "EP05_The_Midnight_Sabotage_and_The_Frozen_Stars_Gaze",
+  "franchiseId": "Series_07_The_Obsidian_Spellsword",
+  "generatedAt": "2026-11-15T08:24:37.623Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "night_celestial",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_072",
+        "lighting": "night_celestial"
+      },
+      {
+        "from_scene": "IMG_073",
+        "to_scene": "IMG_192",
+        "lighting": "bright_morning_sunlight"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "lord_cassian_thorne": "clean signature standard attire",
+    "church_saboteur_envoy": "dark charcoal high-collared buttoned inner tunic beneath a dark crimson-lined black-brown split trench coat with lowered gold-filigree hood and shoulder capelet fastened by twin chained silver-and-gold sunburst clasps at throat",
+    "julian_vaelgard_academy": "clean signature standard attire",
+    "dean_alistair_vance": "clean signature standard attire",
+    "archmage_lyra": "silver snowflake drop earrings"
+  },
+  "held_props": {
+    "vaelgard_silver_training_rapier": {
+      "canonical_name": "Vaelgard Silver Training Rapier",
+      "container": null,
+      "visual_form": "Exquisite lightweight dueling rapier forged from fine enchanted silver-steel alloy, a swept basket hilt with delicate filigree, a midnight-navy leather wrapped grip, and a perfectly balanced slender blade that emits a faint silver aura gleam, textless artwork",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "academy_assessment_ward_grounds": {
+      "canonical_name": "Academy Assessment Ward Grounds",
+      "container": null,
+      "visual_form": "Elevated white-and-obsidian marble ritual ward terrace under a deep midnight-indigo starry sky and crescent moon, paved with a glowing cyan concentric magic formation circle flanked by four carved marble runic obelisks, arched stone colonnades, moonlit bridge leading toward a towering ivory-and-sapphire gothic observation spire.",
+      "notes": "Locked across all episode scenes: Academy Assessment Ward Grounds."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_148",
+      "to_scene": "IMG_169",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Vaelgard Silver Training Rapier}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}
