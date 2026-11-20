@@ -67,11 +67,39 @@ const filteredScenes = targetBatch
   ? scenes.slice((targetBatch - 1) * 24, targetBatch * 24)
   : scenes
 
-// Detect Prop Flickering & Sudden Cast Drops across consecutive scenes in the same zone
+// Load state_events.jsonl to surface active character postures in the digest
+const ledgerPath = path.join(epDir, 'state_events.jsonl')
+const ledgerEvents = fs.existsSync(ledgerPath)
+  ? fs.readFileSync(ledgerPath, 'utf-8').split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => { try { return JSON.parse(l) } catch (_) { return null } }).filter(Boolean)
+  : []
+
+const getActivePostures = (sNum) => {
+  const poses = new Map()
+  for (const ev of ledgerEvents) {
+    if (typeof ev.s === 'number' && ev.s <= sNum && ev.e && ev.set?.posture) {
+      poses.set(ev.e, ev.set.posture)
+    }
+  }
+  return [...poses.entries()].map(([k, v]) => `${k}:${v}`).join(', ')
+}
+
+// Detect Prop Flickering, Zone Ping-Pong & Lighting/Posture Anomalies
 const lifecycleAlerts = []
-for (let i = 1; i < filteredScenes.length; i++) {
-  const prev = filteredScenes[i - 1]
+let zoneTransitions = 0
+let prevZone = null
+for (let i = 0; i < filteredScenes.length; i++) {
   const curr = filteredScenes[i]
+  if (prevZone && prevZone !== curr.zone) zoneTransitions++
+  prevZone = curr.zone
+
+  const litMatch = (curr.prompt || '').match(/illuminated by ([^.]+)\./i)
+  const litTag = litMatch ? litMatch[1].trim() : 'unknown'
+  if (/night/i.test(curr.zone || '') && /morning sunlight|daylight/i.test(litTag)) {
+    lifecycleAlerts.push(`- [ZONE LIGHTING MISMATCH] ${curr.id} (Zone: ${curr.zone}) renders with "${litTag}".`)
+  }
+  if (i === 0) continue
+
+  const prev = filteredScenes[i - 1]
   const prevProps = prev.itemRefs || []
   const currProps = curr.itemRefs || []
 
@@ -87,9 +115,14 @@ for (let i = 1; i < filteredScenes.length; i++) {
   }
 }
 
+const avgHold = zoneTransitions > 0 ? (filteredScenes.length / (zoneTransitions + 1)).toFixed(1) : String(filteredScenes.length)
+if (filteredScenes.length >= 48 && zoneTransitions > Math.max(24, Math.ceil(filteredScenes.length * 0.20))) {
+  lifecycleAlerts.unshift(`- [ZONE PING-PONG ALERT] ${zoneTransitions} zone transitions across ${filteredScenes.length} scenes (avg ${avgHold} scenes/zone). Consolidate into longer location blocks.`)
+}
+
 const lines = [
   `# Common-Sense Continuity & Prop Lifecycle Digest — ${franchiseId} / ${episodeId}`,
-  `> **Scenes Included:** ${filteredScenes.length} (Total Episode Scenes: ${scenes.length})`,
+  `> **Scenes Included:** ${filteredScenes.length} (Total Episode Scenes: ${scenes.length}) | **Zone Transitions:** ${zoneTransitions} (Avg Hold: ${avgHold} scenes/zone)`,
   `> **Lifecycle Alerts Detected:** ${lifecycleAlerts.length}`,
   ``
 ]
@@ -101,17 +134,21 @@ if (lifecycleAlerts.length > 0) {
 }
 
 lines.push(`## 📋 Scene-by-Scene Side-by-Side Digest`)
-lines.push(`| Scene | Zone / Stage | Cast & Props | Spoken Narrative Clause | Layer 4 Action & Lens |`)
+lines.push(`| Scene | Zone / Lighting / Stage | Cast, Active Postures & Props | Spoken Narrative Clause | Layer 4 Action & Lens |`)
 lines.push(`| :--- | :--- | :--- | :--- | :--- |`)
 
 for (const s of filteredScenes) {
   const h = headers.get(s.id) || {}
+  const sNum = parseInt(s.id.replace(/\D/g, ''), 10)
   const stage = h.stage || 'scene'
+  const litMatch = (s.prompt || '').match(/illuminated by ([^.]+)\./i)
+  const litTag = litMatch ? litMatch[1].trim() : 'default'
   const castStr = (h.cast || s.charRefs || []).join(', ') || 'NONE'
   const propsStr = (s.itemRefs || h.props || []).join(', ') || 'NONE'
+  const poseStr = getActivePostures(sNum) || 'default'
   const narr = (s.narrativeSync || '').replace(/\|/g, '/').trim()
   const act = `[${s.lens || '35mm'}] ${(s.actionLayer || '').replace(/\|/g, '/').trim()}`
-  lines.push(`| **${s.id}** | \`${s.zone}\`<br/>*(${stage})* | **Cast:** ${castStr}<br/>**Props:** ${propsStr} | ${narr} | ${act} |`)
+  lines.push(`| **${s.id}** | \`${s.zone}\`<br/>*${litTag} (${stage})* | **Cast:** ${castStr}<br/>**Props:** ${propsStr}<br/>**Poses:** ${poseStr} | ${narr} | ${act} |`)
 }
 
 const output = lines.join('\n') + '\n'

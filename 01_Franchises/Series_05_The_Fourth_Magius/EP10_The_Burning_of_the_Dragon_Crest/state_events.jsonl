@@ -1,0 +1,38 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"sovereign_ascendant","held_weapon":"carved_blackwood_staff"},"reason":"Michael stands unbowed at the foot of the appraisal dais holding his Carved Blackwood Staff, the Montrey Crest Amulet, and the Imperial Reinstatement Scroll"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael holds his Carved Blackwood Staff continuously throughout EP10"}
+{"s":0,"e":"montrey_crest_amulet","set":{"lifecycle":"equipped"},"reason":"Michael holds the platinum Montrey Crest Amulet in his left hand at the start of EP10"}
+{"s":0,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"equipped"},"reason":"Michael holds the sealed Imperial Reinstatement Scroll in his left hand at the start of EP10"}
+{"s":0,"e":"ancestral_resonance_mirror","set":{"lifecycle":"environmental"},"reason":"Ancestral Resonance Mirror stands atop the appraisal hall dais pedestal"}
+{"s":0,"e":"patriarch_valerius_montrey","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"imperious_commanding"},"reason":"Patriarch Valerius stands atop the stepped appraisal dais"}
+{"s":0,"e":"elder_cassius_montrey","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"smug_anticipation"},"reason":"Head Elder Cassius stands beside the appraisal dais"}
+{"s":0,"e":"proctor_alistair","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"authoritative_witness"},"reason":"Proctor Alistair stands as an imperial witness inside the Montrey Appraisal Hall"}
+{"s":0,"e":"commander_marcus_kael","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"vigilant_witness"},"reason":"Commander Marcus Kael stands as an imperial witness inside the Montrey Appraisal Hall"}
+{"s":0,"e":"lord_cedric_vance","set":{"location":"montrey_appraisal_hall","outfit":"default","posture":"bitter_humiliated"},"reason":"Lord Cedric Vance watches from the lower hall gallery"}
+{"s":0,"e":"platinum_crown_chest","set":{"lifecycle":"environmental"},"reason":"Platinum Crown Chest rests untouched in the Montrey Banquet Hall"}
+{"s":0,"e":"montrey_velvet_carriage","set":{"lifecycle":"environmental"},"reason":"Montrey Gilded Velvet Carriage waits parked by the Montrey Estate Grand Gates"}
+{"s":0,"e":"grand_ranking_stele","set":{"lifecycle":"environmental"},"reason":"Grand Ranking Stele gleams in the Imperial Arcane Academy Courtyard"}
+{"s":0,"e":"elena_ashvale","set":{"location":"academy_courtyard","outfit":"default","posture":"earnest_focused"},"reason":"Elena Ashvale awaits Michael's return in the Imperial Arcane Academy Courtyard"}
+{"s":0,"e":"doran_keller","set":{"location":"academy_courtyard","outfit":"default","posture":"protective_frontline"},"reason":"Doran Keller awaits Michael's return in the Imperial Arcane Academy Courtyard"}
+{"s":26,"e":"michael_montrey_academy","set":{"posture":"composed_judgment"},"reason":"Michael calmly recites Valerius's thirteen-year-old dismissal before the imperial witnesses"}
+{"s":59,"e":"michael_montrey_academy","set":{"posture":"azure_lightning_climax"},"reason":"Michael raises the Montrey Crest Amulet and channels cyan Tier 7 lightning"}
+{"s":65,"e":"montrey_crest_amulet","set":{"lifecycle":"destroyed"},"reason":"Michael crushes the Montrey Crest Amulet into fine platinum dust in his bare left fist"}
+{"s":82,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"destroyed"},"reason":"Michael incinerates the Imperial Reinstatement Scroll into drifting grey ash with cyan Tier 7 lightning"}
+{"s":88,"e":"patriarch_valerius_montrey","set":{"posture":"kneeling_shocked"},"reason":"Patriarch Valerius staggers and drops to his knees on the stone dais floor in shock"}
+{"s":88,"e":"elder_cassius_montrey","set":{"posture":"collapsed_floor"},"reason":"Head Elder Cassius collapses onto his knees on the marble floor in dread"}
+{"s":99,"e":"patriarch_valerius_montrey","set":{"posture":"shaken_standing"},"reason":"Patriarch Valerius hauls himself unsteadily back to his feet beside the dais"}
+{"s":99,"e":"elder_cassius_montrey","set":{"posture":"shaken_standing"},"reason":"Head Elder Cassius rises trembling to his feet beside Valerius"}
+{"s":107,"e":"michael_montrey_academy","set":{"location":"montrey_banquet_hall","posture":"sovereign_departure","held_weapon":"carved_blackwood_staff"},"reason":"Michael walks into the Montrey Banquet Hall past the untouched Platinum Crown Chest"}
+{"s":109,"e":"proctor_alistair","set":{"location":"montrey_banquet_hall","posture":"observant_escort"},"reason":"Proctor Alistair walks beside Michael through the banquet hall"}
+{"s":109,"e":"commander_marcus_kael","set":{"location":"montrey_banquet_hall","posture":"vigilant_escort"},"reason":"Commander Marcus Kael accompanies Michael through the banquet hall"}
+{"s":111,"e":"patriarch_valerius_montrey","set":{"location":"montrey_banquet_hall","posture":"desperate_pride"},"reason":"Patriarch Valerius follows into the banquet hall in a last attempt to sway Michael"}
+{"s":111,"e":"elder_cassius_montrey","set":{"location":"montrey_banquet_hall","posture":"defeated_silence"},"reason":"Head Elder Cassius follows behind Valerius into the banquet hall"}
+{"s":126,"e":"michael_montrey_academy","set":{"location":"montrey_estate_gates","posture":"clear_daylight_stride","held_weapon":"carved_blackwood_staff"},"reason":"Michael steps through the Montrey Estate Grand Gates past the untouched carriage"}
+{"s":128,"e":"proctor_alistair","set":{"location":"montrey_estate_gates","posture":"observant_escort"},"reason":"Proctor Alistair exits the Montrey Estate Grand Gates beside Michael"}
+{"s":128,"e":"commander_marcus_kael","set":{"location":"montrey_estate_gates","posture":"vigilant_escort"},"reason":"Commander Marcus Kael exits the Montrey Estate Grand Gates beside Michael"}
+{"s":136,"e":"patriarch_valerius_montrey","set":{"location":"montrey_estate_gates","posture":"helpless_watching"},"reason":"Patriarch Valerius stands helplessly at the estate threshold watching Michael depart"}
+{"s":136,"e":"elder_cassius_montrey","set":{"location":"montrey_estate_gates","posture":"helpless_watching"},"reason":"Head Elder Cassius watches helplessly beside Valerius at the estate threshold"}
+{"s":147,"e":"michael_montrey_academy","set":{"location":"academy_courtyard","posture":"calm_confident","held_weapon":"carved_blackwood_staff"},"reason":"Michael returns to the sunlit Imperial Arcane Academy Courtyard"}
+{"s":147,"e":"proctor_alistair","set":{"location":"academy_courtyard","posture":"authoritative_proctor"},"reason":"Proctor Alistair returns to the academy courtyard with Michael"}
+{"s":147,"e":"commander_marcus_kael","set":{"location":"academy_courtyard","posture":"grim_briefing"},"reason":"Commander Marcus Kael returns to the academy courtyard with Michael"}
+{"s":155,"e":"lord_cedric_vance","set":{"location":"academy_courtyard","posture":"humbled_silent"},"reason":"Lord Cedric Vance watches silently from the academy colonnade"}
+{"s":182,"e":"michael_montrey_academy","set":{"posture":"northern_horizon_resolve","held_weapon":"carved_blackwood_staff"},"reason":"Michael gazes toward the northern frontier spires, braced for the coming Continental Incursion"}

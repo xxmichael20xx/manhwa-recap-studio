@@ -1,0 +1,50 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","eyes":"normal","aura":"none","posture":"standing_calm"},"reason":"EP10 Redo seed: Lu Chen in Dorm 402 before unsealing"}
+{"s":0,"e":"wang_bao","set":{"outfit":"red_plain_tee","posture":"standing_animated"},"reason":"EP10 Redo seed: Wang Bao in Dorm 402"}
+{"s":0,"e":"dean_of_qindu_university","set":{"outfit":"academic_suit","posture":"standing_scholarly"},"reason":"EP10 Redo seed: Dean of Qindu University"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP10 Redo seed: Commander Han Feng in composed military posture"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP10 Redo seed: Jiang Qingxue at perimeter gate"}
+{"s":0,"e":"grandmaster_shen","set":{"outfit":"martial_duster","posture":"standing_calm"},"reason":"EP10 Redo seed: Grandmaster Shen in composed standing_calm posture"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP10 Redo seed: Marshal Lei Gang in War Room"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"standing_poised"},"reason":"EP10 Redo seed: Ye Xingchen in Starfall Penthouse"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Heavenly Dao Simulator Interface active"}
+{"s":0,"e":"heaven_earth_golden_stele","set":{"lifecycle":"active"},"reason":"Heaven-Earth Golden Stele active in troposphere"}
+{"s":0,"e":"celestial_star_astrolabe","set":{"lifecycle":"stowed"},"reason":"Celestial Star Astrolabe stowed; Jiang Qingxue channels frost mist in palm"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Bureau Tactical Alloy Longsword sheathed until perimeter alert"}
+{"s":0,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"equipped"},"reason":"Intact Tactical Spirit Spectrometer carried by Commander Han Feng"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Bureau Recon Drone active over Jiangnan Transit Plaza"}
+{"s":8,"e":"lu_chen","set":{"eyes":"starlight_flecks","aura":"primordial_starlight"},"reason":"Lu Chen disables Planetary Dampening and Mortal Identity Cloak forever"}
+{"s":11,"e":"wang_bao","set":{"posture":"standing_stunned"},"reason":"Wang Bao reels at Lu Chen's uncloaked starlight weight"}
+{"s":18,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Lu Chen walks openly onto sunlit campus pathway"}
+{"s":29,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Commander Han Feng unclips fresh Tactical Spirit Spectrometer"}
+{"s":30,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng lowers spectrometer and turns to watch Lu Chen arrive with empty hands"}
+{"s":33,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Commander Han Feng raises spectrometer toward Lu Chen"}
+{"s":35,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"fried"},"reason":"Tactical Spirit Spectrometer overloads and cracks before Lu Chen"}
+{"s":36,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng lowers broken spectrometer and stands with empty hands"}
+{"s":37,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen reveals he is Global Rank One Xiao Yao"}
+{"s":49,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Group walks onto Jiangnan Transit Plaza Morning"}
+{"s":51,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen taps spectrometer casing open with golden starlight"}
+{"s":52,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"destroyed"},"reason":"Original spectrometer splits open into Split Tactical Spirit Spectrometer"}
+{"s":52,"e":"split_tactical_spirit_spectrometer","set":{"lifecycle":"split_open"},"reason":"Split Tactical Spirit Spectrometer exposes unlisted violet Starfall chip"}
+{"s":55,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen summons HUD to scan violet crystal frequency"}
+{"s":74,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang reacts to drone feed in War Room"}
+{"s":80,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang locked out of War Room consoles"}
+{"s":86,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen watches live plaza decryption in Starfall Penthouse"}
+{"s":89,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen recoils as Sovereign script hijacks penthouse radar"}
+{"s":93,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen pushes 480M-year pressure probe through open relay"}
+{"s":105,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng returns to north perimeter gate for sensor purge"}
+{"s":112,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"equipped"},"reason":"Spare intact Tactical Spirit Spectrometers staged at north gate"}
+{"s":116,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"destroyed"},"reason":"Purged spectrometers split open nationwide"}
+{"s":117,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng reports to Marshal Lei Gang via headset"}
+{"s":122,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng accompanies Lu Chen back to plaza"}
+{"s":134,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen unleashes Sovereign pressure during live broadcast challenge"}
+{"s":138,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen reacts in fury to global Starfall broadcast"}
+{"s":140,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen steps beyond Starfall Tower seal boundary"}
+{"s":156,"e":"split_tactical_spirit_spectrometer","set":{"lifecycle":"destroyed"},"reason":"Split Tactical Spirit Spectrometer discarded permanently on curb"}
+{"s":157,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen addresses allies calmly before clearing plaza"}
+{"s":171,"e":"han_feng","set":{"posture":"combat_guard","held_weapon":"bureau_alloy_longsword"},"reason":"Commander Han Feng draws Bureau Tactical Alloy Longsword at perimeter gate"}
+{"s":171,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Bureau Tactical Alloy Longsword drawn by Commander Han Feng"}
+{"s":171,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen braces martial stance during perimeter alert"}
+{"s":175,"e":"grandmaster_shen","set":{"posture":"standing_calm"},"reason":"Grandmaster Shen relaxes into composed standing_calm watching southern horizon"}
+{"s":176,"e":"wang_bao","set":{"posture":"standing_stunned"},"reason":"Wang Bao watches unmasked Roommate broadcast in Dorm 402"}
+{"s":185,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen releases ten million years of Sovereign pressure skyward"}
+{"s":190,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen faces descended Ye Xingchen across Jiangnan Transit Plaza"}

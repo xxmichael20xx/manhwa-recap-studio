@@ -90,7 +90,9 @@
     "elevation": "ground",
     "lighting": "day_sunlit",
     "adjacent": [
-      "academy_dueling_amphitheater"
+      "academy_dueling_amphitheater",
+      "academy_assessment_ward_grounds",
+      "frozen_spire_sanctum"
     ],
     "vantage_rule": "Wide ground-level perspective looking down the polished marble promenade through the twin obsidian-and-gold triumphal archways toward the soaring academy spires.",
     "window_vantage": "towering ivory-and-sapphire academy spires and floating sky-islands visible across the clear cobalt daylight sky",

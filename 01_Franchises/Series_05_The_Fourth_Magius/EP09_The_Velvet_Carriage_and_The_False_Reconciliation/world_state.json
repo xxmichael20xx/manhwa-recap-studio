@@ -1,0 +1,399 @@
+{
+  "episodeId": "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-20T05:13:52.414Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "clean signature standard attire",
+    "elena_ashvale": "clean signature standard attire",
+    "doran_keller": "clean signature standard attire",
+    "proctor_alistair": "clean signature standard attire",
+    "lord_cedric_vance": "clean signature standard attire",
+    "patriarch_valerius_montrey": "clean signature standard attire",
+    "elder_cassius_montrey": "ceremonial arcane robes"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_crest_amulet": {
+      "canonical_name": "Montrey Crest Amulet",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "academy_courtyard": {
+      "canonical_name": "Imperial Arcane Academy Courtyard",
+      "container": null,
+      "visual_form": "Expansive grand entrance courtyard of the Imperial Arcane Academy paved with reflective pale silver granite and polished white marble, multi-tiered gothic colonnades, crystal mana fountains emitting azure luminescence, colossal arched portals, hovering cyan magic circles above spires.",
+      "notes": "Locked across all episode scenes: Imperial Arcane Academy Courtyard."
+    },
+    "academy_private_dormitory": {
+      "canonical_name": "Academy Private Dormitory Chamber",
+      "container": null,
+      "visual_form": "Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall overlooking nocturnal academy cathedral spires beneath cool moonlight.",
+      "notes": "Locked across all episode scenes: Academy Private Dormitory Chamber."
+    },
+    "grand_ranking_stele": {
+      "canonical_name": "Grand Ranking Stele",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_appraisal_hall": {
+      "canonical_name": "Montrey Appraisal Hall",
+      "container": null,
+      "visual_form": "Grand gothic ancestral appraisal hall built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Appraisal Hall."
+    },
+    "montrey_patriarch_study": {
+      "canonical_name": "Montrey Patriarch Study",
+      "container": null,
+      "visual_form": "High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, tall arched gothic windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Patriarch Study."
+    },
+    "montrey_banquet_hall": {
+      "canonical_name": "Montrey Banquet Hall",
+      "container": null,
+      "visual_form": "High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Banquet Hall."
+    },
+    "montrey_velvet_carriage": {
+      "canonical_name": "Montrey Gilded Velvet Carriage",
+      "container": null,
+      "visual_form": "Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns.",
+      "notes": "Locked across all episode scenes: Montrey Gilded Velvet Carriage."
+    },
+    "platinum_crown_chest": {
+      "canonical_name": "Platinum Crown Chest",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "imperial_reinstatement_scroll": {
+      "canonical_name": "Imperial Reinstatement Scroll",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_gilded_velvet_carriage": {
+      "canonical_name": "Montrey Gilded Velvet Carriage",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_003",
+      "to_scene": "IMG_005",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_011",
+      "to_scene": "IMG_014",
+      "holder_id": "patriarch_valerius_montrey",
+      "prop_token": "@{Montrey Gilded Velvet Carriage}"
+    },
+    {
+      "from_scene": "IMG_016",
+      "to_scene": "IMG_017",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_015",
+      "to_scene": "IMG_020",
+      "holder_id": "",
+      "prop_token": "@{Platinum Crown Chest}"
+    },
+    {
+      "from_scene": "IMG_021",
+      "to_scene": "IMG_025",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_026",
+      "to_scene": "IMG_028",
+      "holder_id": "",
+      "prop_token": "@{Platinum Crown Chest}"
+    },
+    {
+      "from_scene": "IMG_036",
+      "to_scene": "IMG_040",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_043",
+      "to_scene": "IMG_044",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_049",
+      "to_scene": "IMG_054",
+      "holder_id": "",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_051",
+      "to_scene": "IMG_054",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_056",
+      "to_scene": "IMG_057",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_058",
+      "to_scene": "IMG_059",
+      "holder_id": "proctor_alistair",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_063",
+      "to_scene": "IMG_067",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_065",
+      "to_scene": "IMG_067",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_069",
+      "to_scene": "IMG_071",
+      "holder_id": "patriarch_valerius_montrey",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_070",
+      "to_scene": "IMG_071",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_073",
+      "to_scene": "IMG_079",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_081",
+      "to_scene": "IMG_083",
+      "holder_id": "",
+      "prop_token": "@{Montrey Gilded Velvet Carriage}"
+    },
+    {
+      "from_scene": "IMG_082",
+      "to_scene": "IMG_083",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_085",
+      "to_scene": "IMG_087",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Gilded Velvet Carriage}"
+    },
+    {
+      "from_scene": "IMG_095",
+      "to_scene": "IMG_098",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_102",
+      "to_scene": "IMG_103",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_105",
+      "to_scene": "IMG_107",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_110",
+      "to_scene": "IMG_111",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_112",
+      "to_scene": "IMG_114",
+      "holder_id": "",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_115",
+      "to_scene": "IMG_116",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_116",
+      "to_scene": "IMG_120",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_119",
+      "to_scene": "IMG_120",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_122",
+      "to_scene": "IMG_128",
+      "holder_id": "",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_123",
+      "to_scene": "IMG_128",
+      "holder_id": "patriarch_valerius_montrey",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_125",
+      "to_scene": "IMG_128",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_130",
+      "to_scene": "IMG_131",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_136",
+      "to_scene": "IMG_138",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_146",
+      "to_scene": "IMG_154",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_157",
+      "to_scene": "IMG_160",
+      "holder_id": "",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_158",
+      "to_scene": "IMG_160",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_157",
+      "to_scene": "IMG_161",
+      "holder_id": "",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_164",
+      "to_scene": "IMG_167",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_164",
+      "to_scene": "IMG_167",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_164",
+      "to_scene": "IMG_167",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_170",
+      "to_scene": "IMG_171",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_170",
+      "to_scene": "IMG_171",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_170",
+      "to_scene": "IMG_171",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_175",
+      "to_scene": "IMG_176",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_175",
+      "to_scene": "IMG_176",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_175",
+      "to_scene": "IMG_176",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_182",
+      "to_scene": "IMG_192",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_182",
+      "to_scene": "IMG_192",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_182",
+      "to_scene": "IMG_192",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

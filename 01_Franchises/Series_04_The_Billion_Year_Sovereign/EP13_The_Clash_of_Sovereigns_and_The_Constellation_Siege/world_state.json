@@ -1,0 +1,225 @@
+{
+  "episodeId": "EP13_The_Clash_of_Sovereigns_and_The_Constellation_Siege",
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "generatedAt": "2026-11-19T06:17:47.568Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "lu_chen": "clean signature standard attire",
+    "ye_xingchen": "clean signature standard attire",
+    "marshal_lei_gang": "clean signature standard attire",
+    "han_feng": "clean signature standard attire",
+    "jiang_qingxue": "clean signature standard attire",
+    "grandmaster_shen": "clean signature standard attire"
+  },
+  "held_props": {
+    "heavenly_dao_simulator_hud": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "Translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes.",
+      "notes": "Locked across all episode scenes: Heavenly Dao Simulator Interface."
+    },
+    "heaven_earth_golden_stele": {
+      "canonical_name": "Heaven-Earth Golden Stele",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "bureau_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "Straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "notes": "Locked across all episode scenes: Bureau Tactical Alloy Longsword."
+    },
+    "aegis_hover_tank": {
+      "canonical_name": "Aegis Tactical Hover-Tank",
+      "container": null,
+      "visual_form": "Unmanned futuristic Defense Council matte dark-titanium anti-gravity hover-tank armed with twin cyan electromagnetic railguns.",
+      "notes": "Locked across all episode scenes: Aegis Tactical Hover-Tank."
+    },
+    "bureau_recon_drone": {
+      "canonical_name": "Bureau Recon Drone",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "celestial_constellation_siege_pylon": {
+      "canonical_name": "Celestial Constellation Siege Pylon",
+      "container": null,
+      "visual_form": "split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "aegis_tactical_hover_tank": {
+      "canonical_name": "Aegis Tactical Hover-Tank",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "bureau_tactical_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "heavenly_dao_simulator_interface": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_003",
+      "to_scene": "IMG_004",
+      "holder_id": "",
+      "prop_token": "@{Celestial Constellation Siege Pylon}"
+    },
+    {
+      "from_scene": "IMG_015",
+      "to_scene": "IMG_016",
+      "holder_id": "",
+      "prop_token": "@{Aegis Tactical Hover-Tank}"
+    },
+    {
+      "from_scene": "IMG_033",
+      "to_scene": "IMG_034",
+      "holder_id": "",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    },
+    {
+      "from_scene": "IMG_035",
+      "to_scene": "IMG_036",
+      "holder_id": "",
+      "prop_token": "@{Bureau Recon Drone}"
+    },
+    {
+      "from_scene": "IMG_037",
+      "to_scene": "IMG_038",
+      "holder_id": "",
+      "prop_token": "@{Celestial Constellation Siege Pylon}"
+    },
+    {
+      "from_scene": "IMG_049",
+      "to_scene": "IMG_052",
+      "holder_id": "han_feng",
+      "prop_token": "@{Bureau Tactical Alloy Longsword}"
+    },
+    {
+      "from_scene": "IMG_053",
+      "to_scene": "IMG_054",
+      "holder_id": "",
+      "prop_token": "@{Aegis Tactical Hover-Tank}"
+    },
+    {
+      "from_scene": "IMG_067",
+      "to_scene": "IMG_068",
+      "holder_id": "",
+      "prop_token": "@{Celestial Constellation Siege Pylon}"
+    },
+    {
+      "from_scene": "IMG_087",
+      "to_scene": "IMG_088",
+      "holder_id": "",
+      "prop_token": "@{Bureau Recon Drone}"
+    },
+    {
+      "from_scene": "IMG_103",
+      "to_scene": "IMG_104",
+      "holder_id": "",
+      "prop_token": "@{Celestial Constellation Siege Pylon}"
+    },
+    {
+      "from_scene": "IMG_121",
+      "to_scene": "IMG_124",
+      "holder_id": "lu_chen",
+      "prop_token": "@{Heavenly Dao Simulator Interface}"
+    },
+    {
+      "from_scene": "IMG_129",
+      "to_scene": "IMG_132",
+      "holder_id": "",
+      "prop_token": "@{Celestial Constellation Siege Pylon}"
+    },
+    {
+      "from_scene": "IMG_133",
+      "to_scene": "IMG_134",
+      "holder_id": "",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    },
+    {
+      "from_scene": "IMG_169",
+      "to_scene": "IMG_171",
+      "holder_id": "",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    },
+    {
+      "from_scene": "IMG_172",
+      "to_scene": "IMG_173",
+      "holder_id": "",
+      "prop_token": "@{Bureau Recon Drone}"
+    },
+    {
+      "from_scene": "IMG_186",
+      "to_scene": "IMG_192",
+      "holder_id": "lu_chen",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [
+      {
+        "entity_id": "bureau_alloy_longsword",
+        "from_scene": 1,
+        "to_scene": 48,
+        "state": "sheathed",
+        "forbid_holding": true,
+        "strip_patterns": [],
+        "dna_append": "sheathed at hip inside scabbard",
+        "layer4_append": "sheathed at hip in scabbard"
+      },
+      {
+        "entity_id": "bureau_alloy_longsword",
+        "from_scene": 56,
+        "to_scene": 192,
+        "state": "sheathed",
+        "forbid_holding": true,
+        "strip_patterns": [],
+        "dna_append": "sheathed at hip inside scabbard",
+        "layer4_append": "sheathed at hip in scabbard"
+      },
+      {
+        "entity_id": "celestial_constellation_siege_pylon",
+        "from_scene": 131,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      }
+    ],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

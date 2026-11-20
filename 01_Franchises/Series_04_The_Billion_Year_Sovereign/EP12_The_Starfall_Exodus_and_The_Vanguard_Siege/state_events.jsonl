@@ -1,0 +1,66 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","eyes":"starlight_flecks","aura":"primordial_starlight","posture":"standing_calm"},"reason":"EP12 seed: Lu Chen unsealed in Jiangnan Transit Plaza Morning, zero grocery bags, zero cloak"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"observing_monitor"},"reason":"EP12 seed: Ye Xingchen observing Starfall Exodus vanguard from penthouse"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command","held_weapon":"none"},"reason":"EP12 seed: Commander Han Feng unarmed at Qindu north perimeter gate"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP12 seed: Jiang Qingxue in white trench at perimeter gate"}
+{"s":0,"e":"grandmaster_shen","set":{"outfit":"martial_duster","posture":"standing_calm"},"reason":"EP12 seed: Grandmaster Shen in martial duster at perimeter gate"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP12 seed: Marshal Lei Gang in subterranean Defense Council War Room"}
+{"s":0,"e":"starfall_constellation_gunship","set":{"lifecycle":"active"},"reason":"Starfall Constellation Gunship unmanned vanguard armada active"}
+{"s":0,"e":"aegis_hover_tank","set":{"lifecycle":"active"},"reason":"Aegis Tactical Hover-Tank perimeter defense column active"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Bureau Recon Drone active on morning patrol"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Bureau Tactical Alloy Longsword sheathed until perimeter breach defense"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Heavenly Dao Simulator Interface active beside Lu Chen"}
+{"s":0,"e":"heaven_earth_golden_stele","set":{"lifecycle":"active"},"reason":"Heaven-Earth Golden Stele active in morning troposphere"}
+{"s":7,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang inspects approaching Starfall vanguard tracks on console"}
+{"s":9,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang realizes Starfall emptied orbital hangars"}
+{"s":12,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen directs unmanned vanguard remotely"}
+{"s":18,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng rushes to north perimeter barricade"}
+{"s":19,"e":"jiang_qingxue","set":{"posture":"observing_sky"},"reason":"Jiang Qingxue tracks violet contrails across northern sky"}
+{"s":23,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng orders perimeter lockdown"}
+{"s":26,"e":"bureau_recon_drone","set":{"lifecycle":"damaged"},"reason":"Bureau Recon Drone smoked and jolted by Starfall jamming pulse"}
+{"s":28,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng loses War Room earpiece link to static"}
+{"s":29,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue gathers cyan frost mist to defend gate"}
+{"s":30,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen raises golden wind aura ahead of barricades"}
+{"s":31,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang reacts to regional jamming spikes"}
+{"s":34,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Lu Chen walks to center lane of sunlit plaza"}
+{"s":35,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen traces cruiser energy tethers via Simulator HUD"}
+{"s":41,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng commands hover-tank railgun fire"}
+{"s":52,"e":"han_feng","set":{"posture":"combat_guard","held_weapon":"bureau_alloy_longsword"},"reason":"Commander Han Feng draws Bureau Tactical Alloy Longsword during perimeter breach"}
+{"s":52,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Bureau Tactical Alloy Longsword drawn at North Campus Perimeter Gate"}
+{"s":56,"e":"aegis_hover_tank","set":{"lifecycle":"damaged"},"reason":"Aegis Tactical Hover-Tank forward armor grazed by violet rail-cannon blast"}
+{"s":61,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang reroutes reserve power to northern perimeter"}
+{"s":63,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen watches Qindu perimeter skirmish from penthouse"}
+{"s":64,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen prepares remote gravity override"}
+{"s":75,"e":"grandmaster_shen","set":{"posture":"reeling_shocked"},"reason":"Grandmaster Shen slammed backward by Ye Xingchen remote gravity shock"}
+{"s":82,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen regains footing beside Commander Han Feng"}
+{"s":83,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang watches perimeter buckle under 480M-year remote surge"}
+{"s":85,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen reads perimeter alerts on Simulator HUD"}
+{"s":88,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen prepares to pull Starfall vanguard onto downtown plaza"}
+{"s":99,"e":"grandmaster_shen","set":{"posture":"standing_calm"},"reason":"Grandmaster Shen lowers wind aura as golden shock-ring breaks gravity dome"}
+{"s":99,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers frost mist watching golden beacon downtown"}
+{"s":100,"e":"han_feng","set":{"posture":"standing_command","held_weapon":"none"},"reason":"Commander Han Feng sheathes Bureau Tactical Alloy Longsword as gravity dome breaks"}
+{"s":100,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Bureau Tactical Alloy Longsword returned to charcoal scabbard"}
+{"s":104,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng restores earpiece link with Marshal Lei Gang"}
+{"s":105,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang tracks entire Starfall fleet converging downtown"}
+{"s":107,"e":"marshal_lei_gang","set":{"posture":"standing_command"},"reason":"Marshal Lei Gang orders perimeter squad clear of downtown blast zone"}
+{"s":108,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen watches golden pillar from penthouse glass"}
+{"s":109,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen orders twelve cruisers to saturate downtown plaza"}
+{"s":114,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen waits dead center on downtown highway as armada locks on"}
+{"s":118,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen coils golden starlight measuring synchronized rail-cannons"}
+{"s":126,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang stunned by 100M-year daylight release"}
+{"s":128,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen recoils as golden shockwave rattles Starfall penthouse glass"}
+{"s":131,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen aims vertical golden starlight wave upward"}
+{"s":133,"e":"starfall_constellation_gunship","set":{"lifecycle":"damaged"},"reason":"Lead and flanking Starfall Constellation Gunship hulls ripped by golden arcs"}
+{"s":135,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen sweeps eastern flank of vanguard armada"}
+{"s":137,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng watches distant golden arcs carve across downtown skyline"}
+{"s":139,"e":"jiang_qingxue","set":{"posture":"observing_sky"},"reason":"Jiang Qingxue watches Starfall fleet crumble in bright clouds"}
+{"s":140,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen forces surviving cruisers into reactor-linked dive"}
+{"s":152,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen clenches right hand to implode vanguard"}
+{"s":157,"e":"starfall_constellation_gunship","set":{"lifecycle":"destroyed"},"reason":"Entire Starfall Constellation Gunship vanguard pulverized mid-air"}
+{"s":158,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Golden shockwave passes harmlessly over downtown skybridge"}
+{"s":160,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen settles aura amid untouched morning intersection"}
+{"s":161,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang stunned as every crimson threat icon vanishes"}
+{"s":166,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen stares frozen at blank fleet terminals"}
+{"s":167,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen erupts full 480M-year purple starlight aura to descend personally"}
+{"s":174,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang tracks Rank Two descending at supersonic speed"}
+{"s":176,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng braces against purple shockwave at north gate"}
+{"s":181,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen meets Ye Xingchen's Constellation Domain head-on in downtown plaza"}

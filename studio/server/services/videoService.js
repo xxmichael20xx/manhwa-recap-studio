@@ -1155,8 +1155,8 @@ export class VideoService {
       ffmpegArgs.push('-loop', '1', '-i', watermarkPath.replace(/\\/g, '/'))
     }
 
-    // Step 6 Muxing: Use high-speed multi-threaded libx264 to produce compliant, lossless-stitchable NAL units
-    const muxVideoEncoderArgs = ['-c:v', 'libx264', '-preset', isBatchCompile ? 'ultrafast' : 'veryfast', '-crf', isBatchCompile ? '22' : '20', '-pix_fmt', 'yuv420p']
+    // Step 6 Muxing: Use veryfast + stillimage tuning for crisp 2D manhwa linework at ~3-5x smaller bitrates than ultrafast
+    const muxVideoEncoderArgs = ['-c:v', 'libx264', '-preset', 'veryfast', '-tune', 'stillimage', '-crf', isBatchCompile ? '22' : '21', '-pix_fmt', 'yuv420p']
 
     ffmpegArgs.push(
       '-filter_complex', filterComplex,
@@ -1416,7 +1416,15 @@ export class VideoService {
             isFullEpisodeStitch = (!targetLetters || targetLetters.length === 0) && batchFiles.length >= totalBatches
 
             if (isFullEpisodeStitch) {
-              await fs.copyFile(masterOutputPath, standardMasterPath)
+              if (masterOutputPath !== standardMasterPath) {
+                try { await fs.unlink(standardMasterPath) } catch (_) {}
+                await fs.rename(masterOutputPath, standardMasterPath)
+              }
+              for (const b of batchFiles) {
+                if (b.fullPath && b.fullPath !== standardMasterPath) {
+                  try { await fs.unlink(b.fullPath) } catch (_) {}
+                }
+              }
             }
           } catch (_) {}
 

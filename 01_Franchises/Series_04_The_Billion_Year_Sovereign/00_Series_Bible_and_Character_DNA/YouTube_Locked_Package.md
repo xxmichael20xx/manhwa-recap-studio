@@ -6,6 +6,7 @@
 > - **Upload 1 (Episode 1 Standalone):** Title prefix `(Episode 1)` | Badge `PART 1` | **ZERO chapter timestamps** (omit `{{TIMESTAMPS_BLOCK}}` completely).
 > - **Upload 2 (Episodes 1–2 Compiled):** Title prefix `(Episode 1-2)` | Badge `1 - 2` | **Plain Episode Timestamps ONLY** (1 line per compiled episode + finale).
 > - **Upload N (Episodes 1–N Compiled):** Title prefix `(Episode 1-N)` | Badge `1 - N` | **Plain Episode Timestamps ONLY** (1 line per compiled episode + finale).
+> - **Part 1 Archived & Discrete Act Transition (`EP10+`):** `Part 1` (`EP01–EP09`, `4h 30m 29s`, `8.03 GB`) is archived. Starting with Arc 4 (`EP10+`), Series 04 switches to **Discrete Act Compilation** (`Part 2` = `EP10–EP15`, Badge `PART 2`, Title `(Part 2) He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save`, Description `Covers Episodes 10 - 15`).
 
 ---
 
@@ -79,8 +80,8 @@ While arrogant campus scions and corporate oligarchs brag about 50,000 years of 
 🔥 Series: The Billion-Year Sovereign: Reality Convergence
 🎬 Episode: Episode 01: The One-Billion-Year Awakening and The Broken Blade
 ⏱️ FULL EPISODE RUNTIME & TIMELINE:
-• Full Runtime: 270.5 Minutes (4:30:29)
-• Episode Bounds: 00:00 - 4:30:29
+• Full Runtime: 135.6 Minutes (2:15:35)
+• Episode Bounds: 00:00 - 2:15:35
 
 💬 COMMUNITY QUESTION:
 If reality merged with your gaming save and you kept all your progress, would you hide your 1-billion-year power like Lu Chen, or flex it immediately on the first arrogant scion? Let me know in the comments below! 👇
@@ -124,16 +125,13 @@ While arrogant campus scions and corporate oligarchs brag about 50,000 years of 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⏱️ CHAPTER TIMESTAMPS:
-00:00 - Episode 01: The One Billion Year Awakening and The Broken Blade (21m 46s)
-21:46 - Episode 02: The Campus Appraisal and The Celestial Countdown (36m 20s)
-58:05 - Episode 03: The Campus Lockdown and The Impostor Sovereign (39m 06s)
-1:37:11 - Episode 04: The Jiangnan Syndicate War and The Fall of The Gu Zaibatsu (1h 14m 40s)
-2:51:51 - Episode 05: The Planetary Rift Outbreak and The Sky Shield Breach (21m 44s)
-3:13:34 - Episode 06: The Abyssal Incursion and The Guild Collapse (18m 17s)
-3:31:52 - Episode 07: The Class SSS Rupture and the Asura Descent (19m 50s)
-3:51:42 - Episode 08: The 450M Year Despot and the Fall of Armed Divisions (18m 10s)
-4:09:52 - Episode 09: The Grocery Bag Exorcism and the Legend of the Hooded Sovereign (20m 37s)
-4:30:29 - Series Finale & Epilogue
+00:00 - Episode 10: The Unsealed Sovereign and The Project Samsara Conspiracy (19m 20s)
+19:20 - Episode 11: The Telemetry Reversal and The Starfall Exodus (22m 23s)
+41:43 - Episode 12: The Starfall Exodus and The Vanguard Siege (24m 34s)
+1:06:18 - Episode 13: The Clash of Sovereigns and The Constellation Siege (23m 02s)
+1:29:20 - Episode 14: The Shattered Constellation and The Oligarch Reckoning (23m 11s)
+1:52:31 - Episode 15: The One Billion Year Coronation (23m 04s)
+2:15:35 - Act 4 Climax & Cliffhanger
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 COMMUNITY QUESTION:
@@ -202,3 +200,14 @@ This video is an original narrative adaptation and production. All scripts, lore
 
 #manhwarecap #webtoon #cultivation #animerecap #manhwa #overpoweredmc #urbanxianxia #levelingsystem #recap
 ```
+
+---
+
+## 🎬 4. Discrete Act Compilation Transition (Arc 4 / EP10+)
+
+- **Archived Legacy Omnibus (`Part 1`):** `EP01–EP09` (`4h 30m 29s`, `8.03 GB`) is archived and locked.
+- **Active Compilation Model (`EP10+`):** Switches to **Discrete Act Compilation** per arc (60–90+ mins):
+  - **Act / Part:** `Part 2` (`EP10–EP15`)
+  - **Thumbnail Badge:** `PART 2`
+  - **Locked Title:** `(Part 2) He Ran An Idle Cultivation Game For 10 Years, Then Earth Merged With His Save` *(87 chars)*
+  - **Description Scope Line:** `Covers Episodes 10 - 15`

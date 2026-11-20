@@ -1,0 +1,451 @@
+{
+  "episodeId": "EP10_The_Burning_of_the_Dragon_Crest",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-20T11:56:59.620Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "michael_montrey_academy": "clean signature standard attire",
+    "proctor_alistair": "clean signature standard attire",
+    "commander_marcus_kael": "clean signature standard attire",
+    "lord_cedric_vance": "clean signature standard attire",
+    "patriarch_valerius_montrey": "clean signature standard attire",
+    "elder_cassius_montrey": "ceremonial arcane robes",
+    "elena_ashvale": "clean signature standard attire",
+    "doran_keller": "clean signature standard attire"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_crest_amulet": {
+      "canonical_name": "Montrey Crest Amulet",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "academy_courtyard": {
+      "canonical_name": "Imperial Arcane Academy Courtyard",
+      "container": null,
+      "visual_form": "Expansive grand entrance courtyard of the Imperial Arcane Academy paved with reflective pale silver granite and polished white marble, multi-tiered gothic colonnades, crystal mana fountains emitting azure luminescence, colossal arched portals, hovering cyan magic circles above spires.",
+      "notes": "Locked across all episode scenes: Imperial Arcane Academy Courtyard."
+    },
+    "grand_ranking_stele": {
+      "canonical_name": "Grand Ranking Stele",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_appraisal_hall": {
+      "canonical_name": "Montrey Appraisal Hall",
+      "container": null,
+      "visual_form": "Grand gothic ancestral appraisal hall built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Appraisal Hall."
+    },
+    "montrey_patriarch_study": {
+      "canonical_name": "Montrey Patriarch Study",
+      "container": null,
+      "visual_form": "High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, tall arched gothic windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Patriarch Study."
+    },
+    "ancestral_resonance_mirror": {
+      "canonical_name": "Ancestral Resonance Mirror",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_banquet_hall": {
+      "canonical_name": "Montrey Banquet Hall",
+      "container": null,
+      "visual_form": "High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Banquet Hall."
+    },
+    "montrey_velvet_carriage": {
+      "canonical_name": "Montrey Gilded Velvet Carriage",
+      "container": null,
+      "visual_form": "Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns.",
+      "notes": "Locked across all episode scenes: Montrey Gilded Velvet Carriage."
+    },
+    "platinum_crown_chest": {
+      "canonical_name": "Platinum Crown Chest",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "imperial_reinstatement_scroll": {
+      "canonical_name": "Imperial Reinstatement Scroll",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_estate_gates": {
+      "canonical_name": "Montrey Estate Grand Gates",
+      "container": null,
+      "visual_form": "Monumental towering wrought-iron and pale silver-granite outer estate gates beneath a soaring gothic archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet banners, glowing blue crystal gate lanterns, broad dry cobblestone plaza overlooking soaring cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Estate Grand Gates."
+    },
+    "montrey_gilded_velvet_carriage": {
+      "canonical_name": "Montrey Gilded Velvet Carriage",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_008",
+      "to_scene": "IMG_010",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_008",
+      "to_scene": "IMG_010",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_008",
+      "to_scene": "IMG_010",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_016",
+      "to_scene": "IMG_017",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_016",
+      "to_scene": "IMG_017",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_016",
+      "to_scene": "IMG_017",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_025",
+      "to_scene": "IMG_027",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_025",
+      "to_scene": "IMG_027",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_025",
+      "to_scene": "IMG_027",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_032",
+      "to_scene": "IMG_034",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_032",
+      "to_scene": "IMG_034",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_032",
+      "to_scene": "IMG_034",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_037",
+      "to_scene": "IMG_039",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_037",
+      "to_scene": "IMG_039",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_037",
+      "to_scene": "IMG_039",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_046",
+      "to_scene": "IMG_048",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_046",
+      "to_scene": "IMG_048",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_046",
+      "to_scene": "IMG_048",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_050",
+      "to_scene": "IMG_051",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_050",
+      "to_scene": "IMG_051",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_050",
+      "to_scene": "IMG_051",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_055",
+      "to_scene": "IMG_057",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_055",
+      "to_scene": "IMG_057",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_055",
+      "to_scene": "IMG_057",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_059",
+      "to_scene": "IMG_062",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_059",
+      "to_scene": "IMG_062",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_059",
+      "to_scene": "IMG_064",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_064",
+      "to_scene": "IMG_068",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_064",
+      "to_scene": "IMG_068",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_071",
+      "to_scene": "IMG_073",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_071",
+      "to_scene": "IMG_073",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_078",
+      "to_scene": "IMG_081",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Imperial Reinstatement Scroll}"
+    },
+    {
+      "from_scene": "IMG_078",
+      "to_scene": "IMG_087",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_093",
+      "to_scene": "IMG_096",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_107",
+      "to_scene": "IMG_109",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_106",
+      "to_scene": "IMG_111",
+      "holder_id": "",
+      "prop_token": "@{Platinum Crown Chest}"
+    },
+    {
+      "from_scene": "IMG_113",
+      "to_scene": "IMG_115",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Platinum Crown Chest}"
+    },
+    {
+      "from_scene": "IMG_115",
+      "to_scene": "IMG_117",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_125",
+      "to_scene": "IMG_127",
+      "holder_id": "",
+      "prop_token": "@{Montrey Gilded Velvet Carriage}"
+    },
+    {
+      "from_scene": "IMG_126",
+      "to_scene": "IMG_133",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_149",
+      "to_scene": "IMG_152",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_160",
+      "to_scene": "IMG_161",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_160",
+      "to_scene": "IMG_161",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Grand Ranking Stele}"
+    },
+    {
+      "from_scene": "IMG_164",
+      "to_scene": "IMG_166",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_169",
+      "to_scene": "IMG_170",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_174",
+      "to_scene": "IMG_177",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_179",
+      "to_scene": "IMG_180",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_182",
+      "to_scene": "IMG_184",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_187",
+      "to_scene": "IMG_191",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [
+      {
+        "entity_id": "montrey_crest_amulet",
+        "from_scene": 65,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      },
+      {
+        "entity_id": "imperial_reinstatement_scroll",
+        "from_scene": 82,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      }
+    ],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

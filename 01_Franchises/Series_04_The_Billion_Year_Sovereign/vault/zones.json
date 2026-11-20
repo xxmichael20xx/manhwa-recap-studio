@@ -26,7 +26,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "troposphere.stele": {
@@ -55,7 +59,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "campus.perimeter_gate": {
@@ -86,7 +94,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "starfall.penthouse": {
@@ -117,7 +129,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "stadium.clean_arena": {
@@ -151,7 +167,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "stadium.frosted_arena": {
@@ -183,7 +203,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "stadium.impact_crater": {
@@ -216,7 +240,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "dorm.402": {
@@ -250,7 +278,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "campus.pathway": {
@@ -282,7 +314,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "pavilion.auction_hall": {
@@ -314,7 +350,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "pavilion.vip_suite": {
@@ -345,7 +385,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "gu_syndicate.headquarters": {
@@ -376,7 +420,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "gu_syndicate.courtyard_plaza": {
@@ -406,7 +454,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "campus.formation_cordon": {
@@ -437,7 +489,11 @@
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "street.breakfast_stall": {
@@ -468,7 +524,11 @@
       "campus.formation_cordon",
       "jiangnan.transit_plaza",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "jiangnan.transit_plaza": {
@@ -500,7 +560,11 @@
       "campus.formation_cordon",
       "street.breakfast_stall",
       "bureau.command_room",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "bureau.command_room": {
@@ -531,7 +595,11 @@
       "campus.formation_cordon",
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
-      "street.convenience_store"
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
     ]
   },
   "street.convenience_store": {
@@ -562,7 +630,165 @@
       "campus.formation_cordon",
       "street.breakfast_stall",
       "jiangnan.transit_plaza",
-      "bureau.command_room"
+      "bureau.command_room",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
+    ]
+  },
+  "troposphere.stele_daylight": {
+    "id": "troposphere.stele_daylight",
+    "name": "Troposphere Morning Sky Horizon",
+    "canon": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night",
+      "nighttime",
+      "dark night sky",
+      "starry night",
+      "muddy ground",
+      "dirt yard"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall",
+      "jiangnan.transit_plaza",
+      "bureau.command_room",
+      "street.convenience_store",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
+    ]
+  },
+  "campus.perimeter_gate_daylight": {
+    "id": "campus.perimeter_gate_daylight",
+    "name": "North Campus Perimeter Gate Daylight",
+    "canon": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night",
+      "nighttime",
+      "searchlight",
+      "floodlit night",
+      "park bench",
+      "bunk bed",
+      "dorm",
+      "Room 404"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall",
+      "jiangnan.transit_plaza",
+      "bureau.command_room",
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "starfall.penthouse_daylight",
+      "jiangnan.transit_plaza_daylight"
+    ]
+  },
+  "starfall.penthouse_daylight": {
+    "id": "starfall.penthouse_daylight",
+    "name": "Starfall Penthouse Suite Daylight",
+    "canon": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night",
+      "nighttime",
+      "city neon",
+      "starry night",
+      "grass",
+      "synthetic track",
+      "stadium bleachers",
+      "bunk bed"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall",
+      "jiangnan.transit_plaza",
+      "bureau.command_room",
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "jiangnan.transit_plaza_daylight"
+    ]
+  },
+  "jiangnan.transit_plaza_daylight": {
+    "id": "jiangnan.transit_plaza_daylight",
+    "name": "Jiangnan Transit Plaza Morning",
+    "canon": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky.",
+    "lighting": "daylight",
+    "forbidden_tokens": [
+      "night",
+      "nighttime",
+      "crimson storm",
+      "dorm",
+      "bunk bed",
+      "medieval castle",
+      "stone battlement",
+      "horns on buildings"
+    ],
+    "adjacent": [
+      "campus.willow_park",
+      "troposphere.stele",
+      "campus.perimeter_gate",
+      "starfall.penthouse",
+      "stadium.clean_arena",
+      "stadium.frosted_arena",
+      "stadium.impact_crater",
+      "dorm.402",
+      "campus.pathway",
+      "pavilion.auction_hall",
+      "pavilion.vip_suite",
+      "gu_syndicate.headquarters",
+      "gu_syndicate.courtyard_plaza",
+      "campus.formation_cordon",
+      "street.breakfast_stall",
+      "jiangnan.transit_plaza",
+      "bureau.command_room",
+      "street.convenience_store",
+      "troposphere.stele_daylight",
+      "campus.perimeter_gate_daylight",
+      "starfall.penthouse_daylight"
     ]
   }
 }

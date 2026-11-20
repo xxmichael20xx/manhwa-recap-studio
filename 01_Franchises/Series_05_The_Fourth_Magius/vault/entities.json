@@ -78,16 +78,19 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, manicured short beard, Cold, merciless steel-grey eyes brimming with ruthless aristocratic pride, Tall, broad-shouldered nobleman carrying an ornate wind-attuned silver cane",
+    "dna": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, clean-shaven jawline, cold merciless steel-grey eyes brimming with ruthless aristocratic pride, tall broad-shouldered nobleman",
     "default_outfit": "default",
     "outfits": {
-      "default": "Opulent sapphire-velvet coat lined with ermine fur, gilded silver frogging, high-collared silk cravat pinned with the Montrey dragon brooch"
+      "default": "Deep sapphire-blue velvet coat with lush dark charcoal-grey fur collar and sleeve trim, ornate silver coiled dragon embroidery along lapels and hem, charcoal-black brocade waistcoat with silver buttons, navy-blue silk cravat pinned with a glowing star-sapphire brooch, black leather gloves"
     },
     "default_state": {},
     "state_lexicon": {},
     "plate": "character_vault/03_Antagonist_Patriarch_Valerius.jpg",
     "episodes": [
-      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ]
   },
   "elder_cassius_montrey": {
@@ -100,7 +103,7 @@
     ],
     "status": "approved",
     "age_class": "adult",
-    "dna": "Thin, receding snow-white hair, gaunt wrinkled face with hooked nose, Narrowed, hooded dark eyes filled with elitist contempt and zero empathy, Slightly hunched, lean frame wearing ceremonial arcane robes",
+    "dna": "Thin, receding silver-white hair, gaunt wrinkled face with hooked nose, Narrowed, hooded dark eyes filled with elitist contempt and zero empathy, Slightly hunched, lean frame wearing ceremonial arcane robes",
     "default_outfit": "default",
     "outfits": {
       "default": "Heavy dark-navy ceremonial robes with silver lightning runes along sleeves, wearing obsidian diagnostic rings on fingers"
@@ -109,7 +112,10 @@
     "state_lexicon": {},
     "plate": "character_vault/04_Antagonist_Elder_Cassius.jpg",
     "episodes": [
-      "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+      "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ]
   },
   "elder_rowan_thorne": {
@@ -237,7 +243,10 @@
       "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
       "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Carved Blackwood Staff"
   },
@@ -344,7 +353,10 @@
     "state_lexicon": {},
     "plate": "character_vault/09_Item_Montrey_Crest_Amulet.jpg",
     "episodes": [
-      "EP01"
+      "EP01",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Montrey Crest Amulet"
   },
@@ -427,7 +439,8 @@
     "episodes": [
       "EP01",
       "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
-      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
     ],
     "name": "The White Dimension Library"
   },
@@ -539,7 +552,10 @@
       "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
       "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Michael Montrey (Academy)"
   },
@@ -565,7 +581,10 @@
     "episodes": [
       "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Lord Cedric Vance"
   },
@@ -591,7 +610,10 @@
     "episodes": [
       "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Proctor Alistair"
   },
@@ -827,7 +849,10 @@
       "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
       "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Imperial Arcane Academy Courtyard"
   },
@@ -847,7 +872,8 @@
     "episodes": [
       "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
       "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
     ],
     "name": "Academy Resonance Testing Hall"
   },
@@ -891,7 +917,8 @@
     "state_lexicon": {},
     "plate": "character_vault/35_Supporting_Commander_Marcus_Kael.jpg",
     "episodes": [
-      "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+      "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Commander Marcus Kael"
   },
@@ -938,7 +965,10 @@
     "state_lexicon": {},
     "plate": "character_vault/42_Ally_Elena_Ashvale.jpg",
     "episodes": [
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Elena Ashvale"
   },
@@ -961,7 +991,10 @@
     "state_lexicon": {},
     "plate": "character_vault/43_Ally_Doran_Keller.jpg",
     "episodes": [
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
     ],
     "name": "Doran Keller"
   },
@@ -1054,7 +1087,9 @@
     "dna": "@{Academy Private Dormitory Chamber}, master interior room reference plate. Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with neatly folded dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall providing an elevated window vantage overlooking nocturnal academy cathedral spires and hovering cyan mana circles beneath cool moonlight.",
     "plate": "character_vault/39_Location_Academy_Private_Dormitory.jpg",
     "episodes": [
-      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+      "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation"
     ],
     "name": "Academy Private Dormitory Chamber"
   },
@@ -1210,8 +1245,225 @@
     "plate": "character_vault/46_Prop_Labyrinth_Ranking_Monolith.jpg",
     "episodes": [
       "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-      "EP07_The_Ancient_Labyrinth_Tournament"
+      "EP07_The_Ancient_Labyrinth_Tournament",
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation"
     ],
     "name": "Grand Ranking Stele"
+  },
+  "montrey_appraisal_hall": {
+    "id": "montrey_appraisal_hall",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Montrey Appraisal Hall}",
+    "aliases": [
+      "Montrey Appraisal Hall",
+      "montrey_appraisal_hall",
+      "Appraisal Hall"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Appraisal Hall}, master architectural interior reference plate. Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, empty stepped silver-granite appraisal dais at center, and towering gothic stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and hovering ethereal cyan mana circles under bright daylight.",
+    "plate": "character_vault/49_Location_Montrey_Appraisal_Hall.jpg",
+    "episodes": [
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Montrey Appraisal Hall"
+  },
+  "montrey_patriarch_study": {
+    "id": "montrey_patriarch_study",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Montrey Patriarch Study}",
+    "aliases": [
+      "Montrey Patriarch Study",
+      "montrey_patriarch_study",
+      "Patriarch Study"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Patriarch Study}, master architectural interior reference plate. Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, and tall arched gothic windows along the right wall providing an elevated panoramic vantage over soaring pale silver cathedral spires and hovering cyan mana circles under clear daylight.",
+    "plate": "character_vault/50_Location_Montrey_Patriarch_Study.jpg",
+    "episodes": [
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Montrey Patriarch Study"
+  },
+  "ancestral_resonance_mirror": {
+    "id": "ancestral_resonance_mirror",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Ancestral Resonance Mirror}",
+    "aliases": [
+      "Ancestral Resonance Mirror",
+      "Resonance Mirror"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal inside a dark-slate gothic chamber. Frame sculpted with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at the cardinal points. Mirror surface swirls softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. Pure 100% textless abstract artwork, zero readable words, zero reflections of people.",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/51_Artifact_Ancestral_Resonance_Mirror.jpg",
+    "episodes": [
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Ancestral Resonance Mirror"
+  },
+  "academy_labyrinth_dossier": {
+    "id": "academy_labyrinth_dossier",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "handheld",
+    "token": "@{Academy Labyrinth Dossier}",
+    "aliases": [
+      "Academy Labyrinth Dossier",
+      "Labyrinth Dossier"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Academy Labyrinth Dossier}, close-up master prop reference plate. Official heavy dark-navy leather dispatch folder resting flat on a dark polished mahogany table, bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap, soft blue mana glow along the wax seal. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+    "lifecycle": [
+      "equipped",
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/52_Prop_Academy_Labyrinth_Dossier.jpg",
+    "episodes": [
+      "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
+    ],
+    "name": "Academy Labyrinth Dossier"
+  },
+  "montrey_banquet_hall": {
+    "id": "montrey_banquet_hall",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Montrey Banquet Hall}",
+    "aliases": [
+      "Montrey Banquet Hall",
+      "montrey_banquet_hall",
+      "Banquet Hall"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Banquet Hall}, master architectural interior reference plate. Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows along the far wall revealing soaring pale silver cathedral spires and hovering cyan mana circles under bright daylight.",
+    "plate": "character_vault/53_Location_Montrey_Banquet_Hall.jpg",
+    "episodes": [
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Montrey Banquet Hall"
+  },
+  "montrey_velvet_carriage": {
+    "id": "montrey_velvet_carriage",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Montrey Gilded Velvet Carriage}",
+    "aliases": [
+      "Montrey Gilded Velvet Carriage",
+      "Velvet Carriage",
+      "Gilded Carriage"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Gilded Velvet Carriage}, master vehicle prop reference plate. Monumental aristocratic noble carriage parked stationary on clean pale silver-granite courtyard flagstones under bright daylight. Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns. Completely unpopulated still life, zero humans, zero horses, zero people, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/54_Prop_Montrey_Velvet_Carriage.jpg",
+    "episodes": [
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Montrey Gilded Velvet Carriage"
+  },
+  "platinum_crown_chest": {
+    "id": "platinum_crown_chest",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Platinum Crown Chest}",
+    "aliases": [
+      "Platinum Crown Chest",
+      "Platinum Chest"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Platinum Crown Chest}, close-up master prop reference plate. Heavy aristocratic treasure chest resting on polished silver-granite flagstones, wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+    "lifecycle": [
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/55_Prop_Platinum_Crown_Chest.jpg",
+    "episodes": [
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Platinum Crown Chest"
+  },
+  "imperial_reinstatement_scroll": {
+    "id": "imperial_reinstatement_scroll",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "handheld",
+    "token": "@{Imperial Reinstatement Scroll}",
+    "aliases": [
+      "Imperial Reinstatement Scroll",
+      "Reinstatement Scroll",
+      "Imperial Petition"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Imperial Reinstatement Scroll}, close-up master prop reference plate. Ceremonial aristocratic rolled ivory-parchment decree scroll resting flat on a dark polished mahogany surface, bound at the center with a rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, one corner slightly unrolled showing faint abstract geometric border filigree only. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+    "lifecycle": [
+      "equipped",
+      "environmental"
+    ],
+    "default_lifecycle": "environmental",
+    "default_state": {},
+    "state_lexicon": {},
+    "plate": "character_vault/56_Prop_Imperial_Reinstatement_Scroll.jpg",
+    "episodes": [
+      "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Imperial Reinstatement Scroll"
+  },
+  "montrey_estate_gates": {
+    "id": "montrey_estate_gates",
+    "kind": "location",
+    "isAnimate": false,
+    "token": "@{Montrey Estate Grand Gates}",
+    "aliases": [
+      "Montrey Estate Grand Gates",
+      "montrey_estate_gates",
+      "Montrey Grand Gates",
+      "Estate Gates"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "@{Montrey Estate Grand Gates}, master architectural exterior reference plate. Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing open beneath a soaring gothic stone archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet house banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza leading out toward the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under bright clear daylight. Completely unpopulated environment, zero people, zero snow. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+    "plate": "character_vault/57_Location_Montrey_Estate_Gates.jpg",
+    "episodes": [
+      "EP10_The_Burning_of_the_Dragon_Crest"
+    ],
+    "name": "Montrey Estate Grand Gates"
   }
 }

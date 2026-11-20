@@ -737,6 +737,26 @@ for (let i = 0; i < sceneIds.length; i++) {
     return `holding ${tokens} steadily in right hand`
   }
 
+  const findExplicitPropHolder = (hp) => {
+    const escProp = (hp.name || hp.token.replace(/[@{}]/g, '').trim()).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const propPat = `(?:@\\{${escProp}\\}|\\b${escProp}\\b)`
+    const verbPat = `(?:hold(?:s|ing)?|grip(?:s|ping)?|stead(?:y|ies|ying)|rais(?:e|es|ing)|scan(?:s|ning)?|tap(?:s|ping)?|clutch(?:es|ing)?|carr(?:y|ies|ying)|inspect(?:s|ing)?|lift(?:s|ing)?|channel(?:s|ing)?)`
+    for (const cTok of activeCast) {
+      const cName = cTok.replace(/[@{}]/g, '').trim()
+      const escChar = cName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      const re = new RegExp(`(?:@\\{${escChar}\\}|\\b${escChar}\\b)[^.@!?]{0,80}?\\b${verbPat}\\b[^.!?]{0,60}?${propPat}`, 'i')
+      if (re.test(actionText || '')) {
+        return cTok.startsWith('@{') ? cTok : `@{${cName}}`
+      }
+    }
+    return null
+  }
+
+  const propHolderMap = new Map()
+  for (const hp of handheldProps) {
+    propHolderMap.set(hp.token, findExplicitPropHolder(hp))
+  }
+
   for (const cToken of activeCast) {
     const cleanName = cToken.replace(/[@{}]/g, '').trim()
     const ent = Object.values(entities).find(e =>
@@ -774,7 +794,17 @@ for (let i = 0; i < sceneIds.length; i++) {
             block += ', unarmed with empty bare hands, zero swords, zero held weapons'
           }
         } else if (ent.kind === 'character' && !sceneHasWeaponProp && (!entHeld || entHeld === 'none')) {
-          if (!block.toLowerCase().includes('empty hands')) {
+          if (handheldProps.length > 0) {
+            const heldByThisChar = handheldProps.filter(hp => {
+              const holderTok = propHolderMap.get(hp.token)
+              return holderTok && holderTok.replace(/[@{}]/g, '').trim().toLowerCase() === cleanName.toLowerCase()
+            })
+            if (heldByThisChar.length > 0) {
+              block += `, holding ${heldByThisChar.map(hp => hp.token).join(' and ')}`
+            } else if (!block.toLowerCase().includes('empty hands')) {
+              block += ', empty hands with zero held props or weapons'
+            }
+          } else if (!block.toLowerCase().includes('empty hands')) {
             block += ', empty hands with zero held weapons'
           }
         }
@@ -807,7 +837,12 @@ for (let i = 0; i < sceneIds.length; i++) {
     if (handheldProps.length > 0) {
       for (const hp of handheldProps) {
         const cleanPropDna = hp.overriddenDna || (hp.ent?.dna || hp.ent?.visual_dna || hp.ent?.description || hp.name).replace(/^@\{[^}]+\},\s*/, '')
-        layer2 += `, Featuring ${hp.token} (${cleanPropDna}, identical unchanging prop geometry)`
+        const holderToken = propHolderMap.get(hp.token)
+        if (holderToken) {
+          layer2 += `, Featuring ${hp.token} (held exclusively by ${holderToken}, ${cleanPropDna}, identical unchanging prop geometry)`
+        } else {
+          layer2 += `, Featuring ${hp.token} (${cleanPropDna}, identical unchanging prop geometry)`
+        }
       }
     }
   } else if (stationaryProps.length > 0) {
@@ -949,7 +984,7 @@ for (let i = 0; i < sceneIds.length; i++) {
     )
   })
   const groundedCastSpec = groundedTokens.length > 0
-    ? `${groundedTokens.join(', ')} kneeling directly on floor`
+    ? `${groundedTokens.map(t => (t.startsWith('@{') ? t : `@{${t}}`)).join(', ')} kneeling directly on floor`
     : 'grounded posture strictly on stone floor'
   const groundedTail = `zero elevated seating, zero chairs, zero armchairs, zero sofas, zero beds, zero mattresses, grounded directly on floor, ${groundedCastSpec}.`
 

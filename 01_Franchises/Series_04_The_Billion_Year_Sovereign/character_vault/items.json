@@ -39,7 +39,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas",
       "visual_dna": "Retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas."
@@ -63,7 +64,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes",
       "visual_dna": "Translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes."
@@ -75,8 +77,8 @@
       "type": "Artifact",
       "apparent_rank": "Global Celestial Ranking Monument",
       "true_rank": "Cosmic Heavenly Dao Authority Monolith",
-      "description": "Colossal thirty-thousand-metre obsidian-and-gold rectangular primordial stone monolith descending vertically in high atmosphere, etched with glowing divine golden calligraphy and star-charts, encircled by iridescent violet and golden starlight halos.",
-      "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "description": "Monumental thirty-thousand-metre tapered black-obsidian square obelisk column, ornate gothic-arch gold filigree corners and crown, upper circular golden celestial compass ring, middle grid of small glowing golden abstract sigil glyphs, pointed glowing gold crystal base, encircled by double swirling violet-and-gold starlight nebula rings.",
+      "dna_prompt_anchor": "@{Heaven-Earth Golden Stele}, monumental thirty-thousand-metre tapered black-obsidian square obelisk column, ornate gothic-arch gold filigree corners and crown, upper circular golden celestial compass ring, middle grid of small glowing golden abstract sigil glyphs, pointed glowing gold crystal base, encircled by double swirling violet-and-gold starlight nebula rings, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
       "reference_plate": "10_Artifact_Heaven_Earth_Golden_Stele.jpg",
       "episodes": [
         "EP01",
@@ -84,10 +86,11 @@
         "EP03",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
-      "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos",
-      "visual_dna": "Monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos."
+      "dna": "monumental thirty-thousand-metre tapered black-obsidian square obelisk column, ornate gothic-arch gold filigree corners and crown, upper circular golden celestial compass ring, middle grid of small glowing golden abstract sigil glyphs, pointed glowing gold crystal base, encircled by double swirling violet-and-gold starlight nebula rings",
+      "visual_dna": "Monumental thirty-thousand-metre tapered black-obsidian square obelisk column, ornate gothic-arch gold filigree corners and crown, upper circular golden celestial compass ring, middle grid of small glowing golden abstract sigil glyphs, pointed glowing gold crystal base, encircled by double swirling violet-and-gold starlight nebula rings."
     },
     {
       "id": "celestial_star_astrolabe",
@@ -107,7 +110,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core",
       "visual_dna": "Intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core."
@@ -154,7 +158,8 @@
       "dna_prompt_anchor": "@{Blood-Ignition Spirit Pill}, pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks, modern 2025 manhwa style, vertical 9:16",
       "dna": "@{Blood-Ignition Spirit Pill}, pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks, modern 2025 manhwa style, vertical 9:16",
       "visual_dna": "Pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks",
-      "reference_plate": "25_Item_Blood_Ignition_Spirit_Pill.jpg"
+      "reference_plate": "25_Item_Blood_Ignition_Spirit_Pill.jpg",
+      "description": "Pungent jagged crimson demonic pill swirling with volatile dark red spirit sparks"
     },
     {
       "id": "primordial_dust_cleansing_pill",
@@ -239,7 +244,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ]
     },
     {
@@ -272,7 +278,8 @@
       "reference_plate": "43_Prop_Bureau_Recon_Drone.jpg",
       "episodes": [
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ]
     },
     {
@@ -289,6 +296,153 @@
       "reference_plate": "44_Prop_Convenience_Grocery_Bag.jpg",
       "episodes": [
         "EP09"
+      ]
+    },
+    {
+      "id": "split_tactical_spirit_spectrometer",
+      "name": "Split Tactical Spirit Spectrometer",
+      "token": "@{Split Tactical Spirit Spectrometer}",
+      "type": "Prop",
+      "apparent_rank": "Damaged Threat Bureau Spirit-Energy Sensor",
+      "true_rank": "Tampered Military Spatial Leyline Analyzer with Starfall Telemetry Backdoor",
+      "description": "Retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, unlit brushed-brass top sensor nozzle, spiderweb-cracked semicircular analog dial gauge with needle at zero, soot-blackened unlit vertical glass vacuum tube, twin silver toggle switches, two olive knurled rotary knobs, upper-right faceplate split open exposing an internal green printed circuit board with soldered copper wires and a glowing violet six-pointed star-shaped crystal chip inside, zero digital LCD screens, zero antennas.",
+      "dna_prompt_anchor": "@{Split Tactical Spirit Spectrometer}, retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, unlit brushed-brass top sensor nozzle, spiderweb-cracked semicircular analog dial gauge with needle at zero, soot-blackened unlit vertical glass vacuum tube, twin silver toggle switches, two olive knurled rotary knobs, upper-right faceplate split open exposing an internal green printed circuit board with soldered copper wires and a glowing violet six-pointed star-shaped crystal chip inside, zero digital LCD screens, zero antennas, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "reference_plate": "48_Prop_Split_Tactical_Spirit_Spectrometer.jpg",
+      "episodes": [
+        "EP10"
+      ],
+      "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, unlit brushed-brass top sensor nozzle, spiderweb-cracked semicircular analog dial gauge with needle at zero, soot-blackened unlit vertical glass vacuum tube, twin silver toggle switches, two olive knurled rotary knobs, upper-right faceplate split open exposing an internal green printed circuit board with soldered copper wires and a glowing violet six-pointed star-shaped crystal chip inside, zero digital LCD screens, zero antennas",
+      "visual_dna": "Retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, unlit brushed-brass top sensor nozzle, spiderweb-cracked semicircular analog dial gauge with needle at zero, soot-blackened unlit vertical glass vacuum tube, twin silver toggle switches, two olive knurled rotary knobs, upper-right faceplate split open exposing an internal green printed circuit board with soldered copper wires and a glowing violet six-pointed star-shaped crystal chip inside, zero digital LCD screens, zero antennas."
+    },
+    {
+      "id": "troposphere_sky_daylight",
+      "name": "Troposphere Morning Sky Horizon",
+      "token": "@{Troposphere Morning Sky Horizon}",
+      "type": "Location",
+      "description": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars.",
+      "dna_prompt_anchor": "@{Troposphere Morning Sky Horizon}, High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "reference_plate": "49_Location_Troposphere_Sky_Daylight.jpg",
+      "episodes": [
+        "EP10"
+      ],
+      "dna": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars",
+      "visual_dna": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars."
+    },
+    {
+      "id": "campus_perimeter_gate_daylight",
+      "name": "North Campus Perimeter Gate Daylight",
+      "token": "@{North Campus Perimeter Gate Daylight}",
+      "type": "Location",
+      "description": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky.",
+      "dna_prompt_anchor": "@{North Campus Perimeter Gate Daylight}, North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "reference_plate": "50_Location_Campus_Perimeter_Gate_Daylight.jpg",
+      "episodes": [
+        "EP10"
+      ],
+      "dna": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky",
+      "visual_dna": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky."
+    },
+    {
+      "id": "starfall_penthouse_daylight",
+      "name": "Starfall Penthouse Suite Daylight",
+      "token": "@{Starfall Penthouse Suite Daylight}",
+      "type": "Location",
+      "description": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals.",
+      "dna_prompt_anchor": "@{Starfall Penthouse Suite Daylight}, Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "reference_plate": "51_Location_Starfall_Penthouse_Daylight.jpg",
+      "episodes": [
+        "EP10"
+      ],
+      "dna": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals",
+      "visual_dna": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals."
+    },
+    {
+      "id": "jiangnan_transit_plaza_daylight",
+      "name": "Jiangnan Transit Plaza Morning",
+      "token": "@{Jiangnan Transit Plaza Morning}",
+      "type": "Location",
+      "description": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky.",
+      "dna_prompt_anchor": "@{Jiangnan Transit Plaza Morning}, Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky, modern 2025 urban cultivation manhwa style, sharp ink linework, vertical 9:16",
+      "reference_plate": "52_Location_Jiangnan_Transit_Plaza_Daylight.jpg",
+      "episodes": [
+        "EP10"
+      ],
+      "dna": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky",
+      "visual_dna": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky."
+    },
+    {
+      "id": "starfall_telemetry_relay_core",
+      "name": "Starfall Telemetry Relay Core",
+      "token": "@{Starfall Telemetry Relay Core}",
+      "type": "Prop",
+      "description": "Classified Starfall Syndicate planetary telemetry plinth linking Ye Xingchen penthouse array to the Bureau spectrometer network.",
+      "dna": "tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs",
+      "dna_prompt_anchor": "@{Starfall Telemetry Relay Core}, tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "visual_dna": "tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs",
+      "reference_plate": "53_Prop_Starfall_Telemetry_Relay_Core.jpg",
+      "flowName": "Starfall Telemetry Relay Core",
+      "episodes": [
+        "EP11"
+      ]
+    },
+    {
+      "id": "starfall_constellation_gunship",
+      "name": "Starfall Constellation Gunship",
+      "token": "@{Starfall Constellation Gunship}",
+      "type": "Vehicle",
+      "description": "Unmanned Starfall Syndicate anti-gravity assault cruiser leading Ye Xingchens global fleet toward Jiangnan.",
+      "dna": "sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor",
+      "dna_prompt_anchor": "@{Starfall Constellation Gunship}, sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "visual_dna": "sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor",
+      "reference_plate": "54_Vehicle_Starfall_Constellation_Gunship.jpg",
+      "flowName": "Starfall Constellation Gunship",
+      "episodes": [
+        "EP12"
+      ]
+    },
+    {
+      "id": "celestial_constellation_siege_pylon",
+      "name": "Celestial Constellation Siege Pylon",
+      "token": "@{Celestial Constellation Siege Pylon}",
+      "type": "Prop",
+      "description": "Hovering obsidian-and-violet constellation obelisk deployed by Ye Xingchen to anchor his 480-Million-Year Heavenly Constellation Domain over Jiangnan.",
+      "dna": "split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets",
+      "dna_prompt_anchor": "@{Celestial Constellation Siege Pylon}, split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "visual_dna": "split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets",
+      "reference_plate": "55_Prop_Celestial_Constellation_Siege_Pylon.jpg",
+      "flowName": "Celestial Constellation Siege Pylon",
+      "episodes": [
+        "EP13"
+      ]
+    },
+    {
+      "id": "shattered_constellation_crown",
+      "name": "Shattered Constellation Crown",
+      "token": "@{Shattered Constellation Crown}",
+      "type": "Artifact",
+      "description": "The fractured imperial coalition diadem anchoring Ye Xingchens 480-Million-Year Global Oligarch Syndicate network as it cracks apart under Lu Chens unthrottled pressure.",
+      "dna": "angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines",
+      "dna_prompt_anchor": "@{Shattered Constellation Crown}, angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "visual_dna": "angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines",
+      "reference_plate": "56_Prop_Shattered_Constellation_Crown.jpg",
+      "flowName": "Shattered Constellation Crown",
+      "episodes": [
+        "EP14"
+      ]
+    },
+    {
+      "id": "primordial_sovereign_decree_seal",
+      "name": "Primordial Sovereign Decree Seal",
+      "token": "@{Primordial Sovereign Decree Seal}",
+      "type": "Artifact",
+      "description": "The apex One-Billion-Year celestial decree seal projected beside the Heaven-Earth Golden Stele when Lu Chen establishes absolute dominion over Blue Star.",
+      "dna": "octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings",
+      "dna_prompt_anchor": "@{Primordial Sovereign Decree Seal}, octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+      "visual_dna": "octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings",
+      "reference_plate": "57_Prop_Primordial_Sovereign_Decree_Seal.jpg",
+      "flowName": "Primordial Sovereign Decree Seal",
+      "episodes": [
+        "EP15"
       ]
     }
   ]

@@ -167,10 +167,15 @@
     - **Role:** Regal 45-year-old corporate apex martial guildmaster leading the elite cultivator assault against the Asura Blood Sovereign.
     - **DNA Prompt:** `@{Grandmaster Shen}, 45-year-old regal East Asian apex martial grandmaster, long silver-white hair neatly tied in low ponytail, piercing amber eyes, midnight-navy tailored martial duster coat with gold trim lapels and cuffs over black turtleneck, black tactical trousers, dark laced combat boots, vertical 9:16`
 
-27. **Tactical Hardware: Aegis Tactical Hover-Tank, Bureau Recon Drone & Convenience Store Grocery Bag**
+27. **Tactical Hardware: Aegis Tactical Hover-Tank, Bureau Recon Drone, Convenience Store Grocery Bag, Starfall Telemetry Relay Core, Starfall Constellation Gunship, Celestial Constellation Siege Pylon, Shattered Constellation Crown & Primordial Sovereign Decree Seal**
     - `@{Aegis Tactical Hover-Tank}`: sleek unmanned matte dark-titanium stealth hover-tank floating on glowing cyan anti-gravity thrusters with twin linear railgun barrels.
     - `@{Bureau Recon Drone}`: compact matte stealth-black quad-rotor tactical camera drone with carbon-fibre arms and single glowing cyan optical lens.
     - `@{Convenience Store Grocery Bag}`: semi-translucent milky-white plastic carrier grocery bag with tied top handles, visibly containing two blank red-and-amber square instant-noodle packs and a clear bottle of golden iced tea.
+    - `@{Starfall Telemetry Relay Core}`: tall octagonal matte obsidian-black titanium telemetry monolith plinth with brushed brass base conduits and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan holographic geometric circuit arcs.
+    - `@{Starfall Constellation Gunship}`: sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings, dorsal twin rail-cannon turrets, glowing purple under-hull plasma vents, and violet constellation hull conduits.
+    - `@{Celestial Constellation Siege Pylon}`: split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple constellation charts, levitating around a faceted violet starlight core crystal crackling with lightning arcs inside a brushed-gold and violet orbital star-ring.
+    - `@{Shattered Constellation Crown}`: angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing suspended shards and geometric constellation lines.
+    - `@{Primordial Sovereign Decree Seal}`: octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons and trigram bevels enclosing an eight-pointed radiant gold starlight core inside three concentric pale-gold geometric halo rings.
 
 ---
 
@@ -284,7 +289,11 @@
     "dorm.402": "Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps.",
     "jiangnan.transit_plaza": "Wide modern 2025 Jiangnan Central Transit Plaza intersection, empty multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under gloomy crimson overcast storm clouds.",
     "bureau.command_room": "Modern 2025 subterranean Defense Council tactical war room, matte dark charcoal steel acoustic wall panels, curved tiered obsidian glass console desk with blank glowing cyan geometric holographic rings above, cool white LED strip ceiling lighting.",
-    "street.convenience_store": "Modern 2025 corner convenience store exterior beside neat paved sidewalk, recessed sliding glass entrance radiating warm golden indoor light, metal bicycle rack beside roadside greenery, blank glowing cyan fascia awning with zero readable signage."
+    "street.convenience_store": "Modern 2025 corner convenience store exterior beside neat paved sidewalk, recessed sliding glass entrance radiating warm golden indoor light, metal bicycle rack beside roadside greenery, blank glowing cyan fascia awning with zero readable signage.",
+    "troposphere.stele_daylight": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars.",
+    "campus.perimeter_gate_daylight": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky.",
+    "starfall.penthouse_daylight": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals.",
+    "jiangnan.transit_plaza_daylight": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky."
   }
 }
 STUDIO_BIBLE_DIRECTIVES_END -->

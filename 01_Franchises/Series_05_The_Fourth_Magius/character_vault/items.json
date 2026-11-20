@@ -42,7 +42,10 @@
         "EP03_The_First_Breakthrough_and_The_Mercenary_Crucible",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
         "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true,
       "dna": "@{Carved Blackwood Staff}, master weapon reference plate. Sleek, dense, hand-whittled blackwood quarterstaff resting horizontally. Dark burnished dark ebony grain, fine spiral mana veins faintly glowing with faint cyan pulse, reinforced iron-shod tapered base, balanced for heavy physical impact. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
@@ -62,7 +65,10 @@
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00009",
       "flowName": "Montrey Crest Amulet",
       "episodes": [
-        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true,
       "dna": "@{Montrey Crest Amulet}, master aristocratic relic reference plate. Circular heavy platinum noble medallion set with a glowing star-sapphire centerpiece, engraved with the coiled winged dragon and crackling lightning bolt crest of House Montrey, braided silver chain, soft dramatic metallic reflections. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
@@ -207,7 +213,8 @@
       "episodes": [
         "EP01_The_Last_Archmage_and_The_Discarded_Babe",
         "EP02_The_Painless_Crafts_and_The_Agony_of_Magic",
-        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
       ],
       "hasPlate": true,
       "dna": "@{The White Dimension Library}, master astral environment reference plate. Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, ethereal cyan arcane constellation rings rotating horizontally in distant white void. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean elegant lighting, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
@@ -430,7 +437,10 @@
         "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
         "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true,
       "generation_prompt": "Master architectural plaza reference plate. Expansive grand entrance courtyard of an aristocratic high-magic academy, paved with pristine reflective pale silver granite and polished white marble, flanked by multi-tiered gothic colonnades, ornate crystal mana fountains emitting faint azure luminescence, colossal arched cathedral entrance portals, glowing ethereal cyan magic circles faintly rotating above distant soaring sapphire-tipped gothic spires under clear cobalt daylight sky. Pure 100% architectural environment illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, 100% completely textless artwork, zero words, zero letters, zero banners, zero watermarks."
@@ -452,7 +462,8 @@
       "episodes": [
         "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
       ],
       "hasPlate": true,
       "generation_prompt": "Master interior hall reference plate. Vast monumental gothic testing hall built from pale silver granite and glowing blue mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floor inlaid with concentric silver geometric calculation rings, towering stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and glowing cyan mana circles, empty central circular granite dais. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition, zero cloning, 100% completely textless artwork, zero words, zero letters, zero banners, zero watermarks."
@@ -535,7 +546,9 @@
       "reference_plate": "39_Location_Academy_Private_Dormitory.jpg",
       "flowName": "Academy Private Dormitory Chamber",
       "episodes": [
-        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain"
+        "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation"
       ],
       "hasPlate": true
     },
@@ -576,7 +589,9 @@
       "flowName": "Grand Ranking Stele",
       "episodes": [
         "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation"
       ],
       "hasPlate": true
     },
@@ -617,6 +632,195 @@
       "flowName": "Labyrinth 50th Floor Sanctum",
       "episodes": [
         "EP07_The_Ancient_Labyrinth_Tournament"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_appraisal_hall",
+      "name": "Montrey Appraisal Hall",
+      "token": "@{Montrey Appraisal Hall}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Great House Appraisal Hall",
+      "true_rank": "House Montrey Ancestral Appraisal Hall",
+      "description": "Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, and towering stained-glass arched windows overlooking the soaring pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion.",
+      "visual_dna": "Grand gothic ancestral appraisal hall built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "dna": "@{Montrey Appraisal Hall}, master architectural interior reference plate. Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, empty stepped silver-granite appraisal dais at center, and towering gothic stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and hovering ethereal cyan mana circles under bright daylight. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Montrey Appraisal Hall}, master architectural interior reference plate. Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, empty stepped silver-granite appraisal dais at center, and towering gothic stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and hovering ethereal cyan mana circles under bright daylight. Completely unpopulated environment, zero people. Dark fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master architectural interior reference plate. Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, empty stepped silver-granite appraisal dais at center, and towering gothic stained-glass arched windows along the far wall revealing an exterior skyline view of soaring pale silver cathedral spires and hovering ethereal cyan mana circles under bright daylight. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "49_Location_Montrey_Appraisal_Hall.jpg",
+      "flowName": "Montrey Appraisal Hall",
+      "episodes": [
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_patriarch_study",
+      "name": "Montrey Patriarch Study",
+      "token": "@{Montrey Patriarch Study}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Great House Patriarch Study",
+      "true_rank": "House Montrey Patriarch Council Study",
+      "description": "Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique grimoires, and tall arched gothic windows along the right wall overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "visual_dna": "High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, tall arched gothic windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "dna": "@{Montrey Patriarch Study}, master architectural interior reference plate. Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, and tall arched gothic windows along the right wall providing an elevated panoramic vantage over soaring pale silver cathedral spires and hovering cyan mana circles under clear daylight. Completely unpopulated environment, zero people. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Montrey Patriarch Study}, master architectural interior reference plate. Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, and tall arched gothic windows along the right wall providing an elevated panoramic vantage over soaring pale silver cathedral spires and hovering cyan mana circles under clear daylight. Completely unpopulated environment, zero people. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master architectural interior reference plate. Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, and tall arched gothic windows along the right wall providing an elevated panoramic vantage over soaring pale silver cathedral spires and hovering cyan mana circles under clear daylight. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "50_Location_Montrey_Patriarch_Study.jpg",
+      "flowName": "Montrey Patriarch Study",
+      "episodes": [
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "ancestral_resonance_mirror",
+      "name": "Ancestral Resonance Mirror",
+      "token": "@{Ancestral Resonance Mirror}",
+      "type": "Artifact",
+      "category": "Artifacts",
+      "apparent_rank": "House Montrey Lineage Scrying Mirror",
+      "true_rank": "Ancestral Mana Wavelength Resonance Relic",
+      "description": "Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal, framed with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at the cardinal points, its polished mirror surface swirling softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. 100% textless, zero people or face reflections.",
+      "visual_dna": "Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal, frame sculpted with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at cardinal points, mirror surface swirling softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. Pure 100% textless abstract artwork, zero readable words, zero reflections of people.",
+      "dna": "@{Ancestral Resonance Mirror}, master arcane artifact reference plate. Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal inside a dark-slate gothic chamber. Frame sculpted with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at the cardinal points. Mirror surface swirls softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. Completely unpopulated still life, zero people, zero face reflections, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Ancestral Resonance Mirror}, master arcane artifact reference plate. Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal inside a dark-slate gothic chamber. Frame sculpted with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at the cardinal points. Mirror surface swirls softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. Completely unpopulated still life, zero people, zero face reflections, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master arcane artifact still-life reference plate. Towering eight-foot ornate silver-and-platinum oval arcane scrying mirror mounted vertically on an intricately carved silver-granite pedestal inside a dark-slate gothic chamber. Frame sculpted with coiled winged dragon relief engravings and four glowing star-sapphire focus gems at the cardinal points. The mirror surface swirls softly with luminous ethereal cyan and azure arcane wavelength ripples and abstract geometric resonance rings. Completely unpopulated still life, zero humans, zero people, zero faces or reflections of people in the mirror, zero hands, 100% prop artifact showcase illustration, completely textless artwork, no speech bubbles, no words, no banners.",
+      "reference_plate": "51_Artifact_Ancestral_Resonance_Mirror.jpg",
+      "flowName": "Ancestral Resonance Mirror",
+      "episodes": [
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "academy_labyrinth_dossier",
+      "name": "Academy Labyrinth Dossier",
+      "token": "@{Academy Labyrinth Dossier}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Official Imperial Academy Dispatch",
+      "true_rank": "Sealed Floor 50 Resonance Wavelength Portfolio",
+      "description": "Official heavy dark-navy leather dispatch folder bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap. 100% textless artwork, zero readable words or calligraphy.",
+      "visual_dna": "Heavy dark-navy leather dispatch folder bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap, soft blue mana glow along the wax seal. Pure 100% textless artwork, zero readable words, zero letters.",
+      "dna": "@{Academy Labyrinth Dossier}, close-up master prop reference plate. Official heavy dark-navy leather dispatch folder resting flat on a dark polished mahogany table, bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap, soft blue mana glow along the wax seal. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Academy Labyrinth Dossier}, close-up master prop reference plate. Official heavy dark-navy leather dispatch folder resting flat on a dark polished mahogany table, bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap, soft blue mana glow along the wax seal. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Close-up master prop still-life reference plate resting flat on a dark polished mahogany table. Official heavy dark-navy leather dispatch folder bound with ornate silver metal corner protectors and twin silver clasps, sealed at the center with a prominent embossed star-sapphire blue wax medallion bearing a geometric arcane circle crest, crisp blank parchment scroll edges peeking neatly beneath the leather flap, soft blue mana glow along the wax seal. Completely unpopulated still life, zero humans, zero people, zero hands, zero fingers, 100% prop showcase illustration, completely textless artwork, zero readable words, zero letters, zero numbers, no speech bubbles, no banners.",
+      "reference_plate": "52_Prop_Academy_Labyrinth_Dossier.jpg",
+      "flowName": "Academy Labyrinth Dossier",
+      "episodes": [
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_banquet_hall",
+      "name": "Montrey Banquet Hall",
+      "token": "@{Montrey Banquet Hall}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Great House Banquet Hall",
+      "true_rank": "House Montrey Ancestral Banquet Hall",
+      "description": "Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "visual_dna": "High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "dna": "@{Montrey Banquet Hall}, master architectural interior reference plate. Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows along the far wall revealing soaring pale silver cathedral spires and hovering cyan mana circles under bright daylight. Completely unpopulated environment, zero people. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Montrey Banquet Hall}, master architectural interior reference plate. Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows along the far wall revealing soaring pale silver cathedral spires and hovering cyan mana circles under bright daylight. Completely unpopulated environment, zero people. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master architectural interior reference plate. Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows along the far wall revealing soaring pale silver cathedral spires and hovering cyan mana circles under bright daylight. Pure 100% architectural interior illustration, completely unpopulated, zero humans, zero people, zero characters. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9, edge-to-edge full bleed landscape, zero cloning, 100% completely textless artwork, zero words, zero letters, zero speech bubbles, zero banners.",
+      "reference_plate": "53_Location_Montrey_Banquet_Hall.jpg",
+      "flowName": "Montrey Banquet Hall",
+      "episodes": [
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_velvet_carriage",
+      "name": "Montrey Gilded Velvet Carriage",
+      "token": "@{Montrey Gilded Velvet Carriage}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Aristocratic Noble Carriage",
+      "true_rank": "House Montrey Ceremonial Velvet Carriage",
+      "description": "Monumental aristocratic noble carriage of House Montrey parked stationary on pale silver-granite flagstones. Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on the carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, and twin glowing sapphire crystal carriage lanterns.",
+      "visual_dna": "Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns.",
+      "dna": "@{Montrey Gilded Velvet Carriage}, master vehicle prop reference plate. Monumental aristocratic noble carriage parked stationary on clean pale silver-granite courtyard flagstones under bright daylight. Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns. Completely unpopulated still life, zero humans, zero horses, zero people, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Montrey Gilded Velvet Carriage}, master vehicle prop reference plate. Monumental aristocratic noble carriage parked stationary on clean pale silver-granite courtyard flagstones under bright daylight. Lacquered deep sapphire-blue timber cabin trimmed with ornate silver filigree and gilded brass scrollwork, embossed silver coiled winged dragon relief emblem on carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, twin glowing sapphire crystal carriage lanterns. Completely unpopulated still life, zero humans, zero horses, zero people, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master vehicle prop reference plate parked stationary on clean pale silver-granite courtyard flagstones under bright daylight. Monumental aristocratic noble carriage with lacquered deep sapphire-blue timber cabin, ornate silver filigree and gilded brass scrollwork trim, embossed silver coiled winged dragon relief emblem on the carriage door, velvet-curtained arched cabin windows, four large silver-rimmed spoked wheels, and twin glowing sapphire crystal carriage lanterns. Completely unpopulated still life, zero humans, zero people, zero coachmen, zero horses, zero hands, 100% prop showcase illustration, completely textless artwork, zero words, zero letters, no speech bubbles, no banners.",
+      "reference_plate": "54_Prop_Montrey_Velvet_Carriage.jpg",
+      "flowName": "Montrey Gilded Velvet Carriage",
+      "episodes": [
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "platinum_crown_chest",
+      "name": "Platinum Crown Chest",
+      "token": "@{Platinum Crown Chest}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Aristocratic Treasure Chest",
+      "true_rank": "House Montrey Platinum Crown Gift Chest",
+      "description": "Heavy aristocratic treasure chest wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, its hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Pure 100% textless artwork, zero digits or letters on coins.",
+      "visual_dna": "Heavy aristocratic treasure chest wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Pure 100% textless artwork, zero digits on coins.",
+      "dna": "@{Platinum Crown Chest}, close-up master prop reference plate. Heavy aristocratic treasure chest resting on polished silver-granite flagstones, wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Platinum Crown Chest}, close-up master prop reference plate. Heavy aristocratic treasure chest resting on polished silver-granite flagstones, wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Close-up master prop still-life reference plate resting on polished silver-granite flagstones. Heavy aristocratic treasure chest wrapped in deep sapphire-blue velvet and reinforced with ornate silver-and-brass metal bands and dragon-embossed lock clasps, its heavy hinged lid resting open to reveal brimming stacks of gleaming smooth minted platinum coins reflecting soft cyan mana light. Completely unpopulated still life, zero humans, zero people, zero hands, zero fingers, 100% prop showcase illustration, completely textless artwork, zero readable words, zero letters, zero digits on coins, no speech bubbles, no banners.",
+      "reference_plate": "55_Prop_Platinum_Crown_Chest.jpg",
+      "flowName": "Platinum Crown Chest",
+      "episodes": [
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "imperial_reinstatement_scroll",
+      "name": "Imperial Reinstatement Scroll",
+      "token": "@{Imperial Reinstatement Scroll}",
+      "type": "Prop",
+      "category": "Props",
+      "apparent_rank": "Aristocratic Lineage Decree",
+      "true_rank": "House Montrey First Heir Reinstatement Petition",
+      "description": "Ceremonial aristocratic rolled ivory-parchment decree scroll bound at the center with a rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, one corner slightly unrolled showing faint abstract geometric border filigree only. Pure 100% textless artwork, zero readable calligraphy.",
+      "visual_dna": "Ceremonial aristocratic rolled ivory-parchment decree scroll bound at center with rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, faint abstract geometric border filigree only. Pure 100% textless artwork, zero readable words.",
+      "dna": "@{Imperial Reinstatement Scroll}, close-up master prop reference plate. Ceremonial aristocratic rolled ivory-parchment decree scroll resting flat on a dark polished mahogany surface, bound at the center with a rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, one corner slightly unrolled showing faint abstract geometric border filigree only. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Imperial Reinstatement Scroll}, close-up master prop reference plate. Ceremonial aristocratic rolled ivory-parchment decree scroll resting flat on a dark polished mahogany surface, bound at the center with a rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, one corner slightly unrolled showing faint abstract geometric border filigree only. Completely unpopulated still life, zero humans, zero hands, 100% textless artwork. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Close-up master prop still-life reference plate resting flat on a dark polished mahogany surface. Ceremonial aristocratic rolled ivory-parchment decree scroll bound at the center with a rich sapphire-blue silk ribbon and stamped with a prominent glowing silver-and-sapphire dragon wax seal medallion, one corner slightly unrolled showing faint abstract geometric border filigree only. Completely unpopulated still life, zero humans, zero people, zero hands, zero fingers, 100% prop showcase illustration, completely textless artwork, zero readable words, zero letters, zero calligraphy, no speech bubbles, no banners.",
+      "reference_plate": "56_Prop_Imperial_Reinstatement_Scroll.jpg",
+      "flowName": "Imperial Reinstatement Scroll",
+      "episodes": [
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
+      ],
+      "hasPlate": true
+    },
+    {
+      "id": "montrey_estate_gates",
+      "name": "Montrey Estate Grand Gates",
+      "token": "@{Montrey Estate Grand Gates}",
+      "type": "Location",
+      "category": "Locations",
+      "apparent_rank": "Great House Exterior Gates",
+      "true_rank": "House Montrey Ancestral Outer Gates",
+      "description": "Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing open beneath a soaring gothic stone archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza overlooking the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under bright clear daylight.",
+      "visual_dna": "Monumental towering wrought-iron and pale silver-granite outer estate gates beneath a soaring gothic archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet banners, glowing blue crystal gate lanterns, broad dry cobblestone plaza overlooking soaring cathedral spires and hovering cyan mana circles.",
+      "dna": "@{Montrey Estate Grand Gates}, master architectural exterior reference plate. Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing open beneath a soaring gothic stone archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet house banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza leading out toward the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under bright clear daylight. Completely unpopulated environment, zero people, zero snow. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "dna_prompt_anchor": "@{Montrey Estate Grand Gates}, master architectural exterior reference plate. Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing open beneath a soaring gothic stone archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet house banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza leading out toward the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under bright clear daylight. Completely unpopulated environment, zero people, zero snow. High fantasy action manhwa webtoon art style, sharp black ink linework, clean crisp illumination, vibrant high-contrast cel shading, horizontal 16:9 (1920x1080) full bleed widescreen composition",
+      "generation_prompt": "16:9 horizontal widescreen cinematic composition. Master architectural exterior reference plate. Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing open beneath a soaring gothic stone archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet house banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza leading out toward the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under bright clear daylight. Pure 100% architectural exterior illustration, completely unpopulated, zero humans, zero people, zero guards, zero snow, 100% completely textless artwork, zero words, zero letters, no speech bubbles, no banners.",
+      "reference_plate": "57_Location_Montrey_Estate_Gates.jpg",
+      "flowName": "Montrey Estate Grand Gates",
+      "episodes": [
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     }

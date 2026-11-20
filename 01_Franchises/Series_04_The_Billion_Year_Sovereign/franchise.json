@@ -68,7 +68,7 @@
       }
     },
     "tail_positive": "cleanly rendered hand linework, distinct individual fingers, crisp pupil reflections, zero cloning",
-    "tail_negative": "zero cloning, completely textless artwork, no speech bubbles, no words, no banners"
+    "tail_negative": "zero cloning, completely textless artwork, no speech bubbles, no words, no banners, no photorealistic 3D CGI"
   },
   "new_entity_policy": "pending_stub",
   "paths": {

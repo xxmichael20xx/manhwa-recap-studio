@@ -65,7 +65,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "20-year-old East Asian male university student, messy soft raven-black hair, deep calm obsidian eyes with microscopic golden starlight flecks, deadpan bored expression",
       "outfits": {
@@ -161,7 +162,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "20-year-old chubby East Asian male university student, round friendly face, messy spiky dark hair, expressive panicked dark eyes",
       "outfits": {
@@ -272,7 +274,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "21-year-old ethereal East Asian woman, long flowing silk-black hair with frosted silver tips, sharp ice-blue phoenix eyes, graceful cold aloof expression",
       "outfits": {
@@ -327,11 +330,12 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
       "outfits": {
-        "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
+        "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots, dark olive-drab fingerless tactical gloves"
       },
       "default_outfit": "tactical_uniform",
       "state_lexicon": {
@@ -340,13 +344,13 @@
             "phrase": "standing with stern military posture holding a glowing tactical talisman"
           },
           "standing_command": {
-            "phrase": "standing with stern military posture and gauntleted hand raised",
+            "phrase": "standing upright with composed military posture, arms relaxed at sides",
             "contradicts": [
               "glowing tactical talisman"
             ]
           },
           "scanning_device": {
-            "phrase": "holding handheld sensor instrument steady while squinting at dial",
+            "phrase": "standing steady with focused downward gaze while inspecting readings",
             "contradicts": [
               "glowing tactical talisman"
             ]
@@ -398,7 +402,8 @@
         "EP04",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "28-year-old imposing aristocratic East Asian male cultivator, long waist-length jet-black hair with silver streaks swept back, regal golden eyes full of cold disdain, imperial dominating aura, swirling purple cosmic starlight halo floating behind shoulders",
       "outfits": {
@@ -544,7 +549,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, single circular brushed-brass top sensor nozzle with warm amber glow, rectangular off-white analog semicircle needle sweep dial gauge, vertical glowing orange glass vacuum-tube counter, twin silver toggle switches, two olive knurled rotary knobs, zero digital LCD screens, zero antennas"
     },
@@ -575,7 +581,8 @@
         "EP03",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos"
     },
@@ -653,7 +660,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "intricate handheld spherical brushed-brass and celestial-silver armillary astrolabe, concentric rotating gimbal rings etched with glowing cyan starlight constellations, slender silver pointer needles, suspended faceted glowing cyan starlight crystal core"
     },
@@ -687,7 +695,8 @@
         "EP06",
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ],
       "dna": "translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes"
     },
@@ -780,7 +789,8 @@
       "flowName": "Character: Dean of Qindu University",
       "episodes": [
         "EP03",
-        "EP04"
+        "EP04",
+        "EP10"
       ],
       "dna": "62-year-old dignified East Asian male academic scholar, neatly groomed silver-grey hair, short silver beard, wise cautious dark brown eyes, thin rectangular gold-rimmed glasses",
       "outfits": {
@@ -851,7 +861,8 @@
       "episodes": [
         "EP01",
         "EP02",
-        "EP03"
+        "EP03",
+        "EP10"
       ],
       "hasPlate": true,
       "dna": "@{Dormitory Room 402}, Clean modern Qindu University male dormitory Room 402 at night, single brushed-steel lofted bunk bed with neat grey bedding, minimalist study desk below with stainless steel electric kettle, matte white walls, spotless clean tiled floor, window overlooking campus night lamps, vertical 9:16"
@@ -1111,7 +1122,8 @@
       "episodes": [
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ]
     },
     {
@@ -1145,16 +1157,20 @@
           },
           "reeling_shocked": {
             "phrase": "staggering backward across cracked asphalt clutching bruised ribs in awe"
+          },
+          "standing_calm": {
+            "phrase": "standing upright in composed dignified stillness with arms relaxed at sides, zero aura"
           }
         }
       },
       "default_state": {
-        "posture": "martial_aura_stance"
+        "posture": "standing_calm"
       },
       "episodes": [
         "EP07",
         "EP08",
-        "EP09"
+        "EP09",
+        "EP10"
       ]
     }
   ]

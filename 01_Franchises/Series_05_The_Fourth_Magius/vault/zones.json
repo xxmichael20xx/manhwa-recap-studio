@@ -2,15 +2,132 @@
   "montrey_appraisal_hall": {
     "id": "montrey_appraisal_hall",
     "name": "Montrey Appraisal Hall",
-    "canon": "Grand gothic appraisal hall of House Montrey built from pale silver granite, towering stained-glass windows, polished marble floor, and glowing blue mana sconces.",
+    "canon": "Grand gothic ancestral appraisal hall of House Montrey built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, and towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion.",
     "lighting": "interior_warm",
+    "window_vantage": "Tall stained-glass arched windows along the far wall overlooking pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under clear daylight.",
     "forbidden_tokens": [
       "muddy ground",
       "dirt road",
-      "trees"
+      "trees",
+      "blizzard",
+      "modern furniture"
+    ],
+    "cardinal_layout": {
+      "center": "stepped_silver_granite_appraisal_dais_and_resonance_mirror",
+      "north": "towering_stained_glass_arched_windows_overlooking_bastion",
+      "east": "fluted_silver_granite_pillars_with_mana_sconces",
+      "west": "ancestral_gallery_archways"
+    },
+    "allowed_portals": [
+      "ancestral_gallery_archways",
+      "patriarch_study_corridor"
+    ],
+    "forbidden_portals": [
+      "apothecary ladder",
+      "forest trail"
     ],
     "adjacent": [
-      "montrey_ancestral_bastion"
+      "montrey_patriarch_study",
+      "montrey_estate_gates",
+      "academy_courtyard"
+    ]
+  },
+  "montrey_patriarch_study": {
+    "id": "montrey_patriarch_study",
+    "name": "Montrey Patriarch Study",
+    "canon": "Opulent private ancestral council study within House Montrey estate. High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, carved mahogany bookshelves lined with leather-bound grimoires, and tall arched gothic windows along the right wall overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+    "lighting": "interior_warm",
+    "window_vantage": "Tall arched gothic windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion in clear daylight.",
+    "forbidden_tokens": [
+      "muddy ground",
+      "dirt road",
+      "trees",
+      "blizzard",
+      "straw mattress"
+    ],
+    "cardinal_layout": {
+      "center_left": "polished_mahogany_council_desk_and_crystal_sconces",
+      "north": "sapphire_velvet_dragon_banners_and_grimoire_bookshelves",
+      "east": "tall_arched_gothic_windows_overlooking_bastion"
+    },
+    "allowed_portals": [
+      "appraisal_hall_corridor_door"
+    ],
+    "forbidden_portals": [
+      "apothecary ladder",
+      "labyrinth portal"
+    ],
+    "adjacent": [
+      "montrey_appraisal_hall",
+      "montrey_banquet_hall"
+    ]
+  },
+  "montrey_banquet_hall": {
+    "id": "montrey_banquet_hall",
+    "name": "Montrey Banquet Hall",
+    "canon": "Opulent grand ancestral banquet hall inside House Montrey estate. High-vaulted pale silver-granite gothic arches hung with deep sapphire-blue velvet banners embroidered with silver coiled dragon crests, polished white-and-blue marble floor, glowing blue crystal mana sconces along fluted stone pillars, monumental carved dark mahogany banquet table draped in sapphire-and-silver cloth set with silver candelabras and empty crystal goblets, and towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion.",
+    "lighting": "interior_warm",
+    "window_vantage": "Towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under clear daylight.",
+    "forbidden_tokens": [
+      "muddy ground",
+      "dirt road",
+      "trees",
+      "blizzard",
+      "straw mattress",
+      "modern plastic"
+    ],
+    "cardinal_layout": {
+      "center": "carved_mahogany_banquet_table_with_silver_candelabras",
+      "north": "towering_stained_glass_windows_overlooking_bastion",
+      "east": "fluted_silver_granite_pillars_and_dragon_banners",
+      "south": "grand_double_arched_oak_entrance_doors"
+    },
+    "allowed_portals": [
+      "grand_banquet_entrance_doors",
+      "estate_gallery_corridor"
+    ],
+    "forbidden_portals": [
+      "apothecary ladder",
+      "forest trail"
+    ],
+    "adjacent": [
+      "montrey_patriarch_study",
+      "montrey_appraisal_hall",
+      "montrey_estate_gates",
+      "academy_courtyard"
+    ]
+  },
+  "montrey_estate_gates": {
+    "id": "montrey_estate_gates",
+    "name": "Montrey Estate Grand Gates",
+    "canon": "Monumental towering wrought-iron and pale silver-granite outer estate gates of House Montrey standing beneath a soaring gothic archway flanked by sculpted silver coiled dragon pillars, sapphire-blue velvet banners, and glowing blue crystal gate lanterns. Broad dry pale silver-granite cobblestone plaza overlooking the distant soaring cathedral spires and hovering cyan mana circles of the Crystalline Arcane Bastion under clear daylight.",
+    "lighting": "day_sunlit",
+    "forbidden_tokens": [
+      "snow",
+      "blizzard",
+      "ice",
+      "straw mattress",
+      "apothecary shop",
+      "modern cars"
+    ],
+    "cardinal_layout": {
+      "center": "open_wrought_iron_estate_gates_and_cobblestone_plaza",
+      "north": "dragon_pillared_estate_courtyard_leading_to_appraisal_hall",
+      "south": "broad_capital_avenue_toward_academy",
+      "east": "sapphire_bannered_granite_perimeter_wall"
+    },
+    "allowed_portals": [
+      "open_wrought_iron_gates",
+      "capital_avenue"
+    ],
+    "forbidden_portals": [
+      "apothecary ladder",
+      "labyrinth portal"
+    ],
+    "adjacent": [
+      "montrey_appraisal_hall",
+      "montrey_banquet_hall",
+      "academy_courtyard"
     ]
   },
   "blackwood_forest_clearing": {
@@ -278,7 +395,11 @@
       "academy_tactical_proving_grounds",
       "academy_lecture_amphitheatre",
       "academy_private_dormitory",
-      "ancient_labyrinth_corridor"
+      "ancient_labyrinth_corridor",
+      "montrey_banquet_hall",
+      "montrey_appraisal_hall",
+      "montrey_patriarch_study",
+      "montrey_estate_gates"
     ]
   },
   "academy_resonance_hall": {

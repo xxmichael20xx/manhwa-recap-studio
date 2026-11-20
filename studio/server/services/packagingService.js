@@ -6,6 +6,7 @@ import sharp from 'sharp'
 import { TtsService } from './ttsService.js'
 import { VideoService } from './videoService.js'
 import { ImageService } from './imageService.js'
+import { FileService } from './fileService.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -1081,7 +1082,7 @@ static formatTimestamp(seconds) {
     const parsedActs = []
     if (fsSync.existsSync(biblePath)) {
       const bibleText = await fs.readFile(biblePath, 'utf-8').catch(() => '')
-      const actRe = /^#{2,4}\s*Act\s+([IVXLCDM]+|\d+)\s*[:–—-]\s*([^(\r\n]+?)\s*\(EP0*(\d+)\s*[–—-]\s*EP0*(\d+)\)/gim
+      const actRe = /^#{2,4}\s*(?:[^\w\sA-Za-z0-9#]*\s*)?(?:Act|Arc)\s+([IVXLCDM]+|\d+)\s*[:–—-]\s*([^(\r\n]+?)\s*\((?:EP|Episodes?)\s*0*(\d+)\s*[–—-]\s*(?:EP|Episodes?\s*)?0*(\d+)[^)\r\n]*\)/gim
       let m
       while ((m = actRe.exec(bibleText)) !== null) {
         const actNumber = this.parseRomanOrInt(m[1])
@@ -1140,6 +1141,7 @@ static formatTimestamp(seconds) {
 
   /**
    * Resolve Act number & range for a set of episode IDs or numbers.
+   * Prioritizes exact/best-covering (startEp, endEp) Bible Act/Arc match.
    */
   static async detectActForEpisodes(franchiseId, episodeIds = [], explicitActNum = null) {
     const acts = await this.parseSeriesActs(franchiseId)
@@ -1154,19 +1156,43 @@ static formatTimestamp(seconds) {
     const startEp = nums[0] || 1
     const endEp = nums[nums.length - 1] || startEp
 
+    // 1. Exact (startEp, endEp) match in Series Bible
+    const exactMatch = acts.find(a => a.startEp === startEp && a.endEp === endEp)
+    if (exactMatch) return { ...exactMatch, startEp, endEp }
+
+    // 2. Tightest covering match (startEp >= a.startEp && endEp <= a.endEp)
+    const coveringMatches = acts
+      .filter(a => startEp >= a.startEp && endEp <= a.endEp)
+      .sort((a, b) => (a.endEp - a.startEp) - (b.endEp - b.startEp))
+    if (coveringMatches.length > 0) {
+      return { ...coveringMatches[0], startEp, endEp }
+    }
+
+    // 3. Explicit act number if provided
     if (explicitActNum) {
       const match = acts.find(a => a.actNumber === Number(explicitActNum))
       if (match) return { ...match, startEp: nums[0] || match.startEp, endEp: nums[nums.length - 1] || match.endEp }
     }
 
-    // Exact or primary overlap match against Bible Acts
-    const overlap = acts.find(a => startEp >= a.startEp && endEp <= a.endEp)
-    if (overlap) return { ...overlap, startEp, endEp }
-
+    // 4. Start episode match
     const firstStartMatch = acts.find(a => a.startEp === startEp)
     if (firstStartMatch && nums.length <= (firstStartMatch.endEp - firstStartMatch.startEp + 1)) {
       return { ...firstStartMatch, startEp, endEp }
     }
+
+    // 5. Best overlap match
+    let bestOverlap = null
+    let bestScore = 0
+    for (const a of acts) {
+      const ovStart = Math.max(startEp, a.startEp)
+      const ovEnd = Math.min(endEp, a.endEp)
+      const score = Math.max(0, ovEnd - ovStart + 1)
+      if (score > bestScore) {
+        bestScore = score
+        bestOverlap = a
+      }
+    }
+    if (bestOverlap) return { ...bestOverlap, startEp, endEp }
 
     const inferredAct = Math.max(1, Math.ceil(startEp / 3))
     return {
@@ -1177,6 +1203,96 @@ static formatTimestamp(seconds) {
       rangeLabel: `EP${String(startEp).padStart(2, '0')}–EP${String(endEp).padStart(2, '0')}`,
       episodeIds
     }
+  }
+
+  static detectReleaseCadence(franchiseId, startEp, endEp, actNumber = 1, lockedPkgText = '') {
+    const seriesNumMatch = String(franchiseId || '').match(/Series_0*(\d+)/i)
+    const isSeries7Plus = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : true
+    let isDiscreteAct = isSeries7Plus
+    let partNumber = actNumber || 1
+    let badgeSuggestion = isDiscreteAct ? `PART ${partNumber}` : (startEp === 1 && endEp === 1 ? 'PART 1' : `${startEp} - ${endEp}`)
+    let prefixTag = isDiscreteAct ? `(Part ${partNumber})` : `(Episode ${startEp}-${endEp})`
+
+    if (!isSeries7Plus && lockedPkgText) {
+      // Detect dynamic Discrete Act Transition in YouTube_Locked_Package.md (e.g. EP10+ -> Part 2)
+      const transMatch = lockedPkgText.match(/Discrete\s+Act\s+(?:Transition|Compilation)[\s\S]{0,300}?EP0*(\d+)\+/i)
+      const transitionStart = transMatch ? parseInt(transMatch[1], 10) : null
+      const partRangeRegex = /`?Part\s+(\d+)`?\s*=\s*`?EP0*(\d+)\s*[–—-]\s*EP0*(\d+)`?/gi
+      let prm
+      let matchedPart = null
+      while ((prm = partRangeRegex.exec(lockedPkgText)) !== null) {
+        const pNum = parseInt(prm[1], 10)
+        const pStart = parseInt(prm[2], 10)
+        const pEnd = parseInt(prm[3], 10)
+        if (startEp >= pStart && endEp <= pEnd) {
+          matchedPart = pNum
+          break
+        }
+      }
+      if (matchedPart !== null || (transitionStart !== null && startEp >= transitionStart)) {
+        isDiscreteAct = true
+        partNumber = matchedPart || actNumber || 2
+        badgeSuggestion = `PART ${partNumber}`
+        prefixTag = `(Part ${partNumber})`
+      }
+    }
+
+    return {
+      isDiscreteAct,
+      partNumber,
+      badgeSuggestion,
+      prefixTag
+    }
+  }
+
+  static cleanTitleText(raw = '') {
+    return String(raw || '')
+      .replace(/[`*]/g, '')
+      .replace(/^\s*[-–—>•]+\s*/, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+  }
+
+  static fitTitle100(prefix = '', body = '') {
+    const cleanPrefix = this.cleanTitleText(prefix)
+    const cleanBody = this.cleanTitleText(body)
+    const full = cleanPrefix ? `${cleanPrefix} ${cleanBody}`.trim() : cleanBody
+    if (full.length <= 100) return full
+    const maxBody = 100 - (cleanPrefix ? cleanPrefix.length + 1 : 0)
+    if (maxBody <= 12) return `${full.slice(0, 97).trim()}...`
+    const slice = cleanBody.slice(0, maxBody - 3)
+    const lastSpace = slice.lastIndexOf(' ')
+    const trimmedBody = lastSpace > 12 ? slice.slice(0, lastSpace).trim() : slice.trim()
+    return cleanPrefix ? `${cleanPrefix} ${trimmedBody}...` : `${trimmedBody}...`
+  }
+
+  static generateSmartCompiledTitles({
+    franchiseId,
+    canonicalTitle,
+    startEp,
+    endEp,
+    actInfo,
+    isActPartModel = true,
+    partNumber = null,
+    lockedPkgText = ''
+  }) {
+    const cleanCanon = this.cleanTitleText(canonicalTitle || this.getCanonicalSeriesTitle(franchiseId))
+    const actNum = actInfo?.actNumber || 1
+    const cadence = this.detectReleaseCadence(franchiseId, startEp, endEp, actNum, lockedPkgText)
+    const effectiveDiscrete = Boolean(isActPartModel || cadence.isDiscreteAct)
+    const effectivePart = partNumber || cadence.partNumber || actNum
+    const primaryPrefix = effectiveDiscrete ? `(Part ${effectivePart})` : `(Episode ${startEp}-${endEp})`
+    const lockedTitle = this.fitTitle100(primaryPrefix, cleanCanon)
+
+    return [
+      {
+        archetype: effectiveDiscrete ? `Locked Master Title (Part ${effectivePart})` : `Locked Master Title (Episode ${startEp}-${endEp})`,
+        title: lockedTitle,
+        ctrScore: '99%',
+        charCount: lockedTitle.length,
+        isCompliant: lockedTitle.length <= 100
+      }
+    ]
   }
 
   /**
@@ -1192,9 +1308,6 @@ static formatTimestamp(seconds) {
     const omnibusDir = path.join(franchiseDir, 'omnibus')
     await fs.mkdir(omnibusDir, { recursive: true })
 
-    const seriesNumMatch = franchiseId.match(/Series_0*(\d+)/i)
-    const isActPartModel = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : true
-
     const chapterEpIds = Array.isArray(metadata.chapters)
       ? metadata.chapters.map(c => c.episodeId).filter(Boolean)
       : []
@@ -1208,6 +1321,20 @@ static formatTimestamp(seconds) {
     const finalTs = metadata.finalTimestampFormatted || '1:00:00'
     const totalSec = metadata.totalDurationSeconds || 3600
     const totalMinsDecimal = (totalSec / 60).toFixed(1)
+
+    let lockedPkgText = ''
+    let baseSynopsis = ''
+    if (fsSync.existsSync(masterLockedPkgPath)) {
+      lockedPkgText = await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
+      const synMatch = lockedPkgText.match(/##\s*[^\n]*Description[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
+      if (synMatch?.[1]) {
+        const lines = synMatch[1].trim().split(/\r?\n/).filter(l => l.trim() && !/^(?:\(|🔥|🎬|⏱️|•|━|💬|🔔|#)/.test(l.trim()))
+        baseSynopsis = lines.slice(0, 3).join('\n\n')
+      }
+    }
+
+    const cadence = this.detectReleaseCadence(franchiseId, startEp, endEp, actNumber, lockedPkgText)
+    const isActPartModel = cadence.isDiscreteAct
 
     // Build 00:00-based Chapter Timestamps block for the compiled Act/Omnibus
     let chapterLines = []
@@ -1227,30 +1354,25 @@ static formatTimestamp(seconds) {
     // Generate/Update YouTube_Act{N}_Launch_Package.md (titles, description, timestamps, pinned comment, thumbnail)
     const actLaunchPath = path.join(omnibusDir, `YouTube_Act${actNumber}_Launch_Package.md`)
     const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
-    const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ').trim()
-    const prefixTag = isActPartModel ? `(Part ${actNumber})` : `(Episode ${startEp}-${endEp})`
-    const rawActTitle = `${prefixTag} ${canonicalTitle}`.trim()
-    const lockedActTitle = rawActTitle.length <= 100 ? rawActTitle : `${rawActTitle.slice(0, 97).trim()}...`
-
-    // Pull synopsis & locked title options from YouTube_Locked_Package.md or first episode in Act
-    let baseSynopsis = ''
-    let existingMasterTitles = []
-    if (fsSync.existsSync(masterLockedPkgPath)) {
-      const mText = await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
-      const synMatch = mText.match(/##\s*[^\n]*Description[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
-      if (synMatch?.[1]) {
-        const lines = synMatch[1].trim().split(/\r?\n/).filter(l => l.trim() && !/^(?:\(|🔥|🎬|⏱️|•|━|💬|🔔|#)/.test(l.trim()))
-        baseSynopsis = lines.slice(0, 3).join('\n\n')
-      }
-      const uploadMatches = [...mText.matchAll(/`([^`\r\n]{16,120})`/g)].map(x => x[1].trim())
-      existingMasterTitles = uploadMatches.filter(t => !/^[A-Z0-9_]+\.(?:mp4|jpg|md)$/.test(t))
-    }
+    const smartTitles = this.generateSmartCompiledTitles({
+      franchiseId,
+      canonicalTitle,
+      startEp,
+      endEp,
+      actInfo,
+      chapters: metadata.chapters || [],
+      durationFormatted: durFormatted,
+      isActPartModel,
+      partNumber: cadence.partNumber,
+      lockedPkgText
+    })
+    const lockedActTitle = smartTitles[0].title
+    const actTitles = smartTitles.map(t => t.title)
 
     const firstEpId = chapterEpIds[0] || `EP${pad2(startEp)}`
     const firstEpPkgPath = path.join(franchiseDir, firstEpId, '03_YouTube_Package.md')
     let epSynopsis = ''
     let epQuestion = ''
-    const actTitles = [lockedActTitle]
     if (fsSync.existsSync(firstEpPkgPath)) {
       const epText = await fs.readFile(firstEpPkgPath, 'utf-8').catch(() => '')
       const qMatch = epText.match(/💬\s*COMMUNITY QUESTION:\s*\r?\n([^\r\n]+)/i)
@@ -1260,61 +1382,25 @@ static formatTimestamp(seconds) {
         const lines = descMatch[1].trim().split(/\r?\n/).filter(l => l.trim() && !/^(?:\(|🔥|🎬|⏱️|•|━|💬|🔔|#)/.test(l.trim()))
         epSynopsis = lines.slice(0, 2).join('\n\n')
       }
-      const titleMatches = [...epText.matchAll(/^\d+\.\s+(?:\*\*|`)?([^\r\n`*]{16,110})(?:\*\*|`)?/gm)]
-      for (const tm of titleMatches) {
-        let candidate = tm[1].replace(/\s*\(\d+\s*chars?\)\s*$/i, '').trim()
-        candidate = candidate.replace(/^\((?:Episode|Episodes|Part|Parts)\s*[^)]*\)\s*/i, '')
-        const prefixed = `${prefixTag} ${candidate}`.trim()
-        if (prefixed.length <= 100 && !actTitles.includes(prefixed)) {
-          actTitles.push(prefixed)
-        }
-        if (actTitles.length >= 5) break
-      }
-    }
-
-    for (const mt of existingMasterTitles) {
-      if (actTitles.length >= 5) break
-      const stripped = mt.replace(/^\((?:Episode|Episodes|Part|Parts)\s*[^)]*\)\s*/i, '').trim()
-      const prefixed = `${prefixTag} ${stripped}`.trim()
-      if (prefixed.length <= 100 && !actTitles.includes(prefixed)) actTitles.push(prefixed)
     }
 
     const synopsisBlock = epSynopsis || baseSynopsis || `Following ${actInfo.title}, every hidden card comes onto the board as ancient powers awaken.`
     const releaseLine = isActPartModel
-      ? `🎬 Release: Part ${actNumber} — ${actInfo.title} (Covers Episodes ${pad2(startEp)} - ${pad2(endEp)})`
+      ? `🎬 Release: Part ${cadence.partNumber} — ${actInfo.title} (Covers Episodes ${pad2(startEp)} - ${pad2(endEp)})`
       : `🎬 Release: Episodes ${pad2(startEp)} - ${pad2(endEp)} Compiled Saga`
     const communityLine = epQuestion || `Which moment in Act ${actNumber} (${actInfo.title}) hit hardest? Drop your timestamp below! 👇`
-    const subscribeLine = `🔔 Subscribe and hit the bell so you don't miss Part ${actNumber + 1} (Act ${actNumber + 1})!`
+    const subscribeLine = `🔔 Subscribe and hit the bell so you don't miss Part ${cadence.partNumber + 1} (Act ${actNumber + 1})!`
 
-    // Auto-composite Act Thumbnail with PART N badge (if base image is present)
+    // Auto-composite Act Thumbnail strictly from Franchise Locked Master Thumbnail (EP01–end invariant)
     const actThumbDir = path.join(omnibusDir, 'thumbnails')
     await fs.mkdir(actThumbDir, { recursive: true })
     const actThumbFilename = `01_Thumbnail_Act${actNumber}.jpg`
     const actThumbPath = path.join(actThumbDir, actThumbFilename)
-    const badgeLabel = isActPartModel ? `PART ${actNumber}` : `${startEp} - ${endEp}`
+    const badgeLabel = cadence.badgeSuggestion
     const subBadgeLabel = `EP ${pad2(startEp)} - ${pad2(endEp)}`
 
-    const findTextlessInDir = (dir) => {
-      if (!fsSync.existsSync(dir)) return null
-      const files = fsSync.readdirSync(dir)
-      const hit = files.find(f => /01_thumbnail_(?:concept_a|master)_textless\.jpe?g$/i.test(f)) ||
-        files.find(f => /01_thumbnail_concept_a_raw\.jpe?g$/i.test(f))
-      return hit ? path.join(dir, hit) : null
-    }
-    const allEpDirs = fsSync.readdirSync(franchiseDir, { withFileTypes: true })
-      .filter(d => d.isDirectory() && /^EP\d+/i.test(d.name))
-      .map(d => d.name)
-      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-    const epTextlessHits = allEpDirs.map(d => findTextlessInDir(path.join(franchiseDir, d, 'thumbnails'))).filter(Boolean)
-    const thumbCandidates = [
-      path.join(actThumbDir, `01_Thumbnail_Act${actNumber}_Textless.jpg`),
-      findTextlessInDir(actThumbDir),
-      findTextlessInDir(path.join(franchiseDir, firstEpId, 'thumbnails')),
-      ...epTextlessHits,
-      path.join(franchiseDir, firstEpId, 'thumbnails', '01_Thumbnail_Concept_A.jpg'),
-      path.join(omnibusDir, '01_Thumbnail_Master.jpg')
-    ].filter(Boolean)
-    const baseThumbPath = thumbCandidates.find(p => fsSync.existsSync(p))
+    const lockedMaster = await this.resolveLockedMasterThumbnail(franchiseId)
+    const baseThumbPath = lockedMaster?.diskPath || null
     if (baseThumbPath && !fsSync.existsSync(actThumbPath)) {
       try {
         const baseBuf = await sharp(baseThumbPath).resize(1920, 1080, { fit: 'cover', position: 'center' }).toBuffer()
@@ -1436,10 +1522,497 @@ static formatTimestamp(seconds) {
   }
 
   /**
-   * Load full YouTube Launchpad package for a specific Act (Act 1, Act 2, ...).
+   * Scan 01_Franchises/<franchiseId>/omnibus/ for existing compiled .mp4 files
+   * paired with their *_metadata.json (strictly ignoring JSONs whose .mp4 does not exist on disk
+   * and deduplicating when multiple JSONs reference the same .mp4).
+   */
+  static async getCompiledReleases(franchiseId) {
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const omnibusDir = path.join(franchiseDir, 'omnibus')
+    if (!fsSync.existsSync(omnibusDir)) return []
+
+    const entries = await fs.readdir(omnibusDir).catch(() => [])
+    const mp4Files = entries.filter(f => /\.mp4$/i.test(f))
+    if (mp4Files.length === 0) return []
+
+    const mp4Set = new Set(mp4Files)
+    const jsonFiles = entries.filter(f => /_metadata\.json$/i.test(f))
+
+    // Map each existing .mp4 filename -> merged metadata (preferring <basename>_metadata.json > act_*_metadata.json > omnibus_metadata.json)
+    const metaByMp4 = new Map()
+    const priorityOf = (jsonName) => {
+      if (jsonName === 'omnibus_metadata.json') return 1
+      if (/^act_\d+_metadata\.json$/i.test(jsonName)) return 2
+      return 3
+    }
+    const sortedJsons = [...jsonFiles].sort((a, b) => priorityOf(a) - priorityOf(b))
+
+    for (const jf of sortedJsons) {
+      const fullPath = path.join(omnibusDir, jf)
+      let parsed = null
+      try {
+        parsed = JSON.parse(await fs.readFile(fullPath, 'utf-8'))
+      } catch (_) {
+        continue
+      }
+      if (!parsed || !parsed.filename || !mp4Set.has(parsed.filename)) continue
+      const existing = metaByMp4.get(parsed.filename) || {}
+      metaByMp4.set(parsed.filename, { ...existing, ...parsed })
+    }
+
+    const lockedPkgPath = path.join(franchiseDir, '00_Series_Bible_and_Character_DNA', 'YouTube_Locked_Package.md')
+    const lockedPkgText = fsSync.existsSync(lockedPkgPath)
+      ? await fs.readFile(lockedPkgPath, 'utf-8').catch(() => '')
+      : ''
+
+    const pad2 = n => String(n).padStart(2, '0')
+    const releases = []
+
+    for (const mp4Name of mp4Files) {
+      const fullMp4Path = path.join(omnibusDir, mp4Name)
+      let stat
+      try {
+        stat = await fs.stat(fullMp4Path)
+      } catch (_) {
+        continue
+      }
+
+      const meta = metaByMp4.get(mp4Name) || {}
+      const chapters = Array.isArray(meta.chapters) ? meta.chapters : []
+      const chapterEpIds = chapters.map(c => c.episodeId).filter(Boolean)
+
+      const actMatch = mp4Name.match(/Act(\d+)/i)
+      const explicitAct = meta.actNumber || (actMatch ? parseInt(actMatch[1], 10) : null)
+      const actInfo = chapterEpIds.length > 0
+        ? await this.detectActForEpisodes(franchiseId, chapterEpIds, explicitAct)
+        : (explicitAct
+            ? ((await this.parseSeriesActs(franchiseId)).find(a => a.actNumber === explicitAct) || { actNumber: explicitAct, title: `Act ${explicitAct}`, startEp: meta.startEp || 1, endEp: meta.endEp || 1 })
+            : { actNumber: 1, title: 'Omnibus Master', startEp: meta.startEp || 1, endEp: meta.endEp || 1 })
+
+      const startEp = actInfo.startEp || meta.startEp || 1
+      const endEp = actInfo.endEp || meta.endEp || startEp
+      const rangeLabel = `EP${pad2(startEp)}–EP${pad2(endEp)}`
+      const cadence = this.detectReleaseCadence(franchiseId, startEp, endEp, actInfo.actNumber, lockedPkgText)
+
+      releases.push({
+        id: `mp4:${mp4Name}`,
+        filename: mp4Name,
+        fileSize: stat.size,
+        fileSizeFormatted: this.formatFileSize(stat.size),
+        mtime: stat.mtimeMs,
+        actNumber: actInfo.actNumber || 1,
+        actTitle: actInfo.title || `Act ${actInfo.actNumber || 1}`,
+        startEp,
+        endEp,
+        rangeLabel,
+        isDiscreteAct: cadence.isDiscreteAct,
+        partNumber: cadence.partNumber,
+        prefixTag: cadence.prefixTag,
+        badgeSuggestion: cadence.badgeSuggestion,
+        totalDurationSeconds: meta.totalDurationSeconds || 0,
+        totalDurationFormatted: meta.totalDurationFormatted || 'Unknown',
+        finalTimestampFormatted: meta.finalTimestampFormatted || this.formatTimestamp(meta.totalDurationSeconds || 0),
+        chapters,
+        downloadUrl: `/api/franchises/${franchiseId}/omnibus-stream?file=${encodeURIComponent(mp4Name)}`,
+        metadata: meta
+      })
+    }
+
+    return releases.sort((a, b) => (b.endEp - a.endEp) || (b.mtime - a.mtime))
+  }
+
+  /**
+   * Resolve the Franchise's permanently locked Episode 1 Master Thumbnail (consistent Ep 1 -> Finale).
+   * Detects locked Concept A/B/C from YouTube_Locked_Package.md, EP01/03_YouTube_Package.md, or disk hashes,
+   * and prefers the clean textless base plate so dynamic PART/range badges never double-stack.
+   */
+  static async resolveLockedMasterThumbnail(franchiseId) {
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const bibleDir = path.join(franchiseDir, '00_Series_Bible_and_Character_DNA')
+    const omnibusThumbDir = path.join(franchiseDir, 'omnibus', 'thumbnails')
+
+    const epDirs = fsSync.existsSync(franchiseDir)
+      ? fsSync.readdirSync(franchiseDir, { withFileTypes: true })
+          .filter(d => d.isDirectory() && /^EP\d+/i.test(d.name))
+          .map(d => d.name)
+          .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      : []
+    const firstEpId = epDirs[0] || 'EP01'
+    const firstEpThumbDir = path.join(franchiseDir, firstEpId, 'thumbnails')
+
+    const lockedPkgPath = path.join(bibleDir, 'YouTube_Locked_Package.md')
+    const firstEpPkgPath = path.join(franchiseDir, firstEpId, '03_YouTube_Package.md')
+    const lockedPkgText = fsSync.existsSync(lockedPkgPath) ? fsSync.readFileSync(lockedPkgPath, 'utf-8') : ''
+    const firstEpPkgText = fsSync.existsSync(firstEpPkgPath) ? fsSync.readFileSync(firstEpPkgPath, 'utf-8') : ''
+
+    let lockedLetter = null
+    const mBible = lockedPkgText.match(/Locked\s+Canonical\s+Master\s+Thumbnail[^:\r\n]*:\s*\*?\*?(?:Concept|Variant)\s+([A-C])/i)
+    if (mBible?.[1]) lockedLetter = mBible[1].toUpperCase()
+
+    if (!lockedLetter && firstEpPkgText) {
+      const mEp = firstEpPkgText.match(/Locked\s+Master[^\r\n]*\((?:Concept|Variant)\s+([A-C])\)|(?:Concept|Variant)\s+([A-C])[^\r\n]*\[LOCKED\]/i)
+      const hit = mEp?.[1] || mEp?.[2]
+      if (hit) lockedLetter = hit.toUpperCase()
+    }
+
+    // Fallback: match 01_Master_YouTube_Thumbnail_16x9.jpg / 01_Thumbnail_Master.jpg byte content against Concept A/B/C in EP01
+    if (!lockedLetter && fsSync.existsSync(firstEpThumbDir)) {
+      const epThumbFiles = fsSync.readdirSync(firstEpThumbDir)
+      const masterRefName = ['01_Thumbnail_Master.jpg', '01_Master_YouTube_Thumbnail_16x9.jpg'].find(f => epThumbFiles.includes(f))
+      if (masterRefName) {
+        const masterBuf = fsSync.readFileSync(path.join(firstEpThumbDir, masterRefName))
+        for (const letter of ['A', 'B', 'C']) {
+          for (const cand of [`01_Thumbnail_Concept_${letter}_Textless.jpg`, `01_Thumbnail_Concept_${letter}.jpg`]) {
+            const candPath = path.join(firstEpThumbDir, cand)
+            if (fsSync.existsSync(candPath) && fsSync.readFileSync(candPath).equals(masterBuf)) {
+              lockedLetter = letter
+              break
+            }
+          }
+          if (lockedLetter) break
+        }
+      }
+    }
+
+    if (!lockedLetter) return null
+
+    // Parse locked concept title/description from SSOT markdown
+    const combinedMd = `${lockedPkgText}\n${firstEpPkgText}`
+    const titleMatch = combinedMd.match(new RegExp(`###\\s*(?:Concept|Variant)\\s+${lockedLetter}:\\s*([^\\r\\n—\\[]+)`, 'i')) ||
+      combinedMd.match(new RegExp(`-\\s*\\*\\*Name:\\*\\*\\s*\`?(?:Concept|Variant)\\s+${lockedLetter}:\\s*([^\`\\r\\n]+)`, 'i'))
+    const compMatch = combinedMd.match(new RegExp(`###\\s*(?:Concept|Variant)\\s+${lockedLetter}[\\s\\S]{0,600}?-\\s*\\*\\*(?:Visual\\s+(?:Composition|Staging)|Composition):\\*\\*\\s*([^\\r\\n]+)`, 'i')) ||
+      combinedMd.match(/-\\s*\\*\\*Visual\\s+Staging:\\*\\*\\s*([^\r\n]+)/i)
+
+    const conceptName = titleMatch?.[1]?.trim() || `Concept ${lockedLetter}`
+    const composition = compMatch?.[1]?.trim() || `Locked Series Master Thumbnail (Concept ${lockedLetter})`
+
+    // Strictly resolve CLEAN TEXTLESS plate first so dynamic badge overlay never double-stamps PART 1
+    const cleanCandidates = [
+      { dir: omnibusThumbDir, file: `01_Thumbnail_Concept_${lockedLetter}_Textless.jpg`, urlPrefix: `/api/franchises/${franchiseId}/omnibus/thumbnails/`, isTextless: true },
+      { dir: firstEpThumbDir, file: `01_Thumbnail_Concept_${lockedLetter}_Textless.jpg`, urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: true },
+      { dir: firstEpThumbDir, file: `01_Thumbnail_Master_Textless.jpg`, urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: true },
+      { dir: bibleDir, file: `01_Thumbnail_Master_Textless.jpg`, urlPrefix: null, isTextless: true },
+      { dir: firstEpThumbDir, file: `01_Thumbnail_Concept_${lockedLetter}_Raw.jpg`, urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: false },
+      { dir: omnibusThumbDir, file: `01_Thumbnail_Concept_${lockedLetter}.jpg`, urlPrefix: `/api/franchises/${franchiseId}/omnibus/thumbnails/`, isTextless: false },
+      { dir: firstEpThumbDir, file: `01_Thumbnail_Concept_${lockedLetter}.jpg`, urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: false },
+      { dir: firstEpThumbDir, file: '01_Thumbnail_Master.jpg', urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: false },
+      { dir: firstEpThumbDir, file: '01_Master_YouTube_Thumbnail_16x9.jpg', urlPrefix: `/api/episodes/${franchiseId}/${firstEpId}/thumbnail/`, isTextless: false }
+    ]
+
+    for (const c of cleanCandidates) {
+      if (!c.urlPrefix) continue
+      const fullPath = path.join(c.dir, c.file)
+      if (fsSync.existsSync(fullPath)) {
+        return {
+          letter: lockedLetter,
+          variantId: `concept_${lockedLetter.toLowerCase()}`,
+          name: `Concept ${lockedLetter}: ${conceptName.replace(new RegExp(`^Concept\\s+${lockedLetter}:\\s*`, 'i'), '')} (Locked Master Thumbnail)`,
+          composition,
+          filename: c.file,
+          diskPath: fullPath,
+          url: `${c.urlPrefix}${c.file}`,
+          hasBakedBadge: !c.isTextless && /Concept_[A-C]\.jpg$|Master/i.test(c.file),
+          firstEpId
+        }
+      }
+    }
+
+    return null
+  }
+
+  /**
+   * Resolve consistent Franchise Master Thumbnail for a compiled release (locked Ep 1 -> Finale).
+   * Respects manhwa-thumb Locked Master Thumbnail invariant: NEVER swaps to episodic frames unless no EP01 lock exists.
+   */
+  static async buildCompiledThumbnailConcepts(franchiseId, release) {
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const omnibusThumbDir = path.join(franchiseDir, 'omnibus', 'thumbnails')
+    const pad2 = n => String(n).padStart(2, '0')
+    const startEp = release.startEp || 1
+    const endEp = release.endEp || startEp
+    const rangeSlug = `EP${pad2(startEp)}-${pad2(endEp)}`
+
+    const lockedMaster = await this.resolveLockedMasterThumbnail(franchiseId)
+    if (lockedMaster) {
+      // Optional explicit custom upload override for this exact compiled range + locked concept
+      const overrideFile = `01_Thumbnail_${rangeSlug}_Concept_${lockedMaster.letter}.jpg`
+      const overridePath = path.join(omnibusThumbDir, overrideFile)
+      const activePath = fsSync.existsSync(overridePath) ? overridePath : lockedMaster.diskPath
+      const activeUrl = fsSync.existsSync(overridePath)
+        ? `/api/franchises/${franchiseId}/omnibus/thumbnails/${overrideFile}?t=${Date.now()}`
+        : lockedMaster.url
+      const activeFilename = fsSync.existsSync(overridePath) ? overrideFile : lockedMaster.filename
+      const hasBakedBadge = fsSync.existsSync(overridePath) ? false : lockedMaster.hasBakedBadge
+
+      let fileSize = 0
+      try { fileSize = (await fs.stat(activePath)).size } catch (_) {}
+
+      return [
+        {
+          id: lockedMaster.variantId,
+          name: lockedMaster.name,
+          subtitle: `Locked Master Plate (Consistent EP01–End • ${lockedMaster.firstEpId})`,
+          composition: lockedMaster.composition,
+          prompt: `Locked Master Thumbnail (${lockedMaster.filename}) — consistent across all releases; update only top-left badge (${release.badgeSuggestion}).`,
+          filename: activeFilename,
+          hasImage: Boolean(fileSize > 0),
+          hasBakedBadge,
+          badgeText: release.badgeSuggestion,
+          subBadgeText: `EP ${pad2(startEp)} - ${pad2(endEp)}`,
+          url: activeUrl,
+          fileSize,
+          fileSizeFormatted: this.formatFileSize(fileSize),
+          isYouTubeCompliant: fileSize > 0 && fileSize < 2 * 1024 * 1024,
+          sourceEpisodeId: lockedMaster.firstEpId
+        }
+      ]
+    }
+
+    // Mode A fallback (no locked concept yet): return Episode 1's 3 Master Thumbnail concepts cleanly
+    const epDirs = fsSync.existsSync(franchiseDir)
+      ? fsSync.readdirSync(franchiseDir, { withFileTypes: true })
+          .filter(d => d.isDirectory() && /^EP\d+/i.test(d.name))
+          .map(d => d.name)
+          .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      : []
+    const firstEpId = epDirs[0] || 'EP01'
+    const variants = await this.getThumbnailVariants(franchiseId, firstEpId)
+    return variants.map(v => ({
+      ...v,
+      hasBakedBadge: false,
+      badgeText: release.badgeSuggestion,
+      subBadgeText: `EP ${pad2(startEp)} - ${pad2(endEp)}`
+    }))
+  }
+
+  /**
+   * Load complete YouTube Launchpad package for a specific compiled Master Compiler release.
+   */
+  static async getCompiledReleasePackage(franchiseId, releaseId = '') {
+    const releases = await this.getCompiledReleases(franchiseId)
+    if (releases.length === 0) {
+      return {
+        success: false,
+        empty: true,
+        compiledReleases: [],
+        titles: [],
+        chapters: [],
+        thumbnailVariants: [],
+        message: 'No compiled Master Compiler .mp4 releases found in omnibus/.'
+      }
+    }
+
+    let release = null
+    if (releaseId) {
+      release = releases.find(r =>
+        r.id === releaseId ||
+        r.filename === releaseId ||
+        `act_${r.actNumber}` === releaseId
+      )
+    }
+    if (!release) release = releases[0]
+
+    const franchiseDir = path.join(franchisesDir, franchiseId)
+    const bibleDir = path.join(franchiseDir, '00_Series_Bible_and_Character_DNA')
+    const masterLockedPkgPath = path.join(bibleDir, 'YouTube_Locked_Package.md')
+    const lockedPkgText = fsSync.existsSync(masterLockedPkgPath)
+      ? await fs.readFile(masterLockedPkgPath, 'utf-8').catch(() => '')
+      : ''
+
+    const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
+    const pad2 = n => String(n).padStart(2, '0')
+    const startEp = release.startEp
+    const endEp = release.endEp
+    const actNumber = release.actNumber
+    const actInfo = {
+      actNumber,
+      title: release.actTitle,
+      startEp,
+      endEp
+    }
+
+    const titles = this.generateSmartCompiledTitles({
+      franchiseId,
+      canonicalTitle,
+      startEp,
+      endEp,
+      actInfo,
+      chapters: release.chapters,
+      durationFormatted: release.totalDurationFormatted,
+      isActPartModel: release.isDiscreteAct,
+      partNumber: release.partNumber,
+      lockedPkgText
+    })
+
+    const finalTs = release.finalTimestampFormatted || '1:00:00'
+    const totalSec = release.totalDurationSeconds || 0
+    const totalMinsDecimal = (totalSec / 60).toFixed(1)
+
+    const chapters = (release.chapters || []).map((c, idx) => {
+      const epMatch = String(c.episodeId || '').match(/EP0*(\d+)/i)
+      const epNum = epMatch ? parseInt(epMatch[1], 10) : (startEp + idx)
+      return {
+        time: c.startTimestampFormatted || '00:00',
+        seconds: c.startSeconds || 0,
+        title: `Episode ${pad2(epNum)}: ${c.episodeTitle} (${c.durationFormatted})`,
+        episodeId: c.episodeId
+      }
+    })
+    if (chapters.length > 0) {
+      chapters.push({
+        time: finalTs,
+        seconds: Math.floor(totalSec),
+        title: `${release.actTitle} Climax & Finale`
+      })
+    }
+
+    const chapterLines = chapters.map(c => `${c.time} - ${c.title}`)
+    const timestampBlock = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines.join('\n')}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━`
+
+    // Build Description dynamically from YouTube_Locked_Package.md template if available
+    let description = ''
+    const releaseHeader = release.isDiscreteAct
+      ? `Part ${release.partNumber} — ${release.actTitle} (Covers Episodes ${pad2(startEp)} - ${pad2(endEp)})`
+      : `Episodes ${pad2(startEp)} - ${pad2(endEp)} Compiled Saga (${release.actTitle})`
+
+    if (lockedPkgText) {
+      const tmplMatch = lockedPkgText.match(/##\s*[^\n]*Locked Master Description Template[^\n]*[\s\S]*?```(?:text)?\r?\n([\s\S]*?)\r?\n```/i)
+      if (tmplMatch?.[1]) {
+        description = tmplMatch[1]
+          .replace(/\{\{EPISODE_HEADER_LINE\}\}/g, releaseHeader)
+          .replace(/\{\{RUNTIME_BLOCK\}\}/g, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})\n• Episode Bounds: 00:00 - ${finalTs}`)
+          .replace(/\{\{TIMESTAMPS_BLOCK\}\}/g, timestampBlock)
+          .replace(/\{\{NEXT_EPISODE_CTA\}\}/g, `🔔 Subscribe and turn on notifications so you don't miss Part ${release.partNumber + 1}!`)
+          .trim()
+      }
+    }
+
+    if (!description) {
+      description = [
+        titles[0]?.title || canonicalTitle,
+        '',
+        `🔥 Series: ${canonicalTitle}`,
+        `🎬 Release: ${releaseHeader}`,
+        '⏱️ FULL COMPILATION RUNTIME & TIMELINE:',
+        `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`,
+        `• Episode Bounds: 00:00 - ${finalTs}`,
+        '',
+        timestampBlock,
+        '',
+        `💬 COMMUNITY QUESTION:`,
+        `Which moment in ${release.actTitle} (Episodes ${pad2(startEp)}–${pad2(endEp)}) hit hardest? Drop your timestamp below! 👇`,
+        '',
+        `🔔 Subscribe and turn on notifications so you don't miss the next release!`,
+        '',
+        '#manhwarecap #webtoon #animerecap #manhwa #actionmanhwa'
+      ].join('\n')
+    }
+
+    const pinnedComment = `🔥 ${releaseHeader} is live! Drop your favourite scene timestamp below and subscribe for the next arc! ⚔️`
+    const thumbnailVariants = await this.buildCompiledThumbnailConcepts(franchiseId, release, release.chapters, actInfo)
+
+    return {
+      success: true,
+      isCompiledRelease: true,
+      releaseId: release.id,
+      compiledFilename: release.filename,
+      downloadUrl: release.downloadUrl,
+      fileSize: release.fileSize,
+      fileSizeFormatted: release.fileSizeFormatted,
+      actNumber: release.actNumber,
+      actTitle: release.actTitle,
+      startEp: release.startEp,
+      endEp: release.endEp,
+      rangeLabel: release.rangeLabel,
+      isDiscreteAct: release.isDiscreteAct,
+      partNumber: release.partNumber,
+      partBadgeText: release.badgeSuggestion,
+      totalDuration: release.totalDurationSeconds,
+      formattedDuration: release.totalDurationFormatted,
+      titles,
+      chapters,
+      chapterText: chapterLines.join('\n'),
+      description,
+      pinnedComment,
+      thumbnailVariants,
+      masterThumbnail: thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0] || null,
+      actMetadata: release.metadata
+    }
+  }
+
+  /**
+   * Save uploaded custom 16:9 thumbnail into omnibus/thumbnails/ keyed cleanly by compiled release range.
+   */
+  static async saveCompiledThumbnailUpload(franchiseId, releaseId, variantId = 'concept_a', base64Data, options = {}) {
+    const releases = await this.getCompiledReleases(franchiseId)
+    const release = releases.find(r => r.id === releaseId || r.filename === releaseId || `act_${r.actNumber}` === releaseId) || releases[0]
+    if (!release) {
+      throw new Error('No compiled release found to attach thumbnail.')
+    }
+
+    const pad2 = n => String(n).padStart(2, '0')
+    const rangeSlug = `EP${pad2(release.startEp)}-${pad2(release.endEp)}`
+    const variantKey = variantId === 'concept_b' ? 'Concept_B' : (variantId === 'concept_c' ? 'Concept_C' : 'Concept_A')
+    const targetFilename = `01_Thumbnail_${rangeSlug}_${variantKey}.jpg`
+
+    const thumbDir = path.join(franchisesDir, franchiseId, 'omnibus', 'thumbnails')
+    await fs.mkdir(thumbDir, { recursive: true })
+    const outputPath = path.join(thumbDir, targetFilename)
+
+    const cleanBase64 = String(base64Data).replace(/^data:image\/\w+;base64,/, '')
+    const buffer = Buffer.from(cleanBase64, 'base64')
+
+    let processedBuffer = await sharp(buffer)
+      .resize(1920, 1080, { fit: 'cover', position: 'center' })
+      .jpeg({ quality: 90, mozjpeg: true, progressive: true })
+      .toBuffer()
+
+    if (processedBuffer.length > 1.95 * 1024 * 1024) {
+      processedBuffer = await sharp(buffer)
+        .resize(1920, 1080, { fit: 'cover', position: 'center' })
+        .jpeg({ quality: 82, mozjpeg: true, progressive: true })
+        .toBuffer()
+    }
+
+    if (options.applyBadge && options.badgeText) {
+      const svg = this.generateBadgeSvg({
+        badgeText: options.badgeText,
+        subBadgeText: options.subBadgeText || '',
+        badgeColorPreset: options.badgeColorPreset || 'gold_crimson',
+        badgePosition: options.badgePosition || 'top_left',
+        width: 1920,
+        height: 1080
+      })
+      processedBuffer = await sharp(processedBuffer)
+        .composite([{ input: Buffer.from(svg), top: 0, left: 0 }])
+        .jpeg({ quality: 88, mozjpeg: true, progressive: true })
+        .toBuffer()
+    }
+
+    await fs.writeFile(outputPath, processedBuffer)
+    const fileSize = processedBuffer.length
+    return {
+      success: true,
+      variantId,
+      filename: targetFilename,
+      url: `/api/franchises/${franchiseId}/omnibus/thumbnails/${targetFilename}?t=${Date.now()}`,
+      fileSize,
+      fileSizeFormatted: this.formatFileSize(fileSize),
+      isYouTubeCompliant: fileSize < 2 * 1024 * 1024
+    }
+  }
+
+  /**
+   * Load full YouTube Launchpad package for a specific Act (delegates to compiled release when available).
    */
   static async getActPackage(franchiseId, actNumber = 1) {
     const actNum = parseInt(actNumber, 10) || 1
+    const releases = await this.getCompiledReleases(franchiseId)
+    const matchingRelease = releases.find(r => r.actNumber === actNum)
+    if (matchingRelease) {
+      return await this.getCompiledReleasePackage(franchiseId, matchingRelease.id)
+    }
+
     const acts = await this.parseSeriesActs(franchiseId)
     const actInfo = acts.find(a => a.actNumber === actNum) || {
       actNumber: actNum,
@@ -1448,116 +2021,41 @@ static formatTimestamp(seconds) {
       endEp: actNum * 3,
       episodeIds: []
     }
-
-    const franchiseDir = path.join(franchisesDir, franchiseId)
-    const omnibusDir = path.join(franchiseDir, 'omnibus')
-    const actPkgPath = path.join(omnibusDir, `YouTube_Act${actNum}_Launch_Package.md`)
-    const actMetaPath = path.join(omnibusDir, `act_${actNum}_metadata.json`)
-    const actThumbFilename = `01_Thumbnail_Act${actNum}.jpg`
-    const actThumbPath = path.join(omnibusDir, 'thumbnails', actThumbFilename)
-
-    let actMetadata = null
-    if (fsSync.existsSync(actMetaPath)) {
-      try { actMetadata = JSON.parse(await fs.readFile(actMetaPath, 'utf-8')) } catch (_) {}
-    } else if (actNum === 1) {
-      actMetadata = await VideoService.getOmnibusMetadata(franchiseId).catch(() => null)
-    }
-
-    // If package markdown missing yet, synthesize preview dynamically from Act's first episode + metadata
-    if (!fsSync.existsSync(actPkgPath) && actMetadata) {
-      await this.syncOmnibusMetadataToPackages(franchiseId, { ...actMetadata, actNumber: actNum })
-    }
-
+    const pad2 = n => String(n).padStart(2, '0')
     const canonicalTitle = this.getCanonicalSeriesTitle(franchiseId)
     const cleanFranchiseName = franchiseId.replace(/^Series_\d+_/, '').replace(/_/g, ' ').trim()
-    const pad2 = n => String(n).padStart(2, '0')
-    const seriesNumMatch = franchiseId.match(/Series_0*(\d+)/i)
-    const isActPartModel = seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : true
-    const partBadgeText = isActPartModel ? `PART ${actNum}` : `${actInfo.startEp} - ${actInfo.endEp}`
-
-    let titles = []
-    let description = ''
-    let pinnedComment = ''
-    let chapters = []
-    let isPending = !fsSync.existsSync(actPkgPath)
-
-    if (fsSync.existsSync(actPkgPath)) {
-      const md = await fs.readFile(actPkgPath, 'utf-8')
-      const ctrScores = ['99%', '98%', '97%', '96%', '95%']
-      const titleLines = [...md.matchAll(/^\d+\.\s+(.+)$/gm)].map(m => m[1].trim()).filter(Boolean)
-      titles = titleLines.slice(0, 5).map((t, i) => ({
-        archetype: i === 0 ? `Locked Act ${actNum} Title` : `High-CTR Variant ${i + 1}`,
-        title: t,
-        ctrScore: ctrScores[i] || '94%',
-        charCount: t.length,
-        isCompliant: t.length <= 100
-      }))
-      const descM = md.match(/##\s*[^\n]*Description Box[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
-      if (descM?.[1]) description = descM[1].trim()
-      const commM = md.match(/##\s*[^\n]*Pinned Community Comment[^\n]*[\s\S]*?```(?:[a-z]*)\r?\n([\s\S]*?)\r?\n```/i)
-      if (commM?.[1]) pinnedComment = commM[1].trim()
-      const chapM = md.match(/⏱️\s*CHAPTER TIMESTAMPS:\s*\r?\n([\s\S]*?)(?:\r?\n\s*━|$)/i)
-      if (chapM?.[1]) {
-        for (const line of chapM[1].split(/\r?\n/)) {
-          const lm = line.match(/^(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—]\s*(.+)$/)
-          if (lm) chapters.push({ time: lm[1].trim(), seconds: this.parseTimestampToSeconds(lm[1].trim()), title: lm[2].trim() })
-        }
-      }
-    }
-
-    if (titles.length === 0) {
-      const t = `(Part ${actNum}) ${canonicalTitle}`.slice(0, 100)
-      titles = [{ archetype: `Act ${actNum} Default Title`, title: t, ctrScore: '99%', charCount: t.length, isCompliant: t.length <= 100 }]
-    }
-    if (!description) {
-      description = `🔥 Series: ${canonicalTitle}\n🎬 Release: Part ${actNum} — ${actInfo.title} (Covers Episodes ${pad2(actInfo.startEp)} - ${pad2(actInfo.endEp)})\n\n⏳ Compile Act ${actNum} in the Master Compiler to auto-populate exact timestamps and runtime.`
-    }
-    if (!pinnedComment) {
-      pinnedComment = `🔥 Part ${actNum} (${actInfo.title}) of ${cleanFranchiseName} is live! Drop a comment below and subscribe for Part ${actNum + 1}! ⚔️`
-    }
-
-    const firstEpId = actInfo.episodeIds?.[0] || `EP${pad2(actInfo.startEp)}`
-    const fallbackVariants = await this.getThumbnailVariants(franchiseId, firstEpId).catch(() => [])
-    const hasActThumb = fsSync.existsSync(actThumbPath)
-    const actThumbSize = hasActThumb ? fsSync.statSync(actThumbPath).size : 0
-    const thumbnailVariants = hasActThumb
-      ? [
-          {
-            ...(fallbackVariants[0] || {}),
-            id: 'concept_a',
-            name: fallbackVariants[0]?.name || `Act ${actNum} Master Thumbnail (${partBadgeText})`,
-            filename: actThumbFilename,
-            hasImage: true,
-            hasBakedBadge: true,
-            url: `/api/franchises/${franchiseId}/omnibus/thumbnails/${actThumbFilename}?t=${Date.now()}`,
-            fileSize: actThumbSize,
-            fileSizeFormatted: this.formatFileSize(actThumbSize),
-            isYouTubeCompliant: actThumbSize < 2 * 1024 * 1024
-          },
-          ...fallbackVariants.slice(1)
-        ]
-      : fallbackVariants
+    const cadence = this.detectReleaseCadence(franchiseId, actInfo.startEp, actInfo.endEp, actNum, '')
+    const titles = this.generateSmartCompiledTitles({
+      franchiseId,
+      canonicalTitle,
+      startEp: actInfo.startEp,
+      endEp: actInfo.endEp,
+      actInfo,
+      chapters: [],
+      isActPartModel: cadence.isDiscreteAct,
+      partNumber: cadence.partNumber
+    })
 
     return {
       success: true,
-      isPending,
+      isPending: true,
       isActPackage: true,
       actNumber: actNum,
       actTitle: actInfo.title,
       startEp: actInfo.startEp,
       endEp: actInfo.endEp,
-      compiledFilename: actMetadata?.filename || actInfo.compiledFilename || null,
-      partBadgeText,
-      totalDuration: actMetadata?.totalDurationSeconds || 0,
-      formattedDuration: actMetadata?.totalDurationFormatted || 'Pending Compile',
+      compiledFilename: null,
+      partBadgeText: cadence.badgeSuggestion,
+      totalDuration: 0,
+      formattedDuration: 'Pending Compile',
       titles,
-      chapters,
-      chapterText: chapters.map(c => `${c.time} - ${c.title}`).join('\n'),
-      description,
-      pinnedComment,
-      thumbnailVariants,
-      masterThumbnail: thumbnailVariants.find(v => v.hasImage) || thumbnailVariants[0] || null,
-      actMetadata
+      chapters: [],
+      chapterText: '',
+      description: `🔥 Series: ${canonicalTitle}\n🎬 Release: ${actInfo.title} (Covers Episodes ${pad2(actInfo.startEp)} - ${pad2(actInfo.endEp)})\n\n⏳ Compile Act ${actNum} in the Master Compiler to auto-populate exact timestamps and runtime.`,
+      pinnedComment: `🔥 ${actInfo.title} of ${cleanFranchiseName} is coming soon!`,
+      thumbnailVariants: [],
+      masterThumbnail: null,
+      actMetadata: null
     }
   }
 

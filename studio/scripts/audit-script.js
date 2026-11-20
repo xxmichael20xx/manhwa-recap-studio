@@ -782,8 +782,8 @@ if (isHeal) {
       }
     }
 
-    // Carry forward any active handheld props whose holder is present in finalCast
-    if (finalCast.length > 0) {
+    // Carry forward any active handheld props whose holder is present in finalCast (only when healing missing headers)
+    if (!existingHeaderMatch && finalCast.length > 0) {
       for (const [pToken, meta] of carriedHandheldProps.entries()) {
         if (finalCast.includes(meta.holder)) {
           scenePropsSet.add(pToken)

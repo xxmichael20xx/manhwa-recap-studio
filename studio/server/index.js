@@ -234,6 +234,53 @@ app.get('/api/franchises/:franchiseId/act-package/:actNumber', async (req, res) 
   }
 })
 
+app.get('/api/franchises/:franchiseId/compiled-releases', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const releases = await PackagingService.getCompiledReleases(franchiseId)
+    res.json(releases)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.get('/api/franchises/:franchiseId/compiled-package', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const { releaseId } = req.query
+    const pkg = await PackagingService.getCompiledReleasePackage(franchiseId, releaseId ? String(releaseId) : '')
+    res.json(pkg)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
+app.post('/api/franchises/:franchiseId/compiled-thumbnail', async (req, res) => {
+  try {
+    const { franchiseId } = req.params
+    const { releaseId, variantId, base64Data, applyBadge, badgeText, subBadgeText, badgeColorPreset, badgePosition } = req.body || {}
+    if (!base64Data) {
+      return res.status(400).json({ error: 'base64Data is required.' })
+    }
+    const result = await PackagingService.saveCompiledThumbnailUpload(
+      franchiseId,
+      releaseId || '',
+      variantId || 'concept_a',
+      base64Data,
+      {
+        applyBadge: Boolean(applyBadge),
+        badgeText,
+        subBadgeText,
+        badgeColorPreset,
+        badgePosition
+      }
+    )
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 app.get('/api/franchises/:franchiseId/omnibus-files', handleOmnibusFiles)
 app.get('/api/episodes/:franchiseId/omnibus-files', handleOmnibusFiles)
 

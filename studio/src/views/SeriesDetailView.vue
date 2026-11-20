@@ -901,30 +901,26 @@
             </p>
           </div>
 
-          <!-- Episode / Master Omnibus Selector Dropdown & Quick Download -->
+          <!-- Compiled Master Release Selector Dropdown & Quick Download -->
           <div class="flex items-center space-x-3 flex-wrap gap-y-2">
             <div class="flex items-center space-x-2">
               <label class="text-xs font-mono text-slate-400 font-semibold">Select Release Target:</label>
               <select 
                 v-model="selectedPackageEpisode" 
                 @change="loadPackagingData"
-                class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer"
+                :disabled="compiledReleases.length === 0"
+                class="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-900 dark:text-white cursor-pointer disabled:opacity-50"
               >
-                <optgroup :label="isActPartModel ? 'Compiled Act Features (YouTube SSOT)' : 'Compiled Master Releases'">
+                <option v-if="compiledReleases.length === 0" value="" disabled>
+                  No compiled Master Compiler releases yet
+                </option>
+                <optgroup v-else label="Compiled Master Compiler Releases">
                   <option
-                    v-for="act in groupedActs"
-                    :key="`act_${act.actNumber}`"
-                    :value="`act_${act.actNumber}`"
+                    v-for="rel in compiledReleases"
+                    :key="rel.id"
+                    :value="rel.id"
                   >
-                    {{ isActPartModel ? `⚡ Act ${act.actNumber} (Part ${act.actNumber}): ${act.rangeLabel} ${act.hasCompiledAct ? '✓' : '⏳'}` : `🎬 Act ${act.actNumber} (${act.rangeLabel}) ${act.hasCompiledAct ? '✓' : '⏳'}` }}
-                  </option>
-                  <option value="omnibus_complete" :disabled="compiledEpisodes.length === 0">
-                    🏆 Complete Story Marathon (Full Series Complete)
-                  </option>
-                </optgroup>
-                <optgroup :label="isActPartModel ? 'Internal Episodic Segments' : 'Individual Episode Releases'">
-                  <option v-for="ep in availableEpisodes" :key="ep.id" :value="ep.id">
-                    {{ ep.name }}
+                    {{ rel.isDiscreteAct ? `⚡ Part ${rel.partNumber}` : `🎬 Act ${rel.actNumber}` }} ({{ rel.rangeLabel }}) — {{ rel.totalDurationFormatted }} [{{ rel.fileSizeFormatted }}]
                   </option>
                 </optgroup>
               </select>
@@ -935,7 +931,7 @@
               :href="currentSelectedEpisodeVideoDownloadUrl"
               :download="currentSelectedEpisodeVideoFilename"
               class="px-3.5 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold font-mono flex items-center space-x-1.5 shadow-sm shadow-purple-900/20 transition cursor-pointer hover:scale-[1.02]"
-              :title="`Download ${currentSelectedEpisode?.name || selectedPackageEpisode} Master Video`"
+              :title="`Download ${currentSelectedEpisodeVideoFilename}`"
             >
               <Download class="w-3.5 h-3.5" />
               <span>Download Video ({{ currentSelectedEpisodeVideoSize }})</span>
@@ -967,8 +963,16 @@
           </button>
         </div>
 
+        <!-- EMPTY STATE WHEN NO COMPILED MASTER RELEASES EXIST -->
+        <div v-if="compiledReleases.length === 0" class="rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 p-8 text-center space-y-2">
+          <p class="text-sm font-bold text-slate-900 dark:text-white">No Compiled Master Releases Found</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Compile an Act or Multi-Episode Omnibus in the Master Compiler above to unlock YouTube titles, chapter timestamps, and climax thumbnail concepts.
+          </p>
+        </div>
+
         <!-- SUB-TAB 1: YOUTUBE LAUNCHPAD -->
-        <div v-if="launchpadSubTab === 'youtube'" class="space-y-6">
+        <div v-else-if="launchpadSubTab === 'youtube'" class="space-y-6">
         <!-- 1. The 3 High-CTR Master Thumbnails Showcase -->
         <div class="space-y-4 pt-2">
           <div class="flex items-center justify-between">
@@ -1065,6 +1069,20 @@
                     </button>
                   </div>
                 </div>
+
+                <!-- Upload Custom 16:9 Plate Button -->
+                <label
+                  class="py-1.5 px-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-purple-500 text-slate-700 dark:text-slate-300 text-[11px] font-mono flex items-center justify-center cursor-pointer transition shrink-0"
+                  title="Upload custom 16:9 thumbnail plate"
+                >
+                  <span>Upload</span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    class="hidden"
+                    @change="(e) => onCompiledThumbFileSelected(e, variant.id)"
+                  />
+                </label>
 
                 <!-- Prompt Copy Button -->
                 <button 
@@ -1475,8 +1493,15 @@ const selectedEpisodesList = computed(() => {
 const selectedPackageEpisode = ref('')
 const pkgData = ref(null)
 const omnibusFiles = ref([])
+const compiledReleases = ref([])
+
+const selectedCompiledRelease = computed(() => {
+  if (!compiledReleases.value.length) return null
+  return compiledReleases.value.find(r => r.id === selectedPackageEpisode.value) || compiledReleases.value[0]
+})
 
 const isActPartModel = computed(() => {
+  if (selectedCompiledRelease.value) return Boolean(selectedCompiledRelease.value.isDiscreteAct)
   const seriesId = String(route.params.id || franchise.value?.id || franchise.value?.folder || '')
   const seriesNumMatch = seriesId.match(/Series_0*(\d+)/i)
   return seriesNumMatch ? parseInt(seriesNumMatch[1], 10) >= 7 : false
@@ -1488,30 +1513,28 @@ const activeDropdownCard = ref(null)
 const isDownloadingThumb = ref(false)
 
 const dynamicBadgeOptions = computed(() => {
-  if (isActPartModel.value) {
-    return [
-      { id: 'part_1', label: '⚡ Part 1 (Act 1 Feature)', badgeText: 'PART 1' },
-      { id: 'part_2', label: '⚡ Part 2 (Act 2 Feature)', badgeText: 'PART 2' },
-      { id: 'part_3', label: '⚡ Part 3 (Act 3 Feature)', badgeText: 'PART 3' },
-      { id: 'part_4', label: '⚡ Part 4 (Act 4 Feature)', badgeText: 'PART 4' },
-      { id: 'complete', label: '🏆 Complete (Full Story Marathon)', badgeText: 'COMPLETE' },
-      { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' }
-    ]
+  const rel = selectedCompiledRelease.value
+  const options = []
+  const seen = new Set()
+  const addOpt = (id, label, badgeText) => {
+    if (seen.has(badgeText)) return
+    seen.add(badgeText)
+    options.push({ id, label, badgeText })
   }
 
-  const options = [
-    { id: 'clean', label: '🌟 Clean (No Badge / Textless)', badgeText: '' },
-    { id: 'complete', label: '🏆 Complete (Full Story Marathon)', badgeText: 'COMPLETE' },
-    { id: 'ep_1', label: '🟡 Episode 1 (Single Episode)', badgeText: 'EP 1' }
-  ]
-  const count = Math.max(2, availableEpisodes.value.length)
-  for (let i = 2; i <= count; i++) {
-    options.push({
-      id: `ep_1_${i}`,
-      label: `🟡 Episodes 1 - ${i} (${i === 2 ? 'Omnibus Movie' : `Episodes 1-${i}`})`,
-      badgeText: `1 - ${i}`
-    })
+  if (rel) {
+    const pad2 = n => String(n).padStart(2, '0')
+    addOpt('suggested', `⚡ Recommended (${rel.badgeSuggestion})`, rel.badgeSuggestion)
+    addOpt('ep_range', `🟡 EP ${pad2(rel.startEp)} - ${pad2(rel.endEp)}`, `EP ${pad2(rel.startEp)} - ${pad2(rel.endEp)}`)
+    addOpt('num_range', `🟡 ${rel.startEp} - ${rel.endEp}`, `${rel.startEp} - ${rel.endEp}`)
+    addOpt('part_n', `⚡ PART ${rel.partNumber || rel.actNumber}`, `PART ${rel.partNumber || rel.actNumber}`)
+    addOpt('act_n', `🎬 Act ${rel.actNumber}`, `Act ${rel.actNumber}`)
+  } else {
+    addOpt('part_1', '⚡ Part 1 (Act 1 Feature)', 'PART 1')
   }
+
+  addOpt('complete', '🏆 Complete (Full Story Marathon)', 'COMPLETE')
+  addOpt('clean', '🌟 Clean (No Badge / Textless)', '')
   return options
 })
 
@@ -1682,22 +1705,13 @@ const loadFranchise = async () => {
       const latestCompiledAct = [...actsList].reverse().find(a => a.hasCompiledAct)
       const latestReadyAct = [...actsList].reverse().find(a => a.episodes.some(e => e.hasCompiledVideo))
       const defaultAct = latestCompiledAct || latestReadyAct || actsList[0]
-      if (defaultAct && isActPartModel.value) {
-        selectedPackageEpisode.value = `act_${defaultAct.actNumber}`
-        activeThumbnailBadge.value = `PART ${defaultAct.actNumber}`
+      if (defaultAct) {
         selectedEpisodes.value = defaultAct.episodes.filter(e => e.hasCompiledVideo).map(e => e.id)
-      } else if (isActPartModel.value && compiledEpisodes.value.length >= 2) {
-        selectedPackageEpisode.value = 'act_1'
-        activeThumbnailBadge.value = 'PART 1'
-        selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       } else {
-        selectedPackageEpisode.value = availableEpisodes.value[0].id
-        activeThumbnailBadge.value = isActPartModel.value ? 'PART 1' : ''
         selectedEpisodes.value = compiledEpisodes.value.map(e => e.id)
       }
-      loadPackagingData()
-      loadOmnibusFiles()
     }
+    await loadOmnibusFiles()
   } catch (err) {
     console.error(err)
   }
@@ -1714,115 +1728,85 @@ const loadModels = async () => {
 
 const omnibusMetadata = ref(null)
 
-const loadPackagingData = async () => {
-  if (!selectedPackageEpisode.value) return
-  if (selectedPackageEpisode.value.startsWith('act_')) {
-    const actNum = parseInt(selectedPackageEpisode.value.replace('act_', ''), 10) || 1
-    try {
-      const res = await fetch(`/api/franchises/${route.params.id}/act-package/${actNum}`)
-      const actPkg = await res.json()
-      omnibusMetadata.value = actPkg.actMetadata || null
-      activeThumbnailBadge.value = actPkg.partBadgeText || `PART ${actNum}`
-      pkgData.value = actPkg
-    } catch (e) {
-      console.error('Failed to load Act package data:', e)
-    }
-    return
-  }
-  if (selectedPackageEpisode.value === 'omnibus_master' || selectedPackageEpisode.value === 'omnibus_complete') {
-    const isComplete = selectedPackageEpisode.value === 'omnibus_complete'
-    try {
-      const res = await fetch(`/api/franchises/${route.params.id}/omnibus-metadata`)
-      const meta = await res.json()
-      omnibusMetadata.value = meta
-
-      // Load base episode 1 packaging to inherit visual thumbnail concepts
-      const firstEp = availableEpisodes.value[0]?.id || (franchise.value?.episodes?.[0]?.id) || 'EP01'
-      const basePkgRes = await fetch(`/api/episodes/${route.params.id}/${firstEp}/youtube-package`)
-      const basePkg = await basePkgRes.json()
-
-      // Dynamically enhance package for Master Omnibus / Complete Story Marathon using Locked Episode 1 Package Truth
-      const partCount = meta?.partCount || (compiledEpisodes.value.length >= 2 ? compiledEpisodes.value.length : 2)
-      const partBadge = isComplete ? 'COMPLETE' : (isActPartModel.value ? 'PART 1' : (meta?.partBadgeText || (partCount > 1 ? `1 - ${partCount}` : 'PART 1')))
-      const compactRange = `1-${partCount}`
-      const totalSec = meta?.totalDurationSeconds || basePkg?.totalDuration || 3486
-      const totalMinsDecimal = (totalSec / 60).toFixed(1)
-      const finalTs = meta?.finalTimestampFormatted || basePkg?.formattedDuration || '58:06'
-
-      // Extract base canonical title from basePkg (strip leading (Episode X) prefix if present)
-      const rawBaseTitle = basePkg?.titles?.[0]?.title || basePkg?.canonicalTitle || ''
-      const cleanFranchiseName = (franchise.value?.name || String(route.params.id || ''))
-        .replace(/^Series_\d+_/i, '')
-        .replace(/_/g, ' ')
-        .trim()
-      const canonicalTitle = (basePkg?.canonicalTitle || rawBaseTitle.replace(/^\((?:Episode|Episodes|Part|Parts|Complete)\s*[^)]*\)\s*/i, '') || cleanFranchiseName || 'Manhwa Recap Saga').trim()
-
-      const prefixTag = isComplete ? '(Complete)' : (isActPartModel.value ? '(Part 1)' : `(Episode ${compactRange})`)
-      const lockedOmnibusTitle = `${prefixTag} ${canonicalTitle}`.trim()
-
-      const titles = [
-        {
-          archetype: isComplete ? 'Locked Complete Series Title' : (isActPartModel.value ? 'Locked Act 1 Title (Part 1)' : `Locked Canonical Title (Episode ${compactRange})`),
-          ctrScore: '99%',
-          title: lockedOmnibusTitle,
-          charCount: lockedOmnibusTitle.length,
-          isCompliant: lockedOmnibusTitle.length <= 100
-        }
-      ]
-
-      // Build Plain Episode Timestamps block (1 line per compiled episode + Finale)
-      const chapterLines = Array.isArray(meta?.chapters) && meta.chapters.length > 0
-        ? [
-            ...meta.chapters.map((c, idx) => `${c.startTimestampFormatted} - Episode ${String(c.partNumber || (idx + 1)).padStart(2, '0')}: ${c.episodeTitle} (${c.durationFormatted})`),
-            `${finalTs} - Series Finale & Epilogue`
-          ].join('\n')
-        : (meta?.youtubeChapterString || compiledEpisodes.value.map((ep, idx) => `00:00 - Episode 0${idx + 1}: ${ep.name}`).join('\n'))
-
-      const timestampBlock = `\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ CHAPTER TIMESTAMPS:\n${chapterLines}\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`
-
-      // Mutate ONLY the dynamic slots in Episode 1's locked description
-      let omnibusDescription = basePkg?.description || ''
-      if (omnibusDescription) {
-        const releaseHeader = isComplete 
-          ? `🎬 Compilation: Complete Series Marathon (Episodes 01 - ${String(partCount).padStart(2, '0')})`
-          : (isActPartModel.value 
-              ? `🎬 Release: Part 1 — Act 1 Feature (Covers Episodes 01 - ${String(partCount).padStart(2, '0')})`
-              : `🎬 Episode: Episodes 01 - ${String(partCount).padStart(2, '0')} Compiled Saga`)
-
-        omnibusDescription = omnibusDescription
-          .replace(/🎬 (?:Episode|Release):[^\n]+/i, releaseHeader)
-          .replace(/•\s*Full Runtime:[^\n]+/i, `• Full Runtime: ${totalMinsDecimal} Minutes (${finalTs})`)
-          .replace(/•\s*Episode Bounds:[^\n]+/i, `• Episode Bounds: 00:00 - ${finalTs}\n${timestampBlock.trim()}`)
-          .replace(/🔔 Subscribe[^\n]+/, isComplete ? "🔔 Subscribe to the channel and check out our other full-length manhwa series and complete marathon sagas!" : "🔔 Subscribe to the channel and turn on notifications so you don't miss the next episode!")
-      }
-
-      activeThumbnailBadge.value = isComplete ? 'COMPLETE' : partBadge
-      pkgData.value = {
-        ...basePkg,
-        titles,
-        description: omnibusDescription,
-        pinnedComment: basePkg?.pinnedComment || '',
-        isOmnibus: true,
-        isComplete,
-        partBadgeText: isComplete ? 'COMPLETE' : partBadge
-      }
-    } catch (e) {
-      console.error('Failed to load omnibus package data:', e)
-    }
-    return
-  }
-
+const loadCompiledReleases = async (preferredFilename = '') => {
   try {
-    const res = await fetch(`/api/episodes/${route.params.id}/${selectedPackageEpisode.value}/youtube-package`)
-    pkgData.value = await res.json()
-    omnibusMetadata.value = null
-    activeThumbnailBadge.value = isActPartModel.value ? 'PART 1' : '' // Default to PART 1 for Series 07+, Clean for legacy
+    const res = await fetch(`/api/franchises/${route.params.id}/compiled-releases`)
+    if (!res.ok) return
+    const releases = await res.json()
+    compiledReleases.value = Array.isArray(releases) ? releases : []
+
+    if (compiledReleases.value.length === 0) {
+      selectedPackageEpisode.value = ''
+      pkgData.value = null
+      omnibusMetadata.value = null
+      return
+    }
+
+    const preferred = preferredFilename
+      ? compiledReleases.value.find(r => r.filename === preferredFilename || r.id === preferredFilename)
+      : null
+    const stillValid = compiledReleases.value.find(r => r.id === selectedPackageEpisode.value)
+    const target = preferred || stillValid || compiledReleases.value[0]
+    selectedPackageEpisode.value = target.id
+    activeThumbnailBadge.value = target.badgeSuggestion || `PART ${target.partNumber || 1}`
+    await loadPackagingData()
   } catch (err) {
-    console.error(err)
+    console.error('Error loading compiled releases:', err)
   }
 }
 
-const loadOmnibusFiles = async () => {
+const loadPackagingData = async () => {
+  if (!selectedPackageEpisode.value) {
+    pkgData.value = null
+    return
+  }
+  try {
+    const res = await fetch(`/api/franchises/${route.params.id}/compiled-package?releaseId=${encodeURIComponent(selectedPackageEpisode.value)}`)
+    const pkg = await res.json()
+    if (pkg.empty) {
+      pkgData.value = null
+      omnibusMetadata.value = null
+      return
+    }
+    omnibusMetadata.value = pkg.actMetadata || null
+    activeThumbnailBadge.value = pkg.partBadgeText || selectedCompiledRelease.value?.badgeSuggestion || ''
+    pkgData.value = pkg
+  } catch (e) {
+    console.error('Failed to load compiled release package data:', e)
+  }
+}
+
+const onCompiledThumbFileSelected = async (event, variantId) => {
+  const file = event?.target?.files?.[0]
+  if (!file || !selectedPackageEpisode.value) return
+  try {
+    const base64Data = await new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result)
+      reader.onerror = reject
+      reader.readAsDataURL(file)
+    })
+    const res = await fetch(`/api/franchises/${route.params.id}/compiled-thumbnail`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        releaseId: selectedPackageEpisode.value,
+        variantId,
+        base64Data
+      })
+    })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error || 'Upload failed')
+    triggerToast('Thumbnail Uploaded', `${data.filename} (${data.fileSizeFormatted}) saved`)
+    await loadPackagingData()
+  } catch (err) {
+    triggerToast('Upload Error', err.message)
+  } finally {
+    if (event?.target) event.target.value = ''
+  }
+}
+
+const loadOmnibusFiles = async (preferredFilename = '') => {
   try {
     const res = await fetch(`/api/franchises/${route.params.id}/omnibus-files`)
     if (res.ok) {
@@ -1831,6 +1815,7 @@ const loadOmnibusFiles = async () => {
   } catch (err) {
     console.error('Error loading omnibus files:', err)
   }
+  await loadCompiledReleases(preferredFilename)
 }
 
 const availableEpisodes = computed(() => {
@@ -1894,30 +1879,19 @@ const currentSelectedEpisode = computed(() => {
 
 const currentSelectedEpisodeVideoDownloadUrl = computed(() => {
   const fId = franchise.value?.folder || route.params.id
-  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.compiledFilename) {
-    return `/api/franchises/${fId}/omnibus-stream?file=${encodeURIComponent(pkgData.value.compiledFilename)}&download=1`
-  }
-  if (currentSelectedEpisode.value?.hasCompiledVideo) {
-    const eId = currentSelectedEpisode.value.id
-    return `/api/episodes/${fId}/${eId}/video-stream?file=01_Episode_Master_1080p.mp4&download=1`
+  const filename = pkgData.value?.compiledFilename || selectedCompiledRelease.value?.filename
+  if (filename) {
+    return `/api/franchises/${fId}/omnibus-stream?file=${encodeURIComponent(filename)}&download=1`
   }
   return null
 })
 
 const currentSelectedEpisodeVideoFilename = computed(() => {
-  const fId = franchise.value?.folder || route.params.id
-  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.compiledFilename) {
-    return pkgData.value.compiledFilename
-  }
-  if (!currentSelectedEpisode.value) return 'Episode_Master_1080p.mp4'
-  return `${fId}_${currentSelectedEpisode.value.id}_Master_1080p.mp4`
+  return pkgData.value?.compiledFilename || selectedCompiledRelease.value?.filename || 'Master_Omnibus_1080p.mp4'
 })
 
 const currentSelectedEpisodeVideoSize = computed(() => {
-  if (selectedPackageEpisode.value?.startsWith('act_') && pkgData.value?.formattedDuration) {
-    return pkgData.value.formattedDuration
-  }
-  return currentSelectedEpisode.value?.videoSizeFormatted || '1080p'
+  return pkgData.value?.formattedDuration || selectedCompiledRelease.value?.totalDurationFormatted || '1080p'
 })
 
 const isVerticalFormat = computed(() => {
@@ -2396,12 +2370,8 @@ const triggerOmnibusCompile = async () => {
       isFreshCompile ? 'Fresh GPU Compilation Completed' : (isCompileEpisodes ? 'Batch Verification Completed' : 'Multi-Episode Stitching Completed'),
       `Saved to: ${savedName}`
     )
-    if (actNum) {
-      selectedPackageEpisode.value = `act_${actNum}`
-    }
     await loadFranchise()
-    await loadOmnibusFiles()
-    await loadPackagingData()
+    await loadOmnibusFiles(savedName)
   } catch (err) {
     omnibusCompileStatus.value = 'failed'
     omnibusStage.value = 'error'

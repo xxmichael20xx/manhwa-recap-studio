@@ -198,6 +198,19 @@ flowchart TD
     *The Climax:* Michael pulls out the Montrey platinum crest amulet, crushes it into metal dust in his bare fist, and incinerates the adoption scroll with cyan lightning. He proclaims:  
     > *"You did not discard a defect. You threw away your house's only hope. I have no need for your dying name—I am the progenitor of my own sovereign lineage."*
 
+#### 🔥 Act III Vault Tokens (`EP08` – `EP10`)
+* **Artifacts & Props:**
+  * `@{Ancestral Resonance Mirror}` — Towering eight-foot silver-and-platinum oval arcane scrying mirror with coiled winged dragon engravings and four star-sapphire focus gems displaying cyan wavelength ripples.
+  * `@{Academy Labyrinth Dossier}` — Dark-navy leather imperial academy dispatch portfolio with silver corner clasps and embossed star-sapphire wax medallion.
+* **Locations:**
+  * `@{Montrey Appraisal Hall}` — Grand gothic appraisal hall of House Montrey built from pale silver granite, dark-blue and white marble floor, stepped appraisal dais, and towering stained-glass windows overlooking Valerius spires.
+  * `@{Montrey Patriarch Study}` — Opulent private cedar-and-granite council study of House Montrey with sapphire dragon banners, dark mahogany desk, and tall gothic windows overlooking the Crystalline Bastion.
+  * `@{Montrey Banquet Hall}` — Opulent grand ancestral banquet hall inside House Montrey estate with sapphire velvet dragon banners, polished white-and-blue marble floor, carved mahogany banquet table with silver candelabras, and towering gothic windows overlooking the Crystalline Bastion.
+  * `@{Montrey Gilded Velvet Carriage}` — Monumental sapphire-blue lacquered noble carriage with silver filigree, gilded scrollwork, silver dragon door emblem, velvet-curtained windows, and sapphire carriage lanterns.
+  * `@{Platinum Crown Chest}` — Sapphire-velvet and silver-banded aristocratic treasure chest open with gleaming minted platinum coins.
+  * `@{Imperial Reinstatement Scroll}` — Rolled ivory-parchment decree scroll bound with sapphire silk ribbon and glowing silver-and-sapphire dragon wax seal.
+  * `@{Montrey Estate Grand Gates}` — Monumental wrought-iron and pale silver-granite outer estate gates of House Montrey flanked by silver dragon pillars and dry cobblestone plaza overlooking the Crystalline Bastion spires.
+
 ---
 
 ### ⚔️ Act IV: The Continental Calamity & The Forbidden Tiers (EP11 – EP14)
@@ -292,7 +305,16 @@ flowchart TD
     "@{Academy Private Dormitory Chamber}",
     "@{Frozen Astral Crucible}",
     "@{Ancient Labyrinth Stone Corridor}",
-    "@{Labyrinth 50th Floor Sanctum}"
+    "@{Labyrinth 50th Floor Sanctum}",
+    "@{Montrey Appraisal Hall}",
+    "@{Montrey Patriarch Study}",
+    "@{Ancestral Resonance Mirror}",
+    "@{Academy Labyrinth Dossier}",
+    "@{Montrey Banquet Hall}",
+    "@{Montrey Gilded Velvet Carriage}",
+    "@{Platinum Crown Chest}",
+    "@{Imperial Reinstatement Scroll}",
+    "@{Montrey Estate Grand Gates}"
   ],
   "vocabulary": {
     "diegeticScrolls": "ancient grimoires/spellbooks/scrolls",

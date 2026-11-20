@@ -1,0 +1,217 @@
+{
+  "episodeId": "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+  "franchiseId": "Series_05_The_Fourth_Magius",
+  "generatedAt": "2026-11-20T02:10:44.421Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": [
+      {
+        "from_scene": "IMG_001",
+        "to_scene": "IMG_082",
+        "lighting": "bright_morning_sunlight"
+      },
+      {
+        "from_scene": "IMG_083",
+        "to_scene": "IMG_184",
+        "lighting": "dusk"
+      },
+      {
+        "from_scene": "IMG_185",
+        "to_scene": "IMG_192",
+        "lighting": "night_floodlit"
+      }
+    ]
+  },
+  "wardrobe_locks": {
+    "patriarch_valerius_montrey": "clean signature standard attire",
+    "elder_cassius_montrey": "ceremonial arcane robes",
+    "michael_montrey_academy": "clean signature standard attire",
+    "elena_ashvale": "clean signature standard attire",
+    "doran_keller": "clean signature standard attire",
+    "lord_cedric_vance": "clean signature standard attire",
+    "proctor_alistair": "clean signature standard attire"
+  },
+  "held_props": {
+    "carved_blackwood_staff": {
+      "canonical_name": "Carved Blackwood Staff",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_crest_amulet": {
+      "canonical_name": "Montrey Crest Amulet",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "white_dimension_library": {
+      "canonical_name": "The White Dimension Library",
+      "container": null,
+      "visual_form": "Infinite pristine pearlescent white astral dimension left by the First Magicians, boundless polished white marble floor reflecting faint golden starlight mists, millions of colossal floating white-stone bookshelves and glowing ancient leather grimoires gently drifting in serene zero-gravity silence, absolute stillness, ethereal cyan arcane constellation rings rotating horizontally in distant white void.",
+      "notes": "Locked across all episode scenes: The White Dimension Library."
+    },
+    "academy_courtyard": {
+      "canonical_name": "Imperial Arcane Academy Courtyard",
+      "container": null,
+      "visual_form": "Expansive grand entrance courtyard of the Imperial Arcane Academy paved with reflective pale silver granite and polished white marble, multi-tiered gothic colonnades, crystal mana fountains emitting azure luminescence, colossal arched portals, hovering cyan magic circles above spires.",
+      "notes": "Locked across all episode scenes: Imperial Arcane Academy Courtyard."
+    },
+    "academy_resonance_hall": {
+      "canonical_name": "Academy Resonance Testing Hall",
+      "container": null,
+      "visual_form": "Monumental gothic testing chamber built from pale silver granite and luminous mana sconces, high-vaulted ribbed ceilings, polished dark-blue slate floors inlaid with concentric silver calculation rings, towering stained-glass arched windows overlooking soaring sapphire cathedral spires.",
+      "notes": "Locked across all episode scenes: Academy Resonance Testing Hall."
+    },
+    "academy_private_dormitory": {
+      "canonical_name": "Academy Private Dormitory Chamber",
+      "container": null,
+      "visual_form": "Quiet private stone student dormitory study chamber within the Imperial Arcane Academy. Pale grey ashlar stone walls, polished dark oak study desk with stacked antique grimoires and unlit brass lantern along East wall, simple wooden bed frame with dark-blue wool blanket in North-West corner, dark polished timber floorboards, tall gothic lancet stone window on South wall overlooking nocturnal academy cathedral spires beneath cool moonlight.",
+      "notes": "Locked across all episode scenes: Academy Private Dormitory Chamber."
+    },
+    "grand_ranking_stele": {
+      "canonical_name": "Grand Ranking Stele",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "montrey_appraisal_hall": {
+      "canonical_name": "Montrey Appraisal Hall",
+      "container": null,
+      "visual_form": "Grand gothic ancestral appraisal hall built from pale silver granite, high-vaulted ribbed ceilings, polished dark-blue and white marble floor inlaid with silver wind-lightning circle crests, glowing blue mana sconces along fluted stone pillars, stepped silver-granite appraisal dais at center, towering gothic stained-glass arched windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Appraisal Hall."
+    },
+    "montrey_patriarch_study": {
+      "canonical_name": "Montrey Patriarch Study",
+      "container": null,
+      "visual_form": "High-vaulted dark cedar and pale silver-granite walls hung with sapphire-blue velvet banners embroidered with silver coiled dragon crests, massive polished dark mahogany council desk at center-left with glowing blue crystal lamp sconces, tall carved mahogany bookshelves lined with antique leather-bound grimoires, tall arched gothic windows overlooking soaring pale silver cathedral spires and hovering cyan mana circles.",
+      "notes": "Locked across all episode scenes: Montrey Patriarch Study."
+    },
+    "ancestral_resonance_mirror": {
+      "canonical_name": "Ancestral Resonance Mirror",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "academy_labyrinth_dossier": {
+      "canonical_name": "Academy Labyrinth Dossier",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_002",
+      "to_scene": "IMG_012",
+      "holder_id": "",
+      "prop_token": "@{Academy Labyrinth Dossier}"
+    },
+    {
+      "from_scene": "IMG_014",
+      "to_scene": "IMG_036",
+      "holder_id": "",
+      "prop_token": "@{Ancestral Resonance Mirror}"
+    },
+    {
+      "from_scene": "IMG_015",
+      "to_scene": "IMG_036",
+      "holder_id": "patriarch_valerius_montrey",
+      "prop_token": "@{Academy Labyrinth Dossier}"
+    },
+    {
+      "from_scene": "IMG_038",
+      "to_scene": "IMG_048",
+      "holder_id": "",
+      "prop_token": "@{Academy Labyrinth Dossier}"
+    },
+    {
+      "from_scene": "IMG_050",
+      "to_scene": "IMG_060",
+      "holder_id": "",
+      "prop_token": "@{Ancestral Resonance Mirror}"
+    },
+    {
+      "from_scene": "IMG_062",
+      "to_scene": "IMG_084",
+      "holder_id": "",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_086",
+      "to_scene": "IMG_096",
+      "holder_id": "",
+      "prop_token": "@{Ancestral Resonance Mirror}"
+    },
+    {
+      "from_scene": "IMG_086",
+      "to_scene": "IMG_096",
+      "holder_id": "",
+      "prop_token": "@{Montrey Crest Amulet}"
+    },
+    {
+      "from_scene": "IMG_098",
+      "to_scene": "IMG_110",
+      "holder_id": "",
+      "prop_token": "@{Grand Ranking Stele}"
+    },
+    {
+      "from_scene": "IMG_099",
+      "to_scene": "IMG_110",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_112",
+      "to_scene": "IMG_128",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_130",
+      "to_scene": "IMG_136",
+      "holder_id": "",
+      "prop_token": "@{Grand Ranking Stele}"
+    },
+    {
+      "from_scene": "IMG_131",
+      "to_scene": "IMG_136",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_170",
+      "to_scene": "IMG_176",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_178",
+      "to_scene": "IMG_184",
+      "holder_id": "",
+      "prop_token": "@{Grand Ranking Stele}"
+    },
+    {
+      "from_scene": "IMG_179",
+      "to_scene": "IMG_184",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    },
+    {
+      "from_scene": "IMG_186",
+      "to_scene": "IMG_192",
+      "holder_id": "michael_montrey_academy",
+      "prop_token": "@{Carved Blackwood Staff}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

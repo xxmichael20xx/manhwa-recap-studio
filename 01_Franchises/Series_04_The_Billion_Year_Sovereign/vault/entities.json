@@ -84,7 +84,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "wang_bao": {
@@ -136,7 +137,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "gu_tianyu": {
@@ -217,7 +219,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "han_feng": {
@@ -235,7 +238,7 @@
     "dna": "42-year-old weathered military commander, short grizzled dark hair, tired stern eyes with heavy dark circles, sharp tactical scar on left cheek",
     "default_outfit": "tactical_uniform",
     "outfits": {
-      "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots"
+      "tactical_uniform": "dark olive-drab tactical trench coat with brass state insignia, armored combat vest, combat boots, dark olive-drab fingerless tactical gloves"
     },
     "default_state": {
       "posture": "standing_stern"
@@ -246,13 +249,13 @@
           "phrase": "standing with stern military posture holding a glowing tactical talisman"
         },
         "standing_command": {
-          "phrase": "standing with stern military posture and gauntleted hand raised",
+          "phrase": "standing upright with composed military posture, arms relaxed at sides",
           "contradicts": [
             "glowing tactical talisman"
           ]
         },
         "scanning_device": {
-          "phrase": "holding handheld sensor instrument steady while squinting at dial",
+          "phrase": "standing steady with focused downward gaze while inspecting readings",
           "contradicts": [
             "glowing tactical talisman"
           ]
@@ -281,7 +284,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "ye_xingchen": {
@@ -324,7 +328,8 @@
       "EP04",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "asura_blood_sovereign": {
@@ -648,7 +653,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "heavenly_dao_simulator_hud": {
@@ -680,7 +686,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "heaven_earth_golden_stele": {
@@ -694,7 +701,7 @@
     ],
     "status": "approved",
     "age_class": "non_living",
-    "dna": "monumental thirty-thousand-metre colossal obsidian-and-gold rectangular primordial stone stele floating in high atmosphere, etched with glowing divine golden calligraphy and constellation star-charts, iridescent violet and golden celestial starlight halos",
+    "dna": "monumental thirty-thousand-metre tapered black-obsidian square obelisk column, ornate gothic-arch gold filigree corners and crown, upper circular golden celestial compass ring, middle grid of small glowing golden abstract sigil glyphs, pointed glowing gold crystal base, encircled by double swirling violet-and-gold starlight nebula rings",
     "lifecycle": [
       "active"
     ],
@@ -704,7 +711,8 @@
       "EP01",
       "EP02",
       "EP03",
-      "EP04"
+      "EP04",
+      "EP10"
     ]
   },
   "celestial_star_astrolabe": {
@@ -733,7 +741,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "forged_primordial_token": {
@@ -875,7 +884,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ],
     "name": "Dormitory Room 402"
   },
@@ -897,7 +907,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "celestial_auction_hall": {
@@ -1028,7 +1039,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ],
     "name": "North Campus Perimeter Gate Cordon"
   },
@@ -1052,7 +1064,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ],
     "name": "High Troposphere Stele Horizon"
   },
@@ -1073,7 +1086,8 @@
       "EP04",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "qindu_collegiate_stadium": {
@@ -1123,7 +1137,8 @@
     "plate": "15_Dean_Qindu_University.jpg",
     "episodes": [
       "EP03",
-      "EP04"
+      "EP04",
+      "EP10"
     ]
   },
   "nether_behemoth": {
@@ -1278,7 +1293,8 @@
       "EP06",
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "marshal_lei_gang": {
@@ -1319,7 +1335,8 @@
     "episodes": [
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "grandmaster_shen": {
@@ -1341,7 +1358,7 @@
       "martial_duster": "tailored midnight-navy martial duster coat with delicate gold trim lapels over black turtleneck, black tactical cargo trousers, dark laced combat boots"
     },
     "default_state": {
-      "posture": "martial_aura_stance"
+      "posture": "standing_calm"
     },
     "state_lexicon": {
       "posture": {
@@ -1353,6 +1370,9 @@
         },
         "reeling_shocked": {
           "phrase": "staggering backward across cracked asphalt clutching bruised ribs in awe"
+        },
+        "standing_calm": {
+          "phrase": "standing upright in composed dignified stillness with arms relaxed at sides, zero aura"
         }
       }
     },
@@ -1360,7 +1380,8 @@
     "episodes": [
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "aegis_hover_tank": {
@@ -1410,7 +1431,8 @@
     "plate": "43_Prop_Bureau_Recon_Drone.jpg",
     "episodes": [
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "convenience_grocery_bag": {
@@ -1455,7 +1477,8 @@
     "episodes": [
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "bureau_command_room": {
@@ -1475,7 +1498,8 @@
     "episodes": [
       "EP07",
       "EP08",
-      "EP09"
+      "EP09",
+      "EP10"
     ]
   },
   "street_convenience_store": {
@@ -1494,6 +1518,244 @@
     "plate": "47_Location_Convenience_Store.jpg",
     "episodes": [
       "EP09"
+    ]
+  },
+  "split_tactical_spirit_spectrometer": {
+    "id": "split_tactical_spirit_spectrometer",
+    "kind": "item",
+    "placement": "handheld",
+    "token": "@{Split Tactical Spirit Spectrometer}",
+    "aliases": [
+      "Split Tactical Spirit Spectrometer",
+      "Split Spectrometer"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "retro-military olive-drab and brushed-brass rectangular handheld sensor box with heavy black rubber corner bumpers, unlit brushed-brass top sensor nozzle, spiderweb-cracked semicircular analog dial gauge with needle at zero, soot-blackened unlit vertical glass vacuum tube, twin silver toggle switches, two olive knurled rotary knobs, upper-right faceplate split open exposing an internal green printed circuit board with soldered copper wires and a glowing violet six-pointed star-shaped crystal chip inside, zero digital LCD screens, zero antennas",
+    "lifecycle": [
+      "split_open",
+      "destroyed"
+    ],
+    "default_lifecycle": "split_open",
+    "plate": "48_Prop_Split_Tactical_Spirit_Spectrometer.jpg",
+    "episodes": [
+      "EP10"
+    ]
+  },
+  "troposphere_sky_daylight": {
+    "id": "troposphere_sky_daylight",
+    "name": "Troposphere Morning Sky Horizon",
+    "kind": "location",
+    "token": "@{Troposphere Morning Sky Horizon}",
+    "aliases": [
+      "troposphere.stele_daylight",
+      "Troposphere Morning Sky Horizon",
+      "Troposphere Sky Daylight"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "High troposphere morning sky horizon in bright clear daylight, sunlit soft white cumulus clouds drifting far above a distant modern metropolis skyline with zero obelisks, zero steles, and zero floating pillars",
+    "plate": "49_Location_Troposphere_Sky_Daylight.jpg",
+    "episodes": [
+      "EP10"
+    ]
+  },
+  "campus_perimeter_gate_daylight": {
+    "id": "campus_perimeter_gate_daylight",
+    "name": "North Campus Perimeter Gate Daylight",
+    "kind": "location",
+    "token": "@{North Campus Perimeter Gate Daylight}",
+    "aliases": [
+      "campus.perimeter_gate_daylight",
+      "North Campus Perimeter Gate Daylight",
+      "Perimeter Gate Daylight"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "North campus perimeter security cordon of Qindu University in bright morning daylight, reinforced tungsten security barricades, Threat Bureau armored tactical command carriers, modern university brick-and-glass gatehouse under clear sunlit morning sky",
+    "plate": "50_Location_Campus_Perimeter_Gate_Daylight.jpg",
+    "episodes": [
+      "EP10"
+    ]
+  },
+  "starfall_penthouse_daylight": {
+    "id": "starfall_penthouse_daylight",
+    "name": "Starfall Penthouse Suite Daylight",
+    "kind": "location",
+    "token": "@{Starfall Penthouse Suite Daylight}",
+    "aliases": [
+      "starfall.penthouse_daylight",
+      "Starfall Penthouse Suite Daylight",
+      "Starfall Penthouse Daylight"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Panoramic penthouse executive suite atop Starfall Tower in bright morning daylight, polished dark obsidian marble floors, floor-to-ceiling panoramic glass overlooking sunlit Jiangnan metropolis skyline, sleek executive furnishings and blank holographic radar terminals",
+    "plate": "51_Location_Starfall_Penthouse_Daylight.jpg",
+    "episodes": [
+      "EP10"
+    ]
+  },
+  "jiangnan_transit_plaza_daylight": {
+    "id": "jiangnan_transit_plaza_daylight",
+    "name": "Jiangnan Transit Plaza Morning",
+    "kind": "location",
+    "token": "@{Jiangnan Transit Plaza Morning}",
+    "aliases": [
+      "jiangnan.transit_plaza_daylight",
+      "Jiangnan Transit Plaza Morning",
+      "Transit Plaza Daylight"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "Wide modern 2025 Jiangnan Central Transit Plaza intersection in bright morning daylight, clean multi-lane asphalt highway beneath curving elevated steel overpasses and glass pedestrian skybridge framed by contemporary flat-topped glass skyscrapers under clear sunlit sky",
+    "plate": "52_Location_Jiangnan_Transit_Plaza_Daylight.jpg",
+    "episodes": [
+      "EP10"
+    ]
+  },
+  "starfall_telemetry_relay_core": {
+    "id": "starfall_telemetry_relay_core",
+    "name": "Starfall Telemetry Relay Core",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Starfall Telemetry Relay Core}",
+    "aliases": [
+      "Starfall Telemetry Relay Core",
+      "telemetry relay",
+      "relay core",
+      "Starfall relay plinth"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs",
+    "dna_prompt_anchor": "@{Starfall Telemetry Relay Core}, tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+    "visual_dna": "tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs",
+    "lifecycle": [
+      "active",
+      "hijacked",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "53_Prop_Starfall_Telemetry_Relay_Core.jpg",
+    "episodes": [
+      "EP11"
+    ]
+  },
+  "starfall_constellation_gunship": {
+    "id": "starfall_constellation_gunship",
+    "name": "Starfall Constellation Gunship",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Starfall Constellation Gunship}",
+    "aliases": [
+      "Starfall Constellation Gunship",
+      "constellation gunship",
+      "Starfall gunship",
+      "war-cruiser"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor",
+    "dna_prompt_anchor": "@{Starfall Constellation Gunship}, sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+    "visual_dna": "sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor",
+    "lifecycle": [
+      "active",
+      "damaged",
+      "destroyed"
+    ],
+    "default_lifecycle": "active",
+    "plate": "54_Vehicle_Starfall_Constellation_Gunship.jpg",
+    "episodes": [
+      "EP12"
+    ]
+  },
+  "celestial_constellation_siege_pylon": {
+    "id": "celestial_constellation_siege_pylon",
+    "name": "Celestial Constellation Siege Pylon",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Celestial Constellation Siege Pylon}",
+    "aliases": [
+      "Celestial Constellation Siege Pylon",
+      "siege pylon",
+      "constellation pylon",
+      "constellation obelisk"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets",
+    "dna_prompt_anchor": "@{Celestial Constellation Siege Pylon}, split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+    "visual_dna": "split double-tapered hexagonal matte obsidian-black war-obelisk etched with glowing purple geometric constellation charts, levitating around a central exposed faceted violet starlight core crystal crackling with bright white-purple lightning arcs, encircled diagonally by a brushed-gold and violet enameled orbital star-ring studded with four-pointed gold stars and flanked by curved brushed-gold compass brackets",
+    "lifecycle": [
+      "active",
+      "cracked",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "55_Prop_Celestial_Constellation_Siege_Pylon.jpg",
+    "episodes": [
+      "EP13"
+    ]
+  },
+  "shattered_constellation_crown": {
+    "id": "shattered_constellation_crown",
+    "name": "Shattered Constellation Crown",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Shattered Constellation Crown}",
+    "aliases": [
+      "Shattered Constellation Crown",
+      "constellation crown",
+      "imperial crown",
+      "coalition diadem"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines",
+    "dna_prompt_anchor": "@{Shattered Constellation Crown}, angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+    "visual_dna": "angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines",
+    "lifecycle": [
+      "active",
+      "cracked",
+      "shattered"
+    ],
+    "default_lifecycle": "active",
+    "plate": "56_Prop_Shattered_Constellation_Crown.jpg",
+    "episodes": [
+      "EP14"
+    ]
+  },
+  "primordial_sovereign_decree_seal": {
+    "id": "primordial_sovereign_decree_seal",
+    "name": "Primordial Sovereign Decree Seal",
+    "kind": "item",
+    "isAnimate": false,
+    "placement": "stationary",
+    "token": "@{Primordial Sovereign Decree Seal}",
+    "aliases": [
+      "Primordial Sovereign Decree Seal",
+      "sovereign decree seal",
+      "coronation seal",
+      "golden decree seal"
+    ],
+    "status": "approved",
+    "age_class": "non_living",
+    "dna": "octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings",
+    "dna_prompt_anchor": "@{Primordial Sovereign Decree Seal}, octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings, modern 2025 urban cultivation manhwa art style, sharp ink linework, vertical 9:16",
+    "visual_dna": "octagonal matte black-obsidian and brushed-gold imperial decree seal bordered by sculpted brushed-gold dragons coiled around eight edges and gold trigram bars along dark bevels, centered on a dark obsidian glass mirror enclosing a radiant faceted eight-pointed golden starlight core crystal with golden motes inside three concentric pale-gold geometric compass halo rings",
+    "lifecycle": [
+      "active",
+      "radiant"
+    ],
+    "default_lifecycle": "active",
+    "plate": "57_Prop_Primordial_Sovereign_Decree_Seal.jpg",
+    "episodes": [
+      "EP15"
     ]
   }
 }

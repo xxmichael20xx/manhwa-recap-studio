@@ -349,17 +349,18 @@ export class MotionEngine {
         const canWrite = ffmpeg.stdin.write(frameData)
         if (!canWrite && !ffmpeg.stdin.destroyed) {
           await new Promise((resolve) => {
-            const timer = setTimeout(resolve, 1500)
-            const onDrain = () => { clearTimeout(timer); cleanup(); resolve() }
-            const onClose = () => { clearTimeout(timer); cleanup(); resolve() }
-            const cleanup = () => {
-              ffmpeg.stdin.removeListener('drain', onDrain)
-              ffmpeg.removeListener('close', onClose)
-              ffmpeg.removeListener('error', onClose)
+            let timer = null
+            const finish = () => {
+              if (timer) clearTimeout(timer)
+              ffmpeg.stdin.removeListener('drain', finish)
+              ffmpeg.removeListener('close', finish)
+              ffmpeg.removeListener('error', finish)
+              resolve()
             }
-            ffmpeg.stdin.once('drain', onDrain)
-            ffmpeg.once('close', onClose)
-            ffmpeg.once('error', onClose)
+            timer = setTimeout(finish, 1500)
+            ffmpeg.stdin.once('drain', finish)
+            ffmpeg.once('close', finish)
+            ffmpeg.once('error', finish)
           })
         }
       }

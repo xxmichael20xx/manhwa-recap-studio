@@ -1,0 +1,287 @@
+{
+  "episodeId": "EP14_The_Shattered_Constellation_and_The_Oligarch_Reckoning",
+  "franchiseId": "Series_04_The_Billion_Year_Sovereign",
+  "generatedAt": "2026-11-19T12:13:23.268Z",
+  "timeline": {
+    "enforced": true,
+    "default_lighting": "bright_morning_sunlight",
+    "timeline_shifts": []
+  },
+  "wardrobe_locks": {
+    "lu_chen": "clean signature standard attire",
+    "ye_xingchen": "clean signature standard attire",
+    "marshal_lei_gang": "clean signature standard attire",
+    "han_feng": "clean signature standard attire",
+    "jiang_qingxue": "clean signature standard attire",
+    "grandmaster_shen": "clean signature standard attire"
+  },
+  "held_props": {
+    "heavenly_dao_simulator_hud": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "Translucent dark obsidian-glass holographic cultivation system window floating freely in mid-air with glowing celestial gold concentric compass rings, golden lattice borders, starlight nebula particles, microscopic golden geometric runes.",
+      "notes": "Locked across all episode scenes: Heavenly Dao Simulator Interface."
+    },
+    "heaven_earth_golden_stele": {
+      "canonical_name": "Heaven-Earth Golden Stele",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "bureau_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "Straight dark gunmetal-silver steel double-edged tactical longsword, matte black ribbed grip, silver pommel, angular brass-collar guard, charcoal scabbard",
+      "notes": "Locked across all episode scenes: Bureau Tactical Alloy Longsword."
+    },
+    "aegis_hover_tank": {
+      "canonical_name": "Aegis Tactical Hover-Tank",
+      "container": null,
+      "visual_form": "Unmanned futuristic Defense Council matte dark-titanium anti-gravity hover-tank armed with twin cyan electromagnetic railguns.",
+      "notes": "Locked across all episode scenes: Aegis Tactical Hover-Tank."
+    },
+    "bureau_recon_drone": {
+      "canonical_name": "Bureau Recon Drone",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "starfall_telemetry_relay_core": {
+      "canonical_name": "Starfall Telemetry Relay Core",
+      "container": null,
+      "visual_form": "tall octagonal matte obsidian-black titanium telemetry monolith plinth with recessed panel bevels and brushed brass base conduits, crowned by circular spoked brass mount and three concentric brushed-gold gimbal rings suspending a faceted glowing violet starlight crystal prism inside pale-cyan concentric holographic geometric radar circuit arcs",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "starfall_constellation_gunship": {
+      "canonical_name": "Starfall Constellation Gunship",
+      "container": null,
+      "visual_form": "sleek unmanned matte obsidian-black stealth anti-gravity syndicate war-cruiser with twin brushed-gold forward prow prongs, swept-forward diamond wings trimmed in brushed gold, dark opaque tinted canopy slit, dorsal twin paired rail-cannon turrets, glowing purple rectangular under-hull plasma vents, and luminous violet constellation circuit lines etched across dark hull armor",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "shattered_constellation_crown": {
+      "canonical_name": "Shattered Constellation Crown",
+      "container": null,
+      "visual_form": "angular matte obsidian-black and brushed-gold spiked imperial circlet crown inlaid with faceted deep-violet starlight gems, cleaved diagonally by a glowing white-violet lightning fracture seam trailing floating dark-gold shards, purple dust motes, and faint geometric constellation lines",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "aegis_tactical_hover_tank": {
+      "canonical_name": "Aegis Tactical Hover-Tank",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "bureau_tactical_alloy_longsword": {
+      "canonical_name": "Bureau Tactical Alloy Longsword",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    },
+    "heavenly_dao_simulator_interface": {
+      "canonical_name": "Heavenly Dao Simulator Interface",
+      "container": null,
+      "visual_form": "canonical prop artifact",
+      "notes": "Locked across all episode scenes. Do not substitute with vials or bottles unless explicitly scripted."
+    }
+  },
+  "prop_continuity_windows": [
+    {
+      "from_scene": "IMG_007",
+      "to_scene": "IMG_014",
+      "holder_id": "",
+      "prop_token": "@{Shattered Constellation Crown}"
+    },
+    {
+      "from_scene": "IMG_025",
+      "to_scene": "IMG_028",
+      "holder_id": "",
+      "prop_token": "@{Shattered Constellation Crown}"
+    },
+    {
+      "from_scene": "IMG_035",
+      "to_scene": "IMG_036",
+      "holder_id": "",
+      "prop_token": "@{Starfall Telemetry Relay Core}"
+    },
+    {
+      "from_scene": "IMG_038",
+      "to_scene": "IMG_040",
+      "holder_id": "",
+      "prop_token": "@{Starfall Constellation Gunship}"
+    },
+    {
+      "from_scene": "IMG_041",
+      "to_scene": "IMG_042",
+      "holder_id": "",
+      "prop_token": "@{Bureau Recon Drone}"
+    },
+    {
+      "from_scene": "IMG_049",
+      "to_scene": "IMG_053",
+      "holder_id": "han_feng",
+      "prop_token": "@{Bureau Tactical Alloy Longsword}"
+    },
+    {
+      "from_scene": "IMG_054",
+      "to_scene": "IMG_055",
+      "holder_id": "",
+      "prop_token": "@{Aegis Tactical Hover-Tank}"
+    },
+    {
+      "from_scene": "IMG_060",
+      "to_scene": "IMG_062",
+      "holder_id": "",
+      "prop_token": "@{Starfall Constellation Gunship}"
+    },
+    {
+      "from_scene": "IMG_065",
+      "to_scene": "IMG_067",
+      "holder_id": "",
+      "prop_token": "@{Starfall Constellation Gunship}"
+    },
+    {
+      "from_scene": "IMG_097",
+      "to_scene": "IMG_100",
+      "holder_id": "",
+      "prop_token": "@{Shattered Constellation Crown}"
+    },
+    {
+      "from_scene": "IMG_107",
+      "to_scene": "IMG_108",
+      "holder_id": "lu_chen",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    },
+    {
+      "from_scene": "IMG_109",
+      "to_scene": "IMG_113",
+      "holder_id": "lu_chen",
+      "prop_token": "@{Heavenly Dao Simulator Interface}"
+    },
+    {
+      "from_scene": "IMG_115",
+      "to_scene": "IMG_121",
+      "holder_id": "",
+      "prop_token": "@{Shattered Constellation Crown}"
+    },
+    {
+      "from_scene": "IMG_127",
+      "to_scene": "IMG_133",
+      "holder_id": "lu_chen",
+      "prop_token": "@{Shattered Constellation Crown}"
+    },
+    {
+      "from_scene": "IMG_154",
+      "to_scene": "IMG_156",
+      "holder_id": "",
+      "prop_token": "@{Starfall Telemetry Relay Core}"
+    },
+    {
+      "from_scene": "IMG_176",
+      "to_scene": "IMG_177",
+      "holder_id": "",
+      "prop_token": "@{Starfall Telemetry Relay Core}"
+    },
+    {
+      "from_scene": "IMG_188",
+      "to_scene": "IMG_192",
+      "holder_id": "",
+      "prop_token": "@{Heaven-Earth Golden Stele}"
+    }
+  ],
+  "timeline_overrides": {
+    "character_conditions": [],
+    "posture_locks": [],
+    "creature_anatomy": [],
+    "prop_states": [
+      {
+        "entity_id": "bureau_alloy_longsword",
+        "from_scene": 1,
+        "to_scene": 48,
+        "state": "sheathed",
+        "forbid_holding": true,
+        "strip_patterns": [],
+        "dna_append": "sheathed at hip inside scabbard",
+        "layer4_append": "sheathed at hip in scabbard"
+      },
+      {
+        "entity_id": "bureau_alloy_longsword",
+        "from_scene": 56,
+        "to_scene": 192,
+        "state": "sheathed",
+        "forbid_holding": true,
+        "strip_patterns": [],
+        "dna_append": "sheathed at hip inside scabbard",
+        "layer4_append": "sheathed at hip in scabbard"
+      },
+      {
+        "entity_id": "starfall_constellation_gunship",
+        "from_scene": 68,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      },
+      {
+        "entity_id": "shattered_constellation_crown",
+        "from_scene": 132,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      },
+      {
+        "entity_id": "starfall_telemetry_relay_core",
+        "from_scene": 178,
+        "to_scene": 192,
+        "state": "damaged_or_destroyed",
+        "forbid_holding": true,
+        "strip_patterns": [
+          "a large flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "flawless octagonal-cut star-sapphire mana crystal tip that faintly crackles with azure sparks",
+          "faintly crackles with azure sparks",
+          "crackles with azure sparks",
+          "flawless",
+          "intact",
+          "pristine",
+          "radiant"
+        ],
+        "dna_append": "cracked damaged shaft with shattered dark crystal completely devoid of mana, lying broken on the ground, zero sparks, zero glow",
+        "forbidden_terms": [
+          "flawless octagonal-cut",
+          "crackles with azure sparks"
+        ]
+      }
+    ],
+    "zone_surfaces": [],
+    "object_states": []
+  },
+  "zone_invariants": {},
+  "zone_lifecycles": {}
+}

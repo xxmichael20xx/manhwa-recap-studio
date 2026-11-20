@@ -335,11 +335,11 @@ He knew these exact gothic arches—long before the gods betrayed him on the alt
 [IMG_103] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Dean Alistair Vance} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 "Aiden Drake sealed this vault before ascending, leaving the outer key for his true successor."
 
-[IMG_104] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_104] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Julian looked across the tiered stone platform centered between the jagged blue-white ice pillars.
 
-[IMG_105] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-Faint cyan runes pulsed across the stone steps, woven with ancient threads no modern mage could copy.
+[IMG_105] <!-- ZONE: frozen_spire_sanctum | STAGE: establishing | ACTOR: NONE | CAST: []| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+Faint cyan runes pulsed across the empty stone steps, woven with ancient threads no modern mage could copy.
 
 [IMG_106] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Julian's silver eyes narrowed—he was looking straight at his own thousand-year-old mana signature!
@@ -362,10 +362,10 @@ Nodding once, Vance stepped forward and raised both hands toward the tiered ston
 [IMG_112] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Dean Alistair Vance} | CAST: [@{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Warm golden Five-Star rings bloomed around his fingertips, lighting the swirling floor mist in amber and blue.
 
-[IMG_113] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Dean Alistair Vance} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_113] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Dean Alistair Vance} | CAST: [@{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Vance guided golden threads onto the stone platform, locking them into the dormant cyan seal rings.
 
-[IMG_114] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Dean Alistair Vance} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_114] <!-- ZONE: frozen_spire_sanctum | STAGE: establishing | ACTOR: NONE | CAST: []| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Deep inside the stone, heavy mechanical chimes echoed as thousand-year frost locks began to turn!
 
 [IMG_115] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
@@ -561,11 +561,11 @@ Crushed by effortless Six-Star majesty, Dean Vance dropped to one knee on the co
 [IMG_174] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Lyra never spared Vance a glance; her glowing cyan eyes locked onto one person ahead!
 
-[IMG_175] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-Trailing silver frost across the flagstones, Lyra halted directly in front of Julian and his greatsword.
+[IMG_175] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+Trailing silver frost across the flagstones, Lyra walked straight toward Julian on the stepped platform.
 
-[IMG_176] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-One by one, the hovering ice shards dissolved into mist as Lyra gazed at the blade's violet runes!
+[IMG_176] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+As Julian held the greatsword steady beside him, its violet fuller runes pulsed warmly in greeting.
 
 [IMG_177] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Right before a stunned Dean Vance, Lyra sank down and knelt on the cold stone floor before Julian!
@@ -573,10 +573,10 @@ Right before a stunned Dean Vance, Lyra sank down and knelt on the cold stone fl
 [IMG_178] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Kneeling low upon the flagstones, the Six-Star legend bowed her silver head in total reverence!
 
-[IMG_179] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_179] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 "A thousand winters I kept watch beneath these stones, Master Aiden," Lyra whispered from the floor.
 
-[IMG_180] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_180] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 "Your Obsidian Greatsword knew its master's soul—and your youngest disciple kneels at your command once more!"
 
 [IMG_181] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Dean Alistair Vance} | CAST: [@{Dean Alistair Vance}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
@@ -595,22 +595,22 @@ Pale cyan crystals and towering ice pillars bathed the silent subterranean chamb
 Lifting her glowing cyan eyes from the floor, Lyra pressed one hand over her heart.
 
 [IMG_186] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-"The Church of the Radiant Dawn dares call a Continental Inquisition against you?" Lyra's voice turned razor-cold.
+"Give one word, Master, and my eternal winter will bury every cathedral banner beneath glacial ice!"
 
-[IMG_187] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Archmage Lyra} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-"Give one word, and my eternal winter will bury every cathedral banner beneath glacial ice!"
+[IMG_187] <!-- ZONE: academy_assessment_ward_grounds | STAGE: establishing | ACTOR: NONE | CAST: []| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+Leaving Dean Vance below to lock the inner seal, Julian and Lyra climbed out into crisp midnight air.
 
-[IMG_188] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-"Hold your winter for now, Lyra," Julian said, his hand steady on the greatsword as she knelt before him.
+[IMG_188] <!-- ZONE: academy_assessment_ward_grounds | STAGE: entrance | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+Under pale crescent moonlight upon the upper terrace, Julian rested the greatsword at his side as Lyra stood behind him.
 
-[IMG_189] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-"Malakor asked for a Continental Inquisition—and House Vaelgard intends to answer their altars personally."
+[IMG_189] <!-- ZONE: academy_assessment_ward_grounds | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+"Hold your winter for now," Julian said. "Malakor called for a Continental Inquisition—so House Vaelgard will answer their altars first."
 
-[IMG_190] <!-- ZONE: frozen_spire_sanctum | STAGE: interaction | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}, @{Archmage Lyra}, @{Dean Alistair Vance}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
-Behind them on the stone floor, Vance watched the reborn Sword Saint and his kneeling Six-Star disciple in awe.
+[IMG_190] <!-- ZONE: academy_assessment_ward_grounds | STAGE: solo | ACTOR: @{Archmage Lyra} | CAST: [@{Archmage Lyra}]| PROPS: []| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+Bowing slightly in midnight wind, Lyra watched her reborn master gaze out past the academy spires.
 
-[IMG_191] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_191] <!-- ZONE: academy_assessment_ward_grounds | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 Violet runes blazed high along the Obsidian Greatsword as ancient power answered Julian's resolve.
 
-[IMG_192] <!-- ZONE: frozen_spire_sanctum | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
+[IMG_192] <!-- ZONE: academy_assessment_ward_grounds | STAGE: solo | ACTOR: @{Julian Vaelgard (Academy Uniform)} | CAST: [@{Julian Vaelgard (Academy Uniform)}]| PROPS: [@{Obsidian Greatsword}]| TECH_STAGE: ep07_stage1| PLAN_TALK: false -->
 With his blade reclaimed and the Frozen Star pledged, Julian turned toward the coming war—ready to sever heaven itself!

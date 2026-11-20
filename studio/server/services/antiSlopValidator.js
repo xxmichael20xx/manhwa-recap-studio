@@ -1146,8 +1146,14 @@ export class AntiSlopValidator {
           const equippedInJson = sceneJsonObj?.items?.some(
             it => it.id === entId && (it.lifecycle === 'equipped' || it.lifecycle === 'sheathed' || it.holder)
           )
+          const tokenLower = ent.token.toLowerCase()
+          const strippedOtherTokens = promptLower.replace(/@\{[^}]+\}/g, m => (m === tokenLower ? m : ''))
+          const escName = cleanName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const mentionedInPrompt =
+            promptLower.includes(tokenLower) ||
+            new RegExp(`\\b${escName}\\b`, 'i').test(strippedOtherTokens)
           const heldInPrompt =
-            promptLower.includes(cleanName) &&
+            mentionedInPrompt &&
             /\b(?:holding|wielding|brandishing|gripping|unsheathing|in\s+(?:his|her|their)\s+hand)\b/i.test(scene.prompt)
 
           if (equippedInJson || heldInPrompt) {
@@ -2741,6 +2747,32 @@ export class AntiSlopValidator {
       g43Fails,
       `100% textless UI/apparel prompt hygiene and continuous handheld prop parity.`,
       `ALL-CAPS/text-bearing apparel trigger, missing prop ref, prop flicker, or container leak detected`
+    )
+
+    // G44: Character Posture & Empty Hand/Prop Integrity Parity
+    const g44Fails = []
+    const HOLDING_VERB_REGEX = /\b(?:holding|gripping|wielding|grasping|clutching)\s+(?:@\{[^}]+\}|(?:a\s+|an\s+|the\s+)?(?:handheld\s+)?[a-z-]*\s*(?:sensor|scanner|spectrometer|device|instrument|sword|blade|weapon|vial|astrolabe|phone|smartphone|walkie|tablet|box|talisman))\b/i
+
+    for (const scene of matrixScenes) {
+      const header = scriptStagingHeaders.get(scene.id)
+      const sceneProps = header?.props || []
+      const itemRefs = scene.itemRefs || []
+      const pLower = (scene.prompt || '').toLowerCase()
+
+      if (sceneProps.length === 0 && itemRefs.length === 0) {
+        if (HOLDING_VERB_REGEX.test(pLower)) {
+          g44Fails.push(`${scene.id} (Posture leak: holding physical prop/device while scene header declares PROPS: [])`)
+          continue
+        }
+      }
+    }
+
+    recordGate(
+      'G44_posture_prop_parity',
+      'G44: Character Posture & Handheld Prop Continuity Parity',
+      g44Fails,
+      `100% parity between character postures, empty hands, and declared staging props.`,
+      `Posture leak, phantom handheld device, or empty hands contradiction detected`
     )
 
     // D-01: Cryptographic Dispatch Manifest Verification

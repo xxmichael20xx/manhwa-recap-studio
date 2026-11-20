@@ -70,7 +70,9 @@ if (doHealHeaders) scriptArgs.unshift('--heal-headers')
 steps.push(runStep('2. Episodic Script & Sticky Prop Audit', 'audit-script.js', scriptArgs))
 
 // Step 3: World State Scaffolder
-steps.push(runStep('3. World State & Prop Continuity Windows', 'init-world-state.js', ['--json']))
+const worldStateArgs = ['--json']
+if (doCompile) worldStateArgs.unshift('--force')
+steps.push(runStep('3. World State & Prop Continuity Windows', 'init-world-state.js', worldStateArgs))
 
 // Step 4: Optional Matrix Compilation
 if (doCompile) {

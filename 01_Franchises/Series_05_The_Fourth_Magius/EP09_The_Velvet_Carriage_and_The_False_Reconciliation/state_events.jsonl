@@ -1,0 +1,34 @@
+{"s":0,"e":"michael_montrey_academy","set":{"location":"academy_courtyard","outfit":"default","posture":"calm_confident","held_weapon":"carved_blackwood_staff"},"reason":"Michael enters the sunlit academy courtyard carrying his Carved Blackwood Staff"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael holds his Carved Blackwood Staff continuously"}
+{"s":0,"e":"elena_ashvale","set":{"location":"academy_courtyard","outfit":"default","posture":"earnest_focused"},"reason":"Elena stands beside Michael in the academy courtyard"}
+{"s":0,"e":"doran_keller","set":{"location":"academy_courtyard","outfit":"default","posture":"protective_frontline"},"reason":"Doran accompanies Michael in the academy courtyard"}
+{"s":0,"e":"proctor_alistair","set":{"location":"academy_courtyard","outfit":"default","posture":"authoritative_proctor"},"reason":"Proctor Alistair awaits the Montrey envoy by the courtyard gates"}
+{"s":0,"e":"lord_cedric_vance","set":{"location":"academy_courtyard","outfit":"default","posture":"bitter_humiliated"},"reason":"Cedric watches the plaza in resentful silence"}
+{"s":0,"e":"grand_ranking_stele","set":{"lifecycle":"environmental"},"reason":"Grand Ranking Stele gleams in the center of the academy courtyard"}
+{"s":0,"e":"patriarch_valerius_montrey","set":{"location":"academy_courtyard","outfit":"default","posture":"aristocratic_scheming"},"reason":"Patriarch Valerius arrives at the academy gates in his gilded carriage"}
+{"s":0,"e":"elder_cassius_montrey","set":{"location":"academy_courtyard","outfit":"default","posture":"deferential_calculating"},"reason":"Head Elder Cassius accompanies Patriarch Valerius to the academy"}
+{"s":0,"e":"montrey_velvet_carriage","set":{"lifecycle":"environmental"},"reason":"Montrey Gilded Velvet Carriage halts on the silver-granite plaza"}
+{"s":0,"e":"platinum_crown_chest","set":{"lifecycle":"environmental"},"reason":"Platinum Crown Chest is carried forward from the carriage"}
+{"s":0,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"environmental"},"reason":"Imperial Reinstatement Scroll rests sealed in Valerius's possession"}
+{"s":0,"e":"montrey_crest_amulet","set":{"lifecycle":"environmental"},"reason":"Montrey Crest Amulet remains secured for the Montrey estate banquet"}
+{"s":11,"e":"patriarch_valerius_montrey","set":{"posture":"theatrical_patronizing"},"reason":"Valerius steps out of the velvet carriage with calculated aristocratic poise"}
+{"s":15,"e":"platinum_crown_chest","set":{"lifecycle":"active"},"reason":"Platinum Crown Chest rests open on the courtyard flagstones brimming with platinum coins"}
+{"s":20,"e":"lord_cedric_vance","set":{"posture":"stunned_disbelief"},"reason":"Cedric realizes in shock that Patriarch Valerius arrived for Michael"}
+{"s":49,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"equipped"},"reason":"Valerius presents the sealed Imperial Reinstatement Scroll in public"}
+{"s":85,"e":"michael_montrey_academy","set":{"posture":"composed_tactical"},"reason":"Michael boards the Montrey Gilded Velvet Carriage to dismantle House Montrey on their own ground"}
+{"s":89,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"environmental"},"reason":"Imperial Reinstatement Scroll is stowed during the carriage ride to the Montrey estate"}
+{"s":93,"e":"patriarch_valerius_montrey","set":{"location":"montrey_banquet_hall","posture":"false_warmth"},"reason":"Valerius welcomes Michael into the Montrey Banquet Hall"}
+{"s":93,"e":"elder_cassius_montrey","set":{"location":"montrey_banquet_hall","posture":"observant_sycophant"},"reason":"Cassius stands beside the mahogany banquet table"}
+{"s":93,"e":"michael_montrey_academy","set":{"location":"montrey_banquet_hall","posture":"sovereign_vigilance","held_weapon":"carved_blackwood_staff"},"reason":"Michael enters the Montrey Banquet Hall holding his Carved Blackwood Staff"}
+{"s":117,"e":"montrey_crest_amulet","set":{"lifecycle":"equipped"},"reason":"Valerius unveils the platinum Montrey Crest Amulet upon the banquet table"}
+{"s":122,"e":"imperial_reinstatement_scroll","set":{"lifecycle":"equipped"},"reason":"Valerius presents the Imperial Reinstatement Scroll alongside the crest amulet"}
+{"s":146,"e":"michael_montrey_academy","set":{"posture":"unyielding_contempt"},"reason":"Michael refuses to kneel and exposes Valerius's thirteen-year hypocrisy"}
+{"s":155,"e":"michael_montrey_academy","set":{"posture":"tier7_pressure"},"reason":"Azure lightning pulses around Michael's boots in the banquet hall"}
+{"s":155,"e":"elder_cassius_montrey","set":{"posture":"shaken_retreating"},"reason":"Cassius recoils a step from Michael's sudden Tier 7 aura"}
+{"s":161,"e":"michael_montrey_academy","set":{"posture":"calculating_claim"},"reason":"Michael takes the Montrey Crest Amulet and Imperial Reinstatement Scroll into his left hand"}
+{"s":173,"e":"patriarch_valerius_montrey","set":{"location":"montrey_appraisal_hall","posture":"imperious_commanding"},"reason":"Valerius leads the way onto the stepped dais of the Montrey Appraisal Hall"}
+{"s":173,"e":"elder_cassius_montrey","set":{"location":"montrey_appraisal_hall","posture":"smug_anticipation"},"reason":"Cassius stands below the appraisal dais awaiting the oath"}
+{"s":173,"e":"michael_montrey_academy","set":{"location":"montrey_appraisal_hall","posture":"sovereign_ascendant","held_weapon":"carved_blackwood_staff"},"reason":"Michael steps into the Montrey Appraisal Hall holding his staff, the scroll, and the crest amulet"}
+{"s":187,"e":"michael_montrey_academy","set":{"posture":"azure_lightning_climax"},"reason":"Tier 7 azure lightning erupts across Michael's fingers around the Montrey Crest Amulet and Imperial Reinstatement Scroll"}
+{"s":188,"e":"patriarch_valerius_montrey","set":{"posture":"alarmed_recoil"},"reason":"Valerius recoils in shock before Michael's overwhelming Tier 7 Grand Archmage pressure"}
+{"s":188,"e":"elder_cassius_montrey","set":{"posture":"dread_stricken"},"reason":"Cassius trembles in dread as azure lightning illuminates the appraisal hall"}

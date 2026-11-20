@@ -1,0 +1,60 @@
+{"s":0,"e":"lu_chen","set":{"outfit":"hoodie_charcoal","eyes":"starlight_flecks","aura":"primordial_starlight","posture":"standing_calm"},"reason":"EP11 seed: Lu Chen unsealed from EP10 finale, Dampening and Cloak permanently OFF"}
+{"s":0,"e":"ye_xingchen","set":{"outfit":"charcoal_bespoke_suit","posture":"standing_poised"},"reason":"EP11 seed: Ye Xingchen in Starfall Penthouse"}
+{"s":0,"e":"han_feng","set":{"outfit":"tactical_uniform","posture":"standing_command"},"reason":"EP11 seed: Commander Han Feng unarmed in composed military posture"}
+{"s":0,"e":"jiang_qingxue","set":{"outfit":"white_trench","posture":"standing_aloof"},"reason":"EP11 seed: Jiang Qingxue in white trench"}
+{"s":0,"e":"grandmaster_shen","set":{"outfit":"martial_duster","posture":"standing_calm"},"reason":"EP11 seed: Grandmaster Shen in martial duster"}
+{"s":0,"e":"marshal_lei_gang","set":{"outfit":"marshal_coat","posture":"standing_command"},"reason":"EP11 seed: Marshal Lei Gang in War Room"}
+{"s":0,"e":"starfall_telemetry_relay_core","set":{"lifecycle":"active"},"reason":"Starfall Telemetry Relay Core active in Starfall Penthouse"}
+{"s":0,"e":"heavenly_dao_simulator_hud","set":{"lifecycle":"active"},"reason":"Heavenly Dao Simulator Interface active"}
+{"s":0,"e":"heaven_earth_golden_stele","set":{"lifecycle":"active"},"reason":"Heaven-Earth Golden Stele active in troposphere"}
+{"s":0,"e":"aegis_hover_tank","set":{"lifecycle":"active"},"reason":"Aegis Tactical Hover-Tank columns active"}
+{"s":0,"e":"bureau_recon_drone","set":{"lifecycle":"active"},"reason":"Bureau Recon Drone active on morning patrol"}
+{"s":0,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Bureau Tactical Alloy Longsword sheathed until perimeter probe defense"}
+{"s":0,"e":"tactical_spirit_spectrometer","set":{"lifecycle":"equipped"},"reason":"Hijacked Tactical Spirit Spectrometer ready for diagnostic trace"}
+{"s":3,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen clashes Sovereign aura with Ye Xingchen across Jiangnan Transit Plaza"}
+{"s":8,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen watches Ye Xingchen withdraw skyward"}
+{"s":17,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen activates global Starfall mobilization in penthouse"}
+{"s":21,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang inspects War Room override alerts"}
+{"s":24,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang watches consoles lock red"}
+{"s":27,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen dispatches global syndicate orders"}
+{"s":33,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang traces Starfall root lockouts"}
+{"s":37,"e":"marshal_lei_gang","set":{"posture":"tense_observation"},"reason":"Marshal Lei Gang loses external War Room uplinks"}
+{"s":42,"e":"han_feng","set":{"posture":"reporting_urgent"},"reason":"Commander Han Feng reports perimeter hover-tank lockouts"}
+{"s":44,"e":"jiang_qingxue","set":{"posture":"observing_sky"},"reason":"Jiang Qingxue watches distant patrol drones"}
+{"s":48,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng completes urgent report"}
+{"s":53,"e":"lu_chen","set":{"posture":"walking_relaxed"},"reason":"Lu Chen walks across sunlit transit plaza"}
+{"s":56,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen pauses to hear Han Feng's report"}
+{"s":58,"e":"han_feng","set":{"posture":"combat_guard","held_weapon":"bureau_alloy_longsword"},"reason":"Commander Han Feng draws Bureau Tactical Alloy Longsword during perimeter probe"}
+{"s":58,"e":"bureau_alloy_longsword","set":{"lifecycle":"equipped"},"reason":"Bureau Tactical Alloy Longsword drawn at North Campus Perimeter Gate"}
+{"s":58,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen braces martial aura stance at perimeter"}
+{"s":58,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue channels glacial mist during perimeter probe"}
+{"s":65,"e":"han_feng","set":{"posture":"standing_command","held_weapon":"none"},"reason":"Commander Han Feng sheathes Bureau Tactical Alloy Longsword cleanly"}
+{"s":65,"e":"bureau_alloy_longsword","set":{"lifecycle":"sheathed"},"reason":"Bureau Tactical Alloy Longsword sheathed after probe defense"}
+{"s":65,"e":"grandmaster_shen","set":{"posture":"standing_calm"},"reason":"Grandmaster Shen lowers martial stance after probe defense"}
+{"s":65,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers frost mist after probe defense"}
+{"s":67,"e":"ye_xingchen","set":{"posture":"observing_monitor"},"reason":"Ye Xingchen reviews crust resistance telemetry in penthouse"}
+{"s":75,"e":"han_feng","set":{"posture":"scanning_device"},"reason":"Commander Han Feng holds hijacked Tactical Spirit Spectrometer at plaza"}
+{"s":78,"e":"han_feng","set":{"posture":"standing_command"},"reason":"Commander Han Feng sets Tactical Spirit Spectrometer down on concrete bollard"}
+{"s":84,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang tracks upstream carrier spike in War Room"}
+{"s":91,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen isolates Starfall backdoor frequency via Simulator HUD"}
+{"s":95,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen finishes isolating carrier coordinate"}
+{"s":100,"e":"grandmaster_shen","set":{"posture":"martial_aura_stance"},"reason":"Grandmaster Shen braces defense as hover-tanks converge"}
+{"s":100,"e":"jiang_qingxue","set":{"posture":"lotus_channelling"},"reason":"Jiang Qingxue raises frost barrier along north gate"}
+{"s":102,"e":"grandmaster_shen","set":{"posture":"standing_calm"},"reason":"Grandmaster Shen pauses stance to listen to Han Feng"}
+{"s":102,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers frost mist to listen to Han Feng"}
+{"s":104,"e":"grandmaster_shen","set":{"posture":"standing_calm"},"reason":"Grandmaster Shen holds perimeter watch"}
+{"s":104,"e":"jiang_qingxue","set":{"posture":"standing_aloof"},"reason":"Jiang Qingxue lowers frost mist"}
+{"s":105,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen orders full syndicate convergence"}
+{"s":113,"e":"lu_chen","set":{"posture":"finger_flick_calm"},"reason":"Lu Chen locks root override thread inside Simulator HUD"}
+{"s":117,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen alerts Han Feng and Jiang Qingxue"}
+{"s":121,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"CLIMAX: Lu Chen drives unthrottled Sovereign script upstream"}
+{"s":129,"e":"starfall_telemetry_relay_core","set":{"lifecycle":"hijacked"},"reason":"Starfall Telemetry Relay Core hijacked by golden Sovereign override"}
+{"s":133,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen recoils as Starfall relay flips to Xiao Yao gold"}
+{"s":141,"e":"marshal_lei_gang","set":{"posture":"pointing_hologram"},"reason":"Marshal Lei Gang watches locked consoles turn radiant gold"}
+{"s":153,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen channels 480M-year purple starlight to purge golden override"}
+{"s":159,"e":"ye_xingchen","set":{"posture":"stunned_recoil"},"reason":"Ye Xingchen staggered by upstream feedback shockwave"}
+{"s":161,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen seals permanent upstream takeover across syndicate relays"}
+{"s":166,"e":"lu_chen","set":{"posture":"standing_calm"},"reason":"Lu Chen closes global override sequence"}
+{"s":175,"e":"starfall_telemetry_relay_core","set":{"lifecycle":"shattered"},"reason":"Starfall Telemetry Relay Core cracks and shatters from Sovereign overload"}
+{"s":178,"e":"ye_xingchen","set":{"posture":"standing_poised"},"reason":"Ye Xingchen steps out past Starfall Tower launching the Starfall Exodus"}
+{"s":189,"e":"lu_chen","set":{"posture":"releasing_micro_aura"},"reason":"Lu Chen broadcasts open global challenge across Jiangnan Plaza"}

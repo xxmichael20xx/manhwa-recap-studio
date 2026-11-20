@@ -1,0 +1,44 @@
+{"s":0,"e":"patriarch_valerius_montrey","set":{"location":"montrey_patriarch_study","outfit":"default","posture":"stern_commanding"},"reason":"Patriarch Valerius presides in the ancestral study as the Floor 50 dossier arrives"}
+{"s":0,"e":"elder_cassius_montrey","set":{"location":"montrey_patriarch_study","outfit":"default","posture":"analytical_hunched"},"reason":"Head Elder Cassius presents the sealed Academy Labyrinth Dossier"}
+{"s":0,"e":"academy_labyrinth_dossier","set":{"lifecycle":"equipped"},"reason":"Sealed academy dispatch dossier containing the Floor 50 mana imprint"}
+{"s":0,"e":"ancestral_resonance_mirror","set":{"lifecycle":"environmental"},"reason":"Ancestral Resonance Mirror stands on the stepped appraisal dais"}
+{"s":0,"e":"montrey_crest_amulet","set":{"lifecycle":"environmental"},"reason":"Montrey Crest Amulet rests locked inside the ancestral study vault"}
+{"s":0,"e":"michael_montrey_academy","set":{"location":"academy_courtyard","outfit":"default","posture":"calm_confident","held_weapon":"carved_blackwood_staff"},"reason":"Michael holds his Carved Blackwood Staff after clearing Floor 50"}
+{"s":0,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Michael carries his Carved Blackwood Staff"}
+{"s":0,"e":"proctor_alistair","set":{"location":"academy_courtyard","outfit":"default","posture":"authoritative_proctor"},"reason":"Proctor Alistair oversees the post-tournament courtyard tribunal"}
+{"s":0,"e":"elena_ashvale","set":{"location":"academy_courtyard","outfit":"default","posture":"earnest_focused"},"reason":"Elena stands beside Michael as tournament champion"}
+{"s":0,"e":"doran_keller","set":{"location":"academy_courtyard","outfit":"default","posture":"protective_frontline"},"reason":"Doran guards the victorious commoner squad"}
+{"s":0,"e":"lord_cedric_vance","set":{"location":"academy_courtyard","outfit":"default","posture":"bitter_humiliated"},"reason":"Cedric fumes over his Floor 49 defeat"}
+{"s":0,"e":"grand_ranking_stele","set":{"lifecycle":"environmental"},"reason":"Grand Ranking Stele blazes at the fiftieth tier in the courtyard"}
+{"s":13,"e":"patriarch_valerius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Valerius carries the dossier into the Montrey Appraisal Hall"}
+{"s":13,"e":"elder_cassius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Cassius accompanies Valerius to the Ancestral Resonance Mirror"}
+{"s":25,"e":"ancestral_resonance_mirror","set":{"lifecycle":"active"},"reason":"Mirror erupts with cyan wavelength ripples showing a 100% biological bloodline match"}
+{"s":28,"e":"patriarch_valerius_montrey","set":{"posture":"shocked_revelation"},"reason":"Valerius staggers as the mirror confirms the prodigy is his discarded infant"}
+{"s":28,"e":"elder_cassius_montrey","set":{"posture":"shocked_revelation"},"reason":"Cassius trembles at the 100% ancestral resonance lock"}
+{"s":37,"e":"patriarch_valerius_montrey","set":{"location":"montrey_patriarch_study"},"reason":"Valerius retreats to the Patriarch Study to verify the thirteen-year timeline"}
+{"s":37,"e":"elder_cassius_montrey","set":{"location":"montrey_patriarch_study"},"reason":"Cassius cross-checks the frontier birth and abandonment records"}
+{"s":49,"e":"patriarch_valerius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Valerius returns to the Appraisal Hall to review House Montrey declining heir metrics"}
+{"s":49,"e":"elder_cassius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Cassius audits the failing bloodline resonance readings of current Montrey youths"}
+{"s":61,"e":"patriarch_valerius_montrey","set":{"location":"montrey_patriarch_study","posture":"panicked_calculating"},"reason":"Valerius unlocks the ancestral study vault in panic over impending imperial humiliation"}
+{"s":61,"e":"elder_cassius_montrey","set":{"location":"montrey_patriarch_study","posture":"panicked_calculating"},"reason":"Cassius advises reclaiming Michael under a fabricated tempering trial decree"}
+{"s":62,"e":"montrey_crest_amulet","set":{"lifecycle":"equipped"},"reason":"Valerius retrieves the platinum Montrey Crest Amulet for the reinstatement summons"}
+{"s":85,"e":"patriarch_valerius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Valerius brings the Montrey Crest Amulet into the Appraisal Hall to seal the decree"}
+{"s":85,"e":"elder_cassius_montrey","set":{"location":"montrey_appraisal_hall"},"reason":"Cassius prepares the dawn envoy dispatch before the Ancestral Resonance Mirror"}
+{"s":97,"e":"michael_montrey_academy","set":{"location":"academy_courtyard","held_weapon":"carved_blackwood_staff"},"reason":"Michael crosses the Academy Courtyard beside the glowing Grand Ranking Stele"}
+{"s":111,"e":"michael_montrey_academy","set":{"location":"academy_resonance_hall"},"reason":"Proctor Alistair escorts Michael into the Academy Resonance Testing Hall"}
+{"s":111,"e":"elena_ashvale","set":{"location":"academy_resonance_hall"},"reason":"Elena enters the Academy Resonance Testing Hall with Michael"}
+{"s":111,"e":"doran_keller","set":{"location":"academy_resonance_hall"},"reason":"Doran enters the Academy Resonance Testing Hall with Michael"}
+{"s":111,"e":"proctor_alistair","set":{"location":"academy_resonance_hall"},"reason":"Alistair warns Michael about House Montrey demanding his Floor 50 dossier"}
+{"s":111,"e":"lord_cedric_vance","set":{"location":"academy_resonance_hall"},"reason":"Cedric observes nervously from the resonance hall gallery"}
+{"s":129,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael returns to the Academy Courtyard with Elena and Doran"}
+{"s":129,"e":"elena_ashvale","set":{"location":"academy_courtyard"},"reason":"Elena pledges loyalty to Michael in the Academy Courtyard"}
+{"s":129,"e":"doran_keller","set":{"location":"academy_courtyard"},"reason":"Doran vows to stand by Michael against noble house interference"}
+{"s":137,"e":"michael_montrey_academy","set":{"location":"academy_private_dormitory","held_weapon":"none"},"reason":"Michael enters his private dormitory study chamber and sets aside his staff to meditate"}
+{"s":137,"e":"carved_blackwood_staff","set":{"lifecycle":"environmental"},"reason":"Carved Blackwood Staff rests in the dormitory study while Michael enters astral meditation"}
+{"s":145,"e":"michael_montrey_academy","set":{"location":"white_dimension_library","posture":"trial_endurance"},"reason":"Michael enters the White Dimension Library to undergo the Tier 7 Grand Archmage Resonance Trial"}
+{"s":169,"e":"michael_montrey_academy","set":{"location":"academy_private_dormitory","posture":"sovereign_ascendant"},"reason":"Michael awakens in his dormitory after imprinting Tier 7 tempest and spatial domain arcana"}
+{"s":170,"e":"michael_montrey_academy","set":{"held_weapon":"carved_blackwood_staff"},"reason":"Michael takes up his Carved Blackwood Staff with Tier 7 resonance"}
+{"s":170,"e":"carved_blackwood_staff","set":{"lifecycle":"equipped"},"reason":"Carved Blackwood Staff channels Michael newly ascended Tier 7 mana"}
+{"s":177,"e":"michael_montrey_academy","set":{"location":"academy_courtyard"},"reason":"Michael joins Alistair, Elena, and Doran in the courtyard as House Montrey herald seal arrives"}
+{"s":177,"e":"proctor_alistair","set":{"location":"academy_courtyard"},"reason":"Alistair receives the urgent Montrey envoy notification at the courtyard tribunal"}
+{"s":185,"e":"michael_montrey_academy","set":{"location":"academy_private_dormitory","posture":"window_vantage_resolve"},"reason":"Michael gazes at the distant Montrey spires from his dormitory lancet window"}

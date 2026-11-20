@@ -1,20 +1,20 @@
 {
   "episodeId": "EP07_The_Heresy_Summons_and_The_Frozen_Spire",
   "franchiseId": "Series_07_The_Obsidian_Spellsword",
-  "generatedAt": "2026-11-16T18:20:48.658Z",
+  "generatedAt": "2026-11-17T17:37:16.680Z",
   "timeline": {
     "enforced": true,
     "default_lighting": "bright_morning_sunlight",
     "timeline_shifts": [
       {
         "from_scene": "IMG_001",
-        "to_scene": "IMG_096",
+        "to_scene": "IMG_186",
         "lighting": "bright_morning_sunlight"
       },
       {
-        "from_scene": "IMG_097",
+        "from_scene": "IMG_187",
         "to_scene": "IMG_192",
-        "lighting": "night_celestial"
+        "lighting": "night_floodlit"
       }
     ]
   },
@@ -101,14 +101,8 @@
       "prop_token": "@{Obsidian Greatsword}"
     },
     {
-      "from_scene": "IMG_175",
+      "from_scene": "IMG_176",
       "to_scene": "IMG_177",
-      "holder_id": "julian_vaelgard_academy",
-      "prop_token": "@{Obsidian Greatsword}"
-    },
-    {
-      "from_scene": "IMG_179",
-      "to_scene": "IMG_180",
       "holder_id": "julian_vaelgard_academy",
       "prop_token": "@{Obsidian Greatsword}"
     },
@@ -120,6 +114,18 @@
     },
     {
       "from_scene": "IMG_185",
+      "to_scene": "IMG_186",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_188",
+      "to_scene": "IMG_189",
+      "holder_id": "julian_vaelgard_academy",
+      "prop_token": "@{Obsidian Greatsword}"
+    },
+    {
+      "from_scene": "IMG_191",
       "to_scene": "IMG_192",
       "holder_id": "julian_vaelgard_academy",
       "prop_token": "@{Obsidian Greatsword}"
@@ -131,7 +137,7 @@
       {
         "entity_id": "dean_alistair_vance",
         "from_scene": 172,
-        "to_scene": 192,
+        "to_scene": 186,
         "state": "kneeling",
         "dna_append": "kneeling directly on the ground floor",
         "strip_patterns": [
@@ -146,7 +152,7 @@
       {
         "entity_id": "archmage_lyra",
         "from_scene": 177,
-        "to_scene": 192,
+        "to_scene": 186,
         "state": "kneeling",
         "dna_append": "kneeling directly on the ground floor",
         "strip_patterns": [

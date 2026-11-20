@@ -274,19 +274,40 @@ class ClipWorkerPool {
   }
 }
 
+const CPU_MUX_ENCODER = {
+  name: 'libx264',
+  label: 'CPU libx264 (veryfast stillimage CRF 22)',
+  args: ['-c:v', 'libx264', '-preset', 'veryfast', '-tune', 'stillimage', '-crf', '22', '-pix_fmt', 'yuv420p']
+}
+
 /**
- * Check whether NVENC muxing works on this host (tested at 256x256 minimum NVENC size).
+ * Probe the best quality/compression VBR H.264 mux encoder on this host:
+ * NVIDIA NVENC (VBR CQ 24) -> CPU libx264 (veryfast stillimage CRF 22).
+ * Excludes fixed-bitrate h264_mf (-b:v 8M) from Step 6 so 9:16 and 16:9 masters stay compact.
  */
-const supportsNvenc = async () => {
-  return new Promise((resolve) => {
-    const p = spawn('ffmpeg', [
-      '-y', '-f', 'lavfi', '-i', 'color=c=black:s=256x256:d=0.04',
-      '-c:v', 'h264_nvenc', '-preset', 'p4', '-pix_fmt', 'yuv420p',
-      '-f', 'null', '-'
-    ])
-    p.on('close', code => resolve(code === 0))
-    p.on('error', () => resolve(false))
-  })
+const detectMuxEncoder = async (cpuOnly = false) => {
+  if (cpuOnly) return CPU_MUX_ENCODER
+  const candidates = [
+    {
+      name: 'h264_nvenc',
+      label: 'GPU h264_nvenc (VBR CQ 24)',
+      args: ['-c:v', 'h264_nvenc', '-preset', 'p4', '-rc', 'vbr', '-cq', '24', '-b:v', '0', '-pix_fmt', 'yuv420p']
+    }
+  ]
+
+  for (const cand of candidates) {
+    const ok = await new Promise((resolve) => {
+      const p = spawn('ffmpeg', [
+        '-y', '-f', 'lavfi', '-i', 'color=c=black:s=256x256:d=0.04',
+        ...cand.args,
+        '-f', 'null', '-'
+      ])
+      p.on('close', code => resolve(code === 0))
+      p.on('error', () => resolve(false))
+    })
+    if (ok) return cand
+  }
+  return CPU_MUX_ENCODER
 }
 
 const resolveBeatImagePath = (tag, globalBeatIdx, existingFiles, imagesDir) => {
@@ -375,7 +396,7 @@ const muxBatch = async ({
   imagesDir,
   targetVideoPath,
   opts,
-  useNvencMux
+  muxEncoder
 }) => {
   const cleanTempSrt = path.join(os.tmpdir(), `sub_${franchiseId}_${episodeId}_${batchCode}_${Date.now()}.srt`)
   await fs.copyFile(effectiveSrtPath, cleanTempSrt).catch(() => {})
@@ -450,9 +471,9 @@ const muxBatch = async ({
   if (bgmPath) ffmpegArgs.push('-stream_loop', '-1', '-i', bgmPath.replace(/\\/g, '/'))
   if (watermarkPath) ffmpegArgs.push('-loop', '1', '-i', watermarkPath.replace(/\\/g, '/'))
 
-  const videoEncoderArgs = useNvencMux
-    ? ['-c:v', 'h264_nvenc', '-preset', 'p4', '-rc', 'vbr', '-cq', '19', '-b:v', '0', '-pix_fmt', 'yuv420p']
-    : ['-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '21', '-pix_fmt', 'yuv420p']
+  const videoEncoderArgs = (muxEncoder && Array.isArray(muxEncoder.args))
+    ? muxEncoder.args
+    : CPU_MUX_ENCODER.args
 
   ffmpegArgs.push(
     '-filter_complex', filterParts.join(';'),
@@ -840,17 +861,16 @@ if (isMainThread) {
       throw new Error(`No valid batches matched. Episode has ${totalBatches} batches (${fullBeats.length} cuts).`)
     }
 
-    const nvencAvailable = !opts.cpuMux && await supportsNvenc()
-    const useNvencMux = !opts.cpuMux && nvencAvailable
+    const muxEncoder = await detectMuxEncoder(opts.cpuMux)
 
     console.log('════════════════════════════════════════════════════════════════')
-    console.log('⚡ MANHWA FAST-COMPILE CLI (Worker Threads + NVENC)')
+    console.log('⚡ MANHWA FAST-COMPILE CLI (Worker Threads + Hardware Mux)')
     console.log('════════════════════════════════════════════════════════════════')
     console.log(`Franchise : ${franchiseId}`)
     console.log(`Episode   : ${episodeId}`)
     console.log(`Images    : ${imgFilesOnly.length} files | Timeline Cuts: ${fullBeats.length} (${totalBatches} batches)`)
     console.log(`Audio     : ${totalDuration.toFixed(1)}s | SRT: ${fsSync.existsSync(srtPath) ? 'OK' : 'MISSING'}`)
-    console.log(`Workers   : ${opts.workers} parallel Skia threads | Step-6 Mux: ${useNvencMux ? 'GPU h264_nvenc' : 'CPU libx264'}`)
+    console.log(`Workers   : ${opts.workers} parallel Skia threads | Step-6 Mux: ${muxEncoder.label}`)
     console.log(`Batches   : ${targetBatchIndices.map(b => String(b + 1).padStart(2, '0')).join(', ')}`)
     console.log('════════════════════════════════════════════════════════════════')
 
@@ -953,7 +973,7 @@ if (isMainThread) {
         }
 
         const muxStart = Date.now()
-        console.log(`  [${batchCode}] Muxing + Subtitles + Watermark + BGM (${useNvencMux ? 'h264_nvenc' : 'libx264'})...`)
+        console.log(`  [${batchCode}] Muxing + Subtitles + Watermark + BGM (${muxEncoder.name})...`)
 
         try {
           await muxBatch({
@@ -970,11 +990,11 @@ if (isMainThread) {
             imagesDir,
             targetVideoPath,
             opts,
-            useNvencMux
+            muxEncoder
           })
         } catch (muxErr) {
-          if (useNvencMux) {
-            console.warn(`  [${batchCode}] NVENC mux failed (${muxErr.message.slice(0, 120)}), retrying with libx264...`)
+          if (muxEncoder.name !== 'libx264') {
+            console.warn(`  [${batchCode}] ${muxEncoder.name} mux failed (${muxErr.message.slice(0, 120)}), retrying with libx264...`)
             await muxBatch({
               franchiseId,
               episodeId,
@@ -989,7 +1009,7 @@ if (isMainThread) {
               imagesDir,
               targetVideoPath,
               opts,
-              useNvencMux: false
+              muxEncoder: CPU_MUX_ENCODER
             })
           } else {
             throw muxErr

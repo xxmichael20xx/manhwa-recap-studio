@@ -98,8 +98,14 @@ const c05Fails = []
 const c06Fails = []
 const c07Fails = []
 const c08Fails = []
+const c09Fails = []
+const c10Fails = []
+const c11Fails = []
+const c12Fails = []
 let prevCalmWeaponElev = null
 let prevCalmZone = null
+let prevZoneForPingPong = null
+let zoneTransitionCount = 0
 
 const ledgerEvents = ledgerText
   .split(/\r?\n/)
@@ -244,6 +250,71 @@ for (const m of sceneBlocks) {
     prevCalmWeaponElev = null
   }
   prevCalmZone = sceneZone
+
+  // C09: Handheld Non-Weapon Prop Ownership & Mention Lock (Zero leaked/floating/swapped props)
+  const handheldItemEnts = itemRefs
+    .map(ref => Object.values(entities).find(e =>
+      e.kind === 'item' &&
+      ((e.name && e.name.toLowerCase() === ref.toLowerCase()) ||
+       (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === ref.toLowerCase()))
+    ))
+    .filter(e => e && e.placement === 'handheld' && !/\b(?:rapier|sword|greatsword|greatblade|greataxe|blade|staff|wand|dagger|spear|bow|longbow|axe|halberd|polearm|scythe|lance|hammer)\b/i.test(e.name || e.token || ''))
+  for (const hEnt of handheldItemEnts) {
+    const cleanPropName = (hEnt.name || hEnt.token?.replace(/^@\{|\}$/g, '') || '').trim()
+    const terms = [cleanPropName, ...(hEnt.aliases || []), 'meter', 'sensor', 'device', 'sphere', 'astrolabe', 'chip'].filter(Boolean)
+    const isMentioned = terms.some(t => {
+      const esc = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      return new RegExp(`\\b${esc}\\b`, 'i').test(`${narrText} ${rawAct}`)
+    })
+    if (!isMentioned) {
+      c09Fails.push(`${sId} (leaked unmentioned handheld prop "${cleanPropName}")`)
+      continue
+    }
+    const propActiveInMultiChar = charRefs.length >= 2 && /\b(?:holding|gripping|clutching|carrying|raising|raised|lowering|lowered|steadying|lifting|extending|tapping|scanning|examining)\b/i.test(rawAct)
+    if (propActiveInMultiChar && !/held exclusively by @\{/i.test(promptText) && !/holding @\{/i.test(promptText)) {
+      c09Fails.push(`${sId} (multi-character scene lacks explicit owner lock for "${cleanPropName}")`)
+    }
+  }
+
+  // C10: Broken/Split Prop State Variant Parity (Ban intact plate reuse on split/broken props)
+  const isStructurallyBroken = /\b(?:split open|broken open|shattered in half|snapped in half|gutted|torn apart|smashed casing|parted along seams)\b/i.test(`${narrText} ${rawAct}`)
+  if (isStructurallyBroken) {
+    for (const ref of itemRefs) {
+      const ent = Object.values(entities).find(e =>
+        e.kind === 'item' &&
+        ((e.name && e.name.toLowerCase() === ref.toLowerCase()) ||
+         (e.token && e.token.replace(/^@\{|\}$/g, '').toLowerCase() === ref.toLowerCase()))
+      )
+      if (ent && ent.placement === 'handheld') {
+        const variantText = `${ent.id || ''} ${ent.name || ''} ${ent.dna || ''} ${ent.visual_dna || ''}`
+        if (!/\b(?:split|broken|shattered|cracked|damaged|gutted|ruined)\b/i.test(variantText) && /identical unchanging prop geometry/i.test(promptText)) {
+          c10Fails.push(`${sId} (split/broken prop "${ref}" still uses intact reference plate)`)
+        }
+      }
+    }
+  }
+
+  // C11: Outdoor Night-Plate vs. Daylight Conflict & Zone Ping-Pong Ceiling
+  if (prevZoneForPingPong && prevZoneForPingPong !== sceneZone) {
+    zoneTransitionCount++
+  }
+  prevZoneForPingPong = sceneZone
+  const zoneObj = zones[sceneZone] || Object.values(zones).find(z => z.id?.toLowerCase() === sceneZone)
+  if (zoneObj && /^(?:night_floodlit|night_celestial)$/i.test(zoneObj.lighting || '') && /illuminated by bright morning sunlight/i.test(promptText)) {
+    c11Fails.push(`${sId} (outdoor night zone "${sceneZone}" conflicts with daylight prompt)`)
+  }
+
+  // C12: Unsolicited Combat Stance Guard (Ban battle stances during calm conversation/transit)
+  const hasCombatOrAlert = /\b(?:attack|strike|slash|lunge|brace|braced|combat|battle|fight|clash|defend|defensive|alert|draw|drew|guard|intercept|shockwave|gale|threat|roar|explosion|erupt|pressure|aura|barrier|shield|crouch|ready|hostile|ambush)\b/i.test(`${narrText} ${rawAct}`)
+  const hasBattleStanceInPrompt = /\b(?:martial stance|fighting stance|combat stance|fists raised|lunging forward|defensive guard posture|ready to strike)\b/i.test(promptText)
+  if (!hasCombatOrAlert && hasBattleStanceInPrompt) {
+    c12Fails.push(`${sId} (battle/martial stance injected during calm non-combat scene)`)
+  }
+}
+
+const maxAllowedZoneTransitions = sceneBlocks.length >= 48 ? Math.max(24, Math.ceil(sceneBlocks.length * 0.20)) : 999
+if (zoneTransitionCount > maxAllowedZoneTransitions) {
+  c11Fails.push(`EPISODE_PING_PONG (${zoneTransitionCount} zone transitions across ${sceneBlocks.length} scenes exceeds ceiling of ${maxAllowedZoneTransitions})`)
 }
 
 report.checks.push(
@@ -302,11 +373,39 @@ report.checks.push(
     passed: c08Fails.length === 0,
     failingScenes: c08Fails,
     details: c08Fails.length === 0 ? 'Dialogue scenes maintain consistent weapon posture without action-to-standing flips.' : `Posture drift/mismatch (${c08Fails.join(', ')})`
+  },
+  {
+    id: 'C09_handheld_prop_owner_lock',
+    name: 'C09: Handheld Prop Mention & Multi-Character Owner Lock',
+    passed: c09Fails.length === 0,
+    failingScenes: c09Fails,
+    details: c09Fails.length === 0 ? 'All handheld props are actively mentioned and locked to a single named owner in multi-character scenes.' : `Unmentioned or unowned handheld prop (${c09Fails.join(', ')})`
+  },
+  {
+    id: 'C10_damaged_prop_plate_purity',
+    name: 'C10: Broken/Split Prop Dedicated Variant Plate Purity',
+    passed: c10Fails.length === 0,
+    failingScenes: c10Fails,
+    details: c10Fails.length === 0 ? 'All split/broken props bind dedicated damaged/split variant plates.' : `Broken prop using intact plate (${c10Fails.join(', ')})`
+  },
+  {
+    id: 'C11_zone_lighting_plate_parity',
+    name: 'C11: Zone Day/Night Plate Parity & Anti-Ping-Pong Ceiling',
+    passed: c11Fails.length === 0,
+    failingScenes: c11Fails,
+    details: c11Fails.length === 0 ? `Day/night zone plates aligned and zone transitions (${zoneTransitionCount}) within ceiling (${maxAllowedZoneTransitions}).` : `Zone lighting conflict or excessive transitions (${c11Fails.join(', ')})`
+  },
+  {
+    id: 'C12_unsolicited_combat_posture_guard',
+    name: 'C12: Unsolicited Combat/Martial Stance Guard on Calm Scenes',
+    passed: c12Fails.length === 0,
+    failingScenes: c12Fails,
+    details: c12Fails.length === 0 ? 'Zero unsolicited battle/martial stances in calm dialogue or transit scenes.' : `Unsolicited battle stance detected (${c12Fails.join(', ')})`
   }
 )
 report.isProductionReady = report.checks.every(c => c.passed)
 report.overallScore = Math.round((report.checks.filter(c => c.passed).length / report.checks.length) * 100)
-for (const s of [...c01Fails, ...c02Fails, ...c03Fails, ...c04Fails, ...c05Fails, ...c06Fails, ...c07Fails, ...c08Fails].map(x => x.split(' ')[0])) {
+for (const s of [...c01Fails, ...c02Fails, ...c03Fails, ...c04Fails, ...c05Fails, ...c06Fails, ...c07Fails, ...c08Fails, ...c09Fails, ...c10Fails, ...c11Fails, ...c12Fails].map(x => x.split(' ')[0])) {
   if (!report.failingScenes.includes(s)) report.failingScenes.push(s)
 }
 

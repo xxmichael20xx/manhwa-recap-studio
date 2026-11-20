@@ -123,21 +123,24 @@
         "talent": "Ancestral Gale Tempest"
       },
       "appearance": {
-        "hair": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, manicured short beard",
+        "hair": "Slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, clean-shaven jawline",
         "eyes": "Cold, merciless steel-grey eyes brimming with ruthless aristocratic pride",
-        "physique": "Tall, broad-shouldered nobleman carrying an ornate wind-attuned silver cane",
-        "attire": "Opulent sapphire-velvet coat lined with ermine fur, gilded silver frogging, high-collared silk cravat pinned with the Montrey dragon brooch",
+        "physique": "Tall, broad-shouldered nobleman",
+        "attire": "Deep sapphire-blue velvet coat with lush dark charcoal-grey fur collar and sleeve trim, ornate silver coiled dragon embroidery along lapels and hem, charcoal-black brocade waistcoat with silver buttons, navy-blue silk cravat pinned with a glowing star-sapphire brooch, black leather gloves",
         "weapons": "Wind-attuned platinum cane with a concealed enchanted thrusting blade"
       },
-      "dna_prompt_anchor": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp cold grey eyes, cruel proud expression, wearing sapphire-velvet fur-lined coat with ornate silver dragon embroidery, holding a platinum cane, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
+      "dna_prompt_anchor": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, clean-shaven jawline, sharp cold grey eyes, cruel proud expression, wearing deep sapphire-blue velvet coat with lush dark charcoal-grey fur collar and ornate silver coiled dragon embroidery, charcoal-black brocade waistcoat, navy-blue silk cravat with star-sapphire brooch, black leather gloves, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape",
       "reference_plate": "03_Antagonist_Patriarch_Valerius.jpg",
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00003",
       "flowName": "Patriarch Valerius Montrey",
       "episodes": [
-        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true,
-      "dna": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp cold grey eyes, cruel proud expression, wearing sapphire-velvet fur-lined coat with ornate silver dragon embroidery, holding a platinum cane, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
+      "dna": "@{Patriarch Valerius Montrey}, 45-year-old arrogant aristocratic patriarch, slicked-back silver-streaked dark hair, sharp aristocratic cheekbones, clean-shaven jawline, sharp cold grey eyes, cruel proud expression, wearing deep sapphire-blue velvet coat with lush dark charcoal-grey fur collar and ornate silver coiled dragon embroidery, charcoal-black brocade waistcoat, navy-blue silk cravat with star-sapphire brooch, black leather gloves, dark fantasy manhwa art style, sharp ink linework, rich dramatic lighting, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
     },
     {
       "id": "elder_cassius_montrey",
@@ -156,7 +159,7 @@
         "talent": "Vessel Appraisal & Lineage Purging"
       },
       "appearance": {
-        "hair": "Thin, receding snow-white hair, gaunt wrinkled face with hooked nose",
+        "hair": "Thin, receding silver-white hair, gaunt wrinkled face with hooked nose",
         "eyes": "Narrowed, hooded dark eyes filled with elitist contempt and zero empathy",
         "physique": "Slightly hunched, lean frame wearing ceremonial arcane robes",
         "attire": "Heavy dark-navy ceremonial robes with silver lightning runes along sleeves, wearing obsidian diagnostic rings on fingers",
@@ -167,7 +170,10 @@
       "flowUuid": "5c18a240-3b8e-4d1a-9f5e-11a2e4f00004",
       "flowName": "Head Elder Cassius",
       "episodes": [
-        "EP01_The_Last_Archmage_and_The_Discarded_Babe"
+        "EP01_The_Last_Archmage_and_The_Discarded_Babe",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true,
       "dna": "@{Head Elder Cassius}, 62-year-old gaunt ruthless noble elder, thin white hair, hooked nose, sneering contemptuous face, dark navy ceremonial robes with silver runes, holding an antique diagnostic brass bell, dark fantasy manhwa art style, sharp ink linework, stark cold shadows, horizontal 16:9, widescreen, cinematic composition, edge-to-edge full bleed landscape"
@@ -340,7 +346,10 @@
         "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
         "EP06_The_Tier_6_White_Library_Trial_and_The_Glacial_Domain",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
@@ -376,7 +385,10 @@
       "episodes": [
         "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
@@ -412,7 +424,10 @@
       "episodes": [
         "EP04_The_Road_to_the_Capital_and_The_Entrance_Exam",
         "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
@@ -550,7 +565,8 @@
       "reference_plate": "35_Supporting_Commander_Marcus_Kael.jpg",
       "flowName": "Commander Marcus Kael",
       "episodes": [
-        "EP05_The_Fragile_Circles_and_The_Knight_Sparring"
+        "EP05_The_Fragile_Circles_and_The_Knight_Sparring",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
@@ -654,7 +670,10 @@
       "reference_plate": "42_Ally_Elena_Ashvale.jpg",
       "flowName": "Elena Ashvale",
       "episodes": [
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
@@ -689,7 +708,10 @@
       "reference_plate": "43_Ally_Doran_Keller.jpg",
       "flowName": "Doran Keller",
       "episodes": [
-        "EP07_The_Ancient_Labyrinth_Tournament"
+        "EP07_The_Ancient_Labyrinth_Tournament",
+        "EP08_The_Resonance_Mirror_and_The_Patriarchs_Panic",
+        "EP09_The_Velvet_Carriage_and_The_False_Reconciliation",
+        "EP10_The_Burning_of_the_Dragon_Crest"
       ],
       "hasPlate": true
     },
